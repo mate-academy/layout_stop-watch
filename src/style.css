@@ -1,0 +1,81 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.center {
+  position: relative;
+  margin: 300px auto;
+  background-color: aqua;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  z-index: 3;
+}
+
+.minute {
+  position: absolute;
+  background-color: blue;
+  width: 10px;
+  height: 150px;
+  bottom: 7px;
+  right: 5px;
+  z-index: 1;
+  border-radius: 10px;
+  animation: rotateSecond 3600s linear infinite;
+  transform-origin: bottom;
+}
+
+.second {
+  position: absolute;
+  background-color: aqua;
+  width: 10px;
+  height: 250px;
+  bottom: 7px;
+  right: 5px;
+  z-index: 2;
+  border-radius: 10px;
+  animation: rotateSecond 60s linear infinite;
+  transform-origin: bottom;
+}
+
+@keyframes rotateSecond {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.zero,
+.quarter,
+.half,
+.three-quarter {
+  position: absolute;
+  color: rgb(255, 178, 97);
+  font-style: oblique;
+  font-size: 30px;
+}
+
+.zero {
+  bottom: 250px;
+  right: -3px;
+}
+
+.quarter {
+  left: 250px;
+  top: 3px;
+}
+
+.half {
+  top: 250px;
+  right: -3px;
+}
+
+.three-quarter {
+  right: 250px;
+  top: -3px;
+}
