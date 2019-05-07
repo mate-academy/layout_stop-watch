@@ -1,0 +1,73 @@
+:root {
+  --sec_hand_length: 175px;
+  --min_hend_length: 100px;
+  --hand_margin: calc(var(--sec_hand_length) + 10px);
+  --center_point_width: 8px;
+  --hand_width: calc(var(--center_point_width) / 2);
+}
+
+.second-hend {
+  width: var(--hand_width);
+  height: var(--sec_hand_length);
+  border-radius: 2px;
+  margin-right: var(--hand_margin);
+  margin-left: var(--hand_margin);
+  margin-bottom: var(--hand_margin);
+  margin-top: 10px;
+  background-color: #4b99aa;
+  position: absolute;
+  animation-name: second_move;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  animation-duration: 60s;
+  transform-origin: bottom;
+}
+
+@keyframes second_move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.minute-hand {
+  width: var(--hand_width);
+  height: var(--min_hend_length);
+  border-radius: 2px;
+  margin-top: calc(var(--hand_margin) - var(--min_hend_length));
+  margin-right: var(--hand_margin);
+  margin-left: var(--hand_margin);
+  margin-bottom: var(--hand_margin);
+  background-color: #d15559;
+  position: absolute;
+  animation-name: minute_move;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  animation-duration: 3600s;
+  animation-delay: 0s;
+  transform-origin: bottom;
+}
+
+@keyframes minute_move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch-center {
+  width: var(--center_point_width);
+  height: var(--center_point_width);
+  border-radius: 50%;
+  margin-top: calc(var(--hand_margin) - var(--hand_width));
+  margin-left: calc(var(--hand_margin) - var(--hand_width)
+  + var(--hand_width) / 2);
+  background-color: #4b99aa;
+  position: absolute;
+}
