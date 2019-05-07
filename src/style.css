@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+}
+
+.center {
+  width: 36px;
+  height: 36px;
+  margin: 600px auto;
+  border-radius: 18px;
+  background: #0095b6;
+  position: relative;
+}
+
+.seconds {
+  width: 10px;
+  height: 400px;
+  border-radius: 5px;
+  background: #0095b6;
+  position: absolute;
+  bottom: -150px;
+  left: 665px;
+  animation: revolve 60s linear 5;
+  transform-origin: bottom;
+}
+
+.minutes {
+  width: 12px;
+  height: 300px;
+  border-radius: 5px;
+  background: red;
+  position: absolute;
+  bottom: -150px;
+  left: 665px;
+  animation: revolve-min 3600s linear;
+  transform-origin: bottom;
+}
+
+@keyframes revolve {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+@keyframes revolve-min {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
