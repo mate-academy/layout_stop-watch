@@ -1,14 +1,23 @@
 body {
   margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 100px auto;
+  width: 700px;
+  height: 700px;
+  position: relative;
 }
 
 .center {
   width: 36px;
   height: 36px;
-  margin: 600px auto;
   border-radius: 18px;
   background: #0095b6;
-  position: relative;
+  position: absolute;
+  top: 390px;
+  left: 338px;
 }
 
 .seconds {
@@ -17,8 +26,8 @@ body {
   border-radius: 5px;
   background: #0095b6;
   position: absolute;
-  bottom: -150px;
-  left: 665px;
+  left: 350px;
+  top: 15px;
   animation: revolve 60s linear 5;
   transform-origin: bottom;
 }
@@ -29,8 +38,8 @@ body {
   border-radius: 5px;
   background: red;
   position: absolute;
-  bottom: -150px;
-  left: 665px;
+  left: 350px;
+  top: 115px;
   animation: revolve-min 3600s linear;
   transform-origin: bottom;
 }
