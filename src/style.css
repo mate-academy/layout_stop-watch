@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+}
+
+.outer {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: blue;
+  margin: 500px auto;
+  position: relative;
+  z-index: 3;
+}
+
+.seconds {
+  position: absolute;
+  width: 300px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: aqua;
+  left: 15px;
+  top: 10px;
+  animation: timerSecond 1s infinite linear;
+  transform-origin: 0 5px;
+}
+
+.minutes {
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgb(218, 78, 206);
+  left: 15px;
+  top: 10px;
+  animation: timerSecond 60s infinite linear;
+  transform-origin: 0 5px;
+}
+
+.hours {
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgb(179, 80, 80);
+  left: 15px;
+  top: 10px;
+  animation: timerSecond 3600s infinite linear;
+  transform-origin: 0 5px;
+}
+
+@keyframes timerSecond {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
