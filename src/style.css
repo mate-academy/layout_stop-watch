@@ -1,0 +1,82 @@
+:root {
+  --minuteHandBackground: linear-gradient(to top, #530a1d, #a5484c, #c25d5d);
+  --minuteHandHeight: 11px;
+  --borders: 1px solid #94aab0;
+  --borderRadius: 10px;
+  --clockHeartColor: linear-gradient(to top, #081659, #003875, #5f98a8);
+  --secondsHandBackground: linear-gradient(to left top, #6f4c0b,  #e7d243);
+}
+  
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+}
+
+.center {
+  position: relative;
+}
+
+.minute {
+  position: absolute;
+  width: 10px;
+  height: 150px;
+  background: var(--hourHandBackground);
+  border-radius: var(--borderRadius);
+  left: 4px;
+  bottom: 7px;
+  z-index: -1;
+}
+
+.clockCenter {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--clockHeartColor);
+}
+
+.minute {
+  position: absolute;
+  width: 10px;
+  height: 120px;
+  background: var(--minuteHandBackground);
+  border-radius: var(--borderRadius);
+  left: 4px;
+  bottom: 9px;
+  animation: rotateClockHands 3600s linear infinite;
+  transform-origin: bottom center;
+}
+
+.second {
+  position: absolute;
+  width: 5px;
+  height: 120px;
+  background: var(--secondsHandBackground);
+  border-radius: var(--borderRadius);
+  left: 7.5px;
+  bottom: 9px;
+  z-index: -1;
+  animation: rotateClockHands 60s linear infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes rotateClockHands {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+}
