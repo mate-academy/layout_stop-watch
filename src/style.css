@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+}
+
+.clock-face {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  position: relative;
+  margin: 5em auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+    -23px 0 20px -23px rgba(0, 0, 0, 0.6),
+    23px 0 20px -23px rgba(0, 0, 0, 0.6),
+    inset 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+.eyes {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  top: 95px;
+  left: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eye {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  background: #fff;
+
+}
+
+.eye-inner {
+  width: 60px;
+  height: 60px;
+  background: #000;
+  border-radius: 50%;
+  margin-top: 10px;
+  border: 12px solid skyblue;
+  box-shadow: inset rgba(255,255,255,0.2) 8px  8px 18px 5px,
+    inset rgba(0,0,0,0.5)      -8px -8px 18px 5px;
+  animation: move-eye 1s linear 10;
+  animation-fill-mode: forwards;
+}
+
+.eye-inner-blick {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+}
+
+.second-hands {
+  position: absolute;
+  width: 10px;
+  height: 220px;
+  background: #2e159e;
+  border-radius: 5px;
+  top: 30px;
+  left: 244px;
+  transform-origin: 5px 220px;
+  transform: rotate(360deg);
+  animation: rotate-secundes 10s linear;
+  animation-fill-mode: forwards;
+}
+
+.minute-hands {
+  position: absolute;
+  width: 10px;
+  height: 180px;
+  background: #ec5353;
+  border-radius: 5px;
+  top: 70px;
+  left: 244px;
+  transform-origin: 5px 180px;
+  animation: rotate-minutes 10s linear;
+  animation-fill-mode: forwards;
+}
+
+.circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2e159e;
+  top: 230px;
+  left: 230px;
+}
+
+.smile {
+  width: 190px;
+  height: 80px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border: 10px solid gray;
+  border-top: 0;
+  position: absolute;
+  top: 310px;
+  left: 150px;
+}
+
+@keyframes rotate-minutes {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(48deg);
+  }
+
+}
+
+@keyframes rotate-secundes {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(251deg);
+  }
+
+}
+
+@keyframes move-eye {
+
+  from {
+    transform: translateX(2px);
+  }
+
+  to {
+    transform: translateX(2px);
+  }
+
+  50% {
+    transform: translateX(35px);
+  }
+
+}
