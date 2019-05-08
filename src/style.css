@@ -1,0 +1,53 @@
+.stop-watch {
+  display: flex;
+  justify-content: center;
+}
+
+.big-hand,
+.small-hand,
+.point {
+  position: absolute;
+}
+
+.big-hand,
+.small-hand {
+  border-radius: 3px;
+  bottom: 350px;
+}
+
+.big-hand,
+.point {
+  background-color: #6099a8;
+}
+
+.big-hand {
+  width: 8px;
+  height: 300px;
+  animation: small_hand 60s steps(60) infinite;
+  transform-origin: 4px 300px;
+}
+
+.small-hand {
+  background-color: #c25d5e;
+  width: 8px;
+  height: 200px;
+  animation: small_hand 3600s linear infinite;
+  transform-origin: 4px 200px;
+}
+
+.point {
+  height: 20px;
+  width: 20px;
+  bottom: 340px;
+  border-radius: 50%;
+}
+
+@keyframes small_hand {
+  form {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
