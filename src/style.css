@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  height: 500px;
+  width: 100%;
+}
+
+.watch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: blue;
+  margin: 250px auto;
+  position: relative;
+}
+
+.seconds {
+  position: absolute;
+  width: 300px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: blue;
+  left: 15px;
+  top: 10px;
+  animation: timerSecond 60s infinite linear;
+  transform-origin: 0 5px;
+}
+
+.minutes {
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: red;
+  left: 15px;
+  top: 10px;
+  animation: timerSecond 3600s infinite linear;
+  transform-origin: 0 5px;
+  z-index: -1;
+}
+
+@keyframes timerSecond {
+  from {
+    transform: rotate(270deg);
+  }
+
+  to {
+    transform: rotate(630deg);
+  }
+}
