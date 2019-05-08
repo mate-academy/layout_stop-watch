@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+}
+
+.watches {
+  width: 750px;
+  height: 750px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.center {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(116, 190, 255);
+  position: absolute;
+  top: 360px;
+  left: 360px;
+}
+
+.second {
+  position: relative;
+  top: 50px;
+  left: 369px;
+  width: 12px;
+  height: 325px;
+  background-color: rgb(116, 190, 255);
+  animation: secondrotate;
+  animation-duration: 60s;
+  transform-origin: bottom center;
+}
+
+.second:before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 0;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: rgb(116, 190, 255);
+}
+
+.minute {
+  position: relative;
+  top: -150px;
+  left: 369px;
+  width: 12px;
+  height: 200px;
+  background-color: rgb(255, 101, 60);
+  z-index: -1;
+
+  animation: minuterotate;
+  animation-duration: 3600s;
+  transform-origin: bottom center;
+}
+
+.minute:before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 0;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: rgb(255, 101, 60);
+}
+
+@keyframes minuterotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes secondrotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
