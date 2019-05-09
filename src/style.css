@@ -21,10 +21,10 @@ body {
   background: #c14e52;
   border-radius: 5px;
   left: 10px;
-  top: 7.5px;
+  top: 7px;
   z-index: -1;
   transform-origin: left center;
-  animation: rotate-hours 21600s linear infinite;
+  animation: rotate-hands 21600s linear infinite;
 }
 
 .minutes-hand {
@@ -34,10 +34,10 @@ body {
   background: #4b99aa;
   border-radius: 5px;
   left: 10px;
-  top: 7.5px;
+  top: 7px;
   z-index: -2;
   transform-origin: left center;
-  animation: rotate-minutes 3600s linear infinite;
+  animation: rotate-hands 3600s linear infinite;
 }
 
 .seconds-hand {
@@ -47,33 +47,13 @@ body {
   background: #622dff;
   border-radius: 3px;
   left: 10px;
-  top: 7.5px;
+  top: 7px;
   z-index: -2;
   transform-origin: left center;
-  animation: rotate-seconds 60s linear infinite;
+  animation: rotate-hands 60s linear infinite;
 }
 
-@keyframes rotate-minutes {
-  from {
-    transform: rotate(-90deg);
-  }
-
-  to {
-    transform: rotate(270deg);
-  }
-}
-
-@keyframes rotate-hours {
-  from {
-    transform: rotate(-90deg);
-  }
-
-  to {
-    transform: rotate(270deg);
-  }
-}
-
-@keyframes rotate-seconds {
+@keyframes rotate-hands {
   from {
     transform: rotate(-90deg);
   }
