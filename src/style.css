@@ -1,0 +1,50 @@
+:root {
+  --sec_hand_length: 175px;
+  --min_hend_length: 100px;
+  --hand_margin: calc(var(--sec_hand_length) + 10px);
+  --center_point_width: 8px;
+  --hand_width: calc(var(--center_point_width) / 2);
+}
+
+.second-hend {
+  width: var(--hand_width);
+  height: var(--sec_hand_length);
+  border-radius: 2px;
+  margin: 10px var(--hand_margin);
+  background-color: #4b99aa;
+  position: absolute;
+  animation: move 60s infinite linear;
+  transform-origin: bottom;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.minute-hand {
+  width: var(--hand_width);
+  height: var(--min_hend_length);
+  border-radius: 2px;
+  margin-top: calc(var(--hand_margin) - var(--min_hend_length));
+  margin-left: var(--hand_margin);
+  background-color: #d15559;
+  position: absolute;
+  animation: move 3600s infinite steps(60, end) backwards;
+  transform-origin: bottom;
+}
+
+.stopwatch-center {
+  width: var(--center_point_width);
+  height: var(--center_point_width);
+  border-radius: 50%;
+  margin-top: calc(var(--hand_margin) - var(--hand_width));
+  margin-left: calc(var(--hand_margin) - var(--hand_width)
+  + var(--hand_width) / 2);
+  background-color: #4b99aa;
+  position: absolute;
+}
