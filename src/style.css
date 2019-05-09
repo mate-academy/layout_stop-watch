@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+}
+
+@keyframes clock-tic-tac {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.my-watch {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: 200px;
+  border: 1px solid red;
+  position: relative;
+}
+
+.my-watch__hours {
+  height: 80px;
+  width: 7px;
+  background-color: rgb(47, 47, 47);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 150px;
+  left: 149px;
+  transform-origin: bottom center;
+  animation: clock-tic-tac 43200s linear infinite;
+  z-index: 0;
+}
+
+.my-watch__minutes {
+  height: 120px;
+  width: 5px;
+  background-color: rgb(118, 118, 118);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 150px;
+  left: 150px;
+  transform-origin: bottom center;
+  animation: clock-tic-tac 3600s linear infinite;
+  z-index: 1;
+}
+
+.my-watch__seconds {
+  height: 140px;
+  width: 5px;
+  background-color: rgb(255, 0, 0);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 150px;
+  left: 150px;
+  transform-origin: bottom center;
+  animation: clock-tic-tac 60s linear infinite;
+  z-index: 2;
+}
