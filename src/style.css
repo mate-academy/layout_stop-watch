@@ -11,13 +11,14 @@ body {
 }
 
 .clock {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: var(--outer);
   height: var(--outer);
   margin: 50px auto;
-  border: 2px solid green;
+  border: 3px solid green;
   border-radius: 50%;
 }
 
@@ -27,6 +28,26 @@ body {
   height: var(--inner);
   background-color: burlywood;
   border-radius: 50%;
+}
+
+.scale {
+  position: absolute;
+  width: calc(var(--inner) / 4);
+  height: calc(var(--outer) / 10 - var(--inner) / 2);
+  background-color: midnightblue;
+  border-radius: 50%;
+  top: 10px;
+  left: 50%;
+  font-size: 25px;
+}
+
+.scale-number {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  font-size: calc(var(--inner) * 2);
+  font-weight: bold;
+  color: midnightblue;
 }
 
 .min {
