@@ -1,6 +1,6 @@
 :root {
-  --outerNum: 400;
-  --innerNum: 20;
+  --outerNum: 600;
+  --innerNum: 30;
   --outer: calc(var(--outerNum) * 1px);
   --inner: calc(var(--innerNum) * 1px);
   --time: 60s;
@@ -25,7 +25,7 @@ body {
   position: relative;
   width: var(--inner);
   height: var(--inner);
-  background-color: burlywood;
+  background-color: lightblue;
   border-radius: 50%;
 }
 
@@ -34,7 +34,7 @@ body {
   width: calc(var(--inner) / 3);
   height: calc(var(--outer) / 3 - var(--inner) / 2);
   background-color: red;
-  border-radius: 50%;
+  border-radius: 15px;
   bottom: calc(var(--inner) / 2);
   left: calc(var(--inner) / 4 + var(--inner) / 10);
   animation: revolve calc(var(--time) * 60) linear infinite;
@@ -46,7 +46,7 @@ body {
   width: calc(var(--inner) / 3);
   height: calc(var(--outer) / 2 - var(--inner));
   background-color: lightblue;
-  border-radius: 50%;
+  border-radius: 15px;
   bottom: calc(var(--inner) / 2);
   left: calc(var(--inner) / 4 + var(--inner) / 10);
   animation: revolve var(--time) linear infinite;
