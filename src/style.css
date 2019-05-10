@@ -1,0 +1,64 @@
+:root {
+  --outerNum: 400;
+  --innerNum: 20;
+  --outer: calc(var(--outerNum) * 1px);
+  --inner: calc(var(--innerNum) * 1px);
+  --time: 60s;
+}
+
+body {
+  margin: 0;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--outer);
+  height: var(--outer);
+  margin: 50px auto;
+  border: 2px solid green;
+  border-radius: 50%;
+}
+
+.middle {
+  position: relative;
+  width: var(--inner);
+  height: var(--inner);
+  background-color: burlywood;
+  border-radius: 50%;
+}
+
+.min {
+  position: absolute;
+  width: calc(var(--inner) / 3);
+  height: calc(var(--outer) / 3 - var(--inner) / 2);
+  background-color: red;
+  border-radius: 50%;
+  bottom: calc(var(--inner) / 2);
+  left: calc(var(--inner) / 4 + var(--inner) / 10);
+  animation: revolve calc(var(--time) * 60) linear infinite;
+  transform-origin: bottom center;
+}
+
+.sec {
+  position: absolute;
+  width: calc(var(--inner) / 3);
+  height: calc(var(--outer) / 2 - var(--inner));
+  background-color: lightblue;
+  border-radius: 50%;
+  bottom: calc(var(--inner) / 2);
+  left: calc(var(--inner) / 4 + var(--inner) / 10);
+  animation: revolve var(--time) linear infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes revolve {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
