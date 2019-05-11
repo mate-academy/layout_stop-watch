@@ -1,0 +1,55 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 30px;
+  margin: 0 auto;
+  margin-top: 350px;
+}
+
+.second_hand,
+.circle {
+  background: rgb(93, 127, 191);
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+
+}
+
+.second_hand {
+  width: 10px;
+  height: 300px;
+  position: absolute;
+  right: 10px;
+  top: -285px;
+  transform-origin: bottom center;
+  animation: rotate_hand 3600s linear infinite;
+}
+
+.minute_hand {
+  width: 10px;
+  height: 200px;
+  background: rgb(200, 79, 79);
+  position: absolute;
+  top: -185px;
+  right: 10px;
+  z-index: -1;
+  transform-origin: bottom center;
+  animation: rotate_hand 60s linear infinite;
+}
+
+@keyframes rotate_hand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
