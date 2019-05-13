@@ -12,4 +12,3 @@ For this problem, testing of your solution will not be automated.
 **Result**
 
 - [UPDATE DEMO LINK](https://Laliquenoare.github.io/layout_stop-watch/)
-- [UPDATE TEST REPORT LINK](https://Laliquenoare.github.io/layout_stop-watch/report/html_report/)
