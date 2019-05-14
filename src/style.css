@@ -1,6 +1,6 @@
 :root {
   --point-diametr: 20px;
-  --point-bgc: blue;
+  --point-bgc: #4b99aa;
   --hand-radius: 3px;
 }
 
@@ -24,23 +24,14 @@ body {
   width: 8px;
   height: 70px;
   border-radius: var(--hand-radius);
-  background-color: red;
+  background-color: #d15559;
   position: absolute;
   bottom: 10px;
   left: 6px;
-  z-index: 1;
-  animation: minute 3600s infinite linear;
+  z-index: -1;
+  animation: rotate-hand 3600s infinite linear;
   transform: rotate(360deg);
   transform-origin: 4px 70px;
-}
-
-@keyframes minute {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .second-hand {
@@ -51,12 +42,12 @@ body {
   position: absolute;
   bottom: 10px;
   left: 7px;
-  animation: second 60s infinite linear;
+  animation: rotate-hand 60s infinite linear;
   transform: rotate(360deg);
   transform-origin: 3px 100px;
 }
 
-@keyframes second {
+@keyframes rotate-hand {
   0% {
     transform: rotate(0);
   }
