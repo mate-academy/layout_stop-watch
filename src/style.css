@@ -1,10 +1,9 @@
 :root {
-  --minuteHandBackground: linear-gradient(to top, #530a1d, #a5484c, #c25d5d);
+  --backgroundBlue: #4b99aa;
   --minuteHandHeight: 11px;
   --borders: 1px solid #94aab0;
   --borderRadius: 10px;
-  --clockHeartColor: linear-gradient(to top, #081659, #003875, #5f98a8);
-  --secondsHandBackground: linear-gradient(to left top, #6f4c0b,  #e7d243);
+  --backgroundRed: #d15559;
 }
   
 html,
@@ -28,47 +27,36 @@ body {
   position: relative;
 }
 
-.minute {
-  position: absolute;
-  width: 10px;
-  height: 150px;
-  background: var(--hourHandBackground);
+.minute, .second {
   border-radius: var(--borderRadius);
-  left: 4px;
-  bottom: 7px;
-  z-index: -1;
+  position: absolute;
+  transform-origin: bottom center;
+  bottom: 9px;
 }
 
 .clockCenter {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--clockHeartColor);
+  background: var(--backgroundBlue);
 }
 
 .minute {
-  position: absolute;
-  width: 10px;
-  height: 120px;
-  background: var(--minuteHandBackground);
-  border-radius: var(--borderRadius);
+  width: 9px;
+  height: 137px;
+  background: var(--backgroundRed);
   left: 4px;
-  bottom: 9px;
   animation: rotateClockHands 3600s linear infinite;
-  transform-origin: bottom center;
+   z-index: -1;
 }
 
 .second {
-  position: absolute;
-  width: 5px;
-  height: 120px;
-  background: var(--secondsHandBackground);
-  border-radius: var(--borderRadius);
-  left: 7.5px;
-  bottom: 9px;
+  height: 169px;
+  width: 12px;
+  background: var(--backgroundBlue);
+  left: 6px;
   z-index: -1;
   animation: rotateClockHands 60s linear infinite;
-  transform-origin: bottom center;
 }
 
 @keyframes rotateClockHands {
