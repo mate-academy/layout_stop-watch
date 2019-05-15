@@ -1,0 +1,70 @@
+:root {
+  --backgroundBlue: #4b99aa;
+  --minuteHandHeight: 11px;
+  --borders: 1px solid #94aab0;
+  --borderRadius: 10px;
+  --backgroundRed: #d15559;
+}
+  
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+}
+
+.center {
+  position: relative;
+}
+
+.minute, .second {
+  border-radius: var(--borderRadius);
+  position: absolute;
+  transform-origin: bottom center;
+  bottom: 9px;
+}
+
+.clockCenter {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--backgroundBlue);
+}
+
+.minute {
+  width: 9px;
+  height: 137px;
+  background: var(--backgroundRed);
+  left: 4px;
+  animation: rotateClockHands 3600s linear infinite;
+   z-index: -1;
+}
+
+.second {
+  height: 169px;
+  width: 12px;
+  background: var(--backgroundBlue);
+  left: 6px;
+  z-index: -1;
+  animation: rotateClockHands 60s linear infinite;
+}
+
+@keyframes rotateClockHands {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+}
