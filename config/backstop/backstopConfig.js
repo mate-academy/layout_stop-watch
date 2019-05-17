@@ -3,7 +3,7 @@
 // https://github.com/garris/BackstopJS#advanced-scenarios
 const basicScenario = {
   label: 'test', // name of the test
-  url: 'http://localhost:8080',
+  url: 'http://localhost:8080/index.html',
   referenceUrl: '', // put here reference to github-pages with ready project
   readyEvent: '',
   readySelector: '',
