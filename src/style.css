@@ -1,0 +1,48 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.center {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4c99aa;
+  margin: 350px auto;
+  position: relative;
+  z-index: unset;
+}
+
+.longhand {
+  width: 40%;
+  height: 1500%;
+  border-radius: 10px;
+  background: #4c99aa;
+  position: absolute;
+  left: 40%;
+  top: -1450%;
+  transform-origin: bottom;
+  animation: rotate 60s infinite linear;
+  z-index: -2;
+}
+
+.shorthand {
+  width: 40%;
+  height: 1000%;
+  border-radius: 10px;
+  background: #d05559;
+  position: absolute;
+  left: 27%;
+  top: -950%;
+  transform-origin: bottom;
+  animation: rotate 3600s infinite linear;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
