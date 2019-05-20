@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  margin: 300px auto;
+  position: relative;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #5e99a9;
+}
+
+.arrow {
+  position: absolute;
+  left: 15px;
+  width: 10px;
+  border-radius: 10px;
+  transform-origin: 50% 0;
+}
+
+.minute-arrow {
+  bottom: -130px;
+  height: 150px;
+  background-color: #c15f5f;
+  animation: rotateArrows 3600s linear infinite;
+  z-index: -1;
+}
+
+.second-arrow {
+  bottom: -230px;
+  height: 250px;
+  background-color: #5e99a9;
+  animation: rotateArrows 60s linear infinite;
+}
+
+@keyframes rotateArrows {
+  from {
+    transform: rotate(-180deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
