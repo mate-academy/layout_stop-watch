@@ -1,65 +1,51 @@
-.clock {
-  box-shadow: inset 0 0 0 0.02em #fff;
-  display: inline-block;
-  border-radius: 0.5em;
+html,
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.timer {
+  background: #4b99aa;
   position: relative;
-  font-size: 250px;
-  overflow: hidden;
-  height: 1em;
-  width: 1em;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
-  
-.clock__hand {
-  margin-left: -0.5em;
-  margin-top: -0.5em;
+
+.minutes {
+  border-radius: 5px;
   position: absolute;
-  display: block;
-  height: 1em;
-  width: 1em;
-  left: 50%;
-  top: 50%;
+  transform: rotate(-90deg);
+  width: 280px;
+  height: 10px;
+  background: #d15559;
+  transform-origin: left center;
+  left: 15px;
+  top: 10px;
+  animation: rotate-anim 3600s linear infinite;
 }
-  
-.clock__hand--minute::after {
-  content: "";
-  background-color: red;
-  margin-bottom: -0.02em;
-  margin-left: -0.01em;
+
+.seconds {
   position: absolute;
-  display: block;
-  height: 0.4em;
-  width: 0.03em;
-  bottom: 50%;
-  left: 50%;
+  border-radius: 5px;
+  background: #4b99aa;
+  width: 380px;
+  height: 10px;
+  left: 15px;
+  top: 10px;
+  transform-origin: left center;
+  animation: rotate-anim 60s linear infinite;
 }
-  
-.clock__hand--second::after {
-  content: "";
-  background-color: blue;
-  margin-bottom: -0.02em;
-  margin-left: -0.01em;
-  font-size: inherit;
-  position: absolute;
-  display: block;
-  height: 0.46em;
-  width: 0.01em;
-  bottom: 50%;
-  left: 50%;
-}
-  
-.clock__hand--minute {
-  animation: clock-hand-rotate 3600s linear infinite;
-}
-  
-.clock__hand--second {
-  animation: clock-hand-rotate 60s linear infinite;
-}
-  
-@keyframes clock-hand-rotate {
+
+@keyframes rotate-anim {
   from {
-    transform: rotate(0deg);
+    transform: rotate(-90deg);
   }
+
   to {
-    transform: rotate(360deg);
+    transform: rotate(270deg);
   }
 }
