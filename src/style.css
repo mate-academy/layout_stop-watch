@@ -37,7 +37,7 @@
   position: absolute;
   content: "";
   background-color: rgb(194, 93, 93);
-  height: 350px;
+  height: 200px;
   width: 12px;
   top: 30px;
   border-radius: 8px;
@@ -51,7 +51,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  animation: time 2s infinite linear;
+  animation: time 1s infinite linear;
   transform: rotate(180deg);
 }
 
@@ -59,7 +59,7 @@
   position: absolute;
   content: "";
   background-color: rgb(95, 162, 168);
-  height: 350px;
+  height: 250px;
   width: 12px;
   top: 28px;
   border-radius: 8px;
@@ -73,22 +73,25 @@
 }
 
 .time {
-  display: block;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin: auto;
   text-align: center;
 }
 
 .sec,
-.milsec {
+.min {
+  flex-direction: row;
   font-family: sans-serif;
   font-size: 24px;
   font-weight: 900;
 }
 
 .sec {
-  color: rgb(194, 93, 93);
+  color: rgb(95, 162, 168);
 }
 
-.milsec {
-  color: rgb(95, 162, 168);
+.min {
+  color: rgb(194, 93, 93);
 }
