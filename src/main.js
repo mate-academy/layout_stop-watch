@@ -8,7 +8,7 @@ function incrementSeconds() {
   seconds += 1;
   if (seconds === 60) {
     min += 1;
-    seconds = 1;
+    seconds = 0;
   }
 }
 
