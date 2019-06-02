@@ -1,0 +1,61 @@
+body {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  justify-content: center;
+}
+
+@keyframes moving {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.redArrow {
+  animation: moving 60s infinite linear;
+  transform-origin: 50% 100%;
+}
+
+.greenArrow {
+  animation: moving 1s infinite linear;
+  transform-origin: 50% 100%;
+}
+
+.circle {
+  position: relative;
+  margin-top: calc(50vh - 30px);
+  width: 40px;
+  height: 40px;
+  border: 1px;
+  border-radius: 100px;
+  background-color: cadetblue;
+
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.redArrow {
+  position: absolute;
+  margin-top: -230px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 250px;
+  width: 20px;
+  background-color: red;
+  border-radius: 10px;
+  z-index: -4;
+}
+
+.greenArrow {
+  position: absolute;
+  margin-top: -320px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 340px;
+  width: 13px;
+  background-color: cadetblue;
+  border-radius: 10px;
+}
