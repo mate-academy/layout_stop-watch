@@ -1,7 +1,3 @@
-body {
-  background: lightblue;
-}
-
 .center-point {
   position: relative;
   background-color: #4b9aaa;
@@ -14,7 +10,7 @@ body {
 .minute-hand {
   position: absolute;
   background-color: #d15559;
-  width: 150px;
+  width: 250px;
   height: 12px;
   border-radius: 6px;
   top: 10px;
@@ -22,13 +18,14 @@ body {
   z-index: -1;
   transform: rotate(-90deg);
   transform-origin: left center;
+
   animation: handRotate 3600s steps(60, end) infinite;
 }
 
 .second-hand {
   position: absolute;
   background-color: #4b9aaa;
-  width: 250px;
+  width: 400px;
   height: 12px;
   border-radius: 6px;
   top: 10px;
@@ -36,13 +33,13 @@ body {
   z-index: -2;
   transform: rotate(-90deg);
   transform-origin: left center;
+
   animation: handRotate 60s steps(60, end) infinite;
 }
+
 
 @keyframes handRotate {
   100% {
     transform: rotate(270deg);
   }
 }
-
-/*# sourceMappingURL=style.css.map */
