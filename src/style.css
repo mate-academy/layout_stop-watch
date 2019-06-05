@@ -1,0 +1,79 @@
+.second-hand {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  animation-name: circle;
+
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.second-hand:before {
+  position: absolute;
+  content: "";
+
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+
+  width: 30px;
+  height: 30px;
+
+  background-color: #5f98a8;
+  border-radius: 50%;
+}
+
+.second-hand:after {
+  position: absolute;
+  content: "";
+
+  bottom: calc(50% - 5px);
+  left: calc(50% - 5px);
+
+  width: 10px;
+  height: 510px;
+
+  background-color: #5f98a8;
+  border-radius: 5px;
+
+}
+
+.minute-hand {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  animation-name: circle;
+
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+}
+
+.minute-hand:after {
+  position: absolute;
+  content: "";
+
+  bottom: 50%;
+  left: calc(50% - 5px);
+
+  height: 265px;
+  width: 10px;
+
+  background-color: #c25d5d;
+  border-radius: 5px;
+}
+
+@keyframes circle {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
