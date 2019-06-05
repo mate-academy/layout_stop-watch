@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.center {
+  position: relative;
+
+  width: 30px;
+  height: 30px;
+
+  background-color: rgb(95, 162, 168);
+  border-radius: 50%;
+}
+
+.minutes {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: time 3600s infinite linear;
+  transform: rotate(0deg);
+}
+
+.minutes:before {
+  content: "";
+
+  position: absolute;
+  left: 9px;
+  bottom: 25px;
+
+  height: 200px;
+  width: 12px;
+
+  background-color: rgb(194, 93, 93);
+  border-radius: 6px;
+}
+
+.seconds {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: time 60s infinite linear;
+  transform: rotate(0deg);
+}
+
+.seconds:before {
+  content: "";
+
+  position: absolute;
+  left: 9px;
+  bottom: 25px;
+
+  height: 250px;
+  width: 12px;
+
+  background-color: rgb(95, 162, 168);
+  border-radius: 6px;
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.time {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 100px auto 0;
+}
+
+.sec,
+.min {
+  flex-direction: row;
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.sec {
+  color: rgb(95, 162, 168);
+}
+
+.min {
+  color: rgb(194, 93, 93);
+}
