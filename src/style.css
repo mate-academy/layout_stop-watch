@@ -4,71 +4,73 @@
 }
 
 .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(0, -50%);
-}
-
-.center {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 200px;
+}
+
+.center {
+  position: relative;
+
   width: 30px;
   height: 30px;
 
   background-color: rgb(95, 162, 168);
   border-radius: 50%;
-  z-index: 1;
 }
 
 .minutes {
-  width: 1px;
-  height: 100%;
   position: absolute;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  margin: 0 auto;
   animation: time 3600s infinite linear;
-  transform: rotate(180deg);
+  transform: rotate(0deg);
 }
 
 .minutes:before {
-  position: absolute;
   content: "";
-  background-color: rgb(194, 93, 93);
+
+  position: absolute;
+  left: 9px;
+  bottom: 25px;
+
   height: 200px;
   width: 12px;
-  top: 30px;
-  border-radius: 8px;
-  left: -5px;
+
+  background-color: rgb(194, 93, 93);
+  border-radius: 6px;
 }
 
 .seconds {
-  width: 1px;
-  height: 100%;
   position: absolute;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  margin: 0 auto;
-  animation: time 1s infinite linear;
-  transform: rotate(180deg);
+  animation: time 60s infinite linear;
+  transform: rotate(0deg);
 }
 
 .seconds:before {
-  position: absolute;
   content: "";
-  background-color: rgb(95, 162, 168);
+
+  position: absolute;
+  left: 9px;
+  bottom: 25px;
+
   height: 250px;
   width: 12px;
-  top: 28px;
-  border-radius: 8px;
-  left: -5px;
+
+  background-color: rgb(95, 162, 168);
+  border-radius: 6px;
 }
 
 @keyframes time {
   to {
-    transform: rotate(540deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -76,8 +78,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: auto;
-  text-align: center;
+  margin: 100px auto 0;
 }
 
 .sec,
