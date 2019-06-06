@@ -1,0 +1,143 @@
+body {
+  display: grid;
+  grid-template-columns: 500px;
+  grid-template-rows: 500px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+@media (max-width: 639px) {
+  body {
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: 250px;
+  }
+}
+
+.stop-watch {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.stop-watch::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #eee;
+}
+
+.stop-watch::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  min-width: 1px;
+  background-color: #eee;
+}
+
+.stop-watch__circle {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.stop-watch__circle::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 20;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.16);
+  background-color: white;
+  border-radius: 50%;
+}
+
+.stop-watch__second-hand {
+  position: absolute;
+  top: -190px;
+  left: 8px;
+  z-index: 1;
+  width: 5px;
+  height: 200px;
+  background-color: #3700ff;
+  border-radius: 3px;
+  transform-origin: bottom center;
+}
+
+.stop-watch:hover .stop-watch__second-hand {
+  animation-name: rotation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.stop-watch__minute-hand {
+  position: absolute;
+  top: -110px;
+  left: 8px;
+  z-index: 1;
+  width: 5px;
+  height: 120px;
+  background-color: aqua;
+  border-radius: 3px;
+  transform-origin: bottom center;
+}
+
+.stop-watch:hover .stop-watch__minute-hand {
+  animation-name: rotation;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 639px) {
+  .stop-watch__second-hand {
+    position: absolute;
+    top: -100px;
+    left: 8px;
+    z-index: 1;
+    width: 5px;
+    height: 110px;
+  }
+
+  .stop-watch__minute-hand {
+    position: absolute;
+    top: -60px;
+    left: 8px;
+    z-index: 1;
+    width: 5px;
+    height: 70px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

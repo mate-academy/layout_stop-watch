@@ -1,0 +1,26 @@
+body {
+  display: grid;
+  grid-template-columns: 500px;
+  grid-template-rows: 500px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0;
+
+  background-color: #f9f9f9;
+}
+
+@media (max-width: 639px) {
+  body {
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: 250px;
+  }
+}
+
+@import 'stop_watch'
