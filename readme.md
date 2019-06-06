@@ -11,5 +11,6 @@ For this problem, testing of your solution will not be automated.
 
 **Result**
 
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
-- [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
+`SASS used` - please notice.
+
+- [DEMO LINK](https://sviatoslv.github.io/layout_stop-watch/)
