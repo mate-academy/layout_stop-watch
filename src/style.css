@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .stop-watch {
   position: absolute;
   top: 50%;
@@ -11,24 +16,27 @@
 .stop-watch::before {
   content: "";
   position: absolute;
-  top: -186px;
-  left: 14px;
-  width: 2px;
+  top: -185px;
+  left: 13px;
+  width: 4px;
   height: 200px;
   background-color: #4b9aaa;
-  animation: second 60s infinite steps(60);
+  border-radius: 2px;
+  animation: second 60s infinite linear;
   transform-origin: 0 200px;
 }
 
 .stop-watch::after {
-  top: -87px;
+  top: -85px;
   left: 13px;
+  z-index: -1;
   content: "";
   width: 4px;
   height: 100px;
   background-color: #d15559;
+  border-radius: 2px;
   position: absolute;
-  animation: minute 3600s infinite steps(3600);
+  animation: minute 3600s infinite linear;
   transform-origin: 0 100px;
 }
 
