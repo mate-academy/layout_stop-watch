@@ -1,0 +1,61 @@
+.watch__minutes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  animation-name: tick;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+}
+
+.watch__minutes::after {
+  content: "";
+  background-color: #d15559;
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.watch__seconds {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  animation-name: tick;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+
+.watch__seconds::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: #4b99aa;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  border-radius: 15px;
+}
+
+.watch__seconds::after {
+  content: "";
+  background-color: #4b99aa;
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 300px;
+  border-radius: 5px;
+}
+
+@keyframes tick {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
