@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.seconds-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation-name: tick;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.seconds-arrow:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color: #5f98a8;
+  border-radius: 15px;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+}
+
+.seconds-arrow:after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 5px);
+  background-color: #5f98a8;
+  width: 10px;
+  height: 400px;
+  border-radius: 5px;
+  bottom: 50%;
+}
+
+.minutes-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation-name: tick;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.minutes-arrow:after {
+  content: "";
+  position: absolute;
+  background-color: #c25d5d;
+  width: 10px;
+  height: 300px;
+  left: calc(50% - 5px);
+  border-radius: 5px;
+  bottom: 50%;
+}
+
+@keyframes tick {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
