@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.stop-watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4b9aaa;
+}
+
+.stop-watch::before {
+  content: "";
+  position: absolute;
+  top: -185px;
+  left: 13px;
+  width: 4px;
+  height: 200px;
+  background-color: #4b9aaa;
+  border-radius: 2px;
+  animation: second 60s infinite linear;
+  transform-origin: 2px 200px;
+}
+
+.stop-watch::after {
+  top: -85px;
+  left: 13px;
+  z-index: -1;
+  content: "";
+  width: 4px;
+  height: 100px;
+  background-color: #d15559;
+  border-radius: 2px;
+  position: absolute;
+  animation: minute 3600s infinite linear;
+  transform-origin: 2px 100px;
+}
+
+@keyframes second {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minute {
+  100% {
+    transform: rotate(360deg);
+  }
+}
