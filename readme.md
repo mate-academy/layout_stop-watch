@@ -11,5 +11,4 @@ For this problem, testing of your solution will not be automated.
 
 **Result**
 
-- [DEMO LINK](https://<your_account>.github.io/<repo_name>/)
-- [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
+- [DEMO LINK](https://terasulo.github.io/layout_stop-watch)
