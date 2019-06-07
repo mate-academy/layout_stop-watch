@@ -1,0 +1,68 @@
+body {
+  background-color: rgb(157, 196, 240);
+}
+
+.clockContainer {
+  position: absolute;
+  margin: 50px 200px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid transparent;
+}
+
+.clockOut {
+  width: 80%;
+  height: 80%;
+  background: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+}
+
+.clock-minute {
+  width: 4px;
+  height: 30px;
+  background: red;
+  border-radius: 4px;
+  position: absolute;
+  top: 30px;
+  left: 49%;
+  transform-origin: 50% 100%;
+  animation: animation 3600s linear 0s infinite;
+}
+
+.clock-second {
+  width: 2px;
+  height: 50px;
+  border-radius: 2px;
+  background: blue;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform-origin: 50% 100%;
+  animation: animation 60s linear 0s infinite;
+}
+
+.clock-base {
+  position: absolute;
+  top: 48%;
+  left: 49%;
+  width: 5px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: blue;
+}
+
+@keyframes animation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animation {
+  to {
+    transform: rotate(360deg);
+  }
+}
