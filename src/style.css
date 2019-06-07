@@ -11,7 +11,8 @@ body {
   margin: 45vh auto;
 }
 
-.minute-hand {
+.center-point::before {
+  content: "";
   position: absolute;
   background-color: #d15559;
   width: 150px;
@@ -25,7 +26,8 @@ body {
   animation: handRotate 3600s steps(60, end) infinite;
 }
 
-.second-hand {
+.center-point::after {
+  content: "";
   position: absolute;
   background-color: #4b9aaa;
   width: 250px;

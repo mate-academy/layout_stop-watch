@@ -1,3 +1,7 @@
+body {
+  background: lightblue;
+}
+
 .center-point {
   position: relative;
   background-color: #4b9aaa;
@@ -5,37 +9,38 @@
   height: 30px;
   border-radius: 50%;
   margin: 45vh auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: #d15559;
+    width: 150px;
+    height: 12px;
+    border-radius: 6px;
+    top: 10px;
+    left: 15px;
+    z-index: -1;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+    animation: handRotate 3600s steps(60, end) infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #4b9aaa;
+    width: 250px;
+    height: 12px;
+    border-radius: 6px;
+    top: 10px;
+    left: 15px;
+    z-index: -2;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+    animation: handRotate 60s steps(60, end) infinite;
+  }
 }
 
-.minute-hand {
-  position: absolute;
-  background-color: #d15559;
-  width: 250px;
-  height: 12px;
-  border-radius: 6px;
-  top: 10px;
-  left: 15px;
-  z-index: -1;
-  transform: rotate(-90deg);
-  transform-origin: left center;
-
-  animation: handRotate 3600s steps(60, end) infinite;
-}
-
-.second-hand {
-  position: absolute;
-  background-color: #4b9aaa;
-  width: 400px;
-  height: 12px;
-  border-radius: 6px;
-  top: 10px;
-  left: 15px;
-  z-index: -2;
-  transform: rotate(-90deg);
-  transform-origin: left center;
-
-  animation: handRotate 60s steps(60, end) infinite;
-}
 
 
 @keyframes handRotate {
