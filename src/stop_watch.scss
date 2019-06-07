@@ -5,10 +5,10 @@
   height: 100%;
 
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 1);
   cursor: pointer;
 
-  background-color: #fff;
+  background-color: #202020;
 
   &::before {
     content: '';
@@ -18,7 +18,7 @@
 
     height: 1px;
     width: 100%;
-    background-color: #eee;
+    background-color: #1b1b1b;
   }
 
   &::after {
@@ -29,8 +29,9 @@
 
     height: 100%;
     min-width: 1px;
-    background-color: #eee;
+    background-color: #1b1b1b;
   }
+
 
   &__circle {
     position: absolute;
@@ -52,9 +53,52 @@
     position: absolute;
     z-index: 20;
 
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.16);
-    background-color: white;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 1);
+    background-color: #313131;
     border-radius: 50%;
+
+    animation-name: puls;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+  }
+
+  @keyframes puls {
+    from {
+      transform: scale(1.2, 1.2);
+    }
+    from {
+      transform: scale(0.8, 0.8);
+    }
+  }
+
+  &__milisecond-hand {
+    position: absolute;
+    top: -210px;
+    left: 9px;
+    z-index: 1;
+
+    width: 3px;
+    height: 220px;
+    background-color: #ff00c8;
+    border-radius: 2px;
+
+    transform-origin: bottom center;
+
+    box-shadow:
+    0 0 5px #ff00c8,
+    0 0 10px #ff00c8,
+    0 0 20px #ff00c8,
+    0 0 40px #ff00c8,
+    0 0 80px #ff00c8,
+    0 0 90px #ff00c8,
+    0 0 100px #ff00c8,
+    0 0 150px #ff00c8;
+
+    animation-name: rotation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
 
   &__second-hand {
@@ -65,15 +109,23 @@
 
     width: 5px;
     height: 200px;
-    background-color: rgb(55, 0, 255);
+    background-color: #3700ff;
     border-radius: 3px;
 
     transform-origin: bottom center;
-  }
 
-  &:hover &__second-hand {
+    box-shadow:
+    0 0 5px #3700ff,
+    0 0 10px #3700ff,
+    0 0 20px #3700ff,
+    0 0 40px #3700ff,
+    0 0 80px #3700ff,
+    0 0 90px #3700ff,
+    0 0 100px #3700ff,
+    0 0 150px #3700ff;
+
     animation-name: rotation;
-    animation-duration: 1s;
+    animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
@@ -86,15 +138,23 @@
 
     width: 5px;
     height: 120px;
-    background-color: aqua;
+    background-color: #02ddec;
     border-radius: 3px;
 
     transform-origin: bottom center;
-  }
 
-  &:hover &__minute-hand {
+    box-shadow:
+    0 0 5px #02ddec,
+    0 0 10px #02ddec,
+    0 0 20px #02ddec,
+    0 0 40px #02ddec,
+    0 0 80px #02ddec,
+    0 0 90px #02ddec,
+    0 0 100px #02ddec,
+    0 0 150px #02ddec;
+
     animation-name: rotation;
-    animation-duration: 60s;
+    animation-duration: 3600s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
@@ -108,15 +168,25 @@
     }
   }
 
-  @media (max-width: 639px) {
+  @media (max-width: 739px) {
+    &__milisecond-hand {
+      position: absolute;
+      top: -105px;
+      left: 9px;
+      z-index: 1;
+
+      width: 3px;
+      height: 115px;
+    }
+
     &__second-hand {
       position: absolute;
-      top: -100px;
+      top: -90px;
       left: 8px;
       z-index: 1;
 
       width: 5px;
-      height: 110px;
+      height: 100px;
     }
 
     &__minute-hand {
