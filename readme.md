@@ -11,4 +11,4 @@ For this problem, testing of your solution will not be automated.
 
 **Result**
 
-- [DEMO LINK](https://terasulo.github.io/layout_stop-watch)
+- [DEMO LINK](https://tarasulo.github.io/layout_stop-watch)
