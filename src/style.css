@@ -1,29 +1,16 @@
 body {
-  display: grid;
-  grid-template-columns: 500px;
-  grid-template-rows: 500px;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  box-sizing: border-box;
-  padding: 10px;
+  padding: 0;
   margin: 0;
   background-color: #1b1b1b;
 }
 
-@media (max-width: 739px) {
-  body {
-    display: grid;
-    grid-template-columns: 250px;
-    grid-template-rows: 250px;
-  }
-}
 .stop-watch {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   box-shadow: 0 0 8px black;
   cursor: pointer;
@@ -136,6 +123,11 @@ body {
   }
 }
 @media (max-width: 739px) {
+  .stop-watch {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+  }
   .stop-watch__milisecond-hand {
     position: absolute;
     top: -105px;
