@@ -1,0 +1,66 @@
+$main-color: #5f98a8;
+$second-color: #c25d5d;
+
+@mixin hands-animation ($duration) {
+  animation-name: watch;
+  animation-duration: $duration;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+  transform-origin: top center;
+}
+
+.watch {
+  width: 360px;
+  height: 360px;
+  background-color: rgba($color: $main-color, $alpha: 0.2);
+  border-radius: 50%;
+
+  &--hands {
+    position: relative;
+    top: 180px;
+    right: 177px;
+    transform: rotate(180deg);
+  }
+
+  &--hands::before {
+    content: "";
+    position: absolute;
+    height: 130px;
+    width: 4px;
+    border-radius: 2px;
+    background-color: $second-color;
+
+    @include hands-animation (60s);
+  }
+
+  &--hands::after {
+    content: "";
+    position: absolute;
+    height: 160px;
+    width: 6px;
+    border-radius: 3px;
+    background-color: $main-color;
+
+    @include hands-animation (3600s);
+  }
+
+  &--center {
+    position: absolute;
+    top: -5px;
+    left: -2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: $main-color;
+  }
+}
+
+
+@keyframes watch {
+  from {
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
