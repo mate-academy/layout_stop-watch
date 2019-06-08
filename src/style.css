@@ -1,0 +1,61 @@
+.watch {
+  position: absolute;
+
+  bottom: 50%;
+  left: 50%;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  background-color: #5f98a8;
+}
+
+.watch:before {
+  position: absolute;
+  content: "";
+
+  z-index: -1;
+
+  bottom: calc(50% - 5px);
+  left: calc(50% - 5px);
+
+  width: 10px;
+  height: 265px;
+
+  background-color: #c25d5d;
+  border-radius: 5px;
+
+  animation: circle 3600s infinite linear;
+
+  transform-origin: 5px 260px; /*устанавливаем точку центра оси*/
+}
+
+.watch:after {
+  position: absolute;
+  content: "";
+
+  bottom: calc(50% - 5px);
+  left: calc(50% - 5px);
+
+  width: 10px;
+  height: 510px;
+
+  background-color: #5f98a8;
+  border-radius: 5px;
+
+  animation: circle 60s infinite linear;
+
+  transform-origin: 5px 505px; /*устанавливаем точку центра оси*/
+}
+
+@keyframes circle {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
