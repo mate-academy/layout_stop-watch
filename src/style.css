@@ -1,0 +1,67 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.clock {
+  border-radius: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.minute {
+  position: absolute;
+  height: 130px;
+  width: 4px;
+  margin: auto;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #4b9aaa;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+  z-index: 1;
+  animation: spin 60s linear infinite;
+  top: -38%;
+  border-radius: 4px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.second {
+  position: absolute;
+  height: 80px;
+  width: 3px;
+  margin: auto;
+  top: -26%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 4px;
+  background: #d15559;
+  transform-origin: bottom center;
+  animation: spin 3600s linear infinite;
+  z-index: 1;
+}
+
+.dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 100px;
+  background: #4b9aaa;
+  margin: auto;
+  z-index: 1;
+}
