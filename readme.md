@@ -12,4 +12,3 @@ For this problem, testing of your solution will not be automated.
 **Result**
 
 - [DEMO LINK](https://neitiris.github.io/layout_stop-watch/)
-- [TEST REPORT LINK](https://neitiris.github.io/layout_stop-watch/report/html_report/)
