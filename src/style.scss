@@ -8,13 +8,14 @@ body {
   position: relative;
   width: 500px;
   height: 500px;
-  background: rgb(255, 255, 255, 0.95);
+  background: rgb(255, 255, 255, 0.90);
   border-radius: 50%;
   margin: 100px auto;
   cursor: pointer;
+  transition: background .5s;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: "";
     position: absolute;
     top: -5px;
@@ -28,12 +29,12 @@ body {
     animation: border 20s linear infinite;
   }
 
-  &:after {
+  &::after {
     filter: blur(20px);
   }
 
   &:hover {
-    transform: scale(1.02);
+    background: rgb(255, 255, 255, 0.0);
   }
 
   &__hour {

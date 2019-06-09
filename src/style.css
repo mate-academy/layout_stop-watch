@@ -8,12 +8,13 @@ body {
   position: relative;
   width: 500px;
   height: 500px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   margin: 100px auto;
   cursor: pointer;
+  transition: background 0.5s;
 }
-.watch:before, .watch:after {
+.watch::before, .watch::after {
   content: "";
   position: absolute;
   top: -5px;
@@ -26,11 +27,11 @@ body {
   z-index: -1;
   animation: border 20s linear infinite;
 }
-.watch:after {
+.watch::after {
   filter: blur(20px);
 }
 .watch:hover {
-  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0);
 }
 .watch__hour {
   position: absolute;
