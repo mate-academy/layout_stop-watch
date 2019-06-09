@@ -29,6 +29,7 @@ $second-color: #c25d5d;
     width: 4px;
     border-radius: 2px;
     background-color: $second-color;
+    left: 1px;
 
     @include hands-animation (60s);
   }
@@ -46,8 +47,7 @@ $second-color: #c25d5d;
 
   &--center {
     position: absolute;
-    top: -5px;
-    left: -2px;
+    transform: translate(-2px, -5px);
     width: 10px;
     height: 10px;
     border-radius: 5px;

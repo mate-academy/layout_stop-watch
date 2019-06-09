@@ -4,14 +4,12 @@
   background-color: rgba(95, 152, 168, 0.2);
   border-radius: 50%;
 }
-
 .watch--hands {
   position: relative;
   top: 180px;
   right: 177px;
   transform: rotate(180deg);
 }
-
 .watch--hands::before {
   content: "";
   position: absolute;
@@ -19,13 +17,13 @@
   width: 4px;
   border-radius: 2px;
   background-color: #c25d5d;
+  left: 1px;
   animation-name: watch;
   animation-duration: 60s;
   animation-timing-function: steps(60, end);
   animation-iteration-count: infinite;
   transform-origin: top center;
 }
-
 .watch--hands::after {
   content: "";
   position: absolute;
@@ -39,11 +37,9 @@
   animation-iteration-count: infinite;
   transform-origin: top center;
 }
-
 .watch--center {
   position: absolute;
-  top: -5px;
-  left: -2px;
+  transform: translate(-2px, -5px);
   width: 10px;
   height: 10px;
   border-radius: 5px;
