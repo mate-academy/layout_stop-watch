@@ -1,0 +1,62 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+}
+
+.clock {
+  border-radius: 50%;
+  background-size: 88%;
+  height: 20em;
+  position: relative;
+  width: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  background: #4b9aaa;
+  border-radius: 100px;
+  width: 24px;
+  height: 24px;
+}
+
+.dot::before,
+.dot::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.dot::before {
+  content: "";
+  background: #d15559;
+  height: 100px;
+  left: 48.75%;
+  top: 60px;
+  transform-origin: 50% 100%;
+  width: 8px;
+  border-radius: 4px;
+  animation: spin 3600s infinite linear;
+  z-index: -1;
+}
+
+.dot::after {
+  content: "";
+  border-radius: 4px;
+  background: #4b9aaa;
+  height: 130px;
+  left: 49%;
+  top: 30px;
+  transform-origin: 50% 100%;
+  width: 6px;
+  animation: spin 60s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
