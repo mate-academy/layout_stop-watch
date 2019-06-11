@@ -1,54 +1,62 @@
 body {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
+  align-items: center;
+  height: 95vh;
 }
 
 .clock {
+  border-radius: 50%;
+  background-size: 88%;
+  height: 20em;
   position: relative;
+  width: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.dot::after {
-  content: "";
-  position: absolute;
-  height: 260px;
-  width: 9px;
-  bottom: 12px;
+.dot {
   background: #4b9aaa;
-  transform-origin: bottom center;
-  z-index: 1;
-  animation: spin 60s linear infinite;
-  border-radius: 4px;
+  border-radius: 100px;
+  width: 24px;
+  height: 24px;
 }
 
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
+.dot::before,
+.dot::after {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .dot::before {
   content: "";
-  position: absolute;
-  height: 160px;
-  width: 7px;
-  bottom: 12px;
-  border-radius: 4px;
   background: #d15559;
-  transform-origin: bottom center;
-  animation: spin 3600s linear infinite;
+  height: 100px;
+  left: 48.75%;
+  top: 60px;
+  transform-origin: 50% 100%;
+  width: 8px;
+  border-radius: 4px;
+  animation: spin 3600s infinite linear;
   z-index: -1;
 }
 
-.dot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 25px;
-  height: 25px;
-  border-radius: 100px;
+.dot::after {
+  content: "";
+  border-radius: 4px;
   background: #4b9aaa;
-  margin: auto;
-  z-index: 2;
+  height: 130px;
+  left: 49%;
+  top: 30px;
+  transform-origin: 50% 100%;
+  width: 6px;
+  animation: spin 60s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
