@@ -1,0 +1,59 @@
+.clock {
+  width: 400px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  border: black 1px solid;
+  border-radius: 50%;
+}
+
+.clock__circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+}
+
+.clock__arrow-minute {
+  width: 5px;
+  height: 150px;
+  background: black;
+  position: absolute;
+  top: 14%;
+  left: 50.5%;
+  border-radius: 5px;
+  animation-name: spin;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.clock__arrow-second {
+  width: 5px;
+  height: 100px;
+  background: red;
+  position: absolute;
+  top: 26%;
+  left: 50.5%;
+  border-radius: 5px;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: 50% 100%;
+  }
+}
