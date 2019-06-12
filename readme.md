@@ -11,5 +11,5 @@ For this problem, testing of your solution will not be automated.
 
 **Result**
 
-- [DEMO LINK](https://<your_account>.github.io/<repo_name>/)
+- [DEMO LINK](https://tetianazakharova.github.io/layout_stop-watch/)
 
