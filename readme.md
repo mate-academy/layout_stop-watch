@@ -11,4 +11,4 @@ For this problem, testing of your solution will not be automated.
 
 **Result**
 
-- [ DEMO LINK](https://artem-kumskov.github.io/layout_stop-watch/src/index.html)
+- [ DEMO LINK](https://artem-kumskov.github.io/layout_stop-watch/)
