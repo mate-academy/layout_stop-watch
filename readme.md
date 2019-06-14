@@ -9,7 +9,7 @@ For this problem, testing of your solution will not be automated.
 
 [Guideline](https://github.com/mate-academy/layout_task-guideline/blob/master/README.md)
 
-**Result**
+***Result***
 
 - [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
 - [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
