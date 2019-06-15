@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+}
+
+.circle {
+  position: relative;
+  top: 190px;
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #4b9aaa;
+}
+
+.minuteArrow {
+  position: relative;
+  top: 206px;
+  left: calc(50% + 6px);
+  height: 250px;
+  width: 12px;
+  border-radius: 20px;
+  background-color: #d15559;
+  animation: minutes 3600s linear infinite;
+  transform-origin: bottom;
+}
+
+.secondArrow {
+  position: relative;
+  top: -274px;
+  left: calc(50% + 6px);
+  height: 450px;
+  width: 9px;
+  border-radius: 20px;
+  background-color: #4b9aaa;
+  animation: seconds 60s linear infinite;
+  transform-origin: bottom;
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minutes {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
