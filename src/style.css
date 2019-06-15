@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hourArrow {
+  background: #c25d5d;
+  height: 200px;
+  width: 10px;
+  border-radius: 5px;
+  margin-top: 100px;
+  animation: hourArrow 3600s steps(60, end) infinite;
+  transform-origin: bottom;
+}
+
+.minuteArrow {
+  display: flex;
+  align-content: flex-end;
+  height: 300px;
+  width: 10px;
+  background: #5f98a8;
+  border-radius: 5px;
+  animation: minuteArrow 60s steps(60, end) infinite;
+  transform-origin: top;
+  transform: rotate(180deg);
+}
+
+.core {
+  position: absolute;
+  background: #5f98a8;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin-top: 290px;
+}
+
+@keyframes minuteArrow {
+  0% {
+    transform: rotate();
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hourArrow {
+  0% {
+    transform: rotate();
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
