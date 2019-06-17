@@ -9,25 +9,27 @@
   position: relative;
 }
 
+.minuteHand,
+.secondHand {
+  width: 8px;
+  position: absolute;
+  left: 50%;
+  margin-left: -4px;
+}
+
 .minuteHand {
   background-color: rgb(194,93,93);
-  width: 8px;
   height: 200px;
   animation: rotateMinute 3600s infinite linear;
   transform-origin: bottom center;
-  position: absolute;
-  left: 50%;
   top: 75px;
 }
 
 .secondHand {
   background-color: rgb(95, 152, 168);
-  width: 8px;
   height: 250px;
   animation: rotateSecond 60s infinite linear;
   transform-origin: top center;
-  position: absolute;
-  left: 50%;
   top: 275px;
 }
 
