@@ -1,0 +1,63 @@
+.clock {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+  border: rgb(163, 21, 21) 5px solid;
+  border-radius: 50%;
+  background-color: grey;
+}
+
+
+.minute {
+  width: 6px;
+  height: 200px;
+  background: black;
+  position: absolute;
+  top: 17%;
+  left: 49.5%;
+  border-radius: 5px;
+  animation-name: anim;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.second {
+  width: 8px;
+  height: 270px;
+  background: rgb(224, 236, 46);
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  border-radius: 5px;
+  animation-name: anim;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.internalCircule {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border: #000 1px solid;
+  border-radius: 50%;
+  background-color: rgb(235, 50, 50);
+
+}
+
+@keyframes anim {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: 50% 100%;
+  }
+}
