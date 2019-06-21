@@ -1,0 +1,53 @@
+.clock {
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 50%;
+}
+
+.centerСircleForClock {
+  background: rgb(0, 0, 0);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 49.3%;
+  z-index: 3;
+}
+
+.handForMinute {
+  background: rgb(0, 0, 0);
+  height: 300px;
+  position: absolute;
+  left: 49.9%;
+  top: 14%;
+  transform-origin: 50% 100%;
+  width: 14px;
+  border-radius: 10px;
+  animation: circle 3600s infinite linear;
+  z-index: 2;
+}
+
+.handForSecond {
+  background: rgb(255, 0, 0);
+  height: 380px;
+  position: absolute;
+  left: 50%;
+  top: 4%;
+  transform-origin: 50% 100%;
+  width: 10px;
+  border-radius: 10px;
+  animation: circle 60s infinite linear;
+  z-index: 1;
+}
+
+@keyframes circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
