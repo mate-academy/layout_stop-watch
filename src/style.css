@@ -1,0 +1,47 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.point {
+  height: 32px;
+  width: 36px;
+  background-color: #5f98a8;
+  border-radius: 50%;
+  margin: 300px 0 0 600px;
+  position: relative;
+}
+
+.big_page {
+  height: 250px;
+  width: 10px;
+  background-color: #5f98a8;
+  border-radius: 30%;
+  position: absolute;
+  bottom: 16px;
+  left: 12px;
+  transform-origin: bottom center;
+  animation: page-rotate 3600s linear infinite;
+}
+
+.little_page {
+  height: 120px;
+  width: 5px;
+  background-color: red;
+  border-radius: 30%;
+  position: absolute;
+  bottom: 16px;
+  left: 14px;
+  transform-origin: bottom center;
+  animation: page-rotate 60s linear infinite;
+}
+
+@keyframes page-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
