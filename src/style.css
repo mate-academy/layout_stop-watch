@@ -1,0 +1,55 @@
+:root {
+  --point-diametr: 20px;
+  --point-bgc: #4b99aa;
+  --hand-radius: 3px;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center {
+  width: var(--point-diametr);
+  height: var(--point-diametr);
+  border-radius: 50%;
+  position: relative;
+  background-color: var(--point-bgc);
+}
+
+.minute-hand {
+  width: 8px;
+  height: 70px;
+  border-radius: var(--hand-radius);
+  background-color: #d15559;
+  position: absolute;
+  bottom: 10px;
+  left: 6px;
+  z-index: -1;
+  animation: rotate-hand 3600s infinite linear;
+  transform-origin: 4px 70px;
+}
+
+.second-hand {
+  width: 6px;
+  height: 100px;
+  border-radius: var(--hand-radius);
+  background-color: var(--point-bgc);
+  position: absolute;
+  bottom: 10px;
+  left: 7px;
+  animation: rotate-hand 60s infinite linear;
+  transform-origin: 3px 100px;
+}
+
+@keyframes rotate-hand {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
