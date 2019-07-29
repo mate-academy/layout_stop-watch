@@ -1,0 +1,156 @@
+body {
+  background: #ddd;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  width: 600px;
+  height: 600px;
+  background: #eee;
+  border: 1px solid #eee;
+  border-radius: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  margin: auto;
+  overflow: visible;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(5, 120px);
+  grid-template-rows: repeat(6, 120px);
+  justify-items: center;
+  align-items: center;
+  font: 50px bold;
+}
+
+.twelve {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.three {
+  grid-column: 5;
+  grid-row: 3;
+}
+
+.six {
+  grid-column: 3;
+  grid-row: 5;
+}
+
+.nine {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.center {
+  position: absolute;
+  top: 285px;
+  left: 285px;
+  width: 30px;
+  height: 30px;
+  background: #333;
+  border-radius: 15px;
+}
+
+.minute {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  left: 292px;
+  width: 16px;
+  height: 290px;
+  background: #333;
+  border-radius: 30px;
+  animation: minute 3600s infinite;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  animation-play-state: inherit;
+  -webkit-animation-play-state: inherit;
+  transform: rotate(360deg);
+  transform-origin: bottom center;
+}
+
+.second {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  left: 296px;
+  width: 8px;
+  height: 290px;
+  background: #a00;
+  border-radius: 4px;
+  animation: second 60s infinite;
+  -webkit-animation: second 60s infinite;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  animation-play-state: inherit;
+  -webkit-animation-play-state: inherit;
+  transform: rotate(360deg);
+  transform-origin: bottom center;
+}
+
+.button {
+  grid-row: 6;
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.start {
+  grid-column: 2;
+  background: rgba(0, 255, 0, 0.8);
+  border: 1px solid rgba(0, 255, 0, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.pause {
+  grid-column: 4;
+  background: rgba(255, 0, 0, 0.8);
+  border: 1px solid rgba(255, 0, 0, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+@-webkit-keyframes minute {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minute {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes second {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes second {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
