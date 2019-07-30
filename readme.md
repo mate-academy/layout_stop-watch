@@ -7,7 +7,7 @@ For this problem, testing of your solution will not be automated.
 ---
 **Read the guideline before start**
 
--[UPDATE DEMO LINK](https://ivansafiulin.github.io/layout_antisnake/)
+[UPDATE DEMO LINK](https://ivansafiulin.github.io/layout_stop-watch/)
 
 **Result**
 
