@@ -12,3 +12,4 @@ For this problem, testing of your solution will not be automated.
 **Result**
 
 - [DEMO LINK](https://igaryok.github.io/layout_stop-watch/)
+- [PR](https://github.com/mate-academy/layout_stop-watch/pull/84)
