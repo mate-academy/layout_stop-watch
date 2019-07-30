@@ -1,0 +1,50 @@
+.stopwatch-conteiner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.clock-hand {
+  position: absolute;
+  width: 10px;
+  border-radius: 10px;
+  animation: stopwatch 60s linear infinite;
+  transform-origin: bottom;
+}
+
+.minute-hand {
+  top: 170px;
+  height: 280px;
+  background-color: #5f98a8;
+  z-index: 2;
+  border-radius: 10px;
+  animation-duration: 3600s;
+}
+
+.seconds-hand {
+  top: 50px;
+  height: 400px;
+  background-color: #c25d5d;
+  z-index: 1;
+}
+
+.hand-holder {
+  position: absolute;
+  top: 440px;
+  height: 25px;
+  width: 25px;
+  background-color: #5f98a8;
+  border-radius: 15px;
+  z-index: 3;
+}
+
+@keyframes stopwatch {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
