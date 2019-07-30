@@ -1,0 +1,274 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  font-family: Helvetica;
+  font-size: 20px;
+  width: 400px;
+  height: 400px;
+  margin: 100px auto;
+}
+
+.clock {
+  background: powderblue;
+  border-color: darkblue;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.segment {
+  height: 100%;
+  position: absolute;
+  padding-top: 4%;
+  width: 2em;
+  left: calc(50% - 1em);
+  text-align: center;
+  top: 0;
+}
+
+.major {
+  height: 3%;
+  width: 1%;
+  position: absolute;
+  background: darkblue;
+  left: 49.5%;
+  top: 0;
+  transform-origin: center calc(5000% / 3);
+}
+
+.minor {
+  height: 60%;
+  width: 50%;
+  position: absolute;
+  background: darkblue;
+  left: 0;
+  top: 0;
+  transform-origin: center calc(100 / 60 * 5000% / 3);
+}
+
+.minor-one {
+  transform: rotate(3deg);
+}
+
+.minor-two {
+  transform: rotate(6deg);
+}
+
+.minor-three {
+  transform: rotate(9deg);
+}
+
+.minor-four {
+  transform: rotate(12deg);
+}
+
+.minor-five {
+  transform: rotate(15deg);
+}
+
+.minor-six {
+  transform: rotate(18deg);
+}
+
+.minor-seven {
+  transform: rotate(21deg);
+}
+
+.minor-eight {
+  transform: rotate(24deg);
+}
+
+.minor-nine {
+  transform: rotate(27deg);
+}
+
+.one {
+  transform: rotate(30deg);
+}
+
+.two {
+  transform: rotate(60deg);
+}
+
+.three {
+  transform: rotate(90deg);
+}
+
+.four {
+  transform: rotate(120deg);
+}
+
+.five {
+  transform: rotate(150deg);
+}
+
+.six {
+  transform: rotate(180deg);
+}
+
+.seven {
+  transform: rotate(210deg);
+}
+
+.eight {
+  transform: rotate(240deg);
+}
+
+.nine {
+  transform: rotate(270deg);
+}
+
+.ten {
+  transform: rotate(300deg);
+}
+
+.eleven {
+  transform: rotate(330deg);
+}
+
+.one > .numeral {
+  transform: rotate(-30deg);
+}
+
+.two > .numeral {
+  transform: rotate(-60deg);
+}
+
+.three > .numeral {
+  transform: rotate(-90deg);
+}
+
+.four > .numeral {
+  transform: rotate(-120deg);
+}
+
+.five > .numeral {
+  transform: rotate(-150deg);
+}
+
+.six > .numeral {
+  transform: rotate(-180deg);
+}
+
+.seven > .numeral {
+  transform: rotate(-210deg);
+}
+
+.eight > .numeral {
+  transform: rotate(-240deg);
+}
+
+.nine > .numeral {
+  transform: rotate(-270deg);
+}
+
+.ten > .numeral {
+  transform: rotate(-300deg);
+}
+
+.eleven > .numeral {
+  transform: rotate(-330deg);
+}
+
+.dot {
+  border: 0;
+  border-radius: 50%;
+  background: darkblue;
+  height: 4%;
+  width: 4%;
+  position: absolute;
+  left: 48%;
+  top: 48%;
+  z-index: 1;
+}
+
+.hand {
+  position: absolute;
+  border-radius: 6px;
+  background: darkblue;
+  height: 35%;
+  width: 2%;
+  left: 49%;
+  top: 15%;
+  transform-origin: center bottom;
+  z-index: 1;
+}
+
+.seconds-h {
+  position: absolute;
+  border-radius: 6px;
+  background: darkred;
+  height: 25%;
+  width: 2%;
+  left: 49%;
+  top: 25%;
+  transform-origin: center bottom;
+}
+
+label {
+  display: block;
+  color: royalblue;
+  border-width: 2px;
+  border-style: solid;
+  border-color: royalblue;
+  background: deepskyblue;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  height: 30px;
+  line-height: 24px;
+  position: absolute;
+  top: 60%;
+}
+
+.start-button + label {
+  left: calc(50% - 110px);
+}
+
+.stop-button + label {
+  left: calc(50% + 10px);
+}
+
+.start-button:checked ~ .hand {
+  animation: sweep 60s linear;
+  animation-delay: 2s;
+}
+
+.start-button:checked ~ .seconds-h {
+  animation: sweep-sec 1s linear;
+  animation-iteration-count: infinite;
+}
+
+input[type="radio"]:checked + label {
+  background: lightgrey;
+  color: darkgrey;
+  border-color: darkgrey;
+}
+
+@keyframes sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sweep-sec {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
