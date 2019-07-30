@@ -1,0 +1,52 @@
+.watch {
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+  border: 1px solid #e6e6e6;
+  border-radius: 100%;
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  top: 30px;
+  left: calc(50% - 2px);
+  width: 4px;
+  transform-origin: bottom;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.minute {
+  height: 220px;
+  background-color: #c25d5d;
+  animation: transform 3600s infinite linear;
+  animation-name: watch;
+}
+
+.second {
+  top: 70px;
+  height: 180px;
+  background-color: #5f98a8;
+  animation: transform 60s infinite linear;
+  animation-name: watch;
+}
+
+.watch:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #4b9aaa;
+  z-index: 1;
+}
+
+@keyframes watch {
+  to {
+    transform: rotate(360deg);
+  }
+}
