@@ -7,7 +7,7 @@ For this problem, testing of your solution will not be automated.
 ---
 **Read the guideline before start**
 
-[Guideline](https://github.com/mate-academy/layout_task-guideline/blob/master/README.md)
+-[UPDATE DEMO LINK](https://ivansafiulin.github.io/layout_antisnake/)
 
 **Result**
 

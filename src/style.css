@@ -1,0 +1,56 @@
+.clock {
+  position: relative;
+  width: 540px;
+  height: 540px;
+  background-color: grey;
+  transform: rotate(90deg);
+  border: 4px solid red;
+  border-radius: 50%;
+}
+
+.minute-hand,
+.second-hand {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  border-radius: 20px;
+  transform-origin: right;
+}
+
+.minute-hand {
+  z-index: -1;
+  border: 5px solid #d15559;
+  background-color: #d15559;
+  width: 150px;
+  animation: stopwatch 3600s linear infinite;
+}
+
+.second-hand {
+  border: 5px solid #4b9aaa;
+  background: #4b9aaa;
+  width: 260px;
+  animation: stopwatch 60s linear infinite;
+}
+
+.second-hand::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  bottom: -16px;
+  right: -12px;
+  border-radius: 50%;
+  background-color: #4b9aaa;
+}
+
+@keyframes stopwatch {
+
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+
+}
