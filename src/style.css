@@ -1,0 +1,43 @@
+.clock {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 10px;
+  border-radius: 5px;
+  transform-origin: bottom;
+  animation-name: move-around-circle;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.second-hand {
+  background-color: #5f98a8;
+  height: 400px;
+  animation-duration: 60s;
+}
+
+.minute-hand {
+  background-color: #c25d5d;
+  height: 300px;
+  animation-duration: 3600s;
+}
+
+@keyframes move-around-circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.center-circle {
+  background-color: #5f98a8;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: -10px;
+  bottom: -10px;
+}
