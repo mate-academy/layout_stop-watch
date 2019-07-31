@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 600px;
+  height: 600px;
+}
+
+.minutes-clockwise {
+  width: 10px;
+  height: 150px;
+  background-color: #c25d5d;
+  top: 100px;
+  z-index: 1;
+  left: 5px;
+  animation: rotate 3600s linear infinite;
+  transform-origin: bottom;
+}
+
+.seconds-clockwise {
+  width: 10px;
+  height: 250px;
+  background-color: #5f98a8;
+  z-index: 2;
+  right: 5px;
+  animation: rotate 60s linear infinite;
+  transform-origin: bottom;
+}
+
+.minutes-clockwise,
+.seconds-clockwise {
+  border-radius: 10px;
+}
+
+.clock-center,
+.minutes-clockwise,
+.seconds-clockwise {
+  position: relative;
+}
+
+.clock-center {
+  width: 20px;
+  height: 20px;
+  background-color: #5f98a8;
+  z-index: 3;
+  border-radius: 50%;
+  top: 240px;
+  right: 20px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
