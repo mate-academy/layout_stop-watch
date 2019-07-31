@@ -1,0 +1,48 @@
+.clock_container {
+  width: 800px;
+  height: 800px;
+  position: relative;
+}
+
+@keyframes clock {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.second_hand {
+  height: 350px;
+  width: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  border-radius: 20px;
+  animation: clock 60s linear infinite;
+  transform-origin: bottom;
+  background-color: rgb(75,	154,	170	);
+}
+
+.minute_hand {
+  height: 250px;
+  width: 20px;
+  position: absolute;
+  left: 395px;
+  bottom: 50%;
+  background-color: rgb(209,	85,	89);
+  border-radius: 20px;
+  animation: clock 3600s linear infinite;
+  transform-origin: bottom;
+}
+
+.center_dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 75%;
+  position: absolute;
+  left: 390px;
+  bottom: 390px;
+  background-color: rgb(75,	154,	170	);
+}
