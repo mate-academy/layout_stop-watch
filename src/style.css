@@ -31,7 +31,7 @@
   left: 49%;
   border-radius: 64px;
   z-index: 3;
-  animation-name: rotate_animation-min;
+  animation-name: rotate_animation;
   animation-duration: 3600s;
   animation-delay: 0s;
   animation-timing-function: linear;
@@ -48,7 +48,7 @@
   top: 8.3%;
   border-radius: 64px;
   z-index: 1;
-  animation-name: rotate_animation-sec;
+  animation-name: rotate_animation;
   animation-duration: 60s;
   animation-timing-function: linear;
   animation-delay: 0s;
@@ -67,18 +67,7 @@
   z-index: 3;
 }
 
-@keyframes rotate_animation-sec {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-
-}
-
-@keyframes rotate_animation-min {
+@keyframes rotate_animation {
   0% {
     transform: rotate(0deg);
   }
