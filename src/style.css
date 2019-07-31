@@ -1,0 +1,56 @@
+.watch {
+  border-radius: 50%;
+  background: #fff;
+  height: 600px;
+  width: 600px;
+  position: relative;
+  margin: auto;
+}
+
+.watch__round {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.watch__hand {
+  position: absolute;
+  transform-origin: 50% 100%;
+}
+
+.minute {
+  height: 20%;
+  width: 2.5%;
+  left: 48.75%;
+  top: 30%;
+  background: #d15559;
+  border-radius: 3px;
+}
+
+.second {
+  height: 40%;
+  width: 2%;
+  left: 49%;
+  top: 10%;
+  background: #4b9aaa;
+  border-radius: 3px;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.minute {
+  animation: rotate 3600s infinite linear;
+}
+
+.second {
+  animation: rotate 60s infinite steps(60);
+}
