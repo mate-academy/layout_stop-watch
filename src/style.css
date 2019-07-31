@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: rotate(-90deg);
 }
 
 .arrow {
@@ -15,7 +16,7 @@
   width: 300px;
   height: 15px;
   transform-origin: left;
-  animation: second 60s normal infinite linear;
+  animation: rotate-second 60s normal infinite linear;
 }
 
 .minute-arrow {
@@ -23,7 +24,7 @@
   width: 400px;
   height: 15px;
   transform-origin: right;
-  animation: minute 3600s normal infinite linear;
+  animation: rotate-minute 3600s normal infinite linear;
 }
 
 .dot-center {
@@ -35,20 +36,20 @@
   border-radius: 50%;
 }
 
-@keyframes minute {
+@keyframes rotate-second {
   0% {
-    transform: rotate(90deg);
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(450deg);
+    transform: rotate(360deg);
   }
 }
 
-@keyframes second {
+@keyframes rotate-minute {
   0% {
-    transform: rotate(-90deg);
+    transform: rotate(180deg);
   }
   100% {
-    transform: rotate(450deg);
+    transform: rotate(540deg);
   }
 }
