@@ -1,0 +1,53 @@
+.body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.watch {
+  height: 100vh;
+  position: relative;
+}
+
+.point {
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4b9aaa;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+}
+
+.hand {
+  width: 14px;
+  border-radius: 7px;
+  position: absolute;
+  left: calc(50% - 7px);
+  animation-name: hand-rotation;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: bottom center;
+}
+
+.minute-hand {
+  z-index: 1;
+  background-color: #d1555a;
+  height: 30vh;
+  top: calc(50% - 30vh);
+  animation-duration: 3600s;
+}
+
+.second-hand {
+  z-index: 2;
+  background-color: #4b9aaa;
+  height: 45vh;
+  top: calc(50% - 45vh);
+  animation-duration: 60s;
+}
+
+@keyframes hand-rotation {
+  to {
+    transform: rotate(1turn);
+  }
+}
