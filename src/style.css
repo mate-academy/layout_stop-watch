@@ -1,0 +1,109 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  min-width: 1000px;
+  min-height: 600px;
+  background: rgb(241, 239, 238);
+  text-align: center;
+}
+
+.clock {
+  margin-top: 20px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 20px solid #3d3b3b;
+  background: url(./images/clock.png) no-repeat center;
+  display: inline-block;
+}
+
+.sec,
+.min,
+.hour,
+.circle {
+  position: relative;
+}
+
+.sec {
+  height: 220px;
+  width: 7px;
+  border-radius: 10px;
+  background: #f33;
+  left: 225px;
+  top: 15px;
+  z-index: 3;
+  transform-origin: bottom;
+  animation: sec_anim 60s linear infinite;
+}
+
+.min {
+  height: 200px;
+  width: 10px;
+  border-radius: 10px;
+  background: black;
+  left: 224px;
+  top: -182px;
+  z-index: 2;
+  transform-origin: bottom;
+  animation: min_anim 3600s linear infinite;
+}
+
+.hour {
+  height: 180px;
+  width: 15px;
+  border-radius: 10px;
+  background: blue;
+  left: 221px;
+  top: -362px;
+  z-index: 1;
+  transform-origin: bottom;
+  animation: hour_anim 43200s linear infinite;
+}
+
+.circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  background: #3d3b3b;
+  left: 210px;
+  top: -387px;
+  z-index: 6;
+}
+
+@keyframes sec_anim {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes min_anim {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes hour_anim {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
