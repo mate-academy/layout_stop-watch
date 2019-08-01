@@ -1,0 +1,50 @@
+.clock-timer {
+  width: 1000px;
+  height: 1000px;
+}
+
+.minute-clock {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  border-radius: 15px;
+  background-color: rgb(207, 94, 98);
+  width: 17px;
+  height: 250px;
+  animation: clock 360s linear infinite;
+}
+
+.second-clock {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  border-radius: 15px;
+  background-color: rgb(21, 104, 121);
+  width: 15px;
+  height: 350px;
+  animation: clock 60s linear infinite;
+}
+
+.center-clock {
+  position: absolute;
+  left: 49%;
+  bottom: 49%;
+  border-radius: 15px;
+  background-color: rgb(21, 104, 121);
+  width: 30px;
+  height: 30px;
+}
+
+.minute-clock,
+.second-clock {
+  transform-origin: bottom;
+}
+
+@keyframes clock {
+  0% {
+    transform: rotate(0);
+  }
+ 100% {
+   transform: rotate(360deg);
+ }
+}
