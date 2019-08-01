@@ -1,0 +1,47 @@
+.minute-hand,
+.hour-hand,
+.center-circle {
+  position: fixed;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
+
+.hour-hand {
+  bottom: 0;
+  height: 150px;
+  width: 20px;
+  background-color: blue;
+  z-index: 1;
+  animation: watch 3600s normal infinite linear;
+}
+
+.minute-hand {
+  bottom: 100px;
+  height: 250px;
+  width: 20px;
+  background-color: red;
+  animation: watch 60s normal infinite linear;
+}
+
+.center-circle {
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  top: 150px;
+  bottom: 0;
+  z-index: 2;
+  border-radius: 50%;
+}
+
+@keyframes watch {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
