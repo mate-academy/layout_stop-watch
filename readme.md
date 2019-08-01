@@ -12,4 +12,4 @@ For this problem, testing of your solution will not be automated.
 **Result**
 
 - [UPDATE DEMO LINK](https://volodsher.github.io/layout_stop-watch/)
-- [THERE IS NO TEST REQUIRE]
+- [THERE IS NO TEST REQUIRE ]
