@@ -1,0 +1,46 @@
+.watch-container {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+}
+
+.watch {
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.second-hand {
+  border: 6px solid #4b9aaa;
+  border-radius: 6px;
+  height: 500px;
+  animation: rotation 60s infinite;
+  animation-timing-function: linear;
+}
+
+.dot {
+  border: 15px solid #4b9aaa;
+  border-radius: 50%;
+  width: 15px;
+  margin-top: 483px;
+  margin-left: -9px;
+}
+
+.minute-hand {
+  border: 6px solid #d15559;
+  border-radius: 6px;
+  height: 344px;
+  margin-top: 156px;
+  animation: rotation 3600s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
