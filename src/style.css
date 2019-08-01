@@ -1,58 +1,43 @@
-.hour-hand {
-  position: absolute;
+.minute-hand,
+.hour-hand,
+.center-circle {
+  position: fixed;
   margin: auto;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
+
+.hour-hand {
+  bottom: 0;
   height: 150px;
   width: 20px;
   background-color: blue;
   z-index: 1;
-  border-radius: 10px;
-  animation: hour 3600s normal infinite linear;
-  transform-origin: bottom;
+  animation: watch 3600s normal infinite linear;
 }
 
 .minute-hand {
-  margin: auto;
-  top: 0;
-  right: 0;
   bottom: 100px;
-  left: 0;
-  position: fixed;
   height: 250px;
   width: 20px;
   background-color: red;
-  border-radius: 10px;
-  animation: minute 60s normal infinite linear;
-  transform-origin: bottom;
+  animation: watch 60s normal infinite linear;
 }
 
 .center-circle {
   background-color: black;
   width: 50px;
   height: 50px;
-  position: absolute;
-  margin: auto;
   top: 150px;
-  right: 0;
   bottom: 0;
-  left: 0;
   z-index: 2;
   border-radius: 50%;
 }
 
-@keyframes minute {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes hour {
+@keyframes watch {
   0% {
     transform: rotate(0deg);
   }
