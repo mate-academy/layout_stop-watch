@@ -1,0 +1,48 @@
+.clock {
+  position: relative;
+}
+
+.clock__minutes-arrow,
+.clock__seconds-arrow,
+.clock__circle-arrow {
+  position: absolute;
+}
+
+.clock__minutes-arrow {
+  height: 300px;
+  width: 10px;
+  background-color: blueviolet;
+  left: 50%;
+  top: 100px;
+  transform-origin: bottom;
+  animation: circle 3600s linear infinite;
+}
+
+.clock__seconds-arrow {
+  height: 250px;
+  width: 5px;
+  background-color: cyan;
+  left: 50.4%;
+  top: 150px;
+  transform-origin: bottom;
+  animation: circle 60s linear infinite;
+}
+
+.clock__circle-arrow {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: brown;
+  left: 49.2%;
+  top: 375px;
+}
+
+@keyframes circle {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
