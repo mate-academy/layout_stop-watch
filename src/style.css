@@ -1,0 +1,66 @@
+.base,
+.minute {
+  background-color: #5f98a8;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1000px;
+  width: 1000px;
+}
+
+.base {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  z-index: 3;
+  position: relative;
+}
+
+.hour {
+  background-color: #c25d5d;
+  z-index: 1;
+  width: 10px;
+  height: 255px;
+  border-radius: 10%;
+  position: absolute;
+  margin-top: -128px;
+  animation-name: spin-hour;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  transform-origin: bottom center;
+}
+
+.minute {
+  width: 10px;
+  height: 500px;
+  border-radius: 10%;
+  z-index: 2;
+  position: absolute;
+  margin-top: -245px;
+  animation-name: spin-minute;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  transform-origin: bottom center;
+}
+
+@keyframes spin-minute {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-hour {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
