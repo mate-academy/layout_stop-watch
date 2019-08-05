@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  top: 100px;
+  min-width: 600px;
+  min-height: 600px;
+  position: relative;
+}
+
+.clock {
+  display: block;
+  border-radius: 50%;
+  border: 10px solid rgb(37, 37, 37);
+  height: 440px;
+  width: 440px;
+  background: url(/images/ciferblat_014.png) no-repeat center;
+  margin: 20px auto;
+}
+
+.hour {
+  position: absolute;
+  background-color: black;
+  height: 110px;
+  width: 12px;
+  left: 50%;
+  top: 20%;
+  border-radius: 20%;
+  transform-origin: 50% 100%;
+  animation: rotate 43200s infinite steps(60);
+}
+
+.minute {
+  position: absolute;
+  background-color: black;
+  height: 180px;
+  width: 10px;
+  left: 50%;
+  top: 8%;
+  border-radius: 10%;
+  animation: rotate 3600s infinite steps(60);
+  transform-origin: 50% 100%;
+}
+
+.second {
+  position: absolute;
+  background-color: red;
+  height: 160px;
+  width: 5px;
+  left: 50%;
+  top: 11%;
+  border-radius: 10%;
+  animation: rotate 60s infinite steps(60);
+  transform-origin: 50% 100%;
+}
+
+.center {
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  height: 32px;
+  width: 32px;
+  left: 49.5%;
+  top: 35%;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
