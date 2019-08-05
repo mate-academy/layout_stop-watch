@@ -1,0 +1,40 @@
+.clock {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  border-radius: 10px;
+  animation-name: handrotation;
+  transform-origin: bottom;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.second-hand {
+  width: 7px;
+  height: 200px;
+  background-color: peachpuff;
+  animation-duration: 60s;
+}
+
+.minute-hand {
+  width: 10px;
+  height: 100px;
+  background-color: rosybrown;
+  animation-duration: 3600s;
+}
+
+.clock-center {
+  position: absolute;
+  bottom: -10px;
+  left: -5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rosybrown;
+}
+
+@keyframes handrotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
