@@ -10,8 +10,8 @@ For this problem, testing of your solution will not be automated.
 [Guideline](https://github.com/mate-academy/layout_task-guideline/blob/master/README.md)
 
 **Result**
-<ul>
-  <li>[DEMO LINK](https://shklyarigor2015.github.io/layout_stop-watch/)
-  </li>
-<ul>
+
+  [DEMO LINK](https://shklyarigor2015.github.io/layout_stop-watch/)
+  
+
 
