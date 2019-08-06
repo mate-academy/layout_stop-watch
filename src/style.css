@@ -1,0 +1,123 @@
+body {
+  background-color: black;
+}
+
+.clock {
+  position: relative;
+  margin: 150px auto;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 8px solid white;
+  background-image: linear-gradient(90deg,
+  #00c0ff 0%,
+  #ffcf00 49%,
+  #fc4f4f 100%);
+  padding: 3px;
+}
+
+.center-point {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.point {
+  background-color: #fff;
+  border-radius: 10%;
+  margin: auto;
+}
+
+.top-point {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 89%;
+  width: 20px;
+  height: 10%;
+}
+
+.right-point {
+  position: absolute;
+  top: 0;
+  left: 89%;
+  right: 0;
+  bottom: 0;
+  width: 10%;
+  height: 20px;
+}
+
+.bottom-point {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 89%;
+  width: 20px;
+  height: 10%;
+}
+
+.left-point {
+  position: absolute;
+  top: 0;
+  right: 89%;
+  left: 0;
+  bottom: 0;
+  width: 10%;
+  height: 20px;
+}
+
+.sec-arrow {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 43%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 44%;
+  width: 15px;
+  border-radius: 50%;
+  -webkit-animation: sec-rotation 60s infinite linear;
+  transform-origin: bottom;
+}
+@-webkit-keyframes sec-rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.minute-arrow {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 24%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 25%;
+  width: 10px;
+  border-radius: 50%;
+  -webkit-animation: min-rotation 3600s infinite linear;
+  transform-origin: bottom;
+}
+
+@-webkit-keyframes min-rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
