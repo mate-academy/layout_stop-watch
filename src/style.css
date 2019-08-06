@@ -75,6 +75,13 @@ body {
   height: 20px;
 }
 
+.arrow {
+  background-color: #fff;
+  border-radius: 50%;
+  margin: auto;
+  transform-origin: bottom;
+}
+
 .sec-arrow {
   background-color: #fff;
   position: absolute;
@@ -82,12 +89,9 @@ body {
   bottom: 43%;
   left: 0;
   right: 0;
-  margin: auto;
   height: 44%;
   width: 15px;
-  border-radius: 50%;
   -webkit-animation: sec-rotation 60s infinite linear;
-  transform-origin: bottom;
 }
 @-webkit-keyframes sec-rotation {
   from {
@@ -99,18 +103,14 @@ body {
 }
 
 .minute-arrow {
-  background-color: #fff;
   position: absolute;
   top: 0;
   bottom: 24%;
   left: 0;
   right: 0;
-  margin: auto;
   height: 25%;
   width: 10px;
-  border-radius: 50%;
   -webkit-animation: min-rotation 3600s infinite linear;
-  transform-origin: bottom;
 }
 
 @-webkit-keyframes min-rotation {
