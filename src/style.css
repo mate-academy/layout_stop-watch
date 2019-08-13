@@ -27,10 +27,11 @@
   border-radius: 10%;
   position: absolute;
   margin-top: -128px;
-  animation-name: spin-hour;
+  animation-name: spin;
   animation-duration: 3600s;
   animation-timing-function: linear;
   transform-origin: bottom center;
+  animation-iteration-count: infinite;
 }
 
 .minute {
@@ -40,26 +41,17 @@
   z-index: 2;
   position: absolute;
   margin-top: -245px;
-  animation-name: spin-minute;
+  animation-name: spin;
   animation-duration: 60s;
   animation-timing-function: linear;
   transform-origin: bottom center;
+  animation-iteration-count: infinite;
 }
 
-@keyframes spin-minute {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin-hour {
-  from {
-    transform: rotate(0deg);
-  }
-
   to {
     transform: rotate(360deg);
   }
