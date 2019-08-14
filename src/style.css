@@ -1,0 +1,75 @@
+.watch {
+  height: 600px;
+}
+
+.secondArrow {
+  left: calc(50% - 5px);
+  top: 0;
+  width: 10px;
+  height: 300px;
+  background: #4c99aa;
+  animation: secondsRotating 60s linear infinite;
+}
+
+.minuteArrow {
+  left: calc(50% - 5px);
+  top: 100px;
+  width: 10px;
+  height: 200px;
+  background: #d0565a;
+  animation: minutesRotating 3600s linear infinite;
+}
+
+.hourArrow {
+  left: calc(50% - 5px);
+  top: 200px;
+  width: 10px;
+  height: 100px;
+  background: #000;
+  animation: hoursRotating 86400s linear infinite;
+}
+
+.secondArrow,
+.minuteArrow,
+.hourArrow {
+  border-radius: 5px;
+  position: absolute;
+  transform-origin: 50% 100%;
+}
+
+.centerRound {
+  position: absolute;
+  left: calc(50% - 15px);
+  top: 285px;
+  width: 30px;
+  height: 30px;
+  background: #4c99aa;
+  border-radius: 50%;
+}
+
+@keyframes secondsRotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minutesRotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hoursRotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
