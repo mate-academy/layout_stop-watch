@@ -4,12 +4,6 @@ Create a working stopwatch with minute and second hands as shown in the [picture
 
 For this problem, testing of your solution will not be automated.
 
----
-**Read the guideline before start**
-
-[Guideline](https://github.com/mate-academy/layout_task-guideline/blob/master/README.md)
-
 **Result**
 
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
-- [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
+- [DEMO LINK](https://dariyaz.github.io/layout_stop-watch/)
