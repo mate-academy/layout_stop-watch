@@ -1,0 +1,47 @@
+.watch-wraper {
+  position: relative;
+  max-width: 550px;
+  height: 550px;
+  margin: 0 auto;
+}
+
+.point-center {
+  position: absolute;
+  background-color: #000;
+  height: 20px;
+  width: 20px;
+  top: 260px;
+  left: 255px;
+  border-radius: 50%;
+}
+
+.seconds-class {
+  position: absolute;
+  background-color: darkgreen;
+  width: 10px;
+  left: 260px;
+  height: 180px;
+  top: 95px;
+  animation: clock 3600s linear infinite;
+  transform-origin: bottom center;
+}
+
+.minute-class {
+  position: absolute;
+  background-color: darkblue;
+  width: 10px;
+  height: 250px;
+  top: 25px;
+  left: 260px;
+  animation: clock 60s linear infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
