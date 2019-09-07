@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+}
+
+.seconds {
+  width: 10px;
+  height: 100px;
+  position: absolute;
+  left: 300px;
+  top: 300px;
+  z-index: 2;
+  transform-origin: bottom center;
+  animation: second 60s linear 0.2s infinite;
+  background-color: blue;
+}
+
+.minutes {
+  width: 10px;
+  height: 70px;
+  position: absolute;
+  left: 300px;
+  top: 330px;
+  transform-origin: bottom center;
+  animation: minute 3600s linear 0.2s infinite;
+  background-color: red;
+}
+
+.center {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  position: absolute;
+  left: 295px;
+  top: 390px;
+  z-index: 2;
+  background-color: blue;
+}
+
+.clock {
+  box-shadow: inset 0 0 0 3px blue;
+  border-radius: 0.5em;
+  position: relative;
+  font-size: 210px;
+  height: 210px;
+  width: 210px;
+  left: 200px;
+  top: 295px;
+}
+
+.cS {
+  margin-left: -0.5em;
+  margin-top: -0.5em;
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  left: 50%;
+  top: 50%;
+}
+
+.cS::after {
+  content: "";
+  background-color: red;
+  margin-left: -0.01em;
+  position: absolute;
+  height: 0.05em;
+  width: 0.02em;
+  top: 0.02em;
+  left: 50%;
+}
+
+.cS-small::after {
+  height: 0.03em;
+}
+
+.cS-1 {
+  transform: rotate(6deg);
+}
+
+.cS-2 {
+  transform: rotate(12deg);
+}
+
+.cS-3 {
+  transform: rotate(18deg);
+}
+
+.cS-4 {
+  transform: rotate(24deg);
+}
+
+.cS-5 {
+  transform: rotate(30deg);
+}
+
+.cS-6 {
+  transform: rotate(36deg);
+}
+
+.cS-7 {
+  transform: rotate(42deg);
+}
+
+.cS-8 {
+  transform: rotate(48deg);
+}
+
+.cS-9 {
+  transform: rotate(54deg);
+}
+
+.cS-10 {
+  transform: rotate(60deg);
+}
+
+.cS-11 {
+  transform: rotate(66deg);
+}
+
+.cS-12 {
+  transform: rotate(72deg);
+}
+
+.cS-13 {
+  transform: rotate(78deg);
+}
+
+.cS-14 {
+  transform: rotate(84deg);
+}
+
+.cS-15 {
+  transform: rotate(90deg);
+}
+
+.cS-16 {
+  transform: rotate(96deg);
+}
+
+.cS-17 {
+  transform: rotate(102deg);
+}
+
+.cS-18 {
+  transform: rotate(108deg);
+}
+
+.cS-19 {
+  transform: rotate(114deg);
+}
+
+.cS-20 {
+  transform: rotate(120deg);
+}
+
+.cS-21 {
+  transform: rotate(126deg);
+}
+
+.cS-22 {
+  transform: rotate(132deg);
+}
+
+.cS-23 {
+  transform: rotate(138deg);
+}
+
+.cS-24 {
+  transform: rotate(144deg);
+}
+
+.cS-25 {
+  transform: rotate(150deg);
+}
+
+.cS-26 {
+  transform: rotate(156deg);
+}
+
+.cS-27 {
+  transform: rotate(162deg);
+}
+
+.cS-28 {
+  transform: rotate(168deg);
+}
+
+.cS-29 {
+  transform: rotate(174deg);
+}
+
+.cS-30 {
+  transform: rotate(180deg);
+}
+
+.cS-31 {
+  transform: rotate(186deg);
+}
+
+.cS-32 {
+  transform: rotate(192deg);
+}
+
+.cS-33 {
+  transform: rotate(198deg);
+}
+
+.cS-34 {
+  transform: rotate(204deg);
+}
+
+.cS-35 {
+  transform: rotate(210deg);
+}
+
+.cS-36 {
+  transform: rotate(216deg);
+}
+
+.cS-37 {
+  transform: rotate(222deg);
+}
+
+.cS-38 {
+  transform: rotate(228deg);
+}
+
+.cS-39 {
+  transform: rotate(234deg);
+}
+
+.cS-40 {
+  transform: rotate(240deg);
+}
+
+.cS-41 {
+  transform: rotate(246deg);
+}
+
+.cS-42 {
+  transform: rotate(252deg);
+}
+
+.cS-43 {
+  transform: rotate(258deg);
+}
+
+.cS-44 {
+  transform: rotate(264deg);
+}
+
+.cS-45 {
+  transform: rotate(270deg);
+}
+
+.cS-46 {
+  transform: rotate(276deg);
+}
+
+.cS-47 {
+  transform: rotate(282deg);
+}
+
+.cS-48 {
+  transform: rotate(288deg);
+}
+
+.cS-49 {
+  transform: rotate(294deg);
+}
+
+.cS-50 {
+  transform: rotate(300deg);
+}
+
+.cS-51 {
+  transform: rotate(306deg);
+}
+
+.cS-52 {
+  transform: rotate(312deg);
+}
+
+.cS-53 {
+  transform: rotate(318deg);
+}
+
+.cS-54 {
+  transform: rotate(324deg);
+}
+
+.cS-55 {
+  transform: rotate(330deg);
+}
+
+.cS-56 {
+  transform: rotate(336deg);
+}
+
+.cS-57 {
+  transform: rotate(342deg);
+}
+
+.cS-58 {
+  transform: rotate(348deg);
+}
+
+.cS-59 {
+  transform: rotate(354deg);
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minute {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
