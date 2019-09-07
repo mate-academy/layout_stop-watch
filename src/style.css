@@ -1,0 +1,108 @@
+body,
+p {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.main {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  display: grid;
+  position: relative;
+  box-sizing: border-box;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 15px;
+  width: 500px;
+  height: 500px;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+.num {
+  display: grid;
+  font-size: 70px;
+}
+
+.num12 {
+  grid-area: 1 / 2 / 2 / 3;
+  justify-self: center;
+  align-self: flex-start;
+}
+
+.num3 {
+  grid-area: 2 / 3 / 3 / 4;
+  align-self: center;
+  justify-self: flex-end;
+}
+
+.num6 {
+  grid-area: 3 / 2 / 4 / 3;
+  align-self: flex-end;
+  justify-self: center;
+}
+
+.num9 {
+  grid-area: 2 / 1 / 3 / 2;
+  align-self: center;
+  justify-self: flex-start;
+}
+
+.second-arrow,
+.minute-arrow,
+.hour-arrow {
+  position: absolute;
+  border-top-right-radius: 40%;
+  border-top-left-radius: 40%;
+  animation: rotate infinite linear;
+  transform-origin: bottom center;
+}
+
+.second-arrow {
+  top: 5%;
+  left: calc(50% - 0.5%);
+  width: 1%;
+  height: 45%;
+  background-color: #101414;
+  animation-duration: 60s;
+}
+
+.minute-arrow {
+  top: 5%;
+  left: calc(50% - 1%);
+  width: 2%;
+  height: 45%;
+  background-color: #4b99aa;
+  animation-duration: 3600s;
+}
+
+.hour-arrow {
+  top: 26%;
+  left: calc(50% - 1%);
+  width: 2%;
+  height: 24%;
+  background-color: #d15559;
+  animation-duration: 43200s;
+}
+
+.center-dot {
+  position: absolute;
+  top: calc(50% - 3%);
+  left: calc(50% - 3%);
+  width: 6%;
+  height: 6%;
+  background-color: #4b99aa;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
