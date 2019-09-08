@@ -1,0 +1,55 @@
+body {
+  display: grid;
+  justify-content: center;
+}
+
+@keyframes stop-clock-long {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: rotate(-110deg);
+  }
+}
+
+@keyframes stop-clock-short {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+.radio {
+  margin-left: -7px;
+  background-color: blue;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.long-hand {
+  background-color: blue;
+  height: 300px;
+  width: 15px;
+  animation: stop-clock-long 4s infinite;
+  transform-origin: 40% 100%;
+  border-radius: 10px;
+  margin-bottom: -15px;
+}
+
+.short-hand {
+  background-color: red;
+  margin-top: -215px;
+  height: 200px;
+  width: 15px;
+  border-radius: 10px;
+  animation: stop-clock-short 4s infinite;
+  transform-origin: 0 100%;
+  z-index: 0;
+}
