@@ -1,0 +1,52 @@
+.stopwatch {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  background: url(./images/the-watch.png);
+}
+
+.minute-hand,
+.second-hand,
+.circle {
+  position: absolute;
+}
+
+.minute-hand {
+  height: 317px;
+  width: 94px;
+  background: url(./images/minute-hand.png);
+  background-repeat: no-repeat;
+  left: 453px;
+  top: 183px;
+  transform-origin: bottom;
+  animation: circle 3600s linear infinite;
+}
+
+.second-hand {
+  height: 416px;
+  width: 46px;
+  background: url(./images/second-hand.png);
+  left: 477px;
+  top: 84px;
+  transform-origin: bottom;
+  animation: circle 60s linear infinite;
+}
+
+.circle {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: white;
+  left: 470px;
+  top: 470px;
+}
+
+@keyframes circle {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
