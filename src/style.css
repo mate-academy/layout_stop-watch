@@ -1,0 +1,49 @@
+.center {
+  position: absolute;
+  left: 220px;
+}
+
+.center-minus {
+  position: absolute;
+  top: 215px;
+  left: 215px;
+}
+
+.arrow {
+  width: 10px;
+  border-radius: 4px;
+  transform-origin: bottom center;
+}
+
+.minutes {
+  background-color: red;
+  height: 150px;
+  top: 70px;
+  z-index: 1;
+  animation: moving 3600s linear infinite;
+}
+
+.seconds {
+  background-color: blue;
+  height: 200px;
+  top: 20px;
+  animation: moving 60s linear infinite;
+}
+
+.point {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+@keyframes moving {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
