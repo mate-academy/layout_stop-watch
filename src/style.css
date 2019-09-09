@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 600px;
+  height: 600px;
+  background-color: aliceblue;
+  border-radius: 50%;
+  border: 3px solid black;
+  align-items: center;
+  position: absolute;
+  justify-content: center;
+  margin-left: 200px;
+}
+
+.minute_arrow {
+  height: 250px;
+  width: 10px;
+  background-color: black;
+  bottom: 50%;
+  position: absolute;
+  animation: watch 3600s linear infinite;
+}
+
+.second_arrow {
+  height: 300px;
+  width: 5px;
+  background-color: red;
+  bottom: 50%;
+  position: absolute;
+  animation: watch 60s linear infinite;
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
