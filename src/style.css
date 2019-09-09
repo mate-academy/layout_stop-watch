@@ -1,0 +1,50 @@
+.clock-container {
+  height: 600px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.clock-center {
+  background-color: #5f98a8;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  position: relative;
+  top: 290px;
+  z-index: 3;
+}
+
+.strelka {
+  position: absolute;
+  transform-origin: bottom center;
+  animation-name: clock-move;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  border-radius: 5px;
+  width: 10px;
+}
+
+.seconds {
+  background-color: #5f98a8;
+  height: 300px;
+  z-index: 1;
+  animation-duration: 60s;
+}
+
+.minute {
+  background-color: #c25d5d;
+  height: 150px;
+  z-index: 2;
+  top: 150px;
+  animation-duration: 3600s;
+}
+
+@keyframes clock-move {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
