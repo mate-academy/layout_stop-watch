@@ -5,7 +5,6 @@ body {
 main {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,45 +13,44 @@ main {
 
 .stopwatch {
   position: relative;
-  width: 1000px;
-  height: 1000px;
+  width: 900px;
+  height: 900px;
   background: url(./images/the-watch.png);
-}
-
-.minute-hand,
-.second-hand,
-.circle {
-  position: absolute;
+  background-size: 900px;
+  background-repeat: no-repeat;
 }
 
 .minute-hand {
+  position: absolute;
   height: 317px;
   width: 94px;
   background: url(./images/minute-hand.png);
   background-repeat: no-repeat;
-  left: 453px;
-  top: 183px;
+  left: 403px;
+  top: 133px;
   transform-origin: bottom;
-  animation: circle 3600s linear infinite;
+  animation: circle 3600s infinite steps(60);
 }
 
 .second-hand {
+  position: absolute;
   height: 416px;
   width: 46px;
   background: url(./images/second-hand.png);
-  left: 477px;
-  top: 84px;
+  left: 427px;
+  top: 34px;
   transform-origin: bottom;
-  animation: circle 60s linear infinite;
+  animation: circle 60s infinite steps(60);
 }
 
 .circle {
+  position: absolute;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   background-color: white;
-  left: 470px;
-  top: 470px;
+  left: 420px;
+  top: 420px;
 }
 
 @keyframes circle {
