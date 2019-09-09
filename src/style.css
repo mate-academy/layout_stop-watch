@@ -1,0 +1,51 @@
+.watch {
+  height: 1000px;
+  width: 1000px;
+  background-color: #ccc;
+  position: relative;
+}
+
+.center {
+  background-color: #4b9aaa;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 480px;
+  left: 480px;
+}
+
+.hand {
+  width: 20px;
+  transform-origin: bottom center;
+  position: absolute;
+  top: 0;
+  left: 490px;
+  border-radius: 15px;
+  animation-name: full-circle;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.minute-hand {
+  background-color: #d15559;
+  height: 400px;
+  top: 100px;
+  animation-duration: 3600s;
+}
+
+.second-hand {
+  background-color: #4b9aaa;
+  height: 500px;
+  animation-duration: 60s;
+}
+
+@keyframes full-circle {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
