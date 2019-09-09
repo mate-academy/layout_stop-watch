@@ -1,0 +1,132 @@
+body {
+  background: #2fc5ba;
+}
+
+.border-clock {
+  margin: auto;
+  width: 80vmin;
+  height: 80vmin;
+  border: 3vmin solid #000;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: inset 40px 40px 90px rgba(0,0,0, 0.2),
+    inset 10px 10px 30px rgba(0,0,0, 0.5),
+    20px 20px 30px rgba(0,0,0, 0.4),
+    40px 40px 60px rgba(0,0,0, 0.4);
+  position: relative;
+}
+
+.border-clock:after {
+  content: "";
+  width: 105%;
+  height: 105%;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: -2.5%;
+  left: -2.5%;
+  box-shadow: -3px -3px 9px rgba(255,255,255, 0.8);
+}
+
+.minutes-container,
+.seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.minutes {
+  width: 1.2%;
+  height: 30%;
+  background-color: #d15559;
+  left: 49.75%;
+  position: absolute;
+  top: 22%;
+  transform-origin: 50% 100%;
+  border-radius: 50px 50px 0 0;
+  z-index: 2;
+}
+
+.seconds {
+  width: 1%;
+  height: 45%;
+  background-color: #4b99aa;
+  left: 49.75%;
+  position: absolute;
+  top: 7%;
+  transform-origin: 50% 100%;
+  border-radius: 50px 50px 0 0;
+  z-index: 3;
+}
+
+.clock-dot {
+  position: absolute;
+  top: calc(50% - 3%);
+  left: calc(50% - 3%);
+  width: 6%;
+  height: 6%;
+  background-color: #4b99aa;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.hour12,
+.hour1,
+.hour2,
+.hour3,
+.hour4,
+.hour5 {
+  height: 1vmin;
+  width: 55vmin;
+  background: transparent;
+  border-left: 7vmin solid #000;
+  border-right: 7vmin solid #000;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+
+.hour3 {
+  transform: rotate(90deg) translate(0, 34vmin);
+}
+
+.hour1 {
+  transform: rotate(120deg) translate(17vmin, 30vmin);
+}
+
+.hour2 {
+  transform: rotate(150deg) translate(29vmin, 18vmin);
+}
+
+.hour4 {
+  transform: rotate(210deg) translate(30vmin, -17vmin);
+}
+
+.hour5 {
+  transform: rotate(240deg) translate(17vmin, -30vmin);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.minutes-container {
+  animation: rotate 3600s infinite linear;
+}
+
+.seconds-container {
+  animation: rotate 60s infinite linear;
+}
+
+.minutes-container {
+  animation: rotate 3600s infinite steps(60);
+}
+
+.seconds-container {
+  animation: rotate 60s infinite steps(60);
+}
