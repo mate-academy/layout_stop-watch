@@ -1,0 +1,53 @@
+.watch {
+  position: relative;
+  background-image: url("images/clock.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 823px;
+  width: 823px;
+  margin: auto;
+}
+
+.min {
+  width: 10px;
+  height: 150px;
+  background-color: indianred;
+  border-radius: 10px;
+  position: absolute;
+  top: 255px;
+  left: 407px;
+  animation: clock-sec 3600s infinite;
+}
+
+.sec {
+  width: 10px;
+  height: 250px;
+  background-color: darkcyan;
+  border-radius: 10px;
+  position: absolute;
+  top: 155px;
+  left: 407px;
+  animation: clock-sec 60s infinite;
+}
+
+.circle {
+  width: 25px;
+  height: 25px;
+  background-color: darkcyan;
+  border-radius: 50px;
+  position: absolute;
+  top: 400px;
+  left: 400px;
+}
+
+@keyframes clock-sec {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
