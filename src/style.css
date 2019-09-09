@@ -1,0 +1,104 @@
+body,
+p {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-border {
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 250px;
+  border: 7px solid black;
+  height: 500px;
+  width: 500px;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgray;
+  box-shadow: 25px 15px 8px rgba(61, 78, 97, 0.1);
+}
+
+.center_dot {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 13px;
+  background-color: cadetblue;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  animation: arrows_rotation;
+  transform-origin: bottom center;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.hour_arrow {
+  height: 50%;
+  width: 13px;
+  background: indianred;
+  border-radius: 4px;
+  top: 0;
+  animation-duration: 43200s;
+}
+
+.minute_arrow {
+  height: 50%;
+  width: 10px;
+  background: cadetblue;
+  border-radius: 3px;
+  animation-duration: 3600s;
+}
+
+.sec_arrow {
+  height: 50%;
+  width: 5px;
+  background: black;
+  border-radius: 2px;
+  animation-duration: 60s;
+}
+
+.horizontal_time {
+  position: absolute;
+  height: 40px;
+  width: 486px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.verticle_time {
+  position: absolute;
+  width: 40px;
+  height: 486px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.six-hours {
+  position: absolute;
+  bottom: 0;
+}
+
+@keyframes arrows_rotation {
+  from {
+    transform: rotate();
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
