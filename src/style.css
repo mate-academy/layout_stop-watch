@@ -1,0 +1,51 @@
+.clock {
+  display: flex;
+  width: 600px;
+  height: 600px;
+  border: 10px solid #000;
+  border-radius: 50%;
+  margin: auto;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+
+.minutes-arrow,
+.seconds-arrow {
+  bottom: 50%;
+  position: absolute;
+  border-radius: 50%;
+  width: 10px;
+}
+
+.minutes-arrow {
+  height: 200px;
+  background: yellow;
+  animation: watch-animation 3600s infinite steps(60);
+}
+
+.seconds-arrow {
+  height: 250px;
+  background: blue;
+  animation: watch-animation 60s infinite steps(60);
+}
+
+.center {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+}
+
+@keyframes watch-animation {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
