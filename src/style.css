@@ -1,0 +1,48 @@
+.clock {
+  height: 600px;
+  width: 600px;
+  position: relative;
+}
+
+.circle {
+  background-color: #4b9aaa;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 285px;
+  left: 487px;
+}
+
+.time {
+  width: 12px;
+  transform-origin: bottom center;
+  position: absolute;
+  top: 0;
+  left: 490px;
+  border-radius: 15px;
+  animation-name: full-circle;
+}
+
+.hour {
+  background-color: #d15559;
+  height: 200px;
+  top: 100px;
+  animation-duration: 3600s;
+}
+
+.minute {
+  background-color: #4b9aaa;
+  height: 300px;
+  animation-duration: 60s;
+}
+
+@keyframes full-circle {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
