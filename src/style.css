@@ -1,0 +1,48 @@
+.centr {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 30px;
+  background-color: #4b99cc;
+  z-index: 2;
+}
+
+.minutehand {
+  height: 170px;
+  width: 8px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -5px;
+  margin-top: -175px;
+  background-color: #d15559;
+  animation: clock 3600s linear infinite;
+}
+
+.secondhand {
+  height: 200px;
+  width: 4px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -2px;
+  margin-top: -205px;
+  background-color: #4b99cc;
+  animation: steps 60s linear infinite;
+}
+
+@keyframes steps {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}

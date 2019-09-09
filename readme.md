@@ -13,3 +13,6 @@ For this problem, testing of your solution will not be automated.
 
 - [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
 - [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
+
+[DEMO LINK](https://kostya-flern.github.io/layout_stop-watch/)
+[TEST REPORT LINK](https://kostya-flern.github.io/layout_stop-watch/report/html_report/)
