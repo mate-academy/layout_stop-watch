@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  background: #fffccc;
+  border: 5px solid #f5a943;
+  border-radius: 50%;
+  margin: 100px auto;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  /* box-sizing: border-box; */
+}
+
+.minute-hand {
+  height: 200px;
+  width: 5px;
+  background: red;
+  bottom: 50%;
+  position: absolute;
+  border-radius: 150px;
+  animation: stop-watch 3600s linear infinite;
+}
+
+.second-hand {
+  height: 250px;
+  width: 3px;
+  background: blue;
+  bottom: 50%;
+  position: absolute;
+  border-radius: 150px;
+  animation: stop-watch 60s linear infinite;
+}
+
+.center {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: #f5a943;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 235px;
+}
+
+@keyframes stop-watch {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
