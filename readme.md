@@ -11,5 +11,6 @@ For this problem, testing of your solution will not be automated.
 
 **Result**
 
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
-- [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
+- [DEMO LINK](https://xandr1.github.io/layout_stop-watch/)
+
+При запуску npm run deploy виникала помилка, gh-pages створюються, але сайт за лінком недоступний.
