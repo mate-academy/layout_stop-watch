@@ -1,0 +1,57 @@
+.stopwatch {
+  height: 100px;
+  width: 100px;
+  background-color: #59dc38;
+  border: 5px solid #dc1b0d;
+  border-radius: 50%;
+  position: relative;
+}
+
+.zero-hours {
+  font-size: 10px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.centre {
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.secundas {
+  width: 2px;
+  height: 45px;
+  background-color: brown;
+  border-radius: 50%;
+  position: absolute;
+  left: 49px;
+  top: 5px;
+  transform-origin: bottom center;
+  animation: tik 60s linear infinite;
+}
+
+.minutes {
+  width: 2px;
+  height: 40px;
+  background-color: #003bdc;
+  border-radius: 50%;
+  position: absolute;
+  left: 49px;
+  top: 10px;
+  transform-origin: bottom center;
+  animation: tik 3600s steps(60, start) 60s infinite;
+}
+
+@keyframes tik {
+  100% {
+    transform: rotate(360deg);
+  }
+}
