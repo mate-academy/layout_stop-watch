@@ -16,6 +16,7 @@
   left: calc(50% - 10px);
   top: -100px;
   animation: watch-second 60s linear infinite;
+  transform-origin: bottom;
 }
 
 .minute {
@@ -46,23 +47,20 @@
 @keyframes watch-second {
   from {
     transform: rotate(0);
-    transform-origin: bottom;
+
   }
 
   to {
     transform: rotate(360deg);
-    transform-origin: bottom;
   }
 }
 
 @keyframes watch-minute {
   from {
     transform: rotate(45deg);
-    transform-origin: bottom;
   }
 
   to {
     transform: rotate(360deg);
-    transform-origin: bottom;
   }
 }
