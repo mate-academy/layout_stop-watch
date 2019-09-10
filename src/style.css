@@ -13,17 +13,18 @@ body {
   height: 45vw;
   background-color: pink;
   border-radius: 50%;
+  z-index: -1;
 }
 
 .circle {
-  position: absolute;
+  position: relative;
   width: 3vw;
   height: 3vw;
   background-color: blue;
   border-radius: 50%;
   display: flex;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
 }
 
 .circle:after {
@@ -37,6 +38,7 @@ body {
   left: 1vw;
   transform-origin: center bottom;
   animation: clock-animation 60s infinite steps(60);
+  z-index: 1;
 }
 
 .circle::before {
@@ -44,12 +46,13 @@ body {
   position: absolute;
   height: 15vw;
   width: 1vw;
-  background-color: blue;
+  background-color: yellow;
   border-radius: 20px;
   bottom: 1.5vw;
   left: 1vw;
   transform-origin: center bottom;
   animation: clock-animation 3600s infinite linear;
+  z-index: 1;
 }
 
 @keyframes  clock-animation {
