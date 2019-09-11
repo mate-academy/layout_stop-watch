@@ -1,0 +1,51 @@
+.clock {
+  height: 1000px;
+  width: 1000px;
+  position: relative;
+}
+
+.center {
+  background-color: #4b9aaa;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 280px;
+  left: 480px;
+}
+
+.pointer {
+  width: 20px;
+  transform-origin: bottom center;
+  position: absolute;
+  top: 0;
+  left: 490px;
+  border-radius: 15px;
+  animation-name: full-circle;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.minutes {
+  background-color: #d15559;
+  height: 200px;
+  top: 100px;
+  animation-duration: 3600s;
+  z-index: -1;
+}
+
+.seconds {
+  background-color: #4b9aaa;
+  height: 300px;
+  animation-duration: 60s;
+}
+
+@keyframes full-circle {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
