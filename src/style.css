@@ -1,0 +1,57 @@
+@keyframes working {
+  from {
+    transform: rotate(0);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  background-color: aqua;
+  border: 10px solid black;
+  border-radius: 50%;
+}
+
+.central {
+  border-radius: 50%;
+  width: 4%;
+  height: 4%;
+  background-color: rebeccapurple;
+  position: relative;
+  top: 48%;
+  left: 48%;
+  z-index: 1;
+}
+
+.minutes {
+  background-color: green;
+  width: 2%;
+  height: 20%;
+  position: relative;
+  top: -4%;
+  left: 49%;
+  animation: working 3600s infinite linear;
+}
+
+.seconds {
+  background-color: black;
+  width: 2%;
+  height: 30%;
+  position: relative;
+  top: 16%;
+  left: 49%;
+  animation: working 60s infinite linear;
+}
