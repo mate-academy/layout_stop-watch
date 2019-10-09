@@ -1,15 +1,12 @@
 # Stopwatch task
+1. Replace `<your_account>` with your Github username in the links
+    - [DEMO LINK](https://<your_account>.github.io/layout_stop-watch/) <br>
+2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
+___
 
-Create a working stopwatch with minute and second hands as shown in the [picture](stopwatch.png) using only CSS animations. The starting position of the hands should be at 0:00.
-
-For this problem, testing of your solution will not be automated.
-
+## The task
+Create a working stopwatch with minute and second hands using only CSS animations.
+- The starting position of the hands should be at 0:00.
+- There are no tests for this task so use `npm run lint` command instead of `npm test` 
 ---
-**Read the guideline before start**
-
-[Guideline](https://github.com/mate-academy/layout_task-guideline/blob/master/README.md)
-
-**Result**
-
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
-- [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
+![demo](stopwatch.png)
