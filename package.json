@@ -4,9 +4,12 @@
   "description": "Boilerplate for layout tasks with visual regression testing",
   "main": "src/main.js",
   "scripts": {
-    "deploy": "bash ./config/hooks/deploy.sh",
+    "deploy": "git add . && git commit -m 'solution' && git push origin develop && npm run publish",
     "lint": "stylelint src/**/*.css && eslint src/**/*.js && htmllint --rc ./node_modules/@mate-academy/htmllint-config/.htmllintrc src/*.html",
-    "start": "node server.js"
+    "postinstall": "git checkout -b develop",
+    "publish": "bash ./config/hooks/deploy.sh",
+    "start": "node server.js",
+    "test": "npm run lint"
   },
   "keywords": [],
   "author": "Mate Academy",
