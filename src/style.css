@@ -1,0 +1,56 @@
+@keyframes full-rotate {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+
+.watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.clock-hand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+}
+
+.watch {
+  border-radius: 10px;
+}
+
+.watch__hours {
+  top: -1.5px;
+  left: -7.5px;
+  width: 15px;
+  height: 300px;
+  background-color: #4b9aaa;
+  transform-origin: top center;
+  animation: full-rotate 120s infinite linear;
+}
+
+.watch__minutes {
+  top: -1.5px;
+  left: -7.5px;
+  width: 15px;
+  height: 100px;
+  background-color: #d1565a;
+  transform-origin: top center;
+  animation: full-rotate 6s infinite linear;
+}
+
+.watch__circle {
+  top: -15px;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  background-color: #4b9aaa;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */

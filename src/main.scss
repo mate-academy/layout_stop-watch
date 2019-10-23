@@ -1,0 +1,47 @@
+@import "variables";
+@import "animations";
+
+.watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.clock-hand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+}
+
+.watch {
+  border-radius: 10px;
+}
+.watch__hours {
+  top: -($watch-width/10);
+  left: -($watch-width/2);
+  width: $watch-width;
+  height: $hours-height;
+  background-color: $hours-color;
+  transform-origin: top center;
+  animation: full-rotate 120s infinite linear;
+}
+
+.watch__minutes {
+  top: -($watch-width/10);
+  left: -($watch-width/2);
+  width: $watch-width;
+  height: $minutes-height;
+  background-color: $minutes-color;
+  transform-origin: top center;
+  animation: full-rotate 6s infinite linear;
+}
+
+.watch__circle {
+  top: -($watch-width + 15px) / 2;
+  left: -($watch-width + 15px) / 2;
+  width: $watch-width + 15px;
+  height: $watch-width + 15px;
+  background-color: $hours-color;
+  border-radius: 50%;
+}
