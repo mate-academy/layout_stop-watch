@@ -1,0 +1,62 @@
+.clock {
+  width: 550px;
+  height: 550px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock__center {
+  border-radius: 50%;
+  background-color: #4b99aa;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+}
+
+.hands {
+  position: absolute;
+}
+
+.clock__second-hand {
+  animation: clock 60s linear infinite;
+}
+
+.clock__minute-hand {
+  animation: clock 3600s linear infinite;
+}
+
+.clock__second-hand::after,
+.clock__minute-hand::after {
+  content: "";
+  display: block;
+  width: 10px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-5px, 5px);
+}
+
+.clock__second-hand::after {
+  height: 250px;
+  background-color: #4b99aa;
+}
+
+.clock__minute-hand::after {
+  height: 200px;
+  background-color: #d15559;
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
