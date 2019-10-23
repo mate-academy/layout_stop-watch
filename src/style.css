@@ -1,0 +1,105 @@
+body {
+  background-color: beige;
+}
+
+.clock {
+  margin: auto;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.clock__line {
+  margin: -140px auto 0;
+  width: 13px;
+  height: 140px;
+  border-radius: 10px;
+  background-color: #c55258;
+}
+
+.clock__line--second-hand {
+  height: 180px;
+  background-color: #488c9a;
+  margin-top: 0;
+  animation: clock 8s infinite;
+  animation-timing-function: linear;
+}
+
+.clock__center {
+  margin: -12px auto 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #488c9a;
+}
+
+@keyframes clock {
+  from {
+    transform: translate(0);
+  }
+
+  10% {
+    transform: translate(0);
+  }
+
+  12.5% {
+    transform: translate(63px, 26px) rotate(45deg);
+  }
+
+  22.5% {
+    transform: translate(63px, 26px) rotate(45deg);
+  }
+
+  25% {
+    transform: translate(90px, 90px) rotate(90deg);
+  }
+
+  35% {
+    transform: translate(90px, 90px) rotate(90deg);
+  }
+
+  37.5% {
+    transform: translate(63px, 155px) rotate(135deg);
+  }
+
+  47.5% {
+    transform: translate(63px, 155px) rotate(135deg);
+  }
+
+  50% {
+    transform: translate(0, 180px) rotate(180deg);
+  }
+
+  60% {
+    transform: translate(0, 180px) rotate(180deg);
+  }
+
+  62.5% {
+    transform: translate(-63px, 155px) rotate(225deg);
+  }
+
+  72.5% {
+    transform: translate(-63px, 155px) rotate(225deg);
+  }
+
+  75% {
+    transform: translate(-90px, 90px) rotate(270deg);
+  }
+
+  85% {
+    transform: translate(-90px, 90px) rotate(270deg);
+  }
+
+  87.5% {
+    transform: translate(-63px, 26px) rotate(315deg);
+  }
+
+  97.5% {
+    transform: translate(-63px, 26px) rotate(315deg);
+  }
+
+  to {
+    transform: translate(0) rotate(360deg);
+  }
+}
