@@ -1,45 +1,49 @@
 @import "variables";
 @import "animations";
 
-.watch {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
+.watch-block {
+  width: 450px;
+  height: 450px;
+  border: 2px solid #747474;
+  box-shadow: 0px 0px 15px 1px rgba(194,194,194,1);
+  border-radius: 50%;
 
-.clock-hand {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 30px;
+  top: calc(50% - 225px);
+  left: calc(50% - 225px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .watch {
   border-radius: 10px;
 }
-.watch__hours {
-  top: -($watch-width/10);
-  left: -($watch-width/2);
-  width: $watch-width;
-  height: $hours-height;
-  background-color: $hours-color;
-  transform-origin: top center;
-  animation: full-rotate 120s infinite linear;
-}
 
 .watch__minutes {
-  top: -($watch-width/10);
-  left: -($watch-width/2);
+  position: absolute;
+  top: 228px;
   width: $watch-width;
   height: $minutes-height;
   background-color: $minutes-color;
   transform-origin: top center;
-  animation: full-rotate 6s infinite linear;
+  animation: full-rotate 30s infinite linear;
+}
+
+.watch__hours {
+  position: absolute;
+  top: 228px;
+  width: $watch-width;
+  height: $hours-height;
+  background-color: $hours-color;
+  transform-origin: top center;
+  animation: full-rotate 900s infinite linear;
 }
 
 .watch__circle {
-  top: -($watch-width + 15px) / 2;
-  left: -($watch-width + 15px) / 2;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
   width: $watch-width + 15px;
   height: $watch-width + 15px;
   background-color: $hours-color;
