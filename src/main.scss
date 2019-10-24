@@ -1,0 +1,68 @@
+body {
+  background-color: beige;
+}
+
+.clock {
+  margin: auto;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background-color: white;
+
+  &__line {
+    margin: -140px auto 0;
+    width: 13px;
+    height: 140px;
+    border-radius: 10px;
+    background-color: #c55258;
+    transform-origin: bottom;
+    animation: minutes 3600s;
+    animation-timing-function: linear;
+
+    &--second-hand {
+      margin-top: 0;
+      width: 9px;
+      height: 180px;
+      position: relative;
+      z-index: 1;
+      background-color: #488c9a;
+      animation: seconds 60s infinite;
+    }
+  }
+
+  &__center {
+    margin: -12px auto 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    background-color: #488c9a;
+  }
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(0);
+  }
+
+  @for $i from 1 through 60 {
+    #{$i * 1.666666666666667% - 0.25} {
+      transform: rotate(#{($i - 1) * 6deg});
+    }
+
+    #{$i * 1.666666666666667%} {
+      transform: rotate(#{$i * 6deg});
+    }
+  }
+}
+
+@keyframes minutes {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
