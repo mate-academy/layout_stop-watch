@@ -1,0 +1,76 @@
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background: url(images/time-bg.jpg);
+  background-size: cover;
+  width: 600px;
+  margin: 5% auto 0;
+  height: 600px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seconds {
+  width: $diametr-seconds;
+  height: $diametr-seconds;
+  background: $background-seconds;
+  border-radius: 50%;
+  position: relative;
+  animation-name: seconds;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  
+  &:before {
+    content: "";
+    display: block;
+    width: ($diametr-seconds)-($diametr-seconds)*0.5;
+    height: $height-seconds;
+    background-color: $background-seconds;
+    position: absolute;
+    bottom: ($diametr-seconds)-5px;
+    left: (($diametr-seconds)*0.5)*0.5;
+  }
+
+  @keyframes seconds {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+}
+
+.minutes {
+  width: $diametr-minutes;
+  height: $diametr-minutes;
+  background: $background-minutes;
+  border-radius: 50%;
+  position: absolute;
+  animation: minutes 60s  infinite;
+  animation-timing-function: linear;
+
+  &:before {
+    content: "";
+    display: block;
+    width: ($diametr-minutes)-($diametr-minutes)*0.5;
+    height: $height-minutes;
+    background-color: $background-minutes;
+    position: absolute;
+    bottom: ($diametr-minutes)-5px;
+    left: (($diametr-minutes)*0.5)*0.5;
+  }
+
+  @keyframes minutes {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+}
