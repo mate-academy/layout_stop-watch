@@ -18,13 +18,13 @@
 }
 
 .seconds {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   background: red;
   border-radius: 50%;
   position: relative;
   animation-name: seconds;
-  animation-duration: 1s;
+  animation-duration: 60s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -32,12 +32,12 @@
 .seconds:before {
   content: "";
   display: block;
-  width: 10px;
-  height: 150px;
+  width: 5px;
+  height: 290px;
   background-color: red;
   position: absolute;
-  bottom: 15px;
-  left: 5px;
+  bottom: 5px;
+  left: 2.5px;
 }
 @keyframes seconds {
   100% {
@@ -46,24 +46,24 @@
 }
 
 .minutes {
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   background: #001aff;
   border-radius: 50%;
   position: absolute;
-  animation: minutes 60s infinite;
+  animation: minutes 3600s infinite;
   animation-timing-function: linear;
 }
 
 .minutes:before {
   content: "";
   display: block;
-  width: 12.5px;
-  height: 100px;
+  width: 9px;
+  height: 290px;
   background-color: #001aff;
   position: absolute;
-  bottom: 20px;
-  left: 6.25px;
+  bottom: 13px;
+  left: 4.5px;
 }
 @keyframes minutes {
   100% {
