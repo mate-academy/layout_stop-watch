@@ -8,6 +8,9 @@ body {
   border-radius: 50%;
   background-color: black;
   position: relative;
+  margin: 20px 70px;
+  float: left;
+  shape-outside: circle();
 }
 
 .stopwatch:after {
@@ -42,7 +45,7 @@ body {
 }
 
 .stopwatch__minute-hand {
-  background-color: red;
+  background-color: yellow;
   border-radius: 3px;
   width: 6px;
   height: 100px;
@@ -66,12 +69,12 @@ body {
 }
 
 .stopwatch__number {
-  color: red;
+  color: yellow;
   font-family: "Bauhaus 93";
   font-size: 100px;
   position: absolute;
   opacity: 0.8;
-  text-shadow: 10px 10px 5px darkred;
+  text-shadow: 10px 10px 5px white;
 }
 
 .stopwatch__number-twelve {
@@ -92,4 +95,14 @@ body {
 .stopwatch__number-three {
   left: 285px;
   top: 130px;
+}
+
+.text {
+  font-size: 56px;
+  margin: 0;
+  font-family: "Arial Nova Light";
+}
+
+.text-decor {
+  background-color: yellow;
 }
