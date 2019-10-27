@@ -1,0 +1,47 @@
+@import "resets";
+@import "variables";
+@import "animation";
+
+.stop-watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $clock-width;
+  height: $clock-height;
+  margin: auto;
+
+  &__clock-circle {
+    $size: 30px;
+    width: $size;
+    height: $size;
+    border-radius: $size / 2;
+    position: absolute;
+    background-color: #5f98a8;
+  }
+
+  &__second-hand {
+    $height: 250px;
+    $width: $hand-width;
+    position: absolute;
+    top: $clock-height / 2 - $height;
+    border-radius: $width / 2;
+    width: $width;
+    height: $height;
+    background-color: #5f98a8;
+    transform-origin: $origin;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__minute-hand {
+    $height: 180px;
+    $width: $hand-width;
+    position: absolute;
+    top: $clock-height / 2 - $height;
+    border-radius: $width / 2;
+    width: $width;
+    height: $height;
+    background-color: #c25d5d;
+    transform-origin: $origin;
+    animation: rotate 3600s linear infinite;
+  }
+}
