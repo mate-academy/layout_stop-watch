@@ -1,0 +1,71 @@
+:root {
+  --minuteHandLen: 300px;
+  --hourHandLen: 200px;
+  --handsWidth: 10px;
+}
+
+.watch-container {
+  position: relative;
+  width: calc(var(--minuteHandLen) * 2);
+  height: calc(var(--minuteHandLen) * 2);
+  margin: auto;
+}
+
+.hour-container {
+  width: calc(var(--hourHandLen) * 2);
+  height: calc(var(--hourHandLen) * 2);
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: calc(var(--minuteHandLen) - var(--hourHandLen));
+  left: calc(var(--minuteHandLen) - var(--hourHandLen));
+  transform: translate(-50%, -50%);
+
+  animation: onecircle 300s linear infinite;
+}
+
+.hour-hand {
+  width: var(--handsWidth);
+  height: var(--hourHandLen);
+  background-color: #d15559;
+  border-radius: calc(var(--handsWidth) / 2);
+  margin: auto;
+}
+
+.minute-container {
+  background-color: transparent;
+  width: calc(var(--minuteHandLen) * 2);
+  height: calc(var(--minuteHandLen) * 2);
+  border-radius: 50%;
+
+  animation: onecircle 60s linear infinite;
+}
+
+.minute-hand {
+  width: var(--handsWidth);
+  height: var(--minuteHandLen);
+  background-color: #4b9aaa;
+  border-radius: calc(var(--handsWidth) / 2);
+  margin: auto;
+}
+
+.watchcenter {
+  height: calc(var(--handsWidth) * 2);
+  width: calc(var(--handsWidth) * 2);
+  border-radius: 50%;
+  background-color: #4b9aaa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes onecircle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
