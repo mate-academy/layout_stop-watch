@@ -1,11 +1,13 @@
 .wrapper-clock {
-  width: 15em;
-  height: 15em;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  border: 0.1em dotted black;
-  background: whitesmoke;
-  margin: 2em auto;
+  border: 5px dotted black;
+  margin: 100px auto;
   position: relative;
+  background-image: url("img/1200px-Coordinate_with_Origin.svg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .element__minute,
@@ -16,46 +18,37 @@
 }
 
 .element__minute {
-  background: orangered;
-  border-radius: 0.1em;
-  width: 0.2em;
-  height: 40%;
-  left: 7.4em;
-  top: 10%;
+  width: 6px;
+  height: 100px;
+  left: 147px;
+  top: 50px;
+  background: green;
+  border-radius: 2px;
   z-index: 0;
-  animation: move_min 3600s linear infinite;
+  animation: move_clock 3600s linear infinite;
 }
 
 .element__second {
-  width: 0.1em;
-  height: 45%;
+  height: 140px;
   background: red;
-  left: 7.45em;
-  top: 5%;
   z-index: 0;
-  animation: move_sec 60s linear infinite;
+  animation: move_clock 60s linear infinite;
+  width: 4px;
+  left: 148px;
+  top: 10px;
 }
 
 .element__point {
-  width: 1em;
-  height: 1em;
-  background-color: black;
-  left: 7em;
-  top: 7em;
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  left: 140px;
+  top: 140px;
   border-radius: 50%;
   z-index: 1;
 }
 
-@keyframes move_min {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes move_sec {
+@keyframes move_clock {
   from {
     transform: rotate(0deg);
   }
