@@ -1,0 +1,48 @@
+@import "variables";
+@import "animations";
+
+.watch-block {
+  position: absolute;
+  top: calc(50% - #{$block_size} / 2);
+  left: calc(50% - #{$block_size} / 2);
+  width: $block_size;
+  height: $block_size;
+  border: 2px solid #747474;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 1px rgba(194,194,194,1);
+}
+
+.watch {
+  border-radius: 10px;
+}
+
+.watch__minutes {
+  position: absolute;
+  left: calc(50% - #{$watch_width} / 2);
+  width: $watch_width;
+  height: $minutes_height;
+  background-color: $minutes_color;
+  transform-origin: bottom center;
+  animation: full-rotate 60s infinite linear;
+}
+
+.watch__hours {
+  position: absolute;
+  top: calc(50% - #{$hours_height});
+  left: calc(50% - #{$watch_width} / 2);
+  width: $watch_width;
+  height: $hours_height;
+  background-color: $hours_color;
+  transform-origin: bottom center;
+  animation: full-rotate 3600s infinite linear;
+}
+
+.watch__circle {
+  position: absolute;
+  top: calc(50% - #{$circle_diameter} / 5);
+  left: calc(50% - #{$circle_diameter} / 2);
+  width: $circle_diameter;
+  height: $circle_diameter;
+  background-color: $hours_color;
+  border-radius: 50%;
+}
