@@ -13,6 +13,7 @@ body {
 
 .clock__line {
   margin: 0 auto;
+  position: relative;
   border-radius: 10px;
   transform-origin: bottom;
   animation-timing-function: linear;
@@ -21,7 +22,6 @@ body {
 .clock__line--minute-hand {
   width: 13px;
   height: 140px;
-  position: relative;
   bottom: 40%;
   background-color: #c55258;
   animation: minutes 3600s;
@@ -30,7 +30,6 @@ body {
 .clock__line--second-hand {
   width: 9px;
   height: 180px;
-  position: relative;
   z-index: 1;
   background-color: #488c9a;
   animation: seconds 60s infinite;

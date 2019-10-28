@@ -12,6 +12,7 @@ body {
 
   &__line {
     margin: 0 auto;
+    position: relative;
     border-radius: 10px;
     transform-origin: bottom;
     animation-timing-function: linear;
@@ -19,7 +20,6 @@ body {
     &--minute-hand {
       width: 13px;
       height: 140px;
-      position: relative;
       bottom: 40%;
       background-color: #c55258;
       animation: minutes 3600s;
@@ -28,7 +28,6 @@ body {
     &--second-hand {
       width: 9px;
       height: 180px;
-      position: relative;
       z-index: 1;
       background-color: #488c9a;
       animation: seconds 60s infinite;
