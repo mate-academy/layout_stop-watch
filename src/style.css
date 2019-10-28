@@ -29,6 +29,8 @@
   left: 195px;
   right: 195px;
   border-radius: 5px;
+  transform-origin: bottom center;
+  transform: rotate(0);
 }
 
 .clock__arrows--sec {
@@ -43,39 +45,15 @@
 }
 
 .anim-clock-sec {
-  animation-name: clock-sec;
-  animation-duration: 60s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes clock-sec {
-  from {
-    transform: rotate(0);
-    transform-origin: bottom center;
-
-  }
-  to {
-    transform: rotate(360deg);
-    transform-origin: bottom center;
-  }
+  animation: clock 60s linear infinite;
 }
 
 .anim-clock-min {
-  animation-name: clock-min;
-  animation-duration: 3600s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation: clock 3600s linear infinite;
 }
 
-@keyframes clock-min {
-  from {
-    transform: rotate(0);
-    transform-origin: bottom;
-  }
-  
+@keyframes clock {
   to {
     transform: rotate(360deg);
-    transform-origin: bottom;
   }
 }
