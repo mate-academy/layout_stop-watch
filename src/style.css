@@ -1,0 +1,76 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-image: url("img/mikki.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 3px solid #000;
+  border-radius: 50%;
+}
+
+.stopwatch__hand {
+  width: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 2%;
+  transform-origin: bottom center;
+  animation-timing-function: linear;
+  animation-delay: 0.8s;
+}
+
+.minute-hand {
+  height: 170px;
+  top: 7%;
+  left: 48.8%;
+  background-color: #d15559;
+  z-index: 1;
+  animation-name: minute;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+}
+
+.second-hand {
+  height: 190px;
+  left: 48.8%;
+  background-color: #4b99aa;
+  z-index: 2;
+  animation-name: second;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+
+.second-hand:after {
+  content: "";
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  bottom: -5%;
+  left: -60%;
+  background-color: #4b99aa;
+  border-radius: 50%;
+}
+
+@keyframes second {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minute {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
