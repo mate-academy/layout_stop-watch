@@ -8,6 +8,11 @@
   position: relative;
   width: 400px;
   height: 400px;
+  background-image: url("img/mikki.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 2px solid #000;
 }
 
 .stopwatch__hand {
@@ -24,7 +29,7 @@
   height: 40%;
   background-color: #d15559;
   z-index: 1;
-  animation-name: minute;
+  animation-name: rotate;
   animation-duration: 3600s;
   animation-iteration-count: infinite;
 }
@@ -33,7 +38,7 @@
   height: 48%;
   background-color: #4b99aa;
   z-index: 2;
-  animation-name: second;
+  animation-name: rotate;
   animation-duration: 60s;
   animation-iteration-count: infinite;
 }
@@ -49,7 +54,7 @@
   border-radius: 50%;
 }
 
-@keyframes second {
+@keyframes rotate {
   0% {
     transform: rotate(0deg);
   }
@@ -58,11 +63,11 @@
   }
 }
 
-@keyframes minute {
+/*@keyframes minute {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
   }
-}
+}*/
