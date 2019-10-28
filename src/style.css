@@ -7,22 +7,27 @@ body {
   width: 360px;
   height: 360px;
   border-radius: 50%;
+  position: relative;
   background-color: white;
 }
 
 .clock__line {
-  margin: -140px auto 0;
-  width: 13px;
-  height: 140px;
+  margin: 0 auto;
   border-radius: 10px;
-  background-color: #c55258;
   transform-origin: bottom;
-  animation: minutes 3600s;
   animation-timing-function: linear;
 }
 
+.clock__line--minute-hand {
+  width: 13px;
+  height: 140px;
+  position: relative;
+  bottom: 40%;
+  background-color: #c55258;
+  animation: minutes 3600s;
+}
+
 .clock__line--second-hand {
-  margin-top: 0;
   width: 9px;
   height: 180px;
   position: relative;
@@ -32,12 +37,15 @@ body {
 }
 
 .clock__center {
-  margin: -12px auto 0;
+  margin: auto;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: #488c9a;
 }
 
