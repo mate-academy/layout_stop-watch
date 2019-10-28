@@ -1,0 +1,59 @@
+.clock {
+  height: 700px;
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: url("../images/8bb.png") no-repeat;
+  background-size: contain;
+}
+.clock__center {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: blue;
+  z-index: 1;
+}
+.clock__mechanism {
+  transform: translate(-17px, -75px);
+}
+.clock__hour {
+  width: 10px;
+  height: 150px;
+  background-color: #27dcba;
+  border-radius: 5px;
+  transform-origin: bottom;
+  animation: clock-animation linear 86400s infinite;
+}
+.clock__second {
+  position: relative;
+  bottom: 100px;
+  width: 10px;
+  height: 300px;
+  border-radius: 5px;
+  background-color: blue;
+  transform-origin: bottom;
+  animation: clock-animation linear 60s infinite;
+}
+.clock__min {
+  position: relative;
+  bottom: 50px;
+  width: 10px;
+  height: 200px;
+  border-radius: 5px;
+  background-color: darkred;
+  transform-origin: bottom;
+  animation: clock-animation linear 3600s infinite;
+}
+
+@keyframes clock-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=clock.css.map */
