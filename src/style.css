@@ -1,0 +1,61 @@
+body {
+  background-color: beige;
+}
+
+.clock {
+  margin: auto;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  position: relative;
+  background-color: white;
+}
+
+.clock__line {
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+  transform-origin: bottom;
+  animation-timing-function: linear;
+}
+
+.clock__line--minute-hand {
+  width: 13px;
+  height: 140px;
+  bottom: 40%;
+  background-color: #c55258;
+  animation: minutes 3600s steps(60, end);
+}
+
+.clock__line--second-hand {
+  width: 9px;
+  height: 180px;
+  z-index: 1;
+  background-color: #488c9a;
+  animation: seconds 60s steps(60, end) infinite;
+}
+
+.clock__center {
+  margin: auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #488c9a;
+}
+
+@keyframes seconds {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minutes {
+  to {
+    transform: rotate(360deg);
+  }
+}
