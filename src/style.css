@@ -7,44 +7,40 @@
   }
 }
 
-.center {
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.container__center {
   width: 15px;
   height: 15px;
   background-color: blue;
   border-radius: 50%;
   position: absolute;
-  top: 250px;
-  left: 500px;
+  align-self: flex-end;
+  margin-top: 5px;
 }
 
-.minute {
+.container__minute {
+  position: absolute;
+  align-self: flex-end;
   width: 10px;
   height: 110px;
   background-color: red;
-  border-radius: 3px;
-  position: absolute;
-  top: 150px;
-  left: 502px;
+  border-radius: 5px;
   transform-origin: 50% 100%;
-  animation-name: time;
-  animation-duration: 3600s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-  animation-timing-function: linear;
+  animation: time 3600s linear normal infinite;
 }
 
-.secunde {
+.container__secunde {
   width: 8px;
   height: 210px;
   background-color: blue;
-  border-radius: 3px;
-  position: absolute;
-  top: 50px;
-  left: 503px;
+  border-radius: 5px;
   transform-origin: 50% 100%;
-  animation-name: time;
-  animation-duration: 60s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-  animation-timing-function: linear;
+  animation: time 60s linear normal infinite;
 }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,44 @@
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &__center {
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    align-self: flex-end;
+    margin-top: 5px;
+  }
+
+  &__minute {
+    position: absolute;
+    align-self: flex-end;
+    width: 10px;
+    height: 110px;
+    background-color: red;
+    border-radius: 5px;
+    transform-origin: 50% 100%;
+    animation: time 3600s linear normal infinite;
+  }
+
+  &__secunde {
+    width: 8px;
+    height: 210px;
+    background-color: blue;
+    border-radius: 5px;
+    transform-origin: 50% 100%;
+    animation: time 60s linear normal infinite;
+  }
+}
