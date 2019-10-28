@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+}
+
+.heading {
+  visibility: hidden;
+  margin: 0;
+  height: 0;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  position: relative;
+}
+
+.watch__minute--hand {
+  height: 180px;
+  width: 10px;
+  background-color: rgb(209,85,89);
+  border-radius: 8px;
+  position: absolute;
+  margin-top: 140px;
+  animation: animated_cycle 3600s infinite linear;
+  transform-origin: bottom center;
+}
+
+.watch__second--hand {
+  height: 280px;
+  width: 8px;
+  background-color: rgb(60,149,187);
+  border-radius: 12px;
+  position: absolute;
+  margin-top: 89px;
+  animation: animated_cycle 60s infinite linear;
+  transform-origin: bottom center;
+}
+
+.watch__intersection--point {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgb(60,149,187);
+  position: absolute;
+  margin-top: 230px;
+}
+
+@keyframes animated_cycle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
