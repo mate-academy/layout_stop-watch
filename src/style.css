@@ -1,21 +1,18 @@
 body {
-  margin: 20px 0;
+  margin: 0;
 }
 
 .stopwatch {
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background-color: black;
   position: relative;
-  margin: 20px 70px;
-  float: left;
-  shape-outside: circle();
+  margin: auto;
 }
 
 .stopwatch:after {
   content: "";
-  background-color: white;
+  background-color: #4b9aaa;
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -35,23 +32,19 @@ body {
 }
 
 .stopwatch__second-hand {
-  background-color: white;
+  background-color: #4b9aaa;
   border-radius: 3px;
-  width: 2px;
+  width: 6px;
   height: 180px;
-  position: absolute;
-  left: 199px;
-  top: 20px;
+  transform: translate(197px, 20px);
 }
 
 .stopwatch__minute-hand {
-  background-color: yellow;
+  background-color: #d15559;
   border-radius: 3px;
   width: 6px;
   height: 100px;
-  position: absolute;
-  left: 197px;
-  top: 100px;
+  transform: translate(197px, 100px);
 }
 
 @keyframes rotate {
@@ -66,43 +59,4 @@ body {
 
 .stopwatch__minute-hand-box {
   animation: rotate 3600s infinite steps(60);
-}
-
-.stopwatch__number {
-  color: yellow;
-  font-family: "Bauhaus 93";
-  font-size: 100px;
-  position: absolute;
-  opacity: 0.9;
-  text-shadow: 10px 10px 5px white;
-}
-
-.stopwatch__number-twelve {
-  left: 150px;
-  top: -20px;
-}
-
-.stopwatch__number-six {
-  left: 160px;
-  top: 270px;
-}
-
-.stopwatch__number-nine {
-  left: 15px;
-  top: 130px;
-}
-
-.stopwatch__number-three {
-  left: 285px;
-  top: 130px;
-}
-
-.text {
-  font-size: 56px;
-  margin: 0;
-  font-family: "Arial Nova Light";
-}
-
-.text-decor {
-  background-color: yellow;
 }
