@@ -1,3 +1,5 @@
+@import "variables_mixins";
+
 body {
   margin: 0;
 }
@@ -7,14 +9,12 @@ body {
   align-items: center;
   justify-content: center;
   margin: auto;
-  width: 500px;
-  height: 500px;
+  @include w-h($clockWidth, $clockWidth);
 }
 
 .clock__center {
-  width: 25px;
-  height: 25px;
-  background-color: #4b9aaa;
+  @include w-h($centerWidth, $centerWidth);
+  background-color: $colorCenter;
   border-radius: 50%;
   margin: auto;
 }
@@ -29,16 +29,15 @@ body {
 }
 
 .clock__arrow--min::after {
-  width: 10px;
-  height: 150px;
-  background-color: #d15559;
+  @include w-h($arrowWidth, $minHeight);
+  background-color: $colorMin;
   content: "";
   display: block;
   border-radius: 10px;
   position: absolute;
   bottom: 0;
   left: 0;
-  transform: translate(-5px, 5px);
+  transform: translate(-$arrowTranslate, $arrowTranslate);
 }
 
 .clock__arrow--sec {
@@ -46,16 +45,15 @@ body {
 }
 
 .clock__arrow--sec::after {
-  width: 10px;
-  height: 225px;
-  background-color: #4b9aaa;
+  @include w-h($arrowWidth, $secHeight);
+  background-color: $colorSec;
   content: "";
   display: block;
   border-radius: 10px;
   position: absolute;
   bottom: 0;
   left: 0;
-  transform: translate(-5px, 5px);
+  transform: translate(-$arrowTranslate, $arrowTranslate);
 }
 
 @keyframes clock-rotate {
@@ -66,5 +64,3 @@ body {
     transform: rotate(360deg);
   }
 }
-
-/*# sourceMappingURL=style.css.map */
