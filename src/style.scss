@@ -32,13 +32,13 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 
-  &:before {
+  &:after {
     content: "";
     display: block;
     width: ($diametr-seconds)-($diametr-seconds)*0.5;
     height: $height-seconds;
     background-color: $background-seconds;
-    transform: translate((($diametr-seconds)*0.5)*0.5, ($diametr-seconds)-5px)
+    transform: translate((($diametr-seconds)*0.5)*0.5, (($diametr-seconds)-5px)-$height-seconds)
   }
 
   @keyframes seconds {
@@ -58,13 +58,13 @@ body {
   animation-timing-function: linear;
   position: absolute;
 
-  &:before {
+  &:after {
     content: "";
     display: block;
     width: ($diametr-minutes)-($diametr-minutes)*0.5;
     height: $height-minutes;
     background-color: $background-minutes;
-    transform: translate((($diametr-minutes)*0.5)*0.5, ($diametr-minutes)-5px);
+    transform: translate((($diametr-minutes)*0.5)*0.5, (($diametr-minutes)-5px)-$height-minutes);
   }
 
   @keyframes minutes {

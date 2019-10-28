@@ -33,13 +33,13 @@ body {
   animation-timing-function: linear;
 }
 
-.seconds:before {
+.seconds:after {
   content: "";
   display: block;
   width: 5px;
   height: 290px;
   background-color: #130e0e;
-  transform: translate(2.5px, 5px);
+  transform: translate(2.5px, -285px);
 }
 @keyframes seconds {
   100% {
@@ -57,13 +57,13 @@ body {
   position: absolute;
 }
 
-.minutes:before {
+.minutes:after {
   content: "";
   display: block;
   width: 9px;
   height: 290px;
   background-color: #05082b;
-  transform: translate(4.5px, 13px);
+  transform: translate(4.5px, -277px);
 }
 @keyframes minutes {
   100% {
