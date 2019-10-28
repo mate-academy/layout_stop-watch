@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  visibility: hidden;
+  font-size: 0;
+}
+
+.watch {
+  position: relative;
+  height: 620px;
+  width: 620px;
+  border: 6px dashed black;
+  background-color: #bbb;
+  border-radius: 50%;
+}
+
+.watch__hand {
+  position: absolute;
+  top: 127px;
+  left: 305px;
+  height: 183px;
+  width: 10px;
+  border-radius: 5px;
+  background-color: #d15559;
+  animation: watch 3600s linear 1s infinite;
+  transform-origin: bottom center;
+}
+
+.watch__hand--seconds {
+  height: 300px;
+  top: 10px;
+  background-color: #4b9aaa;
+  animation: watch 60s steps(60) 1s infinite;
+}
+
+.watch__center {
+  position: absolute;
+  top: 295px;
+  left: 295px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #4b9aaa;
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,49 @@
+@import "variables";
+
+.watch {
+  position: relative;
+  height: $watchSize;
+  width: $watchSize;
+  border: $borderSize dashed black;
+  background-color: #bbb;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    top: $watchSize / 2 - $minHandHeight;
+    left: $watchSize /2 - $handWidth / 2;
+    height: $minHandHeight;
+    width: $handWidth;
+    border-radius: $handWidth / 2;
+    background-color: $minColor;
+    animation: watch 3600s linear 1s infinite;
+    transform-origin: bottom center;
+
+    &--seconds {
+      height: $secHandHeight;
+      top: $watchSize / 2 - $secHandHeight;
+      background-color: $secColor;
+      animation: watch 60s steps(60) 1s infinite;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    top: $watchSize / 2 - $centerSize / 2;
+    left: $watchSize /2 - $centerSize / 2;
+    height: $centerSize;
+    width: $centerSize;
+    border-radius: 50%;
+    background-color: $secColor;
+  }
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
