@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+}
+
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+  animation-name: change-bg;
+  animation-duration: 15s;
+}
+
+.stop-watch__hand {
+  position: relative;
+  border: 1px solid rgb(206, 201, 201);
+  border-radius: 10px;
+  transform-origin: bottom center;
+}
+
+.stop-watch__hand--minutes {
+  width: 10px;
+  height: 300px;
+  background-color: rgb(208, 85, 90);
+  bottom: 149px;
+  left: 32px;
+  animation: rotate-hands 3600s linear;
+  animation-fill-mode: forwards;
+}
+
+.stop-watch__hand--seconds {
+  width: 8px;
+  height: 446px;
+  background-color: rgb(75, 154, 170);
+  bottom: 222px;
+  left: 21px;
+  z-index: 1;
+  animation: rotate-hands 60s infinite linear;
+}
+
+.stop-watch__center {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgb(206, 201, 201);
+  border-radius: 50%;
+  background-color: rgb(75, 154, 170);
+  z-index: 1;
+}
+
+@keyframes change-bg {
+  0% {
+    background-color: rgb(255, 255, 255);
+  }
+  50% {
+    background-color: rgb(0, 0, 0);
+  }
+  100% {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@keyframes rotate-hands {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
