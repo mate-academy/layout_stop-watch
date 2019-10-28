@@ -1,0 +1,65 @@
+.wrapper-clock {
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  border: 0.1em dotted black;
+  background: whitesmoke;
+  margin: 2em auto;
+  position: relative;
+}
+
+.element__minute,
+.element__second,
+.element__point {
+  position: absolute;
+  transform-origin: bottom center;
+}
+
+.element__minute {
+  background: orangered;
+  border-radius: 0.1em;
+  width: 0.2em;
+  height: 40%;
+  left: 7.4em;
+  top: 10%;
+  z-index: 0;
+  animation: move_min 3600s linear infinite;
+}
+
+.element__second {
+  width: 0.1em;
+  height: 45%;
+  background: red;
+  left: 7.45em;
+  top: 5%;
+  z-index: 0;
+  animation: move_sec 60s linear infinite;
+}
+
+.element__point {
+  width: 1em;
+  height: 1em;
+  background-color: black;
+  left: 7em;
+  top: 7em;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+@keyframes move_min {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move_sec {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
