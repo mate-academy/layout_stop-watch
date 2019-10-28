@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 60px;
+  position: relative;
 }
 
 .clock__center {
@@ -15,8 +15,6 @@
   width: 25px;
   border-radius: 50%;
   background-color: #4b9aaa;
-  display: flex;
-  margin: auto;
 }
 
 .clock__minute {
@@ -26,9 +24,8 @@
   border-radius: 4px;
   transform-origin: bottom center;
   animation: clock 3600s infinite linear;
-  position: relative;
-  right: 1px;
-  bottom: 180px;
+  position: absolute;
+  bottom: 50%;
   z-index: -1;
 }
 
@@ -39,9 +36,8 @@
   border-radius: 4px;
   transform-origin: bottom center;
   animation: clock 60s infinite linear;
-  position: relative;
-  left: 8px;
-  bottom: 220px;
+  position: absolute;
+  bottom: 50%;
 }
 
 @keyframes clock {
