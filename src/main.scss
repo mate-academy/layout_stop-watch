@@ -1,5 +1,9 @@
 $color1: #4b9aaa;
 $color2: #d15559;
+$coreR: 10px;
+$minuteLength: 130px;
+$secLength: 180px;
+$handWidth: 8px;
 
 .clock {
   height: 400px;
@@ -11,8 +15,8 @@ $color2: #d15559;
 }
 
 .clock__core {
-  height: 20px;
-  width: 20px;
+  height: $coreR*2;
+  width: $coreR*2;
   border-radius: 50%;
   background-color: $color1;
   display: flex;
@@ -20,27 +24,27 @@ $color2: #d15559;
 }
 
 .clock__seconds {
-  height: 180px;
-  width: 8px;
+  height: $secLength;
+  width: $handWidth;
   background-color: $color1;
   border-radius: 3px;
   transform-origin: bottom center;
   animation: clock 60s infinite linear;
   position: relative;
-  left: 6px;
-  bottom: 170px;
+  left: ($coreR * 2 - $handWidth)/2;
+  bottom: $secLength - $coreR;
 }
 
 .clock__minutes {
-  height: 130px;
-  width: 8px;
+  height: $minuteLength;
+  width: $handWidth;
   background-color: $color2;
   border-radius: 3px;
   transform-origin: bottom center;
   animation: clock 3600s infinite linear;
   position: relative;
-  right: 2px;
-  bottom: 120px;
+  left: ($coreR * 2 - $handWidth)/2 - $handWidth;
+  bottom: $minuteLength - $coreR;
   z-index: -1;
 }
 
