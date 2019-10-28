@@ -4,7 +4,10 @@
   border: 1px dashed #4b9aaa;
   display: flex;
   margin: auto;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
+  position: relative;
 }
 
 .clock__core {
@@ -12,32 +15,28 @@
   width: 20px;
   border-radius: 50%;
   background-color: #4b9aaa;
-  display: flex;
-  margin: auto;
 }
 
 .clock__seconds {
   height: 180px;
   width: 8px;
   background-color: #4b9aaa;
-  border-radius: 3px;
+  border-radius: 4px;
   transform-origin: bottom center;
   animation: clock 60s infinite linear;
-  position: relative;
-  left: 6px;
-  bottom: 170px;
+  position: absolute;
+  bottom: 50%;
 }
 
 .clock__minutes {
-  height: 130px;
+  height: 132px;
   width: 8px;
   background-color: #d15559;
-  border-radius: 3px;
+  border-radius: 4px;
   transform-origin: bottom center;
   animation: clock 3600s infinite linear;
-  position: relative;
-  left: -2px;
-  bottom: 120px;
+  position: absolute;
+  bottom: 50%;
   z-index: -1;
 }
 

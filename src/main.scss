@@ -1,50 +1,46 @@
 $color1: #4b9aaa;
 $color2: #d15559;
-$coreR: 10px;
-$minuteLength: 130px;
-$secLength: 180px;
-$handWidth: 8px;
+$watchSize: 400px;
 
 .clock {
-  height: 400px;
-  width: 400px;
+  height: $watchSize;
+  width: $watchSize;
   border: 1px dashed $color1;
   display: flex;
   margin: auto;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
+  position: relative;
 }
 
 .clock__core {
-  height: $coreR*2;
-  width: $coreR*2;
+  height: $watchSize/20;
+  width: $watchSize/20;
   border-radius: 50%;
   background-color: $color1;
-  display: flex;
-  margin: auto;
 }
 
 .clock__seconds {
-  height: $secLength;
-  width: $handWidth;
+  height: 0.45 * $watchSize;
+  width: 0.02 * $watchSize;
   background-color: $color1;
-  border-radius: 3px;
+  border-radius: 0.02 * $watchSize/2;
   transform-origin: bottom center;
   animation: clock 60s infinite linear;
-  position: relative;
-  left: ($coreR * 2 - $handWidth)/2;
-  bottom: $secLength - $coreR;
+  position: absolute;
+  bottom: 50%;
 }
 
 .clock__minutes {
-  height: $minuteLength;
-  width: $handWidth;
+  height: 0.33 * $watchSize;
+  width: 0.02 * $watchSize;
   background-color: $color2;
-  border-radius: 3px;
+  border-radius: 0.02 * $watchSize/2;
   transform-origin: bottom center;
   animation: clock 3600s infinite linear;
-  position: relative;
-  left: ($coreR * 2 - $handWidth)/2 - $handWidth;
-  bottom: $minuteLength - $coreR;
+  position: absolute;
+  bottom: 50%;
   z-index: -1;
 }
 
