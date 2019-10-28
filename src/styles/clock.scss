@@ -1,0 +1,68 @@
+$height_clock: 700px;
+$width_clock: 700px;
+$height_center: 20px;
+$width_center: 20px;
+
+.clock {
+  height: $height_clock;
+  width: $width_clock;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: url("../images/8bb.png") no-repeat;
+  background-size: contain;
+
+  &__center {
+    width: $height_center;
+    height: $width_center;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 255);
+    z-index: 1;
+  }
+
+  &__mechanism {
+    transform: translate(-13px, -75px);
+  }
+
+  &__hour {
+    width: 10px;
+    height: 150px;
+    background-color: #27dcba;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: clock-animation  linear 86400s infinite;
+  }
+
+  &__second {
+    position: relative;
+    bottom: 100px;
+    width: 10px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 255);
+    transform-origin: bottom;
+    animation: clock-animation linear 60s infinite;
+  }
+
+  &__min {
+    position: relative;
+    bottom: 50px;
+    right: 2px;
+    width: 10px;
+    height: 200px;
+    border-radius: 5px;
+    background-color: rgb(139, 0, 0);
+    transform-origin: bottom;
+    animation: clock-animation linear 3600s infinite;
+  }
+}
+
+@keyframes clock-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
