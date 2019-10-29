@@ -24,8 +24,8 @@
   background: #60f;
   margin: 0 50%;
   position: relative;
-  bottom: -2px;
-  left: 6px;
+  bottom: -3px;
+  left: 5px;
   animation: tik_sec 60s infinite;
   animation-timing-function: linear;
 }
@@ -38,7 +38,7 @@
   margin: 50%;
   position: absolute;
   left: 4px;
-  bottom: -4px;
+  bottom: -6px;
   z-index: 1;
   animation: tik_sec 3600s infinite;
   animation-timing-function: steps(60, end);
@@ -47,21 +47,21 @@
 @keyframes tik_sec {
   from {
     transform: rotate(0deg);
-    transform-origin: bottom left;
+    transform-origin: bottom;
   }
   to {
     transform: rotate(360deg);
-    transform-origin: bottom left;
+    transform-origin: bottom;
   }
 }
 
 @keyframes tik_min {
   from {
     transform: rotate(0deg);
-    transform-origin: bottom left;
+    transform-origin: bottom;
   }
   to {
     transform: rotate(360deg);
-    transform-origin: bottom left;
+    transform-origin: bottom;
   }
 }
