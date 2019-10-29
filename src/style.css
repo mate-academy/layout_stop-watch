@@ -17,7 +17,7 @@ body {
 .clock:before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: calc(50% - 10px);
   left: 50%;
   width: 40%;
   height: 20px;
@@ -30,12 +30,12 @@ body {
 .clock:after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: calc(50% - 5px);
   left: 50%;
   width: 45%;
   height: 10px;
   background: blue;
-  border-radius: 3px;
+  border-radius: 5px;
   animation: clock__animation 60s linear infinite;
   transform-origin: left;
 }
@@ -47,7 +47,7 @@ body {
   transform: translate(-50%, -50%);
   width: 10px;
   height: 10px;
-  border: 15px solid blue;
+  border: 10px solid blue;
   background: blue;
   border-radius: 50%;
 }
