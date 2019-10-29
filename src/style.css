@@ -1,0 +1,49 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.clock__arrow {
+  width: 10px;
+  border-radius: 10px;
+  position: relative;
+  transform-origin: bottom;
+}
+
+.clock__arrow--minutes {
+  height: 200px;
+  background-color: #d15559;
+  bottom: 100px;
+  left: 10px;
+  animation-name: rotate;
+  animation-duration: 3600s;
+}
+
+.clock__arrow--seconds {
+  height: 250px;
+  background-color: #4b99aa;
+  bottom: 125px;
+  animation-name: rotate;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+
+.clock__center {
+  width: 20px;
+  height: 20px;
+  background-color: #4b99aa;
+  border-radius: 50%;
+  position: relative;
+  left: -15px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
