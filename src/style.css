@@ -1,0 +1,67 @@
+.watch {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.wach__main {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  margin: 50%;
+  right: -27px;
+  top: -10px;
+  z-index: 2;
+}
+
+.watch__sec {
+  width: 8px;
+  height: 305px;
+  border-radius: 4px;
+  background: #60f;
+  margin: 0 50%;
+  position: relative;
+  bottom: -3px;
+  left: 5px;
+  animation: tik_sec 60s infinite;
+  animation-timing-function: linear;
+}
+
+.watch__min {
+  width: 11px;
+  height: 200px;
+  border-radius: 4px;
+  background: #930;
+  margin: 50%;
+  position: absolute;
+  left: 4px;
+  bottom: -6px;
+  z-index: 1;
+  animation: tik_sec 3600s infinite;
+  animation-timing-function: steps(60, end);
+}
+
+@keyframes tik_sec {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes tik_min {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
