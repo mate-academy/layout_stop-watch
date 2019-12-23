@@ -20,37 +20,38 @@ body {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  box-shadow: inset 0 0 70px 10px #b6d3f6;
+  box-shadow: inset 0 0 40px 5px #b6d3f6;
   position: relative;
 }
 
 .clock::after {
   content: "";
   position: absolute;
-  width: 15px;
-  height: 15px;
-  transform: translateX(-50%) translateY(50%);
+  width: 5px;
+  height: 5px;
+  transform: translate(-50%);
   bottom: 50%;
   left: 50%;
   border-radius: 50%;
-  background-color: #eb8fb9;
-  box-shadow: 0 0 15px 20px #eb8fb9;
+  background-color: #b6d3f6;
+  box-shadow: 0 0 15px 15px #b6d3f6;
 }
 
 .arrow {
   position: absolute;
   bottom: 50%;
   right: 50%;
-  transform: translateX(50%) translateY(-50%);
-  transform-origin: bottom;
+  transform: translateX(50%);
+  transform-origin: center bottom;
 }
 
 .clock__hours {
-  width: 8px;
+  width: 9px;
   height: 150px;
   border-radius: 10px;
   background-color: #b6d3f6;
   animation: hour 43200s linear infinite forwards;
+  margin-right: -2px;
 }
 
 .clock__minutes {
@@ -62,7 +63,7 @@ body {
 }
 
 .clock__seconds {
-  width: 2px;
+  width: 1px;
   height: 250px;
   border-radius: 5px;
   background-color: #6fa8ed;
