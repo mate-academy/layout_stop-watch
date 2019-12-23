@@ -10,7 +10,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle, #fad9e8 27%, #b6d3f6 100%);
+  background: radial-gradient(circle, rgba(250,217,232,1) 27%,
+  rgba(182,211,246,1) 100%);
   width: 100vw;
   height: 100vh;
 }
@@ -75,10 +76,12 @@ body {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 @media (max-width: 630px) {
   .clock {
     width: 400px;
@@ -89,15 +92,13 @@ body {
     width: 7px;
     height: 75px;
   }
-
+  
   .clock__minutes {
     width: 4px;
     height: 125px;
   }
-
+  
   .clock__seconds {
     height: 175px;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
