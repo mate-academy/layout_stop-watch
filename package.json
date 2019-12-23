@@ -9,7 +9,8 @@
     "postinstall": "git checkout -b develop",
     "publish": "bash ./config/hooks/deploy.sh",
     "start": "node server.js",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "scss": "node-sass --watch scss -o css"
   },
   "keywords": [],
   "author": "Mate Academy",
@@ -54,5 +55,8 @@
       "post-commit": "git update-index --again",
       "pre-commit": "lint-staged"
     }
+  },
+  "dependencies": {
+    "node-sass": "^4.13.0"
   }
 }

@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.clock__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #fad9e8 27%, #b6d3f6 100%);
+  width: 100vw;
+  height: 100vh;
+}
+
+.clock__inner {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 40px 5px #b6d3f6;
+  position: relative;
+}
+
+.clock__inner::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  transform: translate(-50%);
+  bottom: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: #b6d3f6;
+  box-shadow: 0 0 15px 15px #b6d3f6;
+}
+
+.clock__arrow {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  border-radius: 10px;
+  transform: translateX(50%);
+  transform-origin: center bottom;
+  animation-name: time;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.clock__arrow-hours {
+  width: 9px;
+  height: 150px;
+  background-color: #b6d3f6;
+  animation-duration: 43200s;
+  margin-right: -2px;
+}
+
+.clock__arrow-minutes {
+  width: 5px;
+  height: 200px;
+  background-color: #eb8fb9;
+  animation-duration: 3600s;
+}
+
+.clock__arrow-seconds {
+  width: 1px;
+  height: 250px;
+  background-color: #6fa8ed;
+  animation-duration: 60s;
+}
+
+@keyframes time {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
