@@ -1,0 +1,70 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px 2px gold;
+}
+
+.watch__second {
+  position: absolute;
+  width: 1px;
+  height: 250px;
+  border-radius: 5px;
+  background-color: #9DAB86;
+  top: 50px;
+  left: 300px;
+  animation: time 60s linear infinite forwards;
+}
+
+.watch__minute {
+  position: absolute;
+  width: 4px;
+  height: 220px;
+  border-radius: 2px;
+  background-color: #C9753D;
+  top: 80px;
+  left: 298px;
+  animation: time 3600s linear infinite forwards;
+}
+
+.watch__hour {
+  position: absolute;
+  width: 6px;
+  height: 180px;
+  border-radius: 5px;
+  background-color: #EB8242;
+  top: 120px;
+  left: 297px;
+  z-index: -1;
+  animation: time 86400s linear infinite forwards;
+}
+
+.watch::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #E6A157;
+  top: 50%;
+  left: 298px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 0 0 5px 8px #E6A157;
+  z-index:
+}
+
+@keyframes time {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: 100% 100%;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: 100% 100%;
+  }
+}
