@@ -1,0 +1,50 @@
+.body {
+  margin: 0;
+}
+
+.center {
+  position: absolute;
+  top: 290px;
+  left: 398px;
+  transform: translate(-25%, -25%);
+  width: 30px;
+  height: 30px;
+  background-color: #4280b6;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.hand {
+  border-radius: 10px;
+  position: absolute;
+  transform-origin: bottom;
+}
+
+.minute-hand {
+  width: 12px;
+  height: 200px;
+  left: 400px;
+  top: 100px;
+  background-color: #fa4f4f;
+  z-index: 2;
+  animation: hand-anim 3600s linear infinite;
+}
+
+.second-hand {
+  width: 10px;
+  height: 250px;
+  background-color: #4280b6;
+  left: 401px;
+  top: 50px;
+  z-index: 0;
+  animation: hand-anim 60s linear infinite;
+}
+
+@keyframes hand-anim {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
