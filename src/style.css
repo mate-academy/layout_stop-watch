@@ -14,8 +14,8 @@ body {
   margin: 200px auto;
 }
 
-.clock:hover .hour-hand,
-.clock:hover .minute-hand {
+.clock:hover .center__hour-hand,
+.clock:hover .center__minute-hand {
   animation-play-state: paused;
 }
 
@@ -31,7 +31,7 @@ body {
   position: absolute;
 }
 
-.center-clock {
+.center__clock {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -40,7 +40,8 @@ body {
   z-index: 2;
 }
 
-.both-hand {
+.center__hour-hand,
+.center__minute-hand {
   height: 10px;
   border-radius: 10px;
   transform-origin: 0 50%;
@@ -50,13 +51,13 @@ body {
   left: 13px;
 }
 
-.hour-hand {
+.center__hour-hand {
   width: 200px;
   background-color: #4b9aaa;
   animation: rotater 10s linear infinite;
 }
 
-.minute-hand {
+.center__minute-hand {
   width: 350px;
   background-color: #d15559;
   animation: rotater 4s linear infinite;
