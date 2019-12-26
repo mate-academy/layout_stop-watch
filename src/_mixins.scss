@@ -1,17 +1,22 @@
+@import "vars";
+
 .clock-face {
   position: relative;
   width: 500px;
   height: 500px;
+
   border-radius: 50%;
   border: 3px solid #89e051;
+
   margin: 0 auto;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: $centeredContent;
+  align-items: $centeredContent;
 }
 
 .hour-arrow {
-  background-image: linear-gradient(#000 50%, transparent 0%);
+  background-image: linear-gradient(#000 50%, transparent 0% );
   border-radius: 50%;
   width: 7px;
   height: 470px;
@@ -19,19 +24,19 @@
 }
 
 .min-arrow {
-  position: absolute;
-  margin-right: 1px;
+  position: $position;
+  margin-right: $margin;
   border-radius: 15%;
-  background-image: linear-gradient(red 50%, transparent 0%);
+  background-image: linear-gradient( red 50%, transparent 0% );
   width: 3px;
   height: 430px;
   animation: secMinHour 3600s steps(60) infinite;
 }
 
 .sec-arrow {
-  position: absolute;
-  margin-right: 1px;
-  background-image: linear-gradient(blue 50%, transparent 0%);
+  position: $position;
+  margin-right: $margin;
+  background-image: linear-gradient( blue 50%, transparent 0% );
   width: 1px;
   height: 460px;
   animation: secMinHour 60s steps(60) infinite;
@@ -42,5 +47,3 @@
     transform: rotate(360deg);
   }
 }
-
-/*# sourceMappingURL=style.css.map */
