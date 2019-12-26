@@ -13,31 +13,29 @@
   border-radius: 50%;
   z-index: 3;
 }
-
+  
 .stopwatch__hand {
   border-radius: 10px;
   position: absolute;
   transform-origin: bottom;
-}
-
-.stopwatch__hand_min {
-  width: 12px;
-  height: 200px;
-  left: 400px;
-  top: 100px;
-  background-color: #fa4f4f;
-  z-index: 2;
-  animation: hand-anim 3600s linear infinite;
-}
-
-.stopwatch__hand_sec {
-  width: 10px;
-  height: 250px;
-  background-color: #4280b6;
-  left: 401px;
-  top: 50px;
-  z-index: 0;
-  animation: hand-anim 60s linear infinite;
+  &_min {
+    width: 12px;
+    height: 200px;
+    left: 400px;
+    top: 100px;
+    background-color: #fa4f4f;
+    z-index: 2;
+    animation: hand-anim 3600s linear infinite;
+  }
+  &_sec {
+    width: 10px;
+    height: 250px;
+    background-color: #4280b6;
+    left: 401px;
+    top: 50px;
+    z-index: 0;
+    animation: hand-anim 60s linear infinite;
+  }
 }
 
 @keyframes hand-anim {
@@ -48,5 +46,4 @@
     transform: rotateZ(360deg);
   }
 }
-
-/*# sourceMappingURL=style.css.map */
+  
