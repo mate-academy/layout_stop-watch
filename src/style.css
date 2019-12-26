@@ -27,7 +27,7 @@ ul {
 }
 
 .circle__center,
-.lights__item {
+.circle__light {
   position: absolute;
   top: 28px;
   left: 50%;
@@ -49,7 +49,7 @@ ul {
   z-index: 3;
 }
 
-.lights__item::after,
+.circle__light::after,
 .circle__center::after {
   content: "";
   position: absolute;
@@ -63,47 +63,47 @@ ul {
   background-repeat: no-repeat;
 }
 
-.lights__item:nth-child(2) {
+.circle__light:nth-child(2) {
   top: auto;
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.lights__item:nth-child(3) {
+.circle__light:nth-child(3) {
   top: 50%;
   left: 32px;
   transform: translateY(-50%);
 }
 
-.lights__item:nth-child(4) {
+.circle__light:nth-child(4) {
   top: 50%;
   left: auto;
   right: 32px;
   transform: translateY(-50%);
 }
 
-.lights__item:nth-child(5) {
+.circle__light:nth-child(5) {
   top: 60px;
   left: 28%;
   transform: translateX(-50%);
 }
 
-.lights__item:nth-child(6) {
+.circle__light:nth-child(6) {
   top: 60px;
   left: auto;
   right: 24%;
   transform: translateX(-50%);
 }
 
-.lights__item:nth-child(7) {
+.circle__light:nth-child(7) {
   top: auto;
   bottom: 60px;
   left: 28%;
   transform: translateX(-50%);
 }
 
-.lights__item:nth-child(8) {
+.circle__light:nth-child(8) {
   top: auto;
   bottom: 60px;
   left: auto;
@@ -111,27 +111,27 @@ ul {
   transform: translateX(-50%);
 }
 
-.lights__item:nth-child(9) {
+.circle__light:nth-child(9) {
   top: 28%;
   left: 68px;
   transform: translateX(-50%);
 }
 
-.lights__item:nth-child(10) {
+.circle__light:nth-child(10) {
   top: 28%;
   left: auto;
   right: 46px;
   transform: translateX(-50%);
 }
 
-.lights__item:nth-child(11) {
+.circle__light:nth-child(11) {
   top: auto;
   bottom: 28%;
   left: 68px;
   transform: translateX(-50%);
 }
 
-.lights__item:nth-child(12) {
+.circle__light:nth-child(12) {
   top: auto;
   bottom: 28%;
   left: auto;
@@ -151,6 +151,8 @@ ul {
 
   -webkit-animation: rotate-bl 60s linear infinite both;
   animation: rotate-bl 60s linear infinite both;
+  -webkit-transform-origin: bottom center;
+  transform-origin: bottom center;
 }
 
 .circle::before {
@@ -164,20 +166,18 @@ ul {
 
   -webkit-animation: rotate-bl 3600s linear infinite both;
   animation: rotate-bl 3600s linear infinite both;
+  -webkit-transform-origin: bottom center;
+  transform-origin: bottom center;
 }
 
 @-webkit-keyframes rotate-bl {
   0% {
     -webkit-transform: rotate(0);
     transform: rotate(0);
-    -webkit-transform-origin: bottom center;
-    transform-origin: bottom center;
   }
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
-    -webkit-transform-origin: bottom center;
-    transform-origin: bottom center;
   }
 }
 
@@ -185,13 +185,9 @@ ul {
   0% {
     -webkit-transform: rotate(0);
     transform: rotate(0);
-    -webkit-transform-origin: bottom center;
-    transform-origin: bottom center;
   }
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
-    -webkit-transform-origin: bottom center;
-    transform-origin: bottom center;
   }
 }
