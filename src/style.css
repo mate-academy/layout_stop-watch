@@ -1,0 +1,80 @@
+body {
+  background-color: #909090;
+}
+
+@keyframes stopwatch {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  width: 400px;
+  height: 400px;
+  background-color: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: auto;
+}
+
+.stopwatch_second,
+.stopwatch_minute {
+  transform-origin: 50% 100%;
+}
+
+.stopwatch_second {
+  width: 1px;
+  height: 190px;
+  margin-top: 15px;
+  background-color: #ff0012;
+  animation: 60s steps(60) infinite stopwatch;
+}
+
+.stopwatch_minute {
+  width: 3px;
+  height: 135px;
+  margin-top: 65px;
+  background-color: #09580f;
+  position: absolute;
+  animation: 3600s infinite stopwatch;
+}
+
+.stopwatch-zero,
+.stopwatch-fifteen,
+.stopwatch-thirty,
+.stopwatch-forty-five {
+  position: absolute;
+  font-size: 30px;
+  color: #fff;
+}
+
+.stopwatch-zero {
+  top: 0;
+}
+
+.stopwatch-fifteen {
+  top: 190px;
+  right: 0;
+}
+
+.stopwatch-thirty {
+  bottom: 0;
+}
+
+.stopwatch-forty-five {
+  left: 0;
+  top: 190px;
+}
+
+.stopwatch::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #6c9888;
+  top: 50%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 5px #3c795f;
+}
