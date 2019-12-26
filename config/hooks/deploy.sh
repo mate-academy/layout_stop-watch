@@ -2,4 +2,4 @@
 
 git add src/
 git commit -m "deploy static content"
-git subtree push --prefix src origin gh-pages
+git subtree push --prefix dist origin gh-pages
