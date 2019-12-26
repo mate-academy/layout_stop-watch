@@ -31,7 +31,7 @@
     position: absolute;
     left: calc(50% - 3px);
     top: calc(50% - 180px);
-    
+
     transform-origin: bottom center;
     animation: move-round  60s linear infinite;
   }
@@ -39,7 +39,7 @@
   &__second-hand:before {
     content: "";
     border: 10px solid transparent;
-    border-top: 0px solid transparent;
+    border-top: 0 solid transparent;
     border-bottom: 50px solid green;
     display: block;
     transform: translate(-8px, -50px);
@@ -49,7 +49,6 @@
     height: 140px;
     width: 5px;
     background-color: red;
-    left: 50%;
     border-radius: 1px;
     position: absolute;
     left: calc(50% - 3px);
@@ -62,7 +61,7 @@
   &__minute-hand:before {
     content: "";
     border: 10px solid transparent;
-    border-top: 0px solid transparent;
+    border-top: 0 solid transparent;
     border-bottom: 50px solid red;
     display: block;
     transform: translate(-8px, -50px);
