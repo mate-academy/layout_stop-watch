@@ -1,0 +1,62 @@
+@keyframes minutes-seconds {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px double purple;
+  border-radius: 50%;
+}
+
+.stopwatch .center {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  top: 49%;
+  left: 49%;
+  background-color: #4b9aaa;
+}
+
+.stopwatch::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 35%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #d15559;
+  animation: minutes-seconds 60s linear infinite;
+  transform-origin: left;
+}
+
+.stopwatch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 45%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #4b9aaa;
+  animation: minutes-seconds 1s linear infinite;
+  transform-origin: left;
+}
+
+.stopwatch:hover::after,
+.stopwatch:hover::before {
+  animation-play-state: paused;
+}
+
+/*# sourceMappingURL=style.css.map */
