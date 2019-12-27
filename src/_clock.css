@@ -1,0 +1,81 @@
+.clock {
+  width: 450px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 200px auto;
+  position: relative;
+  background-image: url(http://bgfons.com/upload/rainbow_texture679.jpg);
+  transform-origin: center center;
+  animation: clockShadow 0.7s alternate infinite;
+  border-radius: 30px;
+}
+
+.clock:hover {
+  animation-play-state: paused;
+}
+
+.clock:hover::before {
+  content: "PAUSE";
+  position: relative;
+  top: -300px;
+  left: 0;
+  z-index: 99;
+  font-size: 70px;
+}
+
+.clock > :nth-child(2) :nth-child(n) {
+  top: 0;
+  left: calc(50% - 15px);
+  transform-origin: center bottom;
+  padding-right: 10px;
+}
+
+.clock > :nth-child(2) :nth-child(1) {
+  transform: rotate(30deg);
+}
+
+.clock > :nth-child(2) :nth-child(2) {
+  transform: rotate(60deg);
+}
+
+.clock > :nth-child(2) :nth-child(3) {
+  transform: rotate(90deg);
+  left: calc(50% - 5px);
+  line-height: 60px;
+}
+
+.clock > :nth-child(2) :nth-child(4) {
+  transform: rotate(120deg);
+}
+
+.clock > :nth-child(2) :nth-child(5) {
+  transform: rotate(150deg);
+}
+
+.clock > :nth-child(2) :nth-child(6) {
+  transform: rotate(180deg);
+  left: calc(50% - 10px);
+}
+
+.clock > :nth-child(2) :nth-child(7) {
+  transform: rotate(210deg);
+}
+
+.clock > :nth-child(2) :nth-child(8) {
+  transform: rotate(240deg);
+}
+
+.clock > :nth-child(2) :nth-child(9) {
+  transform: rotate(270deg);
+  left: calc(50%);
+}
+
+.clock > :nth-child(2) :nth-child(10) {
+  transform: rotate(300deg);
+}
+
+.clock > :nth-child(2) :nth-child(11) {
+  transform: rotate(330deg);
+}
