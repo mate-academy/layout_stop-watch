@@ -1,16 +1,15 @@
 @import "vars";
 
 .clock-face {
-
   background: url(./faceClock.png) no-repeat center;
   position: relative;
+
   width: 600px;
   height: 600px;
+  margin: 0 auto;
 
   border-radius: 50%;
   border: 3px solid #89e051;
-
-  margin: 0 auto;
 
   display: flex;
   justify-content: $centeredContent;
@@ -22,7 +21,7 @@
   border-radius: 50%;
   width: 7px;
   height: 470px;
-  animation: secMinHour 43200s linear infinite;
+  animation: rotate 43200s linear infinite;
 }
 
 .min-arrow {
@@ -32,7 +31,7 @@
   background-image: linear-gradient( red 50%, transparent 0% );
   width: 3px;
   height: 430px;
-  animation: secMinHour 3600s steps(60) infinite;
+  animation: rotate 3600s steps(60) infinite;
 }
 
 .sec-arrow {
@@ -41,10 +40,9 @@
   background-image: linear-gradient( blue 50%, transparent 0% );
   width: 1px;
   height: 460px;
-  animation: secMinHour 60s steps(60) infinite;
+  animation: rotate 60s steps(60) infinite;
 }
-
-@keyframes secMinHour {
+@keyframes rotate {
   100% {
     transform: rotate(360deg);
   }
