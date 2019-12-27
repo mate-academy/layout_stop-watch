@@ -170,6 +170,11 @@ ul {
   transform-origin: bottom center;
 }
 
+.circle:hover::before,
+.circle:hover::after {
+  animation-play-state: paused;
+}
+
 @-webkit-keyframes rotate-bl {
   0% {
     -webkit-transform: rotate(0);
