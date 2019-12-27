@@ -14,6 +14,28 @@
   position: relative;
   margin: auto;
 
+   .stopwatch__second {
+    width: 1px;
+    height: 190px;
+    margin-top: 15px;
+    background-color: #ff0012;
+    animation: 60s steps(60) infinite rotate;
+  }
+
+  .stopwatch__minute {
+    width: 3px;
+    height: 135px;
+    margin-top: 65px;
+    background-color: #09580f;
+    position: absolute;
+    animation: 3600s infinite rotate;
+  }
+
+  .stopwatch__second,
+  .stopwatch__minute {
+  transform-origin: 50% 100%;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -26,24 +48,4 @@
   }
 }
 
-.stopwatch__second,
-.stopwatch__minute {
-  transform-origin: 50% 100%;
-}
 
-.stopwatch__second {
-  width: 1px;
-  height: 190px;
-  margin-top: 15px;
-  background-color: #ff0012;
-  animation: 60s steps(60) infinite rotate;
-}
-
-.stopwatch__minute {
-  width: 3px;
-  height: 135px;
-  margin-top: 65px;
-  background-color: #09580f;
-  position: absolute;
-  animation: 3600s infinite rotate;
-}
