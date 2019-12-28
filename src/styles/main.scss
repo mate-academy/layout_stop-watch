@@ -8,6 +8,21 @@
   border: 0.5px solid gray;
   border-radius: 50%;
 
+  &__seconds {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+
+    width: 40%;
+    height: 0.5px;
+
+    background-color: gray;
+
+    animation: arrow 60s linear infinite;
+    transform-origin: left;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -20,7 +35,7 @@
     background-color: rgb(43, 140, 250);
     border-radius: 4px;
 
-    animation: arrow 60s linear infinite;
+    animation: arrow 360s linear infinite;
     transform-origin: left;
   }
 
@@ -37,7 +52,7 @@
     background-color: lightcoral;
     border-radius: 5px;
 
-    animation: arrow 360s linear infinite;
+    animation: arrow 3600s linear infinite;
     transform-origin: left;
   }
 
