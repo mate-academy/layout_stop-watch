@@ -2,10 +2,20 @@
   margin: 0;
 }
 
+.stopwatch {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-color: #c2e2ff;
+  border-radius: 50%;
+  border: 10px solid #0a365c;
+  left: 100px;
+}
+
 .stopwatch__center {
   position: absolute;
-  top: 290px;
-  left: 398px;
+  top: 240px;
+  left: 245px;
   transform: translate(-25%, -25%);
   width: 30px;
   height: 30px;
@@ -23,8 +33,8 @@
 .stopwatch__hand_min {
   width: 12px;
   height: 200px;
-  left: 400px;
-  top: 100px;
+  left: 245px;
+  top: 50px;
   background-color: #fa4f4f;
   z-index: 2;
   animation: hand-anim 3600s linear infinite;
@@ -33,9 +43,9 @@
 .stopwatch__hand_sec {
   width: 10px;
   height: 250px;
-  background-color: #4280b6;
-  left: 401px;
-  top: 50px;
+  background-color: #268cf1;
+  left: 245px;
+  top: 0;
   z-index: 0;
   animation: hand-anim 60s linear infinite;
 }
