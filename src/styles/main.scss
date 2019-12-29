@@ -1,0 +1,52 @@
+.clock {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  border: 5px solid black;
+  border-radius: 50%;
+
+  &__minutes {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    height: 230px;
+    width: 10px;
+    background-color: red;
+    border-radius: 5px;
+    transform-origin: center bottom;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    left: calc(50% + 3px);
+    bottom: 50%;
+    height: 240px;
+    width: 5px;
+    border-radius: 3px;
+    background-color: black;
+    transform-origin: center bottom;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__circle-decoration {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    border-radius: 50%;
+    transform: translate(calc(-50% + 5px), calc(50%));
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
