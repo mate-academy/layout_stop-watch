@@ -1,0 +1,54 @@
+.watch {
+  width: 500px;
+  height: 500px;
+  background-color: rgb(195, 0, 255);
+  position: absolute;
+  top: 100px;
+  left: 500px;
+  border-radius: 50%;
+}
+.center {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  top: calc(50% - 21px);
+  left: calc(50% - 16px);
+}
+
+.biger__arrow {
+  height: 10px;
+  width: 250px;
+  background-color: rgb(0, 89, 255);
+  border-radius: 10px;
+  position: absolute;
+  top: calc(50% - 4px);
+  left: calc(50% - -2px);
+  transform-origin:  0 0;
+
+  animation: arrow-rotate 60s linear infinite;
+}
+
+.smaller__arrow {
+  height: 10px;
+  width: 200px;
+  background-color: rgb(255, 0, 106);
+  border-radius: 10px;
+  position: absolute;
+  top: calc(50% - 4px);
+  left: calc(50% - -2px);
+  transform-origin:  0 0;
+
+  animation: arrow-rotate 3600s linear infinite;
+}
+
+@keyframes arrow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
