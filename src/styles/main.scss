@@ -1,0 +1,80 @@
+.stopwatch {
+  position: relative;
+  margin: 30px auto;
+
+  width: 500px;
+  height: 500px;
+
+  border: 0.5px solid gray;
+  border-radius: 50%;
+
+  &__seconds {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+
+    width: 40%;
+    height: 0.5px;
+
+    background-color: gray;
+
+    animation: arrow 60s linear infinite;
+    transform-origin: left;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 4px);
+    left: 50%;
+
+    width: 40%;
+    height: 8px;
+
+    background-color: rgb(43, 140, 250);
+    border-radius: 4px;
+
+    animation: arrow 3600s linear infinite;
+    transform-origin: left;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 50%;
+    z-index: -1;
+
+    width: 30%;
+    height: 10px;
+
+    background-color: lightcoral;
+    border-radius: 5px;
+
+    animation: arrow 43200s linear infinite;
+    transform-origin: left;
+  }
+
+  @keyframes arrow {
+    0% {
+      transform: rotate(-90deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+
+  &__axis {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 16px;
+    height: 16px;
+
+    background-color: rgb(43, 140, 250);
+    border-radius: 8px;
+  }
+}
