@@ -10,6 +10,15 @@
   border-radius: 300px;
 }
 
+.clock__minute_position,
+.clock__second_position,
+.clock__center_position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .clock__minute {
   background: #d15559;
   width: 200px;
@@ -18,16 +27,10 @@
   animation-name: minute;
   animation: minute 3600s infinite;
   animation-timing-function: linear;
-  transform-origin: top left;
-}
-
-.clock__minute_position,
-.clock__second_position,
-.clock__center_position {
+  transform-origin: center left;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 50.5%;
 }
 
 .clock__center {
@@ -38,7 +41,6 @@
   position: absolute;
   top: 50%;
   left: 50.5%;
-  transform: translate(-50%, -50%);
 }
 
 .clock__second {
@@ -46,12 +48,11 @@
   width: 300px;
   height: 9px;
   border-radius: 5px;
-  animation: second 20s infinite steps(60);
-  transform-origin: top left;
+  animation: second 60s infinite steps(60);
+  transform-origin: center left;
   position: absolute;
   top: 49.5%;
   left: 50.5%;
-  transform: translate(-50%, -50%);
 }
 
 @keyframes minute {
