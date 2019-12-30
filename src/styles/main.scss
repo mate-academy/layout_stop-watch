@@ -1,0 +1,105 @@
+@import "mixin.scss";
+@import "variables.scss";
+
+.stopwatch {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+
+  background-color: $color-watch;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba($color-min, 0.3);
+
+  &__center {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-min;
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &__hour-hand {
+    width: 12px;
+    height: 150px;
+    position: relative;
+
+    left: calc(50% - 5px);
+    top: calc(50% - 148px);
+    transform-origin: bottom center;
+    z-index: 2;
+
+    background-color: $color-hour;
+    border-radius: 5px;
+    animation: tik-tak 43200s linear infinite;
+
+    &::after {
+
+      @include position-after-element;
+      width: 12px;
+      height: 12px;
+      background-color: $color-hour-dark;
+      border-radius: 3px;
+    }
+  }
+
+  &__minute-hand {
+    width: 10px;
+    height: 190px;
+    position: absolute;
+
+    left: calc(50% - 5px);
+    top: calc(50% - 190px);
+    transform-origin: bottom center;
+    z-index: 1;
+
+    background-color: $color-min;
+    border-radius: 5px;
+    animation: tik-tak 3600s linear infinite;
+
+    &::after {
+      @include position-after-element;
+      width: 10px;
+      height: 10px;
+      background-color: $color-min-dark;
+      border-radius: 3px;
+    }
+  }
+
+  &__sec-hand {
+    width: 5px;
+    height: 230px;
+    position: absolute;
+
+    left: calc(50% - 3px);
+    top: calc(50% - 227px);
+    transform-origin: bottom center;
+
+    background-color: $color-min;
+    border-radius: 5px;
+    animation: tik-tak 60s linear infinite;
+
+    &::before {
+      @include position-after-element;
+      width: 5px;
+      height: 5px;
+      background-color: $color-min-dark;
+      border-radius: 3px;
+    }
+
+  }
+}
+
+@keyframes tik-tak {
+  from {
+    transform: rotate(00deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
