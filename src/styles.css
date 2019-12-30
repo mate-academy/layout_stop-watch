@@ -3,10 +3,11 @@ body {
 }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.main {
+.clock {
   position: relative;
   width: 300px;
   height: 300px;
@@ -16,7 +17,7 @@ body {
   background-color: palegreen;
 }
 
-.main::after {
+.clock::after {
   content: "";
   position: absolute;
   width: 90%;
@@ -25,10 +26,11 @@ body {
   border: 15px solid black;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
-.pivot {
+.clock__pivot {
   position: absolute;
   border-radius: 50%;
   background: grey;
@@ -36,50 +38,64 @@ body {
   width: 10px;
   top: calc(50% + 1px);
   left: calc(50% + 2px);
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 3;
 }
 
-.second {
+.clock__second {
   position: absolute;
   bottom: 50%;
   left: calc(50% + 1px);
+  -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 1;
-
   background: red;
-
   border-radius: 1px;
   height: 110px;
   width: 2px;
-
+  -webkit-animation: round 60s steps(60) infinite;
   animation: round 60s steps(60) infinite;
 }
 
-.minute {
+.clock__minute {
   position: absolute;
   bottom: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
   z-index: 2;
-
   background: blue;
-
   border-radius: 3px;
   height: 70px;
   width: 4px;
-
+  -webkit-animation: round 3600s steps(60) infinite;
   animation: round 3600s steps(60) infinite;
+}
+
+@-webkit-keyframes round {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes round {
   0% {
+    -webkit-transform: rotate(0);
     transform: rotate(0);
   }
-
   100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
+/*# sourceMappingURL=styles.css.map */
