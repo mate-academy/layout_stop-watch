@@ -1,12 +1,126 @@
-body {
-  margin: 0;
-  background: #000;
-}
-
-ul {
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
   list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.body {
+  background: #000;
 }
 
 .circle {
@@ -36,21 +150,12 @@ ul {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.3);
-  box-shadow: inset rgba(0, 0, 0, 1) -2px -2px 6px 4px, #fff 0 0 8px 0;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: inset black -2px -2px 6px 4px, #fff 0 0 8px 0;
 }
 
-.circle__center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 16px;
-  height: 16px;
-  z-index: 3;
-}
-
-.circle__light::after,
-.circle__center::after {
+.circle__center::after,
+.circle__light::after {
   content: "";
   position: absolute;
   top: -39px;
@@ -63,6 +168,7 @@ ul {
   background-repeat: no-repeat;
 }
 
+.circle__center:nth-child(2),
 .circle__light:nth-child(2) {
   top: auto;
   bottom: 32px;
@@ -70,12 +176,14 @@ ul {
   transform: translateX(-50%);
 }
 
+.circle__center:nth-child(3),
 .circle__light:nth-child(3) {
   top: 50%;
   left: 32px;
   transform: translateY(-50%);
 }
 
+.circle__center:nth-child(4),
 .circle__light:nth-child(4) {
   top: 50%;
   left: auto;
@@ -83,12 +191,14 @@ ul {
   transform: translateY(-50%);
 }
 
+.circle__center:nth-child(5),
 .circle__light:nth-child(5) {
   top: 60px;
   left: 28%;
   transform: translateX(-50%);
 }
 
+.circle__center:nth-child(6),
 .circle__light:nth-child(6) {
   top: 60px;
   left: auto;
@@ -96,6 +206,7 @@ ul {
   transform: translateX(-50%);
 }
 
+.circle__center:nth-child(7),
 .circle__light:nth-child(7) {
   top: auto;
   bottom: 60px;
@@ -103,6 +214,7 @@ ul {
   transform: translateX(-50%);
 }
 
+.circle__center:nth-child(8),
 .circle__light:nth-child(8) {
   top: auto;
   bottom: 60px;
@@ -111,12 +223,14 @@ ul {
   transform: translateX(-50%);
 }
 
+.circle__center:nth-child(9),
 .circle__light:nth-child(9) {
   top: 28%;
   left: 68px;
   transform: translateX(-50%);
 }
 
+.circle__center:nth-child(10),
 .circle__light:nth-child(10) {
   top: 28%;
   left: auto;
@@ -124,6 +238,7 @@ ul {
   transform: translateX(-50%);
 }
 
+.circle__center:nth-child(11),
 .circle__light:nth-child(11) {
   top: auto;
   bottom: 28%;
@@ -131,6 +246,7 @@ ul {
   transform: translateX(-50%);
 }
 
+.circle__center:nth-child(12),
 .circle__light:nth-child(12) {
   top: auto;
   bottom: 28%;
@@ -139,16 +255,24 @@ ul {
   transform: translateX(-50%);
 }
 
+.circle__center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  z-index: 3;
+}
+
 .circle::after {
   content: "";
   width: 2px;
   height: 230px;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   position: absolute;
   top: calc(502px/2 - 230px);
   left: calc(50% - 1px);
   z-index: 2;
-
   -webkit-animation: rotate-bl 60s linear infinite both;
   animation: rotate-bl 60s linear infinite both;
   -webkit-transform-origin: bottom center;
@@ -159,11 +283,10 @@ ul {
   content: "";
   width: 6px;
   height: 170px;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.7);
   position: absolute;
   top: calc(502px/2 - 170px);
   left: calc(50% - 3px);
-
   -webkit-animation: rotate-bl 3600s linear infinite both;
   animation: rotate-bl 3600s linear infinite both;
   -webkit-transform-origin: bottom center;
@@ -185,7 +308,6 @@ ul {
     transform: rotate(360deg);
   }
 }
-
 @keyframes rotate-bl {
   0% {
     -webkit-transform: rotate(0);
@@ -196,3 +318,5 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+/*# sourceMappingURL=style.css.map */
