@@ -14,7 +14,7 @@
   position: relative;
   margin: auto;
 
-   .stopwatch__second {
+  &__second {
     width: 1px;
     height: 190px;
     margin-top: 15px;
@@ -22,7 +22,7 @@
     animation: 60s steps(60) infinite rotate;
   }
 
-  .stopwatch__minute {
+  &__minute {
     width: 3px;
     height: 135px;
     margin-top: 65px;
@@ -31,8 +31,8 @@
     animation: 3600s infinite rotate;
   }
 
-  .stopwatch__second,
-  .stopwatch__minute {
+  &__second,
+  &__minute {
     transform-origin: 50% 100%;
   }
 
