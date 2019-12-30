@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+}
+
+.main {
+  /* Что бы CircleBoom не создавал scroll*/
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.center {
+  position: absolute;
+}
+
+.center__clock {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.95);
+  position: relative;
+  z-index: 2;
+}
+
+.center__clock::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 5px);
+  top: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(101, 2, 7, 0.85);
+}
+
+.center__clock::after {
+  content: "Wait 1 minute";
+  position: absolute;
+  width: 450px;
+  left: calc(50% - 225px);
+  top: 300px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 38px;
+}
+
+.center__hour-hand,
+.center__minute-hand {
+  height: 10px;
+  border-radius: 10px;
+  transform-origin: 0 50%;
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 10px;
+  left: 13px;
+}
+
+.center__hour-hand {
+  width: 130px;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: rotateHand 720s linear infinite;
+}
+
+.center__minute-hand {
+  width: 200px;
+  background-color: rgba(224, 255, 255, 0.3);
+  animation: rotateHand 60s linear infinite;
+}
+
+.clock {
+  width: 450px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 200px auto;
+  position: relative;
+  background-image: url(http://bgfons.com/upload/rainbow_texture679.jpg);
+  transform-origin: center center;
+  animation: clockShadow 1s alternate infinite;
+  border-radius: 30px;
+}
+
+.clock:hover {
+  animation-play-state: paused;
+}
+
+.clock:hover::before {
+  content: "PAUSE";
+  position: relative;
+  top: -300px;
+  left: 0;
+  z-index: 99;
+  font-size: 70px;
+}
+
+.clock__circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  border: 5px solid black;
+  z-index: -2;
+  animation: circleBoom 60s infinite;
+  filter: blur(1px);
+  position: absolute;
+  transition: opacity 0.1s linear;
+  /*Что бы плавно исчезал взрывающийся круг */
+}
+
+.clock__square {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  background-color: black;
+  animation: rotateSquare 60s infinite;
+  margin: 10px;
+  box-shadow: -6px -4px 38px black;
+  line-height: 150px;
+  color: white;
+  text-align: center;
+  font-size: 70px;
+  transition: opacity 0.2s linear;
+  z-index: -1;
+}
+
+.clock--square-1 {
+  top: 0;
+  left: 0;
+  transform-origin: left top;
+}
+
+.clock--square-2 {
+  top: 0;
+  right: 0;
+  transform-origin: right top;
+}
+
+.clock--square-3 {
+  bottom: 0;
+  left: 0;
+  transform-origin: left bottom;
+}
+
+.clock--square-4 {
+  bottom: 0;
+  right: 0;
+  transform-origin: right bottom;
+}
+
+.clock:hover .center__hour-hand,
+.clock:hover .center__minute-hand,
+.clock:hover .clock__circle,
+.clock:hover .clock__square {
+  animation-play-state: paused;
+}
+
+.clock:hover .clock__circle,
+.clock:hover .clock__square {
+  opacity: 0;
+}
+
+.clock > :nth-child(2) :nth-child(1) {
+  transform: rotate(30deg);
+}
+
+.clock > :nth-child(2) :nth-child(2) {
+  transform: rotate(60deg);
+}
+
+.clock > :nth-child(2) :nth-child(3) {
+  transform: rotate(90deg);
+}
+
+.clock > :nth-child(2) :nth-child(4) {
+  transform: rotate(120deg);
+}
+
+.clock > :nth-child(2) :nth-child(5) {
+  transform: rotate(150deg);
+}
+
+.clock > :nth-child(2) :nth-child(6) {
+  transform: rotate(180deg);
+}
+
+.clock > :nth-child(2) :nth-child(7) {
+  transform: rotate(210deg);
+}
+
+.clock > :nth-child(2) :nth-child(8) {
+  transform: rotate(240deg);
+}
+
+.clock > :nth-child(2) :nth-child(9) {
+  transform: rotate(270deg);
+}
+
+.clock > :nth-child(2) :nth-child(10) {
+  transform: rotate(300deg);
+}
+
+.clock > :nth-child(2) :nth-child(11) {
+  transform: rotate(330deg);
+}
+
+.clock > :nth-child(2) :nth-child(n) {
+  top: 0;
+  left: calc(50% - 15px);
+  transform-origin: center bottom;
+  padding-right: 10px;
+}
+
+.clock > :nth-child(2) :nth-child(3) {
+  left: calc(50% - 5px);
+  line-height: 60px;
+}
+
+.clock > :nth-child(2) :nth-child(6) {
+  left: calc(50% - 10px);
+}
+
+.clock > :nth-child(2) :nth-child(9) {
+  left: calc(50%);
+}
+
+.number {
+  position: absolute;
+  color: white;
+  width: 5px;
+  height: 50%;
+}
+
+@keyframes rotateSquare {
+  0% {
+    transform: rotate(0deg);
+  }
+  95% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes clockShadow {
+  from {
+    box-shadow: 0 5px 20px red;
+  }
+  to {
+    box-shadow: 0 5px 70px red;
+  }
+}
+@keyframes circleBoom {
+  from {
+    transform: scale(1);
+  }
+  95% {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(100);
+  }
+}
+@keyframes rotateHand {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+/*# sourceMappingURL=output.css.map */
