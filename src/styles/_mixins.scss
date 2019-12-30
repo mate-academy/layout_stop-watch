@@ -1,0 +1,41 @@
+@mixin arrow {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  border-radius: 10px;
+  transform-origin: center left;
+}
+
+@mixin arrow-style ($width, $border, $color, $during) {
+  width: $width;
+  border: $border solid $color;
+  animation: move-arrows $during linear infinite;
+}
+
+@mixin move-arrow {
+
+  @keyframes move-arrows {
+
+    0% {
+      transform: rotate(-90deg);
+    }
+
+    25% {
+      transform: rotate(0deg) translate(0, -50%);
+    }
+
+    50% {
+      transform: rotate(90deg);
+    }
+
+    75% {
+      transform: rotate(180deg) translate(0, 50%);
+    }
+
+    100% {
+      transform: rotate(270deg);
+    }
+
+  }
+
+}

@@ -1,15 +1,15 @@
-.stop-watch__secunde-arrow {
-  width: 220px;
+.stop-watch__hour-hand {
   top: 50%;
   left: 50%;
   position: absolute;
-  border: 6px solid #4b9aaa;
   border-radius: 10px;
   transform-origin: center left;
-  animation: secunde-arrow-move 1s linear infinite;
+  width: 200px;
+  border: 8px solid #d15559;
+  animation: move-arrows 3600s linear infinite;
 }
 
-@keyframes secunde-arrow-move {
+@keyframes move-arrows {
   0% {
     transform: rotate(-90deg);
   }
@@ -27,18 +27,18 @@
   }
 }
 
-.stop-watch__minute-arrow {
-  width: 200px;
+.stop-watch__minute-hand {
   top: 50%;
   left: 50%;
   position: absolute;
-  border: 8px solid #d15559;
   border-radius: 10px;
   transform-origin: center left;
-  animation: minute-arrow-move 60s linear infinite;
+  width: 220px;
+  border: 6px solid #4b9aaa;
+  animation: move-arrows 60s linear infinite;
 }
 
-@keyframes minute-arrow-move {
+@keyframes move-arrows {
   0% {
     transform: rotate(-90deg);
   }
