@@ -3,42 +3,52 @@
   position: relative;
   width: 600px;
   height: 600px;
+  margin: 0 auto;
   border-radius: 50%;
   border: 3px solid #89e051;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hour-arrow {
+.clock-face__hour-arrow {
+  position: absolute;
   background-image: linear-gradient(#000 50%, transparent 0%);
   border-radius: 50%;
   width: 7px;
   height: 470px;
-  animation: secMinHour 43200s linear infinite;
+  animation: rotate 43200s linear infinite;
 }
 
-.min-arrow {
+.clock-face__min-arrow {
   position: absolute;
   margin-right: 1px;
   border-radius: 15%;
   background-image: linear-gradient(red 50%, transparent 0%);
   width: 3px;
   height: 430px;
-  animation: secMinHour 3600s steps(60) infinite;
+  animation: rotate 3600s steps(60) infinite;
 }
 
-.sec-arrow {
+.clock-face__sec-arrow {
   position: absolute;
   margin-right: 1px;
   background-image: linear-gradient(blue 50%, transparent 0%);
   width: 1px;
   height: 460px;
-  animation: secMinHour 60s steps(60) infinite;
+  animation: rotate 60s steps(60) infinite;
 }
 
-@keyframes secMinHour {
+.clock-face__center {
+  position: absolute;
+  z-index: 999;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: aqua;
+}
+
+@keyframes rotate {
   100% {
     transform: rotate(360deg);
   }

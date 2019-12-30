@@ -16,7 +16,8 @@
   align-items: $centeredContent;
 }
 
-.hour-arrow {
+.clock-face__hour-arrow {
+  position: absolute;
   background-image: linear-gradient(#000 50%, transparent 0% );
   border-radius: 50%;
   width: 7px;
@@ -24,7 +25,7 @@
   animation: rotate 43200s linear infinite;
 }
 
-.min-arrow {
+.clock-face__min-arrow {
   position: $position;
   margin-right: $margin;
   border-radius: 15%;
@@ -34,7 +35,7 @@
   animation: rotate 3600s steps(60) infinite;
 }
 
-.sec-arrow {
+.clock-face__sec-arrow {
   position: $position;
   margin-right: $margin;
   background-image: linear-gradient( blue 50%, transparent 0% );
@@ -42,6 +43,16 @@
   height: 460px;
   animation: rotate 60s steps(60) infinite;
 }
+
+.clock-face__center {
+  position: absolute;
+  z-index: 999;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: aqua;
+}
+
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
