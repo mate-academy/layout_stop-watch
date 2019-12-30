@@ -13,45 +13,48 @@ body {
   background-color: lightgrey;
 }
 
-.title {
+.watch__title {
   padding-top: 200px;
   margin-top: 0;
 }
 
-.text-style {
+.watch__digit-top_text-style,
+.watch__digit-right_text-style,
+.watch__digit-bottom_text-style,
+.watch__digit-left_text-style {
   font-size: 70px;
   width: 80px;
 }
 
-.digit-top {
+.watch__digit-top {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.digit-right {
+.watch__digit-right {
   position: absolute;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
 }
 
-.digit-bottom {
+.watch__digit-bottom {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.digit-left {
+.watch__digit-left {
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
 }
 
-.center {
+.watch__center {
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -64,7 +67,7 @@ body {
   background-color: purple;
 }
 
-.minutes {
+.watch__minutes {
   height: 30px;
   width: 400px;
   border-radius: 20px;
@@ -78,7 +81,7 @@ body {
   animation: time 3600s backwards infinite linear;
 }
 
-.seconds {
+.watch__seconds {
   height: 25px;
   width: 450px;
   border-radius: 15px;
