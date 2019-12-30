@@ -6,10 +6,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 100vw;
   height: 100vh;
-  text-align: center;
 
   background: linear-gradient(-45deg,
   rgba(238,119,82, 0.6),
@@ -19,28 +17,30 @@ body {
   background-size: 300% 300%;
 
   animation: gradient-bg 15s ease infinite;
-
 }
 
 .watch {
   width: 500px;
   height: 500px;
-  display: inline-block;
+  display: block;
+  position: relative;
 
   border-radius: 50%;
   background: #1e1e1e;
   padding: 50px;
 
+  transition: transform 0.5s;
+
   &__sec {
     width: 1px;
     height: 250px;
 
-    position: relative;
-    left: 249px;
-
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
     border-radius: 4px;
     background-color: rgb(255, 0, 55);
-    z-index: 3;
+    z-index: 1;
 
     transform-origin: bottom;
     animation: arrow-anim 60s linear infinite;
@@ -50,9 +50,9 @@ body {
     width: 6px;
     height: 200px;
 
-    position: relative;
-    left: 247px;
-    top: -200px;
+    position: absolute;
+    left: calc(50% - 3px);
+    bottom: calc(50% - 2px);
 
     border-radius: 4px;
     background-color: #4b9aaa;
@@ -66,9 +66,9 @@ body {
     width: 10px;
     height: 150px;
 
-    position: relative;
-    left: 245px;
-    top: -350px;
+    position: absolute;
+    left: calc(50% - 5px);
+    bottom: calc(50% - 5px);
 
     border-radius: 4px;
     background-color: #d15559;
@@ -81,10 +81,10 @@ body {
   &__nail {
     width: 20px;
     height: 20px;
-    position: relative;
-    display: inline-block;
 
-    top: -360px;
+    position: absolute;
+    left: calc(50% - 10px);
+    bottom: calc(50% - 10px);
 
     background: #4b9aaa;
     border-radius: 50%;
@@ -110,5 +110,11 @@ body {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 750px) {
+  .watch {
+    transform: scale(0.75);
   }
 }
