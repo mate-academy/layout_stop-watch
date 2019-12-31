@@ -1,54 +1,89 @@
 .watch {
   width: 500px;
   height: 500px;
-  background-color: rgb(195, 0, 255);
+  background-color: #fff;
+  border: 3px solid #000;
   position: absolute;
   top: 100px;
   left: 500px;
   border-radius: 50%;
-}
-.center {
-  width: 40px;
-  height: 40px;
-  background-color: black;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 1;
-  top: calc(50% - 21px);
-  left: calc(50% - 16px);
-}
 
-.biger__arrow {
-  height: 10px;
-  width: 250px;
-  background-color: rgb(0, 89, 255);
-  border-radius: 10px;
-  position: absolute;
-  top: calc(50% - 4px);
-  left: calc(50% - -2px);
-  transform-origin:  0 0;
+  .center {
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    top: calc(50% - 21px);
+    left: calc(50% - 16px);
 
-  animation: arrow-rotate 60s linear infinite;
-}
-
-.smaller__arrow {
-  height: 10px;
-  width: 200px;
-  background-color: rgb(255, 0, 106);
-  border-radius: 10px;
-  position: absolute;
-  top: calc(50% - 4px);
-  left: calc(50% - -2px);
-  transform-origin:  0 0;
-
-  animation: arrow-rotate 3600s linear infinite;
-}
-
-@keyframes arrow-rotate {
-  from {
-    transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+
+  .biger__arrow {
+    height: 10px;
+    width: 250px;
+    background-color: #000;
+    border-radius: 10px;
+    position: absolute;
+    top: calc(50% - 0px);
+    left: calc(50% - 0px);
+    z-index: 1;
+    transform-origin:  0 0;
+
+    animation: arrow-rotate 60s linear infinite;
+  }
+
+  .smaller__arrow {
+    height: 10px;
+    width: 200px;
+    background-color: #000;
+    border-radius: 10px;
+    position: absolute;
+    top: calc(50% - 0px);
+    left: calc(50% - 0px);
+    z-index: 1;
+    transform-origin:  0 0;
+
+    animation: arrow-rotate 3600s linear infinite;
+  }
+
+  .twelve,
+  .three,
+  .six,
+  .nine {
+    position: absolute;
+    font-weight: bold;
+    font-size: 42px;
+    color: #000;
+  }
+
+  .twelve {
+    top:12px;
+    left: 228px;
+  }
+
+  .three {
+    top: 227px;
+    left: 464px;
+  }
+
+  .six {
+    top: 446px;
+    left: 237px;
+  }
+
+  .nine {
+    top: 227px;
+    left: 14px;
+  }
+
+  @keyframes arrow-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
