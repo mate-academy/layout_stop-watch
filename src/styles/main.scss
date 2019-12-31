@@ -34,7 +34,7 @@
   top: 10%;
   transform-origin: 50% 80%;
   width: 1%;
-  z-index: 8;
+  z-index: 2;
 }
 
 .seconds-hand::after {
@@ -46,21 +46,13 @@
   bottom: -7.5%;
   right: -6px;
   border-radius: 50%;
-  z-index: 999;
+  z-index: 3;
 }
 
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.clock__minutes {
-  animation: rotate 3600s infinite linear;
-}
-
-.clock__seconds {
-  animation: rotate 60s infinite linear;
 }
 
 .clock__minutes {
