@@ -1,0 +1,71 @@
+@import "_variables";
+@import "_animation";
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.watch {
+  position: relative;
+  margin: 20px auto;
+  width: $watch-width;
+  height: $watch-height;
+  border: $watch-border;
+  border-radius: $border-radius-circle;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $wartch-center-width;
+    height: $watch-center-height;
+    background-color: $watch-center-bg;
+    border: 5px solid black;
+    border-radius: $border-radius-circle;
+    z-index: 4;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    bottom: 148px;
+    left: 148px;
+    width: 2px;
+    height: 45%;
+    background-color: tomato;
+    border-radius: $arrow-border-radius;
+    z-index: 2;
+    animation: circle-move 60s linear infinite;
+    transform-origin: $transform-origin-value;
+  }
+
+  &__hour-arrow {
+    position: absolute;
+    bottom: 148px;
+    left: 144px;
+    width: 10px;
+    height: 35%;
+    background-color: black;
+    border-radius: $arrow-border-radius;
+    animation: circle-move 43200s linear infinite;
+    transform-origin: $transform-origin-value;
+    z-index: 3;
+  }
+
+  &__minute-arrow {
+    position: absolute;
+    bottom: 148px;
+    left: 144px;
+    width: 10px;
+    height: 40%;
+    background-color: rgba(93,93,93, 0.8);
+    border-radius: $arrow-border-radius;
+    z-index: 2;
+    animation: circle-move 3600s linear infinite;
+    transform-origin: $transform-origin-value;
+  }
+}
