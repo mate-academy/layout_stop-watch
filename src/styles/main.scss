@@ -1,0 +1,98 @@
+:root {
+  --diametr: 26px;
+  --bgc: #4b9aaa;
+  --radius: 3px;
+  --time-size: 22px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.watch {
+  position: absolute;
+  height: 333px;
+  width: 333px;
+  background: none;
+  border: 7px double rgb(48, 177, 209);
+  border-radius: 50%;
+}
+
+.w12 {
+  position: relative;
+  top: 17px;
+  left: 153px;
+  color: rgb(241, 9, 9);
+  font-size: var(--time-size);
+}
+
+.w3 {
+  position: relative;
+  top: 150px;
+  left: 255px;
+  color: rgb(192, 31, 31);
+  font-size: var(--time-size);
+}
+
+.w9 {
+  position: relative;
+  top: 150px;
+  right: 65px;
+  color: rgb(68, 2, 2);
+  font-size: var(--time-size);
+}
+
+.w6 {
+  position: relative;
+  top: 295px;
+  left: 95px;
+  color: rgb(155, 31, 31);
+  font-size: var(--time-size);
+}
+
+.center {
+  position: relative;
+  width: var(--diametr);
+  height: var(--diametr);
+  border-radius: 50%;
+  background: var(--bgc);
+}
+
+.minutes {
+  position: absolute;
+  width: 8px;
+  height: 95px;
+  border-radius: var(--radius);
+  background: #d15559;
+  bottom: 11px;
+  left: 8px;
+  z-index: -1;
+  animation: around 3600s infinite linear;
+  transform-origin: 5px 95px;
+}
+
+.seconds {
+  position: absolute;
+  width: 9px;
+  height: 144px;
+  border-radius: var(--radius);
+  background: var(--bgc);
+  bottom: 11px;
+  left: 8px;
+  animation: around 60s infinite linear;
+  transform-origin: 5px 144px;
+}
+
+@keyframes around {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
