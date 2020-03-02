@@ -3,42 +3,47 @@ body {
 }
 
 .stopwatch {
-  position: absolute;
-  top: 30%;
-  left: 40%;
-  transform: rotate(-90deg);
+  position: relative;
+  margin: 20px auto;
+  height: 600px;
+  width: 600px;
 
-  &::before {
+  &::after {
     content: "";
     position: absolute;
-    margin-left: -12px;
-    margin-top: -12px;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
     background-color: #4b99aa;
     z-index: 1;
   }
 }
 
 .minute {
-  width: 150px;
-  height: 12px;
-  margin-bottom: -12px;
-  margin-left: 10px;
-  border-radius: 8px;
+  position: absolute;
+  height: 200px;
+  width: 10px;
+  top: 90px;
+  left: 295px;
   background-color: #d05559;
+  border-radius: 8px;
   animation: rotate-watch 3600s linear infinite;
-  transform-origin: left;
+  transform-origin: bottom;
 }
 
 .second {
-  width: 350px;
-  height: 12px;
+  position: absolute;
+  height: 300px;
+  width: 10px;
+  top: 1px;
+  left: 295px;
+  background-color: #4b9aaa;
   border-radius: 8px;
-  background-color: #4b99aa;
   animation: rotate-watch 60s linear infinite;
-  transform-origin: left;
+  transform-origin: bottom;
 }
 
 @keyframes rotate-watch {
