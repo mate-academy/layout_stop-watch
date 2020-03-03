@@ -2,8 +2,10 @@ $watchSize: 800;
 $handThickness: 10;
 $handBorderRadius: 6;
 
-@mixin handAnimation($time) {
-  animation: rotate-hand #{$time}s linear infinite;
+@mixin handAnimation($i) {
+  animation: rotate-hand #{$i}s infinite;
+  animation-timing-function: steps(60, start);
+  animation-delay: #{$i / 60}s;
 }
 
 .page__stop-watch {
