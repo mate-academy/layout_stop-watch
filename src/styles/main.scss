@@ -1,6 +1,10 @@
-$size: 800;
-$hand-thickness: 10;
-$hand-border-radius: 6;
+$watchSize: 800;
+$handThickness: 10;
+$handBorderRadius: 6;
+
+@mixin handAnimation($time) {
+  animation: rotate-hand #{$time}s linear infinite;
+}
 
 .page__stop-watch {
   margin: 20px auto;
@@ -8,8 +12,8 @@ $hand-border-radius: 6;
 
 .stop-watch {
   position: relative;
-  height: #{$size}px;
-  width: #{$size}px;
+  height: #{$watchSize}px;
+  width: #{$watchSize}px;
 
   &::before {
     content: "";
@@ -23,31 +27,31 @@ $hand-border-radius: 6;
     transform: translate(-50%, -50%);
     z-index: 1;
   }
-  
+
   &__hand {
     position: absolute;
-    left: #{($size / 2) - $hand-thickness / 2}px;
-    width: #{$hand-thickness}px;
-    border-radius: #{$hand-border-radius}px;
+    left: #{($watchSize / 2) - $handThickness / 2}px;
+    width: #{$handThickness}px;
+    border-radius: #{$handBorderRadius}px;
     transform-origin: bottom;
   }
 
   &__second-hand {
     top: 0;
-    height: #{$size / 2}px;
+    height: #{$watchSize / 2}px;
     background-color: #4b9aaa;
-    animation: rotate-watch 60s linear infinite;
+    @include handAnimation(60);
   }
 
   &__minute-hand {
-    top: #{$size / 5}px;
-    height: #{$size / 2 - $size / 5}px;
+    top: #{$watchSize / 5}px;
+    height: #{$watchSize / 2 - $watchSize / 5}px;
     background-color: #d15559;
-    animation: rotate-watch 3600s linear infinite;
+    @include handAnimation(3600);
   }
 }
 
-@keyframes rotate-watch {
+@keyframes rotate-hand {
   0% {
     transform: rotate(0);
   }
