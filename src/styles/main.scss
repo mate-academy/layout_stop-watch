@@ -1,0 +1,52 @@
+.body {
+  margin: 0;
+}
+
+@keyframes stop_watch {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #4b9aaa;
+  border-radius: 50%;
+  transform: translate(-37%, -50%);
+  z-index: 2;
+}
+
+.minute__hand {
+  position: absolute;
+  top: 20%;
+  height: 200px;
+  width: 8px;
+  background-color: #d15559;
+  left: 50%;
+  border-radius: 8px;
+  transform-origin: bottom;
+  animation: stop_watch 3600s infinite;
+  animation-timing-function: linear;
+}
+
+.second__hand {
+  position: absolute;
+  top: 5%;
+  height: 300px;
+  width: 8px;
+  background-color: #4b9aaa;
+  left: 50%;
+  z-index: 1;
+  border-radius: 8px;
+  transform-origin: bottom;
+  animation: stop_watch 60s infinite;
+  animation-timing-function: linear;
+}
