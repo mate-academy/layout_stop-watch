@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+}
+
+@mixin startPosition {
+  transform-origin: top;
+  transform: rotate(180deg);
+}
+
+.box__watch {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 300px;
+}
+
+.second_hand {
+  position: absolute;
+  width: 10px;
+  height: 250px;
+  background-color: red;
+  border-radius: 5px;
+  animation: rotate 60s;
+  @include startPosition;
+}
+
+.minute_hand {
+  position: absolute;
+  width: 10px;
+  height: 150px;
+  background-color: black;
+  border-radius: 5px;
+  animation: rotate 360s;
+  @include startPosition;
+}
+
+.center_hand {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: black;
+  transform: translate(0, -15px);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
