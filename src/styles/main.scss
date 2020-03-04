@@ -1,0 +1,59 @@
+@import "variables";
+@import "mixins";
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.clock {
+  position: relative;
+  box-sizing: border-box;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  border: 1px solid black;
+  // transform: rotate(180deg);
+
+  &__min {
+    @include arrows-block;
+    @include bgc-min;
+    animation: clock 3600s linear infinite;
+
+    &::after {
+      @include arrows;
+      height: 300px;
+      @include bgc-min;
+    }
+  }
+
+  &__sec {
+    @include arrows-block;
+    @include bgc-sec;
+    animation: clock 60s linear infinite;
+    z-index: 1;
+
+    &::after {
+      @include arrows;
+      height: 380px;
+      @include bgc-sec;
+    }
+  }
+}
+
+@keyframes clock {
+  0% {
+    transform: rotate(0deg);    
+  }
+
+  100% {
+    transform: rotate(360deg); 
+  }
+}
