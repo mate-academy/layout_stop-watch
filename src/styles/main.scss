@@ -1,0 +1,78 @@
+.main {
+  display: flex;
+  width: 100%;
+  height: 800px;
+  justify-content: center;
+}
+
+.circle {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(95, 152, 168);
+  z-index: 1;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+}
+
+.min-arrow {
+  display: block;
+  position: relative;
+  width: 600px;
+  height: 600px;
+  animation: arrow-moves 60s both;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  &::before {
+    position: absolute;
+    content: " ";
+    width: 200px;
+    height: 8px;
+    border-radius: 5px;
+    background-color: rgb(95, 152, 168);
+    top: 50%;
+    left: 100px;
+    transform: translate(0, -50%);
+  }
+}
+
+.hour-arrow {
+  display: block;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  animation: arrow-moves 1s both;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  &::before {
+    position: absolute;
+    content: " ";
+    width: 150px;
+    height: 8px;
+    border-radius: 5px;
+    background-color: rgb(194, 93, 93);
+    top: 50%;
+    left: 150px;
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes arrow-moves {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(360deg +90deg);
+  }
+}
