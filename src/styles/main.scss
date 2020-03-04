@@ -1,0 +1,81 @@
+$arrow-small-width: 200px;
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color: rgb(141, 60, 141);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  margin: 0;
+}
+
+.watch {
+  display: flex;
+  width: $arrow-small-width * 2.5;
+  height: $arrow-small-width * 2.5;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+  transform: rotate(-90deg);
+  border: 30px solid rgb(141, 60, 141);
+  border-radius: 50%;
+  margin: auto;
+
+  &__arrow--small {
+    display: flex;
+    position: absolute;
+    width: $arrow-small-width;
+    height: 15px;
+    animation: arrow-rotate 3600s infinite;
+
+    > div {
+      display: flex;
+      width: 100%;
+      background-color: rgb(235, 27, 27);
+      border-radius: 7px;
+    }
+
+    > div:nth-child(1) {
+      visibility: hidden;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: royalblue;
+    border-radius: 15px;
+    z-index: 1;
+  }
+
+  &__arrow--big {
+    display: flex;
+    position: absolute;
+    width: $arrow-small-width * 2;
+    height: 15px;
+    animation: arrow-rotate 60s infinite;
+
+    > div {
+      display: flex;
+      width: 100%;
+      background-color: royalblue;
+      border-radius: 7px;
+    }
+
+    > div:nth-child(1) {
+      visibility: hidden;
+    }
+
+  }
+
+  @keyframes arrow-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+}
