@@ -24,26 +24,26 @@ body {
 
   &__min {
     @include arrows-block;
-    @include bgc-min;
+    background-color: $color-min;
     animation: clock 3600s linear infinite;
 
     &::after {
       @include arrows;
       height: 300px;
-      @include bgc-min;
+      background-color: $color-min;
     }
   }
 
   &__sec {
     @include arrows-block;
-    @include bgc-sec;
+    background-color: $color-sec;
     animation: clock 60s linear infinite;
     z-index: 1;
 
     &::after {
       @include arrows;
       height: 380px;
-      @include bgc-sec;
+      background-color: $color-sec;
     }
   }
 }
