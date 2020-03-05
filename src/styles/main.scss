@@ -1,10 +1,8 @@
 @keyframes clock-hand {
   0% {
-    transform-origin: bottom;
     transform: rotate(0deg);
   }
   100% {
-    transform-origin: bottom;
     transform: rotate(360deg);
   }
 }
@@ -33,6 +31,7 @@
     border-radius: 5px;
     z-index: 0;
 
+    transform-origin: bottom;
     animation: clock-hand 3600s linear infinite;
   }
 
@@ -45,6 +44,7 @@
     border-radius: 5px;
     z-index: 1;
 
+    transform-origin: bottom;
     animation: clock-hand 60s linear infinite;
   }
 
