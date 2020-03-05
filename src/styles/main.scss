@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+}
+
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  margin: 100px auto;
+
+  &__hands {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 4px solid #000;
+    background-color: pink;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__hands::before,
+  &__hands::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 300px;
+    bottom: 10px;
+    left: 5px;
+    background-color: pink;
+    border-radius: 5px;
+
+    transform-origin: center bottom;
+    animation: stop-watch-seconds-run 60s linear infinite;
+  }
+
+  &__hands::after {
+    height: 180px;
+
+    animation: stop-watch-seconds-run 3600s linear infinite;
+  }
+
+  @keyframes stop-watch-seconds-run {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
