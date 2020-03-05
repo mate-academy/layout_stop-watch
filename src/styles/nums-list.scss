@@ -1,0 +1,25 @@
+.nums-list {
+  display: flex;
+  justify-content: space-around;
+  &__item {
+    margin: 5px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+  }
+  &__item:first-child {
+    align-self: center;
+  }
+  &__item:nth-child(3) {
+    align-self: flex-end;
+    position: relative;
+    right: 18px;
+  }
+  &__item:nth-child(4) {
+    align-self: center;
+  }
+  &__item:nth-child(2) {
+    position: relative;
+    left: 18px;
+  }
+}
