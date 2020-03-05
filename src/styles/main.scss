@@ -1,6 +1,7 @@
-$size-center: 30px;
-$size-handwidth: 30px;
-$size-watch: 600px;
+$size-watch: 900px;
+$size-center: $size-watch/20;
+$size-handwidth: $size-watch/60;
+$center-position: $size-watch/2 - $size-center/2;
 
 body {
   margin: 0;
@@ -13,6 +14,12 @@ body {
   height: 100vh;
 }
 
+.size-input {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
 .watch {
   position: relative;
   height: $size-watch;
@@ -22,20 +29,20 @@ body {
 }
 
 .center {
-  position: relative;
+  position: absolute;
   height: $size-center;
   width: $size-center;
-  bottom: 215px;
+  top: $center-position;
+  left: $center-position;
   background-color: #4b9aaa;
   border-radius: $size-center/2;
-  margin: auto;
 }
 
 .minute-hand {
   position: relative;
-  width: 10px;
-  height: 200px;
-  top: 100px;
+  width: $size-handwidth;
+  height: $size-watch/3;
+  top: $size-watch/6;
   background-color: #d15559;
   border-radius: $size-center/2;
   margin: auto;
@@ -45,9 +52,9 @@ body {
 
 .second-hand {
   position: relative;
-  width: 10px;
-  height: 300px;
-  bottom: 200px;
+  width: $size-handwidth;
+  height: $size-watch/2;
+  bottom: $size-watch/3;
   background-color: #4b9aaa;
   border-radius: $size-center/2;
   margin: auto;
