@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+}
+
+.clock {
+  width: 600px;
+  height: 600px;
+
+  &__manual {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    height: 300px;
+    width: 10px;
+    border-radius: 10px;
+  }
+
+  &__center {
+    position: absolute;
+    bottom: 48%;
+    left: 49%;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__minute {
+    background-color: black;
+    height: 150px;
+    animation: anim 3600s infinite linear;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    background-color: red;
+    animation: anim 60s infinite linear;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
