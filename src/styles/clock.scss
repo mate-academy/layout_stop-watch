@@ -1,0 +1,83 @@
+.clock-container {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 20px solid;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    background-color: #4b99aa;
+    z-index: 1;
+  }
+}
+
+.minutes-arrow {
+  position: absolute;
+  height: 200px;
+  width: 10px;
+  top: 150px;
+  left: 345px;
+  background-color: #d05559;
+  border-radius: 8px;
+  animation: rotate-arrow 3600s linear infinite;
+  transform-origin: bottom;
+}
+
+.seconds-arrow {
+  position: relative;
+  height: 300px;
+  width: 10px;
+  bottom: 31px;
+  left: 345px;
+  background-color: #4b9aaa;
+  border-radius: 8px;
+  animation: rotate-arrow 60s linear infinite;
+  transform-origin: bottom;
+}
+
+@keyframes rotate-arrow {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.clock-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:after {
+    font-size: 64px;
+    $minutes: 1;
+    content: "PUSH";
+    display: block;
+    color: red;
+    text-align: center;
+    animation: get-sec 7s linear infinite;
+    transition: color 1s ease;
+  }
+}
+
+@keyframes get-sec {
+  @for $sec from 1 through 9 {
+    $number: $sec * 10;
+    $percent: $number + "%";
+    #{$percent} {
+      content: ""+$sec;
+      color: black;
+    }
+  }
+}
