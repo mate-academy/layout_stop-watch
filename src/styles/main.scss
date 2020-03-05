@@ -5,10 +5,10 @@ body {
 
 .clock {
   position: relative;
-  height: 800px;
-  width: 800px;
+  height: 500px;
+  width: 500px;
   margin-bottom: 50px;
-  border: 3px solid black;
+  margin-top: 150px;
   margin-left: 300px;
 }
 
@@ -17,8 +17,9 @@ body {
   position: absolute;
   height: 30px;
   width: 30px;
-  top: 50%;
+  bottom: 20%;
   left: 50%;
+  transform: translate(-50%,-50%);
   background-color: red;
   border-radius: 50%;
 
@@ -28,24 +29,24 @@ body {
   position: absolute;
   width: 10px;
   height: 235px;
-  top: 22%;
-  left: 51%;
+  top:135px;
+  left:245px;
   background-color: blue;
   border-radius: 8px;
   transform: rotate (360deg);
   animation: clock 3600s linear infinite;
-  transform-origin: bottom;
-  }
+  transform-origin:  bottom;
+}
 
 .clock__second {
   position: absolute;
   width: 10px;
   height: 360px;
-  top: 7%;
-  left: 51%;
+  top: 10px;
+  left: 245px;
   background-color: red;
   border-radius: 8px;
-  animation: clock 60s linear infinite;
+   animation: clock 60s linear infinite;
   transform-origin: bottom;
 
 }
