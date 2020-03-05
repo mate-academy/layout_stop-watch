@@ -1,0 +1,42 @@
+@keyframes rotate-hand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.minute-hand {
+  width: 10px;
+  height: 200px;
+  background-color: brown;
+  border-radius: 5px;
+  margin: auto;
+  position: relative;
+  top: 100px;
+  transform-origin: 50% 100%;
+  animation: rotate-hand 3600s linear infinite;
+}
+
+.second-hand {
+  width: 10px;
+  height: 300px;
+  background-color: cadetblue;
+  margin: auto;
+  border-radius: 5px;
+  transform-origin: 50% 100%;
+  animation: rotate-hand 60s linear infinite;
+  position: relative;
+  bottom: 200px;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  background-color: cadetblue;
+  position: relative;
+  border-radius: 50%;
+  bottom: 215px;
+  margin: auto;
+}
