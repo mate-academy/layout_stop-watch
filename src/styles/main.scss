@@ -1,0 +1,62 @@
+
+.clock {
+  height: 600px;
+  width: 600px;
+  position: relative;
+
+  &:after {
+    content: "";
+    background: #5e99a9;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    z-index: 2;
+  }
+}
+
+.minutes__container,
+.seconds__container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.minutes__hand,
+.seconds__hand {
+  width: 10px;
+  position: absolute;
+  left: 49%;
+  border-radius: 5px;
+}
+
+.minutes__hand {
+  height: 210px;
+  top: 15%;
+  background-color: #c45c5c;
+}
+
+.seconds__hand {
+  height: 300px;
+  background: #5e99a9;
+  z-index: 1;
+}
+
+@keyframes clock {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.minutes__container {
+  animation: clock 3600s infinite steps(60);
+}
+
+.seconds__container {
+  animation: clock 60s infinite steps(60);
+}
