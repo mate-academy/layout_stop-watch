@@ -2,13 +2,17 @@ body,
 html {
   margin: 0;
 }
+$size: 500px;
+$height-sec: calc((#{$size} / 2) / 1.15);
+$height-min: calc((#{$size} / 2) / 1.5);
+$text-height: calc(#{$size} / 8.33);
 
 .watch {
   position: relative;
   display: flex;
 
-  height: 500px;
-  width: 500px;
+  height: #{$size};
+  width: #{$size};
 
   background-color: rgb(197, 197, 197);
 
@@ -20,8 +24,8 @@ html {
     content: "";
 
     position: absolute;
-    top: 50%;
-    left: 255px;
+    top: 49%;
+    left: 51%;
 
     transform: translate(-50%, -50%);
 
@@ -36,13 +40,13 @@ html {
 .watch-min {
   position: absolute;
 
-  height: 160px;
+  height: #{$height-min};
   width: 10px;
 
   left: 50%;
-  top: 90px;
+  bottom: 50%;
 
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
 
   background-color: rgb(161, 54, 54);
 
@@ -55,13 +59,13 @@ html {
 .watch-sec {
   position: absolute;
 
-  height: 220px;
+  height: #{$height-sec};
   width: 10px;
 
   left: 50%;
-  top: 30px;
+  bottom: 50%;
 
-  transform: translate(-50%);
+  transform: translate(-50%, 50%);
 
   background-color: rgb(0, 70, 0);
 
@@ -90,18 +94,19 @@ html {
 }
 
 .six {
-  top: 90%;
+  bottom: 2%;
   left: 50%;
   transform: translate(-50%);
 }
 
 .three {
-  left: 90%;
+  right: 2%;
   top: 50%;
   transform: translate(0 ,-50%);
 }
 
 .nine {
+  left: 2%;
   top: 50%;
   transform: translate(0 ,-50%);
 }
@@ -112,9 +117,9 @@ html {
   color: black;
   width: 60px;
   height: 60px;
-  font-size: 60px;
+  font-size: $text-height;
   text-align: center;
-  line-height: 40px;
+  line-height: $text-height;
 
   font-weight: bold;
 }
