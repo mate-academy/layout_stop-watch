@@ -9,6 +9,8 @@ body {
   width: 600px;
   height: 600px;
   margin: 100px auto;
+  background-color: lightgrey;
+  border-radius: 50%;
 
   &__hands {
     position: relative;
@@ -18,11 +20,14 @@ body {
 
   &__center {
     position: absolute;
+    content: "";
     width: 20px;
     height: 20px;
+
     box-sizing: border-box;
-    border: 4px solid #000;
-    background-color: pink;
+    border: 3px solid red;
+    box-shadow: 0 0 14px 1px rgba(#f00, 0.2);
+    background-color: #fff;
     border-radius: 50%;
     z-index: 2;
   }
@@ -31,20 +36,31 @@ body {
   &__hands::after {
     position: absolute;
     content: "";
-    width: 10px;
-    height: 300px;
-    bottom: 10px;
-    left: 5px;
-    background-color: pink;
-    border-radius: 5px;
+    width: 4px;
+    height: 330px;
+    bottom: calc(50% - 40px);
+    left: 8px;
+    background-color: red;
+    border-radius: 2px;
+    box-shadow: 0 0 10px 2px rgba(#f00, 0.2);
+    transform: rotate(0);
+    z-index: 1;
 
-    transform-origin: center bottom;
+    transform-origin: center 290px;
     animation: stop-watch-seconds-run 60s linear infinite;
   }
 
   &__hands::after {
-    height: 180px;
+    height: 260px;
+    width: 8px;
+    bottom: calc(50% - 30px);
+    left: 6px;
+    background-color: #000;
+    border-radius: 4px;
+    box-shadow: 0 0 16px 2px rgba(#000, 0.2);
+    z-index: 0;
 
+    transform-origin: center 230px;
     animation: stop-watch-seconds-run 3600s linear infinite;
   }
 
