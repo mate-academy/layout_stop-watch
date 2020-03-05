@@ -1,0 +1,57 @@
+$diameter: 50px;
+
+html {
+  height: 100%;
+
+  body {
+    height: 100%;
+    position: relative;
+
+    .center {
+      width: $diameter;
+      height: $diameter;
+      border-radius: $diameter / 2;
+      background-color: lightseagreen;
+      position: absolute;
+      top: calc(50% - #{$diameter} / 2);
+      right: calc(50% - #{$diameter} / 2);
+      z-index: 3;
+    }
+    
+    .minutes {
+      width: 10px;
+      height: 400px;
+      border-radius: 5px;
+      background-color: lightsalmon;
+      position: absolute;
+      bottom: calc(50% - 2.5px);
+      right: calc(50% - 5px);
+      z-index: 2;
+      animation: time 60s linear infinite;
+      transform-origin: bottom;
+    }
+
+    .hours {
+      width: 20px;
+      height: 250px;
+      border-radius: 5px;
+      background-color: salmon;
+      position: absolute;
+      bottom: calc(50% - 5px);
+      right: calc(50% - 10px);
+      animation: time 3600s linear infinite;
+      transform-origin: bottom;
+      z-index: 1;
+    }
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
