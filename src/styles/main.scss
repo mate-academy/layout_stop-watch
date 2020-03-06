@@ -21,22 +21,28 @@ h1 {
   border-radius: 50%;
   margin: auto;
 
-  &__arrow--small {
+  .arrow {
     display: flex;
     position: absolute;
-    width: $arrow-small-width;
     height: 15px;
-    animation: arrow-rotate 3600s infinite;
 
     > div {
       display: flex;
       width: 100%;
-      background-color: rgb(235, 27, 27);
       border-radius: 7px;
     }
 
     > div:nth-child(1) {
       visibility: hidden;
+    }
+  }
+
+  &__arrow--small {
+    width: $arrow-small-width;
+    animation: arrow-rotate 3600s infinite;
+
+    > div {
+      background-color: rgb(235, 27, 27);
     }
   }
 
@@ -50,23 +56,12 @@ h1 {
   }
 
   &__arrow--big {
-    display: flex;
-    position: absolute;
     width: $arrow-small-width * 2;
-    height: 15px;
     animation: arrow-rotate 60s infinite;
 
     > div {
-      display: flex;
-      width: 100%;
       background-color: royalblue;
-      border-radius: 7px;
     }
-
-    > div:nth-child(1) {
-      visibility: hidden;
-    }
-
   }
 
   @keyframes arrow-rotate {
