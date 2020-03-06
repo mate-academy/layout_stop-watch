@@ -1,0 +1,76 @@
+$arrow-small-width: 200px;
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color: rgb(141, 60, 141);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  margin: 0;
+}
+
+.watch {
+  display: flex;
+  width: $arrow-small-width * 2.5;
+  height: $arrow-small-width * 2.5;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+  transform: rotate(-90deg);
+  border: 30px solid rgb(141, 60, 141);
+  border-radius: 50%;
+  margin: auto;
+
+  .arrow {
+    display: flex;
+    position: absolute;
+    height: 15px;
+
+    > div {
+      display: flex;
+      width: 100%;
+      border-radius: 7px;
+    }
+
+    > div:nth-child(1) {
+      visibility: hidden;
+    }
+  }
+
+  &__arrow--small {
+    width: $arrow-small-width;
+    animation: arrow-rotate 3600s infinite linear;
+
+    > div {
+      background-color: rgb(235, 27, 27);
+    }
+  }
+
+  &__center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: royalblue;
+    border-radius: 15px;
+    z-index: 1;
+  }
+
+  &__arrow--big {
+    width: $arrow-small-width * 2;
+    animation: arrow-rotate 60s infinite;
+
+    > div {
+      background-color: royalblue;
+    }
+  }
+
+  @keyframes arrow-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+}
