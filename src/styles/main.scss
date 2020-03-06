@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.watch {
+  box-sizing: border-box;
+  position: relative;
+  width: 420px;
+  height: 420px;
+  margin: 100px;
+  background-color: cornsilk;
+  border: 3px solid red;
+  border-radius: 210px;
+  box-shadow: 0 0 28px 15px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  transition: box-shadow 1s;
+
+  &:hover {
+    box-shadow: 0 0 30px 30px rgba(0,0,0,0.4);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: darkorange;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.4);
+  }
+}
+
+.watch__arrow {
+  transform-origin: bottom;
+  box-sizing: border-box;
+  width: 0;
+  border-bottom: none;
+  position: absolute;
+  bottom: 50%;
+  box-shadow: -5px 0 4px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  animation-name: clockRotation;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.hour {
+  left: calc(50% - 4px);
+  height: 30%;
+  border: 4px solid orangered;
+  border-radius: 4px;
+  animation-duration: 86400s;
+}
+
+.minute {
+  left: calc(50% - 3px);
+  height: 40%;
+  border: 3px solid goldenrod;
+  border-radius: 3px;
+  animation-duration: 3600s;
+}
+
+.second {
+  left: calc(50% - 2px);
+  height: 50%;
+  border: 2px solid darkgoldenrod;
+  border-radius: 2px;
+  animation-duration: 60s;
+}
+
+@keyframes clockRotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
