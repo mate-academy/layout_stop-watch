@@ -1,0 +1,61 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes rotation {
+  from {
+    transform-origin: top;
+    transform: rotate(180deg);
+  }
+
+  to {
+    transform-origin: top;
+    transform: rotate(540deg);
+  }
+}
+
+.stopwatch {
+  height: 700px;
+  width: 700px;
+  border-radius: 50%;
+  border: 3px solid #100035;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__center {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000e5a;
+    z-index: 1;
+  }
+
+  &__second-hand {
+    width: 15px;
+    height: 330px;
+    background-color: #000e5a;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    animation: rotation 60s infinite linear;
+  }
+
+  &__minute-hand {
+    width: 15px;
+    height: 230px;
+    background-color: #970000;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    animation: rotation 3600s infinite linear;
+  }
+}
