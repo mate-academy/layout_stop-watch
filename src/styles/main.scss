@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1000px;
+  transform: rotate(-90deg);
+}
+
+.pointer-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: darkorange;
+  position: relative;
+  left: 10px;
+  z-index: 3;
+}
+
+.seconds-arrow {
+  width: 200px;
+  height: 10px;
+  border-radius: 5px;
+  transform: translateY(20px);
+  background-color: darkorange;
+  animation: rot 60s infinite linear;
+  transform-origin: 0% 50%;
+  z-index: 2;
+}
+
+.minutes-arrow {
+  width: 100px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: orangered;
+  position: relative;
+  left: -200px;
+  animation: rot 3600s infinite linear;
+  transform-origin: 0% 50%;
+  z-index: 1;
+}
+
+@keyframes rot {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
