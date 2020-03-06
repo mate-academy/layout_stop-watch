@@ -1,0 +1,38 @@
+.minutes {
+  position: absolute;
+  width: 6px;
+  height: 300px;
+  left: 600px;
+  top: 200px;
+  border-radius: 50px;
+  background: red;
+  animation: now 60s infinite;
+  transform-origin: 0 300px;
+}
+
+.has {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  left: 600px;
+  top: 200px;
+  background: #009b95;
+}
+
+.dot {
+  position: absolute;
+  bottom: -20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background: #009b95;
+}
+
+@keyframes now {
+  100% {
+    transform: rotate(360deg);
+  }
+}
