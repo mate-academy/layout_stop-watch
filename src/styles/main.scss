@@ -1,4 +1,4 @@
-$arrow-small-width: 200px;
+$arrow-small-width: 150px;
 
 h1 {
   display: flex;
@@ -11,8 +11,8 @@ h1 {
 
 .watch {
   display: flex;
-  width: $arrow-small-width * 2.5;
-  height: $arrow-small-width * 2.5;
+  width: $arrow-small-width * 4;
+  height: $arrow-small-width * 4;
   justify-content: center;
   align-items: center;
   background-color: pink;
@@ -20,57 +20,46 @@ h1 {
   border: 30px solid rgb(141, 60, 141);
   border-radius: 50%;
   margin: auto;
+}
 
-  .arrow {
-    display: flex;
-    position: absolute;
-    height: 15px;
+.center {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: royalblue;
+  border-radius: 20px;
+  z-index: 1;
+}
 
-    > div {
-      display: flex;
-      width: 100%;
-      border-radius: 7px;
-    }
+.center > div {
+  display: flex;
+  position: absolute;
+  left: 20px;
+  height: 15px;
+  border-radius: 7px;
+}
 
-    > div:nth-child(1) {
-      visibility: hidden;
-    }
+.minute {
+  width: $arrow-small-width;
+  background-color: rgb(235, 27, 27);
+  animation: arrow-rotate 3600s infinite linear;
+}
+
+.second {
+  width: $arrow-small-width * 1.5;
+  background-color: royalblue;
+  animation: arrow-rotate 60s infinite;
+}
+
+@keyframes arrow-rotate {
+  from {
+    transform-origin: top left;
+    transform: rotate(0deg);
   }
-
-  &__arrow--small {
-    width: $arrow-small-width;
-    animation: arrow-rotate 3600s infinite linear;
-
-    > div {
-      background-color: rgb(235, 27, 27);
-    }
+  to {
+    transform-origin: bottom left;
+    transform: rotate(360deg);
   }
-
-  &__center {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: royalblue;
-    border-radius: 15px;
-    z-index: 1;
-  }
-
-  &__arrow--big {
-    width: $arrow-small-width * 2;
-    animation: arrow-rotate 60s infinite;
-
-    > div {
-      background-color: royalblue;
-    }
-  }
-
-  @keyframes arrow-rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
 }
