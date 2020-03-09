@@ -2,7 +2,7 @@
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   width: 140px;
   height: 140px;
-  // border-radius: 50%;
+  border-radius: 50%;
   margin: 100px auto;
   display: flex;
   justify-content: center;
@@ -16,21 +16,19 @@
       width: 2px;
       border-radius: 2px;
       position: absolute;
-      // left: calc(50% - 1.5px);
       top: 20%;
-      // animation: hand-rotation 3600s linear infinite;
+      animation: hand-rotation 3600s linear infinite;
       background-color: #c45c5c;
     }
     &--second {
       width: 1px;
       position: absolute;
       top: 20%;
-      // left: calc(50% - 1px);
       border-radius: 1px;
       animation: hand-rotation 60s linear infinite;
       background-color: #5e99a9;
     }
-}
+  }
   &__dot {
     width: 5px;
     height: 5px;
@@ -38,10 +36,6 @@
     border-radius: 50%;
     position: absolute;
     top: 51%;
-  }
-
-  &__nums {
-    height: 100%;
   }
 }
 
