@@ -1,0 +1,44 @@
+.clock__hand {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+
+  &--minute {
+    width:10px;
+    height: 300px;
+    position:absolute;
+    background-color: blue; 
+    transform-origin: bottom;
+    animation: clock-hand-rotate 3600s linear infinite;
+  }
+
+  &--second {
+    width: 10px;
+    height: 300px;
+    background-color: red;
+    position:absolute;
+    transform-origin: bottom;
+    animation: clock-hand-rotate 60s linear infinite;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      top: 100%;
+      left: 50%;
+      background-color: black;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@keyframes clock-hand-rotate {
+  from {
+      transform: rotate(0deg)
+  }
+  to {
+      transform: rotate(360deg)
+  }
+}
