@@ -4,23 +4,26 @@
   top: 10%;
 
   &--minute {
-    width:10px;
-    height: 300px;
     position:absolute;
+    width:10px;
+    height: 150px;
+    margin-top: 150px;
     background-color: blue; 
     transform-origin: bottom;
+    border-radius: 70%;
     animation: clock-hand-rotate 3600s linear infinite;
   }
 
   &--second {
     width: 10px;
     height: 300px;
+    border-radius: 70%;
     background-color: red;
     position:absolute;
     transform-origin: bottom;
     animation: clock-hand-rotate 60s linear infinite;
 
-    &::before {
+    &::after {
       content: "";
       position: absolute;
       height: 30px;
