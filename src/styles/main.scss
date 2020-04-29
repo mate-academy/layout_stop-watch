@@ -1,0 +1,65 @@
+$arrow-small-width: 150px;
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color: rgb(141, 60, 141);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  margin: 0;
+}
+
+.watch {
+  display: flex;
+  width: $arrow-small-width * 4;
+  height: $arrow-small-width * 4;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+  transform: rotate(-90deg);
+  border: 30px solid rgb(141, 60, 141);
+  border-radius: 50%;
+  margin: auto;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: royalblue;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.center > div {
+  display: flex;
+  position: absolute;
+  left: 20px;
+  height: 15px;
+  border-radius: 7px;
+}
+
+.minute {
+  width: $arrow-small-width;
+  background-color: rgb(235, 27, 27);
+  animation: arrow-rotate 3600s infinite linear;
+}
+
+.second {
+  width: $arrow-small-width * 1.5;
+  background-color: royalblue;
+  animation: arrow-rotate 60s infinite;
+}
+
+@keyframes arrow-rotate {
+  from {
+    transform-origin: top left;
+    transform: rotate(0deg);
+  }
+  to {
+    transform-origin: bottom left;
+    transform: rotate(360deg);
+  }
+}
