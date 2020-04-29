@@ -1,0 +1,57 @@
+%watch--features {
+  border: 1px black solid;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+%general--features {
+  position: absolute;
+  background-color: brown;
+}
+
+%hands--features {
+  @extend %general--features;
+  animation: timer 3600s infinite;
+  transform-origin: bottom;
+  left: 195px;
+  width: 10px;
+}
+
+.watch {
+  @extend %watch--features;
+  width: 402px;
+  height: 402px;
+  position: relative;
+  left: 50px;
+  background-color: pink;
+  &__center {
+    @extend %watch--features;
+    @extend %general--features;
+    width: 24px;
+    height: 24px;
+    top: 188px;
+    left: 188px;
+  }
+  &__minutes {
+    @extend %watch--features;
+    @extend  %hands--features;
+    height: 150px;
+    top: 55px;
+  }
+  &__seconds {
+    @extend %watch--features;
+    @extend  %hands--features;
+    height: 200px;
+    top: 0;
+    animation-duration: 60s;
+  }
+}
+
+@keyframes timer {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
