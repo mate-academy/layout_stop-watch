@@ -1,0 +1,45 @@
+
+.minutes {
+  background: #c45c5c;
+  height: 40%;
+  left: 50%;
+  position: absolute;
+  top: 10%;
+  transform-origin: 50% 100%;
+  width: 1%;
+  animation: rotate 3600s infinite linear;
+  border-radius: 5px;
+}
+
+.seconds {
+  background: #7ba1ac;
+  height: 45%;
+  left: 50%;
+  position: absolute;
+  top: 5%;
+  transform-origin: 50% 100%;
+  width: 1%;
+  z-index: 8;
+  animation: rotate 60s infinite linear;
+  border-radius: 5px;
+  }
+
+.middle {
+  width: 18px;
+  height: 18px;
+  background: #7ba1ac;
+  position: absolute;
+  border-radius: 50%;
+  border: groove 7ba1ac;
+  top: 48%;
+  left: 49.85%;
+  z-index: 1;
+  }
+
+  @keyframes rotate {
+    100% {
+    transform: rotateZ(360deg);
+    }
+  }
+
+
