@@ -3,47 +3,34 @@ body {
   background-color: darkgrey;
 }
 
-.general {
-  background-color: lightcyan;
+@mixin position($BG, $wid, $hei) {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 500px;
-  height: 500px;
-  transform: translate(-50%, -50%);
   border-radius: 50%;
+  background-color: $BG;
+  width: $wid;
+  height: $hei;
+}
+
+.general {
+  @include position(lightcyan, 500px, 500px, );
+  transform: translate(-50%, -50%);
 }
 
 .center {
-  background-color: cadetblue;
-  position: absolute;
-  top: 50%;
-  left: calc(50% + 3px);
-  width: 20px;
-  height: 20px;
+  @include position(cadetblue, 25px, 25px);
   transform: translate(-50%, -50%);
-  border-radius: 50%;
+  left: calc(50% + 3px);
 }
 
 .sec-hand {
-  background-color: lightslategray;
-  border-radius: 10px;
-  width: 5px;
-  height: 300px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  @include position(lightslategray, 5px, 300px);
   animation: time-animate 60s linear infinite;
 }
 
 .min-hand {
-  border-radius: 10px;
-  background-color: teal;
-  width: 5px;
-  height: 200px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  @include position(teal, 5px, 200px);
   animation: time-animate 3600s linear infinite;
 }
 
