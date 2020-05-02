@@ -1,0 +1,67 @@
+$clock-size: 600px;
+$seconds-color: #5f98a8;
+$minutes-color: #c25d5d;
+
+body {
+  margin: 0;
+}
+
+.container {
+  width: $clock-size;
+  height: $clock-size;
+  position: absolute;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+@keyframes time {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.seconds {
+  width: $clock-size / 60;
+  height: $clock-size / 2;
+  border: solid $clock-size / 600 $seconds-color;
+  background-color: $seconds-color;
+  border-radius: $clock-size / 60;
+  position: absolute;
+  box-sizing: border-box;
+  left: ($clock-size / 2) - ($clock-size / 120);
+  transform-origin: bottom center;
+  animation: time 60s linear infinite;
+}
+	
+.minutes {
+  width: $clock-size / 50;
+  height: $clock-size / 3;
+  border: solid $clock-size / 600 $minutes-color;
+  background-color: $minutes-color;
+  border-radius: $clock-size / 50;
+  position: absolute;
+  box-sizing: border-box;
+  top: $clock-size / 6;
+  left: ($clock-size / 2) - ($clock-size / 100);
+  transform-origin: bottom center;
+  animation: time 3600s linear infinite;
+
+}
+
+.base {
+  width: $clock-size / 20;
+  height: $clock-size / 20;
+  border-radius: 50%;
+  background-color: $seconds-color;
+  position: absolute;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
