@@ -1,0 +1,45 @@
+@import "variables";
+
+.watch {
+
+  &_center {
+    position: absolute;
+    z-index: 2;
+    background-color: cornflowerblue;
+    border-radius: 50%;
+    height: $center_size;
+    width: $center_size;
+    top: calc((65%) - #{$center_size}/2);
+    left: 50%;
+  }
+
+  &_minute {
+    @extend %arrows_style;
+    z-index: 0;
+    height: $minuteHeight;
+    background-color: crimson;
+    top: calc((65%) - #{$minuteHeight});
+    left: calc((50%) + #{$thickness_arrow}/2);
+    animation: tik-tok 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &_second {
+    z-index: 1;
+    @extend %arrows_style;
+    height: $secondHeight;
+    background-color: cornflowerblue;
+    left: calc((50%) + #{$thickness_arrow}/2);
+    top: calc((65%) - #{$secondHeight});
+    animation: tik-tok 60s linear infinite;
+    transform-origin: bottom;
+  }
+}
+@keyframes tik-tok {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
