@@ -1,0 +1,57 @@
+.clock {
+  width: 600px;
+  height: 600px;
+  border: 1px #000 solid;
+  border-radius: 50%;
+
+  position: relative;
+
+  @include item-center;
+
+  div {
+    position: absolute;
+  }
+
+  &__minutes {
+    @include arrow-size(12px, 70%, 1);
+
+    animation: linear rotate-arrow 3600s infinite;
+  }
+
+  &__seconds {
+    @include arrow-size(7px, 90%, 2);
+    animation: linear rotate-arrow 60s infinite;
+  }
+
+  &__point {
+    background: $primary-color;
+
+    border-radius: 50%;
+
+    @include arrow-size(30px, 30px, 3);
+  }
+
+  &__arrow {
+    width: 100%;
+    height: 50%;
+
+    border-radius: 20px;
+
+    &--minute {
+      background: $secondary-color;
+    }
+
+    &--second {
+      background: $primary-color;
+    }
+  }
+}
+
+@keyframes rotate-arrow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
