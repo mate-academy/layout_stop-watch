@@ -25,6 +25,19 @@
     @include size(7px, 45%);
     @include rotate-time(60s);
     background: $primary-color;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -27px;
+      left: -12px;
+      display: block;
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      border-bottom-color: $primary-color;
+    }
   }
 
   &__point {
