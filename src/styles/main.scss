@@ -1,0 +1,35 @@
+@import "variables";
+@import "mixins";
+
+body {
+  margin: 0;
+}
+
+.clock {
+  margin: auto;
+  height: $clock-size;
+  width: $clock-size;
+  border: 7px solid salmon;
+  border-radius: 50%;
+  position: relative;
+
+  &::after {
+    @include arrow;
+    background-color: $arrow-second-color;
+    animation: rotation 60s infinite steps(60);
+    transform-origin: bottom;
+  }
+
+  &::before {
+    @include arrow;
+    background-color: $arrow-minute-color;
+    animation: rotation 3600s infinite steps(60);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
