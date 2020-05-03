@@ -4,9 +4,11 @@
   align-items: center;
 }
 
-@mixin arrow-size($width, $height, $index) {
+@mixin size($width, $height) {
   width: $width;
   height: $height;
+}
 
-  z-index: $index;
+@mixin rotate-time($seconds) {
+  animation: linear rotate-arrow $seconds infinite;
 }

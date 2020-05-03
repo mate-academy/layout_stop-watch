@@ -1,13 +1,7 @@
 .clock {
-  width: 600px;
-  height: 600px;
-  border: 1px #000 solid;
+  @include size(600px, 600px);
   border-radius: 50%;
-  // background: url(../images/clock.jpg) no-repeat center;
-  //why doesn't work
-  background-image: url("../images/face.jpg");
-  background-size: cover;
-  background-position: center;
+  background: no-repeat center/100% url("../images/face.jpg");
 
   position: relative;
 
@@ -15,40 +9,31 @@
 
   div {
     position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+
+    border-radius: 20px;
   }
 
   &__minutes {
-    @include arrow-size(12px, 70%, 1);
-
-    animation: linear rotate-arrow 3600s infinite;
+    @include size(12px, 35%);
+    @include rotate-time(3600s);
+    background: $secondary-color;
   }
 
   &__seconds {
-    @include arrow-size(7px, 90%, 2);
-    animation: linear rotate-arrow 60s infinite;
+    @include size(7px, 45%);
+    @include rotate-time(60s);
+    background: $primary-color;
   }
 
   &__point {
+    @include size(30px, 30px);
     background: $primary-color;
-
+    
     border-radius: 50%;
 
-    @include arrow-size(30px, 30px, 3);
-  }
-
-  &__arrow {
-    width: 100%;
-    height: 50%;
-
-    border-radius: 20px;
-
-    &--minute {
-      background: $secondary-color;
-    }
-
-    &--second {
-      background: $primary-color;
-    }
+    transform: translateY(50%);
   }
 }
 
