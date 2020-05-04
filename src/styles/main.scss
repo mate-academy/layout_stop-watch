@@ -19,8 +19,8 @@ body {
 
 .watch {
   position: relative;
-  width: 800px;
-  height: 800px;
+  width: 400px;
+  height: 400px;
   border-radius: $radius;
   border: 10px solid $deeppink;
   &__point {
@@ -28,19 +28,19 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     background-color: $deeppink;
     border-radius: $radius;
   }
   &__seconds {
     @include position-arrows;
-    height: 390px;
+    height: 180px;
     animation: watch 60s linear infinite;
   }
   &__minutes {
     @include position-arrows;
-    height: 250px;
+    height: 100px;
     animation: watch 3600s linear;
   }
 }
