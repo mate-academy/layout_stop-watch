@@ -15,50 +15,52 @@ $red: #d15559;
   width: 100%;
   height: 100vh;
   margin: 0 auto;
+
   &__point {
     position: absolute;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    border-radius: 50%;
     background-color: $blue;
   }
-}
 
-.minute__arrow,
-.second__arrow {
-  position: absolute;
-  height: 100%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  &::before {
-    content: "";
+  &__minute,
+  &__second {
     position: absolute;
-    border-radius: 15px;
-    bottom: 50%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    &::before {
+      content: "";
+      position: absolute;
+      border-radius: 15px;
+      bottom: 50%;
+    }
   }
-}
 
-.minute__arrow {
-  width: 12px;
-  animation: timer 3600s linear infinite;
-  &::before {
-    background: $red;
-    height: 40%;
+  &__minute {
     width: 12px;
+    animation: timer 3600s linear infinite;
+    &::before {
+      background: $red;
+      height: 40%;
+      width: 12px;
+    }
   }
-}
 
-.second__arrow {
-  width: 10px;
-  animation: timer 60s linear infinite;
-  &::before {
-    background: $blue;
-    height: 50%;
+  &__second {
     width: 10px;
+    animation: timer 60s  1s linear infinite;
+    &::before {
+      background: $blue;
+      height: 50%;
+      width: 10px;
+    }
   }
 }
 
