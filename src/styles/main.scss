@@ -1,0 +1,67 @@
+$sw-size: 500px;
+$primary-clr: lightskyblue;
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $sw-size;
+  height: $sw-size;
+
+  margin: 0 auto;
+  border: 10px solid $primary-clr;
+  border-radius: 50%;
+
+  background-color: rgb(236, 251, 255);
+}
+
+.circle {
+  width: $sw-size / 15;
+  height: $sw-size / 15;
+  background-color: $primary-clr;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.arrow {
+  width: 5px;
+  position: absolute;
+  z-index: 0;
+  border-radius: 2px;
+  animation: move-arrow 60s linear 1s infinite normal backwards;
+
+  &-sec {
+    height: $sw-size;
+
+    &::after {
+      background-color: lighten($color: black, $amount: 50%);
+    }
+  }
+
+  &-min {
+    height: $sw-size * 0.75;
+    animation-duration: 3600s;
+
+    &::after {
+      background-color: black;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 50%;
+    width: 100%;
+  }
+}
+
+@keyframes move-arrow {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
