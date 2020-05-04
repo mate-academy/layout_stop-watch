@@ -1,0 +1,33 @@
+%position-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+%box-50to50 {
+  width: 50%;
+  height: 50%;
+}
+
+%central-point {
+  height: 10px;
+  width: 10px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+%animation {
+  animation: seconds linear infinite;
+}
+
+%arrow-spec {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  transform-origin: top right;
+  width: 3px;
+  background-color: red;
+  border-bottom: solid green 2px;
+  height: $std-arrow;
+}
