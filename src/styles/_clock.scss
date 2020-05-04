@@ -1,11 +1,13 @@
-.clock {
-  @include size(600px, 600px);
-  border-radius: 50%;
-  background: no-repeat center/100% url("../images/face.jpg");
+@import "variables";
+@import "mixins";
 
+.clock {
+  @include item-center;
+  @include size(600px, 600px);
   position: relative;
 
-  @include item-center;
+  border-radius: 50%;
+  background: no-repeat center/100% url("../images/face.jpg");
 
   div {
     position: absolute;
@@ -18,14 +20,16 @@
   &__minutes {
     @include size(12px, 35%);
     @include rotate-time(3600s);
+
     background: $secondary-color;
   }
 
   &__seconds {
     @include size(7px, 45%);
     @include rotate-time(60s);
-    background: $primary-color;
     position: relative;
+
+    background: $primary-color;
 
     &::before {
       content: "";
@@ -42,6 +46,7 @@
 
   &__point {
     @include size(30px, 30px);
+
     background: $primary-color;
     
     border-radius: 50%;
