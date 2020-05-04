@@ -1,0 +1,64 @@
+$BASELINE: $size / 600px !global;
+
+@mixin center {
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  border-radius: 50%;
+}
+
+@mixin hour-hand($width, $height, $color, $time) {
+  width: $BASELINE * $width;
+  height: $BASELINE * $height;
+  border: solid $BASELINE $color;
+  background-color: $color;
+  border-radius: $BASELINE * $width;
+  position: absolute;
+  transform-origin: bottom center;
+  animation: time $time linear infinite;
+}
+
+@mixin base($size, $color) {
+  width: $BASELINE * $size;
+  height: $BASELINE * $size;
+  border-radius: 50%;
+  background-color: $color;
+  position: relative;
+  top: $BASELINE * $size / 2;
+}
+
+@keyframes time {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin clock($size) {
+  @include center();
+  width: $size * $BASELINE;
+  height: $size * $BASELINE / 2;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.clock {
+  @include clock($size);
+}
+  
+.clock__seconds {
+  @include hour-hand(10px, 300px, $secinds-hand-color, 60s);
+}
+
+.clock__minutes {
+  @include hour-hand(12px, 200px, $minutes-hand-color, 3600s);
+}
+
+.clock__base {
+  @include base(30px, $secinds-hand-color);
+}
