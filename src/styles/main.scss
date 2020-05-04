@@ -13,50 +13,60 @@ $red: #d15559;
   display: flex;
   justify-content: center;
   align-items: center;
+  
   height: 720px;
   width: 1000px;
 }
 
 .clock {
+  position: relative;
   display: block;
   height: 600px;
   width: 600px;
-  position: relative;
   transform: rotate(-90deg);
 
   &__point {
     position: relative;
-    height: 35px;
-    width: 35px;
-    border-radius: 50%;
-    background-color: $blue;
     top: 50%;
     left: 50%;
+
+    height: 35px;
+    width: 35px;
+
+    background-color: $blue;
+    border-radius: 50%;
     z-index: 1;
+
     animation: timer 60s infinite;
   }
 
   &__minute {
     position: absolute;
-    background-color: $red;
-    height: 13px;
-    width: 250px;
     top: 52%;
     left: 52%;
-    transform-origin: left;
+
+    height: 13px;
+    width: 250px;
+
+    background-color: $red;
     border-radius: 10px;
+    transform-origin: left;
+
     animation: timer 3600s infinite;
   }
 
   &__second {
     position: relative;
-    height: 11px;
-    width: 300px;
-    background-color: $blue;
-    border-radius: 10px;
     top: 46.2%;
     left: 53%;
+
+    height: 11px;
+    width: 300px;
+
+    background-color: $blue;
+    border-radius: 10px;
     transform-origin: left;
+
     animation: timer 60s  infinite;
   }
 }
