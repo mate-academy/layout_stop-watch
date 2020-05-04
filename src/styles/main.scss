@@ -1,46 +1,16 @@
+@import "elements";
+
 body {
   margin: 0;
   background-color: darkgrey;
 }
 
-@mixin position($BG, $wid, $hei) {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  background-color: $BG;
-  width: $wid;
-  height: $hei;
+.zegar{
+  position: relative;
 }
 
-.general {
-  @include position(lightcyan, 500px, 500px, );
-  transform: translate(-50%, -50%);
-}
-
-.center {
-  @include position(cadetblue, 25px, 25px);
-  transform: translate(-50%, -50%);
-  left: calc(50% + 3px);
-}
-
-.sec-hand {
-  @include position(lightslategray, 5px, 300px);
-  animation: time-animate 60s linear infinite;
-}
-
-.min-hand {
-  @include position(teal, 5px, 200px);
-  animation: time-animate 3600s linear infinite;
-}
-
-@keyframes time-animate {
-  from {
-    transform: rotate(180deg);
-    transform-origin: 50% 0;
-  }
-  to {
-    transform: rotate(539deg);
-    transform-origin: 50% 0;
-  }
+.zegar--sizes {
+  margin: 100px auto;
+  height: 400px;
+  width: 400px;
 }
