@@ -1,0 +1,46 @@
+@import "vars";
+@import "mixin";
+@import "animation";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #000;
+  height: 100vh;
+}
+
+.watch {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  border-radius: $radius;
+  border: 10px solid $deeppink;
+  &__point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40px;
+    width: 40px;
+    background-color: $deeppink;
+    border-radius: $radius;
+  }
+  &__seconds {
+    @include position-arrows;
+    height: 390px;
+    animation: watch 60s linear infinite;
+  }
+  &__minutes {
+    @include position-arrows;
+    height: 250px;
+    animation: watch 3600s linear;
+  }
+}
