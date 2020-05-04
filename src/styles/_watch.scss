@@ -1,0 +1,36 @@
+.watch {
+  position: relative;
+  margin: 0 auto;
+  border: 3px solid $blue-color;
+  width: $watch-size;
+  height: $watch-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.minute {
+  @include circle;
+  animation: clock-second 3600s infinite linear;
+  z-index: 2;
+}
+
+.minute::before {
+  @include arrow ($blue-color, 120px);
+}
+
+.second {
+  @include circle;
+  animation: clock-second 60s infinite linear;
+  z-index: 2;
+}
+
+.second::before {
+  @include arrow (#d15559, 200px);
+}
+
+@keyframes clock-second {
+  to {
+    transform: rotate(360deg);
+  }
+}

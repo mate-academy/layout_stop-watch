@@ -1,0 +1,26 @@
+$center-percent: 50%;
+$watch-size: 500px;
+$circle-size: 25px;
+$blue-color: #4b9aaa;
+
+@mixin arrow ($bg-color, $height) {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 0);
+  width: 8px;
+  border-radius: 30%;
+  transform-origin: top right;
+  height: $height;
+  background-color: $bg-color;
+}
+
+@mixin circle {
+  position: absolute;
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  background-color: $blue-color;
+}
