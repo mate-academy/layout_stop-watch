@@ -1,21 +1,25 @@
 $sw-size: 500px;
+$primary-clr: lightskyblue;
 
 .stopwatch {
-  width: $sw-size;
-  height: $sw-size;
-  background-color: rgb(236, 251, 255);
-  margin: 0 auto;
-  border: 10px solid lightskyblue;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  width: $sw-size;
+  height: $sw-size;
+
+  margin: 0 auto;
+  border: 10px solid $primary-clr;
+  border-radius: 50%;
+
+  background-color: rgb(236, 251, 255);
 }
 
-.center-circle {
-  width: $sw-size/15;
-  height: $sw-size/15;
-  background-color: lightskyblue;
+.circle {
+  width: $sw-size / 15;
+  height: $sw-size / 15;
+  background-color: $primary-clr;
   border-radius: 50%;
   z-index: 1;
 }
@@ -57,7 +61,6 @@ $sw-size: 500px;
   from {
     transform: rotate(0);
   }
-
   to {
     transform: rotate(360deg);
   }
