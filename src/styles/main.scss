@@ -1,3 +1,6 @@
+$watch-diametr: 402px;
+$center-diametr: 24px;
+
 %watch--features {
   border: 1px black solid;
   box-sizing: border-box;
@@ -11,37 +14,41 @@
 
 %hands--features {
   @extend %general--features;
+  
   animation: timer 3600s infinite;
   transform-origin: bottom;
-  left: 195px;
+  left: ($watch-diametr - 10)/2;
   width: 10px;
 }
 
 .watch {
   @extend %watch--features;
-  width: 402px;
-  height: 402px;
+  width: $watch-diametr;
+  height: $watch-diametr;
   position: relative;
   left: 50px;
   background-color: pink;
+
   &__center {
     @extend %watch--features;
     @extend %general--features;
-    width: 24px;
-    height: 24px;
-    top: 188px;
-    left: 188px;
+    width: $center-diametr;
+    height: $center-diametr;
+    top: ($watch-diametr - $center-diametr)/2;
+    left: ($watch-diametr - $center-diametr)/2;
   }
+
   &__minutes {
     @extend %watch--features;
     @extend  %hands--features;
-    height: 150px;
+    height: $watch-diametr/2 - 50;
     top: 55px;
   }
+
   &__seconds {
     @extend %watch--features;
     @extend  %hands--features;
-    height: 200px;
+    height: $watch-diametr/2;
     top: 0;
     animation-duration: 60s;
   }
