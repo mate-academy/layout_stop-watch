@@ -1,0 +1,50 @@
+%feachure {
+  position: absolute;
+  transform-origin: bottom;
+  left: 50%;
+  bottom: 50%;
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.63);
+}
+
+.watch {
+  position: relative;
+  width: 650px;
+  height: 650px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  box-shadow: 9px 9px 68px 2px rgba(0,0,0,0.43);
+  margin: auto;
+  &__hour {
+    @extend %feachure;
+    background-color: #c35d5d;
+    width: 15px;
+    height: 250px;
+    border-radius: 10px;
+    animation: time 3600s infinite steps(60);
+  }
+  &__minute {
+    @extend %feachure;
+    width: 15px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #5f99a9;
+    animation: time 60s infinite steps(60);
+  }
+
+  &__center {
+    @extend %feachure;
+    background-color: #5f99a9;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 47%;
+    left: 49%;
+    z-index: 2;
+  }
+}
+
+@keyframes time {
+  100% {
+    transform: rotate(360deg);
+  }
+}
