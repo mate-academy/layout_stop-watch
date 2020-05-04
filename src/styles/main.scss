@@ -1,0 +1,40 @@
+@import "extention";
+@import "animation";
+
+.watch {
+  height: 500px;
+  width: 500px;
+  border-radius: 100%;
+  background-color: grey;
+  position: relative;
+
+  &__second {
+    @extend %arrow;
+    height: 50%;
+    background-color: red;
+    
+    animation: arrow 60s infinite linear;
+  }
+
+  &__minute {
+    @extend %arrow;
+    height: 40%;
+    top: 10%;
+    background-color: blue;
+    
+    animation: arrow 3600s infinite linear;
+  }
+
+  &__center {
+    width: 25px;
+    height: 25px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #000;
+    border-radius: 100%;
+  }
+}
