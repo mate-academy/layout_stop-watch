@@ -9,10 +9,10 @@ body {
 }
 
 .clock {
-  position: fixed;
+  position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -27,21 +27,21 @@ body {
     transform: rotate(90deg);
     transform-origin: 100%;
   }
-  .hand-minute {
+  .hand--minute {
     animation: hand-rotation 60s linear infinite;
   }
 
-  .hand-second {
+  .hand--second {
     animation: hand-rotation 3600s linear infinite;
   }
 }
 
 @keyframes hand-rotation {
-  from {
+  0% {
     transform: rotate(90deg);
   }
 
-  to {
+  100% {
     transform: rotate(450deg);
   }
 }
