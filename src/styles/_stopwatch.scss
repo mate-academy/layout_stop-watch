@@ -8,7 +8,7 @@
   width: $clock-size;
   margin: auto;
 
-  border: $clock-size*0.01 solid black;
+  border: $clock-size * 0.01 solid black;
   border-radius: 50%;
 
   &__center {
@@ -29,22 +29,21 @@
 
     width: $clock-size * 0.02;
     border-radius: $clock-size * 0.01;
+  }
 
-    &-min {
-      @extend .stopwatch__hand;
+  &__hand-sec {
+    @extend .stopwatch__hand;
 
-      height: $clock-size * 0.3;
-      background-color: hsl(358, 57%, 58%);
-      animation: hand-movement 3600s linear;
-    }
+    height: $clock-size * 0.4;
+    background-color: $blue;
+    animation: hand-movement 60s linear infinite;
+  }
 
-    &-sec {
-      @extend .stopwatch__hand;
+  &__hand-min {
+    @extend .stopwatch__hand;
 
-      height: $clock-size * 0.4;
-      background-color: $blue;
-      animation: hand-movement 60s linear infinite;
-    }
-
+    height: $clock-size * 0.3;
+    background-color: hsl(358, 57%, 58%);
+    animation: hand-movement 3600s linear;
   }
 }
