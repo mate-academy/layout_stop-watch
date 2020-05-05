@@ -9,18 +9,21 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "postinstall": "cp node_modules/@mate-academy/htmllint-config/.htmllintrc ./.linthtmlrc",
-    "lint": "stylelint src/**/*.scss && eslint src/**/*.js && linthtml src/*.html"
+    "lint": "stylelint src/**/*.scss && eslint src/**/*.js && linthtml src/*.html",
+    "publish": "bash ./config/deploy.sh"
+
   },
   "keywords": [],
   "author": "Mate Academy",
   "license": "GPL-3.0",
   "devDependencies": {
     "@linthtml/linthtml": "^0.3.2",
+    "@mate-academy/backstop-config": "*",
     "@mate-academy/browsersync-config": "*",
     "@mate-academy/eslint-config": "*",
     "@mate-academy/htmllint-config": "*",
     "@mate-academy/stylelint-config": "*",
-    "@mate-academy/backstop-config": "*",
+    "browser-sync": "^2.1.6",
     "colors": "^1.3.3",
     "eslint": "^5.16.0",
     "eslint-plugin-node": "^8.0.1",
@@ -34,10 +37,9 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-stylelint": "^9.0.0",
-    "browser-sync": "^2.1.6",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.5",
-    "stylelint": "^10.0.0",
+    "stylelint": "^13.3.3",
     "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-scss": "^3.6.1"
   },
