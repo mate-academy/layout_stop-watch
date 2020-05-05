@@ -1,0 +1,72 @@
+$main-size: 500px;
+
+.clock {
+  width: $main-size;
+  height: $main-size;
+  margin: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  border: 10px solid #985c1c;
+  background: linear-gradient(137deg, rgba(0,0,0,1) 0%, rgba(233,182,26,1) 43%);
+
+  &__center-circle {
+    width: $main-size / 10;
+    height: $main-size / 10;
+    z-index: 1;
+
+    background: radial-gradient(
+      circle,
+      rgba(233,182,26,1) 0%,
+      rgba(0,0,0,1)
+      78%);
+    border-radius: 50%;
+  }
+
+  &__arrow {
+    position: absolute;
+    width: 15px;
+
+    animation: arrow-spin 60s linear infinite ;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 50%;
+      width: 100%;
+    }
+  }
+
+  &__arrow--sec {
+    height: $main-size;
+
+    &::after {
+      background-color: #de5f1b;
+      border-radius: 30px;
+    }
+  }
+
+  &__arrow--min {
+    height: $main-size * 0.6;
+    animation-duration: 3600s;
+
+    &::after {
+      background-color: #942222;
+      border-radius: 30px;
+    }
+  }
+}
+
+@keyframes arrow-spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
