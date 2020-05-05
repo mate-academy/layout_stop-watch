@@ -18,7 +18,7 @@ $BASELINE: $size / 600px !global;
   border-radius: $BASELINE * $width;
   position: absolute;
   transform-origin: bottom center;
-  animation: time $time linear infinite;
+  animation: time $time cubic-bezier(0, 1.33, 0, 0.94) infinite;
 }
 
 @mixin base($size, $color) {
@@ -31,8 +31,10 @@ $BASELINE: $size / 600px !global;
 }
 
 @keyframes time {
-  0% {
-    transform: rotate(0deg);
+  @for $i from 0 through 59 {
+    #{$i * 1.6667%} {
+      transform: rotate(#{$i * 6deg});
+    }
   }
   100% {
     transform: rotate(360deg);
@@ -52,13 +54,13 @@ $BASELINE: $size / 600px !global;
 }
   
 .clock__seconds {
-  @include hour-hand(10px, 300px, $secinds-hand-color, 60s);
+  @include hour-hand($s-hand-width, $s-hand-height, $s-hand-color, 60s);
 }
 
 .clock__minutes {
-  @include hour-hand(12px, 200px, $minutes-hand-color, 3600s);
+  @include hour-hand($m-hand-width, $m-hand-height, $m-hand-color, 3600s);
 }
 
 .clock__base {
-  @include base(30px, $secinds-hand-color);
+  @include base(30px, $s-hand-color);
 }
