@@ -17,8 +17,12 @@
   border: 3px solid $blue-color;
 }
 
-.minute {
+.minute,
+.second {
   @include circle;
+}
+
+.minute {
   animation: clock-second 3600s infinite linear;
 }
 
@@ -27,7 +31,6 @@
 }
 
 .second {
-  @include circle;
   animation: clock-second 60s infinite linear;
 }
 
