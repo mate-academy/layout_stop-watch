@@ -1,0 +1,14 @@
+@mixin item-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin rotate-time($seconds) {
+  animation: linear rotate-arrow $seconds infinite;
+}

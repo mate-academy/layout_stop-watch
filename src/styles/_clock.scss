@@ -1,0 +1,65 @@
+@import "variables";
+@import "mixins";
+
+.clock {
+  @include item-center;
+  @include size($stopwatch-size, $stopwatch-size);
+  position: relative;
+
+  border-radius: 50%;
+  background: no-repeat center/100% url("../images/face.jpg");
+
+  div {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+
+    border-radius: 20px;
+  }
+
+  &__minutes {
+    @include size(12px, 35%);
+    @include rotate-time(3600s);
+
+    background: $secondary-color;
+  }
+
+  &__seconds {
+    @include size(7px, 45%);
+    @include rotate-time(60s);
+    position: relative;
+
+    background: $primary-color;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -27px;
+      left: -12px;
+      display: block;
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      border-bottom-color: $primary-color;
+    }
+  }
+
+  &__point {
+    @include size(30px, 30px);
+
+    background: $primary-color;
+    
+    border-radius: 50%;
+
+    transform: translateY(50%);
+  }
+}
+
+@keyframes rotate-arrow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
