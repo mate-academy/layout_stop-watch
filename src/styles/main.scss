@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+$main-size: 800px;
+
+.watch {
+  margin: 0 auto;
+  width: $main-size;
+  height: $main-size;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__circle {
+    width: $main-size/40;
+    height: $main-size/40;
+
+    background-color: rgb(46, 46, 46);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    width: $main-size/100;
+    height: $main-size/2;
+
+    background: linear-gradient(rgb(46, 46, 46) 50%, transparent 50%);
+    border-radius: 5px;
+
+    position: absolute;
+    transform: translate(0, $main-size);
+    z-index: 0;
+
+    animation: watch-anime 3600s infinite;
+  }
+
+  &__second-hand {
+    width: $main-size/100;
+    height: $main-size/3;
+
+    background: linear-gradient(rgb(0, 255, 76) 50%, transparent 50%);
+    border-radius: 5px;
+
+    position: absolute;
+    
+    z-index: 0;
+
+    animation: watch-anime 60s infinite;
+  }
+}
+
+@keyframes watch-anime {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
