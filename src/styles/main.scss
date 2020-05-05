@@ -1,0 +1,57 @@
+@import "vars";
+@import "mixin";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #000;
+  height: 100vh;
+}
+
+.watch {
+  position: relative;
+  width: $width-box;
+  height: $height-box;
+  
+  border: 10px solid $deeppink;
+  border-radius: $radius;
+  &__point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 30px;
+    width: 30px;
+    background-color: $deeppink;
+    border-radius: $radius;
+  }
+  &__seconds {
+    @include position-arrows;
+    height: ($height-box / 2) - 10px;
+    animation: watch 60s linear infinite;
+  }
+  &__minutes {
+    @include position-arrows;
+    height: $height-box / 3;
+    animation: watch 3600s linear;
+  }
+}
+
+@keyframes watch {
+  from {
+    transform: translateX(-50%) rotate(0);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
