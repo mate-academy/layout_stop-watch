@@ -20,37 +20,43 @@ body {
 .watch {
   display: flex;
   position: relative;
+  
   width: 30px;
   height: 30px;
   border-radius: 50%;
+
   background-color: $circleColor;
 
   &::after {
-    align-self: flex-end;
-    position: absolute;
     left: 45%;
-    bottom: $bottomPosition;
-    content: "";
     width: 3px;
     height: 300px;
+
     background-color: $secondsColor;
-    transform-origin: $transformPosition;
+
     animation: $secondsAnimation;
-    z-index: -1;
   }
   
   &::before {
-    align-self: flex-end;
-    position: absolute;
     left: 43%;
-    bottom: $bottomPosition;
-    content: "";
     width: 5px;
     height: 200px;
+
     background-color: $hoursColor;
-    transform-origin: $transformPosition;
+
     animation: $hoursAnimation;
+  }
+
+  &__pseudo::after,
+  &__pseudo::before {
+    align-self: flex-end;
+
+    position: absolute;
+    bottom: $bottomPosition;
     z-index: -1;
+    content: "";
+
+    transform-origin: $transformPosition;
   }
 }
 
