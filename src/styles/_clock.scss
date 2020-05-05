@@ -15,7 +15,7 @@ $BASELINE: $size / 600px !global;
   height: $BASELINE * $height;
   border: solid $BASELINE $color;
   background-color: $color;
-  border-radius: $BASELINE * $width;
+  border-radius: ($width / 100%) * $size;
   position: absolute;
   transform-origin: bottom center;
   animation: time $time cubic-bezier(0, 1.33, 0, 0.94) infinite;
