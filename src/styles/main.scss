@@ -1,5 +1,11 @@
 @import "keyframes";
 
+@mixin watch__hand {
+  box-sizing: border-box;
+  border: 2px solid #c45238;
+  background-color: #84b0af;
+}
+
 body {
   margin: 0;
   background-color: #b6d8d5;
@@ -12,49 +18,39 @@ body {
   border-radius: 50%;
   margin: 200px;
   position: relative;
-}
 
-@mixin watch__hand {
-  box-sizing: border-box;
-  border: 2px solid #c45238;
-  background-color: #84b0af;
-}
+  &__minutes {
+    @include watch__hand;
 
-.watch__minutes {
-  @include watch__hand;
+    position: absolute;
+    width: 8px;
+    height: 40%;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: hand--move 3600s linear infinite;
+  }
 
-  position: absolute;
-  width: 8px;
-  height: 40%;
-  bottom: 50%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  animation: hand--move 3600s linear infinite;
-}
+  &__seconds {
+    @extend .watch__minutes;
 
-.watch__seconds {
-  @include watch__hand;
+    width: 6px;
+    height: 50%;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+  }
 
-  position: absolute;
-  width: 6px;
-  height: 50%;
-  bottom: 50%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  animation: hand--move 60s steps(60, end) infinite;
-}
-
-.watch__center {
-  position: absolute;
-  left: 0;
-  right: 0;
-  box-sizing: border-box;
-  bottom: 48%;
-  margin: 0 auto;
-  height: 4%;
-  width: 4%;
-  border: 10px solid #c45238;
-  border-radius: 50%;
+  .watch__center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    bottom: 48%;
+    margin: 0 auto;
+    height: 4%;
+    width: 4%;
+    border: 10px solid #c45238;
+    border-radius: 50%;
+  }
 }
