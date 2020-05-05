@@ -1,0 +1,32 @@
+@import "mixin.scss";
+
+body {
+  margin: 0;
+  background-color: #1c1c1c;
+}
+
+.stopwatch {
+  position: relative;
+  margin: 100px auto 0;
+  width: 600px;
+  height: 600px;
+  border: 2px solid green;
+  border-radius: 50%;
+  background-color: rgba(0,128,0,0.3);
+
+  &::before {
+    @include stopwatch-arrows;
+    animation: stopwatch-engine 60s infinite linear;
+  }
+
+  &::after {
+    @include stopwatch-arrows;
+    animation: stopwatch-engine 3600s infinite linear;
+  }
+}
+
+@keyframes stopwatch-engine {
+  100% {
+    transform: rotate(360deg);
+  }
+}
