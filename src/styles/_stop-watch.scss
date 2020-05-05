@@ -1,0 +1,29 @@
+.watch {
+  @extend %position-absolute;
+  @extend %box-50to50;
+  transform: translate(-50%, -50%);
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRuXqaKXdqFqn_Qpekri2wqiHzhOmEOWV2nwokvFtyapayexpVO&usqp=CAU");
+  background-size: 50vw 50vh;
+}
+
+.watch__seconds {
+  @extend %position-absolute;
+  @extend %central-point;
+  @extend %animation;
+  animation-duration: $min;
+  &::before {
+    @extend %arrow-spec;
+  }
+}
+
+.watch__minutes {
+  @extend %position-absolute;
+  @extend %central-point;
+  @extend %animation;
+  animation-duration: ($min*60);
+  &::before {
+    @extend %arrow-spec;
+    background-color: blue;
+    height: ($std-arrow - 5vh);
+  }
+}
