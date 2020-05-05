@@ -31,7 +31,11 @@ $BASELINE: $size / 600px !global;
 }
 
 @keyframes time {
-  @for $i from 0 through 59 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  @for $i from 1 through 59 {
     #{$i * 1.6667%} {
       transform: rotate(#{$i * 6deg});
     }
@@ -59,6 +63,7 @@ $BASELINE: $size / 600px !global;
 
 .clock__minutes {
   @include hour-hand($m-hand-width, $m-hand-height, $m-hand-color, 3600s);
+  animation: time 3600s linear infinite;
 }
 
 .clock__base {
