@@ -28,7 +28,7 @@
 
     transform-origin: bottom center;
 
-    animation: seconds 60s linear infinite;
+    animation: time 60s linear infinite;
   }
 
   &__minute {
@@ -42,20 +42,11 @@
     background-color: #dc143c;
     border-radius: 10px;
     transform-origin: bottom center;
-    animation: minute 3600s linear infinite;
+    animation: time 3600s linear infinite;
   }
 }
 
-@keyframes seconds {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minute {
+@keyframes time {
   from {
     transform: rotate(0deg);
   }
