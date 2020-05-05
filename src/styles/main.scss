@@ -1,6 +1,5 @@
 @import "vars";
 @import "mixin";
-@import "animation";
 
 * {
   box-sizing: border-box;
@@ -19,15 +18,17 @@ body {
 
 .watch {
   position: relative;
-  width: 400px;
-  height: 400px;
-  border-radius: $radius;
+  width: $width-box;
+  height: $height-box;
+  
   border: 10px solid $deeppink;
+  border-radius: $radius;
   &__point {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     height: 30px;
     width: 30px;
     background-color: $deeppink;
@@ -35,12 +36,22 @@ body {
   }
   &__seconds {
     @include position-arrows;
-    height: 180px;
+    height: ($height-box / 2) - 10px;
     animation: watch 60s linear infinite;
   }
   &__minutes {
     @include position-arrows;
-    height: 100px;
+    height: $height-box / 3;
     animation: watch 3600s linear;
+  }
+}
+
+@keyframes watch {
+  from {
+    transform: translateX(-50%) rotate(0);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(360deg);
   }
 }
