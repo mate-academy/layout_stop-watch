@@ -1,0 +1,60 @@
+$watch-diametr: 402px;
+$center-diametr: 24px;
+
+%watch--features {
+  border: 1px black solid;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+%hands--features {
+  position: absolute;
+  background-color: brown;
+  animation: timer 3600s infinite linear;
+  transform-origin: bottom;
+  left: ($watch-diametr - 10)/2;
+  width: 10px;
+}
+
+.watch {
+  @extend %watch--features;
+  width: $watch-diametr;
+  height: $watch-diametr;
+  position: relative;
+  left: 50px;
+  background-color: pink;
+
+  &__center {
+    @extend %watch--features;
+    position: absolute;
+    background-color: brown;
+    width: $center-diametr;
+    height: $center-diametr;
+    top: ($watch-diametr - $center-diametr)/2;
+    left: ($watch-diametr - $center-diametr)/2;
+  }
+
+  &__minutes {
+    @extend %watch--features;
+    @extend  %hands--features;
+    height: $watch-diametr/2 - 50;
+    top: 55px;
+  }
+
+  &__seconds {
+    @extend %watch--features;
+    @extend  %hands--features;
+    height: $watch-diametr/2;
+    top: 0;
+    animation-duration: 60s;
+  }
+}
+
+@keyframes timer {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
