@@ -21,7 +21,7 @@ $background-color-sec:blue;
 
   &::before {
     @include arrow;
-    top: 50%;
+    top: 10%;
     height: 90%;
     background-color: $background-color-sec;
     animation: mechanism 60s infinite steps(60);
@@ -31,7 +31,8 @@ $background-color-sec:blue;
   
   &::after {
     @include arrow;
-    height: 80%;
+    top: 30%;
+    height: 70%;
     background-color: $background-color-minute;
     animation: mechanism 3600s infinite steps(60);
     transform-origin: bottom;
