@@ -1,0 +1,50 @@
+@import "animation";
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $clock-size;
+  width: $clock-size;
+  margin: auto;
+
+  border: $clock-size*0.01 solid black;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+
+    height: $clock-size*0.04;
+    width: $clock-size*0.04;
+
+    border-radius: $clock-size*0.02;
+    background-color: $blue;
+  }
+
+  &__hand {
+    position: absolute;
+    z-index: 0;
+    transform-origin: bottom;
+
+    width: $clock-size * 0.02;
+    border-radius: $clock-size * 0.01;
+
+    &-min {
+      @extend .stopwatch__hand;
+
+      height: $clock-size * 0.3;
+      background-color: hsl(358, 57%, 58%);
+      animation: hand-movement 3600s linear;
+    }
+
+    &-sec {
+      @extend .stopwatch__hand;
+
+      height: $clock-size * 0.4;
+      background-color: $blue;
+      animation: hand-movement 60s linear infinite;
+    }
+
+  }
+}
