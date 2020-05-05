@@ -1,0 +1,45 @@
+@import "mixin-variables";
+
+.container {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  border: 3px solid $blue-color;
+}
+
+.minute,
+.second {
+  @include circle;
+}
+
+.minute {
+  animation: clock-second 3600s infinite linear;
+}
+
+.minute::before {
+  @include arrow ($blue-color, 300%);
+}
+
+.second {
+  animation: clock-second 60s infinite linear;
+}
+
+.second::after {
+  @include arrow (#d15559, 500%);
+}
+
+@keyframes clock-second {
+  to {
+    transform: rotate(360deg);
+  }
+}
