@@ -7,14 +7,9 @@ $center-diametr: 24px;
   border-radius: 50%;
 }
 
-%general--features {
+%hands--features {
   position: absolute;
   background-color: brown;
-}
-
-%hands--features {
-  @extend %general--features;
-
   animation: timer 3600s infinite linear;
   transform-origin: bottom;
   left: ($watch-diametr - 10)/2;
@@ -31,7 +26,8 @@ $center-diametr: 24px;
 
   &__center {
     @extend %watch--features;
-    @extend %general--features;
+    position: absolute;
+    background-color: brown;
     width: $center-diametr;
     height: $center-diametr;
     top: ($watch-diametr - $center-diametr)/2;
