@@ -1,0 +1,55 @@
+@import "variables";
+@import "mixins";
+
+.clock {
+  position: relative;
+  margin: 0 auto;
+
+  width: $clock-size;
+  height: $clock-size;
+
+  background-color: $clock-color;
+  border-radius: 50%;
+  border: $clock-border;
+
+  &__center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: #{0.05*$clock-size};
+    width: #{0.05*$clock-size};
+
+    background-color: #000;
+    border-radius: 50%;
+  }
+
+  &__seconds {
+    @include arrow(60s);
+
+    height: 47%;
+    left: 49%;
+    top: 3%;
+    width: 2%;
+
+    background: $seconds-color;
+  }
+
+  &__minutes {
+    @include arrow(3600s);
+
+    height: 35%;
+    left: 48%;
+    top: 15%;
+    width: 4%;
+
+    background: $minutes-color;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
