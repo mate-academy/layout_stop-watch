@@ -11,11 +11,7 @@ body {
   border: 2px solid #c45238;
   border-radius: 50%;
   margin: 200px;
-  
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-  flex-direction: column;
+  position: relative;
 }
 
 @mixin watch__hand {
@@ -27,30 +23,38 @@ body {
 .watch__minutes {
   @include watch__hand;
 
-  margin-top: 48px;
+  position: absolute;
   width: 8px;
-  height: 200px;
-
+  height: 40%;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   animation: hand--move 3600s linear infinite;
 }
 
 .watch__seconds {
   @include watch__hand;
 
-  position: relative;
+  position: absolute;
   width: 6px;
-  height: 250px;
-  bottom: 250px;
-
+  height: 50%;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   animation: hand--move 60s steps(60, end) infinite;
 }
 
 .watch__center {
   position: absolute;
+  left: 0;
+  right: 0;
   box-sizing: border-box;
-  bottom: 445px;
-  height: 20px;
-  width: 20px;
+  bottom: 48%;
+  margin: 0 auto;
+  height: 4%;
+  width: 4%;
   border: 10px solid #c45238;
   border-radius: 50%;
 }
