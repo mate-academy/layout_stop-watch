@@ -1,0 +1,73 @@
+$clock-size: 500px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.clock-wrapper {
+  display: block;
+  height: $clock-size;
+  width: $clock-size;
+  margin: 10% auto;
+}
+
+.clock {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 4px solid black;
+  border-radius: 50%;
+
+  &__second-arrow {
+    position: absolute;
+    left: 50%;
+    height: 50%;
+    width: 5px;
+
+    background-color: blue;
+
+    transform-origin: bottom;
+    animation: arrow-animation 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &__minute-arrow {
+    position: absolute;
+    left: 50%;
+    width: 5px;
+    height: 30%;
+    margin-top: 20%;
+
+    background-color: red;
+
+    transform-origin: bottom;
+    animation: arrow-animation 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 5%;
+    width: 5%;
+    top: 50%;
+    left: 50.5%;
+
+    background-color: blue;
+    border-radius: 50%;
+    
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes arrow-animation {
+  to {
+    transform: rotate(360deg);
+  }
+}
