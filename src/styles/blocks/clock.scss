@@ -1,0 +1,66 @@
+﻿@import "../variables";
+@import "../extends";
+
+h1 {
+  text-align: center;
+}
+
+.clock {
+  width: $clock-size;
+  height: $clock-size;
+
+  margin: 0 auto;
+
+  position: relative;
+}
+
+.clock__center {
+  width: $center-size;
+  height: $center-size;
+
+  border-radius: 50%;
+
+  background-color: $blue-color;
+
+  position: absolute;
+  top: ($clock-size - $center-size) / 2;
+  left: ($clock-size - $center-size) / 2;
+
+  z-index: 2;
+}
+
+.clock__hand--minute {
+  @extend %clock-hand;
+
+  height: $minute-height;
+
+  background-color: #d15559;
+
+  top: $clock-size / 2 - $minute-height;
+
+  z-index: 1;
+
+  animation: click-clock 3600s linear infinite;
+}
+
+.clock__hand--second {
+  @extend %clock-hand;
+
+  height: $second-height;
+
+  background-color: $blue-color;
+
+  animation: click-clock 60s linear infinite;
+}
+
+@keyframes click-clock {
+  from {
+    transform: rotate(0);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
