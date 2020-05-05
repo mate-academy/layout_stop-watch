@@ -6,8 +6,8 @@ body {
   box-sizing: border-box;
 }
 
-$blue: #4b9aaa;
-$red: #d15559;
+$main-color: #4b9aaa;
+$minute-color: #d15559;
 
 .clock {
   position: relative;
@@ -25,7 +25,7 @@ $red: #d15559;
     transform: translate(-50%, -50%);
 
     border-radius: 50%;
-    background-color: $blue;
+    background-color: $main-color;
   }
 
   &__minute,
@@ -47,7 +47,7 @@ $red: #d15559;
     width: 12px;
     animation: timer 3600s linear infinite;
     &::before {
-      background: $red;
+      background: $minute-color;
       height: 40%;
       width: 12px;
     }
@@ -57,7 +57,7 @@ $red: #d15559;
     width: 10px;
     animation: timer 60s  1s linear infinite;
     &::before {
-      background: $blue;
+      background: $main-color;
       height: 50%;
       width: 10px;
     }
