@@ -1,0 +1,82 @@
+div {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.watch {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.watch__hand {
+  width: 1%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top;
+
+  animation: roll 20s linear infinite;
+  @keyframes roll {
+    from {
+      transform: rotate(-180deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    background-color: inherit;
+  }
+
+  &::before {
+    width: 300%;
+    transform: translate(-33%, -50%);
+  }
+
+  &::after {
+    width: 100%;
+    position: absolute;
+  }
+
+  &--minute {
+    height: 32%;
+    background-color: #c25d5d;
+    animation-duration: 3600s;
+
+    &::before {
+      height: 9%;
+    }
+
+    &::after {
+      height: 4%;
+      bottom: -1.5%;
+    }
+  }
+
+  &--second {
+    height: 48%;
+    background-color: #5f98a8;
+    animation-duration: 60s;
+    
+    &::before {
+      height: 6.5%;
+    }
+    
+    &::after {
+      height: 3%;
+      bottom: -1.5%;
+    }
+  }
+}
