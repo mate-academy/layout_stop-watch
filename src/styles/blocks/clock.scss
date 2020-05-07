@@ -1,5 +1,4 @@
 ﻿@import "../variables";
-@import "../extends";
 
 h1 {
   text-align: center;
@@ -19,7 +18,7 @@ h1 {
 
     border-radius: 50%;
 
-    background-color: $blue-color;
+    background-color: $clock-color;
 
     position: absolute;
     top: ($clock-size - $center-size) / 2;
@@ -28,9 +27,16 @@ h1 {
     z-index: 2;
   }
 
-  &__hand--minute {
-    @extend %clock-hand;
+  &__hand {
+    width: $hand-width;
 
+    border-radius: 25%;
+
+    position: absolute;
+    left: ($clock-size - $hand-width) / 2;
+  }
+
+  &__hand--minute {
     height: $minute-height;
 
     background-color: #d15559;
@@ -47,7 +53,7 @@ h1 {
 
     height: $second-height;
 
-    background-color: $blue-color;
+    background-color: $clock-color;
 
     animation: click-clock 60s linear infinite;
   }
