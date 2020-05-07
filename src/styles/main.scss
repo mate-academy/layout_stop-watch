@@ -6,6 +6,15 @@ $hand-width: 33%;
 $second-hand-length: 34% * 48;
 $minute-hand-length: 34% * 32;
 
+@keyframes roll {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
 div {
   box-sizing: border-box;
 }
@@ -49,22 +58,13 @@ body {
     background-color: inherit;
 
     transform-origin: top;
-    animation: roll 60s linear infinite;
-    @keyframes roll {
-      from {
-        transform: rotate(-180deg);
-      }
-      to {
-        transform: rotate(180deg);
-      }
-    }
   }
 
   &--minute {
     background-color: #c25d5d;
 
     &::before {
-      animation-duration: 3600s;
+      animation: roll 3600s linear infinite;
       height: $minute-hand-length;
     }
   }
@@ -73,7 +73,7 @@ body {
     background-color: #5f98a8;
 
     &::before {
-      animation-duration: 60s;
+      animation: roll 60s linear infinite;
       height: $second-hand-length;
     }
   }
