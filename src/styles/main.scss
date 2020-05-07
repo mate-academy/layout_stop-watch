@@ -1,9 +1,10 @@
-$watch-size: 1000px; // do not set via relative units
-$core-size: $watch-size * 0.01;
-$hand-width: $core-size * 1;
-$center-circle: 300%; //inside hand-width
-$second-hand-length: $core-size * 48;
-$minute-hand-length: $core-size * 32;
+$watch-size: 80%;
+$center-circle: $watch-size * 0.03;
+
+// inside watch-hand
+$hand-width: 33%;
+$second-hand-length: 34% * 48;
+$minute-hand-length: 34% * 32;
 
 div {
   box-sizing: border-box;
@@ -25,48 +26,55 @@ body {
 }
 
 .watch__hand {
-  width: $hand-width;
+  width: $center-circle;
+  height: $center-circle;
 
   position: absolute;
   top: 50%;
   left: 50%;
-  border-radius: calc(#{$hand-width}/2);
 
-  transform-origin: top;
-  animation: roll 60s linear infinite;
-  @keyframes roll {
-    from {
-      transform: rotate(-180deg);
-    }
-    to {
-      transform: rotate(180deg);
-    }
-  }
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 
   &::before {
     content: "";
     display: block;
-    width: $center-circle;
-    padding-top: $center-circle;
+    width: $hand-width;
+    margin: 0 auto;
 
-    border-radius: 50%;
+    position: relative;
+    top: 50%;
+
+    border-radius: 50% / 2%;
     background-color: inherit;
-  
-    transform: translateY(-50%)
-      translateX(calc(#{$hand-width/2} - 50%));
+
+    transform-origin: top;
+    animation: roll 60s linear infinite;
+    @keyframes roll {
+      from {
+        transform: rotate(-180deg);
+      }
+      to {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   &--minute {
-    height: $minute-hand-length;
     background-color: #c25d5d;
 
-    animation-duration: 3600s;
+    &::before {
+      animation-duration: 3600s;
+      height: $minute-hand-length;
+    }
   }
 
   &--second {
-    height: $second-hand-length;
     background-color: #5f98a8;
-    
-    animation-duration: 60s;
+
+    &::before {
+      animation-duration: 60s;
+      height: $second-hand-length;
+    }
   }
 }
