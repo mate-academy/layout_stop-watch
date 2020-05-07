@@ -4,7 +4,6 @@ div {
 
 body,
 html {
-  width: 100%;
   height: 100%;
   margin: 0;
 }
@@ -33,7 +32,7 @@ html {
   left: 50%;
   transform-origin: top;
 
-  animation: roll 20s linear infinite;
+  animation: roll 60s linear infinite;
   @keyframes roll {
     from {
       transform: rotate(-180deg);
@@ -43,8 +42,7 @@ html {
     }
   }
 
-  &::before,
-  &::after {
+  &::before {
     content: "";
     display: block;
     border-radius: 50%;
@@ -56,23 +54,14 @@ html {
     transform: translate(-33%, -50%);
   }
 
-  &::after {
-    width: 100%;
-    position: absolute;
-  }
-
   &--minute {
     height: 32%;
     background-color: #c25d5d;
+    border-radius: 50% / 1.5%;
     animation-duration: 3600s;
 
     &::before {
       height: 9%;
-    }
-
-    &::after {
-      height: 4%;
-      bottom: -1.5%;
     }
   }
 
@@ -80,14 +69,10 @@ html {
     height: 48%;
     background-color: #5f98a8;
     animation-duration: 60s;
+    border-radius: 50% / 1%;
     
     &::before {
       height: 6.5%;
-    }
-    
-    &::after {
-      height: 3%;
-      bottom: -1.5%;
     }
   }
 }
