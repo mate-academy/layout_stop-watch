@@ -1,0 +1,70 @@
+﻿@import "../variables";
+
+h1 {
+  text-align: center;
+}
+
+.clock {
+  width: $clock-size;
+  height: $clock-size;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+
+    border-radius: 50%;
+
+    background-color: $clock-color;
+
+    position: absolute;
+    top: ($clock-size - $center-size) / 2;
+    left: ($clock-size - $center-size) / 2;
+
+    z-index: 2;
+  }
+
+  &__hand {
+    width: $hand-width;
+
+    border-radius: 25%;
+
+    position: absolute;
+    left: ($clock-size - $hand-width) / 2;
+  }
+
+  &__hand--minute {
+    height: $minute-height;
+
+    background-color: #d15559;
+
+    top: $clock-size / 2 - $minute-height;
+
+    z-index: 1;
+
+    animation: click-clock 3600s linear infinite;
+  }
+
+  &__hand--second {
+    height: $second-height;
+
+    background-color: $clock-color;
+
+    animation: click-clock 60s linear infinite;
+  }
+}
+
+@keyframes click-clock {
+  from {
+    transform: rotate(0);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
