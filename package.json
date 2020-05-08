@@ -7,6 +7,7 @@
     "start": "gulp",
     "build": "gulp build",
     "predeploy": "npm run build",
+    "publish": "npm run deploy",
     "deploy": "gh-pages -d dist",
     "postinstall": "cp node_modules/@mate-academy/htmllint-config/.htmllintrc ./.linthtmlrc",
     "lint": "stylelint src/**/*.scss && eslint src/**/*.js && linthtml src/*.html"
