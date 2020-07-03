@@ -1,0 +1,17 @@
+@mixin arrows-block {
+  position: absolute;
+  width: $arrowBlock;
+  height: $arrowBlock;
+  border-radius: 50%;
+  top: $arrowBlockCenter;
+  left: $arrowBlockCenter;
+}
+
+@mixin arrows {
+  position: absolute;
+  content: "";
+  width: $arrowBlock / 3;
+  bottom: $arrowBlock / 3;
+  left: $arrowBlock / 3;
+  border-radius: 5px;
+}
