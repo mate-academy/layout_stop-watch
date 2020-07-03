@@ -1,0 +1,49 @@
+
+.stopwatch-container {
+  height: 500px;
+  width: 500px;
+  position: relative;
+  background-color: wheat;
+}
+
+.stopwatch {
+  &__center {
+    background-color: teal;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 240px;
+    left: 240px;
+    z-index: 2;
+  }
+  &__min {
+    width: 125px;
+    animation: watch-hand 3600s 0s both infinite linear;
+    background-color: red ;
+    height: 10px;
+    position: absolute;
+    top: 245px;
+    left: 125px;
+    transform-origin: 100% 50% 0;
+  }
+  &__sec {
+    width: 250px;
+    animation: watch-hand 60s 0s both infinite linear;
+    background-color: teal ;
+    height: 10px;
+    position: absolute;
+    top: 245px;
+    transform-origin: 100% 50% 0;
+    z-index: 1;
+  }
+}
+
+@keyframes watch-hand {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
