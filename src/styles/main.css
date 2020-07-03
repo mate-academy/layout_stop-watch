@@ -1,0 +1,54 @@
+.main {
+  position: fixed;
+  top: 100px;
+  right: 500px;
+  background-color: silver;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+}
+
+.timer {
+  background: #4b99aa;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  top: 225px;
+  right: 235px;
+}
+
+.timer__minutes-div {
+  border-radius: 5px;
+  position: absolute;
+  transform: rotate(-90deg);
+  width: 130px;
+  height: 10px;
+  background: #d15559;
+  transform-origin: left center;
+  left: 15px;
+  top: 10px;
+  animation: rotate-anim 3600s linear infinite;
+}
+
+.timer__seconds-div {
+  position: absolute;
+  border-radius: 5px;
+  background: #4b99aa;
+  width: 230px;
+  height: 10px;
+  left: 15px;
+  top: 10px;
+  transform-origin: left center;
+  animation: rotate-anim 60s linear infinite;
+}
+
+@keyframes rotate-anim {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
