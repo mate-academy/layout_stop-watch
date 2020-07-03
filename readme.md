@@ -10,3 +10,5 @@ Create a working stopwatch with minute and second hands using only CSS animation
 - The starting position of the hands should be at 0:00.
 ---
 ![demo](stopwatch.png)
+
+--> [CHECKLIST](https://github.com/mate-academy/layout_stop-watch/blob/master/checklist.md)
