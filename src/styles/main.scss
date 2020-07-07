@@ -1,0 +1,133 @@
+$box-side: 200px;
+$arrow-width: 3px;
+$clock-bg: #e84a5f;
+$small-arr-color: #feceab;
+$big-arrow-bg: #fde7d7;
+$body-bg: #99b898;
+
+$heart-side: 70px;
+$heart-color: #e84a5f;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  background-color: $body-bg;
+}
+
+@mixin arrow {
+  position: absolute;
+  left: ($box-side / 100 * 50) - ($arrow-width / 2);
+  top: 50%;
+  width: $arrow-width;
+  border-radius: $box-side / 10;
+  transform-origin: ($arrow-width / 2) 0;
+  transform: rotate(180deg);
+  animation: rotate linear infinite;
+}
+
+.clock {
+  height: $box-side;
+  width: $box-side;
+  position: relative;
+  background-color: $clock-bg;
+  border-radius: 50%;
+
+  &__minisecond {
+    @include arrow;
+    height: $box-side / 2.3;
+    background-color: $big-arrow-bg;
+    animation-duration: 1s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1 * $arrow-width / 2;
+      top: -1 * $arrow-width;
+      border-radius: 50%;
+      width: $arrow-width * 2;
+      height: $arrow-width * 2;
+      background-color: inherit;
+    }
+  }
+  &__second {
+    @include arrow;
+    height: $box-side / 3.3;
+    background-color: $small-arr-color;
+    animation-duration: 60s;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  99% {
+    transform: rotate(180deg);
+  }
+}
+
+@mixin heart-pseudo {
+  content: "";
+  width: $heart-side;
+  height: $heart-side;
+  border-radius: 50%;
+  position: absolute;
+  background-color: $heart-color;
+}
+
+.heart {
+  margin-top: $heart-side;
+
+  &__elem {
+    position: relative;
+    width: $heart-side;
+    height: $heart-side;
+    background-color: $heart-color;
+    transform: rotate(-45deg) scale(1);
+    transition: 1s;
+    &::after {
+      @include heart-pseudo;
+      top: 0;
+      left: $heart-side / 2;
+    }
+    &::before {
+      @include heart-pseudo;
+      top: - $heart-side / 2;
+      left: 0;
+    }
+
+    animation: heart-beating 1s linear infinite;
+  }
+}
+
+@keyframes heart-beating {
+  0% {
+    transform: rotate(-45deg) scale(1);
+  }
+
+  60% {
+    transform: rotate(-45deg) scale(1.2);
+  }
+
+  75% {
+    transform: rotate(-45deg) scale(1);
+  }
+
+  85% {
+    transform: rotate(-45deg) scale(1.2);
+  }
+
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+}
