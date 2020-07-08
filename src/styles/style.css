@@ -1,0 +1,69 @@
+@keyframes minute {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+
+.clock {
+  position: relative;
+  margin: 50px auto;
+  width: 600px;
+  height: 600px;
+  color: #d15559;
+  font-weight: bold;
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 800px;
+  background: radial-gradient(circle, #ebebeb 0%, #f1f1f1 35%, #b6b6b6 100%);
+  border-radius: 50%;
+}
+
+.clock--center {
+  position: absolute;
+  left: 282.5px;
+  bottom: 282.5px;
+  width: 35px;
+  height: 35px;
+  background-color: #4b9aaa;
+  border-radius: 50%;
+}
+
+.clock--second {
+  position: absolute;
+  left: 295px;
+  bottom: 295px;
+  width: 10px;
+  height: 255px;
+  background-color: #4b9aaa;
+  border-radius: 10px;
+  animation: time 60s steps(60) infinite;
+}
+
+.clock--minute {
+  position: absolute;
+  left: 295px;
+  bottom: 295px;
+  width: 10px;
+  height: 220px;
+  background-color: #d15559;
+  border-radius: 10px;
+  animation: minute 3600s steps(60) infinite;
+}
+
+/*# sourceMappingURL=style.css.map */
