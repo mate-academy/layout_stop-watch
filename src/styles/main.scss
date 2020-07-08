@@ -24,12 +24,14 @@ $heart-color: #e84a5f;
 body {
   background-color: $body-bg-color;
   margin: 0;
-  padding-top: 20%;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
+
+//clock
 
 .clock {
   height: $clock-side;
@@ -47,7 +49,7 @@ body {
     &_small {
       height: $clock-small-arrow-length * 2;
       width: $clock-arrow-width;
-      animation: clock-rotation 60s linear infinite;
+      animation: clock-rotation 60s steps(60, end) infinite;
       &::before {
         content: "";
         display: block;
@@ -83,7 +85,6 @@ body {
 //heart
 
 .heart {
-  flex-basis: 100%;
   height: $heart-side * 2;
   width: $heart-side * 2;
   display: flex;
