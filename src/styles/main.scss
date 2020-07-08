@@ -11,18 +11,6 @@ $color-sec-arrow: #4b9aaa;
   bottom: #{$clock_size/2 - $size/2};
 }
 
-@keyframes minute {
-  from {
-    transform: rotate(0deg);
-    transform-origin: bottom;
-  }
-
-  to {
-    transform: rotate(360deg);
-    transform-origin: bottom;
-  }
-}
-
 @keyframes time {
   from {
     transform: rotate(0deg);
@@ -49,7 +37,10 @@ $color-sec-arrow: #4b9aaa;
   text-align: center;
   line-height: $clock_size + 200px;
 
-  background: radial-gradient(circle, rgba(235,235,235,1) 0%, rgba(241,241,241,1) 35%, rgba(182,182,182,1) 100%);
+  background: radial-gradient(circle,
+  rgba(235,235,235,1) 0%,
+  rgba(241,241,241,1) 35%,
+  rgba(182,182,182,1) 100%);
   border-radius: 50%;
 }
 
@@ -84,5 +75,5 @@ $color-sec-arrow: #4b9aaa;
   background-color: #d15559;
   border-radius: 10px;
 
-  animation: minute 3600s steps(60) infinite;
+  animation: time 3600s steps(60) infinite;
 }
