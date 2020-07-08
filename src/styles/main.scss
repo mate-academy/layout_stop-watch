@@ -1,10 +1,19 @@
-$box-side: 200px;
-$arrow-width: 3px;
+$clock-side: 200px;
+$clock-arrow-width: 5px;
+$clock-big-arrow-length: $clock-side / 2.3;
+$clock-small-arrow-length: $clock-side / 3.3;
+$dot-side: $clock-arrow-width * 2;
+
+$clock-border-radius: 30%;
+$arrow-border-radius: 5px;
+$dot-border-radius: 50%;
+
+$body-bg-color: #feceab;
 $clock-bg: #e84a5f;
 $small-arr-color: #feceab;
-$big-arrow-bg: #fff9f4;
-$body-bg: #feceab;
+$big-arr-color: #fff9f4;
 
+$heart-scale: 1.2;
 $heart-side: 70px;
 $heart-color: #e84a5f;
 
@@ -13,121 +22,130 @@ $heart-color: #e84a5f;
 }
 
 body {
+  background-color: $body-bg-color;
   margin: 0;
+  padding-top: 20%;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  align-items: center;
   flex-wrap: wrap;
-  height: 100vh;
-  background-color: $body-bg;
-}
-
-@mixin arrow {
-  position: absolute;
-  left: ($box-side / 100 * 50) - ($arrow-width / 2);
-  top: 50%;
-  width: $arrow-width;
-  border-radius: $box-side / 10;
-  transform-origin: ($arrow-width / 2) 0;
-  transform: rotate(180deg);
-  animation: rotate linear infinite;
 }
 
 .clock {
-  height: $box-side;
-  width: $box-side;
+  height: $clock-side;
+  width: $clock-side;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  background-color: $clock-bg;
-  border-radius: 50%;
+  background: $clock-bg;
+  border-radius: $clock-border-radius;
 
-  &__minisecond {
-    @include arrow;
-    height: $box-side / 2.3;
-    background-color: $big-arrow-bg;
-    animation-duration: 1s;
+  &__part {
+    position: absolute;
 
-    &::before {
-      content: "";
-      position: absolute;
-      left: -1 * $arrow-width / 2;
-      top: -1 * $arrow-width;
-      border-radius: 50%;
-      width: $arrow-width * 2;
-      height: $arrow-width * 2;
-      background-color: inherit;
+    &_small {
+      height: $clock-small-arrow-length * 2;
+      width: $clock-arrow-width;
+      animation: clock-rotation 60s linear infinite;
+      &::before {
+        content: "";
+        display: block;
+        height: $clock-small-arrow-length;
+        width: $clock-arrow-width;
+        background-color: $small-arr-color;
+        border-radius: $arrow-border-radius;
+      }
+    }
+    &_big {
+      height: $clock-big-arrow-length * 2;
+      width: $clock-arrow-width;
+      animation: clock-rotation 1s linear infinite;
+      &::before {
+        content: "";
+        display: block;
+        height: $clock-big-arrow-length;
+        width: $clock-arrow-width;
+        background-color: $big-arr-color;
+        border-radius: $arrow-border-radius;
+      }
+    }
+    &_dot {
+      height: $dot-side;
+      width: $dot-side;
+      background-color: $big-arr-color;
+      border-radius: $dot-border-radius;
+      animation: clock-rotation 1s linear infinite;
     }
   }
-  &__second {
-    @include arrow;
-    height: $box-side / 3.3;
-    background-color: $small-arr-color;
-    animation-duration: 60s;
-  }
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(-180deg);
-  }
-
-  99% {
-    transform: rotate(180deg);
-  }
-}
-
-@mixin heart-pseudo {
-  content: "";
-  width: $heart-side;
-  height: $heart-side;
-  border-radius: 50%;
-  position: absolute;
-  background-color: $heart-color;
-}
+//heart
 
 .heart {
-  margin-top: $heart-side;
-
-  &__elem {
-    position: relative;
-    width: $heart-side;
+  flex-basis: 100%;
+  height: $heart-side * 2;
+  width: $heart-side * 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__doer {
     height: $heart-side;
+    width: $heart-side;
     background-color: $heart-color;
-    transform: rotate(-45deg) scale(1);
-    transition: 1s;
-    &::after {
-      @include heart-pseudo;
-      top: 0;
-      left: $heart-side / 2;
+    position: relative;
+    transform: rotate(-135deg);
+    animation: heart-scale 1s linear infinite;
+    @mixin heart-pseudo($top, $left) {
+      content: "";
+      display: block;
+      position: absolute;
+      top: $top;
+      left: $left;
+      height: $heart-side;
+      width: $heart-side;
+      border-radius: 50%;
+      background-color: $heart-color;
     }
     &::before {
-      @include heart-pseudo;
-      top: - $heart-side / 2;
-      left: 0;
+      @include heart-pseudo(0, ($heart-side / 2) );
     }
-
-    animation: heart-beating 1s linear infinite;
+    &::after {
+      @include heart-pseudo( ($heart-side / 2), 0 );
+    }
   }
 }
 
-@keyframes heart-beating {
+//keyframes
+
+@keyframes clock-rotation {
   0% {
-    transform: rotate(-45deg) scale(1);
-  }
-
-  60% {
-    transform: rotate(-45deg) scale(1.2);
-  }
-
-  75% {
-    transform: rotate(-45deg) scale(1);
-  }
-
-  85% {
-    transform: rotate(-45deg) scale(1.2);
+    transform: rotate(0);
   }
 
   100% {
-    transform: rotate(-45deg) scale(1);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes heart-scale {
+  0% {
+    transform: scale(1) rotate(-135deg);
+  }
+
+  50% {
+    transform: scale($heart-scale) rotate(-135deg);
+  }
+
+  65% {
+    transform: scale(1) rotate(-135deg);
+  }
+
+  80% {
+    transform: scale($heart-scale) rotate(-135deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(-135deg);
   }
 }
