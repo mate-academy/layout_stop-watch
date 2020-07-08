@@ -1,0 +1,66 @@
+$second_thickness: 10px;
+$second_length: 340px;
+$minute_thickness: 10px;
+$minute_length: 280px;
+$second_color: #4b9aaa;
+$minute_color: #d15559;
+
+body {
+  margin: 0;
+}
+
+.watch__second {
+  position: absolute;
+  top: 20px;
+  left: $second_length * 1.25;
+  background-color: $second_color;
+  width: $second_thickness;
+  height: $second_length;
+  border-radius: 8px;
+  animation: second 60s infinite linear;
+}
+
+.watch__center {
+  position: absolute;
+  top: 20px + $second_length - $second_thickness;
+  left: $second_length * 1.25 - $second_thickness / 2;
+  width: $second_thickness * 2;
+  height: $second_thickness * 2;
+  background-color: $second_color;
+  border-radius: 50%;
+}
+
+.watch__minute {
+  position: absolute;
+  top: 20px - $minute_length + $second_length;
+  left: $second_length * 1.25;
+  width: $minute_thickness;
+  height: $minute_length;
+  background-color: $minute_color;
+  border-radius: 8px;
+  animation: minute 3600s infinite linear;
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom center;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes minute {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom center;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom center;
+  }
+}
