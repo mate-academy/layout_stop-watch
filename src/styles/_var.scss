@@ -1,22 +1,21 @@
-$base__bg: #d9ca68;
-$clock-face__bg: #000;
-$clock-face__bg--g: #080707;
-$clock-face__br: #892be0;
-$clock-face__shadow: rgba(105, 43, 159, 0.7);
-$br__radius: 25px;
-$second__height: 45%;
-$second__width: 5px;
-$second__bg: rgba(20, 210, 120, 0.9);
-$minute__height: 35%;
-$minute__width: $second__width * 1.8;
-$minute__bg: rgba(11, 226, 220, 0.9);
-$hour__height: 25%;
-$hour__width: $second__width * 2.6;
-$hour__bg: rgba(10, 69, 219, 0.9);
-$content__bg: #e25544;
-$content__color: #fff;
-$content__font-size--a: 24px;
-$content__font-size--main: $content__font-size--a * 2;
+$baseBg: #d9ca68;
+$clockFaceBg: #000;
+$clockFaceBgGradient: #080708;
+$clockFaceShadow: rgba(162, 10, 153, 0.7);
+$brRadius: 25px;
+$secondHeight: 45%;
+$secondWidth: 5px;
+$secondBg: rgba(20, 210, 120, 0.85);
+$minuteHeight: 35%;
+$minuteWidth: $secondWidth * 1.8;
+$minuteBg: rgba(11, 226, 220, 0.8);
+$hourHeight: 25%;
+$hourWidth: $secondWidth * 2.6;
+$hourBg: rgba(10, 69, 219, 0.9);
+$contentBg: #e25544;
+$contentColor: #fff;
+$contentFontSizeA: 24px;
+$contentFontSizeMain: $contentFontSizeA * 2;
 
 @mixin circle($size) {
   height: $size;
@@ -24,8 +23,12 @@ $content__font-size--main: $content__font-size--a * 2;
   border-radius: 50%;
 }
 
-@mixin position--top($clock-hand) {
-  top: 50% - $clock-hand;
+@mixin position--top($clockHandHeight) {
+  top: calc(50% - #{$clockHandHeight});
+}
+
+@mixin position--left($clockHandWidth) {
+  left: calc(50% - (#{$clockHandWidth} / 2));
 }
 
 @mixin img-square($size) {
