@@ -1,0 +1,55 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 500px;
+  height: 500px;
+  background-color: blue;
+  border-radius: 50%;
+
+  &__circle {
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 25px;
+    top: calc(50% - 150px) ;
+    left: calc(50% - 10px);
+    animation: hand-move 3600s infinite;
+    transform-origin: bottom center;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 200px;
+    background-color: #000;
+    border-radius: 25px;
+    top: calc(50% - 200px);
+    left: calc(50% - 7.5px);
+    animation: hand-move 60s infinite;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes hand-move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
