@@ -1,0 +1,49 @@
+$baseBg: #d9ca68;
+$clockFaceBg: #000;
+$clockFaceBgGradient: #080708;
+$clockFaceShadow: rgba(162, 10, 153, 0.7);
+$brRadius: 25px;
+$secondHeight: 45%;
+$secondWidth: 5px;
+$secondBg: rgba(20, 210, 120, 0.85);
+$minuteHeight: 35%;
+$minuteWidth: $secondWidth * 1.8;
+$minuteBg: rgba(11, 226, 220, 0.8);
+$hourHeight: 25%;
+$hourWidth: $secondWidth * 2.6;
+$hourBg: rgba(10, 69, 219, 0.9);
+$contentBg: #e25544;
+$contentColor: #fff;
+$contentFontSizeA: 24px;
+$contentFontSizeMain: $contentFontSizeA * 2;
+
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin position--top($clockHandHeight) {
+  top: calc(50% - #{$clockHandHeight});
+}
+
+@mixin position--left($clockHandWidth) {
+  left: calc(50% - (#{$clockHandWidth} / 2));
+}
+
+@mixin img-square($size) {
+  height: $size;
+  width: $size;
+}
+
+@keyframes watch-is-running {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom center;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom center;
+  }
+}
