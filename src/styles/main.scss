@@ -1,0 +1,103 @@
+@import "var";
+
+html {
+  font-family: "rock salt", cursive;
+
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  background-color: $base__bg;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  @include circle(550px);
+  border: 4px solid $clock-face__br;
+  box-shadow: 0 0 10px 5px $clock-face__shadow;
+  background: repeating-radial-gradient(circle
+  farthest-side at center center, $clock-face__bg 0%, $clock-face__bg--g 20%);
+
+  &:before {
+    content: "";
+    position: absolute;
+    @include position--top($minute__height);
+    left: calc(50% - 5px / 2);
+    z-index: 2;
+    height: $minute__height;
+    width: $minute__width;
+    border-radius: $br__radius;
+    background-color: $minute__bg;
+    animation: watch-is-running 3600s infinite linear;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    @include position--top($second__height);
+    left: calc(50% - 5px * 1.8 / 2);
+    height: $second__height;
+    width: $second__width;
+    border-radius: $br__radius;
+    background-color: $second__bg;
+    animation: watch-is-running 60s infinite linear;
+  }
+
+  &__hour {
+    content: "";
+    position: absolute;
+    @include position--top($hour__height);
+    left: calc(50% - 5px * 2.6 / 2);
+    z-index: 1;
+    height: $hour__height;
+    width: $hour__width;
+    border-radius: $br__radius;
+    background-color: $hour__bg;
+    animation: watch-is-running 216000s infinite linear;
+  }
+
+  &__center {
+    position: absolute;
+    z-index: 3;
+    @include circle(16px);
+    border: 2px solid $clock-face__shadow;
+    background-color: $base__bg;
+    box-shadow: inset 0 0 3px 1px $clock-face__br;
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include circle(200px);
+  background-color: $content__bg;
+  color: $content__color;
+
+  &__article {
+    margin: 5px;
+    font-size: $content__font-size--a;
+  }
+
+  &__main {
+    font-size: $content__font-size--main;
+  }
+
+  &__img {
+    @include img-square(40px);
+  }
+}
