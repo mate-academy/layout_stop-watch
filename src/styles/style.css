@@ -1,14 +1,3 @@
-@keyframes time {
-  from {
-    transform: rotate(0deg);
-    transform-origin: bottom;
-  }
-  to {
-    transform: rotate(360deg);
-    transform-origin: bottom;
-  }
-}
-
 .clock {
   position: relative;
   margin: 50px auto;
@@ -25,7 +14,7 @@
   border-radius: 50%;
 }
 
-.clock--center {
+.clock__center {
   position: absolute;
   left: 282.5px;
   bottom: 282.5px;
@@ -35,7 +24,7 @@
   border-radius: 50%;
 }
 
-.clock--second {
+.clock__second {
   position: absolute;
   left: 295px;
   bottom: 295px;
@@ -46,7 +35,7 @@
   animation: time 60s steps(60) infinite;
 }
 
-.clock--minute {
+.clock__minute {
   position: absolute;
   left: 295px;
   bottom: 295px;
@@ -55,6 +44,17 @@
   background-color: #d15559;
   border-radius: 10px;
   animation: time 3600s steps(60) infinite;
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

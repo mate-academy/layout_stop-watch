@@ -11,18 +11,6 @@ $color-sec-arrow: #4b9aaa;
   bottom: #{$clock_size/2 - $size/2};
 }
 
-@keyframes time {
-  from {
-    transform: rotate(0deg);
-    transform-origin: bottom;
-  }
-
-  to {
-    transform: rotate(360deg);
-    transform-origin: bottom;
-  }
-}
-
 .clock {
   position: relative;
   margin: 50px auto;
@@ -45,7 +33,7 @@ $color-sec-arrow: #4b9aaa;
   border-radius: 50%;
 }
 
-.clock--center {
+.clock__center {
   @include position($center-size);
 
   width: $center-size;
@@ -55,7 +43,7 @@ $color-sec-arrow: #4b9aaa;
   border-radius: 50%;
 }
 
-.clock--second {
+.clock__second {
   @include position($arrow-width);
 
   width: $arrow-width;
@@ -67,7 +55,7 @@ $color-sec-arrow: #4b9aaa;
   animation: time 60s steps(60) infinite;
 }
 
-.clock--minute {
+.clock__minute {
   @include position($arrow-width);
 
   width: $arrow-width;
@@ -77,4 +65,16 @@ $color-sec-arrow: #4b9aaa;
   border-radius: 10px;
 
   animation: time 3600s steps(60) infinite;
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
 }
