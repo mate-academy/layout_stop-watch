@@ -1,0 +1,27 @@
+$frame-size: 500px;
+$frame-background: #52a5d9;
+$face-size: 450px;
+$face-background: #fff;
+$seconds-color: #9cc707;
+$minutes-color: #000;
+$hand-width: 20px;
+
+@mixin centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin rounded-top {
+  border-top-left-radius: 100% 5px;
+  border-top-right-radius: 100% 5px;
+}
+
+@mixin clock-animation($time) {
+  animation: rotate #{$time} infinite steps(60);
+  transform-origin: bottom center;
+}
+
+body {
+  margin: 0;
+}

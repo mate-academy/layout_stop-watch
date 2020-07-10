@@ -1,0 +1,60 @@
+@import "global";
+
+.clock {
+  @include centered;
+  height: 100vh;
+
+  &__frame {
+    @include centered;
+    width: $frame-size;
+    height: $frame-size;
+    background: $frame-background;
+    border-radius: 20%;
+  }
+
+  &__face {
+    position: relative;
+    @include centered;
+    width: $face-size;
+    height: $face-size;
+    background: $face-background;
+    border-radius: 50%;
+
+    &:after {
+      position: absolute;
+      width: 5%;
+      height: 5%;
+      margin: 0 auto;
+      background: $minutes-color;
+      border-radius: 50%;
+      content: "";
+    }
+  }
+
+  &__seconds {
+    position: absolute;
+    top: 0;
+    width: $hand-width;
+    height: $face-size / 2;
+    background: $seconds-color;
+    @include rounded-top;
+    @include clock-animation(60s);
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 25%;
+    z-index: 1;
+    width: $hand-width;
+    height: $face-size / 4;
+    background: $minutes-color;
+    @include rounded-top;
+    @include clock-animation(3600s);
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
