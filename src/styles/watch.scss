@@ -1,0 +1,43 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $minuteHandHeight * 2 + $emtywatchSpace;
+  height: $minuteHandHeight * 2 + $emtywatchSpace;
+  border: 10px solid black;
+  border-radius: ($minuteHandHeight * 2 + $emtywatchSpace) / 2;
+  background: linear-gradient(to right, #ff4e50, #f9d423);
+
+  &__minute-hand {
+    position: relative;
+    left: ($centerWidth + $handsWidth) / 2;
+    bottom: $minuteHandHeight / 2;
+    width: $handsWidth;
+    height: $minuteHandHeight;
+    background-color: black;
+    border-radius: $handsWidth / 2;
+    animation: watchHand 3600s steps(60) infinite;
+    transform-origin: center bottom;
+  }
+
+  &__second-hand {
+    position: relative;
+    left: -($centerWidth + $handsWidth) / 2;
+    bottom: $secondHandHeight / 2;
+    width: $handsWidth;
+    height: $secondHandHeight;
+    background-color: white;
+    border-radius: $handsWidth / 2;
+    animation: watchHand 60s steps(60) infinite;
+    transform-origin: center bottom;
+  }
+
+  &__center {
+    position: relative;
+    z-index: 1;
+    width: $centerWidth;
+    height: $centerWidth;
+    background-color: black;
+    border-radius: $centerWidth / 2;
+  }
+}
