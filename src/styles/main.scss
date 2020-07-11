@@ -1,0 +1,61 @@
+@mixin arrow {
+  content: "";
+  width: 100px;
+  height: 45%;
+  position: absolute;
+  left: 45%;
+  bottom: 45%;
+  background-image: url(../images/minute.png);
+  background-repeat: no-repeat;
+  background-position: 5px 65px;
+}
+
+@mixin arrow-blok {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  animation: clock 3600s linear infinite;
+}
+
+.clock {
+  height: 500px;
+  width: 500px;
+  background-image: url(../images/clock.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+  border-radius: 50%;
+
+    &__minute {
+      @include arrow-blok;
+    }
+
+    &__minute::after {
+      @include arrow;
+    }
+
+    &__second {
+      @include arrow-blok();
+      bottom: 100%;
+      animation-duration: 60s;
+    }
+
+    &__second::after {
+      @include arrow;
+      background-image: url(../images/second.png);
+      background-position: 6px -20px;
+    }
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
