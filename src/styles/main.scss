@@ -29,25 +29,22 @@
   margin: 0 auto;
   border-radius: 50%;
 
-    &__minute {
-      @include arrow-blok;
-    }
-
-    &__minute::after {
-      @include arrow;
-    }
-
-    &__second {
-      @include arrow-blok();
-      bottom: 100%;
-      animation-duration: 60s;
-    }
-
-    &__second::after {
-      @include arrow;
-      background-image: url(../images/second.png);
-      background-position: 6px -20px;
-    }
+  &__minute {
+    @include arrow-blok;
+  }
+  &__minute::after {
+    @include arrow;
+  }
+  &__second {
+    @include arrow-blok();
+    bottom: 100%;
+    animation-duration: 60s;
+  }
+  &__second::after {
+    @include arrow;
+    background-image: url(../images/second.png);
+    background-position: 6px -20px;
+  }
 }
 
 @keyframes clock {
