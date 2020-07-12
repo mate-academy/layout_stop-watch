@@ -1,0 +1,27 @@
+$watchSize: 800px;
+
+.stopWatch {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $watchSize;
+  width: $watchSize;
+  margin: 0 auto;
+  border: 5px solid blue;
+  border-radius: $watchSize / 2;
+  background-color: yellow;
+}
+
+@keyframes handRotating {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
