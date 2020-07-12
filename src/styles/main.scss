@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  animation: background-color-change 15s infinite alternate;
+}
+
+$main-circle-size: 650px;
+
+@mixin hands-configuration {
+  position: absolute;
+  bottom: 50%;
+  background-color: #c0fdff;
+  transform-origin: bottom;
+  border-radius: 50%;
+}
+
+.clock {
+  width: $main-circle-size;
+  height: $main-circle-size;
+  background-color: #54478c;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @for $i from 1 through 10 {
+    & :nth-child(#{$i}) {
+      width: $main-circle-size - ($i * 60px);
+      height: $main-circle-size - ($i * 57px);
+      border-radius: 50%;
+      position: absolute;
+    }
+  }
+
+  &__second-hand {
+    @include hands-configuration();
+    height: 290px;
+    width: 15px;
+    animation: rotation 60s steps(60) infinite;
+  }
+  
+  &__minute-hand {
+    @include hands-configuration();
+    height: 250px;
+    width: 10px;
+    animation: rotation 3600s linear infinite;
+  }
+
+  $colors:
+    #ffcbf2 1,
+    #f3c4fb 2,
+    #ecbcfd 3,
+    #e5b3fe 4,
+    #e2afff 5,
+    #deaaff 6,
+    #d8bbff 7,
+    #d0d1ff 8,
+    #c8e7ff 9,
+    #c0fdff 10;
+
+  @each $color, $num in $colors {
+    & :nth-child(#{$num}) {
+      background-color: $color;
+    }
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes background-color-change {
+  from {
+    background-color: #54478c;
+  }
+
+  15% {
+    background-color: #2c699a;
+  }
+
+  25% {
+    background-color: #048ba8;
+  }
+
+  30% {
+    background-color: #0db39e;
+  }
+
+  40% {
+    background-color: #16db93;
+  }
+
+  50% {
+    background-color: #93e1d8;
+  }
+
+  60% {
+    background-color: #83e377;
+  }
+
+  70% {
+    background-color: #b9e769;
+  }
+
+  80% {
+    background-color: #efea5a;
+  }
+
+  90% {
+    background-color: #f1c453;
+  }
+
+  to {
+    background-color: #f29e4c;
+  }
+}
