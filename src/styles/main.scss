@@ -1,0 +1,68 @@
+$watch-size: 450px;
+$width-arrow: 7px;
+$arrow-color: #e7dfd5;
+
+body {
+  margin: 0;
+  background-color: #e7dfd5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 50px auto;
+  position: relative;
+  background-color: #84a9ac;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  border: 10px solid #204051;
+
+  &__sec {
+    position: absolute;
+    width: $width-arrow;
+    height: 200px;
+    border-radius: 10px;
+    background-color: $arrow-color;
+    top: 3%;
+    left: 49%;
+    transform-origin: 50% 100%;
+    animation: clock 60s infinite steps(60);
+  }
+
+  &__min {
+    position: absolute;
+    width: $width-arrow;
+    height: 150px;
+    border-radius: 10px;
+    background-color: $arrow-color;
+    top: 15%;
+    left: 49%;
+    transform-origin: 50% 100%;
+    animation: clock 3600s infinite steps(60);
+  }
+
+  &__center {
+    position: absolute;
+    background-color: $arrow-color;
+    border-radius: 50%;
+    border: 3px solid #3b6978;
+    width: 20px;
+    height: 20px;
+    top: 48%;
+    right: 48%;
+    z-index: 1;
+  }
+
+  @keyframes clock {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
