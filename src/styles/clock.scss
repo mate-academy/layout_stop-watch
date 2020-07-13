@@ -1,0 +1,40 @@
+.arrow {
+  display: block;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 50%;
+  height: $heightArrow;
+  width: $widthArrow;
+  border-radius: 5px;
+}
+
+.seconds {
+  background-color: $colorSeconds;
+  animation: arrowRotate 60s linear infinite;
+}
+
+.hour {
+  background-color: $colorHour;
+  animation: arrowRotate 3600s linear infinite;
+}
+
+.dot {
+  position: absolute;
+  margin-top: $heightArrow - $dotSize / 2 + 30px;
+  margin-left: calc(50% - 15px + 5px);
+  height: $dotSize;
+  width: $dotSize;
+  background-color: #4b99aa;
+  border-radius: 50%;
+}
+
+@keyframes arrowRotate {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: 50% 100%;
+  }
+}
