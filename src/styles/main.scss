@@ -1,10 +1,6 @@
-$clockSide: 500px;
-
-@mixin arrow {
-  position: absolute;
-  bottom: $clockSide / 2;
-  border-radius: 15px;
-}
+@import "variables";
+@import "mixins";
+@import "animations";
 
 .container {
   height: 100vh;
@@ -18,32 +14,32 @@ $clockSide: 500px;
   height: $clockSide;
   width: $clockSide;
   border-radius: 50%;
-  background-color: #d9ddde;
+  background-color: $clockBackgroundColor;
   border: 5px solid black;
 
   &__seconds {
     width: $clockSide / 100;
     height: $clockSide / 2;
-    background-color: #4d7c91;
+    background-color: $secondsArrowColor;
 
     @include arrow();
   
-    left: -2px + $clockSide / 2;
+    left: -$clockSide/200 + $clockSide / 2;
 
-    animation: arrow 10s infinite linear;
+    animation: arrow 60s infinite linear;
   }
 
   
   &__minutes {
     width: $clockSide / 50;
     height: $clockSide / 3;
-    background-color: red;
+    background-color: #f00;
 
     @include arrow();
 
-    left: -5px + $clockSide / 2;
+    left: -$clockSide / 100 + $clockSide / 2;
 
-    animation: arrow 20s infinite linear;
+    animation: arrow 3600s infinite linear;
   }
 
   &__center {
@@ -54,19 +50,7 @@ $clockSide: 500px;
     border-radius: 50%;
     left: $clockSide / 2;
     bottom: $clockSide / 2;
-    transform: translateX(-50%) translateY(50%);
+    transform: translate(-50%, 50%);
 
-  }
-}
-
-@keyframes arrow {
-  from {
-    transform: rotate(0deg);
-    transform-origin: bottom;
-  }
-
-  to {
-    transform: rotate(360deg);
-    transform-origin: bottom;
   }
 }
