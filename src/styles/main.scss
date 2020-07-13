@@ -27,7 +27,7 @@ body {
     border-radius: 10px;
     background-color: $arrow-color;
     top: 3%;
-    left: 49%;
+    left: calc(50% - #{$width-arrow/2});
     transform-origin: 50% 100%;
     animation: clock 60s infinite steps(60);
   }
@@ -39,7 +39,7 @@ body {
     border-radius: 10px;
     background-color: $arrow-color;
     top: 15%;
-    left: 49%;
+    left: calc(50% - #{$width-arrow/2});
     transform-origin: 50% 100%;
     animation: clock 3600s infinite steps(60);
   }
@@ -51,8 +51,8 @@ body {
     border: 3px solid #3b6978;
     width: 20px;
     height: 20px;
-    top: 48%;
-    right: 48%;
+    top: calc(50% - 10px);
+    right: calc(50% - 10px);
     z-index: 1;
   }
 
