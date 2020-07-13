@@ -1,0 +1,56 @@
+@import "variables";
+
+.clock {
+  width: $main-circle-size;
+  height: $main-circle-size;
+  background-color: #54478c;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @for $i from 1 through 10 {
+    & :nth-child(#{$i}) {
+      width: $main-circle-size - ($i * $inner-circles-width);
+      height: $main-circle-size - ($i * $inner-circles-height);
+      border-radius: 50%;
+      position: absolute;
+    }
+  }
+
+  &__second-hand {
+    @include hands-configuration();
+    height: 290px;
+    width: 15px;
+    animation: rotation 60s steps(60) infinite;
+  }
+  
+  &__minute-hand {
+    @include hands-configuration();
+    height: 250px;
+    width: 10px;
+    animation: rotation 3600s linear infinite;
+  }
+
+  $colors:
+    #ffcbf2 1,
+    #f3c4fb 2,
+    #ecbcfd 3,
+    #e5b3fe 4,
+    #e2afff 5,
+    #deaaff 6,
+    #d8bbff 7,
+    #d0d1ff 8,
+    #c8e7ff 9,
+    #c0fdff 10;
+
+  @each $color, $num in $colors {
+    & :nth-child(#{$num}) {
+      background-color: $color;
+    }
+  }
+}

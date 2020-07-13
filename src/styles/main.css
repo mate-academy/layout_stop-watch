@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  animation: background-color-change 15s infinite alternate;
+}
+
+.clock {
+  width: 650px;
+  height: 650px;
+  background-color: #462255;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock :nth-child(1) {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.clock :nth-child(2) {
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.clock :nth-child(3) {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.clock :nth-child(4) {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.clock :nth-child(5) {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.clock :nth-child(6) {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.clock :nth-child(7) {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.clock :nth-child(8) {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.clock :nth-child(9) {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.clock :nth-child(10) {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.clock:nth-child(1) {
+  background-color: #ffcbf2;
+}
+
+.clock:nth-child(2) {
+  background-color: #f3c4fb;
+}
+
+.clock:nth-child(3) {
+  background-color: #ecbcfd;
+}
+
+.clock:nth-child(4) {
+  background-color: #e5b3fe;
+}
+
+.clock:nth-child(5) {
+  background-color: #e2afff;
+}
+
+.clock:nth-child(6) {
+  background-color: #deaaff;
+}
+
+.clock:nth-child(7) {
+  background-color: #d8bbff;
+}
+
+.clock:nth-child(8) {
+  background-color: #d0d1ff;
+}
+
+.clock:nth-child(9) {
+  background-color: #c8e7ff;
+}
+
+.clock:nth-child(10) {
+  background-color: #c0fdff;
+}
+
+@keyframes background-color-change {
+  from {
+    background-color: #ddfff7;
+  }
+  25% {
+    background-color: #93e1d8;
+  }
+  50% {
+    background-color: #ffa69e;
+  }
+  75% {
+    background-color: #aa4465;
+  }
+  to {
+    background-color: #462255;
+  }
+}
+
+.clock__minute-hand {
+  border-radius: 8px;
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  height: 300px;
+  width: 5px;
+  background-color: #011627;
+  animation: rotation 60s infinite;
+  transform-origin: bottom;
+}
+
+.clock__hour-hand {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  height: 300px;
+  width: 3px;
+  background-color: #fe5f55;
+  border-radius: 8px;
+  animation: rotation 3600s infinite;
+  transform-origin: bottom;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
