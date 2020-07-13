@@ -1,5 +1,3 @@
-$watchSize: 800px;
-
 .stopWatch {
   position: relative;
   z-index: 1;
@@ -12,6 +10,37 @@ $watchSize: 800px;
   border: 5px solid blue;
   border-radius: $watchSize / 2;
   background-color: yellow;
+
+  &__center {
+    position: absolute;
+    z-index: 4;
+    width: $pointSize;
+    height: $pointSize;
+    background-color: green;
+    border-radius: $pointSize / 2;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    z-index: 2;
+    bottom: 50%;
+    height: 50%;
+    width: 10px;
+    background-color: red;
+    border-radius: 10px;
+    animation: handRotating 60s 1s infinite linear;
+  }
+
+  &__second-hand {
+    position: absolute;
+    z-index: 3;
+    height: 30%;
+    bottom: 50%;
+    width: 10px;
+    background-color: green;
+    border-radius: 10px;
+    animation: handRotating 3600s 1s infinite linear;
+  }
 }
 
 @keyframes handRotating {
