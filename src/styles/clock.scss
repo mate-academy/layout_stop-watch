@@ -1,34 +1,34 @@
-.hand {
+.arrow {
   display: block;
   position: absolute;
   margin-top: 30px;
   margin-left: 50%;
-  height: $heightHand;
-  width: $widthHand;
+  height: $heightArrow;
+  width: $widthArrow;
   border-radius: 5px;
 }
 
-.secondHand {
-  background-color: #4b99aa;
-  animation: handRotate 60s linear infinite;
+.seconds {
+  background-color: $colorSeconds;
+  animation: arrowRotate 60s linear infinite;
 }
 
-.hourHand {
-  background-color: #d15559;
-  animation: handRotate 3600s linear infinite;
+.hour {
+  background-color: $colorHour;
+  animation: arrowRotate 3600s linear infinite;
 }
 
-.circle {
+.dot {
   position: absolute;
-  margin-top: $heightHand - $circleSize / 2 + 30px;
+  margin-top: $heightArrow - $dotSize / 2 + 30px;
   margin-left: calc(50% - 15px + 5px);
-  height: $circleSize;
-  width: $circleSize;
+  height: $dotSize;
+  width: $dotSize;
   background-color: #4b99aa;
   border-radius: 50%;
 }
 
-@keyframes handRotate {
+@keyframes arrowRotate {
   from {
     transform: rotate(0deg);
     transform-origin: 50% 100%;
