@@ -1,0 +1,58 @@
+@import "reset";
+$rotationCenter: 50% 100%;
+$minuteColor: #424242;
+$axisColor: #2e2e2e;
+$secondColor: #6e6e6e;
+$ring: 50%;
+
+.clock {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  border-radius: $ring;
+  background: center no-repeat url(https://www.pngkey.com/png/detail/410-4109648_printable-clock-templates-clock-face-without-hands.png);
+  background-size: 635px;
+
+  &__secondHand {
+    position: absolute;
+    top: 10px;
+    left: 196px;
+    height: 190px;
+    width: 8px;
+    background-color: $secondColor;
+    border-radius: 20%;
+    transform-origin: $rotationCenter;
+    animation: rotation 60s linear infinite;
+  }
+
+  &__minuteHand {
+    position: absolute;
+    top: 50px;
+    left: 195px;
+    height: 150px;
+    width: 10px;
+    background-color: $minuteColor;
+    border-radius: 20%;
+    transform-origin: $rotationCenter;
+    animation: rotation 3600s linear infinite;
+  }
+
+  &__axis {
+    position: absolute;
+    left: 183px;
+    top: 185px;
+    background-color: $axisColor;
+    height: 30px;
+    width: 30px;
+    border-radius: $ring;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
