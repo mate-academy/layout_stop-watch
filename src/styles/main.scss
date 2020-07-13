@@ -1,11 +1,11 @@
 @import "global";
 
 .clock {
-  @include centered;
+  @extend %centered;
   height: 100vh;
 
   &__frame {
-    @include centered;
+    @extend %centered;
     width: $frame-size;
     height: $frame-size;
     background: $frame-background;
@@ -14,7 +14,7 @@
 
   &__face {
     position: relative;
-    @include centered;
+    @extend %centered;
     width: $face-size;
     height: $face-size;
     background: $face-background;
@@ -37,8 +37,9 @@
     width: $hand-width;
     height: $face-size / 2;
     background: $seconds-color;
-    @include rounded-top;
-    @include clock-animation(60s);
+    @extend %rounded-top;
+    animation: rotate 60s infinite steps(60);
+    transform-origin: bottom center;
   }
 
   &__minutes {
@@ -48,8 +49,9 @@
     width: $hand-width;
     height: $face-size / 4;
     background: $minutes-color;
-    @include rounded-top;
-    @include clock-animation(3600s);
+    @extend %rounded-top;
+    animation: rotate 3600s infinite steps(60);
+    transform-origin: bottom center;
   }
 
   @keyframes rotate {
