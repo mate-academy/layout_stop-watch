@@ -1,0 +1,56 @@
+@import "variables";
+@import "mixins";
+@import "animations";
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  height: $clockSide;
+  width: $clockSide;
+  border-radius: 50%;
+  background-color: $clockBackgroundColor;
+  border: 5px solid black;
+
+  &__seconds {
+    width: $clockSide / 100;
+    height: $clockSide / 2;
+    background-color: $secondsArrowColor;
+
+    @include arrow();
+  
+    left: -$clockSide/200 + $clockSide / 2;
+
+    animation: arrow 60s infinite linear;
+  }
+
+  
+  &__minutes {
+    width: $clockSide / 50;
+    height: $clockSide / 3;
+    background-color: #f00;
+
+    @include arrow();
+
+    left: -$clockSide / 100 + $clockSide / 2;
+
+    animation: arrow 3600s infinite linear;
+  }
+
+  &__center {
+    position: absolute;
+    height: $clockSide / 20;
+    width: $clockSide / 20;
+    background-color: #4d7c91;
+    border-radius: 50%;
+    left: $clockSide / 2;
+    bottom: $clockSide / 2;
+    transform: translate(-50%, 50%);
+
+  }
+}
