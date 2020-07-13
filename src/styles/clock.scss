@@ -1,10 +1,10 @@
 .hand {
   display: block;
   position: absolute;
-  top: 5%;
-  left: 50%;
-  height: 1em;
-  width: 0.04em;
+  margin-top: 30px;
+  margin-left: 50%;
+  height: $heightHand;
+  width: $widthHand;
   border-radius: 5px;
 }
 
@@ -20,10 +20,10 @@
 
 .circle {
   position: absolute;
-  top: 43%;
-  left: 49%;
-  height: 35px;
-  width: 35px;
+  margin-top: $heightHand - $circleSize / 2 + 30px;
+  margin-left: calc(50% - 15px + 5px);
+  height: $circleSize;
+  width: $circleSize;
   background-color: #4b99aa;
   border-radius: 50%;
 }
