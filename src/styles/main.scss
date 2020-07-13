@@ -1,0 +1,69 @@
+@import "variables";
+@import "bubble";
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  padding-top: 150px;
+  background-color: $colorBackground;
+}
+
+.stopwatch {
+  position: relative;
+  height: $clockSize;
+  width: $clockSize;
+  border: 2px dotted $mainColor;
+  border-radius: 50%;
+
+  &__seconds {
+    position: absolute;
+    left: calc(50% - 2px);
+    top: 5px;
+    height: ($clockHeight / 2) - 5px;
+    width: 4px;
+    background-color: $mainColor;
+    border-radius: 40%;
+    z-index: 1;
+    transform-origin: bottom;
+    animation: clock-move 60s both infinite linear;
+  }
+
+  &__minutes {
+    position: absolute;
+    left: calc(50% - 3px);
+    top: 20px;
+    height: ($clockWidth / 2) - 20px;
+    width: 6px;
+    background-color: rgb(193, 198, 199);
+    border-radius: 50%;
+    transform-origin: bottom;
+    animation: clock-move 90s both infinite linear;
+  }
+
+  &__center {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 30%;
+    top: calc(50% - 2px);
+    left: calc(50% - 2px);
+    background-color: white;
+    z-index: 3;
+  }
+  
+}
+
+@keyframes clock-move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
