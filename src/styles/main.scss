@@ -8,7 +8,7 @@ $color-sec-arrow: #4b9aaa;
 @mixin position($size) {
   position: absolute;
   left: #{$clock_size/2 - $size/2};
-  bottom: #{$clock_size/2 - $size/2};
+  bottom: #{$clock_size/2};
 }
 
 .clock {
@@ -34,7 +34,9 @@ $color-sec-arrow: #4b9aaa;
 }
 
 .clock__center {
-  @include position($center-size);
+  position: absolute;
+  left: #{$clock_size/2 - $center-size/2};
+  bottom: #{$clock_size/2 - $center-size/2};
 
   width: $center-size;
   height: $center-size;
