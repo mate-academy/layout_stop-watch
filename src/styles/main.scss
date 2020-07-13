@@ -15,8 +15,9 @@ body {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
+  width: $watchSize;
+  
+  margin: $watchSize * 0.3 auto;
 }
 
 .stopwatch {
@@ -40,7 +41,7 @@ body {
     bottom: $watchSize * 0.5;
 
     border: $circleBorder;
-    border-radius: 100%;
+    border-radius: 50%;
 
     height: $secLenght;
     width: 1px;
@@ -59,7 +60,7 @@ body {
     width: 2px;
 
     border: $circleBorder;
-    border-radius: 100%;
+    border-radius: 50%;
 
     background-color: $color;
 
