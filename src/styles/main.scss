@@ -16,8 +16,8 @@ body {
 
 .stopwatch {
   position: relative;
-  height: 200px;
-  width: 200px;
+  height: $clockHeight;
+  width: $clockWidth;
   border: 2px dotted $mainColor;
   border-radius: 50%;
 
@@ -25,7 +25,7 @@ body {
     position: absolute;
     left: calc(50% - 2px);
     top: 5px;
-    height: 95px;
+    height: ($clockHeight / 2) - 5px;
     width: 4px;
     background-color: $mainColor;
     border-radius: 40%;
@@ -38,7 +38,7 @@ body {
     position: absolute;
     left: calc(50% - 3px);
     top: 20px;
-    height: 80px;
+    height: ($clockWidth / 2) - 20px;
     width: 6px;
     background-color: rgb(193, 198, 199);
     border-radius: 50%;
