@@ -1,0 +1,52 @@
+@import "reset";
+@import "variables";
+@import "animation";
+@import "mixins";
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: $backGroundColor;
+}
+
+.clock {
+  position: relative;
+  display: block;
+  background-color: $colorBgClock;
+  width: $clockSize;
+  height: $clockSize;
+  transform: translate(-100%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+
+  &__center {
+    @include inner-block-position;
+    background-color: $colorCenter;
+    width: $clockCenterSize;
+    height: $clockCenterSize;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    @include inner-block-position;
+    @include hands-position-behaving;
+    background-color: $colorMinHand;
+    height: 200px;
+    top: 100px;
+    animation: min-handle-animation 3600s linear infinite;
+  }
+
+  &__second-hand {
+    @include inner-block-position;
+    @include hands-position-behaving;
+    background-color: $colorSecHand;
+    height: 250px;
+    top: 50px;
+    animation: sec-handle-animation 60s linear infinite;
+  }
+}
