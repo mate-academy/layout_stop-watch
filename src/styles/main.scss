@@ -1,24 +1,20 @@
 @import "reset";
-$rotationCenter: 50% 100%;
-$minuteColor: #424242;
-$axisColor: #2e2e2e;
-$secondColor: #6e6e6e;
-$ring: 50%;
+@import "variables";
 
 .clock {
   position: relative;
-  height: 400px;
-  width: 400px;
+  height: $side;
+  width: $side;
   border-radius: $ring;
-  background: center no-repeat url(https://www.pngkey.com/png/detail/410-4109648_printable-clock-templates-clock-face-without-hands.png);
-  background-size: 635px;
+  background: center no-repeat url(https://p7.hiclipart.com/preview/980/515/700/clock-face-clip-art-analog-clock-without-hands.jpg);
+  background-size: 420px;
 
   &__secondHand {
     position: absolute;
-    top: 10px;
-    left: 196px;
-    height: 190px;
-    width: 8px;
+    top: $side*(2.4/100);
+    left: $side/2 - 5px;
+    height: $side/2 - 10px;
+    width: $side*0.02;
     background-color: $secondColor;
     border-radius: 20%;
     transform-origin: $rotationCenter;
@@ -27,10 +23,10 @@ $ring: 50%;
 
   &__minuteHand {
     position: absolute;
-    top: 50px;
-    left: 195px;
-    height: 150px;
-    width: 10px;
+    top: $side*(12.5/100);
+    left: $side*(48.4/100);
+    height: $side*(37.5/100);
+    width: $side*(2.5/100);
     background-color: $minuteColor;
     border-radius: 20%;
     transform-origin: $rotationCenter;
@@ -39,11 +35,11 @@ $ring: 50%;
 
   &__axis {
     position: absolute;
-    left: 183px;
-    top: 185px;
+    left: $side * 0.47;
+    top: $side * (47.5/100);
+    height: $side* (5.5/100);
+    width: $side* (5.5/100);
     background-color: $axisColor;
-    height: 30px;
-    width: 30px;
     border-radius: $ring;
   }
 }
