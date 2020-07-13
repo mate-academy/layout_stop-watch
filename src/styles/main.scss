@@ -1,0 +1,71 @@
+$stopwatch_arrow: 100px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 100px;
+  background-color: beige;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.stopwatch__body {
+  background-color: mintcream;
+  height: $stopwatch_arrow * 5;
+  width: $stopwatch_arrow * 5;
+  border-radius: 50%;
+}
+
+.stopwatch__second {
+  width: $stopwatch_arrow / 10;
+  height: $stopwatch_arrow * 2;
+  border-radius: $stopwatch_arrow/2;
+  background-color: green;
+  position: absolute;
+  top: $stopwatch_arrow / 2;
+  animation: watch 60s infinite linear ;
+}
+
+.stopwatch__minute {
+  width: $stopwatch_arrow / 7;
+  height: $stopwatch_arrow * 1.5;
+  border-radius: $stopwatch_arrow/2;
+  background-color: gray;
+  position: absolute;
+  top: $stopwatch_arrow * 1.05;
+  animation: watch 3600s infinite steps(60) ;
+}
+
+.stopwatch__second--round {
+  width: $stopwatch_arrow / 5;
+  height: $stopwatch_arrow / 5;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom center;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom center;
+  }
+}
