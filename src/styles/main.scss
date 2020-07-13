@@ -16,7 +16,6 @@ body {
 .clock-face {
   position: relative;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
 
   margin: 0 auto;
@@ -31,11 +30,11 @@ body {
 
   &__second-hand {
     position: absolute;
-    margin-top: $clock-face-size / 2 - $second-hand-height;
+    top: $clock-face-size / 2 - $second-hand-height;
     width: $second-hand-width;
     height: $second-hand-height;
     background-color: $secondary-color;
-    border-radius: 10px 10px 5px 5px;
+    border-radius: $second-hand-width / 2;
     z-index: 2;
 
     animation: clock linear 60s infinite;
@@ -43,11 +42,11 @@ body {
 
   &__minute-hand {
     position: absolute;
-    margin-top: $clock-face-size / 2 - $minute-hand-height;
+    top: $clock-face-size / 2 - $minute-hand-height;
     width: $minute-hand-width;
     height: $minute-hand-height;
     background-color: $main-color;
-    border-radius: 15px 15px 5px 5px;
+    border-radius: $minute-hand-width / 2;
     z-index: 1;
 
     animation: clock linear 3600s infinite;
