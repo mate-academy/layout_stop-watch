@@ -1,0 +1,82 @@
+$clock_size: 600px;
+$center-size: 35px;
+$sec-arrow-heigth: 255px;
+$min-arrow-height: 220px;
+$arrow-width: 10px;
+$color-sec-arrow: #4b9aaa;
+
+@mixin position($size) {
+  position: absolute;
+  left: #{$clock_size/2 - $size/2};
+  bottom: #{$clock_size/2};
+}
+
+.clock {
+  position: relative;
+  margin: 50px auto;
+
+  width: $clock_size;
+  height: $clock_size;
+
+  color: #d15559;
+  font-family: "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: $clock_size * 1.3;
+  text-transform: uppercase;
+  text-align: center;
+
+  background: radial-gradient(circle,
+  rgba(235,235,235,1) 0%,
+  rgba(241,241,241,1) 35%,
+  rgba(182,182,182,1) 100%);
+  border-radius: 50%;
+}
+
+.clock__center {
+  position: absolute;
+  left: #{$clock_size/2 - $center-size/2};
+  bottom: #{$clock_size/2 - $center-size/2};
+
+  width: $center-size;
+  height: $center-size;
+
+  background-color: $color-sec-arrow;
+  border-radius: 50%;
+}
+
+.clock__second {
+  @include position($arrow-width);
+
+  width: $arrow-width;
+  height: $sec-arrow-heigth;
+
+  background-color: $color-sec-arrow;
+  border-radius: 10px;
+
+  animation: time 60s steps(60) infinite;
+}
+
+.clock__minute {
+  @include position($arrow-width);
+
+  width: $arrow-width;
+  height: $min-arrow-height;
+
+  background-color: #d15559;
+  border-radius: 10px;
+
+  animation: time 3600s steps(60) infinite;
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}

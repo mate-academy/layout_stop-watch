@@ -1,0 +1,60 @@
+.clock {
+  position: relative;
+  margin: 50px auto;
+  width: 600px;
+  height: 600px;
+  color: #d15559;
+  font-family: "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 780px;
+  text-transform: uppercase;
+  text-align: center;
+  background: radial-gradient(circle, #ebebeb 0%, #f1f1f1 35%, #b6b6b6 100%);
+  border-radius: 50%;
+}
+
+.clock__center {
+  position: absolute;
+  left: 282.5px;
+  bottom: 282.5px;
+  width: 35px;
+  height: 35px;
+  background-color: #4b9aaa;
+  border-radius: 50%;
+}
+
+.clock__second {
+  position: absolute;
+  left: 295px;
+  bottom: 300px;
+  width: 10px;
+  height: 255px;
+  background-color: #4b9aaa;
+  border-radius: 10px;
+  animation: time 60s steps(60) infinite;
+}
+
+.clock__minute {
+  position: absolute;
+  left: 295px;
+  bottom: 300px;
+  width: 10px;
+  height: 220px;
+  background-color: #d15559;
+  border-radius: 10px;
+  animation: time 3600s steps(60) infinite;
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
