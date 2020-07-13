@@ -4,7 +4,7 @@ $arrow-color: #e7dfd5;
 
 body {
   margin: 0;
-  background-color: #e7dfd5;
+  background-color: $arrow-color;
 }
 
 * {
@@ -23,11 +23,11 @@ body {
   &__sec {
     position: absolute;
     width: $width-arrow;
-    height: 200px;
+    height: 45%;
     border-radius: 10px;
     background-color: $arrow-color;
-    top: 3%;
-    left: calc(50% - #{$width-arrow/2});
+    top: 5%;
+    left: calc(50% - #{$width-arrow / 2});
     transform-origin: 50% 100%;
     animation: clock 60s infinite steps(60);
   }
@@ -35,11 +35,11 @@ body {
   &__min {
     position: absolute;
     width: $width-arrow;
-    height: 150px;
+    height: 30%;
     border-radius: 10px;
     background-color: $arrow-color;
-    top: 15%;
-    left: calc(50% - #{$width-arrow/2});
+    top: 20%;
+    left: calc(50% - #{$width-arrow / 2});
     transform-origin: 50% 100%;
     animation: clock 3600s infinite steps(60);
   }
