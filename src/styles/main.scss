@@ -1,0 +1,75 @@
+$clock-face-size: 500px;
+$dot-size: 30px;
+$second-hand-height: 220px;
+$second-hand-width: 10px;
+$minute-hand-height: 150px;
+$minute-hand-width: 15px;
+$main-color: rgb(82, 131, 236);
+$secondary-color: rgb(144, 179, 255);
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient( #e1f9ff, #636e72);
+}
+
+.clock-face {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  margin: 0 auto;
+  top: 100px;
+
+  height: $clock-face-size;
+  width: $clock-face-size;
+  border-radius: 50%;
+
+  background-color: #000;
+  box-shadow: 0 0 100px rgba(0,0,0,0.5);
+
+  &__second-hand {
+    position: absolute;
+    top: $clock-face-size / 2 - $second-hand-height;
+    width: $second-hand-width;
+    height: $second-hand-height;
+    background-color: $secondary-color;
+    border-radius: $second-hand-width / 2;
+    z-index: 2;
+
+    animation: clock linear 60s infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: $clock-face-size / 2 - $minute-hand-height;
+    width: $minute-hand-width;
+    height: $minute-hand-height;
+    background-color: $main-color;
+    border-radius: $minute-hand-width / 2;
+    z-index: 1;
+
+    animation: clock linear 3600s infinite;
+  }
+
+  &__dot {
+    width: $dot-size;
+    height: $dot-size;
+    border-radius: 50%;
+    background-color: $secondary-color;
+    align-self: center;
+    z-index: 3;
+  }
+}
+
+@keyframes clock {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
