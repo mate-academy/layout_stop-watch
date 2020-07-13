@@ -1,10 +1,10 @@
-$bigPointerLength: 200px;
-$smallPointerLength: 100px;
-$PointerWidth: 5px;
-$circleDiameter: 15px;
-$bigCircleDiametr: $bigPointerLength * 2.1;
-$clockVerticalPosition: 50vh;
-$clockHorisontalPosition: 50vw;
+$bPointerLength: 200px;
+$sPointerLength: 100px;
+$PointerW: 5px;
+$circleDiam: 15px;
+$bigCircleDiam: $bPointerLength * 2.1;
+$clockVerPos: 50vh;
+$clockHorPos: 50vw;
 @keyframes arrow_second {
   100% {
     transform: rotate(360deg);
@@ -17,58 +17,55 @@ $clockHorisontalPosition: 50vw;
 
 .circle {
   position: absolute;
-  width: $circleDiameter;
-  height: $circleDiameter;
+  width: $circleDiam;
+  height: $circleDiam;
   background-color: red;
   border-radius: 50%;
-  margin-left: $clockHorisontalPosition;
-  margin-top: $clockVerticalPosition;
+  margin-left: $clockHorPos;
+  margin-top: $clockVerPos;
   z-index: 2;
-  transform: translate(-($circleDiameter - $PointerWidth) / 2,
-  -$circleDiameter / 2);
+  transform: translate(-($circleDiam - $PointerW) / 2, -$circleDiam / 2);
 }
 
 .circle__big {
   position: absolute;
-  width: $bigCircleDiametr;
-  height: $bigCircleDiametr;
+  width: $bigCircleDiam;
+  height: $bigCircleDiam;
   border: 3px solid black;
   border-radius: 50%;
-  margin-left: $clockHorisontalPosition;
-  margin-top: $clockVerticalPosition;
+  margin-left: $clockHorPos;
+  margin-top: $clockVerPos;
   z-index: 2;
-  transform: translate(-($bigCircleDiametr - $PointerWidth) / 2,
-  -$bigCircleDiametr / 2);
+  transform: translate(-($bigCircleDiam - $PointerW) / 2, -$bigCircleDiam / 2);
 }
 
 .seconds {
   position: absolute;
-  height: $bigPointerLength * 2;
-  width: $PointerWidth;
-  margin-top: calc(#{$clockVerticalPosition} - #{$bigPointerLength});
-  margin-left: $clockHorisontalPosition;
+  height: $bPointerLength * 2;
+  width: $PointerW;
+  margin-top: calc(#{$clockVerPos} - #{$bPointerLength});
+  margin-left: $clockHorPos;
   animation: arrow_second 60s infinite linear;
 
   &__pointer {
     height: 50%;
     background-color: blue;
-    border-radius: $PointerWidth;
+    border-radius: $PointerW;
   }
 }
 
 .minutes {
   position: absolute;
-  height: $smallPointerLength * 2;
-  width: $PointerWidth;
-  margin-left: $clockHorisontalPosition;
-  margin-top: calc(#{$clockVerticalPosition}
-  - #{$bigPointerLength - $smallPointerLength});
+  height: $sPointerLength * 2;
+  width: $PointerW;
+  margin-left: $clockHorPos;
+  margin-top: calc(#{$clockVerPos} - #{$bPointerLength - $sPointerLength});
   animation: arrow_second calc(60s * 60) infinite linear;
   z-index: 1;
 
   &__pointer {
     height: 50%;
     background-color: green;
-    border-radius: $PointerWidth;
+    border-radius: $PointerW;
   }
 }
