@@ -3,7 +3,6 @@
 
 body {
   margin: 0;
-  box-sizing: border-box;
 }
 
 .container {
@@ -16,8 +15,8 @@ body {
 
 .stopwatch {
   position: relative;
-  height: $clockHeight;
-  width: $clockWidth;
+  height: $clockSize;
+  width: $clockSize;
   border: 2px dotted $mainColor;
   border-radius: 50%;
 
@@ -31,7 +30,7 @@ body {
     border-radius: 40%;
     z-index: 1;
     transform-origin: bottom;
-    animation: clock-move 60s both infinite;
+    animation: clock-move 60s both infinite linear;
   }
 
   &__minutes {
@@ -43,7 +42,7 @@ body {
     background-color: rgb(193, 198, 199);
     border-radius: 50%;
     transform-origin: bottom;
-    animation: clock-move 90s both infinite;
+    animation: clock-move 90s both infinite linear;
   }
 
   &__center {
