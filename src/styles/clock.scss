@@ -1,0 +1,40 @@
+.hand {
+  display: block;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  height: 1em;
+  width: 0.04em;
+  border-radius: 5px;
+}
+
+.secondHand {
+  background-color: #4b99aa;
+  animation: handRotate 60s linear infinite;
+}
+
+.hourHand {
+  background-color: #d15559;
+  animation: handRotate 3600s linear infinite;
+}
+
+.circle {
+  position: absolute;
+  top: 43%;
+  left: 49%;
+  height: 35px;
+  width: 35px;
+  background-color: #4b99aa;
+  border-radius: 50%;
+}
+
+@keyframes handRotate {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: 50% 100%;
+  }
+}
