@@ -1,0 +1,58 @@
+$watchSize: 600px;
+$mainColor: gray;
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+  width: $watchSize;
+  height: $watchSize;
+  border: 15px solid $mainColor;
+  border-radius: 50%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background-color: $mainColor;
+    border-radius: 50%;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: 10%;
+    width: 10px;
+    height: 240px;
+    background-color: $mainColor;
+    border-radius: 10px;
+    transform-origin: bottom center;
+    animation: moveArrow 60s linear infinite;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 25%;
+    width: 15px;
+    height: 150px;
+    background-color: black;
+    border-radius: 10px;
+    transform-origin: bottom center;
+    animation: moveArrow 3600s linear infinite;
+  }
+
+}
+
+@keyframes moveArrow {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
