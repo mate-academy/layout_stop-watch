@@ -2,6 +2,14 @@ $watch-size: 450px;
 $width-arrow: 7px;
 $arrow-color: #e7dfd5;
 
+@mixin arrows {
+  position: absolute;
+  width: $width-arrow;
+  border-radius: 10px;
+  background-color: $arrow-color;
+  transform-origin: 50% 100%;
+}
+
 body {
   margin: 0;
   background-color: $arrow-color;
@@ -21,26 +29,18 @@ body {
   border: 10px solid #204051;
 
   &__sec {
-    position: absolute;
-    width: $width-arrow;
+    @include arrows;
     height: 45%;
-    border-radius: 10px;
-    background-color: $arrow-color;
     top: 5%;
     left: calc(50% - #{$width-arrow / 2});
-    transform-origin: 50% 100%;
     animation: clock 60s infinite steps(60);
   }
 
   &__min {
-    position: absolute;
-    width: $width-arrow;
+    @include arrows;
     height: 30%;
-    border-radius: 10px;
-    background-color: $arrow-color;
     top: 20%;
     left: calc(50% - #{$width-arrow / 2});
-    transform-origin: 50% 100%;
     animation: clock 3600s infinite steps(60);
   }
 
