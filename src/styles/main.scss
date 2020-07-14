@@ -1,6 +1,7 @@
 $sizeWatch: 400px;
 $handsRadius: 50%;
 $handsWidth: 10px;
+$posLeft: calc(50% - #{$handsWidth} / 2);
 
 body {
   margin: 0;
@@ -36,9 +37,9 @@ body {
     justify-content: center;
     align-items: center;
     bottom: 50%;
-    left: 49%;
-    transform: translate(-50%);
-    height: 150px;
+    left: $posLeft;
+    transform: translate(50%);
+    height: 200px;
     width: $handsWidth;
     background-color: #973397;
     border-radius: $handsRadius;
@@ -53,9 +54,9 @@ body {
     justify-content: center;
     align-items: center;
     bottom: 50%;
-    left: 49%;
-    transform: translate(-50%);
-    height: 200px;
+    left: $posLeft;
+    transform: translate(50%);
+    height: 150px;
     width: $handsWidth;
     background-color: #100c47;
     border-radius: $handsRadius;
