@@ -36,7 +36,7 @@ body {
     top: $clock-size / 2 - $minute-hand-height;
     height: $minute-hand-height;
     background-color: black;
-    animation: rotation ($minute * 60) infinite;
+    animation: rotation ($minute * 60) linear infinite;
   }
 
   &__second-hand {
@@ -44,7 +44,7 @@ body {
     top: $clock-size / 2 - $second-hand-height;
     height: $second-hand-height;
     background-color: rgb(110, 107, 95);
-    animation: rotation $minute infinite;
+    animation: rotation $minute linear infinite;
   }
 
   &__center {
