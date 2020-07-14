@@ -33,7 +33,6 @@ body {
   rgba(44,189,63,1) 49%, rgba(212,45,253,1) 100%);
   border-radius: 50%;
   margin: auto;
-  z-index: 2;
 
   &__circle {
     position: relative;
@@ -41,7 +40,6 @@ body {
     height: $circleDiametr;
     background-color: black;
     border-radius: 50%;
-    z-index: 2;
   }
 
   &__seconds {
@@ -50,12 +48,10 @@ body {
     width: $PointerWidth;
     bottom: $secondsPointer / 2;
     left: $circleDiametr / 2 + $PointerWidth / 2;
-    z-index: 1;
     transform-origin: center bottom;
     animation: poiners_animation 60s infinite linear;
     background-color: black;
     border-radius: $PointerWidth;
-
   }
 
   &__minutes {
@@ -73,6 +69,5 @@ body {
   &__image {
     position: absolute;
     height: $watchSize;
-    z-index: 1;
   }
 }
