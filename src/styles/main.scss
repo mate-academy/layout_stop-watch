@@ -1,11 +1,10 @@
-$bPointerLength: 200px;
-$sPointerLength: 100px;
-$PointerW: 5px;
-$circleDiam: 15px;
-$bigCircleDiam: $bPointerLength * 2.1;
-$clockVerPos: 50vh;
-$clockHorPos: 50vw;
-@keyframes arrow_second {
+$minutesPointer: 70px;
+$secondsPointer: 120px;
+$watchSize: $secondsPointer * 2.2;
+$PointerWidth: 5px;
+$circleDiametr: 15px;
+
+@keyframes poiners_animation {
   100% {
     transform: rotate(360deg);
   }
@@ -15,57 +14,65 @@ $clockHorPos: 50vw;
   box-sizing: border-box;
 }
 
-.circle {
-  position: absolute;
-  width: $circleDiam;
-  height: $circleDiam;
-  background-color: red;
-  border-radius: 50%;
-  margin-left: $clockHorPos;
-  margin-top: $clockVerPos;
-  z-index: 2;
-  transform: translate(-($circleDiam - $PointerW) / 2, -$circleDiam / 2);
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(63,168,251,1) 36%,
+  rgba(63,35,139,1) 100%);
 }
 
-.circle__big {
-  position: absolute;
-  width: $bigCircleDiam;
-  height: $bigCircleDiam;
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $watchSize;
+  height: $watchSize;
   border: 3px solid black;
+  background: linear-gradient(0deg, rgba(226,252,0,1) 0%,
+  rgba(44,189,63,1) 49%, rgba(212,45,253,1) 100%);
   border-radius: 50%;
-  margin-left: $clockHorPos;
-  margin-top: $clockVerPos;
+  margin: auto;
   z-index: 2;
-  transform: translate(-($bigCircleDiam - $PointerW) / 2, -$bigCircleDiam / 2);
-}
 
-.seconds {
-  position: absolute;
-  height: $bPointerLength * 2;
-  width: $PointerW;
-  margin-top: calc(#{$clockVerPos} - #{$bPointerLength});
-  margin-left: $clockHorPos;
-  animation: arrow_second 60s infinite linear;
-
-  &__pointer {
-    height: 50%;
-    background-color: blue;
-    border-radius: $PointerW;
+  &__circle {
+    position: relative;
+    width: $circleDiametr;
+    height: $circleDiametr;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 2;
   }
-}
 
-.minutes {
-  position: absolute;
-  height: $sPointerLength * 2;
-  width: $PointerW;
-  margin-left: $clockHorPos;
-  margin-top: calc(#{$clockVerPos} - #{$bPointerLength - $sPointerLength});
-  animation: arrow_second calc(60s * 60) infinite linear;
-  z-index: 1;
+  &__seconds {
+    position: relative;
+    height: $secondsPointer;
+    width: $PointerWidth;
+    bottom: $secondsPointer / 2;
+    left: $circleDiametr / 2 + $PointerWidth / 2;
+    z-index: 1;
+    transform-origin: center bottom;
+    animation: poiners_animation 60s infinite linear;
+    background-color: black;
+    border-radius: $PointerWidth;
 
-  &__pointer {
-    height: 50%;
-    background-color: green;
-    border-radius: $PointerW;
+  }
+
+  &__minutes {
+    position: relative;
+    height: $minutesPointer;
+    width: $PointerWidth;
+    bottom: $minutesPointer / 2;
+    right: $circleDiametr / 2 + $PointerWidth / 2;
+    animation: poiners_animation calc(60s * 60) infinite linear;
+    transform-origin: center bottom;
+    background-color: black;
+    border-radius: $PointerWidth;
+  }
+
+  &__image {
+    position: absolute;
+    height: $watchSize;
+    z-index: 1;
   }
 }
