@@ -1,0 +1,74 @@
+$sizeWatch: 400px;
+$handsRadius: 50%;
+$handsWidth: 10px;
+
+body {
+  margin: 0;
+  background-color: #d7d0f5;
+}
+
+.watch {
+  position: relative;
+  transform: translate(-50%, 50%);
+  left: 50%;
+  width: $sizeWatch;
+  height: $sizeWatch;
+  border: 5px solid #100c47;
+  border-radius: 50%;
+  background-image: url(../images/bg2.jpg);
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4%;
+    height: 4%;
+    border: 1px solid #100c47;
+    background-color: #100c47;
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &__second-hands {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 50%;
+    left: 49%;
+    transform: translate(-50%);
+    height: 150px;
+    width: $handsWidth;
+    background-color: #973397;
+    border-radius: $handsRadius;
+    z-index: 2;
+    transform-origin: 50% 100%;
+    animation: watch-run 60s linear infinite;
+  }
+
+  &__minute-hands {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 50%;
+    left: 49%;
+    transform: translate(-50%);
+    height: 200px;
+    width: $handsWidth;
+    background-color: #100c47;
+    border-radius: $handsRadius;
+    transform-origin: 50% 100%;
+    animation: watch-run 3600s linear infinite;
+  }
+}
+
+@keyframes watch-run {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
