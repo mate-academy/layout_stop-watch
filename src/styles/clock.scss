@@ -1,0 +1,65 @@
+$minuteHeight: 300px;
+$secondHeight: 300px;
+$centerWidth: 50px;
+$arrowWidth: 10px;
+$emtySpace: 80px;
+
+@keyframes clock-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $minuteHeight * 2 + $emtySpace;
+  height: $minuteHeight * 2 + $emtySpace;
+  border: 20px solid rgb(141, 1, 1);
+  border-radius: ($minuteHeight * 2 + $emtySpace) / 2;
+  background: url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg) no-repeat center;
+  background-size: 90%;
+  opacity: 0.8;
+  box-shadow: 0 0 40px 10px rgb(77, 76, 76);
+
+  &__minute-arrow {
+    position: relative;
+    left: -($centerWidth + $arrowWidth) / 2;
+    bottom: $minuteHeight / 2;
+    width: $arrowWidth;
+    height: $minuteHeight;
+    background-color: rgba(179, 179, 179, 0.71);
+    border-radius: $arrowWidth / 2;
+    animation: clock-animation 3600s steps(60) infinite;
+    transform-origin: center bottom;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+  }
+
+  &__second-arrow {
+    position: relative;
+    left: ($centerWidth + $arrowWidth) / 2;
+    bottom: $secondHeight / 2;
+    width: $arrowWidth;
+    height: $secondHeight;
+    background-color: rgba(250, 4, 4, 0.63);
+    border-radius: $arrowWidth / 2;
+    animation: clock-animation 60s steps(60) infinite;
+    transform-origin: center bottom;
+    box-shadow: 5 5 10px rgb(0, 0, 0);
+  }
+
+  &__center {
+    position: relative;
+    z-index: 1;
+    width: $centerWidth;
+    height: $centerWidth;
+    background-color: black;
+    border-radius: $centerWidth / 2;
+    box-shadow: 0 0 50px 10px rgb(51, 51, 51);
+  }
+}
