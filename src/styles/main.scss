@@ -22,9 +22,7 @@ body {
 
 .stopwatch {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
 
   position: relative;
 
@@ -38,9 +36,8 @@ body {
 
   &__sec {
     position: absolute;
-    bottom: $watchSize * 0.5;
-
-    border: $circleBorder;
+    left: calc(50% - 0.5px);
+    top: ($watchSize/2) - $secLenght;
     border-radius: 50%;
 
     height: $secLenght;
@@ -54,12 +51,12 @@ body {
 
   &__min {
     position: absolute;
-    top: $watchSize * 0.2;
+    left: calc(50% - 1px);
+    top: ($watchSize/2) - $minLenght;
 
     height: $minLenght;
     width: 2px;
 
-    border: $circleBorder;
     border-radius: 50%;
 
     background-color: $color;
@@ -70,10 +67,12 @@ body {
   }
 
   &__center {
+    position: absolute;
+    top: $watchSize/2 - $centerSize/2;
+
     height: $centerSize;
     width: $centerSize;
 
-    border: $circleBorder;
     border-radius: 50%;
 
     background-color: $color;
