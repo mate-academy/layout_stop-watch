@@ -1,5 +1,4 @@
-
-@keyframes seconds_animation {
+@mixin arrow-animate {
   from {
     transform: rotateZ(0deg);
   }
@@ -7,11 +6,11 @@
     transform: rotateZ(360deg);
   }
 }
+
+@keyframes seconds_animation {
+  @include arrow-animate;
+}
+
 @keyframes minutes_animation {
-  from {
-    transform: rotateZ(0deg);
-  }
-  to {
-    transform: rotateZ(360deg);
-  }
+  @include arrow-animate;
 }
