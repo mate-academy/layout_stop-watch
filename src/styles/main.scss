@@ -1,0 +1,54 @@
+@import "reset";
+@import "variables";
+
+.clock {
+  position: relative;
+  height: $side;
+  width: $side;
+  border-radius: $ring;
+  background: center no-repeat url(https://p7.hiclipart.com/preview/980/515/700/clock-face-clip-art-analog-clock-without-hands.jpg);
+  background-size: 420px;
+
+  &__secondHand {
+    position: absolute;
+    top: ($side/2) - $secondLong;
+    left: ($side/2) - ($secondThickness/2);
+    height: $secondLong;
+    width: $secondThickness;
+    background-color: $secondColor;
+    border-radius: 20%;
+    transform-origin: $rotationCenter;
+    animation: rotation 60s linear infinite;
+  }
+
+  &__minuteHand {
+    position: absolute;
+    top: ($side/2) - $minuteLong;
+    left: ($side/2) - $minuteThicknes/2;
+    height: $minuteLong;
+    width: $minuteThicknes;
+    background-color: $minuteColor;
+    border-radius: 20%;
+    transform-origin: $rotationCenter;
+    animation: rotation 3600s linear infinite;
+  }
+
+  &__axis {
+    position: absolute;
+    left: ($side/2) - ($axisSide/2);
+    top: ($side/2) - ($axisSide/2);
+    height: $axisSide;
+    width: $axisSide;
+    background-color: $axisColor;
+    border-radius: $ring;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
