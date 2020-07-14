@@ -45,16 +45,14 @@ body {
   }
 }
 
-@for $deg from 0 through 354 {
   @keyframes watch {
-    0% {
+    from {
       transform-origin: bottom;
-      transform: rotate($deg);
+      transform: rotate();
     }
 
-    100% {
+    to {
       transform-origin: bottom;
-      transform: rotate($deg + 6deg);
+      transform: rotate(360deg);
     }
   }
-}
