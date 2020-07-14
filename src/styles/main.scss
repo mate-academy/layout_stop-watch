@@ -1,0 +1,56 @@
+%handAppearance {
+  content: "";
+  position: absolute;
+  width: 100%;
+}
+
+.clock {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 20px auto 0;
+  border: 1px solid #000;
+  border-radius: 50%;
+
+  .secondHand {
+    position: absolute;
+    left: 245px;
+    top: 10px;
+    width: 10px;
+    height: 480px;
+    animation: timeCount 60s linear infinite;
+
+    &::before {
+      @extend %handAppearance;
+      height: 51%;
+      border-radius: 5px;
+      background-color: #f00;
+    }
+  }
+
+  .minuteHand {
+    position: absolute;
+    left: 240px;
+    top: 110px;
+    width: 20px;
+    height: 300px;
+    animation: timeCount 3600s linear infinite;
+
+    &::before {
+      @extend %handAppearance;
+      height: 50%;
+      border-radius: 10px;
+      background-color: #000;
+    }
+  }
+}
+
+@keyframes timeCount {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
