@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.watch {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  background-color: #333;
+  border-radius: 50%;
+  transform: translate(0, 10%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__rotary-mechanism {
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    background-color: #c20000;
+    border-radius: 50%;
+  }
+
+  &__second-hand {
+    position: absolute;
+    bottom: 50%;
+    height: 50%;
+    width: 3%;
+    background-color: #00ff;
+
+    animation: animate linear 60s infinite;
+    transform-origin: bottom;
+
+  }
+
+  &__minute-hand {
+    position: absolute;
+    bottom: 50%;
+    height: 40%;
+    width: 4%;
+    background-color: #ffff00;
+
+    animation: animate linear 3600s infinite;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes animate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
