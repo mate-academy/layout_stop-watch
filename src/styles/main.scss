@@ -8,6 +8,7 @@ $arrow-color: #e7dfd5;
   border-radius: 10px;
   background-color: $arrow-color;
   transform-origin: 50% 100%;
+  left: calc(50% - #{$width-arrow / 2});
 }
 
 body {
@@ -32,7 +33,6 @@ body {
     @include arrows;
     height: 45%;
     top: 5%;
-    left: calc(50% - #{$width-arrow / 2});
     animation: clock 60s infinite steps(60);
   }
 
@@ -40,7 +40,6 @@ body {
     @include arrows;
     height: 30%;
     top: 20%;
-    left: calc(50% - #{$width-arrow / 2});
     animation: clock 3600s infinite steps(60);
   }
 
