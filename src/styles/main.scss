@@ -11,10 +11,10 @@
 
   &__secondHand {
     position: absolute;
-    top: $side*(2.4/100);
-    left: $side/2 - 5px;
-    height: $side/2 - 10px;
-    width: $side*0.02;
+    top: ($side/2) - $secondLong;
+    left: ($side/2) - ($secondThickness/2);
+    height: $secondLong;
+    width: $secondThickness;
     background-color: $secondColor;
     border-radius: 20%;
     transform-origin: $rotationCenter;
@@ -23,10 +23,10 @@
 
   &__minuteHand {
     position: absolute;
-    top: $side*(12.5/100);
-    left: $side*(48.4/100);
-    height: $side*(37.5/100);
-    width: $side*(2.5/100);
+    top: ($side/2) - $minuteLong;
+    left: ($side/2) - $minuteThicknes/2;
+    height: $minuteLong;
+    width: $minuteThicknes;
     background-color: $minuteColor;
     border-radius: 20%;
     transform-origin: $rotationCenter;
@@ -35,10 +35,10 @@
 
   &__axis {
     position: absolute;
-    left: $side * 0.47;
-    top: $side * (47.5/100);
-    height: $side* (5.5/100);
-    width: $side* (5.5/100);
+    left: ($side/2) - ($axisSide/2);
+    top: ($side/2) - ($axisSide/2);
+    height: $axisSide;
+    width: $axisSide;
     background-color: $axisColor;
     border-radius: $ring;
   }
