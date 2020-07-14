@@ -1,0 +1,63 @@
+$clock-size: 500px;
+$minute: 60s;
+$arrow-width: 10px;
+$minute-hand-height: 150px;
+$second-hand-height: 250px;
+$clock-center-size: 30px;
+$circle: 50%;
+
+@mixin arrow {
+  position: absolute;
+  width: $arrow-width;
+  border-radius: 5px;
+  transform-origin: bottom;
+}
+
+body {
+  margin: 0;
+}
+
+.clock {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $clock-size;
+  height: $clock-size;
+  margin: 50px auto;
+
+  background: url(/images/703916902.jpg);
+  border: 5px solid black;
+  border-radius: $circle;
+
+  &__minute-hand {
+    @include arrow;
+    top: $clock-size / 2 - $minute-hand-height;
+    height: $minute-hand-height;
+    background-color: black;
+    animation: rotation ($minute * 60) linear infinite;
+  }
+
+  &__second-hand {
+    @include arrow;
+    top: $clock-size / 2 - $second-hand-height;
+    height: $second-hand-height;
+    background-color: rgb(110, 107, 95);
+    animation: rotation $minute linear infinite;
+  }
+
+  &__center {
+    z-index: 1;
+    width: $clock-center-size;
+    height: $clock-center-size;
+    background-color: rgb(110, 107, 95);
+    border-radius: $circle;
+  }
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
