@@ -1,0 +1,68 @@
+$minuteArrowColor: #10e910;
+$minuteArrowHeight: 175px;
+$minuteArrowwidth: 26px;
+$secondArrowColor: #1010e9;
+$secondArrowHeight: 220px;
+$secondArrowWidth: 16px;
+
+body {
+  margin: 0;
+  background-color: #505050;
+}
+
+.watch {
+  position: relative;
+  margin: 50px auto;
+  width: 500px;
+  height: 500px;
+  background-color: #e9e9e9;
+  border: 10px solid #e91010;
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: $minuteArrowwidth;
+    height: $minuteArrowHeight;
+    left: calc(50% - #{$minuteArrowwidth} / 2);
+    top: calc(50% - #{$minuteArrowHeight});
+    border-radius: $minuteArrowwidth / 2;
+    background-color: $minuteArrowColor;
+    animation: arrowMoving 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: $secondArrowWidth;
+    height: $secondArrowHeight;
+    left: calc(50% - #{$secondArrowWidth} / 2);
+    top: calc(50% - #{$secondArrowHeight});
+    border-radius: $secondArrowWidth / 2;
+    background-color: $secondArrowColor;
+    animation: arrowMoving 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: $secondArrowColor;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+@keyframes arrowMoving {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
