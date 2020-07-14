@@ -1,0 +1,53 @@
+@import "variables";
+
+.watch {
+  position: relative;
+  background-color: rgb(248, 231, 233);
+  border: 15px solid rgb(24, 22, 22);
+  border-radius: 50%;
+  height: $second-hand-length * 2.5;
+  width: $second-hand-length * 2.5;
+
+  &__minute {
+    position: absolute;
+    left: calc(50% - #{$minute-hand-width} / 2);
+    top: calc(50% - #{$minute-hand-length});
+    border-radius: $minute-hand-width / 2;
+    background-color: $minute-hand-color;
+    height: $minute-hand-length;
+    width: $minute-hand-width;
+    transform-origin: bottom center;
+    animation: watch-run 3600s linear infinite;
+  }
+
+  &__second {
+    position: absolute;
+    left: calc(50% - #{$second-hand-width} / 2);
+    top: calc(50% - #{$second-hand-length});
+    border-radius: $second-hand-width / 2;
+    background-color: $second-hand-color;
+    height: $second-hand-length;
+    width: $second-hand-width;
+    transform-origin: bottom center;
+    animation: watch-run 60s linear infinite;
+  }
+
+  &__middle {
+    position: absolute;
+    top: calc(50% - #{$middle-dot-diametr} / 2);
+    left: calc(50% - #{$middle-dot-diametr} / 2);
+    border-radius: 50%;
+    background-color: $middle-dot-color;
+    height: $middle-dot-diametr;
+    width: $middle-dot-diametr;
+  }
+}
+
+@keyframes watch-run {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
