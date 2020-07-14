@@ -6,8 +6,8 @@ $watch-size: 600px;
 $seconds-width: 3px;
 $minutes-width: 4px;
 $center-diameter: 8px;
-$seconds-length: $watch-size*0.45;
-$minutes-length: $watch-size*0.4;
+$seconds-length: $watch-size * 0.45;
+$minutes-length: $watch-size * 0.4;
 
 @mixin watch-center {
   position: absolute;
@@ -27,33 +27,30 @@ $minutes-length: $watch-size*0.4;
 
 .watch__seconds {
   @include watch-center;
-  left: ($watch-size - $seconds-width)/2;
-  top: $watch-size*0.05;
+  left: ($watch-size - $seconds-width) / 2;
+  top: $watch-size * 0.05;
   height: $seconds-length;
   border: $seconds-width solid #0fabbc;
   border-radius: 30%;
-  z-index: 1;
   animation: clock 60s linear infinite;
 }
 
 .watch__minutes {
   @include watch-center;
-  left: ($watch-size - $minutes-width)/2;
-  top: $watch-size*0.1;
+  left: ($watch-size - $minutes-width) / 2;
+  top: $watch-size * 0.1;
   height: $minutes-length;
   border: $minutes-width solid #fa1616;
   border-radius: 40%;
-  z-index: 2;
   animation: clock 3600s linear infinite;
 }
 
 .watch__center {
   @include watch-center;
-  left: ($watch-size - $center-diameter)/2;
-  top: ($watch-size - $center-diameter)/2;
+  left: ($watch-size - $center-diameter) / 2;
+  top: ($watch-size - $center-diameter) / 2;
   border: $center-diameter solid #12cad6;
   border-radius: 50%;
-  z-index: 3;
 }
 
 @keyframes clock {
