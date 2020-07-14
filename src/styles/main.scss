@@ -1,8 +1,9 @@
-$minutesPointer: 70px;
-$secondsPointer: 120px;
-$watchSize: $secondsPointer * 2.2;
+$minutesPointer: 110px;
+$secondsPointer: 180px;
+$watchSize: $secondsPointer * 2.25;
 $PointerWidth: 5px;
 $circleDiametr: 15px;
+$watchColor: black;
 
 @keyframes poiners_animation {
   100% {
@@ -28,7 +29,7 @@ body {
   align-items: center;
   width: $watchSize;
   height: $watchSize;
-  border: 3px solid black;
+  border: 4px solid $watchColor;
   background: linear-gradient(0deg, rgba(226,252,0,1) 0%,
   rgba(44,189,63,1) 49%, rgba(212,45,253,1) 100%);
   border-radius: 50%;
@@ -38,7 +39,7 @@ body {
     position: relative;
     width: $circleDiametr;
     height: $circleDiametr;
-    background-color: black;
+    background-color: $watchColor;
     border-radius: 50%;
   }
 
@@ -50,7 +51,7 @@ body {
     left: $circleDiametr / 2 + $PointerWidth / 2;
     transform-origin: center bottom;
     animation: poiners_animation 60s infinite linear;
-    background-color: black;
+    background-color: $watchColor;
     border-radius: $PointerWidth;
   }
 
@@ -62,7 +63,7 @@ body {
     right: $circleDiametr / 2 + $PointerWidth / 2;
     animation: poiners_animation calc(60s * 60) infinite linear;
     transform-origin: center bottom;
-    background-color: black;
+    background-color: $watchColor;
     border-radius: $PointerWidth;
   }
 
