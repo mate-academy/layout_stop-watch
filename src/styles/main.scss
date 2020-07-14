@@ -1,0 +1,56 @@
+%alignAbsoluteArrow {
+  position: absolute;
+  left: calc(50% - (10px / 2));
+  bottom: 50%;
+}
+
+.clock {
+  position: relative;
+  margin: 15vh auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #911e42;
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #f5f5dc;
+    z-index: 1;
+  }
+
+  &__arrow {
+    @extend %alignAbsoluteArrow;
+    width: 10px;
+    height: 100px;
+    border-radius: 5px;
+
+    &--minute {
+      animation: secondTick 3600s linear infinite;
+      background-color: #ffa000	;
+    }
+
+    &--second {
+      height: 130px;
+      background-color: #007fff;
+      animation: secondTick 60s steps(60) infinite;
+    }
+  }
+}
+
+@keyframes secondTick {
+  0% {
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform-origin: bottom center;
+    transform: rotate(360deg);
+  }
+}
