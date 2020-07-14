@@ -18,6 +18,7 @@
     height: $pointSize;
     background-color: green;
     border-radius: $pointSize / 2;
+    opacity: 0.5;
   }
 
   &__minute-hand {
@@ -29,6 +30,7 @@
     background-color: red;
     border-radius: 10px;
     animation: handRotating 60s 1s infinite linear;
+    transform-origin: center bottom;
   }
 
   &__second-hand {
@@ -40,17 +42,16 @@
     background-color: green;
     border-radius: 10px;
     animation: handRotating 3600s 1s infinite linear;
+    transform-origin: center bottom;
   }
 }
 
 @keyframes handRotating {
   from {
     transform: rotate(0deg);
-    transform-origin: bottom;
   }
 
   to {
     transform: rotate(360deg);
-    transform-origin: bottom;
   }
 }
