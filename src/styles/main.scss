@@ -5,7 +5,7 @@ $PointerWidth: 5px;
 $circleDiametr: 15px;
 $watchColor: black;
 
-@keyframes poiners_animation {
+@keyframes pointers_animation {
   100% {
     transform: rotate(360deg);
   }
@@ -50,7 +50,7 @@ body {
     bottom: $secondsPointer / 2;
     left: $circleDiametr / 2 + $PointerWidth / 2;
     transform-origin: center bottom;
-    animation: poiners_animation 60s infinite linear;
+    animation: pointers_animation 60s infinite linear;
     background-color: $watchColor;
     border-radius: $PointerWidth;
   }
@@ -61,7 +61,7 @@ body {
     width: $PointerWidth;
     bottom: $minutesPointer / 2;
     right: $circleDiametr / 2 + $PointerWidth / 2;
-    animation: poiners_animation calc(60s * 60) infinite linear;
+    animation: pointers_animation calc(60s * 60) infinite linear;
     transform-origin: center bottom;
     background-color: $watchColor;
     border-radius: $PointerWidth;
