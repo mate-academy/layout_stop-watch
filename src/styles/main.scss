@@ -15,9 +15,8 @@ body {
   background-color: $colorBgClock;
   width: $clockSize;
   height: $clockSize;
-  transform: translate(-100%, -50%);
-  left: 50%;
-  top: 50%;
+  left: calc(50% - #{$clockSize} / 2);
+  top: calc(50% - #{$clockSize} / 2);
   border-radius: 50%;
 
   &__center {
@@ -25,11 +24,11 @@ body {
     background-color: $colorCenter;
     width: $clockCenterSize;
     height: $clockCenterSize;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
+    left: calc(50% - #{$clockCenterSize} / 2);
+    top: calc(50% - #{$clockCenterSize} / 2);
     border-radius: 50%;
     animation: center-block 3s linear infinite;
+    z-index: 1;
   }
 
   &__minute-hand {
@@ -37,7 +36,7 @@ body {
     @include hands-position-behaving;
     background-color: $colorMinHand;
     height: 200px;
-    top: 100px;
+    top: 75px;
     animation: min-handle-animation 3600s linear infinite;
   }
 
@@ -46,7 +45,7 @@ body {
     @include hands-position-behaving;
     background-color: $colorSecHand;
     height: 250px;
-    top: 50px;
+    top: -175px;
     animation: sec-handle-animation 60s linear infinite;
   }
 }

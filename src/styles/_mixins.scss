@@ -1,12 +1,11 @@
 @mixin inner-block-position {
-  position: absolute;
+  position: relative;
   display: block;
 }
 
 @mixin hands-position-behaving {
   width: $handWidth;
-  left: 300px - $handWidth / 2;
+  left: calc(50% - #{$handWidth} / 2);
   border-radius: $handWidth / 2;
   transform-origin: bottom;
-  z-index: -1;
 }
