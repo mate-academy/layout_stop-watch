@@ -10,11 +10,11 @@ body {
   align-items: center;
   justify-content: center;
   margin: auto;
-  @include w-h(500px,500px);
+  @include width-height(500px,500px);
 }
 
 .clock__center {
-  @include w-h(25px,25px);
+  @include width-height(25px,25px);
   background-color: #4b9aaa;
   border-radius: 50%;
   margin: auto;
@@ -27,7 +27,7 @@ body {
 }
 
 .clock__min::after {
-  @include w-h(10px,150px);
+  @include width-height(10px,150px);
   background-color: #d15559;
   content: "";
   display: block;
@@ -43,7 +43,7 @@ body {
 }
 
 .clock__sec::after {
-  @include w-h(10px,225px);
+  @include width-height(10px,225px);
   background-color: #4b9aaa;
   content: "";
   display: block;
