@@ -1,5 +1,5 @@
 .clock {
-  display: flex;
+  position: relative;
   width: 1000px;
   height: 1000px;
   background: url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg) no-repeat center;
@@ -11,8 +11,8 @@
   box-shadow: 15px 30px 50px rgba(95, 95, 95, 0.83);
   
   &__second-arrow {
-    position: relative;
-    left: 50%;
+    position: absolute;
+    left: 496px;
     height: 500px;
     width: 7px;
     background-color: rgba(66, 66, 66, 0.89);
@@ -24,8 +24,8 @@
   }
 
   &__minute-arrow {
-    position: relative;
-    left: calc(50% - 5px);
+    position: absolute;
+    left: 496px;
     height: 500px;
     width: 10px;
     background-color: rgba(112, 112, 112, 0.87);
@@ -36,8 +36,9 @@
     
   }
   &__center {
-    position: relative;
-    margin: auto;
+    position: absolute;
+    left: 450px;
+    top: 450px;
     height: 100px;
     width: 100px;
     background-color: rgb(156, 156, 161);
