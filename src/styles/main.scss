@@ -1,0 +1,89 @@
+$bgColor: rgba(0, 0, 0, 0.7);
+$color: rgb(219, 210, 210);
+$circleBorder: 1px solid $color;
+$watchSize: 300px;
+$secLenght: $watchSize * 0.45;
+$minLenght: $watchSize * 0.3;
+$centerSize: $watchSize * 0.01;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  width: $watchSize;
+  
+  margin: $watchSize * 0.3 auto;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+
+  border: $circleBorder;
+  border-radius: 50%;
+
+  height: $watchSize;
+  width: $watchSize;
+
+  background-color: $bgColor;
+
+  &__sec {
+    position: absolute;
+    left: calc(50% - 0.5px);
+    top: ($watchSize/2) - $secLenght;
+    border-radius: 50%;
+
+    height: $secLenght;
+    width: 1px;
+
+    background-color: $color;
+
+    transform-origin: bottom;
+    animation: second 60s infinite linear;
+  }
+
+  &__min {
+    position: absolute;
+    left: calc(50% - 1px);
+    top: ($watchSize/2) - $minLenght;
+
+    height: $minLenght;
+    width: 2px;
+
+    border-radius: 50%;
+
+    background-color: $color;
+
+    transform-origin: bottom;
+    bottom: $minLenght;
+    animation: second 3600s infinite linear;
+  }
+
+  &__center {
+    position: absolute;
+    top: $watchSize/2 - $centerSize/2;
+
+    height: $centerSize;
+    width: $centerSize;
+
+    border-radius: 50%;
+
+    background-color: $color;
+  }
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
