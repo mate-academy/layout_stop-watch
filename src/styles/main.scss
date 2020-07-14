@@ -1,0 +1,58 @@
+.clock {
+  display: flex;
+  width: 1000px;
+  height: 1000px;
+  background: url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg) no-repeat center;
+  background-size: 900px;
+  z-index: 0;
+  margin: auto;
+  border-radius: 50%;
+  border: 20px solid rgb(41, 41, 41);
+  box-shadow: 15px 30px 50px rgba(95, 95, 95, 0.83);
+  
+  &__second-arrow {
+    position: relative;
+    left: 50%;
+    height: 500px;
+    width: 7px;
+    background-color: rgba(66, 66, 66, 0.89);
+    border-radius: 10px;
+    animation: clock-animation 60s steps(60) infinite;
+    transform-origin: bottom;
+    z-index: 1;
+    box-shadow: 10px 10px 35px rgba(87, 87, 87, 0.83);
+  }
+
+  &__minute-arrow {
+    position: relative;
+    left: calc(50% - 5px);
+    height: 500px;
+    width: 10px;
+    background-color: rgba(112, 112, 112, 0.87);
+    border-radius: 10px;
+    animation: clock-animation 3600s steps(60) infinite;
+    transform-origin: bottom;
+    box-shadow: 10px 10px 35px rgb(87, 87, 87);
+    
+  }
+  &__center {
+    position: relative;
+    margin: auto;
+    height: 100px;
+    width: 100px;
+    background-color: rgb(156, 156, 161);
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 10px 10px 35px rgba(52, 66, 75, 0.99);
+  }
+}
+
+@keyframes clock-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
