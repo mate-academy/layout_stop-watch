@@ -1,0 +1,74 @@
+@import "reset";
+
+$minuteColor: #0e2038;
+$center-d: 90px;
+$secondColor: #d0462d;
+
+.clock {
+  height: 400px;
+  width: 400px;
+  margin: 100px auto;
+  border: 20px solid $minuteColor;
+  background-color: #d4d5d7;
+  border-radius: 50%;
+  position: relative;
+
+  &__arrow {
+    position: absolute;
+    height: 100%;
+
+    &--minute {
+      left: calc(50% - #{$center-d / 7 / 2});
+      width: calc(#{$center-d} / 7);
+      animation: clock 3600s linear infinite;
+
+      &::before {
+        position: absolute;
+        top: 3%;
+        border-radius: 10px;
+        content: "";
+        height: 46%;
+        width: 100%;
+        background-color: $minuteColor;
+      }
+    }
+
+    &--second {
+      left: calc(50% - #{$center-d / 10 / 2});
+      width: calc(#{$center-d} / 10);
+      animation: clock 60s linear infinite;
+
+      &::before {
+        position: absolute;
+        top: 1%;
+        content: "";
+        height: 50%;
+        width: 100%;
+        background-color: $secondColor;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &__center {
+    z-index: 1;
+    height: calc(#{$center-d} / 2);
+    width: calc(#{$center-d} / 2);
+    background-color: $secondColor;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - #{$center-d} / 4);
+    top: calc(50% - #{$center-d} / 4);
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
