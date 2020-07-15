@@ -1,0 +1,52 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &__container {
+    width: 100%;
+    max-width: $maxWidthContainer;
+    min-width: $minWidthContainer;
+    border-radius: $borderRadius;
+    background: blue;
+  }
+
+  &__inner {
+    position: relative;
+    margin: 0 auto;
+    width: $sizeInner;
+    height: $sizeInner;
+    border-radius: $borderRadius;
+    box-shadow: inset 0 0 10px 2px rgba(#000, 0.5);
+    background: linear-gradient(45deg, #eebae1, #c8e8c5);
+  }
+
+  &__center {
+    width: $senter;
+    height: $senter;
+    border-radius: $borderRadius;
+    background-color: $colorInnerHand;
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 8px);
+    box-shadow: 0 0 5px rgba(#000, 0.5);
+    border: 1px solid purple;
+    z-index: 1;
+    animation: watch  steps(1) 1s infinite;
+  }
+  
+  &__second {
+    @extend %watchDesigner;
+    height: $heightHand / 2;
+    top: 7px;
+    animation: watch 60s  linear infinite;
+  }
+
+  &__minute {
+    @extend %watchDesigner;
+    height: $heightHand / 3;
+    top: 75px;
+    animation: watch 3600s linear 1s infinite;
+  }
+}
