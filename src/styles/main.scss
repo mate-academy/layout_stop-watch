@@ -1,47 +1,38 @@
-%handAppearance {
-  content: "";
-  position: absolute;
-  width: 100%;
-}
+$clockWidth: 500px;
+$clockHeight: $clockWidth;
+$secondHandHeight: 240px;
+$minuteHandHeight: 150px;
 
 .clock {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: $clockWidth;
+  height: $clockHeight;
   margin: 20px auto 0;
   border: 1px solid #000;
   border-radius: 50%;
 
-  .secondHand {
+  &__secondHand {
     position: absolute;
     left: 245px;
-    top: 10px;
+    top: $clockHeight / 2 - $secondHandHeight;
     width: 10px;
-    height: 480px;
+    height: $secondHandHeight;
+    border-radius: 5px;
+    background-color: #f00;
+    transform-origin: 50% 100%;
     animation: timeCount 60s linear infinite;
-
-    &::before {
-      @extend %handAppearance;
-      height: 51%;
-      border-radius: 5px;
-      background-color: #f00;
-    }
   }
 
-  .minuteHand {
+  &__minuteHand {
     position: absolute;
     left: 240px;
-    top: 110px;
+    top: $clockHeight / 2 - $minuteHandHeight;
     width: 20px;
-    height: 300px;
+    height: $minuteHandHeight;
+    border-radius: 10px;
+    background-color: #000;
+    transform-origin: 50% 100%;
     animation: timeCount 3600s linear infinite;
-
-    &::before {
-      @extend %handAppearance;
-      height: 50%;
-      border-radius: 10px;
-      background-color: #000;
-    }
   }
 }
 
