@@ -1,0 +1,48 @@
+@import "variables";
+
+.clock {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+
+  &__minutes {
+    position: absolute;
+    top: 40px;
+    width: 8px;
+    height: 160px;
+    background: $minutes-color;
+    border-radius: 5px;
+
+    transform-origin: bottom;
+    animation: rotate 3600s infinite steps(60);
+  }
+
+  &__seconds {
+    position: absolute;
+    top: 2px;
+    width: 6px;
+    height: 200px;
+    background: $seconds-color;
+    border-radius: 5px;
+
+    transform-origin: bottom;
+    animation: rotate 60s infinite steps(60);
+  }
+
+  &__point {
+    position: absolute;
+    top: ($clock-size - $point-size) / 2;;
+    background: $seconds-color;
+    width: $point-size;
+    height: $point-size;
+    border-radius: 50%;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
