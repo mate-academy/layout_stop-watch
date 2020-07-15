@@ -37,14 +37,14 @@
   }
   
   &__second {
-    @include watchDesigner;
+    @extend %watchDesigner;
     height: $heightHand / 2;
     top: 7px;
     animation: watch 60s  linear infinite;
   }
 
   &__minute {
-    @include watchDesigner;
+    @extend %watchDesigner;
     height: $heightHand / 3;
     top: 75px;
     animation: watch 3600s linear 1s infinite;
