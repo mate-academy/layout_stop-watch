@@ -1,0 +1,16 @@
+@mixin arrow-animate {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes seconds_animation {
+  @include arrow-animate;
+}
+
+@keyframes minutes_animation {
+  @include arrow-animate;
+}

@@ -1,0 +1,57 @@
+.clock {
+  width: $clockSize;
+  height: $clockSize;
+  background: radial-gradient($clockColor, $mainColor);
+  display: inline-block;
+  border-radius: 50%;
+  padding: 20px;
+
+  &__clock_face {
+    height: $clockSize;
+    width: $clockSize;
+    border-radius: 50%;
+    position: relative;
+    top: -$clockSize - $radiusOfCenterPoint;
+
+    &--image {
+      width: $clockSize;
+      height: $clockSize;
+    }
+  }
+
+  &__seconds {
+    height: $clockSize / 2;
+    width: $widthOfArrow;
+    border-radius: 20%;
+    background: radial-gradient($mainColor, $mixArrowColor);
+    position: relative;
+    left: $clockSize / 2 - $widthOfArrow / 2;
+    z-index: 1;
+    transform-origin: bottom;
+    animation: seconds_animation 60s linear infinite;
+  }
+
+  &__minutes {
+    height: $clockSize / 2;
+    width: $widthOfArrow * 2;
+    border-radius: 20%;
+    background: radial-gradient($mainColor, $mixArrowColor);
+    position: relative;
+    left: $clockSize / 2 - $widthOfArrow;
+    top: -$clockSize / 2;
+    z-index: 2;
+    transform-origin: bottom;
+    animation: minutes_animation 3600s linear infinite;
+  }
+
+  &__center {
+    height: $radiusOfCenterPoint;
+    width: $radiusOfCenterPoint;
+    border-radius: 50%;
+    position: relative;
+    left: $clockSize / 2 - $radiusOfCenterPoint / 2;
+    top: -$clockSize / 2 - $radiusOfCenterPoint / 2;
+    z-index: 3;
+    background: radial-gradient($mainColor, $mixArrowColor);
+  }
+}
