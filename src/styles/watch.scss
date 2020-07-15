@@ -5,18 +5,18 @@
   height: 100%;
 
   &__container {
-    background: blue;
-    max-width: 530px;
     width: 100%;
-    min-width: 400px;
+    max-width: $maxWidthContainer;
+    min-width: $minWidthContainer;
     border-radius: $borderRadius;
+    background: blue;
   }
 
   &__inner {
     position: relative;
     margin: 0 auto;
-    width: $size;
-    height: $size;
+    width: $sizeInner;
+    height: $sizeInner;
     border-radius: $borderRadius;
     box-shadow: inset 0 0 10px 2px rgba(#000, 0.5);
     background: linear-gradient(45deg, #eebae1, #c8e8c5);
@@ -25,8 +25,8 @@
   &__center {
     width: $senter;
     height: $senter;
-    border-radius: 50%;
-    background-color: orangered;
+    border-radius: $borderRadius;
+    background-color: $colorInnerHand;
     position: absolute;
     top: calc(50% - 4px);
     left: calc(50% - 8px);
@@ -37,26 +37,16 @@
   }
   
   &__second {
-    position: absolute;
-    width: $sizeHand;
-    height: ($size - 10px) / 2;
-    background-color: orangered;
-    border-radius: 50%;
-    left: calc(50% - 7px);
+    @include watchDesigner;
+    height: $heightHand / 2;
     top: 7px;
     animation: watch 60s  linear infinite;
-    transform-origin: bottom center;
   }
 
   &__minute {
-    position: absolute;
-    height: ($size - 10px) / 3;
-    width: $sizeHand;
-    background-color: orangered;
-    left: calc(50% - 7px);
+    @include watchDesigner;
+    height: $heightHand / 3;
     top: 75px;
-    border-radius: 50%;
     animation: watch 3600s linear 1s infinite;
-    transform-origin: bottom center;
   }
 }
