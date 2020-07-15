@@ -14,7 +14,6 @@
     height: 160px;
     background: $minutes-color;
     border-radius: 5px;
-    z-index: 0;
 
     transform-origin: bottom;
     animation: rotate 3600s infinite steps(60);
@@ -22,12 +21,11 @@
 
   &__seconds {
     position: absolute;
-    top: 1px;
+    top: 2px;
     width: 6px;
     height: 200px;
     background: $seconds-color;
     border-radius: 5px;
-    z-index: 1;
 
     transform-origin: bottom;
     animation: rotate 60s infinite steps(60);
@@ -35,10 +33,10 @@
 
   &__point {
     position: absolute;
-    top: $clock-size * 0.48;
+    top: ($clock-size - $point-size) / 2;;
     background: $seconds-color;
-    width: 16px;
-    height: 16px;
+    width: $point-size;
+    height: $point-size;
     border-radius: 50%;
   }
 }
