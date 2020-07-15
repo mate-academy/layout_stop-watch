@@ -1,7 +1,10 @@
 $clockWidth: 500px;
 $clockHeight: $clockWidth;
+$handsWidth: 10px;
 $secondHandHeight: 240px;
 $minuteHandHeight: 150px;
+$handsBorderRad: $handsWidth / 2;
+$handsPositionX: $clockWidth / 2 - $handsWidth/2;
 
 .clock {
   position: relative;
@@ -11,25 +14,25 @@ $minuteHandHeight: 150px;
   border: 1px solid #000;
   border-radius: 50%;
 
-  &__secondHand {
+  &__second-hand {
     position: absolute;
-    left: 245px;
+    left: $handsPositionX;
     top: $clockHeight / 2 - $secondHandHeight;
-    width: 10px;
+    width: $handsWidth;
     height: $secondHandHeight;
-    border-radius: 5px;
+    border-radius: $handsBorderRad;
     background-color: #f00;
     transform-origin: 50% 100%;
     animation: timeCount 60s linear infinite;
   }
 
-  &__minuteHand {
+  &__minute-hand {
     position: absolute;
-    left: 240px;
+    left: $handsPositionX;
     top: $clockHeight / 2 - $minuteHandHeight;
-    width: 20px;
+    width: $handsWidth;
     height: $minuteHandHeight;
-    border-radius: 10px;
+    border-radius: $handsBorderRad;
     background-color: #000;
     transform-origin: 50% 100%;
     animation: timeCount 3600s linear infinite;
