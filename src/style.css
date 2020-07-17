@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+}
+
+.circle {
+  position: relative;
+  margin: 150px auto;
+  width: 30vw;
+  height: 30vw;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.circle__hand-centre {
+  z-index: 2;
+  background-color: #4a9bac;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 47%;
+  margin: auto;
+}
+
+.circle__hand-seconds {
+  position: absolute;
+  z-index: 2;
+  width: 15vw;
+  height: 0.7vw;
+  border-radius: 10px;
+  background-color: #4a9bac;
+  margin: auto;
+  bottom: 49%;
+  right: 50%;
+  animation: rotation 60s 0s both infinite linear;
+  transform-origin: 100% 50% 0;
+}
+
+.circle__hand-minutes {
+  position: absolute;
+  z-index: 1;
+  width: 10vw;
+  height: 0.7vw;
+  border-radius: 10px;
+  background-color: #d25459;
+  margin: auto;
+  bottom: 49%;
+  right: 50%;
+  animation: rotation 3600s 0s both infinite linear;
+  transform-origin: 100% 50% 0;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
