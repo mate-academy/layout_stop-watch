@@ -1,0 +1,64 @@
+$watch--diameter: 300px;
+$watch__center--diameter: 25px;
+
+%watch--style {
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px #448b8b solid;
+}
+
+%hands--style {
+  border-radius: 10px;
+  transform-origin: bottom;
+  background-color: #337a7a;
+}
+
+@keyframes hands {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.watch {
+  @extend %watch--style;
+  height: $watch--diameter;
+  width: $watch--diameter;
+  box-shadow: 5px 10px 2px black;
+}
+
+.watch__center {
+  @extend %hands--style;
+  @extend %watch--style;
+  height: $watch__center--diameter;
+  width: $watch__center--diameter;
+  position: absolute;
+  top: ($watch--diameter - $watch__center--diameter)/2;
+  left: ($watch--diameter - $watch__center--diameter)/2;
+}
+
+.watch__minutes {
+  @extend %hands--style;
+  position: absolute;
+  height: ($watch--diameter/2) * 0.7;
+  width: ($watch__center--diameter/2);
+  left: ($watch--diameter/2 - $watch__center--diameter/4);
+  top: ($watch--diameter/2 - ($watch--diameter/2 * 0.7));
+  animation: hands 3600s infinite linear;
+}
+
+.watch__seconds {
+  @extend %hands--style;
+  position: absolute;
+  height: ($watch--diameter/2) * 0.9;
+  width: ($watch__center--diameter/3);
+  left: ($watch--diameter/2 - $watch__center--diameter/6);
+  top: ($watch--diameter/2 - ($watch--diameter/2 * 0.9));
+  animation: hands 60s infinite linear;
+}
