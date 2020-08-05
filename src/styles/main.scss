@@ -1,0 +1,57 @@
+.container {
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
+}
+
+.stopwatch {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__minute,
+  &__second,
+  &__pin {
+    position: absolute;
+    border-radius: 20px;
+  }
+
+  &__minute,
+  &__second {
+    left: 51%;
+    width: 10px;
+    transform-origin: bottom center;
+  }
+
+  &__minute {
+    top: 210px;
+    height: 200px;
+    background-color: #003f5c;
+    animation: clock-ticking 60s*60 linear infinite;
+  }
+
+  &__second {
+    top: 110px;
+    height: 300px;
+    background-color: #bc5090;
+    animation: clock-ticking 60s linear infinite;
+  }
+
+  &__pin {
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: #ff6361;
+  }
+}
+
+@keyframes clock-ticking {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(720deg);
+  }
+}
