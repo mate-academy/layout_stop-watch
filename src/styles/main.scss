@@ -1,0 +1,51 @@
+@import "_mixin";
+
+$background-color-minute:red;
+$background-color-sec:blue;
+
+.watch-box {
+  position: relative;
+  margin: auto;
+  height: 10em;
+  width: 10em;
+  border: 5px solid #f1f;
+  border-radius: 50%;
+}
+
+.watch {
+  position: absolute;
+  width: 0.3em;
+  height: 50%;
+  bottom: 50%;
+  left: 50%;
+
+  &::before {
+    @include arrow;
+    top: 10%;
+    height: 90%;
+    background-color: $background-color-sec;
+    animation: mechanism 60s infinite steps(60);
+    transform-origin: bottom;
+
+  }
+  
+  &::after {
+    @include arrow;
+    top: 30%;
+    height: 70%;
+    background-color: $background-color-minute;
+    animation: mechanism 3600s infinite steps(60);
+    transform-origin: bottom;
+  }
+
+}
+
+@keyframes mechanism {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
