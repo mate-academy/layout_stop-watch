@@ -13,14 +13,37 @@ body {
 
 .clock {
   position: relative;
-  padding: 20px;
-  margin: 0;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $clock-height;
+  width: $clock-height;
+  margin: auto;
+
+  background-color: #e2c0c2;
+  border-radius: 50%;
+
+  &__number {
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: #28545e;
+  }
+
+  @each $side in right, left {
+    @include number($side, 20);
+  }
+
+  @each $side in top, bottom {
+    @include number($side, 5);
+  }
+  
   &__minute {
-    @include position;
+    @include position($left-minute);
 
-    width: 10px;
-    height: 150px;
+    width: $minute-width;
+    height: $minute-height;
 
     border-radius: 5px;
     background-color: #d15559;
@@ -30,10 +53,10 @@ body {
   }
 
   &__second {
-    @include position(0);
+    @include position($left-second);
 
-    width: 10px;
-    height: 250px;
+    width: $second-width;
+    height: $second-height;
 
     border-radius: 5px;
     background-color: #4b9aaa;
@@ -43,16 +66,13 @@ body {
   }
 
   &__circle {
-    @include position(250px);
+    z-index: 2;
 
-    width: 20px;
-    height: 20px;
+    width: $circle-size;
+    height: $circle-size;
 
     border-radius: 50%;
     background-color: #4b9aaa;
-
-    transform-origin: center;
-    transform: translate(-25%, -50%);
   }
 }
 
