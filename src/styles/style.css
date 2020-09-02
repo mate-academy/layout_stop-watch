@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 5px solid #81879c;
+  background-color: #f1f3f8;
+  margin: 0 auto;
+  transform: translateY(calc(50vh - 50%));
+}
+
+.stopwatch__center {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4b9aaa;
+  z-index: 1;
+}
+
+.stopwatch__hand {
+  position: absolute;
+  bottom: 300px;
+  animation: rotation infinite;
+  transform-origin: center bottom;
+}
+
+.stopwatch__hand--minute {
+  width: 15px;
+  height: 150px;
+  border-radius: 7.5px;
+  background-color: #d15559;
+  animation-duration: 3600s;
+}
+
+.stopwatch__hand--second {
+  width: 10px;
+  height: 225px;
+  border-radius: 5px;
+  background-color: #4b9aaa;
+  animation-duration: 60s;
+  animation-timing-function: steps(60);
+}
+
+.stopwatch__number {
+  position: absolute;
+  padding: 0 10px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #81879c;
+}
+
+.stopwatch__number--12 {
+  top: 0;
+}
+
+.stopwatch__number--3 {
+  right: 0;
+}
+
+.stopwatch__number--6 {
+  bottom: 0;
+}
+
+.stopwatch__number--9 {
+  left: 0;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
