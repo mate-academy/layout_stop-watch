@@ -26,7 +26,7 @@ body {
 .stopwatch__hand {
   position: absolute;
   bottom: 300px;
-  animation: rotation infinite linear;
+  animation: rotation infinite;
   transform-origin: center bottom;
 }
 
@@ -44,6 +44,7 @@ body {
   border-radius: 5px;
   background-color: #4b9aaa;
   animation-duration: 60s;
+  animation-timing-function: steps(60);
 }
 
 .stopwatch__number {

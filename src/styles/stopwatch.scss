@@ -21,7 +21,7 @@
   &__hand {
     position: absolute;
     bottom: $stopwatchSize / 2;
-    animation: rotation infinite linear;
+    animation: rotation infinite;
     transform-origin: center bottom;
 
     &--minute {
@@ -38,13 +38,16 @@
       border-radius: $secondHandWidth / 2;
       background-color: $c-blue;
       animation-duration: 60s;
+      animation-timing-function: steps(60);
     }
   }
 
   &__number {
     position: absolute;
     padding: 0 10px;
-    @include number;
+    font-size: 60px;
+    font-weight: bold;
+    color: $c-grey;
 
     &--12 {
       top: 0;
