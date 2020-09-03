@@ -8,7 +8,7 @@
 
   width: 700px;
   height: 700px;
-  border: 3px solid #2f8596;
+  border: 5px solid #2f8596;
   border-radius: 50%;
   margin: 30px auto;
 
@@ -31,24 +31,47 @@
 
     &--second {
       background-color: #d15559;
-      height: 250px;
+      height: 280px;
       bottom: 350px;
       z-index: 2;
-      animation: watch-second-hand-anim 60s infinite;
+      animation: watch-hand-anim 60s infinite;
       animation-timing-function: steps(60);
     }
   
     &--minute {
       background-color: #4b9aaa;
-      height: 320px;
+      height: 200px;
       bottom: 350px;
       z-index: 1;
-      animation: watch-second-hand-anim 3600s;
+      animation: watch-hand-anim 3600s;
+    }
+  }
+
+  .clock__number {
+    position: absolute;
+    font-size: 64px;
+    font-weight: bold;
+    color: #2f8596;
+
+    &--3 {
+      left: 650px;
+    }
+
+    &--6 {
+      top: 620px;
+    }
+
+    &--9 {
+      right: 650px;
+    }
+
+    &--12 {
+      bottom: 620px;
     }
   }
 }
 
-@keyframes watch-second-hand-anim {
+@keyframes watch-hand-anim {
   0% {
     transform: rotate(0deg);
   }
