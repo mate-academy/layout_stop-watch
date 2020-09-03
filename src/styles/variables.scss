@@ -1,11 +1,11 @@
-@mixin position {
+%position {
   position: absolute;
   bottom: 50%;
   transform: translateX(-50%);
 }
 
-@mixin number($side, $px) {
-  &__#{$side} {
+@mixin time($side, $px) {
+  &_#{$side} {
     position: absolute;
     #{$side}: $px * 1px;
   }
@@ -16,4 +16,4 @@ $minute-height: 150px;
 $minute-width: 8px;
 $second-width: 5px;
 $circle-size: 20px;
-$clock-height: $second-height * 2 + 200px;
+$clock-height: $second-height * 3;

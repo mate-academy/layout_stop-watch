@@ -1,10 +1,10 @@
+@import "variables";
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
-
-@import "variables";
 
 body {
   padding: 20px;
@@ -29,18 +29,18 @@ body {
     font-family: Arial, sans-serif;
     font-size: 100px;
     color: #28545e;
-  }
 
-  @each $side in right, left {
-    @include number($side, 20);
-  }
+    @each $side in right, left {
+      @include time($side, 20);
+    }
 
-  @each $side in top, bottom {
-    @include number($side, 5);
+    @each $side in top, bottom {
+      @include time($side, 5);
+    }
   }
 
   &__minute {
-    @include position;
+    @extend %position;
 
     width: $minute-width;
     height: $minute-height;
@@ -49,11 +49,11 @@ body {
     background-color: #d15559;
 
     transform-origin: bottom;
-    animation: clock 3600s steps(60,end) infinite;
+    animation: clock 3600s linear infinite;
   }
 
   &__second {
-    @include position;
+    @extend %position;
 
     width: $second-width;
     height: $second-height;
