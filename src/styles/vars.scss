@@ -1,0 +1,17 @@
+$clock-size: 400px;
+
+$circle-color: rgb(75, 153, 170);
+$blue: linear-gradient(rgb(75, 153, 170) 50%, transparent 50%);
+$red: linear-gradient(rgb(209, 85, 89) 50%, transparent 50%);
+
+$sec-hand-height: $clock-size;
+$circle-size: $clock-size / 10 - 10;
+$hands-width: $clock-size / 4 / 10;
+$min-hand-height: $clock-size * 0.6;
+
+@mixin hand {
+  width: $hands-width;
+  position: absolute;
+  left: $clock-size / 2 - $hands-width / 2;
+  border-radius: $hands-width / 2;
+}

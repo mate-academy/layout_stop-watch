@@ -1,0 +1,38 @@
+.clock {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+
+  &__circle {
+    position: absolute;
+    z-index: 1;
+    top: $clock-size / 2 - $circle-size / 2;
+    left: $clock-size / 2 - $circle-size / 2;
+    height: $circle-size;
+    width: $circle-size;
+    background-color: $circle-color;
+    border-radius: 50%;
+  }
+  
+  &__sec-hand {
+    @include hand;
+    z-index: 1;
+    background: $blue;
+    height: $clock-size;
+    animation: move 60s steps(60, end) infinite;
+  }
+  
+  &__min-hand {
+    top: ($clock-size / 2 - $min-hand-height / 2);
+    @include hand;
+    background: $red;
+    height: $min-hand-height;
+    animation: move 3600s infinite;
+  }
+}
+
+@keyframes move {
+  to {
+    transform: rotate(360deg);
+  }
+}
