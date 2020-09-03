@@ -1,0 +1,86 @@
+@import "variables";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  margin: 0;
+}
+
+.clock {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $clock-height;
+  width: $clock-height;
+  margin: auto;
+
+  background-color: #e2c0c2;
+  border-radius: 50%;
+
+  &__number {
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: #28545e;
+
+    @each $side in right, left {
+      @include time($side, 20);
+    }
+
+    @each $side in top, bottom {
+      @include time($side, 5);
+    }
+  }
+
+  &__minute {
+    @extend %position;
+
+    width: $minute-width;
+    height: $minute-height;
+
+    border-radius: 5px;
+    background-color: #d15559;
+
+    transform-origin: bottom;
+    animation: clock 3600s linear infinite;
+  }
+
+  &__second {
+    @extend %position;
+
+    width: $second-width;
+    height: $second-height;
+
+    border-radius: 5px;
+    background-color: #4b9aaa;
+
+    transform-origin: bottom;
+    animation: clock 60s steps(60,end) infinite;
+  }
+
+  &__circle {
+    z-index: 2;
+
+    width: $circle-size;
+    height: $circle-size;
+
+    border-radius: 50%;
+    background-color: #4b9aaa;
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
