@@ -1,6 +1,5 @@
-@mixin position($left) {
+@mixin position {
   position: absolute;
-  left: $left;
   bottom: 50%;
   transform: translateX(-50%);
 }
@@ -18,5 +17,3 @@ $minute-width: 8px;
 $second-width: 5px;
 $circle-size: 20px;
 $clock-height: $second-height * 2 + 200px;
-$left-minute: ($clock-height - $minute-width)/2;
-$left-second: ($clock-height - $second-width)/2;

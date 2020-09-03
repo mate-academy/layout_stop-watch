@@ -38,9 +38,9 @@ body {
   @each $side in top, bottom {
     @include number($side, 5);
   }
-  
+
   &__minute {
-    @include position($left-minute);
+    @include position;
 
     width: $minute-width;
     height: $minute-height;
@@ -53,7 +53,7 @@ body {
   }
 
   &__second {
-    @include position($left-second);
+    @include position;
 
     width: $second-width;
     height: $second-height;
