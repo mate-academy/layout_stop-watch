@@ -1,0 +1,53 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: 650px;
+  height: 650px;
+
+  background: url("./cface.png") center;
+  background-size: cover;
+  border: 15px solid #424242;
+  border-radius: 50%;
+
+  &__seconds {
+    position: absolute;
+    top: 75px;
+    width: 6px;
+    height: 250px;
+
+    background-color: #262626;
+    border-radius: 4px;
+
+    transform-origin: bottom;
+
+    animation: clock-animation 60s  steps(60) infinite ;
+    z-index: 1;
+  }
+
+  &__center-circle {
+    height: 30px;
+    width: 30px;
+
+    background-color: #262626;
+    border-radius: 50%;
+
+    z-index: 2;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 175px;
+    width: 10px;
+    height: 150px;
+
+    background-color: #7c2426;
+    border-radius: 4px;
+
+    transform-origin: bottom;
+
+    animation: clock-animation 3600s linear infinite forwards;
+  }
+}
