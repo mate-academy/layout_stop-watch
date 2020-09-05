@@ -13,7 +13,7 @@
     border-radius: 10px;
 
     transform-origin: center bottom;
-    animation: minute-hand-move 3600s steps(60, end) infinite,
+    animation: hand-move 3600s steps(60, end) infinite,
       shadow-animation 3600s steps(60, end) infinite;
 
     box-shadow: 10px 0 7px #ccc, 0 0 7px #ccc;
@@ -30,7 +30,7 @@
     border-radius: 10px;
 
     transform-origin: center bottom;
-    animation: second-hand-move 60s steps(60, end) infinite,
+    animation: hand-move 60s steps(60, end) infinite,
       shadow-animation 60s steps(60, end) infinite;
 
     box-shadow: 10px 0 7px #ccc, 0 0 7px #ccc;
@@ -50,16 +50,7 @@
   }
 }
 
-@keyframes second-hand-move {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minute-hand-move {
+@keyframes hand-move {
   from {
     transform: rotate(0);
   }
