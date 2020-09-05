@@ -1,0 +1,78 @@
+.clock {
+  position: relative;
+
+  &__minute-hand {
+    position: absolute;
+    top: 15%;
+    left: ($size / 2) - ($hand-width / 2);
+
+    height: 35%;
+    width: $hand-width;
+
+    background-color: $minute-hand-color;
+    border-radius: 10px;
+
+    transform-origin: center bottom;
+    animation: hand-move 3600s steps(60, end) infinite,
+      shadow-animation 3600s steps(60, end) infinite;
+
+    box-shadow: 10px 0 7px #ccc, 0 0 7px #ccc;
+  }
+
+  &__second-hand {
+    position: absolute;
+    left: ($size / 2) - ($hand-width / 2);
+
+    height: 50%;
+    width: $hand-width;
+
+    background-color: $second-hand-color;
+    border-radius: 10px;
+
+    transform-origin: center bottom;
+    animation: hand-move 60s steps(60, end) infinite,
+      shadow-animation 60s steps(60, end) infinite;
+
+    box-shadow: 10px 0 7px #ccc, 0 0 7px #ccc;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: -5px;
+
+      width: 24px;
+      height: 24px;
+
+      background-color: $second-hand-color;
+      border-radius: 50%;
+    }
+  }
+}
+
+@keyframes hand-move {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shadow-animation {
+  0% {
+    box-shadow: 10px 0 7px $shadow-color, 0 0 7px $shadow-color;
+  }
+  25% {
+    box-shadow: 2px -10px 7px $shadow-color, -2px -10px 7px $shadow-color;
+  }
+  50% {
+    box-shadow: 0 0 7px $shadow-color, -10px 0 7px $shadow-color;
+  }
+  75% {
+    box-shadow: 2px 10px 7px $shadow-color, -2px 10px 7px $shadow-color;
+  }
+  100% {
+    box-shadow: 10px 0 7px $shadow-color, 0 0 7px $shadow-color;
+  }
+}
