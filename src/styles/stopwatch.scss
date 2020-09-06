@@ -1,0 +1,63 @@
+.stopwatch {
+  width: $watchRadius * 2;
+  height: $watchRadius * 2;
+  position: relative;
+  background-image: url("./clockface.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #4b99aa2e;
+  border-radius: 50%;
+
+  &__second {
+    position: absolute;
+    top: $watchRadius - $secondHandLength;
+    left: $watchRadius - ($handThickness - 1) / 2;
+    z-index: 2;
+    width: $handThickness;
+    height: $secondHandLength;
+    background-color: $secondHandColor;
+    border: 1px solid $secondHandColor;
+    border-top-left-radius: $borderRadiusHand;
+    border-top-right-radius: $borderRadiusHand;
+    transform-origin: bottom;
+    animation: circle 60s infinite steps(60, start);
+    animation-delay: $delayBeforeStart;
+  }
+
+  &__minute {
+    position: absolute;
+    top: $watchRadius - $minuteHandLength;
+    left: $watchRadius - ($handThickness - 1) / 2;
+    z-index: 1;
+    width: $handThickness;
+    height: $minuteHandLength;
+    background-color: $minuteHandColor;
+    border: 1px solid $minuteHandColor;
+    border-top-left-radius: $borderRadiusHand;
+    border-top-right-radius: $borderRadiusHand;
+    transform-origin: bottom;
+    animation: circle 3600s infinite linear;
+    animation-delay: $delayBeforeStart;
+  }
+
+  &__center {
+    position: absolute;
+    top: $watchRadius - $centerPointRadius;
+    left: $watchRadius - $centerPointRadius;
+    z-index: 3;
+    width: $centerPointRadius * 2;
+    height: $centerPointRadius * 2;
+    background-color: $secondHandColor;
+    border: 1px solid $secondHandColor;
+    border-radius: 50%;
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
