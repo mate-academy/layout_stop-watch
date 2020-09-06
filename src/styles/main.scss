@@ -24,37 +24,33 @@
     z-index: 1;
   }
 
-  &__minute-hand {
+  &__hand {
     position: absolute;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    width: $hand-width;
     height: 100%;
-    animation: watch-anim 3600s;
 
-    &::after {
+    &::before {
       content: "";
       position: absolute;
+      transform-origin: bottom;
       bottom: 50%;
       width: $hand-width;
       height: 30%;
       border-radius: $hand-border-radius;
       background-color: $second-hand-color;
+      animation: watch-anim 3600s;
     }
-  }
-
-  &__second-hand {
-    @extend .watch__minute-hand;
-    animation: watch-anim 60s steps(60) infinite;
 
     &::after {
       content: "";
       position: absolute;
+      transform-origin: bottom;
       bottom: 50%;
       width: $hand-width;
       height: 40%;
       border-radius: $hand-border-radius;
       background-color: $minute-hand-color;
+      animation: watch-anim 60s steps(60) infinite;
     }
   }
 }
