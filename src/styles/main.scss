@@ -1,0 +1,70 @@
+@import "_reset";
+@import "variables";
+
+.page__watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $watch-size;
+  height: $watch-size;
+
+  &__center {
+    position: absolute;
+    width: 3%;
+    height: 3%;
+    border-radius: 50%;
+    background-color: $minute-hand-color;
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    animation: watch-anim 3600s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 50%;
+      width: $hand-width;
+      height: 30%;
+      border-radius: $hand-border-radius;
+      background-color: $second-hand-color;
+    }
+  }
+
+  &__second-hand {
+    @extend .watch__minute-hand;
+    animation: watch-anim 60s steps(60) infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 50%;
+      width: $hand-width;
+      height: 40%;
+      border-radius: $hand-border-radius;
+      background-color: $minute-hand-color;
+    }
+  }
+}
+
+@keyframes watch-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
