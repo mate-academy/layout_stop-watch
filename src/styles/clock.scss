@@ -1,0 +1,45 @@
+.clock {
+  height: 600px;
+  width: 600px;
+  padding: 50px;
+
+  &__minute_arrow {
+    position: absolute;
+    top: 30%;
+    left: 300px;
+
+    height: 30%;
+    width: $arrowWidth;
+
+    background-color: $minuteArrowColor;
+    border-radius: 10px;
+
+    transform-origin: center bottom;
+    animation: arrowStepping 3600s steps(60, end) infinite;
+  }
+
+  &__second_arrow {
+    position: absolute;
+    left: 300px;
+    height: 50%;
+    width: $arrowWidth;
+
+    background-color: $secondArrowColor;
+    border-radius: 10px;
+
+    transform-origin: center bottom;
+    animation: arrowStepping 60s steps(60, end) infinite;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: -8px;
+
+      height: 30px;
+      width: 30px;
+      background-color: $secondArrowColor;
+      border-radius: 50%;
+    }
+  }
+}
