@@ -7,40 +7,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.clock__sec {
-  position: absolute;
-  top: 50px;
+  &__sec {
+    position: absolute;
+    top: 50px;
 
-  width: 7px;
-  height: 200px;
-  background-color: #4c9aaa;
-  border-radius: 10px;
-  animation: clock-anim 60s steps(60, end) infinite;
-  transform-origin: bottom;
-}
+    width: 7px;
+    height: 200px;
+    background-color: #4c9aaa;
+    border-radius: 10px;
+    animation: clock-anim 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
 
-.clock__min {
-  position: absolute;
-  top: 100px;
+  &__min {
+    position: absolute;
+    top: 100px;
 
-  width: 12px;
-  height: 150px;
-  background-color: #d15659;
-  border-radius: 10px;
-  animation: clock-anim 3600s infinite;
-  transform-origin: bottom;
-}
+    width: 12px;
+    height: 150px;
+    background-color: #d15659;
+    border-radius: 10px;
+    animation: clock-anim 3600s infinite;
+    transform-origin: bottom;
+  }
 
-.clock__center {
-  position: absolute;
-  z-index: 1;
+  &__center {
+    position: absolute;
+    z-index: 1;
 
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: #4c9aaa;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #4c9aaa;
+  }
 }
 
 @keyframes clock-anim {
