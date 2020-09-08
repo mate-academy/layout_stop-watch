@@ -1,0 +1,13 @@
+@mixin installation__animation(
+  $func,
+  $time,
+  $animation-timing-function: ease-in-out,
+  $animation-direction: normal) {
+  animation: $func
+    $time
+    $animation-timing-function
+    $animation-direction
+    infinite;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}

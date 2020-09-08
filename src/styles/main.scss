@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+@import "mixin";
+@import "birds";
+@import "grass";
+@import "tree";
+
+.installation {
+  text-align: center;
+  padding-top: 100px;
+
+  &__seconds {
+    @include installation__animation(
+      $func: times-arrow,
+      $time: 60s,
+      $animation-timing-function: steps(60, end)
+    );
+  }
+
+  &__minutes {
+    @include installation__animation(
+      $func: times-arrow,
+      $time: 3600s,
+      $animation-timing-function: steps(60, end)
+    );
+  }
+}
+
+@keyframes times-arrow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

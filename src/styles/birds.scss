@@ -1,0 +1,18 @@
+@import "mixin";
+
+.birds {
+  @include installation__animation(
+    $func: birds,
+    $time: 5s,
+    $animation-direction: alternate
+  );
+}
+
+@keyframes birds {
+  from {
+    transform: scale(0.6) translateY(0);
+  }
+  to {
+    transform: scale(1.2) translateY(100%);
+  }
+}

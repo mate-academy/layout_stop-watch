@@ -1,0 +1,18 @@
+@import "mixin";
+
+.tree {
+  @include installation__animation(
+    $func: tree,
+    $time: 6s,
+    $animation-direction: alternate
+  );
+}
+
+@keyframes tree {
+  from {
+    transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(-5deg);
+  }
+}

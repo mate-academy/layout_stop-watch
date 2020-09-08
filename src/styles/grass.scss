@@ -1,0 +1,18 @@
+@import "mixin";
+
+.grass {
+  @include installation__animation(
+    $func: grass,
+    $time: 2s,
+    $animation-direction: alternate
+  );
+}
+
+@keyframes grass {
+  from {
+    transform: rotate(0) skew(0, 0);
+  }
+  to {
+    transform: rotate(-1deg) skew(5deg, 0);
+  }
+}
