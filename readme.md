@@ -5,6 +5,8 @@
     - There are no tests for this task so use `npm run lint` command instead of `npm test` 
 ___
 
+
+
 ## The task
 Create a working stopwatch with minute and second hands using only CSS animations.
 - The starting position of the hands should be at 0:00.
