@@ -9,7 +9,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
   @include width-height(500px,500px);
 }
 
@@ -17,7 +16,6 @@ body {
   @include width-height(25px,25px);
   background-color: #4b9aaa;
   border-radius: 50%;
-  margin: auto;
 }
 
 .clock__min {
@@ -33,7 +31,7 @@ body {
   display: block;
   border-radius: 10px;
   position: absolute;
-  @extend %position;
+  @extend %bottom-left-corner;
   transform: translate(-5px, 5px);
 }
 
@@ -49,7 +47,7 @@ body {
   display: block;
   border-radius: 10px;
   position: absolute;
-  @extend %position;
+  @extend %bottom-left-corner;
   transform: translate(-5px, 5px);
 }
 
