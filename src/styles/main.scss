@@ -1,0 +1,61 @@
+
+@import "variables";
+
+body {
+  margin: 0;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include width-height(500px,500px);
+}
+
+.clock__center {
+  @include width-height(25px,25px);
+  background-color: #4b9aaa;
+  border-radius: 50%;
+}
+
+.clock__min {
+  position: absolute;
+  animation: clock-rotate 3600s linear infinite;
+  z-index: -2;
+}
+
+.clock__min::after {
+  @include width-height(10px,150px);
+  background-color: #d15559;
+  content: "";
+  display: block;
+  border-radius: 10px;
+  position: absolute;
+  @extend %bottom-left-corner;
+  transform: translate(-5px, 5px);
+}
+
+.clock__sec {
+  position: absolute;
+  animation: clock-rotate 60s linear infinite;
+}
+
+.clock__sec::after {
+  @include width-height(10px,225px);
+  background-color: #4b9aaa;
+  content: "";
+  display: block;
+  border-radius: 10px;
+  position: absolute;
+  @extend %bottom-left-corner;
+  transform: translate(-5px, 5px);
+}
+
+@keyframes clock-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
