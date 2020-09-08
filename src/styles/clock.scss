@@ -1,15 +1,17 @@
 .clock {
   position: relative;
-  height: $clock-size;
   width: $clock-size;
+  height: $clock-size;
 
   &__circle {
     position: absolute;
-    z-index: 1;
     top: $clock-size / 2 - $circle-size / 2;
     left: $clock-size / 2 - $circle-size / 2;
-    height: $circle-size;
+    z-index: 1;
+
     width: $circle-size;
+    height: $circle-size;
+
     background-color: $circle-color;
     border-radius: 50%;
   }
@@ -17,16 +19,20 @@
   &__sec-hand {
     @include hand;
     z-index: 1;
-    background: $blue;
+
     height: $clock-size;
+
+    background: $blue;
     animation: move 60s steps(60, end) infinite;
   }
   
   &__min-hand {
-    top: ($clock-size / 2 - $min-hand-height / 2);
     @include hand;
-    background: $red;
+    top: ($clock-size / 2 - $min-hand-height / 2);
+
     height: $min-hand-height;
+
+    background: $red;
     animation: move 3600s infinite;
   }
 }

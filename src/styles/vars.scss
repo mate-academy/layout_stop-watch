@@ -10,8 +10,10 @@ $hands-width: $clock-size / 4 / 10;
 $min-hand-height: $clock-size * 0.6;
 
 @mixin hand {
-  width: $hands-width;
   position: absolute;
   left: $clock-size / 2 - $hands-width / 2;
+
+  width: $hands-width;
+  
   border-radius: $hands-width / 2;
 }
