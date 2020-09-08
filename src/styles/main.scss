@@ -17,11 +17,12 @@
 
   &__center {
     position: absolute;
+    z-index: 1;
     width: 3%;
     height: 3%;
-    border-radius: 50%;
+
     background-color: $minute-hand-color;
-    z-index: 1;
+    border-radius: 50%;
   }
 
   &__hand {
@@ -32,24 +33,28 @@
     &::before {
       content: "";
       position: absolute;
-      transform-origin: bottom;
       bottom: 50%;
       width: $hand-width;
       height: 30%;
-      border-radius: $hand-border-radius;
+      transform-origin: bottom;
+
       background-color: $second-hand-color;
+      border-radius: $hand-border-radius;
+
       animation: watch-anim 3600s;
     }
 
     &::after {
       content: "";
       position: absolute;
-      transform-origin: bottom;
       bottom: 50%;
       width: $hand-width;
       height: 40%;
-      border-radius: $hand-border-radius;
+      transform-origin: bottom;
+
       background-color: $minute-hand-color;
+      border-radius: $hand-border-radius;
+
       animation: watch-anim 60s steps(60) infinite;
     }
   }
