@@ -14,72 +14,71 @@
 
   border: 5px solid $main-watch-color;
   border-radius: 50%;
-}
 
-.watch__center {
-  content: "";
-  position: absolute;
-  z-index: 1;
+  &__center {
+    content: "";
+    position: absolute;
+    z-index: 1;
 
-  width: 25px;
-  height: 25px;
-  background-color: $sec-hand-color;
+    width: 25px;
+    height: 25px;
+    background-color: $sec-hand-color;
 
-  border: 5px solid $main-watch-color;
-  border-radius: 50%;
-}
-
-.watch__sec-hand {
-  position: absolute;
-  top: 70px;
-
-  height: 180px;
-
-  border: 4px solid $sec-hand-color;
-  border-radius: 5px;
-
-  transform-origin: bottom;
-  animation: stopwatch-animation 60s infinite steps(60);
-}
-
-.watch__minute-hand {
-  position: absolute;
-  top: 105px;
-
-  height: 140px;
-
-  border: 6px solid $min-hand-color;
-  border-radius: 5px;
-
-  transform-origin: bottom;
-  animation: stopwatch-animation 3600s infinite steps(60);
-}
-
-.watch__number {
-  position: absolute;
-
-  padding: 10px;
-
-  font-size: 50px;
-  font-weight: bold;
-  color: $main-watch-color;
-
-  &--3 {
-    right: 0;
+    border: 5px solid $main-watch-color;
+    border-radius: 50%;
   }
 
-  &--6 {
-    bottom: 0;
+  &__sec-hand {
+    position: absolute;
+    top: 70px;
+
+    height: 180px;
+
+    border: 4px solid $sec-hand-color;
+    border-radius: 5px;
+
+    transform-origin: bottom;
+    animation: stopwatch-animation 60s infinite steps(60);
   }
 
-  &--9 {
-    left: 0;
+  &__minute-hand {
+    position: absolute;
+    top: 105px;
+
+    height: 140px;
+
+    border: 6px solid $min-hand-color;
+    border-radius: 5px;
+
+    transform-origin: bottom;
+    animation: stopwatch-animation 3600s infinite steps(60);
   }
 
-  &--12 {
-    top: 0;
-  }
+  &__number {
+    position: absolute;
 
+    padding: 10px;
+
+    font-size: 50px;
+    font-weight: bold;
+    color: $main-watch-color;
+
+    &--3 {
+      right: 0;
+    }
+
+    &--6 {
+      bottom: 0;
+    }
+
+    &--9 {
+      left: 0;
+    }
+
+    &--12 {
+      top: 0;
+    }
+  }
 }
 
 @keyframes stopwatch-animation {
