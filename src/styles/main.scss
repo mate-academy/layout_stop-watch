@@ -1,53 +1,5 @@
-.clock {
-  position: relative;
-  width: 500px;
-  height: 500px;
+@import "clock";
+
+.page__clock {
   margin: auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &__sec {
-    position: absolute;
-    top: 50px;
-
-    width: 7px;
-    height: 200px;
-    background-color: #4c9aaa;
-    border-radius: 10px;
-    animation: clock-anim 60s steps(60, end) infinite;
-    transform-origin: bottom;
-  }
-
-  &__min {
-    position: absolute;
-    top: 100px;
-
-    width: 12px;
-    height: 150px;
-    background-color: #d15659;
-    border-radius: 10px;
-    animation: clock-anim 3600s infinite;
-    transform-origin: bottom;
-  }
-
-  &__center {
-    position: absolute;
-    z-index: 1;
-
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: #4c9aaa;
-  }
-}
-
-@keyframes clock-anim {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
