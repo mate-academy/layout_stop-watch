@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page__clock {
+  margin: auto;
+}
+
+.clock {
+  position: relative;
+
+  width: 700px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__min {
+    position: absolute;
+    top: 200px;
+
+    width: 10px;
+    height: 150px;
+
+    background-color: #d15659;
+    border-radius: 10px;
+
+    animation: time-anim 3600s infinite steps(60, end);
+    transform-origin: bottom;
+  }
+
+  &__sec {
+    position: absolute;
+    top: 150px;
+
+    width: 5px;
+    height: 200px;
+    
+    background-color: #4c9aaa;
+    border-radius: 10px;
+
+    animation: time-anim 60s infinite steps(60, end);
+    transform-origin: bottom;
+  }
+
+  &__center {
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+    
+    border-radius: 50%;
+    background-color: #4c9aaa;
+  }
+}
+
+@keyframes time-anim {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
