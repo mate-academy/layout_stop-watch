@@ -1,10 +1,15 @@
+@import "variables";
+
+.page__stowatch {
+  margin-top: 150px;
+}
+
 .stopwatch {
   display: flex;
   justify-content: center;
   align-items: center;
 
   height: 500px;
-  margin-top: 150px;
 
   &__circle {
     z-index: 3;
@@ -13,7 +18,7 @@
     width: 20px;
     border-radius: 10px;
 
-    background-color: #4b9aaa;
+    background-color: $second-hand-color;
   }
 
   &__minute-hand {
@@ -25,13 +30,10 @@
     width: 10px;
     height: 200px;
     border-radius: 5px;
-    background-color: #d15559;
+    background-color: $minute-hand-color;
 
     transform-origin: 5px 200px;
-    animation-name: rotation;
-    animation-duration: 3600s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: rotation 3600s linear infinite;
   }
 
   &__seconds-hand {
@@ -42,13 +44,10 @@
     width: 10px;
     height: 300px;
     border-radius: 5px;
-    background-color: #4b9aaa;
+    background-color: $second-hand-color;
 
     transform-origin: 5px 300px;
-    animation-name: rotation;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: rotation 60s linear infinite;
   }
 }
 
