@@ -4,7 +4,7 @@
 
 h1 {
   text-align: center;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 .stopwatch {
@@ -13,6 +13,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+
 
   margin: auto;
   width: 600px;
@@ -39,7 +40,7 @@ h1 {
     top: 0;
 
     width: 10px;
-    height:  300px;
+    height: 300px;
 
     background-color: crimson;
     border-radius: 90%;
@@ -53,10 +54,12 @@ h1 {
     height: 30px;
 
     border-radius: 50%;
-    background-color:  black;
+    background-color: black;
+
+    z-index: 0;
   }
 
-  @keyframes  time  {
+  @keyframes time {
     from {
       transform: rotate(0deg);
     }
@@ -64,7 +67,4 @@ h1 {
       transform: rotate(360deg);
     }
   }
-
 }
-
-
