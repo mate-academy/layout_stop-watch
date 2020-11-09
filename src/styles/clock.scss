@@ -1,0 +1,50 @@
+.clock {
+
+  &::before ,
+  &::after {
+    content: "";
+    height: 10px;
+    border-radius: 8px;
+    transform-origin: left;
+  }
+
+  &::before {
+
+    @include position;
+
+    width: 500px;
+    background-color: $base-color;
+    animation: clock 60s linear infinite;
+    z-index: 1;
+  }
+
+  &::after {
+
+    @include position;
+
+    width: 300px;
+    background-color: $accent-color;
+    animation: clock 3600s linear infinite;
+  }
+
+  &__point {
+
+    @include position;
+
+    width: $point-size;
+    height: $point-size;
+    background-color: $base-color;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+}
+
+@keyframes clock {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
