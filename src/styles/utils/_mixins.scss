@@ -1,0 +1,10 @@
+@mixin clockAnimation($timer) {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  transform-origin: left;
+  transform: rotate(-90deg);
+  animation: tick #{$timer}s linear infinite;
+  z-index: -1;
+}
