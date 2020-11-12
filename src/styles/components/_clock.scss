@@ -1,0 +1,42 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../images/clock.png) no-repeat center;
+  width: 850px;
+  height: 850px;
+  z-index: -2;
+}
+
+.clock__dot {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: #4b9aaa;
+  border-radius: 50%;
+}
+
+.clock__dot::after {
+  width: 210px;
+  height: 14px;
+  border-radius: 7px;
+  background-color: #d15559;
+  @include clockAnimation(3600);
+}
+
+.clock__dot::before {
+  width: 290px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #4b9aaa;
+  @include clockAnimation(60);
+}
+
+@keyframes tick {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
