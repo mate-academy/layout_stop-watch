@@ -1,0 +1,15 @@
+.watch {
+  @include watch-position;
+
+  &__center {
+    @include center-styles;
+
+    &::after {
+      @include seconds-arrow;
+    }
+
+    &::before {
+      @include hours-arrow;
+    }
+  }
+}
