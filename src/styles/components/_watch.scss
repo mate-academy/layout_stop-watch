@@ -1,28 +1,37 @@
 .watch {
-  &::before {
-    @include position-arrow;
+  height: 500px;
+  position: relative;
+  margin: 0 auto;
 
-    width: 250px;
+  &__arrow {
+    @include styles-arrow;
+  }
+
+  &__arrow--short {
+    height: 200px;
+    top: 30%;
     background-color: #d15559;
     animation: clock 3600s linear infinite;
+    z-index: 1;
   }
 
-  &::after {
-    @include position-arrow;
-
-    width: 350px;
+  &__arrow--long {
+    height: 300px;
+    top: 10%;
     background-color: $primary-color;
-    animation: clock 60s linear infinite;
-  }
+    animation: clock 60s steps(60) infinite;
+    z-index: 2;
 
-  &__circle {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: $primary-color;
-    border-radius: 50%;
+    &::before {
+      content: "";
+      width: $circle-size;
+      height: $circle-size;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $primary-color;
+      border-radius: 50%;
+    }
   }
 }
