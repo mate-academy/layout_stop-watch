@@ -1,0 +1,24 @@
+@mixin hands($hand, $color) {
+  content: "";
+  position: absolute;
+  bottom: $watch-center-dot-size/2;
+  left: ($watch-center-dot-size/2) - ($hand-thickness/2);
+  @if $hand == minute {
+    z-index: -1;
+  }
+  @if $hand == second {
+    z-index: -2;
+  }
+  display: block;
+  width: $hand-thickness;
+  height: #{map-get($hands-length, $hand)};
+  border-radius: $hand-thickness/2;
+  background-color: #{map-get($colors, $color)};
+  transform-origin: bottom;
+  @if $hand == minute {
+    animation: hands-animation 3600s infinite steps(60, end);
+  }
+  @if $hand == second {
+    animation: hands-animation 60s infinite steps(60, end);
+  }
+}
