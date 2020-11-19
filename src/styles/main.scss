@@ -1,0 +1,72 @@
+@import "rotation";
+$color-blue: #4b9aaa;
+$color-red: #d15559;
+$size: 300px;
+$center-size: 10px;
+$hand-seconds: $size/2.5;
+$hand-minutes: $size/3.5;
+$seconds-width: 3px;
+$minutes-width: 4px;
+
+@mixin hand {
+  transform-origin: bottom center;
+  border-radius: 10px;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  @include flex-center;
+}
+
+.watch {
+  @include flex-center;
+  position: relative;
+
+  background-color: tan;
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+
+  z-index: -2;
+}
+
+.watch__center {
+  position: absolute;
+
+  justify-content: center;
+  width: $center-size;
+  height: $center-size;
+  border-radius: 50%;
+  background-color: $color-blue;
+}
+
+.watch__minutes {
+  @include hand;
+  position: absolute;
+
+  width: $minutes-width;
+  height: $hand-minutes;
+  bottom: $size/2;
+
+  background-color: $color-blue;
+
+  z-index: -1;
+}
+
+.watch__seconds {
+  @include hand;
+  position: absolute;
+
+  width: $seconds-width;
+  height: $hand-seconds;
+  bottom: $size/2;
+
+  background-color: $color-red;
+
+  z-index: -2;
+}
