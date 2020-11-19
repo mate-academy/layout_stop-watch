@@ -1,0 +1,17 @@
+.watch {
+
+  &__center-dot {
+    width: $watch-center-dot-size;
+    height: $watch-center-dot-size;
+    background-color: map-get($colors, main);
+    border-radius: 50%;
+
+    &::before {
+      @include hands(minute, main);
+    }
+
+    &::after {
+      @include hands(second, secondary);
+    }
+  }
+}
