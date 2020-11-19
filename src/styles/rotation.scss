@@ -1,0 +1,17 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.watch__minutes {
+  animation: rotation 60s * 60 both linear infinite;
+}
+
+.watch__seconds {
+  animation: rotation 60s both steps(60) infinite;
+}
