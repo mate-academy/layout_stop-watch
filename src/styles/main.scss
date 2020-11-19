@@ -1,0 +1,43 @@
+@mixin arrow($color) {
+  content: "";
+  z-index: -1;
+  height: 200px;
+  width: 6px;
+  background: $color;
+  position: absolute;
+  left: 50%;
+  top: -185px;
+  transform-origin: 3px 100%;
+}
+
+.page {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  &__clock {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #000;
+
+    &::before {
+      @include arrow(red);
+      animation: rotate 60s infinite linear;
+    }
+
+    &::after {
+      @include arrow(blue);
+      animation: rotate 3600s infinite linear;
+    }
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
