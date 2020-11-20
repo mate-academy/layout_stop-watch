@@ -1,0 +1,47 @@
+@import "variables";
+@import "wrapper";
+@import "mixins";
+
+.clock {
+  position: relative;
+  width: $clock-width;
+  height: $clock-height;
+
+  background-color: lightgreen;
+  border-radius: 50%;
+  border: 10px solid green;
+
+  &__center {
+    position: absolute;
+    top: ($clock-height / 2) - ($center-height / 2);
+    left: ($clock-width / 2) - ($center-width / 2);
+    width: $center-width;
+    height: $center-height;
+
+    background-color: #1dd0f0;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__minutes-hand {
+    @include arrow($minutes-hand-height);
+    background-color: #0f19d9;
+    animation: revolve 3600s linear infinite;
+  }
+
+  &__seconds-hand {
+    @include arrow($seconds-hand-height);
+    background-color: #1dd0f0;
+    animation: revolve 60s linear infinite;
+  }
+
+  @keyframes revolve {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

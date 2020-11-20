@@ -1,0 +1,11 @@
+@mixin arrow($hand-height) {
+  position: absolute;
+  top: ($clock-height / 2)- $hand-height;
+  left: ($clock-width / 2) - ($hand-width / 2);
+  width: $hand-width;
+  height: $hand-height;
+
+  border-radius: $hand-border-radius;
+
+  transform-origin: ($hand-width / 2)  $hand-height;
+}
