@@ -1,0 +1,34 @@
+.watch {
+  padding: 50px;
+  position: relative;
+
+  &__circle {
+    top: 325px;
+    left: 493px;
+
+    @include circleRadius;
+
+    border-radius: 50%;
+    background-color: $blueColor;
+  }
+
+  &__minutes {
+    top: 140px;
+
+    @include buildArrow(10px, 200px, $redColor);
+    @include animateArrow(3600s, linear);
+  }
+
+  &__seconds {
+    top: 45px;
+
+    @include buildArrow(10px, 300px, $blueColor);
+    @include animateArrow(60s, steps(60));
+
+    @keyframes ArrowMove {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
