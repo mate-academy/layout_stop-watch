@@ -1,0 +1,62 @@
+@import "variables";
+@import "wrapper";
+
+.clock {
+  position: relative;
+  width: $clock-width;
+  height: $clock-height;
+
+  background-color: lightgreen;
+  border-radius: 50%;
+  border: 10px solid green;
+
+  &__center {
+    position: absolute;
+    top: ($clock-height / 2) - ($center-height / 2);
+    left: ($clock-width / 2) - ($center-width / 2);
+    width: $center-width;
+    height: $center-height;
+
+    background-color: #1dd0f0;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__minutes-hand {
+    position: absolute;
+    top: ($clock-height / 2)- $minutes-hand-height;
+    left: ($clock-width / 2) - ($hand-width / 2);
+    width: $hand-width;
+    height: $minutes-hand-height;
+
+    background-color: #0f19d9;
+    border-radius: $hand-border-radius;
+
+    animation: revolve 3600s linear infinite;
+    transform-origin: ($hand-width / 2)  $minutes-hand-height;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    top: ($clock-height / 2) (-$seconds-hand-height);
+    left: ( $clock-width / 2) - ($hand-width / 2);
+    width: $hand-width;
+    height: $seconds-hand-height;
+
+    background-color: #1dd0f0;
+    border-radius: $hand-border-radius;
+
+    animation: revolve 60s linear infinite;
+    transform-origin: ($hand-width / 2)  $seconds-hand-height;
+  }
+
+  @keyframes revolve {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
