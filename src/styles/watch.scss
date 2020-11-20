@@ -1,10 +1,9 @@
 .watch {
-  padding: 50px;
   position: relative;
 
   &__circle {
-    top: 325px;
-    left: 493px;
+    top: 300px;
+    left: 327px;
 
     @include circleRadius;
 
@@ -13,14 +12,14 @@
   }
 
   &__minutes {
-    top: 140px;
+    top: 120px;
 
     @include buildArrow(10px, 200px, $redColor);
     @include animateArrow(3600s, linear);
   }
 
   &__seconds {
-    top: 45px;
+    top: 17px;
 
     @include buildArrow(10px, 300px, $blueColor);
     @include animateArrow(60s, steps(60));
