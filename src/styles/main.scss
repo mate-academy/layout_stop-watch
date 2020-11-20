@@ -1,0 +1,62 @@
+.second {
+  position: relative;
+  width: 10px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: red;
+  transform-origin: bottom;
+  animation-name: stopwatch;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  &::before {
+    position: absolute;
+    display: block;
+    height: 40px;
+    width: 40px;
+    background-color: blue;
+    border-radius: 50%;
+    top: 100%;
+    transform: translate(-15px,-50%);
+
+    content: "";
+  }
+}
+
+.pseudo-second {
+  position: relative;
+  bottom: 310px;
+  width: 10px;
+  height: 300px;
+  margin: 0 auto;
+  transform-origin: bottom;
+  transform: rotate(0deg);
+  animation-name: stopwatch;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+}
+
+.minute {
+  position: absolute;
+  top: 90px;
+  height: 200px;
+  width: 10px;
+  border-radius: 4px 4px 0 0;
+  background-color: blue;
+
+  transform-origin: bottom;
+}
+
+@keyframes stopwatch {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
