@@ -1,26 +1,22 @@
-@mixin arrow($color) {
-  content: "";
-  z-index: -1;
-  height: 200px;
-  width: 6px;
-  background: $color;
-  position: absolute;
-  left: 50%;
-  top: -185px;
-  transform-origin: 3px 100%;
-}
+@import "variables";
+
+@import "mixins";
+
+@import "animations";
 
 .page {
-  margin: 0;
+  height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  margin: 0;
 
   &__clock {
     position: relative;
-    height: 30px;
-    width: 30px;
+    height: $clockHeight;
+    width: $clockWidth;
+
     border-radius: 50%;
     background-color: #000;
 
@@ -33,11 +29,5 @@
       @include arrow(blue);
       animation: rotate 3600s infinite linear;
     }
-  }
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
   }
 }

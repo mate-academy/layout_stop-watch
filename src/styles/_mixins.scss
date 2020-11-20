@@ -1,0 +1,14 @@
+@mixin arrow($color) {
+  content: "";
+  position: absolute;
+  height: $arrowHeight;
+  width: $arrowWidth;
+  left: 50%;
+  top: - ($arrowHeight - $clockHeight / 2);
+  z-index: -1;
+
+  background: $color;
+  border-radius: ($arrowWidth / 2);
+
+  transform-origin: ($arrowWidth / 2) 100%;
+}
