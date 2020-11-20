@@ -1,5 +1,6 @@
 @import "variables";
 @import "wrapper";
+@import "mixins";
 
 .clock {
   position: relative;
@@ -23,31 +24,15 @@
   }
 
   &__minutes-hand {
-    position: absolute;
-    top: ($clock-height / 2)- $minutes-hand-height;
-    left: ($clock-width / 2) - ($hand-width / 2);
-    width: $hand-width;
-    height: $minutes-hand-height;
-
+    @include arrow($minutes-hand-height);
     background-color: #0f19d9;
-    border-radius: $hand-border-radius;
-
     animation: revolve 3600s linear infinite;
-    transform-origin: ($hand-width / 2)  $minutes-hand-height;
   }
 
   &__seconds-hand {
-    position: absolute;
-    top: ($clock-height / 2) (-$seconds-hand-height);
-    left: ( $clock-width / 2) - ($hand-width / 2);
-    width: $hand-width;
-    height: $seconds-hand-height;
-
+    @include arrow($seconds-hand-height);
     background-color: #1dd0f0;
-    border-radius: $hand-border-radius;
-
     animation: revolve 60s linear infinite;
-    transform-origin: ($hand-width / 2)  $seconds-hand-height;
   }
 
   @keyframes revolve {
