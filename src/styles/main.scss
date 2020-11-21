@@ -1,0 +1,39 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+.clock-container {
+  position: relative;
+  height: 950px;
+
+  &__circle {
+    position: absolute;
+    height: $circleSize;
+    width: $circleSize;
+    top: $circlePosition;
+    right: $circlePosition;
+    background-color: $mainColor;
+    border-radius: 50%;
+  }
+
+  &__sec {
+    @include arrow(400px, 60);
+    background-color: $mainColor;
+  }
+
+  &__min {
+    @include arrow(250px, 3600);
+    background-color: #d15559;
+    z-index: -1;
+  }
+}
+
+@keyframes clock-wise {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
