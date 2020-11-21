@@ -50,10 +50,12 @@ $handWidth: 15px;
     left: 0;
 
     &--sec {
+      z-index: 2;
       animation: go 60s infinite linear;
     }
 
     &--min {
+      z-index: 1;
       animation: go 3600s infinite linear;
     }
 
@@ -61,8 +63,6 @@ $handWidth: 15px;
 
   &__sec {
     @include hand;
-
-    z-index: 2;
 
     height: 50%;
 
@@ -74,7 +74,6 @@ $handWidth: 15px;
     @include hand;
 
     top: $radius/9;
-    z-index: 1;
 
     height: 40%;
 
