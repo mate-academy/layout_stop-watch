@@ -1,0 +1,28 @@
+@mixin buildArrow($width, $height, $color) {
+  position: absolute;
+
+  content: "";
+  width: $width;
+  height: $height;
+
+  background-color: $color;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+@mixin centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin buildCircle($diameter) {
+  width: $diameter;
+  height: $diameter;
+  border-radius: 50%;
+}
+
+@mixin animateArrow($time, $aFunc) {
+  animation: ArrowMove $time infinite $aFunc;
+  transform-origin: bottom;
+}

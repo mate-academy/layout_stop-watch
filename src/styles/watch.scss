@@ -1,0 +1,39 @@
+.watch {
+  position: relative;
+  border: 5px solid orange;
+  @include centered;
+
+  background: linear-gradient(217deg, rgba(255,0,0,0.8),
+  rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, 
+  rgba(0,255,0,0.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(0,0,255,0.8), rgba(0,0,255,0) 70.71%);
+
+  &__point {
+    @include buildCircle($pointDiameter);
+    background-color: $blueColor;
+    z-index: 10;
+  }
+
+  &::after {
+    top: 70px;
+
+    @include buildArrow($minuteArrowWidth, $minuteArrowHeight, $redColor);
+    @include animateArrow(3600s, linear);
+  }
+
+  &::before {
+    top: 20px;
+
+    @include buildArrow($secondArrowWidth, $secondArrowHeight, $blueColor);
+    @include animateArrow(60s, steps(60));
+
+    z-index: 5;
+
+    @keyframes ArrowMove {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
