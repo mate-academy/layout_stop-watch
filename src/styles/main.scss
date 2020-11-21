@@ -1,0 +1,65 @@
+@import "var";
+@import "methods";
+
+.watch {
+  position: relative;
+  margin: 20px auto 0;
+
+  width: $radius;
+  height: $radius;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 3;
+
+    width: $handWidth+5px;
+    height: $handWidth+5px;
+
+    background-color: $colSec;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &__circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    &--sec {
+      z-index: 2;
+      animation: go 60s infinite linear;
+    }
+
+    &--min {
+      z-index: 1;
+      animation: go 3600s infinite linear;
+    }
+
+  }
+
+  &__sec {
+    @include hand;
+
+    height: 50%;
+
+    background-color: $colSec;
+
+  }
+
+  &__min {
+    @include hand;
+
+    top: $radius/9;
+
+    height: 40%;
+
+    background-color: $colMin;
+  }
+}
