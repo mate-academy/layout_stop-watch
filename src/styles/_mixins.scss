@@ -1,6 +1,7 @@
 @mixin buildArrow($width, $height, $color) {
   position: absolute;
 
+  content: "";
   width: $width;
   height: $height;
 
@@ -15,10 +16,10 @@
   align-items: center;
 }
 
-@mixin circleRadius {
-  width: $radius;
-  height: $radius;
-  position: absolute;
+@mixin buildCircle($diameter) {
+  width: $diameter;
+  height: $diameter;
+  border-radius: 50%;
 }
 
 @mixin animateArrow($time, $aFunc) {
