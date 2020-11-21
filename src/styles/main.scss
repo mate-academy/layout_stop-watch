@@ -1,0 +1,84 @@
+@import "./normalize";
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./animations.scss";
+@import "./page.scss";
+
+.watch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+
+  display: flex;
+
+  border: 5px solid $main-color;
+  border-radius: 50%;
+
+  &__point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+
+    width: $point-size;
+    height: $point-size;
+
+    border-radius: 50%;
+    background-color: $main-color;
+  }
+
+  &__secondHand {
+    @include handPosition;
+    z-index: 2;
+
+    width: $hand-width;
+    height: 280px;
+
+    background-color: $main-color;
+
+    animation: flow 60s infinite;
+    animation-timing-function: linear;
+  }
+
+  &__secondHand::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    transform: translate(0, -50%);
+    z-index: 2;
+
+    width: $hand-width;
+    height: $hand-width;
+
+    border-radius: 50%;
+    background-color: $main-color;
+  }
+
+  &__minuteHand {
+    @include handPosition;
+    z-index: 1;
+
+    width: $hand-width;
+    height: 200px;
+
+    background-color: $minute-color;
+
+    animation: flow 3600s infinite;
+    animation-timing-function: linear;
+  }
+
+  &__minuteHand::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    transform: translate(0, -50%);
+    z-index: 1;
+
+    width: $hand-width;
+    height: $hand-width;
+
+    border-radius: 50%;
+    background-color: $minute-color;
+  }
+}
