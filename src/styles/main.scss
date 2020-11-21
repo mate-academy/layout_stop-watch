@@ -1,0 +1,42 @@
+@import "reset.scss";
+@import "mixin.scss";
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 650px;
+}
+
+.clock__round {
+  height: 30px;
+  width: 30px;
+  position: relative;
+  border-radius: 50%;
+  background-color: #4b9aaa;
+}
+
+.clock__round::before {
+  height: 10px;
+  width: 290px;
+  background-color: #4b9aaa;
+  border-radius: 5px;
+  @include animation(60);
+}
+
+.clock__round::after {
+  height: 14px;
+  width: 210px;
+  background-color: #d15559;
+  border-radius: 7px;
+  @include animation(3600);
+}
+
+@keyframes tick {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
