@@ -1,0 +1,52 @@
+$circle-size: 20px;
+$blue: #4b9aaa;
+$red:  #d15559;
+$clockwise-size: 7px;
+
+@mixin details-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@mixin clockwise-features($rotate-time, $length, $color) {
+  transform-origin: left center;
+  animation: rotation $rotate-time linear infinite;
+  width: $length;
+  height: $clockwise-size;
+  background-color: $color;
+  border-radius: $clockwise-size;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.stop-watch__circle {
+  @include details-position();
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  transform: translate(-50%, -($circle-size - $clockwise-size) / 2);
+  background-color: $blue;
+}
+
+.stop-watch__clockwise-small {
+  @include details-position();
+  @include clockwise-features(3600s, 200px, $red);
+}
+
+.stop-watch__clockwise-big {
+  @include details-position();
+  @include clockwise-features(60s, 300px, $blue);
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
