@@ -1,0 +1,14 @@
+@mixin hand {
+  position: absolute;
+  left: $radius/2 - $handWidth/2;
+
+  width: $handWidth;
+
+  border-radius: $handWidth/2;
+}
+
+@keyframes go {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
