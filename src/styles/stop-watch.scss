@@ -1,0 +1,92 @@
+.stop-watch {
+  &__center {
+    @include alignToCenter;
+    z-index: 3;
+
+    width: $center-size;
+    height: $center-size;
+    background: $minute-hand-color;
+    border-radius: 50%;
+  }
+
+  &__number {
+    position: absolute;
+    left: ($main-size - $number-width) / 2;
+    top: 20px;
+    width: $number-width;
+    height: $main-size - 40px;
+    font-size: 20px;
+    color: $border-color;
+    text-align: center;
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        transform: rotate($i * 30deg);
+      }
+    }
+  }
+
+  &__hand {
+    transform-origin: left;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: -20px;
+      bottom: 0;
+      width: 0;
+      height: 0;
+    }
+
+    &--second {
+      @include alignStartToCenter($second-hand-weight);
+      z-index: 2;
+      width: 150px;
+      height: $second-hand-weight;
+      background: $second-hand-color;
+      animation: rotateClockwise 60s steps(60, end) infinite backwards;
+
+      &::after {
+        border-left: 6px solid white;
+        border-top: #{$second-hand-weight / 2} solid transparent;
+        border-bottom: #{$second-hand-weight / 2} solid transparent;
+      }
+
+      &::before {
+        border-left: 20px solid $second-hand-color;
+        border-top: #{$second-hand-weight / 2} solid transparent;
+        border-bottom: #{$second-hand-weight / 2} solid transparent;
+      }
+    }
+
+    &--minute {
+      @include alignStartToCenter($minute-hand-weight);
+      z-index: 1;
+      width: 110px;
+      height: $minute-hand-weight;
+      background: $minute-hand-color;
+      animation: rotateClockwise 3600s linear 0s infinite normal backwards;
+
+      &::after {
+        border-left: 6px solid white;
+        border-top: #{$minute-hand-weight / 2} solid transparent;
+        border-bottom: #{$minute-hand-weight / 2} solid transparent;
+      }
+
+      &::before {
+        border-left: 20px solid $minute-hand-color;
+        border-top: #{$minute-hand-weight / 2} solid transparent;
+        border-bottom: #{$minute-hand-weight / 2} solid transparent;
+      }
+    }
+  }
+}

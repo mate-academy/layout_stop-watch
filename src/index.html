@@ -1,14 +1,33 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body class="page">
+    <h1 class="visually-hidden">Stop watch</h1>
+    <main class="page__watch-container stop-watch">
+      <div class="stop-watch__center"></div>
+      <div class="stop-watch__face">
+        <div class="stop-watch__number">1</div>
+        <div class="stop-watch__number">10</div>
+        <div class="stop-watch__number">11</div>
+        <div class="stop-watch__number">100</div>
+        <div class="stop-watch__number">101</div>
+        <div class="stop-watch__number">110</div>
+        <div class="stop-watch__number">111</div>
+        <div class="stop-watch__number">1000</div>
+        <div class="stop-watch__number">1001</div>
+        <div class="stop-watch__number">1010</div>
+        <div class="stop-watch__number">1011</div>
+        <div class="stop-watch__number">1100</div>
+      </div>
+      <div class="stop-watch__hand stop-watch__hand--second"></div>
+      <div class="stop-watch__hand stop-watch__hand--minute"></div>
+    </main>
+  </body>
 </html>
