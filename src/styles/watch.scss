@@ -1,0 +1,46 @@
+@import "variables";
+
+@keyframes watch {
+  from {
+    transform: rotate(0deg);
+    transform-origin: $arrow-axis;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: $arrow-axis;
+  }
+}
+
+.watch {
+  position: relative;
+  max-width: 850px;
+  height: 850px;
+
+  &__min {
+    @include arrow-position;
+    height: $minute-height;
+    width: $arrow-width;
+    background-color: #d15559;
+    animation: watch 3600s linear infinite;
+  }
+
+  &__sec {
+    @include arrow-position;
+    height: $minute-height * 2;
+    width: $arrow-width;
+    background-color: #4b9aaa;
+    opacity: 0.7;
+    animation: watch 60s linear infinite;
+  }
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+    background-color: #4b9aaa;
+    border-radius: 50%;
+    position: absolute;
+    right: calc(50% - #{$arrow-width});
+    bottom: calc(50% - (#{$center-size} / 2));
+  }
+}
