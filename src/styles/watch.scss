@@ -1,0 +1,32 @@
+.watch {
+  position: relative;
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  background-image: url(../watch.jpg);
+  background-size: cover;
+  overflow: hidden;
+
+  &__arrow {
+    position: absolute;
+    height: 200px;
+    left: calc(50% - 1.5px);
+    bottom: calc(50% - 1.5px);
+    animation: round steps(60) infinite;
+    transform-origin: center bottom;
+
+    &--minute {
+      width: 4px;
+      background-color: brown;
+      animation-duration: 3600s;
+    }
+
+    &--second {
+      width: 3px;
+      background-color: black;
+      animation-duration: 60s;
+
+    }
+  }
+}
