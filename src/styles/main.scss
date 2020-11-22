@@ -1,0 +1,76 @@
+@import "variables";
+
+.clock {
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  background-color: #477;
+  font-size: $font-basic-size;
+  margin: 0, auto;
+  border: 0.01em solid black;
+  border-radius: 0.5em;
+
+  &__hand {
+    height: 1em;
+    width: 1em;
+    margin-left: -0.5em;
+    margin-top: -0.5em;
+    @include hand-position;
+    left: 50%;
+    top: 50%;
+  }
+
+  &__hand--hour::after {
+    content: "";
+    @include hand-sizes;
+    @include hand-position;
+    height: 0.25em;
+    width: 0.05em;
+    background-color: #000;
+    margin-left: -0.02em;
+  }
+
+  &__hand--minute::after {
+    content: "";
+    @include hand-sizes;
+    @include hand-position;
+    height: 0.4em;
+    width: 0.03em;
+    background-color: #333;
+    margin-left: -0.02em;
+  }
+
+  &__hand--second::after {
+    content: "";
+    @include hand-sizes;
+    @include hand-position;
+    height: 0.46em;
+    width: 0.01em;
+    background-color: #f00;
+    margin-left: -0.01em;
+  }
+
+  &__hand--second-anim {
+    animation: time-go-seconds 60s steps(60) infinite;
+  }
+
+  &__hand--minute-anim {
+    animation: time-go-seconds 3600s steps(60) infinite;
+  }
+
+  &__hand--hour-anim {
+    animation: time-go-seconds 216000s infinite;
+  }
+}
+
+@keyframes time-go-seconds {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
