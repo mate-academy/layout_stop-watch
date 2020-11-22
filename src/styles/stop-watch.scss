@@ -2,10 +2,10 @@
   &__center {
     @include alignToCenter;
     z-index: 3;
-
     width: $center-size;
     height: $center-size;
     background: $minute-hand-color;
+    box-shadow: 3px 3px 3px #808080;
     border-radius: 50%;
   }
 
@@ -14,8 +14,8 @@
     left: ($main-size - $number-width) / 2;
     top: 20px;
     width: $number-width;
-    height: $main-size - 40px;
-    font-size: 20px;
+    height: $main-size - 50px;
+    font-size: 40px;
     font-weight: 600;
     color: $border-color;
     text-shadow: 2px 2px 4px #808080;
@@ -47,40 +47,36 @@
     &--second {
       @include alignStartToCenter($second-hand-weight);
       z-index: 2;
-      width: 150px;
+      width: $main-size * 0.4;
       height: $second-hand-weight;
       background: $second-hand-color;
       animation: rotateClockwise 60s steps(300, end) infinite backwards;
 
       &::after {
-        border-top: #{$second-hand-weight / 2} solid transparent;
-        border-bottom: #{$second-hand-weight / 2} solid transparent;
+        @include handDetailing($second-hand-weight);
       }
 
       &::before {
         border-left: 20px solid $second-hand-color;
-        border-top: #{$second-hand-weight / 2} solid transparent;
-        border-bottom: #{$second-hand-weight / 2} solid transparent;
+        @include handDetailing($second-hand-weight);
       }
     }
 
     &--minute {
       @include alignStartToCenter($minute-hand-weight);
       z-index: 1;
-      width: 110px;
+      width: $main-size * 0.27;
       height: $minute-hand-weight;
       background: $minute-hand-color;
       animation: rotateClockwise 3600s linear 0s infinite normal backwards;
 
       &::after {
-        border-top: #{$minute-hand-weight / 2} solid transparent;
-        border-bottom: #{$minute-hand-weight / 2} solid transparent;
+        @include handDetailing($minute-hand-weight);
       }
 
       &::before {
         border-left: 20px solid $minute-hand-color;
-        border-top: #{$minute-hand-weight / 2} solid transparent;
-        border-bottom: #{$minute-hand-weight / 2} solid transparent;
+        @include handDetailing($minute-hand-weight);
       }
     }
   }

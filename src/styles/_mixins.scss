@@ -10,3 +10,8 @@
   top: ($main-size - $weight) / 2;
   left: $main-size / 2;
 }
+
+@mixin handDetailing($weight) {
+  border-top: #{$weight / 2} solid transparent;
+  border-bottom: #{$weight / 2} solid transparent;
+}
