@@ -30,24 +30,18 @@
 
   &__hand {
     transform-origin: left;
-    box-shadow: -3px 3px 3px grey;
+    box-shadow: -3px 3px 3px #808080;
 
     &::after {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 0;
+      border-left: 6px solid #fff;
     }
 
     &::before {
       content: "";
       position: absolute;
       right: -20px;
-      bottom: 0;
-      width: 0;
-      height: 0;
     }
 
     &--second {
@@ -59,7 +53,6 @@
       animation: rotateClockwise 60s steps(300, end) infinite backwards;
 
       &::after {
-        border-left: 6px solid white;
         border-top: #{$second-hand-weight / 2} solid transparent;
         border-bottom: #{$second-hand-weight / 2} solid transparent;
       }
@@ -80,7 +73,6 @@
       animation: rotateClockwise 3600s linear 0s infinite normal backwards;
 
       &::after {
-        border-left: 6px solid white;
         border-top: #{$minute-hand-weight / 2} solid transparent;
         border-bottom: #{$minute-hand-weight / 2} solid transparent;
       }
