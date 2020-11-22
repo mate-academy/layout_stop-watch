@@ -1,0 +1,76 @@
+@import "mixins";
+@import "variables";
+@import "keyframes";
+
+body {
+  @include flexCentrin;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url(../img/dark.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.clock {
+  &__hands {
+    background-image: url(../img/clock.png);
+    background-size: 500px 500px;
+    background-color: #e0ece4;
+  }
+}
+
+.hands {
+  position: relative;
+  @include flexCentrin;
+  width: 500px;
+  height: 500px;
+  border: 25px solid #1c2b2d;
+  border-radius: 50%;
+  box-shadow: $clock-shadow;
+
+  &__hour {
+    @include sharpeningNposition;
+    top: calc(50% - 150px);
+    height: 150px;
+    width: 12px;
+    background-color: $black-color;
+    box-shadow: $box-shadow;
+    animation: transform 43200s infinite linear;
+    transform: rotate(250deg);
+  }
+
+  &__minute {
+    @include sharpeningNposition;
+    top: calc(50% - 200px);
+    height: 200px;
+    width: 8px;
+    background-color: $black-color;
+    box-shadow: $box-shadow;
+    transform: rotate(100deg);
+    animation: rotate 3600s infinite linear;
+  }
+
+  &__second {
+    @include sharpeningNposition;
+    z-index: 1;
+    top: calc(50% - 175px);
+    height: 175px;
+    width: 4px;
+    background-color: #222831;
+    box-shadow: $box-shadow;
+    animation: rotate 60s infinite linear;
+  }
+
+  &__dot {
+    @include flexCentrin;
+    position: relative;
+    z-index: 3;
+    top: calc(50% - 13px);
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background-color: #2f4f4f;
+    border: 2px solid black;
+  }
+}
