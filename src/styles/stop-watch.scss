@@ -16,7 +16,9 @@
     width: $number-width;
     height: $main-size - 40px;
     font-size: 20px;
+    font-weight: 600;
     color: $border-color;
+    text-shadow: 2px 2px 4px #808080;
     text-align: center;
 
     @for $i from 1 through 12 {
@@ -28,6 +30,7 @@
 
   &__hand {
     transform-origin: left;
+    box-shadow: -3px 3px 3px grey;
 
     &::after {
       content: "";
@@ -53,7 +56,7 @@
       width: 150px;
       height: $second-hand-weight;
       background: $second-hand-color;
-      animation: rotateClockwise 60s steps(60, end) infinite backwards;
+      animation: rotateClockwise 60s steps(300, end) infinite backwards;
 
       &::after {
         border-left: 6px solid white;
