@@ -1,0 +1,100 @@
+@import "reset";
+@import "variables";
+@import "animation";
+@import "clock-face";
+
+.stopwatch {
+  height: 600px;
+  width: 600px;
+
+  &__position {
+    margin: 5vh auto;
+  }
+
+  &__clock-face {
+    position: absolute;
+    bottom: $face-position;
+  }
+
+  &__block {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  &__second-hand {
+    position: absolute;
+    transform-origin: bottom;
+    height: $second-hand-height;
+    width: $hands-width;
+    background: linear-gradient(
+      0deg,
+      rgba(218,255,243,1) 0%,
+      rgba(14,238,198,1) 44%,
+      rgba(7,101,83,1) 100%);
+    border: 1px solid #03423a;
+    border-radius: 10px;
+    animation: hand-rotation 1s infinite;
+    animation-timing-function: linear;
+    z-index: 2;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    transform-origin: bottom;
+    height: $minute-hand-height;
+    width: $hands-width;
+    background: linear-gradient(
+      0deg,
+      rgba(220,176,251,1) 0%,
+      rgba(138,65,247,1) 44%,
+      rgba(44,0,88,1) 100%);
+    border: 1px solid #160242;
+    border-radius: 10px;
+    animation: hand-rotation 60s infinite;
+    animation-timing-function: linear;
+    z-index: 1;
+  }
+
+  &__cover {
+    position: absolute;
+    bottom: $cover-position;
+    min-width: 10px;
+    min-height: 10px;
+    width: $cover-size;
+    height: $cover-size;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    z-index: 3;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .stopwatch {
+    height: 300px;
+    width: 300px;
+
+    &__clock-face {
+      height: $face-size / 2;
+      width: $face-size / 2;
+      bottom: $face-position / 2;
+    }
+  }
+}
+
+@media screen and (max-height: 580px) {
+  .stopwatch {
+    height: 300px;
+    width: 300px;
+
+    &__clock-face {
+      height: $face-size / 2;
+      width: $face-size / 2;
+      bottom: $face-position / 2;
+    }
+  }
+}
