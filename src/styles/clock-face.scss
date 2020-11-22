@@ -1,0 +1,43 @@
+.clock-face {
+  height: $face-size;
+  width: $face-size;
+  border: 5px solid black;
+  border-radius: 50%;
+
+  &__dash {
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: black;
+
+    &:nth-child(1) {
+      top: 50%;
+      left: -15px;
+      animation: cricle-light 15s infinite;
+      animation-timing-function: ease-in;
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+      right: -15px;
+      animation: cricle-light 15s infinite;
+      animation-timing-function: ease-in;
+    }
+
+    &:nth-child(3) {
+      left: 50%;
+      transform: translate(-50%, 0) rotate(90deg);
+      animation: cricle-light 15s infinite;
+      animation-timing-function: ease-in;
+    }
+
+    &:nth-child(4) {
+      left: 50%;
+      bottom: 0%;
+      transform: translate(-50%, 0) rotate(90deg);
+      animation: cricle-light 15s infinite;
+      animation-timing-function: ease-in;
+    }
+  }
+}
