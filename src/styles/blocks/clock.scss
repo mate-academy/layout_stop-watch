@@ -1,0 +1,30 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  &--parameters {
+    margin: 50px 0px;
+  }
+
+  &__arrow-big {
+    @include width-height-border-radius-color(10px, 350px, 10px, #3636aa);
+    transform-origin: bottom center;
+    animation: rotating $arrow-big-time infinite linear;
+  }
+
+  &__arrow-small {
+    @include width-height-border-radius-color(10px, 150px, 10px, #c8ff00);
+    transform-origin: bottom center;
+    position: relative;
+    right: 10px;
+    animation: rotating $arrow-small-time infinite linear;
+  }
+
+  &__circle {
+    @include width-height-border-radius-color(30px, 30px, 50%, #3636aa);
+     position: relative;
+     right: 30px;
+     top: 15px;
+  }
+}
