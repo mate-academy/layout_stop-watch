@@ -1,0 +1,55 @@
+.clock {
+  position: relative;
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+  background-color: aqua;
+}
+
+.clock__pin {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4b9aaa;
+  z-index: 2;
+}
+
+.clock:before {
+  content: "";
+  position: absolute;
+  left: 49.3%;
+  top: 15%;
+  height: 250px;
+  width: 10px;
+  border-radius: 50%;
+  z-index: 1;
+  background-color: #d15559;
+  transform-origin: 50% 84%;
+  animation: clock-start 3600s infinite steps(60);
+}
+
+.clock:after {
+  content: "";
+  position: absolute;
+  left: 49.3%;
+  top: 4%;
+  height: 400px;
+  width: 10px;
+  border-radius: 50%;
+  z-index: 1;
+  background-color: #4b9aaa;
+  transform-origin: 50% 69%;
+  animation: clock-start 60s infinite steps(60);
+}
+
+@keyframes clock-start {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
