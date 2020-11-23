@@ -21,13 +21,11 @@
     background-color: #000;
 
     &::before {
-      @include arrow(red);
-      animation: rotate 60s infinite linear;
+      @include arrow(red, 60s);
     }
 
     &::after {
-      @include arrow(blue);
-      animation: rotate 3600s infinite linear;
+      @include arrow(blue, 3600s);
     }
   }
 }
