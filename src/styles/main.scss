@@ -1,0 +1,31 @@
+@import "variables";
+
+@import "mixins";
+
+@import "animations";
+
+.page {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+
+  &__clock {
+    position: relative;
+    height: $clockHeight;
+    width: $clockWidth;
+
+    border-radius: 50%;
+    background-color: #000;
+
+    &::before {
+      @include arrow(red, 60s);
+    }
+
+    &::after {
+      @include arrow(blue, 3600s);
+    }
+  }
+}

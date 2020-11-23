@@ -1,0 +1,15 @@
+@mixin arrow($color, $duration) {
+  content: "";
+  position: absolute;
+  height: $arrowHeight;
+  width: $arrowWidth;
+  left: 40%;
+  top: - ($arrowHeight - $clockHeight / 2);
+  z-index: -1;
+
+  background: $color;
+  border-radius: ($arrowWidth / 2);
+
+  transform-origin: ($arrowWidth / 2) 100%;
+  animation: rotate $duration infinite linear;
+}
