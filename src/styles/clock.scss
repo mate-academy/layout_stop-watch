@@ -8,12 +8,7 @@
   border-radius: 50%;
 
   &__minute-hand {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0) rotate(180deg);
-    transform-origin: 25% 0;
-
+    @include handsPosition;
     height: 100px;
     width: 5px;
     background-color: #666;
@@ -23,12 +18,7 @@
   }
 
   &__second-hand {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0), rotate(180deg);
-    transform-origin: 25% 0;
-
+    @include handsPosition;
     height: 120px;
     width: 2px;
     background-color: #333;
