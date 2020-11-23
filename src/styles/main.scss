@@ -1,0 +1,49 @@
+@mixin arrow-type($length, $color, $top) {
+  content: "";
+  position: absolute;
+  left: 49.3%;
+  top: $top;
+  height: $length;
+  width: 10px;
+  border-radius: 50%;
+  z-index: 1;
+  background-color: $color;
+}
+
+.clock {
+  position: relative;
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+  background-color: aqua;
+
+  &__pin {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4b9aaa;
+    z-index: 2;
+  }
+
+  &:before {
+    @include arrow-type(250px, #d15559, 15%);
+    transform-origin: 50% 84%;
+    animation: clock-start 3600s infinite steps(60);
+  }
+
+  &:after {
+    @include arrow-type(400px, #4b9aaa, 4%);
+    transform-origin: 50% 69%;
+    animation: clock-start 60s infinite steps(60);
+  }
+}
+
+@keyframes clock-start {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
