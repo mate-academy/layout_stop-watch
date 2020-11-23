@@ -8,10 +8,7 @@
 
   background-color: red;
   
-  animation-name: stopwatch;
-  animation-duration: 60s;
-  @include animation-time-logic;
-  transform-origin: bottom;
+  @include animation-param(60s);
 
   &::before {
     position: absolute;
@@ -37,12 +34,7 @@
   height: 300px;
   margin: 0 auto;
 
- 
-  transform: rotate(0deg);
-  animation-name: stopwatch;
-  animation-duration: 3600s;
-  @include animation-time-logic;
-  transform-origin: bottom;
+  @include animation-param(3600s);
 
 }
 
@@ -53,6 +45,4 @@
   width: 10px;
   border-radius: 4px 4px 0 0;
   background-color: blue;
-
-  transform-origin: bottom;
 }
