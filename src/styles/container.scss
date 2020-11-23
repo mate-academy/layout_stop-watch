@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__clock {
+    height: $clockSize;
+    width: $clockSize;
+    background-color: thistle;
+    border-radius: $borderRadius;
+    overflow: hidden;
+  }
+
+  &__center {
+    width: $centerSize;
+    height: $centerSize;
+    background-color: $hourArrowColor;
+    border-radius: $borderRadius;
+    position: relative;
+    margin: 0 auto;
+    top: 47%;
+    transform: translate(0, -50%);
+  }
+
+  &__arrow {
+    position: relative;
+    left: 50%;
+    top: 48%;
+
+    height: 10px;
+    border-radius: 40px;
+
+    transform-origin: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: minute;
+
+    &--minute {
+      width: 300px;
+      background-color: $hourArrowColor;
+      animation-duration: 60s;
+    }
+
+    &--hour {
+      width: 200px;
+      background-color: #d15559;
+      animation-duration: 3600s;
+    }
+  }
+}
