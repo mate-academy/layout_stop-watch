@@ -1,0 +1,40 @@
+.clock {
+  position: relative;
+  display: flex;
+  margin: 30px auto;
+  height: 300px;
+  width: 300px;
+  border: 5px dotted #999;
+  border-radius: 50%;
+
+  &__minute-hand {
+    @include handsPosition;
+    height: 100px;
+    width: 5px;
+    background-color: #666;
+    border-radius: 100% ;
+
+    animation: moveMinute 3600s linear infinite;
+  }
+
+  &__second-hand {
+    @include handsPosition;
+    height: 120px;
+    width: 2px;
+    background-color: #333;
+    border-radius: 100%;
+
+    animation: moveMinute 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10px;
+    width: 10px;
+    background-color: #000;
+    border-radius: 50%;
+  }
+}
