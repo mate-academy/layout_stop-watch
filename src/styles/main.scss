@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+}
+
+.page__stop-watch {
+  margin: 100px auto;
+
+  width: 700px;
+  height: 700px;
+}
+
+.stop-watch {
+  position: relative;
+
+  &__minute-hand {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+
+    width: 20px;
+    height: 40%;
+
+    z-index: 2;
+
+    border-radius: 10px;
+
+    background-color: rgb(13, 13, 131);
+
+    transform-origin: center bottom;
+    animation: hand-move 3600s linear infinite;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: -15px;
+      left: -8px;
+
+      width: 35px;
+      height: 35px;
+
+      background-color: rgb(13, 13, 131);
+
+      border-radius: 50%;
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    left: 50%;
+
+    width: 20px;
+    height: 60%;
+
+    background-color: rgb(133, 16, 16);
+
+    border-radius: 10px;
+
+    transform-origin: center bottom;
+    animation: hand-move 60s linear infinite;
+  }
+}
+
+@keyframes hand-move {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
