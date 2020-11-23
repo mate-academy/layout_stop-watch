@@ -1,0 +1,68 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &__dial {
+    height: 300px;
+    width: 300px;
+    border: 3px solid $colorMinute;
+    border-radius: 50%;
+    background: radial-gradient(60% 60%, #faecd5, $colorMinute);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  }
+
+  &__minute-hand {
+    position: absolute;
+    bottom: 50%;
+    height: 100px;
+    width: 7px;
+    background-color: $colorMinute;
+    border-radius: 9px;
+    box-shadow: 1px 3px 3px rgba(0,0,0,0.5);
+    animation-name: minute;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom center;
+  }
+
+  &__second-hand {
+    @extend .clock__minute-hand;
+    height: 200px;
+    width: 5px;
+    opacity: 0.7;
+    background-color: $colorSecond;
+    animation-name: second;
+    animation-duration: 60s;
+    animation-timing-function: steps(60);
+  }
+
+  &__center {
+    position: absolute;
+    bottom: 50%;
+    height: 15px;
+    width: 15px;
+    background-color: $colorSecond;
+    border-radius: 50%;
+    transform: translateY(50%);
+  }
+
+  @keyframes second {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes minute {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
