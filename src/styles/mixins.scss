@@ -1,0 +1,10 @@
+@mixin arrow($height, $time) {
+  position: absolute;
+  width: $arrowWidth;
+  height: $height;
+  top: calc(50% - #{$height});
+  left: 50%;
+  border-radius: 10px;
+  transform-origin: bottom;
+  animation: clock-wise #{$time}s linear infinite;
+}
