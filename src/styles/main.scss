@@ -1,0 +1,29 @@
+@import "reset";
+@import "mixins";
+@import "animations";
+
+.clock {
+  display: block;
+  height: 500px;
+  width: 500px;
+  background-image: url("../images/clock.png");
+  background-size: contain;
+
+  &__second::after {
+    @include arrow;
+    height: 175px;
+    top: 75px;
+    left: 250px;
+    z-index: 2;
+    animation-duration: 60s;
+  }
+
+  &__minute::after {
+    @include arrow;
+    height: 140px;
+    top: 110px;
+    left: 249px;
+    z-index: 1;
+    animation-duration: 3600s;
+  }
+}
