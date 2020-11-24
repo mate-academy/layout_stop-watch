@@ -1,0 +1,41 @@
+@mixin watch-position {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-styles {
+  width: $size;
+  height: $size;
+  background-color: $main-color;
+  border-radius: $centered;
+  position: relative;
+}
+
+@mixin seconds-arrow {
+  width: 200px;
+  height: $height;
+  background-color: $main-color;
+  z-index: -2;
+  transform: rotate(-90deg);
+  transform-origin: left;
+  animation: seconds 60s infinite;
+}
+
+@mixin hours-arrow {
+  width: 150px;
+  height: $height;
+  background-color: $sub-color;
+  z-index: -1;
+  transform: rotate(-90deg);
+  transform-origin: left;
+  animation: hours 3600s infinite;
+}
+
+@mixin arrow-position {
+  position: absolute;
+  top: $centered;
+  left: $centered;
+  content: " ";
+}
