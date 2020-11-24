@@ -1,0 +1,62 @@
+.page__clock {
+  position: absolute;
+  top: calc(50% - 350px);
+  left: calc(50% - 350px);
+}
+
+.clock {
+  height: $clockDiameter;
+  width: $clockDiameter;
+  border: 3px solid #000;
+  border-radius: 50%;
+
+  &__seconds {
+    background-color: #d15559;
+    border-radius: $rounding;
+    width: $arrowWidth / 2;
+    height: #{$arrowLength * 0.85};
+
+    position: absolute;
+    top: calc(50% - #{$arrowLength * 0.85 + 5px});
+    left: calc(50% - #{$arrowWidth * 2 - (5px / 2)});
+
+    animation: watch 60s linear infinite;
+  }
+
+  &__minutes {
+    background-color: $mainColor;
+    border-radius: $rounding;
+    width: $arrowWidth;
+    height: $arrowLength;
+
+    position: absolute;
+    top: calc(50% - #{$arrowLength + 5px});
+    left: calc(50% - 7px);
+
+    animation: watch 3600s linear infinite;
+  }
+
+  &__hours {
+    background-color: $mainColor;
+    border-radius: $rounding;
+    width: $arrowWidth * 1.2;
+    height: $arrowLength * 0.7;
+
+    position: absolute;
+    top: calc(50% - #{$arrowLength * 0.7 + 5px});
+    left: calc(50% - #{$arrowWidth * 1.2 * 2 - (5px / 2)});
+
+    animation: watch 43200s linear infinite;
+  }
+
+  &__dot {
+    height: $dotDiameter;
+    width: $dotDiameter;
+    border-radius: 50%;
+    background-color: $mainColor;
+
+    position: absolute;
+    top: calc(50% - #{$dotDiameter});
+    left: calc(50% - #{$dotDiameter});
+  }
+}
