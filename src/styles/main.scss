@@ -1,0 +1,78 @@
+@import "./mixins.scss";
+
+body {
+  margin: 0;
+}
+
+.stop-watch {
+  display: flex;
+  margin: 50px auto;
+  height: 700px;
+  width: 700px;
+  border: solid;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background: url(./image/alexander-mils-ZxHT5QzrJhA-unsplash.jpg) center no-repeat;
+  background-position: -2410px -1565px;
+
+  &__second {
+    display: flex;
+    height: 6px;
+    width: 240px;
+    background-color: #f1a77a;
+    border: solid #241e28;
+    border-radius: 10px;
+    transform-origin: right;
+    transform: rotate(160deg);
+    animation-name: minute;
+    animation-duration: 3600s;
+    z-index: 2;
+    @include animations;
+  }
+
+  &__minute {
+    display: flex;
+    height: 3px;
+    width: 220px;
+    background-color: red;
+    border: solid #241e28;
+    border-radius: 10px;
+    transform-origin: left;
+    transform: rotate(400deg);
+    animation-name: sec;
+    animation-duration: 60s;
+    z-index: 1;
+    @include animations;
+  }
+
+  &__circle {
+    position: relative;
+    right: 244px;
+    height: 35px;
+    width: 35px;
+    background-color: #d9d0bf;
+    border-radius: 50%;
+    z-index: 3;
+  }
+}
+
+@keyframes sec {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minute {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
