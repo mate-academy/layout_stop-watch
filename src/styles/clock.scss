@@ -1,5 +1,5 @@
 .clock {
-  background-color: #4b99aa;
+  background-color: #d1555a;
   width: $circleRadius;
   height: $circleRadius;
   border-radius: 50%;
@@ -15,6 +15,7 @@
     left: ($circleRadius - $arrowThickness) / 2;
     animation: rotation 3600s infinite linear;
     transform-origin: bottom;
+    z-index: -1;
   }
 
   &__mins {
@@ -25,7 +26,6 @@
     position: absolute;
     top: -$minutesArrowLength + $circleRadius / 2;
     left: ($circleRadius - $arrowThickness) / 2;
-    z-index: -1;
     animation: rotation 60s infinite steps(60);
     transform-origin: bottom;
   }
