@@ -1,0 +1,33 @@
+.clock {
+  background-color: #d1555a;
+  width: $circleRadius;
+  height: $circleRadius;
+  border-radius: 50%;
+  position: relative;
+
+  &__hours {
+    width: $arrowThickness;
+    height: $hoursArrowLength;
+    border-radius: $arrowBorderRadius;
+    background-color: #4b99aa;
+    position: absolute;
+    top: -$hoursArrowLength + $circleRadius / 2;
+    left: ($circleRadius - $arrowThickness) / 2;
+    animation: rotation 3600s infinite linear;
+    transform-origin: bottom;
+    z-index: -1;
+  }
+
+  &__mins {
+    width: $arrowThickness;
+    height: $minutesArrowLength;
+    border-radius: $arrowBorderRadius;
+    background-color: #d1555a;
+    position: absolute;
+    top: -$minutesArrowLength + $circleRadius / 2;
+    left: ($circleRadius - $arrowThickness) / 2;
+    animation: rotation 60s infinite steps(60);
+    transform-origin: bottom;
+  }
+
+}
