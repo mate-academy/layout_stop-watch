@@ -18,13 +18,16 @@ body {
 
   &__second {
     display: flex;
-    height: 6px;
-    width: 240px;
+    position: relative;
+    bottom: 125px;
+    left: 15px;
+
+    height: 240px;
+    width: 6px;
     background-color: #f1a77a;
     border: solid #241e28;
     border-radius: 10px;
-    transform-origin: right;
-    transform: rotate(160deg);
+    transform-origin: bottom;
     animation-name: minute;
     animation-duration: 3600s;
     z-index: 2;
@@ -32,14 +35,16 @@ body {
   }
 
   &__minute {
+    position: relative;
+    bottom: 117px;
+    left: 8px;
     display: flex;
-    height: 3px;
-    width: 220px;
+    height: 220px;
+    width: 3px;
     background-color: red;
     border: solid #241e28;
     border-radius: 10px;
-    transform-origin: left;
-    transform: rotate(400deg);
+    transform-origin: bottom;
     animation-name: sec;
     animation-duration: 60s;
     z-index: 1;
@@ -48,7 +53,7 @@ body {
 
   &__circle {
     position: relative;
-    right: 244px;
+    right: 15px;
     height: 35px;
     width: 35px;
     background-color: #d9d0bf;
@@ -60,10 +65,16 @@ body {
 @keyframes sec {
   from {
     transform: rotate(0deg);
+    background-color: #ff4300;
+  }
+
+  50% {
+    background-color: #f200ff;
   }
 
   to {
     transform: rotate(360deg);
+    background-color: #ff4300;
   }
 }
 
