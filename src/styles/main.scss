@@ -1,0 +1,89 @@
+@import "./mixins.scss";
+
+body {
+  margin: 0;
+}
+
+.stop-watch {
+  display: flex;
+  margin: 50px auto;
+  height: 700px;
+  width: 700px;
+  border: solid;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background: url(./image/alexander-mils-ZxHT5QzrJhA-unsplash.jpg) center no-repeat;
+  background-position: -2410px -1565px;
+
+  &__second {
+    display: flex;
+    position: relative;
+    bottom: 125px;
+    left: 15px;
+
+    height: 240px;
+    width: 6px;
+    background-color: #f1a77a;
+    border: solid #241e28;
+    border-radius: 10px;
+    transform-origin: bottom;
+    animation-name: minute;
+    animation-duration: 3600s;
+    z-index: 2;
+    @include animations;
+  }
+
+  &__minute {
+    position: relative;
+    bottom: 117px;
+    left: 8px;
+    display: flex;
+    height: 220px;
+    width: 3px;
+    background-color: red;
+    border: solid #241e28;
+    border-radius: 10px;
+    transform-origin: bottom;
+    animation-name: sec;
+    animation-duration: 60s;
+    z-index: 1;
+    @include animations;
+  }
+
+  &__circle {
+    position: relative;
+    right: 15px;
+    height: 35px;
+    width: 35px;
+    background-color: #d9d0bf;
+    border-radius: 50%;
+    z-index: 3;
+  }
+}
+
+@keyframes sec {
+  from {
+    transform: rotate(0deg);
+    background-color: #ff4300;
+  }
+
+  50% {
+    background-color: #f200ff;
+  }
+
+  to {
+    transform: rotate(360deg);
+    background-color: #ff4300;
+  }
+}
+
+@keyframes minute {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
