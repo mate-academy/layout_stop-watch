@@ -1,32 +1,17 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &__clock {
-    height: $clockSize;
-    width: $clockSize;
-    background-color: thistle;
-    border-radius: $borderRadius;
-    overflow: hidden;
-  }
+  height: 600px;
 
   &__center {
+    @include absolute;
     height: $centerSize;
     width: $centerSize;
     background-color: $hourArrowColor;
     border-radius: $borderRadius;
-    position: relative;
-    margin: 0 auto;
-    top: 47%;
-    transform: translate(0, -50%);
+    transform: translate(-50%, -50%);
   }
 
   &__arrow {
-    position: relative;
-    left: 50%;
-    top: 48%;
-
+    @include absolute;
     height: 10px;
     border-radius: 40px;
 
@@ -34,7 +19,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-name: minute;
-
+    
     &--minute {
       width: 300px;
       background-color: $hourArrowColor;
