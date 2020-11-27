@@ -1,0 +1,100 @@
+@import "mixins";
+@import "reset";
+
+.watch__arrow {
+  position: absolute;
+  top: 499px;
+  left: 480px;
+  transform-origin: 213px 4px;
+  @include arrowAnim;
+  animation-duration: 60s;
+}
+
+.main-watch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+@keyframes time-travel {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.watch__arrow-2 {
+  position: absolute;
+  top: 499px;
+  left: 630px;
+  transform: rotate(360deg);
+  transform-origin: 60px 4px;
+  @include arrowAnim;
+  animation-duration: 3600s;
+}
+
+.watch__arrow-3 {
+  position: absolute;
+  transform: rotate(360deg);
+  transform-origin: 70px 250px;
+  transition: 0s;
+  top: -8px;
+  left: 16px;
+  @include arrowAnim;
+  animation-duration: 2s;
+}
+
+.left-big {
+  position: absolute;
+  top: 239px;
+  left: -126px;
+  transform-origin: 213px 4px;
+  @include arrowAnim;
+  animation-duration: 4s;
+}
+
+.right-big {
+  position: absolute;
+  z-index: 0;
+  top: 429px;
+  left: 1020px;
+  transform-origin: 6px 55px;
+  @include arrowAnim;
+  animation-duration: 2s;
+}
+
+.right-small {
+  position: absolute;
+  z-index: 0;
+  top: 479px;
+  left: 993px;
+  transform-origin: 33px 6px;
+  @include arrowAnim;
+  animation-duration: 4s;
+}
+
+.container {
+  animation-name: joke;
+  animation-duration: 12s;
+  animation-timing-function: cubic-bezier(0,-1.23,1,-0.94);
+}
+
+@keyframes joke {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.arrow {
+  z-index: 2;
+}
+
+.ar {
+  position: relative;
+}
