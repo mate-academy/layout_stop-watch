@@ -1,0 +1,60 @@
+@mixin line {
+  position: relative;
+  height: 10px;
+  border-radius: 10px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.point {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #4b9aaa;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.second_line,
+.minute_line {
+  @include line;
+}
+
+.second_line {
+  left: -175px;
+  width: 350px;
+  background-color: #4b9aaa;
+}
+
+.minute_line {
+  left: -125px;
+  width: 250px;
+  background-color: #d15559;
+}
+
+.rotate_second {
+  position: relative;
+  left: 125px;
+  animation: move linear 1s infinite;
+}
+
+.rotate_minute {
+  position: relative;
+  left: -175px;
+  animation: move linear 60s infinite;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
