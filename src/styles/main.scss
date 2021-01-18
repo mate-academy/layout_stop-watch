@@ -1,0 +1,65 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@mixin watch-hands ($height: 700px) {
+  position: absolute;
+  height: $height;
+  width: 20px;
+  border-radius: 9px;
+}
+
+$color: #4b9aaa;
+
+.watch__circle {
+  position: absolute;
+  
+  height: 50px;
+  width: 50px;
+  
+  border-radius: 50%;
+  background-color: $color;
+}
+
+.watch__hand-big {
+  top: -25%;
+
+  @include watch-hands(950px);
+
+  background-color: $color;
+
+  animation: big-hand 5s linear 0s infinite;
+  transform-origin: bottom;
+}
+
+.watch__hand-small {
+  top: -5%;
+
+  @include watch-hands;
+
+  background-color: #d15559;
+
+  animation: small-hand 6s linear 0s infinite;
+  transform-origin: bottom;
+}
+
+@keyframes big-hand {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes small-hand {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
