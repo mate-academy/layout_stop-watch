@@ -1,0 +1,68 @@
+$clock-center-size: 25px;
+$second-pointer-length: 250px;
+$minute-pointer-length: 125px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  &__item {
+    position: relative;
+
+    height: $clock-center-size;
+    width: $clock-center-size;
+
+    border-radius: 50%;
+    background-color: #00acdc;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 7.5px;
+
+      display: block;
+      width: 10px;
+
+      border-radius: 20px;
+
+      transform-origin: top;
+    }
+
+    &::after {
+      height: $second-pointer-length;
+      background-color: #00acdc;
+      animation: clock-animation 1s linear infinite;
+    }
+
+    &::before {
+      z-index: -1;
+      height: $minute-pointer-length;
+
+      background-color: #e95d49;
+      animation: clock-animation 60s linear infinite;
+    }
+  }
+}
+
+@keyframes clock-animation {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
