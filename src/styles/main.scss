@@ -1,3 +1,7 @@
+$clock-center-size: 25px;
+$second-pointer-length: 250px;
+$minute-pointer-length: 125px;
+
 * {
   box-sizing: border-box;
 }
@@ -15,39 +19,40 @@ body {
 
   &__item {
     position: relative;
-    height: 30px;
-    width: 30px;
+
+    height: $clock-center-size;
+    width: $clock-center-size;
+
     border-radius: 50%;
     background-color: #00acdc;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 10px;
-      display: block;
-      width: 10px;
-      height: 250px;
-      background-color: #00acdc;
-      border-radius: 20px;
-      z-index: 1;
-      transform-origin: top;
-      animation: clock-animation 5s linear infinite;
-    }
-
+    &::after,
     &::before {
       content: "";
       position: absolute;
       top: 50%;
-      left: 10px;
+      left: 7.5px;
+
       display: block;
       width: 10px;
-      height: 125px;
-      background-color: #e95d49;
+
       border-radius: 20px;
-      z-index: -1;
+
       transform-origin: top;
-      animation: clock-animation 180s linear infinite;
+    }
+
+    &::after {
+      height: $second-pointer-length;
+      background-color: #00acdc;
+      animation: clock-animation 1s linear infinite;
+    }
+
+    &::before {
+      z-index: -1;
+      height: $minute-pointer-length;
+
+      background-color: #e95d49;
+      animation: clock-animation 60s linear infinite;
     }
   }
 }
