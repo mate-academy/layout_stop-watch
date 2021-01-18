@@ -5,10 +5,13 @@
   min-height: 100vh;
 }
 
-@mixin watch-hands ($height: 700px) {
+@mixin watch-hands ($height: 700px, $margin-bottom: 700px) {
   position: absolute;
+
   height: $height;
   width: 20px;
+  margin-bottom: $margin-bottom;
+
   border-radius: 9px;
 }
 
@@ -25,9 +28,7 @@ $color: #4b9aaa;
 }
 
 .watch__hand-big {
-  top: -25%;
-
-  @include watch-hands(950px);
+  @include watch-hands(950px, 948px);
 
   background-color: $color;
 
@@ -36,8 +37,6 @@ $color: #4b9aaa;
 }
 
 .watch__hand-small {
-  top: -5%;
-
   @include watch-hands;
 
   background-color: #d15559;
