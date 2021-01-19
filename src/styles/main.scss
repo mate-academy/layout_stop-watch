@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+  top: 110px;
+  left: 110px;
+
+  width: 410px;
+  height: 410px;
+  box-sizing: initial;
+
+  background: linear-gradient(#c6ea8d, #fe90af);
+  border: 5px solid #2a363b;
+
+  border-radius: 50%;
+  box-shadow: 10px 5px 13px 8px rgba(99,75,83,0.5);
+
+  &__minute {
+    position: absolute;
+    bottom: 205px;
+    left: 198px;
+
+    width: 14px;
+    height: 140px;
+
+    background-color: #2a363b;
+
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px 1px rgba(59, 37, 19, 0.62);
+
+    transform-origin: center bottom;
+    animation: stopwatch 3600s infinite linear;
+  }
+
+  &__second {
+    position: absolute;
+    bottom: 205px;
+    left: 199px;
+
+    width: 12px;
+    height: 200px;
+    background-color: #cb540a;
+    border: 2px solid #2a363b;
+    border-radius: 10px;
+    box-shadow: 5px 5px 13px 4px rgba(24, 19, 7, 0.72);
+
+    transform-origin: center bottom;
+    animation: stopwatch 60s infinite linear;
+  }
+
+  &__center {
+    position: absolute;
+    top: 190px;
+    left: 190px;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+    background-color: #2a363b;
+
+  }
+
+  &__mark {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    background-color: #2a363b;
+
+    &.start {
+      top: 0;
+      left: 200px;
+    }
+
+    &.quatter {
+      bottom: 200px;
+      right: 0;
+    }
+
+    &.half {
+      right: 200px;
+      bottom: 0;
+    }
+
+    &.three-fourth {
+      top: 200px;
+    }
+  }
+
+  @keyframes stopwatch {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
