@@ -6,11 +6,12 @@
   height: 100vh;
   background: linear-gradient(purple, pink, orange);
 
-  &__hour {
+  &__minutes {
     @include positionAbsoluteCenter;
 
     width: 250px;
-    height: 10px;
+    height: $mainHeight;
+    border-radius: $mainHeight;
 
     background-color: royalblue;
 
@@ -19,16 +20,17 @@
     animation: round 60s linear infinite;
   }
 
-  &__minutes {
+  &__seconds {
     @include positionAbsoluteCenter;
-    height: 10px;
     width: 350px;
+    height: $mainHeight;
+    border-radius: $mainHeight;
 
     background-color: yellow;
 
     transform-origin: $transOrigin-LC;
     transform: $rotate-90;
-    animation: round 15s linear infinite;
+    animation: round 1s linear infinite;
   }
 
   &__circle {
