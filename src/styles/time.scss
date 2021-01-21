@@ -1,0 +1,55 @@
+@import "mixin";
+@import "variables";
+
+.time {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(purple, pink, orange);
+
+  &__hour {
+    @include positionAbsoluteCenter;
+
+    width: 250px;
+    height: 10px;
+
+    background-color: royalblue;
+
+    transform-origin: $transOrigin-LC;
+    transform: $rotate-90;
+    animation: round 60s linear infinite;
+  }
+
+  &__minutes {
+    @include positionAbsoluteCenter;
+    height: 10px;
+    width: 350px;
+
+    background-color: yellow;
+
+    transform-origin: $transOrigin-LC;
+    transform: $rotate-90;
+    animation: round 15s linear infinite;
+  }
+
+  &__circle {
+    @include positionAbsoluteCenter;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+    background-color: purple;
+
+    transform: $transfTranslate;
+  }
+}
+
+@keyframes round {
+  form {
+    transform: $rotate-90;
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
