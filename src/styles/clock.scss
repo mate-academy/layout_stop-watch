@@ -1,5 +1,4 @@
 .clock {
-  border: 1px solid red;
   height: 100vh;
   position: relative;
 
@@ -14,6 +13,19 @@
     border-radius: 50%;
   }
 
+  &__background {
+    position: absolute;
+    left: calc(50% - 315px);
+    top: calc(50% - 315px);
+    width: 630px;
+    height: 630px;
+
+    background-color: #cde4eb;
+    box-shadow: 8px 8px 3px 5px #729ead;
+    border: 1px solid #b9d3db;
+    border-radius: 50%;
+  }
+
   &__minute-hand {
     position: absolute;
     left: calc(50% - 5px);
@@ -22,6 +34,7 @@
     height: 200px;
 
     background-color: #c25d5d;
+    box-shadow: -2px 2px 2px 2px #b77;
     border-radius: 5px;
 
     animation: hand-animation 3600s linear infinite;
@@ -35,6 +48,7 @@
     height: 300px;
 
     background-color: #5f98a8;
+    box-shadow: -2px 2px 2px 2px #b5cbd8;
     border-radius: 5px;
 
     animation: hand-animation 60s linear infinite;
