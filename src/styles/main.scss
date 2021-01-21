@@ -5,7 +5,7 @@
   min-height: 100vh;
 }
 
-@mixin watch-hands ($height: 700px, $margin-bottom: 700px) {
+@mixin watch-hands ($height: 200px, $margin-bottom: 200px) {
   position: absolute;
 
   height: $height;
@@ -28,11 +28,10 @@ $color: #4b9aaa;
 }
 
 .watch__hand-big {
-  @include watch-hands(950px, 948px);
-
+  @include watch-hands(400px, 400px);
   background-color: $color;
 
-  animation: big-hand 1s linear 0s infinite;
+  animation: clock 1s linear 0s infinite;
   transform-origin: bottom;
 }
 
@@ -41,20 +40,11 @@ $color: #4b9aaa;
 
   background-color: #d15559;
 
-  animation: small-hand 60s linear 0s infinite;
+  animation: clock 60s linear 0s infinite;
   transform-origin: bottom;
 }
 
-@keyframes big-hand {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes small-hand {
+@keyframes clock {
   0% {
     transform: rotate(0);
   }
