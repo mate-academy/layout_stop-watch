@@ -1,0 +1,92 @@
+@mixin arrow {
+  position: absolute;
+  width: $centersize/1.5;
+  border-radius: 10px;
+  transform-origin: bottom center;
+}
+
+* {
+  margin: 0;
+}
+
+$centersize: 30px;
+
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  position: relative;
+}
+
+.center {
+  position: absolute;
+
+  height: $centersize;
+  width: $centersize;
+  left: 0;
+
+  background-color: #59a0b0;
+  
+  border-radius: $centersize/2;
+}
+
+.container {
+
+  &__minutes {
+
+    position: absolute;
+    top: -400px;
+
+  }
+
+  &__seconds {
+
+    position: absolute;
+    top: -250px;
+
+  }
+
+  &__center {
+    position: absolute;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    top: 3px;
+    left: -5px;
+  }
+}
+
+.seconds {
+  @include arrow;
+
+  background-color: #d15559;
+  height: 250px;
+
+  animation: time 60s linear infinite normal 0s none;
+ 
+}
+
+.minutes {
+  @include arrow;
+
+  background-color: #59a0b0;
+  height: 400px;
+  
+  animation: time 1s linear infinite normal 0s none;
+ 
+}
+
+@keyframes time {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
