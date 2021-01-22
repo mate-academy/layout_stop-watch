@@ -1,0 +1,65 @@
+@import "../variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(to right top,
+  #87da46, #c8b500, #f38600,#9e60e6
+  #ff4b47, #f80082, #db39ba,#9e60e6,
+  #007bfd, #009bff, #00b3f8, #00c6e2, #28d6cb);
+}
+
+.clock {
+  background: #fff;
+
+  &__point {
+    display: block;
+    position: $absolute-position;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: greenyellow;
+    z-index: 3;
+  }
+
+  &::before,
+  &::after {
+    position: $absolute-position;
+    top: calc(50% - 3px);
+    left: 50%;
+    height: 6px;
+    border-radius: 3px;
+    transform-origin: left;
+    content: "";
+  }
+
+  &::before {
+    width: 350px;
+    background: $standart-background;
+    animation: animate 15s linear infinite;
+    z-index: 2;
+  }
+
+  &::after {
+    width: 250px;
+    background: #fff;
+    animation: animate 60s linear infinite;
+    z-index: 1;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
