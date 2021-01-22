@@ -1,0 +1,60 @@
+.wraper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 650px;
+  height: 650px;
+
+  border-radius: 50%;
+  background-image: $background_border;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+  background-color: $background_clock;
+
+  &__center {
+    height: 30px;
+    width: 30px;
+
+    border-radius: 50%;
+    background-color: $color_center;
+    z-index: 1;
+  }
+
+  &::before {
+    position: absolute;
+    right: calc(50% - #{$width_minutes} / 2);
+    bottom: 50%;
+    width: $width_minutes;
+    height: 30%;
+    content: " ";
+
+    border-radius: 10px;
+    background-color: $color_minutes;
+    animation: animation 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &::after {
+    position: absolute;
+    right: calc(50% - #{$width_seconds} / 2);
+    bottom: 50%;
+    width: $width_seconds;
+    height: 45%;
+    content: " ";
+
+    border-radius: 12px;
+    background-color: $color_seconds;
+
+    animation: animation 60s linear infinite;
+    transform-origin: bottom;
+  }
+}
