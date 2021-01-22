@@ -1,6 +1,6 @@
 @mixin arrow {
   position: absolute;
-  width: $centersize/1.5;
+  width: $centersize/2;
   border-radius: 10px;
   transform-origin: bottom center;
 }
@@ -39,14 +39,14 @@ body {
   &__minutes {
 
     position: absolute;
-    top: -400px;
-
+    
+    top: -250px;
   }
 
   &__seconds {
 
     position: absolute;
-    top: -250px;
+    top: -400px;
 
   }
 
@@ -65,8 +65,9 @@ body {
 .seconds {
   @include arrow;
 
-  background-color: #d15559;
-  height: 250px;
+  background-color: #59a0b0;
+  height: 400px;
+ 
 
   animation: time 60s linear infinite normal 0s none;
  
@@ -75,10 +76,10 @@ body {
 .minutes {
   @include arrow;
 
-  background-color: #59a0b0;
-  height: 400px;
+  background-color: #d15559;
+  height: 250px;
   
-  animation: time 1s linear infinite normal 0s none;
+  animation: time 360s linear infinite normal 0s none;
  
 }
 
