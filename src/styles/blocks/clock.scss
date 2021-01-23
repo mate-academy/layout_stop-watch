@@ -13,7 +13,15 @@ body {
 }
 
 .clock {
-  background: #fff;
+  background: rgba(230, 226, 28, 0.83);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 750px;
+  height: 750px;
+  border: 12px solid rgb(84, 24, 139);
+  border-radius: 50%;
 
   &__point {
     display: block;
@@ -42,7 +50,7 @@ body {
   &::before {
     width: 350px;
     background: $standart-background;
-    animation: animate 15s linear infinite;
+    animation: animate 1s linear infinite;
     z-index: 2;
   }
 
