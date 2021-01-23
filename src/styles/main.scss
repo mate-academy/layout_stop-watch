@@ -16,10 +16,45 @@ body {
   box-sizing: initial;
 
   background: linear-gradient(#c6ea8d, #fe90af);
-  border: 5px solid #2a363b;
+  border: 24px solid #2a363b;
 
   border-radius: 50%;
   box-shadow: 10px 5px 13px 8px rgba(99,75,83,0.5);
+
+  &__text {
+    position: relative;
+    top: -40px;
+    left: 390px;
+
+    width: 250px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: italic;
+    color: #cb540a;
+
+    background-color: #c6ea8d;
+    border: 5px solid #2a363b;
+    border-radius: 30px;
+    transform: rotate(52deg);
+
+  }
+
+  &__cover {
+    position: absolute;
+    top: 53px;
+    left: 350px;
+
+    width: 70px;
+    height: 35px;
+    background-color: #2a363b;
+    border-radius: 20px;
+    transform: rotate(52deg);
+  }
 
   &__minute {
     position: absolute;
@@ -35,7 +70,8 @@ body {
     box-shadow: 4px 4px 5px 1px rgba(59, 37, 19, 0.62);
 
     transform-origin: center bottom;
-    animation: stopwatch 3600s infinite linear;
+    animation: stopwatch 3600s steps(60) infinite;
+    animation-play-state: paused;
   }
 
   &__second {
@@ -51,7 +87,42 @@ body {
     box-shadow: 5px 5px 13px 4px rgba(24, 19, 7, 0.72);
 
     transform-origin: center bottom;
-    animation: stopwatch 60s infinite linear;
+    animation: stopwatch 60s steps(60) infinite;
+    animation-play-state: paused;
+  }
+
+  &__id {
+    position: absolute;
+    display: none;
+
+    & ~ .stopwatch__switch {
+      position: absolute;
+      top: 20px;
+      left: 380px;
+      display: block;
+      width: 50px;
+      height: 70px;
+      border-radius: 20px;
+      transform: rotate(52deg);
+      background-color: #fe90af;
+      border: 5px solid #2a363b;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out ;
+    }
+
+    &:checked ~ .stopwatch__switch {
+      background-color: #c6ea8d;
+      border-radius: 30px;
+      transform: rotate(52deg) scaleY(0.6);
+    }
+
+    &:checked ~ .stopwatch__minute {
+      animation-play-state: running;
+    }
+
+    &:checked ~ .stopwatch__second {
+      animation-play-state: running;
+    }
   }
 
   &__center {
@@ -64,7 +135,6 @@ body {
 
     border-radius: 50%;
     background-color: #2a363b;
-
   }
 
   &__mark {
@@ -96,6 +166,9 @@ body {
   }
 
   @keyframes stopwatch {
+    0% {
+      transform: rotate(0deg);
+    }
     100% {
       transform: rotate(360deg);
     }
