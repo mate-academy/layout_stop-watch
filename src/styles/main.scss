@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  $color: #4b9aaa;
+  @mixin watch ($height: 200px, $margin-bottom: 200px) {
+    position: absolute;
+    height: $height;
+    width: 10px;
+    border-radius: 10px;
+    margin-bottom: $margin-bottom;
+  }
+
+  &__circle {
+    position: absolute;
+
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: $color;
+  }
+
+  &__minute-hand {
+    @include watch;
+    background-color: $color;
+
+    animation: watch 60s linear 0s infinite;
+    transform-origin: bottom;
+
+  }
+
+  &__second-hand {
+    @include watch(350px, 350px);
+    background-color: #d15559;
+
+    animation: watch 2.5s linear 0s infinite;
+    transform-origin: bottom;
+  }
+
+}
+
+@keyframes watch {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
