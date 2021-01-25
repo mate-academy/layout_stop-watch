@@ -1,0 +1,14 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.hand__minute {
+  width: 15px;
+  height: 200px;
+
+  @include position-minute;
+
+  background-color: #4b9aaa;
+  border-radius: 10px;
+
+  animation: rotation 1s linear infinite;
+}
