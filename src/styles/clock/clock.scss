@@ -1,4 +1,4 @@
-.wraper {
+.clock {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,9 +7,8 @@
 
   border-radius: 50%;
   background-image: $background_border;
-}
 
-.clock {
+  &__inner {
   position: relative;
   display: flex;
   justify-content: center;
@@ -19,6 +18,8 @@
 
   border-radius: 50%;
   background-color: $background_clock;
+  box-shadow: inset 0px 0px 15px 5px rgba(7, 6, 6, 0.9);
+  }
 
   &__center {
     height: 30px;
@@ -27,9 +28,10 @@
     border-radius: 50%;
     background-color: $color_center;
     z-index: 1;
+    box-shadow: inset -5px 0px 10px rgba(54, 50, 50, 0.9);
   }
 
-  &::before {
+  &__minutes {
     position: absolute;
     right: calc(50% - #{$width_minutes} / 2);
     bottom: 50%;
@@ -41,9 +43,10 @@
     background-color: $color_minutes;
     animation: animation 3600s linear infinite;
     transform-origin: bottom;
+    box-shadow: inset -1px 0px 5px rgba(54, 50, 50, 0.9);
   }
 
-  &::after {
+  &__seconds {
     position: absolute;
     right: calc(50% - #{$width_seconds} / 2);
     bottom: 50%;
@@ -56,5 +59,6 @@
 
     animation: animation 60s linear infinite;
     transform-origin: bottom;
-  }
+    box-shadow: inset -1px 0px 5px rgba(54, 50, 50, 0.9);
+    }
 }
