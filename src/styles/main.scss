@@ -1,0 +1,54 @@
+@import "animations";
+
+.watch {
+  background-color: aqua;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  position: relative;
+  margin: 100px auto;
+
+  &__minutes {
+    height: 150px;
+    width: 12px;
+    border-radius: 10px;
+    background-color: brown;
+
+    position: absolute;
+    left: 246px;
+    bottom: 50%;
+
+    animation: watch-move 3600s infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+
+  }
+
+  &__seconds {
+    height: 200px;
+    width: 12px;
+    border-radius: 10px;
+    background-color: blueviolet;
+
+    position: absolute;
+    bottom: 50%;
+    left: 246px;
+
+    animation: watch-move 60s infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+
+  &__center {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    background-color: blueviolet;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
