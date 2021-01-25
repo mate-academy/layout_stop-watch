@@ -1,0 +1,43 @@
+.clock {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  height: 100vh;
+
+  &__minute-hand {
+    @include position;
+
+    width: $minute-hand-width;
+    height: $minute-hand-height;
+    background-color: $minute-hand-color;
+    border-radius: 10px;
+
+    z-index: 1;
+
+    @include clock-transform;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__second-hand {
+    @include position;
+
+    width: $second-hand-width;
+    height: $second-hand-height;
+    background-color: $second-hand-color;
+    border-radius: 10px;
+
+    @include clock-transform;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__core {
+    @include position;
+
+    width: $core-radius;
+    height: $core-radius;
+    border-radius: 50%;
+
+    background-color: $core-color;
+    z-index: 2;
+  }
+}
