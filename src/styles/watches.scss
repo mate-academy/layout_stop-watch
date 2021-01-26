@@ -3,15 +3,16 @@
   align-items: flex-end;
   justify-content: center;
   position: relative;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 .watches__seconds {
   transform-origin: $t-origin;
   height: 300px;
-  width: 4px;
+  width: 7px;
 
-  background-color: rgb(60, 161, 168);
+  background-color: $s-color;
+  border-radius: 30%;
 
   animation: 60s $a-rotating;
 }
@@ -19,22 +20,24 @@
 .watches__minutes {
   position: absolute;
   transform-origin: $t-origin;
-  height: 270px;
-  width: 7px;
+  height: 250px;
+  width: 10px;
 
-  background-color: rgb(204, 102, 84);
+  background-color: $m-color;
+  border-radius: 30%;
 
   animation: 3600s $a-rotating;
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    bottom: 0;
+.watches__minutes--center::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -10px;
+  left: -10px;
+  height: 30px;
+  width: 30px;
 
-    height: 20px;
-    width: 20px;
-    color: rgb(204, 102, 84);
-    border-radius: 50%;
-  }
+  background-color: $m-color;
+  border-radius: 50%;
 }
