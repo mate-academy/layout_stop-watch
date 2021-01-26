@@ -1,0 +1,47 @@
+@import "variable";
+
+@function clockHandPositionLeft ($left) {
+  @return calc(#{$left} / 2 - 1px);
+}
+
+.clock {
+  width: $clockWidth;
+  &__img {
+    width: $clockWidth;
+    height: 400px;
+  }
+
+  &__hand {
+    background-color: black;
+    width: 2px;
+    transform: rotate(0deg);
+    transform-origin: bottom center;
+  }
+
+  &__hand-second {
+    position: absolute;
+    top: calc(39% - #{$clockSecondsHandWidth} / 2 - 2px);
+    left: clockHandPositionLeft($clockWidth);
+    height: $clockSecondsHandWidth;
+
+    animation: clock linear 1s infinite;
+  }
+
+  &__hand--hour {
+    position: absolute;
+    top: calc(32% - #{$clockHourHandWidth} / 2 - 2px);
+    left: clockHandPositionLeft($clockWidth);
+    height: $clockHourHandWidth;
+
+    animation: clock linear 60s infinite;
+  }
+}
+
+@keyframes clock {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
