@@ -1,0 +1,28 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.hand__minute {
+  width: 15px;
+  height: 200px;
+
+  @include position;
+  top: 150px;
+
+  background-color: $color-minute-center;
+  border-radius: 10px;
+
+  animation: $animation-minute;
+}
+
+.hand__second {
+  width: 15px;
+  height: 360px;
+
+  @include position;
+  bottom: 210px;
+
+  background-color: $color-second;
+  border-radius: 10px;
+
+  animation: $animation-second;
+}
