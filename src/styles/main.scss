@@ -1,0 +1,66 @@
+$color-minutes: #d15559;
+$color-seconds: #4b9aaa;
+
+@keyframes clock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin move {
+  animation: clock linear infinite;
+  transform-origin: bottom center;
+}
+
+.watch {
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+
+  &__center {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  
+    background-color: $color-seconds;
+  }
+
+  &__minutes {
+    width: 10px;
+    height: 200px;
+    border-radius: 8px;
+    z-index: -1;
+  
+    position: absolute;
+    top: 26.5%;
+    left: 51%;
+  
+    background-color: $color-minutes;
+  
+    @include move;
+    animation-duration: 3600s;
+  }
+
+  &__seconds {
+    width: 8px;
+    height: 350px;
+    border-radius: 8px;
+  
+    position: absolute;
+    top: 6.5%;
+    left: 51%;
+  
+    background-color: $color-seconds;
+  
+    @include move;
+    animation-duration: 60s;
+  }
+}
