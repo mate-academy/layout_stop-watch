@@ -1,0 +1,43 @@
+.watches {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  margin-top: 10px;
+}
+
+.watches__seconds {
+  transform-origin: $t-origin;
+  height: 300px;
+  width: 7px;
+
+  background-color: $s-color;
+  border-radius: 30%;
+
+  animation: 60s $a-rotating;
+}
+
+.watches__minutes {
+  position: absolute;
+  transform-origin: $t-origin;
+  height: 250px;
+  width: 10px;
+
+  background-color: $m-color;
+  border-radius: 30%;
+
+  animation: 3600s $a-rotating;
+}
+
+.watches__minutes--center::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -10px;
+  left: -10px;
+  height: 30px;
+  width: 30px;
+
+  background-color: $m-color;
+  border-radius: 50%;
+}
