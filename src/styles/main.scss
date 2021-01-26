@@ -32,57 +32,58 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-}
 
-.minutes-container {
-  position: absolute;
-
-  top: -295px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.minutes {
-  @extend %standart-line;
-  @extend %trans-origin;
-
-  height: 300px;
-  background-color: #d15559;
-
-  animation: tic-tic 60s linear infinite;
-}
-
-.seconds-container {
-  position: absolute;
+  &__minutes-container {
+    position: absolute;
   
-  top: -395px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
+    top: -295px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
-.seconds {
-  @extend %standart-line;
-  @extend %trans-origin;
+  &__minutes {
+    @extend %standart-line;
+    @extend %trans-origin;
   
-  height: 400px;
-
-  background-color: #59a0b0;
-
-  animation: tic-tic 1s linear 0s infinite;
-
-}
-
-.blue-circle {
-  position: absolute;
-
-  width: $circle-diam;
-  height: $circle-diam;
+    height: 300px;
+    background-color: #d15559;
   
-  top: -5px;
-  left: -7.5px;
+    animation: tic-tic 60s linear infinite;
+  }
 
-  border-radius: 100%;
-  background-color: #59a0b0;
+  &__seconds-container {
+    position: absolute;
+    
+    top: -395px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__seconds {
+    @extend %standart-line;
+    @extend %trans-origin;
+    
+    height: 400px;
+  
+    background-color: #59a0b0;
+  
+    animation: tic-tic 1s linear 0s infinite;
+  
+  }
+
+  &__blue-circle {
+    position: absolute;
+  
+    width: $circle-diam;
+    height: $circle-diam;
+    
+    top: -5px;
+    left: -7.5px;
+  
+    border-radius: 100%;
+    background-color: #59a0b0;
+  }
+  
 }
