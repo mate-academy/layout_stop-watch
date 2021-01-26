@@ -1,0 +1,67 @@
+%line {
+  position: relative;
+  height: 10px;
+  border-radius: 10px;
+}
+
+body {
+  margin: 0;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__point {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-color: blue;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__line-second,
+  &__line-minute {
+    @extend %line;
+  }
+
+  &__line-second {
+    width: 400px;
+    left: -200px;
+
+    background-color: red;
+  }
+
+  &__line-minute {
+    width: 200px;
+    left: -100px;
+
+    background-color: rgb(74, 74, 240);
+  }
+
+  &__move-wrapper-second {
+    position: relative;
+    left: 100px;
+    animation: move linear 1s infinite;
+  }
+
+  &__move-wrapper-minute {
+    position: relative;
+    left: -200px;
+    animation: move linear 60s infinite;
+  }
+
+  @keyframes move {
+
+    0% {
+      transform: rotate(90deg);
+    }
+
+    100% {
+      transform: rotate(450deg);
+    }
+  }
+}
