@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: grey;
+}
+
+.watch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 750px;
+  height: 750px;
+  margin: 0 auto;
+
+  border: 20px #4b99aa solid;
+  border-radius: 50%;
+  background-color: #fff;
+
+  &__twelve,
+  &__three,
+  &__six,
+  &__nine {
+    background: black;
+    position: absolute;
+  }
+
+  &__twelve,
+  &__six {
+    height: 20px;
+    width: 8px;
+  }
+
+  &__three,
+  &__nine {
+    height: 8px;
+    width: 20px;
+  }
+
+  &__twelve {
+    left: 50%;
+    top: -1px;
+  }
+
+  &__three {
+    right: -1px;
+    top: 50%;
+  }
+
+  &__six {
+    left: 50%;
+    bottom: -1px;
+  }
+
+  &__nine {
+    left: -1px;
+    top: 50%;
+  }
+
+  &__center {
+    position: absolute;
+    left: calc(50% - 15px);
+    z-index: 3;
+
+    width: 30px;
+    height: 30px;
+
+    background-color: #4b99aa;
+    border-radius: 50%;
+  }
+
+  &__hours-arrow {
+    position: absolute;
+    right: 375px;
+    z-index: 2;
+
+    width: 180px;
+    height: 12px;
+
+    background-color: #d15459;
+    border-radius: 10px;
+
+    animation: arrows-rotation 60s linear infinite;
+    transform-origin: 100%;
+  }
+
+  &__minutes-arrow {
+    position: absolute;
+    right: 375px;
+    z-index: 2;
+
+    width: 250px;
+    height: 12px;
+
+    background-color: grey;
+    border-radius: 10px;
+
+    animation: arrows-rotation 30s linear infinite;
+    transform-origin: 100%;
+  }
+
+  &__seconds-arrow {
+    position: absolute;
+    right: 375px;
+
+    width: 320px;
+    height: 10px;
+
+    background-color: #4b99aa;
+    border-radius: 5px;
+
+    animation: arrows-rotation 3s linear infinite;
+    transform-origin: 100%;
+  }
+}
+@keyframes arrows-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
