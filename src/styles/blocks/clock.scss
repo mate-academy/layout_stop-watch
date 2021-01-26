@@ -13,7 +13,6 @@ body {
 }
 
 .clock {
-  background: rgba(230, 226, 28, 0.83);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,6 +20,7 @@ body {
   width: 750px;
   height: 750px;
   border: 12px solid rgb(84, 24, 139);
+  background: rgba(230, 226, 28, 0.83);
   border-radius: 50%;
 
   &__point {
@@ -29,8 +29,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: greenyellow;
     z-index: 3;
@@ -38,13 +38,13 @@ body {
 
   &::before,
   &::after {
+    content: "";
     position: $absolute-position;
     top: calc(50% - 3px);
     left: 50%;
-    height: 6px;
-    border-radius: 3px;
+    height: 12px;
+    border-radius: 8px;
     transform-origin: left;
-    content: "";
   }
 
   &::before {
@@ -55,7 +55,7 @@ body {
   }
 
   &::after {
-    width: 250px;
+    width: 210px;
     background: #fff;
     animation: animate 3600s linear infinite;
     z-index: 1;
