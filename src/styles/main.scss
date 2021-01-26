@@ -1,3 +1,5 @@
+@import "./mixins";
+
 body {
   margin: 0;
   display: flex;
@@ -21,29 +23,19 @@ body {
 }
 
 .clock__minutes-hand {
+  @include clock-hand;
   width: 230px;
-  height: 20px;
   background-color: #d3585d;
-  border-radius: 50px;
-  position: absolute;
-  top: 250px;
-  right: 250px;
-  transform-origin: 100%;
 
-  animation: minutes-hand-move 3600s linear infinite;
+  animation: hand-move 3600s linear infinite;
 }
 
 .clock__seconds-hand {
+  @include clock-hand;
   width: 300px;
-  height: 20px;
   background-color: #499ba6;
-  border-radius: 50px;
-  position: absolute;
-  top: 250px;
-  right: 250px;
-  transform-origin: 100%;
 
-  animation: second-hand-move 60s linear infinite;
+  animation: hand-move 60s linear infinite;
 }
 
 .clock__center {
@@ -63,22 +55,7 @@ body {
   padding-top: 100%;
 }
 
-@keyframes second-hand-move {
-  from {
-    transform: rotate(90deg);
-  }
-  50% {
-    transform: rotate(270deg);
-  }
-  75% {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(450deg);
-  }
-}
-
-@keyframes minutes-hand-move {
+@keyframes hand-move {
   from {
     transform: rotate(90deg);
   }
