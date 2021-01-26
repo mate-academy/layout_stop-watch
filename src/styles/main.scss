@@ -11,10 +11,8 @@ $color-seconds: #4b9aaa;
 }
 
 @mixin move {
-  animation-name: clock;
+  animation: clock linear infinite;
   transform-origin: bottom center;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
 }
 
 .watch {
@@ -22,47 +20,47 @@ $color-seconds: #4b9aaa;
   height: 100vh;
 
   position: relative;
-}
 
-.center {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  &__center {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  
+    background-color: $color-seconds;
+  }
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  &__minutes {
+    width: 10px;
+    height: 200px;
+    border-radius: 8px;
+    z-index: -1;
+  
+    position: absolute;
+    top: 26.5%;
+    left: 51%;
+  
+    background-color: $color-minutes;
+  
+    @include move;
+    animation-duration: 3600s;
+  }
 
-  background-color: $color-seconds;
-}
-
-.minutes {
-  width: 10px;
-  height: 200px;
-  border-radius: 8px;
-  z-index: -1;
-
-  position: absolute;
-  top: 26.5%;
-  left: 51%;
-
-  background-color: $color-minutes;
-
-  animation-duration: 3600s;
-  @include move;
-}
-
-.seconds {
-  width: 8px;
-  height: 350px;
-  border-radius: 8px;
-
-  position: absolute;
-  top: 6.5%;
-  left: 51%;
-
-  background-color: $color-seconds;
-
-  animation-duration: 60s;
-  @include move;
+  &__seconds {
+    width: 8px;
+    height: 350px;
+    border-radius: 8px;
+  
+    position: absolute;
+    top: 6.5%;
+    left: 51%;
+  
+    background-color: $color-seconds;
+  
+    @include move;
+    animation-duration: 60s;
+  }
 }
