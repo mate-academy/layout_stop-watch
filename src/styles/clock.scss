@@ -7,40 +7,19 @@ body {
 }
 
 .clock {
-  @include center;
+  @include location;
   height: $clock-size;
   width: $clock-size;
+  margin: auto;
   background: $clock-back;
   border-radius: $clock-radius;
   border: 15px solid $border-color;
 
-  &__fourth {
-    background: $clock-color;
-
-    &--top {
-      @include top-bottom;
-    }
-
-    &--right {
-      @include right-left;
-      right: 0;
-    }
-
-    &--bottom {
-      @include top-bottom;
-      bottom: 0;
-    }
-
-    &--left {
-      @include right-left;
-      left: 0;
-    }
-  }
-
   &__center {
-    @include center;
+    @include location;
     height: $center-size;
     width: $center-size;
+    margin: auto;
     background: #4b9aaa;
     border-radius: $clock-radius;
     z-index: 1;
@@ -48,7 +27,6 @@ body {
 
   &__minute {
     @include clock-hand;
-    width: 1px;
     animation: time 3600s infinite linear;
 
     &:before {
@@ -60,7 +38,6 @@ body {
 
   &__second {
     @include clock-hand;
-    width: 2px;
     animation: time 60s infinite linear;
 
     &:before {

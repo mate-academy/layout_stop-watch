@@ -1,52 +1,23 @@
 $clock-size: 400px;
 $clock-radius: 100%;
-$clock-color: #262626;
 $clock-back: white;
 $back-color: #00a99e;
 $border-color: #67d2c8;
-$center-size: 13px;
-$fourth-size: 3px;
-$fourth-size-second: 8px;
+$center-size: 15px;
 
-@mixin fourth {
-  width: $fourth-size;
-  height: $fourth-size-second;
-  background: $clock-color;
-}
-
-@mixin center {
+@mixin location {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
-}
-
-@mixin top-bottom {
-  position: absolute;
-  left: 0;
-  right: 0;
   margin: 0 auto;
-  width: $fourth-size;
-  height: $fourth-size-second;
-}
-
-@mixin right-left {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-  width: $fourth-size-second;
-  height: $fourth-size;
 }
 
 @mixin clock-hand {
+  @include location;
   height: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  width: 3px;
 }
 
 @mixin arrow {
