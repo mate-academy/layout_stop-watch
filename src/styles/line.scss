@@ -1,0 +1,16 @@
+.line {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: calc(50% - 5px);
+  transform: rotate(90deg);
+  &__half {
+    width: 10px;
+  }
+  &__half:nth-child(2) {
+    background-color: transparent;
+  }
+  animation-name: example;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
