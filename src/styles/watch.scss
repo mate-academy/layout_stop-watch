@@ -1,0 +1,44 @@
+@import "./mixin.scss";
+@import "./variables.scss";
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20%;
+
+  &__circle {
+    position: absolute;
+
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: $min-color;
+  }
+
+  &__minute-hand {
+    @include watch;
+    background-color: $min-color;
+
+    animation: watch 60s linear 0s infinite;
+    transform-origin: bottom;
+
+  }
+
+  &__second-hand {
+    @include watch(350px, 350px);
+    background-color: $sec-color;
+
+    animation: watch 2.5s linear 0s infinite;
+    transform-origin: bottom;
+  }
+
+  @keyframes watch {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
