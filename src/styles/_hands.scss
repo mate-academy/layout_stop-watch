@@ -1,0 +1,39 @@
+
+.minute,
+.second {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: $hands-width;
+  border-radius: 6px;
+}
+
+.minute {
+  height: $minute-height;
+  background-color: $minute-bg-color;
+  transform-origin: bottom;
+  animation: watch 2s linear infinite;
+  z-index: 2;
+}
+
+.circle {
+  display: inline-block;
+  position: relative;
+  top: 161px;
+  right: -164px;
+
+  background-color: $minute-bg-color;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.second {
+  height: $second-height;
+
+  background-color: $second-bg-color;
+  animation: watch 120s linear infinite;
+  transform-origin: bottom;
+  z-index: 1;
+}
