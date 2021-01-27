@@ -5,8 +5,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   width: 600px;
   height: 600px;
+
   border: 10px solid;
   border-radius: 50%;
 }
@@ -16,8 +18,10 @@
   position: absolute;
   top: calc(50% - 5px);
   left: 50%;
+
   width: 45%;
   height: 7px;
+
   border-radius: 10px;
   background: $sec-color;
   animation: anim 60s linear infinite;
@@ -25,13 +29,15 @@
   z-index: 2;
 }
 
-.watch:after {
+&::after {
   content: "";
   position: absolute;
   top: calc(50% - 3px);
   left: 50%;
+
   width: 30%;
   height: 10px;
+
   border-radius: 3px;
   background: $min-color;
   animation: anim 1200s linear infinite;
@@ -48,15 +54,16 @@
   }
 }
 
-.watch__circle {
-  display: block;
+&__circle {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   width: 30px;
   height: 30px;
+
   background: $sec-color;
   border-radius: 50%;
-  z-index: 100;
+  z-index: 2;
 }
