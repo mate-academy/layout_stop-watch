@@ -1,27 +1,32 @@
 .container {
-  height: 100vh;
+  height: 100%;
   background-color: #c0c0c0;
-  display: flex;
-  justify-content: center;
+
   position: relative;
   z-index: -2;
+
+  display: flex;
+  justify-content: center;
   &__clock {
-    margin: auto;
     width: 650px;
     height: 650px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
+
     position: relative;
     z-index: -2;
+
     background-color: #fff;
+    border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    margin: auto;
   }
   &__circle {
+    width: 25px;
+    height: 25px;
     position: relative;
     margin: auto;
     background-color: blue;
-    width: 25px;
-    height: 25px;
     border-radius: 50%;
   }
 
