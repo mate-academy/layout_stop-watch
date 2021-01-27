@@ -30,12 +30,26 @@
     border-radius: 50%;
   }
 
+  &__circle::before {
+    content: " ";
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    display: block;
+    height: 150px;
+    border-radius: 15px;
+    width: 15px;
+    transform-origin: top;
+    animation: sec 3600s linear infinite;
+    background-color: brown;
+    z-index: -1;
+  }
+
   &__circle::after {
     content: " ";
     position: absolute;
     left: 25%;
     top: 25%;
-    transform: translate(-50%, -50%);
     display: block;
     height: 300px;
     border-radius: 15px;
@@ -46,19 +60,4 @@
     z-index: -1;
   }
 
-  &__circle::before {
-    content: " ";
-    position: absolute;
-    left: 25%;
-    top: 25%;
-    transform: translate(-50%, -50%);
-    display: block;
-    height: 150px;
-    border-radius: 15px;
-    width: 15px;
-    transform-origin: top;
-    animation: sec 3600s linear infinite;
-    background-color: brown;
-    z-index: -1;
-  }
 }
