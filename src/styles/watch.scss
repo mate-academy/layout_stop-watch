@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 15vh;
+}
+
+.watch {
+  position: relative;
+}
+
+.minute {
+  position: absolute;
+  width: 5px;
+  height: 250px;
+  left: 47px;
+  top: 54px;
+  background: $broun;
+  animation: nev 3600s infinite steps(3600);
+  transform-origin: 0 260px;
+}
+
+.second {
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  left: 50px;
+  top: 4px;
+  background: $blue;
+  animation: one-turn 60s infinite steps(60);
+  transform-origin: 0 300px;
+}
+
+@keyframes one-turn {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.circle {
+  position: absolute;
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  top: 290px;
+  left: 32px;
+  background: $broun;
+}
