@@ -1,0 +1,54 @@
+.watch {
+  position: relative;
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  background: url(../img/clock.png);
+  background-size: cover;
+  background-position: center;
+  border: 15px solid rgb(22, 93, 12);
+  border-radius: 50%;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(38, 109, 28);
+    border-radius: 50%;
+  }
+
+  &__arrow {
+    content: "";
+    position: absolute;
+    top: 0%;
+    transform-origin: 50% 100%;
+    transform: rotate(0deg);
+    border-radius: 6px;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+
+    &--sec {
+      width: $sec-arrow-size;
+      height: 50%;
+      left: calc(50% - #{$sec-arrow-size/2});
+      background-color: rgb(18, 18, 131);
+      animation-name: sec;
+      animation-duration: 60s;
+    }
+
+    &--min {
+      top: 10%;
+      width: $min-arrow-size;
+      height: 40%;
+      left: calc(50% - #{$min-arrow-size/2});
+      background-color: rgb(250, 8, 8);
+      animation-name: min;
+      animation-duration: 3600s;
+    }
+  }
+}
