@@ -1,0 +1,58 @@
+@import "variables";
+@import "mixins";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  width: $watch-size;
+  height: $watch-size;
+
+  &__circle {
+    @include position-center;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background-color: $blue-color;
+    border-radius: 50%;
+  }
+
+  &__seconds {
+    @include position-center;
+    z-index: 1;
+    width: 5px;
+    height: 250px;
+    background-color: $blue-color;
+    animation: watch-time 60s;
+    @include watch-animation;
+  }
+
+  &__minutes {
+    @include position-center;
+    top: 100px;
+    width: 7px;
+    height: 150px;
+    background-color: #d15559;
+    animation: watch-time 3600s;
+    @include watch-animation;
+  }
+}
+
+@keyframes watch-time {
+  0% {
+    transform-origin: bottom;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform-origin: bottom;
+    transform: rotate(360deg);
+  }
+}
