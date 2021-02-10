@@ -1,0 +1,55 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clock {
+  @extend body;
+  position: absolute;
+  height: 845px;
+  width: 845px;
+  border: 2px solid rgb(114, 114, 223);
+  border-radius: 50%;
+}
+
+@keyframes clock-hand-rotate {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+
+@mixin clock-hand($sec) {
+  position: absolute;
+  top: 50%;
+  border-radius: 20px;
+  transform: rotate(360deg);
+  animation: clock-hand-rotate $sec linear infinite;
+  transform-origin: top;
+}
+
+.clock__min {
+  @include clock-hand(3600s);
+  width: 20px;
+  height: 320px;
+  background-color: #d15559;
+}
+
+.clock__sec {
+  @include clock-hand(60s);
+  width: 15px;
+  height: 420px;
+  background-color: #4b9aaa;
+}
+
+.clock__circle {
+  position: relative;
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  background-color: #4b9aaa;
+  border-radius: 50%;
+}
