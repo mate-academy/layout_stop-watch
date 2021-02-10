@@ -1,0 +1,57 @@
+@import "_reset.scss";
+@import "variables";
+@import "mixin";
+
+@keyframes stopwatch {
+  from {
+    transform: rotate(180deg) ;
+  }
+
+  to {
+    transform: rotate(540deg);
+  }
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $watch-size;
+  width: $watch-size;
+  border-radius: 50%;
+
+  &__circle {
+    left: $center-of-watch;
+    top: $center-of-watch;
+    height: $circle-size;
+    width: $circle-size;
+    border-radius: 50%;
+    background-color: #4b9aaa;
+    z-index: 1;
+  }
+
+  &__minutes {
+    position: absolute;
+    left: $start-point;
+    top: $center-of-watch;
+    height: $minutes-hand-height;
+    width: $hands_width;
+    border-radius: 5px;
+    background-color: #4b9aaa;
+    animation-duration: 240s;
+    @include animation-properties;
+  }
+
+  &__seconds {
+    position: absolute;
+    left: $start-point;
+    top: $center-of-watch;
+    height: $seconds-hand-height;
+    width: $hands_width;
+    border-radius: 5px;
+    background-color: #d15559;
+    animation-duration: 4s;
+    @include animation-properties;
+  }
+}
