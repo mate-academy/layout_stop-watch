@@ -27,31 +27,22 @@
     height: $circle-size;
     width: $circle-size;
     border-radius: 50%;
+    border: 1px solid black;
     background-color: #4b9aaa;
     z-index: 1;
   }
 
   &__minutes {
-    position: absolute;
-    left: $start-point;
-    top: $center-of-watch;
     height: $minutes-hand-height;
-    width: $hands_width;
-    border-radius: 5px;
     background-color: #4b9aaa;
     animation-duration: 60s;
-    @include animation-properties;
+    @include hands-properties;
   }
 
   &__seconds {
-    position: absolute;
-    left: $start-point;
-    top: $center-of-watch;
     height: $seconds-hand-height;
-    width: $hands_width;
-    border-radius: 5px;
     background-color: #d15559;
     animation-duration: 360s;
-    @include animation-properties;
+    @include hands-properties;
   }
 }
