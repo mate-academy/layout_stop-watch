@@ -15,7 +15,7 @@ body {
   width: $watch-size;
   height: $watch-size;
 
-  .watch__circle {
+  &__circle {
     @include position-center;
     bottom: 0;
     width: 20px;
@@ -24,7 +24,7 @@ body {
     border-radius: 50%;
   }
 
-  .watch__seconds {
+  &__seconds {
     @include position-center;
     z-index: 1;
     width: 5px;
@@ -34,7 +34,7 @@ body {
     @include watch-animation;
   }
 
-  .watch__minutes {
+  &__minutes {
     @include position-center;
     top: 100px;
     width: 7px;
