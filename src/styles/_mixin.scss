@@ -1,0 +1,17 @@
+@mixin arrowStyle ($height, $bgColor) {
+  position: absolute;
+  left: 50%;
+  width: $arrowWidth;
+  height: $height;
+  border-radius: $arrowRadius;
+  background-color: $bgColor;
+  transform: translate(-50%, 0);
+  transform-origin: bottom left;
+}
+
+@mixin basicCircleStyle ($radius) {
+  left: 50%;
+  width: $radius;
+  height: $radius;
+  border-radius: 50%;
+}

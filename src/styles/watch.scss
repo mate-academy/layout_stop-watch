@@ -1,0 +1,26 @@
+.watch {
+  @include basicCircleStyle($bigCircleRadius);
+  position: relative;
+  transform: translate(-50%, 0);
+  border: 1px solid black;
+
+  &::after {
+    content: "";
+    position: absolute;
+    @include basicCircleStyle($smallCircleRadius);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #111;
+  }
+
+  &__second {
+    @include arrowStyle($secondArrowHeight, $secondBGColor);
+    animation: $secondTime infinite linear circle-rotate;
+  }
+
+  &__minute {
+    @include arrowStyle($minuteArrowHeight, $minuteBGColor);
+    top: 20%;
+    animation: $minuteTime infinite linear circle-rotate;
+  }
+}
