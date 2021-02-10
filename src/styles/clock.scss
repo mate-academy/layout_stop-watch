@@ -1,0 +1,58 @@
+.clock {
+  height: 850px;
+  width: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid black;
+  border-radius: 425px;
+
+  &_position {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+  }
+
+  &__min {
+    position: relative;
+    bottom: 120px;
+    right: 15px;
+    height: 250px;
+    width: 10px;
+    background-color: #d15559;
+    border-radius: 5px;
+    animation: tik 3600s linear infinite;
+    transform-origin: bottom;
+    z-index: 1;
+  }
+
+  &__sec {
+    position: relative;
+    bottom: 200px;
+    right: 25px;
+    height: 400px;
+    width: 10px;
+    background-color: #4b9aaa;
+    border-radius: 5px;
+    animation: tik 60s linear infinite;
+    transform-origin: bottom;
+    z-index: 2;
+  }
+
+  &__center {
+    height: 20px;
+    width: 20px;
+    background-color: #4b9aaa;
+    border-radius: 10px;
+    z-index: 3;
+  }
+}
+
+@keyframes tik {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(380deg);
+  }
+}
