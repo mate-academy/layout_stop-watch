@@ -1,0 +1,64 @@
+$watchSize: 800;
+$handThickness: 10;
+$handBorderRadius: 6;
+
+@mixin handAnimation($i) {
+  animation: rotate-hand #{$i}s infinite;
+  animation-timing-function: steps(60, start);
+  animation-delay: #{$i / 60}s;
+}
+
+.page__stop-watch {
+  margin: 20px auto;
+}
+
+.stop-watch {
+  position: relative;
+  height: #{$watchSize}px;
+  width: #{$watchSize}px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 50%;
+    left: 50%;
+    background-color: #4b9aaa;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &__hand {
+    position: absolute;
+    left: #{($watchSize / 2) - $handThickness / 2}px;
+    width: #{$handThickness}px;
+    border-radius: #{$handBorderRadius}px;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    top: 0;
+    height: #{$watchSize / 2}px;
+    background-color: #4b9aaa;
+    @include handAnimation(60);
+  }
+
+  &__minute-hand {
+    top: #{$watchSize / 5}px;
+    height: #{$watchSize / 2 - $watchSize / 5}px;
+    background-color: #d15559;
+    @include handAnimation(3600);
+  }
+}
+
+@keyframes rotate-hand {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
