@@ -1,4 +1,5 @@
-@import "mix";
+@import "variables";
+@import "mixins";
 
 body {
   display: flex;
@@ -11,8 +12,8 @@ body {
 .watch {
   position: relative;
   display: flex;
-  width: 500px;
-  height: 500px;
+  width: $watch-size;
+  height: $watch-size;
 
   .watch__circle {
     @include position-center;
@@ -41,5 +42,17 @@ body {
     background-color: #d15559;
     animation: watch-time 3600s;
     @include watch-animation;
+  }
+}
+
+@keyframes watch-time {
+  0% {
+    transform-origin: bottom;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform-origin: bottom;
+    transform: rotate(360deg);
   }
 }
