@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+$secondHandWidth: 20px;
+$secondHandColor: rgb(130, 213, 238);
+$minuteHandWidth: 10px;
+$minuteHandColor: rgb(9, 0, 128);
+
+.watch {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-image: url("../images/watch-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+
+  &__second-hand,
+  &__minute-hand {
+    position: absolute;
+    animation-name: watchHandMove;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, start);
+    transform-origin: 50% bottom;
+    bottom: 50%;
+  }
+
+  &__second-hand {
+    height: 240px;
+    width: $secondHandWidth;
+    background-color: $secondHandColor;
+    left: calc(50% - #{$secondHandWidth/2});
+
+    border-radius: 45px;
+
+    animation-duration: 60s;
+  }
+
+  &__minute-hand {
+    width: $minuteHandWidth;
+    height: 140px;
+    background-color: $minuteHandColor;
+    left: calc(50% - #{$minuteHandWidth/2});
+    border-radius: 65px;
+    animation-duration: 3600s;
+    animation-delay: 60s;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px;
+    height: 35px;
+    background-color: red;
+    border-radius: 50%;
+  }
+}
+
+@keyframes watchHandMove {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
