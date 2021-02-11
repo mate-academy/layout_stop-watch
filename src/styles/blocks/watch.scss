@@ -1,0 +1,45 @@
+.watch {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-image: url("../images/watch-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+
+  &__second-hand,
+  &__minute-hand {
+    @include watchHand;
+  }
+
+  &__second-hand {
+    width: $secondHandWidth;
+    height: 240px;
+    background-color: $secondHandColor;
+    left: calc(50% - #{$secondHandWidth/2});
+    border-radius: 45px;
+    animation-duration: 60s;
+  }
+
+  &__minute-hand {
+    width: $minuteHandWidth;
+    height: 140px;
+    background-color: $minuteHandColor;
+    left: calc(50% - #{$minuteHandWidth/2});
+    border-radius: 65px;
+    animation-duration: 3600s;
+    animation-delay: 60s;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35px;
+    height: 35px;
+    background-color: red;
+    border-radius: 50%;
+  }
+}
