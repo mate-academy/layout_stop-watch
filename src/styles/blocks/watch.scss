@@ -1,0 +1,47 @@
+.watch {
+  @include centeredFlex;
+
+    &__hand {
+      position: relative;
+      transform-origin: bottom center;
+      
+      border-radius: $handBorderRadius;
+      @keyframes spin {
+        0% { transform: translateX(-$handThickness / 2) rotate(0deg); }
+        100% { transform: translateX(-$handThickness / 2) rotate(360deg); }
+      }
+    
+      &-small {
+        position: absolute;
+        width: $handThickness;
+        height: $smallHandLength;
+        top: calc(50% - #{$smallHandLength});
+        left: 50%;
+        background-color: $smallHandColor;
+        animation: spin 60s linear infinite;
+      }
+
+      &-big {
+        position: absolute;
+        width: $handThickness;
+        height: $bigHandLength;
+        top: calc(50% - #{$bigHandLength});
+        left: 50%;
+        background-color: $bigHandColor;
+        animation: spin 1s linear infinite;
+      }
+    }
+
+    &__center {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: $centerSize;
+      height: $centerSize;
+      top: 50%;
+      left: 50%;
+
+      background-color: $bigHandColor;
+      border-radius: 50%;
+    }
+
+}
