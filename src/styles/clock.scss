@@ -1,0 +1,33 @@
+.clock {
+  position: relative;
+  width: $clock-width;
+  height: $clock-height;
+  margin: 20px auto 0;
+  border: 3px solid #000;
+  border-radius: 50%;
+  background-color: #ccc;
+
+  &__second-arrow {
+    position: absolute;
+    left: $arrow-position-x;
+    top: $clock-height / 2 - $second-arrow-height;
+    width: $arrow-width;
+    height: $second-arrow-height;
+    border-radius: $arrow-border-rad;
+    background-color: rgb(251, 255, 0);
+    transform-origin: 50% 100%;
+    animation: timeCount 60s linear infinite;
+  }
+
+  &__minute-arrow {
+    position: absolute;
+    left: $arrow-position-x;
+    top: $clock-height / 2 - $minute-arrow-height;
+    width: $arrow-width;
+    height: $minute-arrow-height;
+    border-radius: $arrow-border-rad;
+    background-color: rgba(255, 0, 0, 0.74);
+    transform-origin: 50% 100%;
+    animation: timeCount 3600s linear infinite;
+  }
+}
