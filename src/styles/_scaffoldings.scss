@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+@keyframes watchHandMove {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin watchHand {
+  position: absolute;
+  animation-name: watchHandMove;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60, start);
+  transform-origin: 50% bottom;
+  bottom: 50%;
+}
