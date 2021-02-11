@@ -2,9 +2,11 @@
   @include centeredFlex;
 
   &__hand {
-    position: relative;
+    position: absolute;
+    width: $handThickness;
+    left: 50%;
     transform-origin: bottom center;
-    
+  
     border-radius: $handBorderRadius;
     @keyframes spin {
       0% {
@@ -18,21 +20,15 @@
     }
     
     &-small {
-      position: absolute;
-      width: $handThickness;
       height: $smallHandLength;
       top: calc(50% - #{$smallHandLength});
-      left: 50%;
       background-color: $smallHandColor;
       animation: spin 60s linear infinite;
     }
 
     &-big {
-      position: absolute;
-      width: $handThickness;
       height: $bigHandLength;
       top: calc(50% - #{$bigHandLength});
-      left: 50%;
       background-color: $bigHandColor;
       animation: spin 1s linear infinite;
     }
