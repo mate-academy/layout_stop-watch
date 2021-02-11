@@ -1,0 +1,47 @@
+.stop-watch {
+  &__circle {
+    @include positioning;
+    z-index: 3;
+
+    top: -$watch-circle-radius / 2;
+
+    height: $watch-circle-radius;
+    width: $watch-circle-radius;
+
+    border-radius: 50%;
+
+    background-color: $main-color;
+  }
+
+  &__arrow-minute {
+    @include positioning;
+    z-index: 2;
+
+    top: -$arrow-minute-length;
+    left: $arrow-minute-width / 2;
+
+    height: $arrow-minute-length;
+    width: $arrow-minute-width;
+
+    background-color: $secondary-color;
+
+    transform-origin: bottom center;
+    animation: rotate 3600s infinite linear;
+  }
+
+  &__arrow-second {
+    @include positioning;
+    z-index: 1;
+
+    top: -$arrow-second-length;
+    left: $arrow-second-width / 2;
+
+    height: $arrow-second-length;
+    width: $arrow-second-width;
+
+    background-color: $main-color;
+
+    transform-origin: bottom center;
+    animation: rotate 60s infinite linear;
+  }
+}
