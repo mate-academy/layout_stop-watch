@@ -1,0 +1,33 @@
+.stopwatch {
+  @include center;
+  background-image: url("../images/depositphotos_49156621-stock-illustration-template-of-clock-dial.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 410px;
+  width: 400px;
+
+  .stopwatch__point {
+    @include center;
+    width: 20px;
+    height: 20px;
+    @include border(#000, 1px, 50%);
+    z-index: 1;
+  }
+
+  .stopwatch__minute {
+    @include center;
+    width: 100px;
+    @include border(#590995, 3px, 20%);
+    @include rotate(3600s);
+  
+  }
+  
+  .stopwatch__second {
+    @include center;
+    width: 150px;
+    @include border(#ff414d, 2px, 20%);
+    @include rotate(60s);
+
+  }
+
+}
