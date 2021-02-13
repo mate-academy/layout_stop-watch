@@ -1,0 +1,53 @@
+.stopwatch {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 1px solid #000;
+
+  &__minute,
+  &__second {
+    position: absolute;
+    left: 50%;
+    width: 10px;
+    border-radius: 5px;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  &__minute {
+    height: 200px;
+    background-color: #5f98a8;
+    z-index: 2;
+    animation: time-walk 3600s linear infinite;
+    
+  }
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #5f98a8;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+  &__second {
+    top: 50px;
+    height: 150px;
+    background-color: #c25d5d;
+    animation: time-walk 60s linear infinite;
+  }
+}
+
+@keyframes time-walk {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
