@@ -1,0 +1,34 @@
+.watch {
+  @include forCenter;
+  height: 500px;
+  width: 500px;
+  border: 2px solid red;
+  border-radius: 50%;
+
+  &__cicle {
+    @include forCenter;
+    width: 4px;
+    height: 4px;
+    border: 6px solid red;
+    border-radius: 50px;
+    z-index: 1;
+  }
+
+  &__minute {
+    @include forCenter;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 20%;
+    animation: rotate 3600s linear infinite;
+    transform-origin: left;
+  }
+  &__second {
+    @include forCenter;
+    width: 248px;
+    border: 2px solid gray;
+    border-radius: 20%;
+    animation: rotate 60s linear infinite;
+    animation-timing-function: steps(60, start);
+    transform-origin: left;
+  }
+}
