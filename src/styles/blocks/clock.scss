@@ -1,0 +1,34 @@
+.clock {
+  &__content {
+    position: relative;
+    margin: 0 auto;
+    width: $clockSize;
+    height: $clockSize;
+  }
+
+  &__minutes-hand {
+    position: absolute;
+    top: ($clockSize / 2) - $minutesHandHeight;
+    left: ($clockSize - $minutesHandWidth) / 2;
+    height: $minutesHandHeight;
+    width: $minutesHandWidth;
+    @include hand-full-circle(3600s);
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    top: ($clockSize / 2) - $secondsHandHeight;
+    left: ($clockSize - $secondsHandWidth) / 2;
+    height: $secondsHandHeight;
+    width: $secondsHandWidth;
+    @include hand-full-circle(60s);
+  }
+
+  &__center-point {
+    position: absolute;
+    top: ($clockSize - $centerSize) / 2;
+    left: ($clockSize - $centerSize) / 2;
+    height: $centerSize;
+    width: $centerSize;
+  }
+}
