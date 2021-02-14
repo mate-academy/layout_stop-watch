@@ -11,7 +11,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    margin: auto;
+    @include marg;
     width: 26px;
     height: 26px;
     background-color: #4b9aaa;
@@ -22,25 +22,27 @@
     left: 0;
     right: 0;
     top: 100px;
-    margin: auto;
+    @include marg;
     width: 9px;
     height: 200px;
     background-color: #d15559;
     transform-origin: bottom;
     animation: watch-go 3600s;
     animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
   &__sec {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
-    margin: auto;
+    @include marg;
     width: 7px;
     height: 300px;
     background-color: #4b9aaa;
     transform-origin: bottom;
     animation: watch-go 60s;
-    animation-timing-function: steps(60, end);
+    animation-timing-function: linear, steps(60, end);
+    animation-iteration-count: infinite;
   }
 }
