@@ -1,0 +1,62 @@
+@import "_reset";
+@import "variables";
+@import "animation";
+
+.container {
+  position: relative;
+  top: 40%;
+  left: 40%;
+}
+
+.watch {
+  width: 400px;
+  height: 400px;
+  border-radius: $border-radius;
+  border: 5px solid $green;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.seconds {
+  width: 10px;
+  height: 200px;
+  background-color: $green;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 200px;
+  left: 195px;
+  z-index: 1;
+  transform-origin: bottom center;
+  animation: watch_animation 60s infinite linear;
+}
+
+.minutes {
+  width: 10px;
+  height: 150px;
+  background-color: $coral;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 195px;
+  z-index: 2;
+  transform-origin: bottom center;
+  animation: watch_animation 3600s infinite linear;
+}
+
+.small__circle {
+  position: absolute;
+  top: 187px;
+  right: 0;
+  bottom: 0;
+  left: 187px;
+  z-index: 3;
+  height: 26px;
+  width: 26px;
+  border-radius: $border-radius;
+  background-color: $coral;
+}
