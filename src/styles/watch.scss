@@ -1,0 +1,44 @@
+.watch {
+  position: relative;
+  display: flex;
+  width: 600px;
+  height: 600px;
+  border: 1px solid black;
+  border-radius: 50%;
+  &__point {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    @include margin;
+    width: 26px;
+    height: 26px;
+    background-color: #4b9aaa;
+    border-radius: 50%;
+  }
+  &__min {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100px;
+    @include margin;
+    width: 9px;
+    height: 200px;
+    background-color: #d15559;
+    transform-origin: bottom;
+    animation: watch-go 3600s linear 0s infinite;
+  }
+  &__sec {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    @include margin;
+    width: 7px;
+    height: 300px;
+    background-color: #4b9aaa;
+    transform-origin: bottom;
+    animation: watch-go 60s linear 0s infinite;
+  }
+}
