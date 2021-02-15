@@ -27,9 +27,7 @@
     height: 200px;
     background-color: #d15559;
     transform-origin: bottom;
-    animation: watch-go 3600s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation: watch-go 3600s linear 0s infinite;
   }
   &__sec {
     position: absolute;
@@ -41,8 +39,6 @@
     height: 300px;
     background-color: #4b9aaa;
     transform-origin: bottom;
-    animation: watch-go 60s;
-    animation-timing-function: linear, steps(60, end);
-    animation-iteration-count: infinite;
+    animation: watch-go 60s linear 0s infinite;
   }
 }
