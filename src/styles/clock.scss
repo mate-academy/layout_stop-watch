@@ -5,19 +5,15 @@ h1 {
 
 .watch {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
 
   &_wrapper {
     position: relative;
+    justify-content: center;
+    display: flex;
     width: 500px;
     height: 500px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
     border: 1px solid #000;
-    border-radius: 50%;
     background-image: url(../img/clock-face.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -29,9 +25,10 @@ h1 {
   position: absolute;
   width: 14px;
   height: 180px;
+  margin: 70px;
   background-color: #000;
   border-radius: 10px;
-  margin: 70px;
+  transform-origin: bottom center;
   animation: rotation 42300s 1s infinite linear;
 }
 
@@ -42,6 +39,7 @@ h1 {
   margin: 10px;
   background-color: #00f;
   border-radius: 10px;
+  transform-origin: bottom center;
   animation: rotation 3600s 1s infinite linear;
 }
 
@@ -52,6 +50,7 @@ h1 {
   margin: 30px;
   background-color: #f00;
   border-radius: 10px;
+  transform-origin: bottom center;
   animation: rotation 60s 1s infinite linear;
 }
 
