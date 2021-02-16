@@ -1,0 +1,55 @@
+.clock {
+  position: relative;
+
+  &__minutes {
+    position: absolute;
+    width: 6px;
+    height: 230px;
+    left: 44px;
+    top: 71px;
+    background: $minutes-color;
+    animation: one-turn 3600s linear infinite;
+    transform-origin: 0 230px;
+  }
+
+  @keyframes one-turn {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__seconds {
+    position: absolute;
+    width: 3px;
+    height: 290px;
+    left: 49px;
+    top: 1px;
+    background: $seconds-color;
+    animation: one-turn 60s infinite steps(60);
+    transform-origin: 0 300px;
+  }
+
+  @keyframes one-turn {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__center {
+    width: $size;
+    height: $size;
+    background: $minutes-color;
+    border-radius: 50%;
+    top: 284px;
+    left: 32px;
+    position: absolute;
+    //   opacity: 95%;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding-top: 3em;
+  padding-right: 8em;
+}
