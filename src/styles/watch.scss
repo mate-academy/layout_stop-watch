@@ -1,0 +1,90 @@
+.watch {
+  position: relative;
+  top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 20px solid #644222;
+  border-radius: 45%;
+  width: 500px;
+  height: 530px;
+  margin: auto;
+  background-image: radial-gradient(#a09af1, #000038);
+
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    height: 180px;
+    width: 15px;
+    border-radius: 8px;
+    background-color: #355e00;
+    transform-origin: bottom;
+    animation: one_minute 3600s steps(60) infinite;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: -3.7px;
+      width: 15px;
+      height: 15px;
+      border: solid #355e00;
+      border-width: 7px 7px 0 0;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__hours {
+    position: absolute;
+    bottom: 50%;
+    height: 140px;
+    width: 18px;
+    border-radius: 15px;
+    background-color: #0f044d;
+    transform-origin: bottom;
+    animation: one_minute 43200s steps(12) infinite;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: -12px;
+      width: 15px;
+      height: 15px;
+      border: solid #0f044d;
+      border-width: 13px 13px 0 0;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: 50%;
+    height: 230px;
+    width: 11px;
+    border-radius: 5px;
+    background-color: rgb(51, 255, 95);
+    transform-origin: bottom;
+    animation: one_minute 60s steps(60) infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -4.5px;
+      width: 15px;
+      height: 15px;
+      border: solid #8e3;
+      border-width: 5px 5px 0 0;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__center {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f34;
+  }
+}
