@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $back-color;
+}
+
+.clock {
+  @include location;
+  height: $clock-size;
+  width: $clock-size;
+  background: $clock-back;
+  border-radius: $clock-radius;
+  border: 15px solid $border-color;
+
+  &__center {
+    @include location;
+    height: $center-size;
+    width: $center-size;
+    background: #4b9aaa;
+    border-radius: $clock-radius;
+    z-index: 1;
+  }
+
+  &__minute {
+    @include clock-hand;
+    animation: time 3600s infinite linear;
+
+    &:before {
+      @include arrow;
+      background: #d15559;
+      height: 100px;
+    }
+  }
+
+  &__second {
+    @include clock-hand;
+    animation: time 60s infinite linear;
+
+    &:before {
+      @include arrow;
+      background: #4b9aaa;
+      height: 175px;
+    }
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}

@@ -1,0 +1,28 @@
+$clock-size: 400px;
+$clock-radius: 100%;
+$clock-back: white;
+$back-color: #00a99e;
+$border-color: #67d2c8;
+$center-size: 15px;
+
+@mixin location {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@mixin clock-hand {
+  @include location;
+  height: 100%;
+  width: 3px;
+}
+
+@mixin arrow {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 5px;
+}
