@@ -1,0 +1,42 @@
+.watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #4b9aaa;
+  }
+
+  &__minute {
+    position: absolute;
+    left: 10px;
+    top: -170px;
+    width: 10px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: #d15559;
+    transform-origin: 5px 185px;
+    z-index: -1;
+    
+    animation: watch 3600s linear infinite;
+  }
+
+  &__second {
+    position: absolute;
+    left: 10px;
+    top: -220px;
+    width: 10px;
+    height: 250px;
+    border-radius: 10px;
+    background-color: #4b9aaa;
+    transform-origin: 5px 235px;
+    
+    animation: watch 60s linear infinite;
+  }
+}
