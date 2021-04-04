@@ -1,0 +1,18 @@
+@mixin arrow ($arowSize, $color, $duration) {
+  position: absolute;
+  bottom: 50%;
+  width: 5px;
+  height: $arowSize;
+  transform-origin: bottom;
+  border-radius: 10px;
+  background-color: $color;
+  animation: time $duration linear 0s infinite;
+}
+
+@mixin circle ($size, $color) {
+  position: absolute;
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+  background-color: $color;
+}
