@@ -1,0 +1,43 @@
+.watch {
+  position: relative;
+  @include circle($watch-size);
+  border: 5px solid $main-color;
+
+  &__center-circle {
+    @include center;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    @include circle($center-circle-size);
+    background-color: $main-color;
+  }
+
+  &__minutes-hand {
+    @include center;
+    @include rectangle($minutes-hand-width, $minutes-hand-width * 20);
+    z-index: 0;
+    transform-origin: top left;
+    animation: move 3600s linear infinite;
+    @include borderRadius($minutes-hand-width / 2);
+    background-color: $secondary-color;
+  }
+
+  &__seconds-hand {
+    @include center;
+    @include rectangle($seconds-hand-width, $seconds-hand-width * 30);
+    z-index: 1;
+    transform-origin: top left;
+    animation: move 60s steps(60, end) infinite;
+    @include borderRadius($seconds-hand-width / 2);
+    background-color: $main-color;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg) translate(-50%, -100%);
+  }
+
+  to {
+    transform: rotate(360deg) translate(-50%, -100%);
+  }
+}
