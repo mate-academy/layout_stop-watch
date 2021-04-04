@@ -1,0 +1,18 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__seconds {
+    @include arrow(200px, $secArrowColor, 60s);
+  }
+
+  &__minutes {
+    @include arrow(130px, $minArrowColor, 3600s);
+  }
+
+  &__circle {
+    @include circle (15px, $secArrowColor);
+  }
+}
