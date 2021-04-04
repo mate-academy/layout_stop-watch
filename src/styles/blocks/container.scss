@@ -1,0 +1,18 @@
+.container {
+  @include container;
+  position: relative;
+  background-image: linear-gradient(to left bottom, #370512,
+  #68273b, #9b4c6c, #ce74a4, #ffa0e2);
+  border-radius: 50%;
+  &::after {
+    background-color: $minute-color;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: $center-of-container;
+    transform: translate(-50%, -50%);
+    @include center-circle;
+    z-index: 2;
+  }
+}
