@@ -1,0 +1,48 @@
+.content {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-hads {
+  @include circle($sizeCircle);
+  background-color: #4b9aaa;
+  position: absolute;
+  z-index: 3;
+}
+
+.second-hand {
+  position: absolute;
+  bottom: 50%;
+  z-index: 2;
+  height: $heigthHand;
+  width: $heigthHand/40;
+  background-color: #4b9aaa;
+  border-radius: 5px;
+  @extend %animationHands;
+  animation-duration: 60s;
+}
+
+.hour-hand {
+  position: absolute;
+  bottom: 50%;
+  z-index: 1;
+  height: $heigthHand*0.8;
+  width: $heigthHand/40;
+  background-color: #d15559;
+  border-radius: 5px;
+  @extend %animationHands;
+  animation-duration: 60*60s;
+  animation-delay: 1s;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
