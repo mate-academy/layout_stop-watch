@@ -48,7 +48,7 @@ $watchConteiner: $heightSecondArrow * 2;
     border-radius: 15px;
 
     transform-origin: bottom;
-    animation-name: minuteAnimation;
+    animation-name: arrowAnimation;
     animation-duration: 3600s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -67,7 +67,7 @@ $watchConteiner: $heightSecondArrow * 2;
     border-radius: 15px;
 
     transform-origin: bottom;
-    animation-name: secondAnimation;
+    animation-name: arrowAnimation;
     animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -75,16 +75,7 @@ $watchConteiner: $heightSecondArrow * 2;
 
 }
 
-@keyframes secondAnimation {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minuteAnimation {
+@keyframes arrowAnimation {
   from {
     transform: rotate(0);
   }
