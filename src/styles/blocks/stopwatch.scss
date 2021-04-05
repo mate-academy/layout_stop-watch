@@ -1,0 +1,71 @@
+.stopwatch {
+  position: relative;
+
+  &__minute-hand {
+    background-color: $minuteHandColor;
+    animation: hands 3600s infinite linear;
+  }
+
+  &__second-hand {
+    background-color: $secondHandColor;
+    animation: hands 60s infinite steps(60);
+  }
+
+  &__pipka {
+    background-color: $secondHandColor;
+  }
+
+  @media (min-width: $smallSize) {
+    @include stopwatchSize ($smallSize);
+
+    &__minute-hand {
+      @include minuteHand($smallSize);
+    }
+
+    &__second-hand {
+      @include secondHand($smallSize);
+    }
+
+    &__pipka {
+      @include pipka($smallSize);
+    }
+  }
+
+  @media (min-width: $middleSize) {
+    @include stopwatchSize ($middleSize);
+
+    &__minute-hand {
+      @include minuteHand($middleSize);
+    }
+
+    &__second-hand {
+      @include secondHand($middleSize);
+    }
+
+    &__pipka {
+      @include pipka($middleSize);
+    }
+  }
+
+  @media (min-width: $largeSize) {
+    @include stopwatchSize ($largeSize);
+
+    &__minute-hand {
+      @include minuteHand($largeSize);
+    }
+
+    &__second-hand {
+      @include secondHand($largeSize);
+    }
+
+    &__pipka {
+      @include pipka($largeSize);
+    }
+  }
+
+  @keyframes hands {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

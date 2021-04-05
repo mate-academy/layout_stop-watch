@@ -1,0 +1,38 @@
+@mixin stopwatchSize($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin position {
+  position: absolute;
+}
+
+@mixin minuteHand($size) {
+  @include position;
+  left: minuteHandLeft($size);
+  top: minuteHandHeight($size) / 2;
+  width: minuteHandWidth($size);
+  height: minuteHandHeight($size);
+  border-radius: minuteHandWidth($size) / 2;
+  transform-origin: (minuteHandWidth($size) / 2) (minuteHandHeight($size));
+}
+
+@mixin secondHand($size) {
+  @include position;
+  left: secondHandLeft($size);
+  top: 0;
+  width: secondHandWidth($size);
+  height: secondHandHeight($size);
+  border-radius: minuteHandWidth($size) / 2;
+  transform-origin: (secondHandWidth($size) / 2) (secondHandHeight($size));
+}
+
+@mixin pipka($size) {
+  @include position;
+  left: $size / 2 - $size / 60;
+  top: $size / 2 - $size / 60;
+  width: $size / 30;
+  height: $size / 30;
+  background-color: $secondHandColor;
+  border-radius: $size / 60;
+}
