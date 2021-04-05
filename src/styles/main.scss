@@ -1,0 +1,85 @@
+$heightSecondArrow: 400px;
+$heightMinuteArrow: 300px;
+$watchConteiner: $heightSecondArrow * 2;
+
+.watch {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__conteiner {
+    position: relative;
+
+    width: $watchConteiner;
+    height: $watchConteiner;
+  }
+
+  &__middle {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 50%;
+
+    margin: auto;
+    height: 30px;
+    width: 30px;
+
+    background-color: #4b9aaa;
+    border-radius: 30px;
+
+    transform: translate(0, -50%);
+    transform-origin: bottom;
+  }
+
+  &__minute-arrow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: ($watchConteiner / 2 ) - $heightMinuteArrow;
+
+    height: $heightMinuteArrow;
+    width: 15px;
+    margin: auto;
+
+    background-color: #d15559;
+    border-radius: 15px;
+
+    transform-origin: bottom;
+    animation-name: arrowAnimation;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    height: $heightSecondArrow;
+    width: 15px;
+    margin: auto;
+
+    background-color: #4b9aaa;
+    border-radius: 15px;
+
+    transform-origin: bottom;
+    animation-name: arrowAnimation;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+}
+
+@keyframes arrowAnimation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
