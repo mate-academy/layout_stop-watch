@@ -1,0 +1,70 @@
+.stopwatch {
+  position: relative;
+
+  width: 40%;
+
+  &__dial {
+    padding-top: 100%;
+    border: 1px dashed black;
+    border-radius: 50%;
+  }
+
+  &__min {
+    position: absolute;
+    top: 50 - $min-size;
+    left: 50%;
+
+    width: 10px;
+    height: $min-size;
+    border-radius: 10px;
+
+    background-color: #d15559;
+
+    transform-origin: 0 100%;
+    animation-name: watch;
+    animation-iteration-count: infinite;
+    animation-duration: 3600s;
+  }
+
+  &__sec {
+    position: absolute;
+    top: 50 - $sec-size;
+    left: 50%;
+
+    width: 10px;
+    height: $sec-size;
+    border-radius: 10px;
+
+    background-color: #4b9aaa;
+
+    transform-origin: 0 100%;
+    animation-name: watch;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__center-circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+
+    background-color: #4b9aaa;
+  }
+
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0) translateX(-50%);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(-50%);
+  }
+}
