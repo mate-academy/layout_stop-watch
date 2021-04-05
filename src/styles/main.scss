@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.circle {
+  display: flex;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #4b9aaa;
+  border-radius: 50px;
+  background-color: #4b9aaa;
+}
+
+.secondsArrow {
+  position: absolute;
+  top: -285px;
+  z-index: 0;
+  animation: arrowsMoves 60s infinite linear;
+  transform-origin: bottom;
+  width: 10px;
+  height: 300px;
+  border: 1px solid #d15559;
+  border-radius: 10px;
+  background-color: #d15559;
+}
+
+.minutesArrow {
+  position: absolute;
+  top: -135px;
+  z-index: 0;
+  animation: arrowsMoves 3600s infinite steps(60);
+  transform-origin: bottom;
+  width: 10px;
+  height: 150px;
+  border: 1px solid #4b9aaa;
+  border-radius: 10px;
+  background-color: #4b9aaa;
+}
+
+@keyframes arrowsMoves {
+  100% {
+    transform: rotate(360deg);
+  }
+}
