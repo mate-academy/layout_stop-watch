@@ -1,0 +1,53 @@
+.watch {
+  position: relative;
+  width: 45%;
+
+  &__circle {
+    padding-top: 100%;
+    border: 3px dashed #000;
+    border-radius: 50%;
+    background-image: url(../images/stopWatch.png);
+    background-size: cover;
+    background-color: yellowgreen;
+  }
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+    @include center-circle;
+    background-color: #4b9aaa;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+  }
+  &__minutes {
+    position: absolute;
+    @include arrows-position;
+    height: 280px;
+    width: 10px;
+    background-color: #d15559;
+    border-radius: 5px;
+    animation: stopWatch 3600s linear infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    @include arrows-position;
+    height: 410px;
+    width: 10px;
+    background-color: #4b9aaa;
+    border-radius: 5px;
+    animation: stopWatch 60s linear infinite;
+  }
+  @keyframes stopWatch {
+
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
