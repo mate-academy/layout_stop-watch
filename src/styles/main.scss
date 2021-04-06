@@ -1,0 +1,62 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.center {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  &::after {
+    content: " ";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #860d3b;
+    border-radius: 50%;
+  }
+  &__arrow-second,
+  &__arrow-hour,
+  &__arrow-minute {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+  }
+  &__arrow-second {
+    left: 16px;
+    height: 450px;
+    width: 8px;
+    border-radius: 15px;
+    background-color: #d15559;
+    animation: arrow 60s steps(60) infinite;
+  }
+  &__arrow-minute {
+    left: 15px;
+    height: 350px;
+    width: 10px;
+    border-radius: 15px;
+    background-color: #4b9aaa;
+    animation: arrow 3600s linear infinite;
+  }
+  &__arrow-hour {
+    left: 14px;
+    height: 250px;
+    width: 12px;
+    border-radius: 15px;
+    background-color: #102d69;
+    animation: arrow 216000s linear infinite;
+  }
+}
+
+@keyframes arrow {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
