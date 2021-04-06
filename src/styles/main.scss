@@ -1,0 +1,58 @@
+@import "_placeholders.scss";
+@import "time-table.scss";
+
+.watch-container {
+  display: block;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border: 5px solid #808080;
+  border-radius: 15px;
+  font-size: 45px;
+}
+
+.second-hands {
+  position: absolute;
+  height: 180px;
+  width: 7px;
+  background-color: #f00;
+  left: 50.3%;
+  top: 5%;
+  border-radius: 5px;
+
+  animation-duration: 60s;
+  @extend %animation-set;
+}
+
+.minute-hands {
+  position: absolute;
+  height: 150px;
+  width: 10px;
+  left: 50%;
+  top: 13%;
+  background-color: #000;
+  border-radius: 8px;
+
+  animation-duration: 3600s;
+  @extend %animation-set;
+}
+
+.center-point {
+  position: absolute;
+  left: 48%;
+  top: 48%;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: #808080;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
