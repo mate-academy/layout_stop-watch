@@ -1,0 +1,50 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__circle {
+    position: absolute;
+    z-index: 3;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #93afb5;
+  }
+
+  &__hand1 {
+    position: absolute;
+    bottom: 50%;
+    z-index: 2;
+    height: 350px;
+    width: 5px;
+    background-color: #93afb5;
+    border-radius: 10px;
+    animation: clock-hand-rotate 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__hand2 {
+    position: absolute;
+    bottom: 50%;
+    z-index: 1;
+    height: 150px;
+    width: 10px;
+    background-color: #d15559;
+    border-radius: 10px;
+    animation: clock-hand-rotate 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes clock-hand-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
