@@ -1,38 +1,26 @@
-@mixin stopwatchSize($size) {
-  width: $size;
-  height: $size;
+@mixin setSize($wSize, $hSize) {
+  width: $wSize;
+  height: $hSize;
 }
 
-@mixin position {
+@mixin elementPositionDecoration($wSize, $hSize, $color) {
   position: absolute;
+  left: 50%;
+  bottom: 50%;
+  margin-left: -1 * $wSize / 2;
+  width: $wSize;
+  height: $hSize;
+  border-radius: $wSize / 2;
+  background-color: $color;
 }
 
-@mixin minuteHand($size) {
-  @include position;
-  left: minuteHandLeft($size);
-  top: minuteHandHeight($size) / 2;
-  width: minuteHandWidth($size);
-  height: minuteHandHeight($size);
-  border-radius: minuteHandWidth($size) / 2;
-  transform-origin: (minuteHandWidth($size) / 2) (minuteHandHeight($size));
-}
+@mixin rotateEngine($duration, $timingFunction) {
+  animation: twist $duration infinite $timingFunction;
+  transform-origin: center bottom;
 
-@mixin secondHand($size) {
-  @include position;
-  left: secondHandLeft($size);
-  top: 0;
-  width: secondHandWidth($size);
-  height: secondHandHeight($size);
-  border-radius: minuteHandWidth($size) / 2;
-  transform-origin: (secondHandWidth($size) / 2) (secondHandHeight($size));
-}
-
-@mixin pipka($size) {
-  @include position;
-  left: $size / 2 - $size / 60;
-  top: $size / 2 - $size / 60;
-  width: $size / 30;
-  height: $size / 30;
-  background-color: $secondHandColor;
-  border-radius: $size / 60;
+  @keyframes twist {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
