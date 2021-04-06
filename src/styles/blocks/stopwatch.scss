@@ -1,0 +1,61 @@
+.container {
+  @extend %containerSize;
+  margin: 5vmin;
+  position: relative;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.circle {
+  @extend %watchCenter;
+  position: absolute;
+  left: 50%;
+  margin-left: calc(#{$circleSize} / -2);
+  top: 50%;
+  margin-top: calc(#{$circleSize} / -2);
+  z-index: 1;
+  background-color: #4b9aaa;
+  border-radius: 50%;
+}
+
+.minutes {
+  @extend %arrowMin;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  margin-left: calc(#{$arrowMinWidth} / -2);
+  background-color: #d15559;
+  transform-origin: bottom;
+  transform: rotate(0);
+  animation: arrowMin 3600s steps(60, end) infinite;
+}
+
+.seconds {
+  @extend %arrowSec;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  margin-left: calc(#{$arrowSecWidth} / -2);
+  background-color: #4b9aaa;
+  transform-origin: bottom;
+  transform: rotate(0);
+  animation: arrowSec 60s steps(60, end) infinite;
+}
+
+@keyframes arrowSec {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes arrowMin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
