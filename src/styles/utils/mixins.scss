@@ -1,19 +1,10 @@
-%containerSize {
-  height: $containerSize;
-  width: $containerSize;
+%arrowPos {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
 }
 
-%arrowMin {
-  height: $arrowMinHeight;
-  width: $arrowMinWidth;
-}
-
-%arrowSec {
-  height: $arrowSecHeight;
-  width: $arrowSecWidth;
-}
-
-%watchCenter {
-  height: $circleSize;
-  width: $circleSize;
+@mixin size($height, $width) {
+  height: $height;
+  width: $width;
 }
