@@ -4,12 +4,12 @@
   justify-content: center;
   position: relative;
   width: 500px;
-  height: 500px;
+  height: 100vh;
   margin: auto;
 
   &__min {
     position: absolute;
-    top: 50px;
+    bottom: 50%;
     width: 10px;
     height: 200px;
     background-color: #d15659;
@@ -20,7 +20,7 @@
 
   &__sec {
     position: absolute;
-    top: 0;
+    bottom: 50%;
     width: 5px;
     height: 250px;
     background-color: #4c9aaa;
@@ -46,4 +46,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
