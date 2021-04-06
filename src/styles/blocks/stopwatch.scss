@@ -1,0 +1,34 @@
+.stopwatch {
+  position: relative;
+  @include setSize($stopwatchSize, $stopwatchSize);
+
+  &__minute-hand {
+    @include elementPositionDecoration
+      (
+        $minuteHandHeight,
+        $minuteHandWidth,
+        $minuteHandColor
+      );
+    @include rotateEngine(3600s, linear);
+  }
+
+  &__second-hand {
+    @include elementPositionDecoration
+      (
+        $secondHandHeight,
+        $secondHandWidth,
+        $secondHandColor
+      );
+    @include rotateEngine(60s, steps(60));
+  }
+
+  &__central-nail {
+    @include elementPositionDecoration
+      (
+        $centralNailSize,
+        $centralNailSize,
+        $secondHandColor
+      );
+    margin-bottom: -1 * $centralNailSize / 2;
+  }
+}

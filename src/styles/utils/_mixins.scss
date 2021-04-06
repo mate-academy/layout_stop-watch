@@ -1,0 +1,26 @@
+@mixin setSize($wSize, $hSize) {
+  width: $wSize;
+  height: $hSize;
+}
+
+@mixin elementPositionDecoration($wSize, $hSize, $color) {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  margin-left: -1 * $wSize / 2;
+  width: $wSize;
+  height: $hSize;
+  border-radius: $wSize / 2;
+  background-color: $color;
+}
+
+@mixin rotateEngine($duration, $timingFunction) {
+  animation: twist $duration infinite $timingFunction;
+  transform-origin: center bottom;
+
+  @keyframes twist {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
