@@ -1,0 +1,53 @@
+@import "./reset.scss";
+
+.arrow {
+  &__long {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 8px;
+    height: 40%;
+    border-radius: 8px;
+    background-color: red;
+    transform-origin: 0 100%;
+    animation-name: stopwatch;
+    animation-iteration-count: infinite;
+    animation-duration: 3600s;
+  }
+
+  &__short {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 8px;
+    height: 50%;
+    border-radius: 8px;
+    background-color: blue;
+    transform-origin: 0 100%;
+    animation-name: stopwatch;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+}
+
+@keyframes stopwatch {
+  from {
+    transform: rotate(0) translateX(-50%);
+  }
+  
+  to {
+    transform: rotate(360deg) translateX(-50%);
+  }
+}
