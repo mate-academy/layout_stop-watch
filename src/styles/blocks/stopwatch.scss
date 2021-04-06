@@ -1,0 +1,47 @@
+.container {
+  @include size($containerSize, $containerSize);
+  margin: 5vmin;
+  position: relative;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.circle {
+  @include size($circleSize, $circleSize);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: calc(#{$circleSize} / -2);
+  margin-top: calc(#{$circleSize} / -2);
+  background-color: #4b9aaa;
+  border-radius: 50%;
+}
+
+.minutes {
+  @include size($arrowMinHeight, $arrowMinWidth);
+  @extend %arrowPos;
+  margin-left: calc(#{$arrowMinWidth} / -2);
+  background-color: #d15559;
+  transform-origin: bottom;
+  transform: rotate(0);
+  animation: arrowMove 3600s steps(60, end) infinite;
+}
+
+.seconds {
+  @include size($arrowSecHeight, $arrowSecWidth);
+  @extend %arrowPos;
+  margin-left: calc(#{$arrowSecWidth} / -2);
+  background-color: #4b9aaa;
+  transform-origin: bottom;
+  transform: rotate(0);
+  animation: arrowMove 60s steps(60, end) infinite;
+}
+
+@keyframes arrowMove {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
