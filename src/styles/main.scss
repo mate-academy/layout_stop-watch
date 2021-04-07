@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #4b9aaa;
+  }
+
+  &__minutes {
+    position: absolute;
+    z-index: -1;
+    bottom: 50%;
+    width: 11px;
+    height: 200px;
+    border-radius: 5px;
+    background-color: #d15659;
+
+    animation-name: tick;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+
+  &__secunds {
+    position: absolute;
+    z-index: -1;
+    bottom: 50%;
+    width: 10px;
+    height: 280px;
+    border-radius: 5px;
+    background-color: #4b9aaa;
+
+    animation-name: tick;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, start);
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes tick {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
