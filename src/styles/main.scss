@@ -1,0 +1,45 @@
+.clock {
+  &__center {
+    position: absolute;
+    top: 49vh;
+    left: 49vw;
+    width: 2vw;
+    height: 2vw;
+    background-color: #4b9aaa;
+    border-radius: 50%;
+  }
+  
+  &__minute-clockwise {
+    position: absolute;
+    top: 26vh;
+    left: 49.5vw;
+    width: 1vw;
+    height: 25vh;
+    background-color: #4b9aaa;
+    border-radius: 1vh;
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+  }
+  
+  &__second-clockwise {
+    position: absolute;
+    top: 1vh;
+    left: 49.5vw;
+    width: 1vw;
+    height: 50vh;
+    background-color: #d15559;
+    border-radius: 1vh;
+    transform-origin: bottom;
+    animation: move 60s steps(60) infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
