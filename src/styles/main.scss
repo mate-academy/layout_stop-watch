@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 5px solid #000;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.element1 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 10px;
+  z-index: 3;
+}
+
+.element2 {
+  position: absolute;
+  width: 20px;
+  height: 90px;
+  background-color: black;
+  top: 10px;
+  left: 90px;
+  z-index: 2;
+  transform-origin: bottom;
+  animation-name: round;
+  animation-iteration-count: infinite;
+  animation-duration: 3600s;
+  animation-timing-function: steps(60, end);
+}
+
+.element3 {
+  position: absolute;
+  width: 10px;
+  height: 98px;
+  background-color: blue;
+  top: 2px;
+  left: 95px;
+  z-index: 2;
+  transform-origin: bottom;
+  animation-name: round;
+  animation-iteration-count: infinite;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+}
+
+@keyframes round {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
