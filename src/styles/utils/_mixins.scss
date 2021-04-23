@@ -1,0 +1,14 @@
+
+@mixin element-size($w, $h, $r:0) {
+  width: $w;
+  height: $h;
+  border-radius: $r;
+}
+
+@mixin animation-settings($name, $duration, $delay: 0) {
+  animation-name: $name;
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+}
