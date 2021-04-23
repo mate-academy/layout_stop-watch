@@ -1,0 +1,74 @@
+.watch-board {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  box-shadow: 5px 2px 10px #000;
+  display: flex;
+  background-color: #e9ee78;
+}
+
+.center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: blue;
+  box-shadow: 2px 1px 5px black;
+}
+
+.center::after {
+  width: 12px;
+  height: 225px;
+  border-radius: 50%;
+  animation-name: watch;
+  animation-delay: 0;
+  animation-duration: 60s;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+  position: absolute;
+  content: "";
+  bottom: 50%;
+  background-color: green;
+  transform-origin: bottom center;
+}
+
+.center::before {
+  width: 12px;
+  height: 150px;
+  border-radius: 50%;
+  animation-name: watch;
+  animation-delay: 1s;
+  animation-duration: 3600s;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+  position: absolute;
+  content: "";
+  background-color: #ff4800;
+  bottom: 50%;
+  transform-origin: bottom center;
+}
+
+@keyframes watch {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 5px 3px 6px black;
+  }
+  25% {
+    box-shadow: 5px 3px 6px black;
+  }
+  50% {
+    box-shadow: -5px -10px 6px black;
+  }
+  75% {
+    box-shadow: -5px 8px 6px black;
+  }
+  100% {
+    box-shadow: 5px 3px 6px black;
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,24 @@
+@use "./blocks/watch_board.scss";
+
+@keyframes watch {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 5px 3px 6px black;
+  }
+
+  25% {
+    box-shadow: 5px 3px 6px black;
+  }
+
+  50% {
+    box-shadow: -5px -10px 6px black;
+  }
+  75% {
+    box-shadow: -5px 8px 6px black;
+  }
+  100% {
+    box-shadow: 5px 3px 6px black;
+
+    transform: rotate(360deg);
+  }
+}
