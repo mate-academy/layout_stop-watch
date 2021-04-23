@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+}
+
+.watch-contant {
+  display: flex;
+  justify-content: center;
+}
+
+.watch {
+  background-color: lightgoldenrodyellow;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  border: 2px solid #d1d1d1;
+}
+
+.watch__center {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #207db8;
+  box-shadow: 5px 1px 5px grey;
+  z-index: 3;
+}
+
+.watch__min-arrow {
+  position: absolute;
+  width: 15px;
+  height: 100px;
+  background-color: #207db8;
+  border-radius: 10px;
+  bottom: 50%;
+  transform-origin: bottom center;
+  animation-duration: 3600s;
+  animation-timing-function: steps(60, end);
+  animation-name: watch;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  box-shadow: 5px 1px 5px grey;
+  z-index: 1;
+}
+
+.watch__sec-arrow {
+  position: absolute;
+  width: 10px;
+  height: 190px;
+  background-color: #e4a111;
+  border-radius: 10px;
+  bottom: 50%;
+  transform-origin: bottom center;
+  animation-duration: 60s;
+  animation-timing-function: steps(60, end);
+  animation-name: watch;
+  animation-iteration-count: infinite;
+  box-shadow: 5px 1px 5px grey;
+  z-index: 2;
+}
+
+@keyframes watch {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  13% {
+    box-shadow: 5px 1px 5px grey;
+  }
+
+  25% {
+    box-shadow: 5px -6px 5px grey;
+  }
+
+  38% {
+    box-shadow: 1px -10px 3px grey;
+  }
+
+  50% {
+    box-shadow: -5px -10px 5px grey;
+  }
+
+  63% {
+    box-shadow: -4px -3px 5px grey;
+  }
+
+  75% {
+    box-shadow: -4px 1px 5px grey;
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
