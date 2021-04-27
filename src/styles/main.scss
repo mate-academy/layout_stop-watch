@@ -1,0 +1,44 @@
+$watch-size: 300px;
+
+@mixin hand {
+  position: absolute;
+  content: "";
+  width: 5px;
+  border-radius: 5px;
+  bottom: 50%;
+  left: 50%;
+  animation: rotate infinite steps(60);
+  transform-origin: bottom;
+}
+
+.stopwatch {
+  position: absolute;
+  width: $watch-size;
+  height: $watch-size;
+  border: 5px solid #656365;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stopwatch::before {
+  @include hand;
+  height: 130px;
+  background: rgb(70, 106, 150);
+  border-radius: 5px;
+  animation-duration: 60s;
+}
+
+.stopwatch::after {
+  @include hand;
+  height: 100px;
+  background: rgb(201, 79, 79);
+  animation-duration: 3660s;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
