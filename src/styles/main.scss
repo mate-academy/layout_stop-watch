@@ -5,10 +5,10 @@ $watch-size: 300px;
   content: "";
   width: 5px;
   border-radius: 5px;
-  top: 50%;
+  bottom: 50%;
   left: 50%;
   animation: rotate infinite steps(60);
-  transform-origin: top;
+  transform-origin: bottom;
 }
 
 .stopwatch {
@@ -27,14 +27,14 @@ $watch-size: 300px;
   height: 130px;
   background: rgb(70, 106, 150);
   border-radius: 5px;
-  animation-duration: 3600s;
+  animation-duration: 60s;
 }
 
 .stopwatch::after {
   @include hand;
   height: 100px;
   background: rgb(201, 79, 79);
-  animation-duration: 60s;
+  animation-duration: 3660s;
 }
 
 @keyframes rotate {
