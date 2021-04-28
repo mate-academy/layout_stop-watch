@@ -15,8 +15,17 @@
   height: 400px;
   border: 2px solid #d1d1d1;
 
-  &__center {
+  .arrow {
     position: absolute;
+    transform-origin: bottom center;
+    animation-timing-function: steps(60, end);
+    animation-name: watch;
+    animation-iteration-count: infinite;
+    box-shadow: 5px 1px 5px grey;
+    bottom: 50%;
+  }
+
+  &__center {
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -26,29 +35,15 @@
   }
 
   &__min-arrow {
-    position: absolute;
     @include mixins.arrow-style(15px, 100px, rgb(32, 125, 184), 10px);
-    bottom: 50%;
-    transform-origin: bottom center;
     animation-duration: 3600s;
-    animation-timing-function: steps(60, end);
-    animation-name: watch;
-    animation-iteration-count: infinite;
     animation-delay: 1s;
-    box-shadow: 5px 1px 5px grey;
     z-index: 1;
   }
 
   &__sec-arrow {
-    position: absolute;
     @include mixins.arrow-style(10px, 190px, rgb(228, 161, 17), 10px);
-    bottom: 50%;
-    transform-origin: bottom center;
     animation-duration: 60s;
-    animation-timing-function: steps(60, end);
-    animation-name: watch;
-    animation-iteration-count: infinite;
-    box-shadow: 5px 1px 5px grey;
     z-index: 2;
   }
 
