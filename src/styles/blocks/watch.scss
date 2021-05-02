@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+}
+
+.stop-watch {
+  position: relative;
+  width: $watch-width;
+  height: $watch-width;
+  border: 1px solid black;
+  border-radius: 50%;
+
+  &__minute-hand {
+    top: 100px;
+    @include hand-position;
+    height: 50px;
+    background-color: rgb(134, 4, 37);
+    animation: rotating 3600s linear infinite;
+  }
+
+  &__second-hand {
+    top: 30px;
+    @include hand-position;
+    height: 120px;
+    background-color: darkcyan;
+    animation: rotating 60s linear infinite;
+  }
+
+  &__center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $center-width;
+    height: $center-width;
+    border-radius: 50%;
+    background-color: darkcyan;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
