@@ -1,0 +1,58 @@
+$b-r-value: 50%;
+$bg-color-red: #f00;
+$bg-color-black: #000;
+
+%same-styles {
+  position: absolute;
+  bottom: 50%;
+  width: 5px;
+  border-radius: 10px;
+  transform-origin: bottom;
+
+}
+@mixin width ($size) {
+  width: $size;
+  height: $size;
+} 
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  position: relative;
+  margin: 100px auto;
+  @include width(300px);
+  border: 5px dotted #333;
+  border-radius: $b-r-value;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  &__second-arrow {
+    height: 130px;
+    background-color: $bg-color-black;
+    animation: rotate 59s steps(60) infinite;
+    @extend %same-styles;
+  }
+
+  &__minute-arrow {
+    height: 110px;
+    background-color: $bg-color-red;
+    animation: rotate 3600s steps(60) infinite;
+    @extend %same-styles;
+    z-index: 1;
+  }
+
+  &__axis {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: $b-r-value;
+    background-color: $bg-color-red;
+  }
+
+}
