@@ -1,14 +1,14 @@
 $clock-size: 500px;
 
-$hand-hour-length: 140px;
+$hand-minutes-length: 140px;
 
-$hand-minute-length: 240px;
+$hand-seconds-length: 240px;
 
 $hand-thickness: 10px;
 
-$hour-hand-top-position: $clock-size / 2 - $hand-hour-length;
+$minutes-hand-top-position: $clock-size / 2 - $hand-minutes-length;
 
-$minute-hand-top-position: $clock-size / 2 - $hand-minute-length;
+$seconds-hand-top-position: $clock-size / 2 - $hand-seconds-length;
 
 $hand-left-position: $clock-size / 2 - $hand-thickness / 2;
 
@@ -41,20 +41,21 @@ $hand-left-position: $clock-size / 2 - $hand-thickness / 2;
     animation: hand_rotate;
     transform-origin: bottom center;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
 
-    &--hour {
-      top: $hour-hand-top-position;
-      height: $hand-hour-length;
+    &--minutes {
+      top: $minutes-hand-top-position;
+      height: $hand-minutes-length;
       background-color: #d15559;
-      animation-duration: 86400s;
+      animation-duration: 3600s;
+      animation-timing-function: linear;
     }
 
-    &--minute {
-      top: $minute-hand-top-position;
-      height: $hand-minute-length;
+    &--seconds {
+      top: $seconds-hand-top-position;
+      height: $hand-seconds-length;
       background-color: #4b9aaa;
-      animation-duration: 3600s;
+      animation-duration: 60s;
+      animation-timing-function: steps(60);
     }
   }
 }
