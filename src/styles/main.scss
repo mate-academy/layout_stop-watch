@@ -1,0 +1,71 @@
+$clock-size: 500px;
+
+$hand-minutes-length: 140px;
+
+$hand-seconds-length: 240px;
+
+$hand-thickness: 10px;
+
+$minutes-hand-top-position: $clock-size / 2 - $hand-minutes-length;
+
+$seconds-hand-top-position: $clock-size / 2 - $hand-seconds-length;
+
+$hand-left-position: $clock-size / 2 - $hand-thickness / 2;
+
+* {
+  margin: 0;
+}
+
+.clock {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background-color: #4b9aaa;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    left: $hand-left-position;
+    width: $hand-thickness;
+    border-radius: 5px;
+    animation: hand_rotate;
+    transform-origin: bottom center;
+    animation-iteration-count: infinite;
+
+    &--minutes {
+      top: $minutes-hand-top-position;
+      height: $hand-minutes-length;
+      background-color: #d15559;
+      animation-duration: 3600s;
+      animation-timing-function: linear;
+    }
+
+    &--seconds {
+      top: $seconds-hand-top-position;
+      height: $hand-seconds-length;
+      background-color: #4b9aaa;
+      animation-duration: 60s;
+      animation-timing-function: steps(60);
+    }
+  }
+}
+
+@keyframes hand_rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
