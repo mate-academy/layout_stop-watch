@@ -1,0 +1,61 @@
+$circle-size: 30px;
+$hand-width: 10px;
+$second-hand-height: 300px;
+$minute-hand-height: 200px;
+$top-shift: $second-hand-height;
+$left-shift: 550px;
+$left-shift--hand: $left-shift + ($circle-size - $hand-width) / 2;
+
+body {
+  margin: 0;
+}
+
+.clock {
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  z-index: 3;
+  left: $left-shift;
+  top: $top-shift - $circle-size / 2;
+  height: $circle-size;
+  width: $circle-size;
+  background-color: rgb(78, 78, 231);
+  border-radius: 50%;
+}
+
+.minute-hand {
+  z-index: 2;
+  position: absolute;
+  left: $left-shift--hand;
+  top: $top-shift - $minute-hand-height;
+  width: $hand-width;
+  height: $minute-hand-height;
+  background-color: pink;
+  border-radius: 5px;
+  animation: hand-move 3600s steps(60) infinite;
+  transform-origin: bottom;
+}
+
+.second-hand {
+  position: absolute;
+  z-index: 1;
+  left: $left-shift--hand;
+  width: $hand-width;
+  height: $second-hand-height;
+  background-color: rgb(78, 78, 231);
+  border-radius: 5px;
+  animation: hand-move 60s steps(60) infinite;
+  transform-origin: bottom;
+}
+
+@keyframes hand-move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
