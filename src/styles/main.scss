@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0%;
+}
+
+@mixin watch {
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+}
+
+.conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  @include watch;
+  background-color: wheat;
+  
+
+  &__center {
+    position: absolute;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(94, 213, 221);
+    z-index: 2;
+  }
+
+  &__arrow-min {
+    position: absolute;
+    display: flex;
+    width: 24px;
+    height: 140px;
+    top: 113px;
+    background-color: rgb(222, 116, 78);
+    border-radius: 10px;
+    animation: rotate-arrows 3600s infinite;
+    transform-origin: bottom;
+  }
+
+  &__arrow-sec {
+    position: absolute;
+    display: flex;
+    width: 20px;
+    height: 240px;
+    top: 13px;
+    background-color: rgb(94, 213, 221);
+    border-radius: 10px;
+    animation: rotate-arrows 60s infinite;
+    transform-origin: bottom;
+    z-index: 1;
+  }
+}
+
+@keyframes rotate-arrows {
+  from {
+    transform: rotate(0);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+}
