@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: rgb(247, 122, 6);
+}
+
+.clock {
+  @include circle($clock-size);
+  background-color: #fff;
+  margin: auto;
+  border: 5px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+
+  &__dots {
+    position: relative;
+    background-color: #000;
+    @include circle($dot-size);
+    z-index: 4;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: 50%;
+    @include arrow($secunds-height, $arrows-width);
+    background-color: rgb(226, 10, 10);
+    z-index: 2;
+    transform-origin: bottom;
+    animation: seconds 60s linear infinite;
+  }
+
+  &__minutes {
+    position: absolute;
+    bottom: 50%;
+    @include arrow($minutes-height, $arrows-width);
+    background-color: rgb(14, 10, 226);
+    z-index: 3;
+    transform-origin: bottom;
+    animation: minutes 3600s linear infinite;
+  }
+}
