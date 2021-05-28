@@ -1,0 +1,15 @@
+.minute-hand {
+  @include stop-watch-minute-hand-position;
+  width: $stop-watch-hand-width;
+  height: $hand-height * 0.7;
+
+  @include stop-watch-hand-animation(3600s);
+
+  background-color: $minute-hand-color;
+
+  &::before {
+    @include stop-watch-element-ending;
+
+    background-color: $minute-hand-color;
+  }
+}

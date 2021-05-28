@@ -1,70 +1,8 @@
 @import "./utiles/_reset.scss";
 @import "./utiles/variables";
-@import "./utiles/mixins";
 @import "./utiles/functions";
+@import "./utiles/mixins";
 
-.stop-watch {
-  position: relative;
-  display: flex;
-  margin: 100px auto;
-
-  @include stop-watch-circle;
-
-  &__hand {
-    transform-origin: bottom;
-  }
-
-  &__center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: $stop-watch-hand-width * 2;
-    height: $stop-watch-hand-width * 2;
-    transform: translate(-50%, -50%);
-  }
-
-  &:hover {
-    cursor: pointer;
-
-    .stop-watch__hand:nth-child(1) {
-      animation: rotate 3600s infinite linear;
-    }
-
-    .stop-watch__hand:nth-child(2) {
-      animation: rotate 60s infinite linear;
-    }
-  }
-}
-
-.watch-center {
-  border-radius: 50%;
-  background-color: $second-hand-color;
-}
-
-.minute-hand {
-  @include stop-watch-minute-hand-position;
-  width: $stop-watch-hand-width;
-  height: $hand-height * 0.7;
-
-  background-color: $minute-hand-color;
-
-  &::before {
-    @include stop-watch-element-ending;
-
-    background-color: $minute-hand-color;
-  }
-}
-
-.second-hand {
-  @include stop-watch-second-hand-position;
-  width: $stop-watch-hand-width;
-  height: $hand-height;
-
-  background-color: $second-hand-color;
-
-  &::before {
-    @include stop-watch-element-ending;
-
-    background-color: $second-hand-color;
-  }
-}
+@import "./blocks/stop-watch";
+@import "./blocks/minute-hand";
+@import "./blocks/second-hand";

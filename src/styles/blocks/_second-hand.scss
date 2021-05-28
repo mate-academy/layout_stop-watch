@@ -1,0 +1,15 @@
+.second-hand {
+  @include stop-watch-second-hand-position;
+  width: $stop-watch-hand-width;
+  height: $hand-height;
+
+  @include stop-watch-hand-animation(60s);
+
+  background-color: $second-hand-color;
+
+  &::before {
+    @include stop-watch-element-ending;
+
+    background-color: $second-hand-color;
+  }
+}
