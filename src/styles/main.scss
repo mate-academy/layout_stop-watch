@@ -1,82 +1,74 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-$stop-watch-hand-width: 10px;
-$minute-color: rgb(156, 49, 16);
-$second-color: rgb(0, 119, 128);
-$hand-height: 250px;
-
-@mixin stop-watch-element-position($percent) {
-  position: absolute;
-  left: $percent;
-  top: $percent;
-}
-
-@mixin stop-watch-element-ending {
-  content: "";
-  position: absolute;
-  top: -5px;
-  width: $stop-watch-hand-width;
-  height: $stop-watch-hand-width;
-
-  border-radius: 50%;
-}
+@import "./utiles/_reset.scss";
+@import "./utiles/variables";
+@import "./utiles/mixins";
 
 .stop-watch {
   position: relative;
   display: flex;
-  min-width: 500px;
-  min-height: 500px;
   margin: 100px auto;
 
+  @include stop-watch-circle;
+
   &__hand {
-    @include stop-watch-element-position(50%);
+    transition: 1s;
+    transform-origin: bottom;
   }
 
   &__center {
-    @include stop-watch-element-position(50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $stop-watch-hand-width * 2;
+    height: $stop-watch-hand-width * 2;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .stop-watch__hand:nth-child(-n + 2) {
+      transform: rotate(360deg);
+    }
+
+    .stop-watch__hand:nth-child(1) {
+      transition: 3600s;
+    }
+
+    .stop-watch__hand:nth-child(2) {
+      transition: 60s;
+    }
   }
 }
 
 .watch-center {
-  width: $stop-watch-hand-width * 2;
-  height: $stop-watch-hand-width * 2;
-  transform: translate(-50%, -50%);
-
   border-radius: 50%;
-  background-color: $second-color;
+  background-color: $second-hand-color;
 }
 
 .minute-hand {
+  @include stop-watch-minute-hand-position;
   width: $stop-watch-hand-width;
   height: $hand-height * 0.7;
-  transform: translate(-50%, -100%);
 
-  background-color: $minute-color;
+  background-color: $minute-hand-color;
 
   &::before {
     @include stop-watch-element-ending;
 
-    background-color: $minute-color;
+    background-color: $minute-hand-color;
   }
 }
 
 .second-hand {
+  @include stop-watch-second-hand-position;
   width: $stop-watch-hand-width;
   height: $hand-height;
-  transform: translate(-50%, -100%);
 
-  background-color: $second-color;
+  background-color: $second-hand-color;
 
   &::before {
     @include stop-watch-element-ending;
 
-    background-color: $second-color;
+    background-color: $second-hand-color;
   }
 }
-
