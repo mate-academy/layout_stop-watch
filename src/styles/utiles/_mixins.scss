@@ -1,0 +1,34 @@
+@mixin stop-watch-circle {
+  width: $stop-watch-width;
+  height: $stop-watch-width;
+
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 4px 4px 8px 2px rgba(34, 60, 80, 0.5);
+}
+
+@mixin stop-watch-second-hand-position {
+  position: absolute;
+  left: $stop-watch-width / 2 - $stop-watch-hand-width / 2;
+  top: $stop-watch-width / 2 - $hand-height;
+}
+
+@mixin stop-watch-minute-hand-position {
+  position: absolute;
+  left: $stop-watch-width / 2 - $stop-watch-hand-width / 2;
+  top: $stop-watch-width / 2 - $hand-height * 0.7;
+}
+
+@mixin stop-watch-element-ending {
+  content: "";
+  position: absolute;
+  top: -5px;
+  width: $stop-watch-hand-width;
+  height: $stop-watch-hand-width;
+
+  border-radius: 50%;
+}
+
+@mixin stop-watch-hand-animation($duration) {
+  animation: rotate $duration infinite linear;
+}

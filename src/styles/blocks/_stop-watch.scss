@@ -1,0 +1,23 @@
+.stop-watch {
+  position: relative;
+  display: flex;
+  margin: 100px auto;
+
+  @include stop-watch-circle;
+
+  &__hand {
+    transform-origin: bottom;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $stop-watch-hand-width * 2;
+    height: $stop-watch-hand-width * 2;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+    background-color: $second-hand-color;
+  }
+}
