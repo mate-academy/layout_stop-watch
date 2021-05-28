@@ -1,0 +1,64 @@
+@use '../utils/variables' as *;
+
+body {
+  margin: 0;
+}
+
+.hand {
+  width: 10px;
+  border-radius: 5px;
+  position: absolute;
+  transform-origin: bottom center;
+  
+  &--minutes {
+    @extend .hand;
+    background-color: rgb(168, 60, 60);
+    height: $handlenght * 0.5; 
+    animation-name: rotate;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation: rotatemin 3600s steps(60) 0s infinite  forwards;
+
+    @keyframes rotatemin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+   }
+
+  }
+  
+  &--seconds {
+    @extend .hand;
+    background-color: rgb(54, 49, 104);
+    height: $handlenght; 
+    animation-name: rotates;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation: rotatesec 60s steps(60) 0s infinite  forwards;
+
+    @keyframes rotatesec {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+   }
+
+  }
+
+  &--button {
+    position: absolute;
+    z-index: 1;
+    top: $handlenght - $button / 2;
+    width: $button;
+    height: $button;
+    background-color: rgb(54, 49, 104);
+    border-radius: 50%;
+  }
+
+}
+
