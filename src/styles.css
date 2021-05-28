@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+}
+
+.hand, .hand--seconds, .hand--minutes {
+  width: 10px;
+  border-radius: 5px;
+  position: absolute;
+  transform-origin: bottom center;
+}
+.hand--minutes {
+  background-color: #a83c3c;
+  height: 125px;
+  animation-name: rotate;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation: rotatemin 3600s steps(60) 0s infinite forwards;
+}
+@keyframes rotatemin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.hand--seconds {
+  background-color: #363168;
+  height: 250px;
+  animation-name: rotates;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation: rotatesec 60s steps(60) 0s infinite forwards;
+}
+@keyframes rotatesec {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.hand--button {
+  position: absolute;
+  z-index: 1;
+  top: 240px;
+  width: 20px;
+  height: 20px;
+  background-color: #363168;
+  border-radius: 50%;
+}
+
+.clock {
+  margin-top: 100px;
+  position: relative;
+  width: 500px;
+  width: fit-content;
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=styles.css.map */
