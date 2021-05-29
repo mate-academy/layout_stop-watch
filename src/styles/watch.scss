@@ -1,0 +1,35 @@
+.watch {
+  @include watch(500px);
+  background-color: #81070f;
+  box-shadow: 0 5px 30px 20px rgba(0, 0, 0, 0.2);
+
+  &__hand {
+    &--second {
+      position: relative;
+      left: calc(50% - 2.5px);
+      top: 5%;
+      height: 45%;
+      width: 5px;
+      background-color: #fff;
+      border-radius: 8px;
+      animation-name: second-hand;
+      animation-duration: 60s;
+      @include animation-properties;
+    
+    }
+
+    &--minute {
+      position: relative;
+      left: calc(50% - 2.5px);
+      top: -20%;
+      height: 25%;
+      width: 5px;
+      background-color: #8d8d8d;
+      border-radius: 8px;
+      animation-name: minute-hand;
+      animation-duration: 3600s;
+      @include animation-properties;
+    
+    }
+  }
+}
