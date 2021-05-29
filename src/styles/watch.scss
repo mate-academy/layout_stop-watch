@@ -1,7 +1,16 @@
 .watch {
-  @include watch(500px);
+  @include circle(500px);
   background-color: #81070f;
   box-shadow: 0 5px 30px 20px rgba(0, 0, 0, 0.2);
+  
+  &__center {
+    position: absolute;
+    left: calc(50% - 15px);
+    top: calc(50% - 15px);
+    background-color: #000;
+    @include circle(30px);
+    
+  }
 
   &__hand {
     &--second {
