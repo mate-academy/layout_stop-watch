@@ -1,0 +1,68 @@
+.watch {
+  margin: auto;
+  position: relative;
+  transform: translateY(15%);
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background-image: url(../images/istockphoto-519789604-1024x1024.jpg);
+  background-position: cover;
+  background-size: contain;
+}
+
+.watch__arrow-seconds {
+  height: 295px;
+  width: 6px;
+  background-color: #ce3535;
+  position: absolute;
+  top: 13.5%;
+  left: 49.5%;
+  transform-origin: 3px 255px;
+  animation: move 60s linear infinite;
+}
+
+.watch:hover .watch__arrow-seconds {
+  animation-play-state: paused;
+}
+
+.watch .watch__arrow-minutes {
+  height: 260px;
+  width: 10px;
+  background-color: #070716;
+  position: relative;
+  left: 49.3%;
+  top: 17%;
+  border-radius: 20%;
+  transform-origin: 3px 230px;
+  animation: move 3600s linear infinite;
+  animation-fill-mode: forwards;
+}
+
+.watch:hover .watch .watch__arrow-minutes {
+  animation-play-state: paused;
+}
+
+.watch .watch__round-in-centre {
+  cursor: pointer;
+  width: 5%;
+  height: 5%;
+  border-radius: 50%;
+  background-color: #0b0f0d;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+    animation-fill-mode: forwards;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
