@@ -1,15 +1,19 @@
+@import "_palette.scss";
+@import "_variables.scss";
+
 .stopwatch {
   display: flex;
   height: 100%;
   width: 100%;
   align-items: center;
   justify-content: center;
-  background: url(/src/image/alarm-clock.jpg) repeat center;
 
   &__corp {
 
     position: relative;
-    @include sec-corp-size;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
     background-color: $corp;
   }
 
