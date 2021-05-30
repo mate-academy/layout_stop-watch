@@ -1,0 +1,67 @@
+.stopwatch {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: url(/src/image/alarm-clock.jpg) repeat center;
+
+  &__corp {
+
+    position: relative;
+    @include sec-corp-size;
+    background-color: $corp;
+  }
+
+  &__sec-hand {
+    
+    width: 1%;
+    height: 50%;
+    background-color: $sec_hand;
+    border-radius: 8px;
+    z-index: 2;
+    top: 0;
+    left: $sec-hand-left-position;
+    animation: hand-steps 60s linear infinite;
+    transform-origin: bottom;
+    position: absolute;
+  }
+
+  &__min-hand {
+
+    width: 2%;
+    height: 42%;
+    background-color: $min_hand;
+    border-radius: 30px;
+    position: absolute;
+    animation: hand-steps 3600s steps(60) infinite;
+    top: $min-hand-top-position;
+    left: $min-hand-left-position;
+    z-index: 1;
+    transform-origin: bottom;
+  }
+
+  &__center {
+
+    width: 7%;
+    height: 7%;
+    border-radius: 50%;
+    background-color: $sec_hand;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+}
+
+@keyframes hand-steps {
+  
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
