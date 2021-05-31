@@ -1,0 +1,46 @@
+@import "./utils/variables";
+
+.watch {
+  position: relative;
+
+  @include cyrcle($size);
+
+  background-color: $watch-color;
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+
+    @include cyrcle($center-size);
+
+    background: $center-color;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute {
+    position: absolute;
+    top: $minute-position-top;
+    left: $arrow-position-left;
+    width: $arrow-width;
+    height: $arrow-height;
+    background: $minute-color;
+    border-radius: $arrow-radius;
+    animation: move-watch 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    top: $second-position-top;
+    left: $arrow-position-left;
+    z-index: 1;
+    width: $arrow-width;
+    height: $second-height;
+    background: $second-color;
+    border-radius: $arrow-radius;
+    animation: move-watch 60s linear infinite;
+    transform-origin: bottom;
+  }
+}
