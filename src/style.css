@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #aaa;
+}
+
+.container {
+  height: 600px;
+  width: 600px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.watch-circle {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #4b9aaa;
+}
+
+.watch-hand {
+  position: relative;
+  width: 15px;
+  border-radius: 14px;
+  transform-origin: bottom;
+}
+
+.watch-hand--seconds {
+  top: 10px;
+  left: 293px;
+  height: 250px;
+  z-index: 1;
+  background-color: #4b9aaa;
+  animation: rotation 60s infinite linear backwards;
+}
+
+.watch-hand--minutes {
+  top: -190px;
+  left: 293px;
+  height: 200px;
+  background-color: #d15559;
+  animation: rotation 3600s infinite linear backwards;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
