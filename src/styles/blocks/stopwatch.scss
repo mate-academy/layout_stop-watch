@@ -1,0 +1,59 @@
+@import "./utils/variables.scss";
+
+.stopwatch {
+  position: relative;
+  height: $sell-size;
+  width: $sell-size;
+  margin: 0 auto;
+  background-color: rgb(202, 190, 190);
+  box-shadow: 0 0 20px 2px red;
+  border-radius: 50%;
+
+  &__minut {
+    position: absolute;
+    width: 4px;
+    height: $sell-size / 4;
+    border-radius: 2px;
+    background-color: red;
+    left: 50%;
+    top: 25%;
+    margin-left: -2px;
+    animation: move 3600s linear infinite;
+    transform-origin: center bottom;
+  }
+
+  &__second {
+    position: absolute;
+    width: 4px;
+    height: $sell-size / 2;
+    border-radius: 2px;
+    background-color: rgb(120, 120, 247);
+    left: 50%;
+    margin-left: -2px;
+    animation: move 60s steps(60) infinite;
+    transform-origin: center bottom;
+  }
+
+  @keyframes move {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    left: 50%;
+    top: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+
+}
