@@ -1,5 +1,6 @@
 @import "_palette.scss";
 @import "_variables.scss";
+@import "_animation.scss";
 
 .stopwatch {
   display: flex;
@@ -16,6 +17,7 @@
     height: 600px;
     border-radius: 50%;
     background-color: $corp;
+    box-shadow: 0 0 10px;
   }
 
   &__sec-hand {
@@ -23,6 +25,7 @@
     width: 1%;
     height: 50%;
     background-color: $sec_hand;
+    box-shadow: 0 0 3px;
     border-radius: 8px;
     z-index: 2;
     top: 0;
@@ -37,6 +40,7 @@
     width: 2%;
     height: 42%;
     background-color: $min_hand;
+    box-shadow: 0 0 5px;
     border-radius: 30px;
     position: absolute;
     animation: hand-steps 3600s steps(60) infinite;
@@ -52,21 +56,11 @@
     height: 7%;
     border-radius: 50%;
     background-color: $sec_hand;
+    box-shadow: 0 0 5px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-  }
-}
-
-@keyframes hand-steps {
-  
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 }
