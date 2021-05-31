@@ -30,29 +30,28 @@
   background-color: #4b9aaa;
 }
 
-.watch-seconds {
+.watch-hand {
   position: relative;
-  top: 10px;
-  left: 293px;
-  height: 250px;
   width: 15px;
-  z-index: 1;
   border-radius: 14px;
-  background-color: #4b9aaa;
-  animation: rotation 60s infinite linear backwards;
   transform-origin: bottom;
 }
 
-.watch-minutes {
-  position: relative;
+.watch-hand--seconds {
+  top: 10px;
+  left: 293px;
+  height: 250px;
+  z-index: 1;
+  background-color: #4b9aaa;
+  animation: rotation 60s infinite linear backwards;
+}
+
+.watch-hand--minutes {
   top: -190px;
   left: 293px;
   height: 200px;
-  width: 15px;
-  border-radius: 14px;
   background-color: #d15559;
   animation: rotation 3600s infinite linear backwards;
-  transform-origin: bottom;
 }
 
 @keyframes rotation {
