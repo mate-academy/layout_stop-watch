@@ -33,31 +33,13 @@
     }
   }
 
-  &__twelve {
-    @extend %for-numbers;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  &__tree {
-    @extend %for-numbers;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-  }
-
-  &__six {
-    @extend %for-numbers;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  &__nine {
-    @extend %for-numbers;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
+  @each $time, $top-bottom, $tb-val,$left-right , $lr-val, $x, $y in $hours {
+    &__#{$time} {
+      position: absolute;
+      z-index: -2;
+      #{$top-bottom}: $tb-val;
+      #{$left-right}: $lr-val;
+      transform: translate($x, $y);
+    }
   }
 }
