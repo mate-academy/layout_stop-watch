@@ -1,12 +1,3 @@
-$watch-size: 600px;
-$watch-circle-size: 40px;
-$circle-round: 50%;
-$circle-position: 50%;
-$watch-seconds-hand-length: 250px;
-$watch-hand-width: 15px;
-$watch-hand-round: 14px;
-$watch-minutes-hand-length: 200px;
-
 * {
   box-sizing: border-box;
 }
@@ -21,21 +12,21 @@ $watch-minutes-hand-length: 200px;
 }
 
 .container {
-  height: $watch-size;
-  width: $watch-size;
-  border-radius: $circle-round;
+  height: 600px;
+  width: 600px;
+  border-radius: 50%;
   background-color: #fff;
 }
 
 .watch-circle {
   position: relative;
-  height: $watch-circle-size;
-  width: $watch-circle-size;
-  top: $circle-position;
-  left: $circle-position;
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  left: 50%;
   z-index: 2;
-  transform: translate(-$circle-position, -$circle-position);
-  border-radius: $circle-round;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
   background-color: #4b9aaa;
 }
 
@@ -43,10 +34,10 @@ $watch-minutes-hand-length: 200px;
   position: relative;
   top: 10px;
   left: 293px;
-  height: $watch-seconds-hand-length;
-  width: $watch-hand-width;
+  height: 250px;
+  width: 15px;
   z-index: 1;
-  border-radius: $watch-hand-round;
+  border-radius: 14px;
   background-color: #4b9aaa;
   animation: rotation 60s infinite linear backwards;
   transform-origin: bottom;
@@ -56,9 +47,9 @@ $watch-minutes-hand-length: 200px;
   position: relative;
   top: -190px;
   left: 293px;
-  height: $watch-minutes-hand-length;
-  width: $watch-hand-width;
-  border-radius: $watch-hand-round;
+  height: 200px;
+  width: 15px;
+  border-radius: 14px;
   background-color: #d15559;
   animation: rotation 3600s infinite linear backwards;
   transform-origin: bottom;
@@ -68,8 +59,9 @@ $watch-minutes-hand-length: 200px;
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
 }
+
+/*# sourceMappingURL=style.css.map */
