@@ -1,0 +1,46 @@
+.watch {
+  @include circle($container-size);
+  border: 1px solid black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/pc787xLEi.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &__center {
+    @include circle($center-size);
+    background-color: rgb(74, 74, 230);
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    bottom: $container-size / 2;
+    height: $second-arrow-heigth;
+    width: $arrow-width;
+    border-radius: $arrow-width;
+    background-color: rgb(74, 74, 230);
+    animation: rotation 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__minute-arrow {
+    position: absolute;
+    bottom: $container-size / 2;
+    height: $minute-arrow-heigth;
+    width: $arrow-width;
+    border-radius: $arrow-width;
+    background-color: rgb(151, 1, 1);
+    animation: rotation 3600s linear infinite;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
