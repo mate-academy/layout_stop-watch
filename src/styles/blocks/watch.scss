@@ -19,7 +19,7 @@
     @extend %clock-hand-rules;
     height: $second-height;
     background-color: $second-bgc;
-    transform-origin: bottom center;
+    @extend %transform-origin;
     animation: move 60s linear infinite;
     z-index: 0;
   }
@@ -30,7 +30,7 @@
     @extend %clock-hand-rules;
     height: $minute-height;
     background-color: $minute-bgc;
-    transform-origin: bottom center;
+    @extend %transform-origin;
     animation: move 3600s linear infinite;
     z-index: 1;
   }
