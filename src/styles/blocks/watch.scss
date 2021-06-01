@@ -6,32 +6,32 @@
   &__center {
     @extend %element-in-center;
     top: $element-top-padding;
-    @include small-center-circle($watch-size);
-    background-color: $center-bgc;
+    z-index: 2;
+    @include main-circle($watch-size / 20);
     border: 1px solid black;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    background-color: $center-bgc;
   }
   &__second {
     @extend %element-in-center;
     top: $watch-radius - $second-height;
     margin-left: $negative-margine-for-clocks;
     @extend %clock-hand-rules;
-    height: $second-height;
-    background-color: $second-bgc;
-    @extend %transform-origin;
-    animation: move 60s linear infinite;
     z-index: 0;
+    height: $second-height;
+    @extend %transform-origin;
+    background-color: $second-bgc;
+    animation: move 60s linear infinite;
   }
   &__minute {
     @extend %element-in-center;
     top: $element-top-padding / 2;
     margin-left: $negative-margine-for-clocks;
     @extend %clock-hand-rules;
-    height: $minute-height;
-    background-color: $minute-bgc;
-    @extend %transform-origin;
-    animation: move 3600s linear infinite;
     z-index: 1;
+    height: $minute-height;
+    @extend %transform-origin;
+    background-color: $minute-bgc;
+    animation: move 3600s linear infinite;
   }
 }
