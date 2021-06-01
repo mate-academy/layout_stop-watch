@@ -1,0 +1,68 @@
+.clock {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+
+  border-radius: 50%;
+  background-color: #fff;
+  background-image: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)
+  ),
+    url(../../images/clock2.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+
+  &__minutes {
+    height: $arrows-h;
+    width: $minutes-w;
+    background-color: $arrow-color;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: rotate(-90deg);
+
+    transform-origin: left;
+    animation: move 3600s linear infinite;
+  }
+
+  &__seconds {
+    height: $arrows-h;
+    width: $seconds-w;
+    background-color: $arrow-color;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: rotate(-90deg);
+
+    transform-origin: left;
+    animation: move 60s linear infinite;
+  }
+
+  &__point {
+    position: relative;
+    width: $point-w-h;
+    height: $point-w-h;
+    background-color: $arrow-color;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    border-radius: 50%;
+  }
+  @keyframes move {
+    from {
+      transform: rotate(-90deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
