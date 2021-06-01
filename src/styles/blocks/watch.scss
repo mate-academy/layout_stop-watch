@@ -1,0 +1,37 @@
+.watch {
+  position: relative;
+  @include main-circle ($watch-size);
+  background-color: rgb(75, 63, 63);
+  border: 2px solid rgb(255, 0, 0);
+  &__center {
+    @extend %element-in-center;
+    top: $element-top-padding;
+    z-index: 2;
+    @include main-circle($watch-size / 20);
+    border: 1px solid black;
+    transform: translate(-50%, -50%);
+    background-color: $center-bgc;
+  }
+  &__second {
+    @extend %element-in-center;
+    top: $watch-radius - $second-height;
+    margin-left: $negative-margine-for-clocks;
+    @extend %clock-hand-rules;
+    z-index: 0;
+    height: $second-height;
+    @extend %transform-origin;
+    background-color: $second-bgc;
+    animation: move 60s linear infinite;
+  }
+  &__minute {
+    @extend %element-in-center;
+    top: $element-top-padding / 2;
+    margin-left: $negative-margine-for-clocks;
+    @extend %clock-hand-rules;
+    z-index: 1;
+    height: $minute-height;
+    @extend %transform-origin;
+    background-color: $minute-bgc;
+    animation: move 3600s linear infinite;
+  }
+}
