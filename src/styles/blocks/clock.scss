@@ -1,0 +1,35 @@
+.main-content {
+  position: relative;
+  margin: 0 auto;
+  @include clock-view(700px, 700px, 50%, bisque);
+
+  box-shadow: 0 15px 20px grey,
+    0 -5px 50px rgb(255, 245, 109) inset;
+}
+
+.minute-hand {
+  @include hand-view(10px, 200px, #b42843, 5px);
+  @extend %hand-position;
+
+  animation: move 3600s linear infinite;
+}
+
+.second-hand {
+  @include hand-view(10px, 280px, #3599da, 5px);
+  @extend %hand-position;
+
+  animation: move 60s linear infinite;
+}
+
+.center-clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  background-color: rgb(204, 196, 80);
+
+  transform: translate(-25%, -50%);
+}
