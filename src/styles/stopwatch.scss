@@ -1,0 +1,62 @@
+@import "_palette.scss";
+@import "_variables.scss";
+@import "_animation.scss";
+
+.stopwatch {
+  display: flex;
+  width: 600px;
+  height: 600px;
+  padding: 100px 0 0;
+  justify-content: center;
+
+  &__corp {
+
+    position: relative;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background-color: $corp;
+    box-shadow: 0 0 10px;
+  }
+  &__sec-hand {
+    
+    width: 1%;
+    height: 50%;
+    background-color: $sec_hand;
+    box-shadow: 0 0 3px;
+    border-radius: 8px;
+    z-index: 2;
+    top: 0;
+    left: $sec-hand-left-position;
+    animation: hand-steps 60s linear infinite;
+    transform-origin: bottom;
+    position: absolute;
+  }
+  &__min-hand {
+
+    width: 2%;
+    height: 42%;
+    background-color: $min_hand;
+    box-shadow: 0 0 5px;
+    border-radius: 30px;
+    position: absolute;
+    animation: hand-steps 3600s steps(60) infinite;
+    top: $min-hand-top-position;
+    left: $min-hand-left-position;
+    z-index: 1;
+    transform-origin: bottom;
+  }
+  &__center {
+
+    width: 7%;
+    height: 7%;
+    border-radius: 50%;
+    background-color: $sec_hand;
+    box-shadow: 0 0 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+}
