@@ -1,0 +1,45 @@
+.section-watch {
+  position: relative;
+  @extend %display-flex-center;
+  @include round ($box-width, $box-height);
+  font-size: 60px;
+  color: $color-grey;
+  border: 2px solid $color-grey;
+
+  &__watch {
+    content: "";
+    position: relative;
+    display: block;
+    @include round (20px, 20px);
+    background: $color-green;
+  }
+
+  @each $type, $value, $time, $color in $height-arrow {
+    &__#{$type} {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      z-index: -1;
+      display: block;
+      height: $value;
+      width: 10px;
+      background: $color;
+      border-radius: 10px;
+      transform: rotate(180deg),
+        translate(-50%, -50%);
+      transform-origin: top center;
+      animation: go-round #{$time} linear infinite;
+    }
+  }
+
+  @each $time, $top-bottom, $tb-val,$left-right , $lr-val, $x, $y in $hours {
+    &__#{$time} {
+      position: absolute;
+      z-index: -2;
+      #{$top-bottom}: $tb-val;
+      #{$left-right}: $lr-val;
+      transform: translate($x, $y);
+    }
+  }
+}

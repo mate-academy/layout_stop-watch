@@ -1,0 +1,9 @@
+@mixin square($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin round($width, $height) {
+  @include square($width, $height);
+  border-radius: 50%;
+}
