@@ -1,42 +1,44 @@
-$color-red: rgb(195, 93, 93);
-$color-blue: rgb(95, 153, 170);
-$minute-arrow-width: 20px;
-$seconds-arrow-width: 20px;
+@import "./utils/variables.scss";
+
+@import "./utils/extend.scss";
+@import "./utils/mixin.scss";
+
+body::before {
+  content: "";
+  @extend %position;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $color-blue;
+  z-index: 1;
+}
 
 .stopwatch {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 600px;
-  height: 600px;
+  @include size ($watch-size);
+  @extend %position;
   border: 1px solid yellow;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
 
   &::before {
     content: "";
-    position: absolute;
-    top: 50%;
+    @extend %arrow-styles;
     left: calc(50% - 10px);
     height: 200px;
-    width: 20px;
+    width: $arrow-minute-width;
     border-radius: 10px;
     background-color: $color-red;
-    animation: rotate-arrow 3600s linear infinite;
-    transform-origin: top;
+    animation-duration: 3600s;
   }
 
   &::after {
     content: "";
-    position: absolute;
-    top: 50%;
+    @extend %arrow-styles;
     left: calc(50% - 5px);
     height: 280px;
-    width: 10px;
+    width: $arrow-seconds-width;
     border-radius: 5px;
     background-color: $color-blue;
-    animation: rotate-arrow 60s linear infinite;
-    transform-origin: top;
+    animation-duration: 60s;
   }
 }
 
@@ -47,17 +49,4 @@ $seconds-arrow-width: 20px;
   100% {
     transform: rotate(180deg);
   }
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: $color-blue;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
 }
