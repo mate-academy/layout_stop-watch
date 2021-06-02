@@ -1,0 +1,44 @@
+.watch {
+  width: $widthScreen;
+  height: $heightScreen;
+  border-radius: 100%;
+  border: 1px solid rgb(187, 33, 33);
+  box-shadow: 0 0 10px;
+
+  &__center {
+    position: absolute;
+    width: $watchCenterWidth;
+    height: $watchCenterHeight;
+    z-index: 2;
+    background-color: rgb(231, 69, 69);
+    border-radius: 100%;
+  }
+
+  &__min {
+    position: absolute;
+    top: 6%;
+    width: $watchMinWidth;
+    height: $watchMinHeight;
+    background-color: rgb(231, 69, 69);
+    border-radius: 8px;
+
+    animation: transform 3600s;
+    animation-timing-function: linear;
+    @include animation;
+
+  }
+
+  &__sec {
+    position: relative;
+    bottom: 17%;
+    width: $watchSecWidth;
+    height: $watchSecHeight;
+    z-index: 1;
+    background-color: rgb(44, 19, 19);
+    border-radius: 8px;
+
+    animation: transform 60s;
+    animation-timing-function: steps(60, end);
+    @include animation;
+  }
+}
