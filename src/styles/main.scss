@@ -1,0 +1,52 @@
+@import "./utils/variables.scss";
+
+@import "./utils/extend.scss";
+@import "./utils/mixin.scss";
+
+body::before {
+  content: "";
+  @extend %position;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $color-blue;
+  z-index: 1;
+}
+
+.stopwatch {
+  @include size ($watch-size);
+  @extend %position;
+  border: 1px solid yellow;
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    @extend %arrow-styles;
+    left: calc(50% - 10px);
+    height: 200px;
+    width: $arrow-minute-width;
+    border-radius: 10px;
+    background-color: $color-red;
+    animation-duration: 3600s;
+  }
+
+  &::after {
+    content: "";
+    @extend %arrow-styles;
+    left: calc(50% - 5px);
+    height: 280px;
+    width: $arrow-seconds-width;
+    border-radius: 5px;
+    background-color: $color-blue;
+    animation-duration: 60s;
+  }
+}
+
+@keyframes rotate-arrow {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
