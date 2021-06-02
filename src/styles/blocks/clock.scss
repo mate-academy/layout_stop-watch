@@ -1,0 +1,38 @@
+
+.clock {
+  @include size($size-big);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-bg-big-circle;
+
+  &__arrow-big {
+    top: $top-arr-big;
+    border-radius: $width-arr;
+    position: absolute;
+    height: $height-big-arr;
+    width: $width-arr;
+    background-color: $color-arr-big;
+    transform-origin: bottom;
+    animation: move $time-min infinite linear;
+  }
+
+  &__arrow-small {
+    border-radius: $width-arr;
+    top: $top-arr-small;
+    position: absolute;
+    height: $height-small-arr;
+    width: $width-arr;
+    background-color: $color-arr-small;
+    transform-origin: bottom;
+    animation: move $time-hour infinite linear;
+  }
+
+  &__circle {
+    @include size($size-small);
+    position: absolute;
+    background-color: $color-bg-small-circle;
+  }
+
+}
