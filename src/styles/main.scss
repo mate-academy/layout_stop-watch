@@ -1,0 +1,65 @@
+$blue-color:#5a9aac;
+$red-color: #c25858;
+
+.page__content {
+  display: flex;
+  justify-content: center;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  border: 1px solid #d1d1d1;
+
+  &__circle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $blue-color;
+    z-index: 3;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    height: 200px;
+    width: 20px;
+    top: 100px;
+    background-color: $red-color;
+    animation: rotate-arrows;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+    border-radius: 10px;
+    z-index: 1;
+  }
+
+  &__second-hand {
+    position: absolute;
+    height: 300px;
+    top: 0;
+    width: 15px;
+    border-radius: 10px;
+    background-color: $blue-color;
+    transform-origin: bottom;
+    animation-name: rotate-arrows;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+    z-index: 2;
+  }
+}
+
+@keyframes rotate-arrows {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
