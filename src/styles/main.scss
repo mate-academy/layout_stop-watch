@@ -1,0 +1,65 @@
+.watch {
+  position: relative;
+  transform: translateY(15%);
+  margin: auto;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background-image: url(../images/istockphoto-519789604-1024x1024.jpg);
+  background-position: cover;
+  background-size: contain;
+
+  &__arrow-seconds {
+    position: absolute;
+    top: 13.5%;
+    left: 49.5%;
+    height: 295px;
+    width: 6px;
+    transform-origin: 3px 255px;
+    animation: move 60s linear infinite;
+    background-color: #ce3535;
+
+    .watch:hover & {
+      animation-play-state: paused;
+    }
+  }
+
+  &__arrow-minutes {
+    position: relative;
+    left: 49.3%;
+    top: 17%;
+    height: 260px;
+    width: 10px;
+    border-radius: 20%;
+    transform-origin: 3px 230px;
+    animation: move 3600s linear infinite;
+    animation-fill-mode: forwards;
+    background-color: #070716;
+
+    .watch:hover & {
+      animation-play-state: paused;
+    }
+  }
+
+  &__round-in-centre {
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5%;
+    height: 5%;
+    border-radius: 50%;
+    background-color: #0b0f0d;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+    animation-fill-mode: forwards;
+  }
+}
