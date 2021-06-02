@@ -1,0 +1,54 @@
+$clock-width: 10px;
+$clock-point: 15px;
+$left-point: 500px;
+$minute-size: 100px;
+$second-size: 150px;
+$left-point--arrow: $left-point + ($clock-point - $clock-width)/2;
+
+.clock {
+  position: relative;
+}
+
+.clock__point {
+  position: absolute;
+  width: $clock-point;
+  height: $clock-point;
+  left: $left-point;
+  top: $second-size - $clock-width / 2;
+  border-radius: 50%;
+  z-index: 3;
+  background-color: #519dad;
+}
+
+.clock__minute {
+  position: absolute;
+  left: $left-point--arrow;
+  top: $second-size - $minute-size;
+  width: $clock-width;
+  height: $minute-size;
+  background-color: #d15559;
+  border-radius: 10px;
+  animation: clock-time 3600s infinite;
+  transform-origin: bottom;
+}
+
+.clock__second {
+  position: absolute;
+  left: $left-point--arrow;
+  width: $clock-width;
+  height: $second-size;
+  background-color: #519dad;
+  border-radius: 10px;
+  animation: clock-time 60s infinite;
+  transform-origin: bottom;
+}
+
+@keyframes clock-time {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
