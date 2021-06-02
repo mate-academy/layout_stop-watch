@@ -1,0 +1,17 @@
+.watch {
+  @extend %flex;
+  position: relative;
+  margin: 60px auto;
+  @include cyrcle(600px);
+
+  box-shadow: 1px 1px 8px 1px;
+  background: #fff url(../images/clock.svg) no-repeat center;
+  background-size: 88%;
+
+  &__circle-watch {
+    position: absolute;
+    z-index: 2;
+    @include cyrcle(20px);
+    background-color: rgb(155, 225, 243);
+  }
+}

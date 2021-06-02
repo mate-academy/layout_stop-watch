@@ -1,0 +1,13 @@
+.minute-hand {
+  @extend %flex;
+  position: absolute;
+
+  &__spoon {
+    position: absolute;
+    height: 180px;
+    bottom: 2px;
+
+    animation: move-watch-hand 3600s linear infinite;
+    transform-origin: bottom;
+  }
+}

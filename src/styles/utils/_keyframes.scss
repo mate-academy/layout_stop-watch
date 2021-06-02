@@ -1,0 +1,21 @@
+@keyframes move-watch-hand {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes x {
+  100% {
+    transform: translateX( calc(100vw - #{$size-ice-cream}) );
+  }
+}
+
+@keyframes y {
+  100% {
+    transform: translateY( calc(100vh - #{$size-ice-cream}) );
+  }
+}
