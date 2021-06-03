@@ -1,6 +1,6 @@
 # Stopwatch task
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_stop-watch/)
+- [DEMO LINK](https://sviatoslav-kishka.github.io/layout_stop-watch/)
 
 ___
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
@@ -9,8 +9,8 @@ ___
 ___
 
 ## The task
-Create a working stopwatch with minute and second hands using only CSS animations.
-- The starting position of the hands should be at 0:00.
+Create a working stopwatch with minute and second clock__hands using only CSS animations.
+- The starting position of the clock__hands should be at 0:00.
 ---
 ![demo](stopwatch.png)
 

@@ -1,0 +1,18 @@
+.clock {
+  position: relative;
+  @include clock-size($clock-size);
+  margin: 0 auto;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.clock__circle {
+  @include circle-size($clock-size);
+  position: absolute;
+  display: inline-block;
+  left: $clock-size / 2 - 8;
+  top: $clock-size / 2 - 10;
+  border-radius: 50%;
+  background-color: blue;
+  z-index: 2;
+}

@@ -1,0 +1,30 @@
+.clock__hand {
+  position: absolute;
+  display: inline-block;
+  border-radius: 10px 10px 0 0;
+  animation-name: rotating;
+  transform-origin: bottom center;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}
+  
+.clock__hand--minutes {
+  left: $clock-size / 2 - 4;
+  top: $clock-size / 4;
+  height: $clock-size / 4;
+  width: 10px;
+  background-color: red;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+}
+  
+.clock__hand--seconds {
+  left: $clock-size / 2;
+  top: 10px;
+  height: $clock-size / 2 - 10;
+  width: 5px;
+  background-color: blue;
+  animation-duration: 60s;
+  animation-timing-function: steps(60, end);
+  z-index: 1;
+}
