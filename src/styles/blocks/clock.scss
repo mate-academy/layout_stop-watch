@@ -1,0 +1,33 @@
+.clock {
+  @include squareSize($clockSize);
+  margin: 0 auto;
+  border: 3px solid black;
+  position: relative;
+
+  &__centre {
+    @include squareSize($centerSize);
+    background-color: $minColor;
+    @include centre;
+    z-index: 1;
+  }
+
+  &__seconds {
+    width: $lineW;
+    height: $secLineH;
+    background-color: $secColor;
+    @include startEnd;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+    border-radius: 5px;
+  }
+
+  &__minute {
+    width: $lineW;
+    height: $minlineH;
+    background-color: $minColor;
+    @include startEnd;
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+    border-radius: 5px;
+  }
+}
