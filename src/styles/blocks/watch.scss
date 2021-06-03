@@ -1,0 +1,54 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  width: $watch-size;
+  height: $watch-size;
+  border: 3px solid purple;
+  border-radius: 50%;
+
+  background-color: pink;
+
+  &__centre {
+    background-color: #ff1493;
+    border-radius: 50%;
+
+    width: $watch-size--centre;
+    height: $watch-size--centre;
+    z-index: 1;
+  }
+
+  &::before{
+    position: absolute;
+    top: 0;
+    left: $position-hend-min;
+
+    content: '';
+    width: $height-of-min;
+    height: $hend-minute;
+    border-radius: 40px;
+
+    background-color: #ff1493;
+
+    animation: minutes 3600s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &::after{
+    position: absolute;
+    top: $hend-second;
+    left: $position-hend-sec;
+
+    content: '';
+    width: $height-of-sec;
+    height: $hend-second;
+    border-radius: 40px;
+
+    background-color: purple;
+
+    animation: minutes 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+}
