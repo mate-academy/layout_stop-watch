@@ -5,27 +5,27 @@
   border-radius: 50%;
   background-color: $clock-color;
 
+  &__hour-hand {
+    height: $hour-hand-height;
+    width: $hour-hand-width;
+    background-color: $hour-hand-color;
+    border-radius: 5px;
+
+    @include hour-hand-position;
+
+    animation: hand-steps 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
   &__min-hand {
     height: $min-hand-height;
     width: $min-hand-width;
     background-color: $min-hand-color;
     border-radius: 5px;
-
+    
     @include min-hand-position;
 
     animation: hand-steps 60s linear infinite;
-    transform-origin: bottom;
-  }
-
-  &__sec-hand {
-    height: $sec-hand-height;
-    width: $sec-hand-width;
-    background-color: $sec-hand-color;
-    border-radius: 5px;
-    
-    @include sec-hand-position;
-
-    animation: hand-steps 1s linear infinite;
     transform-origin: bottom;
   }
 
@@ -33,7 +33,7 @@
     height: $clock-dot-diameter;
     width: $clock-dot-diameter;
     border-radius: 50%;
-    background-color: $sec-hand-color;
+    background-color: $min-hand-color;
 
     @include dot-position;
   }

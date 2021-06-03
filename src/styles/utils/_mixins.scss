@@ -3,16 +3,16 @@
   width: $clock-size;
 }
 
-@mixin min-hand-position {
+@mixin hour-hand-position {
   position: absolute;
-  top: ($clock-size / 2 - $clock-border-size) - $min-hand-height;
-  left: ($clock-size / 2 - $clock-border-size) - $min-hand-width;
+  top: ($clock-size / 2 - $clock-border-size) - $hour-hand-height;
+  left: ($clock-size / 2 - $clock-border-size) - $hour-hand-width;
 }
 
-@mixin sec-hand-position {
+@mixin min-hand-position {
   position: absolute;
-  left: ($clock-size / 2 - $clock-border-size) - $sec-hand-width;
-  top: ($clock-size / 2 - $clock-border-size) - $sec-hand-height;
+  left: ($clock-size / 2 - $clock-border-size) - $min-hand-width;
+  top: ($clock-size / 2 - $clock-border-size) - $min-hand-height;
 }
 
 @mixin dot-position {
