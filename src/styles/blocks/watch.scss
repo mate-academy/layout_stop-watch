@@ -1,0 +1,41 @@
+.watch {
+  position: relative;
+  width: $watch-width;
+  height: $watch-height;
+  border-radius: $watch-border-radius;
+  background-color: #000;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 50px;
+    width: 50px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    border-radius: 50%;
+    background: url(../img/smile.png);
+  }
+
+  &__arrow-hours {
+    position: absolute;
+    top: 19%;
+    left: 49%;
+    height: 150px;
+    width: 5px;
+    @extend %arrow-color-border;
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+  }
+
+  &__arrow-second {
+    position: absolute;
+    top: 9%;
+    left: 49%;
+    height: 200px;
+    width: 10px;
+    @extend %arrow-color-border;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+}
