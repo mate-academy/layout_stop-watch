@@ -1,0 +1,11 @@
+@mixin square($side) {
+  width: $side;
+  height: $side;
+  border-radius: 50%;
+}
+
+@mixin center($shift) {
+  position: absolute;
+  left: $shift;
+  top: $shift;
+}
