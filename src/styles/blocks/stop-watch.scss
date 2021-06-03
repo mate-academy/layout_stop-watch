@@ -1,5 +1,5 @@
 .stop-watch {
-  @include clock-face($clock-size);
+  @include clock-face($minute-size);
   background-image: url(http://abali.ru/wp-content/uploads/2011/04/ciferblat_sekundomera_Abali.ru_.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -9,22 +9,22 @@
   justify-content: center;
   align-items: center;
 
-  &__minutes {
-    @extend %position;
-    width: #{$width * 2};
+  &__minutes-hand {
+    @extend %clock-hands-position;
+    @extend %move;
+    width: getMinuteWidth($second-width);
     height: #{$minute-size};
     background-color: red;
-    animation: move 60s linear infinite;
-    transform-origin: bottom center;
+    animation-duration: 60s;
   }
 
-  &__seconds {
-    @extend %position;
-    background-color: blue;
-    width: #{$width};
-    height: getSecondSize($minute-size);
-    animation: move 1s linear infinite;
-    transform-origin: bottom center;
+  &__seconds-hand {
+    @extend %clock-hands-position;
+    @extend %move;
+    background-color: cadetblue;
+    width: #{$second-width};
+    height: getSecondHeight($minute-size);
+    animation-duration: 1s;
   }
 
   &__center {

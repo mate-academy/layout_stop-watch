@@ -1,13 +1,18 @@
-%position {
+%clock-hands-position {
   position: absolute;
   bottom: 50%;
-  border-radius: 50%;
+  border-radius: 20%;
 }
 
-@mixin clock-face ($clock-size) {
-  width: $clock-size;
-  height: $clock-size;
-  border-radius: 75%;
+%move {
+  animation: move linear infinite;
+  transform-origin: bottom center;
+}
+
+@mixin clock-face ($minute-size) {
+  width: getClockSize($minute-size);
+  height: getClockSize($minute-size);
+  border-radius: 50%;
 }
 
 @mixin center ($center-size) {
