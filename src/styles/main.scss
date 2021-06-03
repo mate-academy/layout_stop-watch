@@ -1,55 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
 
 .watch {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
   border: 2px solid darkblue;
 
   &__minute {
     position: absolute;
-    height: 10px;
-    width: 200px;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 8px;
     border-radius: 5px;
     background-color: crimson;
-    animation-name: watch;
+    animation-name: minut;
     animation-duration: 3600s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    @keyframes watch {
+    transform-origin: 0 100%;
+
+    @keyframes minut {
       0% {
-        transform: rotate(0);
+        transform: translateX(-50%) translateY(-100%) rotate(0);
       }
 
       100% {
-        transform: rotate(360deg);
+        transform: translateX(-50%) translateY(-100%) rotate(360deg);
       }
     }
   }
 
   &__second {
     position: absolute;
-    height: 8px;
-    width: 300px;
+    top: 50%;
+    left: 50%;
+    height: 300px;
+    width: 8px;
     border-radius: 5px;
     background-color: skyblue;
-    animation-name: watch;
+    animation-name: sec;
     animation-duration: 60s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    
+    transform-origin: 0 100%;
+
+    @keyframes sec {
+      0% {
+        transform: translateX(-50%) translateY(-100%) rotate(0);
+      }
+
+      100% {
+        transform: translateX(-50%) translateY(-100%) rotate(360deg);
+      }
+    }
   }
 
   &__center {
     position: absolute;
+    top: 50%;
+    left: 50%;
     height: 20px;
     width: 20px;
     border-radius: 50%;
     background-color: skyblue;
+    transform: translateX(-50%) translateY(-50%);
   }
 }
