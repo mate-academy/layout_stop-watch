@@ -1,0 +1,16 @@
+@mixin element($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin rotate-animation($sec) {
+  transform-origin: bottom;
+  animation: rotation $sec;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@mixin hand($color) {
+  background-color: $color;
+  border-radius: 10px;
+}

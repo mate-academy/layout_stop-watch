@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+.center {
+  @include element($center-size);
+
+  background-color: $minute-hand-color;
+  border: 1px solid $minute-hand-color;
+  border-radius: 50%;
+  position: relative;
+  bottom: $center-size / 2;
+  right: $center-size / 4;
+}

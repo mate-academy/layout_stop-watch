@@ -1,0 +1,11 @@
+@import "./variables.scss";
+
+.second-hand {
+  position: absolute;
+  bottom: $main-height / 2;
+  height: $hand-height-s;
+  width: $hand-width;
+
+  @include hand($second-hand-color);
+  @include rotate-animation(60s);
+}
