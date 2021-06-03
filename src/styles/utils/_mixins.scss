@@ -1,0 +1,22 @@
+@mixin clock-size {
+  height: $clock-size;
+  width: $clock-size;
+}
+
+@mixin hour-hand-position {
+  position: absolute;
+  top: ($clock-size / 2 - $clock-border-size) - $hour-hand-height;
+  left: ($clock-size / 2 - $clock-border-size) - $hour-hand-width;
+}
+
+@mixin min-hand-position {
+  position: absolute;
+  left: ($clock-size / 2 - $clock-border-size) - $min-hand-width;
+  top: ($clock-size / 2 - $clock-border-size) - $min-hand-height;
+}
+
+@mixin dot-position {
+  position: absolute;
+  top: ($clock-size / 2 - $clock-border-size) - ($clock-dot-diameter / 2);
+  left: ($clock-size / 2 - $clock-border-size) - ($clock-dot-diameter / 2) - 5;
+}
