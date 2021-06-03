@@ -1,6 +1,9 @@
 .watch {
-    display: flex;
     @include watch($watch-size);
+
+    position: relative;
+
+    display: flex;
     justify-content: center;
     align-items: center;
   
@@ -13,7 +16,7 @@
   
       &__minute-arrow {
         position: absolute;
-        top: $watch-size / 2.7;
+        top: $watch-size / 3;
         height: $arrow-height;
         width: $minute-arrow-width;
         border-radius: 10px;
@@ -25,7 +28,7 @@
   
       &__second-arrow {
         position: absolute;
-        top: $watch-size / 2.7;
+        top: $watch-size / 3;
         height: $arrow-height;
         width: $second-arrow-width;
         border-radius: 10px;
