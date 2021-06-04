@@ -1,0 +1,35 @@
+.stop-watch {
+  @include clock-face($minute-size);
+  background-image: url(http://abali.ru/wp-content/uploads/2011/04/ciferblat_sekundomera_Abali.ru_.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__minutes-hand {
+    @extend %clock-hands-position;
+    @extend %move;
+    width: getMinuteWidth($second-width);
+    height: #{$minute-size};
+    background-color: red;
+    animation-duration: 3600s;
+  }
+
+  &__seconds-hand {
+    @extend %clock-hands-position;
+    @extend %move;
+    background-color: cadetblue;
+    width: #{$second-width};
+    height: getSecondHeight($minute-size);
+    animation-duration: 60s;
+  }
+
+  &__center {
+    @include center($center-size);
+    position: absolute;
+    background-color: cadetblue;
+  }
+}
