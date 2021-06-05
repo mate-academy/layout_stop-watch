@@ -1,0 +1,70 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/cat-clock.jpg);
+  background-size: contain;
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  @include clock($clock-size);
+  box-shadow: 10px 15px 10px rgb(81, 78, 92);
+
+  @media (max-width:720px) {
+    min-height: 300px;
+    min-width: 300px;
+  }
+
+  &__center {
+    background: rgb(120, 120, 214);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: 3;
+
+    @media (max-width:720px) {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__min-arrow {
+    position: absolute;
+    align-self: flex-start;
+    margin-top: 15%;
+    background: rgb(196, 69, 69);
+    z-index: 2;
+    border-radius: 10px;
+    height: $min-arrow-height;
+    width: 2.5%;
+    animation: anim 3600s infinite linear;
+    transform-origin: bottom;
+
+    @media (max-width:720px) {
+      height: $min-arrow-height-media;
+    }
+  }
+
+  &__sec-arrow {
+    background: rgb(120, 120, 214);
+    position: absolute;
+    z-index: 1;
+    margin-top: 7%;
+    align-self: flex-start;
+    border-radius: 10px;
+    height: $sec-arrow-height;
+    width: 2.5%;
+    transform-origin: bottom;
+    animation: anim 60s infinite linear;
+
+    @media (max-width:720px) {
+      height: $sec-arrow-height-media;
+    }
+  }
+}
+
+@keyframes anim {
+  to {
+    transform: rotate(360deg);
+  }
+}
