@@ -1,0 +1,58 @@
+.watch {
+  position: relative;
+  margin: 0 auto;
+  height: $watch-size;
+  width: $watch-size;
+  border: 5px dotted #fff;
+  border-radius: 50%;
+  background-image: url(https://www.freecodecamp.org/news/content/images/size/w2000/2020/04/w-qjCHPZbeXCQ-unsplash.jpg);
+  background-position: center;
+
+  &__minute::after {
+    content: "";
+    position: absolute;
+    bottom: $vertical-centring;
+    left: centring($watch-size, $hands-width);
+    width: $hands-width;
+    height: $minute-height;
+    background-color: rgb(74, 29, 80);
+    border-radius: 8px;
+
+    animation: second;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    
+  }
+
+  &__second::after {
+    content: "";
+    position: absolute;
+    bottom: $vertical-centring;
+    left: centring($watch-size, $hands-width);
+    width: $hands-width;
+    height: $second-height;
+    background-color: rgb(211, 2, 89);
+    border-radius: 8px;
+
+    animation: second;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom ;
+
+  }
+
+  &__center::after {
+    content: "";
+    position: absolute;
+    width: $center-size;
+    height: $center-size;
+    top: centring($watch-size, $center-size);
+    left: centring($watch-size, $center-size);
+    background-color: rgb(20, 8, 43);
+    border-radius: 50%;
+  }
+
+}
