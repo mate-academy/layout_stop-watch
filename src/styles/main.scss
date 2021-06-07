@@ -1,53 +1,5 @@
-$point-size: 30px;
+@import "./normalize.scss";
+@import "./variables.scss";
 
-.page-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.stopwatch-center {
-  background-color: #4b9aaa;
-  border-radius: 50%;
-  height: $point-size;
-  width: $point-size;
-  position: relative;
-
-  &::before,
-  &::after {
-    transform: rotate(-90deg);
-    z-index: -1;
-  }
-
-  &::before {
-    content: "";
-    background-color: #4b9aaa;
-    border-radius: 10px;
-    height: 15px;
-    width: 500px;
-    position: absolute;
-    animation: secondArrow 60s infinite steps(60);
-    bottom: 10px;
-    transform-origin: 3%;
-  }
-
-  &::after {
-    content: "";
-    background-color: #d15559;
-    border-radius: 10px;
-    height: 15px;
-    width: 350px;
-    position: absolute;
-    animation: secondArrow 3600s infinite steps(60);
-    bottom: 8px;
-    transform-origin: 4%;
-  }
-}
-
-@keyframes secondArrow {
-  100% {
-    transform: rotateZ(270deg);
-  }
-}
+@import "./blocks/page.scss";
+@import "./blocks/stopwatch.scss";

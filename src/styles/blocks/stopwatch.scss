@@ -1,0 +1,38 @@
+.stopwatch {
+  @include circle;
+
+  background-color: $seconds-color;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    border-radius: $arrow-border-radius;
+    height: $arrow-height;
+    position: absolute;
+    transform: rotate(-90deg);
+    z-index: -1;
+  }
+
+  &::before {
+    background-color: $seconds-color;
+    width: 500px;
+    animation: tick 60s infinite steps(60);
+    bottom: 10px;
+    transform-origin: 3%;
+  }
+
+  &::after {
+    background-color: $minutes-color;
+    width: 350px;
+    animation: tick 3600s infinite steps(60);
+    bottom: 8px;
+    transform-origin: 4%;
+  }
+}
+
+@keyframes tick {
+  100% {
+    transform: rotateZ(270deg);
+  }
+}
