@@ -1,0 +1,11 @@
+@mixin square($length) {
+  height: $length;
+  width: $length;
+  border-radius: 50%;
+}
+
+@mixin centering($shiftInPercents) {
+  position: absolute;
+  top: $shiftInPercents;
+  left: $shiftInPercents;
+}

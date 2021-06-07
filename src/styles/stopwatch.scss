@@ -1,0 +1,52 @@
+$length: 800px;
+
+@mixin square($length) {
+  height: $length;
+  width: $length;
+  border-radius: 50%;
+}
+
+@mixin centering($shiftInPercents) {
+  position: absolute;
+  top: $shiftInPercents;
+  left: $shiftInPercents;
+}
+
+.stopwatch {
+  @include square($length);
+  position: relative;
+  border: 1px solid #000;
+
+  &__circle {
+    @include centering(50%);
+    @include square(10%);
+    transform: translate(-50%, -50%);
+    background-color: green;
+    z-index: 3;
+  }
+
+  &__minute {
+    @include centering(50%);
+    background-color: red;
+    transform: translate(-50%, -100%);
+    height: 30%;
+    width: $length / 40;
+    border-radius: $length / 40;
+    animation: move 3600s linear infinite;
+    transform-origin: bottom;
+    z-index: 1;
+  }
+
+  &__second {
+    @include centering(50%);
+    transform: translate(-50%, -100%);
+    height: 40%;
+    width: $length / 40;
+    border-radius: $length / 40;
+    background-color: greenyellow;
+    animation: move 60s linear infinite;
+    animation-timing-function: steps(60);
+    transform-origin: bottom;
+    z-index: 2;
+  }
+}
