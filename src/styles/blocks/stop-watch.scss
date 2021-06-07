@@ -1,0 +1,23 @@
+.stop-watch {
+  position: relative;
+  @include square($watch-size);
+
+  &__seconds-hand {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    
+  }
+
+  &__minutes-hand {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+  }
+
+  &__central-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
