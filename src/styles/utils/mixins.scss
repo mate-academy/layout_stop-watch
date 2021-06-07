@@ -1,0 +1,14 @@
+@mixin circle ($diameter) {
+  height: $diameter;
+  width: $diameter;
+  border-radius: 50%;
+}
+
+@mixin w-arrow {
+  position: absolute;
+  left: $distance;
+  bottom: 50%;
+  width: $width-arrow;
+  border-radius: $width-arrow / 2;
+  transform-origin: bottom;
+}

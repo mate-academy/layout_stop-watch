@@ -1,0 +1,39 @@
+.watch {
+  position: relative;
+  @include circle ($watch-diam);
+  border: 3px solid rgb(39, 80, 39);
+
+  background-color: #fff;
+
+  &__second {
+    @include w-arrow;
+    height: 290px;
+    animation: moves 60s linear infinite;
+    background-color: rgb(75, 75, 141);
+  }
+
+  &__minute {
+    @include w-arrow;
+    height: 200px;
+    animation: moves 3600s linear infinite;
+    background-color: rgb(153, 6, 6);
+  }
+
+  &__center {
+    position: absolute;
+    @include circle($center-diam);
+    left: ($watch-diam - $center-diam) / 2;
+    bottom: ($watch-diam - $center-diam) / 2;
+    background-color: rgb(75, 75, 141);
+    z-index: 1;
+  }
+}
+
+@keyframes moves {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
