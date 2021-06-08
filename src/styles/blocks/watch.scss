@@ -1,0 +1,62 @@
+.watch {
+  position: relative;
+  display: flex;
+  margin: auto;
+  width: $watch-size;
+  height: $watch-size;
+  border: 8px solid $main-color;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: $dark-main-color;
+    border: 8px solid $main-color;
+    border-radius: 50%;
+    height: 5%;
+    width: 5%;
+    transform: translate(-50%, -50%);
+  }
+  
+  &__second-hand {
+    position: absolute;
+    margin-left: 49%;
+    width: $hand-width;
+    border: 3px solid $main-color;
+    border-radius: 5%;
+    height: 50%;
+    transform: translate(-50%);
+  
+    @include watch_animation(60s);
+    
+    transform-origin: bottom;
+  }
+  
+  &__hour-hand {
+    position: absolute;
+    margin-left: 49%;
+    width: $hand-width;
+    margin-top: 15%;
+    background-color: $dark-main-color;
+    border: 5px solid $dark-main-color;
+    border-radius: 10%;
+    height: 35%;
+    transform: translate(-50%);
+  
+    @include watch_animation(3600s);
+  
+    transform-origin: bottom;
+  }
+
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0);
+  }
+  
+  to {
+    transform: rotate(1turn);
+  }
+}
