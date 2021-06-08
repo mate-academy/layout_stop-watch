@@ -11,7 +11,7 @@
     width: $line_width;
     border-radius: $line_border-radius;
     background-color: brown;
-    animation: minute_line linear 3600s infinite;
+    animation: timer linear 3600s infinite;
     transform-origin: bottom center;
   }
 
@@ -20,21 +20,12 @@
     width: $line_width;
     border-radius: $line_border-radius;
     background-color: cadetblue;
-    animation: second_line linear 60s infinite;
+    animation: timer linear 60s infinite;
     transform-origin: bottom center;
   }
 }
 
-@keyframes second_line {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minute_line {
+@keyframes timer {
   0% {
     transform: rotate(0deg);
   }
