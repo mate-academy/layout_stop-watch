@@ -1,0 +1,35 @@
+.timer {
+  display: flex;
+  justify-content: center;
+  border: solid black 3px;
+  @include square ($timer_size);
+  border-radius: 50%;
+
+  &__minute {
+    position: absolute;
+    height: $line_height;
+    width: $line_width;
+    border-radius: $line_border-radius;
+    background-color: brown;
+    animation: timer linear 3600s infinite;
+    transform-origin: bottom center;
+  }
+
+  &__second {
+    height: $line_height;
+    width: $line_width;
+    border-radius: $line_border-radius;
+    background-color: cadetblue;
+    animation: timer linear 60s infinite;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes timer {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
