@@ -1,0 +1,87 @@
+@use "../utils/variables"as *;
+@use "../utils/mixins"as *;
+@use "./all-style.scss"as *;
+
+.time {
+  margin: auto;
+}
+
+.time__bord-minute {
+  @include time-circle(#fff, 4px solid rgb(158, 65, 65), $bord-minute);
+}
+
+.time__bord-sec {
+  @include time-circle(rgb(248, 247, 238),
+  4px solid rgb(53, 121, 70),
+  $bord-sec);
+}
+
+.time__start {
+  position: fixed;
+  background-color: rgb(49, 47, 173);
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+}
+
+.time__min {
+  @include position();
+  @include arrow($min-size, 60s, rgb(221, 90, 90));
+  animation-timing-function: steps(60);
+
+}
+
+.time__sec {
+  @include position();
+  @include arrow($sec-size, 1s, rgb(85, 189, 111));
+}
+
+.time__dot {
+  @include position();
+  transform: translateY($dot-size / 2);
+  width: $dot-size;
+  height: $dot-size;
+  background-color: rgb(221, 90, 90);
+  border-radius: 100%;
+}
+
+@keyframes turnover {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.time__bord-minute:hover {
+  border: 10px solid rgb(158, 65, 65);
+
+  .time__sec {
+    animation-name: turnover;
+    animation-iteration-count: 60;
+  }
+
+  .time__min {
+    animation-name: turnover;
+    animation-iteration-count: 1;
+  }
+}
+
+.time__bord-minute::before {
+  content: "mouse over";
+  width: 80%;
+  text-align: center;
+  font-size: 31px;
+  position: fixed;
+  background-color: rgb(179, 169, 42);
+  top: 0;
+  border-radius: 10px;
+  transition: all 1s;
+}
+
+.time__bord-minute:hover::before {
+  content: "timer:   1 minute";
+  background-color: rgb(85, 219, 91);
+}
