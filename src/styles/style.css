@@ -1,0 +1,124 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #e7f1ce;
+}
+
+.time {
+  margin: auto;
+}
+
+.time__bord-minute {
+  margin: auto;
+  background-color: #fff;
+  border: 4px solid #9e4141;
+  border-radius: 100%;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  box-shadow: 0 0 27px rgba(0, 0, 0, 0.4);
+}
+
+.time__bord-sec {
+  margin: auto;
+  background-color: #f8f7ee;
+  border: 4px solid #357946;
+  border-radius: 100%;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  box-shadow: 0 0 27px rgba(0, 0, 0, 0.4);
+}
+
+.time__start {
+  position: fixed;
+  background-color: #312fad;
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+}
+
+.time__min {
+  position: fixed;
+  bottom: 50%;
+  width: 10px;
+  height: 200px;
+  border-radius: 100px;
+  transform-origin: bottom;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  background-color: #dd5a5a;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+  animation-timing-function: steps(60);
+}
+
+.time__sec {
+  position: fixed;
+  bottom: 50%;
+  width: 10px;
+  height: 140px;
+  border-radius: 100px;
+  transform-origin: bottom;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  background-color: #55bd6f;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+}
+
+.time__dot {
+  position: fixed;
+  bottom: 50%;
+  transform: translateY(10px);
+  width: 20px;
+  height: 20px;
+  background-color: #dd5a5a;
+  border-radius: 100%;
+}
+
+@keyframes turnover {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.time__bord-minute:hover {
+  border: 10px solid #9e4141;
+}
+
+.time__bord-minute:hover .time__sec {
+  animation-name: turnover;
+  animation-iteration-count: 60;
+}
+
+.time__bord-minute:hover .time__min {
+  animation-name: turnover;
+  animation-iteration-count: 1;
+}
+
+.time__bord-minute::before {
+  content: "hover over";
+  width: 80%;
+  text-align: center;
+  font-size: 31px;
+  position: fixed;
+  background-color: #b3a92a;
+  top: 0;
+  border-radius: 10px;
+  transition: all 1s;
+}
+
+.time__bord-minute:hover::before {
+  content: "timer:   1 minute";
+  background-color: #55db5b;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,28 @@
+@mixin position() {
+  position: fixed;
+  bottom: 50%;
+}
+
+@mixin arrow($height, $anim, $bc) {
+  width: 10px;
+  height: $height;
+  border-radius: 100px;
+  transform-origin: bottom;
+  animation-duration: $anim;
+  animation-iteration-count: infinite;
+  background-color: $bc;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+}
+
+@mixin time-circle($bc, $border, $size) {
+  margin: auto;
+  background-color: $bc;
+  border: $border;
+  border-radius: 100%;
+  width: $size;
+  height: $size;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  box-shadow: 0 0 27px rgba(0, 0, 0, 0.4);
+}
