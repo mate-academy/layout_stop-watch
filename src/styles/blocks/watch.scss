@@ -1,0 +1,53 @@
+.watch {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 50%;
+  position: relative;
+  &::after {
+    position: absolute;
+    top: -190px;
+    right: 19px;
+    display: block;
+    content: "";
+    width: 10px;
+    height: 210px;
+    background-color: rgba(255, 174, 0, 0.84);
+    animation: seconds 60s steps(60, end) infinite;
+    transform-origin: bottom;
+    z-index: -2;
+  }
+  &::before {
+    position: absolute;
+    top: -80px;
+    right: 19px;
+    display: block;
+    content: "";
+    width: 10px;
+    height: 100px;
+    background-color: rgb(153, 0, 255);
+    animation: minutes 3600s linear infinite;
+    transform-origin: bottom;
+    z-index: -1;
+  }
+}
+
+@keyframes minutes {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes seconds {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}
