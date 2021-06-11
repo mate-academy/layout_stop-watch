@@ -1,0 +1,118 @@
+$min-size: 200px;
+$sec-size: 140px;
+$watch-minute: 400px;
+$watch-sec: 280px;
+$dot-size: 20px;
+
+@mixin position() {
+  position: fixed;
+  bottom: 50%;
+}
+
+@mixin arrow($height, $anim, $bc) {
+  width: 10px;
+  height: $height;
+  border-radius: 100px;
+  transform-origin: bottom;
+  animation-duration: $anim;
+  animation-iteration-count: infinite;
+  background-color: $bc;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+}
+
+@mixin time-circle($bc, $border, $size) {
+  margin: auto;
+  background-color: $bc;
+  border: $border;
+  border-radius: 100%;
+  width: $size;
+  height: $size;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  box-shadow: 0 0 27px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(102, 104, 98);
+}
+
+.watch {
+  margin: auto;
+
+  &__minute {
+    @include time-circle(#000, 4px solid rgb(49, 245, 228), $watch-minute);
+  }
+
+  &__seconds {
+    @include time-circle(rgb(110, 347, 238),
+    4px solid rgb(6, 255, 243),
+    $watch-sec);
+  }
+
+  &__start {
+    position: fixed;
+    background-color: rgb(173, 6, 179);
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+  }
+
+  &__min {
+    @include position();
+    @include arrow($min-size, 60s, rgb(248, 90, 196));
+    animation-timing-function: steps(60);
+    animation-name: turnover;
+    animation-iteration-count: 1;
+  }
+
+  &__sec {
+    @include position();
+    @include arrow($sec-size, 1s, rgb(248, 90, 196));
+    animation-name: turnover;
+    animation-iteration-count: 60;
+    &:hover {
+      border: 10px solid rgb(14, 233, 233);
+    }
+  }
+
+  &__dot {
+    @include position();
+    transform: translateY($dot-size / 2);
+    width: $dot-size;
+    height: $dot-size;
+    background-color: rgb(233, 87, 184);
+    border-radius: 100%;
+  }
+}
+
+@keyframes turnover {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.watch__minute::before {
+  content: "mouse over";
+  width: 80%;
+  text-align: center;
+  font-size: 31px;
+  position: fixed;
+  background-color: rgb(245, 129, 193);
+  top: 0;
+  border-radius: 10px;
+  transition: all 1s;
+}
+
+.watch__minute:hover::before {
+  content: "timer: 1 minute";
+  background-color: rgb(13, 203, 228);
+}
