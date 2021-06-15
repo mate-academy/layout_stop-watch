@@ -1,0 +1,85 @@
+$side: 0.9 * 100vh;
+$center: 0.05 * 100vh;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.watch {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px green solid;
+  border-radius: 50%;
+  height: $side;
+  min-width: $side;
+
+  &__center {
+    display: flex;
+    height: $center;
+    width: $center;
+    background-color: green;
+    z-index: 1;
+    border-radius: 50%;
+  }
+
+  &__sec-arrow {
+    display: flex;
+    position: absolute;
+    top: 0;
+    height: $side / 2;
+    width: $center / 2;
+    background-color: green;
+    z-index: 1;
+    border-radius: 15px;
+    animation-name: seconds;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    transform-origin: bottom;
+    @keyframes seconds {
+      from {
+        transform: rotate(0);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__min-arrow {
+    display: flex;
+    position: absolute;
+    bottom: $side / 2;
+    height: $side / 3;
+    width: $center / 2;
+    background-color: yellowgreen;
+    z-index: 0;
+    border-radius: 15px;
+    animation-name: minutes;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    transform-origin: bottom;
+    @keyframes minutes {
+      from {
+        transform: rotate(0);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
