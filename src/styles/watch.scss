@@ -1,0 +1,58 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 100px;
+  left: 100px;
+  height: 500px;
+  width: 500px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+}
+
+.watch:hover {
+  .watch__minute, .watch__second {
+    animation-play-state: running;
+  }
+}
+
+.watch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #00f;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #00f;
+  border-radius: 50%;
+}
+
+.watch__minute {
+  display: flex;
+  position: absolute;
+  top: 20%;
+  width: 6px;
+  height: 30%;
+  border: 8px solid #f00;
+  background-color: #f00;
+  border-radius: 8px;
+  transform-origin: bottom;
+  animation: minute 3600s linear infinite;
+  animation-play-state: paused;
+}
+
+.watch__second {
+  display: flex;
+  position: absolute;
+  top: 5%;
+  width: 6px;
+  height: 45%;
+  border: 8px solid #00f;
+  background-color: #00f;
+  border-radius: 8px;
+  transform-origin: bottom;
+  animation: second 60s steps(60) infinite;
+  animation-play-state: paused;
+}
