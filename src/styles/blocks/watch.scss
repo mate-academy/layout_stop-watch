@@ -1,0 +1,46 @@
+.watch {
+  @include circle($watch-size);
+  border: 2px solid $watch-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    @include circle($circle-size);
+    background-color: $watch-color;
+  }
+
+  &__hand {
+    position: absolute;
+    width: $hand-width;
+    border-radius: $hand-width;
+    z-index: -1;
+    bottom: 50%;
+    left: $watch-size / 2 - ($hand-width / 2);
+    transform-origin: bottom center;
+
+    &--seconds {
+      height: $seconds-hand-height;
+      background-color: $seconds-hand-color;
+      animation: tick
+        $minute-duration
+        steps($watch-step-count, start)
+        1s
+        infinite;
+    }
+
+    &--minutes {
+      height: $minutes-hand-height;
+      background-color: $minutes-hand-color;
+      animation: tick
+        $hour-duration
+        steps($watch-step-count, start)
+        60s
+        infinite;
+    }
+  }
+}
