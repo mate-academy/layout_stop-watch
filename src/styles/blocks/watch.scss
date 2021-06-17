@@ -2,13 +2,15 @@
   @include circle($watch-size);
   border: 2px solid $watch-color;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 
   &::after {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 50%;
+    transform: translateY(50%);
     display: block;
     @include circle($circle-size);
     background-color: $watch-color;
@@ -20,7 +22,6 @@
     border-radius: $hand-width;
     z-index: -1;
     bottom: 50%;
-    left: $watch-size / 2 - ($hand-width / 2);
     transform-origin: bottom center;
 
     &--seconds {
