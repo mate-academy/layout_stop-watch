@@ -1,0 +1,66 @@
+.page-content {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12px;
+  width: 12px;
+  background-color: blue;
+  border-radius: 50%;
+}
+
+.container__cell {
+  position: relative;
+  height: 5px;
+  width: 5px;
+  background-color: blue;
+  z-index: -1;
+}
+
+.container__minute-hand {
+  position: absolute;
+  height: 100px;
+  width: 5px;
+  background-color: red;
+  bottom: 50%;
+  border-radius: 5px;
+  animation-name: move-minute-hand;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom center;
+  animation-timing-function: steps(60, end);
+}
+
+.container__second-hand {
+  position: absolute;
+  height: 150px;
+  width: 5px;
+  background-color: blue;
+  bottom: 50%;
+  border-radius: 5px;
+  animation-name: move-second-hand;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom center;
+  animation-timing-function: steps(60, end);
+}
+
+@keyframes move-minute-hand {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move-second-hand {
+  100% {
+    transform: rotate(360deg);
+  }
+}
