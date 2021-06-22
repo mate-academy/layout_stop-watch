@@ -1,0 +1,82 @@
+$watch-width: 700px;
+$circle-diam:35px;
+$arrow-width: $circle-diam / 2;
+$arrow-hour-height: 150px;
+$arrow-minute-height: $arrow-hour-height * 2;
+
+$color-blue: rgb(26, 144, 241);
+$color-red:rgb(221, 24, 24);
+
+html {
+  box-sizing: border-box;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $watch-width;
+  height: 2 * $arrow-minute-height + 100px;
+  margin: 0 auto;
+
+  &__minute-line {
+    position: relative;
+    top: -$arrow-minute-height / 2;
+    left: $arrow-width * 2.5;
+
+    width: $arrow-width;
+    height: $arrow-minute-height;
+
+    background-color: $color-blue;
+    border-radius: 100px;
+
+    animation: minute-spin 3s infinite ease-in-out 350ms alternate;
+  }
+
+  &__hour-line {
+    position: relative;
+    top: -$arrow-hour-height / 2;
+    left: $arrow-width * 1.5;
+    z-index: -1;
+
+    width: $arrow-width;
+    height: $arrow-hour-height;
+
+    background-color: $color-red;
+    border-radius: 100px;
+
+    animation: hour-spin 3s infinite ease-in-out 350ms alternate;
+  }
+
+  &__circle {
+    height: $circle-diam;
+    width: $circle-diam;
+
+    background-color: $color-blue;
+    border-radius: 50%;
+  }
+}
+
+@keyframes hour-spin {
+  10% {
+    transform: rotateZ(0deg);
+    transform-origin: 50% 100%;
+  }
+
+  100% {
+    transform: rotateZ(60deg);
+    transform-origin: 50% 100%;
+  }
+}
+
+@keyframes minute-spin {
+  10% {
+    transform: rotateZ(0deg);
+    transform-origin: 50% 100%;
+  }
+
+  100% {
+    transform: rotateZ(290deg);
+    transform-origin: 50% 100%;
+  }
+}
