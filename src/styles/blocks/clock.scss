@@ -4,27 +4,22 @@
   border-radius: 50%;
   border: 3px solid black;
 
-  &-hand {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    transform-origin: bottom;
-  }
-
   &::before {
     content: '';
     @include clock-hands($hands-size);
     border-radius: 50%;
     background-color: #088f8f;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 150px;
+    left: 150px;
     transform: translate(-50%, -50%);
     z-index: 1;
   }
 
   &-minute {
+    position: absolute;
+    bottom: 150px;
+    left: 148px;
     width: 4px;
     height: 35%;
     border-radius: 5px;
@@ -32,17 +27,22 @@
     animation-name: min;
     animation-timing-function: linear;
     animation-duration: 720s;
+    transform-origin: bottom;
     animation-iteration-count: infinite;
   }
 
   &-second {
-    width: 5px;
+    position: absolute;
+    bottom: 150px;
+    left: 148px;
+    width: 4px;
     height: 40%;
     border-radius: 5px;
     background-color: #088f8f;
     animation-name: sec;
     animation-timing-function: linear;
     animation-duration: 60s;
+    transform-origin: bottom;
     animation-iteration-count: infinite;
   }
 }
