@@ -1,0 +1,49 @@
+.watch {
+    @include watch($watch-size);
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background-image: url(../images/watch.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  
+    border: 2px solid darkorange;
+    border-radius: 150px;
+  
+      &__minute-arrow {
+        position: absolute;
+        top: $watch-size / 3;
+        height: $arrow-height;
+        width: $minute-arrow-width;
+        border-radius: 10px;
+        background-color: black;
+  
+        animation: rotation 3600s linear infinite;
+        transform-origin: bottom;
+      }
+  
+      &__second-arrow {
+        position: absolute;
+        top: $watch-size / 3;
+        height: $arrow-height;
+        width: $second-arrow-width;
+        border-radius: 10px;
+        background-color: dimgray;
+  
+        animation: rotation 60s linear infinite;
+        transform-origin: bottom;
+      }
+  
+      &__circle {
+        position: absolute;
+        @include circle($circle-size);
+    
+        background-color: gray;
+        border-radius: 50px;
+      }
+  }
+  
