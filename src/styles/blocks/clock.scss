@@ -17,32 +17,16 @@
   }
 
   &-minute {
-    position: absolute;
-    bottom: 150px;
-    left: 148px;
-    width: 4px;
+    @extend %hands-position;
     height: 35%;
-    border-radius: 5px;
     background-color: red;
-    animation-name: min;
-    animation-timing-function: linear;
-    animation-duration: 720s;
-    transform-origin: bottom;
-    animation-iteration-count: infinite;
+    animation: min linear infinite 720s;
   }
 
   &-second {
-    position: absolute;
-    bottom: 150px;
-    left: 148px;
-    width: 4px;
+    @extend %hands-position;
     height: 40%;
-    border-radius: 5px;
     background-color: #088f8f;
-    animation-name: sec;
-    animation-timing-function: linear;
-    animation-duration: 60s;
-    transform-origin: bottom;
-    animation-iteration-count: infinite;
+    animation: sec linear infinite 60s;
   }
 }
