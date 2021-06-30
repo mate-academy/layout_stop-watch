@@ -1,0 +1,86 @@
+$clock_growth: 400px;
+$clock_position: 100px;
+
+body {
+  margin: 0;
+}
+
+@mixin time {
+  width: $clock_growth;
+  height: $clock_growth;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  @include time();
+  border-radius: 50%;
+  border: 4px solid #fff;
+  top: $clock_position;
+  left: $clock_position;
+  justify-content: center;
+}
+
+@keyframes minutes {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes seconds {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.clock_minutes {
+  position: absolute;
+  display: flex;
+  top: 20%;
+  width: 5px;
+  height: 120px;
+  background-color: #f00;
+  border-radius: 8px;
+  animation: minutes;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  transform-origin: bottom;
+}
+
+.clock_seconds {
+  position: absolute;
+  top: 10%;
+  display: flex;
+  width: 5px;
+  height: 150px;
+  background-color: #00bfff;
+  border-radius: 8px;
+  animation: seconds;
+  animation-duration: 60s;
+  animation-timing-function: steps(60);
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  transform-origin: bottom;
+}
+
+.clock:hover {
+  .clock_minutes,
+  .clock_seconds {
+    animation-play-state: running;
+  }
+}
+
+.clock::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #00bfff;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #00bfff;
+  border-radius: 50%;
+}
