@@ -1,0 +1,50 @@
+%hand {
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  border-radius: 5px;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: burlywood;
+
+  &__circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000;
+    z-index: 3;
+  }
+
+  &__hand-minut {
+    @extend %hand;
+    width: 150px;
+    background-color: #d15559 ;
+    animation: anim-times 3600s cubic-bezier(1,1,0,0) infinite;
+    transform-origin: left center ;
+  }
+
+  &__hand-second {
+    @extend %hand;
+    width: 200px;
+    background-color: #4b9aaa;
+    animation: anim-times 60s cubic-bezier(1,1,0,0) infinite;
+    transform-origin: left center ;
+  }
+
+  @keyframes anim-times {
+    from {
+      transform: rotate(270deg);
+    }
+    to {
+      transform: rotate(630deg);
+    }
+  }
+}
