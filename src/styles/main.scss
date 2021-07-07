@@ -1,0 +1,57 @@
+$heightClock: 700px;
+
+body {
+  background: linear-gradient(to right, #e9e4f0, #d3cce3);
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $heightClock;
+  width: $heightClock;
+  margin: auto;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/9/97/Ios_clock.svg") center no-repeat;
+  &__point {
+    position: absolute;
+    background-color: #232526;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+  }
+
+  &__minutes {
+    position: absolute;
+    bottom: 50%;
+    height: 200px;
+    width: 10px;
+
+    background: #616161;
+
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: 50%;
+    height: 280px;
+    width: 10px;
+    background: #283048;
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom;
+    animation: rotate 60s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
