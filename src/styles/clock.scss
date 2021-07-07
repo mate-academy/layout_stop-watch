@@ -1,0 +1,51 @@
+@import "variables";
+
+.clock {
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 30%;
+    width: $arrow-width;
+    background-color: $main-color;
+    border-radius: $arrow-width;
+    animation: clock-work 60s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    height: 20%;
+    width: $arrow-width;
+    background-color: $secondary-color;
+    border-radius: $arrow-width;
+    animation: clock-work 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-35%, -60%);
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: 50%;
+    background-color: $main-color;
+    z-index: 1;
+  }
+}
+
+@keyframes clock-work {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
