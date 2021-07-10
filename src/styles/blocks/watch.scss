@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  background-color: #ddf;
+}
+
+.watch {
+  @include watch-size($watch-size);
+
+  display: flex;
+  position: relative;
+  margin: 100px auto;
+  border: $watch-thickness solid $watch-color;
+
+  &__center {
+    @include center-size($center-size);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $watch-color;
+  }
+
+  &__second-hand {
+    @include seconds-hand-size($hand-size);
+    @include position-hand($watch-size);
+
+    background-color: $watch-color;
+    transform-origin: bottom;
+    animation: second-move 60s steps(60) infinite;
+  }
+  
+  &__minute-hand {
+    @include minutes-hand-size($hand-size);
+    @include position-hand($watch-size);
+    
+    background-color: $watch-color;
+    transform-origin: bottom;
+    animation: second-move 3600s steps(60) 1s infinite;
+  }
+  
+  @keyframes second-move {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
