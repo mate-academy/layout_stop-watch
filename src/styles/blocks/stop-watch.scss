@@ -1,0 +1,39 @@
+.stop-watch {
+  @include display-size($watch-size);
+
+  position: relative;
+  min-width: $watch-size;
+
+  &__center {
+    @include display-size(30px);
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 15px;
+    background-color: $blue-color;
+    z-index: 1;
+  }
+
+  &__second-hand {
+    @include hand-position($second-hand-height, $hand-width);
+    @extend %animation;
+
+    position: absolute;
+
+    background-color: $blue-color;
+    animation-duration: 60s;
+  }
+
+  &__minute-hand {
+    @include hand-position($minute-hand-height, $hand-width);
+    @extend %animation;
+
+    position: absolute;
+
+    background-color: $red-color;
+    animation-duration: 3600s;
+  }
+}

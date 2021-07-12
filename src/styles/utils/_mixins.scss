@@ -1,0 +1,15 @@
+@mixin display-size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin hand-position($height, $width) {
+  height: $height;
+  width: $width;
+  border-radius: $width / 2;
+
+  top: #{($watch-size / 2) + ($width / 2) - $height};
+  left: #{($watch-size / 2) - ($width / 2)};
+
+  transform-origin: #{$width / 2} #{$height - ($width / 2)};
+}
