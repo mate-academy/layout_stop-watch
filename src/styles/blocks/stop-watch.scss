@@ -1,0 +1,31 @@
+.stop-watch {
+  @include square($watch-size);
+
+  background-image: url(clock-face.svg);
+
+  &__center {
+    @include square ($watch-size / 25);
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 25px;
+    background-color: $blue-color;
+
+    z-index: 1;
+  }
+
+  &__second-hand {
+    @include hand($second-hand-height, $hand-width, $blue-color);
+
+    animation: time 60s steps(60) infinite;
+  }
+
+  &__minute-hand {
+    @include hand($minute-hand-height, $hand-width, $red-color);
+
+    animation: time 3600s linear infinite;
+  }
+}
