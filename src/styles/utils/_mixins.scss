@@ -1,0 +1,16 @@
+@mixin watch-hand-styles($circle-size, $hand-size, $color) {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 25%;
+  bottom: $circle-size / 2;
+  width: 50%;
+  height: $hand-size;
+  border-radius: 10px;
+  background-color: $color;
+  transform-origin: bottom center;
+}
+
+@mixin rotate($duration) {
+  animation: rotate $duration steps(60, end) infinite;
+}

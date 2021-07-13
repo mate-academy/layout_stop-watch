@@ -1,0 +1,39 @@
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+  &__circle {
+    position: relative;
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: 50%;
+    background-color: $circle-color;
+
+    &::before {
+      @include watch-hand-styles(
+        $circle-size,
+        $secund-hand-height,
+        $circle-color
+      );
+      @include rotate(60s);
+    }
+
+    &::after {
+      @include watch-hand-styles(
+        $circle-size,
+        $minute-hand-height,
+        $minute-hand-color
+      );
+      z-index: -1;
+      @include rotate(3600s);
+    }
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
