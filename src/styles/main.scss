@@ -1,0 +1,58 @@
+$--main-color: #559;
+$--circle-size: 30px;
+
+@mixin circle-size($--circle-size) {
+  width: $--circle-size;
+  height: $--circle-size;
+}
+
+@keyframes move {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  position: relative;
+
+  &__center {
+    @include circle-size($--circle-size);
+    background-color: $--main-color;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -15px;
+    left: -5px;
+    z-index: 3;
+  }
+
+  &__seconds {
+    width: 20px;
+    height: 300px;
+    background-color: $--main-color;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    transform-origin: center bottom;
+    animation: move 60s steps(60, end) infinite;
+  }
+
+  &__minutes {
+    width: 20px;
+    height: 150px;
+    background-color: #955;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    transform-origin: center bottom;
+    animation: move 3600s steps(60, end) infinite;
+  }
+}
