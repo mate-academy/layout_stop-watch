@@ -1,0 +1,29 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+
+  border-radius: 50%;
+}
+
+@mixin clock-hand($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+%clock-hand-position {
+  border-radius: 30px;
+  transform-origin: bottom left;
+
+  box-shadow: 5px 5px 5px $shadow-color;
+}
+
+%abs-el-center {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+}
+
+%align-X {
+  transform: translateX(-50%);
+  left: 50%;
+}
