@@ -1,0 +1,29 @@
+.clock {
+  position: relative;
+  max-width: 840px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__dot {
+    width: $square-size;
+    height: $square-size;
+    background-color: $seconds-color;
+    border-radius: 50%;
+  }
+
+  &::before {
+    @extend %pseudo-basic-styles;
+    height: 43%;
+    background-color: $seconds-color;
+    animation: time-move 60s steps(60) infinite;
+  }
+
+  &::after {
+    @extend %pseudo-basic-styles;
+    height: 35%;
+    background-color: $minutes-color;
+    animation: time-move 3600s steps(60) infinite;
+  }
+}
