@@ -1,46 +1,4 @@
-$clock-size: 500px;
+@import "./utils/mixin";
 
-@mixin watchHand ($height, $color) {
-  position: absolute;
-  left: 50%;
-  height: $height;
-  top: 50% - $height;
-  width: $clock-size / 50;
-  border-radius: $clock-size / 100;
-  background-color: $color;
-  transform-origin: bottom center;
-}
-
-.watch {
-  position: relative;
-  height: $clock-size;
-  width: $clock-size;
-
-  &__second {
-    @include watchHand(50%, #5f98a8);
-    animation: time 60s steps(60) infinite;
-
-    &::before {
-      position: absolute;
-      left: 50%;
-      top: 100%;
-      height: $clock-size / 25;
-      width: $clock-size / 25;
-      border-radius: 50%;
-      content: "";
-      background-color: #5f98a8;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  &__minute {
-    @include watchHand(40%, #c25d5d);
-    animation: time 3600s linear infinite;
-  }
-
-  @keyframes time {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-}
+@import "./blocks/watch";
+@import "./blocks/container";

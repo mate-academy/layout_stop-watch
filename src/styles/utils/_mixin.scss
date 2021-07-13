@@ -1,0 +1,10 @@
+@mixin watchHand ($height, $color) {
+  position: absolute;
+  left: 50%;
+  height: $height;
+  top: 50% - $height;
+  width: $clock-size / 50;
+  border-radius: $clock-size / 100;
+  background-color: $color;
+  transform-origin: bottom center;
+}
