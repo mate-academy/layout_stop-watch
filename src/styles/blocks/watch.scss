@@ -1,0 +1,48 @@
+.watch {
+  position: relative;
+  @include watch-size;
+  margin: 100px auto;
+  background: radial-gradient(#444, #000);
+  border-radius: 50%;
+
+  &__center {
+    @include position;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  
+    &--white {
+      background-color: #fff;
+      @include big-circle;
+    }
+  
+    &--red {
+      background-color: #f00;
+      @include small-circle;
+      z-index: 3;
+    }
+  
+  }
+  
+  &__minute-hand {
+    @include position;
+    transform: translate(-50%, -100%);
+    height: $min-hand-length;
+    width: $min-hand-width;
+    background-color: #fff;
+    animation: move 3600s 1s infinite;
+    transform-origin: bottom;
+    z-index: 1;
+  }
+  
+  &__second-hand {
+    @include position;
+    transform: translate(-50%, -100%);
+    height: $sec-hand-length;
+    width: $sec-hand-width;
+    background-color: #f00;
+    animation: move 60s steps(60) infinite;
+    transform-origin: bottom;
+    z-index: 2;
+  }
+
+}
