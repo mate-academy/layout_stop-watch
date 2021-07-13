@@ -1,0 +1,64 @@
+@mixin hand {
+  0% {
+    transform-origin: bottom;
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform-origin: bottom;
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__circle {
+    background-color: rgb(75, 154, 170);
+    position: absolute;
+    top: 320px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  &__second-hand {
+    width: 10px;
+    height: 250px;
+    background-color: rgb(75, 154, 170);
+    position: absolute;
+    top: 80px;
+    border-radius: 10px;
+    animation-name: second;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+    z-index: 1;
+  }
+
+  @keyframes second {
+
+    @include hand;
+  }
+
+  &__minute-hand {
+    width: 10px;
+    height: 120px;
+    background-color: rgb(209, 85, 89);
+    position: absolute;
+    top: 210px;
+    border-radius: 10px;
+    animation-name: minute;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+  }
+
+  @keyframes minute {
+
+    @include hand;
+  }
+
+}
