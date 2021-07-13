@@ -1,3 +1,17 @@
+$--main-color: #559;
+$--circle-size: 30px;
+
+@mixin circle-size($--circle-size) {
+  width: $--circle-size;
+  height: $--circle-size;
+}
+
+@keyframes move {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
@@ -9,9 +23,8 @@
   position: relative;
 
   &__center {
-    width: 30px;
-    height: 30px;
-    background-color: #559;
+    @include circle-size($--circle-size);
+    background-color: $--main-color;
     border-radius: 50%;
     position: absolute;
     bottom: -15px;
@@ -22,17 +35,13 @@
   &__seconds {
     width: 20px;
     height: 300px;
-    background-color: #559;
+    background-color: $--main-color;
     border-radius: 30px;
     position: absolute;
     bottom: 0;
     z-index: 1;
-    animation-name: move;
-    animation-duration: 60s;
     transform-origin: center bottom;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(60, end);
-
+    animation: move 60s steps(60, end) infinite;
   }
 
   &__minutes {
@@ -43,16 +52,7 @@
     position: absolute;
     bottom: 0;
     z-index: 2;
-    animation-name: move;
-    animation-duration: 3600s;
     transform-origin: center bottom;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(60, end);
-  }
-}
-
-@keyframes move {
-  to {
-    transform: rotate(360deg);
+    animation: move 3600s steps(60, end) infinite;
   }
 }
