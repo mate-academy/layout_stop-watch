@@ -1,0 +1,31 @@
+.clock {
+
+  &::after {
+    content: "";
+    @extend %pos-center;
+    @include clock-center(($clock-center-radius));
+    background-color: $color-dark-blue;
+  }
+
+  &__second-wrapper {
+    // animation: rotate 60s infinite linear;
+    animation: rotate 60s infinite steps(60);
+  }
+
+  &__second-hand {
+    @extend %pos-center;
+    @include hand($second-hand-height, $hand-width);
+    background: $color-dark-blue;
+  }
+
+  &__minute-wrapper {
+    animation: rotate 3600s infinite linear;
+    // animation: rotate 3600s infinite steps(60);
+  }
+
+  &__minute-hand {
+    @extend %pos-center;
+    @include hand($minute-hand-height, $hand-width);
+    background: brown;
+  }
+}
