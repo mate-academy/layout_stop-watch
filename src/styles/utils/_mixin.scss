@@ -1,0 +1,16 @@
+@mixin position-hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@mixin seting-form($color) {
+  width: 8px;
+  background-color: $color;
+  border-radius: 8px;
+}
+
+@mixin animation-setting($speed) {
+  transform-origin: top;
+  animation: move ($speed) linear infinite;
+}
