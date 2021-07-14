@@ -33,17 +33,17 @@
     @include circle($origin-size, $origin-color);
     @extend %abs-element-center;
 
-    transform: translate(-50%, 50%);
+    transform: translateY(50%);
 
     box-shadow: 0 0 10px $shadow-color;
   }
 
   @keyframes tik-tock {
     from {
-      transform: rotate(0) translateX(-50%);
+      transform: rotate(0);
     }
     to {
-      transform: rotate(360deg) translateX(-50%);
+      transform: rotate(360deg);
     }
   }
 }
