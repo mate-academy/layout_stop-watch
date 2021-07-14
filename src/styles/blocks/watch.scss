@@ -1,0 +1,40 @@
+.watch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  @include circle(2 * $clock-face-radius);
+
+  &__center-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    @include circle($pointer-size);
+  
+    background-color: $second-hand-color;
+  }
+  
+  &__minute-hand {
+    @include watch-hand($hands-width, 0.67, $minute-hand-color);
+  
+    animation: hand-move 3600s linear 1;
+  }
+  
+  &__second-hand {
+    @include watch-hand($hands-width, 1, $second-hand-color);
+  
+    animation: hand-move 60s steps(60, end) 1;
+  }
+  
+  @keyframes hand-move {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

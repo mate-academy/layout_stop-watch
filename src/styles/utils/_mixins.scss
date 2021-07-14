@@ -1,0 +1,18 @@
+@mixin watch-hand ($width, $height-index, $color) {
+  position: absolute;
+  bottom: 50%;
+
+  width: $width;
+  height: $height-index * $clock-face-radius;
+
+  border-radius: 8px;
+  background-color: $color;
+
+  transform-origin: bottom center;
+}
+
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
