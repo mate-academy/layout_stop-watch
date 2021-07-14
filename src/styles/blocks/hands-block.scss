@@ -8,7 +8,7 @@
   
   &__minute {
     @extend %position_border-radius;
-    @include minute-size ($minute-height, $hands-width);
+    @include hand-size ($minute-height, $hands-width);
 
     top: 25%;
     background-color: #696969;
@@ -17,7 +17,7 @@
 
   &__second {
     @extend %position_border-radius;
-    @include minute-size ($second-height, $hands-width);
+    @include hand-size ($second-height, $hands-width);
 
     background-color: #a9a9a9;
     animation: move_second 60s steps(60, end) infinite;
@@ -27,12 +27,12 @@
 @keyframes move_second {
   0% {
     transform: rotate(0deg);
-    transform-origin: bottom center;
+    transform-origin: bottom;
   }
 
   100% {
     transform: rotate(360deg);
-    transform-origin: bottom center;
+    transform-origin: bottom;
   }
 }
 
