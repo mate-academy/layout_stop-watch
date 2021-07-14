@@ -1,0 +1,57 @@
+$border-width: 4px;
+$hand-width: 10px;
+
+@mixin center($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+%hand {
+  position: absolute;
+  z-index: -1;
+  border-radius: 10px;
+  width: $hand-width;
+}
+
+.clock {
+  border: $border-width solid #006d77;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  position: relative;
+
+  &__center {
+    @include center(20px);
+    background-color: #006d77;
+  }
+
+  &__minute-hand {
+    @extend %hand;
+    position: absolute;
+    top: 0;
+    height: 145px;
+    background-color: #e29578;
+    transform-origin: center bottom;
+    animation: move 3600s infinite linear;
+  }
+
+  &__second-hand {
+    @extend %hand;
+    position: absolute;
+    top: 12%;
+    height: 110px;
+    background-color: #83c5be;
+    transform-origin: center bottom;
+    animation: move 60s infinite steps(60);
+  }
+
+  @keyframes move {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
