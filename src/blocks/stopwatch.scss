@@ -1,0 +1,48 @@
+.stopwatch {
+  position: relative;
+  @include circleSize($size-stop-watch);
+
+  background: $bg-stop-watch;
+  
+  &__minut::before {
+    content: "";
+    @include positArrow($width-minut);
+    width: $width-minut;
+    height: $hight-minut;
+
+    background: $bg-minut;
+    border-radius: $radius-arrow;
+    
+    animation: $anime-monut;
+    transform-origin: bottom;
+  }
+
+  &__sekond::after {
+    content: "";
+    @include positArrow($width-second);
+
+    width: $width-second;
+    height: $hight-second;
+
+    background: $bg-second;
+    border-radius: $radius-arrow;
+    
+    animation: $anime-second;
+    transform-origin: bottom;
+  }
+
+  &__center {
+    position: absolute;
+    @extend %position-center;
+    transform: translate(-50%, -50%);
+
+    @include circleSize($circle-in-center);
+
+    background: $bg-second;
+  }
+
+  &--posit {
+    @extend %position-center;
+    transform: translate(-50%, 50%);
+  }
+}
