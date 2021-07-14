@@ -1,40 +1,39 @@
 .clock {
-  @include circle($clock-size);
+  @include circle($clock-size, $clock-color);
 
   position: relative;
 
   box-shadow: inset 0 0 30px 5px rgba($color: $shadow-color, $alpha: 0.4);
-  background-color: $clock-color;
 
   &__minute-hand {
-    @extend %abs-el-center;
+    @extend %abs-element-center;
     @extend %clock-hand-position;
-    @extend %align-X;
-    @include clock-hand($hand-minute-height, $hand-minute-width);
-
-    background-color: $hand-minute-color;
+    @include clock-hand(
+      $hand-minute-height,
+      $hand-minute-width,
+      $hand-minute-color
+    );
 
     animation: tik-tock $clock-minute-duration steps(60, end) infinite 0.3s;
   }
 
   &__second-hand {
-    @extend %abs-el-center;
+    @extend %abs-element-center;
     @extend %clock-hand-position;
-    @extend %align-X;
-    @include clock-hand($hand-second-height, $hand-second-width);
-
-    background-color: $hand-second-color;
+    @include clock-hand(
+      $hand-second-height,
+      $hand-second-width,
+      $hand-second-color
+    );
 
     animation: tik-tock $clock-second-duration steps(60, end) infinite 0.3s;
   }
 
   &__origin {
-    @include circle($origin-size);
-    @extend %abs-el-center;
+    @include circle($origin-size, $origin-color);
+    @extend %abs-element-center;
 
     transform: translate(-50%, 50%);
-    
-    background-color: $origin-color;
 
     box-shadow: 0 0 10px $shadow-color;
   }
