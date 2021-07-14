@@ -1,0 +1,51 @@
+$second-hand-color: rgb(75, 154, 170);
+$minute-hand-color: rgb(209, 85, 89);
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__circle {
+    background-color: $second-hand-color;
+    position: absolute;
+    top: 320px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  &__second-hand {
+    width: 10px;
+    height: 250px;
+    background-color: $second-hand-color;
+    position: absolute;
+    top: 80px;
+    border-radius: 10px;
+    animation: action 60s steps(60, end) infinite;
+    z-index: 1;
+  }
+
+  @keyframes action {
+
+    from {
+      transform-origin: bottom;
+      transform: rotate(0deg);
+    }
+    
+    to {
+      transform-origin: bottom;
+      transform: rotate(360deg);
+    }
+  }
+
+  &__minute-hand {
+    width: 10px;
+    height: 120px;
+    background-color: $minute-hand-color;
+    position: absolute;
+    top: 210px;
+    border-radius: 10px;
+    animation: action 3600s steps(60, end) infinite;
+  }
+}
