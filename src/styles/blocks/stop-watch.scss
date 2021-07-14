@@ -6,8 +6,7 @@
   
   &__circle {
     position: relative;
-    width: $circle-size;
-    height: $circle-size;
+    @include square($circle-size);
     border-radius: 50%;
     background-color: $circle-color;
 

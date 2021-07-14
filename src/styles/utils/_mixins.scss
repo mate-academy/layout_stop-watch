@@ -11,6 +11,11 @@
   transform-origin: bottom center;
 }
 
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
 @mixin rotate($duration) {
   animation: rotate $duration steps(60, end) infinite;
 }
