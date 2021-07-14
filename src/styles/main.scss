@@ -1,14 +1,5 @@
-@mixin hand {
-  0% {
-    transform-origin: bottom;
-    transform: rotate(0deg);
-  }
-  
-  100% {
-    transform-origin: bottom;
-    transform: rotate(360deg);
-  }
-}
+$second-hand-color: rgb(75, 154, 170);
+$minute-hand-color: rgb(209, 85, 89);
 
 .clock {
   display: flex;
@@ -16,7 +7,7 @@
   align-items: center;
 
   &__circle {
-    background-color: rgb(75, 154, 170);
+    background-color: $second-hand-color;
     position: absolute;
     top: 320px;
     width: 20px;
@@ -27,38 +18,34 @@
   &__second-hand {
     width: 10px;
     height: 250px;
-    background-color: rgb(75, 154, 170);
+    background-color: $second-hand-color;
     position: absolute;
     top: 80px;
     border-radius: 10px;
-    animation-name: second;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(60, end);
+    animation: action 60s steps(60, end) infinite;
     z-index: 1;
   }
 
-  @keyframes second {
+  @keyframes action {
 
-    @include hand;
+    from {
+      transform-origin: bottom;
+      transform: rotate(0deg);
+    }
+    
+    to {
+      transform-origin: bottom;
+      transform: rotate(360deg);
+    }
   }
 
   &__minute-hand {
     width: 10px;
     height: 120px;
-    background-color: rgb(209, 85, 89);
+    background-color: $minute-hand-color;
     position: absolute;
     top: 210px;
     border-radius: 10px;
-    animation-name: minute;
-    animation-duration: 3600s;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(60, end);
+    animation: action 3600s steps(60, end) infinite;
   }
-
-  @keyframes minute {
-
-    @include hand;
-  }
-
 }
