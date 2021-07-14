@@ -1,0 +1,46 @@
+@import "./utiles.scss";
+
+.page {
+  &__watch {
+    @include circle($watch-width);
+    margin: 40px auto;
+  }
+}
+
+.watch {
+  background-color: rgb(211, 211, 211);
+  border: 10px dotted rgb(58, 58, 58);
+  border-radius: 50%;
+
+  &__seconds {
+    @extend %one-hand;
+    height: $second-height;
+    z-index: 10;
+    animation: rotate 60s infinite linear;
+    background-color: $blue;
+  }
+
+  &__minutes {
+    @extend %one-hand;
+    height: $minutes-height;
+    animation: rotate 3600s infinite linear;
+    transform-origin: bottom center;
+    bottom: $minutes-height;
+    background-color: $red;
+  }
+
+  &__round {
+    @include circle($circle-diameter);
+
+    position: relative;
+    bottom: $minutes-height + 15px;
+    left: left-position($watch-width, $circle-diameter);
+    background-color: $blue;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
