@@ -7,28 +7,23 @@
   &__minut::before {
     content: "";
     @include positArrow($width-minut);
-    width: $width-minut;
-    height: $hight-minut;
-
-    background: $bg-minut;
-    border-radius: $radius-arrow;
-    
-    animation: $anime-minut;
-    transform-origin: bottom;
+    @include paramArrow(
+      $width-minut, 
+      $hight-minut, 
+      $bg-minut, 
+      $anime-minut
+    );
   }
 
   &__sekond::after {
     content: "";
     @include positArrow($width-second);
-
-    width: $width-second;
-    height: $hight-second;
-
-    background: $bg-second;
-    border-radius: $radius-arrow;
-    
-    animation: $anime-second;
-    transform-origin: bottom;
+    @include paramArrow(
+      $width-second, 
+      $hight-second, 
+      $bg-second, 
+      $anime-second
+    );
   }
 
   &__center {
