@@ -2,8 +2,7 @@ $clock-size: 500px;
 
 .watch {
   position: relative;
-  height: $clock-size;
-  width: $clock-size;
+  @include square($clock-size);
 
   &__second {
     @include watchHand(50%, #5f98a8);
