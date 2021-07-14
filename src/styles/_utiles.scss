@@ -1,0 +1,26 @@
+$second-height: 350px;
+$minutes-height: 150px;
+$hand-width: 10px;
+$circle-diameter: 30px;
+$watch-width: (2 * $second-height);
+
+$blue: rgb(114, 105, 236);
+$red: rgb(236, 73, 73);
+
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@function left-position($w-w, $h-w) {
+  @return ($w-w / 2) - ($h-w / 2);
+}
+
+%one-hand {
+  width: $hand-width;
+  border-radius: 10px;
+  position: relative;
+  left: left-position($watch-width, $hand-width);
+  transform-origin: bottom center;
+}
