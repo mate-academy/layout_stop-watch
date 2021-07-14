@@ -1,0 +1,33 @@
+.watch {
+  position: relative;
+  @include circle($clock-size);
+  background: linear-gradient(rgb(154, 207, 201) 14%, rgb(30, 50, 104));
+
+  &__circle {
+    @include circle($circle-size);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: $minute-color;
+  }
+
+  &__big-hand {
+    @extend %hands;
+    height: $minute-hand;
+    z-index: 1;
+    background-color: $minute-color;
+
+    animation: hands-move 60s steps(60, end) infinite;
+  }
+
+  &__small-hand {
+    @extend %hands;
+    height: $second-hand;
+    background-color: yellow;
+
+    animation: hands-move 3600s linear infinite;
+  }
+
+}
