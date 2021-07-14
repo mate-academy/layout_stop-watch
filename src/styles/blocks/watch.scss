@@ -1,0 +1,61 @@
+.watch {
+  margin: auto;
+  display: flex;
+  height: $watch-size;
+  width: $watch-size;
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 50%;
+
+  &__center {
+    position: relative;
+    height: $center-size;
+    width: $center-size;
+    margin: auto;
+  }
+
+  &__center-round {
+    position: absolute;
+    height: $center-size;
+    width: $center-size;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%);
+    width: $arrow-width;
+    border-radius: $arrow-border;
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: top center;
+
+    &--minute {
+      height: $minute-hight;
+      background-color: blue;
+      animation-duration: 60s;
+      animation-delay: -30s;
+    }
+
+    &--second {
+      height: $second-hight;
+      animation-duration: 1s;
+      background-color: red;
+      animation-delay: -500ms;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
