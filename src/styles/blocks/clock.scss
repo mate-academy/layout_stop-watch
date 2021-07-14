@@ -1,0 +1,38 @@
+.watch {
+  @include square($watch-size);
+  position: relative;
+  
+  &__big-arrow {
+    position: absolute;
+    @include size($big-arrow-height, $big-arrow-width);
+    @include position(0%,51%);
+    border-radius: $arrow-radius;
+    background-color: $blue-color;
+    animation: watch 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__little-arrow {
+    position: absolute;
+    @include size($little-arrow-height, $little-arrow-width);
+    @include position (18%,50.85%);
+    border-radius: $arrow-radius;
+    background-color: $red-color;
+    animation: watch 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__binding {
+    position: absolute;
+    @include square($binding-size);
+    @include position (50%, 50%);
+    border-radius: 50%;
+    background-color: $blue-color;
+  }
+}
+
+@keyframes watch {
+  100% {
+    transform: rotate(360deg);
+  }
+}
