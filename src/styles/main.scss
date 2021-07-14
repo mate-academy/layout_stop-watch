@@ -1,0 +1,61 @@
+$minute-color: #800;
+$second-color: #008;
+$center-color: #008;
+$minute-height: 100px;
+$second-height: $minute-height * 2;
+$center-height-width: $second-height * 0.1;
+$hands-width: 6px;
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__clock {
+    position: relative;
+    @include square($center-height-width);
+  }
+
+  &__second,
+  &__minute {
+    position: absolute;
+    bottom: 0;
+    width: $hands-width;
+    border-radius: 10%;
+    transform-origin: bottom center;
+    animation: move 60s steps(60, end) infinite;
+  }
+
+  &__center {
+    position: absolute;
+    bottom: -$center-height-width / 2;
+    left: -$center-height-width * 0.33;
+    @include square($center-height-width);
+    background-color: $center-color;
+    border-radius: 100%;
+  }
+
+  &__minute {
+    height: $minute-height;
+    background-color: $minute-color;
+    animation-duration: 3600s;
+  }
+
+  &__second {
+    height: $second-height;
+    background-color: $center-color;
+    animation-duration: 60s;
+  }
+
+  @keyframes move {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
