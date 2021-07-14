@@ -1,0 +1,42 @@
+@import "_extends.scss";
+
+.clock {
+  @extend %circle-styles;
+  width: 500px;
+  height: 500px;
+  border: 40px solid #ffd700;
+  background-color: #fffff0;
+  box-shadow: 0 0 8px 1px rgba(34, 60, 80, 0.2) inset;
+
+  &__center {
+    @extend %circle-styles;
+    width: 25px;
+    height: 25px;
+    background-color: #6495ed;
+  }
+
+  &::before {
+    @extend %hand-position;
+    top: 15%;
+    height: 35%;
+    background-color: #dc143c;
+    animation: rotation 3600s infinite linear;
+  }
+  
+  &::after {
+    @extend %hand-position;
+    top: 5%;
+    height: 45%;
+    background-color: #6495ed;
+    animation: rotation 60s infinite linear;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
