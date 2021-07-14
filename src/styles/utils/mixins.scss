@@ -1,33 +1,14 @@
-@mixin watch-size {
-  height: $watch-size;
-  width: $watch-size;
+@mixin square($size) {
+  height: $size;
+  width: $size;
 }
 
-@mixin binding-size {
-  height: $binding-size;
-  width: $binding-size;
+@mixin size($height, $width) {
+  height: $height;
+  width: $width;
 }
 
-@mixin binding-position {
-  top: $binding-position;
-  left: $binding-position;
-}
-
-@mixin big-arrow-size {
-  height: $big-arrow-height;
-  width: $big-arrow-width;
-}
-
-@mixin big-arrow-position {
-  left: $big-arrow-position;
-}
-
-@mixin little-arrow-size {
-  height: $little-arrow-height;
-  width: $little-arrow-width;
-}
-
-@mixin little-arrow-position {
-  left: $little-arrow-position-x;
-  top: $little-arrow-position-y;
+@mixin position($top, $left) {
+  top: $top;
+  left: $left;
 }
