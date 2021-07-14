@@ -1,0 +1,46 @@
+@import "_variables.scss";
+@import "_animations.scss";
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+  &__center {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: $bck-color-second-arrow;
+  }
+  
+  &__second-wrapper {
+    position: absolute;
+    margin-bottom: $height-second-arrow;
+    z-index: 1;
+  }
+
+  &__second-arrow {
+    height: $height-second-arrow;
+    width: 10px;
+    border-radius: 5px;
+    background-color: $bck-color-second-arrow;
+    transform-origin: bottom;
+    animation: arrowAnimation 60s infinite steps(60);
+  }
+  
+  &__minute-wrapper {
+    position: absolute;
+    margin-bottom: $height-minute-arrow;
+  }
+
+  &__minute-arrow {
+    height: $height-minute-arrow;
+    width: 10px;
+    border-radius: 5px;
+    background-color: $bck-color-minute-arrow;
+    transform-origin: bottom;
+    animation: arrowAnimation 3600s infinite steps(3600);
+  }
+}
