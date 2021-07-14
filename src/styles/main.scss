@@ -1,0 +1,46 @@
+@import "./utils/reset";
+@import "./utils/mixin";
+@import "./utils/variables";
+
+.watch {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Academ_Progressions_along_a_knot_on_a_clock_face.svg/1200px-Academ_Progressions_along_a_knot_on_a_clock_face.svg.png);
+  background-size: cover;
+
+  &__second-hand {
+    @include position-hand();
+    height: $height-second-hand;
+    @include seting-form($color-second-hand);
+    @include animation-setting(60s);
+  }
+
+  &__minute-hand {
+    @include position-hand();
+    height: $height-minute-hand;
+    @include seting-form($color-minute-hand);
+    @include animation-setting(86400s);
+  }
+
+  &__center-dot {
+    position: absolute;
+    top: calc(50% - #{$diametr} / 4) ;
+    left: calc(50% - #{$diametr} / 4);
+    width: $diametr;
+    height: $diametr;
+    border-radius: $diametr/2;
+    background-color: $color-dot;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0.5turn);
+  }
+
+  to {
+    transform: rotate(1.5turn);
+  }
+}
