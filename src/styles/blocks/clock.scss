@@ -1,0 +1,36 @@
+
+.content__container {
+    position: relative;
+    margin: 100px auto;
+  }
+
+  .clock {
+    @include circle($watch_size);
+
+    border: 3px solid black;
+    background-image: url(https://cdn.pngsumo.com/clock-clipart-transparent-4-clipart-portal-clock-clipart-transparent-3000_3000.png);
+    background-size: cover;
+
+    &__hand {
+      position: absolute;
+      display: block;
+      left: 50%;
+      top: 50%;
+      transform-origin: top center;
+    }
+
+    &__hand--minute {
+      @include hand($minute_width, $minute_height, $minute_color, $minute_radius);
+    }
+
+    &__hand--second {
+      @include hand($second_width, $second_height, $second_color, $second_radius);
+    }
+
+    &__hand--minute {
+      animation: clock-hand-rotate 3600s steps(60) infinite;
+    }
+    &__hand--second {
+      animation: clock-hand-rotate 60s steps(60) infinite;
+    }
+  }
