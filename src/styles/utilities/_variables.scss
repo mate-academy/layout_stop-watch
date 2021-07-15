@@ -1,5 +1,25 @@
 $watch-width: 300px;
 $watch-height: 300px;
+$watch-background: rgb(251, 75, 59);
+
+@mixin watch-digit-blocks-styles($digit) {
+  position: absolute;
+  top: 0;
+  content: "#{$digit}";
+  width: 30px;
+  height: 30px;
+}
+
+@mixin watch-arrows-styles($width,$arrow-background-color,$z-index) {
+  position: absolute;
+  top: 0;
+  z-index: $z-index;
+  width: $width;
+  height: $watch-height / 2;
+  background-color: $arrow-background-color;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
 
 @keyframes rotateWatch {
   from {

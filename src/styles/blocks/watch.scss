@@ -9,23 +9,15 @@
   color: #fff;
   text-align: center;
   font-weight: 900;
-  background-color: rgb(251, 75, 59);
+  background-color: $watch-background;
   border-radius: 50%;
 
   &::before {
-    position: absolute;
-    top: 0;
-    content: "12";
-    width: 30px;
-    height: 30px;
+    @include watch-digit-blocks-styles(12);
   }
 
   &::after {
-    position: absolute;
-    bottom: 0;
-    content: "6";
-    width: 30px;
-    height: 30px;
+    @include watch-digit-blocks-styles(6);
   }
 
   &__sircle-center {
@@ -38,26 +30,12 @@
   }
 
   &__minutes-arrow {
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    width: 9px;
-    height: $watch-height / 2;
-    background-color: rgb(88, 79, 97);
-    border-radius: 10px;
-    transform-origin: bottom;
+    @include watch-arrows-styles (9, rgb(20, 18, 22), 1);
     animation: rotateWatch 3600s linear infinite;
   }
 
   &__seconds-arrow {
-    position: absolute;
-    top: 0;
-    z-index: 2;
-    width: 6px;
-    height: $watch-height / 2;
-    background-color: rgb(88, 48, 126);
-    border-radius: 10px;
-    transform-origin: bottom;
+    @include watch-arrows-styles (6, rgb(69, 62, 77), 2);
     animation: rotateWatch 60s steps(60) infinite;
   }
 }
