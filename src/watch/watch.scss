@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   @include square(50px);
-  background-color: $main-color;
   border-radius: 50%;
+  background-color: $main-color;
 
   &__arrow {
     position: absolute;
@@ -12,21 +12,15 @@
   }
 
   &__arrow--second--speed {
-    height: 250px;
-    width: 45%;
+    @include arrow-form(250px, 45%, $border-radius, bottom);
     background-color: $main-color;
-    border-radius: 15px;
     animation: move 60s steps(60, start) 3s infinite;
-    transform-origin: bottom;
   }
 
   &__arrow--minute--speed {
-    height: 150px;
-    width: 55%;
-    background-color: #000;
-    border-radius: 15px;
+    @include arrow-form(150px, 55%, $border-radius, bottom);
+    background-color: $minute-color;
     animation: move 3600s steps(60, start) 63s infinite;
-    transform-origin: bottom;
   }
 }
 
