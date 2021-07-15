@@ -1,0 +1,22 @@
+@mixin center($size) {
+  @include square($size);
+  border-radius: 50%;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin hand-position($top, $height) {
+  top: $top;
+  height: $height;
+}
+
+%hand {
+  position: absolute;
+  z-index: -1;
+  border-radius: 10px;
+  width: 10px;
+  transform-origin: center bottom;
+}
