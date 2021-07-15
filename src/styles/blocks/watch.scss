@@ -1,0 +1,42 @@
+
+.watch {
+  @include square($watch-size);
+  border: 10px solid #fcb045;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(34,193,195,1) 0%,
+    rgba(184,45,253,1) 100%);
+
+  &__center-dot {
+    @include square($dote-size);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: #e2c1c1;
+  }
+  
+  &__minute-hand {
+    @extend %hand-position;
+    height: 240px;
+    width: $hand-width;
+    background-color: #525040;
+    animation: moving 60s linear infinite;
+  }
+
+  &__second-hand {
+    @extend %hand-position;
+    height: 140px;
+    width: $hand-width;
+    background-color: #e0fd2d;
+    animation: moving 3600s steps(60, end) infinite;
+  }
+}
+
+@keyframes moving {
+  100% {
+    transform: rotate(360deg);
+  }
+}
