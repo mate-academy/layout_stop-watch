@@ -1,0 +1,43 @@
+.watch {
+  @include size-watch;
+  border: 2px solid black;
+  border-radius: $radius-cyrcle;
+  background-color: $color-pink;
+
+  &__cyrcle {
+    @include position-top-left;
+    @include size-cyrcle;
+    border-radius: $radius-cyrcle;
+    background-color: $color-blue;
+    transform: translate(-50%, -50%);
+  }
+
+  &__seconds {
+    @include position-top-left;
+    width: $width-second-minute;
+    height: 200px;
+    background-color: $color-blue;
+    border-radius: $radius-second-minute;
+    transform-origin: top;
+    animation: action 60s linear infinite;
+  }
+ 
+  &__minutes {
+    @include position-top-left;
+    width: $width-second-minute;
+    height: 100px;
+    background-color: $color-red;
+    border-radius: $radius-second-minute;
+    transform-origin: top;
+    animation: action 3600s linear infinite;
+  }
+}
+
+@keyframes action {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
