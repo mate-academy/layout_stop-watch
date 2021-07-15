@@ -2,23 +2,21 @@
   position: relative;
   
   &__second {
+    @include animation();
     position: absolute;
     width: 10px;
     height: $big-arrow;
     border-radius: 100px;
-    animation: time 60s linear infinite;
-    transform-origin: bottom center;
     background-color: rgb(36, 36, 90);
   }
   
   &__minute {
+    @include animation();
     position: absolute;
     top: $small-arrow;
     width: 10px;
     height: $small-arrow;
     border-radius: 100px;
-    animation: time 3600s linear infinite;
-    transform-origin: bottom center;
     background-color: rgb(90, 34, 69);
   }
   
