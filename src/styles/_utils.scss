@@ -1,13 +1,9 @@
-$border-width: 4px;
-$hand-width: 10px;
-
 @mixin center($size) {
-  width: $size;
-  height: $size;
+  @include square($size);
   border-radius: 50%;
 }
 
-@mixin clockFace($size) {
+@mixin square($size) {
   width: $size;
   height: $size;
 }
@@ -21,6 +17,6 @@ $hand-width: 10px;
   position: absolute;
   z-index: -1;
   border-radius: 10px;
-  width: $hand-width;
+  width: 10px;
   transform-origin: center bottom;
 }
