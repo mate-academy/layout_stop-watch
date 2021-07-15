@@ -1,0 +1,40 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__circle {
+    position: relative;
+    @include square($circle-size);
+    border-radius: 50%;
+    background-color: $circle-color;
+
+    &::before {
+      @include watch-arrow-styles(
+        $circle-size,
+        $second-arrow-height,
+        $circle-color,
+      );
+
+      @include rotate(60s);
+    }
+
+    &::after {
+
+      @include watch-arrow-styles(
+        $circle-size,
+        $minute-arrow-height,
+        $minute-arrow-color,
+      );
+      z-index: -1;
+      @include rotate(3600s);
+    }
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
