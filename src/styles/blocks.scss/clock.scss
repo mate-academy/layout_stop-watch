@@ -1,0 +1,55 @@
+.clock {
+  position: relative;
+  width: $clock-circle-size;
+  height: $clock-circle-size;
+  padding: 5px;
+
+  border: 5px solid #028e9a;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 53, 66, 0.5);
+
+  &__arrow {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+  }
+
+  &__center {
+    position: absolute;
+    bottom: 47%;
+    left: 48%;
+    z-index: 1;
+    width: $center-circle-size;
+    height: $center-circle-size;
+    background: #028e9a;
+    border-radius: 50%;
+  }
+
+  &__arrow--h {
+    height: 200px;
+    width: 10px;
+    border-radius: 20px;
+    background: #b22727;
+    animation: circle 43200s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__arrow--m {
+    height: 300px;
+    width: 10px;
+    border-radius: 20px;
+    background: #028e9a;
+    animation: circle 60s linear infinite;
+    transform-origin: bottom center;
+  }
+  
+  @keyframes circle {
+    from {
+      transform: (0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
