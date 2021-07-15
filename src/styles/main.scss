@@ -1,0 +1,72 @@
+$color-black: #000;
+
+.page {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1px dotted $color-black;
+
+  &__arrows-holder {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, $color-black, white);
+    border: 1px solid $color-black;
+    z-index: 3;
+  }
+
+  &__hours-arrow {
+    position: absolute;
+    top: 150px;
+    width: 15px;
+    height: 100px;
+    background-color: $color-black;
+    border-radius: 5px;
+    animation: goTime 518400s 5 linear;
+    transform-origin: center bottom;
+  }
+
+  &__minutes-arrow {
+    position: absolute;
+    top: 50px;
+    width: 10px;
+    height: 200px;
+    background-color: #555;
+    border-radius: 5px;
+    animation: goTime 43200s 5 linear;
+    transform-origin: center bottom;
+  }
+
+  &__seconds-arrow {
+    position: absolute;
+    top: 20px;
+    width: 1px;
+    height: 230px;
+    background-color: #f00;
+    border-radius: 5px;
+    animation: goTime 60s 5 linear;
+    transform-origin: center bottom;
+  }
+}
+
+@keyframes goTime {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
