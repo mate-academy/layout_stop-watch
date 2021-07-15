@@ -17,7 +17,7 @@
   align-items: baseline;
 }
 
-.start {
+.watch__center {
   position: absolute;
   align-self: center;
   width: 20px;
@@ -26,9 +26,8 @@
   border-radius: 50%;
 }
 
-.minutes {
+.watch__minutes {
   position: absolute;
-  top: 10%;
   height: 40%;
   width: 4px;
   background-color: #5f9ea0;
@@ -42,12 +41,7 @@
   animation-iteration-count: infinite;
 }
 
-.minutes:hover {
-  
-  transform: rotate(360deg);
-}
-
-.seconds {
+.watch__seconds {
   height: 50%;
   width: 4px;
   background-color: #dc143c;
@@ -57,10 +51,6 @@
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-}
-
-.watch:hover {
-  animation-play-state: paused;
 }
 
 @keyframes move-watch {
