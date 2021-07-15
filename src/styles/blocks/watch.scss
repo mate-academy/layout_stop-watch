@@ -1,0 +1,56 @@
+.watch {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+
+  &__center {
+    position: absolute;
+
+    align-self: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    background-color: #5f9ea0;
+  }
+
+  &__minutes {
+    height: 50%;
+    width: 4px;
+
+    background-color: #5f9ea0;
+
+    transition: transform 60s;
+    transform-origin: bottom;
+
+    animation-name: move-watch;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__seconds {
+    height: 50%;
+    width: 4px;
+
+    background-color: #dc143c;
+
+    transform-origin: bottom;
+
+    animation-name: move-watch;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes move-watch {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
