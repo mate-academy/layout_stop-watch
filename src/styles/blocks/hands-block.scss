@@ -12,7 +12,7 @@
 
     top: 25%;
     background-color: #696969;
-    animation: move_minute 3600s steps(60, end) infinite;
+    animation: move 3600s steps(60, end) infinite;
   }
 
   &__second {
@@ -20,23 +20,11 @@
     @include hand-size ($second-height, $hands-width);
 
     background-color: #a9a9a9;
-    animation: move_second 60s steps(60, end) infinite;
+    animation: move 60s steps(60, end) infinite;
   }
 }
 
-@keyframes move_second {
-  0% {
-    transform: rotate(0deg);
-    transform-origin: bottom;
-  }
-
-  100% {
-    transform: rotate(360deg);
-    transform-origin: bottom;
-  }
-}
-
-@keyframes move_minute {
+@keyframes move {
   0% {
     transform: rotate(0deg);
     transform-origin: bottom;
