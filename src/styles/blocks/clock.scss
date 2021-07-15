@@ -3,8 +3,7 @@
   @include square (500px);
 
   &__minute {
-    position: absolute;
-    left: 50%;
+    @include position (absolute,50%);
     top: 15%;
     height: 35%;
     width: 10px;
@@ -15,8 +14,7 @@
   }
 
   &__second {
-    position: absolute;
-    left: 50%;
+    @include position (absolute ,50%);
     top: 5%;
     height: 45%;
     width: 10px;
