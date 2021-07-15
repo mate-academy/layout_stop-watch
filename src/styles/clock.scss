@@ -1,0 +1,31 @@
+.clock {
+  position: relative;
+  top: 50%;
+  left: 50%;
+
+  &__sec {
+    @include positionClocks();
+    background-color: #c25d5d;
+
+    animation-name: moveRound;
+    animation-duration: 1s;
+    @include animationSet();
+  }
+
+  &__min {
+    @include positionClocks();
+    background-color: $color-blue;
+
+    animation-name: moveRound;
+    animation-duration: 60s;
+    @include animationSet();
+  }
+
+  &__circle {
+    position: absolute;
+    border-radius: 50%;
+    height: $cirle-diameter;
+    width: $cirle-diameter;
+    background-color: $color-blue;
+  }
+}

@@ -1,0 +1,14 @@
+@mixin positionClocks {
+  position: absolute;
+  left: $cirle-center-x;
+  top: $cirle-center-y;
+  height: $minute-hight;
+  width: $minute-width;
+  border-radius: 15px;
+}
+
+@mixin animationSet {
+  animation-timing-function: linear;
+  transform-origin: $cirle-center-x / 2 0;
+  animation-iteration-count: infinite;
+}
