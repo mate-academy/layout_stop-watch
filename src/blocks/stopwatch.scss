@@ -1,17 +1,18 @@
 .stopwatch {
-  position: relative;
   @include circleSize($size-stop-watch);
+  @extend %position-center;
 
   background: $bg-stop-watch;
+  box-shadow: $box-shadow;
   
-  &__minut::before {
+  &__minute::before {
     content: "";
-    @include positArrow($width-minut);
+    @include positArrow($width-minute);
     @include paramArrow(
-      $width-minut, 
-      $hight-minut, 
-      $bg-minut, 
-      $anime-minut
+      $width-minute, 
+      $hight-minute, 
+      $bg-minute, 
+      $anime-minute
     );
   }
 
@@ -27,17 +28,9 @@
   }
 
   &__center {
-    position: absolute;
     @extend %position-center;
-    transform: translate(-50%, -50%);
-
     @include circleSize($circle-in-center);
 
     background: $bg-second;
-  }
-
-  &--posit {
-    @extend %position-center;
-    transform: translate(-50%, 50%);
   }
 }
