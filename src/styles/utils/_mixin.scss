@@ -1,0 +1,12 @@
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+%hand-position {
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - #{$hand-width / 2});
+  transform-origin: bottom;
+  border-radius: 10px;
+}
