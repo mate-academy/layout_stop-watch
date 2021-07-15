@@ -1,0 +1,74 @@
+.table {
+  display: flex;
+  justify-content: center;
+}
+
+.table__watch {
+  height: 600px;
+  width: 600px;
+  border: cadetblue solid 4px;
+  border-radius: 50%;
+}
+
+.watch {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.start {
+  position: absolute;
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  background-color: #5f9ea0;
+  border-radius: 50%;
+}
+
+.minutes {
+  position: absolute;
+  top: 10%;
+  height: 40%;
+  width: 4px;
+  background-color: #5f9ea0;
+
+  transition: transform 60s;
+  transform-origin: bottom;
+
+  animation-name: move-watch;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.minutes:hover {
+  
+  transform: rotate(360deg);
+}
+
+.seconds {
+  height: 50%;
+  width: 4px;
+  background-color: #dc143c;
+  transition: transform 2s;
+  transform-origin: bottom;
+  animation-name: move-watch;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.watch:hover {
+  animation-play-state: paused;
+}
+
+@keyframes move-watch {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
