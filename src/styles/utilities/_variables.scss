@@ -1,0 +1,29 @@
+$watch-width: 300px;
+$watch-height: 300px;
+$watch-background: rgb(251, 75, 59);
+
+@mixin watch-digit-blocks-styles($digit) {
+  position: absolute;
+  content: "#{$digit}";
+  width: 30px;
+  height: 30px;
+}
+
+@mixin watch-arrows-styles($width,$arrow-background-color) {
+  position: absolute;
+  top: 0;
+  width: $width;
+  height: $watch-height / 2;
+  background-color: $arrow-background-color;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
+
+@keyframes rotateWatch {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

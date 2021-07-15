@@ -1,0 +1,43 @@
+.watch {
+  width: $watch-width;
+  height: $watch-height;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  background-color: $watch-background;
+  border-radius: 50%;
+
+  &::before {
+    @include watch-digit-blocks-styles(12);
+    top: 0;
+  }
+
+  &::after {
+    @include watch-digit-blocks-styles(6);
+    bottom: 0;
+  }
+
+  &__sircle-center {
+    position: static;
+    z-index: 2;
+    width: $watch-width / 10;
+    height: $watch-height / 10;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
+  &__minutes-arrow {
+    @include watch-arrows-styles (9px, rgb(20, 18, 22));
+    animation: rotateWatch 3600s linear infinite;
+  }
+
+  &__seconds-arrow {
+    @include watch-arrows-styles (6px, rgb(69, 62, 77));
+    animation: rotateWatch 60s steps(60) infinite;
+  }
+}
