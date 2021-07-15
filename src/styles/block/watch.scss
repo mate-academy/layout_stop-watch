@@ -1,0 +1,39 @@
+.watch {
+  @extend %watch-position;
+  
+  
+
+  &__dial-seconds {
+    animation: rotation 3600s infinite steps(60);
+  }
+
+  &__seconds {
+    @extend %watch-position;
+    height: $seconds-height;
+    width: $hand-width;
+    background-color: $color-blue;
+    border-radius: 20px;
+
+    &::after {
+      content: "";
+      @extend %watch-position;
+      @include hands-axis;
+      background-color: $color-blue;
+      top: 100%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__dial-minutes {
+    animation: rotation 60s infinite linear;
+  }
+
+  &__minutes {
+    @extend %watch-position;
+    height: $minutes-height;
+    width: $hand-width;
+    background-color: $color-pink;
+    border-radius: 20px;
+  }
+
+}
