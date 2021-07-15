@@ -1,0 +1,22 @@
+@mixin circleSize($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin positArrow($width) {
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - (#{$width} / 2));
+}
+
+@mixin paramArrow($width, $hight, $bg, $anime) {
+  width: $width;
+  height: $hight;
+
+  background: $bg;
+  border-radius: $radius-arrow;
+  
+  animation: $anime;
+  transform-origin: bottom;
+}
