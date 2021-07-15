@@ -1,0 +1,49 @@
+%hand {
+  position: absolute;
+  left: 49%;
+  width: 10px;
+  border-radius: 5px;
+  transform-origin: bottom center;
+}
+
+.watch {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+  border-radius: 50%;
+
+  &__minute-hand {
+    @extend %hand;
+    top: 20%;
+    height: 30%;
+    background-color: rgb(231, 136, 136);
+    animation: time 3600s linear infinite;
+  }
+
+  &__second-hand {
+    @extend %hand;
+    top: 10%;
+    height: 40%;
+    width: 10px;
+    background-color: rgb(14, 93, 127);
+    animation: time 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(14, 93, 127);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes time {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
