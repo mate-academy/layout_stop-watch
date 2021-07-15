@@ -1,0 +1,34 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  @include square(50px);
+  border-radius: 50%;
+  background-color: $main-color;
+
+  &__arrow {
+    position: absolute;
+    bottom: 50%;
+    z-index: -1;
+  }
+
+  &__arrow--second--speed {
+    @include arrow-form(250px, 45%, $border-radius, bottom);
+    background-color: $main-color;
+    animation: move 60s steps(60, start) 3s infinite;
+  }
+
+  &__arrow--minute--speed {
+    @include arrow-form(150px, 55%, $border-radius, bottom);
+    background-color: $minute-color;
+    animation: move 3600s steps(60, start) 63s infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
