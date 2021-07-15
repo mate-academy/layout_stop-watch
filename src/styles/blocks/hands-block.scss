@@ -1,0 +1,37 @@
+.hands {
+  @include clock-size($clock-size);
+  
+  position: relative;
+  background-color: #fffaf0;
+  border-radius: 50%;
+  border: 6px solid #dcdcdc;
+  
+  &__minute {
+    @extend %position_border-radius;
+    @include hand-size ($minute-height, $hands-width);
+
+    top: 25%;
+    background-color: #696969;
+    animation: move 3600s steps(60, end) infinite;
+  }
+
+  &__second {
+    @extend %position_border-radius;
+    @include hand-size ($second-height, $hands-width);
+
+    background-color: #a9a9a9;
+    animation: move 60s steps(60, end) infinite;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
