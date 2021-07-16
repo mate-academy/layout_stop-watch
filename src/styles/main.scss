@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.watch {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 56%;
+    background-color: #4c99aa;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    z-index: 2;
+  }
+
+  .second_arrow {
+    position: absolute;
+    left: 50.6%;
+    top: -5%;
+    background-color: #4c99aa;
+    height: 350px;
+    width: 10px;
+    border-radius: 20px;
+    margin: 100px auto 0;
+    z-index: 2;
+    transform-origin: 50% 100%;
+    animation: clock-clock 60s forwards infinite linear;
+  }
+
+  .hour_arrow {
+    position: absolute;
+    top: 23%;
+    left: 51%;
+    background-color: #d15559;
+    height: 250px;
+    width: 10px;
+    border-radius: 20px;
+    z-index: 1;
+    transform-origin: 50% 100%;
+    animation: clock-clock 3600s infinite linear;
+  }
+}
+
+@keyframes clock-clock {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
