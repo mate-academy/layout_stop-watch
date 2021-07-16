@@ -1,10 +1,10 @@
-@mixin square($size) {
+@mixin circle($size) {
   width: $size;
   height: $size;
   border-radius: 50%;
 }
 
-@mixin postionCenter($width-hand, $heigth-hand, $bgcolor-hand) {
+@mixin postionCenter($width-hand, $heigth-hand) {
   position: absolute;
   bottom: 50%;
   left: calc(50% - (#{$width-hand} / 2));
@@ -13,5 +13,4 @@
   transform-origin: bottom;
   transform: rotate(0deg);
   border-radius: 12px;
-  background-color: $bgcolor-hand;
 }

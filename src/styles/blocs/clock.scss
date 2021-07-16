@@ -1,20 +1,22 @@
 .clock {
-  @include square($size-watch);
+  @include circle($size-watch);
   background-color: #eee;
 
   &__seconds {
-    @include postionCenter($width-hand, $heigth-hand-sec, #4b9aaa);
+    @include postionCenter($width-hand, $heigth-hand-sec);
     z-index: 2;
     animation: move 60s steps(60) infinite;
+    background-color: #4b9aaa;
   }
 
   &__minutes {
-    @include postionCenter($width-hand, $heigth-hand-min,#d15559);
+    @include postionCenter($width-hand, $heigth-hand-min);
     animation: move 3600s steps(60) infinite;
+    background-color: #d15559;
   }
 
   &__circle {
-    @include square($circle-width);
+    @include circle($circle-width);
     position: absolute;
     top: 50%;
     left: 50%;
