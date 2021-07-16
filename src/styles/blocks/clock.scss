@@ -16,32 +16,19 @@
   }
 
   &__line-min {
-    position: absolute;
-    bottom: $length-block / 2;
+    @extend %arrow-settings, %animation-settings;
     width: $border-size;
     height: $size / 1.6;
-    border-radius: 6px;
     background-color: blue;
-    animation-name: min;
-    transform-origin: bottom;
     animation-duration: 3600s;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(60, end);
   }
 
   &__line-sec {
-    position: absolute;
-    bottom: $length-block / 2;
+    @extend %arrow-settings, %animation-settings;
     width: $border-size / 2;
     height: $size;
     background-color: red;
-    border-radius: 6px;
-    animation-name: sec;
     animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    transform-origin: bottom;
-    transition: linear;
   }
 
   &__circle {
@@ -53,17 +40,7 @@
   }
 }
 
-@keyframes sec {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes min {
+@keyframes time {
   from {
     transform: rotate(0deg);
   }
