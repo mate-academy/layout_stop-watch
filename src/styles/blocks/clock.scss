@@ -1,0 +1,51 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+  }
+
+  &__line-min {
+    @extend %arrow-settings, %animation-settings;
+    width: $border-size;
+    height: $size / 1.6;
+    background-color: blue;
+    animation-duration: 3600s;
+  }
+
+  &__line-sec {
+    @extend %arrow-settings, %animation-settings;
+    width: $border-size / 2;
+    height: $size;
+    background-color: red;
+    animation-duration: 60s;
+  }
+
+  &__circle {
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
