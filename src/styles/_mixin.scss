@@ -1,0 +1,16 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin postionCenter($width-hand, $heigth-hand) {
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - (#{$width-hand} / 2));
+  width: $width-hand;
+  height: $heigth-hand;
+  transform-origin: bottom;
+  transform: rotate(0deg);
+  border-radius: 12px;
+}

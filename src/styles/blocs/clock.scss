@@ -1,0 +1,32 @@
+.clock {
+  @include circle($size-watch);
+  background-color: #eee;
+
+  &__seconds {
+    @include postionCenter($width-hand, $heigth-hand-sec);
+    z-index: 2;
+    animation: move 60s steps(60) infinite;
+    background-color: #4b9aaa;
+  }
+
+  &__minutes {
+    @include postionCenter($width-hand, $heigth-hand-min);
+    animation: move 3600s steps(60) infinite;
+    background-color: #d15559;
+  }
+
+  &__circle {
+    @include circle($circle-width);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4b9aaa;
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: rotate(360deg);
+  }
+}
