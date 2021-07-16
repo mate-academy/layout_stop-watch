@@ -1,0 +1,66 @@
+@mixin square ($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin circle ($size) {
+  @include square($size);
+  border-radius: 50%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/image/0_184e41_6ed8c5f6_orig.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+  .clock {
+    position: relative;
+    @include square (500px);
+    
+    &__minute-arrow {
+      position: absolute;
+      left: 50%;
+      top: 15%;
+      height: 35%;
+      width: 10px;
+      background-color: black;
+      transform-origin: bottom center;
+      animation: now 3600s infinite steps(3600);
+    }
+
+    &__second-arrow {
+      position: absolute;
+      left: 50%;
+      top: 5%;
+      height: 45%;
+      width: 5px;
+      background-color: black;
+      transform-origin: bottom center;
+      animation: nev 60s infinite steps(60);
+  
+      &::before {
+        position: absolute;
+        content: "";
+        @include circle(20px);
+        background-color: rgb(85, 94, 60);
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    @keyframes nev {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes now {
+      100% {
+      transform: rotate(360deg);
+      }
+    }
+  }
