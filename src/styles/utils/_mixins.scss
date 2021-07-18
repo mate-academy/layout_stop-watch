@@ -1,0 +1,20 @@
+@mixin width-height($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position($top, $right, $z-index) {
+  position: relative;
+  top: $top;
+  right: $right;
+  z-index: $z-index;
+}
+
+@mixin animation($animation-name, $animation-duration, 
+$animation-timing-function, $animation-iteration-count) {
+  transform-origin: bottom center;
+  animation-name: $animation-name;
+  animation-duration: $animation-duration;
+  animation-timing-function: $animation-timing-function;
+  animation-iteration-count: $animation-iteration-count;
+}

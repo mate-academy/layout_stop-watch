@@ -1,0 +1,32 @@
+.watch {
+  &__seconds-arrow {
+    @include position(6px, 0, 0);
+    @include width-height(16px, 300px);
+    border-radius: $watch-arrow-radius;
+    background-color: $bg-color-seconds-arrow;
+    @include animation(rotation, 60s, steps(60), infinite);
+  }
+  
+  &__minutes-arrow {
+    @include position(-144px, 0, -1);
+    @include width-height(16px, 150px);
+    border-radius: $watch-arrow-radius;
+    background-color: $bg-color-minutes-arrow;
+    @include animation(rotation, 3600s, steps(3600), infinite);
+  }
+}
+
+.watch::after {
+  content: "";
+  display: block;
+  @include position(-166px, 10px, 1);
+  @include width-height(38px, 38px);
+  border-radius: 50%;
+  background-color: $bg-color-seconds-arrow;
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
