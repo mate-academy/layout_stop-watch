@@ -1,3 +1,6 @@
+$primary-color: #000;
+$secondary-color: #e81313;
+
 * {
   box-sizing: border-box;
 }
@@ -7,57 +10,59 @@ body {
 }
 
 .clock {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 500px;
   width: 500px;
-  border: 10px solid;
+  border: 10px solid $primary-color;
   border-radius: 50%;
+  background-image: url(../images/gordon.jpeg);
+  background-position: 35% 45%;
+  background-repeat: no-repeat;
+
+  &__minute-hand {
+    top: 100px;
+    height: 150px;
+    background-color: $primary-color;
+    animation: action 3600s steps(60, end) infinite;
+  }
+
+  &__second-hand {
+    top: 50px;
+    height: 200px;
+    background-color: $secondary-color;
+    z-index: 1;
+    animation: action 60s steps(60, end) infinite;
+  }
+
+  &__dot {
+    height: 30px;
+    width: 30px;
+    background-color: $secondary-color;
+    border-radius: 50%;
+  }
 }
 
 .clock__minute-hand,
 .clock__second-hand,
 .clock__dot {
   position: absolute;
-  bottom: 50%;
-  left: 50%;
 }
 
 .clock__minute-hand,
 .clock__second-hand {
-  transform-origin: center bottom;
-  transform: translate(-50%);
   border-radius: 5px;
-  width: 8px;
-}
-
-.clock__minute-hand {
-  height: 150px;
-  background-color: #000;
-  animation: action 3600s steps(60, end) infinite;
-}
-
-.clock__second-hand {
-  height: 200px;
-  background-color: #abb;
-  animation: action 60s steps(60, end) infinite;
-}
-
-.clock__dot {
-  position: absolute;
-  height: 30px;
-  width: 30px;
-  background-color: #000;
-  transform: translate(-50%, 50%);
-  border-radius: 50%;
+  width: 5px;
 }
 
 @keyframes action {
   from {
-    transform-origin: bottom;
+    transform-origin: center bottom;
     transform: rotate(0deg);
   }
   to {
-    transform-origin: bottom;
+    transform-origin: center bottom;
     transform: rotate(360deg);
   }
 }
