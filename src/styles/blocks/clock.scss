@@ -1,0 +1,53 @@
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__minute-arrow {
+    animation: rotate 3600s linear infinite;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__small-arrow {
+    @include position-arrows;
+    top: -100px;
+    height: 200px;
+    width: $width-arrow;
+    background-color: #ff0080;
+    border-radius: 10px;
+  }
+
+  &__second-arrow {
+    animation: rotate 60s linear infinite;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__big-arrow {
+    @include position-arrows;
+    top: -150px;
+    height: 300px;
+    width: $width-arrow;
+    border-radius: 10px;
+    background-color: $second-ar-color;
+  }
+
+  &::after {
+    @include position-arrows;
+    content: "";
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: $second-ar-color;
+  }
+}
