@@ -1,0 +1,62 @@
+.page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    position: relative;
+    width: $wrapper-diametr;
+    height: $wrapper-diametr;
+    border: 1px solid silver;
+    border-radius: 50%;
+  }
+
+  &__circle {
+    position: absolute;
+    top: $circle-position;
+    left: $circle-position;
+
+    height: $circle-diametr;
+    width: $circle-diametr;
+
+    border-radius: 50%;
+    background-color: gray;
+  }
+
+  &__minute-pointer {
+    position: absolute;
+    left: $pointer-left-position;
+    top: $pointer-minute-top-position;
+
+    height: $height-of-minute-pointer;
+    width: $width-of-pointers;
+    background: blue;
+    border-radius: $width-of-pointers / 2;
+
+    transform-origin: bottom center;
+
+    animation: rotate 3600s steps(60) infinite;
+  }
+
+  &__second-pointer {
+    position: absolute;
+    left: $pointer-left-position;
+    top: $pointer-second-top-position;
+
+    height: $height-of-second-pointer;
+    width: $width-of-pointers;
+    background: black;
+    border-radius: $width-of-pointers / 2;
+
+    transform-origin: bottom center;
+
+    animation: rotate 60s steps(60) infinite;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
