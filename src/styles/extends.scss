@@ -1,0 +1,14 @@
+@mixin createArrow($width, $height, $shift, $time, $color) {
+  position: absolute;
+  width: $width;
+  height: $height;
+  left: $shift;
+  transform: rotate(180deg);
+  transform-origin: top;
+  animation-name: move;
+  animation-duration: $time;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: $border-radius;
+  background-color: $color;
+}

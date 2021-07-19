@@ -1,18 +1,5 @@
-$border-radius: 30px;
-
-@mixin createArrow($width, $height, $shift, $time, $color) {
-  position: absolute;
-  width: $width;
-  height: $height;
-  left: $shift;
-  transform: rotate(180deg);
-  transform-origin: top;
-  animation-name: move;
-  animation-duration: $time;
-  animation-timing-function: linear;
-  border-radius: $border-radius;
-  background-color: $color;
-}
+@import "extends";
+@import "variables";
 
 .root-page {
   margin: 0;
@@ -32,11 +19,11 @@ $border-radius: 30px;
 }
 
 .minute-line {
-  @include createArrow(20px, 200px, 5px, 360s, blueviolet);
+  @include createArrow(20px, 150px, 5px, 360s, blueviolet);
 }
 
 .second-line {
-  @include createArrow(10px, 150px, 10px, 60s, black);
+  @include createArrow(10px, 200px, 10px, 60s, black);
 }
 
 @keyframes move {
