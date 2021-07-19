@@ -25,7 +25,7 @@ body {
 
     animation-name: seconds;
     animation-duration: 60s;
-    animation-timing-function: linear;
+    animation-timing-function: steps(60, end);
     animation-iteration-count: infinite;
 
     border-radius: 50%;
@@ -56,7 +56,7 @@ body {
     animation-name: minute;
     animation-duration: 3600s;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-timing-function: steps(60, end);
     transform-origin: right bottom;
 
     background: #c25d5d;
