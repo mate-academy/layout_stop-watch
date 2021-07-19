@@ -1,0 +1,19 @@
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin hand-style ($height, $width, $color) {
+  height: $height;
+  width: $width;
+  border-radius: $width * 2;
+  background-color: $color;
+
+  position: absolute;
+  bottom: calc(50% + #{$hand-width});
+  transform-origin: bottom;
+}
+
+@mixin rotate($duration) {
+  animation: rotate $duration steps(60) infinite;
+}
