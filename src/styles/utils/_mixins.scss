@@ -1,0 +1,14 @@
+@mixin clock-size ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin clock-min-size ($min-size) {
+  min-width: $min-size;
+  min-height: $min-size;
+}
+
+@mixin clock-center ($center-size) {
+  @include clock-size($center-size);
+  border-radius: 50%;
+}

@@ -1,0 +1,53 @@
+.clock {
+  @include clock-size($clock-size);
+  @include clock-min-size($clock-min-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__center {
+    @include clock-center($clock-size-center);
+    position: relative;
+    border: 1px solid #6495ed;
+    background-color: #6495ed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      border-radius: 8px;
+      z-index: -1;
+      transform-origin: bottom;
+    }
+
+    &::after {
+      width: $hand-second-weight;
+      height: $hand-second-height;
+      top: getTopSfift($hand-second-height, $clock-size-center);
+      background-color: #6495ed;
+      animation: clock-hand-rotate 60s linear infinite;
+    }
+
+    &::before {
+      width: $hand-minute-weight;
+      height: $hand-minute-height;
+      top: getTopSfift($hand-minute-height, $clock-size-center);
+      background-color: #cd5c5c;
+      animation: clock-hand-rotate 3600s linear infinite;
+    }
+
+  }
+
+}
+
+@keyframes clock-hand-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
