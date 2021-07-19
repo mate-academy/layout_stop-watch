@@ -1,0 +1,42 @@
+.clock {
+  @include pos;
+
+  &__arrow-min {
+    @include pos;
+    width: 10px;
+    height: 150px;
+    border-radius: 5px;
+    background-color: #c25d5d;
+    transform-origin: bottom;
+    animation: round 3600s linear infinite;
+  }
+
+  &__arrow-sec {
+    position: absolute;
+    left: 200px;
+    top: 50px;
+    width: 10px;
+    height: 200px;
+    border-radius: 5px;
+    background-color: #5f98a8;
+    transform-origin: bottom;
+    animation: round 60s linear infinite;
+  }
+
+  @keyframes round {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &::after {
+    position: absolute;
+    left: 195px;
+    top: 240px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #5f98a8;
+    content: "";
+  }
+}
