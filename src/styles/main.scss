@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.watch {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  margin: 0 auto;
+  background-color: #eee;
+  border-radius: 50%;
+
+  &__second {
+    position: absolute;
+
+    height: 300px;
+    width: 15px;
+
+    top: 65px;
+    left: 350px;
+
+    animation-name: seconds;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+
+    border-radius: 50%;
+
+    background-color: #5f98a8;
+  }
+
+  @keyframes seconds {
+    from {
+      transform-origin: center bottom;
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform-origin: center bottom;
+      transform: rotate(360deg);
+    }
+  }
+  
+  &__minute {
+    position: absolute;
+    height: 150px;
+    width: 15px;
+
+    top: 210px;
+    left: 350px;
+
+    animation-name: minute;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+    transform-origin: right bottom;
+
+    background: #c25d5d;
+    border-radius: 50%;
+  }
+
+  @keyframes minute {
+    from {
+      transform-origin: center bottom;
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform-origin: center bottom;
+      transform: rotate(360deg);
+    }
+  }
+  
+  &__circle {
+    position: absolute;
+    background-color: #5f98a8;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+    top: 350px;
+    left: 348px;
+  }
+}
