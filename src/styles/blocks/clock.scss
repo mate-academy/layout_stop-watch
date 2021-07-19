@@ -1,0 +1,44 @@
+.clock {
+  position: relative;
+
+  &__minute-line {
+    position: absolute;
+    height: 200px;
+    width: 10px;
+    background-color: #c35d5d;
+    bottom: 0;
+    border-radius: 10px;
+    transform-origin: bottom;
+    animation: rotate 3600s steps(60, end) infinite;
+  }
+
+  &__second-line {
+    position: absolute;
+    height: 300px;
+    width: 8px;
+    background-color: #5f99a9;
+    bottom: 0;
+    border-radius: 10px;
+    z-index: 1;
+    transform-origin: bottom;
+    animation: rotate 60s steps(60, end) infinite;
+  }
+
+  &__circle {
+    top: -15px;
+    left: -7px;
+    position: absolute;
+    @include circle($circle-size);
+    background-color: #5f99a9;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
