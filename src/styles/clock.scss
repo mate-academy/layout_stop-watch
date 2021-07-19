@@ -33,7 +33,7 @@
     border-radius: $arrow-radius;
     background-color: $light-color;
 
-    animation-name: hour;
+    animation-name: spin;
     transform-origin: bottom center;
     animation-duration: 3600s;
     animation-iteration-count: infinite;
@@ -41,12 +41,6 @@
   }
 
   @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes hour {
     to {
       transform: rotate(360deg);
     }
