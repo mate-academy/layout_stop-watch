@@ -1,26 +1,23 @@
 .clock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  position: relative;
 
-  &__second-line {
-    top: 190px;
+  &__minute-line {
     position: absolute;
     height: 200px;
     width: 10px;
     background-color: #c35d5d;
+    bottom: 0;
     border-radius: 10px;
     transform-origin: bottom;
     animation: rotate 3600s steps(60, end) infinite;
   }
 
-  &__minute-line {
-    top: 85px;
+  &__second-line {
     position: absolute;
     height: 300px;
     width: 8px;
     background-color: #5f99a9;
+    bottom: 0;
     border-radius: 10px;
     z-index: 1;
     transform-origin: bottom;
@@ -28,7 +25,8 @@
   }
 
   &__circle {
-    top: 50%;
+    top: -15px;
+    left: -7px;
     position: absolute;
     @include circle($circle-size);
     background-color: #5f99a9;
