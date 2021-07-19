@@ -1,0 +1,54 @@
+.clock {
+  position: relative;
+  width: $size-circle;
+  height: $size-circle;
+
+  background-color: $dark-color;
+  border-radius: 50%;
+
+  &__big-arrow {
+    position: absolute;
+    left: 25%;
+    bottom: 50%;
+    z-index: -1;
+    width: $width-arrow;
+    height: 300px;
+    border-radius: $arrow-radius;
+    background-color: $dark-color;
+
+    animation-name: spin;
+    transform-origin: bottom center;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+    animation-timing-function: steps(60);
+  }
+
+  &__small-arrow {
+    position: absolute;
+    left: 25%;
+    bottom: 50%;
+    z-index: -2;
+    width: $width-arrow;
+    height: 250px;
+    border-radius: $arrow-radius;
+    background-color: $light-color;
+
+    animation-name: hour;
+    transform-origin: bottom center;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes hour {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
