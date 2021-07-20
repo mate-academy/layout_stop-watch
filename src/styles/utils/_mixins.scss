@@ -1,0 +1,11 @@
+@mixin turn-hand($top, $heigth-hand, $color, $speed) {
+  position: absolute;
+  top: $top;
+  width: $hand-radius;
+  height: $heigth-hand;
+  border-radius: $hand-radius;
+  background-color: $color;
+  animation: turn-around $speed linear infinite;
+  animation-timing-function: steps(60);
+  transform-origin: bottom center;
+}

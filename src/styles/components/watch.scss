@@ -1,0 +1,37 @@
+.watch {
+  @extend %watch-position;
+  height: 100vh;
+
+  &__dial {
+    @extend %watch-position;
+    position: relative;
+    width: $watch-size;
+    height: $watch-size;
+  }
+
+  &__minute-hand {
+    @include turn-hand ($minute-top, $minute-heigth, #d15559, 3600s);
+  }
+
+  &__second-hand {
+    @include turn-hand ($second-top, $second-heigth, #4a9aaa, 60s);
+  }
+
+  &__center-dot {
+    position: absolute;
+    height: $dot-size;
+    width: $dot-size;
+    border-radius: $dot-size;
+    background-color: #4a9aaa;
+  }
+}
+
+@keyframes turn-around {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
