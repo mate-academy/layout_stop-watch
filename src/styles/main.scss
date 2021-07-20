@@ -11,23 +11,26 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  width: 500px;
+  height: 500px;
   &::after {
     content: "";
     display: block;
     position: absolute;
+    top: 50%;
     left: 50%;
-    top: 60%;
     background-color: #4c99aa;
     border-radius: 50%;
     width: 30px;
     height: 30px;
     z-index: 2;
+    transform-origin: bottom center;
   }
 
   .second_arrow {
     position: absolute;
-    left: 50.5%;
-    top: 0;
+    left: 51% ;
+    top: calc(50% - 430px);
     background-color: #4c99aa;
     height: 350px;
     width: 10px;
@@ -40,8 +43,8 @@ body {
 
   .hour_arrow {
     position: absolute;
-    top: 23%;
-    left: 50.5%;
+    left: 51%;
+    top: calc(50% - 260px);
     background-color: #d15559;
     height: 285px;
     width: 10px;
