@@ -1,0 +1,88 @@
+$minute-length: 230px;
+$minute-width: 15px;
+$minute-color: #f55;
+$second-length: 270px;
+$second-width: 10px;
+$second-color: #55f;
+$center-width: 30px;
+$watch-width: ($second-length + $second-width) * 2;
+
+@mixin circle ($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin rectangle ($width, $height, $radius) {
+  height: $height;
+  width: $width;
+  border-radius: $radius;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 30px 0 0;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  margin: auto;
+  cursor: pointer;
+  @include circle($watch-width);
+  background-color: #f8f8f4;
+  box-shadow: 3px 4px 6px #eee, -2px -1px 3px #eee;
+
+  &__center {
+    @include circle($center-width);
+    background-color: $second-color;
+    display: flex;
+    margin: auto;
+    z-index: 3;
+  }
+
+  &__minutes {
+    @include rectangle($minute-width, $minute-length, ($minute-width / 2));
+    background-color: $minute-color;
+    position: absolute;
+    left: ($watch-width - $minute-width)/ 2;
+    bottom: ($watch-width - $minute-width)/ 2;
+    z-index: 2;
+  }
+
+  &__seconds {
+    @include rectangle($second-width, $second-length, ($second-width / 2));
+    background-color: $second-color;
+    position: absolute;
+    left: ($watch-width - $second-width)/ 2;
+    bottom: ($watch-width - $second-width)/ 2;
+    z-index: 1;
+  }
+
+  & :nth-child(2) {
+    transform-origin: bottom;
+    animation: rotate 3600s steps(60, jump-both) 0.5s infinite forwards;
+  }
+
+  & :nth-child(3) {
+    transform-origin: bottom;
+    animation: rotate 60s linear 0.5s infinite forwards;
+  }
+
+  &:hover :nth-child(n + 2) {
+    animation-play-state: paused;
+  }
+}
