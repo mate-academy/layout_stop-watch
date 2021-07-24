@@ -1,0 +1,61 @@
+$center-size: 30px;
+$hand-size: 50px;
+$minute-hands-size: 3 * $hand-size;
+$stopwatch-size: 3 * $minute-hands-size;
+$width-hands: 0.5 * $center-size;
+$border-radius-size: 15px;
+
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  position: relative;
+
+  &__second-hands {
+    width: $width-hands;
+    height: 2 * $hand-size;
+    background-color: #3CB371;
+    border-radius: $border-radius-size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    // transform: translateX(-100%) rotate(10deg) translateY(-100%);
+    // transform: translateX(-50%) translateY(-100%);
+    // transform: translateY(-100%);
+    transform-origin: top;
+    animation: hands-move 60s steps(60) infinite;
+  }
+
+  &__minute-hands {
+    width: $width-hands;
+    height: $minute-hands-size;
+    background-color: #2E8B57;
+    border-radius: $border-radius-size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    // transform: translate(-50%, -100%);
+    transform-origin: top;
+    animation: hands-move 3600s steps(60) infinite;
+  }
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+    background-color: #00FF7F;
+    border-radius: $border-radius-size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes hands-move {
+  from {
+    transform: translateX(-50%) rotate(0deg) translateY(-100%);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(360deg) translateY(-100%);
+  }
+}
