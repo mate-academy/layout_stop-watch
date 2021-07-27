@@ -1,0 +1,59 @@
+.clock {
+  width: 600px;
+  height: 300px;
+  transition: transform 10s;
+
+  @keyframes move {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__arrows {
+    min-height: 100%;
+    position: relative;
+  }
+
+  &__arrow {
+    border-radius: 3px;
+    animation-name: move;
+    animation-timing-function: linear;
+    transform-origin: bottom center;
+  }
+
+  &__arrow:first-child {
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    width: 6px;
+    height: 250px;
+    background-color: red;
+    animation-duration: 36s;
+    animation-iteration-count: 1;
+  }
+
+  &__arrow:nth-child(2) {
+    position: absolute;
+    left: 50%;
+    width: 6px;
+    height: 300px;
+    background-color: rgb(73, 73, 197);
+    z-index: 1;
+    animation-duration: 3s;
+    animation-iteration-count: 12;
+  }
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(73, 73, 197);
+    border-radius: 50%;
+    transform: translate(-25%, 50%);
+  }
+}
