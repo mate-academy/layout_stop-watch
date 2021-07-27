@@ -1,0 +1,73 @@
+$watch-size: 500px;
+$margin-top: 100px;
+
+@mixin watch($size) {
+  width: $size;
+  height: $size;
+}
+
+body {
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: $margin-top;
+}
+
+.watch {
+  position: relative;
+
+  @include watch($watch-size);
+  border: 1px solid black;
+  border-radius: 50%;
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #4b9aaa;
+  }
+
+  &__minute-hand,
+  &__second-hand {
+    position: absolute;
+    transform-origin: bottom;
+    border-radius: 5px;
+
+  }
+
+  &__minute-hand {
+    top: 20%;
+    left: 49%;
+
+    width: 10px;
+    height: 150px;
+    background-color: #d15559;
+
+    animation: move-around 3600s steps(60, end) infinite;
+  }
+
+  &__second-hand {
+    bottom: 50%;
+    left: 49%;
+
+    width: 10px;
+    height: 250px;
+    background-color: #4b9aaa;
+
+    animation: move-around 60s steps(60) infinite;
+  }
+}
+
+@keyframes move-around {
+  to {
+    transform: rotate(1turn);
+  }
+}
