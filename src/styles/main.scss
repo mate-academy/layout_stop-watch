@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.stop_watch {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 4px dashed black;
+  margin-left: auto;
+  margin-right: auto;
+  background: url("../image/ciferblat_sekundomera-600x600.png")center center no-repeat;
+  background-size: cover;
+
+  &__clock_hand {
+    position: absolute;
+  }
+
+  &__clock_hand:hover {
+    transition: 60s;
+    transform: rotate(360deg);
+  }
+
+}
