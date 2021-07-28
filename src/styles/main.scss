@@ -1,0 +1,54 @@
+.stop-watch {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  display: flex;
+  background-color: rgb(51, 50, 50);
+  border: 10px solid rgb(17, 211, 245);
+}
+
+.center {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  margin: auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 195px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    bottom: 50%;
+    transform-origin: bottom center;
+    animation: watch 60s 1s infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 115px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    bottom: 50%;
+    transform-origin: bottom center;
+    animation: watch 3600s 1s infinite;
+  }
+
+  @keyframes watch {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
