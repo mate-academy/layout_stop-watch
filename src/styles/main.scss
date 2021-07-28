@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*#region mixins*/
+@mixin flexing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@mixin heiwidth($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin beforeAfter($animation-duration, $bg-color) {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+  background: $bg-color;
+  border-radius: 7px;
+  animation: hands $animation-duration infinite linear;
+}
+/*#endregion*/
+
+.container {
+  @include container;
+  @include flexing;
+  height: 100vh;
+}
+
+.watch {
+  @include heiwidth(500px, 500px);
+  @include flexing;
+  background: #ecf0f1;
+  border: 5px #2980b9;
+  border-style: groove;
+  border-radius: 5px;
+
+  &__circle {
+    @include heiwidth(40px, 40px);
+    @include flexing;
+    background: #2980b9;
+    border-radius: 50%;
+    position: relative;
+  }
+  &__circle::before {
+    @include heiwidth(170px, 10px);
+    @include beforeAfter(36s, #2980b9);
+  }
+  &__circle::after {
+    @include heiwidth(220px, 5px);
+    @include beforeAfter(6s, #2980b9);
+  }
+}
+
+@keyframes hands {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
