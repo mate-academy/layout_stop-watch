@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+}
+
+$clock-size: 500px;
+$minute-length: $clock-size/3.5;
+$second-length: $clock-size/2.5;
+$minute-color: blue;
+$seconds-color: red;
+
+@mixin hands-config ($width,$color) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 5px;
+  border-radius: 5px;
+  width: $width;
+  background-color: $color;
+  animation-timing-function: steps(60);
+  transform-origin: left ;
+}
+
+@keyframes move-around {
+  from {
+    transform: rotate(270deg);
+  }
+
+  to {
+    transform: rotate(650deg);
+  }
+}
+
+.clock {
+  margin: auto;
+  width: $clock-size;
+  height: $clock-size;
+  border-radius: 50%;
+  background-color: rgb(248, 245, 241);
+  border: 2px solid rgb(202, 115, 9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.clock__minute {
+  @include hands-config ($minute-length, $minute-color);
+  animation: move-around 60s linear infinite;
+  
+}
+
+.clock__seconds {
+  @include hands-config ($second-length, $seconds-color);
+  animation: move-around 1s linear infinite;
+  
+}
