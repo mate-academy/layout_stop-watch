@@ -1,0 +1,46 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/animations";
+
+body {
+  margin: 0;
+}
+
+.watch {
+  position: relative;
+  border-radius: 50%;
+  @include width-height($watch-size, $watch-size);
+  background-color: $color-background;
+  border: 1px solid $color-dark-blue;
+
+  &__arrow {
+    @include width-height($arr-width, $arr-min-height);
+    @include position-bottom-left (50%, 50%);
+    background-color: rgb(180, 55, 55);
+    border-radius: 5px;
+
+    animation-name: arrow-rotate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    transform-origin: bottom center;
+
+    &--min {
+      animation-duration: 60 * 60s;
+    }
+
+    &--sec {
+      @include width-height($arr-width, $arr-sec-height);
+      background-color: $color-dark-blue;
+      animation-duration: 60s;
+    }
+  }
+
+  &__bolt {
+    @include width-height($watch-bolt-size, $watch-bolt-size);
+    @include position-bottom-left (49%, 49%);
+
+    border-radius: 50%;
+    background-color: $color-dark-blue;
+  }
+}
