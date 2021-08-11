@@ -1,0 +1,45 @@
+.clock {
+  position: relative;
+  @include clock-size;
+  border: 5px solid $color-main;
+  margin: 50px auto;
+  border-radius: $border-circle;
+  background-image: url(./img/clock.png);
+  background-size: contain;
+
+  &__center {
+    position: absolute;
+    @include center-size;
+    @include position-center;
+    border: $border-width solid red;
+    border-radius: $border-circle;
+    background-color: $color-main;
+    z-index: 1;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &__minutes-hand {
+    position: absolute;
+    @include position-hand;
+    transform: translateX(-50%);
+    @include min-hand-size;
+    border: $border-width solid rgb(180, 178, 178);
+    border-radius: 6px;
+    background-color: $color-main;
+    @include animation-basic;
+    animation-timing-function: linear;
+    animation-duration: 3600s;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    @include position-hand;
+    transform: translateX(-50%);
+    @include sec-hand-size;
+    border-radius: 2px;
+    background-color: red;
+    @include animation-basic;
+    animation-timing-function: steps(60);
+    animation-duration: 60s;
+  }
+}

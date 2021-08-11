@@ -1,0 +1,36 @@
+@mixin clock-size {
+  width: 600px;
+  height: 600px;
+}
+
+@mixin min-hand-size {
+  width: 12px;
+  height: 220px;
+}
+
+@mixin sec-hand-size {
+  width: 4px;
+  height: 280px;
+}
+
+@mixin center-size {
+  width: 40px;
+  height: 40px;
+}
+
+@mixin position-hand {
+  top: 50%;
+  left: 50%;
+  bottom: 50%;
+}
+
+@mixin position-center {
+  top: 50%;
+  left: 50%;
+}
+
+@mixin animation-basic {
+  animation-name: move;
+  transform-origin: bottom;
+  animation-iteration-count: infinite;
+}
