@@ -1,0 +1,47 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  display: flex;
+  margin-top: 50px;
+  width: 500px;
+  height: 500px;
+  border: 5px solid red;
+  border-radius: 50%;
+  
+  &__minute-hand {
+    position: relative;
+    margin: 0 auto;
+    height: 250px;
+    width: 10px;
+    background-color: red;
+    border-radius: 5px;
+    animation: watch 3600s linear infinite;
+    transform-origin: bottom;
+  }
+  
+  &__second-hand {
+    position: relative;
+    margin: 50px auto 0;
+    height: 200px;
+    width: 5px;
+    background-color: black;
+    border-radius: 5px;
+    animation: watch 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
