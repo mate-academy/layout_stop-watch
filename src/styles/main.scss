@@ -64,3 +64,40 @@ $arrow-size: 10px;
     transform: rotate(360deg);
   }
 }
+
+.btn {
+  margin-top: 50px;
+  margin-right: 20px;
+
+  &__firstSkin,
+  &__secondSkin,
+  &__clearSkin {
+    box-shadow: inset 0 1px 0 0 #a4e271;
+    background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+    background-color: #89c403;
+    border-radius: 6px;
+    border: 1px solid  #74b807;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-shadow: 0 1px 0 #528009;
+
+    &:hover {
+      background: linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+      background-color: #77a809;
+    }
+
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
