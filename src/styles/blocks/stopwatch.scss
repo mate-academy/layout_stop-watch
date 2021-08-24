@@ -9,14 +9,16 @@ body {
 
 .stopwatch {
   position: absolute;
+  display: block;
   top: 50%;
   left: 50%;
 
   width: 500px;
   height: 500px;
 
-  border: 10px solid black;
-  border-radius: 50%;
+  background: url("../1.jpg");
+  background-size: cover;
+  background-position: center;
 
   transform: translate(-50%, -50%);
 
@@ -51,13 +53,13 @@ body {
   }
 
   &__minutes {
-    height: 30%;
-    
+    height: 20%;
+
     animation: revolution 3600s steps(60) infinite;
   }
 
   &__seconds {
-    height: 40%;
+    height: 30%;
 
     animation: revolution 60s steps(60) infinite;
   }
