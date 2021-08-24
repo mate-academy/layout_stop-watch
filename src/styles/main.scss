@@ -1,0 +1,67 @@
+$clock-size: 600px;
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+.body {
+  display: flex;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.body__clock {
+  margin: auto;
+}
+
+.clock {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: rgb(160, 160, 160);
+  @include circle($clock-size);
+  &__arrow {
+    position: absolute;
+    border-radius: 25px;
+    width: 1%;
+    transform-origin: bottom;
+    animation: move linear infinite;
+  }
+
+  &::before {
+    content: "";
+    height: 4%;
+    width: 4%;
+    border-radius: 50%;
+    background-color: rgb(84, 115, 199);
+    z-index: 5;
+  }
+}
+
+.minute-arrow {
+  height: 40%;
+  top: 10%;
+  animation-duration: 3600s;
+  background-color: rgb(214, 61, 99);
+}
+
+.second-arrow {
+  height: 45%;
+  top: 5%;
+  animation-duration: 60s;
+  background-color: rgb(84, 115, 199);
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
