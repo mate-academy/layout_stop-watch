@@ -1,0 +1,52 @@
+.watch {
+  position: absolute;
+  display: flex;
+  width: 2 * $long-hand-size;
+  height: 2 * $long-hand-size;
+  justify-content: center;
+  align-items: center;
+
+  &__circle {
+    position: absolute;
+    height: 3 * $hand-width;
+    width: 3 * $hand-width;
+    border-radius: 50%;
+    background-color:blue;
+  }
+
+  &__long-hand {
+    top: 0px;
+    position: absolute;
+    height: $long-hand-size;
+    width: $hand-width;
+    border-radius: 10%;
+    background-color:blue;
+    animation-name: watch;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+    transform-origin: bottom center;
+  }
+  
+  &__short-hand {
+    top: $long-hand-size / 2;
+    position: absolute;
+    height: $long-hand-size / 2;
+    width: $hand-width;
+    border-radius: 10%;
+    background-color: red;
+    animation-name: watch;
+    animation-duration: 3600s;
+    animation-timing-function: steps(3600, end);
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes watch{
+  from {
+  transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
