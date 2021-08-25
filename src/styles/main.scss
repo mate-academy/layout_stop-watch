@@ -24,18 +24,21 @@ $clock-size: 600px;
   position: relative;
   background-color: rgb(160, 160, 160);
   @include circle($clock-size);
+
   &__arrow {
     position: absolute;
     border-radius: 25px;
     width: 1%;
     transform-origin: bottom;
     animation: move linear infinite;
+    
     &--minute {
       height: 40%;
       top: 10%;
       animation-duration: 3600s;
-      background-color: rgb(214, 61, 99);
+      background-color: rgb(109, 108, 108);
     }
+
     &--second {
       height: 45%;
       top: 5%;
@@ -55,6 +58,7 @@ $clock-size: 600px;
 }
 
 @keyframes move {
+  
   from {
     transform: rotate(0deg);
   }
