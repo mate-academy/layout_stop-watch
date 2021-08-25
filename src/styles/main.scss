@@ -1,5 +1,7 @@
 @import "reset";
 @import "vars";
+@import "./untils/mixins.scss";
+@import "./untils//animation.scss";
 
 .container {
   margin: 80px 0;
@@ -9,9 +11,7 @@
 
 .clock {
   position: relative;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
+  @include bigCircle;
   background: linear-gradient( #fff, #808080);
   border: 5px solid $black-color;
 
@@ -23,7 +23,7 @@
     width: 36%;
     height: 11px;
     background: #22bfa2;
-    animation: animation 3600s linear infinite;
+    animation: animation-clock 3600s linear infinite;
     transform-origin: left;
     border-radius: 20px;
     border: 1px solid $black-color;
@@ -38,30 +38,21 @@
     height: 6px;
     background: #f55816;
     border-radius: 5px;
-    animation: animation 60s linear infinite;
+    animation: animation-clock 60s linear infinite;
     transform-origin: left;
     border: 1px solid $black-color;
   }
 
   &__inside {
-    z-index: 1;
     position: absolute;
     top: 48%;
     left: 48%;
-    width: 8px;
-    height: 8px;
+    z-index: 1;
+    @include smallCircle;
     border: 10px solid $orange-color;
     background-color: $orange-color;
-    border-radius: 50%;
     box-shadow: 1px 1px 1px $black-color;
   }
 }
 
-@keyframes animation {
-  0% {
-    transform: rotate(-90deg);
-  }
-  100% {
-    transform: rotate(270deg);
-  }
-}
+
