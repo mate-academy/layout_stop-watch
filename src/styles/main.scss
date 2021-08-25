@@ -1,0 +1,95 @@
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  margin-top: 25px;
+  background-color: rgba(223, 223, 219, 0.63);
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.7);
+  position: relative;
+}
+
+.second-hand {
+  width: 4px;
+  height: 150px;
+  background-color: #4b9aaa;
+  border-radius: 4px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  animation: rotate 1s steps(60) infinite;
+  animation-play-state: paused;
+  transform-origin: center bottom;
+}
+
+.ms-hand {
+  width: 4px;
+  height: 100px;
+  background-color: #d15559;
+  border-radius: 4px;
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  animation: rotate 60s steps(60) infinite;
+  animation-play-state: paused;
+  transform-origin: center bottom;
+}
+
+.center-dot {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 149px;
+  top: 146px;
+  border-radius: 50%;
+  background-color: #4b9aaa;
+}
+
+.start,
+.stop {
+  width: 200px;
+  padding: 12px;
+  box-sizing: border-box;
+  font-size: 24px;
+  font-family: sans-serif;
+  color: #d15559;
+  font-weight: 300;
+  text-align: center;
+  border-radius: 12px;
+  background-color: rgba(223, 223, 219, 0.63);
+  box-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+
+.input {
+  visibility: hidden;
+  
+  &:checked ~ .stop {
+    display: block;
+  }
+  
+  &:checked ~ .start {
+    display: none;
+  }
+  
+  &:checked ~ .clock .ms-hand,
+  &:checked ~ .clock .second-hand {
+    animation-play-state: running;
+  }
+}
