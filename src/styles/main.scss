@@ -1,0 +1,68 @@
+$arrow-minute-height: 150px;
+$arrow-seconds-height: 250px;
+$arrow-width: 15px;
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #32515c;
+  height: 100%;
+}
+
+.watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 600px;
+  height: 600px;
+  background-color: #f2ff3e;
+  border: 5px solid yellowgreen;
+  border-radius: 50%;
+
+  &__minute {
+    position: absolute;
+    width: $arrow-width;
+    height: $arrow-minute-height;
+    margin-bottom: $arrow-minute-height;
+    background-color: #901100;
+    animation: move 3600s linear;
+    transform-origin: bottom;
+    z-index: 1;
+  }
+  
+  &__seconds {
+    position: absolute;
+    width: $arrow-width;
+    height: $arrow-seconds-height;
+    margin-bottom: $arrow-seconds-height;
+    background-color: #34568b;
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #34568b;
+    z-index: 2;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
