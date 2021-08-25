@@ -1,0 +1,56 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @extend %clock;
+  background-color: rgb(163, 224, 196);
+  border-radius: 50%;
+
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    width: 7px;
+    height: 150px;
+    background-color: rgb(133, 106, 106);
+    border-radius: 20px;
+    animation-name: move-minute;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    bottom: 50%;
+    width: 10px;
+    height: 190px;
+    background-color: rgb(33, 58, 128);
+    border-radius: 20px;
+    animation-name: move-minute;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+
+  &__center {
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(33, 58, 128);
+  }
+
+  @keyframes move-minute {
+    from {
+      transform: rotate(0);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
