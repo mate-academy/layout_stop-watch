@@ -1,3 +1,5 @@
+@import "./utils/animations";
+
 $clock-size: 600px;
 
 @mixin circle($size) {
@@ -49,21 +51,8 @@ $clock-size: 600px;
 
   &::before {
     content: "";
-    height: 4%;
-    width: 4%;
-    border-radius: 50%;
+    @include circle(4%);
     background-color: rgb(84, 115, 199);
     z-index: 5;
-  }
-}
-
-@keyframes move {
-  
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 }
