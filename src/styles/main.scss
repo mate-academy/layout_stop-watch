@@ -34,7 +34,7 @@
   position: absolute;
   left: 50%;
   top: 0;
-  animation: rotate 1s steps(60) infinite;
+  animation: rotate 60s steps(60) infinite;
   animation-play-state: paused;
   transform-origin: center bottom;
 }
@@ -47,7 +47,7 @@
   position: absolute;
   left: 50%;
   top: 50px;
-  animation: rotate 60s steps(60) infinite;
+  animation: rotate 3600s steps(60) infinite;
   animation-play-state: paused;
   transform-origin: center bottom;
 }
@@ -62,12 +62,11 @@
   background-color: #4b9aaa;
 }
 
-.start,
-.stop {
-  width: 200px;
+.start {
+  width: 125px;
   padding: 12px;
   box-sizing: border-box;
-  font-size: 24px;
+  font-size: 18px;
   font-family: sans-serif;
   color: #d15559;
   font-weight: 300;
@@ -79,14 +78,6 @@
 
 .input {
   visibility: hidden;
-  
-  &:checked ~ .stop {
-    display: block;
-  }
-  
-  &:checked ~ .start {
-    display: none;
-  }
   
   &:checked ~ .clock .ms-hand,
   &:checked ~ .clock .second-hand {
