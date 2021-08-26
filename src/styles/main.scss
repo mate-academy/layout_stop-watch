@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%
+}
+
+.body{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.clock {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 8vh;
+  background-color: #adadc9;
+  @include circle(600px);
+}
+
+.hour {
+  width: 10px;
+  height: 200px;
+  border-radius: 50px;
+  position: absolute;
+  left: 295px;
+  top: 100px;
+  background-color: #d0312d;
+  animation: move 3600s linear infinite;
+  transform-origin: bottom;
+}
+
+.minute {
+  width: 7px;
+  height: 300px;
+  border-radius: 50px;
+  z-index: 2;
+  position: absolute;
+  left: 296px;
+  top: 0px;
+  background-color: #3944bc;
+  animation: move 60s linear infinite;
+  transform-origin: bottom;
+}
+
+.clock::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  z-index: 3;
+  position: absolute;
+  left: 290px;
+  background-color: #3944bc;
+}
+
+@keyframes move {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
