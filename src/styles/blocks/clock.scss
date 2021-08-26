@@ -1,0 +1,42 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: rgba(223, 223, 219, 0.63);
+  box-shadow: 0 0 5px rgba(0,0,0,0.7);
+
+  @include circle($clock-size);
+
+  &__pointer {
+    position: absolute;
+    width: 1%;
+    border-radius: 25px;
+    transform-origin: bottom;
+    animation: rotate linear infinite;
+    animation-play-state: paused;
+  }
+  &_second-hand {
+    height: 40%;
+    top: 10%;
+    background-color: #4b9aaa;
+    animation-duration: 60s;
+  }
+  
+  &_ms-hand {
+    height: 45%;
+    top: 5%;
+    background-color: #d15559;
+    animation-duration: 3600s;
+  }
+
+  &::before {
+    content: "";
+
+    @include circle(4%);
+
+    background-color: #4b9aaa;
+    z-index: 1;
+  }
+
+}
