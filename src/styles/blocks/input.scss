@@ -1,0 +1,10 @@
+
+.input {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  
+  &:checked ~ .clock .clock__pointer {
+    animation-play-state: running;
+  }
+}
