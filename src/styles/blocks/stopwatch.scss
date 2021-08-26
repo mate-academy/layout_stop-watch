@@ -1,0 +1,39 @@
+.stopwatch {
+  position: relative;
+  height: $watch-diametr;
+  width: $watch-diametr;
+  border: $watch-border solid tomato;
+  border-radius: 50%;
+  background-color: ivory;
+
+  &__pivot {
+    position: absolute;
+    left: $pivot-displacement;
+    top: $pivot-displacement;
+    height: $pivot-diametr;
+    width: $pivot-diametr;
+    background-color: cornflowerblue;
+    border-radius: 50%;
+  }
+
+  @keyframes revolution {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__second-arrow {
+    @extend %arrows-size-position;
+    background-color: cornflowerblue;
+    animation: revolution 60s steps(60, end) 1s infinite;
+  }
+
+  &__minute-arrow {
+    @extend %arrows-size-position;
+    background-color: tomato;
+    animation: revolution 3600s steps(60, end) 1s infinite;
+  }
+}
