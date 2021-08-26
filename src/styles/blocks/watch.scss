@@ -1,0 +1,50 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  &__minute-hand::before {
+    content: "";
+    position: absolute;
+    margin-left: -5px;
+    background-color: #5f99a9;
+    height: 250px;
+    width: 10px;
+    border-radius: 5px;
+    animation-name: rotate;
+    animation-duration: 3600s;
+    animation-delay: -1800s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__second-hand::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: #c35d5d;
+    height: 200px;
+    width: 10px;
+    margin-left: -5px;
+    border-radius: 5px;
+    animation-name: rotate;
+    animation-duration: 60s;
+    animation-delay: -30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__middle-circle::before {
+    content: "";
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -20px;
+    background-color: #5f99a9;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+}
