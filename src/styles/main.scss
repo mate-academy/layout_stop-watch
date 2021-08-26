@@ -1,0 +1,54 @@
+$watch-size: 350px;
+$center-size: 0.06 * $watch-size;
+$first-color: rgba(255, 217, 0, 0.7);
+$second-color: rgba(255, 165, 0, 1);
+
+@mixin watch-base($watch-size) {
+  height: $watch-size;
+  width: $watch-size;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  margin: 100px auto;
+  @include watch-base($watch-size);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $first-color;
+  border: 5px dotted $second-color;
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    border-radius: 40%;
+    transform-origin: bottom;
+  }
+  &__center {
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: $second-color;
+  }
+}
+
+.minute-hand {
+  height: 30%;
+  width: 1.7%;
+  border: 2px solid $second-color;
+  animation: spin 3600s linear infinite;
+}
+
+.second-hand {
+  height: 45%;
+  width: 1.3%;
+  background-color: $second-color;
+  animation: spin 60s steps(60) infinite;
+}
