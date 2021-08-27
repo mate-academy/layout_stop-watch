@@ -1,0 +1,53 @@
+.watch {
+  @include watch-size($watch-size);
+  position: relative;
+  border: 1px solid #000;
+  border-radius: 50%;
+
+  &__center {
+    @include watch-center-size ($watch-items-thickness);
+    display: inline-block;
+    position: absolute;
+    top: ($watch-size / 2) - ($watch-items-thickness / 2);
+    left: ($watch-size / 2) - ($watch-items-thickness / 2);
+    border-radius: 50%;
+    background-color: #000;
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: ($watch-size / 2) - ($watch-items-thickness / 2);
+    width: $watch-items-thickness;
+    height: ($watch-size / 2) - ($watch-items-thickness / 2);
+    background-color: #4b9aaa;
+
+    animation: animate 24s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: ($watch-size / 2) - ($watch-items-thickness / 2);
+    width: $watch-items-thickness;
+    height: ($watch-size / 4) - ($watch-items-thickness / 2);
+    margin-top: ($watch-size / 4) + ($watch-items-thickness / 2);
+    background-color: #d15559;
+
+    animation: animate 48s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
