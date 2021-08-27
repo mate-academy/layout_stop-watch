@@ -1,0 +1,77 @@
+
+$clockDiametr: 500px;
+$clockwisesFat: 10px;
+
+@mixin round ($diametr) {
+  width: $diametr;
+  height: $diametr;
+  border-radius: 50%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  position: absolute;
+  visibility: hidden;
+}
+
+.clock {
+  position: relative;
+
+  @include round($clockDiametr);
+  background-color: #ccc;
+
+  &__center {
+    position: absolute;
+    top: 50% - (5% / 2);
+    left: 50% - (5% / 2);
+    @include round($clockDiametr * 0.05);
+    background-color: #f00;
+  }
+
+  &__clockwise-big {
+    position: absolute;
+    top: 0;
+    left: ($clockDiametr - $clockwisesFat) / 2;
+    width: $clockwisesFat;
+    height: $clockDiametr / 2;
+    border-radius: 5px;
+    background-color: #00f;
+
+    transform-origin: bottom;
+    animation-name: cicle;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__clockwise-small {
+    position: absolute;
+    top: $clockDiametr * 0.1;
+    left: ($clockDiametr - $clockwisesFat) / 2;
+    width: $clockwisesFat;
+    height: $clockDiametr * 0.4;
+    border-radius: 5px;
+    background-color: #0f0;
+
+    transform-origin: bottom;
+    animation-name: cicle;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+}
+
+@keyframes cicle {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
