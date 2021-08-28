@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.watch {
+  border-radius: 50%;
+  @include watch-base($watch-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(22, 119, 179);
+  position: relative;
+  z-index: 1;
+
+  &__center {
+    border-radius: 50%;
+    background-color: $red-color;
+    height: $center-size;
+    width: $center-size;
+    position: absolute;
+    z-index: 4;
+  }
+
+  &__minute {
+    height: 150px;
+    width: $watch-hand-width;
+    background-color: #00f;
+    top: 150px;
+    position: absolute;
+    z-index: 2;
+    animation-name: time;
+    animation-duration: 3600s;
+    transform-origin: bottom;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  &__second {
+    height: 250px;
+    width: $watch-hand-width;
+    top: 50px;
+    background-color: $red-color;
+    position: absolute;
+    z-index: 3;
+    animation-name: time;
+    animation-duration: 60s;
+    transform-origin: bottom;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes time {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+
+  }
+}
