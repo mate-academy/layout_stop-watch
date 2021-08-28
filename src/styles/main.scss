@@ -1,0 +1,73 @@
+@mixin absolute-centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  width: 100vw;
+  height: 100vh;
+}
+
+.seconds,
+.start,
+.minutes {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  @include absolute-centered;
+  z-index: -1;
+}
+
+.start {
+  z-index: 3;
+}
+
+.minutes,
+.seconds, {
+  animation-timing-function: linear;
+}
+
+.minutes {
+  animation: stopwatch 600s steps(60) infinite;
+  z-index: 2;
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    top: 45%;
+    left: 50%;
+    width: 250px;
+    background-color: red;
+  }
+}
+
+.seconds {
+  animation: stopwatch 10s steps(60) infinite;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    height: 5px;
+    width: 500px;
+    background-color: blue;
+  }
+}
+
+@keyframes stopwatch {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
