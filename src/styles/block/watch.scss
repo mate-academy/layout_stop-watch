@@ -1,0 +1,39 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 600px;
+  width: 600px;
+  border: 10px solid #602040;
+  background-color: #f9ecf2;
+  border-radius: 50%;
+
+  &__minutes {
+    position: absolute;
+    height: 270px;
+    width: 20px;
+    bottom: 50%;
+    border-radius: 10px;
+    background-color: #c69;
+    animation: go 60s steps(60) infinite;
+  }
+
+  &__second {
+    position: absolute;
+    height: 130px;
+    width: 20px;
+    bottom: 50%;
+    border-radius: 10px;
+    background-color: #bf4080;
+    animation: go 360s linear infinite;
+  }
+
+  &__center {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #602040;
+    z-index: 1;
+  }
+}
