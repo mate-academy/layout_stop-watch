@@ -1,0 +1,56 @@
+.watch {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 20% auto;
+  background-color: honeydew;
+  border: 1px solid yellow;
+  border-radius: 50%;
+  transition: floor($number: 5);
+}
+
+.watch::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 9%;
+  height: 9%;
+  content: "";
+  background: black;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.minutes {
+  position: absolute;
+  left: 49%;
+  bottom: 50%;
+  height: 30%;
+  width: 3%;
+  transform-origin: 50% 100%;
+  animation: minutes-watch 3600s infinite linear;
+  background: limegreen;
+}
+
+.secundes {
+  position: absolute;
+  left: 49%;
+  bottom: 50%;
+  height: 45%;
+  width: 2%;
+  transform-origin: 50% 100%;
+  animation: secundes-watch 60s infinite linear;
+  background: turquoise;
+}
+
+@keyframes minutes-watch {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes secundes-watch {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
