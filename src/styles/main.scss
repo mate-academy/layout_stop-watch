@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+}
+
+.clock {
+  display: block;
+  margin: 100px auto;
+  height: 400px;
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 50%;
+
+  background-image: url("../images/1.svg");
+  background-position: center;
+  background-size: 130%;
+
+  perspective: 100px;
+  &__secondarrow {
+    position: relative;
+    top: 10px;
+    left: 198px;
+    width: 4px;
+    height: 160px;
+    background-color: red;
+
+    animation: sec 60s linear infinite;
+    transform-origin: bottom;
+    @keyframes sec {
+      from {
+        transform: rotateZ(0deg);
+      }
+      to {
+        transform: rotateZ(360deg);
+      }
+    }
+  }
+  &__point {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    background-color: red;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  &__minarrow {
+    position: relative;
+    bottom: 120px;
+    left: 197px;
+    width: 6px;
+    height: 130px;
+    background-color: gray;
+    border-radius: 50%;
+
+    animation: min 3600s linear infinite;
+    transform-origin: bottom;
+    @keyframes min {
+      from {
+        transform: rotateZ(0deg);
+      }
+      to {
+        transform: rotateZ(360deg);
+      }
+    }
+  }
+  &__hourarrow {
+    position: relative;
+    bottom: 220px;
+    left: 195px;
+    width: 10px;
+    height: 100px;
+    background-color: black;
+    border-radius: 30%;
+
+    animation: min 86400s linear infinite;
+    transform-origin: bottom;
+    @keyframes min {
+      from {
+        transform: rotateZ(0deg);
+      }
+      to {
+        transform: rotateZ(360deg);
+      }
+    }
+  }
+}
