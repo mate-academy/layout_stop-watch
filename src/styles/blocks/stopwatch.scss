@@ -1,5 +1,8 @@
 .stopwatch {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: $watch-diametr;
   width: $watch-diametr;
   border: $watch-border solid tomato;
@@ -8,8 +11,6 @@
 
   &__pivot {
     position: absolute;
-    left: $pivot-displacement;
-    top: $pivot-displacement;
     height: $pivot-diametr;
     width: $pivot-diametr;
     background-color: cornflowerblue;
