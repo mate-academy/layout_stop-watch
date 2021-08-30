@@ -1,11 +1,11 @@
-$watch-size: 350px;
-$center-size: 0.06 * $watch-size;
+$size-of-watch: 350px;
+$size-of-center: 0.06 * $size-of-watch;
 $first-color: rgba(255, 217, 0, 0.7);
 $second-color: rgba(255, 165, 0, 1);
 
-@mixin watch-base($watch-size) {
-  height: $watch-size;
-  width: $watch-size;
+@mixin circle($size-of-watch) {
+  height: $size-of-watch;
+  width: $size-of-watch;
   border-radius: 50%;
 }
 
@@ -15,9 +15,12 @@ $second-color: rgba(255, 165, 0, 1);
   }
 }
 
-.watch {
+.page__watch {
   margin: 100px auto;
-  @include watch-base($watch-size);
+}
+
+.watch {
+  @include circle($size-of-watch);
   position: relative;
   display: flex;
   justify-content: center;
@@ -31,9 +34,7 @@ $second-color: rgba(255, 165, 0, 1);
     transform-origin: bottom;
   }
   &__center {
-    width: $center-size;
-    height: $center-size;
-    border-radius: 50%;
+    @include circle($size-of-center);
     z-index: 1;
     background-color: $second-color;
   }
