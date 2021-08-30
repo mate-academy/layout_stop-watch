@@ -1,7 +1,14 @@
 %centralization {
   position: absolute;
-  @include position-center;
-  height: $line-thickness;
-  border-radius: $border-radius;
-  transform-origin: left;
+  top: 50%;
+  left: 50%;
+  height: 8px;
+  border-radius: 5px;
+  transform-origin: 0;
+}
+
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
