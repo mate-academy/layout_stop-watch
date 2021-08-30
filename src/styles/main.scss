@@ -1,0 +1,74 @@
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+  
+    height: 10px;
+    width: 10px;
+  
+    background-color: #fff;
+    border-radius: 50%;
+
+    &--minutes {
+      animation-name: rotation;
+      animation-duration: 3600s;
+      animation-timing-function: steps(3600, end);
+      animation-iteration-count: infinite;
+
+      &::before {
+        height: 90px;
+        width: 7px;
+
+        content: "";
+        position: absolute;
+        top: -90px;
+        left: 1.5px;
+
+        background-color: #fff;
+      }
+    }
+
+    &--seconds {
+      animation-name: rotation;
+      animation-duration: 60s;
+      animation-timing-function: steps(60, end);
+      animation-iteration-count: infinite;
+
+      &::before {
+        height: 110px;
+        width: 5px;
+
+        content: "";
+        position: absolute;
+        top: -110px;
+        left: 2.5px;
+
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
