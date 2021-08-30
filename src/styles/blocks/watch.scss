@@ -1,0 +1,67 @@
+$watch-size: 600px;
+$second-height: 250px;
+$second-width: 10px;
+$minute-heigth: 150px;
+$minute-width: 10px;
+$base-size: 40px;
+$radius: 50%;
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $watch-size;
+  height: $watch-size;
+  margin: 0 auto;
+  position: relative;
+  border-radius: $radius;
+  background: linear-gradient(217deg, rgba(255, 0, 0, 0.8),
+  rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0,0,255,0) 70.71%);
+
+  &__arrow {
+    position: absolute;
+    animation: move;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    transform-origin: center;
+
+    &--second {
+      width: $second-width;
+      height: $second-height;
+      border-radius: 20px;
+      background-color: #ffc;
+      animation-duration: 60s;
+    }
+  
+    &--minute {
+      width: $minute-width;
+      height: $minute-heigth;
+      border-radius: 20px;
+      background-color: #ffa;
+      animation-duration: 3600s;
+    }
+  
+    &--base {
+      align-self: center;
+      width: $base-size;
+      height: $base-size;
+      border-radius: $radius;
+      background-color: #fff;
+      z-index: 1;
+      transform: translate(10%, 10%);
+    }
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0) translate(40%, -50%);
+  }
+
+  to {
+    transform: rotate(360deg) translate(40%, -50%);
+  }
+}
