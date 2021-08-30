@@ -3,7 +3,12 @@ $center-size: 50px;
 $red-color: #f00;
 $watch-hand-width: 5px;
 
-@mixin watch-base($watch-size) {
+@mixin square ($watch-size) {
   height: $watch-size;
   width: $watch-size;
+}
+
+@mixin square ($center-size) {
+  height: $center-size;
+  width: $center-size;
 }

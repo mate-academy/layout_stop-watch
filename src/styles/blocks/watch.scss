@@ -5,7 +5,7 @@
 
 .watch {
   border-radius: 50%;
-  @include watch-base($watch-size);
+  @include square($watch-size);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,8 +16,7 @@
   &__center {
     border-radius: 50%;
     background-color: $red-color;
-    height: $center-size;
-    width: $center-size;
+    @include square($center-size);
     position: absolute;
     z-index: 4;
   }
