@@ -1,0 +1,55 @@
+.watch {
+  @extend %flex-center;
+  height: 100vh;
+  min-width: $clock-size;
+  background-color: $bg-color;
+
+  &__center-bg {
+    @extend %flex-center;
+    justify-content: space-around;
+    position: relative;
+    @include circle($clock-size);
+    background-color: #c0c0c0;
+  }
+  &__center {
+    @include circle(25px);
+    background-color: $main-color;
+    z-index: 1;
+  }
+  &__milliseconds {
+    @extend %flex-center;
+    @include circle($clock-size / 6);
+    background-color: $bg-color;
+    z-index: 1;
+  }
+  &__milliseconds-center {
+    position: relative;
+    @include circle(15px);
+    background-color: $main-color;
+    z-index: 1;
+  }
+  &__milliseconds-hand {
+    @extend %centralization;
+    width: $clock-size / 14;
+    top: 49.5%;
+    left: 18.8%;
+    background-color: $second-color;
+    animation: clock 1s linear infinite;
+  }
+  &__hidden {
+    @include circle($clock-size / 6);
+  }
+  &__minutes {
+    @extend %centralization;
+    width: $width-minutes;
+    background-color: $second-color;
+    animation: clock 3600s linear infinite;
+  }
+  &__seconds {
+    @extend %centralization;
+    width: $width-second;
+    background-color: $main-color;
+    animation: clock 60s linear infinite;
+    z-index: 2;
+  }
+}
