@@ -2,6 +2,8 @@ $clockSize: 300px;
 
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 @mixin square($size) {
@@ -15,7 +17,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
   border-radius: 50%;
   border: 2px solid rgb(173, 103, 168);
   background-color: #fff;
@@ -34,7 +35,7 @@ body {
     width: 10px;
     background-color: rgb(173, 103, 168);
     border-radius: 50%;
-    z-index: 99;
+    z-index: 1;
   }
 }
 
