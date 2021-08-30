@@ -1,0 +1,33 @@
+.seconds-arrow {
+  @extend %arrow-position;
+  left: 50%;
+  top: 50px;
+  width: $seconds-arrow-wid;
+  height: $seconds-arrow-hgt;
+  background-color: $sec-color;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  animation: minute 6000ms infinite;
+  transform: rotate(360deg);
+  transform-origin: bottom;
+  transition-timing-function: linear;
+}
+
+@keyframes minute {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.seconds-arrow-base {
+  @extend %arrow-position;
+  left: calc(50% + 6px);
+  top: 50%;
+  border-radius: 50%;
+  width: $sec-base-size;
+  height: $sec-base-size;
+  background-color: $sec-color;
+}
