@@ -2,10 +2,8 @@
 .watch {
   position: relative;
 
-  width: $watch-side;
-  height: $watch-side;
+  @include square ($watch-side, 16px);
 
-  border-radius: 16px;
   background-color: #ffc0cb;
   border: 1px solid #bfbfbf;
 
@@ -16,10 +14,8 @@
 
     z-index: 3;
  
-    width: $watch-center-size;
-    height: $watch-center-size;
+    @include square($watch-center-size, 50%);
     
-    border-radius: 50%;
     background-color: #fff;
     transform: translate(-50%, -50%);
   }
