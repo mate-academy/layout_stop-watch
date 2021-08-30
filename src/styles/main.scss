@@ -6,7 +6,6 @@
   background-color: honeydew;
   border: 1px solid yellow;
   border-radius: 50%;
-  transition: floor($number: 5);
 }
 
 .watch::after {
@@ -28,7 +27,7 @@
   height: 30%;
   width: 3%;
   transform-origin: 50% 100%;
-  animation: minutes-watch 3600s infinite linear;
+  animation: minutes-secundes-watch 3600s infinite linear;
   background: limegreen;
 }
 
@@ -39,17 +38,11 @@
   height: 45%;
   width: 2%;
   transform-origin: 50% 100%;
-  animation: secundes-watch 60s infinite linear;
+  animation: minutes-secundes-watch 60s infinite linear;
   background: turquoise;
 }
 
-@keyframes minutes-watch {
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
-
-@keyframes secundes-watch {
+@keyframes minutes-secundes-watch {
   100% {
     transform: rotateZ(360deg);
   }
