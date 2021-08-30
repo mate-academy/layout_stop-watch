@@ -1,0 +1,68 @@
+$clockSize: 300px;
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+.clock {
+  @include square($clockSize);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid rgb(173, 103, 168);
+  background-color: #fff;
+
+  &__arrow {
+    border-radius: 50px;
+    transform-origin: bottom;
+    animation-name: round;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &::before {
+    content: "";
+    height: 10px;
+    width: 10px;
+    background-color: rgb(173, 103, 168);
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+.arrow-second {
+  position: absolute;
+  top: 5%;
+  height: 45%;
+  width: 2px;
+  background-color: rgb(173, 103, 168);
+  animation-duration: 60s;
+}
+
+.arrow-minute {
+  position: absolute;
+  top: 10%;
+  height: 40%;
+  width: 5px;
+  background-color: rgb(173, 103, 168);
+  animation-duration: 3600s;
+}
+
+@keyframes round {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
