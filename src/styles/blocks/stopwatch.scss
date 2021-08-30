@@ -1,0 +1,36 @@
+.stopwatch {
+  @include square;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 32px;
+  background-color: lightcoral;
+
+  &__circle {
+    @include circle;
+    z-index: 1;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    height: 100px;
+    width: 20px;
+    border-radius: 8px;
+    background-color: yellow;
+    animation: rotation 360s linear infinite;
+  }
+
+  &__second {
+    position: absolute;
+    bottom: 50%;
+    height: 200px;
+    width: 20px;
+    border-radius: 8px;
+    background-color: pink;
+    animation: rotation 60s linear infinite;
+  }
+}
