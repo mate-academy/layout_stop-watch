@@ -1,18 +1,16 @@
 .stopwatch {
+  @include square;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 500px;
-  width: 500px;
   border-radius: 32px;
   background-color: lightcoral;
 
   &__circle {
+    @include circle;
     z-index: 1;
     background-color: yellow;
-    height: 30px;
-    width: 30px;
     border-radius: 50%;
   }
 
