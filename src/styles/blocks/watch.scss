@@ -53,12 +53,22 @@ div {
   }
 
   &:hover > &__minute-arrow {
-    transform: rotate(360deg);
-    transition: transform 60s linear;
+    transform-origin: bottom;
+    animation: watchTic 3600s linear infinite;
   }
 
   &:hover > &__second-arrow {
-    transform: rotate(21600deg);
-    transition: transform 60s linear;
+    transform-origin: bottom;
+    animation: watchTic 60s linear infinite;
+  }
+}
+
+@keyframes watchTic {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
