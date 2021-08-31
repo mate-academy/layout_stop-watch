@@ -1,0 +1,64 @@
+body,
+div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.watch {
+  position: relative;
+  height: $watch-height;
+  width: $watch-width;
+  border: 1px solid gray;
+  margin: 0 auto;
+  background-color: lightsteelblue;
+  box-shadow: grey 3px 3px 10px;
+
+  &__second-arrow {
+    position: absolute;
+    top: $second-arrow-top;
+    left: $second-arrow-left;
+    height: $second-arrow-height;
+    width: $second-arrow-width;
+    border-radius: $arrow-border-radius;
+    background-color: blue;
+    box-shadow: grey 3px 3px 5px;
+    transition: transform 0.1s;
+    transform-origin: bottom center;
+  }
+
+  &__minute-arrow {
+    position: absolute;
+    top: $minute-arrow-top;
+    left: $minute-arrow-left;
+    height: $minute-arrow-height;
+    width: $minute-arrow-width;
+    border-radius: $arrow-border-radius;
+    background-color: yellow;
+    box-shadow: grey 3px 3px 5px;
+    transition: transform 0.1s;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    position: absolute;
+    top: $center-top;
+    left: $center-left;
+    height: $center-height;
+    width: $center-width;
+    border-radius: 100%;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: grey 3px 3px 5px;
+  }
+
+  &:hover > &__minute-arrow {
+    transform: rotate(360deg);
+    transition: transform 60s linear;
+  }
+
+  &:hover > &__second-arrow {
+    transform: rotate(21600deg);
+    transition: transform 60s linear;
+  }
+}
