@@ -1,10 +1,14 @@
-@mixin circle ($size) {
+@mixin square ($size) {
   width: $size;
   height: $size;
+}
+
+@mixin circle ($size) {
+  @include square($size);
   border-radius: 50%;
 }
 
-@mixin square ($width, $height) {
+@mixin rectangle($width, $height) {
   width: $width;
   height: $height;
 }
