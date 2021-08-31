@@ -1,10 +1,5 @@
-%flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-$mainSize: 650px;
+@import "./utils/extends-mixins.scss";
+@import "./utils/variables.scss";
 
 .body {
   @extend %flex-center;
@@ -16,12 +11,10 @@ $mainSize: 650px;
 
 .watch {
   @extend %flex-center;
+  @include circle ($mainSize);
   position: relative;
-  width: $mainSize;
-  height: $mainSize;
   background-color: rgb(224, 212, 197);
-  border-radius: 50%;
-
+  
   &__sec {
     position: absolute;
     width: 12px;
@@ -57,10 +50,8 @@ $mainSize: 650px;
 
   &__center {
     margin: auto;
-    width: 44px;
-    height: 44px;
+    @include circle ($centerSize);
     background-color: rgb(110, 214, 206);
-    border-radius: 50%;
     z-index: 4;
   }
 }
