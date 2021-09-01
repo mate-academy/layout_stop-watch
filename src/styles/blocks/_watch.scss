@@ -1,0 +1,59 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40%;
+  background-image: url("https://www.pinclipart.com/picdir/big/548-5484893_transparent-clock-template-png-ansonia-clock-dial-face.png");
+
+  .watch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include square($size);
+    border-radius: 50%;
+    position: relative;
+    &::after {
+      top: ($size - $centerOfClockSize) / 2;
+      left: ($size - $centerOfClockSize) / 2;
+      position: absolute;
+      content: " ";
+      @include circle($centerOfClockSize);
+      background-color: $mainColor;
+      border-radius: 50%;
+    }
+  
+    &__arrow {
+      &--minute {
+        position: absolute;
+        bottom: 50%;
+        width: 3px;
+        height: 150px;
+        background-color: $mainColor;
+        animation: turn 3600s linear infinite;
+        transform-origin: bottom;
+        border-radius: 25px;
+      }
+      &--second {
+        position: absolute;
+        bottom: 50%;
+        width: 3px;
+        height: 200px;
+        background-color: $mainColor;
+        animation: turn 60s linear infinite;
+        transform-origin: bottom;
+      }
+      @keyframes turn {
+        from {
+          transform: rotate(0);
+        }
+      
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}
