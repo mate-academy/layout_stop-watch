@@ -32,7 +32,7 @@
         width: 3px;
         height: 150px;
         background-color: $mainColor;
-        animation: minute 3600s linear infinite;
+        animation: turn 3600s linear infinite;
         transform-origin: bottom;
         border-radius: 25px;
       }
@@ -42,19 +42,10 @@
         width: 3px;
         height: 200px;
         background-color: $mainColor;
-        animation: second 60s linear infinite;
+        animation: turn 60s linear infinite;
         transform-origin: bottom;
       }
-      @keyframes minute {
-        from {
-          transform: rotate(0);
-        }
-      
-        to {
-          transform: rotate(360deg);
-        }
-      }
-      @keyframes second {
+      @keyframes turn {
         from {
           transform: rotate(0);
         }
