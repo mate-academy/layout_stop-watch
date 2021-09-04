@@ -1,0 +1,76 @@
+.watch-wraper {
+  @extend %flex-center-elements;
+  height: 80vh;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-width: $watch-size;
+  @include square ($watch-size);
+  border: 15px solid $main-color;
+  border-radius: 50%;
+  background: radial-gradient(at center, #31313131, $elements-bg-color);
+  
+  &__center-circle-wraper {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include square ($center-circle-size);
+    border: 2px solid $main-color;
+    border-radius: 50%;
+    background-color: $elements-bg-color;
+  }
+
+  &__center-circle {
+    position: absolute;
+    @extend %flex-center-elements;
+    top: 37%;
+    @include square ($center-circle-size - 25px);
+    border-radius: 50%;
+    background-color: $main-color;
+
+  }
+
+  &__big-arrow {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    height: 135px;
+    width: 20px;
+    border: 2px solid $main-color;
+    border-radius: 7px;
+    background-color: $elements-bg-color;
+
+    @extend %arrow-animation;
+    animation-duration: 60s;
+  }
+
+  &__small-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 40px;
+    height: 105px;
+    width: 20px;
+    border: 2px solid $main-color;
+    border-radius: 7px;
+    background-color: $elements-bg-color;
+
+    @extend %arrow-animation;
+    animation-duration: 3600s;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0)
+    }
+    to {
+      transform: rotate(360deg)
+    }
+  }
+}
