@@ -1,0 +1,41 @@
+@mixin clock-style($clock-radius) {
+  width: 2* $clock-radius;
+  height: 2* $clock-radius;
+}
+
+@mixin minute-animation ($minute-frequency) {
+  animation: clock-working #{$minute-frequency * 12}s infinite steps(#{$minute-frequency * 12});
+  transform-origin: bottom center;
+}
+
+@mixin hour-animation ($minute-frequency) {
+  animation: clock-working #{$minute-frequency * 12 * 60}s infinite steps(#{$minute-frequency * 12 * 60});
+  transform-origin: bottom center;
+}
+
+%position-in-centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%minute-style {
+  width:  0.08 * $clock-radius;
+  height: 0.95 * $clock-radius;
+  border-radius: 0.04 * $clock-radius;
+  background-color: $minutes-color;
+}
+
+%hours-style {
+  width: 0.08 * $clock-radius;
+  height: 0.75 * $clock-radius;
+  border-radius: 0.04 * $clock-radius;
+  background-color: $hours-color;
+}
+
+%centre-style {
+  width: 0.16 * $clock-radius;
+  height: 0.16 * $clock-radius;
+  border-radius: 50%;
+  background-color: $minutes-color;
+}

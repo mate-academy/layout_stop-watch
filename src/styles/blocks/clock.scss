@@ -1,0 +1,30 @@
+.clock {
+  position: relative;
+
+  @include clock-style($clock-radius);
+
+  @extend %position-in-centre;
+
+  &__hours {
+    @extend %hours-style;
+
+    position: absolute;
+    top: 0.25 * $clock-radius;
+
+    @include hour-animation ($minute-frequency);
+  }
+
+  &__minutes {
+    @extend %minute-style;
+
+    position: absolute;
+    top: 0.05 * $clock-radius;
+
+    @include minute-animation ($minute-frequency);
+  }
+
+  &__centre {
+    @extend %centre-style;
+    z-index: 1;
+  }
+}
