@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes minutes {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes hours {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+.body {
+  box-sizing: border-box;
+  font-family: "arial", Courier, sans-serif;
+  font-size: 45px;
+  margin: 25px;
+}
+
+.watch {
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side ellipse at top left, white, #aaa);
+  box-shadow: 5px 10px 20px rgba(0,0,0,0.3), -5px -10px 20px #aaa;
+  width: 500px;
+  height: 500px;
+}
+
+.watch__center {
+  position: absolute;
+  background-color: red;
+  top: 235px;
+  left: 235px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.watch__arrow_hour {
+  position: absolute;
+  border-radius: 10px;
+  top: 240px;
+  left: 250px;
+  width: 190px;
+  height: 20px;
+  background-color: black;
+  transform-origin: -1px;
+  transform: rotate(-180deg);
+  transition: transform 5s;
+  animation-name: hours;
+  animation-duration: 86400s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.watch__arrow_minute {
+  position: absolute;
+  border-radius: 10px;
+  top: 244px;
+  left: 244px;
+  width: 215px;
+  height: 12px;
+  background-color: black;
+  transform-origin: 5px;
+  transform: rotate(-4deg);
+  transition: transform 5s;
+  animation-name: minutes;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.watch__arrow_second {
+  position: absolute;
+  border-radius: 2px;
+  top: 248px;
+  left: 248px;
+  width: 240px;
+  height: 4px;
+  background-color: red;
+  transform-origin: 2px;
+  transform: rotate(-45deg);
+  transition: transform 5s;
+  animation-name: seconds;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.digit_12 {
+  position: absolute;
+  top: 1px;
+}
+
+.digit_3 {
+  position: absolute;
+  right: 4px;
+}
+
+.digit_6 {
+  position: absolute;
+  bottom: 1px;
+}
+
+.digit_9 {
+  position: absolute;
+  left: 4px;
+}
