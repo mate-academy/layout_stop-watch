@@ -6,27 +6,29 @@
   @extend %position-in-centre;
 
   &__seconds {
-    @extend %seconds-style;
+    @include elements-style($clock-radius, 0.08, 0.95, 0.04, $seconds-color);
 
     position: absolute;
     top: 0.05 * $clock-radius;
+    //высота стрелки 95% радиуса=> от верха отступ 5% радиуса
 
     animation: clock-working 60s infinite steps(60);
     transform-origin: bottom center;
   }
 
   &__minutes {
-    @extend %minute-style;
+    @include elements-style($clock-radius, 0.08, 0.75, 0.04, $minutes-color);
 
     position: absolute;
     top: 0.25 * $clock-radius;
+    //высота стрелки 75% радиуса=> от верха отступ 25% радиуса
 
     animation: clock-working 3600s infinite steps(3600);
     transform-origin: bottom center;
   }
 
   &__centre {
-    @extend %centre-style;
+    @include elements-style($clock-radius, 0.16, 0.16, 0.5, $minutes-color);
     z-index: 1;
   }
 }

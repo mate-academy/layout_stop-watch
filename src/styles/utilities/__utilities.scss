@@ -3,29 +3,16 @@
   height: 2 * $clock-radius;
 }
 
+@mixin elements-style ($clock-radius, $width-proportion, $height-proportion, 
+$border-proportion, $element-style) {
+  width: $width-proportion * $clock-radius;
+  height: $height-proportion * $clock-radius;
+  border-radius: $border-proportion * $clock-radius;
+  background-color: $element-style;
+}
+
 %position-in-centre {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-%minute-style {
-  width: 0.08 * $clock-radius;
-  height: 0.75 * $clock-radius;
-  border-radius: 0.04 * $clock-radius;
-  background-color: $minutes-color;
-}
-
-%seconds-style {
-  width: 0.08 * $clock-radius;
-  height: 0.95 * $clock-radius;
-  border-radius: 0.04 * $clock-radius;
-  background-color: $seconds-color;
-}
-
-%centre-style {
-  width: 0.16 * $clock-radius;
-  height: 0.16 * $clock-radius;
-  border-radius: 50%;
-  background-color: $minutes-color;
 }
