@@ -1,0 +1,18 @@
+@mixin clock-style($clock-radius) {
+  width: 2 * $clock-radius;
+  height: 2 * $clock-radius;
+}
+
+@mixin elements-style ($clock-radius, $width-proportion, $height-proportion, 
+$border-proportion, $element-style) {
+  width: $width-proportion * $clock-radius;
+  height: $height-proportion * $clock-radius;
+  border-radius: $border-proportion * $clock-radius;
+  background-color: $element-style;
+}
+
+%position-in-centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
