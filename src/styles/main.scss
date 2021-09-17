@@ -1,0 +1,61 @@
+$clock-hands-width: 5px;
+$clock-center-diametr: 15px;
+$clock-minutes-color: red;
+$clock-seconds-color: lightblue;
+ 
+
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+}
+
+%clock-hands-properties {
+  position: absolute;
+  width: $clock-hands-width;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
+
+.clock {
+  position: relative;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__minutes {
+    @extend %clock-hands-properties;
+    top: 105px;
+    height: 150px;
+    background: $clock-minutes-color;
+    animation: clockHands 3600s linear infinite;
+    z-index: 1;
+  }
+
+  &__seconds {
+    @extend %clock-hands-properties;
+    top: 5px;
+    height: 250px;
+    background: $clock-seconds-color;
+    animation: clockHands 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 245px;
+    @include circle($clock-center-diametr);
+    border-radius: 50%;
+    background-color: lightblue;
+    z-index: 2;
+  }
+}
+
+@keyframes clockHands {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
