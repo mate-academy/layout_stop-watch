@@ -3,27 +3,7 @@
   padding: 0;
 }
 
-@keyframes seconds {
-  from {
-    transform: rotate(-90deg);
-  }
-
-  to {
-    transform: rotate(270deg);
-  }
-}
-
-@keyframes minutes {
-  from {
-    transform: rotate(-90deg);
-  }
-
-  to {
-    transform: rotate(270deg);
-  }
-}
-
-@keyframes hours {
+@keyframes arrows {
   from {
     transform: rotate(-90deg);
   }
@@ -74,7 +54,7 @@
   transform-origin: -1px;
   transform: rotate(-180deg);
   transition: transform 5s;
-  animation-name: hours;
+  animation-name: arrows;
   animation-duration: 86400s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -91,7 +71,7 @@
   transform-origin: 5px;
   transform: rotate(-4deg);
   transition: transform 5s;
-  animation-name: minutes;
+  animation-name: arrows;
   animation-duration: 3600s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -108,7 +88,7 @@
   transform-origin: 2px;
   transform: rotate(-45deg);
   transition: transform 5s;
-  animation-name: seconds;
+  animation-name: arrows;
   animation-duration: 60s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
