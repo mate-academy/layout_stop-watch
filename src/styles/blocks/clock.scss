@@ -1,0 +1,92 @@
+.clock {
+  height: 100vh;
+  @extend %flex-center;
+
+  &__position {
+    position: relative;
+    background: $clock-background;
+    @include circle($clock-length);
+
+    &::before {
+      content: "";
+      @extend %transform-center;
+      @include circle($clock-length);
+      border: 5px solid $clock-border;
+      box-shadow: inset 0 0 5px $black-color;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translate(-50%, -50%);
+      width: 15px;
+      height: 6px;
+      background-color: $black-color;
+      border-radius: 3px;
+      box-shadow: 280px 0 0 $black-color;
+    }
+  }
+
+  &__nail {
+    @extend %transform-center;
+
+    @include circle(20px);
+    background-color: $black-color;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 150px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 6px;
+      height: 15px;
+      background-color: $black-color;
+      border-radius: 3px;
+      box-shadow: 0 -280px 0 $black-color;
+    }
+  }
+
+  &__minute {
+    position: absolute;
+    top: range($clock-length, 80px);
+    left: range($clock-length, 4px);
+    transform: translate(-50%, -50%);
+
+    width: 8px;
+    height: 80px;
+    border-radius: 4px;
+    background-color: $hand-color;
+
+    animation: spin 3600s infinite linear;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    top: range($clock-length, 130px);
+    left: range($clock-length, 3px);
+    transform: translate(-50%, -50%);
+
+    width: 6px;
+    height: 130px;
+    border-radius: 3px;
+    background-color: $hand-color;
+
+    animation: spin 60s infinite linear;
+    transform-origin: bottom;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
