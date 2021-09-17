@@ -1,27 +1,27 @@
 .stop-watch {
-  @include  square($stop-watch-size);
-
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+
+  @include square($stop-watch-size);
+  border: 1px dashed black;
+  border-radius: 50%;
 }
 
 .stop-watch__circle {
   @include square($circle-size);
-
-  position: relative;
+  z-index: 1;
+  position: absolute;
   border-radius: 50%;
   background-color: $main-color;
 }
 
 .stop-watch__low-hand {
   position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  @include position-center(50%);
 
-  width: 270px;
+  width: $low-hand-width;
   height: $hand-height;
   border-radius: $border-radius;
   background-color: $addition-color;
@@ -42,9 +42,7 @@
 
 .stop-watch__long-hand {
   position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  @include position-center(50%);
 
   width: $big-hand-width;
   height: $hand-height;
@@ -58,6 +56,7 @@
       transform-origin: left;
       transform: rotate(270deg);
     }
+    
     100% {
       transform-origin: left;
       transform: rotate(630deg);
