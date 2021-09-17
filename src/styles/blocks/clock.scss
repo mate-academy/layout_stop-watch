@@ -1,0 +1,47 @@
+.clock {
+  position: relative;
+  background-image: url(../img/clock-face.jpg);
+  background-position: center;
+  background-size: cover;
+  width: $box-size;
+  min-height: $box-size;
+  margin: 0 auto;
+  border-radius: $clock-radius;
+
+  &__dot {
+    position: absolute;
+    background-color: $seconds-color;
+    height: 0.11 * $clock-radius;
+    width: 0.11 * $clock-radius;
+    border-radius: 50%;
+    left: $dot-center;
+    top: $dot-center;
+  }
+
+  &__seconds {
+    position: absolute;
+    left: $hand-seconds-position;
+    width: $hand-seconds-width;
+    height: $clock-radius;
+    @extend %seconds;
+  }
+
+  &__minutes {
+    position: absolute;
+    left: $hand-seconds-position;
+    top: $hand-minutes-position-top;
+    width: $hand-minutes-width;
+    height: $hand-minutes-height;
+    @extend %minutes;
+
+  }
+}
+
+@keyframes clock-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
