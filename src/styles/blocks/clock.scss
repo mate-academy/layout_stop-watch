@@ -5,22 +5,24 @@
 
   @extend %position-in-centre;
 
-  &__hours {
-    @extend %hours-style;
+  &__seconds {
+    @extend %seconds-style;
 
     position: absolute;
-    top: 0.25 * $clock-radius;
+    top: 0.05 * $clock-radius;
 
-    @include hour-animation ($minute-frequency);
+    animation: clock-working 60s infinite steps(60);
+    transform-origin: bottom center;
   }
 
   &__minutes {
     @extend %minute-style;
 
     position: absolute;
-    top: 0.05 * $clock-radius;
+    top: 0.25 * $clock-radius;
 
-    @include minute-animation ($minute-frequency);
+    animation: clock-working 3600s infinite steps(3600);
+    transform-origin: bottom center;
   }
 
   &__centre {

@@ -3,18 +3,6 @@
   height: 2* $clock-radius;
 }
 
-@mixin minute-animation ($minute-frequency) {
-  animation: clock-working #{$minute-frequency * 10}s infinite 
-    steps(#{$minute-frequency * 10});
-  transform-origin: bottom center;
-}
-
-@mixin hour-animation ($minute-frequency) {
-  animation: clock-working #{$minute-frequency * 10 * 12}s infinite 
-    steps(#{$minute-frequency * 10 * 12});
-  transform-origin: bottom center;
-}
-
 %position-in-centre {
   display: flex;
   justify-content: center;
@@ -23,16 +11,16 @@
 
 %minute-style {
   width: 0.08 * $clock-radius;
-  height: 0.95 * $clock-radius;
+  height: 0.75 * $clock-radius;
   border-radius: 0.04 * $clock-radius;
   background-color: $minutes-color;
 }
 
-%hours-style {
+%seconds-style {
   width: 0.08 * $clock-radius;
-  height: 0.75 * $clock-radius;
+  height: 0.95 * $clock-radius;
   border-radius: 0.04 * $clock-radius;
-  background-color: $hours-color;
+  background-color: $seconds-color;
 }
 
 %centre-style {
