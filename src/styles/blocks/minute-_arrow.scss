@@ -1,0 +1,33 @@
+.stop-watch {
+  @extend %arrow-position;
+  top: 50%;
+  left: 50%;
+  width: $stopwatch-width;
+  height: $stopwatch-height;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.minute-arrow {
+  @extend %arrow-position;
+  left: 50%;
+  top: 100px;
+  width: $min-arrow-wid;
+  height: $min-arrow-hgt;
+  background-color: $min-color;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  animation: hour 60s infinite;
+  transform: rotate(360deg);
+  transform-origin: bottom;
+  transition-timing-function: linear;
+}
+
+@keyframes hour {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
