@@ -18,6 +18,8 @@
 
     &--sec {
       height: 300px;
+      display: flex;
+      align-items: flex-end;
       background-color: $color-sec;
       transform-origin: center 0;
       @include animation ($second);
@@ -30,8 +32,8 @@
     border-radius: 50%;
     @extend %position-absolute;
     background-color: tomato;
-    left: 49.8%;
     top: 49%;
+    left: 49.8%;
   }
 }
 
