@@ -31,13 +31,13 @@
   &__minute {
     height: 200px;
     background-color: $color-timer-minute;
-    animation: move #{$time-minute}s steps($time-second) infinite;
+    @include anim-time($time-minute);
   }
 
   &__second {
     height: $timer-size;
     background-color: $color-timer-second;
-    animation: move #{$time-second}s steps($time-second) infinite;
+    @include anim-time($time-second);
   }
 }
 
