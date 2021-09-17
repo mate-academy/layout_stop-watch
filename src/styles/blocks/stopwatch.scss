@@ -1,0 +1,51 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  height: $watch-size;
+  width: $watch-size;
+  border: 5px solid black;
+  margin: auto;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background: url("https://www.pikpng.com/pngl/b/208-2088281_graphic-black-and-white-library-clipart-clock-face.png") no-repeat center;
+  background-size: 950px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: $center-dot-size;
+    width: $center-dot-size;
+    background-color: skyblue;
+    border-radius: 50%;
+    margin: auto;
+  }
+
+  &__face {
+    display: flex;
+    justify-items: center;
+  }
+
+  @each $position, $number in $clockface {
+    &__face--#{$number} {
+      position: absolute;
+      #{$position}: 150px;
+    }
+  }
+
+  &__hand_big {
+    @extend %hands;
+    height: $big-hand;
+    width: $big-hand * 0.02;
+    background-color: skyblue;
+    animation: move 60s infinite linear;
+  }
+
+  &__hand_small {
+    @extend %hands;
+    height: $small-hand;
+    width: $small-hand * 0.03;
+    background-color: #d15559;
+    animation: move 3600s infinite linear;
+  }
+}
