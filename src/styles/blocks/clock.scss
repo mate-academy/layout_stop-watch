@@ -1,0 +1,49 @@
+.watch {
+  background: url("../images/clock.jpg") center no-repeat;
+}
+
+.clock {
+  height: 100vh;
+  @extend %place-content-center;
+  transform: rotate(180deg);
+
+  &__watch {
+    position: absolute;
+    top: 50%;
+
+    &--min {
+      height: $min-hand-height;
+      width: $hand-width;
+      background-color: $min-color;
+      @include animation($minute);
+      transform-origin: center 0;
+      order: 1;
+    }
+
+    &--sec {
+      display: flex;
+      height: $sec-hand-height;
+      width: $hand-width;
+      background-color: $sec-color;
+      @include animation($second);
+      transform-origin: center 0;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    background-color: $dot-color;
+    @include dot-size($dot-size);
+    order: 2;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
