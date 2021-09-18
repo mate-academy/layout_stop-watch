@@ -15,35 +15,34 @@
       height: $min-hand-height;
       width: $hand-width;
       background-color: $min-color;
-      @include animation($minute);
+      animation: rotate 3600s infinite;
       transform-origin: center 0;
-      order: 1;
+      z-index: 1;
     }
 
     &--sec {
-      display: flex;
       height: $sec-hand-height;
       width: $hand-width;
       background-color: $sec-color;
-      @include animation($second);
+      animation: rotate 60s linear infinite;
       transform-origin: center 0;
+      z-index: 2;
     }
   }
 
-  &__dot {
-    position: absolute;
+  &__center {
     background-color: $dot-color;
     @include dot-size($dot-size);
-    order: 2;
+    z-index: 3;
   }
 }
 
 @keyframes rotate {
   from {
-    transform: rotate(0);
+    transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(1turn);
+    transform: rotate(360deg);
   }
 }
