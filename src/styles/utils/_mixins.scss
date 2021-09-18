@@ -1,0 +1,22 @@
+@mixin circle($side) {
+  width: $side;
+  height: $side;
+  border-radius: 50%;
+}
+
+@mixin setWatch(
+  $circle-size,
+  $border-size: 1px,
+  $border-color: #990099,
+  $bg-color: darken(#339999, 15%)
+) {
+  width: $circle-size;
+  height: $circle-size;
+  border: $border-size solid $border-color;
+  border-radius: 50%;
+  background-color: $bg-color;
+}
+
+@mixin rotation ($duration) {
+  animation: rotation $duration linear infinite;
+}
