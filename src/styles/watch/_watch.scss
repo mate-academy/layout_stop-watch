@@ -1,0 +1,33 @@
+.watch {
+  @extend %flex-center;
+  @include setWatch(500px);
+
+  &__circle {
+    position: relative;
+    z-index: 1;
+
+    @include circle(25px);
+    background-color: $circle-color;
+  }
+
+  &__second-hand {
+    position: absolute;
+    z-index: 1;
+
+    width: $hand-width;
+    height: $hand-height;
+    border-radius: $hand-radius;
+    background-color: $second-hand-color;
+    @include rotation($second-value);
+  }
+
+  &__minute-hand {
+    position: absolute;
+
+    width: $minute-width;
+    height: $minute-height;
+    border-radius: $hand-radius;
+    background-color: $minute-hand-color;
+    @include rotation($minute-value);
+  }
+}
