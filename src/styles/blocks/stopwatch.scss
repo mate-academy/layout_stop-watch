@@ -1,6 +1,6 @@
 .stopwatch {
   &__hour-hand {
-    @extend %position;
+    position: absolute;
     @include rectangle($hour_hand_height, $hour_hand_width);
 
     background-color: $hour_hand_color;
@@ -12,7 +12,7 @@
   }
 
   &__minute-hand {
-    @extend %position;
+    position: absolute;
     @include rectangle($minute_hand_height, $minute_hand_width);
 
     background-color: $minute_hand_color;
@@ -24,12 +24,11 @@
   }
 
   &__point {
-    @extend %position;
+    position: absolute;
     @include square($point_size);
 
     margin-left: -7px;
     margin-top: -10px;
-    
     background-color: $point_color;
     border-radius: 50%;
   }
