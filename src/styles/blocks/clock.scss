@@ -1,0 +1,43 @@
+.clock {
+  height: 100vh;
+  @extend %place-content-center;
+  transform: rotate(180deg);
+
+  &__watch {
+    position: absolute;
+    top: 50%;
+
+    &--minute {
+      height: $min-hand-height;
+      width: $hand-width;
+      background-color: $min-color;
+      animation: rotate $minute infinite;
+      transform-origin: center 0;
+    }
+
+    &--second {
+      height: $sec-hand-height;
+      width: $hand-width;
+      background-color: $sec-color;
+      animation: rotate $second linear infinite;
+      transform-origin: center 0;
+      z-index: 1;
+    }
+  }
+
+  &__center {
+    background-color: $dot-color;
+    @include dot-size($dot-size);
+    z-index: 2;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
