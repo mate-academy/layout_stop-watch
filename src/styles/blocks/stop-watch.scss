@@ -1,0 +1,63 @@
+.stop-watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include circle($stop-watch-size);
+  border: 1px dashed black;
+
+  &__circle {
+    position: absolute;
+    z-index: 1;
+    @include circle($circle-size);
+    background-color: $main-color;
+  }
+
+  &__low-hand {
+    position: absolute;
+    @include position-center(50%);
+
+    width: $low-hand-width;
+    height: $hand-height;
+    border-radius: $border-radius;
+    background-color: $addition-color;
+
+    animation: low-hand 3600s linear infinite;
+
+    @keyframes low-hand {
+      0% {
+        transform-origin: left;
+        transform: rotate(270deg);
+      }
+      100% {
+        transform-origin: left;
+        transform: rotate(630deg);
+      }
+    }
+  }
+
+  &__long-hand {
+    position: absolute;
+    @include position-center(50%);
+
+    width: $big-hand-width;
+    height: $hand-height;
+    border-radius: $border-radius;
+    background-color: $main-color;
+
+    animation: big-hand 60s linear infinite;
+
+    @keyframes big-hand {
+      0% {
+        transform-origin: left;
+        transform: rotate(270deg);
+      }
+      
+      100% {
+        transform-origin: left;
+        transform: rotate(630deg);
+      }
+    }
+  }
+}
