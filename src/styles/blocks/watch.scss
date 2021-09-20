@@ -1,0 +1,31 @@
+.watch {
+  @extend %flex-centering;
+  min-height: $second-hand-height * 2;
+  min-width: $second-hand-height * 2;
+
+  &__center {
+    position: relative;
+    background-color: lightblue;
+    height: $watch-center-size;
+    width: $watch-center-size;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    @extend %hand-styles;
+    background-color: lightcoral;
+    width: $minute-hand-height / 15;
+    height: $minute-hand-height;
+    margin: 0 (($watch-center-size - $minute-hand-height / 15) / 2);
+    @include animation(60 * $one-minute);
+  }
+
+  &__second-hand {
+    @extend %hand-styles;
+    background-color: lightblue;
+    width: $second-hand-height / 30;
+    height: $second-hand-height;
+    margin: 0 (($watch-center-size - $second-hand-height / 30) / 2);
+    @include animation($one-minute);
+  }
+}
