@@ -1,0 +1,59 @@
+.stopwatch {
+  display: flex;
+  position: relative;
+  background-image: url(/images/smile.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: $watchSize;
+  width: $watchSize;
+  border: 5px solid $blackColor;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  &::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    background-color: $blackColor;
+    border-radius: 50%;
+  }
+
+  &__big {
+    @include hands($watchSize);
+    height: $bigHand;
+    background-color: blue;
+    animation: move 15s linear infinite;
+  }
+
+  &__small {
+    @include hands($watchSize);
+    height: $smallHand;
+    background-color: red;
+    animation: move 180s linear infinite;
+  }
+
+  &__clockface {
+    display: flex;
+    position: relative;
+    font-size: $fontSize;
+    text-align: center;
+
+    $clockface:
+      "top" 12,
+      "right" 3,
+      "bottom" 6,
+      "left" 9;
+
+    @each $position, $var in $clockface {
+      &--#{$var} {
+        position: absolute;
+        #{$position}: 0;
+      }
+    }
+  }
+}
