@@ -4,62 +4,60 @@
   align-items: center;
   justify-content: center;
 
-  @include square($stop-watch-size);
+  @include circle($stop-watch-size);
   border: 1px dashed black;
-  border-radius: 50%;
-}
 
-.stop-watch__circle {
-  @include square($circle-size);
-  z-index: 1;
-  position: absolute;
-  border-radius: 50%;
-  background-color: $main-color;
-}
+  &__circle {
+    position: absolute;
+    z-index: 1;
+    @include circle($circle-size);
+    background-color: $main-color;
+  }
 
-.stop-watch__low-hand {
-  position: absolute;
-  @include position-center(50%);
+  &__low-hand {
+    position: absolute;
+    @include position-center(50%);
 
-  width: $low-hand-width;
-  height: $hand-height;
-  border-radius: $border-radius;
-  background-color: $addition-color;
+    width: $low-hand-width;
+    height: $hand-height;
+    border-radius: $border-radius;
+    background-color: $addition-color;
 
-  animation: low-hand 3600s linear infinite;
+    animation: low-hand 3600s linear infinite;
 
-  @keyframes low-hand {
-    0% {
-      transform-origin: left;
-      transform: rotate(270deg);
-    }
-    100% {
-      transform-origin: left;
-      transform: rotate(630deg);
+    @keyframes low-hand {
+      0% {
+        transform-origin: left;
+        transform: rotate(270deg);
+      }
+      100% {
+        transform-origin: left;
+        transform: rotate(630deg);
+      }
     }
   }
-}
 
-.stop-watch__long-hand {
-  position: absolute;
-  @include position-center(50%);
+  &__long-hand {
+    position: absolute;
+    @include position-center(50%);
 
-  width: $big-hand-width;
-  height: $hand-height;
-  border-radius: $border-radius;
-  background-color: $main-color;
+    width: $big-hand-width;
+    height: $hand-height;
+    border-radius: $border-radius;
+    background-color: $main-color;
 
-  animation: big-hand 60s linear infinite;
+    animation: big-hand 60s linear infinite;
 
-  @keyframes big-hand {
-    0% {
-      transform-origin: left;
-      transform: rotate(270deg);
-    }
-    
-    100% {
-      transform-origin: left;
-      transform: rotate(630deg);
+    @keyframes big-hand {
+      0% {
+        transform-origin: left;
+        transform: rotate(270deg);
+      }
+      
+      100% {
+        transform-origin: left;
+        transform: rotate(630deg);
+      }
     }
   }
 }
