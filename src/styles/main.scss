@@ -1,0 +1,84 @@
+$spot-radius: 31px;
+$second-width: 10px;
+$second-height: 250px;
+$minute-width: 14px;
+$minute-height: 200px;
+$second: 60s;
+$minute: ($second * 60);
+$minute-color:rgb(201, 23, 38);
+$second-color:rgb(109, 132, 236);
+
+@mixin spot($size) {
+  width: $size;
+  height: $size;
+}
+
+@function handPos($radius, $width) {
+  @return ($radius - $width) / 2;
+}
+
+@function transformPos($width, $height, $radius) {
+  @return ($width / 2) ($height + ($radius / 2));
+}
+
+body {
+  margin: 0;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__spot {
+    position: relative;
+    @include spot($spot-radius);
+    border-radius: 50%;
+    background-color: $second-color;
+    z-index: 1;
+  
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: $spot-radius;
+      left: handPos($spot-radius, $minute-width);
+      height: $minute-height;
+      width: $minute-width;
+      border-radius: 50% 50% 15% 15%;
+      background-color: $minute-color;
+      animation: spin $minute linear infinite;
+      transform-origin: transformPos(
+        $minute-width,
+        $minute-height,
+        $spot-radius
+      );
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: $spot-radius;
+      left: handPos($spot-radius, $second-width);
+      height: $second-height;
+      width: $second-width;
+      border-radius: 50% 50% 15% 15%;
+      background-color: $second-color;
+      animation: spin steps(60) $second infinite;
+      transform-origin: transformPos(
+        $second-width,
+        $second-height,
+        $spot-radius
+      );
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
