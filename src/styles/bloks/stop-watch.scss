@@ -1,0 +1,48 @@
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stop-watch__big-circle {
+  position: absolute;
+  width: $wotch-size;
+  height: $wotch-size;
+  border: 5px solid $color-one;
+  border-radius: 50%;
+}
+
+.stop-watch__small-circle {
+  position: absolute;
+  width: $ten-percent;
+  height: $ten-percent;
+  top: $fivty-percent;
+  left: $fivty-percent;
+  background-color: $color-one;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stop-watch__minute-hand {
+  position: absolute;
+  width: $seven-percent;
+  height: $fivty-percent;
+  left: $fivty-percent;
+  background-color: $color-two;
+  border-radius: 50%;
+  transform: translate(-50%, 0%);
+  animation: move 360s steps(60) infinite;
+  transform-origin: bottom;
+}
+
+.stop-watch__second-hand {
+  position: absolute;
+  width: $five-percent;
+  height: $fivty-percent;
+  left: $fivty-percent;
+  background-color: $color-two;
+  border-radius: 50%;
+  animation: move 60s steps(60) infinite;
+  transform-origin: bottom;
+}
