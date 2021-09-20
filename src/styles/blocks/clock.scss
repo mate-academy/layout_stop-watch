@@ -5,6 +5,14 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
   transform: rotate(180deg);
 
+  &::before {
+    content: "";
+    @extend %center;
+    @include circle($small-circle-size);
+    background-color: rgb(54, 48, 48);
+    z-index: 10;
+  }
+
   &__minute-hand {
     @include center($minute-hand-width);
     height: $minute-hand-height;
@@ -25,12 +33,4 @@
     animation: rotate $minute steps(60) infinite ;
     transform-origin: top center;
   }
-}
-
-.clock::before {
-  content: "";
-  @extend %center;
-  @include circle($small-circle-size);
-  background-color: rgb(54, 48, 48);
-  z-index: 3;
 }
