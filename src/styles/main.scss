@@ -30,39 +30,47 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
 
-.spot {
-  position: relative;
-  @include spot($spot-radius);
-  border-radius: 50%;
-  background-color: $second-color;
-  z-index: 1;
-
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: $spot-radius;
-    left: handPos($spot-radius, $minute-width);
-    height: $minute-height;
-    width: $minute-width;
-    border-radius: 50% 50% 15% 15%;
-    background-color: $minute-color;
-    animation: spin $minute linear infinite;
-    transform-origin: transformPos($minute-width, $minute-height, $spot-radius);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: $spot-radius;
-    left: handPos($spot-radius, $second-width);
-    height: $second-height;
-    width: $second-width;
-    border-radius: 50% 50% 15% 15%;
+  &__spot {
+    position: relative;
+    @include spot($spot-radius);
+    border-radius: 50%;
     background-color: $second-color;
-    animation: spin steps(60) $second infinite;
-    transform-origin: transformPos($second-width, $second-height, $spot-radius);
+    z-index: 1;
+  
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: $spot-radius;
+      left: handPos($spot-radius, $minute-width);
+      height: $minute-height;
+      width: $minute-width;
+      border-radius: 50% 50% 15% 15%;
+      background-color: $minute-color;
+      animation: spin $minute linear infinite;
+      transform-origin: transformPos(
+        $minute-width,
+        $minute-height,
+        $spot-radius
+      );
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: $spot-radius;
+      left: handPos($spot-radius, $second-width);
+      height: $second-height;
+      width: $second-width;
+      border-radius: 50% 50% 15% 15%;
+      background-color: $second-color;
+      animation: spin steps(60) $second infinite;
+      transform-origin: transformPos(
+        $second-width,
+        $second-height,
+        $spot-radius
+      );
+    }
   }
 }
 
