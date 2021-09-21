@@ -1,0 +1,68 @@
+.clock {
+  @include circle($clock-size);
+  
+  background: $clock-color;
+  border: 20px solid $clock-color;
+  position: relative;
+  box-shadow: inset 0 5px 25px #00000080,
+    0 5px 25px #00000080,
+    0 5px 30px #00000080,
+    0 5px 35px #00000080,
+    0 5px 35px #00000080,
+    0 5px 35px #00000080;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: calc(50% - (#{$clock-point-size} / 2));
+    top: calc(50% - (#{$clock-point-size} / 2));
+
+    @include circle($clock-point-size);
+    background: #071d4b;
+  }
+
+  & li {
+    list-style: none;
+    position: absolute;
+  }
+
+  &__second-handle {
+    width: 100%;
+    height: 100%;
+    animation: rotation 60s steps(60, end) infinite;
+
+    &::after {
+      content: "";
+      width: $second-handle-width;
+      height: $second-handle-height;
+      border-radius: 2px;
+      background: $second-handle-color;
+      position: absolute;
+      left: calc(50% - (#{$second-handle-width} / 2));
+      top: 10%;
+    }
+  }
+
+  .clock__minute-handle {
+    width: 100%;
+    height: 100%;
+    animation: rotation 3600s steps(60, end) infinite;
+
+    &::after {
+      content: "";
+      width: $minute-handle-width;
+      height: $minute-handle-height;
+      border-radius: 4px;
+      background: $minute-handle-color;
+      position: absolute;
+      left: calc(50% - (#{$minute-handle-width} / 2));
+      top: 20%;
+    }
+
+    @keyframes rotation {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
