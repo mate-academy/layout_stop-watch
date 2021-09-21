@@ -1,0 +1,43 @@
+.container {
+  position: relative;
+  @include square(500px);
+  background: url("../images/pngwing.com.png");
+  background-size: cover;
+
+  &__arrow {
+    position: absolute;
+    @extend %position-arrow;
+    transform: translate(-50%,-50%);
+  }
+
+  &__arrow--sec {
+    animation: move 60s steps(60) infinite normal;
+    height: 200px;
+    @extend %arrow;
+    background-color: $seconds-arrow-color;
+  }
+
+  &__arrow--min {
+    @extend %arrow;
+    animation: move 3600s steps(60) infinite normal;
+    height: 150px;
+    background-color: $hours_arrow-color;
+  }
+
+  &__center {
+    position: absolute;
+    @extend %point;
+    @extend %point-size;
+    background-color: $center_arrows-color;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
