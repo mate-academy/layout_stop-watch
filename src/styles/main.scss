@@ -1,39 +1,45 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+}
+
+%arrow {
+  width: 5px;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
+
 .watch {
   position: relative;
   margin: 200px auto;
-  height: 400px;
-  width: 400px;
+  @include circle(400px);
   border: 1px solid deepskyblue;
   border-radius: 100%;
 
   &__arrow {
     position: absolute;
     bottom: 50%;
-    left: 49%;
+    left: 50%;
   }
 
-  &__first--sec {
-    transform-origin: bottom;
+  &__arrow--sec {
     animation: move 60s steps(60) infinite normal;
     height: 200px;
-    width: 5px;
-    border-radius: 10px;
+    @extend %arrow;
     background-color: blue;
   }
 
-  &__first--min {
-    transform-origin: bottom left;
+  &__arrow--min {
+    @extend %arrow;
     animation: move 3600s steps(60) infinite normal;
     height: 150px;
-    width: 5px;
-    border-radius: 10px;
     background-color: red;
   }
 
   &__point {
     position: absolute;
-    bottom: 48%;
-    left: 47.8%;
+    bottom: 48.5%;
+    left: 48.7%;
     height: 15px;
     width: 15px;
     border-radius: 10px;
