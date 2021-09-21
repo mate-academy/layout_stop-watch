@@ -3,6 +3,11 @@
   height: $size;
 }
 
+%position {
+  bottom: 50%;
+  left: 50%;
+}
+
 %arrow {
   width: 5px;
   border-radius: 10px;
@@ -18,8 +23,8 @@
 
   &__arrow {
     position: absolute;
-    bottom: 50%;
-    left: 50%;
+    @extend %position;
+    transform: translate(-50%,-50%);
   }
 
   &__arrow--sec {
@@ -38,8 +43,10 @@
 
   &__point {
     position: absolute;
-    bottom: 48.5%;
-    left: 48.7%;
+    top: 50%;
+    left: 50.62%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
     height: 15px;
     width: 15px;
     border-radius: 10px;
