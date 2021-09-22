@@ -3,24 +3,13 @@ $seconds-height: 300px;
 $dot-size: 18px;
 $blue-color: rgb(9, 121, 136);
 
-@keyframes watch-rotate-min {
+@keyframes watch-rotate {
   from {
-    transform: translateX(-35px) rotate(0deg);
+    transform: rotate(0deg);
     transform-origin: bottom;
   }
   to {
-    transform: translateX(-35px) rotate(360deg);
-    transform-origin: bottom;
-  }
-}
-
-@keyframes watch-rotate-sec {
-  from {
-    transform: translateX(-45px) rotate(0deg);
-    transform-origin: bottom;
-  }
-  to {
-    transform: translateX(-45px) rotate(360deg);
+    transform: rotate(360deg);
     transform-origin: bottom;
   }
 }
@@ -37,7 +26,7 @@ $blue-color: rgb(9, 121, 136);
     background-color: $blue-color;
     display: inline-block;
     top: 300px;
-    left: 455px;
+    left: 495px;
     transform: translate(-50%, -50%);
   }
 
@@ -47,10 +36,11 @@ $blue-color: rgb(9, 121, 136);
     width: 10px;
     background-color: rgb(150, 54, 62);
     border-radius: 50% 0 0 50%;
-    left: 485px;
+    left: 490px;
     top: 150px;
     display: inline-block;
-    animation: watch-rotate-min 3600s linear infinite;
+    animation: watch-rotate 3600s linear infinite;
+    transform: translateX(-35px);
   }
 
   &__second {
@@ -60,7 +50,8 @@ $blue-color: rgb(9, 121, 136);
     background-color: $blue-color;
     border-radius: 50% 0 0 50%;
     display: inline-block;
-    left: 495px;
-    animation: watch-rotate-sec 60s linear infinite;
+    left: 490px;
+    animation: watch-rotate 60s linear infinite;
+    transform: translateX(-45px);
   }
 }
