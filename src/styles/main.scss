@@ -1,0 +1,62 @@
+$watch-size: 600px;
+$second-hand-hight: 0.4 * $watch-size;
+$minute-hand-hight: 0.8 * $second-hand-hight;
+$second-hand-width: 0.01 * $watch-size;
+$minute-hand-width: 2 * $second-hand-width;
+$center-circle-diametr: 3 * $second-hand-width;
+
+body {
+  margin: 0;
+  height: 100vh;
+  min-height: $watch-size;
+  min-width: $watch-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stop-watch {
+  width: $watch-size;
+  height: $watch-size;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &__minute-hand {
+    width: $minute-hand-width;
+    height: $minute-hand-hight;
+    background-color: palevioletred;
+    position: absolute;
+    top: 0.5 * $watch-size - $minute-hand-hight;
+    border-radius: $minute-hand-width;
+    transform-origin: center bottom;
+    animation: hands-move 3600s steps(60, end) infinite;
+  }
+
+  &__second-hand {
+    width: $second-hand-width;
+    height: $second-hand-hight;
+    background-color: blue;
+    position: absolute;
+    top: 0.5 * $watch-size - $second-hand-hight;
+    border-radius: $second-hand-width;
+    transform-origin: center bottom;
+    animation: hands-move 60s steps(60, end) infinite;
+  }
+
+  &__center-circle {
+    width: $center-circle-diametr;
+    height: $center-circle-diametr;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @keyframes hands-move {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
