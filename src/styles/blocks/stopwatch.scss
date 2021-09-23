@@ -1,12 +1,15 @@
 .stopwatch {
+  @extend %flex_center;
+  @include square($minute_hand_height * 2); 
+  border-radius: 50%;
+  background-color: $stopwatch_color;
+
   &__hour-hand {
     position: absolute;
     @include rectangle($hour_hand_height, $hour_hand_width);
 
     background-color: $hour_hand_color;
     border-radius: 5px;
-    transform-origin: top center;
-    transform: rotate(180deg);
 
     animation: hand_split 3600s linear infinite;
   }
@@ -17,29 +20,25 @@
 
     background-color: $minute_hand_color;
     border-radius: 5px;
-    transform-origin: top center;
-    transform: rotate(180deg);
 
-    animation: hand_split 60s linear infinite;
+    animation: hand_split 60s steps(60, end) infinite;
   }
 
   &__point {
-    position: absolute;
     @include square($point_size);
 
-    margin-left: -7px;
-    margin-top: -10px;
     background-color: $point_color;
     border-radius: 50%;
+    z-index: 1;
   }
 }
 
 @keyframes hand_split {
   from {
-    transform: rotate(180deg);
+    transform: rotate(0deg) translateY(-50%);
   }
 
   to {
-    transform: rotate(540deg);
+    transform: rotate(360deg) translateY(-50%);
   }
 }
