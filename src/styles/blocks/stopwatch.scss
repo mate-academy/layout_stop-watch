@@ -1,0 +1,44 @@
+.stopwatch {
+  @extend %flex_center;
+  @include square($minute_hand_height * 2); 
+  border-radius: 50%;
+  background-color: $stopwatch_color;
+
+  &__hour-hand {
+    position: absolute;
+    @include rectangle($hour_hand_height, $hour_hand_width);
+
+    background-color: $hour_hand_color;
+    border-radius: 5px;
+
+    animation: hand_split 3600s linear infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    @include rectangle($minute_hand_height, $minute_hand_width);
+
+    background-color: $minute_hand_color;
+    border-radius: 5px;
+
+    animation: hand_split 60s steps(60, end) infinite;
+  }
+
+  &__point {
+    @include square($point_size);
+
+    background-color: $point_color;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+@keyframes hand_split {
+  from {
+    transform: rotate(0deg) translateY(-50%);
+  }
+
+  to {
+    transform: rotate(360deg) translateY(-50%);
+  }
+}
