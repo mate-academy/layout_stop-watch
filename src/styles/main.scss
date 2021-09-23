@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+@keyframes time {
+  from {
+    transform: none;
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watches {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 600px;
+  height: 600px;
+  background-color: #ccc;
+  border: 10px solid #000;
+  border-radius: 50%;
+
+  &__center {
+    width: 50px;
+    height: 50px;
+    background-color: #4b9aaa;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__second-hand {
+    height: 270px;
+    width: 30px;
+    background-color: #4b9aaa;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 50%;
+    z-index: 1;
+    transform-origin: bottom;
+
+    animation-name: time;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+  }
+
+  &__minute-hand {
+    height: 180px;
+    width: 30px;
+    background-color: #d15559;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+
+    animation-name: time;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
