@@ -1,0 +1,57 @@
+@import "./utils/variables";
+
+* {
+  margin: 0;
+}
+
+.watch,
+.watch__minute-hand,
+.watch__seconds-hand {
+  margin: auto;
+}
+
+.watch__minute-hand,
+.watch__seconds-hand {
+  display: flex;
+  position: relative;
+  width: 10px;
+  border-radius: 10px;
+}
+
+.watch {
+  border: 2px solid black;
+  border-radius: 50px;
+  background-color: gray;
+  height: $clock-size;
+  width: $clock-size;
+
+  &__seconds-hand {
+    height: $max-height-hends;
+    background-color: red;
+    border: red;
+    transform-origin: bottom;
+    animation: move 60s infinite;
+    animation-timing-function: steps(60, end);
+    top: -190px;
+  }
+
+  &__minute-hand {
+    height: $min-height-hands;
+    background-color: blue;
+    border: blue;
+    top: 110px;
+    transform-origin: bottom;
+    animation: move 3600s infinite;
+    animation-timing-function: steps(60, end);
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
