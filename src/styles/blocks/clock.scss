@@ -1,0 +1,45 @@
+.clock {
+  @extend %df--j-c--a-c;
+  background: #000;
+  @include circle-big;
+
+  &__center {
+    z-index: 2;
+    background-color: #fff;
+    @include circle-small;
+  }
+  &__min {
+    top: 106px;
+    width: 15px;
+    height: 100px;
+    border-radius: 6px;
+    z-index: 1;
+    background-color: red;
+    animation-name: arrow;
+    animation-duration: 3600s;
+    @extend %anim--setting;
+    @extend %arrow-position;
+
+  }
+
+  &__sec {
+    top: 50px;
+    width: 15px;
+    height: 160px;
+    border-radius: 6px;
+    background-color: yellow;
+    animation-name: arrow;
+    animation-duration: 60s;
+    @extend %anim--setting;
+    @extend %arrow-position;
+  }
+}
+
+@keyframes arrow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
