@@ -1,0 +1,72 @@
+$clock-size: 30vw;
+$sec-arrow-height: 11vw;
+$min-arrow-height: 9vw;
+$arrow-width: 0.5vw;
+
+@mixin circle($size, $background) {
+  width: $size;
+  height: $size;
+  background-color: $background;
+  border-radius: 50%;
+}
+
+@mixin arrow($height, $color) {
+  position: absolute;
+  width: $arrow-width;
+  height: $height;
+  top: ($clock-size / 2) - $height;
+  left: ($clock-size / 2) - ($arrow-width / 2);
+  background-color: $color;
+  border-radius: 15px;
+}
+
+@mixin animate-arrow ($time) {
+  transform-origin: bottom center;
+  animation: tictac $time steps(60) infinite normal;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  @include circle($clock-size, black);
+  position: relative;
+  background: center / contain no-repeat url("../img/stopwatch.png");
+  border: 1vw solid black;
+
+  &__center {
+    @include circle(1vw, #4b9aaa);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minutes {
+    @include arrow($min-arrow-height, #d15559);
+    @include animate-arrow(3600s);
+  }
+
+  &__seconds {
+    @include arrow($sec-arrow-height, #4b9aaa);
+    @include animate-arrow(60s);
+  }
+}
+
+@keyframes tictac {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
