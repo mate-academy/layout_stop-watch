@@ -1,0 +1,54 @@
+.watch {
+  position: relative;
+
+  background-image: url(https://e7.pngegg.com/pngimages/928/173/png-clipart-clock-face-template-aiguille-resume-clock-template-resume.png);
+  background-position: center;
+  background-size: 122%;
+  background-repeat: no-repeat;
+
+  border-radius: 50%;
+  border: 10px solid #000;
+
+
+  &__dot {
+    @extend %watch-elements-position;
+    border-radius: 50%;
+    border: 3px solid #084e057c;
+    @include sqr-sizes ($dot-size);
+    background-color: #0bb1a6;
+  }
+
+  &__minutes {
+    @extend %watch-elements-position;
+    height: $minutes-size;
+    width: $arrow-width;
+
+    background-color: #084e057c;
+    border-radius: 3px;
+
+    animation: move 3600s linear infinite;
+    transform-origin: center bottom;
+  }
+
+  &__seconds {
+    @extend %watch-elements-position;
+    height: $seconds-size;
+    width: $arrow-width;
+
+    background-color: #0bb1a6;
+    border-radius: 3px;
+
+    animation: move 60s steps(60, end) infinite;
+    transform-origin: center bottom;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
