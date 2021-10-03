@@ -1,0 +1,45 @@
+@import "./_mixin.scss";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.clock::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  content: "";
+  background-color: #6a5b6e;
+}
+
+.seconds {
+  @include arrow_common;
+  top: 7%;
+  height: 43%;
+  background-color: #6a5b6e;
+  animation-duration: 60s;
+  animation-timing-function: steps(60, end);
+}
+
+.minutes {
+  @include arrow_common;
+  top: 25%;
+  height: 25%;
+  background-color: #f0b7b3;
+  animation-duration: 3600s;
+  animation-timing-function: steps(60);
+}
+
+@keyframes clock {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
