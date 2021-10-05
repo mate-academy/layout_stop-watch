@@ -1,0 +1,27 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(../images/34139.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__center {
+    @include square ($hand-width + 10);
+    position: absolute;
+    bottom: 50%;
+    border-radius: 20px;
+    background-color: $color;
+  }
+
+  &__second-hand {
+    @include hand-style($second-hand-height, $hand-width, $color);
+    @include rotate (60s);
+  }
+
+  &__minute-hand {
+    @include hand-style($minute-hand-height,$hand-width, $color);
+    @include rotate(3600s);
+  }
+}
