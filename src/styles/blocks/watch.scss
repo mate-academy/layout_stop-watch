@@ -1,0 +1,49 @@
+.watch {
+  min-height: $base-size;
+  min-width: $base-size;
+  max-width: $base-size;
+  margin: calc((100vh - #{$base-size}) / 2) calc((100vw - #{$base-size}) / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50%;
+
+  &__big {
+    height: $arrow-height * 1.25;
+    width: $arrow-width;
+    background-color: rgb(0, 162, 255);
+    position: relative;
+    bottom: 125px;
+    animation: around 60s 3600 steps(60, end);
+    transform-origin: 100% 100%;
+    border-radius: 50%;
+  }
+
+  &__small {
+    height: $arrow-height;
+    width: $arrow-width;
+    background-color: rgb(255, 72, 0);
+    position: absolute;
+    top: 50px;
+    animation: around 3600s 60 steps(60, end);
+    transform-origin: 100% 100%;
+    border-radius: 50%;
+  }
+
+  &__center {
+    @include square($center-size);
+    border-radius: 50%;
+    background-color: rgb(0, 162, 255);
+    position: absolute;
+  }
+}
+
+@keyframes around {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
