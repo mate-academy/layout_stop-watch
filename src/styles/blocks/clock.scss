@@ -1,0 +1,30 @@
+.clock {
+  position: relative;
+  @include circle($clock-size);
+  margin: 50px auto;
+  border: 2px solid black;
+
+  &__center {
+    position: absolute;
+    @include circle(20px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+  }
+
+  &__seconds {
+    @include arrow(220px, $seconds-width, black);
+    @include animation(60s, steps(60));
+  }
+
+  &__minutes {
+    @include arrow (200px, $minutes-width, grey);
+    @include animation(3600s, linear);
+  }
+
+  &__hours {
+    @include arrow (150px, $hours-width, red);
+    @include animation(43200s, linear);
+  }
+}
