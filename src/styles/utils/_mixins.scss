@@ -1,0 +1,23 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin arrow($height, $width, $color) {
+  position: absolute;
+  height: $height;
+  width: $width;
+  top: ($clock-size / 2) - $height;
+  left: ($clock-size / 2) - (($width) / 2);
+  background-color: $color;
+  border-radius: ($width) / 2;
+}
+
+@mixin animation($duration, $timing) {
+  animation-duration: $duration;
+  animation-timing-function: $timing;
+  transform-origin: bottom center;
+  animation-name: move;
+  animation-iteration-count: infinite;
+}
