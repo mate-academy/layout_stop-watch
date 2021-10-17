@@ -1,0 +1,38 @@
+.watch {
+  position: relative;
+
+  @include size(90%, 90%);
+
+  background: $color-watch-bg;
+
+  &__dot {
+    @extend %position-center;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    @include size(25px, 25px, 50%);
+
+    background: #626284;
+  }
+
+  &__second-hand {
+    @include watch-hand($second-hand...);
+
+    animation: spin 60s infinite linear;
+  }
+
+  &__minute-hand {
+    @include watch-hand($minute-hand...);
+
+    animation: spin 3600s infinite linear;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
