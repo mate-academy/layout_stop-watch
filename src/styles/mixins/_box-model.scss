@@ -1,0 +1,22 @@
+@mixin size($width, $height, $radius: null) {
+  width: $width;
+  height: $height;
+  
+  @if $radius {
+    border-radius: $radius;
+  }
+}
+
+@mixin watch-hand(
+  $width,
+  $height,
+  $radius,
+  $bg-color
+) {
+  @extend %position-center;
+  @extend %transform-default;
+
+  @include size($width, $height, $radius);
+
+  background-color: $bg-color;
+}
