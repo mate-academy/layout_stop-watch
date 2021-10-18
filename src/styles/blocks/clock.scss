@@ -1,0 +1,58 @@
+.clock {
+  position: relative;
+  font-size: 5em;
+  @include circle($clock-size);
+  background-color: rgba(245, 213, 54, 0.89);
+  border: 15px solid #9d0d0d;
+
+  &__number1 {
+    position: absolute;
+    top: 2%;
+    left: 41%;
+  }
+
+  &__number2 {
+    position: absolute;
+    top: 44%;
+    right: 5%;
+  }
+
+  &__number3 {
+    position: absolute;
+    bottom: 3%;
+    left: 47%;
+  }
+
+  &__number4 {
+    position: absolute;
+    top: 44%;
+    left: 5%;
+  }
+
+  &__center {
+    position: absolute;
+    @include circle(20px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    z-index: 3;
+  }
+
+  &__seconds {
+    @include arrow(220px, $seconds-width, #000);
+    @include animation(60s, steps(60));
+    z-index: 2;
+  }
+
+  &__minutes {
+    @include arrow(200px, $minutes-width, #a6a6a6);
+    @include animation(3600s, linear);
+    z-index: 1;
+  }
+
+  &__hours {
+    @include arrow(150px, $hours-width, #f00);
+    @include animation(43200s, linear);
+  }
+}
