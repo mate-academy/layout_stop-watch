@@ -1,9 +1,7 @@
 .stop-watch {
   height: $watch-size;
   width: $watch-size;
-  padding: $watch-size / 40;
   position: relative;
-
   background-color: #fff;
 
   &__hand-wrapper {
@@ -13,7 +11,7 @@
   }
 
   &__seconds {
-    @include size(20px, 300px, 10px, $second-hand-and-circle-color);
+    @include size(18px, 300px, 10px, $second-hand-and-circle-color);
 
     animation: 60s spin infinite;
     transform-origin: bottom center;
