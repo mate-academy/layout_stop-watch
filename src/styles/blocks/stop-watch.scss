@@ -13,14 +13,14 @@
   &__seconds {
     @include size(18px, 300px, 10px, $second-hand-and-circle-color);
 
-    animation: 60s spin infinite;
+    animation: spin 60s linear infinite;
     transform-origin: bottom center;
   }
 
   &__minutes {
     @include size(20px, 250px, 10px, $minute-hand-color);
 
-    animation: 3600s spin infinite;
+    animation: spin 3600s linear infinite;
     transform-origin: bottom center;
   }
 
