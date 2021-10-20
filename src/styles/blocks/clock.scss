@@ -1,0 +1,49 @@
+.clock {
+  @include circle($clock-size, $clock-color);
+
+  position: relative;
+
+  box-shadow: inset 0 0 30px 5px rgba($color: $shadow-color, $alpha: 0.4);
+
+  &__minute-hand {
+    @extend %abs-element-center;
+    @extend %clock-hand-position;
+    @include clock-hand(
+      $hand-minute-height,
+      $hand-minute-width,
+      $hand-minute-color
+    );
+
+    animation: tik-tock $clock-minute-duration steps(60, end) infinite 0.3s;
+  }
+
+  &__second-hand {
+    @extend %abs-element-center;
+    @extend %clock-hand-position;
+    @include clock-hand(
+      $hand-second-height,
+      $hand-second-width,
+      $hand-second-color
+    );
+
+    animation: tik-tock $clock-second-duration steps(60, end) infinite 0.3s;
+  }
+
+  &__origin {
+    @include circle($origin-size, $origin-color);
+    @extend %abs-element-center;
+
+    transform: translateY(50%);
+
+    box-shadow: 0 0 10px $shadow-color;
+  }
+
+  @keyframes tik-tock {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
