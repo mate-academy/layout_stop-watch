@@ -1,0 +1,44 @@
+.stop-watch {
+  height: $watch-size;
+  width: $watch-size;
+  position: relative;
+  background-color: #fff;
+
+  &__hand-wrapper {
+    @extend %position;
+
+    transform: translateX(-50%);
+  }
+
+  &__seconds {
+    @include size(18px, 300px, 10px, $second-hand-and-circle-color);
+
+    animation: spin 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__minutes {
+    @include size(20px, 250px, 10px, $minute-hand-color);
+
+    animation: spin 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__circle {
+    @extend %position;
+    @include size(40px, 40px, 50%, $second-hand-and-circle-color);
+
+    transform: translate(-50%, 50%);
+    z-index: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
