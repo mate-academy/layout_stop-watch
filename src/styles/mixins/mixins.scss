@@ -1,0 +1,28 @@
+@mixin handsSettings 
+  ($handWidth, $handHeight, $handBottomPosition, $radius, $color) {
+  position: absolute;
+  bottom: $handBottomPosition;
+  width: $handWidth;
+  height: $handHeight;
+  border-radius: $radius;
+  background-color: $color;
+
+}
+
+@mixin handsAnimation 
+  ($animationName,$iterationCount, $timingFunction,$duration) {
+  transform-origin: bottom;
+  animation-name: rotate;
+  animation-iteration-count: $iterationCount;
+  animation-timing-function: $timingFunction;
+  animation-duration: $duration;
+}
+
+@mixin middleCircle ($dimensions, $radius, $color) {
+  position: absolute;
+  z-index: 1;
+  width: $dimensions;
+  height: $dimensions;
+  border-radius: $radius;
+  background-color: $color;
+}
