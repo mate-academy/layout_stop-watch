@@ -1,0 +1,25 @@
+$seconds-height: 300px;
+$seconds-width: 13px;
+$seconds-color: #2a2a74;
+
+$minutes-height: calc(#{$seconds-height} * 0.8);
+$minutes-width: calc(#{$seconds-width} * 1.2);
+$minutes-color: #2a6474;
+
+$arrow-border-r: 20px;
+
+$center-hw: calc(#{$seconds-width} * 3);
+
+$additional-space: 40px;
+$stopwatch-hw: calc(#{$seconds-height * 2} + #{$additional-space * 2});
+$stopwatch-color: #ddd;
+$border-color: #bbb;
+
+$seconds-left: calc(#{$stopwatch-hw / 2} - #{$seconds-width / 2});
+$minutes-left: calc(#{$stopwatch-hw / 2} - #{$minutes-width / 2});
+$center-left: calc(#{$stopwatch-hw / 2} - #{$center-hw / 2});
+
+$minutes-top: calc(#{$seconds-height} - #{$minutes-height} +
+#{$additional-space});
+$center-top: calc(#{$seconds-height} - #{$center-hw / 2} +
+#{$additional-space});
