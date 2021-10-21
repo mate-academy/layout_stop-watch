@@ -1,0 +1,11 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin hand-position($clock-size, $hand-heigh, $hand-width) {
+  position: absolute;
+  top: hand-ver-position($clock-size, $hand-heigh);
+  left: hand-hor-position($clock-size, $hand-width);
+}
