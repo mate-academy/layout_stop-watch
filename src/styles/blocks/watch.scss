@@ -1,0 +1,55 @@
+.watch {
+  position: relative;
+
+  &__point {
+    width: $point-side-size;
+    height: $point-side-size;
+    border-radius: 50%;
+    background-color: #04202c;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    z-index: -1;
+
+    width: $hand-width;
+    height: $hand-minute-height;
+
+    top: $top-hands-indent - $hand-minute-height;
+    left: $left-hands-indent;
+
+    border-radius: 10px;
+    background-color: #5b7065;
+
+    transform-origin: bottom;
+
+    @include animation(spin, 3600s, infinite, linear);
+  }
+
+  &__second-hand {
+    position: absolute;
+    z-index: -1;
+
+    width: $hand-width;
+    height: $hand-second-height;
+  
+    top: $top-hands-indent - $hand-second-height;
+    left: $left-hands-indent;
+
+    border-radius: 10px;
+    background-color: #304040;
+
+    transform-origin: bottom;
+
+    @include animation(spin, 60s, infinite, linear);
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
