@@ -1,0 +1,43 @@
+.clock {
+  @include circle($clock-size);
+
+  position: relative;
+  background-color: lightgray;
+
+  &__second-hand,
+  &__minute-hand {
+    border-radius: 20%;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    @include hand-position($clock-size, $second-hand-heigh, $second-hand-width);
+
+    height: $second-hand-heigh;
+    width: $second-hand-width;
+    z-index: 2;
+    background-color: white;
+    animation: spin 60s linear infinite;
+  }
+
+  &__minute-hand {
+    @include hand-position($clock-size, $minute-hand-heigh, $minute-hand-width);
+
+    height: $minute-hand-heigh;
+    width: $minute-hand-width;
+    z-index: 1;
+    background-color: dimgray;
+    animation: spin 3600s linear infinite;
+  }
+
+  &__center-circle {
+    @include circle($center-circle-size);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background-color: gray;
+  }
+}
