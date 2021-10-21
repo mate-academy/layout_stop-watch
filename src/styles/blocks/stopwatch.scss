@@ -5,37 +5,24 @@
   border-radius: 30%;
 
   &__seconds {
-    height: $seconds-height;
-    width: $seconds-width;
-    border-radius: $arrow-border-r;
-    background-color: $seconds-color;
-    position: absolute;
-    top: $additional-space;
-    left: $seconds-left;
-
+    @include facade-arrow($seconds-height, $seconds-width,
+    $arrow-border-r, $seconds-color);
+    @include position-arrow($additional-space, $seconds-left, 2);
+    
     animation: arrow-animation 60s linear infinite;
   }
 
   &__minutes {
-    height: $minutes-height;
-    width: $minutes-width;
-    border-radius: $arrow-border-r;
-    background-color: $minutes-color;
-    position: absolute;
-    top: $minutes-top;
-    left: $minutes-left;
+    @include facade-arrow($minutes-height, $minutes-width,
+    $arrow-border-r, $minutes-color);
+    @include position-arrow($minutes-top, $minutes-left, 1);
 
     animation: arrow-animation 3600s linear infinite;
   }
 
   &__center {
-    height: $center-hw;
-    width: $center-hw;
-    border-radius: 50%;
-    background-color: $minutes-color;
-    position: absolute;
-    top: $center-top;
-    left: $center-left;
+    @include facade-arrow($center-hw, $center-hw, 50%, $seconds-color);
+    @include position-arrow($center-top, $center-left, 3);
   }
 }
 
