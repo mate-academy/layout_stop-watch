@@ -1,0 +1,75 @@
+$stopwatch-size: 450px;
+$clock-front-color: #fff;
+$stopwatch-border-color: rgb(243, 234, 236);
+$clockwise-minutes-color: rgb(56, 54, 55);
+$clockwise-seconds-color: #fd4784;
+
+%center-positioning {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+
+  &__front {
+    position: relative;
+    width: $stopwatch-size;
+    height: $stopwatch-size;
+    border-radius: 50%;
+    background-color: $clock-front-color;
+    border: 3px solid $stopwatch-border-color;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 5px 50px -10px;
+  }
+
+  &__clockwise {
+    @extend %center-positioning;
+    border-radius: 5px;
+    animation-name: rotation;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &--seconds {
+      width: $stopwatch-size / 200;
+      height: $stopwatch-size / 2 - $stopwatch-size / 10;
+      background-color: $clockwise-seconds-color;
+      animation-duration: 60s;
+    }
+
+    &--minutes {
+      width: $stopwatch-size / 100;
+      height: $stopwatch-size/ 2 - $stopwatch-size / 6;
+      background-color: $clockwise-minutes-color;
+      animation-duration: 3600s;
+    }
+  }
+
+  &__center {
+    width: $stopwatch-size / 30;
+    height: $stopwatch-size / 30;
+    border-radius: 50%;
+
+    @extend %center-positioning;
+    background-color: $clockwise-minutes-color;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: translate(-50%) rotate(0deg);
+    transform-origin: bottom center;
+  }
+  to {
+    transform: translate(-50%) rotate(360deg);
+    transform-origin: bottom center;
+  }
+}
