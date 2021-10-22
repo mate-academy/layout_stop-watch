@@ -1,0 +1,83 @@
+$minute-col: rgb(117, 117, 230);
+$sec-color: rgb(199, 87, 87);
+$stop-watch-size: 300px;
+$arrow-radius: 20px;
+
+@mixin anim ($name, $dur, $time-func, $delay, $count) {
+  animation: $name $dur $time-func $delay $count;
+}
+
+%half-pos {
+  left: 50%;
+  top: 50%;
+}
+
+%arrow-size {
+  width: 150px;
+  height: 5px;
+}
+
+%main-pos {
+  transform-origin: left center;
+  transform: rotate(-90deg);
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+body {
+  margin: 0;
+}
+
+.page-stopwatch {
+  position: relative;
+}
+
+.stopwatch {
+  @include square($stop-watch-size);
+
+  &__center {
+    position: absolute;
+    @extend %half-pos;
+    @include square(15px);
+    border-radius: 50%;
+    background-color: $minute-col;
+  }
+
+  &__minutes {
+    position: relative;
+    @extend %half-pos;
+
+    @extend %main-pos;
+    @include anim (move, 3600s, steps(60, start), 60s, infinite);
+
+    @extend %arrow-size;
+    background-color: $minute-col;
+    border-radius: $arrow-radius;
+  }
+
+  &__seconds {
+    z-index: -1;
+    position: relative;
+    @extend %half-pos;
+    border-radius: $arrow-radius;
+
+    @extend %main-pos;
+    @include anim (move, 60s, steps(60, start), 0.5s, infinite);
+
+    @extend %arrow-size;
+    background-color: $sec-color;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
