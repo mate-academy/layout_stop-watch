@@ -1,0 +1,50 @@
+.clock {
+  @extend %centring-circle;
+  @include clock-circle($clock-size);
+  border: $border-size solid $clock-border;
+  background-color: $clock-background;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+
+  &__minutes {
+    @extend %centring-minutes-hand;
+    width: $minutes-length;
+    height: $minutes-height;
+    background-color: $minutes-color;
+    border-radius: $minutes-bdr-radius;
+    animation: animate 3600s linear infinite;
+    transform-origin: left;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.2);
+    z-index: 3;
+  }
+
+  &__seconds {
+    @extend %centring-seconds-hand;
+    width: $seconds-length;
+    height: $seconds-height;
+    background-color: $seconds-color;
+    border-radius: $seconds-bdr-radius;
+    animation: animate 60s linear infinite;
+    transform-origin: left;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 4;
+  }
+
+  &::after {
+    content: "";
+    @extend %centring-circle;
+    @include clock-circle($center-circle-size);
+    background-color: $seconds-color;
+    border-radius: 50%;
+    z-index: 4;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
