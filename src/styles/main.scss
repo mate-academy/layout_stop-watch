@@ -27,12 +27,12 @@ $arrow-radius: 20px;
   height: $size;
 }
 
-body {
+.page {
   margin: 0;
-}
 
-.page-stopwatch {
-  position: relative;
+  &__stopwatch {
+    position: relative;
+  }
 }
 
 .stopwatch {
@@ -48,7 +48,8 @@ body {
 
   &__minutes {
     position: relative;
-    @extend %half-pos;
+    left: 50%;
+    top: 0%;
 
     @extend %main-pos;
     @include anim (move, 3600s, steps(60, start), 60s, infinite);
