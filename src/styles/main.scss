@@ -1,3 +1,5 @@
+@import "./variables";
+
 .clock {
   display: flex;
   justify-content: center;
@@ -5,14 +7,14 @@
   margin: 60px auto;
   width: 800px;
   height: 800px;
-  background-color: #f1f1f1;
+  background-color: $color-grey;
 
   &-second {
     position: absolute;
     top: 160px;
     width: 5px;
     height: 300px;
-    background-color: #4c9aaa;
+    background-color: $color-blue;
     border-radius: 5px;
     animation: clock-animation 60s steps(60, end) infinite;
     transform-origin: bottom;
@@ -23,7 +25,7 @@
     top: 260px;
     width: 10px;
     height: 200px;
-    background-color: #d15659;
+    background-color: $color-red;
     border-radius: 5px;
     animation: clock-animation 3600s infinite;
     transform-origin: bottom;
@@ -34,7 +36,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #4c9aaa;
+    background-color: $color-blue;
   }
 }
 
