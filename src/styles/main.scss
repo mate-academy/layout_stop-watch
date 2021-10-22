@@ -24,8 +24,8 @@ body {
 }
 
 .clock {
-  width: 700px;
-  height: 700px;
+  min-width: 700px;
+  min-height: 700px;
   border: 5px solid gold;
   border-radius: 50%;
   position: relative;
@@ -50,6 +50,7 @@ body {
     top: 10%;
     animation: clock 60s steps(60) infinite;
     box-shadow: 5px 5px 30px gold;
+    z-index: 1;
 
     &::before {
       content: "";
