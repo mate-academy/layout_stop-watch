@@ -8,7 +8,7 @@
     margin: auto;
     position: relative;
     width: 900px;
-    height: 90vh;
+    height: 900px;
     border-radius: 50%;
     border: 5px solid #9daaf3;
     background-color: #bbdae7;
@@ -19,12 +19,14 @@
   }
   
   &__first-hand {
-    @include handsAnimation (rotate,infinite, linear,3600s);
+    animation: rotate 3660s linear 0s infinite;
+    transform-origin: bottom;
     @include handsSettings (12px, 370px,50%,0.5em,#738a8a);
   }
 
   &__second-hand {
-    @include handsAnimation (rotate,infinite, linear,60s);
+    animation: rotate 60s linear 0s infinite;
+    transform-origin: bottom;
     @include handsSettings (10px,405px,50%,0.5em,#1e494b);
   }
 
