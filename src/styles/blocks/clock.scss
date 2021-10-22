@@ -1,0 +1,43 @@
+@import "../mixins/mixins.scss";
+
+.clock-container {
+  &__clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    border: 5px solid #9daaf3;
+    background-color: #bbdae7;
+  }
+
+  &__circle {
+    @include middleCircle (35px,2em,#1e494b);
+  }
+  
+  &__first-hand {
+    animation: rotate 3660s linear 0s infinite;
+    transform-origin: bottom;
+    @include handsSettings (12px, 370px,50%,0.5em,#738a8a);
+  }
+
+  &__second-hand {
+    animation: rotate 60s linear 0s infinite;
+    transform-origin: bottom;
+    @include handsSettings (10px,405px,50%,0.5em,#1e494b);
+  }
+
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
