@@ -1,0 +1,64 @@
+body {
+  background-color: $black-bgc;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px dashed rgb(39, 97, 172);
+  position: relative;
+  height: $watch-hw;
+  width: $watch-hw;
+  border-radius: $circle-radius;
+  background-color: $purple-black-bgc;
+  box-shadow: $purple-big-shadow;
+  
+
+  &__min {
+    position: $absolute-position;
+    height: $minute-height;
+    width: $minute-width;
+    border-radius: $hand-radius;
+    background-color: $red-bgc;
+    box-shadow: $red-shadow;
+    animation: rotation 3600s linear infinite;
+    z-index: 1;
+  }
+
+  &__sec {
+    position: $absolute-position;
+    height: $second-height;
+    width: $second-width;
+    border-radius: $hand-radius;
+    background-color: $purple-bgc;
+    box-shadow: $purple-shadow;
+    animation: rotation 60s linear infinite;
+    z-index: 2;
+  }
+
+  &__center {
+    position: $absolute-position;
+    height: $center-hw;
+    width: $center-hw;
+    border-radius: $circle-radius;
+    background-color: $purple-bgc;
+    box-shadow: $purple-shadow;
+    z-index: 3;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: translate(0%, 50%) rotate(-180deg);
+    transform-origin: top center;
+  }
+  to {
+    transform: translate(0%, 50%) rotate(180deg);
+    transform-origin: top center;
+  }
+}
