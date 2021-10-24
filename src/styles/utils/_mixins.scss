@@ -1,0 +1,31 @@
+@mixin watch-size ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin center-size ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin seconds-hand-size ($size) {
+  width: $size;
+  height: $size * 45;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+@mixin minutes-hand-size ($size) {
+  width: $size;
+  height: $size * 35;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+@mixin position-hand ($size) {
+  position: absolute;
+  bottom: $size / 2;
+  left: $size / 2 - $hand-size / 2;
+}
