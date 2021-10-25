@@ -4,7 +4,6 @@ body {
 }
 
 .watch {
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,48 +11,60 @@ body {
 }
 
 .clockface {
-  height: 500px;
-  width: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: blue;
-  border-radius: 50%;
-  z-index: 1;
+  &__view {
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-  &__center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
+    height: 500px;
+    width: 500px;
+    
+    background-color: blue;
     border-radius: 50%;
-    background-color: white;
-    z-index: 4;
+    transform: translate(-50%, -50%);
+  }
+  
+  
+  &__minute-arrow {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+
+    height: 125px;
+    width: 5px;
+
+    background-color: aqua;
+    animation: time 3600s linear infinite;
+    transform-origin: bottom;
+    z-index: 1;
   }
 
   &__second-arrow {
     position: absolute;
+    top: 25%;
     left: 50%;
-    top: 23%;
+
     height: 200px;
     width: 4px;
+
     background-color: white;
     animation: time 60s linear infinite;
     transform-origin: bottom;
-    z-index: 3;
+    z-index: 2;
   }
 
-  &__minute-arrow {
+  &__center {
     position: absolute;
-    height: 125px;
-    width: 5px;
+    top: 50%;
     left: 50%;
-    top: 33%;
-    background-color: aqua;
-    animation: time 3600s linear infinite;
-    transform-origin: bottom;
-    z-index: 2;
+
+    height: 50px;
+    width: 50px;
+
+    border-radius: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    z-index: 3;
   }
 }
 
