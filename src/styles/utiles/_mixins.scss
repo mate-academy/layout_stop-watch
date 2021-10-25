@@ -1,0 +1,22 @@
+@mixin arrow-animation {
+  animation-name: arrow-move;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: bottom center;
+
+  @keyframes arrow-move {
+    from {
+      transform: translateY(-50%) rotate(0deg);
+    }
+
+    to {
+      transform: translateY(-50%) rotate(360deg);
+    }
+  }
+}
+
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
