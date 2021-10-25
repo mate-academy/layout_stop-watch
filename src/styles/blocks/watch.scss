@@ -1,0 +1,50 @@
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  @include circle ($watch-size);
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: $watch-color;
+
+  &__clockwise {
+    position: absolute;
+    bottom: 50%;
+    width: 5px;
+    border-radius: 30%;
+
+    transform-origin: bottom;
+
+    &--minutes {
+      height: 150px;
+      background-color: $minutes-color;
+
+      animation: move 3600s linear infinite;
+    }
+
+    &--seconds {
+      height: 220px;
+      background-color: $seconds-color;
+
+      animation: move 60s linear infinite;
+    }
+  }
+
+  &__center {
+    @include circle ($center-size);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $center-color;
+  }
+}
