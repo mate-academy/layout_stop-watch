@@ -1,4 +1,4 @@
-@mixin arrow-property {
+@mixin arrow-properties {
   width: 8px;
   position: absolute;
   border-radius: 15px;
@@ -33,22 +33,24 @@ body {
   box-shadow: 10px 10px 100px gold;
 
   &-arrow {
-    @include arrow-property;
+    @include arrow-properties();
   }
 
   &__arrow_minutes {
     height: 150px;
     background-color: rgb(104, 37, 7);
     top: 30%;
+
     animation: clock 3600s linear infinite;
     box-shadow: 10px 10px 100px rgb(14, 8, 3);
   }
 
   &__arrow_seconds {
+    top: 10%;
     height: 290px;
     width: 5px;
     background-color: rgb(211, 167, 46);
-    top: 10%;
+
     animation: clock 60s linear infinite;
     box-shadow: 5px 5px 30px gold;
     z-index: 1;
@@ -56,12 +58,13 @@ body {
     &::before {
       content: "";
       position: absolute;
+      top: 100%;
+      left: 50%;
       width: 20px;
       height: 20px;
       background-color: rgb(97, 46, 4);
       border-radius: 50%;
-      top: 100%;
-      left: 50%;
+
       transform: translate(-50%, -50%);
     }
   }
