@@ -6,22 +6,19 @@
 
 .watch {
   position: relative;
-  width: $diameter-watch;
-  height: $diameter-watch;
+  width: $diameter-dot;
+  height: $diameter-dot;
   box-shadow: 2px 3px 3px 3px rgba(0, 0, 255, 0.2);
   border-radius: 50%;
-  
+
   &__second-hand {
     @extend %position-center;
     width: 3px;
     height: 200px;
-    background-color: rgba(0, 0, 255, 0.3);
+    background-color: rgba(0, 0, 255, 1);
     border-radius: 4px;
-    animation-name: rotation;
-    animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    transform-origin: bottom right;
+    animation: rotation 60s linear infinite;
+    transform-origin: bottom;
   }
 
   &__minute-hand {
@@ -30,18 +27,15 @@
     height: 150px;
     background-color: rgba(0, 0, 255, 0.4);
     border-radius: 4px;
-    animation-name: rotation;
-    animation-duration: 3600s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    transform-origin: bottom right;
+    animation: rotation 3600s linear infinite;
+    transform-origin: bottom;
   }
 
   &__dot {
     @extend %position-center;
     width: $diameter-dot;
     height: $diameter-dot;
-    background-color: rgb(80, 80, 255);
+    background-color: rgba(0, 0, 255, 1);
     border-radius: 50%;
   }
 }
