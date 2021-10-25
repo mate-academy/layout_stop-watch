@@ -1,39 +1,43 @@
 .clock {
 
   &__dot {
-    border-radius: 50%;
-    width: $dot-size;
-    height: $dot-size;
-    background-color: #2f4f4f;
     @extend %center;
     z-index: 1;
-   
+
+    width: $dot-size;
+    height: $dot-size;
+
+    border-radius: 50%;
+    background-color: $c-main-grey;
+    
     transform: translate(-50%, -50%);
   }
 
   &__form {
+    @extend %center;
+    z-index: 0;
+
+    width: $clock-size;
+    height: $clock-size;
+
     border-radius: 50%;
     background-color: #ebe2e2;
-    width: 300px;
-    height: 300px;
-    z-index: 0;
     box-shadow: 5px 2px 12px 6px rgba(185, 185, 204, 0.2);
     border: 1px solid #fff;
-    @extend %center;
-
+    
     transform: translate(-50%, -50%);
   }
 
   &__seconds {
     @extend %center;
-
-    background: #d3687a;
-    border-radius: 10px;
-    box-shadow: 7px 2px 10px 2px rgba(88, 88, 134, 0.2);
     width: 3px;
     height: 120px;
-    transform-origin: top center;
 
+    background: #d3687a;
+    border-radius: $line-radius;
+    box-shadow: $line-shadow;
+    
+    transform-origin: top center;
     animation: go-round 60s linear infinite;
   }
 
@@ -42,11 +46,12 @@
 
     width: 4px;
     height: 90px;
-    background: #2f4f4f;
-    border-radius: 10px;
-    box-shadow: 7px 2px 10px 2px rgba(88, 88, 134, 0.2);
-    transform-origin: top center;
 
+    background: $c-main-grey;
+    border-radius: $line-radius;
+    box-shadow: $line-shadow;
+
+    transform-origin: top center;
     animation: go-round 3600s linear infinite;
 
   }
@@ -54,9 +59,9 @@
 
 @keyframes go-round {
   from {
-    transform: rotate(-180deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
   }
 }
