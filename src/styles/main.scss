@@ -1,8 +1,8 @@
 @mixin arrow-properties {
-  width: 8px;
   position: absolute;
-  border-radius: 15px;
   left: 50%;
+  width: 8px;
+  border-radius: 15px;
   transform-origin: 50% 100%;
 }
 
@@ -17,55 +17,52 @@ body {
 }
 
 .main {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 .clock {
+  position: relative;
   min-width: 700px;
   min-height: 700px;
   border: 5px solid gold;
   border-radius: 50%;
-  position: relative;
   background-color: rgb(223, 219, 219);
   box-shadow: 10px 10px 100px gold;
 
-  &-arrow {
+  &__arrow {
     @include arrow-properties();
-  }
 
-  &__arrow_minutes {
-    height: 150px;
-    background-color: rgb(104, 37, 7);
-    top: 30%;
-
-    animation: clock 3600s linear infinite;
-    box-shadow: 10px 10px 100px rgb(14, 8, 3);
-  }
-
-  &__arrow_seconds {
-    top: 10%;
-    height: 290px;
-    width: 5px;
-    background-color: rgb(211, 167, 46);
-
-    animation: clock 60s linear infinite;
-    box-shadow: 5px 5px 30px gold;
-    z-index: 1;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      width: 20px;
-      height: 20px;
-      background-color: rgb(97, 46, 4);
-      border-radius: 50%;
-
-      transform: translate(-50%, -50%);
+    &--minutes {
+      height: 150px;
+      background-color: rgb(104, 37, 7);
+      top: 30%;
+      animation: clock 3600s linear infinite;
+      box-shadow: 10px 10px 100px rgb(14, 8, 3);
+    }
+  
+    &--seconds {
+      top: 10%;
+      height: 290px;
+      width: 5px;
+      background-color: rgb(211, 167, 46);
+      animation: clock 60s linear infinite;
+      box-shadow: 5px 5px 30px gold;
+      z-index: 1;
+  
+      &::before {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: rgb(97, 46, 4);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 }
