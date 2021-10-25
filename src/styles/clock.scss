@@ -1,0 +1,37 @@
+.clock {
+  @include circle($clock-size);
+  background: radial-gradient(
+    circle,
+    $light-blue-color 60%,
+    $main-pink-color 100%
+  );
+  border: 10px solid $main-pink-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__minute {
+    @include arrow($minute-arrow-size, $main-pink-color, 3600s);
+  }
+
+  &__second {
+    @include arrow($second-arrow-size, $main-blue-color, 60s);
+  }
+
+  &__center {
+    @include circle($center-size);
+    background-color: $main-blue-color;
+    z-index: 1;
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

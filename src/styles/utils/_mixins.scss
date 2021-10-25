@@ -1,0 +1,20 @@
+@mixin arrow($size, $color, $time) {
+  position: absolute;
+  width: $arrows-width;
+  height: $size;
+  background-color: $color;
+  border-radius: 10px;
+
+  bottom: 50%;
+  animation-name: clock;
+  animation-duration: $time;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: bottom center;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
