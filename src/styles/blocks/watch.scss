@@ -16,28 +16,27 @@
   align-items: center;
   background-image: $watch-color;
 
-  &__minutes-clockwise {
+  &__clockwise {
     position: absolute;
     bottom: 50%;
-    height: 150px;
     width: 5px;
     border-radius: 30%;
-    background-color: $minutes-color;
 
     transform-origin: bottom;
-    animation: move 3600s linear infinite;
-  }
 
-  &__seconds-clockwise {
-    position: absolute;
-    bottom: 50%;
-    height: 220px;
-    width: 5px;
-    border-radius: 30%;
-    background-color: $seconds-color;
+    &--minutes {
+      height: 150px;
+      background-color: $minutes-color;
 
-    transform-origin: bottom;
-    animation: move 60s linear infinite;
+      animation: move 3600s linear infinite;
+    }
+
+    &--seconds {
+      height: 220px;
+      background-color: $seconds-color;
+
+      animation: move 60s linear infinite;
+    }
   }
 
   &__center {
