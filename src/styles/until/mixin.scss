@@ -1,11 +1,11 @@
-@mixin clock-hand($hand-height, $hand-width, $c-hand, $hand-dur) {
+@mixin clock-hand($arrow-height, $arrow-width, $color-hand, $hand-dur) {
   position: absolute;
   border-radius: 5px;
   bottom: 50%;
   left: 50%;
-  height: $hand-height;
-  width: $hand-width;
-  background-color: $c-hand;
+  height: $arrow-height ;
+  width: $arrow-width;
+  background-color: $color-hand;
   animation-name: hand;
   animation-duration: $hand-dur;
   transform-origin: bottom;
