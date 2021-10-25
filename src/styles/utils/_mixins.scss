@@ -1,0 +1,21 @@
+@mixin hand-position($size, $height, $widht) {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  height: $height;
+  width: $widht;
+
+  border-radius: 6px;
+
+  transform-origin: bottom;
+}
+
+@mixin dot-size($size) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  height: $size;
+  width: $size;
+}

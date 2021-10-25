@@ -1,0 +1,40 @@
+.clock {
+  width: 100%;
+  height: 100%;
+  border: 2px solid $seconds-bg-color;
+  border-radius: 50%;
+
+  &__dot {
+    @include dot-size($dot-size);
+
+    border-radius: 50%;
+    background: $dot-bg-color;
+    z-index: 3;
+  }
+
+  &__seconds {
+    @include hand-position($container-size, $seconds-heigth, $hand-width);
+
+    background-color: $minute-bg-color;
+    z-index: 2;
+    animation: circuit 60s linear infinite;
+  }
+
+  &__minute {
+    @include hand-position($container-size, $minute-heigth, $hand-width);
+
+    background: $seconds-bg-color;
+    z-index: 1;
+    animation: circuit 3600s linear infinite;
+  }
+}
+
+@keyframes circuit {
+  0% {
+    transform: translate(50%,-100%) rotate(0deg) ;
+    
+  }
+  100% {
+    transform: translate(50%,-100%) rotate(360deg) ;
+  }
+}
