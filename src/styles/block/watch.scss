@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+}
+
+.watch {
+  position: relative;
+  width: $diameter-dot;
+  height: $diameter-dot;
+  box-shadow: 2px 3px 3px 3px rgba(0, 0, 255, 0.2);
+  border-radius: 50%;
+
+  &__second-hand {
+    @extend %position-center;
+    width: 3px;
+    height: 200px;
+    background-color: rgba(0, 0, 255, 1);
+    border-radius: 4px;
+    animation: rotation 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__minute-hand {
+    @extend %position-center;
+    width: 5px;
+    height: 150px;
+    background-color: rgba(0, 0, 255, 0.4);
+    border-radius: 4px;
+    animation: rotation 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__dot {
+    @extend %position-center;
+    width: $diameter-dot;
+    height: $diameter-dot;
+    background-color: rgba(0, 0, 255, 1);
+    border-radius: 50%;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: translate(-50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%) rotate(360deg);
+  }
+}
