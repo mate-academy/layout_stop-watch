@@ -1,0 +1,39 @@
+.stopwatch {
+  position: relative;
+  background-color: $stopwatch-color;
+  border: 5px solid $border-color;
+  border-radius: 30%;
+
+  &__seconds {
+    @include facade-arrow($seconds-height, $seconds-width,
+    $arrow-border-radius, $seconds-color);
+    @include position-arrow($additional-space, $seconds-left, 2);
+
+    animation: arrow-animation 60s linear infinite;
+  }
+
+  &__minutes {
+    @include facade-arrow($minutes-height, $minutes-width,
+    $arrow-border-radius, $minutes-color);
+    @include position-arrow($minutes-top, $minutes-left, 1);
+
+    animation: arrow-animation 3600s linear infinite;
+  }
+
+  &__center {
+    @include facade-arrow($center-size, $center-size, 50%, $seconds-color);
+    @include position-arrow($center-top, $center-left, 3);
+  }
+}
+
+@keyframes arrow-animation {
+  0% {
+    transform-origin: bottom center;
+    transform: rotate(0);
+  }
+
+  100% {
+    transform-origin: bottom center;
+    transform: rotate(360deg);
+  }
+}
