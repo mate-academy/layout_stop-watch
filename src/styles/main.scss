@@ -2,57 +2,6 @@ body {
   margin: 0;
 }
 
-@keyframes rotate {
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
-
-.page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.clock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 500px;
-  width: 500px;
-  border: 2px solid;
- 
-  &__dot {
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    background-color: #38a1c7;
-    z-index: 1;
-  }
-
-  &__hand-big {
-    height: 50%;
-    left: 49%;
-    position: absolute;
-    top: 2%;
-    transform-origin: 55% 96%;
-    width: 2%;
-    border-radius: 5px;
-    background-color: #38a1c7;
-    animation: rotate 60s infinite steps(60);
-  }
-
-  &__hand-small {
-    height: 40%;
-    left: 49%;
-    position: absolute;
-    top: 12%;
-    transform-origin: 55% 96%;
-    width: 2%;
-    border-radius: 5px;
-    background-color: #dc574e;
-    animation: rotate 3600s infinite steps(60);
-  }
-}
+@import './variables';
+@import './mixins';
+@import './clock';
