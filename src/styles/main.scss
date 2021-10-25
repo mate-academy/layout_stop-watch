@@ -1,0 +1,58 @@
+:root {
+  --clock-size: 500px;
+  --hand-width: calc(var(--clock-size) / 100);
+  --second: 1s;
+  --minute: calc(var(--second) * 60);
+  --hour: calc(var(--minute) * 60);
+}
+
+@keyframes rotate {
+  from { transform: rotate(0); }
+  to { transform: rotate(1turn); }
+}
+
+.clock {
+  position: relative;
+  width: var(--clock-size);
+  height: var(--clock-size);
+  border-radius: 50%;
+  background-color:mediumpurple;
+  margin: 150px auto;
+  position: relative;
+  transform: rotate(180deg);
+  --setTimeHour: 00;
+  --setTimeMinute: 00;
+
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - var(--hand-width) / 2);
+  width: var(--hand-width);
+  background-color: white;
+  transform-origin: center 0;
+  border-radius: calc(var(--hand-width) / 2);
+
+
+  // doesn't work(
+  &::before {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+  }
+
+  &-second {
+    animation: rotate steps(60) var(--minute) infinite;
+    height: 186px;
+  }
+
+  &-minute {
+    animation: rotate linear var(--hour) infinite;
+    height: 130px;
+  }
+}
