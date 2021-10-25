@@ -1,0 +1,69 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 70px 0;
+
+  background-color: #fff;
+}
+
+.watch {
+  position: relative;
+
+  width: 400px;
+  height: 400px;
+  background-color: rgb(190, 190, 190); /*#0f52ba ruby*/
+
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.33);
+
+  &__second {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 2px;
+    height: 180px;
+    background-color: #b83c2c;
+    
+    border-radius: 1px;
+
+    transform-origin: top center;
+    animation: spin 60s linear infinite;
+  }
+
+  &__minute {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 4px;
+    height: 160px;
+    background-color: rgba(100, 23, 23, 1);
+
+    border-radius: 2px;
+    transform-origin: top center;
+    animation: spin 3600s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    left: 48%;
+    top: 48%;
+    z-index: infinite;
+
+    width: 16px;
+    height: 16px;
+    background-color: #161616;
+
+    border-radius: 50%;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(-180deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  }
+}
