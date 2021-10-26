@@ -3,27 +3,23 @@
   justify-content: center;
   padding: 70px 0;
 
-  background-color: #fff;
+  background-color: $main-color;
 }
 
 .watch {
   position: relative;
-
-  width: 400px;
-  height: 400px;
-  background-color: rgb(190, 190, 190); /*#0f52ba ruby*/
+  @extend %watch-size;
+  background-color: $watch-color;
 
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.33);
+  box-shadow: 8px 8px 16px 0 $shadow-color;
 
   &__second {
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    @extend %position-center;
 
     width: 2px;
     height: 180px;
-    background-color: #b83c2c;
+    background-color: $arrow-color-big;
     
     border-radius: 1px;
 
@@ -32,13 +28,11 @@
   }
 
   &__minute {
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    @extend %position-center;
 
     width: 4px;
     height: 160px;
-    background-color: rgba(100, 23, 23, 1);
+    background-color: $arrow-color-small;
 
     border-radius: 2px;
     transform-origin: top center;
@@ -46,16 +40,15 @@
   }
 
   &__center {
-    position: absolute;
-    left: 48%;
-    top: 48%;
+    @extend %position-center;
     z-index: infinite;
 
     width: 16px;
     height: 16px;
-    background-color: #161616;
+    background-color: $center-color;
 
     border-radius: 50%;
+    transform: translate(-50%, -50%);
   }
 
   @keyframes spin {
