@@ -1,25 +1,25 @@
-$minute-col: rgb(117, 117, 230);
-$sec-color: rgb(199, 87, 87);
+$minute-color: rgb(117, 117, 230);
+$seconds-color: rgb(199, 87, 87);
 $stop-watch-size: 300px;
 $arrow-radius: 20px;
 
-@mixin anim ($name, $dur, $time-func, $delay, $count) {
+@mixin animation ($name, $dur, $time-func, $delay, $count) {
   animation: $name $dur $time-func $delay $count;
 }
 
-%half-pos {
-  left: 50%;
+%half-position {
+  left: 25%;
   top: 50%;
 }
 
 %arrow-size {
-  width: 150px;
-  height: 5px;
+  height: 150px;
+  width: 5px;
 }
 
-%main-pos {
-  transform-origin: left center;
-  transform: rotate(-90deg);
+%main-position {
+  transform-origin: top center;
+  transform: rotate(180deg);
 }
 
 @mixin square($size) {
@@ -40,45 +40,45 @@ $arrow-radius: 20px;
 
   &__center {
     position: absolute;
-    @extend %half-pos;
+    left:50%;
+    top: 50%;
     @include square(15px);
     border-radius: 50%;
-    background-color: $minute-col;
+    background-color: $minute-color;
   }
 
   &__minutes {
-    position: relative;
-    left: 50%;
-    top: 0%;
+    position: absolute;
+    @extend %half-position;
 
-    @extend %main-pos;
-    @include anim (move, 3600s, steps(60, start), 60s, infinite);
+    @extend %main-position;
+    @include animation (move, 3600s, linear, 0s, infinite);
 
     @extend %arrow-size;
-    background-color: $minute-col;
+    background-color: $minute-color;
     border-radius: $arrow-radius;
   }
 
   &__seconds {
     z-index: -1;
     position: relative;
-    @extend %half-pos;
+    @extend %half-position;
     border-radius: $arrow-radius;
 
-    @extend %main-pos;
-    @include anim (move, 60s, steps(60, start), 0.5s, infinite);
+    @extend %main-position;
+    @include animation (move, 60s, steps(60, start), 0.5s, infinite);
 
     @extend %arrow-size;
-    background-color: $sec-color;
+    background-color: $seconds-color;
   }
 }
 
 @keyframes move {
   from {
-    transform: rotate(-90deg);
+    transform: rotate(180deg);
   }
 
   to {
-    transform: rotate(270deg);
+    transform: rotate(540deg);
   }
 }
