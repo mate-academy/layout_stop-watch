@@ -1,0 +1,20 @@
+@mixin item-animation($name, $duration,
+$iteration-count, $timing-function,
+$transofrm-origin) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration-count;
+  animation-timing-function: $timing-function;
+  transform-origin: $transofrm-origin;
+}
+
+@mixin item-size ($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin item-position ($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}

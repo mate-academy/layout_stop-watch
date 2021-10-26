@@ -1,0 +1,43 @@
+.watch {
+  &__container {
+    position: relative;
+  }
+
+  &__point {
+    width: $point-side-size;
+    height: $point-side-size;
+    border-radius: 50%;
+    background-color: #04202c;
+  }
+
+  &__minute-hand {
+    z-index: -1;
+
+    border-radius: 10px;
+    background-color: #5b7065;
+
+    @include item-size ($hand-width, $hand-minute-height);
+    @include item-position (absolute, $minute-hand-indent, $left-hands-indent);
+    @include item-animation(spin, 3600s, infinite, linear, bottom);
+  }
+
+  &__second-hand {
+    z-index: -1;
+
+    border-radius: 10px;
+    background-color: #304040;
+
+    @include item-size ($hand-width, $hand-second-height);
+    @include item-position (absolute, $second-hand-indent, $left-hands-indent);
+    @include item-animation(spin, 60s, infinite, linear, bottom);
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
