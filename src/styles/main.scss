@@ -36,7 +36,6 @@ body {
     background-color: aqua;
     animation: time 3600s linear infinite;
     transform-origin: bottom;
-    z-index: 1;
   }
 
   &__second-arrow {
@@ -50,12 +49,11 @@ body {
     background-color: white;
     animation: time 60s linear infinite;
     transform-origin: bottom;
-    z-index: 2;
   }
 
   &__center {
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
 
     height: 50px;
@@ -64,7 +62,7 @@ body {
     border-radius: 50%;
     background-color: white;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 1;
   }
 }
 
