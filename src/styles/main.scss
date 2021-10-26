@@ -1,3 +1,8 @@
+@import "mixins";
+
+$second-color: #4c9aaa;
+$minute-color: #62d400;
+
 .clock {
   display: flex;
   justify-content: center;
@@ -9,15 +14,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 300px;
-  border: 10px double #7e5858;
-  box-shadow: rgba(163, 177, 198, 0.5) -32px -32px 64px 0, rgb(255, 255, 255) 16px 16px 32px 0;
+  box-shadow: 20px 15px 200px black;
 
   &-second {
     position: absolute;
     top: 160px;
     width: 5px;
     height: 300px;
-    background-color: #4c9aaa;
+    background-color: $second-color;
     border-radius: 5px;
     animation: clock-animation 60s steps(60, end) infinite;
     transform-origin: bottom;
@@ -28,18 +32,18 @@
     top: 260px;
     width: 10px;
     height: 200px;
-    background-color: #d15659;
+    background-color: $minute-color;
     border-radius: 5px;
     animation: clock-animation 3600s infinite;
+    animation-timing-function: linear;
     transform-origin: bottom;
   }
 
   &-center {
+    @include center-size;
     position: absolute;
-    width: 30px;
-    height: 30px;
     border-radius: 50%;
-    background-color: #4c9aaa;
+    background-color: $second-color;
   }
 }
 
