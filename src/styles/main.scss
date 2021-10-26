@@ -1,0 +1,53 @@
+.clock {
+  position: relative;
+  background-color: lightblue;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+
+  @mixin hands($hand-height, $hand-width) {
+    position: absolute;
+    border-radius: 20px;
+    width: $hand-width;
+    height: $hand-height;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transform-origin: bottom center;
+  }
+
+  &__minute-hand {
+    @include hands(195px, 5px);
+    background-color: lightseagreen;
+    z-index: 1;
+    animation: spin 3600s linear infinite;
+  }
+
+  &__second-hand {
+    @include hands(195px, 2px);
+    background-color: lightsalmon;
+    z-index: 2;
+    animation: spin 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background-color: grey;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+}
