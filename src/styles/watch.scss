@@ -1,6 +1,9 @@
 $clock-size: 500px;
 $minutes-hand-height: $clock-size / 4;
 $seconds-hand-height: $clock-size / 2.5;
+$clock-color: #ccf;
+$hands-color: #000;
+$borders-color: #fff;
 
 %positioning {
   position: absolute;
@@ -8,9 +11,9 @@ $seconds-hand-height: $clock-size / 2.5;
   left: 50%;
 }
 
-.conteiner {
-  height: 100vh;
+.container {
   width: 100%;
+  height: 100vh;
 
   &__clock {
     width: $clock-size;
@@ -21,47 +24,55 @@ $seconds-hand-height: $clock-size / 2.5;
 
 .clock {
   position: relative;
+
   border-radius: 50%;
-  background-color: #ccccff;
+  background-color: $clock-color;
 
   &__minutes-hand {
     @extend %positioning;
 
-    border-radius: 5px;
-    height: $minutes-hand-height;
     width: 10px;
-    background-color: #000;
+    height: $minutes-hand-height;
+
+    background-color: $hands-color;
+    border: 1px solid $borders-color;
+    border-radius: 5px;
+
     animation-name: watch-hand;
     animation-duration: 3600s;
-    transform-origin: bottom;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    transform-origin: bottom;
   }
 
   &__seconds-hand {
     @extend %positioning;
 
-    border-radius: 5px;
-    height: $seconds-hand-height;
     width: 8px;
-    background-color: #000;
+    height: $seconds-hand-height;
+
+    background-color: $hands-color;
+    border: 1px solid $borders-color;
+    border-radius: 5px;
+
     animation-name: watch-hand;
     animation-duration: 60s;
-    transform-origin: bottom;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    transform-origin: bottom;
   }
 
   &__dot {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    border-radius: 50%;
-    transform: translate(-30%, 50%);
-    height: 25px;
+    @extend %positioning;
+
     width: 25px;
-    border: 1px solid #fff;
-    background-color: black;
+    height: 25px;
+
+    background-color: $hands-color;
+    border: 1px solid $borders-color;
+    border-radius: 50%;
+
+    transform: translate(-30%, 50%);
   }
 }
 
