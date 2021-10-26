@@ -1,9 +1,16 @@
 @import "./utils/variables";
-@import "./utils/mixins";
 
 @keyframes rotate {
   from { transform: rotate(0); }
   to { transform: rotate(1turn); }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: oldlace;
 }
 
 .clock {
@@ -17,7 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @include clock;
+  flex-shrink: 0;
   
   &-center {
     width: 100px;
