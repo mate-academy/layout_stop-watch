@@ -1,4 +1,4 @@
-body {
+.body {
   background-color: $black-bgc;
   justify-content: center;
   align-items: center;
@@ -10,44 +10,57 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 4px dashed rgb(39, 97, 172);
+
+  
   position: relative;
   height: $watch-hw;
   width: $watch-hw;
+
+  border: 4px dashed rgb(39, 97, 172);
   border-radius: $circle-radius;
+
   background-color: $purple-black-bgc;
   box-shadow: $purple-big-shadow;
   
 
   &__min {
-    position: $absolute-position;
-    height: $minute-height;
-    width: $minute-width;
+    position: absolute;
+    height: 250px;
+    width: 6px;
+
     border-radius: $hand-radius;
+
     background-color: $red-bgc;
     box-shadow: $red-shadow;
+
     animation: rotation 3600s linear infinite;
     z-index: 1;
   }
 
   &__sec {
-    position: $absolute-position;
-    height: $second-height;
-    width: $second-width;
+    position: absolute;
+    height: 330px;
+    width: 3px;
+
     border-radius: $hand-radius;
+
     background-color: $purple-bgc;
     box-shadow: $purple-shadow;
+
     animation: rotation 60s linear infinite;
     z-index: 2;
   }
 
   &__center {
-    position: $absolute-position;
+    position: absolute;
     height: $center-hw;
     width: $center-hw;
+
     border-radius: $circle-radius;
+
     background-color: $purple-bgc;
     box-shadow: $purple-shadow;
+
     z-index: 3;
   }
 }
