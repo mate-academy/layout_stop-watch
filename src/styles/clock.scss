@@ -1,0 +1,69 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+}
+
+.clock {
+  box-sizing: border-box;
+  position: relative;
+  background-color: wheat;
+  border: 2px dotted saddlebrown;
+  border-radius: 50%;
+ 
+  @include size ($clock-height, $clock-width);
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    @include size (25px, 25px);
+
+    z-index: 1;
+    border-radius: 50%;
+    background-color: $main-color;
+  
+  }
+
+  &__hand-big {
+    position: absolute;
+    left: 50%;
+    
+    height: 50%;
+    width: $hand-width;
+    
+    border-radius: $hand-border-radius;
+    background-color: $main-color;
+    animation: rotate 60s infinite steps(60);
+  }
+
+  &__hand-small {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+
+    height: 40%;
+    width: $hand-width;
+
+    border-radius: $hand-border-radius;
+    background-color: $second-color;
+    animation: rotate 3600s infinite steps(60);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%) rotate(0deg);
+    transform-origin: bottom center;
+  }
+
+  to {
+    transform: translate(-50%) rotate(360deg);
+    transform-origin: bottom center;
+  }
+}
