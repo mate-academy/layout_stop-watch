@@ -1,5 +1,7 @@
 .watch {
-  position: relative;
+  &__container {
+    position: relative;
+  }
 
   &__point {
     width: $point-side-size;
@@ -9,39 +11,25 @@
   }
 
   &__minute-hand {
-    position: absolute;
     z-index: -1;
-
-    width: $hand-width;
-    height: $hand-minute-height;
-
-    top: $top-hands-indent - $hand-minute-height;
-    left: $left-hands-indent;
 
     border-radius: 10px;
     background-color: #5b7065;
 
-    transform-origin: bottom;
-
-    @include animation(spin, 3600s, infinite, linear);
+    @include item-size ($hand-width, $hand-minute-height);
+    @include item-position (absolute, $minute-hand-indent, $left-hands-indent);
+    @include item-animation(spin, 3600s, infinite, linear, bottom);
   }
 
   &__second-hand {
-    position: absolute;
     z-index: -1;
-
-    width: $hand-width;
-    height: $hand-second-height;
-  
-    top: $top-hands-indent - $hand-second-height;
-    left: $left-hands-indent;
 
     border-radius: 10px;
     background-color: #304040;
 
-    transform-origin: bottom;
-
-    @include animation(spin, 60s, infinite, linear);
+    @include item-size ($hand-width, $hand-second-height);
+    @include item-position (absolute, $second-hand-indent, $left-hands-indent);
+    @include item-animation(spin, 60s, infinite, linear, bottom);
   }
 
   @keyframes spin {
