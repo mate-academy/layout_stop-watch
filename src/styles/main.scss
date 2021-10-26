@@ -1,10 +1,5 @@
-:root {
-  --clock-size: 500px;
-  --hand-width: calc(var(--clock-size) / 100);
-  --second: 1s;
-  --minute: calc(var(--second) * 60);
-  --hour: calc(var(--minute) * 60);
-}
+@import "./utils/variables";
+@import "./utils/mixins";
 
 @keyframes rotate {
   from { transform: rotate(0); }
@@ -12,23 +7,22 @@
 }
 
 .clock {
-  width: var(--clock-size);
-  height: var(--clock-size);
+  width: $clock-size;
+  height: $clock-size;
   border-radius: 50%;
   background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
   linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
   linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);  
-  margin: 150px auto;
-  position: relative;
   transform: rotate(180deg);
   display: flex;
   justify-content: center;
   align-items: center;
+  @include clock;
   
   &-center {
     width: 100px;
     height: 100px;
-    background-color: yellow;
+    background-color: rgb(10, 8, 8);
     border-radius: 100%;
     opacity: .3;
   }
@@ -37,18 +31,18 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: var(--hand-width);
-    background-color: white;
+    width: $hand-width;
+    background-color: rgb(2, 1, 1);
     transform-origin: center 0;
-    border-radius: calc(var(--hand-width) / 2);
+    border-radius: calc((#{$hand-width}) / 2);
   
     &-second {
-      animation: rotate steps(60) var(--minute) infinite;
+      animation: rotate steps(60) $minute infinite;
       height: 186px;
     }
   
     &-minute {
-      animation: rotate linear var(--hour) infinite;
+      animation: rotate linear $hour infinite;
       height: 130px;
     }
   }
