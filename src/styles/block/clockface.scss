@@ -1,0 +1,53 @@
+.clockface {
+  @extend %middle;
+
+  height: $clock-size;
+  width: $clock-size;
+  background-color: blue;
+  border-radius: 50%;
+  
+  &__minute-arrow {
+    @extend %center;
+
+    height: $minute-arrow-height;
+    width: $minute-arrow-width;
+
+    background-color: aqua;
+    border-radius: 5px;
+    animation: time 3600s linear infinite;
+    transform-origin: bottom;
+  }
+  
+  &__second-arrow {
+    @extend %center;
+
+    height: $second-arrow-height;
+    width: $second-arrow-width;
+    
+    background-color: white;
+    border-radius: 5px;
+    animation: time 60s linear infinite;
+    transform-origin: bottom;
+  }
+  
+  &__center {
+    position: absolute;
+
+    height: $center-size;
+    width: $center-size;
+
+    border-radius: 50%;
+    background-color: white;
+    z-index: 1;
+  }
+}
+
+@keyframes time {
+  0% {
+    transform: rotate(0);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
