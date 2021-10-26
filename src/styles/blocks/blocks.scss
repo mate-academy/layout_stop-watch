@@ -1,0 +1,62 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 70px 0;
+
+  background-color: $main-color;
+}
+
+.watch {
+  position: relative;
+  @extend %watch-size;
+  background-color: $watch-color;
+
+  border-radius: 50%;
+  box-shadow: 8px 8px 16px 0 $shadow-color;
+
+  &__second {
+    @extend %position-center;
+
+    width: 2px;
+    height: 180px;
+    background-color: $arrow-color-big;
+    
+    border-radius: 1px;
+
+    transform-origin: top center;
+    animation: spin 60s linear infinite;
+  }
+
+  &__minute {
+    @extend %position-center;
+
+    width: 4px;
+    height: 160px;
+    background-color: $arrow-color-small;
+
+    border-radius: 2px;
+    transform-origin: top center;
+    animation: spin 3600s linear infinite;
+  }
+
+  &__center {
+    @extend %position-center;
+    z-index: infinite;
+
+    width: 16px;
+    height: 16px;
+    background-color: $center-color;
+
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(-180deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  }
+}
