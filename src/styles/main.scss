@@ -1,0 +1,84 @@
+@import "mixin";
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.clock {
+  background-color: aqua;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+
+  &__border {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include size-clock(600px);
+    background-color: rgb(114, 114, 196);
+    border: 10px dashed rgba(0, 0, 0, 0.65);
+    box-shadow: 4px 4px 10px rgb(65, 104, 231);
+  }
+
+  &__basic {
+    @include size-clock (500px);
+    background-color: rgb(58, 143, 212);
+    border: 5px dashed rgba(90, 90, 190, 0.39);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  &__arrow-1 {
+    position: absolute;
+    top: 61px;
+    height: 230px;
+    width: 10px;
+    border-radius: 50px;
+    background-color: #f00;
+    transform-origin: bottom;
+    animation: move 60s infinite linear;
+    animation-timing-function: steps(60);
+    z-index: 1;
+  }
+
+  &__arrow-2 {
+    position: absolute;
+    top: 93px;
+    height: 200px;
+    width: 14px;
+    border-radius: 50px;
+    background-color: rgb(110, 5, 5);
+    transform-origin: bottom;
+    animation: move 3600s infinite linear;
+  }
+
+  &__center {
+    position: absolute;
+    @include size-clock (30px);
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+}
