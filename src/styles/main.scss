@@ -40,7 +40,7 @@ $arrow-radius: 20px;
 
   &__center {
     position: absolute;
-    left:50%;
+    left: 50%;
     top: 50%;
     @include square(15px);
     border-radius: 50%;
@@ -52,7 +52,7 @@ $arrow-radius: 20px;
     @extend %half-position;
 
     @extend %main-position;
-    @include animation (move, 3600s, linear, 0s, infinite);
+    @include animation (clock-rotation, 3600s, linear, 0s, infinite);
 
     @extend %arrow-size;
     background-color: $minute-color;
@@ -66,19 +66,19 @@ $arrow-radius: 20px;
     border-radius: $arrow-radius;
 
     @extend %main-position;
-    @include animation (move, 60s, steps(60, start), 0.5s, infinite);
+    @include animation (clock-rotation, 60s, steps(60, start), 0s, infinite);
 
     @extend %arrow-size;
     background-color: $seconds-color;
   }
 }
 
-@keyframes move {
+@keyframes clock-rotation {
   from {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(540deg);
+    transform: rotate(360deg);
   }
 }
