@@ -1,0 +1,45 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  @include clock($size);
+  perspective: 100px;
+  border: black solid 1px;
+  background-color: rgb(255, 197, 255);
+  border-radius: 50%;
+
+  &__centre {
+    position: absolute;
+    @include centre($size);
+    background-color: purple;
+    border: black 1px solid;
+    border-radius: 50%;
+  }
+
+  &__seconds {
+    position: absolute;
+    left: $string-position;
+    bottom: 50%;
+    width: $string-width;
+    height: 50%;
+    background-color: fuchsia;
+    animation: clockwork 60s linear infinite;
+    border: black 1px solid;
+    border-radius: 5px;
+    animation-timing-function: steps(3600, end);
+  }
+
+  &__minutes {
+    position: absolute;
+    left: $string-position;
+    bottom: 50%;
+    width: $string-width;
+    height: 40%;
+    background-color: fuchsia;
+    animation: clockwork 3600s linear infinite;
+    border: black 1px solid;
+    border-radius: 5px;
+    animation-timing-function: steps(60, end);
+  }
+}
