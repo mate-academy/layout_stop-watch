@@ -1,0 +1,47 @@
+.watch {
+  position: relative;
+  width: 20px;
+  height: 20px;
+
+  &--position--center {
+    margin: 50vh auto;
+  }
+
+  &__hand {
+    position: absolute;
+    left: 25%;
+    bottom: 50%;
+    width: 10px;
+    border-radius: 10px;
+    transform-origin: center bottom;
+  }
+}
+
+.minute {
+  height: 200px;
+  background-color: #d2575e;
+  animation: watch-hand 3600s infinite linear;
+}
+
+.second {
+  height: 300px;
+  background: #4b9aaa;
+  animation: watch-hand 60s infinite linear;
+}
+
+@keyframes watch-hand {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.center {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4b9aaa;
+}
