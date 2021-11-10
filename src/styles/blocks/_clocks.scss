@@ -1,0 +1,111 @@
+.clock {
+  height: $clock-radius;
+  width: $clock-radius;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: $clock-border;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  &__point {
+    position: absolute;
+    height: $clock-point-radius;
+    width: $clock-point-radius;
+    border-radius: 50%;
+    background: $clock-color;
+
+    &--top {
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+
+    &--right {
+      margin: auto 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    &--bottom {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0 auto;
+    }
+
+    &--left {
+      margin: auto 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    &--center {
+      height: $clock-point-radius * 1.5;
+      width: $clock-point-radius * 1.5;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+  
+  &__arrow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    &--hour {
+      animation: time (216000s / #{$clock-speed}) infinite linear;
+      width: 6px;
+      height: 100%;
+      &:before {
+        position: absolute;
+        content: "";
+        background: $clock-color--h;
+        @include ar_hour;
+      }
+    }
+
+    &--minute {
+      animation: time (3600s / #{$clock-speed}) infinite linear;
+      width: 4px;
+      height: 100%;
+    
+      &:before {
+        position: absolute;
+        content: "";
+        background: $clock-color--m;
+        @include ar_min;
+      }
+    }
+
+    &--second {
+      animation: time (60s / #{$clock-speed}) infinite linear;
+      width: 2px;
+      height: 100%;
+
+      &:before {
+        position: absolute;
+        content: "";
+        background: $clock-color--s;
+        @include ar_sec;
+
+      }
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}

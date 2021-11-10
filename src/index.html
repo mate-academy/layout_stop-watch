@@ -6,17 +6,23 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Stop watch</title>
-    <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="stylesheet" href="styles/main.scss">
   </head>
   <body>
     <header>
-      <h1>Stop watch</h1>
     </header>
     <main>
       <div class="clock">
-        <div class="clock__hour"></div>
-        <div class="clock_minute"></div>
-        <div class="clock_second"></div>
+        <div class="clock__point clock__point--top"></div>
+        <div class="clock__point clock__point--bottom"></div>
+        <div class="clock__point clock__point--right"></div>
+        <div class="clock__point clock__point--left"></div>
+        <div class="clock__point clock__point--center"></div>
+        <div class="clock__arrow clock__arrow--minute"></div>
+        <div class="clock__arrow clock__arrow--second"></div>
+        <div class="clock__arrow clock__arrow--hour"></div>
+        <div class="clock__button clock__button--start"></div>
+        <div class="clock__button clock__button--stop"></div>
       </div>
     </main>
   </body>
