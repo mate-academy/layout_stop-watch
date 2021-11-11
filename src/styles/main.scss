@@ -1,0 +1,71 @@
+$sizeClock: 1000px;
+$sizeClockElements: 100px;
+
+@mixin clockSize($sizeClock) {
+  height: $sizeClock;
+  width: $sizeClock;
+}
+
+@mixin clockElements($sizeClockElements) {
+  height: $sizeClockElements;
+  width: $sizeClockElements;
+}
+
+body {
+  margin: 0;
+}
+
+.clockField {
+  @include clockSize($sizeClock);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border: 5px solid #000;
+  border-radius: 50%;
+  background-blend-mode: screen;
+	
+  background: linear-gradient(pink, cyan);
+
+  &__clockMechanism {
+    @include clockElements($sizeClockElements);
+    box-sizing: border-box;
+    border: 5px solid #000;
+    border-radius: 50%;
+    background-color: #858585;
+    z-index: 3;
+  }
+
+  &__minutesArrow {
+    @include clockElements($sizeClockElements);
+    position: absolute;
+    bottom: 50%;
+    height: 400px;
+    width: 30px;
+    border-radius: 100px;
+    background-color: #000;
+    animation: time 3600s linear infinite;
+    transform-origin: bottom;
+    z-index: 1;
+  }
+
+  &__secondsArrow {
+    @include clockElements($sizeClockElements);
+    position: absolute;
+    bottom: 50%;
+    height: 500px;
+    width: 20px;
+    border-radius: 100px;
+    background-color: #000;
+    animation: time 60s linear infinite;
+    transform-origin: bottom;
+    z-index: 2;
+  }
+}
+
+@keyframes time {
+  100% {
+    transform: rotate(360deg);
+  }
+}
