@@ -1,0 +1,46 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  &__center {
+    @include center($center-size);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: $seconds-hand-color;
+  }
+
+  &__minutes-hand {
+    @extend %hands-position;
+    width: $hands-width;
+    height: $minutes-hand-height;
+    background-color: $minutes-hand-color;
+    border-radius: $hands-border-radius;
+    z-index: -2;
+    animation: rotate 3600s infinite steps(60);
+  }
+
+  &__seconds-hand {
+    @extend %hands-position;
+    width: $hands-width;
+    height: $seconds-hand-height;
+    background-color: $seconds-hand-color;
+    border-radius: $hands-border-radius;
+    animation: rotate 60s infinite linear;
+    z-index: -1;
+  }
+
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
