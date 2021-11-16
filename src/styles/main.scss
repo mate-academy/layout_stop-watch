@@ -1,0 +1,56 @@
+$watch: 500px;
+$center: 20px;
+$minute-height: ($watch / 4) - ($center / 2);
+$hands-width: $center / 2;
+$second-height: ($watch / 2) - ($center / 2);
+
+.stop-watch {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin: 0 auto;
+  height: $watch;
+  width: $watch;
+  background-color: #c5d9ed;
+  border-radius: $watch / 2;
+
+  &__minutes {
+    position: absolute;
+    height: $minute-height;
+    width: $hands-width;
+    background-color: #8c8f94;
+    top: ($watch / 2) - $minute-height;
+    border-radius: 70%;
+    transform-origin: bottom;
+    animation: spining 3600s linear 0s infinite normal;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: ($watch / 2) - $second-height;
+    background-color: #2271b1;
+    height: $second-height;
+    width: $hands-width;
+    border-radius: 70%;
+    transform-origin: bottom;
+    animation: spining 60s linear 0s infinite normal;
+  }
+
+  &__center {
+    position: absolute;
+    height: $center;
+    width: $center;
+    top: ($watch / 2) - ($center / 2);
+    border-radius: $center / 2;
+    background-color: #0a4b78;
+  }
+
+  @keyframes spining {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
