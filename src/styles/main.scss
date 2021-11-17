@@ -1,17 +1,13 @@
 
 body {
-  margin: 0;
-}
-
-h1 {
   display: flex;
   justify-content: center;
-  margin: 0;
 }
 
 .watch {
   position: relative;
   height: 700px;
+  width: 700px;
   border: 2px solid red;
   border-radius: 50%;
 
@@ -21,6 +17,7 @@ h1 {
     width: 20px;
     top: 50%;
     left: 50%;
+    transform: translate(-37%, -42%);
     border-radius: 50%;
     background: chocolate;
   }
@@ -29,7 +26,7 @@ h1 {
     position: absolute;
     height: 300px;
     width: 0;
-    bottom: 48%;
+    bottom: 50%;
     left: 50%;
     border: 2px solid pink;
     background: pink;
@@ -51,9 +48,10 @@ h1 {
     position: absolute;
     height: 200px;
     width: 0;
-    bottom: 48%;
+    bottom: 50%;
     left: 50%;
-    border: 4px solid blue;
+    border: 3px solid blue;
+    background: blue;
     border-radius: 10px;
     transform-origin: bottom;
     animation: minute 3600s linear infinite;
