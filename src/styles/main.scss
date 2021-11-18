@@ -33,7 +33,7 @@ $before-right: $before-size / 2;
   position: absolute;
   top: 0;
   left: 0;
-  animation: minute 3600s linear infinite;
+  animation: rotate 3600s linear infinite;
   transform-origin: 0 origin($minut-height);
 
   &::before {
@@ -49,15 +49,6 @@ $before-right: $before-size / 2;
   }
 }
 
-@keyframes minute {
-  0% {
-    transform: rotate(-90deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .watch__second-hand {
   width: 190px;
   height: $second-height;
@@ -66,12 +57,12 @@ $before-right: $before-size / 2;
   position: absolute;
   top: 0;
   left: 0;
-  animation: second 60s linear infinite;
+  animation: rotate 60s linear infinite;
   transform-origin: 0 origin($second-height);
   z-index: -1;
 }
 
-@keyframes second {
+@keyframes rotate {
   0% {
     transform: rotate(-90deg);
   }
