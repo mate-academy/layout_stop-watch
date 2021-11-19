@@ -1,0 +1,72 @@
+$minut-height: 8px;
+$second-height: 6px;
+$before-size: $minut-height * 2;
+$before-bottom: ($before-size - $minut-height) / 2;
+$before-right: $before-size / 2;
+@function origin ($size) {
+  @return $size / 2;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page__container {
+  margin: 0;
+  padding: 0;
+}
+
+.watch {
+  position: relative;
+}
+
+.watch__minute-hand {
+  width: 200px;
+  height: $minut-height;
+  background-color: #00c3ff;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: rotate 3600s linear infinite;
+  transform-origin: 0 origin($minut-height);
+
+  &::before {
+    content: "";
+    width: $before-size;
+    height: $before-size;
+    border-radius: 50%;
+    background-color: #00c3ff;
+    display: block;
+    position: relative;
+    bottom: $before-bottom;
+    right: $before-right;
+  }
+}
+
+.watch__second-hand {
+  width: 190px;
+  height: $second-height;
+  background-color: #f00;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: rotate 60s linear infinite;
+  transform-origin: 0 origin($second-height);
+  z-index: -1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
