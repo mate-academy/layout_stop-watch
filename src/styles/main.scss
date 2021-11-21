@@ -1,0 +1,73 @@
+$dot-size: 30px;
+$clock-size: 500px;
+$minute-width: 10px;
+$second-width: 5px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  border: 5px solid slategrey;
+  border-radius: 50%;
+
+  &__minute-hand {
+    position: absolute;
+    bottom: 50%;
+    left: $clock-size / 2 - 10px;
+    width: $minute-width;
+    height: 200px;
+    border-radius: 5px;
+    transform-origin: bottom;
+    background-color: rgb(38, 98, 158);
+    animation: rotation 3600s linear infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    bottom: 50%;
+    left: $clock-size / 2 - 7px;
+    width: $second-width;
+    height: 150px;
+    border-radius: 5px;
+    transform-origin: bottom;
+    background-color: rosybrown;
+    animation: rotation 60s linear infinite;
+  }
+
+  &__point {
+    height: $dot-size;
+    width: $dot-size;
+    z-index: 3;
+    border-radius: 50%;
+    background-color: rgb(38, 98, 158);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
