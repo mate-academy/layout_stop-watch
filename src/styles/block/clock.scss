@@ -1,0 +1,46 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: $clock-size;
+  height: $clock-size;
+  border-radius: 50%;
+  background-color: rgb(220, 223, 224);
+  box-shadow: 0 0 10px rgba(78, 82, 85, 0.5);
+
+  &__center {
+    position: absolute;
+    align-self: center;
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+    background: $color-blue;
+  }
+
+  &__second {
+    @extend %block-style;
+    height: 40%;
+    background: $color-blue;
+    top: calc(50% - 40%);
+    animation: move 60s infinite steps(60);
+  }
+
+  &__minutes {
+    @extend %block-style;
+    height: 30%;
+    background: $color-red;
+    top: calc(50% - 30%);
+    animation: move 3600s infinite steps(3600);
+  }
+
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
