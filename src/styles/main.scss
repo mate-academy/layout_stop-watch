@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+@mixin square($width, $height) {
+  width: $width;
+  height: $height;
+  left: 50%;
+  top: 50%;
+}
+
+.clock {
+  &__center {
+    position: absolute;
+    @include square(20px, 20px);
+    margin-left: -10px;
+    margin-top: -5px;
+    background-color: #7cd;
+    border-radius: 50%;
+    border: 1px transparent #7cd;
+
+    z-index: 1;
+  }
+
+  &__arrow {
+    @include square(300px, 10px);
+    background-color: #7cd;
+    border-radius: 5px;
+
+    animation-name: clock_arrow;
+    animation-duration: 2s;
+    position: absolute;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &-small {
+      @include square(170px, 10px);
+
+      position: absolute;
+      background-color: #f00;
+      border-radius: 5px;
+
+      animation-name: clock_arrow;
+      animation-duration: 120s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+@keyframes clock_arrow {
+  from {
+    transform: rotate(0);
+    transform-origin: left;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: left;
+  }
+}
