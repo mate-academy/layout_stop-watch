@@ -1,0 +1,20 @@
+@mixin square($width, $height) {
+  position: absolute;
+  width: $width;
+  height: $height;
+  left: 50%;
+  top: 50%;
+}
+
+@mixin arrow (
+  $width,
+  $height,
+  $color,
+  $duration) {
+  @include square($width, $height);
+
+  background-color: $color;
+  border-radius: 5px;
+
+  animation: clock_arrow $duration linear infinite;
+}
