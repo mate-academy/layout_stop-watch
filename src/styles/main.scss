@@ -1,0 +1,79 @@
+$blue-color: #58a3b8;
+$red-color: #a51616;
+$watch-size: 600px;
+$hand-width: 10px;
+$second-hand-height: $watch-size / 2.1;
+$minute-hand-height: $second-hand-height * 0.6;
+
+%hand-params-static {
+  position: absolute;
+  animation-name: move-hand;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60, end);
+}
+
+@mixin hand-params($height, $color, $width) {
+  height: $height;
+  width: $width;
+  background-color: $color;
+
+  top: ($watch-size / 2) - $height + ($width / 2);
+  left: #{($watch-size / 2) - ($width / 2)};
+
+  transform-origin: #{$width / 2} #{$height - ($width / 2)};
+}
+
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+body {
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  @include square($watch-size);
+
+  min-width: $watch-size;
+  position: relative;
+  background-color: #eee;
+
+  &__second-hand {
+    @extend %hand-params-static;
+    @include hand-params($second-hand-height, $blue-color, $hand-width);
+
+    animation-duration: 60s;
+  }
+
+  &__minute-hand {
+    @extend %hand-params-static;
+    @include hand-params($minute-hand-height, $red-color, $hand-width);
+
+    animation-duration: 3600s;
+  }
+
+  &__center {
+    @include square(20px);
+
+    border-radius: 50%;
+    background-color: $blue-color;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes move-hand {
+  100% {
+    transform: rotate(360deg);
+  }
+}
