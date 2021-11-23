@@ -1,0 +1,36 @@
+.clock__circle {
+  &--1 {
+    @extend %centring-circle;
+    @include clock-circle($circle-1-size);
+    border: $circles-border solid  transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.5) inset;
+    z-index: 1;
+  }
+
+  &--2 {
+    @extend %centring-circle;
+    @include clock-circle($circle-2-size);
+    border: $circles-border solid  $background-color;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &--3 {
+    @extend %centring-circle;
+    @include clock-circle($circle-3-size);
+    border: $circles-border solid  transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  &--4 {
+    @extend %centring-circle;
+    @include clock-circle($circle-4-size);
+    border: $circles-border solid  transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.4) inset;
+    z-index: 1;
+  }
+}

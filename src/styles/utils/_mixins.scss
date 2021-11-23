@@ -1,0 +1,23 @@
+@mixin clock-circle($size) {
+  width: $size;
+  height: $size;
+}
+
+%centring-minutes-hand {
+  position: absolute;
+  top: calc(50% - #{$minutes-height} / 2);
+  left: 50%;
+}
+
+%centring-seconds-hand {
+  position: absolute;
+  top: calc(50% - #{$seconds-height} / 2);
+  left: 50%;
+}
+
+%centring-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
