@@ -1,29 +1,24 @@
-@import "./utils/_mixins.scss";
-@import "./utils/_animations.scss";
+@import "./utils/mixins.scss";
+@import "./utils/animations.scss";
 @import "./utils/reset";
 
 .clock {
   &__center {
     @include clock_element(20px, 20px, #7cd, 50%);
-
     margin-left: -10px;
     margin-top: -5px;
-
     border: 1px transparent #7cd;
   }
 
   &__arrow {
     &--big {
       @include clock_element(300px, 10px, #7cd, 5px);
-
       animation: clock_arrow 2s linear infinite;
     }
 
     &--small {
       @include clock_element(170px, 10px, #f00, 5px);
-
       animation: clock_arrow 120s linear infinite;
-
       z-index: -1;
     }
   }
