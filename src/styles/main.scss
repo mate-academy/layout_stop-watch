@@ -1,0 +1,80 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.clock {
+  display: flex;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: gray;
+
+  &:after {
+    position: relative;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: blue;
+    border-radius: 50%;
+    top: calc(50% - 8px);
+    left: calc(50% - 8px);
+  }
+}
+
+.sec {
+  position: absolute;
+  top: 0;
+  left: 146px;
+  display: flex;
+  justify-content: center;
+  width: 8px;
+  height: 150px;
+  animation-name: sec;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: 4px 150px;
+
+  &:after {
+    content: "";
+    width: 8px;
+    height: 150px;
+    background-color: blue;
+    border-radius: 4px;
+  }
+}
+
+.minute {
+  position: absolute;
+  top: 50px;
+  left: 146px;
+  display: flex;
+  justify-content: center;
+  width: 8px;
+  height: 100px;
+  animation-name: sec;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: 4px 100px;
+
+  &:after {
+    content: "";
+    width: 8px;
+    height: 100px;
+    background-color: crimson;
+    border-radius: 4px;
+  }
+}
+
+@keyframes sec {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
