@@ -2,13 +2,14 @@
   $width,
   $height,
   $color,
-  $border-radius) {
+  $border-radius,
+  $duration) {
   position: absolute;
   width: $width;
   height: $height;
   left: 50%;
   top: 50%;
-
   background-color: $color;
   border-radius: $border-radius;
+  animation: clock_arrow $duration linear infinite;
 }

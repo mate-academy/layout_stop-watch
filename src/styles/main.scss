@@ -4,7 +4,7 @@
 
 .clock {
   &__center {
-    @include clock_element(20px, 20px, #7cd, 50%);
+    @include clock_element(20px, 20px, #7cd, 50%, 0);
     margin-left: -10px;
     margin-top: -5px;
     border: 1px transparent #7cd;
@@ -12,13 +12,11 @@
 
   &__arrow {
     &--big {
-      @include clock_element(300px, 10px, #7cd, 5px);
-      animation: clock_arrow 2s linear infinite;
+      @include clock_element(300px, 10px, #7cd, 5px, 2s);
     }
 
     &--small {
-      @include clock_element(170px, 10px, #f00, 5px);
-      animation: clock_arrow 120s linear infinite;
+      @include clock_element(170px, 10px, #f00, 5px, 120s);
       z-index: -1;
     }
   }
