@@ -9,10 +9,19 @@
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
   <body>
-    <div class="clock">
-      <div class="clock__arrow"></div>
+    <main class="clock">
+      <input
+        type="checkbox"
+        id="start__button"
+        name="start__button"
+        class="clock__button"
+        checked>
+      <label for="start__button" class="clock__button-label">
+        Start
+      </label>
+      <div class="clock__arrow clock__arrow--big"></div>
       <div class="clock__center"></div>
-      <div class="clock__arrow-small"></div>
-    </div>
+      <div class="clock__arrow clock__arrow--small"></div>
+    </main>
   </body>
 </html>

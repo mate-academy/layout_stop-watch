@@ -4,27 +4,46 @@
 
 .clock {
   &__center {
-    @include square(20px, 20px);
+    @include clock_element(20px, 20px, #7cd, 50%);
 
     margin-left: -10px;
     margin-top: -5px;
 
-    background-color: #7cd;
-    border-radius: 50%;
     border: 1px transparent #7cd;
-
-    z-index: 1;
-
-    &:hover {
-      animation-name: none;
-    }
   }
 
   &__arrow {
-    @include arrow(300px, 10px, #7cd, 2s);
+    &--big {
+      @include clock_element(300px, 10px, #7cd, 5px);
 
-    &-small {
-      @include arrow(170px, 10px, #f00, 120s);
+      animation: clock_arrow 2s linear infinite;
+    }
+
+    &--small {
+      @include clock_element(170px, 10px, #f00, 5px);
+
+      animation: clock_arrow 120s linear infinite;
+
+      z-index: -1;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    &:checked ~ .clock__arrow {
+      animation-play-state: paused;
+    }
+
+    &-label {
+      position: absolute;
+      top: 70%;
+      left: 10%;
+      padding: 10px 15px;
+      background-color: #20e945;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
     }
   }
 }
