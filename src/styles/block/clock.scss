@@ -3,11 +3,20 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  width: $clock-size;
-  height: $clock-size;
+  min-width: $clock-size;
+  min-height: $clock-size;
   border-radius: 50%;
   background-color: rgb(220, 223, 224);
   box-shadow: 0 0 10px rgba(78, 82, 85, 0.5);
+  transition: all 1s ease;
+  
+  @media (max-width: 699px) {
+    transform: scale(0.7);
+  }
+
+  @media (max-width: 499px) {
+    transform: scale(0.5);
+  }
 
   &__center {
     position: absolute;
