@@ -1,20 +1,14 @@
-* {
-  box-sizing: border-box;
-}
-
-@mixin square($width, $height) {
-  width: $width;
-  height: $height;
-  left: 50%;
-  top: 50%;
-}
+@import "./utils/_mixins.scss";
+@import "./utils/_animations.scss";
+@import "./utils/reset";
 
 .clock {
   &__center {
-    position: absolute;
     @include square(20px, 20px);
+
     margin-left: -10px;
     margin-top: -5px;
+
     background-color: #7cd;
     border-radius: 50%;
     border: 1px transparent #7cd;
@@ -23,39 +17,10 @@
   }
 
   &__arrow {
-    @include square(300px, 10px);
-    background-color: #7cd;
-    border-radius: 5px;
-
-    animation-name: clock_arrow;
-    animation-duration: 2s;
-    position: absolute;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    @include arrow(300px, 10px, #7cd, 2s);
 
     &-small {
-      @include square(170px, 10px);
-
-      position: absolute;
-      background-color: #f00;
-      border-radius: 5px;
-
-      animation-name: clock_arrow;
-      animation-duration: 120s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
+      @include arrow(170px, 10px, #f00, 120s);
     }
-  }
-}
-
-@keyframes clock_arrow {
-  from {
-    transform: rotate(0);
-    transform-origin: left;
-  }
-
-  to {
-    transform: rotate(360deg);
-    transform-origin: left;
   }
 }
