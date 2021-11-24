@@ -1,0 +1,52 @@
+body {
+  margin: $top-margin;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.surface__clock {
+  width: $clock-sise;
+  height: $clock-sise;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  background-color: $back-color;
+  border: 2px solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: 20px 20px 10px $shadow-color;
+
+  &__seconds {
+    @include arrow(
+      $seconds-border,
+      $second-color,
+      $seconds-timing,
+      $seconds-height,
+      $seconds-top
+    );
+  }
+
+  &__minutes {
+    @include arrow(
+      $minutes-border,
+      $minute-color,
+      $minutes-timing,
+      $minutes-height,
+      $minutes-top
+    );
+  }
+
+  &__center {
+    position: absolute;
+    height: $center-sise;
+    width: $center-sise;
+    top: $center-top;
+
+    border-radius: $border-radius;
+    background-color: $minute-color;
+  }
+}

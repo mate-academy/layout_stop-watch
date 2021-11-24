@@ -1,0 +1,12 @@
+@mixin arrow($border, $color, $timing, $height, $top) {
+  position: absolute;
+  border-radius: $border;
+  background-color: $color;
+
+  top: $top;
+  height: $height;
+  width: $border;
+
+  animation: rotation $timing linear infinite;
+  transform-origin: bottom;
+}

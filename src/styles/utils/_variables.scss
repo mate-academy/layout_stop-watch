@@ -1,0 +1,25 @@
+$clock-sise: 600px;
+$seconds-timing: 60s;
+$minutes-timing: 3600s;
+
+$top-margin: calc(#{$clock-sise} * 0.2);
+$border-radius: 50%;
+
+$back-color: #fae5c7;
+$border-color: #c7a477;
+$minute-color: #b62e2e;
+$second-color: #811ce5;
+$shadow-color: #f5deb3;
+
+$seconds-border: calc(#{$clock-sise} * 0.01);
+$minutes-border: calc(#{$clock-sise} * 0.02);
+
+$seconds-height: calc(#{$clock-sise} * 0.45);
+$minutes-height: calc(#{$clock-sise} * 0.25);
+$center-sise: calc(#{$clock-sise} * 0.04);
+
+$seconds-top:
+  calc(#{$top-margin} + ((#{$clock-sise} / 2) - #{$seconds-height}));
+$minutes-top:
+  calc(#{$top-margin} + ((#{$clock-sise} / 2) - #{$minutes-height}));
+$center-top: calc(#{$top-margin} + ((#{$clock-sise} - #{$center-sise}) / 2));
