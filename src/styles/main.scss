@@ -1,0 +1,62 @@
+.watch {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.minutes {
+  position: absolute;
+  height: 200px;
+  width: 10px;
+  background-color: red;
+  border-radius: 50px;
+  transform-origin: bottom;
+  animation-duration: 3600s;
+  animation-name: watch;
+  animation-timing-function: linear;
+}
+
+.seconds {
+  position: absolute;
+  height: 200px;
+  width: 10px;
+  background-color: blue;
+  border-radius: 50px;
+  transform-origin: bottom;
+  animation-duration: 60s;
+  animation-name: watch2;
+  animation-iteration-count: 60;
+  animation-timing-function: linear;
+}
+
+.circle {
+  height: 40px;
+  width: 40px;
+  background-color: blue;
+  border-radius: 50%;
+  margin-top: 175px;
+  z-index: 2;
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes watch2 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
