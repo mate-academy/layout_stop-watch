@@ -1,0 +1,66 @@
+@keyframes clock-hand-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 200px;
+
+  &__minute {
+    width: 5px;
+    height: 400px;
+    background-color: black;
+    margin-bottom: 200px;
+    border-radius: 10px;
+    animation: clock-hand-rotate 3600s linear infinite;
+    transform-origin: center bottom 0;
+  }
+
+  &__second {
+    width: 4px;
+    height: 200px;
+    background-color: red;
+    animation: clock-hand-rotate 60s linear infinite;
+    transform-origin: center bottom 0;
+  }
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 586px;
+
+    width: 30px;
+    height: 30px;
+    background-color: #00acdc;
+    border-radius: 50%;
+
+    transition: 0.5s;
+  }
+
+  &__check {
+    display: none;
+  }
+
+  &__center:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+  }
+
+  &__check:checked ~ .clock__second {
+    animation-play-state: paused;
+  }
+
+  &__check:checked ~ .clock__minute {
+    animation-play-state: paused;
+  }
+}
