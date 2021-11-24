@@ -1,0 +1,59 @@
+@import "./utils/variables";
+
+@keyframes rotate {
+  from { transform: rotate(0); }
+  to { transform: rotate(1turn); }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: oldlace;
+}
+
+.clock {
+  border-radius: 50%;
+  background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+  linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);  
+  transform: rotate(180deg);
+  
+  &__size-position {
+    width: $clock-size;
+    height: $clock-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  &-center {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(10, 8, 8);
+    border-radius: 100%;
+    opacity: .3;
+  }
+
+  &-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $hand-width;
+    background-color: rgb(2, 1, 1);
+    transform-origin: center 0;
+    border-radius: calc((#{$hand-width}) / 2);
+  
+    &-second {
+      animation: rotate steps(60) $minute infinite;
+      height: 186px;
+    }
+  
+    &-minute {
+      animation: rotate linear $hour infinite;
+      height: 130px;
+    }
+  }
+}
