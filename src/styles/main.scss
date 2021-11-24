@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 @mixin circle($size) {
   width: $size;
   height: $size;
@@ -24,6 +19,32 @@
   top: 8vh;
   background-color: black;
   @include circle(600px);
+
+  &__toggle {
+    margin-left: 150px;
+
+    &::after {
+      content: " ";
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-color: orange;
+      border-radius: 100px;
+      color: white;
+      position: absolute;
+      left: 132px;
+      top: 270px;
+    }
+
+    &:checked ~ .clock__minute {
+      animation-play-state: paused;
+    }
+    
+    &:checked ~ .clock__hour {
+      animation-play-state: paused;
+    }
+    
+  }
 
   &__hour {
     width: 10px;
