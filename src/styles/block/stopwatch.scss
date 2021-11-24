@@ -1,0 +1,40 @@
+.stopWatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(224, 118, 18);
+  border-radius: 50%;
+
+  &__minutes {
+    position: absolute;
+    width: 13px;
+    height: 140px;
+    background-color: rgb(27, 79, 223);
+    border-radius: 30px;
+    bottom: 50%;
+    animation-duration: 3600s;
+    @include watch;
+  }
+
+  &__seconds {
+    position: absolute;
+    width: 12px;
+    height: 170px;
+    background-color: rgb(103, 214, 248);
+    border-radius: 30px;
+    bottom: 50%;
+    animation-duration: 60s;
+    @include watch;
+  }
+
+  &__center {
+    position: absolute;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(163, 5, 71);
+  }
+}
