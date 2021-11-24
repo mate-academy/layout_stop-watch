@@ -1,0 +1,46 @@
+
+.watch {
+  position: relative;
+
+  @include square ($watch-side, 16px);
+
+  background-color: #ffc0cb;
+  border: 1px solid #bfbfbf;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    z-index: 3;
+ 
+    @include square($watch-center-size, 50%);
+    
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minutes-hand {
+    @include hands-style;
+
+    z-index: 2;
+
+    height: 80px;
+
+    background-color: #3498db;
+
+    animation: clockwise 3600s linear infinite;
+  }
+
+  &__seconds-hand {
+    @include hands-style;
+
+    z-index: 1;
+
+    height: 120px;
+
+    background-color: #45bf55;
+
+    animation: clockwise 60s linear infinite;
+  }
+}

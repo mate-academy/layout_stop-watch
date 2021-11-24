@@ -1,0 +1,16 @@
+@mixin square($size, $radius) {
+  width: $size;
+  height: $size;
+  border-radius: $radius;
+}
+
+@mixin hands-style {
+  position: absolute;
+  bottom: 50%;
+  left: $center-position;
+
+  width: $hand-width;
+  border-radius: 8px;
+
+  transform-origin: bottom center;
+}
