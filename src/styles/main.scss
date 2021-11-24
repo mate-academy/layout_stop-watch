@@ -1,0 +1,57 @@
+@import "mixins";
+
+$second-color: #4c9aaa;
+$minute-color: #62d400;
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto;
+  width: 800px;
+  height: 800px;
+  background-image: url("https://blog.mate.academy/wp-content/uploads/2019/03/logo_square_small.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 300px;
+  box-shadow: 20px 15px 200px black;
+
+  &-second {
+    position: absolute;
+    top: 160px;
+    width: 5px;
+    height: 300px;
+    background-color: $second-color;
+    border-radius: 5px;
+    animation: clock-animation 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &-minute {
+    position: absolute;
+    top: 260px;
+    width: 10px;
+    height: 200px;
+    background-color: $minute-color;
+    border-radius: 5px;
+    animation: clock-animation 3600s infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+
+  &-center {
+    @include center-size (30px, 30px);
+    position: absolute;
+    border-radius: 50%;
+    background-color: $second-color;
+  }
+}
+
+@keyframes clock-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
