@@ -1,0 +1,58 @@
+@import "../utils/variables";
+
+.clock {
+  width: 420px;
+  height: 420px;
+  border: 4px outset rgb(97, 52, 0);
+  margin: 150px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+
+  &__center {
+    width: 30px;
+    height: 30px;
+    background: $blue;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__minute {
+    position: absolute;
+    margin-top: -$heigth * 0.75;
+
+    height: $heigth * 0.75;
+    width: $width * 2;
+    background: $red;
+    animation: stop-watch 3600s linear infinite;
+    transform-origin: bottom;
+    border-radius: 25%;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  &__second {
+    position: absolute;
+    margin-top: -$heigth;
+    z-index: 1;
+
+    height: $heigth;
+    width: $width;
+    background: $blue;
+    animation: stop-watch 60s linear infinite;
+    animation-timing-function: steps(60, end);
+    transform-origin: bottom;
+    border-radius: 25%;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes stop-watch {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
