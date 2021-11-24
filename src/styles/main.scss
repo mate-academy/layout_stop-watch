@@ -1,18 +1,54 @@
 body {
-  margin: 300px;
+  display: flex;
+  justify-content: center;
+  background-color: #d6d6d691;
 }
 
 .watch {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: flex-start;
+  box-sizing: border-box;
+  background-color: black;
+  cursor: pointer;
+  padding: 300px;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  box-shadow: 10px 5px 5px grey;
+  background-image: none;
+  transition: 2s;
+
+  &:hover {
+    background-color: #2f4f4f;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url("../images/img.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    height: 90%;
+    width: 90%;
+    opacity: 0;
+    left: 0;
+    transition: opacity 2s;
+    top: 10%;
+    z-index: 2;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
 
   &__circle {
     position: absolute;
     z-index: 1;
     width: 20px;
     height: 20px;
-    background-color: red;
+    background-color: white;
     border-radius: 100px;
   }
 
@@ -20,7 +56,7 @@ body {
     position: absolute;
     width: 10px;
     height: 200px;
-    background-color: rgb(196, 170, 170);
+    background-color: white;
     border-radius: 20px;
     transform-origin: 5px 6px;
     animation: rotate-min 3600s linear infinite;
@@ -28,9 +64,10 @@ body {
   }
 
   &__seconds {
+    position: absolute;
     width: 10px;
     height: 300px;
-    background-color: rgb(91, 117, 235);
+    background-color: white;
     border-radius: 20px;
     transform-origin: 5px 6px;
     animation: rotate-sec 60s linear infinite;
