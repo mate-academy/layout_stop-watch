@@ -4,10 +4,10 @@
   align-items: center;
 }
 
-$watch-radius: 500px;
-$wraper-radius: $watch-radius * 1.1;
-$big-arrow-height: $watch-radius / 2;
-$small-arrow-height: $watch-radius / 3;
+$watch-diameter: 500px;
+$wraper-radius: $watch-diameter * 1.1;
+$big-arrow-height: $watch-diameter / 2;
+$small-arrow-height: $watch-diameter / 3;
 
 .page {
   @include flex-position;
@@ -29,15 +29,15 @@ $small-arrow-height: $watch-radius / 3;
 .watch {
   @include flex-position;
   position: relative;
-  width: $watch-radius;
-  height: $watch-radius;
+  width: $watch-diameter;
+  height: $watch-diameter;
   border-radius: 50%;
   background-color: rgb(139, 154, 224);
 
   &::before {
     position: absolute;
     content: "";
-    top: $watch-radius / 2 - $small-arrow-height;
+    top: $watch-diameter / 2 - $small-arrow-height;
     width: 12px;
     height: $small-arrow-height;
     border-radius: 12px;
@@ -49,7 +49,7 @@ $small-arrow-height: $watch-radius / 3;
   &::after {
     position: absolute;
     content: "";
-    top: $watch-radius / 2 - $big-arrow-height;
+    top: $watch-diameter / 2 - $big-arrow-height;
     width: 6px;
     height: $big-arrow-height;
     border-radius: 6px;
