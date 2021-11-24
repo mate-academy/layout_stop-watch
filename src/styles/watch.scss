@@ -1,0 +1,87 @@
+$clock-size: 500px;
+$minutes-hand-height: $clock-size / 4;
+$seconds-hand-height: $clock-size / 2.5;
+$clock-color: #ccf;
+$hands-color: #000;
+$borders-color: #fff;
+
+%positioning {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  &__clock {
+    width: $clock-size;
+    height: $clock-size;
+    margin: 50px auto;
+  }
+}
+
+.clock {
+  position: relative;
+
+  border-radius: 50%;
+  background-color: $clock-color;
+
+  &__minutes-hand {
+    @extend %positioning;
+
+    width: 10px;
+    height: $minutes-hand-height;
+
+    background-color: $hands-color;
+    border: 1px solid $borders-color;
+    border-radius: 5px;
+
+    animation-name: watch-hand;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+
+  &__seconds-hand {
+    @extend %positioning;
+
+    width: 8px;
+    height: $seconds-hand-height;
+
+    background-color: $hands-color;
+    border: 1px solid $borders-color;
+    border-radius: 5px;
+
+    animation-name: watch-hand;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+
+  &__dot {
+    @extend %positioning;
+
+    width: 25px;
+    height: 25px;
+
+    background-color: $hands-color;
+    border: 1px solid $borders-color;
+    border-radius: 50%;
+
+    transform: translate(-30%, 50%);
+  }
+}
+
+@keyframes watch-hand {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
