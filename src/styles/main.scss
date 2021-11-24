@@ -30,7 +30,8 @@ $point-size: 30px;
     left: calc(50% - #{$element-width / 2});
     height: $second-height;
     background-color: rgb(46, 151, 232);
-    animation-duration: 1s;
+    animation-duration: 60s;
+
     z-index: 2;
   }
 
@@ -40,19 +41,19 @@ $point-size: 30px;
     left: calc(50% - #{$element-width / 2});
     height: $minuts-height;
     background-color: rgb(237, 90, 115);
-    animation-duration: 60s;
+    animation-duration: 3600s;
     z-index: 1;
   }
-}
 
-@keyframes clockRotate {
-  0% {
-    transform-origin: bottom center;
-    transform: rotate(0deg);
-  }
+  @keyframes clockRotate {
+    0% {
+      transform-origin: bottom center;
+      transform: rotate(0deg);
+    }
 
-  100% {
-    transform-origin: bottom center;
-    transform: rotate(360deg);
+    100% {
+      transform-origin: bottom center;
+      transform: rotate(360deg);
+    }
   }
 }
