@@ -3,7 +3,7 @@
   @include circle($wraper-diameter);
 
   position: relative;
-  background-color: rgb(65, 83, 95);
+  background-color: $color-dark-grey;
 
   &__button {
     display: none;
@@ -15,16 +15,18 @@
 
     position: absolute;
     top: $wraper-diameter / 2 - 25px;
-    background-color: rgba(65, 83, 95, 0.7);
-    color: rgb(233, 177, 72);
-    border: 3px solid rgb(233, 177, 72);
+    background-color: $color-dark-grey;
+    opacity: 0.7;
+    color: $color-orange;
+    border: 3px solid $color-orange;
     cursor: pointer;
     z-index: 1;
-    transition-duration: 0.3s;
+    transition: transform 0.3s, background-color 1s, opacity 0.3s;
 
     &:hover {
-      background-color: rgb(65, 83, 95);
       transform: scale(1.4);
+      background-color: $color-dark-grey;
+      opacity: 1;
     }
 
     &:active {
