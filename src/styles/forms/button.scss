@@ -1,0 +1,30 @@
+.checkbox {
+  position: relative;
+  z-index: -1;
+  opacity: 0;
+
+  & + label::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  & + label .arrow--min {
+    animation: clockArrow 3600s infinite steps(3600) ;
+    animation-play-state: paused;
+  }
+
+  & + label .arrow--hour {
+    animation: clockArrow 60s infinite steps(60);
+    animation-play-state: paused;
+  }
+
+  &:checked + label .arrow--min,
+  &:checked + label .arrow--hour {
+    animation-play-state: running;
+  }
+}
