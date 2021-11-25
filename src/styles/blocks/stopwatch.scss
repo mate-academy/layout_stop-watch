@@ -1,0 +1,59 @@
+.stopwatch {
+  box-sizing: content-box;
+  position: relative;
+  width: $watch-radius * 2;
+  height: $watch-radius * 2;
+  border: #{$watch-radius / 30} dashed #bbb;
+  border-radius: 50%;
+
+  &__button {
+    @include flexer;
+
+    position: absolute;
+    top: #{$watch-radius * 1.4};
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    height: #{$watch-radius / 5};
+    width: $watch-radius;
+    background-color: #999;
+    border-radius: 15%;
+    font-size: #{$watch-radius / 10};
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked ~ .stopwatch__arrow {
+      animation-play-state: paused;
+    }
+  }
+
+  &__arrow--small {
+    position: absolute;
+    top: #{$watch-radius / 2};
+    @include position-x-center;
+
+    width: #{$watch-radius / 15};
+    height: #{$watch-radius / 2};
+    background-color: #333;
+    border-radius: 20%;
+
+    animation: watch-arrow 60s linear infinite;
+  }
+
+  &__arrow--big {
+    position: relative;
+    z-index: 1;
+    top: #{$watch-radius *0.2};
+    @include position-x-center;
+
+    width: #{$watch-radius / 15};
+    height: #{$watch-radius * 0.8};
+    background-color: #000;
+    border-radius: 20%;
+
+    animation: watch-arrow 1s linear infinite;
+  }
+}
