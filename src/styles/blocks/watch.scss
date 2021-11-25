@@ -1,0 +1,71 @@
+.stopwatch {
+  @include area($watch-size);
+  border: 1px solid black;
+  position: relative;
+  border-radius: 50%;
+
+  %origin {
+    transform-origin: 50% bottom;
+  }
+
+  &__center {
+    @include area($watch-size * 0.06);
+    background-color: $color-blue;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  &__minute {
+    position: absolute;
+    left: 194px;
+    top: 80px;
+    @include area($watch-size * 0.03, $watch-size * 0.3);
+    background-color: $color-red;
+    border-radius: 5px;
+    @extend %origin;
+    z-index: 1;
+    animation-name: minute-arrow;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__second {
+    @include area($watch-size * 0.03, $watch-size * 0.45);
+    background-color: $color-blue;
+    border-radius: 5px;
+    position: absolute;
+    left: 194px;
+    top: 20px;
+    @extend %origin;
+    z-index: 2;
+    animation-name: second-arrow;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes second-arrow {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minute-arrow {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
