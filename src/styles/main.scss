@@ -1,13 +1,6 @@
-$element-width: 10px;
-$second-height: 200px;
-$minuts-height: 150px;
-$point-size: 30px;
-%clock-style {
-  position: absolute;
-  width: $element-width;
-  border-radius: 4px;
-  animation: clockRotate infinite linear;
-}
+@import "./utils/variables";
+@import "./utils/animation";
+@import "./utils/clock-style";
 
 .container {
   &__point {
@@ -28,29 +21,16 @@ $point-size: 30px;
     height: $second-height;
     background-color: rgb(46, 151, 232);
     animation-duration: 60s;
-
     z-index: 2;
   }
 
-  &__minuts {
+  &__minutes {
     @extend %clock-style;
-    top: calc(50% - #{$minuts-height});
+    top: calc(50% - #{$minutes-height});
     left: calc(50% - #{$element-width / 2});
-    height: $minuts-height;
+    height: $minutes-height;
     background-color: rgb(237, 90, 115);
     animation-duration: 3600s;
     z-index: 1;
-  }
-
-  @keyframes clockRotate {
-    0% {
-      transform-origin: bottom center;
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform-origin: bottom center;
-      transform: rotate(360deg);
-    }
   }
 }
