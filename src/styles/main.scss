@@ -1,0 +1,94 @@
+$height-sec-hand: 230px;
+$height-min-hand: 170px;
+$width-sec-hand: 3px;
+$width-min-hand: 6px;
+$watch-size: 500px;
+$half-watch: $watch-size / 2;
+$center-size: 30px;
+
+@mixin animation($duration, $timing-function) {
+  animation: move;
+  animation-duration: $duration;
+  animation-timing-function: $timing-function;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__watch {
+    position: relative;
+  }
+}
+
+.watch {
+  height: $watch-size;
+  width: $watch-size;
+  
+  border-radius: 50%;
+  border: 5px solid #384661;
+  background-color: #dbc6b5;
+  box-sizing: border-box;
+
+  &__check {
+    display: none;
+
+    &:checked ~ * {
+      animation-play-state: paused;
+    }
+  }
+
+  &__min-hand {
+    height: $height-min-hand;
+    width: $width-min-hand;
+
+    border-radius: 15px;
+    background-color: #f2f3ee;
+
+    position: absolute;
+    top: $half-watch - $height-min-hand;
+    left: $half-watch - $width-min-hand / 2;
+
+    @include animation(3600s, linear);
+
+  }
+
+  &__sec-hand {
+    height: $height-sec-hand;
+    width: $width-sec-hand;
+
+    border-radius: 15px;
+    background-color: #384661;
+
+    position: absolute;
+    top: $half-watch - $height-sec-hand;
+    left: $half-watch - $width-sec-hand / 2;
+
+    @include animation(60s, steps(60, end));
+  }
+
+  &__center {
+    height: $center-size;
+    width: $center-size;
+
+    border-radius: 50%;
+    background-color: #384661;
+
+    position: absolute;
+    top: $half-watch - $center-size / 2;
+    left: $half-watch - $center-size / 2;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
