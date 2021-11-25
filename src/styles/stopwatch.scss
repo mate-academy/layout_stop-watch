@@ -1,0 +1,49 @@
+@import "./utils/variables";
+@import "./utils/animations";
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+
+  border: 15px solid $c-primary;
+  border-radius: 50%;
+  background-color: #c869ee;
+  background-image: $watchbg;
+  background-size: 10%;
+
+  &__minutes {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    width: 10px;
+    height: 250px;
+
+    border: 2px solid $c-primary;
+    background-color: rgba($color: $c-primary, $alpha: 0.8);
+
+    animation: clock 3600s infinite linear;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    box-sizing: border-box;
+    width: 6px;
+    height: 250px;
+
+    background-color: rgba($color: $c-primary, $alpha: 0.8);
+    border: 1px solid $c-primary;
+
+    animation: clock 60s infinite linear;
+    transform-origin: bottom;
+  }
+
+  &:hover &__seconds {
+    animation-play-state: paused;
+  }
+
+  &:hover &__minutes {
+    animation-play-state: paused;
+  }
+}
