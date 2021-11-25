@@ -1,0 +1,40 @@
+.wrapper {
+  @include flex-position;
+  @include circle($wraper-diameter);
+
+  background-color: rgb(65, 83, 95);
+
+  &__button {
+    display: none;
+  }
+
+  &__button-label {
+    @include flex-position;
+    @include circle(50px);
+
+    position: absolute;
+    top: 10px;
+    background-color: rgb(65, 83, 95);
+    color: rgb(233, 177, 72);
+    border: 3px solid rgb(233, 177, 72);
+    cursor: pointer;
+    z-index: 1;
+    transition-duration: 0.3s;
+
+    &:hover {
+      background-color: rgba(65, 83, 95, 0.7);
+    }
+
+    &:active {
+      background-color: green;
+    }
+  }
+
+  &__button:checked ~ .watch::after {
+    animation-play-state: paused;
+  }
+
+  &__button:checked ~ .watch::before {
+    animation-play-state: paused;
+  }
+}
