@@ -1,0 +1,39 @@
+@import "./utils/animations";
+@import "./utils/mixins";
+
+.stopwatch {
+  &__reset-button {
+    margin-right: 20px;
+    text-decoration: none;
+    @include button(10px, white, red, 5px);
+  }
+
+  &__start-button {
+    display: none;
+
+    &:checked ~ .hands {
+      animation-play-state: paused;
+    }
+
+    &-label::before {
+      content: "Start/Pause";
+      cursor: pointer;
+      @include button(10px, white, green, 5px);
+    }
+  }
+
+  &__central-wheel {
+    @include stopwatch-part(400px, 400px, 40px, 40px, blue);
+    border-radius: 50%;
+  }
+
+  &__seconds-hand {
+    @include stopwatch-part(120px, 415px, 10px, 300px, blue);
+    animation: 60s linear infinite rotation;
+  }
+
+  &__minutes-hand {
+    @include stopwatch-part(250px, 415px, 10px, 170px, red);
+    animation: 3600s linear infinite rotation;
+  }
+}
