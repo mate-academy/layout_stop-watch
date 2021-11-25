@@ -1,0 +1,13 @@
+@mixin clockStyle($hight, $width, $color, $radius) {
+  position: absolute;
+
+  width: $width;
+  height: $hight;
+  background-color: $color;
+  border-radius: $radius;
+}
+
+@mixin shiftToCenter($hight, $width,) {
+  top: calc(50% - #{$hight});
+  left: calc(50% - #{$width / 2});
+}
