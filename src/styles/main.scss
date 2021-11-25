@@ -1,0 +1,50 @@
+@import "./utils/normalize";
+@import "./utils/variables";
+@import "./utils/mixin";
+@import "./animations.scss";
+
+.watch {
+  &__center-point {
+    @include watch_element(20px, 20px, $firs-line-color, 50%, 0);
+    margin-left: -10px;
+    margin-top: -5px;
+    border: 1px transparent $firs-line-color;
+  }
+
+  &__line {
+    &--big {
+      @include watch_element(200px, 10px, $firs-line-color, 5px, 3s);
+    }
+
+    &--small {
+      @include watch_element(120px, 10px, $second-line-color, 5px, 50s);
+      z-index: -1;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    &:checked ~ .watch__line {
+      animation-play-state: paused;
+    }
+
+    &-label {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      height: 70px;
+      top: 80%;
+      left: 47%;
+      padding: 10px 15px;
+      background-color: $firs-line-color;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $second-line-color;
+      }
+    }
+  }
+}
