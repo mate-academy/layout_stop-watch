@@ -1,8 +1,5 @@
-@mixin circle($size) {
-  width: $size;
-  height: $size;
-  border-radius: 50%;
-}
+@import "./animation.scss";
+@import "./mixins.scss";
 
 .body {
   display: flex;
@@ -39,11 +36,11 @@
     &:checked ~ .clock__minute {
       animation-play-state: paused;
     }
-    
+
     &:checked ~ .clock__hour {
       animation-play-state: paused;
     }
-    
+
   }
 
   &__hour {
@@ -80,16 +77,5 @@
     position: absolute;
     left: 290px;
     background-color: white;
-  }
-}
-
-@keyframes move {
-
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 }
