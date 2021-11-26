@@ -19,7 +19,8 @@
     @include shiftToCenter($hight-minute, $width-arrows);
 
     transform-origin: bottom ;
-    animation: round 60s steps(60, jump-none) infinite;
+    animation: round 3600s linear infinite;
+
   }
 
   &__second {
@@ -27,7 +28,8 @@
     @include shiftToCenter($hight-second, $width-arrows);
 
     transform-origin: bottom;
-    animation: round 1s linear infinite;
+    animation: round 60s steps(60, jump-none) infinite;
+
   }
 
   &__checkbox {
