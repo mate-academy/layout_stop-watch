@@ -1,5 +1,6 @@
 @import "./utils/reset";
 @import "./animations.scss";
+@import "./utils/mixin";
 
 .clock {
   display: flex;
@@ -9,28 +10,13 @@
   position: relative;
 
   &__center {
-    width: 20px;
-    height: 20px;
+    @include clock (20px, 20px, calc(50% - 8px), calc(50% - 5px), #6c6cc2, 50%);
 
-    position: absolute;
-    left: calc(50% - 5px);
-    top: 293px;
-
-    background-color: #6c6cc2;
-    border-radius: 50%;
     z-index: 2;
   }
 
   &__minute-hand {
-    width: 10px;
-    height: 120px;
-
-    position: absolute;
-    left: 50%;
-    top: 300px;
-
-    background-color: #cf4c4c;
-    border-radius: 10px;
+    @include clock (10px, 120px, 50%, 50%, #cf4c4c, 10px);
 
     animation: rotation 60s steps(60) infinite;
     animation-play-state: paused;
@@ -38,15 +24,8 @@
   }
 
   &__second-hand {
-    width: 10px;
-    height: 240px;
+    @include clock (10px, 240px, 50%, 50%, #a0a0d8, 10px);
 
-    position: absolute;
-    left: 50%;
-    top: 300px;
-
-    background-color: #a0a0d8;
-    border-radius: 10px;
     z-index: 1;
 
     animation: rotation 1s linear infinite;
