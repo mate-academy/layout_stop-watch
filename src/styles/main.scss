@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 400px;
+  width: 400px;
+  box-sizing: border-box;
+
+  border: 3px solid black;
+  border-radius: 50%;
+  background-color: lightcyan;
+}
+
+.watch::after {
+  display: flex;
+  align-self: flex-start;
+  content: "";
+  height: 20px;
+  width: 3px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.minute {
+  position: absolute;
+  height: 100px;
+  width: 5px;
+  top: 100px;
+  background-color: #d15559;
+  border-radius: 4px;
+
+  transform-origin: bottom;
+  animation: rotate 60s steps(60);
+  animation-iteration-count: infinite;
+}
+
+.second {
+  position: absolute;
+  height: 200px;
+  width: 5px;
+  top: 0;
+  background-color: #4b9aaa;
+  border-radius: 10px;
+
+  transform-origin: bottom;
+  animation: rotate 60s steps(60);
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
