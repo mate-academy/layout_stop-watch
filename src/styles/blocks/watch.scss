@@ -1,0 +1,44 @@
+
+.watch {
+  display: flex;
+  justify-content: center;
+
+  &__minutes {
+    align-self: flex-end;
+    position: absolute;
+
+    @include elment-appearance(
+      $minutes-hand-height,
+      $minutes-hand-width,
+      $minutes-hand-border-radius,
+      $minutes-hand-color
+    );
+
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    @include elment-appearance(
+      $seconds-hand-height,
+      $seconds-hand-width,
+      $seconds-hand-border-radius,
+      $seconds-hand-color
+    );
+
+    animation: move 10s steps(10) infinite;
+    transform-origin: bottom;
+  }
+
+  &__center {
+    position: absolute;
+    top: $center-shift;
+
+    @include elment-appearance(
+      $center-size,
+      $center-size,
+      50%,
+      $center-color
+    );
+  }
+}
