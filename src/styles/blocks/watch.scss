@@ -4,7 +4,7 @@
   background-color: $blue-color;
   width: 400px;
   height: 400px;
-  border-radius: 50%;
+  border-radius: $border-radius;
   display: flex;
   margin: auto;
   justify-content: center;
@@ -18,7 +18,7 @@
     height: 110px;
     top: 90px;
     background: linear-gradient($blue-color, $black-color);
-    border-radius: 50%;
+    border-radius: $border-radius;
     animation: move 3600s linear infinite;
     transform-origin: bottom;
   }
@@ -29,7 +29,7 @@
     background: linear-gradient($blue-color, $black-color);
     position: absolute;
     top: 0;
-    border-radius: 50%;
+    border-radius: $border-radius;
     z-index: 1;
     animation: move 60s linear infinite;
     transform-origin: bottom;
@@ -55,7 +55,7 @@
       height: 40px;
       background-color: #fff;
       content: "";
-      border-radius: 50%;
+      border-radius: $border-radius;
     }
   }
 
@@ -65,7 +65,7 @@
     height: 15px;
     content: "";
     background-color: $black-color;
-    border-radius: 50%;
+    border-radius: $border-radius;
     z-index: 3;
   }
 }
