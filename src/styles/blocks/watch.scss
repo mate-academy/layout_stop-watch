@@ -1,0 +1,46 @@
+.watch {
+  display: flex;
+  margin: auto;
+  height: $watch-size;
+  width: $watch-size;
+  background-color: seashell;
+
+  &__minute-hand {
+    @include watch-parts-position {
+      top: 25%;
+    }
+    height: calc(#{$watch-size} * 0.25);
+    width: 5px;
+    background-color: rgb(201, 76, 76);
+    border-radius: $r-border;
+
+    @include animation-props {
+      animation-duration: 3600s;
+    }
+  }
+
+  &__second-hand {
+    @include watch-parts-position {
+      top: 10%;
+    }
+    height: calc(#{$watch-size} * 0.4);
+    width: 5px;
+    background-color: rgb(50, 116, 110);
+    border-radius: $r-border;
+
+    @include animation-props {
+      animation-duration: 60s;
+    }
+  }
+
+  &__center {
+    @include watch-parts-position {
+      top: 48%;
+      transform: translate(-35%);
+    }
+    height: 20px;
+    width: 20px;
+    background-color: rgb(50, 116, 110);
+    border-radius: $r-border;
+  }
+}
