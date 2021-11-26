@@ -1,0 +1,67 @@
+$radius: 8px;
+$c-blue: rgb(112, 179, 230);
+
+@mixin animation($time) {
+  animation-name: circle;
+  animation-duration: $time;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: bottom;
+}
+
+@mixin parametr($par1, $par2) {
+  width: $par1;
+  height: $par2;
+}
+
+.stopwatch {
+  @include parametr(600px, 600px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.minute {
+  position: absolute;
+  top: 110px;
+
+  @include parametr(10px, 200px);
+
+  background-color: rgb(191, 82, 82);
+  border-radius: $radius;
+
+  @include animation(60s);
+}
+
+.second {
+  position: absolute;
+  top: 10px;
+
+  @include parametr(10px, 300px);
+
+  background-color: $c-blue;
+  border-radius: $radius;
+
+  @include animation(1s);
+}
+
+.dot {
+  @include parametr(25px, 25px);
+
+  background-color: $c-blue;
+  border-radius: 50%;
+
+  align-self: center;
+}
+
+@keyframes circle {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
