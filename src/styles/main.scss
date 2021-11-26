@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  margin: 0;
+
+  &__mins {
+    position: absolute;
+    left: calc(50% - 5px);
+    bottom: 50%;
+    width: 10px;
+    height: 200px;
+    background-color: rgba(0, 174, 255, 1);
+    border-radius: 5px;
+    margin: auto;
+    animation-name: spin;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    transform-origin: 5px 200px;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  &__hours {
+    position: absolute;
+    left: calc(50% - 5px);
+    bottom: 50%;
+    width: 10px;
+    height: 300px;
+    background-color: rgb(255, 0, 128);
+    border-radius: 5px;
+    margin: auto;
+    animation-name: spin;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: 60;
+    transform-origin: 5px 300px;
+  }
+
+  &__center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 174, 255, 1);
+    left: calc(50% - 10px);
+    bottom: calc(50% - 10px);
+  }
+}
