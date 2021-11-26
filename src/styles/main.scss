@@ -29,11 +29,11 @@
 
   &__seconds-hand {
     @include stopwatch-part(120px, 415px, 10px, 300px, blue);
-    animation: 60s linear infinite rotation;
+    animation: 1s linear infinite rotation;
   }
 
   &__minutes-hand {
     @include stopwatch-part(250px, 415px, 10px, 170px, red);
-    animation: 3600s linear infinite rotation;
+    animation: 60s steps(60) infinite rotation;
   }
 }
