@@ -1,0 +1,41 @@
+@import "utils/mixins";
+@import "utils/animation";
+
+.watch {
+  position: relative;
+
+  &__hour-line {
+    @include setup_clock(10px,200px,20px);
+    background-color: rgb(148, 54, 0);
+
+    left: 5px;
+    top: -190px;
+
+    transform-origin: 5px 200px;
+    animation: timer 3600s linear infinite;
+  }
+
+  &__minute-line {
+    @include setup_clock(10px,300px,20px);
+    background-color: rgb(0, 148, 148);
+
+    left: 5px;
+    top: -290px;
+
+    transform-origin: 5px 300px;
+    animation: timer 60s linear infinite;
+  }
+
+  &__point {
+    @include setup_clock(20px,20px,50%);
+    background-color: rgb(0, 148, 148);
+  }
+
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
