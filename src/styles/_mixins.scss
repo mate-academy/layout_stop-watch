@@ -1,0 +1,19 @@
+@mixin animation {
+  animation: move linear infinite;
+  @content;
+}
+
+@mixin position {
+  position: absolute;
+  width: 20px;
+  left: ($clock-size / 2) - ($border * 3);
+  bottom: ($clock-size / 2) - $border;
+  border: 5px solid;
+  background-color: #000000b6;
+  border-radius: 90%;
+}
+
+@mixin border {
+  border: 5px solid;
+  border-radius: 50%;
+}
