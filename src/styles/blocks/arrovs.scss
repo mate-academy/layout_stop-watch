@@ -1,0 +1,64 @@
+.clock {
+  display: flex;
+  @include size-clock($clock-radius);
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 10px;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: flex-end;
+    margin: auto;
+    height: 30px;
+    width: 30px;
+  }
+
+  &__minute,
+  &__second {
+    position: absolute;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    animation-name: move;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom center;
+  }
+
+  &__minute {
+    height: 200px;
+    width: 10px;
+    background-color: red;
+    animation-duration: 3600s;
+  }
+
+  &__second {
+    height: 250px;
+    width: 5px;
+    background-color: green;
+    animation-duration: 60s;
+  }
+
+  &__center {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.body {
+  @extend %flex-centering;
+}
