@@ -1,0 +1,48 @@
+.clock {
+  height: 100vh;
+  position: relative;
+  transform: rotate(180deg);
+
+  &__arr {
+    @extend %position-absolute;
+    width: $line-width;
+    left: 50%;
+    top: 50%;
+
+    &--min {
+      height: 150px;
+      background-color: $color-min;
+      transform-origin: center 0;
+      @include animation($minute);
+    }
+
+    &--sec {
+      height: 300px;
+      display: flex;
+      align-items: flex-end;
+      background-color: $color-sec;
+      transform-origin: center 0;
+      @include animation ($second);
+    }
+  }
+
+  &__dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    @extend %position-absolute;
+    background-color: tomato;
+    top: 49%;
+    left: 49.8%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
