@@ -1,0 +1,36 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include square(200px);
+
+  &__center {
+    position: relative;
+    z-index: 1;
+    @include square(15px);
+    background-color: $blue-color;
+    border-radius: 50%;
+
+    &::before {
+      content: "";
+    }
+  }
+
+  &__minutes {
+    position: absolute;
+    height: 8px;
+    width: 70px;
+    background-color: $red-color;
+    border-radius: 50% 0 0 50%;
+    animation: rotate-min 3600s linear infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    height: 6px;
+    width: 90px;
+    background-color: $blue-color;
+    border-radius: 50% 0 0 50%;
+    animation: rotate-sec 60s linear infinite;
+  }
+}

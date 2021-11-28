@@ -1,0 +1,31 @@
+$blue-color: #80ced6;
+$red-color: #c94c4c;
+
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+@keyframes rotate-sec {
+  from {
+    transform-origin: center right;
+    transform: translateX(-45px) rotate(90deg);
+
+  }
+  to {
+    transform-origin: center right;
+    transform: translateX(-45px) rotate(450deg);
+  }
+}
+
+@keyframes rotate-min {
+  from {
+    transform-origin: center right;
+    transform: translateX(-35px) rotate(90deg);
+
+  }
+  to {
+    transform-origin: center right;
+    transform: translateX(-35px) rotate(450deg);
+  }
+}
