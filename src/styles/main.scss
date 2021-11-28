@@ -1,11 +1,11 @@
-@import './_utils/variables';
-@import './_utils/mixins';
+@import "./_utils/variables";
+@import "./_utils/mixins";
 
 .body {
   margin: 0 auto;
   padding: $paddings;
-
 }
+
 .table {
   display: flex;
   box-sizing: border-box;
@@ -32,7 +32,7 @@
   &__second {
     @include hands-rules;
     width: 5px;
-    background-color:white;
+    background-color: white;
     height: $size / 2 - 10px;
 
     animation-name: seconds;
@@ -52,22 +52,20 @@
 
     @include hands-rules;
     width: 10px;
-    background-color:brown;
+    background-color: brown;
     height: $size / 2 - 20px;
     z-index: 1;
 
     animation-name: minutes;
     animation-duration: $time * 60;
-
-}
-
-@keyframes minutes {
-  from {
-    transform: rotate(0);
   }
-  to {
-    transform: rotate(360deg);
+
+  @keyframes minutes {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
-}
-
