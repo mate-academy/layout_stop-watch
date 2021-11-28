@@ -1,0 +1,54 @@
+.timer {
+  position: relative;
+  @include on-two($timer-size);
+
+  background-image: url("../images/bg-clock.jpg");
+  background-size: cover;
+  background-position: center 10px;
+  background-repeat: no-repeat;
+
+  &__circle {
+    @extend %position-left-50;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    @include on-two($size-line);
+
+    background-color: $color-timer-minute;
+    border-radius: 50%;
+  }
+
+  &__second,
+  &__minute {
+    @extend %position-left-50;
+    bottom: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    width: $size-line;
+    border-radius: 20px;
+    transform-origin: center bottom;
+  }
+
+  &__minute {
+    height: 200px;
+    background-color: $color-timer-minute;
+    @include anim-time($time-minute);
+  }
+
+  &__second {
+    height: $timer-size;
+    background-color: $color-timer-second;
+    @include anim-time($time-second);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(-50%) rotate(0);
+  }
+
+  100% {
+    transform: translateX(-50%) rotate(1turn);
+  }
+}
