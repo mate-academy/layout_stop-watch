@@ -1,29 +1,7 @@
-body {
-  margin: 0;
-}
-
-$c-black: #000;
-
-@mixin animation {
-  transform-origin: bottom;
-  animation: rotate 60s steps(60);
-  animation-iteration-count: infinite;
-}
-
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
+@import "./utils/reset";
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/animations";
 
 .container {
   @include flex-center;
@@ -60,7 +38,8 @@ $c-black: #000;
     background-color: #d15559;
     border-radius: 4px;
 
-    @include animation;
+    transform-origin: bottom;
+    animation: rotate linear 3600s infinite;
   }
 
   &__second {
@@ -71,7 +50,7 @@ $c-black: #000;
     background-color: #4b9aaa;
     border-radius: 10px;
 
-    @include animation;
-    animation-duration: 1s;
+    transform-origin: bottom;
+    animation: rotate steps(60) 60s infinite;
   }
 }
