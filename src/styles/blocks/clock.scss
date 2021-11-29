@@ -1,3 +1,5 @@
+@import "./utils/_placeholders";
+
 .clock {
   position: relative;
   width: 10px;
@@ -5,32 +7,28 @@
   margin: 0 auto;
 
   &__long-hand {
-    position: absolute;
-    bottom: 0;
+    @extend %position;
     width: $arrow-width;
     height: 250px;
     background-color: $c-green;
-    border-radius: 5px;
+    border-radius: $radius;
 
-    animation-name: around;
+    @extend %animation;
     animation-duration: 3600s;
-    animation-timing-function: linear;
     animation-iteration-count: 1;
 
     transform-origin: 5px 250px;
   }
 
   &__small-hand {
-    position: absolute;
-    bottom: 0;
+    @extend %position;
     width: $arrow-width;
     height: 190px;
     background-color: $c-red;
-    border-radius: 5px;
+    border-radius: $radius;
 
-    animation-name: around;
+    @extend %animation;
     animation-duration: 60s;
-    animation-timing-function: linear;
     animation-iteration-count: 60;
 
     transform-origin: 5px 190px;
