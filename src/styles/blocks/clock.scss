@@ -1,0 +1,40 @@
+.clock {
+  &__dot {
+    @include options(
+      $dot-size,
+      $dot-size,
+      50%,
+      #4b9aaa,
+      $dot-size / 2,
+      $dot-size / 2
+    );
+    z-index: 2;
+  }
+
+  &__seconds {
+    @include options(
+      $seconds-height,
+      $clock-arrows-width,
+      4px,
+      #4b9aaa,
+      $seconds-height,
+      $clock-arrows-width / 2
+    );
+    animation: clock infinite linear;
+    animation-duration: 60s;
+    z-index: 1;
+  }
+
+  &__minutes {
+    @include options(
+      $minutes-height,
+      $clock-arrows-width,
+      4px,
+      #d15559,
+      $minutes-height,
+      $clock-arrows-width / 2
+    );
+    animation: clock infinite linear;
+    animation-duration: 3600s;
+  }
+}
