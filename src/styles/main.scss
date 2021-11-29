@@ -1,0 +1,42 @@
+@import "./utils/mixins.scss";
+@import "./utils/animations.scss";
+@import "./utils/reset";
+
+.clock {
+  &__center {
+    @include clock_element(20px, 20px, #7cd, 50%, 0);
+    margin-left: -10px;
+    margin-top: -5px;
+    border: 1px transparent #7cd;
+  }
+
+  &__arrow {
+    &--big {
+      @include clock_element(300px, 10px, #7cd, 5px, 2s);
+    }
+
+    &--small {
+      @include clock_element(170px, 10px, #f00, 5px, 120s);
+      z-index: -1;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    &:checked ~ .clock__arrow {
+      animation-play-state: paused;
+    }
+
+    &-label {
+      position: absolute;
+      top: 70%;
+      left: 10%;
+      padding: 10px 15px;
+      background-color: #20e945;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}
