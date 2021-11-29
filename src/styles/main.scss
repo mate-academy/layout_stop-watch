@@ -18,7 +18,7 @@
   &__minute-hand {
     @include time-hand (10px, 120px, 200px, 50%, #cf4c4c, 10px);
 
-    animation: rotation 60s steps(60) infinite;
+    animation: rotation 3600s linear infinite;
     animation-play-state: paused;
     transform-origin: bottom;
   }
@@ -28,7 +28,7 @@
 
     z-index: 1;
 
-    animation: rotation 1s linear infinite;
+    animation: rotation 60s steps(60) infinite;
     animation-play-state: paused;
     transform-origin: bottom;
   }
