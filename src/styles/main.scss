@@ -6,16 +6,16 @@ $c-blue: rgb(112, 179, 230);
   animation-duration: $time;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  transform-origin: bottom;
+  transform-origin: center bottom;
 }
 
-@mixin parametr($par1, $par2) {
+@mixin size($par1, $par2) {
   width: $par1;
   height: $par2;
 }
 
 .stopwatch {
-  @include parametr(600px, 600px);
+  @include size(600px, 600px);
 
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@ $c-blue: rgb(112, 179, 230);
     position: absolute;
     top: 110px;
 
-    @include parametr(10px, 200px);
+    @include size(10px, 200px);
 
     background-color: rgb(191, 82, 82);
     border-radius: $radius;
@@ -39,7 +39,7 @@ $c-blue: rgb(112, 179, 230);
     position: absolute;
     top: 10px;
 
-    @include parametr(10px, 300px);
+    @include size(10px, 300px);
 
     background-color: $c-blue;
     border-radius: $radius;
@@ -48,10 +48,11 @@ $c-blue: rgb(112, 179, 230);
   }
 
   &__dot {
-    @include parametr(25px, 25px);
+    @include size(25px, 25px);
 
     background-color: $c-blue;
     border-radius: 50%;
+    z-index: 1;
 
     align-self: center;
   }
