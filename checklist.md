@@ -83,9 +83,7 @@ BAD example
 }
 ```
 
-8. [BEM] - create a separate file per each BEM block styles that have the same
-   name as the block
-9. [SASS] - Make use of SASS nesting - write pseudo-class, pseudo-element
+8. [SASS] - Make use of SASS nesting - write pseudo-class, pseudo-element
    selectors inside general selector. As well as media queries.
 
 GOOD example:
@@ -112,8 +110,8 @@ BAD example:
 }
 ```
 
-10. [SASS] - use variables for the main values so that you'll be able to reuse
+9. [SASS] - use variables for the main values so that you'll be able to reuse
     them and give them descriptive names. But don't overuse them, don't create
     variable for the value that's used just once.
-11. [SASS] - Try to use different features - mixins etc - where it makes sense.
-12. [CODE STYLE] - Remember about styles properties order - ([css order](https://codeguide.academy/html-css.html#css-order))
+10. [SASS] - Try to use different features - mixins etc - where it makes sense.
+11. [CODE STYLE] - Remember about styles properties order - ([css order](https://codeguide.academy/html-css.html#css-order))
