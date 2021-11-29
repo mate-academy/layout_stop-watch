@@ -1,0 +1,59 @@
+.clock {
+  display: flex;
+  justify-content: center;
+}
+
+.clock__item {
+  position: relative;
+
+  @include size($clock-size, $clock-size);
+
+  border-radius: 50%;
+  background: #fff url(../img/oclock.jpg) no-repeat center;
+  background-size: 80%;
+
+  &::after {
+    position: absolute;
+    left: calc(50% - #{$point-size / 6});
+    top: calc(50% - #{$point-size / 3});
+
+    @include size($point-size, $point-size);
+
+    content: "";
+    background: #000;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+.clock__minute {
+  position: absolute;
+  top: 33%;
+  left: 48%;
+
+  @include size(15%, $minute-width);
+
+  background: #000;
+
+  transform-origin: 50% 100%;
+  animation: rotate 3600s infinite linear;
+}
+
+.clock__second {
+  background: #000;
+  position: absolute;
+  top: 27%;
+  left: calc(50% - #{$second-width});
+
+  @include size(21%, $second-width);
+
+  transform-origin: 50% 100%;
+  animation: rotate 60s infinite linear;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
