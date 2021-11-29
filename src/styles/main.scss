@@ -33,7 +33,6 @@ body {
 
   width: 400px;
   height: 400px;
-
 }
 
 .watch__minutes-line {
@@ -44,6 +43,7 @@ body {
   width: 10px;
 
   background-color: $dim-red-color;
+  border-radius: 5px;
 
   animation: tik-tak 3600s linear infinite;
   transform-origin: bottom;
@@ -57,6 +57,7 @@ body {
   width: 10px;
 
   background-color: $dim-blue-color;
+  border-radius: 5px;
 
   animation: tik-tak 60s linear infinite;
   transform-origin: bottom;
@@ -75,7 +76,7 @@ body {
 .watch__seconds_dot {
   @extend %absolute-center;
   @include position(0, 0, 0, 0);
-  
+
   height: 25px;
   width: 25px;
   border-radius: 50%;
