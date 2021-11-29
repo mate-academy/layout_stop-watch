@@ -1,0 +1,52 @@
+.clock {
+  position: relative;
+
+  width: 500px;
+  height: 500px;
+
+  background-image: url(../img/FullMoon2010.jpg);
+  background-size: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.25),
+    0 0 30px rgba(255, 255, 255, 0.1);
+
+  &__arrows {
+    display: flex;
+  }
+
+  &__minute {
+    @include clockStyle($hight-minute, $width-arrows, #fff, 5px);
+    @include shiftToCenter($hight-minute, $width-arrows);
+
+    transform-origin: bottom ;
+    animation: round 3600s linear infinite;
+
+  }
+
+  &__second {
+    @include clockStyle($hight-second, $width-arrows, #000, 5px);
+    @include shiftToCenter($hight-second, $width-arrows);
+
+    transform-origin: bottom;
+    animation: round 60s steps(60, jump-none) infinite;
+
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked ~ .clock__second,
+    &:checked ~ .clock__minute {
+      animation-play-state: paused;
+    }
+  }
+
+  &__center {
+    @include clockStyle($circle-size, $circle-size, #000, 50%);
+
+    top: calc(50% - #{$circle-size / 2});
+    left: calc(50% - #{$circle-size / 2});
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+}
