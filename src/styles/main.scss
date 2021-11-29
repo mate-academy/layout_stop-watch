@@ -4,7 +4,13 @@
 
 .stopwatch {
   &__central-wheel {
-    @include stopwatch-part(400px, 400px, 40px, 40px, blue);
+    @include stopwatch-part(
+      $central-wheel-position,
+      $central-wheel-position,
+      $central-wheel-size,
+      $central-wheel-size,
+      blue
+    );
     border-radius: 50%;
   }
 
@@ -17,7 +23,8 @@
       blue
     );
 
-    @include stopwatch-animation(60s, steps(60), infinite, rotation);
+    animation: 60s steps(60) infinite rotation;
+    transform-origin: bottom;
   }
 
   &__minutes-hand {
@@ -29,7 +36,8 @@
       red
     );
 
-    @include stopwatch-animation(3600s, steps(60), infinite, rotation);
+    animation: 3600s steps(60) infinite rotation;
+    transform-origin: bottom;
   }
 
   &__reset-button {
