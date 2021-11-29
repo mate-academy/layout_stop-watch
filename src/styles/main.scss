@@ -1,0 +1,63 @@
+@import "./utils/variables";
+@import "./utils/animations";
+@import "./utils/mixins";
+
+.stopwatch {
+  &__central-wheel {
+    @include stopwatch-part(
+      $central-wheel-position,
+      $central-wheel-position,
+      $central-wheel-size,
+      $central-wheel-size,
+      blue
+    );
+    border-radius: 50%;
+  }
+
+  &__seconds-hand {
+    @include stopwatch-part(
+      120px,
+      $hand-position-left,
+      $hand-width,
+      300px,
+      blue
+    );
+
+    animation: 60s steps(60) infinite rotation;
+    transform-origin: bottom;
+  }
+
+  &__minutes-hand {
+    @include stopwatch-part(
+      250px,
+      $hand-position-left,
+      $hand-width,
+      170px,
+      red
+    );
+
+    animation: 3600s steps(60) infinite rotation;
+    transform-origin: bottom;
+  }
+
+  &__reset-button {
+    margin-right: 20px;
+    text-decoration: none;
+    @include button(10px, white, red, 5px);
+  }
+
+  &__start-button {
+    display: none;
+
+    &:checked ~ .stopwatch__seconds-hand,
+    &:checked ~ .stopwatch__minutes-hand {
+      animation-play-state: paused;
+    }
+
+    &-label::before {
+      content: "Start/Pause";
+      cursor: pointer;
+      @include button(10px, white, green, 5px);
+    }
+  }
+}

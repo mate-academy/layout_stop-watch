@@ -1,0 +1,16 @@
+@mixin stopwatch-part($top, $left, $width, $height, $background-color) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: $width;
+  height: $height;
+  background-color: $background-color;
+}
+
+@mixin button($padding, $color, $background-color, $border-radius) {
+  display: inline-block;
+  padding: $padding;
+  color: $color;
+  background-color: $background-color;
+  border-radius: $border-radius;
+}
