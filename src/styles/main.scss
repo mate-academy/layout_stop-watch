@@ -3,26 +3,6 @@
 @import "./utils/mixins";
 
 .stopwatch {
-  &__reset-button {
-    margin-right: 20px;
-    text-decoration: none;
-    @include button(10px, white, red, 5px);
-  }
-
-  &__start-button {
-    display: none;
-
-    &:checked ~ .hands {
-      animation-play-state: paused;
-    }
-
-    &-label::before {
-      content: "Start/Pause";
-      cursor: pointer;
-      @include button(10px, white, green, 5px);
-    }
-  }
-
   &__central-wheel {
     @include stopwatch-part(400px, 400px, 40px, 40px, blue);
     border-radius: 50%;
@@ -50,5 +30,26 @@
     );
 
     @include stopwatch-animation(60s, steps(60), infinite, rotation);
+  }
+
+  &__reset-button {
+    margin-right: 20px;
+    text-decoration: none;
+    @include button(10px, white, red, 5px);
+  }
+
+  &__start-button {
+    display: none;
+
+    &:checked ~ .stopwatch__seconds-hand,
+    &:checked ~ .stopwatch__minutes-hand {
+      animation-play-state: paused;
+    }
+
+    &-label::before {
+      content: "Start/Pause";
+      cursor: pointer;
+      @include button(10px, white, green, 5px);
+    }
   }
 }
