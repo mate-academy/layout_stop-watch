@@ -10,10 +10,12 @@
   border: 15px solid $c-primary;
   border-radius: 50%;
   background-color: #c869ee;
-  background-image: $watchbg;
+  background-image: $watch-bg;
   background-size: 10%;
 
   &__minutes {
+    position: relative;
+    left: 4px;
     display: flex;
     box-sizing: border-box;
     justify-content: center;
@@ -28,6 +30,8 @@
   }
 
   &__seconds {
+    position: relative;
+    right: 4px;
     box-sizing: border-box;
     width: 6px;
     height: 250px;
@@ -35,14 +39,11 @@
     background-color: rgba($color: $c-primary, $alpha: 0.8);
     border: 1px solid $c-primary;
 
-    animation: clock 60s infinite linear;
+    animation: clock 60s infinite steps(60);
     transform-origin: bottom;
   }
 
-  &:hover &__seconds {
-    animation-play-state: paused;
-  }
-
+  &:hover &__seconds,
   &:hover &__minutes {
     animation-play-state: paused;
   }
