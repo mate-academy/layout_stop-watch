@@ -7,10 +7,15 @@
   background-color: $background-color;
 }
 
-@mixin button ($padding, $color, $background-color, $border-radius) {
+@mixin button($padding, $color, $background-color, $border-radius) {
   display: inline-block;
   padding: $padding;
   color: $color;
   background-color: $background-color;
   border-radius: $border-radius;
+}
+
+@mixin stopwatch-animation($duration, $timing, $iteration, $name) {
+  animation: $duration $timing $iteration $name;
+  transform-origin: bottom;
 }

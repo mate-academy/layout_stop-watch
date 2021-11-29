@@ -1,3 +1,4 @@
+@import "./utils/variables";
 @import "./utils/animations";
 @import "./utils/mixins";
 
@@ -28,12 +29,26 @@
   }
 
   &__seconds-hand {
-    @include stopwatch-part(120px, 415px, 10px, 300px, blue);
-    animation: 1s linear infinite rotation;
+    @include stopwatch-part(
+      120px,
+      $hand-position-left,
+      $hand-width,
+      300px,
+      blue
+    );
+
+    @include stopwatch-animation(1s, linear, infinite, rotation);
   }
 
   &__minutes-hand {
-    @include stopwatch-part(250px, 415px, 10px, 170px, red);
-    animation: 60s steps(60) infinite rotation;
+    @include stopwatch-part(
+      250px,
+      $hand-position-left,
+      $hand-width,
+      170px,
+      red
+    );
+
+    @include stopwatch-animation(60s, steps(60), infinite, rotation);
   }
 }
