@@ -1,0 +1,57 @@
+@import "./utils/reset";
+@import "./animations.scss";
+@import "./utils/mixin";
+
+.clock {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  position: relative;
+
+  &__center {
+    @include time-hand (20px, 20px, 310px, calc(50% - 5px), #6c6cc2, 50%);
+
+    z-index: 2;
+  }
+
+  &__minute-hand {
+    @include time-hand (10px, 120px, 200px, 50%, #cf4c4c, 10px);
+
+    animation: rotation 3600s linear infinite;
+    animation-play-state: paused;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    @include time-hand (10px, 240px, 80px, 50%, #a0a0d8, 10px);
+
+    z-index: 1;
+
+    animation: rotation 60s steps(60) infinite;
+    animation-play-state: paused;
+    transform-origin: bottom;
+  }
+
+  &__start {
+    display: none;
+
+    &:checked ~ .clock__minute-hand,
+    &:checked ~ .clock__second-hand {
+      animation-play-state: running;
+    }
+  }
+
+  &__label {
+    padding: 12px 40px;
+    margin-left: 10px;
+
+    background-color: #eee;
+    color: #cf4c4c;
+
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
