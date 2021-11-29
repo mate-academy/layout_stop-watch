@@ -1,0 +1,43 @@
+@import "./mixin.scss";
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__minute {
+    height: 200px;
+    width: 8px;
+    background-color: #008080;
+    border-radius: 10px;
+    position: absolute;
+    top: 150px;
+    z-index: 1;
+
+    @include animation;
+    animation-duration: 3600s;
+  }
+
+  &__second {
+    height: 300px;
+    width: 8px;
+    background-color: #20b2aa;
+    border-radius: 10px;
+    position: absolute;
+    top: 50px;
+    z-index: 2;
+
+    @include animation;
+    animation-duration: 60s;
+  }
+
+  &__center {
+    height: 30px;
+    width: 30px;
+    background-color: #20b2aa;
+    border-radius: 50%;
+    top: 330px;
+    position: absolute;
+    z-index: 3;
+  }
+}
