@@ -1,7 +1,7 @@
 $radius: 8px;
 $c-blue: rgb(112, 179, 230);
 
-@mixin animation($time) {
+@mixin watch-animation($time) {
   animation-name: circle;
   animation-duration: $time;
   animation-iteration-count: infinite;
@@ -32,7 +32,7 @@ $c-blue: rgb(112, 179, 230);
     background-color: rgb(191, 82, 82);
     border-radius: $radius;
 
-    @include animation(60s);
+    @include watch-animation(3600s);
   }
 
   &__second {
@@ -44,7 +44,7 @@ $c-blue: rgb(112, 179, 230);
     background-color: $c-blue;
     border-radius: $radius;
 
-    @include animation(1s);
+    @include watch-animation(60s);
   }
 
   &__dot {
