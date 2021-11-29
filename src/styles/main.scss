@@ -10,27 +10,27 @@
   position: relative;
 
   &__center {
-    @include clock (20px, 20px, calc(50% - 8px), calc(50% - 5px), #6c6cc2, 50%);
+    @include time-hand (20px, 20px, 310px, calc(50% - 5px), #6c6cc2, 50%);
 
     z-index: 2;
   }
 
   &__minute-hand {
-    @include clock (10px, 120px, 50%, 50%, #cf4c4c, 10px);
+    @include time-hand (10px, 120px, 200px, 50%, #cf4c4c, 10px);
 
     animation: rotation 60s steps(60) infinite;
     animation-play-state: paused;
-    transform-origin: top;
+    transform-origin: bottom;
   }
 
   &__second-hand {
-    @include clock (10px, 240px, 50%, 50%, #a0a0d8, 10px);
+    @include time-hand (10px, 240px, 80px, 50%, #a0a0d8, 10px);
 
     z-index: 1;
 
     animation: rotation 1s linear infinite;
     animation-play-state: paused;
-    transform-origin: top;
+    transform-origin: bottom;
   }
 
   &__start {
