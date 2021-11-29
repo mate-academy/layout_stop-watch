@@ -11,19 +11,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 200px;
 
   &__minute {
+    position: absolute;
+    top: 200px;
     width: 5px;
     height: 400px;
     background-color: black;
-    margin-bottom: 200px;
+
     border-radius: 10px;
     animation: clock-hand-rotate 3600s linear infinite;
     transform-origin: center bottom 0;
   }
 
   &__second {
+    position: absolute;
+    top: 400px;
     width: 4px;
     height: 200px;
     background-color: red;
@@ -37,7 +40,7 @@
     align-items: center;
 
     position: absolute;
-    top: 586px;
+    top: 585px;
 
     width: 30px;
     height: 30px;
