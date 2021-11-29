@@ -1,0 +1,10 @@
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin clock-animation($sec) {
+  animation: timer $sec linear 1s infinite;
+  transform-origin: bottom center;
+}

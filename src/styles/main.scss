@@ -1,0 +1,50 @@
+@import "./utils.scss/variables";
+@import "./utils.scss/mixins";
+@import "./utils.scss/extends";
+@import "./utils.scss/animations";
+
+.page {
+  @extend %flex-center;
+
+  height: 100vh;
+  background-color: black;
+}
+
+.clock {
+  @extend %flex-center;
+  @include circle (600px);
+
+  position: relative;
+
+  border: 8px solid $dark-cyan;
+  background-color: cyan;
+
+  &__minutes {
+    @extend %positioning;
+    @include clock-animation(3600s);
+
+    height: 200px;
+    width: 20px;
+
+    border-radius: 5px;
+    background-color: $dark-cyan;
+  }
+
+  &__seconds {
+    @extend %positioning;
+    @include clock-animation(60s);
+
+    height: 280px;
+    width: 20px;
+
+    border-radius: 5px;
+    background-color: white;
+  }
+
+  &__center {
+    @include circle (50px);
+
+    position: absolute;
+    background-color: $dark-cyan;
+  }
+}
