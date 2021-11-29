@@ -1,0 +1,83 @@
+body {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.watch {
+  height: 600px;
+  width: 600px;
+  border: 1px solid rgb(194,93,93);
+  border-radius: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.minute {
+  position: absolute;
+  display: flex;
+  // border: 1px solid green;
+  animation-name: move-min;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: -900s;
+}
+
+@keyframes move-min {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.min {
+  height: 1px;
+  width: 200px;
+  background-color: rgb(194,93,93);
+  border: 10px solid rgb(194,93,93);
+  border-radius: 10px;
+}
+
+.second {
+  position: absolute;
+  display: flex;
+
+  animation-name: move-sec;
+  animation-duration: 60s;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+  animation-delay: -15s;
+}
+
+@keyframes move-sec {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sec {
+  height: 1px;
+  width: 280px;
+  background-color: rgb(95,152,168);
+  border: 8px solid rgb(95,152,168);
+  border-radius: 8px;
+}
+
+.sec--invisible,
+.min--invisible {
+  opacity: 0;
+}
+
+.point {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  background-color: rgb(95,152,168);
+  border: 8px solid rgb(95,152,168);
+  border-radius: 25px;
+}
