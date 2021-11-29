@@ -17,7 +17,7 @@
       blue
     );
 
-    @include stopwatch-animation(1s, linear, infinite, rotation);
+    @include stopwatch-animation(60s, steps(60), infinite, rotation);
   }
 
   &__minutes-hand {
@@ -29,7 +29,7 @@
       red
     );
 
-    @include stopwatch-animation(60s, steps(60), infinite, rotation);
+    @include stopwatch-animation(3600s, steps(60), infinite, rotation);
   }
 
   &__reset-button {
