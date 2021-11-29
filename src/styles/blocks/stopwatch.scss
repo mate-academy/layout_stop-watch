@@ -10,7 +10,7 @@
     background-color: #c00;
     position: relative;
     top: 100px;
-    @include animation(spin-second, 0, linear, infinite);
+    @include animation(spin, 0, linear, infinite);
     transform-origin: center bottom;
   }
 
@@ -22,7 +22,7 @@
     background-color: #0aa;
     position: relative;
     bottom: 250px;
-    @include animation(spin-minute, 0, linear, infinite);
+    @include animation(spin, 0, linear, infinite);
     transform-origin: center bottom;
   }
 
@@ -36,7 +36,7 @@
     bottom: 265px;
   }
 
-  @keyframes spin-second {
+  @keyframes spin {
     from {
       transform: rotate(0);
     }
@@ -45,24 +45,15 @@
     }
   }
 
-  @keyframes spin-minute {
-    from {
-      transform: rotate(0);
+  &__input {
+    display: none;
+
+    &:checked + label .stopwatch__second {
+      animation-duration: 60s;
     }
-    to {
-      transform: rotate(1turn);
+
+    &:checked + label .stopwatch__minute {
+      animation-duration: 3600s;
     }
-  }
-}
-
-#stopwatch {
-  display: none;
-
-  &:checked + label .stopwatch__second {
-    animation-duration: 60s;
-  }
-
-  &:checked + label .stopwatch__minute {
-    animation-duration: 3600s;
   }
 }
