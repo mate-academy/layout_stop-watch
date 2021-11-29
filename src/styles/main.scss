@@ -8,6 +8,11 @@ $dim-blue-color: #4b9aaa;
   left: $left;
 }
 
+%absolute-center {
+  position: absolute;
+  margin: auto;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -20,24 +25,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 100vh;
 }
 
 .watch {
+  position: relative;
+
   width: 400px;
   height: 400px;
 
-  position: relative;
 }
 
 .watch__minutes-line {
+  @extend %absolute-center;
+  @include position(0, 0, 25%, 0);
+
   height: 100px;
   width: 10px;
-
-  position: absolute;
-  margin: auto;
-  @include position(0, 0, 25%, 0);
 
   background-color: $dim-red-color;
 
@@ -46,12 +50,11 @@ body {
 }
 
 .watch__seconds-line {
+  @extend %absolute-center;
+  @include position(0, 0, 50%, 0);
+
   height: 200px;
   width: 10px;
-
-  position: absolute;
-  margin: auto;
-  @include position(0, 0, 50%, 0);
 
   background-color: $dim-blue-color;
 
