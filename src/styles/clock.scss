@@ -1,0 +1,61 @@
+.clock {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+  @include border;
+
+  background: lightgray;
+
+  &__big-hand {
+    height: 200px;
+    @include position;
+    @include animation {
+      animation-duration: 60s;
+    }
+  }
+
+  &__small-hand {
+    height: 150px;
+    @include position;
+    @include animation {
+      animation-duration: 3600s;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 20px;
+    width: 20px;
+    @include border;
+    transform: translate(-50%, -50%);
+
+    background-color: black;
+  }
+
+  &__text {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    padding-top: 70%;
+    border-radius: 50%;
+    cursor: pointer;
+
+    font-size: 50px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+  }
+
+  &__click {
+    display: none;
+
+    &:checked ~ .clock__big-hand {
+      animation-play-state: paused;
+    }
+
+    &:checked ~ .clock__small-hand {
+      animation-play-state: paused;
+    }
+  }
+}
