@@ -1,0 +1,48 @@
+.clock {
+
+  &__center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #2596be;
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
+    z-index: 1;
+  }
+
+  &__minute {
+    width: 10px;
+    height: 150px;
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 5px);
+    background-color: #d15559;
+    border-radius: 5px;
+    animation: timer infinite linear ;
+    animation-duration: 3600s;
+  }
+
+  &__second {
+    position: absolute;
+    width: 10px;
+    height: 200px;
+    border-radius: 5px;
+    top: calc(50% - 200px);
+    left: calc(50% - 5px);
+    background-color: #2596be;
+    animation: timer infinite linear;
+    animation-duration: 60s;
+  }
+}
+
+@keyframes timer {
+  0% {
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform-origin: bottom center;
+    transform: rotate(360deg);
+  }
+}
