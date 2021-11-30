@@ -1,0 +1,16 @@
+@mixin watch_element (
+  $width,
+  $height,
+  $color,
+  $border-radius,
+  $duration
+) {
+  position: absolute;
+  width: $width;
+  height: $height;
+  left: 50%;
+  top: 50%;
+  background-color: $color;
+  border-radius: $border-radius;
+  animation: watch_line $duration linear infinite;
+}
