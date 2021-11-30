@@ -1,0 +1,59 @@
+.stopwatch {
+  width: 800px;
+  height: 800px;
+
+  &__minute {
+    width: 10px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #c00;
+    position: relative;
+    top: 100px;
+    @include animation(spin, 0, linear, infinite);
+    transform-origin: center bottom;
+  }
+
+  &__second {
+    width: 10px;
+    height: 350px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #0aa;
+    position: relative;
+    bottom: 250px;
+    @include animation(spin, 0, linear, infinite);
+    transform-origin: center bottom;
+  }
+
+  &__dot {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: #0aa;
+    position: relative;
+    bottom: 265px;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + label .stopwatch__second {
+      animation-duration: 60s;
+    }
+
+    &:checked + label .stopwatch__minute {
+      animation-duration: 3600s;
+    }
+  }
+}
