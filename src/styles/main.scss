@@ -1,0 +1,36 @@
+@import "./animations";
+@import "./watch-style";
+
+.main {
+  height: 100vh;
+  display: flex;
+  position: relative;
+
+  &__mins {
+    @extend %watch-style;
+    height: 200px;
+    background-color: rgba(0, 174, 255, 1);
+    animation-duration: 3600s;
+    animation-iteration-count: 1;
+    transform-origin: bottom center;
+  }
+
+  &__hours {
+    @extend %watch-style;
+    height: 300px;
+    background-color: rgb(255, 0, 128);
+    animation-duration: 60s;
+    animation-iteration-count: 60;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 174, 255, 1);
+    left: calc(50% - 10px);
+    bottom: calc(50% - 10px);
+  }
+}
