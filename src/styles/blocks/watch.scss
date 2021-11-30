@@ -1,0 +1,28 @@
+.watch {
+  &__center {
+    @include position($center-size, $center-size);
+
+    @extend %properties-center;
+
+    top: calc(50% - #{$center-size / 2});
+    left: calc(50% - #{$center-size / 2});
+  }
+
+  &__big-hand {
+    @include position($clock-hand-width, $minutes-height);
+
+    @extend %properties-big;
+
+    top: calc(50% - #{$minutes-height});
+    left: calc(50% - #{$clock-hand-width / 2});
+  }
+
+  &__little-hand {
+    @include position($clock-hand-width, $second-height);
+
+    @extend %properties-little;
+
+    top: calc(50% - #{$second-height});
+    left: calc(50% - #{$clock-hand-width / 2});
+  }
+}
