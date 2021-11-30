@@ -1,0 +1,68 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.StopWatch {
+  display: flex;
+  position: relative;
+  margin: 50px auto;
+  @include watch-circle($watch-size);
+  border: 3px black dotted;
+  border-radius: 50%;
+  background-color: rgb(45, 47, 48);
+
+  &__minute {
+    width: 12px;
+    height: 240px;
+    border-radius: 10px;
+    background-color: slategrey;
+    position: absolute;
+    left: 50% - 1%;
+    transform: translate(-50%, -50%);
+    transform-origin: bottom;
+
+    animation-name: time;
+    animation-duration: 3600s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+  }
+
+  &__second {
+    width: 10px;
+    height: 240px;
+    border-radius: 10px;
+    background-color: rgb(14, 207, 143);
+    position: absolute;
+    left: 50% - 1%;
+    transform: translate(-50%, -50%);
+    transform-origin: bottom;
+
+    animation-name: time;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+  }
+
+  &__circle {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border: 1px red solid;
+    border-radius: 50%;
+    background-color: red;
+  }
+}
+
+@keyframes time {
+  from {
+    transform: none;
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
