@@ -54,6 +54,18 @@
 
 @keyframes rotate {
   100% {
-    transform: rotateZ(360deg);
+    transform: rotate(360deg);
   }
+}
+
+.clock__checkbox {
+  display: none;
+}
+
+.clock__checkbox:checked ~ .clock__minute {
+  animation-play-state: paused;
+}
+
+.clock__checkbox:checked ~ .clock__second {
+  animation-play-state: paused;
 }
