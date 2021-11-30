@@ -1,4 +1,4 @@
-$color_blue: rgb(0, 106, 141);
+$color-blue: rgb(0, 106, 141);
 
 @mixin hand {
   position: absolute;
@@ -14,22 +14,22 @@ $color_blue: rgb(0, 106, 141);
   width: 20px;
   height: 20px;
 
-  &--position--center {
-    margin: 25% auto;
+  &--position-top {
+    margin: 300px auto;
   }
 
   &__minute {
     @include hand();
     height: 200px;
     background-color: rgb(194, 40, 47);
-    animation: watch-minute 3600s infinite linear;
+    animation: watch 3600s infinite linear;
   }
 
   &__second {
     @include hand();
     height: 300px;
-    background: $color_blue;
-    animation: watch-second 60s infinite linear;
+    background: $color-blue;
+    animation: watch 60s infinite linear;
   }
 
   &__center {
@@ -37,20 +37,11 @@ $color_blue: rgb(0, 106, 141);
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: $color_blue;
+    background-color: $color-blue;
   }
 }
 
-@keyframes watch-minute {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes watch-second {
+@keyframes watch {
   0% {
     transform: rotate(0deg);
   }
