@@ -1,0 +1,33 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__minute {
+    @extend %position-border-width;
+    top: 200px;
+    height: 300px;
+    background-color: $c-blue;
+    animation: time 3600s linear infinite;
+    z-index: 1;
+  }
+
+  &__second {
+    @extend %position-border-width;
+    top: 350px;
+    height: 150px;
+    background-color: #e08586;
+    animation: time 60s linear infinite;
+    z-index: 2;
+  }
+
+  &__point {
+    position: absolute;
+    top: 480px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $c-blue;
+    z-index: 3;
+  }
+}
