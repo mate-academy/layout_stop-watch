@@ -1,14 +1,27 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body class="page">
+    <div class="stopwatch">
+      <label for="checkbox" class="stopwatch__button">
+        Pause/Start
+      </label>
+      <input
+        type="checkbox"
+        name="pause"
+        id="checkbox"
+        class="stopwatch__checkbox"
+        checked
+      >
+      <div class="stopwatch__arrow stopwatch__arrow--big"></div>
+      <div class="stopwatch__arrow stopwatch__arrow--small"></div>
+    </div>
+  </body>
 </html>
