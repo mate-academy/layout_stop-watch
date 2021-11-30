@@ -1,0 +1,64 @@
+.watch {
+  height: 600px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  &__center-circle {
+    background: #2874a6;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    z-index: 3;
+  }
+
+  &__second-hand {
+    background: #2874a6;
+    width: 10px;
+    height: 200px;
+    border-radius: 5px;
+
+    position: absolute;
+    transform: translate(0%, -50%);
+
+    animation-name: rotates;
+    animation-duration: 60s;
+    animation-timing-function: steps(360, end);
+    animation-iteration-count: infinite;
+
+    z-index: 2;
+  }
+
+  &__minute-hand {
+    background: #cb4335;
+    width: 10px;
+    height: 150px;
+    border-radius: 5px;
+
+    position: absolute;
+    transform: translate(0%, -50%);
+
+    animation-name: rotates;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    z-index: 1;
+  }
+
+  @keyframes rotates {
+    0% {
+      transform-origin: bottom center;
+      transform: translate(0%, -50%) rotate(0deg);
+    }
+
+    100% {
+      transform-origin: bottom center;
+      transform: translate(0%, -50%) rotate(360deg);
+    }
+  }
+}
