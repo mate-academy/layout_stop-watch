@@ -1,0 +1,53 @@
+.stopwatch {
+  height: 500px;
+  width: 500px;
+  background-color: #eee;
+  border: 5px solid black;
+  border-radius: 50%;
+
+  &__second-hand {
+    width: 10px;
+    height: 250px;
+    background-color: #005acf;
+    border-radius: 10px;
+    position: relative;
+    left: 245px;
+    z-index: 3;
+    animation: rotation 60s linear 0s infinite;
+    animation-play-state: paused;
+  }
+
+  &__minute-hand {
+    width: 10px;
+    height: 150px;
+    background-color: #bd1c00;
+    border-radius: 10px;
+    position: relative;
+    left: 245px;
+    top: -150px;
+    z-index: 2;
+    animation: rotation 3600s linear 0s infinite;
+    animation-play-state: paused;
+  }
+
+  &__center-pin {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    background-color: #005acf;
+    position: relative;
+    left: 235px;
+    top: -165px;
+    z-index: 4;
+  }
+
+  &:hover {
+    .stopwatch__minute-hand {
+      animation-play-state: running;
+    }
+
+    .stopwatch__second-hand {
+      animation-play-state: running;
+    }
+  }
+}
