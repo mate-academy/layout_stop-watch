@@ -1,0 +1,31 @@
+.watch {
+  @include flex-position;
+  @include circle($watch-diameter);
+
+  position: relative;
+  background-color: rgb(139, 154, 224);
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: $watch-diameter / 2 - $small-arrow-height;
+    width: 12px;
+    height: $small-arrow-height;
+    border-radius: 12px;
+    background-color: red;
+    transform-origin: bottom;
+    animation: go-go-go 3600s infinite linear;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: $watch-diameter / 2 - $big-arrow-height;
+    width: 6px;
+    height: $big-arrow-height;
+    border-radius: 6px;
+    background-color: yellow;
+    transform-origin: bottom;
+    animation: go-go-go 60s infinite steps(60);
+  }
+}
