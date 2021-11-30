@@ -10,8 +10,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 600px;
+  height: 600px;
 }
 
 .circle {
@@ -25,50 +25,41 @@ body {
 
 .seconds {
   position: absolute;
-  top: 0;
+  bottom: 300px;
   height: 350px;
   width: 10px;
   background-color: #4b9aaa;
   border-radius: 5px;
+  z-index: 1;
 
-  animation-name: seconds;
+  animation-name: stop-watch;
   animation-duration: 60s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  transform-origin: center 15px;
+  transform-origin: bottom;
 }
 
 .minutes {
   position: absolute;
-  top: 0;
-  height: 200px;
+  bottom: 300px;
+  height: 250px;
   width: 10px;
   background-color: #d15559;
   border-radius: 5px;
 
-  animation-name: minutes;
+  animation-name: stop-watch;
   animation-duration: 3600s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  transform-origin: center 15px;
+  transform-origin: bottom;
 }
 
-@keyframes seconds {
+@keyframes stop-watch {
   0% {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
   }
 
   100% {
-    transform: rotate(540deg);
-  }
-}
-
-@keyframes minutes {
-  0% {
-    transform: rotate(180deg);
-  }
-
-  100% {
-    transform: rotate(540deg);
+    transform: rotate(360deg);
   }
 }
