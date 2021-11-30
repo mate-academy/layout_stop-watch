@@ -1,0 +1,79 @@
+.container {
+  min-width: 600px;
+  min-height: 600px;
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  background-color: rgb(129, 128, 128);
+
+  &__dot {
+    background-color: rgb(128, 255, 0);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    position: absolute;
+
+    left: 280px;
+    top: 280px;
+  }
+
+  &__sec {
+    background-color: rgb(0, 255, 255);
+    width: 6px;
+    height: 250px;
+    border-radius: 8px;
+
+    position: absolute;
+
+    left: 297px;
+    top: 50px;
+    transform-origin: 3px 250px;
+
+    animation-name: oneLoop;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__min {
+    background-color: rgb(255, 21, 146);
+    width: 8px;
+    height: 175px;
+    border-radius: 8px;
+
+    position: absolute;
+    left: 296px;
+    top: 125px;
+    transform-origin: 4px 175px;
+
+    animation-name: oneLoop;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__border {
+    width: 520px;
+    height: 520px;
+
+    position: absolute;
+    transform-origin: 260px 260px;
+    left: 40px;
+    top: 40px;
+
+    border-radius: 40%;
+    border: 1px solid darkgreen;
+  }
+}
+
+@keyframes oneLoop {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
