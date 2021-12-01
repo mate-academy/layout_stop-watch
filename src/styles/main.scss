@@ -1,0 +1,74 @@
+@keyframes move {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.watch {
+  position: relative;
+  top: 50%;
+  height: 600px;
+  width: 600px;
+  border: 1px solid rgb(194,93,93);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.minute {
+  position: absolute;
+  display: flex;
+  animation-name: move;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: -900s;
+}
+
+.minute__hand {
+  height: 1px;
+  width: 200px;
+  background-color: rgb(194,93,93);
+  border: 10px solid rgb(194,93,93);
+  border-radius: 10px;
+}
+
+.second {
+  position: absolute;
+  display: flex;
+  animation-name: move;
+  animation-duration: 60s;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+  animation-delay: -15s;
+}
+
+.second__hand {
+  height: 1px;
+  width: 280px;
+  background-color: rgb(95,152,168);
+  border: 8px solid rgb(95,152,168);
+  border-radius: 8px;
+}
+
+.minute__hand--invisible,
+.second__hand--invisible {
+  opacity: 0;
+}
+
+.point {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  background-color: rgb(95,152,168);
+  border: 8px solid rgb(95,152,168);
+  border-radius: 25px;
+}
