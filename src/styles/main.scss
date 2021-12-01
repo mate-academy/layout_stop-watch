@@ -1,5 +1,10 @@
+@keyframes move {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
-  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,35 +12,28 @@ body {
 }
 
 .watch {
+  position: relative;
+  top: 50%;
   height: 600px;
   width: 600px;
   border: 1px solid rgb(194,93,93);
-  border-radius: 600px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-
 }
 
 .minute {
   position: absolute;
   display: flex;
-  // border: 1px solid green;
-  animation-name: move-min;
+  animation-name: move;
   animation-duration: 3600s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-delay: -900s;
 }
 
-@keyframes move-min {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.min {
+.minute__hand {
   height: 1px;
   width: 200px;
   background-color: rgb(194,93,93);
@@ -46,21 +44,14 @@ body {
 .second {
   position: absolute;
   display: flex;
-
-  animation-name: move-sec;
+  animation-name: move;
   animation-duration: 60s;
   animation-timing-function: steps(60, end);
   animation-iteration-count: infinite;
   animation-delay: -15s;
 }
 
-@keyframes move-sec {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.sec {
+.second__hand {
   height: 1px;
   width: 280px;
   background-color: rgb(95,152,168);
@@ -68,8 +59,8 @@ body {
   border-radius: 8px;
 }
 
-.sec--invisible,
-.min--invisible {
+.minute__hand--invisible,
+.second__hand--invisible {
   opacity: 0;
 }
 
