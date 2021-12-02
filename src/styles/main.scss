@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+}
+
+$bgc-circle-center: #4b9aaa;
+$bgc-second: #4b9aaa;
+$bgc-minute: #d15559;
+$time-second: 60s;
+$time-minute: 60 * $time-second;
+$circle-diameter: 24px;
+$width-second-hands: 50vh;
+$height-second-hands: 12px;
+$width-minute: 35vh;
+$height-minute: 16px;
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin circle($diameter: $circle-diameter) {
+  width: $diameter;
+  height: $diameter;
+  border-radius: 50%;
+}
+
+@mixin arrow($width, $height, $border-radius: $height) {
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+}
+
+@mixin transformArrow($deg: -90deg) {
+  transform-origin: left;
+  transform: translateX(50%) rotate($deg);
+}
+
+@mixin animationArrow($duration) {
+  animation: animArrow $duration linear infinite;
+}
+
+.stopwatch {
+  @include flexCenter;
+  width: 100vw;
+  height: 100vh;
+
+  &__circle-center {
+    @include circle();
+
+    position: relative;
+    background-color: $bgc-circle-center;
+  }
+
+  &__second-hands,
+  &__minute {
+    position: absolute;
+    @include transformArrow();
+  }
+
+  &__second-hands {
+    @include arrow($width-second-hands, $height-second-hands);
+    @include animationArrow($time-second);
+    background-color: $bgc-second;
+  }
+
+  &__minute {
+    @include arrow($width-minute, $height-minute);
+    @include animationArrow($time-minute);
+    background-color: $bgc-minute;
+  }
+}
+
+@keyframes animArrow {
+  0% {
+    @include transformArrow();
+  }
+
+  25% {
+    @include transformArrow(0deg);
+  }
+
+  50% {
+    @include transformArrow(90deg);
+  }
+
+  75% {
+    @include transformArrow(180deg);
+  }
+
+  100% {
+    @include transformArrow(270deg);
+  }
+}
