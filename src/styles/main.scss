@@ -1,0 +1,63 @@
+$stopwatch-size: 300px; 
+$center-size: 20px;
+$stopwatch__minute-width: 4px;
+$stopwatch__second-width: 2px; 
+
+.stopwatch {
+  position: relative;
+  margin: 0 auto;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border-radius: 50%;
+  border: 2px solid #48d1cc;
+
+  &__center {
+    position: absolute;
+    left: ($stopwatch-size / 2) - ($center-size / 2);
+    bottom: ($stopwatch-size / 2) - ($center-size / 2);
+    height: $center-size;
+    width: $center-size;
+    border-radius: 50%;
+    background-color: #009B95;
+  }
+
+  &__minute {
+    position: absolute;
+    left: ($stopwatch-size / 2) - ($stopwatch__minute-width / 2);
+    bottom: ($stopwatch-size / 2) - ($stopwatch__minute-width / 2);
+    height: $stopwatch-size / 3;
+    width: $stopwatch__minute-width;
+    background-color: #24c0ba;
+    border-radius: 10px;
+    animation-duration: 3600s;
+    transform-origin: 0 ($stopwatch-size / 3);
+  }
+
+  &__second {
+    position: absolute;
+    display: block;
+    left: ($stopwatch-size / 2) - ($stopwatch__second-width / 2);;
+    bottom: ($stopwatch-size / 2) - ($stopwatch__second-width / 2);;
+    height: $stopwatch-size / 2;
+    width: $stopwatch__second-width;
+    background-color: #48d1cc;
+    animation-duration: 60s;
+    transform-origin: 0 ($stopwatch-size / 2);
+  }
+
+  &__second,
+  &__minute {
+    animation-name: around;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes around {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
