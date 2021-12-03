@@ -1,0 +1,81 @@
+@import "./animation.scss";
+@import "./mixins.scss";
+
+.body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.clock {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 8vh;
+  background-color: black;
+  @include circle(600px);
+
+  &__toggle {
+    margin-left: 150px;
+
+    &::after {
+      content: " ";
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-color: orange;
+      border-radius: 100px;
+      color: white;
+      position: absolute;
+      left: 132px;
+      top: 270px;
+    }
+
+    &:checked ~ .clock__minute {
+      animation-play-state: paused;
+    }
+
+    &:checked ~ .clock__hour {
+      animation-play-state: paused;
+    }
+
+  }
+
+  &__hour {
+    width: 10px;
+    height: 200px;
+    border-radius: 50px;
+    position: absolute;
+    left: 295px;
+    top: 100px;
+    background-color: cyan;
+    animation: move 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__minute {
+    width: 7px;
+    height: 300px;
+    border-radius: 50px;
+    z-index: 2;
+    position: absolute;
+    left: 296px;
+    top: 0;
+    background-color: white;
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    z-index: 3;
+    position: absolute;
+    left: 290px;
+    background-color: white;
+  }
+}
