@@ -1,0 +1,67 @@
+@import "./extends";
+@import "./variables";
+
+body {
+  margin: 0;
+  background-color: $dark-blue;
+}
+
+.stopwatch {
+  height: 100vh;
+
+  &__watch {
+    width: $clock-size;
+    height: $clock-size;
+  
+    @extend %centring;
+  }
+}
+
+.watch {
+  background-color: $almost-white;
+  border: 30px solid $blue;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2),
+    inset 0 0 10px rgba(0, 0, 0, 0.4);
+
+  &__minutes {
+    width: 10px;
+    height: 180px;
+    background-color: $dark-blue;
+    border-radius: 4px;
+    animation: rotation 3600s linear infinite;
+
+    @extend %centring;
+  }
+
+  &__seconds {
+    width: 2px;
+    height: 220px;
+    background-color: $yellow;
+    border-radius: 4px;
+    animation: rotation 60s linear infinite;
+
+    @extend %centring;
+  }
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+
+    background-color: $yellow;
+
+    @extend %centring;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: translate(-50%, -100%) rotate(0);
+      transform-origin: bottom center;
+    }
+    to {
+      transform: translate(-50%, -100%) rotate(1turn);
+      transform-origin: bottom center;
+    }
+  }
+}
