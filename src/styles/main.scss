@@ -1,0 +1,53 @@
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  height: 100vh;
+  background-color: #ff6347;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.clock {
+  @include block-clock(400, 400);
+  background-color: rgb(8, 4, 0);
+  position: relative;
+
+  &__circle {
+    @include block-circle(30, 30);
+    background-color: rgb(2, 255, 200);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__second {
+    height: 40%;
+    background-color: rgb(128, 197, 18);
+    animation: rotate 60s linear infinite;
+    @include clock-line;
+  }
+
+  &__minute {
+    height: 30%;
+    background-color: rgb(255, 0, 98);
+    animation: rotate 3600s linear infinite;
+    @include clock-line;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
