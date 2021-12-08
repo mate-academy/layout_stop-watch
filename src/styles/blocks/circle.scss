@@ -1,0 +1,52 @@
+.circle {
+  @include square($watch-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: $green-color;
+  border-radius: 50%;
+  border: $watch-size * 0.01 solid $blue-color;
+
+  &__center {
+    position: absolute;
+    @include square($center-size);
+    border-radius: 50%;
+    background-color: $gray-color;
+  }
+
+  &__min-arrow {
+    position: absolute;
+    width: $watch-size * 0.02;
+    height: $watch-size * 0.29;
+    bottom: 50%;
+    background-color: $blue-color;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: circle 3600s linear infinite;
+  }
+
+  &__sec-arrow {
+    position: absolute;
+    width: $watch-size * 0.01;
+    height: $watch-size * 0.39;
+    bottom: 50%;
+    background-color: rgb(140, 170, 226);
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: circle 60s steps(60) infinite;
+  }
+
+  &__numbers {
+    font-family: Helvetica, sans-serif;
+    font-size: $watch-size * 0.1;
+    color: $blue-color;
+    position: absolute;
+
+    @each $number, $position in $numbers {
+      &--#{$number} {
+        #{$position}: 0;
+      }
+    }
+  }
+}
