@@ -1,0 +1,67 @@
+.stopwatch {
+  position: relative;
+  left: 25%;
+  bottom: 50%;
+  width: 600px;
+  height: 600px;
+}
+
+.stopwatch__second-arrow {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  width: 10px;
+  height: 200px;
+  border-radius: 5px;
+  background-color: blue;
+  animation-name: second;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+
+.stopwatch__minute-arrow {
+  position: absolute;
+  left: 50%;
+  top: 33%;
+  width: 10px;
+  height: 150px;
+  border-radius: 5px;
+  background-color: red;
+  animation-name: minute;
+  animation-duration: 3600s;
+  animation-delay: 60s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+
+.stopwatch__minute-arrow::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: blue;
+  top: calc(100% - 10px);
+  left: calc(100% - 15px);
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minute {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+}
