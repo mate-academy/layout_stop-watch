@@ -1,0 +1,14 @@
+@import '../_utils/variables';
+
+@mixin hands-rules {
+  position: absolute;
+  bottom: 250px;
+  box-sizing: border-box;
+  border: $border-rule;
+  border-radius: 20px;
+
+  animation-duration: $time;
+  animation-timing-function: linear;
+  transform-origin: bottom;
+  animation-iteration-count: infinite;
+}
