@@ -1,0 +1,93 @@
+$hand-width: 10px;
+
+%color-blue {
+  background-color: rgb(75,154,170);
+}
+
+$minute-hand-height: 100px;
+
+$second-hand-height: 200px;
+
+%hand-radius {
+  border-radius: 5px;
+}
+
+%pos-absolute {
+  position: absolute;
+}
+
+@mixin tran-origin ($hand-height) {
+  transform-origin: $hand-width / 2 ($hand-height - $hand-width / 2);
+}
+
+@mixin dot-R ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin dot-pos ($big-hand-height) {
+  left: $big-hand-height;
+  top: $big-hand-height;
+}
+
+@mixin hand-pos($hand-height) {
+  left: $second-hand-height + ($hand-width / 2);
+  top: $second-hand-height - $hand-height + ($hand-width * 2 - $hand-width / 2);
+}
+
+.watch {
+  display: flex;
+}
+
+.page__watch {
+  position: relative;
+}
+
+.watch__minute-hand {
+  @extend %pos-absolute;
+  @include hand-pos($minute-hand-height);
+  height: $minute-hand-height;
+  width: $hand-width;
+}
+
+.minute-hand {
+  background-color: rgb(209,85,89);
+  @extend %hand-radius;
+  @include tran-origin($minute-hand-height);
+  animation: move 15s linear 2s infinite;
+}
+
+.watch__second-hand {
+  @extend %pos-absolute;
+  @include hand-pos($second-hand-height);
+  height: $second-hand-height;
+  width: $hand-width;
+}
+
+.second-hand {
+  @extend %color-blue;
+  @extend %hand-radius;
+  @include tran-origin($second-hand-height);
+  animation: move 10s linear 2s infinite;
+}
+
+.watch__dot {
+  @extend %pos-absolute;
+  @include dot-pos($second-hand-height);
+  @include dot-R($hand-width * 2);
+}
+
+.dot {
+  @extend %color-blue;
+  border-radius: 10px;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
