@@ -1,0 +1,43 @@
+.watch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  border: 6px solid #f60;
+  margin: 100px auto;
+  
+  
+
+  &__small-clock-hand {
+    @include hand();
+    height: 150px;
+    background-color: #f60;
+    animation: watch 3600s infinite linear;
+  }
+
+  &__big-clock-hand {
+    @include hand();
+    height: $watch-size / 2;
+    background-color: #f60;
+    animation: watch 60s infinite linear;
+  }
+
+  &__clock-center {
+    position: absolute;
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+    background-color: #f60;
+    left: 190px;
+    bottom: 190px;
+  }
+}
+
+@keyframes watch {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
