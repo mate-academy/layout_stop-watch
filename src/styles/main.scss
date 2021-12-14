@@ -1,0 +1,48 @@
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &__center {
+    height: 20px;
+    width: 20px;
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    display: inline-block;
+    width: 10px;
+    height: 300px;
+    background-color: blue;
+    border-radius: 5px;
+    transform-origin: bottom;
+    bottom: 10px;
+    animation: rotatehand 60s linear infinite;
+  }
+
+  &__hand--minute {
+    height: 200px;
+    background-color: red;
+    animation: rotatehand 3600s linear infinite;
+  }
+}
+
+@keyframes rotatehand {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
