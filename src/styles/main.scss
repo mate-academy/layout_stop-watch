@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page__main-block {
+  height: 100vh;
+}
+
+@keyframes move-arrow {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@import "_variables";
+@import "_watch-container.scss";
+@import "_seconds-arrow.scss";
+@import "_minutes-arrow.scss";
+@import "_watch-center.scss";
