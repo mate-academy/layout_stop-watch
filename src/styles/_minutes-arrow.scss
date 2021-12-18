@@ -1,0 +1,13 @@
+.minutes-arrow {
+  border-radius: 5px 5px 0 0;
+  background-color: rgb(190, 63, 63);
+  animation: move-arrow 3600s linear infinite;
+  transform-origin: bottom center;
+}
+
+.watch-container__minutes {
+  position: absolute;
+  top: $watch-container-size / 2 - $minutes-arrow-length;
+  height: $minutes-arrow-length;
+  width: $arrow-width;
+}
