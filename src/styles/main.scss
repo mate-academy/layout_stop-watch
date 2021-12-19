@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+$hand-width: 6px;
+
+@keyframes hands {
+  from {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(270deg);
+  }
+}
+
+@mixin point-size($size) {
+  width: $size;
+  height: $size;
+}
+
+%hands-properties {
+  height: $hand-width;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: left center;
+}
+
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: relative;
+
+  &__point {
+    @include point-size(20px);
+    background-color: blue;
+    position: relative;
+    border-radius: 50%;
+  }
+
+  &__second-hand {
+    @extend %hands-properties;
+    width: 250px;
+    background-color: blue;
+    animation: hands 60s linear infinite normal backwards;
+  }
+
+  &__minute-hand {
+    @extend %hands-properties;
+    width: 200px;
+    background-color: red;
+    animation: hands 3600s linear infinite normal backwards;
+  }
+}
