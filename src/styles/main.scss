@@ -1,0 +1,61 @@
+@mixin hand {
+  width: 11px;
+  border-radius: 10px;
+  margin: 0 auto;
+  transform-origin: bottom;
+}
+
+.clock {
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  border: 2px solid #888;
+  margin: 50vh auto 0;
+  transform: translateY(-50%);
+  position: relative;
+  
+  &__center {
+    background-color: #4b9aaa;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  &__second-hand {
+    background-color: #4b9aaa;
+    height: 490px;
+    @include hand;
+    animation: hand-move 60s steps(60, end) infinite;
+  }
+
+  &__minute-hand {
+    background-color: #d15559;
+    height: 320px;
+    @include hand;
+    animation: hand-move 3600s linear infinite;
+  }
+
+  @keyframes hand-move {
+    0% {
+      transform: translateX(-50%) rotate(0);
+    }
+    100% {
+      transform: translateX(-50%) rotate(360deg);
+    }
+  }
+}
+
+.second-hand,
+.minute-hand {
+  left: 50%;
+  bottom: 50%;
+  position: absolute;
+}
+
+.center {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}
