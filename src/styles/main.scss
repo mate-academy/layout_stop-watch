@@ -2,9 +2,8 @@ $size-watch: 300px;
 
 @mixin hand-position {
   position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 
 body {
@@ -43,8 +42,9 @@ body {
 
   &__element {
     @include hand-position();
+    transform: translate(-50%, -50%);
 
-    background-color: orange;
+    background-color: rgba(207, 172, 106, 0.404);
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -53,9 +53,10 @@ body {
 
 @keyframes stopwatch {
   from {
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) translate(0px, -50%);
   }
+
   to {
-    transform: rotate(270deg);
+    transform: rotate(270deg) translate(0px, -50%);
   }
 }
