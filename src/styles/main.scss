@@ -1,0 +1,51 @@
+$size: 1000px;
+$width: #{$size / 100};
+
+.stop-watch {
+  height: $size;
+  width: $size;
+  position: relative;
+}
+
+.stop-watch__second {
+  height: #{$size / 2};
+  width: $width;
+  border-radius: $width;
+  background-color: #177;
+  transform-origin: bottom center;
+  animation: rotate 60s linear infinite;
+  position: absolute;
+  transform: translate(-50%, -100%);
+  left: 50%;
+  top: 50%;
+}
+
+.stop-watch__minute {
+  height: #{$size / 3};
+  width: $width;
+  border-radius: $width;
+  background-color: #711;
+  transform-origin: bottom center;
+  animation: rotate 3600s linear infinite;
+  position: absolute;
+  transform: translate(-50%, -100%);
+  left: 50%;
+  top: 50%;
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%,-100%) rotate(360deg);
+  }
+}
+
+.stop-watch__circle {
+  height: #{$size / 33};
+  width: #{$size / 33};
+  border-radius: 50%;
+  background-color: #177;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
