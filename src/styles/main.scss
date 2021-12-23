@@ -1,0 +1,47 @@
+.clock {
+  position: relative;
+  left: 25%;
+  bottom: 50%;
+  width: 600px;
+  height: 600px;
+
+  &__minutes {
+    position: absolute;
+    left: 50%;
+    top: 33%;
+    width: 10px;
+    height: 150px;
+    background-color: pink;
+    border-radius: 10px;
+    animation-name: move;
+    animation-duration: 3600s;
+    animation-delay: 60s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    width: 10px;
+    height: 200px;
+    background-color: blue;
+    border-radius: 10px;
+    animation-name: move;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
