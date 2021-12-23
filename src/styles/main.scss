@@ -13,21 +13,11 @@
     height: 150px;
     background-color: pink;
     border-radius: 10px;
-    animation-name: minute;
+    animation-name: move;
     animation-duration: 3600s;
     animation-delay: 60s;
     animation-iteration-count: infinite;
     transform-origin: bottom;
-
-    @keyframes minute {
-      from {
-        transform: rotate(0deg);
-      }
-    
-      to {
-        transform: rotate(360deg);
-      }
-    }
   }
 
   &__seconds {
@@ -38,20 +28,20 @@
     height: 200px;
     background-color: blue;
     border-radius: 10px;
-    animation-name: second;
+    animation-name: move;
     animation-duration: 60s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     transform-origin: bottom;
+  }
 
-    @keyframes second {
-      from {
-        transform: rotate(0deg);
-      }
-    
-      to {
-        transform: rotate(360deg);
-      }
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
     }
   }
 }
