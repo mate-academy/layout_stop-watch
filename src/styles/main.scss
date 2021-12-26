@@ -1,0 +1,38 @@
+.stop-watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  width: 400px;
+  border: 1px solid red;
+  box-sizing: border-box;
+  border-radius: 50%;
+
+  &__arrow {
+
+    &-container {
+      display: flex;
+      height: 100%;
+      width: 5%;
+      animation: 60s linear seconds-moove infinite;
+    }
+
+    &-seconds {
+      height: 45%;
+      width: 100%;
+      margin-top: 5%;
+      background-color: red;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  }
+}
+
+@keyframes seconds-moove {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
