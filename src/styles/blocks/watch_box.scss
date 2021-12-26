@@ -1,0 +1,57 @@
+.watch_box {
+  position: relative;
+  @include flex_box();
+  @include watch_size();
+  border: 5px solid rgb(56, 56, 56);
+  border-radius: 100%;
+  background-color: #fff;
+}
+
+.center {
+  position: absolute;
+  width: $watch_size / 20;
+  height: $watch_size / 20;
+  border-radius: 50%;
+  background-color: rgb(82, 158, 194);
+  z-index: 1;
+}
+
+.min {
+  @include minHand_size();
+  top: $watch_size / 4;
+  background-color: red;
+  animation: minute_hand 60s;
+  animation-timing-function: linear;
+  animation-duration: $animation_duration * 60;
+  @include other_rules();
+}
+
+.sec {
+  @include secHand_size();
+  background-color: rgb(82, 158, 194);
+  top: 0;
+  animation: seconds_hand 60s;
+  animation-timing-function: steps(60, end);
+  animation-duration: 60s;
+  @include other_rules();
+}
+
+@keyframes seconds_hand {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minute_hand {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
