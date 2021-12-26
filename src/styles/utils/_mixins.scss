@@ -1,0 +1,37 @@
+@use "./variables" as *;
+
+@mixin watch_size {
+  height: $watch_size;
+  width: $watch_size;
+}
+
+@mixin other_rules {
+  position: absolute;
+  border-radius: 50px;
+  transform-origin: bottom;
+  transform: rotate(0deg);
+  animation-iteration-count: infinite;
+}
+
+@mixin secHand_size {
+  width: $watch_size / 40;
+  height: $watch_size / 2;
+}
+
+@mixin minHand_size {
+  width: $watch_size / 40;
+  height: $watch_size / 4;
+}
+
+@mixin transform_and_animation_options {
+  transform-origin: bottom;
+  transform: rotate(0deg);
+  animation: seconds_hand 60s;
+  animation-iteration-count: infinite;
+}
+
+@mixin flex_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
