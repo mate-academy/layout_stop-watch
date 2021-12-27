@@ -1,29 +1,67 @@
+$circle-size: 300px;
+
+@mixin circle($circle-size) {
+  height: $circle-size;
+  width: $circle-size;
+  border: 1px solid red;
+  border-radius: 50%;
+}
+
 .stop-watch {
+  box-sizing: border-box;
   position: relative;
   display: flex;
   justify-content: center;
-  height: 400px;
-  width: 400px;
-  border: 1px solid red;
-  box-sizing: border-box;
-  border-radius: 50%;
+  align-items: center;
+  @include circle($circle-size);
 
-  &__arrow {
+  &__seconds-numbers {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include circle($circle-size);
+
+    @for $seconds-number-index from 1 through 12 {
+      & :nth-child(#{$seconds-number-index}) {
+        position: absolute;
+        width: 1.5rem;
+        height: inherit;
+        transform: rotate(30deg * $seconds-number-index);
+
+        & :nth-child(n) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: inherit;
+          height: 1.5rem;
+          transform: rotate(0deg);
+
+          &::before {
+            content: "#{$seconds-number-index * 5}";
+          }
+        }
+      }
+    }
+  }
+
+  &__seconds-arrow {
 
     &-container {
-      display: flex;
-      height: 100%;
-      width: 5%;
+      position: absolute;
+      width: 0.5rem;
+      height: $circle-size;
       animation: 60s linear seconds-moove infinite;
-    }
 
-    &-seconds {
-      height: 45%;
-      width: 100%;
-      margin-top: 5%;
-      background-color: red;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
+      &-arrow {
+        height: $circle-size * 0.4;
+        margin-top: $circle-size * 0.1;
+        width: inherit;
+        background-color: red;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+      }
     }
   }
 }
