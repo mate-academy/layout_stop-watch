@@ -1,0 +1,43 @@
+.clock {
+  position: relative;
+  min-height: $heigth-clock;
+
+  &__center {
+    position: absolute;
+    height: $center-diametr;
+    width: $center-diametr;
+    border-radius: 50%;
+    background-color: blue;
+    top: $center-position;
+    left: $center-position;
+  }
+
+  &__minutes {
+    position: absolute;
+    height: $height-minutes;
+    width: $hand-widht;
+    bottom: 50%;
+    left: 50%;
+    background-color: red;
+    border-radius: 10px;
+    transform-origin: bottom center;
+    animation: go 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    height: $height-seconds;
+    width: $hand-widht;
+    left: 50%;
+    background-color: blue;
+    border-radius: 10px;
+    transform-origin: bottom center;
+    animation: go 60s steps(60) infinite;
+  }
+
+  @keyframes go {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
