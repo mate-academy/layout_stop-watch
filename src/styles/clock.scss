@@ -32,7 +32,8 @@
   
   &__arrow-second {
     height: 100%;
-    animation: sec $animation-second steps(60) infinite;
+    animation: seconds $animation-second steps(60) infinite;
+    z-index: 2;
 
     &::after {
       content: "";
@@ -44,12 +45,14 @@
 
       background-color: rgb(253, 0, 0);
       transform: translate(-50%);
+
+      
     }
   }
 
   &__arrow-minute {
     height: 100%;
-    animation: sec $animation-minute steps(60, end) infinite;
+    animation: minutes $animation-minute steps(60, end) infinite;
 
     &::after {
       content: "";
@@ -66,12 +69,12 @@
 
   &__arrow-hour {
     height: 100%;
-    animation: sec $animation-hour infinite;
+    animation: hours $animation-hour infinite;
 
     &::after {
       content: "";
       position: absolute;
-      width: 7px;
+      width: 8px;
       height: 80px;
       left: 0;
       top: 90px;
@@ -81,9 +84,29 @@
     }
   }
 
-  @keyframes sec {
+  @keyframes seconds {
     from {
       transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes minutes {
+    from {
+      transform: rotate(90deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes hours {
+    from {
+      transform: rotate(-60deg);
     }
   
     to {
