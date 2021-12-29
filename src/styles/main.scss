@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.page__clock {
+  position: relative;
+}
+
+.clock {
+  width: 600px;
+  height: 600px;
+}
+
+.clock::before {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #008080;
+  transform: translate(-50%, -50%);
+}
+
+.hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%);
+  transform-origin: bottom;
+}
+
+.min-hand {
+  width: 15px;
+  height: 35%;
+  background-color: #cf222e;
+  animation-name: rotate;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.second-hand {
+  width: 15px;
+  height: 50%;
+  background-color: #008080;
+  animation-name: rotate;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
