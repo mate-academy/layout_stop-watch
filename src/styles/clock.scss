@@ -24,7 +24,7 @@
     left: 50%;
     top: 50%;
 
-    background-color: red;
+    background-color: @second-color;
     border-radius: 50%;
     
     transform: translate(-50%, -50%);
@@ -43,7 +43,7 @@
       top: 50px;
       left: 0;
 
-      background-color: rgb(253, 0, 0);
+      background-color: $second-color;
       transform: translate(-50%);
 
       
@@ -62,7 +62,7 @@
       top: 70px;
       left: 0;
 
-      background-color: rgb(119, 119, 119);
+      background-color: $minute-color;
       transform: translate(-50%);
     }
   }
@@ -79,7 +79,7 @@
       left: 0;
       top: 90px;
 
-      background-color: rgb(71, 71, 71);
+      background-color: $hour-color;
       transform: translate(-50%);
     }
   }
@@ -106,7 +106,7 @@
 
   @keyframes hours {
     from {
-      transform: rotate(-60deg);
+      transform: rotate(300deg);
     }
   
     to {
