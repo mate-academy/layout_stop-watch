@@ -1,0 +1,72 @@
+@import "./utils/variables";
+@import "./utils/reset";
+@import "./utils/mixins";
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__watch {
+    position: relative;
+  }
+}
+
+.watch {
+  @include watch-diameter($watch-size);
+
+  border: 5px solid #000;
+  background-color: darkslateblue;
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-75%, -50%);
+  }
+
+  &__minute-hand {
+    @include hands-pos-absolute();
+  }
+
+  &__second-hand {
+    @include hands-pos-absolute();
+  }
+}
+
+.circle {
+  @include circle-diameter($circle-size);
+
+  background-color: #000;
+  z-index: 1;
+}
+
+.minute-hand {
+  height: $minute-height;
+  width: $hands-width;
+  border: 3px solid goldenrod;
+  border-radius: 10px;
+
+  transform-origin: bottom;
+  animation: hands 3600s linear infinite;
+}
+
+.second-hand {
+  height: $second-height;
+  width: $hands-width;
+  border: 3px solid black;
+  border-radius: 10px;
+
+  transform-origin: bottom;
+  animation: hands 60s linear infinite;
+}
+
+@keyframes hands {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
