@@ -3,114 +3,113 @@
   @extend %flex-center;
   @include circle($circle-size);
 
+  // #region #seconds
   &__seconds {
     position: absolute;
+  }
 
-    &-wrapper {
-      @extend %flex-center;
-    }
+  &__seconds-wrapper {
+    @extend %flex-center;
+  }
 
-    &-numbers {
-      position: relative;
-      @extend %flex-center;
-      @include circle($circle-size);
+  &__seconds-numbers {
+    position: relative;
+    @extend %flex-center;
+    @include circle($circle-size);
 
-      @for $seconds-number-index from 1 through 12 {
-        & :nth-child(#{$seconds-number-index}) {
-          position: absolute;
-          width: $second-numbers-size;
-          height: inherit;
-          transform: rotate(30deg * $seconds-number-index);
-
-          & :nth-child(n) {
-            @extend %flex-center;
-            width: inherit;
-            height: $second-numbers-size;
-            transform: rotate(-30deg * $seconds-number-index);
-
-            &::before {
-              font-size: $second-numbers-size;
-              content: "#{$seconds-number-index * 5}";
-            }
-          }
-        }
-      }
-    }
-
-    &-arrow {
-
-      &-container {
+    @for $seconds-number-index from 1 through 12 {
+      & :nth-child(#{$seconds-number-index}) {
         position: absolute;
-        width: $second-arrow-width;
-        height: $circle-size;
-        animation: 60s linear arrow-moove infinite;
+        width: $second-numbers-size;
+        height: inherit;
+        transform: rotate(30deg * $seconds-number-index);
 
-        &-arrow {
-          height: $second-arrow-lenght;
-          margin-top: $circle-size * 0.1;
+        & :nth-child(n) {
+          @extend %flex-center;
           width: inherit;
-          background-color: red;
-          border-top-left-radius: 50%;
-          border-top-right-radius: 50%;
+          height: $second-numbers-size;
+          transform: rotate(-30deg * $seconds-number-index);
+
+          &::before {
+            font-size: $second-numbers-size;
+            content: "#{$seconds-number-index * 5}";
+          }
         }
       }
     }
   }
 
+  &__seconds-arrow-container {
+    position: absolute;
+    width: $second-arrow-width;
+    height: $circle-size;
+    animation: 60s linear arrow-moove infinite;
+  }
+
+  &__seconds-arrow-container-arrow {
+    height: $second-arrow-lenght;
+    margin-top: $circle-size * 0.1;
+    width: inherit;
+    background-color: red;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+  // #endregion
+
+  // #region minutes
   &__minutes {
     position: absolute;
     top: $circle-size * 0.15;
+  }
 
-    &-wrapper {
-      @extend %flex-center;
-    }
+  &__minutes-wrapper {
+    @extend %flex-center;
+  }
 
-    &-numbers {
-      position: relative;
-      @extend %flex-center;
-      @include circle($circle-size * 0.25);
+  &__minutes-numbers {
+    position: relative;
+    @extend %flex-center;
+    @include circle($circle-size * 0.25);
 
-      @for $minutes-number-index from 1 through 12 {
-        & :nth-child(#{$minutes-number-index}) {
-          position: absolute;
-          width: $minute-numbers-size;
-          height: inherit;
-          transform: rotate(30deg * $minutes-number-index);
+    @for $minutes-number-index from 1 through 12 {
+      & :nth-child(#{$minutes-number-index}) {
+        position: absolute;
+        width: $minute-numbers-size;
+        height: inherit;
+        transform: rotate(30deg * $minutes-number-index);
 
-          & :nth-child(n) {
-            @extend %flex-center;
-            width: inherit;
-            height: $minute-numbers-size;
-            transform: rotate(-30deg * $minutes-number-index);
+        & :nth-child(n) {
+          @extend %flex-center;
+          width: inherit;
+          height: $minute-numbers-size;
+          transform: rotate(-30deg * $minutes-number-index);
 
-            &::before {
-              font-size: $minute-numbers-size;
-              content: "#{$minutes-number-index * 5}";
-            }
+          &::before {
+            font-size: $minute-numbers-size;
+            content: "#{$minutes-number-index * 5}";
           }
         }
       }
     }
-
-    &-arrow {
-
-      &-container {
-        position: absolute;
-        width: $minute-arrow-width;
-        height: $circle-size * 0.25;
-        animation: 3600s linear arrow-moove infinite;
-
-        &-arrow {
-          height: $minute-arrow-lenght;
-          width: inherit;
-          margin-top: $circle-size * 0.04;
-          background-color: red;
-          border-top-left-radius: 50%;
-          border-top-right-radius: 50%;
-        }
-      }
-    }
   }
+
+  &__minutes-arrow-container {
+    position: absolute;
+    width: $minute-arrow-width;
+    height: $circle-size * 0.25;
+    animation: 3600s linear arrow-moove infinite;
+  }
+
+  &__minutes-arrow-container-arrow {
+    height: $minute-arrow-lenght;
+    width: inherit;
+    margin-top: $circle-size * 0.04;
+    background-color: red;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+
+  // #endregion
 }
 
 @keyframes arrow-moove {
