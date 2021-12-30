@@ -1,0 +1,54 @@
+.watch {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+
+  @include watch($watch-diameter);
+  border: 2px solid black;
+  border-radius: 50%;
+
+  &__minutes {
+    position: relative;
+    bottom: getMinutesBottomPosition($watch-diameter);
+
+    width: $arrows-width;
+    height: getMinutesHeight($watch-diameter);
+
+    background-color: $mitutes-arrow-color;
+    border-radius: getArrowsBorderRadius($arrows-width);
+
+    transform-origin: bottom;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__seconds {
+    position: relative;
+    bottom: getSecondsBottomPosition($watch-diameter);
+    height: getSecondsHeight($watch-diameter);
+
+    background-color: #4b9aaa;
+    border-radius: getArrowsBorderRadius($arrows-width);
+
+    transform-origin: bottom;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__point {
+    position: absolute;
+    bottom: calc(50vh - 20px);
+
+    @include point-size($arrows-width);
+    border-radius: 50%;
+    background-color: $seconds-arrow-color;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
