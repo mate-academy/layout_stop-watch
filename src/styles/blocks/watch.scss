@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
 
-  @include watch-size;
+  @include watch($watch-diameter);
   border: 2px solid black;
   border-radius: 50%;
 
@@ -37,7 +37,7 @@
     position: absolute;
     bottom: calc(50vh - 20px);
 
-    @include point-size;
+    @include point-size($arrows-width);
     border-radius: 50%;
     background-color: $seconds-arrow-color;
   }

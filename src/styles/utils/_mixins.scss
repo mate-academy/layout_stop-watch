@@ -1,9 +1,9 @@
-@mixin watch-size {
-  width: $watch-diameter;
-  height: $watch-diameter;
+@mixin watch($size) {
+  width: $size;
+  height: $size;
 }
 
-@mixin point-size {
-  width: getPointSize($arrows-width);
-  height: getPointSize($arrows-width);
+@mixin point-size($width) {
+  width: getPointSize($width);
+  height: getPointSize($width);
 }
