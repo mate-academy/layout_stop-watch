@@ -1,3 +1,16 @@
+$color-secs: #9292e6;
+$color-mins: #f00;
+
+$arrow-width: 10px;
+$arrow-height-mins: 35%;
+$clock-size: 600px;
+$center-size: $arrow-width * 2;
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
 .page {
   &__body {
     display: flex;
@@ -9,8 +22,8 @@
 }
 
 .clock {
-  width: 600px;
-  height: 600px;
+  @include size($clock-size);
+
   position: relative;
 
   &__center {
@@ -19,11 +32,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 20px;
-    height: 20px;
+    @include size($center-size);
     border-radius: 50%;
 
-    background-color: #9292e6;
+    background-color: $color-secs;
   }
 
   &__arrow-secs {
@@ -31,25 +43,25 @@
     top: 0;
     left: 50%;
 
-    width: 10px;
+    width: $arrow-width;
     height: 50%;
     border-radius: 5px;
 
-    background-color: #9292e6;
+    background-color: $color-secs;
 
     animation: rotateArrow 60s steps(60, end) infinite;
   }
 
   &__arrow-mins {
     position: absolute;
-    top: 15%;
+    top: 50% - $arrow-height-mins;
     left: 50%;
 
-    width: 10px;
-    height: 35%;
-    border-radius: 5px;
+    width: $arrow-width;
+    height: $arrow-height-mins;
+    border-radius: $arrow-width / 2;
 
-    background-color: #f00;
+    background-color: $color-mins;
 
     animation: rotateArrow 3600s steps(60, end) infinite;
   }
