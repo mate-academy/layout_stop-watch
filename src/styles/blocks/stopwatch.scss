@@ -1,6 +1,5 @@
 .stopwatch {
-  display: flex;
-  justify-content: center;
+  @extend %justify-center;
   align-items: center;
 
   @extend %stopwatch-size;
@@ -24,8 +23,7 @@
   }
 
   &__center {
-    width: 30px;
-    height: 30px;
+    @include center-size(30px);
     border-radius: 50%;
     background-color: $seconds-pointer-color;
     z-index: 2;
@@ -37,7 +35,3 @@
     }
   }
 }
-
-
-
-
