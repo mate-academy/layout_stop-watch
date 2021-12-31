@@ -1,10 +1,9 @@
 .clock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %flex-center;
+  
   position: relative;
-  width: $box-size;
-  height: $box-size;
+
+  @include box-size($box-size);
 
   background: #fff url(../images/clock.png);
   background-size: cover;
