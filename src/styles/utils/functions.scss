@@ -1,0 +1,23 @@
+@function getMinutesBottomPosition($watch-diameter) {
+  @return $watch-diameter / -8;
+}
+
+@function getSecondsBottomPosition($watch-diameter) {
+  @return $watch-diameter / 8 - 10px;
+}
+
+@function getMinutesHeight($watch-diameter) {
+  @return $watch-diameter * 0.75 / 2;
+}
+
+@function getSecondsHeight($watch-diameter) {
+  @return $watch-diameter / 2 - 10px;
+}
+
+@function getArrowsBorderRadius($arrows-width) {
+  @return $arrows-width / 2;
+}
+
+@function getPointSize($arrows-width) {
+  @return $arrows-width * 3;
+}
