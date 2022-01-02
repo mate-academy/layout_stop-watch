@@ -1,0 +1,55 @@
+.container {
+  height: 100vh;
+
+  @extend %flex-option;
+
+  &__watch {
+    @include clock-size($size);
+
+    @extend %flex-option;
+
+    border: 2px solid $dot-color;
+    border-radius: 50%;
+  }
+}
+
+.watch__center {
+  @include dot-size($dot-size);
+  position: absolute;
+  border-radius: 50%;
+}
+
+.watch__sec {
+  position: relative;
+  width: $arrow-width;
+  height: $big-arrow-heigh;
+  bottom: $arrow-pos;
+
+  background-color: $color-arrow-seconds;
+  border-radius: $arrow-border;
+
+  transform-origin: bottom;
+  animation: arrow-rotate 60s linear infinite;
+}
+
+.watch__min {
+  position: absolute;
+  width: $arrow-width;
+  height: $min-arrow-heigh;
+  bottom: 50vh;
+
+  background-color: $color-arrow-minutes;
+  border-radius: $arrow-border;
+
+  transform-origin: bottom;
+  animation: arrow-rotate 3600s linear infinite;
+}
+
+@keyframes arrow-rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
