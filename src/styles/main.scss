@@ -1,0 +1,75 @@
+@import "./variables";
+@import "./extends";
+@import "./mixins";
+
+.container {
+  @extend %position-flex-center;
+  height: 100vh;
+}
+
+.clock {
+  position: relative;
+  @extend %position-flex-center;
+  @include circle ($clock-size);
+  border: 1px dotted darkblue;
+  border-radius: 50%;
+  background-color: $color-clocks;
+  box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
+  transition: transform 0.8s;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+
+  &__center {
+    @include circle ($size-center);
+    background-color: $color-clocks-center;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__hand-seconds {
+    position: absolute;
+    top: 0;
+    @extend %position-left;
+    @extend %hands-width;
+    height: $size-seconds;
+    background-color: $color-seconds-hand;
+    border-radius: $border-radius;
+    animation: rotate 60s infinite;
+  }
+
+  &__hand-minutes {
+    position: absolute;
+    top: 50% - $size-minutes ;
+    @extend %position-left;
+    @extend %hands-width;
+    height: $size-minutes;
+    background-color: $color-minutes-hand;
+    border-radius: $border-radius;
+    animation: rotate 3600s steps(60,end) infinite;
+  }
+
+  &__hand-hours {
+    position: absolute;
+    top: 50% - $size-hours;
+    @extend %position-left;
+    @extend %hands-width;
+    height: $size-hours;
+    background-color: $color-hours-hand;
+    border-radius: $border-radius;
+    animation: rotate 86400s infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translateX(-50%);
+    transform-origin: left bottom;
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(-50%);
+    transform-origin: left bottom ;
+  }
+}
