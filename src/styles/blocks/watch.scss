@@ -1,0 +1,45 @@
+.watch {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include circle($watchSize);
+
+  border: $watchItemSize solid $watchColor;
+
+  & > * {
+    position: absolute;
+  }
+
+  &__min {
+    align-self: flex-end;
+
+    width: $watchSize / 2 - $watchItemSize;
+    height: $watchItemSize;
+
+    background-color: $watchColor;
+    border-radius: $watchItemSize / 2;
+
+    animation: move 3600s steps(60) infinite;
+  }
+
+  &__sec {
+    align-self: flex-end;
+
+    width: $watchSize / 2 - $watchItemSize;
+    height: $secItemSize;
+
+    background-color: $secColor;
+    border-radius: $secItemSize / 2;
+
+    animation: move 60s linear infinite;
+  }
+
+  &__dot {
+    @include circle ($watchItemSize * 1.5);
+    background-color: $secColor;
+  }
+}
