@@ -1,0 +1,79 @@
+$watch-diametr: 200px;
+$center-point-size: 5%;
+$hand-width: 2.5%;
+$hand-border-radius: $watch-diametr * $hand-width / 100% / 2;
+$minute-hand-height: 40%;
+$second-hand-height: 50%;
+$half-size: 50%;
+
+$second-hand-color: blue;
+$minute-hand-color: navy;
+$clock-face-color: yellow;
+
+@mixin round-diametr($size) {
+  width: $size;
+  height: $size;
+  border-radius: $half-size;
+}
+
+@mixin hand-size ($height) {
+  height: $height;
+  width: $hand-width;
+}
+
+@mixin hand-center-positioning ($hand-height) {
+  left: $half-size - $hand-width / 2;
+  top: $half-size - $hand-height;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.watch {
+  position: relative;
+  @include round-diametr($watch-diametr);
+  background-color: $clock-face-color;
+  border: 1px solid $minute-hand-color;
+
+  &__center-point {
+    position: absolute;
+    @include round-diametr($center-point-size);
+    top: $half-size;
+    left: $half-size;
+    transform: translate(-$half-size, -$half-size);
+    background-color: $second-hand-color;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    @include hand-size($minute-hand-height);
+    @include hand-center-positioning($minute-hand-height);
+    border-radius: $hand-border-radius;
+    background-color: $minute-hand-color;
+    animation: hand-move 3600s linear infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    @include hand-size($second-hand-height);
+    @include hand-center-positioning($second-hand-height);
+    border-radius: $hand-border-radius;
+    background-color: $second-hand-color;
+    animation: hand-move 60s linear infinite;
+  }
+}
+
+@keyframes hand-move {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: center bottom;
+
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: center bottom;
+  }
+}
