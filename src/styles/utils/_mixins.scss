@@ -1,0 +1,12 @@
+@mixin square($width, $height) {
+  width: $width;
+  height: $height;
+
+  top: 200 - $height;
+  left: 200 - $width/2;
+}
+
+@mixin afterSquare($width) {
+  width: $width*5;
+  height: $width*5;
+}
