@@ -1,0 +1,45 @@
+.watch {
+  @include circle($watch-size);
+
+  background-color: $background-watch-color;
+  border: 5px solid $border-watch-color;
+
+  &__circle {
+    @include circle($center-circle);
+
+    position: absolute;
+    background-color: $seconds-clockwise-color;
+  }
+
+  &__minutes-clockwise {
+    @extend %clockwise-position;
+
+    height: 120px;
+    width: 8px;
+    transform-origin: bottom;
+    animation: time 3600s linear infinite;
+
+    background-color: $minutes-clockwise-color;
+  }
+
+  &__seconds-clockwise {
+    @extend %clockwise-position;
+
+    height: 220px;
+    width: 5px;
+    transform-origin: bottom;
+    animation: time 60s linear infinite;
+
+    background-color: $seconds-clockwise-color;
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
