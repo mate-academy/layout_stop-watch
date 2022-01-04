@@ -1,0 +1,81 @@
+$clockSize: 300px;
+$clockRadius: $clockSize / 2;
+$pointSize: 20px;
+$arrowWigth: 6px;
+$minHeight: 100px;
+$secHeight: 140px;
+
+$clockBorder: #0edddd;
+$arrowColor: #b5ec46;
+
+@mixin size ($size) {
+  width: $size;
+  height: $size;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include size($clockSize);
+
+  border: 4px solid $clockBorder;
+  border-radius: 50%;
+
+
+  &__point {
+    z-index: 1;
+
+    @include size($pointSize);
+    border-radius: 50%;
+    background-color: $clockBorder;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: $clockRadius - $minHeight;
+
+    width: $arrowWigth;
+    height: $minHeight;
+
+    background-color: $arrowColor;
+    border-radius: 5px;
+
+    animation: move 3600s linear 4;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: $clockRadius - $secHeight;
+
+    width: $arrowWigth;
+    height: $secHeight;
+
+    background-color: $arrowColor;
+    border-radius: 5px;
+
+    animation: move 60s linear 10;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes move{
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
