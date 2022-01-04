@@ -1,0 +1,64 @@
+@import "src/styles/utils/variables.scss";
+@import "src/styles/utils/mixins.scss";
+
+.clock {
+  position: relative;
+  @include size-clock;
+  margin: 30px auto;
+  border-radius: 50%;
+  border: 1px solid $color-clock-arrow;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    @include size-center-clock;
+    border-radius: 50%;
+    background-color: $bg-color-center;
+    z-index: 1;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: $clock-size / 60;
+    height: $clock-size / 2;
+    background-color: $bg-second-arrow;
+    border-radius: 5px;
+    animation: move-minute 60s linear infinite;
+    transform-origin: center bottom;
+  }
+
+  &__minute-arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    width: $clock-size / 30;
+    height: $clock-size / 4;
+    background-color: $color-clock-arrow;
+    border-radius: 5px;
+    animation: move-minute (60s * 60) linear infinite;
+    transform-origin: center bottom;
+  }
+}
+
+@keyframes move-minute {
+  0% {
+    transform: rotate(0turn), translateX(-50%);
+  }
+  100% {
+    transform: translateX(-50%) rotate(1turn);
+  }
+}
+
+@keyframes move-second {
+  0% {
+    transform: rotate(0turn), translateX(-50%);
+  }
+  100% {
+    transform: translateX(-50%) rotate(1turn);
+  }
+}
