@@ -1,0 +1,39 @@
+.watch {
+  height: 300px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: flex;
+  margin-top: 10%;
+  margin-left: 30%;
+  position: relative;
+
+  &__hand1 {
+    height: 120px;
+    width: 4px;
+    background: #333;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    animation: tick 43200s infinite linear;
+    transform-origin: 2px 100%;
+  }
+
+  &__hand2 {
+    height: 100px;
+    width: 4px;
+    background: #777;
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    animation: tick 10s infinite linear;
+    transform-origin: 2px 100%;
+  }
+}
+
+@keyframes tick {
+  to {
+    transform: rotate(360deg);
+  }
+}
