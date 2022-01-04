@@ -1,0 +1,50 @@
+$color-grey: #645757;
+$color-blue: #4c9aaa;
+$color-red: #d15659;
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  &-seconds {
+    position: absolute;
+    top: 160px;
+    width: 5px;
+    height: 300px;
+    background-color: $color-blue;
+    border-radius: 5px;
+    animation: clock-animation 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &-minutes {
+    position: absolute;
+    top: 260px;
+    width: 10px;
+    height: 200px;
+    background-color: $color-red;
+    border-radius: 5px;
+    animation: clock-animation 3600s infinite;
+    transform-origin: bottom;
+  }
+
+  &-center {
+    position: absolute;
+    top: 440px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $color-grey;
+  }
+}
+
+@keyframes clock-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
