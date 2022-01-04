@@ -1,0 +1,72 @@
+$seconds-time-animation: 60s;
+$minutes-time-animation: 60 * $seconds-time-animation;
+$diameter: 600px;
+$watch-hands-width: $diameter / 40;
+$second-hand-height: $diameter / 2;
+$minute-hand-height: $diameter / 3;
+$minute-color: #bb1818;
+$second-color: #7c87ce;
+
+@mixin circle($diameter) {
+  height: $diameter;
+  width: $diameter;
+}
+
+%watch-hands-parameters {
+  width: $watch-hands-width;
+  border-radius: $watch-hands-width / 2;
+  position: absolute;
+  left: $diameter / 2 - $watch-hands-width / 2;
+  transform-origin: bottom center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.watch {
+  @include circle($diameter);
+  border-radius: 50%;
+  border: 3px solid $second-color;
+  position: relative;
+
+  &__second {
+    background-color: $second-color;
+    height: $second-hand-height;
+
+    @extend %watch-hands-parameters;
+
+    top: 0%;
+    animation: watch-animation $seconds-time-animation linear infinite;
+  }
+
+  &__minute {
+    background-color: $minute-color;
+    height: $minute-hand-height;
+
+    @extend %watch-hands-parameters;
+
+    top: $second-hand-height - $minute-hand-height;
+    animation: watch-animation $minutes-time-animation linear infinite;
+  }
+
+  &__central-circle {
+    @include circle($watch-hands-width * 3);
+    border-radius: 50%;
+    background-color: $second-color;
+    position: absolute;
+    left: $diameter / 2 - $watch-hands-width * 3 / 2;
+    top: $diameter / 2 - $watch-hands-width * 3 / 2;
+  }
+
+  @keyframes watch-animation {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
