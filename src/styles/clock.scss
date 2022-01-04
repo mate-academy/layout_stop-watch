@@ -1,0 +1,57 @@
+.clock {
+  @include circle($clockSize);
+  border: solid 2px;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bgClockColor;
+  position: relative;
+
+  &__center {
+    position: absolute;
+    @include circle(20px);
+    background-color: $detailColor;
+    border: solid $borderColor 2px;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+  &__minArrow {
+    position: absolute;
+    bottom: $arrowSift;
+    @include arrow(120px);
+    background-color: $detailColor;
+    border: solid $borderColor 2px;
+    box-sizing: border-box;
+    z-index: 1;
+    animation-name: rotate;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+  &__hourArrow {
+    position: absolute;
+    bottom: $arrowSift;
+    @include arrow(90px);
+    border: solid $borderColor 2px;
+    box-sizing: border-box;
+    background-color: $detailColor;
+    z-index: 2;
+    animation-name: rotate;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
