@@ -1,0 +1,42 @@
+.clock {
+  position: relative;
+  margin: 100px auto;
+
+  width: $clock-size;
+  height: $clock-size;
+
+  border: 2px dashed green;
+  border-radius: 50%;
+
+  &__round {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+
+    z-index: 1;
+  }
+
+  &__second {
+    @include arrowPar($second-pos, $second-width, $second-height);
+
+    background-color: rgb(124, 166, 214);
+
+    animation: round 60s linear infinite;
+  }
+
+  &__minute {
+    @include arrowPar($minute-pos, $minute-width, $minute-height);
+
+    background-color: transparent;
+    border: 1px solid grey;
+
+    animation: round 3600s linear infinite;
+  }
+}

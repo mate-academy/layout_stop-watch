@@ -1,0 +1,12 @@
+@mixin arrowPar ($pos, $width, $height) {
+  position: absolute;
+  box-sizing: border-box;
+  left: $pos;
+  top: $clock-size / 2 - $height;
+
+  width: $width;
+  height: $height;
+
+  border-radius: 40px 40px 2px 2px;
+  transform-origin: $width / 2 $height;
+}
