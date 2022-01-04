@@ -1,0 +1,54 @@
+@import "./variables";
+@import "./mixins";
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.watch {
+  position: relative;
+  @include round-diametr($watch-diametr);
+  background-color: $clock-face-color;
+  border: 1px solid $minute-hand-color;
+
+  &__center-point {
+    position: absolute;
+    @include round-diametr($center-point-size);
+    top: $half-size;
+    left: $half-size;
+    transform: translate(-$half-size, -$half-size);
+    background-color: $second-hand-color;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    @include hand-size($minute-hand-height);
+    @include hand-center-positioning($minute-hand-height);
+    border-radius: $hand-border-radius;
+    background-color: $minute-hand-color;
+    transform-origin: center bottom;
+    animation: hand-move 3600s linear infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    @include hand-size($second-hand-height);
+    @include hand-center-positioning($second-hand-height);
+    border-radius: $hand-border-radius;
+    background-color: $second-hand-color;
+    transform-origin: center bottom;
+    animation: hand-move 60s linear infinite;
+  }
+}
+
+@keyframes hand-move {
+  0% {
+    transform: rotate(0deg);
+
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
