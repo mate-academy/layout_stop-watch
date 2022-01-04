@@ -1,0 +1,49 @@
+.clock {
+  position: relative;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+
+  &__img {
+    width: $size;
+  }
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+
+    width: $centerSize;
+    height: $centerSize;
+
+    border-radius: 50%;
+    background-color: $color-white;
+  }
+
+  &__minutes {
+    @include handle-properties;
+    height: $handle-minutes-height;
+
+    animation: rotateArrow 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    @include handle-properties;
+    height: $handle-seconnds-height;
+
+    animation: rotateArrow 60s steps(60, end) infinite;
+  }
+}
+
+@keyframes rotateArrow {
+  0% {
+    transform: rotate(0deg) translateX(-50%);
+    transform-origin: left bottom;
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(-50%);
+    transform-origin: left bottom;
+  }
+}
