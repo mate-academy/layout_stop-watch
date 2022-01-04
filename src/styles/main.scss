@@ -31,7 +31,7 @@ $radius-circle: 100px;
     z-index: 2;
 
     transform-origin: 0 50%;
-    animation: rotate 60s infinite steps(60);
+    animation: rotate 60s steps(60) infinite;
   }
 
   &::after {
@@ -70,7 +70,7 @@ $radius-circle: 100px;
     border-radius: 0 50% 50% 0;
 
     transform-origin: 0 50%;
-    animation: rotate 3600s infinite steps(60);
+    animation: rotate 3600s steps(60) infinite;
   }
 
   &::after {
@@ -88,10 +88,10 @@ $radius-circle: 100px;
 }
 
 @keyframes rotate {
-  from {
+  0% {
     transform: rotate(-90deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: rotate(270deg);
   }
 }
