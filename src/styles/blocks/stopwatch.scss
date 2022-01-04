@@ -1,0 +1,37 @@
+.stopwatch {
+  @extend %justify-center;
+  align-items: center;
+
+  @extend %stopwatch-size;
+  border-radius: 50%;
+  border: 2px solid $stopwatch-color;
+
+  &__minutes {
+    @extend %pointer-position;
+    @extend %pointer-sizes;
+    height: $stopwatch-radius * 0.5;
+    background-color: $minutes-pointer-color;
+    @include rotate(rotate, 3600s);
+  }
+
+  &__seconds {
+    @extend %pointer-position;
+    @extend %pointer-sizes;
+    height: $stopwatch-radius;
+    background-color: $seconds-pointer-color;
+    @include rotate(rotate, 60s);
+  }
+
+  &__center {
+    @include center-size(30px);
+    border-radius: 50%;
+    background-color: $seconds-pointer-color;
+    z-index: 2;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+}
