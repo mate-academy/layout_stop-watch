@@ -1,0 +1,75 @@
+$bigArrowColor: rgb(90, 88, 212);
+$smallArrowColor: rgb(197, 88, 88);
+$arrowWidth: 10px;
+$smallArrowHeight: 30%;
+$watchSize: 500px;
+$centerWidthAndHeight: $arrowWidth * 2;
+
+.page {
+  &__content {
+    display: flex;
+    justify-content: center;
+
+    padding: 200px 0;
+    margin: 0;
+  }
+}
+
+.watch {
+  height: $watchSize;
+  width: $watchSize;
+
+  position: relative;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: $centerWidthAndHeight;
+    height: $centerWidthAndHeight;
+    border-radius: 50%;
+
+    background-color: $bigArrowColor;
+  }
+
+  &__bigArrow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: $arrowWidth;
+    height: 50%;
+    border-radius: 5px;
+    background-color: $bigArrowColor;
+
+    animation: arrowCircle 60s steps(60, end) infinite;
+  }
+
+  &__smallArrow {
+    position: absolute;
+    top: 50% - $smallArrowHeight;
+    left: 50%;
+
+    width: $arrowWidth;
+    height: $smallArrowHeight;
+    border-radius: $arrowWidth / 2;
+
+    background-color: $smallArrowColor;
+
+    animation: arrowCircle 3600s steps(60, end) infinite;
+  }
+}
+
+@keyframes arrowCircle {
+  0% {
+    transform: rotate(0deg) translateX(-50%);
+    transform-origin: left bottom;
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(-50%);
+    transform-origin: left bottom;
+  }
+}
