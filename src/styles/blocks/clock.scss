@@ -1,0 +1,70 @@
+.clock {
+  position: relative;
+  width: $clockSize;
+  height: $clockSize;
+
+  margin: 0 auto;
+  background-image: url("../images/clock1.png");
+  background-size: cover;
+
+  &__hour {
+    position: absolute;
+
+    @include square($secWidth*3, 150px);
+    @include position($secWidth*3, 150px);
+
+    background-color: $colorHour;
+    border-radius: $borderRadius;
+    @extend %animate;
+
+    animation-duration: 216000s;
+  }
+
+  &__minute {
+    position: absolute;
+    @include square($secWidth*2, 175px);
+    @include position($secWidth*2, 175px);
+
+    background-color: $colorMinute;
+    border-radius: $borderRadius;
+    @extend %animate;
+
+    animation-duration: 3600s;
+  }
+
+  &__second {
+    position: absolute;
+    @include square($secWidth, 200px);
+    @include position($secWidth, 200px);
+
+    background-color: $colorSeconds;
+    border-radius: $borderRadius;
+    @extend %animate;
+
+    animation-duration: 60s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    @include afterSquare($secWidth);
+
+    top: 50%;
+    left: 50%;
+
+    background-color: $colorSeconds;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
