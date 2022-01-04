@@ -1,74 +1,7 @@
-body {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+@import "./utils/normalize";
+@import "./utils/mixins";
+@import "./utils/extends";
+@import "./utils/variables";
 
-.watch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
-  height: 600px;
-  background-color: rgb(127, 225, 255);
-  border-radius: 50%;
-  border: 2px dashed #001bff;
-  position: relative;
+@import "./blocks/clock";
 
-  &__center {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color:#8214dc;
-    border-radius: 50%;
-    z-index: 5;
-  }
-
-  &__row {
-    &--seconds {
-      margin: 0;
-      width: 290px;
-      height: 3px;
-      border: transparent;
-      border-radius: 2px;
-      background-color: crimson;
-      transform: rotate(-90deg);
-      transform-origin: 0% 3px;
-      z-index: 1;
-      position: absolute;
-      top: 8px;
-      left: 10px;
-      animation: nev 60s infinite steps(60);
-    }
-
-   &--minutes {
-      margin: 0;
-      width: 250px;
-      height: 5px;
-      border: transparent;
-      border-radius: 5px;
-      background-color: #8214dc;
-      transform: rotate(-90deg);
-      transform-origin: 0% 3px;
-      z-index: 2;
-      position: absolute;
-      top: 8px;
-      left: 10px;
-      animation: nov 1600s infinite steps(1600);
-    }
-
-    @keyframes nev {
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes nov {
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  }
-}

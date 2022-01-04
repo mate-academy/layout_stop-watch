@@ -1,0 +1,56 @@
+.clock {
+  @extend %center;
+  @include box-size($box-size);
+  background-color: #ffc1051a;
+  box-shadow: inset
+  0 0 60px 0 #0000001f,
+  0 55px 55px 0 #00000041,
+  0 0 0 6px #ffffff;
+  border-radius: 50%;
+  position: relative;
+
+  &__center {
+    position: absolute;
+    @include center-size($center-size);
+    background-color: $second-color;
+    border-radius: 50%;
+  }
+
+  &__row {
+    &--seconds {
+      margin: 0;
+      width: 280px;
+      height: 3px;
+      border: $border;
+      border-radius: 2px;
+      background-color: $second-color;
+      @extend %transform;
+      @extend %position;
+      animation: nev 60s infinite steps(60);
+    }
+
+   &--minutes {
+      margin: 0;
+      width: 230px;
+      height: 5px;
+      border: $border;
+      border-radius: 5px;
+      background-color: $minute-color;
+      @extend %transform;
+      @extend %position;
+      animation: nov 1600s infinite steps(1600);
+    }
+
+    @keyframes nev {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes nov {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
