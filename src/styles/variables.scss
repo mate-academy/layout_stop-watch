@@ -1,0 +1,28 @@
+$second: 1s;
+$minute: $second * 60;
+$hour: $minute * 60;
+
+$watchSize: 500px;
+$halfSizeOfWatch: 50%;
+
+$handWidth: 10px;
+$centerSize: $handWidth * 2;
+$minuteHeight: 35%;
+
+$secondColor: red;
+$minuteColor: orange;
+
+@mixin square ($size) {
+  height: $size;
+  width: $size;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0) translateX(-$halfSizeOfWatch);
+  }
+
+  to {
+    transform: rotate(1turn) translateX(-$halfSizeOfWatch);
+  }
+}

@@ -1,0 +1,39 @@
+@import "variables";
+@import "page_styles";
+@import "hands_styles";
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  @include square($watchSize);
+
+  &__center {
+    top: $halfSizeOfWatch;
+    @include square($centerSize);
+    background-color: $secondColor;
+
+    transform: translate(-$halfSizeOfWatch, -$halfSizeOfWatch);
+
+  }
+
+  &__second {
+    top: 0;
+    width: $handWidth;
+    height: $halfSizeOfWatch;
+    background-color: $secondColor;
+    animation: rotate steps(60) $minute infinite;
+    transform-origin: left bottom;
+  }
+
+  &__minute {
+    top: $halfSizeOfWatch - $minuteHeight;
+    width: $handWidth * 1.5;
+    height: $minuteHeight;
+    background-color: $minuteColor;
+    animation: rotate linear $hour infinite;
+    transform-origin: left bottom;
+
+    z-index: -1;
+  }
+}
