@@ -10,21 +10,7 @@ $second-hand-color: blue;
 $minute-hand-color: navy;
 $clock-face-color: yellow;
 
-@mixin round-diametr($size) {
-  width: $size;
-  height: $size;
-  border-radius: $half-size;
-}
-
-@mixin hand-size ($height) {
-  height: $height;
-  width: $hand-width;
-}
-
-@mixin hand-center-positioning ($hand-height) {
-  left: $half-size - $hand-width / 2;
-  top: $half-size - $hand-height;
-}
+@import "./mixins";
 
 .content {
   display: flex;
@@ -52,6 +38,7 @@ $clock-face-color: yellow;
     @include hand-center-positioning($minute-hand-height);
     border-radius: $hand-border-radius;
     background-color: $minute-hand-color;
+    transform-origin: center bottom;
     animation: hand-move 3600s linear infinite;
   }
 
@@ -61,6 +48,7 @@ $clock-face-color: yellow;
     @include hand-center-positioning($second-hand-height);
     border-radius: $hand-border-radius;
     background-color: $second-hand-color;
+    transform-origin: center bottom;
     animation: hand-move 60s linear infinite;
   }
 }
@@ -68,12 +56,10 @@ $clock-face-color: yellow;
 @keyframes hand-move {
   0% {
     transform: rotate(0deg);
-    transform-origin: center bottom;
 
   }
 
   100% {
     transform: rotate(360deg);
-    transform-origin: center bottom;
   }
 }

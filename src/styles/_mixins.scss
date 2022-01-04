@@ -1,0 +1,15 @@
+@mixin round-diametr($size) {
+  width: $size;
+  height: $size;
+  border-radius: $half-size;
+}
+
+@mixin hand-size ($height) {
+  height: $height;
+  width: $hand-width;
+}
+
+@mixin hand-center-positioning ($hand-height) {
+  left: $half-size - $hand-width / 2;
+  top: $half-size - $hand-height;
+}
