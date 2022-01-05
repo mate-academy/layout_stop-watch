@@ -1,0 +1,27 @@
+.watch {
+  position: relative;
+  margin: 100px auto;
+  width: $watchSize;
+  height: $watchSize;
+
+  border: 3px dotted black;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &__sec {
+    position: absolute;
+    left: ($watchSize - 4) / 2;
+  }
+
+  &__min {
+    position: absolute;
+    left: ($watchSize - 10) / 2;
+  }
+}
