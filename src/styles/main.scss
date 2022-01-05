@@ -1,6 +1,5 @@
-$color-grey: #645757;
-$color-blue: #4c9aaa;
-$color-red: #d15659;
+@import "./utils/variables";
+@import "./utils/mixins";
 
 .clock {
   display: flex;
@@ -10,31 +9,30 @@ $color-red: #d15659;
 
   &-seconds {
     position: absolute;
-    top: 160px;
-    width: 5px;
-    height: 300px;
+    top: $main-gap;
+    width: $size-clockwise;
+    height: $height-clockwise * 1.5;
     background-color: $color-blue;
-    border-radius: 5px;
+    border-radius: $size-clockwise;
     animation: clock-animation 60s steps(60, end) infinite;
     transform-origin: bottom;
   }
 
   &-minutes {
     position: absolute;
-    top: 260px;
-    width: 10px;
-    height: 200px;
+    top: $main-gap * 2;
+    width: $size-clockwise * 2;
+    height: $height-clockwise;
     background-color: $color-red;
-    border-radius: 5px;
+    border-radius: $size-clockwise;
     animation: clock-animation 3600s infinite;
     transform-origin: bottom;
   }
 
   &-center {
     position: absolute;
-    top: 440px;
-    width: 30px;
-    height: 30px;
+    top: $main-gap * 3 + $size-of-circle * 2 + $size-of-circle / 2;
+    @include center-sizes;
     border-radius: 50%;
     background-color: $color-grey;
   }
