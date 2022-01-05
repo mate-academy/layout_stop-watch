@@ -5,7 +5,7 @@
   height: $watchSize;
 
   border: 3px dotted black;
-  border-radius: 50%;
+  @extend %borderRadius;
 
   &__center {
     position: absolute;
@@ -15,7 +15,7 @@
     width: 20px;
     height: 20px;
     background-color: $centerColor;
-    border-radius: 50%;
+    @extend %borderRadius;
 
     transform: translate(-50%, -50%);
   }
@@ -28,7 +28,7 @@
     height: $watchSize * 0.5;
 
     background-color: $secColor;
-    border-radius: 50%;
+    @extend %borderRadius;
 
     animation: round 60s linear infinite;
     transform-origin: bottom;
@@ -42,7 +42,7 @@
     height: $watchSize * 0.5;
 
     background-color: $minColor;
-    border-radius: 40px 40px 2px 2px;
+    @extend %borderRadius;
 
     animation: round 3600s linear infinite;
     transform-origin: bottom;
