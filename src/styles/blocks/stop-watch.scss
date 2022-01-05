@@ -1,0 +1,32 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include size(500px);
+  border: solid 1px $watch-border-color;
+  border-radius: $border-circle;
+  background-color: $watch-color;
+
+  &__point {
+    position: absolute;
+    @include size(20px);
+    border-radius: $border-circle;
+    background-color: $second-point-color;
+  }
+
+  &__minute {
+    position: absolute;
+    @include lengthArrow(190px);
+    background-color: $minure-color;
+    transform-origin: bottom;
+    animation: rotate linear 3600s infinite;
+  }
+
+  &__second {
+    position: absolute;
+    @include lengthArrow(220px);
+    background-color: $second-point-color;
+    transform-origin: bottom;
+    animation: rotate linear 60s infinite;
+  }
+}
