@@ -1,0 +1,45 @@
+.watch{
+@extend %center-items;
+@extend %circle;
+@include watchSize($watch-size);
+&-sec {
+  position: relative;
+  left:5px;
+  width:$width;
+  height: $height*2;
+  background-color:$main-color;
+  transform-origin: bottom;
+  animation:rotate 60s linear infinite;
+  border-radius: 10px;
+}
+&-circle {
+  position: relative;
+  bottom: -190px;
+  left: -10px;
+  @extend %circle;
+  background-color:$main-color;
+  height:$height/5;
+  width:$width*2;
+}
+&-min {
+  bottom:-100px;
+  right: -14px;
+  position: relative;
+  width:$width;
+  height: $height;
+  background-color:#c35d5d;
+  transform-origin: bottom;
+  animation:rotate 3600s linear infinite;
+  border-radius: 10px;
+}
+
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
