@@ -3,4 +3,54 @@
   width: $containerSize;
   height: $containerSize;
   margin: auto;
+
+  &__minute {
+    position: absolute;
+    left: $firstPosition;
+    top: 225px;
+    border-radius: 50%;
+    width: 7px;
+    height: 80px;
+    background-color: $colorMin;
+
+    animation-name: move;
+
+    animation-duration: 3600s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    transform-origin: 5px 80px;
+  }
+
+  &__second {
+    position: absolute;
+    left: $firstPosition;
+    top: 205px;
+    border-radius: 50%;
+    width: 5px;
+    height: 100px;
+    background-color: $colorSec;
+
+    animation-name: move;
+
+    animation-duration: 60s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    transform-origin: 5px 100px;
+  }
+
+  &__center {
+    position: absolute;
+    left: $firstPosition;
+    top: $firstPosition;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: $colorCenter;
+    opacity: 0.3;
+  }
+
 }
