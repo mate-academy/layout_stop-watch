@@ -1,5 +1,5 @@
-$size: 500px;
-$mainColor: #00acdc;
+@import "./mixin.scss";
+@import "./variables.scss";
 
 body {
   display: flex;
@@ -22,17 +22,12 @@ body {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  width: $size;
-  height: $size;
-  border-radius: 50%;
   border: 3px solid $mainColor;
-
+  @include watch-size;
   position: relative;
 
   &__centr {
-    height: 0.05 * $size;
-    width: 0.05 * $size;
-    border-radius: 50%;
+    @include centr-size;
     background-color: $mainColor;
     position: absolute;
     z-index: 1;
@@ -43,10 +38,11 @@ body {
     height: 0.3 * $size;
     background-color: #f00;
     position: absolute;
-    top: 0.2 * $size ;
+    bottom: 50%;
+
     border-radius: 3px;
     animation: rotateHand 3600s linear infinite;
-    transform-origin: bottom;
+    transform-origin: bottom center;
   }
 
   &__secondHand {
@@ -55,8 +51,8 @@ body {
     border-radius: 5px;
     background-color: #0e0;
     position: absolute;
-    top: 0.1 * $size;
+    bottom: 50%;
     animation: rotateHand 60s steps(60, end) infinite;
-    transform-origin: bottom;
+    transform-origin: bottom center;
   }
 }
