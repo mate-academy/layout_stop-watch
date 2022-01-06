@@ -1,0 +1,13 @@
+@mixin decoration ($color, $borderRadius) {
+  border: 2px solid $color;
+  border-radius: $borderRadius;
+  background-color: $color;
+}
+
+%hand-parameters {
+  position: absolute;
+  box-sizing: border-box;
+  animation-name: rotateHand;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
