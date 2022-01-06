@@ -1,37 +1,39 @@
-.watch{
-@extend %center-items;
-@extend %circle;
-@include watchSize($watch-size);
-&-sec {
+.watch {
   position: relative;
-  left:5px;
-  width:$width;
-  height: $height*2;
-  background-color:$main-color;
-  transform-origin: bottom;
-  animation:rotate 60s linear infinite;
-  border-radius: 10px;
-}
-&-circle {
-  position: relative;
-  bottom: -190px;
-  left: -10px;
+  @extend %center-items;
   @extend %circle;
-  background-color:$main-color;
-  height:$height/5;
-  width:$width*2;
-}
-&-min {
-  bottom:-100px;
-  right: -14px;
-  position: relative;
-  width:$width;
-  height: $height;
-  background-color:#c35d5d;
-  transform-origin: bottom;
-  animation:rotate 3600s linear infinite;
-  border-radius: 10px;
-}
+  @include watchSize($watch-size);
+
+  &-sec {
+    bottom: $watch-size/2 + 10px;
+    position: absolute;
+    width: $width;
+    height: $height*2;
+    background-color: $main-color;
+    transform-origin: bottom;
+    animation: rotate 60s linear infinite;
+    border-radius: 10px;
+
+  }
+  &-circle {
+    position: absolute;
+    bottom: $watch-size/2;
+    left: -10px;
+    @extend %circle;
+    background-color: $main-color;
+    height: $height/5;
+    width: $width*2;
+  }
+  &-min {
+    bottom: $watch-size/2 + 10px;
+    position: absolute;
+    width: $width;
+    height: $height;
+    background-color: #c35d5d;
+    transform-origin: bottom;
+    animation: rotate 3600s linear infinite;
+    border-radius: 10px;
+  }
 
 }
 
