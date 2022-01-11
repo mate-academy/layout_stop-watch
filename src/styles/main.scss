@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #bbb;
+}
+
+.header {
+  display: inline-block;
+  margin-left: 500px;
+  margin-top: 100px;
+  font-size: 70px;
+  color: #fff;
+  text-shadow: 0 0 2px #eee,
+    0 0 4px #fff,
+    0 -2px 4px #ff3,
+    2px -4px 6px #fd3,
+    -2px -6px 11px #f80,
+    2px -8px 18px #f20;
+}
+
+.stop-watch {
+  box-sizing: border-box;
+  height: 600px;
+  width: 600px;
+  border: 1px solid #eee;
+  background-color: #bbb;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  padding-left: 295px;
+  border-radius: 50%;
+}
+
+.second {
+  position: relative;
+  height: 300px;
+  width: 10px;
+  background-color: #4b9aaa;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  animation-name: move;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  transform-origin: bottom;
+  animation-iteration-count: infinite;
+  z-index: 1;
+}
+
+.minute {
+  height: 150px;
+  width: 10px;
+  background-color: #d15559;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  animation-name: move;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  transform-origin: top;
+  animation-iteration-count: infinite;
+  animation-delay: -1800s;
+}
+
+.stop-watch:hover > .second,
+.minute {
+  animation-play-state: paused;
+}
+
+.circle {
+  position: relative;
+  bottom: 170px;
+  right: 15px;
+  height: 40px;
+  width: 40px;
+  background-color: #4b9aaa;
+  border-radius: 50%;
+}
+
+@keyframes move {
+  from {
+    left: 0;
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
