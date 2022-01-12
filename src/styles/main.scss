@@ -26,6 +26,11 @@ body {
   width: 600px;
   border: 1px solid #eee;
   background-color: #bbb;
+  background-image: url(
+    https://image.shutterstock.com/image-vector/clock-face-vector-illustration-260nw-446372479.jpg
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
   margin-left: 50px;
   margin-bottom: 50px;
   padding-left: 295px;
@@ -34,13 +39,14 @@ body {
 
 .second {
   position: relative;
-  height: 300px;
+  top: 30px;
+  height: 260px;
   width: 10px;
   background-color: #4b9aaa;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   animation-name: move;
-  animation-duration: 60s;
+  animation-duration: 1s;
   animation-timing-function: linear;
   transform-origin: bottom;
   animation-iteration-count: infinite;
@@ -48,27 +54,32 @@ body {
 }
 
 .minute {
+  position: relative;
+  top: 30px;
   height: 150px;
   width: 10px;
   background-color: #d15559;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   animation-name: move;
-  animation-duration: 3600s;
+  animation-duration: 60s;
   animation-timing-function: linear;
   transform-origin: top;
   animation-iteration-count: infinite;
-  animation-delay: -1800s;
+  animation-delay: -30s;
 }
 
-.stop-watch:hover > .second,
-.minute {
+.stop-watch:hover > .second {
+  animation-play-state: paused;
+}
+
+.stop-watch:hover > .minute {
   animation-play-state: paused;
 }
 
 .circle {
   position: relative;
-  bottom: 170px;
+  bottom: 140px;
   right: 15px;
   height: 40px;
   width: 40px;
