@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+
+}
+
+body::after {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(251, 75, 59);
+  border-radius: 10px;
+  position: absolute;
+  content: "Ma";
+  color: #fff;
+  line-height: 20px;
+  text-align: center;
+  left: 295px;
+  top: 335px;
+  animation: rotate alternate 6s infinite;
+}
+
+h1::after {
+  display: block;
+  width: 10px;
+  height: 250px;
+  background-color: rgb(251, 75, 59);
+  border-radius: 5px;
+  position: absolute;
+  top: 225px;
+  left: 300px;
+  content: "";
+  transform-origin: 5px 245px;
+  animation: move steps(60, end) 3600s infinite;
+}
+
+h1::before {
+  display: block;
+  width: 10px;
+  height: 300px;
+  background-color: #0c0;
+  border-radius: 5px;
+  position: absolute;
+  top: 200px;
+  left: 300px;
+  content: "";
+  transform-origin: 5px 295px;
+  animation: move steps(60, end) 60s infinite;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(-50%) rotate(0);
+  }
+
+  to {
+    transform: translateY(-50%) rotate(1turn);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
