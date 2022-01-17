@@ -1,0 +1,78 @@
+$watch-size: 300px;
+$center-size: 20px;
+$watch-radius: $watch-size / 2;
+$arrow-wigth: 6px;
+$min-height: 100px;
+$sec-height: 140px;
+$arrow-border-radius: 5px;
+$sun-color: #fef2e4;
+$watch-color: #fd974f;
+$watch-color-minutes: #805a3b;
+$watch-color-seconds: #c60000;
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $sun-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+  
+.watch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  border: 3px solid white;
+  background-color: $watch-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &__center {
+    width: $center-size;
+    height: $center-size;
+    background-color: $sun-color;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  &__seconds {
+    position: absolute;
+    content: "";
+  
+    top: $watch-radius - $min-height;
+    width: $arrow-wigth;
+    height: $min-height;
+  
+    background-color: $watch-color-seconds;
+  
+    animation: move 60s linear 10;
+    transform-origin: bottom;
+  }
+  
+  &__minutes {
+    position: absolute;
+    content: "";
+    top: $watch-radius - $min-height;
+  
+    width: $arrow-wigth;
+    height: $min-height;
+    background-color: $watch-color-minutes;
+  
+    animation: move 3600s linear 4;
+    transform-origin: bottom;
+  }
+}
+  
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+    
+  to {
+    transform: rotate(360deg);
+  }
+}
