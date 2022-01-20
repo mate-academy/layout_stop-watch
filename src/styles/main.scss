@@ -1,0 +1,51 @@
+body::after {
+  display: block;
+  position: absolute;
+  top: 290px;
+  left: 295px;
+  content: "";
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+h1::before {
+  display: block;
+  position: absolute;
+  top: 120px;
+  left: 300px;
+  content: "";
+  background-color: pink;
+  height: 180px;
+  width: 10px;
+  border-radius: 10px;
+  transform-origin: 5px bottom;
+  animation: arrow steps(60, end) 3600s infinite;
+}
+
+h1::after {
+  display: block;
+  position: absolute;
+  top: 90px;
+  left: 300px;
+  content: "";
+  background-color: rgba($color: red, $alpha: 0.5);
+  height: 210px;
+  width: 10px;
+  border-radius: 10px;
+  transform-origin: 5px bottom;
+  animation: arrow steps(60, end) 60s infinite;
+
+}
+
+
+@keyframes arrow {
+  from {
+    transform:  rotate(0);
+  }
+
+  to {
+    transform:  rotate(1turn);
+  }
+}
