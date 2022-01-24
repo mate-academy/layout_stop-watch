@@ -1,52 +1,9 @@
 @import "./utils/variables";
 @import "./utils/mixins";
+@import "./utils/extends";
 
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
+@import "./blocks/container.scss";
+@import "./blocks/watch.scss";
+@import "./blocks/animation.scss";
 
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-
-  min-height: 100vh;
-  width: 100%;
-
-  background-color: azure;
-}
-
-.watch {
-
-  &__second-arrow {
-    position: relative;
-
-    width: $arrow-width;
-    height: $arrow-height;
-
-    border-radius: $arrow-curve;
-    background-color: #37adc2;
-
-    animation-name: rotation;
-    animation-duration: 60s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-    transform-origin: bottom center;
-
-    &::after {
-      position: absolute;
-      bottom: $wheel-y-adjustment;
-      left: $wheel-x-adjustment;
-
-      content: "";
-
-      @include wheel($wheel-size);
-      background-color: inherit;
-    }
-  }
-}
+@import "./reset.scss";
