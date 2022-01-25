@@ -1,0 +1,40 @@
+.watch {
+
+  &__second-arrow {
+    @extend %watch-position;
+    z-index: 1;
+
+    @extend %arrow-properties;
+    height: 300px;
+
+    background-color: #37adc2;
+
+    @extend %animation;
+    animation-duration: 60s;
+    animation-iteration-count: 60;
+
+    &::after {
+      position: absolute;
+      bottom: -$wheel-size / 2;
+      left: -$arrow-width / 2;
+
+      content: "";
+      @include wheel($wheel-size);
+
+      background-color: inherit;
+    }
+  }
+
+  &__minute-arrow {
+    @extend %watch-position;
+
+    @extend %arrow-properties;
+    height: 200px;
+
+    background-color: rgb(185, 23, 23);
+
+    @extend %animation;
+    animation-duration: 3600s;
+    animation-iteration-count: 1;
+  }
+}
