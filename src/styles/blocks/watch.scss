@@ -5,9 +5,9 @@
     z-index: 1;
 
     @extend %arrow-properties;
-    height: $arrow-second-height;
+    height: 300px;
 
-    background-color: $wheel-color;
+    background-color: #37adc2;
 
     @extend %animation;
     animation-duration: 60s;
@@ -23,18 +23,12 @@
     @extend %watch-position;
 
     @extend %arrow-properties;
-    height: $arrow-minute-height;
+    height: 200px;
 
     background-color: rgb(185, 23, 23);
 
     @extend %animation;
     animation-duration: 3600s;
     animation-iteration-count: 1;
-
-    &::after {
-      @extend %wheel-position;
-
-      background-color: $wheel-color;
-    }
   }
 }
