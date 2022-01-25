@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.watch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-origin: top left;
+  border: 1px solid black;
+  width: 500px;
+  margin: auto;
+
+  &__circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+}
+
+.arrows {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  &__second {
+    width: 10px;
+    height: 400px;
+    background-color: blue;
+    animation: sec 60s steps(60, end) infinite;
+  }
+
+  &__minute {
+    width: 10px;
+    height: 250px;
+    background-color: pink;
+    animation: sec 3600s steps(60, end) infinite;
+    // transform-origin: bottom left;
+    bottom: 0;
+  }
+}
+
+@keyframes sec {
+  to {
+    transform: rotate(360deg);
+  }
+}
