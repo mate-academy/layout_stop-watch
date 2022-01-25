@@ -1,0 +1,36 @@
+.stopwatch {
+  height: 500px;
+  width: 500px;
+  position: relative;
+  margin: 0 auto;
+
+  &:before {
+    content: "";
+    height: 200px;
+    width: 10px;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    background-color: #eea29a;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: rotate 3600s infinite linear;
+  }
+  &:after {
+    content: "";
+    height: 250px;
+    width: 10px;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    background-color: #92a8d1;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: rotate 60s infinite linear;
+  }
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
