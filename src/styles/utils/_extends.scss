@@ -6,21 +6,11 @@
 
 %arrow-properties {
   width: $arrow-width;
-  border-radius: $arrow-curve;
+  border-radius: $arrow-width / 2;
 }
 
 %animation {
   animation-name: rotation;
   animation-timing-function: linear;
   transform-origin: bottom center;
-}
-
-%wheel-position {
-  position: absolute;
-  bottom: $wheel-y-adjustment;
-  left: $wheel-x-adjustment;
-
-  content: "";
-
-  @include wheel($wheel-size);
 }

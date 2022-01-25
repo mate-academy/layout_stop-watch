@@ -14,7 +14,13 @@
     animation-iteration-count: 60;
 
     &::after {
-      @extend %wheel-position;
+      position: absolute;
+      bottom: -$wheel-size / 2;
+      left: -$arrow-width / 2;
+
+      content: "";
+      @include wheel($wheel-size);
+
       background-color: inherit;
     }
   }
