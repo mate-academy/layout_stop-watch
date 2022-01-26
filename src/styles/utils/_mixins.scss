@@ -1,0 +1,23 @@
+@mixin rectangle($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin circle($radius, $color, $thickness) {
+  @include rectangle(2 * $radius, 2 * $radius);
+
+  border: $thickness solid $color;
+  border-radius: 50%;
+}
+
+@mixin arrange-hand($hand-length, $hand-scale, $color) {
+  position: absolute;
+  bottom: 50%;
+  margin-top: (1 - $hand-scale) * $hand-length;
+  @include rectangle($line-weight, $hand-length);
+
+  background-color: $color;
+  border-radius: 2px;
+
+  transform-origin: bottom center;
+}

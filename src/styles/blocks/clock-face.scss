@@ -1,0 +1,40 @@
+.clock-face {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include circle($cf-radius, $color-yellow, $line-weight);
+
+  transition: transform 0.3s;
+
+  &__min-hand {
+    @include arrange-hand($min-hand-length, $min-hand-scale, $color-marine);
+    z-index: -1;
+    animation: tick 60s steps(60, end) infinite;
+  }
+
+  &__sec-hand {
+    @include arrange-hand($sec-hand-length, $sec-hand-scale, $color-red);
+    animation: tick 1s linear infinite;
+  }
+
+  &__joint {
+    @include circle($joint-radius, $color-red, $line-weight);
+    background-color: $color-red;
+  }
+
+  &:hover {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes tick {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
