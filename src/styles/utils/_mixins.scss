@@ -5,7 +5,6 @@
 
 @mixin circle($radius, $color, $thickness) {
   @include rectangle(2 * $radius, 2 * $radius);
-
   border: $thickness solid $color;
   border-radius: 50%;
 }
