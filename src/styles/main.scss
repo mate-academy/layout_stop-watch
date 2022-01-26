@@ -1,0 +1,89 @@
+$external-circle-size: 600px;
+$central-circle-size: 20px;
+
+%arrrow-parametrs {
+  width: 10px;
+  height: 280px;
+  border-radius: 10px;
+}
+
+@mixin external-circle ($external-circle-size) {
+  height: $external-circle-size;
+  width: $external-circle-size;
+  border-radius: 50%;
+}
+
+@mixin central-circle ($central-circle-size) {
+  height: $central-circle-size;
+  width: $central-circle-size;
+  border-radius: 50%;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  @include external-circle($external-circle-size);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  border: 3px solid orange;
+
+  &__center {
+    @include central-circle($central-circle-size);
+    position: relative;
+
+    background-color: lightgreen;
+
+    &::before {
+      content: "";
+      @extend %arrrow-parametrs;
+
+      position: relative;
+      bottom: 270px;
+      left: 5px;
+
+      display: block;
+
+      z-index: -1;
+
+      background-color: lightgray;
+
+      transform-origin: bottom center;
+      animation: move 60s steps(60) infinite 1s;
+    }
+
+    &::after {
+      content: "";
+      @extend %arrrow-parametrs;
+
+      position: relative;
+      bottom: 550px;
+      left: 5px;
+
+      display: block;
+
+      background-color: lightgreen;
+
+      transform-origin: bottom center;
+      animation: move 3600s steps(60) infinite 1s;
+    }
+  }
+}
