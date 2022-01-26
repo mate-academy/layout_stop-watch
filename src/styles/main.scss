@@ -1,0 +1,51 @@
+.watch {
+  width: 400px;
+  height: 400px;
+  position: relative;
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    background-color: darkgreen;
+    border-radius: 15px;
+
+  }
+
+  &__second {
+    position: absolute;
+    top: 0;
+    left: 195px;
+    transform-origin: bottom center;
+    height: 200px;
+    width: 10px;
+    background: darkgreen;
+    border-radius: 10px;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 50px;
+    left: 195px;
+    transform-origin: bottom center;
+    height: 150px;
+    width: 10px;
+    background: darkcyan;
+    border-radius: 5px;
+    animation: rotate 3600s linear infinite;
+  }
+}
