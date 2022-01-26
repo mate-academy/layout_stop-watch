@@ -1,0 +1,18 @@
+.stopwatch {
+  position: relative;
+
+  @include circle($watchHeight);
+  border: 3px solid #9d79a8;
+
+  background-color: #d3c9f5;
+
+  &::after {
+    content: "";
+    @include watchArrow(getMinuteHeight($watchHeight), #f5f1c9, 60s);
+  }
+
+  &::before {
+    content: "";
+    @include watchArrow(getSecondHeight($watchHeight), #7a7115, 3600s);
+  }
+}
