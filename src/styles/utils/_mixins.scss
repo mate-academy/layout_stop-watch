@@ -1,0 +1,21 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+
+  border-radius: 50%;
+}
+
+@mixin watchArrow($height, $background, $a-duration) {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: $height;
+  border-radius: 8px;
+
+  background-color: $background;
+
+  animation: rotate $a-duration infinite linear;
+  transform-origin: bottom;
+}
