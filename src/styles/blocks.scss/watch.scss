@@ -1,0 +1,57 @@
+.watch {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    @include square($size);
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("../images/clock.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__sec-arrow {
+    @extend %arrow-settings;
+
+    height: $sec-arrow-size;
+    background-color: $sec-arrow-color;
+
+    animation: move 60s steps(60) infinite;
+  }
+
+  &__min-arrow {
+    @extend %arrow-settings;
+
+    height: $min-arrow-size;
+    background-color: $min-arrow-color;
+
+    animation: move 3600s steps(60, end) infinite;
+  }
+
+  &__dot {
+    @include square($dot-size);
+
+    z-index: 1;
+
+    background-color: $sec-arrow-color;
+    border-radius: 50%;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
