@@ -1,0 +1,50 @@
+$clock-size: 500px;
+$hourly-arrow: 100px;
+$minute-arrow: 200px;
+$width-arrow: 5px;
+
+.clock {
+  position: relative;
+
+  margin: auto;
+
+  @include squere ($clock-size);
+
+  background-color: burlywood;
+  border-radius: 50%;
+  border: 1px solid orange;
+
+  &::before {
+    position: absolute;
+    top: $clock-size / 2 - $hourly-arrow;
+    left: $clock-size / 2;
+    display: block;
+    content: "";
+    height: $hourly-arrow;
+    width: $width-arrow;
+    background-color: red;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: rotate 3600s infinite linear;
+  }
+
+  &::after {
+    position: absolute;
+    top: $clock-size / 2 - $minute-arrow;
+    left: $clock-size / 2;
+    display: block;
+    content: "";
+    height: $minute-arrow;
+    width: $width-arrow;
+    background-color: cadetblue;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: rotate 60s infinite linear;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
