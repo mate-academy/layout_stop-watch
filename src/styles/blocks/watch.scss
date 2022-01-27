@@ -9,23 +9,27 @@
   }
 
   &__minute {
-    animation: minute-arrow 3600s linear 1s;
+    @include arrow-position;
+    animation: minute-arrow 3600s linear;
+    transform-origin: bottom;
 
     &::before {
       content: "";
-      @include arrow-position;
+      display: block;
       @include size($arrow-width, $arrow-min-height);
       background-color: #fff;
       border-radius: 8px;
     }
   }
-  
+
   &__second {
+    @include arrow-position;
     animation: second-arrow 60s linear infinite;
+    transform-origin: bottom;
 
     &::before {
       content: "";
-      @include arrow-position;
+      display: block;
       @include size($arrow-width, $arrow-sec-height);
       background-color: #0c08f7;
       border-radius: 8px;
