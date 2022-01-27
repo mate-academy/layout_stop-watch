@@ -1,0 +1,40 @@
+.watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: $center-circle-size;
+  height: $center-circle-size;
+  border-radius: 50%;
+  background-color: lightblue;
+  border: 1px solid #000;
+
+  &__min-arrow {
+    @include arrow-pos-n-size;
+    height: $min-arrow-size;
+    background-color: #903;
+    z-index: -1;
+
+    animation: move 3600s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__sec-arrow {
+    @include arrow-pos-n-size;
+    height: $sec-arrow-size;
+    background-color: #30c;
+    z-index: -2;
+
+    animation: move 60s steps(60) infinite;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
