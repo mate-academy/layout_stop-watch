@@ -1,0 +1,70 @@
+$color-seconds: lightblue;
+$color-minutes: coral;
+
+$second-arrow-size: 300px;
+$minute-arrow-size: 200px;
+$arrows-width: 16px;
+$dot-size: 30px;
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin stopwatch-arrows ($size, $color, $duration) {
+  content: "";
+  height: $size;
+  width: $arrows-width;
+
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  background-color: $color;
+  border-radius: $arrows-width / 2;
+
+  animation: rotate $duration infinite linear;
+  transform-origin: bottom;
+}
+
+@mixin dot ($size, $color) {
+  height: $size;
+  width: $size;
+  border-radius: $size / 2;
+  background-color: $color-seconds;
+  margin-left: $dot-size / 2;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stop-watch {
+  position: relative;
+
+  &::before {
+    content: "";
+    @include stopwatch-arrows($minute-arrow-size, $color-minutes, 3600s);
+
+    z-index: -1;
+  }
+
+  &::after {
+    @include stopwatch-arrows($second-arrow-size, $color-seconds, 60s);
+
+  }
+
+  &__dot {
+    @include dot($dot-size, $color-seconds);
+
+  }
+}
