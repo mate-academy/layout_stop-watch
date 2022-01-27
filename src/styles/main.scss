@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+$dial-size: 420px;
+$c-sec: #4b9aaa;
+$c-min: #993c3f;
+$c-white: white;
+
+%origin {
+  transform-origin: bottom center;
+}
+
+@mixin area($size-w, $size-h) {
+  width: $size-w;
+  height: $size-h;
+}
+
+@keyframes move {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.dial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  background-image: url("/images/black-burst-abstract-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__stop-watch {
+    position: relative;
+    @include area($dial-size, $dial-size);
+
+    min-width: $dial-size;
+
+    border: 3px solid $c-white;
+    border-radius: 50%;
+
+    background-image: url("/images/dial.png");
+    background-color: $c-white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.8;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      opacity: 0.95;
+      box-shadow: 0 0 20px 5px #993c3f;
+      cursor: pointer;
+    }
+  }
+}
+
+.stop-watch {
+  &__minute-arrow {
+    position: absolute;
+    left: 48.5%;
+    bottom: 50%;
+
+    @include area($dial-size * 0.03, $dial-size * 0.3);
+    background-color: $c-min;
+    border-radius: 50%;
+
+    @extend %origin;
+    z-index: 1;
+
+    animation: move 3600s steps(3600) infinite;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    left: 48.5%;
+    bottom: 50%;
+
+    @include area($dial-size * 0.03, $dial-size * 0.45);
+    background-color: $c-sec;
+    border-radius: 90%;
+
+    @extend %origin;
+    z-index: 2;
+
+    animation: move 60s steps(600) infinite;
+  }
+
+  &__core {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    @include area($dial-size * 0.06, $dial-size * 0.06);
+
+    background-color: $c-sec;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+}
