@@ -1,0 +1,49 @@
+.watch {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: rgb(201, 193, 193);
+
+  &__hands-min {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: 50%;
+    height: 100px;
+    width: 10px;
+    background-color: rgb(205, 240, 10);
+    border-radius: 5px;
+  }
+
+  &__hands-sec {
+    position: absolute;
+    top: calc(50% - 200px);
+    left: 50%;
+    height: 200px;
+    width: 10px;
+    background-color: blue;
+    border-radius: 5px;
+    animation: move 36s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__hands-center {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 5px);
+    height: 20px;
+    width: 20px;
+    background-color: blue;
+    border-radius: 50%;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
