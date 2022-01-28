@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$sw-size: 800px;
+
+@mixin animSet ($time) {
+  animation-name: turning;
+  animation-duration: $time;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: bottom center;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes turning {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  background-color: rgba(192, 192, 192, 0.3);
+  width: $sw-size;
+  height: $sw-size;
+  border: 3px solid grey;
+  border-radius: 50%;
+  box-shadow: 0 0 55px -8px #313030;
+  position: relative;
+
+  &__feature {
+
+    &--long {
+      position: absolute;
+      left: $sw-size / 2 - $sw-size / 160;
+      width: $sw-size / 80;
+      height: $sw-size / 2;
+      border-radius: $sw-size / 80;
+      background-color: aqua;
+
+      @include animSet(10s);
+    }
+
+    &--short {
+      position: absolute;
+      left: $sw-size / 2 - $sw-size / 100;
+      top: $sw-size / 2 - $sw-size / 3;
+      width: $sw-size / 50;
+      height: $sw-size / 3;
+      border-radius: $sw-size / 50;
+      background-color: red;
+
+      @include animSet(60s);
+    }
+
+    &--center {
+      position: absolute;
+      left: $sw-size / 2 - $sw-size / 60;
+      top: $sw-size / 2 - $sw-size / 50;
+      width: $sw-size / 25;
+      height: $sw-size / 25;
+      border-radius: 50%;
+      background-color: aqua;
+    }
+  }
+}
