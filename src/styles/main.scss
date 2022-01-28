@@ -1,23 +1,7 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.wrapper {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 $sw-size: 800px;
 
 @mixin animSet ($time) {
-  animation-name: turning;
-  animation-duration: $time;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation: turning $time linear infinite;
   transform-origin: bottom center;
 
   &:hover {
@@ -32,6 +16,19 @@ $sw-size: 800px;
   100% {
     transform: rotate(360deg);
   }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .stopwatch {
@@ -53,7 +50,7 @@ $sw-size: 800px;
       border-radius: $sw-size / 80;
       background-color: aqua;
 
-      @include animSet(10s);
+      @include animSet(60s);
     }
 
     &--short {
@@ -65,7 +62,7 @@ $sw-size: 800px;
       border-radius: $sw-size / 50;
       background-color: red;
 
-      @include animSet(60s);
+      @include animSet(3600s);
     }
 
     &--center {
