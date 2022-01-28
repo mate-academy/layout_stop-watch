@@ -23,13 +23,15 @@ body {
 .clock__second-hand {
   animation: rotate (steps(60) 60s infinite);
   background-color: blue;
-
   position: absolute;
+
   left: 50%;
-  top: 50%;
+  bottom: 50%;
+
   width: 5px;
   height: 150px;
-  transform-origin: center 0;
+  transform-origin: bottom left;
+  transform: translateX(50%);
 }
 
 .clock__minute-hand {
@@ -37,9 +39,12 @@ body {
   background-color: red;
 
   position: absolute;
+
   left: 50%;
-  top: 50%;
+  bottom: 50%;
+
   width: 5px;
   height: 150px;
-  transform-origin: center 0;
+  transform-origin: top left;
+  transform: translateX(50%);
 }
