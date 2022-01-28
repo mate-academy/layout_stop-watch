@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  padding: 200px;
+}
+
+.stopwatch {
+  position: relative;
+  transform: rotate(180deg);
+  margin: 0 auto;
+
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+
+  background-color: #000;
+
+  @keyframes circle {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 4px;
+    height: 100px;
+    background-color: #fff;
+    transform-origin: center 0;
+
+    animation: circle linear 3600s infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 4px;
+    height: 90px;
+    background-color: #fff;
+    transform-origin: center 0;
+
+    animation: circle steps(60) 60s infinite;
+  }
+}
