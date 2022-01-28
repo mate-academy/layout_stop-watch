@@ -1,0 +1,59 @@
+.timer {
+  display: flex;
+  background-color: #c9f;
+  height: 100vh;
+
+  &__hours {
+    position: absolute;
+    top: 0;
+    bottom: 200px;
+    left: 0;
+    right: 0;
+    display: flex;
+    width: 13px;
+    height: 200px;
+    background-color: #f93;
+    margin: auto;
+    border-radius: 20px;
+    border: 1px solid white;
+    animation-name: move;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom center;
+    animation-timing-function: linear;
+  }
+
+  &__min {
+    position: absolute;
+    top: 0;
+    bottom: 300px;
+    left: 0;
+    right: 0;
+    width: 13px;
+    height: 300px;
+    display: flex;
+    background-color: #ff9;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 20px;
+    animation-name: move;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom center;
+    animation-timing-function: linear;
+  }
+
+  &__dot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #eee;
+    background-color: #eee;
+    border-radius: 50px;
+    margin: auto;
+  }
+}
