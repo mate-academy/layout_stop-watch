@@ -7,8 +7,8 @@
 
   &__hands-min {
     position: absolute;
-    top: calc(50% - 100px);
     left: 50%;
+    bottom: 50%;
     height: 100px;
     width: 10px;
     background-color: rgb(205, 240, 10);
@@ -19,8 +19,8 @@
 
   &__hands-sec {
     position: absolute;
-    top: calc(50% - 200px);
     left: 50%;
+    bottom: 50%;
     height: 200px;
     width: 10px;
     background-color: blue;
@@ -31,12 +31,13 @@
 
   &__hands-center {
     position: absolute;
-    top: calc(50% - 10px);
-    left: calc(50% - 5px);
+    left: 50%;
+    bottom: 50%;
     height: 20px;
     width: 20px;
     background-color: blue;
     border-radius: 50%;
+    transform: translate(-25%, 50%);
   }
 }
 
