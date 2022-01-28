@@ -1,0 +1,65 @@
+$clock-size: 500px;
+$minute-hand: 150px;
+$second-hand: 200px;
+$with-hand: 10px;
+$point-size: 20px;
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin point($size) {
+  width: $size;
+  height: $size;
+}
+
+.clock {
+  position: relative;
+  @include square($clock-size);
+  border-radius: 50%;
+  border: 2px solid #8c8897;
+  margin: 0 auto;
+  background-color: #d9dddc;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: $with-hand;
+    height: $minute-hand;
+    background-color: #d15559;
+    border-radius: 5px;
+    top: $clock-size / 2 - $minute-hand;
+    left: $clock-size / 2 - $with-hand / 2;
+    transform-origin: bottom;
+    animation: rotate 3600s infinite linear;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: $with-hand;
+    height: $second-hand;
+    background-color: #4c9aaa;
+    border-radius: 5px;
+    top: $clock-size / 2 - $second-hand;
+    left: $clock-size / 2 - $with-hand / 2;
+    transform-origin: bottom;
+    animation: rotate 60s infinite linear;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .point {
+    position: absolute;
+    @include point($point-size);
+    background-color: #4c9aaa;
+    border-radius: 50%;
+    top: $clock-size / 2 - $point-size / 2;
+    left: $clock-size / 2 - $point-size / 2;
+  }
+}
