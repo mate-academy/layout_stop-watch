@@ -7,37 +7,37 @@
   width: $watch-width;
   height: $watch-height;
   position: relative;
-}
 
-.watch__second-arrow {
-  position: absolute;
-  background-color: rgb(31, 145, 180);
-  height: 6px;
-  width: $second-arrow-width;
-  border-radius: 8px;
-  transform-origin: center left;
-  @extend %centre-position;
-  animation: move-second-arrows  60s infinite steps(60, end);
-}
-
-.watch__middle-point {
-  position: absolute;
-  @include centre-point(14px);
-  border-radius: 50%;
-  background-color: rgb(31, 145, 180);
-  @include  centre-position(50%);
-  transform: translate(-50%, -50%);
-}
-
-.watch__minute-arrow {
-  position: absolute;
-  background-color: rgb(214, 104, 104);
-  height: 7px;
-  width: $minute-arrow-width;
-  border-radius: 8px;
-  transform-origin: center left;
-  @extend %centre-position;
-  animation: move-minute-arrows  3600s infinite steps(360, end);
+  &__second-arrow {
+    position: absolute;
+    background-color: rgb(31, 145, 180);
+    height: 6px;
+    width: $second-arrow-width;
+    border-radius: 8px;
+    transform-origin: center left;
+    @extend %centre-position;
+    animation: move-second-arrows  60s infinite steps(60, end);
+  }
+  
+  &__middle-point {
+    position: absolute;
+    @include centre-point(14px);
+    border-radius: 50%;
+    background-color: rgb(31, 145, 180);
+    @include  centre-position(50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  &__minute-arrow {
+    position: absolute;
+    background-color: rgb(214, 104, 104);
+    height: 7px;
+    width: $minute-arrow-width;
+    border-radius: 8px;
+    transform-origin: center left;
+    @extend %centre-position;
+    animation: move-minute-arrows  3600s infinite steps(360, end);
+  }
 }
 
 @keyframes move-second-arrows {
