@@ -1,0 +1,37 @@
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include circle($clock-size);
+  background: #4285f4;
+
+  &__min-hand {
+    @extend %hands-position;
+    height: 250px;
+    width: 10px;
+    border-radius: 10px;
+    background: #db4437;
+    transform-origin: top;
+    animation: steps 3600s linear infinite -1800s;
+  }
+
+  &__sec-hand {
+    @extend %hands-position;
+    height: 300px;
+    width: 10px;
+    border-radius: 10px;
+    background: #4285f4;
+    transform-origin: top;
+    animation: steps 60s linear infinite -30s;
+  }
+}
+
+@keyframes steps {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
