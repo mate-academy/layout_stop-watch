@@ -16,9 +16,9 @@
     border-radius: 8px;
     transform-origin: center left;
     @extend %centre-position;
-    animation: move-second-arrows  60s infinite steps(60, end);
+    animation: move-arrows  60s infinite steps(60, end);
   }
-  
+
   &__middle-point {
     position: absolute;
     @include centre-point(14px);
@@ -27,7 +27,7 @@
     @include  centre-position(50%);
     transform: translate(-50%, -50%);
   }
-  
+
   &__minute-arrow {
     position: absolute;
     background-color: rgb(214, 104, 104);
@@ -36,21 +36,11 @@
     border-radius: 8px;
     transform-origin: center left;
     @extend %centre-position;
-    animation: move-minute-arrows  3600s infinite steps(360, end);
+    animation: move-arrows  3600s infinite steps(360, end);
   }
 }
 
-@keyframes move-second-arrows {
-  0% {
-    transform: rotate($start-position);
-  }
-
-  100% {
-    transform: rotate($end-position);
-  }
-}
-
-@keyframes move-minute-arrows {
+@keyframes move-arrows {
   0% {
     transform: rotate($start-position);
   }
