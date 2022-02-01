@@ -7,8 +7,36 @@ body {
   height: 300px;
   border-radius: 50%;
   background-color: pink;
-  margin: 0 auto;
   position: relative;
+
+  &__secondhand {
+    animation: rotate (steps(60) 60s infinite);
+    background-color: blue;
+    position: absolute;
+  
+    left: 50%;
+    bottom: 50%;
+  
+    width: 5px;
+    height: 150px;
+    transform-origin: bottom left;
+    transform: translateX(50%);
+  }
+
+  &__minutehand {
+    animation: rotate linear 3600s infinite;
+    background-color: red;
+  
+    position: absolute;
+  
+    left: 50%;
+    bottom: 50%;
+  
+    width: 5px;
+    height: 150px;
+    transform-origin: bottom left;
+    transform: translateX(50%);
+  }
 }
 
 @keyframes rotate {
@@ -18,33 +46,4 @@ body {
   to {
     transform: rotate(1turn);
   }
-}
-
-.clock__second-hand {
-  animation: rotate (steps(60) 60s infinite);
-  background-color: blue;
-  position: absolute;
-
-  left: 50%;
-  bottom: 50%;
-
-  width: 5px;
-  height: 150px;
-  transform-origin: bottom left;
-  transform: translateX(50%);
-}
-
-.clock__minute-hand {
-  animation: rotate linear 3600s infinite;
-  background-color: red;
-
-  position: absolute;
-
-  left: 50%;
-  bottom: 50%;
-
-  width: 5px;
-  height: 150px;
-  transform-origin: bottom left;
-  transform: translateX(50%);
 }
