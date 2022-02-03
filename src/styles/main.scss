@@ -1,0 +1,58 @@
+$stopwath-size: 100px;
+
+body {
+  margin: 0;
+}
+
+.stopwath {
+  position: relative;
+  height: $stopwath-size;
+  width: $stopwath-size;
+  background-color: lightgrey;
+  display: flex;
+
+  &__minute-arrow {
+    position: absolute;
+    bottom: $stopwath-size / 2;
+    left: $stopwath-size / 2 - ($stopwath-size / 20) / 2;
+    display: inline-block;
+    width: $stopwath-size / 20;
+    height: $stopwath-size / 3;
+    border-radius: $stopwath-size / 40;
+    background-color: brown;
+    transform-origin: bottom center;
+    animation: rotate 60s linear infinite;
+  }
+  &__second-arrow {
+    position: absolute;
+    bottom: $stopwath-size / 2;
+    left: $stopwath-size / 2 - ($stopwath-size / 20) / 2;
+    display: inline-block;
+    width: $stopwath-size / 20;
+    height: $stopwath-size / 2 - 10px;
+    border-radius: $stopwath-size / 40;
+    background-color: lightseagreen;
+    transform-origin: bottom center;
+    animation: rotate 1s linear infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    bottom: $stopwath-size / 2 - ($stopwath-size / 10) / 2;
+    left: $stopwath-size / 2 - ($stopwath-size / 10) / 2;
+    display: inline-block;
+    width: $stopwath-size / 10;
+    height: $stopwath-size / 10;
+    border-radius: 50%;
+    background-color: #58c3ca;
+  }
+}
