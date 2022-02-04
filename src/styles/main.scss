@@ -1,65 +1,63 @@
 body {
-    margin: 0;
-    background: gold;
-  }
+  margin: 0;
+  background: gold;
+}
   
-  $main_color:#4B9AAA;
-  $secondary_color:#D15559;
+$main_color:#4b9aaa;
+$secondary_color:#d15559;
   
   
-  .center {
-    width: 50px;
-    height: 50px;
-    background: $main_color;
-    border-radius: 40px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-  }
+.center {
+  width: 50px;
+  height: 50px;
+  background: $main_color;
+  border-radius: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
   
-  .seconds {
-    width: 250px;
-    margin-top: 10px;
-    height: 15px;
-    border-radius: 20px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transform: rotateZ(270deg);
-    background: black;
-    transform-origin: 0;
-    z-index: 2;
-    animation: rotate_sec 60s linear infinite;
-  }
+.seconds {
+  width: 250px;
+  margin-top: 10px;
+  height: 15px;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotateZ(270deg);
+  background: black;
+  transform-origin: 0;
+  z-index: 2;
+  animation: rotate_sec 60s linear infinite;
+}
   
-  @keyframes rotate_sec {
+@keyframes rotate_sec {
 
-    100% {
-      transform: rotateZ(630deg);
-    }
+  100% {
+    transform: rotateZ(630deg);
   }
+}
   
-  .minutes {
-    width: 150px;
-    height: 15px;
-    margin-top: 10px;
-    border-radius: 20px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transform: rotateZ(270deg);
-    transform-origin: 0;
-    z-index: 1;
-    background: $secondary_color;
-    animation: rotate_min 3600s linear infinite;
-  }
+.minutes {
+  width: 150px;
+  height: 15px;
+  margin-top: 10px;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotateZ(270deg);
+  transform-origin: 0;
+  z-index: 1;
+  background: $secondary_color;
+  animation: rotate_min 3600s linear infinite;
+}
   
-  @keyframes rotate_min {
-    100% {
-      transform: rotateZ(630deg);
-    }
+@keyframes rotate_min {
+  100% {
+    transform: rotateZ(630deg);
   }
+}
