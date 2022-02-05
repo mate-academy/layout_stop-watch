@@ -1,0 +1,96 @@
+$watch-size: 500px;
+$circle-size: 20px;
+$minute-height: 100px;
+$secunde-height: $minute-height + 150px;
+
+@mixin watch-circle {
+  height: $watch-size;
+  width: $watch-size;
+  border-radius: 50%;
+
+}
+  
+@mixin inner-circle {
+  height: $circle-size;
+  width: $circle-size;
+  border-radius: 50%;
+  
+}
+
+%minute-arrow {
+  height: $minute-height;
+  width: 10px;
+  background-color: red;
+  border-radius: 5px;
+}
+  
+%secunda-arrow {
+  height: $secunde-height;
+  width: 10px;
+  background-color: aqua;
+  border-radius: 5px;
+}
+
+@keyframes rotate {
+  from {
+  
+    transform: rotate(0deg);
+    
+  }
+  to {
+   
+    transform: rotate(360deg);
+  
+  }
+    
+}
+
+.body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include watch-circle;
+  border: 4px solid black;
+  background-color: white;
+  
+  &::before {
+    content: "";
+    @extend %minute-arrow;
+    display: block;
+    position: relative;
+    bottom: $minute-height / 2;
+    left: 15px;
+    transform-origin: bottom center;
+    animation: rotate 3600s steps(60) infinite;
+  
+  }
+  
+  &::after {
+    content: "";
+    @extend %secunda-arrow;
+    display: block;
+    position: relative;
+    right: 15px;
+    bottom: $secunde-height / 2;
+    transform-origin: bottom center;
+    animation: rotate 60s steps(60) infinite;
+  }
+}
+
+.inner-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  @include inner-circle;
+  background-color: aqua;
+}
