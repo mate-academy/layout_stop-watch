@@ -14,8 +14,9 @@
     height: 10px;
     border-radius: 25%;
     background-color: #34568b;
+    transform: rotate(90deg);
     transform-origin: 200px;
-    animation: move-seconds 60s infinite steps(1200, end);
+    animation: move-hands 60s linear infinite backwards;
   }
 
   &:after {
@@ -24,9 +25,10 @@
     width: 80px;
     height: 10px;
     border-radius: 25%;
+    transform: rotate(-90deg);
     transform-origin: -10px;
     background-color: rgb(223, 12, 12);
-    animation: move-minutes 3600s linear forwards;
+    animation: move-hands 3600s linear infinite backwards;
   }
 
   &__central-point {
