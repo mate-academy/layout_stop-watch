@@ -31,7 +31,7 @@ $stop-watch-size: $second-hand-length * 2;
     height: $second-hand-length;
     background-color: rgb(85, 168, 201);
     z-index: 50;
-    animation: seconds 60s linear infinite;
+    animation: round 60s linear infinite;
   }
 
   &__minute-hand {
@@ -40,7 +40,7 @@ $stop-watch-size: $second-hand-length * 2;
     height: $mitute-hand-length;
     background-color: rgb(211, 92, 92);
     z-index: 0;
-    animation: minutes 3600s linear infinite;
+    animation: round 3600s linear infinite;
   }
 
   &__centre {
@@ -54,14 +54,7 @@ $stop-watch-size: $second-hand-length * 2;
   }
 }
 
-@keyframes seconds {
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minutes {
+@keyframes round {
 
   to {
     transform: rotate(360deg);
