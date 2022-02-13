@@ -1,0 +1,57 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+@keyframes tictac {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.watch {
+  @include center ($watch-size);
+  position: relative;
+
+  &__center,
+  &__seconds,
+  &__minutes {
+    @extend %position;
+  }
+
+  &__center {
+    @include center (22px);
+    background-color: $first-color;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__seconds,
+  &__minutes {
+    height: 8px;
+    transform-origin: center left;
+    border-radius: 8px;
+    transform: translateY(-50%);
+  }
+
+  &__seconds {
+    width: $second-hand;
+    background-color: $first-color;
+    animation: tictac 60s infinite steps(60);
+  }
+
+  &__minutes {
+    width: $minutes-hand;
+    background-color: $second-color;
+    animation: tictac 3600s infinite steps(60);
+  }
+}
