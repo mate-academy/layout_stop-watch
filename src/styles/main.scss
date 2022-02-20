@@ -1,0 +1,72 @@
+@mixin center ($size) {
+  height: $size;
+  width: $size;
+}
+
+$watch-size: 1200px;
+$arrow-minutes: 350px;
+$arrow-seconds: 550px;
+$color-blue:rgb(63, 136, 154);
+$color-red:rgb(194, 63, 72);
+
+%position {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+@keyframes arrow {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.watch {
+  @include center ($watch-size);
+  position: relative;
+
+  &__seconds,
+  &__minutes,
+  &__center {
+    @extend %position;
+  }
+
+  &__seconds,
+  &__minutes {
+    height: 10px;
+    transform-origin: center left;
+    border-radius: 10px;
+    transform: translateY(-50%);
+  }
+
+  &__minutes {
+    width: $arrow-minutes;
+    animation: arrow 3600s infinite steps(60);
+    background-color: $color-red;
+  }
+
+  &__seconds {
+    width: $arrow-seconds;
+    animation: arrow 60s infinite steps(60);
+    background-color: $color-blue;
+  }
+
+  &__center {
+    @include center (35px);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-blue;
+    z-index: 1;
+  }
+}
