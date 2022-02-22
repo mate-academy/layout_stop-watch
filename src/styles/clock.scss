@@ -1,0 +1,68 @@
+@import "./variables.scss";
+
+.clock {
+  position: relative;
+  z-index: -2;
+
+  width: $clock-size;
+  height: $clock-size;
+
+  background-color: $clock-main-color;
+  border-radius: 50%;
+
+  &__joint {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: calc(#{$clock-size} * 0.1);
+    height: calc(#{$clock-size} * 0.1);
+
+    background-color: $joint-color;
+    border-radius: 50%;
+  }
+
+  &__arrow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: center bottom;
+    transform: translate(-50%, -100%);
+    z-index: -1;
+
+    border-radius: 20px;
+
+    animation-name: rotate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &--min {
+      height: calc(#{$clock-size} * 0.4);
+      width: calc(#{$clock-size} * 0.05);
+
+      background-color: $arrow-min-color;
+
+      animation-duration: 3600s;
+    }
+
+    &--sec {
+      height: calc(#{$clock-size} * 0.45);
+      width: calc(#{$clock-size} * 0.03);
+
+      background-color: $arrow-sec-color;
+
+      animation-duration: 60s;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -100%) rotate(0);
+  }
+
+  100% {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
