@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+$clock-size: 500px;
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $clock-size;
+  height: $clock-size;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+
+    width: $clock-size * 0.05;
+    height: $clock-size * 0.05;
+
+    background-color: blue;
+    border-radius: 50%;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: 50%;
+    transform: translateX(50%);
+
+    height: $clock-size * 0.4;
+    width: $clock-size * 0.03;
+
+    background-color: blue;
+    border-radius: $clock-size * 0.4;
+
+    transform-origin: bottom center;
+    animation-name: rotate;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    transform: translateX(1000%);
+
+    height: $clock-size * 0.25;
+    width: $clock-size * 0.03;
+
+    background-color: red;
+    border-radius: $clock-size * 0.03;
+
+    transform-origin: bottom center;
+    animation-name: rotate;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__bg {
+    height: $clock-size;
+    width: $clock-size;
+
+    background-color: yellowgreen;
+  }
+}
