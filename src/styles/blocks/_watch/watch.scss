@@ -1,0 +1,108 @@
+.wrap {
+  height: 100vh;
+  display: flex;
+  background-color: $color-two;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desc {
+  color: $color-one;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 50px;
+}
+
+.miniWatch {
+  display: flex;
+  top: $watch-size / 30;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: $watch-size * 0.3;
+  width: $watch-size * 0.3;
+  border-radius: 50%;
+  border: $watch-size / 100 solid $color-one;
+  background-color: $color-two;
+
+  &__sircle {
+    box-sizing: border-box;
+    z-index: 1;
+    width: $watch-size / 30;
+    height: $watch-size / 30;
+    background-color: $color-two;
+    border-radius: 50%;
+    border: $watch-size / 300 solid $color-one;
+  }
+
+  &__seconds {
+    z-index: 0;
+    top: (($watch-size * 0.3) / 2) - $miliseconds-height * 0.3;
+    position: absolute;
+    height: $miliseconds-height * 0.3;
+    width: $miliseconds-width * 0.2;
+    background-color: $color-one;
+    border-radius: $miliseconds-width * 0.4;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transform-origin: ($miliseconds-width * 0.2 / 2) $miliseconds-height * 0.3;
+    animation-timing-function: steps(60);
+  }
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 50px;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  border: $miliseconds-width / 2 solid $color-one;
+  background-color: $color-two;
+
+  &__sircle {
+    box-sizing: border-box;
+    z-index: 1;
+    width: $watch-size / 15;
+    height: $watch-size / 15;
+    background-color: $color-two;
+    border-radius: 50%;
+    border: $watch-size / 150 solid $color-one;
+  }
+  &__miliseconds {
+    top: ($watch-size / 2) - $miliseconds-height;
+    left: ($watch-size / 2) - ($miliseconds-width / 2);
+    position: absolute;
+    height: $miliseconds-height;
+    width: $miliseconds-width;
+    background-color: $color-one;
+    border-radius: $miliseconds-width / 2;
+    animation-name: move;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    transform-origin: ($miliseconds-width / 2) $miliseconds-height;
+    animation-timing-function: steps(60);
+  }
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover > .watch__miliseconds {
+    animation-play-state: paused;
+  }
+
+  &:hover > .miniWatch > .miniWatch__seconds {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: rotate(360deg);
+  }
+}
