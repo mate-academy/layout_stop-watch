@@ -4,6 +4,13 @@ $joint-color: #27d;
 $arrow-min-color: #49f;
 $arrow-sec-color: #f49;
 
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+
+  border-radius: 50%;
+}
+
 @mixin arrow-size($widht-quatient, $height-quatient) {
   height: calc(#{$clock-size} * #{$widht-quatient});
   width: calc(#{$clock-size} * #{$height-quatient});
@@ -31,11 +38,9 @@ body {
   position: relative;
   z-index: -2;
 
-  width: $clock-size;
-  height: $clock-size;
+  @include circle($clock-size);
 
   background-color: $clock-main-color;
-  border-radius: 50%;
 
   &__joint {
     position: absolute;
@@ -43,10 +48,9 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
 
-    @include arrow-size(0.1, 0.1);
+    @include circle($clock-size * 0.1);
 
     background-color: $joint-color;
-    border-radius: 50%;
   }
 
   &__arrow {
