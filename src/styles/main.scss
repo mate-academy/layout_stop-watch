@@ -1,0 +1,74 @@
+@import "./utils/variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px;
+}
+
+.watch {
+  position: relative;
+  width: $watch-width;
+  height: $watch-height;
+  border: 4px solid brown;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+
+    width: $watch-width * 0.2;
+    height: $watch-height * 0.2;
+
+    background-color: brown;
+    border-radius: 50%;
+  }
+
+  &__has {
+    position: absolute;
+    bottom: 50%;
+    width: $watch-width * 0.04;
+    height: $watch-height * 0.39;
+    background: #009b95;
+    animation: nov 300s infinite steps(60,end);
+    transform-origin: bottom center;
+  }
+
+  &__minutes {
+    position: absolute;
+    bottom: 50%;
+    width: $watch-width * 0.03;
+    height: $watch-height * 0.43;
+    background: #24c0ba;
+    animation: nov 160s infinite steps(60,end);
+    transform-origin: bottom center;
+    z-index: 1;
+  }
+
+  &__sekundes {
+    position: absolute;
+    bottom: 50%;
+    width: $watch-width * 0.02;
+    height: $watch-height * 0.47;
+    background: #48d1cc;
+    animation: nov 60s infinite steps(60,end);
+    transform-origin: bottom center;
+    z-index: 2;
+  }
+}
+
+@keyframes nov {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
