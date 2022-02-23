@@ -17,42 +17,42 @@
   position: relative;
   @include circle($watch-width);
   background-color: azure;
-}
 
-.watch__circle {
-  position: absolute;
-  top: calc(50% - #{$circle-width} / 2);
-  left: calc(50% - #{$circle-width} / 2);
-  @include circle($circle-width);
-  background-color: $first-color;
-  z-index: 1;
-}
+  &__circle {
+    position: absolute;
+    top: calc(50% - #{$circle-width} / 2);
+    left: calc(50% - #{$circle-width} / 2);
+    @include circle($circle-width);
+    background-color: $first-color;
+    z-index: 1;
+  }
 
-.watch__big-hand {
-  position: absolute;
-  top: calc(50% - #{$big-hand-height});
-  left: calc(50% - #{$hand-width} / 2);
-  width: $hand-width;
-  height: $big-hand-height;
-  background-color: $first-color;
-  border-radius: 10px;
-  z-index: 1;
+  &__big-hand {
+    position: absolute;
+    top: calc(50% - #{$big-hand-height});
+    left: calc(50% - #{$hand-width} / 2);
+    width: $hand-width;
+    height: $big-hand-height;
+    background-color: $first-color;
+    border-radius: 10px;
+    z-index: 1;
 
-  transform-origin: bottom;
-  animation: seconds 60s infinite steps(60);
-}
+    transform-origin: bottom;
+    animation: seconds 60s infinite steps(60);
+  }
 
-.watch__small-hand {
-  position: absolute;
-  top: calc(50% - #{$small-hand-height});
-  left: calc(50% - #{$hand-width} / 2);
-  width: $hand-width;
-  height: $small-hand-height;
-  background-color: $second-color;
-  border-radius: 10px;
+  &__small-hand {
+    position: absolute;
+    top: calc(50% - #{$small-hand-height});
+    left: calc(50% - #{$hand-width} / 2);
+    width: $hand-width;
+    height: $small-hand-height;
+    background-color: $second-color;
+    border-radius: 10px;
 
-  transform-origin: bottom;
-  animation: seconds 3600s infinite steps(60);
+    transform-origin: bottom;
+    animation: seconds 3600s infinite steps(60);
+  }
 }
 
 @keyframes seconds {
