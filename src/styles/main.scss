@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+$watch-size-width: 350px;
+$watch-size-heigth: 350px;
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $watch-size-width;
+  height: $watch-size-heigth;
+  background: #eee;
+
+  &__second {
+    position: absolute;
+    bottom: 50%;
+    transform: translateX(50%);
+    width: $watch-size-width * 0.03;
+    height: $watch-size-heigth * 0.45;
+    background-color: rgb(247, 125, 131);
+    border-radius: $watch-size-width * 0.4;
+    border: 1px solid #000;
+
+    transform-origin: bottom center;
+    animation-name: rotate;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    transform: translateX(50%);
+    width: $watch-size-width * 0.03;
+    height: $watch-size-heigth * 0.25;
+    background-color: rgb(78, 49, 245);
+    border-radius: $watch-size-width * 0.4;
+    border: 1px solid rgb(13, 14, 12);
+
+    transform-origin: bottom center;
+    animation-name: rotate;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__center {
+    position: absolute;
+    bottom: 50%;
+    transform: translate(0, 10px);
+    width: $watch-size-width * 0.07;
+    height: $watch-size-heigth * 0.07;
+    background-color: rgb(78, 49, 245);
+    border-radius: $watch-size-width * 0.4;
+    border: 1px solid rgb(13, 14, 12);
+  }
+}
