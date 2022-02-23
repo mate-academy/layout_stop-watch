@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+$watch-size: 510px;
+$circle-size: 20px;
+$minute-height: 100px;
+$arrow-width: 10px;
+$secunde-height: $minute-height + 150px;
+
+@mixin watch-circle {
+  height: $watch-size;
+  width: $watch-size;
+  border-radius: 50%;
+
+}
+
+@mixin inner-circle {
+  height: $circle-size;
+  width: $circle-size;
+  border-radius: 50%;
+
+}
+
+%minute-arrow {
+  height: $minute-height;
+  width: $arrow-width;
+  background-color: rgb(255, 30, 0);
+  border-radius: 5px;
+}
+
+%secunda-arrow {
+  height: $secunde-height;
+  width: 10px;
+  background-color: aqua;
+  border-radius: 5px;
+}
+
+@keyframes rotate {
+  from {
+
+    transform: rotate(0deg);
+
+  }
+  to {
+
+    transform: rotate(360deg);
+
+  }
+
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include watch-circle;
+  border: 4px solid rgba(78, 76, 76, 0.94);
+  background-color: rgb(192, 182, 182);
+
+  &::before {
+    content: "";
+    @extend %minute-arrow;
+    position: relative;
+    bottom: $minute-height / 2;
+    left: 15px;
+    transform-origin: bottom center;
+    animation: rotate 3600s steps(60) infinite;
+
+  }
+
+  &::after {
+    content: "";
+    @extend %secunda-arrow;
+    position: relative;
+    right: 15px;
+    bottom: $secunde-height / 2;
+    transform-origin: bottom center;
+    animation: rotate 60s steps(60) infinite;
+  }
+
+  &__inner-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @include inner-circle;
+    background-color: aqua;
+  }
+}
