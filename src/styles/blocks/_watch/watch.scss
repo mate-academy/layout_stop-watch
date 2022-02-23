@@ -1,3 +1,10 @@
+@mixin position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-two;
+}
+
 .wrap {
   height: 100vh;
   display: flex;
@@ -7,6 +14,7 @@
 }
 
 .desc {
+  margin-bottom: 50px;
   color: $color-one;
   text-transform: uppercase;
   font-size: 20px;
@@ -14,32 +22,81 @@
   margin-top: 50px;
 }
 
-.miniWatch {
-  display: flex;
-  top: $watch-size / 30;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  height: $watch-size * 0.3;
-  width: $watch-size * 0.3;
+.watch {
+  @include position;
+  position: relative;
+  width: $main-size;
+  height: $main-size;
   border-radius: 50%;
-  border: $watch-size / 100 solid $color-one;
-  background-color: $color-two;
+  border: $miliseconds-width / 2 solid $color-one;
+
+  &__sircle {
+    box-sizing: border-box;
+    z-index: 3;
+    width: $main-size / 15;
+    height: $main-size / 15;
+    background-color: $color-two;
+    border-radius: 50%;
+    border: $main-size / 150 solid $color-one;
+  }
+  &__miliseconds {
+    z-index: 2;
+    top: ($main-size / 2) - $miliseconds-height;
+    left: ($main-size / 2) - ($miliseconds-width / 2);
+    position: absolute;
+    height: $miliseconds-height;
+    width: $miliseconds-width;
+    background-color: $color-one;
+    border-radius: $miliseconds-width / 2;
+    animation-name: move;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    transform-origin: ($miliseconds-width / 2) $miliseconds-height;
+    animation-timing-function: steps(60);
+  }
+
+  &__minest {
+    z-index: 2;
+    top: ($main-size / 2) - ($miliseconds-height * 0.8);
+    left: ($main-size / 2) - ($miliseconds-width / 2);
+    position: absolute;
+    height: $miliseconds-height * 0.8;
+    width: $miliseconds-width;
+    background-color: $color-one;
+    border-radius: ($miliseconds-width * 0.8) / 2;
+    animation-name: move;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    transform-origin: ($miliseconds-width / 2) ($miliseconds-height * 0.8);
+    animation-timing-function: steps(60);
+  }
+}
+
+.miniWatch {
+  @include position;
+  z-index: 1;
+  left: $main-size / 8;
+  top: $main-size / 6;
+  position: absolute;
+  margin: auto;
+  height: $main-size * 0.3;
+  width: $main-size * 0.3;
+  border-radius: 50%;
+  border: $main-size / 100 solid $color-one;
 
   &__sircle {
     box-sizing: border-box;
     z-index: 1;
-    width: $watch-size / 30;
-    height: $watch-size / 30;
+    width: $main-size / 30;
+    height: $main-size / 30;
     background-color: $color-two;
     border-radius: 50%;
-    border: $watch-size / 300 solid $color-one;
+    border: $main-size / 300 solid $color-one;
   }
 
   &__seconds {
     z-index: 0;
-    top: (($watch-size * 0.3) / 2) - $miliseconds-height * 0.3;
+    top: (($main-size * 0.3) / 2) - $miliseconds-height * 0.3;
     position: absolute;
     height: $miliseconds-height * 0.3;
     width: $miliseconds-width * 0.2;
@@ -53,50 +110,23 @@
   }
 }
 
-.watch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin-top: 50px;
-  width: $watch-size;
-  height: $watch-size;
+.watch-wrap {
   border-radius: 50%;
-  border: $miliseconds-width / 2 solid $color-one;
-  background-color: $color-two;
+  position: relative;
 
-  &__sircle {
-    box-sizing: border-box;
-    z-index: 1;
-    width: $watch-size / 15;
-    height: $watch-size / 15;
-    background-color: $color-two;
-    border-radius: 50%;
-    border: $watch-size / 150 solid $color-one;
-  }
-  &__miliseconds {
-    top: ($watch-size / 2) - $miliseconds-height;
-    left: ($watch-size / 2) - ($miliseconds-width / 2);
-    position: absolute;
-    height: $miliseconds-height;
-    width: $miliseconds-width;
-    background-color: $color-one;
-    border-radius: $miliseconds-width / 2;
-    animation-name: move;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    transform-origin: ($miliseconds-width / 2) $miliseconds-height;
-    animation-timing-function: steps(60);
-  }
   &:hover {
     cursor: pointer;
   }
 
-  &:hover > .watch__miliseconds {
+  &:hover > .watch > .watch__miliseconds {
     animation-play-state: paused;
   }
 
   &:hover > .miniWatch > .miniWatch__seconds {
+    animation-play-state: paused;
+  }
+
+  &:hover > .watch > .watch__minets {
     animation-play-state: paused;
   }
 }
