@@ -1,0 +1,70 @@
+$rottor_h: 50px;
+$arrow_min_h: 20px;
+$arrow_sec_h: 10px;
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  width: 400px;
+  height: 400px;
+  background-color: rgb(47, 40, 56);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  &__rotor {
+    position: relative;
+    width: $rottor_h;
+    height: $rottor_h;
+    border-radius: 50%;
+    background-color: rgb(32, 87, 87);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__min {
+    position: absolute;
+    left: $rottor_h / 2;
+    top: ($rottor_h - $arrow_min_h) / 2;
+    width: 125px;
+    height: $arrow_min_h;
+    background-color: rgb(32, 87, 87);
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    transform-origin: left center;
+    animation: sec 3600s steps(60, end);
+  }
+
+  &__sec {
+    position: absolute;
+    left: $rottor_h / 2;
+    top: ($rottor_h - $arrow_sec_h) / 2;
+    width: 200px;
+    height: $arrow_sec_h;
+    background-color: rgb(32, 87, 87);
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    transform-origin: left center;
+    animation: sec 60s linear infinite;
+  }
+}
+
+@keyframes sec {
+
+  from {
+    transform: rotate(270deg);
+  }
+
+  to {
+    transform: rotate(630deg);
+  }
+}
