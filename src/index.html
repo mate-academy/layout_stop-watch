@@ -1,14 +1,52 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <div class="stopwatch">
+      <input
+        type="checkbox"
+        name="On"
+        class="stopwatch__button-on"
+        id="button-on"
+      >
+
+      <label
+        for="button-on"
+        class="stopwatch__button-on-label"
+      ></label>
+
+      <input
+        type="checkbox"
+        name="pause"
+        class="stopwatch__button-pause"
+        id="button-pause"
+      >
+
+      <label
+        for="button-pause"
+        class="stopwatch__button-pause-label"
+      ></label>
+
+      <div class="stopwatch__clock clock">
+        <div class="clock__vert-numbers">
+          <p class="clock__number">12</p>
+
+          <p class="clock__number">6</p>
+        </div>
+
+        <div class="clock__hor-numbers">
+          <p class="clock__number">9</p>
+
+          <p class="clock__number">3</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
