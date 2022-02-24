@@ -1,0 +1,96 @@
+// extends
+%arrowsPosition {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(0, -50%) rotate(-90deg);
+}
+
+// variables
+$hourColor: #f00;
+$minuteColor: #00f;
+$clockRimColor: #000;
+
+$minuteArrowLength: 200px;
+$minuteArrowWidth: $minuteArrowLength / 25;
+
+$hourArrowLength: $minuteArrowLength / 2;
+$hourArrowWidth: $hourArrowLength / 10;
+
+$clockSize: $minuteArrowLength * 2.5;
+
+// mixins
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+
+  border-radius: 50%;
+}
+
+body {
+  margin: 0;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.stop-watch {
+  position: relative;
+
+  @include circle($clockSize);
+
+  border: 5px solid $clockRimColor;
+
+  &__circle {
+    @extend %arrowsPosition;
+    z-index: 1;
+
+    @include circle(20px);
+
+    transform: translate(-50%, -25%);
+
+    background-color: $minuteColor;
+  }
+
+  &__minute {
+    @extend %arrowsPosition;
+
+    width: $minuteArrowLength;
+    height: $minuteArrowWidth;
+
+    animation: clock 60s steps(60) infinite;
+    transform-origin: 0 #{$minuteArrowWidth / 2};
+
+    background-color: $minuteColor;
+    border-radius: $minuteArrowWidth;
+  }
+
+  &__hour {
+    @extend %arrowsPosition;
+
+    width: $hourArrowLength;
+    height: $hourArrowWidth;
+
+    animation: clock 3600s steps(60) infinite;
+    transform-origin: 0 #{$hourArrowWidth / 2};
+
+    background-color: $hourColor;
+    border-radius: $hourArrowWidth;
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
