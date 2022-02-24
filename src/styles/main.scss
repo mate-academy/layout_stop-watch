@@ -1,3 +1,25 @@
+// Variables and extends
+$main-color: #333;
+
+%arrowPosition {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+}
+
+// Mixins
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+@mixin roundedLine ($length, $width) {
+  width: $length;
+  height: $width;
+  border-radius: $width / 2;
+}
+
+// Global styles
 * {
   box-sizing: border-box;
 }
@@ -10,25 +32,7 @@
   margin: 0;
 }
 
-$main-color: #333;
-
-%arrowPosition {
-  position: absolute;
-  bottom: 50%;
-  transform-origin: bottom;
-}
-
-@mixin circle ($size) {
-  width: $size;
-  height: $size;
-  border-radius: 50%;
-}
-@mixin roundedLine ($length, $width) {
-  width: $length;
-  height: $width;
-  border-radius: $width / 2;
-}
-
+// Page content
 .watch {
   @include circle (500px);
 
@@ -53,27 +57,19 @@ $main-color: #333;
     @extend %arrowPosition;
     background-color: #014361;
 
-    animation: minute 3600s steps(60, end) infinite;
+    animation: clockWork 3600s steps(60, end) infinite;
   }
   &__second-arrow {
     @include roundedLine(6px,240px);
     @extend %arrowPosition;
     background-color: $main-color;
 
-    animation: second 60s steps(60, end) infinite;
+    animation: clockWork 60s steps(60, end) infinite;
   }
 }
 
-@keyframes minute {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(1turn);
-  }
-}
-
-@keyframes second {
+// Animation
+@keyframes clockWork {
   0% {
     transform: rotate(0);
   }
