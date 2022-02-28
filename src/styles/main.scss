@@ -1,0 +1,47 @@
+@import "./utils/reset.scss";
+@import "./utils/variable.scss";
+@import "./utils/mixin.scss";
+@import "./utils/animation.scss";
+
+.clock {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+  margin: 100px auto;
+
+  &--circle-style {
+    border-radius: 50%;
+    background-color: #c9c9c9;
+    border: 2px solid #c7c7c7;
+    box-shadow: 5px 5px 10px 2px rgba(201, 201, 201, 0.5);
+  }
+
+  &__second {
+    @include arrows;
+    z-index: 1;
+    width: 45%;
+    background-color: $second-arrow-color;
+    animation: moveSecond 60s linear infinite;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -12px;
+      transform: translateY(-50%);
+
+      width: $seconds-arrow-dots-size;
+      height: $seconds-arrow-dots-size;
+      background-color: $second-arrow-color;
+      border-radius: 50%;
+    }
+  }
+
+  &__minute {
+    @include arrows;
+    top: calc(50% - 10px);
+    width: 35%;
+    background-color: $minute-arrow-color;
+    animation: moveMinute 3600s linear infinite;
+  }
+}

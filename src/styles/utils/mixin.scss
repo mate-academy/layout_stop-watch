@@ -1,0 +1,21 @@
+@mixin arrows {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) rotateZ($rotate-to-top);
+
+  height: 10px;
+  border-radius: 0 10px 10px 0;
+
+  transform-origin: left;
+  transition: transform 1s;
+}
+
+// Animation section
+@mixin animation-arrows-to {
+  transform: rotateZ($rotate-to-top);
+}
+
+@mixin animation-arrows-from {
+  transform: rotateZ($rotate-to-top + 360deg);
+}
