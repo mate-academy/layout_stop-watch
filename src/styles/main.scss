@@ -1,0 +1,50 @@
+@import "./variables.scss";
+
+.clock {
+  border-radius: 50%;
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  background-color: rgb(10, 233, 151);
+  z-index: -2;
+
+  &__centr-dot {
+    @include centr-dot-size;
+    position: absolute;
+    background-color: rgb(218, 149, 2);
+    z-index: 0;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__minute {
+    @include minute-arrow-size;
+    position: absolute;
+    animation-name: rotate;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+    transform-origin: center bottom;
+    background-color: rgb(17, 0, 255);
+    z-index: -1;
+  }
+
+  &__sec {
+    @include second-arrow-size;
+    position: absolute;
+    animation-name: rotate;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+    transform-origin: center bottom;
+    background-color: rgb(218, 149, 2);
+    z-index: -1;
+  }
+}

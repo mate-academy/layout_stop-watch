@@ -1,0 +1,27 @@
+$clock-size: 600px;
+$minute-arrow-height: $clock-size/2 * 0.7;
+$second-arrow-height: $clock-size/2 * 0.97;
+
+@mixin centr-dot-size {
+  top: $clock-size/2 - $clock-size * 0.02;
+  left: $clock-size/2 - $clock-size * 0.02;
+  height: $clock-size * 0.04;
+  width: $clock-size * 0.04;
+  border-radius: 50%;
+}
+
+@mixin minute-arrow-size {
+  left: $clock-size/2 - 5px;
+  top: $clock-size/2 * 0.3;
+  height: $minute-arrow-height;
+  width: $clock-size * 0.02;
+  border-radius: 3px;
+}
+
+@mixin second-arrow-size {
+  left: $clock-size/2 - 5px;
+  top: $clock-size/2 * 0.03;
+  height: $second-arrow-height;
+  width: $clock-size * 0.02;
+  border-radius: 3px;
+}
