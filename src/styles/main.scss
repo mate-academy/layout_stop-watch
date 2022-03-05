@@ -4,21 +4,22 @@
   top: 50%;
   left: 50%;
 
-  transform: translate(0, -50%) rotate(-90deg);
+  transform-origin: left center;
 }
 
 // variables
-$hourColor: #f00;
-$minuteColor: #00f;
+$minuteColor: #f00;
+$secondColor: #00f;
 $clockRimColor: #000;
 
-$minuteArrowLength: 200px;
-$minuteArrowWidth: $minuteArrowLength / 25;
+$secondArrowLength: 500px;
+$secondArrowWidth: $secondArrowLength / 25;
 
-$hourArrowLength: $minuteArrowLength / 2;
-$hourArrowWidth: $hourArrowLength / 10;
+$minuteArrowLength: $secondArrowLength / 2;
+$minuteArrowWidth: $minuteArrowLength / 10;
 
-$clockSize: $minuteArrowLength * 2.5;
+$clockSize: $secondArrowLength * 2.5;
+$centerSize: $secondArrowLength / 10;
 
 // mixins
 @mixin circle($size) {
@@ -47,50 +48,48 @@ body {
 
   border: 5px solid $clockRimColor;
 
-  &__circle {
+  &__center {
     @extend %arrowsPosition;
     z-index: 1;
 
-    @include circle(20px);
+    @include circle($centerSize);
 
-    transform: translate(-50%, -25%);
+    transform: translate(-50%, -50%);
 
-    background-color: $minuteColor;
+    background-color: $secondColor;
+  }
+
+  &__second {
+    @extend %arrowsPosition;
+
+    width: $secondArrowLength;
+    height: $secondArrowWidth;
+
+    animation: clock 60s steps(60) infinite;
+
+    background-color: $secondColor;
+    border-radius: $secondArrowWidth;
   }
 
   &__minute {
     @extend %arrowsPosition;
 
-    width: $minuteArrowLength;
     height: $minuteArrowWidth;
+    width: $minuteArrowLength;
 
     animation: clock 60s steps(60) infinite;
-    transform-origin: 0 #{$minuteArrowWidth / 2};
 
     background-color: $minuteColor;
     border-radius: $minuteArrowWidth;
-  }
-
-  &__hour {
-    @extend %arrowsPosition;
-
-    width: $hourArrowLength;
-    height: $hourArrowWidth;
-
-    animation: clock 3600s steps(60) infinite;
-    transform-origin: 0 #{$hourArrowWidth / 2};
-
-    background-color: $hourColor;
-    border-radius: $hourArrowWidth;
   }
 }
 
 @keyframes clock {
   from {
-    transform: rotate(-90deg);
+    transform: translate(0, -50%) rotate(-90deg);
   }
 
   to {
-    transform: rotate(270deg);
+    transform: translate(0, -50%) rotate(270deg);
   }
 }
