@@ -1,0 +1,51 @@
+@import "../utils/variable";
+@import "../utils/mixins";
+
+.container {
+  @include square ($size-of-frame);
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+
+  &__minute {
+    height: 0.3 * $size-of-frame;
+    width: 0.03 * $size-of-frame;
+    background-color: rgb(224, 46, 46);
+    border-radius: 0.03 * $size-of-frame;
+
+    animation: move 3600s steps(60, end) infinite forwards;
+  }
+
+  &__second {
+    height: 0.46 * $size-of-frame;
+    width: 0.02 * $size-of-frame;
+    background-color: rgb(37, 212, 204);
+    border-radius: 0.02 * $size-of-frame;
+
+    animation: move 60s steps(60, end) infinite forwards;
+  }
+
+  &__center {
+    @include cicle($size-of-center);
+    position: absolute;
+    bottom: ($size-of-frame - $size-of-center) / 2;
+    background-color: rgb(37, 212, 204);
+  }
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
