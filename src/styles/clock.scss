@@ -1,0 +1,49 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  @include circle($watch-width);
+  border: 1px solid #000;
+
+  &__point {
+    position: absolute;
+    top: calc(#{$watch-width} / 2 - #{$point-width} / 2);
+
+    @include circle($point-width);
+    background-color: rgb(39, 164, 196);
+
+  }
+
+  &__minutes {
+    position: absolute;
+    top: calc(#{$watch-width} / 2 - #{$second-lendgth});
+    width: $width-line;
+    height: $second-lendgth;
+    background-color: $main-color;
+    border-radius: $line-radius;
+
+    transform-origin: bottom;
+    animation: time 60s infinite steps(60, start);
+  }
+
+  &__hours {
+    position: absolute;
+    top: calc(#{$watch-width} / 2 - #{$minutes-lendgth});
+    width: $width-line;
+    height: $minutes-lendgth;
+    background-color: $secondary-color;
+    border-radius: $line-radius;
+
+    transform-origin: bottom;
+    animation: time 3600s infinite steps(60, start);
+  }
+}
+
+@keyframes time {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
