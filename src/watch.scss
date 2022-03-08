@@ -1,0 +1,67 @@
+@import "init.scss";
+@import "var.scss";
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $watch-size-width;
+  height: $watch-size-heigth;
+  background: $watch-background;
+
+  &__second {
+    position: absolute;
+    bottom: 50%;
+    transform: translateX(50%);
+    width: $width-arrow-second;
+    height: $height-arrow-second;
+    background-color: $back-ground-color-arrow-second;
+    border-radius: $border-radius-arrows;
+    border: $border-arrows;
+
+    transform-origin: bottom center;
+    animation-name: rotate;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    transform: translateX(50%);
+    width: $width-arrow-minute;
+    height: $height-arrow-minute;
+    background-color: $back-ground-color-arrow-minute;
+    border-radius: $border-radius-arrows;
+    border: $border-arrows;
+
+    transform-origin: bottom center;
+    animation-name: rotate;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__center {
+    position: absolute;
+    bottom: 50%;
+    transform: translate(0, 10px);
+    width: $width-center;
+    height: $height-center;
+    background-color: $background-color-center;
+    border-radius: $border-radius-center;
+    border: $border-arrows;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
