@@ -6,10 +6,12 @@ $clock-size: 600px;
 $background-clock: #d5fc79;
 $minute-arrow-color: #288cc4;
 $second-arrow-color: #7fb2ca;
+
 %arrowsPosition {
-  transform-origin: bottom;
-  bottom: 50%;
   position: absolute;
+  bottom: 50%;
+
+  transform-origin: bottom;
 }
 
 .page {
@@ -27,32 +29,41 @@ $second-arrow-color: #7fb2ca;
 @mixin roundArrow ($length, $width) {
   height: $length;
   width: $width;
+
   border-radius: 10px;
 }
 
 @mixin circle ($diametr) {
   width: $diametr;
   height: $diametr;
+
   border-radius: 50%;
 }
 
 .watch {
   position: relative;
+
   @include circle($clock-size);
+
   border: 1px solid black;
   background-color: $background-clock;
+
   &__center {
     @include circle($clock-size*0.04);
+    z-index: 2;
+
     border: 3px solid black;
     background-color: $background-clock;
-    z-index: 2;
+
   }
 
   &__second-arrow {
     @extend %arrowsPosition;
-    @include roundArrow($clock-size*0.5-10,6px );
-    background-color: $second-arrow-color;
     z-index: 1;
+
+    @include roundArrow($clock-size*0.5-10,6px );
+
+    background-color: $second-arrow-color;
 
     animation: clockRotate 60s linear infinite;
   }
