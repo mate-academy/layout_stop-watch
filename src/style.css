@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  width: 400px;
+  height: 400px;
+  background-color: azure;
+  border: 3px solid black;
+  perspective: 400px;
+}
+
+.clock__circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: aquamarine;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.clock__small-arrow {
+  width: 10px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  background-color: red;
+  border-radius: 5px;
+  transform-origin: bottom;
+  animation: seconds 3600s infinite steps(60);
+  animation-name: clock;
+  position: absolute;
+  transform: translate(-50%, -100%);
+}
+
+.clock__big-arrow {
+  width: 10px;
+  height: 190px;
+  top: 50%;
+  left: 50%;
+  background-color: aquamarine;
+  border-radius: 5px;
+  transform-origin: bottom;
+  animation: seconds 60s infinite steps(60);
+  animation-name: clock;
+  position: absolute;
+  transform: translate(-50%, -100%);
+}
+
+@keyframes clock {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
