@@ -1,0 +1,93 @@
+$stopwatch-size: 350px;
+$coupling-size: $stopwatch-size / 10;
+$stopwatch-color: rgb(31, 253, 10);
+$coupling-color: rgb(0, 0, 0);
+$minute-color: rgb(0, 0, 0);
+$second-color: rgb(204, 32, 32);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(117, 119, 119);
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border-radius: 10%;
+  position: relative;
+  z-index: -2;
+  background-color: $stopwatch-color;
+  border: 3px solid #000;
+
+  %couplingPosition {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  &__coupling {
+    width: $stopwatch-size / 10;
+    height: $stopwatch-size / 10;
+    @extend %couplingPosition;
+    background-color: $coupling-color;
+
+    &-small {
+      width: $coupling-size / 2;
+      height: $coupling-size / 2;
+      @extend %couplingPosition;
+      background-color: $second-color;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: center bottom;
+    transform: translate(-50%, -100%);
+    z-index: -1;
+
+    animation-name: clock;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &--minute {
+      height: calc(#{$stopwatch-size} * 0.45);
+      width: calc(#{$stopwatch-size} * 0.04);
+      border-radius: 8px;
+      background-color: $minute-color;
+      animation-duration: 3600s;
+    }
+
+    &--second {
+      height: calc(#{$stopwatch-size} * 0.5);
+      width: calc(#{$stopwatch-size} * 0.02);
+      border-radius: 8px;
+      background-color: $second-color;
+      animation-duration: 60s;
+    }
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: translate(-50%, -100%) rotate(0);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
