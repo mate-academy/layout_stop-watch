@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+$clock-size: 600px;
+
+%arrowsPosition {
+  transform-origin: bottom;
+  bottom: 50%;
+  position: absolute;
+}
+
+.page {
+  margin: 0;
+  height: 100vh;
+}
+
+.watch,
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin roundArrow ($length, $width) {
+  height: $length;
+  width: $width;
+  border-radius: 10px;
+}
+
+@mixin circle ($diametr) {
+  width: $diametr;
+  height: $diametr;
+  border-radius: 50%;
+}
+
+.watch {
+  position: relative;
+  @include circle($clock-size);
+  border: 1px solid black;
+  background-color: #d5fc79;
+  &__center {
+    @include circle($clock-size*0.04);
+    border: 3px solid #0e140c;
+    background-color: #efa8a8;
+    z-index: 2;
+  }
+
+  &__second-arrow {
+    @extend %arrowsPosition;
+    @include roundArrow($clock-size*0.5-10,6px );
+    background-color: #7fb2ca;
+    z-index: 1;
+
+    animation: clockRotate 60s linear infinite;
+  }
+
+  &__minute-arrow {
+    @extend %arrowsPosition;
+    @include roundArrow($clock-size*0.4-10,12px );
+    background-color: #288cc4;
+    z-index: 0;
+
+    animation: clockRotate 3600s linear infinite;
+  }
+}
+
+@keyframes clockRotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
