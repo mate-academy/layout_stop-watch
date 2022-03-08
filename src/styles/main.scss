@@ -1,0 +1,95 @@
+// extends
+%arrowsPosition {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+
+  transform-origin: bottom center;
+}
+
+// variables
+$minuteColor: #f00;
+$secondColor: #00f;
+$clockRimColor: #000;
+
+$secondArrowLength: 200px;
+$secondArrowWidth: $secondArrowLength / 25;
+
+$minuteArrowLength: $secondArrowLength / 2;
+$minuteArrowWidth: $minuteArrowLength / 10;
+
+$clockSize: $secondArrowLength * 2.5;
+$centerSize: $secondArrowLength / 10;
+
+// mixins
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+
+  border-radius: 50%;
+}
+
+body {
+  margin: 0;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.stop-watch {
+  position: relative;
+
+  @include circle($clockSize);
+
+  border: 5px solid $clockRimColor;
+
+  &__center {
+    @extend %arrowsPosition;
+    z-index: 1;
+
+    @include circle($centerSize);
+
+    transform: translate(-50%, 50%);
+
+    background-color: $secondColor;
+  }
+
+  &__second {
+    @extend %arrowsPosition;
+
+    width: $secondArrowWidth;
+    height: $secondArrowLength;
+
+    animation: clock 60s steps(60) infinite;
+
+    background-color: $secondColor;
+    border-radius: $secondArrowWidth;
+  }
+
+  &__minute {
+    @extend %arrowsPosition;
+
+    height: $minuteArrowLength;
+    width: $minuteArrowWidth;
+
+    animation: clock 3600s linear infinite;
+
+    background-color: $minuteColor;
+    border-radius: $minuteArrowWidth;
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
