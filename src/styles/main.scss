@@ -1,0 +1,50 @@
+@import "./utils/variables.scss";
+@import "./utils/function.scss";
+
+body {
+  margin: 0;
+}
+
+.watch {
+  margin: 100px;
+  height: $clock-size;
+  width: $clock-size;
+
+  border: 1px solid #000;
+  border-radius: 50%;
+  background-color: $back-ground-color-watch;
+  z-index: 0;
+
+  &__pointer {
+    height: $poinetr-size;
+    width: $poinetr-size;
+    border-radius: 50%;
+    background-color: $back-ground-color-arrow;
+    margin-top: $clock-size/2 - $poinetr-size/2;
+    margin-left: $clock-size/2 - $poinetr-size/2;
+    }
+
+  &__second {
+    height: $clock-size*0.45;
+    width: $poinetr-size*0.4;
+    background-color: $back-ground-color-arrow;
+    margin-top: -($clock-size/2 - $poinetr-size);
+    margin-left: $clock-size/2 - $poinetr-size*0.2;
+    border-radius: 2px;
+    transform-origin: bottom;
+    transform: rotate(5deg);
+    animation: move 60s linear infinite;
+    }
+
+  &__minute {
+    height: $clock-size*0.4;
+    width: $poinetr-size*0.5;
+    background-color: $back-ground-color-arrow;
+    margin-top: -$clock-size/2 + $poinetr-size*1.5;
+    margin-left: $clock-size/2 - $poinetr-size*0.25;
+    border-radius: 5px;
+    transform-origin: bottom;
+    transform: rotate(5deg);
+    animation: move 3600s linear infinite;
+    }
+}
