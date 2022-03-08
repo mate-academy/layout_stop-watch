@@ -1,0 +1,44 @@
+.watch {
+  position: relative;
+  height: 350px;
+  width: 350px;
+  background-color: aquamarine;
+  background-image: url(./gerb.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+
+  &__second {
+    height: $second-hand-height;
+    width: $second-hand-width;
+    background-color: blue;
+    border-radius: 2px;
+    position: absolute;
+    left: calc(50% - #{$second-hand-width} / 2);
+    top: calc(50% - #{$second-hand-height});
+    transform-origin: bottom;
+    animation: watch-hand 60s linear infinite;
+  }
+
+  &__minute {
+    height: $minute-hand-height;
+    width: $minute-hand-width;
+    background-color: red;
+    border-radius: 5px;
+    position: absolute;
+    left: calc(50% - #{$minute-hand-width} / 2);
+    top: calc(50% - #{$minute-hand-height});
+    transform-origin: bottom;
+    animation: watch-hand 3600s linear infinite;
+  }
+}
+
+@keyframes watch-hand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
