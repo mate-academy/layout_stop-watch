@@ -1,0 +1,96 @@
+$clock-size: 500px;
+$clock-main-color: #333;
+$joint-color: #27d;
+$arrow-min-color: #49f;
+$arrow-sec-color: #f49;
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+
+  border-radius: 50%;
+}
+
+@mixin arrow-size($widht-quatient, $height-quatient) {
+  height: calc(#{$clock-size} * #{$widht-quatient});
+  width: calc(#{$clock-size} * #{$height-quatient});
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+}
+
+.clock {
+  position: relative;
+  z-index: -2;
+
+  @include circle($clock-size);
+
+  background-color: $clock-main-color;
+
+  &__joint {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @include circle($clock-size * 0.1);
+
+    background-color: $joint-color;
+  }
+
+  &__arrow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: center bottom;
+    transform: translate(-50%, -100%);
+    z-index: -1;
+
+    border-radius: 20px;
+
+    animation-name: rotate;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+
+    &--min {
+      @include arrow-size(0.4, 0.05);
+
+      background-color: $arrow-min-color;
+
+      animation-duration: 3600s;
+    }
+
+    &--sec {
+      @include arrow-size(0.44, 0.03);
+
+      background-color: $arrow-sec-color;
+
+      animation-duration: 60s;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -100%) rotate(0);
+  }
+
+  100% {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
