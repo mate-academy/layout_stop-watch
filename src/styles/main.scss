@@ -1,10 +1,10 @@
 // extends
 %arrowsPosition {
   position: absolute;
-  top: 50%;
   left: 50%;
+  bottom: 50%;
 
-  transform-origin: left center;
+  transform-origin: bottom center;
 }
 
 // variables
@@ -12,7 +12,7 @@ $minuteColor: #f00;
 $secondColor: #00f;
 $clockRimColor: #000;
 
-$secondArrowLength: 500px;
+$secondArrowLength: 200px;
 $secondArrowWidth: $secondArrowLength / 25;
 
 $minuteArrowLength: $secondArrowLength / 2;
@@ -54,7 +54,7 @@ body {
 
     @include circle($centerSize);
 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 50%);
 
     background-color: $secondColor;
   }
@@ -62,8 +62,8 @@ body {
   &__second {
     @extend %arrowsPosition;
 
-    width: $secondArrowLength;
-    height: $secondArrowWidth;
+    width: $secondArrowWidth;
+    height: $secondArrowLength;
 
     animation: clock 60s steps(60) infinite;
 
@@ -74,10 +74,10 @@ body {
   &__minute {
     @extend %arrowsPosition;
 
-    height: $minuteArrowWidth;
-    width: $minuteArrowLength;
+    height: $minuteArrowLength;
+    width: $minuteArrowWidth;
 
-    animation: clock 60s steps(60) infinite;
+    animation: clock 3600s linear infinite;
 
     background-color: $minuteColor;
     border-radius: $minuteArrowWidth;
@@ -86,10 +86,10 @@ body {
 
 @keyframes clock {
   from {
-    transform: translate(0, -50%) rotate(-90deg);
+    transform: translateX(-50%) rotate(0deg);
   }
 
   to {
-    transform: translate(0, -50%) rotate(270deg);
+    transform: translateX(-50%) rotate(360deg);
   }
 }
