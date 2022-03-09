@@ -1,0 +1,20 @@
+@mixin square ($size-of-frame) {
+  width: $size-of-frame;
+  height: $size-of-frame;
+}
+
+@mixin cicle ($size-of-center) {
+  width: $size-of-center;
+  height: $size-of-center;
+  border-radius: 50%;
+}
+
+@mixin big-hand ($size-of-frame) {
+  height: 0.3 * $size-of-frame;
+  width: 0.03 * $size-of-frame;
+}
+
+@mixin small-hand ($size-of-frame) {
+  height: 0.46 * $size-of-frame;
+  width: 0.02 * $size-of-frame;
+}
