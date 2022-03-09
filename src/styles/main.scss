@@ -1,0 +1,74 @@
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin line ($length, $width) {
+  width: $length;
+  height: $width;
+  border-radius: $width / 2;
+}
+
+%Position {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+}
+
+@keyframes clockWork {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.clocks {
+  @include circle(400px);
+
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+
+  background-color: yellow;
+  box-shadow: 0 0 260px #0b0bfd inset;
+  border: 2px solid rgb(71, 71, 245);
+
+  &__seconds {
+    @include line(6px, 180px);
+    @extend %Position;
+
+    background-color: blue;
+
+    animation: clockWork 60s steps(60, end) infinite;
+  }
+
+  &__minutes {
+    @include line(9px, 120px);
+    @extend %Position;
+
+    background-color: blue;
+
+    animation: clockWork 3600s steps(60, end) infinite;
+  }
+
+  &__name {
+    padding-top: 60%;
+    text-transform: uppercase;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    z-index: 3;
+    color: blue;
+  }
+}
