@@ -10,17 +10,15 @@
   position: relative;
 
   &__minute {
-    height: 0.3 * $size-of-frame;
-    width: 0.03 * $size-of-frame;
+    @include big-hand ($size-of-frame);
     background-color: rgb(224, 46, 46);
     border-radius: 0.03 * $size-of-frame;
 
-    animation: move 3600s steps(60, end) infinite forwards;
+    animation: move 3600s linear infinite forwards;
   }
 
   &__second {
-    height: 0.46 * $size-of-frame;
-    width: 0.02 * $size-of-frame;
+    @include small-hand ($size-of-frame);
     background-color: rgb(37, 212, 204);
     border-radius: 0.02 * $size-of-frame;
 
