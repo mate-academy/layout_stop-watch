@@ -1,0 +1,13 @@
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin arrow ($arr) {
+  position: absolute;
+  top: calc(50% - #{$arr});
+  left: calc(50% - #{$arrow-width} / 2);
+  width: $arrow-width;
+  height: $arr;
+}
