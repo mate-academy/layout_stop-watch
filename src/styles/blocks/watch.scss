@@ -1,0 +1,32 @@
+.watch {
+  position: relative;
+  @include circle($watch-size);
+  background: #eee;
+  border: 10px dotted green;
+
+  &__center {
+    position: absolute;
+    top: calc(50% - #{$center-width} / 2);
+    left: calc(50% - #{$center-width} / 2);
+    @include circle($center-width);
+    background-color: #5f98a8;
+    z-index: 1;
+  }
+
+  &__minutes {
+    @include arrow($minutes-height);
+    background-color: #5f98a8;
+    border-radius: 10px;
+    z-index: 1;
+    transform-origin: bottom;
+    animation: seconds 60s infinite steps(60);
+  }
+
+  &__hour {
+    @include arrow($hours-height);
+    background-color: #c25d5d;
+    border-radius: 10px;
+    transform-origin: bottom;
+    animation: seconds 3600s infinite steps(60);
+  }
+}

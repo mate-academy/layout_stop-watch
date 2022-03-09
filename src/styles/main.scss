@@ -1,51 +1,6 @@
-@import "./utils/_variables";
-@import "./utils/_mixins";
-@import "./utils/_animation";
+@import "./utils/_variables.scss";
+@import "./utils/_mixins.scss";
+@import "./utils/_animation.scss";
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.watch {
-  position: relative;
-  @include circle($watch-size);
-  background: #eee;
-  border: 10px dotted green;
-
-  &__center {
-    position: absolute;
-    top: calc(50% - #{$center-width} / 2);
-    left: calc(50% - #{$center-width} / 2);
-    @include circle($center-width);
-    background-color: #5f98a8;
-    z-index: 1;
-  }
-
-  &__minutes {
-    position: absolute;
-    top: calc(50% - #{$minutes-height});
-    left: calc(50% - #{$arrow-width} / 2);
-    width: $arrow-width;
-    height: $minutes-height;
-    background-color: #5f98a8;
-    border-radius: 10px;
-    z-index: 1;
-    transform-origin: bottom;
-    animation: seconds 60s infinite steps(60);
-  }
-
-  &__hour {
-    position: absolute;
-    top: calc(50% - #{$hours-height});
-    left: calc(50% - #{$arrow-width} / 2);
-    width: $arrow-width;
-    height: $hours-height;
-    background-color: #c25d5d;
-    border-radius: 10px;
-    transform-origin: bottom;
-    animation: seconds 3600s infinite steps(60);
-  }
-}
+@import "./blocks/container.scss";
+@import "./blocks/watch.scss";
