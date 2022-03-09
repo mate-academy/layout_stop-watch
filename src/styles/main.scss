@@ -1,0 +1,41 @@
+@import "./variables.scss";
+
+.clock {
+  border-radius: 50%;
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  background-color: rgb(10, 233, 151);
+
+  &__center-dot {
+    @include centr-dot-size;
+    position: absolute;
+    background-color: rgb(218, 149, 2);
+    z-index: 1;
+  }
+
+  &__minute {
+    @include minute-arrow-size;
+    position: absolute;
+    animation: rotate 3600s linear infinite;
+    transform-origin: center bottom;
+    background-color: rgb(17, 0, 255);
+  }
+
+  &__sec {
+    @include second-arrow-size;
+    position: absolute;
+    animation: rotate 60s steps(60, end) infinite;
+    transform-origin: center bottom;
+    background-color: rgb(218, 149, 2);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
