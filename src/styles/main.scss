@@ -1,0 +1,72 @@
+@import "./utils/variables.scss";
+@import "./mixins.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px;
+}
+
+.watch {
+  position: relative;
+  @include watch($width, $height);
+  border: 4px solid brown;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+
+    @include watch($width * 0.2, $height * 0.2);
+
+    background-color: brown;
+    border-radius: 50%;
+  }
+
+  &__hour {
+    position: absolute;
+    bottom: 50%;
+    @include watch($width * 0.04, $height * 0.39);
+    background: #009b95;
+    animation: step 86400s infinite steps(60,end);
+    animation-timing-function: linear;
+    transform-origin: bottom center;
+  }
+
+  &__minutes {
+    position: absolute;
+    bottom: 50%;
+    @include watch($width * 0.03, $height * 0.43);
+    background: #24c0ba;
+    animation: step 3600s infinite steps(60,end);
+    animation-timing-function: linear;
+    transform-origin: bottom center;
+    z-index: 1;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: 50%;
+    @include watch($width * 0.02, $height * 0.47);
+    background: #48d1cc;
+    animation: step 60s infinite steps(60,end);
+    transform-origin: bottom center;
+    z-index: 2;
+  }
+}
+
+@keyframes step {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
