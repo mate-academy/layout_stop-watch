@@ -1,0 +1,40 @@
+.clock {
+  width: $clock-size;
+  height: $clock-size;
+  background-color: #e5e3c9;
+  border-radius: 10px;
+  position: relative;
+
+  &__minutes {
+    position: absolute;
+    left: $left;
+    height: $minutes-height;
+    width: 4px;
+    background-color: #b4cfb0;
+    border-radius: 2px;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+
+  &__hours {
+    position: absolute;
+    left: $left;
+    top: $hours-top;
+    height: $hours-height;
+    width: 4px;
+    background-color: #94b49f;
+    border-radius: 2px;
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
