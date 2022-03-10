@@ -8,7 +8,7 @@
 
 /* #region Variables */
 $big-arrow-height: 200px;
-$watch-diameter: $big-arrow-height * 2 + 50px;
+$watch-diameter: $big-arrow-height * 2 + 100px;
 $small-arrow-height: $big-arrow-height/1.5;
 $point-diameter: 15px;
 $arrows-width: 8px;
@@ -33,8 +33,11 @@ $watch-shadow: 1px 2px 16px 1px rgba(3,54,12,0.87);
 .watch {
   position: relative;
   @include circle($watch-diameter);
-  border: 8px dashed rgb(47, 107, 78);
   box-shadow: $watch-shadow;
+  background-image: url(../img/png-transparent-clock-position-clock-face-digital-clock-clock-clock-position-clock-face-digital-clock.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .watch--position {
@@ -44,7 +47,7 @@ $watch-shadow: 1px 2px 16px 1px rgba(3,54,12,0.87);
 .watch__small-hand {
   position: absolute;
   left: $watch-diameter/2 - $arrows-width;
-  top: ($watch-diameter/2 - $small-arrow-height -8px);
+  top: ($watch-diameter/2 - $small-arrow-height);
   transform: translate(-50%, -50%);
   @include arrow($arrows-width, $small-arrow-height);
   border: 1px solid black;
@@ -57,7 +60,7 @@ $watch-shadow: 1px 2px 16px 1px rgba(3,54,12,0.87);
 .watch__big-hand {
   position: absolute;
   left: $watch-diameter/2 - $arrows-width;
-  top: ($watch-diameter/2 - $big-arrow-height -8px);
+  top: ($watch-diameter/2 - $big-arrow-height);
   @include arrow($arrows-width, $big-arrow-height);
   border: 1px solid black;
   box-shadow: $watch-shadow;
@@ -70,7 +73,7 @@ $watch-shadow: 1px 2px 16px 1px rgba(3,54,12,0.87);
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-25%, -50%);
+  transform: translate(-75%, -50%);
   @include circle($point-diameter);
   border: 1px solid black;
   background-color: rgb(3, 90, 61);
