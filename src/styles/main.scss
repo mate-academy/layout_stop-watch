@@ -1,0 +1,67 @@
+$watch-width: 400px;
+$watch-hight: 400px;
+$center-width: 30px;
+$center-hight: 30px;
+$hand-width: 20px;
+$hand-hight: 180px;
+
+@mixin size {
+  height: $watch-hight;
+  width: $watch-width;
+}
+
+@mixin circle {
+  width: $center-width;
+  height: $center-hight;
+  border-radius: 50%;
+  background: #ffa500;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hand {
+  position: absolute;
+  width: $hand-width;
+  border-radius: 20px;
+}
+
+.stopwatch {
+  @include size;
+  position: relative;
+  margin: 100px auto;
+  border-radius: 20%;
+  background-color: #eee;
+
+  &__minute {
+    top: ($watch-hight - $center-hight) / 2 - $hand-hight + $center-hight / 2;
+    left: ($watch-width - $hand-width) / 2;
+    height: $hand-hight;
+    background-color: #f00;
+    animation: rotate 3600s linear;
+    transform-origin: bottom center;
+  }
+
+  &__second {
+    top: ($watch-hight - $center-hight) / 2 - $hand-hight + $center-hight / 2;
+    left: ($watch-width - $hand-width) / 2;
+    height: $hand-hight;
+    background-color: blue;
+    animation: rotate 60s linear;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    @include circle;
+    position: absolute;
+    top: ($watch-hight - $center-hight) / 2;
+    left: ($watch-width - $center-width) / 2;
+    border-radius: 50%;
+  }
+}
