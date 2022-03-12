@@ -7,14 +7,12 @@
   position: relative;
   height: $clock-size;
   width: $clock-size;
-  margin: 100px auto;
+  margin: 30px auto;
 
-  &--circle-style {
-    border-radius: 50%;
-    background-color: #c9c9c9;
-    border: 2px solid #c7c7c7;
-    box-shadow: 5px 5px 10px 2px rgba(201, 201, 201, 0.5);
-  }
+  border-radius: 50%;
+  background-color: #c9c9c9;
+  border: 2px solid #c7c7c7;
+  box-shadow: 5px 5px 10px 2px rgba(201, 201, 201, 0.5);
 
   &__second {
     @include arrows;
@@ -43,5 +41,25 @@
     width: 35%;
     background-color: $minute-arrow-color;
     animation: moveMinute 3600s linear infinite;
+  }
+}
+
+@keyframes moveSecond {
+  0% {
+    transform: rotateZ($rotate-to-top);
+  }
+
+  100% {
+    transform: rotateZ($rotate-to-top + 360deg);
+  }
+}
+
+@keyframes moveMinute {
+  0% {
+    transform: rotateZ($rotate-to-top);
+  }
+
+  100% {
+    transform: rotateZ($rotate-to-top + 360deg);
   }
 }
