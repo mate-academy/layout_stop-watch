@@ -1,0 +1,67 @@
+@import "utils/variables";
+@import "utils/animation";
+
+@import "reset";
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  height: $height-clock;
+  width: $width-clock;
+
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+
+  background-color: $color-clock;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  &__minute {
+    background-color: $bgc-minute;
+
+    height: $height-minute;
+    width: $width-minute;
+
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+
+    @extend %position-hand;
+
+    animation: clock-anim 3600s steps(60, end) infinite;
+  }
+
+  &__second {
+    background-color: $bgc-dot-second;
+
+    height: $height-second;
+    width: $width-second;
+
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+
+    @extend %position-hand;
+
+    animation: clock-anim 60s steps(60, end) infinite;
+  }
+
+  &__dot {
+    background-color: $bgc-dot-second;
+
+    height: $dot-height;
+    width: $dot-width;
+
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+
+    z-index: 1;
+  }
+}
