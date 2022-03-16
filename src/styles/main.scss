@@ -1,0 +1,72 @@
+$clock-size: 200px;
+$center-size: 10px;
+
+$minute-arrow-color: burlywood;
+$second-arrow-color: aliceblue;
+
+$second-arrow-height: 90px;
+$minute-arrow-height: 70px;
+$arrow-width: 6px;
+
+@mixin centerSize($size) {
+  width: $size;
+  height: $size;
+}
+
+.clock {
+  margin: 100px auto;
+  position: relative;
+
+  width: $clock-size;
+  height: $clock-size;
+  background-color: darkgray;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: (($clock-size / 2) - ($center-size / 2));
+    left: (($clock-size / 2) - ($center-size / 2));
+
+    @include centerSize($center-size);
+    background-color: burlywood;
+    border-radius: 50%;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    top: $clock-size / 2 - $second-arrow-height;
+    left: ($clock-size / 2 - $arrow-width / 2);
+
+    width: $arrow-width;
+    height: $second-arrow-height;
+
+    background-color: $second-arrow-color;
+    border-radius: 50%;
+    transform-origin: bottom center;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__minute-arrow {
+    position: absolute;
+    top: $clock-size / 2 - $minute-arrow-height;
+    left: ($clock-size - $arrow-width) / 2;
+
+    width: $arrow-width;
+    height: $minute-arrow-height;
+
+    background-color: $minute-arrow-color;
+    border-radius: 50%;
+    transform-origin: bottom center;
+    animation: rotate 3600s linear infinite;
+  }
+
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
