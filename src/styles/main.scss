@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  position: relative;
+}
+
+.stopwatch__big-hand {
+  position: absolute;
+  background-color: rgb(109, 184, 159);
+  border-radius: 10px;
+  height: 250px; //width-centerwidth/2=295
+  width: 10px;
+  top: 60px;
+  left: 305px;
+
+  transform: rotateZ(360deg);
+  transform-origin: bottom;
+  animation: big-hand 3s infinite;
+  animation-direction: normal;
+  transition-timing-function: linear;
+}
+
+.stopwatch__center {
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  border-radius: 50%;
+  background-color: rgb(109, 184, 159);
+  height: 20px;
+  width: 20px;
+}
+
+.stopwatch__small-hand {
+  position: absolute;
+  top: 160px;
+  left: 305px;
+  background-color: rgb(126, 38, 38);
+  border-radius: 10px;
+  height: 150px;
+  width: 10px;
+
+  transform: rotateZ(360deg);
+  transform-origin: bottom;
+  animation: small-hand 36s infinite;
+  animation-direction: normal;
+  transition-timing-function: linear;
+}
+
+@keyframes big-hand {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes small-hand {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
