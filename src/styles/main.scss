@@ -1,0 +1,71 @@
+$second-hand-length: 420px;
+$center-size: 60px;
+$minute-hand-length: 200px;
+$minute-hand-width: 12px;
+$second-hand-width: 8px;
+
+@keyframes clock-hand {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  height: 2 * $second-hand-length + $center-size;
+  width: 2 * $second-hand-length + $center-size;
+  border-radius: 50%;
+  background-color: #efe;
+  position: relative;
+}
+
+.center {
+  border-radius: 50%;
+  height: $center-size;
+  width: $center-size;
+  background-color: rosybrown;
+  position: absolute;
+  top: $second-hand-length + $center-size / 2;
+  left: $second-hand-length + $center-size / 2;
+  z-index: 2;
+}
+
+.center::before {
+  content: "";
+  box-sizing: border-box;
+  height: $second-hand-length;
+  display: block;
+  position: absolute;
+  bottom: $center-size / 2;
+  left: ($center-size - $minute-hand-width) / 2;
+  width: $second-hand-width;
+  background-color: brown;
+  border-radius: 20px;
+  animation-name: clock-hand;
+  animation-duration: 60s;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+  z-index: 1;
+}
+
+.center::after {
+  content: "";
+  height: $minute-hand-length;
+  display: block;
+  position: absolute;
+  bottom: $center-size / 2;
+  left: ($center-size - $minute-hand-width) / 2;
+  width: $minute-hand-width;
+  background-color: brown;
+  border-radius: 20px;
+  animation-name: clock-hand;
+  animation-duration: 3600s;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+  z-index: 1;
+}
