@@ -1,0 +1,85 @@
+$watchSize: 500px;
+$centerSize: $watchSize / 15;
+
+@mixin cell($size) {
+  width: $size;
+  height: $size;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #3e3e3e;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  @include cell($watchSize);
+  border-radius: 50%;
+
+  position: relative;
+  z-index: -2;
+  background-color: #fff;
+
+  %centerPosition {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+
+  &__center {
+    @extend %centerPosition;
+    @include cell($centerSize);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
+    background-color: black;
+  }
+
+  &__arrow {
+    @extend %centerPosition;
+
+    transform-origin: center bottom;
+    transform: translate(-50%, -100%);
+    z-index: -1;
+
+    animation-name: watch;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+
+    &--minutes {
+      height: $watchSize * 0.35;
+      width: $watchSize * 0.03;
+      border-radius: 10px;
+      background-color: blue;
+      animation-duration: 3600s;
+    }
+
+    &--seconds {
+      height: $watchSize * 0.45;
+      width: $watchSize * 0.02;
+      border-radius: 8px;
+      background-color: red;
+      animation-duration: 60s;
+    }
+  }
+}
+
+@keyframes watch {
+  from {
+    transform: translate(-50%, -100%) rotate(0);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
