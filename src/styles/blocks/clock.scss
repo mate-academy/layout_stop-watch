@@ -1,0 +1,47 @@
+.clock {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+
+  &__minutehands {
+    width: 10px;
+    height: 140px;
+    border-radius: 10px;
+    background: rgb(134, 36, 6);
+    animation-duration: 3600s;
+  }
+
+  &__secondhands {
+    width: 8px;
+    height: 180px;
+    border-radius: 10px;
+    background: teal;
+    z-index: 1;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__center {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: teal;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes myclock {
+    0% {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+  }
+}
