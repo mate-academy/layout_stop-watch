@@ -1,0 +1,61 @@
+$clock-size: 500px;
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $clock-size;
+  height: $clock-size;
+  background-color: yellow;
+  border-radius: 50%;
+
+  &__dot {
+    position: absolute;
+    z-index: 1;
+    width: $clock-size * 0.03;
+    height: $clock-size * 0.03;
+    background-color: blue;
+    border-radius: 50%;
+  }
+
+  &__second {
+    position: absolute;
+    bottom: 50%;
+    width: $clock-size * 0.01;
+    height: $clock-size * 0.4;
+    background-color: black;
+    border-radius: 50%;
+
+    animation-name: rotate;
+    transform-origin: bottom;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    width: $clock-size * 0.01;
+    height: $clock-size * 0.3;
+    background-color: red;
+    border-radius: 50%;
+
+    animation-name: rotate;
+    transform-origin: bottom;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
