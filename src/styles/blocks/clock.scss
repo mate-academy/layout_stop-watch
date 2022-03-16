@@ -1,0 +1,53 @@
+@import "../styles/utils/variables";
+@import "../utils/mixins";
+@import "../utils/keyframes";
+
+.clock {
+  margin: 150px auto;
+  display: block;
+  position: relative;
+
+  @include circle($clock-size);
+
+  border: 3px solid rgb(141, 133, 127);
+  background-color: rgba(141, 133, 127, 0.1);
+
+  &__seconds {
+    position: absolute;
+    top: $clock-size / 2 - $clock-seconds-h;
+    left: ($clock-size - $clock-seconds-w) / 2;
+
+    @include arrow($clock-seconds-w, $clock-seconds-h);
+
+    background-color: rgba(141, 133, 127, 0.7);
+    border-radius: 30px;
+
+    animation: rotate 60s linear;
+    transform-origin: bottom center;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: $clock-size / 2 - $clock-minutes-h;
+    left: ($clock-size / 2) - $clock-minutes-w / 2;
+
+    @include arrow($clock-minutes-w, $clock-minutes-h);
+
+    background-color: rgba(141, 133, 127, 0.8);
+    border-radius: 30px;
+
+    animation: rotate 360s linear;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    position: absolute;
+    top: ($clock-size - $clock-center) / 2;
+    left: ($clock-size - $clock-center) / 2;
+
+    @include arrow($clock-center, $clock-center);
+
+    border-radius: 50%;
+    background-color: rgb(141, 133, 127);
+  }
+}
