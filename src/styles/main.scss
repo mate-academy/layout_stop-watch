@@ -1,0 +1,71 @@
+$radius-clock: 80vh;
+
+$color-minute-hand: #a00;
+$color-second-hand: #aaf;
+
+$width-hands: 3%;
+$lenght-minute-hand: 40%;
+$lenght-second-hand: 50%;
+
+@mixin circle ($radius, $color-circle, $color-border) {
+  width: $radius;
+  height: $radius;
+  border-radius: 50%;
+  border: 1px solid $color-border;
+  background-color: $color-circle;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  position: relative;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  @include circle ($radius-clock, #eee, #ccc);
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include circle (5%, $color-second-hand, $color-second-hand);
+  }
+
+  &__second-hand {
+    position: absolute;
+    // left: 50%-$width-hands/2;
+    left: 48.5%;
+
+    width: $width-hands;
+    height: $lenght-second-hand;
+    background-color: $color-second-hand;
+    border-radius: 50%;
+
+    transform-origin: bottom center;
+    animation: move 60s linear infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    // left: 50%-$width-hands/2;
+    left: 48.5%;
+    // top: 50%-$lenght-minute-hand;
+    top: 10%;
+
+    width: $width-hands;
+    height: $lenght-minute-hand;
+    background-color: $color-minute-hand;
+    border-radius: 50%;
+
+    transform-origin: bottom center;
+    animation: move 3600s linear infinite;
+  }
+}
