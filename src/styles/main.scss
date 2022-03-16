@@ -1,11 +1,11 @@
-$center-size: 20px;
+$center-size: 30px;
 $clock-size: 500px;
 
-$seconds-hand-width: 5px;
-$seconds-hand-heigh: 250px;
+$seconds-hand-width: 10px;
+$seconds-hand-heigh: 225px;
 
 $minute-hand-heigh: 150px;
-$minute-hand-width: 5px;
+$minute-hand-width: 10px;
 
 body {
   margin: 0;
@@ -24,10 +24,12 @@ body {
   height: $clock-size;
   width: $clock-size;
 
-  border: 2px solid black;
+  // border: 2px solid black;
   border-radius: 50%;
 
   position: relative;
+
+  background-color: beige;
 
   &__center {
     background-color: blue;
@@ -37,9 +39,13 @@ body {
 
     border-radius: 50%;
 
-    transform: translate(-50%, 50%);
+    transform: translate(-35%, 50%);
 
     z-index: 1;
+
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
   }
 
   &__seconds-hand {
@@ -50,6 +56,8 @@ body {
     transform-origin: bottom center;
 
     animation: round 60s steps(60) infinite;
+
+    border-radius: 10px;
   }
 
   &__minute-hand {
@@ -60,9 +68,10 @@ body {
     transform-origin: bottom center;
 
     animation: round 3600s linear infinite;
+
+    border-radius: 10px;
   }
 
-  &__center,
   &__seconds-hand,
   &__minute-hand {
     position: absolute;
