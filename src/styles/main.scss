@@ -1,0 +1,71 @@
+@import "utils/variables";
+@import "utils/mixins";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include circle($watch-width);
+  background-color: $watch-color;
+
+  &__circle {
+    position: absolute;
+    @include circle($circle-width);
+    background-color: $first-color;
+    z-index: 1;
+  }
+
+  &__long-hand {
+    position: absolute;
+    top: calc(50% - #{$long-hand-height});
+    width: $hand-width;
+    height: $long-hand-height;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: $first-color;
+    z-index: 1;
+
+    animation: seconds 60s infinite steps(60);
+    transform-origin: bottom;
+  }
+
+  &__small-hand {
+    position: absolute;
+    top: calc(50% - #{$small-hand-height});
+    width: $hand-width;
+    height: $small-hand-height;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: $second-color;
+
+    animation: seconds 3600s infinite steps(60);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes seconds {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
