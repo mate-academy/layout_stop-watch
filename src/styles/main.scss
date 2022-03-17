@@ -24,8 +24,9 @@ $arrow-width: 6px;
 
   &__center {
     position: absolute;
-    top: (($clock-size / 2) - ($center-size / 2));
-    left: (($clock-size / 2) - ($center-size / 2));
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
 
     @include centerSize($center-size);
     background-color: burlywood;
