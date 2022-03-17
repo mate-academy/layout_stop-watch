@@ -1,0 +1,17 @@
+$clock-size: 500px;
+$watch-color: rgb(64, 64, 64);
+$joint-color: #000;
+$hand-min-color: rgba(255, 255, 255, 0.7);
+$hand-sec-color: rgba(170, 170, 170, 0.7);
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+
+  border-radius: 50%;
+}
+
+@mixin arrow-size($widht-quatient, $height-quatient) {
+  height: calc(#{$clock-size} * #{$widht-quatient});
+  width: calc(#{$clock-size} * #{$height-quatient});
+}
