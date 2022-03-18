@@ -1,0 +1,65 @@
+$color-sec: #4b9aaa;
+$color-min: #e63d42;
+$color-dot: #449cad;
+
+$size-sec-arrow: 120px;
+$size-min-arrow: 80px;
+$size-dot: 14px;
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin circle ($size, $color) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: $color;
+}
+
+@mixin stopwatch-arrow ($size, $color, $duration) {
+  width: 8px;
+  height: $size;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  margin-left: -$size-dot / 4;
+  background-color: $color;
+  animation: rotate $duration infinite linear;
+  transform-origin: bottom;
+}
+
+body {
+  margin: 0;
+  // overflow: hidden;
+}
+
+.stopwatch-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+
+  &::before {
+    content: "";
+    @include stopwatch-arrow($size-min-arrow, $color-min, 3600s);
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    @include stopwatch-arrow($size-sec-arrow, $color-sec, 60s);
+    z-index: -2;
+  }
+
+  &__dot {
+    @include circle($size-dot, $color-dot);
+  }
+}
