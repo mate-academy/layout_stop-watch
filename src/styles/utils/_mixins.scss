@@ -1,0 +1,13 @@
+@mixin circle($diameter) {
+  width: $diameter;
+  height: $diameter;
+  border-radius: 50%;
+}
+
+@mixin watch-hand($width, $length) {
+  position: absolute;
+  width: $width;
+  height: $length;
+  transform-origin: 50% 100%;
+  border-radius: 50% 50% 0 0;
+}

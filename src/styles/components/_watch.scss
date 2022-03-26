@@ -1,0 +1,28 @@
+.watch {
+  @include circle($watch-size);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-color: #d3d3d3;
+  border: 10px solid #666;
+
+  &__minute-hand {
+    @include watch-hand($watch-size / 40, $watch-size / 2);
+    background-color: #000;
+    animation: rotate 3600s steps(3600, end) normal linear infinite;
+  }
+  
+  &__second-hand {
+    @include watch-hand($watch-size / 160, $watch-size / 2);
+    background-color: #f00;
+    animation: rotate 60s steps(60, end) infinite;
+  }
+  
+  &__button {
+    @include circle($watch-size / 10);
+    align-self: center;
+    background-color: #000;
+    z-index: 1;
+  }
+}
