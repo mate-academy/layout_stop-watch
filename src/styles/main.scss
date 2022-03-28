@@ -1,0 +1,86 @@
+$stopwatch-size: 500px;
+$hand-width: 10px;
+$small-hand-height: $stopwatch-size / 3;
+$center: $stopwatch-size / 2;
+
+//a minute is arranged for 6s since it is boring to watch
+$animation-minute-time: 6s;
+
+@mixin watchsize {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+}
+
+body {
+  margin: 0;
+}
+
+.page__container {
+  margin: 50px auto;
+}
+
+.container {
+  position: relative;
+
+  @include watchsize();
+
+  border-radius: 50%;
+
+  background-color: #ededed;
+
+  &__hand {
+    position: absolute;
+    top: $center - $small-hand-height;
+    left: ($stopwatch-size / 2) - ($hand-width / 2);
+
+    animation-name: rotate;
+    animation-duration: $animation-minute-time * 60;
+    animation-timing-function: linear;
+
+    transform-origin: bottom center;
+
+    height: $small-hand-height;
+    width: $hand-width;
+
+    background-color: #171717;
+
+    &--big {
+      position: absolute;
+      top: 0;
+      left: $center - ($hand-width / 4);
+
+      animation-duration: $animation-minute-time;
+      animation-iteration-count: 60;
+
+      height: ($stopwatch-size / 2);
+      width: ($hand-width / 2);
+
+      background-color: #da0037;
+    }
+
+    &--pin {
+      position: absolute;
+      top: $center - $hand-width;
+      left: $center - $hand-width;
+
+      animation: none;
+
+      width: $hand-width * 2;
+      height: $hand-width * 2;
+
+      border-radius: 50%;
+      background-color: #da0037;
+
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
