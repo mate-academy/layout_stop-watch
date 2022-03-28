@@ -1,0 +1,64 @@
+/* #region Normalize */
+body {
+  margin: 0;
+}
+/* #endregion */
+
+/*#region Variables */
+  $pin-size: 24px;
+/* #endregion */
+
+/* #region Mixins */
+
+@mixin position {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+}
+
+@mixin pin_size($pin_size) {
+  width: $pin_size;
+  height: $pin_size;
+  border-radius: 50%;
+}
+
+/* #endregion */
+
+.minute {
+  @include position;
+  height: 175px;
+  width: 12px;
+  transform: translateX(-12.5%);
+  background-color: red;
+  animation: rotate 60s linear infinite 2s; //this has been sped up 60 times
+  transform-origin: bottom center;
+}
+
+.second {
+  @include position;
+  height: 300px;
+  width: 6px;
+  transform: translateX(25%);
+  background-color: mediumseagreen;
+  animation: rotate 6s linear infinite 2s;//this has been sped up 10 times
+  transform-origin: bottom center;
+}
+
+.pin {
+  @include position;
+  @include pin_size($pin-size);
+  background-color: mediumseagreen;
+  transform: translate3D(-30%, 50%, 0);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
