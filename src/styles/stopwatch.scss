@@ -1,0 +1,39 @@
+.stopwatch {
+  position: relative;
+
+  @include square ($watch-size);
+
+  &:before {
+    @include pointer-position;
+
+    height: 200px;
+    width: $pointer-width;
+
+    content: "";
+    background-color: #000;
+    border-radius: $b-r-pointer;
+
+    transform-origin: bottom;
+    animation: rotate 3600s infinite linear;
+  }
+
+  &:after {
+    @include pointer-position;
+
+    height: 250px;
+    width: $pointer-width;
+
+    content: "";
+    background-color: #f00;
+    border-radius: $b-r-pointer;
+
+    transform-origin: bottom;
+    animation: rotate 60s infinite linear;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
