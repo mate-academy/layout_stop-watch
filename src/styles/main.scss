@@ -5,7 +5,7 @@ body {
 /* #endregion */
 
 /*#region Variables */
-  $pin-size: 24px;
+$pin-size: 24px;
 /* #endregion */
 
 /* #region Mixins */
@@ -28,19 +28,17 @@ body {
   @include position;
   height: 175px;
   width: 12px;
-  transform: translateX(-12.5%);
   background-color: red;
-  animation: rotate 60s linear infinite 2s; //this has been sped up 60 times
+  animation: rotate 3600s linear infinite 2s;
   transform-origin: bottom center;
 }
 
 .second {
   @include position;
   height: 300px;
-  width: 6px;
-  transform: translateX(25%);
+  width: 12px;
   background-color: mediumseagreen;
-  animation: rotate 6s linear infinite 2s;//this has been sped up 10 times
+  animation: rotate 60s linear infinite 2s;
   transform-origin: bottom center;
 }
 
@@ -48,7 +46,7 @@ body {
   @include position;
   @include pin_size($pin-size);
   background-color: mediumseagreen;
-  transform: translate3D(-30%, 50%, 0);
+  transform: translate3D(-25%, 50%, 0);
 }
 
 @keyframes rotate {
@@ -60,5 +58,3 @@ body {
     transform: rotate(360deg);
   }
 }
-
-
