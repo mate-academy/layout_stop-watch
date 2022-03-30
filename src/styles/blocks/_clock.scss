@@ -1,0 +1,70 @@
+.container {
+  padding: 100px 0;
+  width: 100%;
+
+  @extend %flex-center;
+}
+
+.clock {
+
+  @include clock-size($size);
+
+  @extend %flex-center;
+  border: 25px solid $dot-color;
+  border-radius: 50%;
+  position: relative;
+  background: linear-gradient(225deg, #e5e1ac, #c79c39, #edf2d0);
+  box-shadow: 11px 11px 23px 8px rgba(34, 60, 80, 0.19);
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  &__second {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: $arrow-width;
+    height: 45%;
+    border-radius: 5px;
+
+    background-color: $second-color;
+
+    transform-origin: left bottom;
+
+    animation: rotateArrow 60s steps(60, end) infinite;
+
+  }
+
+  &__minute {
+    position: absolute;
+    top: 50% - $arrow-height-minute;
+    left: 50%;
+    width: $arrow-width;
+    height: $arrow-height-minute;
+    border-radius: $arrow-width / 2;
+
+    background-color: $minute-color;
+
+    transform-origin: left bottom;
+
+    animation: rotateArrow 3600s linear infinite;
+
+  }
+}
+
+@keyframes rotateArrow {
+  0% {
+    transform: rotate(0deg) translateX(-50%);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(-50%);
+  }
+}
