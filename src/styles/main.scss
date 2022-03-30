@@ -1,0 +1,57 @@
+.clock {
+  height: 340px;
+  width: 340px;
+  position: relative;
+
+  &__hour {
+    height: 120px;
+    width: 5px;
+    position: absolute;
+    background: gray;
+    left: 50%;
+    top: 20px;
+    animation: rotate 43200s infinite linear;
+  }
+
+  &__minute {
+    height: 100px;
+    width: 4px;
+    position: absolute;
+    background: #000;
+    left: 50%;
+    top: 40px;
+    animation: rotate 3600s infinite linear;
+  }
+
+  &__second {
+    height: 120px;
+    width: 2px;
+    background: #f00;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    animation: rotate 60s infinite linear;
+  }
+
+  &__rotor {
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    border-radius: 50%;
+    top: 40%;
+    left: 49%;
+    background-color: black;
+  }
+
+  &__hour,
+  &__minute,
+  &__second {
+    transform-origin: 0 100%;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
