@@ -1,0 +1,78 @@
+@mixin hand-layout {
+  position: absolute;
+  bottom: 50%;
+
+  border-radius: 5px;
+
+  transform-origin: bottom center;
+}
+
+body {
+  margin: 0;
+  padding-top: 50px;
+}
+
+.page__stop-watch {
+  margin: 0 auto;
+}
+
+.stop-watch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+
+  background-color: #24e;
+  border: 2px solid #000;
+  border-radius: 50%;
+
+  &__rolex {
+    position: absolute;
+    top: 15%;
+
+    font-family: 'EB Garamond', serif;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+
+  &__minute {
+    @include hand-layout;
+    height: 175px;
+    width: 10px;
+
+    background-color: pink;
+
+    animation: 60s tick linear infinite;
+  }
+
+  &__second {
+    @include hand-layout;
+    height: 225px;
+    width: 10px;
+
+    background-color: teal;
+
+    animation: 1s tick linear infinite;
+    }
+
+  &__center {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+
+    background-color: teal;
+    border-radius: 50%;
+  }
+}
+
+@keyframes tick {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
