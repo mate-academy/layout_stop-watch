@@ -28,7 +28,8 @@ $pin-size: 24px;
   @include position;
   height: 175px;
   width: 12px;
-  background-color: red;
+  border-radius: 5px;
+  background: linear-gradient(rgb(150, 150, 150),#000);
   animation: rotate 3600s linear infinite 2s;
   transform-origin: bottom center;
 }
@@ -37,7 +38,8 @@ $pin-size: 24px;
   @include position;
   height: 300px;
   width: 12px;
-  background-color: mediumseagreen;
+  border-radius: 5px;
+  background: linear-gradient(rgb(150, 150, 150),#000);
   animation: rotate 60s linear infinite 2s;
   transform-origin: bottom center;
 }
@@ -45,7 +47,7 @@ $pin-size: 24px;
 .pin {
   @include position;
   @include pin_size($pin-size);
-  background-color: mediumseagreen;
+  background-color: black;
   transform: translate3D(-25%, 50%, 0);
 }
 
