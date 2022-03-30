@@ -1,0 +1,68 @@
+.arrow {
+  background: yellowgreen;
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  margin: 100px auto;
+
+  &__circle {
+    width: 50px;
+    height: 50px;
+    background: blue;
+    border-radius: 50%;
+    margin: 225px;
+    position: absolute;
+  }
+
+  &__minute {
+    width: 20px;
+    height: 200px;
+    background: blue;
+    border-radius: 50%;
+    margin-left: 245px;
+    margin-top: 50px;
+    position: absolute;
+    transition: transform 1s ease;
+    transform-origin: bottom center;
+    animation-name: minute;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__second {
+    width: 20px;
+    height: 160px;
+    background: red;
+    border-radius: 50%;
+    margin-left: 245px;
+    margin-top: 90px;
+    position: absolute;
+    transition: transform 2s ease;
+    transform-origin: bottom center;
+    animation-name: second;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes minute {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(250deg);
+  }
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(30deg);
+  }
+}
