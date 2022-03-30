@@ -23,13 +23,11 @@
     margin-top: 50px;
     position: absolute;
     transition: transform 1s ease;
-    transform-origin: bottom left;
+    transform-origin: bottom center;
     animation-name: minute;
-    animation-duration: 1s;
+    animation-duration: 20s;
     animation-timing-function: linear;
-    animation-delay: 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
   }
 
   &__second {
@@ -41,15 +39,12 @@
     margin-top: 90px;
     position: absolute;
     transition: transform 2s ease;
-    transform-origin: bottom left;
+    transform-origin: bottom center;
     animation-name: second;
-    animation-duration: 1s;
+    animation-duration: 20s;
     animation-timing-function: linear;
-    animation-delay: 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
   }
-
 }
 
 @keyframes minute {
