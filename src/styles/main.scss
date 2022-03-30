@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+}
+
+$size: 600px;
+
+@mixin circle ($n) {
+  height: $n;
+  width: $n;
+  border-radius: 50%;
+}
+
+.stopwatch {
+  @include circle($size);
+  position: relative;
+  background-color: rgb(236, 232, 232);
+  margin: 50px auto;
+
+  &__dot {
+    @include circle($size / 10);
+    position: relative;
+    background-color: rgb(236, 12, 12);
+    top: ($size - $size / 10) / 2;
+    left: ($size - $size / 10) / 2;
+    z-index: 2;
+  }
+
+  &__minutes {
+    position: absolute;
+    background-color: rgb(5, 0, 0);
+    width: $size / 4;
+    height: $size / 20;
+    top: ($size - $size / 20) / 2;
+    left: $size / 2;
+    z-index: 1;
+    transform-origin: 0;
+
+    animation-name: rotate;
+    animation-duration: 360s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    background-color: rgb(121, 243, 8);
+    width: $size / 2;
+    height: $size / 40;
+    top: ($size - $size / 40) / 2;
+    left: $size / 2;
+    z-index: 0;
+    transform-origin: 0;
+
+    animation-name: rotate;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
