@@ -1,34 +1,38 @@
 .clock {
-  @include watchSize($stopwatch-size);
+  @include circle($stopwatch-size);
   position: relative;
-
-  border-radius: 50%;
   background-image: radial-gradient(rgb(44, 44, 44), grey);
 
   &__hand {
     position: absolute;
-    top: $center - $small-hand-height;
-    left: ($stopwatch-size / 2) - ($hand-width / 2);
 
-    animation-name: rotate;
-    animation-delay: 0.5s;
-    animation-duration: $minute-time * 60;
-    animation-timing-function: linear;
+    &--hour {
+      top: $center - $small-hand-height;
+      left: ($stopwatch-size / 2) - ($hand-width / 2);
 
-    transform-origin: bottom center;
-    height: $small-hand-height;
-    width: $hand-width;
+      animation-name: rotate;
+      animation-delay: 0.5s;
+      animation-duration: $minute-time * 60;
+      animation-timing-function: linear;
 
-    background-color: black;
+      transform-origin: bottom center;
+      height: $small-hand-height;
+      width: $hand-width;
 
-    &--big {
+      background-color: black;
+    }
+
+    &--min {
       position: absolute;
       top: 0;
       left: $center - ($hand-width / 4);
 
+      animation-name: rotate;
       animation-duration: $minute-time;
       animation-iteration-count: 60;
+      animation-timing-function: linear;
 
+      transform-origin: bottom center;
       height: ($stopwatch-size / 2);
       width: ($hand-width / 2);
 
@@ -40,10 +44,8 @@
       top: $center - $hand-width;
       left: $center - $hand-width;
 
-      width: $hand-width * 2;
-      height: $hand-width * 2;
+      @include circle($hand-width * 2);
 
-      border-radius: 50%;
       background-color: black;
 
       animation: none;
