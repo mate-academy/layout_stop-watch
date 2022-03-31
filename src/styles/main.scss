@@ -1,0 +1,50 @@
+$hour-hand-height: 150px;
+$minute-hand-height: 200px;
+$circle-diam: 15px;
+
+@mixin hand {
+  width: 6px;
+  border-radius: 2px;
+}
+
+@mixin circle {
+  height: $circle-diam;
+  width: $circle-diam;
+  border-radius: 50%;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  &__center {
+    position: absolute;
+    background-color: #4b9aaa;
+    @include circle();
+    z-index: 1;
+    top: $minute-hand-height - $circle-diam / 2;
+  }
+  &__hour-hand {
+    position: absolute;
+    height: $hour-hand-height;
+    @include hand();
+    background-color: #d15559;
+    animation: move 3600s linear infinite;
+    transform-origin: bottom center;
+    top: $minute-hand-height - $hour-hand-height;
+  }
+  &__minute-hand {
+    position: absolute;
+    height: $minute-hand-height;
+    @include hand();
+    background-color: #4b9aaa;
+    animation: move 150s linear infinite;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes move {
+  to {
+    transform: rotate(360deg);
+  }
+}
