@@ -5,27 +5,28 @@ body {
 /* #endregion */
 
 /*#region Variables */
-$pin-size: 24px;
+$circleSize: 24px;
+$handlePosition: 50%;
 /* #endregion */
 
 /* #region Mixins */
 
-@mixin position {
+@mixin position($handlePosition) {
   position: absolute;
-  left: 50%;
-  bottom: 50%;
+  left: $handlePosition;
+  bottom: $handlePosition;
 }
 
-@mixin pin_size($pin_size) {
-  width: $pin_size;
-  height: $pin_size;
+@mixin circleSize($circleSize) {
+  width: $circleSize;
+  height: $circleSize;
   border-radius: 50%;
 }
 
 /* #endregion */
 
 .minute {
-  @include position;
+  @include position($handlePosition);
   height: 175px;
   width: 12px;
   border-radius: 5px;
@@ -35,7 +36,7 @@ $pin-size: 24px;
 }
 
 .second {
-  @include position;
+  @include position($handlePosition);
   height: 300px;
   width: 12px;
   border-radius: 5px;
@@ -44,11 +45,11 @@ $pin-size: 24px;
   transform-origin: bottom center;
 }
 
-.pin {
-  @include position;
-  @include pin_size($pin-size);
+.circle {
+  @include position($handlePosition);
+  @include circleSize($circleSize);
   background-color: black;
-  transform: translate3D(-25%, 50%, 0);
+  transform: translate(-25%, 50%);
 }
 
 @keyframes rotate {
