@@ -1,0 +1,64 @@
+/* #region Normalize */
+body {
+  margin: 0;
+}
+/* #endregion */
+
+/*#region Variables */
+$circleSize: 24px;
+$handlePosition: 50%;
+/* #endregion */
+
+/* #region Mixins */
+
+%handlePosition {
+  position: absolute;
+  left: $handlePosition;
+  bottom: $handlePosition;
+}
+
+%circleSize {
+  width: $circleSize;
+  height: $circleSize;
+  border-radius: 50%;
+}
+
+/* #endregion */
+
+.minute {
+  @extend %handlePosition;
+  height: 175px;
+  width: 12px;
+  border-radius: 5px;
+  background: linear-gradient(rgb(150, 150, 150),#000);
+  animation: rotate 3600s linear infinite 2s;
+  transform-origin: bottom center;
+}
+
+.second {
+  @extend %handlePosition;
+  height: 300px;
+  width: 12px;
+  border-radius: 5px;
+  background: linear-gradient(rgb(150, 150, 150),#000);
+  animation: rotate 60s linear infinite 2s;
+  transform-origin: bottom center;
+}
+
+.circle {
+  @extend %handlePosition;
+  @extend %circleSize;
+  background-color: black;
+  transform: translate(-25%, 50%);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
