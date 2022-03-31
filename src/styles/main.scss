@@ -11,13 +11,13 @@ $handlePosition: 50%;
 
 /* #region Mixins */
 
-@mixin position($handlePosition) {
+%handlePosition {
   position: absolute;
   left: $handlePosition;
   bottom: $handlePosition;
 }
 
-@mixin circleSize($circleSize) {
+%circleSize {
   width: $circleSize;
   height: $circleSize;
   border-radius: 50%;
@@ -26,7 +26,7 @@ $handlePosition: 50%;
 /* #endregion */
 
 .minute {
-  @include position($handlePosition);
+  @extend %handlePosition;
   height: 175px;
   width: 12px;
   border-radius: 5px;
@@ -36,7 +36,7 @@ $handlePosition: 50%;
 }
 
 .second {
-  @include position($handlePosition);
+  @extend %handlePosition;
   height: 300px;
   width: 12px;
   border-radius: 5px;
@@ -46,8 +46,8 @@ $handlePosition: 50%;
 }
 
 .circle {
-  @include position($handlePosition);
-  @include circleSize($circleSize);
+  @extend %handlePosition;
+  @extend %circleSize;
   background-color: black;
   transform: translate(-25%, 50%);
 }
@@ -61,3 +61,4 @@ $handlePosition: 50%;
     transform: rotate(360deg);
   }
 }
+
