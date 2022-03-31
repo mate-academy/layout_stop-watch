@@ -1,4 +1,4 @@
-@mixin hand-layout {
+%hand-layout {
   position: absolute;
   bottom: 50%;
 
@@ -9,11 +9,19 @@
 
 body {
   margin: 0;
-  padding-top: 50px;
 }
 
-.page__stop-watch {
-  margin: 0 auto;
+.page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  &__stop-watch {
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .stop-watch {
@@ -39,7 +47,7 @@ body {
   }
 
   &__minute {
-    @include hand-layout;
+    @extend %hand-layout;
     height: 175px;
     width: 10px;
 
@@ -49,7 +57,7 @@ body {
   }
 
   &__second {
-    @include hand-layout;
+    @extend %hand-layout;
     height: 225px;
     width: 10px;
 
