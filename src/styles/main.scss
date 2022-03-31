@@ -6,10 +6,17 @@ $center: $stopwatch-size / 2;
 //a minute is arranged for 6s since it is boring to watch
 $animation-minute-time: 6s;
 
-@mixin watchSize {
+%watch-size {
   width: $stopwatch-size;
   height: $stopwatch-size;
   border-radius: 50%;
+}
+
+@mixin watch-hand-position($topAdjust: $hand-width, $leftAdjust: $hand-width,
+$origin: $center) {
+  position: absolute;
+  top: $origin - $topAdjust;
+  left: $center - $leftAdjust;
 }
 
 body {
@@ -22,13 +29,11 @@ body {
 
 .container {
   position: relative;
-  @include watchSize();
+  @extend %watch-size;
   background-color: #ededed;
 
   &__hand {
-    position: absolute;
-    top: $center - $small-hand-height;
-    left: $center - ($hand-width / 2);
+    @include watch-hand-position($small-hand-height, ($hand-width / 2));
 
     animation: rotate $animation-minute-time * 60 linear 1s;
     transform-origin: bottom center;
@@ -39,9 +44,7 @@ body {
     background-color: #171717;
 
     &--big {
-      position: absolute;
-      top: 0;
-      left: $center - ($hand-width / 4);
+      @include watch-hand-position(0, ($hand-width / 4), 0);
 
       animation-duration: $animation-minute-time;
       animation-iteration-count: 60;
@@ -53,9 +56,7 @@ body {
     }
 
     &--pin {
-      position: absolute;
-      top: $center - $hand-width;
-      left: $center - $hand-width;
+      @include watch-hand-position;
 
       animation: none;
 
@@ -75,5 +76,11 @@ body {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(100px);
   }
 }
