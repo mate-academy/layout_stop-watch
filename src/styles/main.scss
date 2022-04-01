@@ -1,0 +1,43 @@
+.stopwatch {
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 300px;
+  left: 500px;
+  background-color: rgb(21, 94, 49);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.minutes {
+  position: absolute;
+  top: 110px;
+  left: 507px;
+  width: 7px;
+  height: 200px;
+  background-color: rgb(21, 94, 49);
+  border-radius: 10px;
+  animation: move 3600s steps(60) infinite;
+  transform-origin: 4px 200px;
+}
+
+.seconds {
+  position: absolute;
+  top: 140px;
+  left: 506px;
+  width: 8px;
+  height: 170px;
+  background-color: rgb(197, 30, 30);
+  border-radius: 10px;
+  animation: move 60s steps(60) infinite;
+  transform-origin: 5px 170px;
+}
+
+@keyframes move {
+  100% {
+    transform: rotate(360deg);
+  }
+}
