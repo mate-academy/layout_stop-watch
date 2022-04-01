@@ -1,15 +1,15 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .stopwatch {
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     height: 130px;
     width: 10px;
-    background: rgb(94, 222, 244);;
+    background: rgb(94, 222, 244);
     top: 50%;
     left: 500px;
     border-radius: 5px;
@@ -19,7 +19,7 @@
 
   &::after {
     position: absolute;
-    content: '';
+    content: "";
     height: 100px;
     width: 10px;
     background: rgb(239, 40, 40);
@@ -31,7 +31,7 @@
   }
 
   &__circle {
-    content: '';
+    content: "";
     position: absolute;
     width: 20px;
     height: 20px;
@@ -45,10 +45,10 @@
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(-180deg)
-    }
-    100% {
-        transform: rotate(180deg)
-    }
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
 }
