@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.stopwatch {
+  &::before {
+    position: absolute;
+    content: "";
+    height: 130px;
+    width: 10px;
+    background: rgb(94, 222, 244);
+    top: 50%;
+    left: calc(50% - 5px);
+    border-radius: 5px;
+    animation: spin 60s linear infinite;
+    transform-origin: top;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 100px;
+    width: 10px;
+    background: rgb(239, 40, 40);
+    top: 50%;
+    left: calc(50% - 5px);
+    border-radius: 5px;
+    animation: spin 3540s linear infinite;
+    transform-origin: top;
+  }
+
+  &__circle {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(94, 222, 244);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
