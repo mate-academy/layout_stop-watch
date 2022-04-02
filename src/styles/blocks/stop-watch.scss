@@ -1,0 +1,30 @@
+.stop-watch {
+  &__arrow {
+    transform-origin: bottom;
+    
+    &--big {
+      @extend %set-position;
+      @extend %arrow-size;
+      height: $big-arrow-size;
+      background-color: $big-arrow-c;
+      animation: watch-rotation 60s linear infinite;
+      z-index: 1;
+
+      &::after {
+        position: absolute;
+        bottom: -$circle-size / 2;
+        left: -$arrow-width / 2;
+        content: "";
+        @include circle($circle-size);
+        background-color: inherit;
+      }
+    }
+    &--small {
+      @extend %set-position;
+      @extend %arrow-size;
+      background-color: $small-arrow-c;
+      height: $small-arrow-size;
+      animation: watch-rotation 3600s linear infinite;
+    }
+  }
+}
