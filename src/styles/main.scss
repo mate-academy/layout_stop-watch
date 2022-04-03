@@ -1,0 +1,51 @@
+.stop-watch {
+  height: auto;
+  width: auto;
+  position: relative;
+  margin: 0 auto ;
+
+  &__arrow {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 300px;
+
+    &::before {
+      content: "";
+      background: rgb(189, 70, 183);
+      border-radius: 5px;
+
+      height: 200px;
+      width: 10px;
+
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+
+      transform-origin: bottom;
+      animation: rotate 3600s infinite linear;
+    }
+
+    &::after {
+      content: "";
+      background: rgb(61, 61, 236);
+      border-radius: 5px;
+
+      height: 250px;
+      width: 10px;
+
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+
+      transform-origin: bottom;
+      animation: rotate 60s infinite linear;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotateZ(360deg);
+      }
+    }
+  }
+}
