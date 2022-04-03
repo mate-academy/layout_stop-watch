@@ -1,0 +1,62 @@
+$second-hand-length: 400px;
+$mitute-hand-length: $second-hand-length * 0.66;
+$hands-width: $second-hand-length / 50;
+$centre-size: $hands-width * 3;
+$stop-watch-size: $second-hand-length * 2;
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+%hands-params {
+  position: absolute;
+  bottom: $second-hand-length;
+  left: $second-hand-length;
+  width: $hands-width;
+  border-radius: $hands-width / 2;
+  transform-origin: bottom;
+}
+
+.stop-watch {
+  @include square($stop-watch-size);
+
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__second-hand {
+    @extend %hands-params;
+
+    height: $second-hand-length;
+    background-color: rgb(85, 168, 201);
+    z-index: 50;
+    animation: round 60s linear infinite;
+  }
+
+  &__minute-hand {
+    @extend %hands-params;
+
+    height: $mitute-hand-length;
+    background-color: rgb(211, 92, 92);
+    z-index: 0;
+    animation: round 3600s linear infinite;
+  }
+
+  &__centre {
+    @include square($centre-size);
+
+    left: $second-hand-length - $centre-size / 3;
+    position: absolute;
+    background-color: rgb(85, 168, 201);
+    border-radius: 50%;
+    z-index: 100;
+  }
+}
+
+@keyframes round {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
