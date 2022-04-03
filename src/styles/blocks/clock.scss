@@ -1,0 +1,45 @@
+.clock {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+
+  //this gives the same position to all children
+  & * {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &__pin {
+    z-index: 1;
+    @include circle(25px);
+    background-color: $pale-blue;
+  }
+
+  &__hand-minute {
+    @include rotateClockwise(60s);
+    width: 15px;
+    height: $hand-minute-height;
+    border-radius: 8px;
+    margin-bottom: $hand-minute-height;
+    background-color: $pale-blue;
+  }
+
+  &__hand-second {
+    @include rotateClockwise(1s);
+    width: 10px;
+    height: $hand-second-height;
+    border-radius: 5px;
+    margin-bottom: $hand-second-height;
+    background-color: $pale-red;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
