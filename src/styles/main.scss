@@ -1,0 +1,67 @@
+$min-hand-height: 100px;
+$min-hand-width: 10px;
+
+$sec-hand-height: $min-hand-height * 1.6;
+$sec-hand-width: $min-hand-width * 0.8;
+
+$start-dot-size: $min-hand-width * 2.5;
+
+@mixin start-dot($start-size) {
+  height: $start-dot-size;
+  width: $start-dot-size;
+  border-radius: 50%;
+}
+
+.watch {
+  margin: 10px;
+  position: absolute;
+  width: $sec-hand-height * 2.5;
+  height: $sec-hand-height * 2.5;
+  border: 1px dotted lightcyan;
+  border-radius: 80%;
+
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__min {
+    height: $min-hand-height;
+    width: $min-hand-width;
+    background-color: lightseagreen;
+    border: 1px dotted black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: absolute;
+    left: $sec-hand-height * 1.25;
+    top: $sec-hand-height * 1.25 - $min-hand-height;
+    animation: rotate 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__sec {
+    height: $sec-hand-height;
+    width: $sec-hand-width;
+    border-radius: 4px;
+    background-color: greenyellow;
+    border: 1px dotted darkgreen;
+    box-sizing: border-box;
+    position: absolute;
+    left: $sec-hand-height * 1.25;
+    top: $sec-hand-height * 0.25;
+    animation: rotate 60s linear infinite;
+    transform-origin: bottom center;
+    }
+
+  &__start {
+    @include start-dot($start-dot-size);
+
+    background-color: lightgray;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    position: absolute;
+    left: $sec-hand-height * 1.25 - $start-dot-size * 0.3;
+    top: $sec-hand-height * 1.25 - $start-dot-size * 0.5;
+  }
+}
