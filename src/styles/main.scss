@@ -1,72 +1,35 @@
-$minutesWidth: 16px;
-$secondsWidth: 10px;
-
-$offsetMin: calc(50% - #{$minutesWidth} / 2);
-$offsetSec: calc(50% - #{$secondsWidth} / 2);
+@import "./utils/variables";
+@import "./utils/mixins";
 
 * {
   box-sizing: border-box;
 }
 
-.page__watches {
-  height: 500px;
-  width: 500px;
-}
-
 .watches {
-  position: relative;
-
-  border: 20px solid #e25544;
-  border-radius: 50%;
-
-  // &::after {
-  //   position: absolute;
-  //   left: 0;
-  //   right: 0;
-
-  //   content: '';
-  //   display: flex;
-
-  //   width: 100%;
-  //   height: 100%;
-  //   transform: translate3d(-5px, -5px , 0);
-  //   transform-origin: center center;
-
-  //   border-radius: 50%;
-  //   border: 5px dashed #e25544;
-  //   border: 5px dashed #000;
-  // }
+  @include watch($watchSize, #e25544);
 
   &__minutes-hand {
-    position: absolute;
-    bottom: 50%;
+    @include watchHand;
+
+    width: $watchSize / 100 * 3; // minutes
+    height: $watchSize / 100 * 34; // minutes
+
     left: $offsetMin;
-
-    height: 170px;
-    width: $minutesWidth;
-
-    border-radius: 20px;
     background: #e25544;
-
-    transform-origin: center bottom;
-
     animation: time 3600s linear infinite;
+    animation-timing-function: steps(60, end);
   }
 
   &__seconds-hand {
-    position: absolute;
-    bottom: 50%;
+    @include watchHand;
+
+    width: $watchSize / 100 * 2;
+    height: $watchSize / 100 * 43;
+
     left: $offsetSec;
-
-    height: 210px;
-    width: $secondsWidth;
-
-    border-radius: 20px;
     background: #1ccbe2;
-
-    transform-origin: center bottom;
-
     animation: time 60s linear infinite;
+    animation-timing-function: steps(60, end);
   }
 
   &__center-dot {
