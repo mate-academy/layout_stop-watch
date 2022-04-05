@@ -1,0 +1,17 @@
+@mixin watch ($size, $color) {
+  position: relative;
+
+  width: $size;
+  height: $size;
+
+  border: $size / 100 * 4 solid $color;
+  border-radius: 50%;
+}
+
+@mixin watchHand {
+  position: absolute;
+  bottom: 50%;
+
+  border-radius: $watchSize / 100 * 3;
+  transform-origin: center bottom;
+}
