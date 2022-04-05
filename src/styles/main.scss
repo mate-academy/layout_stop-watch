@@ -1,0 +1,56 @@
+%style-line {
+  position: absolute;
+  border-radius: 5px;
+  transform-origin: bottom;
+  animation-name: time;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.clock {
+  position: relative;
+
+  &__minute {
+    @extend %style-line;
+    width: 10px;
+    height: 150px;
+    top: 50px;
+    left: 50%;
+    animation-duration: 3600s;
+    background-color: #c00;
+  }
+
+  &__second {
+    @extend %style-line;
+    width: 5px;
+    height: 180px;
+    top: 20px;
+    left: 50%;
+    animation-duration: 60s;
+    background-color: #09f;
+
+    &::after {
+      content: "";
+      position: relative;
+      top: 100%;
+      left: 50%;
+      display: block;
+      height: 25px;
+      width: 25px;
+      background-color: #09f;
+    
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
