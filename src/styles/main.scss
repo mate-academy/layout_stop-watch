@@ -1,0 +1,95 @@
+$minutesWidth: 16px;
+$secondsWidth: 10px;
+
+$offsetMin: calc(50% - #{$minutesWidth} / 2);
+$offsetSec: calc(50% - #{$secondsWidth} / 2);
+
+* {
+  box-sizing: border-box;
+}
+
+.page__watches {
+  height: 500px;
+  width: 500px;
+}
+
+.watches {
+  position: relative;
+
+  border: 20px solid #e25544;
+  border-radius: 50%;
+
+  // &::after {
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+
+  //   content: '';
+  //   display: flex;
+
+  //   width: 100%;
+  //   height: 100%;
+  //   transform: translate3d(-5px, -5px , 0);
+  //   transform-origin: center center;
+
+  //   border-radius: 50%;
+  //   border: 5px dashed #e25544;
+  //   border: 5px dashed #000;
+  // }
+
+  &__minutes-hand {
+    position: absolute;
+    bottom: 50%;
+    left: $offsetMin;
+
+    height: 170px;
+    width: $minutesWidth;
+
+    border-radius: 20px;
+    background: #e25544;
+
+    transform-origin: center bottom;
+
+    animation: time 3600s linear infinite;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    bottom: 50%;
+    left: $offsetSec;
+
+    height: 210px;
+    width: $secondsWidth;
+
+    border-radius: 20px;
+    background: #1ccbe2;
+
+    transform-origin: center bottom;
+
+    animation: time 60s linear infinite;
+  }
+
+  &__center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate3d(-50%, -50%, 0);
+
+    width: 35px;
+    height: 35px;
+
+    background: #1ccbe2;
+    border-radius: 50%;
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
