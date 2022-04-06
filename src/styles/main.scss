@@ -1,35 +1,24 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
 .stopwatch {
 
   &__seconds {
     &::after {
-      content: "";
-      position: absolute;
-      left: 450px;
-      height: 800px;
-      width: 10px;
+      @include afterArrow($arrowHeight, $arrowWidth, $arrowLeft);
       background: linear-gradient(0deg,
       rgba(255,255,255,0) 50%,
       rgba(189,33,53,1) 50%);
-      animation-name: movement;
       animation-duration: 60s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
     }
   }
   &__minutes {
     &::after {
-      content: "";
-      position: absolute;
-      left: 450px;
-      height: 800px;
-      width: 10px;
+      @include afterArrow($arrowHeight, $arrowWidth, $arrowLeft);
       background: linear-gradient(0deg,
       rgba(255,255,255,0) 50%,
       rgba(0,212,255,1) 50%);
-      animation-name: movement;
       animation-duration: 3600s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
     }
   }
 
@@ -37,10 +26,10 @@
     &::after {
       content: "";
       position: absolute;
-      top: 400px;
-      left: 445px;
-      height: 25px;
-      width: 25px;
+      top: 390px;
+      left: 430px;
+      height: 50px;
+      width: 50px;
       background-color: rgba(0,212,255,1);
       border-radius: 50%;
     }
