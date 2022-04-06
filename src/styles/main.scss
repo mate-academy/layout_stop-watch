@@ -1,0 +1,45 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.stopwatch {
+
+  &__seconds {
+    &::after {
+      @include afterArrow($arrowHeight, $arrowWidth, $arrowLeft);
+      background: linear-gradient(0deg,
+      rgba(255,255,255,0) 50%,
+      rgba(189,33,53,1) 50%);
+      animation-duration: 60s;
+    }
+  }
+  &__minutes {
+    &::after {
+      @include afterArrow($arrowHeight, $arrowWidth, $arrowLeft);
+      background: linear-gradient(0deg,
+      rgba(255,255,255,0) 50%,
+      rgba(0,212,255,1) 50%);
+      animation-duration: 3600s;
+    }
+  }
+
+  &__circle {
+    &::after {
+      content: "";
+      position: absolute;
+      top: $arrowLeft - 60px;
+      left: $arrowLeft - 20px;
+      height: 50px;
+      width: 50px;
+      background-color: rgba(0,212,255,1);
+      border-radius: 50%;
+    }
+  }
+}
+@keyframes movement {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
