@@ -1,0 +1,72 @@
+$clock-size: 400px;
+$minutes-height: $clock-size / 2 - 30px;
+$minutes-width: 10px;
+$seconds-height: $clock-size / 2;
+$seconds-width: 6px;
+$center-circle: 20px;
+
+@keyframes seconds {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minutes {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  position: relative;
+  border: 5px solid #000000;
+  border-radius: 50%;
+
+  &__minutes{
+    width: $minutes-width;
+    height: $minutes-height;
+
+    background-color: pink;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 30px;
+    left: $clock-size /2 - $minutes-width /2;
+
+    transform-origin: bottom;
+    animation: minutes 3600s steps(60, end) infinite;
+  }
+
+  &__seconds {
+    width: $seconds-width;
+    height: $seconds-height;
+
+    background-color: #00acdc;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 0;
+    left: $clock-size /2 - $seconds-width /2;
+
+    transform-origin: bottom;
+    animation: seconds 60s steps(60, end) infinite;
+  }
+
+  &__center-circle {
+    width: $center-circle;
+    height: $center-circle;
+
+    background-color: #00acdc;
+    border-radius: 50%;
+
+    position: absolute;
+    top: $clock-size /2 - $center-circle /2;
+    left: $clock-size /2 - $center-circle /2;
+  }
+}
