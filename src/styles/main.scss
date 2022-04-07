@@ -1,91 +1,64 @@
 body {
   margin: 0;
-  padding: 10px;
+  padding: 50px;
 }
 
 .watch {
-  display: flex;
   width: 500px;
   height: 500px;
-  border: 1px solid grey;
-  justify-content: center;
-  align-items: center;
+  border: 4px solid grey;
   border-radius: 50%;
   position: relative;
-
-  .dig {
-    font-size: 28px;
-    position: absolute;
-  
-  &:nth-child(1) {
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  &:nth-child(2) {
-    right: 48%;
-    bottom: 5px;
-    transform: translateX(-50%);
-  }
-
-  &:nth-child(3) {
-    left: 5px;
-    top: 51%;
-    transform: translateY(-50%);
-  }
-
-  &:nth-child(4) {
-    right: 48%;
-    top: 25px;
-    transform: translateY(-50%);
-  }
-}
 }
 .center {
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background-color: red;
   border: 1px solid #ff0000;
-  position: relative;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  &::before {
-    width: 2px;
-    height: 200px;
-    background-color: green;
-    content: '';
-    position: absolute;
-    bottom: calc(50% - 2px);
-    left: calc(50% - 1.5px);
-    animation-duration: 60s;
-    animation-name: tickTock;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 60;
-    
+.seconds-hand {
+  width: 200px;
+  height: 5px;
+  background-color: green;
+  position: absolute;
+  bottom: 52.5%;
+  left: 50%;
+  transform: rotate(-90deg);
+  transform-origin: left;
+  animation-name: tickTock;
+  animation-duration: 60s;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: 60;
+  animation-delay: 1s;
 
-  }
+}
 
-  &::after {
-    width: 4px;
-    height: 100px;
-    background-color: blue;
-    content: '';
-    position: absolute;
-    bottom: calc(50% - 2px);
-    left: calc(50% - 2px);
-    animation: tickTock 3600s linear 1s 1 normal forwards;
-  }
+.minutes-hand {
+  width: 150px;
+  height: 8px;
+  background-color: blue;
+  position: absolute;
+  bottom: 52%;
+  left: 50%;
+  transform: rotate(-90deg);
+  transform-origin: left;
+  animation-name: tickTock;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
 }
 
 @keyframes tickTock {
   from {
-  transform: rotate(0);
-  transform-origin: bottom;
+  transform: rotate(-90deg);
   }
   to {
-  transform: rotate(360deg);
-  transform-origin: bottom;
+  transform: rotate(270deg);
   }
 }
