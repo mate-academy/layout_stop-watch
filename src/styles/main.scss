@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 10px;
+}
+
+.watch {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  border: 1px solid grey;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+
+  .dig {
+    font-size: 28px;
+    position: absolute;
+  
+  &:nth-child(1) {
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:nth-child(2) {
+    right: 48%;
+    bottom: 5px;
+    transform: translateX(-50%);
+  }
+
+  &:nth-child(3) {
+    left: 5px;
+    top: 51%;
+    transform: translateY(-50%);
+  }
+
+  &:nth-child(4) {
+    right: 48%;
+    top: 25px;
+    transform: translateY(-50%);
+  }
+}
+}
+.center {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  border: 1px solid #ff0000;
+  position: relative;
+
+  &::before {
+    width: 2px;
+    height: 200px;
+    background-color: green;
+    content: '';
+    position: absolute;
+    bottom: calc(50% - 2px);
+    left: calc(50% - 1.5px);
+    animation-duration: 60s;
+    animation-name: tickTock;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 60;
+    
+
+  }
+
+  &::after {
+    width: 4px;
+    height: 100px;
+    background-color: blue;
+    content: '';
+    position: absolute;
+    bottom: calc(50% - 2px);
+    left: calc(50% - 2px);
+    animation: tickTock 3600s linear 1s 1 normal forwards;
+  }
+}
+
+@keyframes tickTock {
+  from {
+  transform: rotate(0);
+  transform-origin: bottom;
+  }
+  to {
+  transform: rotate(360deg);
+  transform-origin: bottom;
+  }
+}
