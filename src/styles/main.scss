@@ -1,0 +1,68 @@
+.page__watch {
+  height: 500px;
+  width: 500px;
+}
+
+.watch {
+  position: relative;
+  left: 50%;
+  border: 5px solid violet;
+  border-radius: 50%;
+
+  transform: translateX(-50%);
+
+  &__point {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  &::before {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    content: " ";
+    background-color: violet;
+    width: 5px;
+    height: 50%;
+    border-radius: 5px;
+
+    transform-origin: bottom;
+    animation: knock 60s infinite steps(60);
+  }
+
+  &::after {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+
+    content: "";
+    background-color: blue;
+    width: 7px;
+    height: 30%;
+    border-radius: 5px;
+
+    transform-origin: bottom;
+    animation: knock 1600s infinite steps(1600);
+  }
+}
+
+@keyframes knock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
