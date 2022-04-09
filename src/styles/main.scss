@@ -1,0 +1,54 @@
+@import "./_variables.scss";
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.watch {
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+    border: 2px rgb(33, 33, 33) dashed;
+
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+
+  &__hour {
+    height: $height / 2;
+    width: 8px;
+    background-color: black;
+    border-radius: 8px;
+
+    animation: rotate 3600s linear infinite;
+    transform-origin: bottom;
+
+    position: absolute;
+  }
+
+  &__sec {
+    height: $height / 2;
+    width: 5px;
+    background-color: red;
+    border-radius: 5px;
+
+    animation: rotate 60s linear infinite;
+    transform-origin: bottom;
+
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+@keyframes rotate{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
