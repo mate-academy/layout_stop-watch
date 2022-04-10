@@ -1,0 +1,25 @@
+.watch__min {
+  position: absolute;
+  top: $secHeight - $minHeight + $border;
+  left: $minCenter;
+  @include min;
+  background-color: rgb(87, 96, 179);
+  border-radius: $minWidth;
+
+  transform-origin: center bottom;
+  animation-name: min;
+  animation-duration: 3600s;
+  animation-timing-function: steps(60, start);
+  animation-iteration-count: infinite;
+  animation-delay: 60s;
+}
+
+@keyframes min {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
