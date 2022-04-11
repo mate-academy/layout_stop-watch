@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+$basic-size: 400px;
+$center-size: 0.1 * $basic-size;
+$center-position-size: ($basic-size - $center-size) / 2;
+$minute-arrow-height: 0.35 * $basic-size;
+$minute-arrow-width: 0.04 * $basic-size;
+$second-arrow-height: 0.45 * $basic-size;
+$second-arrow-width: 0.03 * $basic-size;
+
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin center-position ($position) {
+  left: $position;
+  bottom: $position;
+}
+
+@mixin center-size ($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin second-arrow-position ($size) {
+  left: ($size - $second-arrow-width) / 2;
+  bottom: $size / 2;
+}
+
+@mixin minute-arrow-position ($size) {
+  left: ($size - $minute-arrow-width) / 2;
+  bottom: $size / 2;
+}
+
+.stop-watch {
+  @include square($basic-size);
+
+  position: relative;
+  margin: 100px auto;
+
+  &__circle {
+    @include square($basic-size);
+    border: 40px solid #e8a735;
+    background-color: #e2c499;
+    border-radius: 25%;
+  }
+
+  &__center {
+    position: absolute;
+    @include center-position ($center-position-size);
+    @include center-size ($center-size);
+    background-color: #e8a735;
+    border-radius: 50%;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    @include second-arrow-position ($basic-size);
+    height: $second-arrow-height;
+    width: $second-arrow-width;
+    background-color: #c8000a;
+    border-radius: 3px;
+    animation: rotation;
+    animation-duration: 60s;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+    transform-origin: bottom center;
+  }
+
+  &__minute-arrow {
+    position: absolute;
+    @include minute-arrow-position ($basic-size);
+    height: $minute-arrow-height;
+    width: $minute-arrow-width;
+    background-color: #8c0004;
+    border-radius: 5px;
+    animation: rotation;
+    animation-duration: 3600s;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
