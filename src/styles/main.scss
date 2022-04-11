@@ -1,0 +1,70 @@
+.clock-face {
+  box-sizing: border-box;
+  border: solid;
+  border-radius: 50%;
+  border-color: black;
+  height: 500px;
+  width: 500px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__fix {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(157, 157, 221);
+    border-radius: 50%;
+    display: flex;
+  }
+}
+
+.arrow-sec {
+  height: 250px;
+  width: 10px;
+  background-color: rgb(157, 157, 221);
+  top: 10px;
+  left: 250px;
+  position: absolute;
+  margin: 0 auto;
+  animation-name: sec;
+  animation-duration: 60s;
+  transform-origin: 6px 250px;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes sec {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.arrow-min {
+
+  height: 200px;
+  width: 10px;
+  background-color: rgb(176, 40, 62);
+  top: 60px;
+  left: 250px;
+  position: absolute;
+  animation-name: min;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  transform-origin: 5px 200px;
+  display: flex;
+}
+
+@keyframes min {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
