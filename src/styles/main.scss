@@ -13,6 +13,7 @@ $minute-arrow-height: 0.35 * $basic-size;
 $minute-arrow-width: 0.04 * $basic-size;
 $second-arrow-height: 0.45 * $basic-size;
 $second-arrow-width: 0.03 * $basic-size;
+$secons-in-hour: 60 * 60s;
 
 @mixin square ($size) {
   width: $size;
@@ -82,7 +83,7 @@ $second-arrow-width: 0.03 * $basic-size;
     background-color: #8c0004;
     border-radius: 5px;
     animation: rotation;
-    animation-duration: 3600s;
+    animation-duration: $secons-in-hour;
     animation-timing-function: steps(60);
     animation-iteration-count: infinite;
     transform-origin: bottom center;
