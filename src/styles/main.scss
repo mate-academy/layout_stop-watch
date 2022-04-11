@@ -22,7 +22,6 @@
     transform: translate($translateXPoint, $translateXPoint);
   }
   &__clockwise {
-    position: relative;
     content: " ";
     transform-origin: bottom;
     width: 20px;
@@ -36,13 +35,13 @@
 
   &__minute-hand {
     position: relative;
-    transform-origin: top;
+    transform-origin: bottom;
     content: " ";
     width: 20px;
     height: $widthClock / 2;
     background-color: rgb(131, 199, 222);
     border-radius: 10px;
-    margin: auto;
+    margin: -300px auto 0;
     animation: move 2s linear 12;
 
   }
