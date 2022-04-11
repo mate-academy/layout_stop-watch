@@ -13,7 +13,7 @@ body {
 
 .page {
   &__circle {
-  @include circle($circleDiameter, $circleBorRadius);
+    @include circle($circleDiameter, $circleBorRadius);
   }
 }
 
@@ -73,6 +73,16 @@ body {
 
     transform-origin: bottom;
   }
+
+  &__dot {
+    position: absolute;
+
+    height: 30px;
+    width: 30px;
+    border-radius: $circleBorRadius;
+    left: 343px;
+    bottom: 337px;
+
+    background-color: #ff0;
+  }
 }
-
-
