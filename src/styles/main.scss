@@ -1,0 +1,63 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.clock {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-color: #fce5bf;
+  border-radius: 50%;
+  border: 10px solid #9b6812;
+  transform: rotate(180deg);
+
+  &_minute-hand
+  ,
+  &_second-hand {
+    position: absolute;
+    border-radius: 10px;
+    transform-origin: center 0;
+  }
+
+  &_minute-hand {
+    left: calc(50% - 10px);
+    top: 50%;
+    height: 200px;
+    width: 15px;
+    background-color: #000;
+    animation: hand 3600s steps(60) infinite;
+  }
+
+  &_second-hand {
+    left: calc(50% - 5px);
+    top: 50%;
+    height: 240px;
+    width: 10px;
+    background-color: #4d3319;
+    animation: hand 60s steps(60) infinite;
+  }
+
+  &_center {
+    position: absolute;
+    left: calc(50% - 15px);
+    top: calc(50% - 15px);
+    width: 30px;
+    height: 30px;
+    background-color: #9b6812;
+    border-radius: 50%;
+  }
+
+  @keyframes hand {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+}
