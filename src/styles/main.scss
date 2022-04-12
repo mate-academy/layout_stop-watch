@@ -1,0 +1,60 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+.watches {
+  @include watch($scale, #e25544);
+
+  &__minutes-hand {
+    @include watchHand;
+
+    width: $minutesHandWidth;
+    height: $minutesHandWidth * 12;
+
+    left: 49%;
+    background: #e20544;
+    animation: time 3600s linear infinite;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__seconds-hand {
+    @include watchHand;
+
+    width: $secondsHandWidth;
+    height: $secondsHandWidth * 18;
+
+    left: 49%;
+    background: #1ccbe2;
+    animation: time 60s linear infinite;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate3d(-50%, -50%, 0);
+
+    width: 22px;
+    height: 22px;
+
+    background: #1ccbe2;
+    border-radius: 50%;
+
+    z-index: 1;
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
