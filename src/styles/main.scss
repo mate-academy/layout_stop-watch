@@ -9,25 +9,39 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border: 15px solid red;
   border-radius: 50%;
   background: #fff;
-}
 
-.clock::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 40%;
-  height: 6px;
-  background: #000;
-  border-radius: 3px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 6px;
+    background: #000;
+    border-radius: 3px;
 
-  animation: animate 60s linear infinite;
-  transform-origin: left;
+    animation: animate 60s linear infinite;
+    transform-origin: left;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 3px);
+    left: 50%;
+    width: 30%;
+    height: 6px;
+    background: #000;
+    border-radius: 3px;
+
+    animation: animate 3600s linear infinite;
+    transform-origin: left;
+  }
 }
 
 span {
@@ -36,25 +50,11 @@ span {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   background: red;
   border-radius: 50%;
   z-index: 1;
-}
-
-.clock::after {
-  content: "";
-  position: absolute;
-  top: calc(50% - 3px);
-  left: 50%;
-  width: 30%;
-  height: 6px;
-  background: #000;
-  border-radius: 3px;
-
-  animation: animate 3600s linear infinite;
-  transform-origin: left;
 }
 
 @keyframes animate {
