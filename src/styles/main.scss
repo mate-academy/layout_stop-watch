@@ -1,43 +1,47 @@
+$minute-color: lightseagreen;
+
+@mixin positioning {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
 body {
   margin: 0;
 }
 
 .clock {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  margin: 100px auto;
-  border: 5px solid lightgreen;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
-    background-color: lightseagreen;
+  &__container {
+    position: relative;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
+    margin: 100px auto;
+    border: 5px solid lightgreen;
+
+    &::after {
+      @include positioning;
+      content: "";
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      background-color: $minute-color;
+      border-radius: 50%;
+    }
   }
 
   &__seconds {
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    @include positioning;
     width: 16px;
     height: 220px;
     border-radius: 10px;
-    background-color: lightseagreen;
+    background-color: $minute-color;
     transform-origin: center bottom;
     animation: rotation 60s steps(60) infinite;
   }
 
   &__minutes {
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    @include positioning;
     width: 20px;
     height: 170px;
     border-radius: 10px;
