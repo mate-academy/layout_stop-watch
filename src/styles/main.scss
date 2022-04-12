@@ -8,6 +8,7 @@
   &__watch {
     height: $watchSize;
     width: $watchSize;
+    position: relative;
   }
 }
 
@@ -15,7 +16,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   border: black solid 20px;
   border-radius: 50%;
 
@@ -35,11 +35,10 @@
     background-color: darkorange;
     border-radius: 10px;
     bottom: $watchSize / 2;
-    animation-name: clock;
+    animation: clock;
     animation-duration: $hour-in-seconds ;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    z-index: 1;
     transform-origin: bottom;
   }
 
