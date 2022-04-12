@@ -1,7 +1,8 @@
 @import "./_variables.scss";
 
 .clock {
-  content: " ";
+  position: relative;
+  content: "";
   border-radius: 100%;
   border: 20px solid rgb(183, 235, 235);
   background-color: rgb(194, 229, 248);
@@ -12,17 +13,9 @@
     margin: auto;
   }
 
-  &__point {
-    position: absolute;
-    content: "";
-    width: $widthClock / 12;
-    height: $heightClock / 12;
-    border-radius: 100%;
-    background-color: rgb(183, 235, 235);
-    transform: translate($translateXPoint, $translateXPoint);
-  }
   &__clockwise {
-    content: "";
+    position: relative;
+    content: " ";
     transform-origin: bottom;
     width: 20px;
     height: $widthClock / 3;
@@ -34,7 +27,6 @@
   }
 
   &__minute-hand {
-    position: relative;
     transform-origin: bottom;
     content: " ";
     width: 20px;
@@ -44,6 +36,17 @@
     margin: -300px auto 0;
     animation: move 2s linear 12;
 
+  }
+
+  &__point {
+    position: absolute;
+    z-index: 2;
+    content: "";
+    width: $widthClock / 12;
+    height: $heightClock / 12;
+    border-radius: 100%;
+    background-color: rgb(183, 235, 235);
+    transform: translate($translateXPoint, $translateXPoint);
   }
 }
 
