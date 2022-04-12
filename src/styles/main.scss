@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+$watchSize: 500px;
+$watchCenter: 20px;
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: $watchSize;
+  height: $watchSize;
+  background-color: #d0c5e1;
+
+  &__center {
+    height: $watchCenter;
+    width: $watchCenter;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+  }
+
+  &__center::before {
+    position: absolute;
+    content: "";
+    left: 7px;
+    top: -223px;
+    width: 6px;
+    height: 230px;
+
+    background-color: black;
+    border-radius: 5px;
+    animation: time 3600s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__center::after {
+    position: absolute;
+    content: "";
+    left: 9px;
+    top: -220px;
+    width: 2px;
+    height: 230px;
+
+    background-color: red;
+    border-radius: 2px;
+    animation: time 60s steps(60) infinite;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
