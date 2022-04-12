@@ -31,30 +31,27 @@ body {
     z-index: 1;
   }
 
-  &__minutes {
+  &__hand {
     position: absolute;
     bottom: 50%;
-    width: $center-size * 0.2;
-    height: 4 * $center-size;
     border: 1px solid $border-color;
     border-radius: 10px;
-    transform-origin: bottom;
     animation-name: move-circle;
+    transform-origin: bottom;
     animation-iteration-count: infinite;
-    animation-duration: 3600s;
-  }
+    animation-timing-function: linear;
 
-  &__seconds {
-    position: absolute;
-    border: 1px solid $border-color;
-    bottom: 50%;
-    width: $center-size * 0.12;
-    height: 4.9 * $center-size;
-    border-radius: 10px;
-    transform-origin: bottom;
-    animation-iteration-count: infinite;
-    animation-name: move-circle;
-    animation-duration: 60s;
+    &--minutes {
+      width: $center-size * 0.2;
+      height: 4 * $center-size;
+      animation-duration: 3600s;
+    }
+
+    &--seconds {
+      width: $center-size * 0.12;
+      height: 4.9 * $center-size;
+      animation-duration: 60s;
+    }
   }
 }
 
