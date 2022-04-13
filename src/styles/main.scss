@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+$mainColor: #00acdc;
+
+$watchHeight: 500px;
+$watchWidth: 500px;
+
+$minuteHandHeight: 200px;
+$minuteHandWidth: 15px;
+
+$secondHandHeight: 220px;
+$secondHandWidth: 20px;
+
+$borderSize: $watchHeight * 0.05;
+
+$centralPointHeight: $watchHeight * 0.08;
+$centralPointWidth: $watchWidth * 0.08;
+
+$secondLeft: $watchHeight / 2 - $secondHandWidth / 2 - $borderSize;
+$secondTop: $watchHeight / 2 - $borderSize;
+
+$minuteLeft: $watchHeight / 2 - $minuteHandWidth / 2 - $borderSize;
+$minuteTop: $centralPointWidth / 2;
+
+.page__watch {
+  height: $watchHeight;
+  width: $watchWidth;
+  border: $borderSize solid $mainColor;
+  border-radius: 50%;
+}
+
+.watch {
+  position: relative;
+
+  &__second-hand {
+    position: absolute;
+    bottom: $secondTop;
+    left: $secondLeft;
+    height: $secondHandHeight;
+    width: $secondHandWidth;
+    background-color: $mainColor;
+    border-radius: 10px;
+    animation: seconds steps(60) 60s infinite ;
+    transform-origin: bottom center;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: $minuteTop ;
+    left: $minuteLeft;
+    height: $minuteHandHeight;
+    width: $minuteHandWidth;
+    background-color: gold;
+    border-radius: 10px;
+    animation: minutes steps(3600) 3600s infinite ;
+    transform-origin: bottom center;
+  }
+
+  &__central-point {
+    position: absolute;
+    background: $mainColor;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: $centralPointWidth;
+    height: $centralPointHeight;
+  }
+}
+
+@keyframes seconds {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minutes {
+  100% {
+    transform: rotate(360deg);
+  }
+}
