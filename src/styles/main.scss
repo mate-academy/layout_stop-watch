@@ -19,9 +19,13 @@ $watchCenter: 20px;
   align-items: center;
   border: 1px solid black;
   border-radius: 50%;
-  width: $watchSize;
-  height: $watchSize;
+
   background-color: #d0c5e1;
+
+  &__container {
+    width: $watchSize;
+    height: $watchSize;
+  }
 
   &__center {
     height: $watchCenter;
@@ -29,13 +33,14 @@ $watchCenter: 20px;
     border-radius: 50%;
     background-color: black;
     position: relative;
+    right: 50%;
   }
 
   &__center::before {
     position: absolute;
     content: "";
     left: 7px;
-    top: -223px;
+    top: -220px;
     width: 6px;
     height: 230px;
 
