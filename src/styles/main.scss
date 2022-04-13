@@ -25,7 +25,7 @@ $centralPointWidth: $watchWidth * 0.08;
 $secondLeft: $watchHeight / 2 - $secondHandWidth / 2 - $borderSize;
 $secondTop: $watchHeight / 2 - $borderSize;
 
-$minuteLeft: $watchHeight / 2 - $minuteHandWidth - $borderSize;
+$minuteLeft: $watchHeight / 2 - $minuteHandWidth / 2 - $borderSize;
 $minuteTop: $centralPointWidth / 2;
 
 .page__watch {
@@ -53,7 +53,7 @@ $minuteTop: $centralPointWidth / 2;
   &__minute-hand {
     position: absolute;
     top: $minuteTop ;
-    left: calc(50% - 7.5px);
+    left: $minuteLeft;
     height: $minuteHandHeight;
     width: $minuteHandWidth;
     background-color: gold;
