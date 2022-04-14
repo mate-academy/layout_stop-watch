@@ -1,0 +1,78 @@
+h1 {
+  display: none;
+}
+
+$clock-width: 600px;
+$clock-center-diametr: 30px;
+$clock-hand-width: 12px;
+$second-hand-indent: 30px;
+$minute-hand-indent: 120px;
+
+@mixin square ($clock-width) {
+  width: $clock-width;
+  height: $clock-width;
+}
+
+@mixin round ($clock-center-diametr) {
+  width: $clock-center-diametr;
+  height: $clock-center-diametr;
+  border-radius: 50%;
+}
+
+.clock {
+  position: relative;
+  margin: 50px auto;
+
+  @include square($clock-width);
+
+  &__center {
+    background-color: #4b9aaa;
+    z-index: 3;
+    position: absolute;
+    left: calc(50% - #{$clock-center-diametr} / 2);
+    top: calc(50% - #{$clock-center-diametr} / 2);
+
+    @include round($clock-center-diametr);
+  }
+
+  &__second {
+    z-index: 2;
+    background-color: #4b9aaa;
+    position: absolute;
+    border: none;
+    top: #{$second-hand-indent};
+    height: calc(#{$clock-width} / 2 - #{$second-hand-indent});
+    width: #{$clock-hand-width};
+    border-radius: calc(#{$clock-hand-width} / 2);
+    left: calc(50% - #{$clock-hand-width} / 2);
+
+    transform-origin: bottom center;
+    animation: second 60s infinite steps(60, end);
+  }
+
+  &__minute {
+    z-index: 1;
+    background-color: #d15559;
+    position: absolute;
+    border: none;
+    top: $minute-hand-indent;
+    left: calc(50% - #{$clock-hand-width} / 2);
+    height: calc(#{$clock-width} / 2 -
+    #{$minute-hand-indent});
+    width: #{$clock-hand-width};
+    border-radius: calc(#{$clock-hand-width} / 2);
+
+    transform-origin: bottom center;
+    animation: second 3600s infinite steps(360, end);
+  }
+}
+
+@keyframes second {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
