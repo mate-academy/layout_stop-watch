@@ -12,11 +12,12 @@ body {
   height: 550px;
   width: 550px;
   left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__center {
     position: absolute;
-    top: 55%;
-    left: 49%;
     width: 30px;
     height: 30px;
     background-color: blue;
@@ -25,7 +26,7 @@ body {
 }
 
 .page__container {
-  margin: 10% auto;
+  margin: 5% auto;
 }
 
 .clock {
@@ -38,7 +39,7 @@ body {
   &__minutes {
     position: absolute;
     background-color: blue;
-    top: 2%;
+    top: 0;
     width: 15px;
     height: 250px;
     border-radius: 50%;
@@ -49,7 +50,7 @@ body {
   &__seconds {
     position: absolute;
     background-color: red;
-    top: 27%;
+    top: 25%;
     width: 15px;
     height: 125px;
     border-radius: 50%;
