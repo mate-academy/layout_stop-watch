@@ -13,24 +13,16 @@
   }
 
   &__minute {
-    width: $watch-size * 0.04;
+    @extend %arrow-style;
     height: $watch-size / 2 - ($watch-size * 0.01);
     background-color: black;
-    border-radius: $arrow-radius;
     animation: circle 300s linear infinite;
-    position: absolute;
-    bottom: 50%;
-    transform-origin: bottom;
   }
 
   &__second {
-    width: $watch-size * 0.04;
+    @extend %arrow-style;
     height: $watch-size / 2.5 - ($watch-size * 0.01);
     background-color: red;
-    border-radius: $arrow-radius;
     animation: circle 60s linear infinite;
-    position: absolute;
-    bottom: 50%;
-    transform-origin: bottom;
   }
 }
