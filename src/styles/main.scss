@@ -1,0 +1,66 @@
+body {
+  display: flex;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px dotted black;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+
+  &__dot {
+    width: 15px;
+    height: 15px;
+    background-color: #000;
+    border-radius: 10px;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 150px;
+    transform-origin: top;
+    border-radius: 10px;
+    background-color: black;
+    animation-name: circle;
+    animation-duration: 360s;
+
+    @keyframes circle {
+      0% {
+        transform: rotate(180deg);
+      }
+
+      100% {
+        transform: rotate(1turn);
+      }
+    }
+  }
+
+  &__second {
+    position: absolute;
+    top: 50%;
+    width: 4px;
+    height: 150px;
+    border: white;
+    background-color: #f00;
+    border-radius: 20px;
+    transform-origin: top;
+    animation-name: second;
+    animation-duration: 60s;
+
+    @keyframes second {
+      0% {
+        transform: rotate(180deg);
+      }
+
+      100% {
+        transform: rotate(540deg);
+      }
+    }
+  }
+}
