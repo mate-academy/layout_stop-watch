@@ -1,0 +1,21 @@
+.stopwatch__minute-hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: $width-hands;
+  height: $minuteHand-height;
+  background-color: rgb(155, 49, 65);
+  border-radius: 10px;
+  animation: minute-hand-move 3600s linear infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes minute-hand-move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
