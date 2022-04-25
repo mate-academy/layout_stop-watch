@@ -1,0 +1,55 @@
+@keyframes move {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px auto;
+  width: 500px;
+  height: 500px;
+
+  &__stop-watch {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(255, 0, 0);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150px;
+      height: 8px;
+      background-color: #00acdc;
+      border-radius: 5px;
+
+      transform-origin: left;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 250px;
+      height: 8px;
+      background-color: rgb(255, 0, 0);
+      border-radius: 5px;
+
+      transform-origin: left center;
+      transform: translateY(-50%) rotate(-90deg);
+      animation: move 60s linear;
+    }
+  }
+}
