@@ -1,0 +1,16 @@
+@mixin watch($watch-size) {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border: $arrows-width solid $secondary-color;
+  border-radius: 50%;
+}
+
+@mixin center($center-size) {
+  position: absolute;
+  width: $center-size;
+  height: $center-size;
+  top: $watch-size / 2 - $center-size / 2 - $arrows-width;
+  left: $watch-size / 2 - $center-size / 2 - $arrows-width;
+  border-radius: 50%;
+}

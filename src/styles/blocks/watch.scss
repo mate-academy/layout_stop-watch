@@ -1,0 +1,44 @@
+.watch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.watch {
+  @include watch($watch-size);
+
+  &__minutes-arrow {
+    @extend %hands-position;
+
+    height: 50%;
+    background-color: $main-color;
+    z-index: 1;
+    animation: rotate 3600s steps(60) infinite;
+  }
+
+  &__seconds-arrow {
+    @extend %hands-position;
+
+    height: 30%;
+    background-color: $secondary-color;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__center {
+    @include center($center-size);
+    background-color: $main-color;
+    z-index: 1;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
