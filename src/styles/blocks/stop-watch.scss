@@ -1,0 +1,46 @@
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  &__face {
+    position: relative;
+    height: $stop-watch-size;
+    width: $stop-watch-size;
+  }
+
+  &__hands {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: $stop-watch-size * 0.01;
+    border-radius: 10px;
+    transform: $hands-center-position;
+    transform-origin: bottom center;
+    animation: rot linear infinite;
+
+    &--minute {
+      height: $stop-watch-size * 0.2;
+      background-color: crimson;
+      animation-duration: 3600s;
+    }
+
+    &--sacond {
+      height: $stop-watch-size * 0.3;
+      background-color: darkcyan;
+      animation-duration: 60s;
+    }
+  }
+
+  &__center-point {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    height: $stop-watch-size * 0.03;
+    width: $stop-watch-size * 0.03;
+    border-radius: 50%;
+    background-color: darkcyan;
+    transform: translate(-50%, 50%);
+  }
+}
