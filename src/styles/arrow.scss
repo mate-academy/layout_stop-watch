@@ -1,0 +1,24 @@
+.arrow {
+  transform: translate(-50%, 0%);
+  border-radius: 5px;
+  transform-origin: 0% 100%;
+  animation: rotate-arrow 60s steps(60, start) infinite;
+
+  &--small {
+    z-index: 1;
+    height: 150px;
+    width: 4px;
+    background-color: #9a7b7c;
+    animation-delay: 60s;
+    animation-duration: 3600s;
+  }
+
+  &--big {
+    z-index: 2;
+    height: 180px;
+    width: 6px;
+    border-radius: 5px;
+    background-color: #677579;
+    animation-delay: 0.5s;
+  }
+}
