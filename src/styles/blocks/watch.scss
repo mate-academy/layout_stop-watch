@@ -1,0 +1,40 @@
+.page__watch {
+  margin: 100px auto;
+}
+
+.watch {
+  position: relative;
+  height: 350px;
+  width: 350px;
+  background-color: #dcd4f9;
+  border: thick double $main-color;
+  border-radius: 50%;
+
+  &__hour-hand {
+    @extend %center-position;
+    height: 100px;
+    width: $width-hand;
+    @extend %hand-style;
+    transform: $start-position;
+  }
+
+  &__second-hand {
+    @extend %center-position;
+    height: 140px;
+    width: $width-hand;
+    @extend %hand-style;
+    transform: $start-position;
+    transform-origin: bottom center;
+    animation: stopwatch 60s steps(60, end) infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 15px;
+    width: 15px;
+    @extend %hand-style;
+    transform: translate(-50%, -50%);
+  }
+}
