@@ -1,0 +1,53 @@
+@import "./utils/mixins";
+@import "./utils/variables";
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  height: 100vh;
+
+  &__sec {
+    @include arrow-left-center;
+
+    height: $width-arrow;
+    width: $size-arrow * 2;
+
+    background: steelblue;
+    border-radius: $radius-arrow;
+
+    transform-origin: left;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__minute {
+    @include arrow-left-center;
+
+    height: $width-arrow;
+    width: $size-arrow;
+
+    background: coral;
+    border-radius: $radius-arrow;
+
+    transform-origin: left;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__dot {
+    @include circle;
+    background-color: steelblue;
+    z-index: 1;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(-90deg);
+    }
+
+    to {
+      transform: rotate(270deg);
+    }
+  }
+}
