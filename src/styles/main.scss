@@ -1,0 +1,60 @@
+$watch-diameter: 200px;
+$circle-diametr: 8px;
+$second-arrow-width: 2px;
+$second-arrow-height: $watch-diameter / 2;
+$minutes-arrow-width: 4px;
+$minutes-arrow-height: $watch-diameter / 3;
+
+.watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: $watch-diameter;
+  width: $watch-diameter;
+  background-color: #555;
+  border-radius: 50%;
+
+  &__second {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    width: $second-arrow-width;
+    height: $second-arrow-height;
+    background-color: #fff;
+    z-index: 1;
+    animation: move_arrow 60s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: ($watch-diameter / 2) - $minutes-arrow-height;
+    display: inline-block;
+    width: $minutes-arrow-width;
+    height: $minutes-arrow-height;
+    background-color: #f00;
+    z-index: 2;
+    transform-origin: bottom;
+    animation: move_arrow 3600s steps(60) infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    background-color: #fff;
+    width: $circle-diametr;
+    height: $circle-diametr;
+    border-radius: 50%;
+    z-index: 3;
+  }
+}
+
+@keyframes move_arrow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
