@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+}
+
+$hour_line:#d15559;
+$minute_line: #4b9aaa;
+
+h1 {
+  text-align: center;
+}
+
+.position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top;
+  transform: translate(-50%) rotate(-180deg);
+}
+
+@keyframes rotate_minute_line {
+  0% {
+    transform: rotate(-190deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  margin: 50px auto;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: rgb(210, 210, 210);
+  position: relative;
+    
+  &_center {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform-origin: top;
+    transform: translate(-50%) rotate(-180deg);
+    width: 20px;
+    height: 20px;
+    background-color: $minute_line;
+    border-radius: 20px;
+    z-index: 1;
+  }
+
+  &_hour-line {
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform-origin: top;
+    transform: translate(-50%) rotate(-180deg);
+    width: 10px;
+    height: 150px;
+    background-color: $hour_line;
+    border-radius: 10px;
+  }
+
+  &_minute-line {
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform-origin: top;
+    transform: translate(-50%) rotate(-180deg);
+    width: 8px;
+    height: 220px;
+    background-color: $minute_line;
+    border-radius: 10px;
+    transition: all 1s;
+    animation: rotate_minute_line 60s steps(60,start) infinite;
+  }
+}
