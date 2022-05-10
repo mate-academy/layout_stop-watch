@@ -1,7 +1,7 @@
 $minutes-arow-width: 20px;
-$minutes-arow-height: 30vh;
+$minutes-arow-height: 30%;
 $seconds-arow-width: 10px;
-$seconds-arow-height: 40vh;
+$seconds-arow-height: 40%;
 $center-width: 30px;
 $center-height: 30px;
 
@@ -10,13 +10,13 @@ body {
 }
 
 .watch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   height: 100vh;
 
   &__center {
-    position: absolute;
-    top: calc(50% - $center-height / 2);
-    left: calc(50% - $center-width / 2);
     height: $center-height;
     width: $center-width;
     border-radius: 50%;
@@ -25,8 +25,7 @@ body {
 
   &__minutes-arrow {
     position: absolute;
-    top: calc(50% - $minutes-arow-height);
-    left: calc(50% - $minutes-arow-width / 2);
+    top: 50% - $minutes-arow-height;
     height: $minutes-arow-height;
     width: $minutes-arow-width;
     border-radius: 10px;
@@ -38,8 +37,7 @@ body {
   &__seconds-arrow {
     position: absolute;
     z-index: 1;
-    top: calc(50% - $seconds-arow-height);
-    left: calc(50% - $seconds-arow-width / 2);
+    top: 50% - $seconds-arow-height;
     height: $seconds-arow-height;
     width: $seconds-arow-width;
     border-radius: 10px;
