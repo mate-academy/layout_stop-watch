@@ -1,0 +1,112 @@
+%center-position {
+  left: 50%;
+  bottom: 50%;
+}
+
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 800px;
+    height: 800px;
+    background-color: black;
+    border: 5px solid red;
+    border-radius: 60px;
+    box-shadow: 10px 10px 50px 5px rgba(0, 0, 0, 0.8);
+
+  }
+
+  &__minutes-hand {
+    display: block;
+    position: absolute;
+    @extend %center-position;
+    width: 10px;
+    height: 200px;
+    background-color: red;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation-name: minutes;
+    animation-timing-function: steps(3600);
+    animation-direction: normal;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-duration: 3600s;
+  }
+
+  @keyframes minutes {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    @extend %center-position;
+    width: 10px;
+    height: 390px;
+    background-color: white;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation-name: seconds;
+    animation-timing-function: steps(60);
+    animation-direction: normal;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+  }
+
+  @keyframes seconds {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__axis {
+    display: block;
+    position: absolute;
+    top: 370px;
+    left: 370px;
+    width: 60px;
+    height: 60px;
+    background-color: grey;
+    border-radius: 30px;
+    animation-name: axis;
+    animation-timing-function: steps(2);
+    animation-direction: normal;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+  }
+
+  @keyframes axis {
+    from {
+      background-color: grey;
+      transform: scale(1);
+    }
+
+    to {
+      background-color: red;
+      transform: scale(1.4);
+    }
+  }
+}
