@@ -1,7 +1,8 @@
-%center-position {
-  left: 50%;
-  bottom: 50%;
-}
+$size-of-watch: 800px;
+$height-minutes-hand: $size-of-watch / 4;
+$height-seconds-hand: ($size-of-watch / 2) - 10px;
+$width-of-hand: $size-of-watch / 80;
+$size-of-axis: ($size-of-watch / 8) - 40px;
 
 body {
   margin: 0;
@@ -9,33 +10,33 @@ body {
 
 .stopwatch {
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 
   &__container {
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: content-box;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    width: 800px;
-    height: 800px;
+    width: $size-of-watch;
+    height: $size-of-watch;
     background-color: black;
     border: 5px solid red;
     border-radius: 60px;
     box-shadow: 10px 10px 50px 5px rgba(0, 0, 0, 0.8);
-
   }
 
   &__minutes-hand {
-    display: block;
     position: absolute;
-    @extend %center-position;
-    width: 10px;
-    height: 200px;
+    left: 50%;
+    bottom: 50%;
+    display: block;
+    width: $width-of-hand;
+    height: $height-minutes-hand;
     background-color: red;
-    border-radius: 5px;
+    border-radius: 50%;
     transform-origin: bottom;
     animation-name: minutes;
     animation-timing-function: steps(3600);
@@ -57,11 +58,13 @@ body {
 
   &__seconds-hand {
     position: absolute;
-    @extend %center-position;
-    width: 10px;
-    height: 390px;
+    left: 50%;
+    bottom: 50%;
+    display: block;
+    width: $width-of-hand;
+    height: $height-seconds-hand;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 50%;
     transform-origin: bottom;
     animation-name: seconds;
     animation-timing-function: steps(60);
@@ -82,14 +85,12 @@ body {
   }
 
   &__axis {
-    display: block;
     position: absolute;
-    top: 370px;
-    left: 370px;
-    width: 60px;
-    height: 60px;
+    display: block;
+    width: $size-of-axis;
+    height: $size-of-axis;
     background-color: grey;
-    border-radius: 30px;
+    border-radius: 50%;
     animation-name: axis;
     animation-timing-function: steps(2);
     animation-direction: normal;
