@@ -3,8 +3,9 @@ $size-circle: 18px;
 $width-hand: 4px;
 $borderRadiusHand: 2px;
 $positionShiftCircle: $size-circle / 2;
-$bgMin: #18928b;
-$bgSec: #c31029;
+$backgroundMin: #18928b;
+$backgroundSec: #c31029;
+$shift: $width-hand / 2;
 
 @mixin circle($size) {
   width: $size;
@@ -35,9 +36,10 @@ $bgSec: #c31029;
       content: "";
       position: absolute;
       @include circle($size-circle);
-      background-color: $bgMin;
-      left: calc(50% - 9px);
-      top: calc(50% - 9px);
+      background-color: $backgroundMin;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
 
     &__hand {
@@ -50,8 +52,8 @@ $bgSec: #c31029;
         width: $width-hand;
         height: 100px;
         border-radius: $borderRadiusHand;
-        background-color: $bgMin;
-        left: calc(50% - 2px);
+        background-color: $backgroundMin;
+        left: calc(50% - #{$shift});
         top: 50px;
         animation: sec 3600s steps(60, end) infinite;
       }
@@ -61,8 +63,8 @@ $bgSec: #c31029;
         width: $width-hand;
         height: 150px;
         border-radius: $borderRadiusHand;
-        background-color: $bgSec;
-        left: calc(50% - 2px);
+        background-color: $backgroundSec;
+        left: calc(50% - #{$shift});
         top: 0;
         animation: sec 60s steps(60, end) infinite;
       }
