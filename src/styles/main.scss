@@ -19,7 +19,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: content-box;
     width: $size-of-watch;
     height: $size-of-watch;
     background-color: black;
@@ -30,9 +29,7 @@ body {
 
   &__minutes-hand {
     position: absolute;
-    left: 50%;
     bottom: 50%;
-    display: block;
     width: $width-of-hand;
     height: $height-minutes-hand;
     background-color: red;
@@ -58,9 +55,7 @@ body {
 
   &__seconds-hand {
     position: absolute;
-    left: 50%;
     bottom: 50%;
-    display: block;
     width: $width-of-hand;
     height: $height-seconds-hand;
     background-color: white;
@@ -86,7 +81,6 @@ body {
 
   &__axis {
     position: absolute;
-    display: block;
     width: $size-of-axis;
     height: $size-of-axis;
     background-color: grey;
