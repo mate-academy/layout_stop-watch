@@ -1,0 +1,77 @@
+$size-clock: 300px;
+$size-circle: 18px;
+$width-hand: 4px;
+$borderRadiusHand: 2px;
+$positionShiftCircle: $size-circle / 2;
+$bgMin: #18928b;
+$bgSec: #c31029;
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  .clock {
+    position: relative;
+    @include circle($size-clock);
+    border: 1px solid rgba(16, 205, 193, 0.69);
+    box-shadow: 27px 14px 15px -10px rgba(16, 205, 193, 0.69);
+
+    &::after {
+      content: "";
+      position: absolute;
+      @include circle($size-circle);
+      background-color: $bgMin;
+      left: calc(50% - 9px);
+      top: calc(50% - 9px);
+    }
+
+    &__hand {
+      width: 100%;
+      height: 100%;
+      transform-origin: bottom;
+
+      &--minute {
+        position: absolute;
+        width: $width-hand;
+        height: 100px;
+        border-radius: $borderRadiusHand;
+        background-color: $bgMin;
+        left: calc(50% - 2px);
+        top: 50px;
+        animation: sec 3600s steps(60, end) infinite;
+      }
+
+      &--second {
+        position: absolute;
+        width: $width-hand;
+        height: 150px;
+        border-radius: $borderRadiusHand;
+        background-color: $bgSec;
+        left: calc(50% - 2px);
+        top: 0;
+        animation: sec 60s steps(60, end) infinite;
+      }
+    }
+
+    @keyframes sec {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
