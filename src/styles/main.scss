@@ -4,17 +4,7 @@
   margin: 0;
 }
 
-@keyframes rotation-seconds {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotation-minute {
+@keyframes rotation {
   0% {
     transform: rotate(0);
   }
@@ -36,26 +26,15 @@
 .seconds-hand {
   @include hand;
 
-  position: absolute;
-  top: 10%;
-  left: 98px;
-
-  transform-origin: bottom center;
-  animation: rotation-seconds 60s steps(60, start) 0.5s infinite;
+  animation: rotation 60s steps(60, start) 0.5s infinite;
 }
 
 .minutes-hand {
   @include hand;
   background-color: blueviolet;
-  height: 40px;
+  height: 20%;
 
-  position: absolute;
-  top: 60px;
-  left: 98px;
- 
-
-  transform-origin: bottom center;
-  animation: rotation-minute 600s linear 0.5s infinite;
+  animation: rotation 600s linear 0.5s infinite;
 }
 
 .center {
@@ -64,7 +43,7 @@
   height: 10px;
   border-radius: 50%;
   background-color: yellowgreen;
-  top: 100px;
-  left: 100px;
-  transform: translate(-50%, -50%);
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }
