@@ -38,7 +38,7 @@ li {
     animation: clockwork 3600s steps(60, end) infinite;
     transform-origin: bottom;
     background-color: $border-color;
-    border-radius: 40%;
+    border-radius: 50% 50% 0 0;
   }
 
   &__second-hand {
@@ -49,7 +49,8 @@ li {
     animation: clockwork 60s steps(60, end) infinite;
     transform-origin: bottom;
     background-color: #a82929;
-    border-radius: 40%;
+    border-radius: 50% 50% 0 0;
+    z-index: 1;
   }
 
   &__center {
@@ -57,12 +58,13 @@ li {
     position: absolute;
     background-color: #fff9d8;
     border-radius: 50%;
+    z-index: 2;
   }
 
   &__inner-circle {
     @include diameter(230px);
     position: absolute;
-    border: 4px double $border-color;
+    border: 4px dotted $border-color;
     border-radius: 50%;
   }
 }
