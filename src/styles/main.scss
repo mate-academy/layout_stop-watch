@@ -1,0 +1,81 @@
+@import "./utils/extends";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/variebles";
+
+.watch {
+  position: relative;
+  min-height: getHeight(300px);
+
+  &__minute {
+    @extend %position;
+    top: 200px;
+    width: 15px;
+    height: 100px;
+    background-color: red;
+    border-radius: $border-radius-item;
+    margin: auto;
+
+    &--active {
+      animation: minute 60s linear infinite normal;
+    }
+  }
+
+  @keyframes minute {
+    from {
+      transform-origin: bottom;
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform-origin: bottom;
+      transform: rotate(360deg);
+    }
+  }
+
+  &__circle {
+    @extend %position;
+    top: 290px;
+    @include square($size-watch-circle);
+    background-color: blue;
+    border-radius: 50%;
+    margin: auto;
+  }
+
+  &__second {
+    @extend %position;
+    width: 10px;
+    height: 300px;
+    background-color: blue;
+    border-radius: $border-radius-item;
+    margin: auto;
+
+
+    &--active {
+      animation: second 1s linear infinite normal;
+    }
+  }
+
+  @keyframes second {
+    from {
+      transform-origin: bottom;
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform-origin: bottom;
+      transform: rotate(360deg);
+    }
+  }
+
+  &__active {
+    @extend %button;
+    left: 10%;
+
+  }
+
+  &__stop {
+    @extend %button;
+    right: 10%;
+  }
+}
