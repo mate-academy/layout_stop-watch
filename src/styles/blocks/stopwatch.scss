@@ -1,0 +1,49 @@
+.stopwatch {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  border: 1px solid;
+  border-radius: 10px;
+  
+    &__hand {
+      position: absolute;
+      border: 3px solid;
+      width: 4px;
+      border-radius: 50%;
+      animation-name: rotate;
+      animation-duration: 3600s;
+      box-sizing: border-box;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
+      &--minutes {
+        height: 180px;
+        top: 70px;
+        left: 250px;
+        color: chocolate;
+        animation-duration: 60s;
+      }
+
+      &--seconds {
+        height: 200px;
+        top: 50px;
+        left: 250px;
+        color: aqua;
+        animation-duration: 3600s;
+      }
+    }
+
+    &__circle {
+      position: absolute;
+      box-sizing: border-box;
+      margin-top: -5px;
+      margin-left: -2px;;
+      top: 250px;
+      left: 250px;
+      height: 10px;
+      width: 10px;
+      border: 1px solid;
+      border-radius: 50%;
+      color: red;
+    }
+}
