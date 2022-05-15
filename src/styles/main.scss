@@ -1,0 +1,61 @@
+$watch-diameter: 300px;
+$center-diameter: 10px;
+$second-arrow-width: 2px;
+$second-arrow-height: 150px;
+$minute-arrow-width: 4px;
+$minute-arrow-height: 100px;
+
+.watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $watch-diameter;
+  width: $watch-diameter;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid black;
+
+  &__second {
+    position: absolute;
+    top: 0;
+    width: $second-arrow-width;
+    height: $second-arrow-height;
+    background-color: rgb(7, 120, 116);
+    animation: move 60s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__minute {
+    position: absolute;
+    top: ($watch-diameter / 2) - $minute-arrow-height;
+    width: $minute-arrow-width;
+    height: $minute-arrow-height;
+    background-color: rgb(197, 55, 55);
+    transform-origin: bottom;
+    animation: move 3600s steps(60) infinite;
+  }
+
+  &__center {
+    position: absolute;
+    background-color: rgb(7, 120, 116);
+    width: $center-diameter;
+    height: $center-diameter;
+    border-radius: 50%;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.watch:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
