@@ -1,28 +1,33 @@
 $watch-size: 400px;
 $pin-size: $watch-size/30;
 
-@mixin watch-hand($w, $h, $clr, $br-clr, $spin-dur) {
+@mixin watch-hand($width, $height, $color, $border-color, $spin-duration) {
   position: absolute;
   bottom: 50%;
 
   box-sizing: border-box;
-  width: $w;
-  height: $h;
-  border-radius: $w/2;
-  border: 1px solid $br-clr;
+  width: $width;
+  height: $height;
+  border-radius: $width/2;
+  border: 1px solid $border-color;
 
-  background-color: $clr;
+  background-color: $color;
 
   transform-origin: bottom;
-  animation: spin $spin-dur steps(60, end);
+  animation: spin $spin-duration steps(60, end);
   animation-play-state: paused;
   animation-iteration-count: infinite;
 }
 
-@mixin sircle ($d) {
-  width: $d;
-  height: $d;
-  border-radius: $d/2;
+@mixin circle ($diametr) {
+  width: $diametr;
+  height: $diametr;
+  border-radius: $diametr/2;
+}
+
+html {
+  font-family: Courier, monospace;
+  font-size: 14px;
 }
 
 body {
@@ -32,13 +37,10 @@ body {
 
   height: 100vh;
   margin: 0;
-
-  font-family: Courier, monospace;
-  font-size: 14px;
 }
 
 .stop-watch {
-  @include sircle($watch-size);
+  @include circle($watch-size);
 
   position: relative;
   display: flex;
@@ -100,13 +102,12 @@ body {
   }
 
   &__pin {
-    @include sircle($pin-size);
+    @include circle($pin-size);
 
     position: absolute;
     top: $watch-size/2 - $pin-size/2;
 
     background: #000;
-
   }
 }
 
