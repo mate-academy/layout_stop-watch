@@ -1,0 +1,53 @@
+$clock-size: 500px;
+$hand-width: $clock-size * 0.02;
+%hands {
+  position: absolute;
+  left: ($clock-size - $hand-width) / 2;
+  bottom: $clock-size / 2;
+  width: $hand-width;
+  transform-origin: bottom center;
+  border-radius: $hand-width / 2 ;
+}
+
+@keyframes sec {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+  border-radius: $clock-size / 2;
+  background-color: rgb(26, 180, 201);
+
+  &_axis {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: $hand-width * 2;
+    width: $hand-width * 2;
+    border-radius: 50%;
+    background-color: lightblue;
+    transform: translate(-50%, -50%);
+  }
+
+  &_second-hand {
+    @extend %hands;
+    height: $clock-size / 2 - $hand-width;
+    background-color: lightblue;
+    animation: sec 60s linear infinite;
+  }
+
+  &_minute-hand {
+    @extend %hands;
+    height: $clock-size / 4 - $hand-width;
+    background-color: red;
+    animation: sec 3600s linear infinite;
+  }
+
+}
