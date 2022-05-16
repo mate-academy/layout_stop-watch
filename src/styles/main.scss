@@ -5,46 +5,48 @@ $second-arrow-height: $watch-diameter / 2;
 $minutes-arrow-width: 10px;
 $minutes-arrow-height: $watch-diameter / 3;
 
+@mixin diameter ($diameter) {
+  height: $diameter;
+  width: $diameter;
+  border-radius: 50%;
+}
+
 .watch {
+  @include diameter($watch-diameter);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: $watch-diameter;
-  width: $watch-diameter;
   background-color: #00f;
-  border-radius: 50%;
-}
 
-.watch__circle {
-  position: absolute;
-  z-index: 3;
-  height: $circle-diameter;
-  width: $circle-diameter;
-  background-color: #fff;
-  border-radius: 50%;
-}
+  &__min-arrow {
+    position: absolute;
+    z-index: 2;
+    top: ($watch-diameter / 2) - $minutes-arrow-height;
+    width: $minutes-arrow-width;
+    height: $minutes-arrow-height;
+    background-color: #ff0;
+    transform-origin: bottom;
+    animation: time 3600s steps(60) infinite;
+  }
 
-.watch__min-arrow {
-  position: absolute;
-  z-index: 2;
-  top: ($watch-diameter / 2) - $minutes-arrow-height;
-  width: 10px;
-  height: 100px;
-  background-color: #ff0;
-  transform-origin: bottom;
-  animation: time 3600s steps(60) infinite;
-}
+  &__circle {
+    @include diameter($circle-diameter);
+    position: absolute;
+    z-index: 3;
+    background-color: #fff;
+  }
 
-.watch__sec-arrow {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  height: $second-arrow-height;
-  width: $second-arrow-width;
-  background-color: #f00;
-  transform-origin: bottom;
-  animation: time 60s steps(60) infinite;
+  &__sec-arrow {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: $second-arrow-height;
+    width: $second-arrow-width;
+    background-color: #f00;
+    transform-origin: bottom;
+    animation: time 60s steps(60) infinite;
+  }
 }
 
 @keyframes time {
