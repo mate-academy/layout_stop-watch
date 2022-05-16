@@ -1,8 +1,8 @@
 .stop-watch {
   &__second-hand {
-    position: absolute;
-    top: 5%;
-    left: 50.7%;
+    position: relative;
+    bottom: 290px;
+    left: 5px;
     @include clock_hand(300px,10px,#5090E2);
 
     animation: move 1s infinite 0s;
@@ -10,15 +10,16 @@
   }
 
   &__minute-hand {
-    position: absolute;
-    left: 50.7%;
-    top: 24%;
+    position: relative;
+    bottom: 470px;
+    left: 5px;
     @include clock_hand(180px, 10px, #FF3E8A);
 
     animation: move 60s infinite 0s;
     transform-origin: bottom;
   }
 
+  &__container,
   &__middle {
     position: absolute;
     top: 50%;
