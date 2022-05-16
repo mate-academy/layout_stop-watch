@@ -1,0 +1,127 @@
+$clock-size: 200px;
+$border-size: $clock-size + 3px;
+$size-hour-hand: ($clock-size / 2) - 7px;
+$size-second-hand: ($clock-size / 2) - 3px;
+$width-second-hand: 4px;
+$width-hour-hand: 6px;
+
+html {
+  font-size: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background: white;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $border-size;
+  height: $border-size;
+  border-radius: 50%;
+  background: gold;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $clock-size;
+  height: $clock-size;
+
+  border-radius: 50%;
+  background: rgb(69, 65, 65);
+
+  &__hour-hand {
+    box-sizing: border-box;
+    $border-width: $width-hour-hand / 3;
+    position: absolute;
+    top: ($clock-size / 2) - $size-hour-hand;
+    z-index: 1;
+    height: $size-hour-hand;
+    width: $width-hour-hand;
+
+    background: rgb(209, 209, 209);
+    border: $border-width solid gold;
+    border-radius: 1px;
+    transform-origin: bottom center;
+
+    animation: clock steps(60) infinite;
+    animation-duration: 3600s;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: ($clock-size / 2) - $size-second-hand;
+    height: $size-second-hand;
+    width: $width-second-hand;
+    z-index: 2;
+
+    background: rgb(209, 209, 209);
+    border-radius: 8px;
+    transform-origin: bottom center;
+    animation: clock infinite;
+    animation-duration: 60s;
+  }
+
+  &__pointer {
+    width: $width-second-hand + $width-hour-hand;
+    height: $width-second-hand + $width-hour-hand;
+
+    background: rgb(209, 209, 209);
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &__content {
+    font-size: $clock-size / 10;
+    color: rgb(209, 209, 209);
+    z-index: 0;
+
+    &_12 {
+      position: absolute;
+      top: 0;
+      left: $clock-size * 0.45;
+    }
+
+    &_3 {
+      position: absolute;
+      top: $clock-size * 0.45;
+      right: $clock-size * 0.01;
+    }
+
+    &_6 {
+      position: absolute;
+      bottom: $clock-size * 0.01;
+      left: $clock-size * 0.45;
+    }
+
+    &_9 {
+      position: absolute;
+      top: $clock-size * 0.45;
+      left: $clock-size * 0.01;
+    }
+  }
+
+}
+
+@keyframes clock {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
