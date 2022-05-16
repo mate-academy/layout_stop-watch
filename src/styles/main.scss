@@ -1,0 +1,60 @@
+.watch {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: grey;
+  border-radius: 50%;
+
+  &__minute {
+    background-color: #ec3434;
+    border-radius: 5px;
+    position: absolute;
+    display: block;
+    height: 80px;
+    width: 6px;
+    left: 50%;
+    bottom: 50%;
+    margin-left: -3px;
+    margin-bottom: -2px;
+    animation: time-rotate 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    background-color: #4a4aff;
+    border-radius: 5px;
+    position: absolute;
+    display: block;
+    height: 95px;
+    width: 4px;
+    left: 50%;
+    bottom: 50%;
+    margin-left: -2px;
+    margin-bottom: -2px;
+    animation: time-rotate 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__circle {
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    height: 20px;
+    width: 20px;
+    left: 50%;
+    bottom: 50%;
+    margin-left: -10px;
+    margin-bottom: -10px;
+  }
+}
+
+@keyframes time-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
