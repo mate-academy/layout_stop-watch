@@ -1,0 +1,83 @@
+//can be changed
+$watch-diameter: 400px;
+$watch-color: black;
+
+//fixed values
+$watch-dot-diameter: $watch-diameter/40;
+$second-hand-height: $watch-diameter / 1.7;
+$second-hand-width: $watch-dot-diameter / 4;
+$minute-hand-height: $watch-diameter / 2.5;
+$minute-hand-width: $watch-dot-diameter / 2.5;
+
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+}
+
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 50px;
+  @include circle($watch-diameter);
+
+  border: 1px solid $watch-color;
+  border-radius: 50%;
+
+  &__dot {
+    position: absolute;
+    z-index: 2;
+
+    @include circle($watch-dot-diameter);
+
+    border-radius: 50%;
+    background-color: $watch-color;
+  }
+
+  &__minute {
+    position: absolute;
+    bottom:  42%;
+
+    height: $minute-hand-height;
+    width: $minute-hand-width;
+
+    background-color: $watch-color;
+    border-radius: 50% 50% 0 0;
+
+    animation: stopwatch 3600s linear infinite;
+    transform-origin: center 79.5%;
+  }
+
+  &__second {
+    position: absolute;
+    z-index: 1;
+    bottom: 38%;
+
+
+    height: $second-hand-height;
+    width: $second-hand-width;
+
+    border-radius: 60% 60% 0 0;
+    background-color: $watch-color;
+
+    animation: stopwatch 60s linear infinite;
+    transform-origin: center 79.5%;
+  }
+
+  @keyframes stopwatch {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg)
+    }
+  }
+}
