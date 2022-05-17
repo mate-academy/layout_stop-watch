@@ -1,13 +1,13 @@
 //can be changed
-$watch-diameter: 400px;
-$watch-color: black;
+$stopwatch-diameter: 400px;
+$stopwatch-color: black;
 
 //fixed values
-$watch-dot-diameter: $watch-diameter/40;
-$second-hand-height: $watch-diameter / 1.7;
-$second-hand-width: $watch-dot-diameter / 4;
-$minute-hand-height: $watch-diameter / 2.5;
-$minute-hand-width: $watch-dot-diameter / 2.5;
+$stopwatch-dot-diameter: $stopwatch-diameter/40;
+$second-hand-height: $stopwatch-diameter / 1.7;
+$second-hand-width: $stopwatch-dot-diameter / 4;
+$minute-hand-height: $stopwatch-diameter / 2.5;
+$minute-hand-width: $stopwatch-dot-diameter / 2.5;
 
 @mixin circle ($size) {
   width: $size;
@@ -25,30 +25,28 @@ body {
   justify-content: center;
   align-items: center;
 
-  margin: 50px;
-  @include circle($watch-diameter);
+  @include circle($stopwatch-diameter);
 
-  border: 1px solid $watch-color;
+  border: 1px solid $stopwatch-color;
   border-radius: 50%;
 
   &__dot {
     position: absolute;
-    z-index: 2;
 
-    @include circle($watch-dot-diameter);
+    @include circle($stopwatch-dot-diameter);
 
     border-radius: 50%;
-    background-color: $watch-color;
+    background-color: $stopwatch-color;
   }
 
   &__minute {
     position: absolute;
-    bottom:  42%;
+    bottom: 42%;
 
     height: $minute-hand-height;
     width: $minute-hand-width;
 
-    background-color: $watch-color;
+    background-color: $stopwatch-color;
     border-radius: 50% 50% 0 0;
 
     animation: stopwatch 3600s linear infinite;
@@ -57,15 +55,13 @@ body {
 
   &__second {
     position: absolute;
-    z-index: 1;
     bottom: 38%;
-
 
     height: $second-hand-height;
     width: $second-hand-width;
 
     border-radius: 60% 60% 0 0;
-    background-color: $watch-color;
+    background-color: $stopwatch-color;
 
     animation: stopwatch 60s linear infinite;
     transform-origin: center 79.5%;
@@ -77,7 +73,11 @@ body {
     }
 
     to {
-      transform: rotate(360deg)
+      transform: rotate(360deg);
     }
   }
+}
+
+.main__stopwatch {
+  margin: 30px auto;
 }
