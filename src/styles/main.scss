@@ -1,0 +1,58 @@
+$watch-width: 500px;
+$watch-height: 500px;
+$arrow-width: 10px;
+$circle-side: 30px;
+$minute-arrow-height: $watch-width / 3;
+$second-arrow-height: $watch-width / 2;
+
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: $watch-width;
+  height: $watch-height;
+
+  &__center {
+    position: absolute;
+    z-index: 3;
+    width: $circle-side;
+    height: $circle-side;
+    background-color: blue;
+    border-radius: 50%;
+  }
+
+  &__minute {
+    position: absolute;
+    z-index: 2;
+    top: ($watch-height/2) - $minute-arrow-height;
+    width: $arrow-width;
+    height: $minute-arrow-height;
+    border-radius: 4px;
+    background-color: yellow;
+    animation: watchMove 3600s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: $arrow-width;
+    height: $second-arrow-height;
+    border-radius: 4px;
+    background-color: blue;
+    animation: watchMove 60s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+}
+
+@keyframes watchMove {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
