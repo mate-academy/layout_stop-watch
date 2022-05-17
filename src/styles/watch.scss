@@ -1,0 +1,36 @@
+.watch {
+  @include circle($watch-size);
+  align-items: center;
+  margin: auto;
+  border: 15px solid thistle;
+  background-color: whitesmoke;
+
+  &__center {
+    @include circle ($center-size);
+
+    background-color: thistle;
+  }
+
+  &__minute {
+    @include hand($minute-height, $minute-width);
+
+    animation: rotate 3600s steps(60) infinite;
+    background-color: rosybrown;
+    border-radius: 5px;
+  }
+
+  &__second {
+    @include hand($second-height, $seconde-width);
+
+    animation: rotate 60s steps(60) infinite;
+    background-color: whitesmoke;
+    border: 4px solid rosybrown;
+    border-radius: 5px;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
