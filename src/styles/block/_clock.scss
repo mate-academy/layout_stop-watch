@@ -1,0 +1,57 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__clockface {
+    @include diameter(300px);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    list-style-type: none;
+    background-color: #e1f2fc;
+    border: 7px solid $border-color;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    position: relative;
+    bottom: 35px ;
+    width: 10px;
+    height: 70px;
+    background-color: $border-color;
+    border-radius: 50% 50% 0 0;
+    animation: clockwork 3600s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 20px ;
+    z-index: 1;
+    width: 4px;
+    height: 130px;
+    background-color: #a82929;
+    border-radius: 50% 50% 0 0;
+    animation: clockwork 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__center {
+    @include diameter(20px);
+    position: absolute;
+    z-index: 2;
+    background-color: #fff9d8;
+    border-radius: 50%;
+  }
+
+  &__inner-circle {
+    @include diameter(230px);
+    position: absolute;
+    border: 4px dotted $border-color;
+    border-radius: 50%;
+  }
+}
