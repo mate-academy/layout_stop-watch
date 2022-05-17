@@ -1,15 +1,14 @@
 .stopwatch {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: #{$container-size * 0.9};
-  height: #{$container-size * 0.9};
+  @include square ($stopwatch-size);
   border-radius: 50%;
   background-color: rgb(223, 245, 255);
 
   &__center-point {
-    width: #{$container-size * 0.05};
-    height: #{$container-size * 0.05};
+    @include square($container-size * 0.05);
     border-radius: 50%;
     background-color: #b9c4c9;
     z-index: 1;
@@ -17,11 +16,11 @@
 
   &__minute-arrow {
     position: absolute;
-    width: #{($container-size * 0.9) * 0.04};
-    height: #{($container-size * 0.9) / 3};
+    width: $stopwatch-size * 0.04;
+    height: ($stopwatch-size / 2) * 0.5;
     background-color: #52958b;
-    top: #{$container-size * 0.2};
-    border-radius: 5px;
+    top: ($stopwatch-size / 2) * 0.5;
+    border-radius: $container-size / 40;
     animation: anim infinite steps(60, end);
     animation-duration: 3600s;
     transform-origin: bottom;
@@ -30,11 +29,11 @@
 
   &__second-arrow {
     position: absolute;
-    width: #{($container-size * 0.9) * 0.03};
-    height: #{($container-size * 0.9) / 2};
+    width: $stopwatch-size * 0.03;
+    height: $stopwatch-size / 2;
     background-color: #b9c4c9;
-    top: #{$container-size * 0.05};
-    border-radius: 5px;
+    top: 0;
+    border-radius: $container-size / 40;
     animation: anim infinite linear;
     animation-duration: 60s;
     transform-origin: bottom;

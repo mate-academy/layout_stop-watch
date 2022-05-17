@@ -1,6 +1,13 @@
-$container-size: 400px;
+$container-size: 500px;
+$stopwatch-size: $container-size * 0.95;
+
 @keyframes anim {
   to {
     transform: rotate(360deg);
   }
+}
+
+@mixin square($size) {
+  height: $size;
+  width: $size;
 }
