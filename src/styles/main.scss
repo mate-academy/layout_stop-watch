@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.stopwatch {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(33, 33, 31);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch__container {
+  box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+  background: rgb(37, 39, 39);
+  border: 12px solid rgb(64, 66, 66);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch__numbers {
+  position: absolute;
+  width: 100%;
+  height: 117%;
+  text-align: center;
+  color: white;
+}
+
+.stopwatch__number-05 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(30deg);
+}
+
+.stopwatch__number-10 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(60deg);
+}
+
+.stopwatch__number-15 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(90deg);
+}
+
+.stopwatch__number-20 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(120deg);
+}
+
+.stopwatch__number-25 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(150deg);
+}
+
+.stopwatch__number-30 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg);
+}
+
+.stopwatch__number-35 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(210deg);
+}
+
+.stopwatch__number-40 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(240deg);
+}
+
+.stopwatch__number-45 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(270deg);
+}
+
+.stopwatch__number-50 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(300deg);
+}
+
+.stopwatch__number-55 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(330deg);
+}
+
+.stopwatch__number-00 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(360deg);
+}
+
+.stopwatch__arrow {
+  position: absolute;
+  bottom: 50%;
+  background-color: rgb(141, 26, 26);
+  height: 50%;
+  width: 2px;
+  transform-origin: bottom;
+  animation: rotate 60s linear infinite;
+  animation-play-state: running;
+}
+
+.stopwatch__arrow-minutes {
+  position: absolute;
+  bottom: 50%;
+  background-color: rgb(255, 255, 255);
+  height: 35%;
+  width: 2px;
+  transform-origin: bottom;
+  animation: rotate  3600s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch__center {
+  height: 10px;
+  width: 10px;
+  background-color: rgb(64, 66, 66);
+  position: absolute;
+  border-radius: 50%;
+}
