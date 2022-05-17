@@ -17,6 +17,7 @@ $min-hand-color: black;
 
   &__sec {
     position: absolute;
+    z-index: 2;
     top: 0;
     width: $sec-hand-width;
     height: $sec-hand-height;
@@ -30,7 +31,7 @@ $min-hand-color: black;
   &__min {
     position: absolute;
     top: ($clock-diameter / 2) - $min-hand-height;
-    z-index: 3;
+    z-index: 1;
     width: $min-hand-width;
     height: $min-hand-height;
     background-color: $min-hand-color;
@@ -42,8 +43,8 @@ $min-hand-color: black;
 
   &__circle {
     position: absolute;
-    z-index: 2;
-    background-color: black;
+    z-index: 3;
+    background-color: red;
     width: $circle-diameter;
     height: $circle-diameter;
     border-radius: 50%;
