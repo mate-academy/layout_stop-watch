@@ -30,7 +30,7 @@ $min-hand-color: black;
   &__min {
     position: absolute;
     top: ($clock-diameter / 2) - $min-hand-height;
-    z-index: 2;
+    z-index: 3;
     width: $min-hand-width;
     height: $min-hand-height;
     background-color: $min-hand-color;
@@ -42,7 +42,7 @@ $min-hand-color: black;
 
   &__circle {
     position: absolute;
-    z-index: 3;
+    z-index: 2;
     background-color: black;
     width: $circle-diameter;
     height: $circle-diameter;
@@ -54,7 +54,6 @@ $min-hand-color: black;
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
