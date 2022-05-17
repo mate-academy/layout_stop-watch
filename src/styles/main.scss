@@ -1,0 +1,64 @@
+@mixin animation($duration) {
+  animation-name: rotate;
+  animation-duration: #{$duration}s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  transform-origin: center bottom;
+}
+
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  position: absolute;
+  left: 500px;
+  top: 300px;
+
+  &__center {
+    position: relative;
+    z-index: 1;
+
+    width: 24px;
+    height: 24px;
+
+    background-color: cadetblue;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    position: relative;
+    left: 6px;
+    top: 12px;
+
+    width: 12px;
+    height: 160px;
+
+    background-color: brown;
+    border-radius: 6px;
+
+    @include animation(60);
+  }
+
+  &__second-hand {
+    position: relative;
+    left: 6px;
+    bottom: 268px;
+    z-index: -1;
+
+    width: 12px;
+    height: 256px;
+
+    background-color: cadetblue;
+    border-radius: 6px;
+
+    @include animation(1);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
