@@ -1,0 +1,60 @@
+$arrowsWidth: 10px;
+$arrowsGap :50px;
+$clockDiameter: 400px;
+$bigArrowHeight: $clockDiameter / 2;
+$smallArrowHeight: $bigArrowHeight - $arrowsGap;
+$roundDiameter: 20px;
+
+.container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: $clockDiameter;
+  width: $clockDiameter;
+  margin: 50px auto;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: whitesmoke;
+}
+
+.big-arrow {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: $arrowsWidth;
+  height: $bigArrowHeight;
+  background-color: aqua;
+  animation: move 3600s steps(60) infinite;
+  transform-origin: bottom;
+}
+
+.small-arrow {
+  position: absolute;
+  top: $arrowsGap;
+  z-index: 2;
+  width: $arrowsWidth;
+  height: $smallArrowHeight;
+  background-color: yellow;
+  animation: move 60s steps(60) infinite;
+  transform-origin: bottom;
+}
+
+.round {
+  position: absolute;
+  z-index: 3;
+  width: $roundDiameter;
+  height: $roundDiameter;
+  background-color: black;
+  border-radius: 50%;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
