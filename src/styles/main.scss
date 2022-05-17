@@ -1,0 +1,80 @@
+$height-watch: 200px;
+$height-watch-1:  $height-watch / 2 - 10px;
+$height-watch-2: $height-watch-1 * 0.75;
+
+@mixin nuber-dicoration {
+  position: absolute;
+  background-color: white;
+  padding: 0 3px;
+}
+
+@mixin hands-dicoration {
+  width: 4px;
+  border-radius: 70% ;
+  position: absolute;
+  bottom: 50%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: $height-watch;
+  width: $height-watch;
+  border: 6px dotted black;
+  border-radius: 50%;
+
+  &::before {
+    content: "12";
+    top: -12px;
+    @include nuber-dicoration;
+  }
+
+  &::after {
+    content: "6";
+    bottom: -12px;
+    @include nuber-dicoration;
+  }
+
+  &__center {
+    height: 10px;
+    width: 10px;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 3;
+
+  }
+
+  &__hands-1 {
+    background-color: yellow;
+    height: $height-watch-1;
+    z-index: 2;
+    animation: move 60s linear infinite;
+    @include hands-dicoration;
+  }
+
+  &__hands-2 {
+    background-color: blue;
+    height: $height-watch-2;
+    z-index: 1;
+    animation: move 3600s linear infinite;
+    @include hands-dicoration;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
