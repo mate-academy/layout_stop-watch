@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+}
+
+$container-width: 300px;
+$container-height: 300px;
+$center-point-size: 4px;
+
+%animation {
+  transform-origin: bottom;
+  animation: move;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.container {
+  width: $container-width;
+  height: $container-height;
+  position: relative;
+  border-radius: 50%;
+  background: rgb(2,0,36)
+    radial-gradient(circle, rgba(2,0,36,1) 0%,
+    rgba(7,142,122,1) 50%,
+    rgba(0,212,255,1) 100%);
+}
+
+.container::after {
+  content: "";
+  height: $center-point-size;
+  width: $center-point-size;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: 50%;
+  background-color: rgba(0,212,255,1);
+}
+
+.second-hand {
+  width: 2px;
+  height: $container-height / 2;
+  position: absolute;
+  left: $container-width / 2 - 1px;
+  border-radius: 1px;
+  @extend %animation;
+  animation-duration: 60s;
+  background: rgb(4,26,50)
+    linear-gradient(0deg, rgba(4,26,50,1) 0%,
+    rgba(194,171,91,1) 50%,
+    rgba(242,242,242,1) 100%);
+}
+
+.hand {
+  width: 2px;
+  height: $container-height / 3;
+  position: absolute;
+  left: $container-width / 2 - 1px;
+  top: $container-height / 6;
+  z-index: 1;
+  @extend %animation;
+  animation-duration: 3600s;
+  border-radius: 1px;
+  background: rgb(4,26,50)
+    linear-gradient(0deg, rgba(4,26,50,1) 0%,
+    rgba(111,199,199,1) 50%,
+    rgba(242,242,242,1) 100%);
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
