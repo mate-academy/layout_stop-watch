@@ -1,9 +1,68 @@
+@import "./reset.scss";
+
+$clock-size: 300px;
+
 .watch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  left: 100px;
+  top: 100px;
+
+  &__clock {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $clock-size;
+    height: $clock-size;
+    background-color: #a76db6;
+    border: 10px dotted #dde239;
+    border-radius: 50%;
+  }
 
   &__circle {
-    border: 1.5px dotted #175b38;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $clock-size / 30;
+    width: $clock-size / 30;
+    background-color: #f85349;
+    border-radius: 50%;
+  }
+
+  &__minute-arrow {
+    position: absolute;
+    top: -95px;
+    z-index: 1;
+    width: $clock-size / 20;
+    height: $clock-size / 3;
+    background-color: #48ee98;
+    border-radius: 50%;
+
+    animation: rotate 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__seconds-arrow {
+    position: relative;
+    top: -70px;
+    width: $clock-size / 20;
+    height: $clock-size / 2.2;
+    background-color: rgb(40, 40, 133);
+    border-radius: 50%;
+
+    animation: rotate 60s linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
