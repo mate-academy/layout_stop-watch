@@ -1,0 +1,42 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+  margin: auto;
+  background-color: rgb(26, 180, 201);
+  border-radius: $clock-size / 2;
+
+  &__axis {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: $hand-width * 2;
+    width: $hand-width * 2;
+    background-color: lightblue;
+    border-radius: 50%;
+  }
+
+  &__second-hand {
+    @extend %hands;
+    height: $clock-size / 2 - $hand-width;
+    background-color: lightblue;
+    animation: rotation 60s linear infinite;
+  }
+
+  &__minute-hand {
+    @extend %hands;
+    height: $clock-size / 4 - $hand-width;
+    background-color: red;
+    animation: rotation 3600s linear infinite;
+  }
+}
