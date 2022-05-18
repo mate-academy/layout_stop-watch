@@ -1,0 +1,57 @@
+.clock {
+  width: $clock-size;
+  height: $clock-size;
+
+  background-color: green;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: $clock-center-position;
+    left: $clock-center-position;
+    z-index: 1;
+
+    width: $clock-center-size;
+    height: $clock-center-size;
+
+    border-radius: 50%;
+    background-color: lightblue;
+  }
+
+  @mixin arrow ($position-top, $arrow-heigth, $bgc) {
+    position: absolute;
+    top: $position-top;
+    left: $clock-center-position + 10px;
+
+    height: $arrow-heigth;
+    width: $clock-center-size / 2;
+    
+    background-color: $bgc;
+    border-radius: $clock-size / 40;
+    transform-origin: bottom;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__arrow-sec {
+    @include arrow(0, $clock-size / 2, red);
+    animation: rotate 60s linear infinite;
+  }
+
+  &__arrow-min {
+    @include arrow(
+      $clock-center-position / 2 + 10px,
+      $clock-size / 4,
+      lightblue
+    );
+    animation: rotate 3600s steps(60, end) infinite;
+  }
+}
