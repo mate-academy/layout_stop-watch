@@ -1,0 +1,67 @@
+$watchDiameter: 500px;
+$circleDiameter: 25px;
+$secondsHeight: $watchDiameter / 2;
+$minutesHeight: ($watchDiameter / 2) - ($watchDiameter / 2) * 0.3;
+$secondsWidth: 15px;
+$minutesWidth: 15px;
+
+@mixin circle ($diameter) {
+  height: $diameter;
+  width: $diameter;
+  border-radius: 50%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  @include circle($watchDiameter);
+  background-color: #e6eeee;
+}
+
+.watch__circle {
+  z-index: 2;
+  @include circle($circleDiameter);
+  background-color: #6491e4;
+}
+
+.watch__minutes {
+  position: absolute;
+  top: ($watchDiameter / 2) * 0.3;
+  z-index: 2;
+  width: $minutesWidth;
+  height: $minutesHeight;
+  border-radius: $minutesWidth / 2;
+  background-color: #6491e4;
+  transform-origin: bottom;
+  animation: rotate 3600s steps(60) infinite;
+}
+
+.watch__seconds {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: $secondsWidth;
+  height: $secondsHeight;
+  border-radius: $secondsWidth / 2;
+  background-color: #a756d6;
+  transform-origin: bottom;
+  animation: rotate 60s steps(60) infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
