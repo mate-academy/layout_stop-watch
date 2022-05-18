@@ -1,0 +1,53 @@
+.clock {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+  margin: 50px;
+  background: radial-gradient(#505050, #303030);
+  border: 3px solid #302e2c;
+  box-shadow: 5px silver;
+
+  border-radius: 50%;
+
+  &__arrow {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    height: $arrow-h;
+    width: $arrow-w;
+    background-color: #171717;
+    transform-origin: 50% $top-space;
+    animation: rotate 3600s infinite linear;
+
+    &::after {
+      content: "^";
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 13px;
+      text-align: center;
+      margin-left: -9px;
+      color: #171717;
+    }
+  }
+
+  &__arrow-short {
+    position: absolute;
+    left: 50%;
+    height: $arrow-short-h;
+    width: $arrow-short-w;
+    background-color: #171717;
+    transform-origin: 50% $top-space;
+    animation: rotate 60s infinite linear;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
