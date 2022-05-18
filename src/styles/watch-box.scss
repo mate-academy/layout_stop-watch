@@ -1,0 +1,71 @@
+.watch-box {
+  position: relative;
+  margin: 50px auto;
+  height: 600px;
+  width: 600px;
+
+  border: 1px solid #00acdc;
+  border-radius: 50%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 48%;
+    top: 48%;
+    width: 20px;
+    height: 20px;
+    border-radius: 30%;
+    background-color: #f5c16a;
+  }
+
+  &__12hour {
+    position: absolute;
+    left: 45%;
+
+    font-size: $hourSize;
+  }
+
+  &__3hour {
+    position: absolute;
+    top: 44%;
+    left: 95%;
+
+    font-size: $hourSize;
+  }
+
+  &__6hour {
+    position: absolute;
+    left: 48%;
+    top: 90%;
+
+    font-size: $hourSize;
+  }
+
+  &__9hour {
+    position: absolute;
+    left: 0%;
+    top: 45%;
+
+    font-size: $hourSize;
+  }
+
+}
+
+.arrow-seconds::after {
+  @include arrow;
+
+  left: 49%;
+  top: 8%;
+  height: 250px;
+  background-color: #444c5c;
+  animation-duration: 3600s;
+}
+
+.arrow-minutes::after {
+  @include arrow;
+
+  left: 49%;
+  height: 300px;
+  background-color: #ce5a57;
+  animation-duration: 60s;
+}
