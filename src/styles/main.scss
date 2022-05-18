@@ -1,0 +1,74 @@
+$clock-diameter: 500px;
+$second-hand-height: 0.45 * $clock-diameter;
+$second-hand-width: 0.01 * $second-hand-height;
+$minute-hand-height: 0.35 * $clock-diameter;
+$minute-hand-width: 0.06 * $minute-hand-height;
+
+@mixin square($form) {
+  height: $form;
+  width: $form;
+  border-radius: 50%;
+}
+
+.page {
+  &__body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include square($clock-diameter);
+  border: 30px solid #242525;
+  background: linear-gradient(180deg, #648f9e, #e1e8dc, #94714c);
+
+  &__minute-hand {
+    position: absolute;
+    top: $clock-diameter / 2 - $minute-hand-height;
+    height: $minute-hand-height;
+    width: $minute-hand-width;
+
+    background: linear-gradient(180deg, #2f3435, #545653, #312d29);
+    border-radius: 35%;
+
+    animation: move 3600s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: $clock-diameter / 2 - $second-hand-height;
+    height: $second-hand-height;
+    width: $second-hand-width;
+
+    background: linear-gradient(180deg, #2f3435, #787d74, #312d29);
+    border-radius: 75%;
+
+    animation: move 60s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__center {
+    position: absolute;
+
+    @include square($clock-diameter * 0.04);
+    background: linear-gradient(250deg, #1a1b1b, #444543, #1d1c1c);
+  }
+
+  @keyframes move {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
