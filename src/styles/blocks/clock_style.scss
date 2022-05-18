@@ -20,7 +20,13 @@
   height: $clock-size;
 
   border-radius: 50%;
-  background: rgb(69, 65, 65);
+  background: linear-gradient(
+    #6898f2,
+    #a2e0f5,
+    #f39720 70%,
+    #48c0ba 80%,
+    #fdf85d 85%
+  );
 
   &__minute-hand {
     box-sizing: border-box;
@@ -31,7 +37,7 @@
     height: $size-minute-hand;
     width: $width-minute-hand;
 
-    background: rgb(209, 209, 209);
+    background: rgb(227, 226, 226);
     border: $border-width solid gold;
     border-radius: 1px;
     transform-origin: bottom center;
@@ -47,7 +53,7 @@
     width: $width-second-hand;
     z-index: 2;
 
-    background: rgb(209, 209, 209);
+    background: rgb(227, 226, 226);
     border-radius: 8px;
     transform-origin: bottom center;
     animation: clock infinite linear;
@@ -58,14 +64,14 @@
     width: $width-second-hand + $width-minute-hand;
     height: $width-second-hand + $width-minute-hand;
 
-    background: rgb(209, 209, 209);
+    background: rgb(227, 226, 226);
     border-radius: 50%;
     z-index: 3;
   }
 
   &__content {
     font-size: $clock-size / 10;
-    color: rgb(209, 209, 209);
+    color: rgb(227, 226, 226);
     z-index: 0;
 
     &_12 {
