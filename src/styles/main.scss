@@ -1,0 +1,86 @@
+@import "variables.scss";
+
+@keyframes arrowGo {
+
+  from {
+    transform-origin: top left;
+    transform: rotate(180deg);
+  }
+
+  to {
+    transform-origin: top left;
+    transform: rotate(540deg);
+  }
+}
+
+.watch-box {
+  position: relative;
+
+  height: 600px;
+  width: 600px;
+
+  border: 1px solid #00acdc;
+  border-radius: 50%;
+
+  &__12hour {
+    position: absolute;
+    left: 45%;
+
+    font-size: $hourSize;
+  }
+
+  &__3hour {
+    position: absolute;
+    top: 44%;
+    left: 95%;
+
+    font-size: $hourSize;
+  }
+
+  &__6hour {
+    position: absolute;
+    left: 48%;
+    top: 90%;
+
+    font-size: $hourSize;
+  }
+
+  &__9hour {
+    position: absolute;
+    left: 0%;
+    top: 45%;
+
+    font-size: $hourSize;
+  }
+
+}
+
+.arrow-seconds::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 200px;
+  background-color: #ce5a57;
+  border-radius: 10px;
+  animation-name: arrowGo;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.arrow-minutes::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 280px;
+  background-color: #444c5c;
+  border-radius: 5px;
+  animation-name: arrowGo;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
