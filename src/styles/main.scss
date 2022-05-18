@@ -1,6 +1,5 @@
-@import "./reset.scss";
-
-$clock-size: 300px;
+@import "./reset";
+@import "./variables";
 
 .watch {
   position: relative;
@@ -54,15 +53,5 @@ $clock-size: 300px;
     animation: rotate 60s linear;
     animation-iteration-count: infinite;
     transform-origin: bottom;
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 }
