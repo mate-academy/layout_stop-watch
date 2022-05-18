@@ -1,0 +1,65 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  width: $widthAndHeightWrapper;
+  height: $widthAndHeightWrapper;
+
+  border-radius: 50%;
+  border: 10px solid #ff0;
+
+  &__circle {
+    position: absolute;
+
+    width: $circle;
+    height: $circle;
+
+    background-color: blue;
+    border-radius: 50%;
+
+    z-index: 3;
+  }
+
+  &__minute {
+    top: 12%;
+
+    position: absolute;
+
+    height: 180px;
+    width: 6px;
+
+    border-radius: 12%;
+    background-color: #ff0;
+
+    animation-duration: 3600s;
+
+    z-index: 1;
+  }
+
+  &__second {
+    position: absolute;
+    top: 4%;
+
+    height: 220px;
+    width: 10px;
+
+    border-radius: 20%;
+    background-color: red;
+
+    animation-duration: 60s;
+
+    z-index: 2;
+  }
+
+  &__minute,
+  &__second {
+    transform-origin: bottom center;
+    animation-name: move;
+    animation-iteration-count: 24;
+    animation-timing-function: linear;
+  }
+}
