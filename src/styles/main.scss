@@ -1,3 +1,20 @@
+@mixin bord($solid, $borRad, $backCol) {
+  border: solid $solid rgb(14, 13, 13);
+  border-radius: $borRad;
+  background-color: $backCol;
+}
+
+@mixin forArrow($top, $width, $height, $backColor, $borderRad, $timeInS) {
+  position: absolute;
+  top: $top;
+  width: $width;
+  height: $height;
+  background-color: $backColor;
+  border-radius: $borderRad;
+  transform-origin: bottom;
+  animation: time $timeInS steps(60) infinite;
+}
+
 .watch {
   position: relative;
 
@@ -7,50 +24,26 @@
   width: 500px;
   height: 500px;
 
-  background-color: rgb(197, 198, 201);
-  border: solid  2px rgb(14, 13, 13);
-  border-radius: 50%;
+  @include bord(2px, 50%, #c5c6c9);
 
   cursor: pointer;
-}
 
-.centr {
-  position: absolute;
+  &__centr {
+    position: absolute;
 
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 
-  background-color: rgb(80, 80, 80);
-  border: solid 1.5px ;
-  border-radius: 50%;
-}
+    @include bord(1.5px, 50%, #505050);
+  }
 
-.str_min {
-  position: absolute;
-  top: 50px;
+  &__min {
+    @include forArrow(50px, 8px, 200px, #535353, 5px, 3600s);
+  }
 
-  width: 8px;
-  height: 200px;
-
-  background-color: rgb(83, 83, 83);
-  border-radius: 5px;
-
-  transform-origin: bottom;
-  animation: time 3600s steps(60) infinite;
-}
-
-.str_sec {
-  position: absolute;
-  top: 100px;
-
-  width: 6px;
-  height: 150px;
-
-  background-color: rgb(158, 48, 48);
-  border-radius: 3px;
-  
-  transform-origin: bottom;
-  animation: time 60s steps(60) infinite;
+  &__sec {
+    @include forArrow(100px, 6px, 150px, #9e3030, 3px, 60s);
+  }
 }
 
 @keyframes time {
