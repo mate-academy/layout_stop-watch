@@ -3,24 +3,35 @@
 @keyframes arrowGo {
 
   from {
-    transform-origin: top left;
-    transform: rotate(180deg);
+    transform-origin: bottom;
+    transform: rotate(0);
   }
 
   to {
-    transform-origin: top left;
-    transform: rotate(540deg);
+    transform-origin: bottom;
+    transform: rotate(360deg);
   }
 }
 
 .watch-box {
   position: relative;
-
+  margin: 50px auto;
   height: 600px;
   width: 600px;
 
   border: 1px solid #00acdc;
   border-radius: 50%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 48%;
+    top:48%;
+    width: 20px;
+    height: 20px;
+    border-radius: 30%;
+    background-color: #f5c16a;
+  }
 
   &__12hour {
     position: absolute;
@@ -58,12 +69,12 @@
 .arrow-seconds::after {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 49%;
+  top: 8%;
   width: 10px;
-  height: 200px;
-  background-color: #ce5a57;
-  border-radius: 10px;
+  height: 250px;
+  background-color: #444c5c;
+  border-radius: 5px;
   animation-name: arrowGo;
   animation-duration: 3600s;
   animation-iteration-count: infinite;
@@ -73,11 +84,10 @@
 .arrow-minutes::after {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 49%;
   width: 10px;
-  height: 280px;
-  background-color: #444c5c;
+  height: 300px;
+  background-color: #ce5a57;
   border-radius: 5px;
   animation-name: arrowGo;
   animation-duration: 60s;
