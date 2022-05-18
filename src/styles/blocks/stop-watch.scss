@@ -1,0 +1,60 @@
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include square($stop-watch__size);
+  border-radius: 50%;
+  background-color: #fb7;
+}
+
+.unit {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  @include square($unit__size);
+  border-radius: 50%;
+  background-color: #eee;
+
+
+  &__point {
+    @include square(0.05 * $unit__size);
+    border-radius: 50%;
+    background-color: #aaa;
+    z-index: 1;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: $unit__size / 2;
+  }
+}
+
+.second {
+    height: $unit__size / 2;
+    width: $second_width;
+    border-radius: $second_width / 2;
+    background-color: #aaa;
+
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+}
+
+.minute {
+  height: $unit__size / 2.3;
+  width: $second_width * 1.6;
+  border-radius: $second_width * 0.8;
+  background-color: #e77;
+
+  animation: move 3600s steps(60, end) infinite;
+  transform-origin: bottom;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
