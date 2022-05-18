@@ -11,11 +11,10 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   @include square($unit__size);
   border-radius: 50%;
   background-color: #eee;
-
 
   &__point {
     @include square(0.05 * $unit__size);
@@ -31,13 +30,13 @@
 }
 
 .second {
-    height: $unit__size / 2;
-    width: $second_width;
-    border-radius: $second_width / 2;
-    background-color: #aaa;
+  height: $unit__size / 2;
+  width: $second_width;
+  border-radius: $second_width / 2;
+  background-color: #aaa;
 
-    animation: move 60s linear infinite;
-    transform-origin: bottom;
+  animation: move 60s linear infinite;
+  transform-origin: bottom;
 }
 
 .minute {
