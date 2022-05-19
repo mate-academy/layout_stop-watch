@@ -1,0 +1,52 @@
+@mixin settings($size) {
+  left: $size;
+  top: $size;
+  position: absolute;
+}
+
+.clock {
+  @include settings($indent);
+  width: $clockrsize;
+  height: $clockrsize;
+  border: 1px solid #afafaf;
+  border-radius: $lapRadius;
+  transform: translate(-50%, -50%);
+
+  &__second {
+    @include settings($indent);
+    height: 100px;
+    width: 4px;
+    background: rgb(206, 233, 36);
+    border-radius: 2px;
+    animation: spin 1s linear infinite;
+    transform-origin: top;
+  }
+  &__minute {
+    @include settings($indent);
+    height: 90px;
+    width: 6px;
+    background: rgb(124, 124, 124);
+    border-radius: 4px;
+    animation: spin 60s linear infinite;
+    transform-origin: top;
+  }
+
+  &__center {
+    @include settings($indent);
+    width: $centersize;
+    height: $centersize;
+    border-radius: $lapRadius;
+    background: rgb(124, 124, 124);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
