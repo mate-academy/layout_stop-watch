@@ -5,21 +5,6 @@ $clock-hand-width: 20px;
     transform: rotate(-180deg);
     transform-origin: ($clock-hand-width / 2) ($clock-hand-width / 2);
   }
-
-  25% {
-    transform: rotate(-90deg);
-    transform-origin: ($clock-hand-width / 2) ($clock-hand-width / 2);
-  }
-  
-  50% {
-    transform: rotate(0deg);
-    transform-origin: ($clock-hand-width / 2) ($clock-hand-width / 2);
-  }
-
-  75% {
-    transform: rotate(90deg);
-    transform-origin: ($clock-hand-width / 2) ($clock-hand-width / 2);
-  }
   
   100% {
     transform: rotate(180deg);
@@ -61,7 +46,7 @@ body {
 
     transform: rotate(180deg);
     transform-origin: ($clock-hand-width / 2) ($clock-hand-width / 2);
-    animation: move-watch-hand 3600s steps(15) infinite;
+    animation: move-watch-hand 3600s steps(60) infinite;
   }
 
   &__second {
@@ -73,6 +58,6 @@ body {
 
     transform: rotate(180deg);
     transform-origin: ($clock-hand-width / 2) ($clock-hand-width / 2);
-    animation: move-watch-hand 60s steps(15) infinite;
+    animation: move-watch-hand 60s steps(60) infinite;
   }
 }
