@@ -1,73 +1,7 @@
-$center-size: 24px;
-$minute-hand-length: 160px;
-$second-hand-length: 256px;
+@import "./reset";
 
-%hand {
-  position: relative;
-  left: $center-size / 4;
+@import "./variables";
+@import "./mixins";
+@import "./placeholders";
 
-  width: $center-size / 2;
-
-  border-radius: $center-size / 4;
-}
-
-@mixin animation($duration) {
-  animation-name: rotate;
-  animation-duration: #{$duration}s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-
-  transform-origin: center bottom;
-}
-
-body {
-  margin: 0;
-}
-
-.stopwatch {
-  position: absolute;
-  left: 500px;
-  top: 300px;
-
-  &__center {
-    position: relative;
-    z-index: 1;
-
-    width: $center-size;
-    height: $center-size;
-
-    background-color: cadetblue;
-    border-radius: 50%;
-  }
-
-  &__minute-hand {
-    @extend %hand;
-
-    top: $center-size / 2;
-
-    height: $minute-hand-length;
-
-    background-color: brown;
-
-    @include animation(60);
-  }
-
-  &__second-hand {
-    @extend %hand;
-
-    bottom: $second-hand-length + $center-size / 2;
-    z-index: -1;
-
-    height: $second-hand-length;
-
-    background-color: cadetblue;
-
-    @include animation(1);
-  }
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
+@import "./stopwatch.scss";
