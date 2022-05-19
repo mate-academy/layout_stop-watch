@@ -1,0 +1,14 @@
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin hand-mixin ($height, $width, $time) {
+  bottom: (($stopwatch-diameter - $height) / 2) + ($height * 0.33);
+
+  height: $height;
+  width: $width;
+
+  animation: stopwatch $time linear infinite;
+  transform-origin: center ($height / 2 + $height * 0.33);
+}
