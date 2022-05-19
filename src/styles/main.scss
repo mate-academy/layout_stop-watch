@@ -2,65 +2,61 @@ body {
   margin: 0;
 }
 
+$container-height: 600px;
+$big-hand-height: 250px;
+$small-hand-height: 150px;
+$hand-width: 10px;
+
 .stopwatch {
-  width: 600px;
-  height: 600px;
-  display: flex;
+  width: $container-height;
+  height: $container-height;
+
   position: relative;
-}
 
-.stopwatch__big-hand {
-  position: absolute;
-  background-color: rgb(109, 184, 159);
-  border-radius: 10px;
-  height: 250px; //width-centerwidth/2=295
-  width: 10px;
-  top: 60px;
-  left: 305px;
+  &__big-hand {
+    position: absolute;
+    background-color: rgb(109, 184, 159);
+    border-radius: 10px;
+    
+    height: $big-hand-height;
+    width: $hand-width;
+    top: $container-height / 2 -  $big-hand-height;
+    left: $container-height / 2 -  $hand-width / 2;
+    transform: translate(50%,50%);
 
-  transform: rotateZ(360deg);
-  transform-origin: bottom;
-  animation: big-hand 60s infinite;
-  animation-direction: normal;
-  animation-timing-function: linear;
-}
-
-.stopwatch__center {
-  position: absolute;
-  top: 300px;
-  left: 300px;
-  border-radius: 50%;
-  background-color: rgb(109, 184, 159);
-  height: 20px;
-  width: 20px;
-}
-
-.stopwatch__small-hand {
-  position: absolute;
-  top: 160px;
-  left: 305px;
-  background-color: rgb(126, 38, 38);
-  border-radius: 10px;
-  height: 150px;
-  width: 10px;
-
-  transform: rotateZ(360deg);
-  transform-origin: bottom;
-  animation: small-hand 3600s infinite;
-  animation-direction: normal;
-  animation-timing-function: linear;
-}
-
-@keyframes big-hand {
-  0% {
-    transform: rotateZ(0);
+    transform-origin: bottom;
+    animation: time-tick 60s linear infinite;
   }
-  100% {
-    transform: rotateZ(360deg);
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    border-radius: 50%;
+    background-color: rgb(109, 184, 170);
+    height: 20px;
+    width: 20px;
+  }
+
+  &__small-hand {
+    position: absolute;
+    top: $container-height / 2 -  $small-hand-height;
+    left: $container-height / 2 -  $hand-width / 2;
+    transform: translate(-50%,-50%);
+
+    background-color: rgb(126, 38, 38);
+    border-radius: 10px;
+    height: $small-hand-height;
+    width: $hand-width;
+
+    transform-origin: bottom;
+    animation: time-tick 3600s linear infinite;
   }
 }
 
-@keyframes small-hand {
+@keyframes time-tick {
   0% {
     transform: rotateZ(0);
   }
