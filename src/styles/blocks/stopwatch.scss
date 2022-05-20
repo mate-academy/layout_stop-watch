@@ -1,0 +1,52 @@
+.stopwatch {
+  position: relative;
+  @include circle ($stopwatchDiametr);
+  background-color: #fff;
+  border: 5px solid black;
+  border-radius: 50%;
+
+  &__middle {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    @include circle ($middleButtonDiametr);
+    background-color: $lightBlue;
+    border-radius: 50%;
+  }
+
+  &__second {
+    position: absolute;
+    left: $horizontalCentration;
+    top: 20px;
+    width: $arrowThickness;
+    height: $secondArrowHeigth;
+    background-color: $lightBlue;
+    border-radius: 4px;
+    transform-origin: bottom;
+    animation: timer 60s steps(60, end) infinite;
+  }
+
+  &__minute {
+    position: absolute;
+    left: $horizontalCentration;
+    top: 70px;
+    width: $arrowThickness;
+    height: $minuteArrowHeigth;
+    background-color: $lightRed;
+    border-radius: 4px;
+    transform-origin: bottom;
+    animation: timer 3600s steps(60, end) infinite;
+  }
+
+  @keyframes timer {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
