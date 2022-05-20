@@ -1,0 +1,47 @@
+.stopwatch {
+  position: absolute;
+  left: 500px;
+  top: 300px;
+
+  &__center {
+    position: relative;
+    z-index: 1;
+
+    width: $center-size;
+    height: $center-size;
+
+    background-color: cadetblue;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    @extend %hand;
+
+    top: $center-size / 2;
+
+    height: $minute-hand-length;
+
+    background-color: brown;
+
+    @include rotation-animation(60);
+  }
+
+  &__second-hand {
+    @extend %hand;
+
+    bottom: $second-hand-length + $center-size / 2;
+    z-index: -1;
+
+    height: $second-hand-length;
+
+    background-color: cadetblue;
+
+    @include rotation-animation(1);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
