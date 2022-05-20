@@ -1,53 +1,59 @@
 @mixin settings($size) {
-  position: absolute;
   left: $size;
   top: $size;
 }
 
 .clock {
-  @include settings($indent);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: $clockrsize;
   height: $clockrsize;
-  border: 1px solid #afafaf;
+  margin: 100px auto;
   border-radius: $lapRadius;
-  transform: translate(-50%, -50%);
+  border: 1px solid #afafaf;
 
   &__second {
-    @include settings($indent);
-    width: 4px;
-    height: 100px;
+    position: absolute;
+    left: 49%;
+    top: 10%;
+    width: 2%;
+    height: 40%;
     background: rgb(206, 233, 36);
     border-radius: 2px;
-    transform-origin: top;
-    animation: spin 60s linear infinite;
+    animation: spin 60s infinite linear;
+    animation-timing-function: steps(60, end);
+    transform-origin: bottom;
+    z-index: -1;
   }
 
   &__minute {
-    @include settings($indent);
-    width: 6px;
-    height: 90px;
-    background: rgb(124, 124, 124);
-    border-radius: 4px;
-    transform-origin: top;
-    animation: spin 3600s linear infinite;
+    position: absolute;
+    left: 48.8%;
+    top: 15%;
+    width: 2.4%;
+    height: 35%;
+    background: rgb(153, 153, 153);
+    border-radius: 2px;
+    animation: spin 3600s infinite linear;
+    animation-timing-function: steps(60, end);
+    transform-origin: bottom;
   }
 
   &__center {
-    @include settings($indent);
-    width: $centersize;
-    height: $centersize;
-    background: rgb(124, 124, 124);
+    position: absolute;
+    left: 48%;
+    top: 48%;
+    width: 4%;
+    height: 4%;
+    background: rgb(153, 153, 153);
     border-radius: $lapRadius;
-    transform: translate(-50%, -50%);
-    z-index: 1;
   }
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(-180deg);
-  }
   100% {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
   }
 }
