@@ -1,0 +1,35 @@
+.watch {
+  @include circle($watch-size);
+  position: relative;
+  margin: auto;
+  background-color: antiquewhite;
+
+  &__circle {
+    @include circle($circle-size);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 50%;
+    background-color: cadetblue;
+  }
+
+  &__seconds {
+    @extend %hand-position;
+    height: $watch-size / 2.2;
+    width: $hand-width;
+    border-radius: 5px;
+    background-color: cadetblue;
+    animation: move 60s linear infinite;
+  }
+
+  &__minutes {
+    @extend %hand-position;
+    height: $watch-size / 3.2;
+    width: $hand-width;
+    border-radius: 5px;
+    background-color: #cf222e;
+    animation: move 3600s steps(60, end) infinite;
+  }
+}
