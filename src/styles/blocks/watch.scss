@@ -9,39 +9,38 @@
   border-radius: 50%;
 
   &__minutes {
-    @extend %absoluteBlock;
     @extend %leftBottom;
-    background-color: black;
-    border-radius: $borderRadius;
-    height: 105px;
+    @extend %absoluteBlock;
     width: 8px;
+    height: 105px;
     margin-left: -4px;
     margin-bottom: -2px;
+    background-color: black;
+    border-radius: $borderRadius;
     animation: time-rotate 3600s linear infinite;
     transform-origin: bottom;
   }
 
   &__seconds {
-    @extend %absoluteBlock;
     @extend %leftBottom;
-    background-color: aqua;
-    border-radius: $borderRadius;
-    height: 145px;
+    @extend %absoluteBlock;
     width: 4px;
+    height: 145px;
     margin-left: -2px;
     margin-bottom: -2px;
+    background-color: aqua;
+    border-radius: $borderRadius;
     animation: time-rotate 60s steps(60, end) infinite;
     transform-origin: bottom;
   }
 
   &__circle {
-    @include clockCircle($circleDiametr);
     @extend %leftBottom;
-    background-color: aqua;
-    border-radius: 50%;
-    position: absolute;
-    display: block;
+    @extend %absoluteBlock;
+    @include clockCircle($circleDiametr);
     margin-left: -10px;
     margin-bottom: -10px;
+    background-color: aqua;
+    border-radius: 50%;
   }
 }
