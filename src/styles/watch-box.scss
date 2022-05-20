@@ -1,0 +1,62 @@
+.watch-box {
+
+  @include watch;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 48%;
+    top: 48%;
+    width: 20px;
+    height: 20px;
+    border-radius: 30%;
+    background-color: #f5c16a;
+  }
+
+  &__12hour,
+  &__3hour,
+  &__6hour,
+  &__9hour {
+    position: absolute;
+    font-size: $hourSize;
+  }
+
+  &__12hour {
+    left: 45%;
+  }
+
+  &__3hour {
+    top: 44%;
+    left: 95%;
+  }
+
+  &__6hour {
+    left: 48%;
+    top: 90%;
+  }
+
+  &__9hour {
+    left: 0%;
+    top: 45%;
+  }
+
+}
+
+.arrow-seconds::after {
+  @include arrow;
+
+  left: 49%;
+  top: 8%;
+  height: 250px;
+  background-color: #444c5c;
+  animation-duration: $oneMinute * 60;
+}
+
+.arrow-minutes::after {
+  @include arrow;
+
+  left: 49%;
+  height: 300px;
+  background-color: #ce5a57;
+  animation-duration: $oneMinute;
+}
