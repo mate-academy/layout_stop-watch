@@ -1,0 +1,53 @@
+@mixin bord($solid, $borRad, $backCol) {
+  border: solid $solid rgb(14, 13, 13);
+  border-radius: $borRad;
+  background-color: $backCol;
+}
+
+@mixin forArrow($top, $width, $height, $backColor, $borderRad, $timeInS) {
+  position: absolute;
+  top: $top;
+  width: $width;
+  height: $height;
+  background-color: $backColor;
+  border-radius: $borderRad;
+  transform-origin: bottom;
+  animation: time $timeInS steps(60) infinite;
+}
+
+.watch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+
+  @include bord(2px, 50%, #c5c6c9);
+
+  cursor: pointer;
+
+  &__centr {
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    @include bord(1.5px, 50%, #505050);
+  }
+
+  &__min {
+    @include forArrow(50px, 8px, 200px, #535353, 5px, 3600s);
+  }
+
+  &__sec {
+    @include forArrow(100px, 6px, 150px, #9e3030, 3px, 60s);
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
