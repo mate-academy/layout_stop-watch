@@ -1,0 +1,82 @@
+.stopWatch-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopWatch {
+  background-image: url("https://wallpaperaccess.com/full/929063.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: $stopWatchSize;
+  width: $stopWatchSize;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  perspective: $stopWatchSize;
+
+  border: $borderSize solid $detailsColor;
+
+  &__secondsArrow {
+    height: 45%;
+    width: $stopWatchSize / 50;
+    border-radius: $stopWatchSize / 50;
+    background-color: $detailsColor;
+    position: absolute;
+    bottom: 50%;
+
+    z-index: -1;
+    transform-origin: bottom;
+    animation: minutesCount 60s steps(360) infinite;
+    animation-name: minutesCount;
+  }
+
+  &__minutesArrow {
+    height: 25%;
+    width: $stopWatchSize / 40;
+    border-radius: 5px;
+    background-color: $detailcDecorColor;
+    position: absolute;
+    bottom: 50%;
+    z-index: -2;
+
+    animation: minutesCount 3600s steps(360) infinite;
+    animation-name: minutesCount;
+    transform-origin: bottom;
+  }
+
+  &__center {
+    width: $centerSize;
+    height: $centerSize;
+    background-color: $detailsColor;
+    border-radius: 50%;
+    position: absolute;
+
+    animation-name: centerCount;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+  }
+
+  &__decorPoint {
+    width: $decorPointSize;
+    height: $decorPointSize;
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: #{$stopWatchSize - $borderSize};
+
+    background-color: $detailcDecorColor;
+
+    animation-name: minutesCount;
+    animation-duration: 60s;
+    transform-origin: #{$decorPointSize / 2}
+      #{$stopWatchSize / 2 + $decorPointSize};
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
