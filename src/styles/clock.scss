@@ -1,0 +1,51 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $clockrsize;
+  height: $clockrsize;
+  margin: 20px auto;
+  border-radius: $lapRadius;
+  border: 1px solid #afafaf;
+
+  &__second {
+    position: absolute;
+    top: 50px;
+    width: 4px;
+    height: 100px;
+    background: rgb(206, 233, 36);
+    border-radius: 2px;
+    animation: spin 60s infinite linear;
+    animation-timing-function: steps(60, end);
+    transform-origin: bottom;
+    z-index: -1;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 50px;
+    width: 4px;
+    height: 100px;
+    background: rgb(153, 153, 153);
+    border-radius: 2px;
+    animation: spin 3600s infinite linear;
+    animation-timing-function: steps(60, end);
+    transform-origin: bottom;
+  }
+
+  &__center {
+    position: absolute;
+    top: 145px;
+    width: 10px;
+    height: 10px;
+    background: rgb(153, 153, 153);
+    border-radius: $lapRadius;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
