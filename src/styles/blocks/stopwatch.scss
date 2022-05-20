@@ -1,0 +1,39 @@
+.stopwatch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @extend %circle;
+  @include circle($stopwatch-diameter);
+
+  &__dot {
+    position: absolute;
+
+    background-color: $stopwatch-color;
+
+    @extend %circle;
+    @include circle($stopwatch-dot-diameter);
+  }
+
+  &__minute {
+    @extend %hand-properties;
+    @include hand-mixin ($minute-hand-height, $minute-hand-width, 3600s);
+  }
+
+  &__second {
+    @extend %hand-properties;
+    @include hand-mixin ($second-hand-height, $second-hand-width, 60s);
+  }
+
+  @keyframes stopwatch {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
