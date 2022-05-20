@@ -1,0 +1,57 @@
+$clock-size: 600px;
+$center-size: 30px;
+$minute-hand-width: 12px;
+$second-hand-width: 10px;
+
+@mixin flex-circle($size) {
+  display: flex;
+  justify-content: center;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin hand($width, $duration) {
+  position: absolute;
+  z-index: -1;
+  bottom: 50%;
+  width: $width;
+  border-radius: $width;
+  transform-origin: bottom;
+  animation: rotate #{$duration}s infinite steps(60, end);
+}
+
+.clock {
+  @include flex-circle($clock-size);
+
+  align-items: center;
+  border: 1px solid royalblue;
+
+  &__center {
+    @include flex-circle($center-size);
+
+    position: relative;
+    background-color: royalblue;
+    transition: infinite;
+  }
+
+  &__minute-hand {
+    @include hand($minute-hand-width, 3600);
+
+    height: 200px;
+    background-color: rosybrown;
+  }
+
+  &__second-hand {
+    @include hand($second-hand-width, 60);
+
+    height: 280px;
+    background-color: rebeccapurple;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
