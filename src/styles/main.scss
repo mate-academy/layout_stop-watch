@@ -5,6 +5,18 @@ body {
 $container-width: 300px;
 $container-height: 300px;
 $center-point-size: 4px;
+$hand-width: 2px;
+
+@mixin element-size($height-size, $width-size) {
+  height: $height-size;
+  width: $width-size;
+}
+
+@mixin position($pos-value, $top-value, $left-value) {
+  position: $pos-value;
+  top: $top-value;
+  left: $left-value;
+}
 
 %animation {
   transform-origin: bottom;
@@ -14,57 +26,52 @@ $center-point-size: 4px;
 }
 
 .container {
-  width: $container-width;
-  height: $container-height;
-  position: relative;
+  @include element-size($container-height, $container-width);
+  @include position(relative, inherit, inherit);
   border-radius: 50%;
   background: rgb(2,0,36)
     radial-gradient(circle, rgba(2,0,36,1) 0%,
     rgba(7,142,122,1) 50%,
     rgba(0,212,255,1) 100%);
-}
 
-.container::after {
-  content: "";
-  height: $center-point-size;
-  width: $center-point-size;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  border-radius: 50%;
-  background-color: rgba(0,212,255,1);
-}
+  &::after {
+    content: "";
+    @include element-size($center-point-size, $center-point-size);
+    @include position(absolute, 50%, 50%);
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: rgba(0,212,255,1);
+  }
 
-.second-hand {
-  width: 2px;
-  height: $container-height / 2;
-  position: absolute;
-  left: $container-width / 2 - 1px;
-  border-radius: 1px;
-  @extend %animation;
-  animation-duration: 60s;
-  background: rgb(4,26,50)
-    linear-gradient(0deg, rgba(4,26,50,1) 0%,
-    rgba(194,171,91,1) 50%,
-    rgba(242,242,242,1) 100%);
-}
+  &__hand {
+    @include element-size($container-height / 3, $hand-width);
+    @include position(
+      absolute,
+      $container-height / 6,
+      $container-width / 2 - 1px
+    );
+    @extend %animation;
+    animation-duration: 3600s;
+    z-index: 1;
+    border-radius: 1px;
+    background: rgb(4,26,50)
+      linear-gradient(0deg, rgba(4,26,50,1) 0%,
+      rgba(111,199,199,1) 50%,
+      rgba(242,242,242,1) 100%);
+  }
 
-.hand {
-  width: 2px;
-  height: $container-height / 3;
-  position: absolute;
-  left: $container-width / 2 - 1px;
-  top: $container-height / 6;
-  z-index: 1;
-  @extend %animation;
-  animation-duration: 3600s;
-  border-radius: 1px;
-  background: rgb(4,26,50)
-    linear-gradient(0deg, rgba(4,26,50,1) 0%,
-    rgba(111,199,199,1) 50%,
-    rgba(242,242,242,1) 100%);
+  &__second-hand {
+    @include element-size($container-height / 2, $hand-width);
+    @include position(absolute, inherit, $container-width / 2 - 1px);
+    @extend %animation;
+    animation-duration: 60s;
+    border-radius: 1px;
+    background: rgb(4,26,50)
+      linear-gradient(0deg, rgba(4,26,50,1) 0%,
+      rgba(194,171,91,1) 50%,
+      rgba(242,242,242,1) 100%);
+  }
 }
 
 @keyframes move {
