@@ -1,0 +1,67 @@
+body {
+  background-color: rgb(20, 20, 20);
+}
+
+.watch {
+  position: relative;
+  top: 50px;
+  left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px dotted rgb(0, 0, 0);
+  outline: 15px solid rgb(1, 1, 1);
+  box-shadow: 0 10px 10px  rgb(0, 0, 0) inset,
+    0 -3px 10px  rgb(0, 0, 0) inset,
+    7px 0 10px  rgb(0, 0, 0) inset,
+    -7px 0 10px  rgb(0, 0, 0) inset,
+    0 -30px 30px rgb(0, 0, 0),
+    0 -25px 20px rgb(13, 13, 13),
+    0 30px 345px rgb(65, 65, 65),
+    0 25px 25px rgb(4, 4, 4);
+  background-color: rgb(85, 93, 109);
+  border-radius: 50%;
+  height: 320px;
+  width: 320px;
+  z-index: -1;
+
+  &__minutes {
+    background: linear-gradient(to bottom, rgb(188, 62, 62) 10%,
+    rgb(1, 1, 7) 10% 50%, rgba(12, 5, 230, 0) 50%);
+    border-radius: 35%;
+    height: 250px;
+    width: 10px;
+    z-index: 1;
+    animation: tic 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    width: 5px;
+    height: 320px;
+    border-radius: 35%;
+    background-image: linear-gradient(to bottom, rgb(47, 107, 235) 10%,
+    rgb(255, 255, 255) 10% 50%, rgba(255, 255, 255, 0)  50%);
+    animation: tic 60s steps(60) infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    background-color: rgb(66, 66, 66);
+    border-radius: 50%;
+    border: 3px solid rgb(255, 255, 255);
+    outline: 5px solid rgb(0, 0, 0);
+    height: 8px;
+    width: 8px;
+    z-index: 999;
+  }
+}
+
+@keyframes tic {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
