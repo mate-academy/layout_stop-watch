@@ -1,5 +1,6 @@
 @import "./reset";
 @import "./variables";
+@import "./extends";
 
 .watch {
   position: relative;
@@ -7,10 +8,8 @@
   top: 100px;
 
   &__clock {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include positioning;
+
     width: $clock-size;
     height: $clock-size;
     background-color: #a76db6;
@@ -19,10 +18,8 @@
   }
 
   &__circle {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include positioning;
+
     height: $clock-size / 30;
     width: $clock-size / 30;
     background-color: #f85349;
@@ -53,5 +50,15 @@
     animation: rotate 60s linear;
     animation-iteration-count: infinite;
     transform-origin: bottom;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
