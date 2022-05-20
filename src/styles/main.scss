@@ -1,0 +1,61 @@
+$clock-diameter: 400px;
+$circle-diameter: 12px;
+$sec-hand-width: 4px;
+$min-hand-width: 4px;
+$min-hand-height: $clock-diameter / 4;
+$sec-hand-height: $clock-diameter / 2;
+$sec-hand-color: red;
+$min-hand-color: black;
+
+.clock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $clock-diameter;
+  width: $clock-diameter;
+
+  &__sec {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: $sec-hand-width;
+    height: $sec-hand-height;
+    background-color: $sec-hand-color;
+    border: 1px solid $sec-hand-color;
+    border-radius: 4px;
+    animation: move_hand 60s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__min {
+    position: absolute;
+    top: ($clock-diameter / 2) - $min-hand-height;
+    z-index: 1;
+    width: $min-hand-width;
+    height: $min-hand-height;
+    background-color: $min-hand-color;
+    border: 1px solid $min-hand-color;
+    border-radius: 4px;
+    transform-origin: bottom;
+    animation: move_hand 3600s steps(60) infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    z-index: 3;
+    background-color: red;
+    width: $circle-diameter;
+    height: $circle-diameter;
+    border-radius: 50%;
+  }
+}
+
+@keyframes move_hand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
