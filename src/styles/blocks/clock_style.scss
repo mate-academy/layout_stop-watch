@@ -1,0 +1,101 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  text-align: center;
+  width: $border-size;
+  height: $border-size;
+  border-radius: 50%;
+  background: gold;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $clock-size;
+  height: $clock-size;
+
+  border-radius: 50%;
+  background: linear-gradient(
+    #6898f2,
+    #a2e0f5,
+    #f39720 70%,
+    #48c0ba 80%,
+    #fdf85d 86%
+  );
+
+  &__minute-hand {
+    box-sizing: border-box;
+    $border-width: $width-minute-hand / 3;
+    position: absolute;
+    top: ($clock-size / 2) - $size-minute-hand;
+    z-index: 1;
+    height: $size-minute-hand;
+    width: $width-minute-hand;
+
+    background: rgb(227, 226, 226);
+    border: $border-width solid gold;
+    border-radius: 1px;
+    transform-origin: bottom center;
+
+    animation: clock steps(60) infinite;
+    animation-duration: 3600s;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: ($clock-size / 2) - $size-second-hand;
+    height: $size-second-hand;
+    width: $width-second-hand;
+    z-index: 2;
+
+    background: rgb(227, 226, 226);
+    border-radius: 8px;
+    transform-origin: bottom center;
+    animation: clock infinite linear;
+    animation-duration: 60s;
+  }
+
+  &__pointer {
+    width: $width-second-hand + $width-minute-hand;
+    height: $width-second-hand + $width-minute-hand;
+
+    background: rgb(227, 226, 226);
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &__content {
+    font-size: $clock-size / 10;
+    color: rgb(227, 226, 226);
+    z-index: 0;
+
+    &_12 {
+      position: absolute;
+      top: 0;
+      left: $clock-size * 0.45;
+    }
+
+    &_3 {
+      position: absolute;
+      top: $clock-size * 0.45;
+      right: $clock-size * 0.01;
+    }
+
+    &_6 {
+      position: absolute;
+      bottom: $clock-size * 0.01;
+      left: $clock-size * 0.45;
+    }
+
+    &_9 {
+      position: absolute;
+      top: $clock-size * 0.45;
+      left: $clock-size * 0.01;
+    }
+  }
+}
