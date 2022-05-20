@@ -1,0 +1,39 @@
+.watch {
+  @include circle (400px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  background-color: #6f8faf;
+
+  &::before {
+    @include circle (15px);
+
+    content: "";
+    position: absolute;
+    z-index: 1;
+
+    background-color: #f08080;
+  }
+
+  &__minutes {
+    @extend %arrows-position-animation;
+
+    height: 100px;
+    background-color: #f08080;
+
+    animation: arrow 3600s steps(60);
+    animation-iteration-count: 60;
+    z-index: 1;
+  }
+
+  &__seconds {
+    @extend %arrows-position-animation;
+    height: 150px;
+    background-color: aliceblue;
+    animation: arrow 60s steps(60);
+    animation-iteration-count: 60;
+  }
+}
