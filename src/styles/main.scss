@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+}
+
+$container-height: 600px;
+$big-hand-height: 250px;
+$small-hand-height: 150px;
+$hand-width: 10px;
+
+.stopwatch {
+  width: $container-height;
+  height: $container-height;
+
+  position: relative;
+
+  &__big-hand {
+    position: absolute;
+    background-color: rgb(109, 184, 159);
+    border-radius: 10px;
+    
+    height: $big-hand-height;
+    width: $hand-width;
+    top: $container-height / 2 -  $big-hand-height;
+    left: $container-height / 2 -  $hand-width / 2;
+    transform: translate(50%,50%);
+
+    transform-origin: bottom;
+    animation: time-tick 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    border-radius: 50%;
+    background-color: rgb(109, 184, 170);
+    height: 20px;
+    width: 20px;
+  }
+
+  &__small-hand {
+    position: absolute;
+    top: $container-height / 2 -  $small-hand-height;
+    left: $container-height / 2 -  $hand-width / 2;
+    transform: translate(-50%,-50%);
+
+    background-color: rgb(126, 38, 38);
+    border-radius: 10px;
+    height: $small-hand-height;
+    width: $hand-width;
+
+    transform-origin: bottom;
+    animation: time-tick 3600s linear infinite;
+  }
+}
+
+@keyframes time-tick {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
