@@ -1,0 +1,74 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  width: $diameterClock;
+  height: $diameterClock;
+
+  border-radius: 50%;
+  background-color: #daa89b;
+  box-shadow: 7px -11px 24px 5px rgba(0,0,0,0.78);
+
+  &__circle {
+    position: absolute;
+
+    width: $diametercircle;
+    height: $diametercircle;
+
+    background-color: #ae847e;
+    border-radius: 50%;
+
+    z-index: 3;
+  }
+
+  &__hour {
+    position: absolute;
+
+    top: $topHour;
+
+    width: $widthArrow;
+    height: $heightHour;
+
+    border-radius: $borderRadiusForArrows;
+    background-color: #2c0e37;
+
+    transform-origin: bottom center;
+    animation: move 86 400s linear 24;
+  }
+
+  &__minute {
+    position: absolute;
+
+    top: $topMinute;
+
+    width: $widthArrow;
+    height: $heightMinute;
+
+    border-radius: $borderRadiusForArrows;
+    background-color: #cb429f;
+
+    transform-origin: bottom center;
+    animation: move 3600s linear 24;
+
+    z-index: 1;
+  }
+
+  &__second {
+    position: absolute;
+
+    top: 0;
+
+    height: $heightSecond;
+    width: $widthArrow;
+
+    border-radius: $borderRadiusForArrows;
+    background-color: #690375;
+
+    transform-origin: bottom center;
+    animation: move 60s linear 24;
+  }
+}
