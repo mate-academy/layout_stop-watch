@@ -1,0 +1,58 @@
+.clock {
+  position: relative;
+  width: $square;
+  height: $square;
+  border: 2px dotted black;
+  border-radius: $percentsHalf;
+
+  &__minute {
+    position: absolute;
+    top: $percentsHalf;
+    left: $percentsHalf;
+    width: $arrowWidth;
+    height: $square / 2.5;
+    transform: translate(-50%, -50%);
+    background-color: #d15559;
+    border-radius: 5px;
+    transform-origin: top;
+    animation-name: second;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+  }
+
+  &__second {
+    position: absolute;
+    top: $percentsHalf;
+    left: $percentsHalf;
+    transform: translate(-50%, -50%);
+    width: $arrowWidth;
+    height: $square / 2;
+    background-color: #4a9aaa;
+    border-radius: 5px;
+    transform-origin: top;
+    animation-name: second;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+
+    @keyframes second {
+      from {
+        transform: rotate(180deg);
+      }
+
+      to {
+        transform: rotate(720deg);
+      }
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $arrowWidth * 2;
+    height: $arrowWidth * 2;
+    border-radius: $percentsHalf;
+    background-color: #4a9aaa;
+  }
+}
