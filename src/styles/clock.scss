@@ -1,44 +1,74 @@
 .clock {
   position: relative;
-  height: $clock-size;
-  width: $clock-size;
-  margin: 50px;
-  background: radial-gradient(#505050, #303030);
-  border: 3px solid #302e2c;
-  box-shadow: 5px silver;
+  width: 600px;
+  height: 600px;
 
+  margin: 150px auto;
+
+  box-sizing: border-box;
   border-radius: 50%;
+  border: 9px solid #424242;
 
-  &__arrow {
+  &::after {
+    content: "";
     position: absolute;
-    left: 50%;
-    top: 30px;
-    height: $arrow-h;
-    width: $arrow-w;
-    background-color: #171717;
-    transform-origin: 50% $top-space;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    border-radius: 50%;
+    border: 4px solid #ff4040;
+  }
+
+  &__center {
+    position: absolute;
+    top: calc(50% - 13px);
+    left: calc(50% - 13px);
+    height: 36px;
+    width: 36px;
+
+    background-color: #424242;
+    border-radius: 50%;
+  }
+
+  &__sec {
+    position: absolute;
+    top: 50px;
+    left: calc(50% + 4px);
+
+    height: 250px;
+    width: 1px;
+
+    background-color: #424242;
+    transform-origin: bottom;
+    animation: rotate 60s infinite linear;
+  }
+
+  &__min {
+    position: absolute;
+    top: 75px;
+    left: calc(50% + 2px);
+
+    height: 225px;
+    width: 5px;
+
+    background-color: #424242;
+    transform-origin: bottom;
     animation: rotate 3600s infinite linear;
+  }
 
-    &::after {
-      content: "^";
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 40px;
-      font-weight: 900;
-      line-height: 13px;
-      text-align: center;
-      margin-left: -9px;
-      color: #171717;
-    }
+  &__hour {
+    position: absolute;
+    top: 150px;
+    left: 50%;
 
-    &-short {
-      position: absolute;
-      left: 50%;
-      height: $arrow-short-h;
-      width: $arrow-short-w;
-      background-color: #171717;
-      transform-origin: 50% $top-space;
-      animation: rotate 60s infinite linear;
-    }
+    height: 150px;
+    width: 9px;
+
+    background-color: #424242;
+    transform-origin: bottom;
+    animation: rotate 86400s steps(60) infinite linear;
   }
 }
 
