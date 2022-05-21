@@ -1,0 +1,88 @@
+$circleDiameter: 700px;
+$circleBorRadius: 50%;
+
+@mixin circle ($diameter, $bordRadius) {
+  height: $diameter;
+  width: $diameter;
+  border-radius: $bordRadius;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  &__circle {
+    @include circle($circleDiameter, $circleBorRadius);
+  }
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 10px solid aqua;
+
+  &::before {
+    position: absolute;
+
+    content: "";
+    height: 300px;
+    width: 15px;
+    left: 50%;
+    right: 50%;
+    bottom: 50%;
+
+    background-color: #f0f;
+    border-radius: 8px;
+    animation-name: seconds;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+
+    transform-origin: bottom;
+  }
+
+  &::after {
+    position: absolute;
+
+    content: "";
+    height: 330px;
+    width: 15px;
+    left: 50%;
+    right: 50%;
+    bottom: 50%;
+
+    background-color: #ff0;
+    border-radius: 8px;
+    animation-name: seconds;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+
+    transform-origin: bottom;
+  }
+
+  &__dot {
+    position: absolute;
+
+    height: 30px;
+    width: 30px;
+    border-radius: $circleBorRadius;
+    left: 343px;
+    bottom: 337px;
+
+    background-color: #ff0;
+  }
+}
