@@ -1,0 +1,9 @@
+@mixin hand-set ($width, $height, $duration) {
+  position: absolute;
+  top: $clock-size / 2 - $height;
+  width: $width;
+  height: $height;
+  border-radius: $rounding;
+  animation: rotate $duration steps(60, end) infinite;
+  transform-origin: bottom center;
+}
