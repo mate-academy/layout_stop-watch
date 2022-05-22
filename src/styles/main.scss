@@ -1,0 +1,73 @@
+$clock-diameter: 500px;
+$minute-hand-height: 0.35 * $clock-diameter;
+$minute-hand-width: 0.02 * $clock-diameter;
+$second-hand-height: 0.5 * $clock-diameter;
+$second-hand-width: 0.02 * $clock-diameter;
+
+@mixin circle($clock) {
+  width: $clock;
+  height: $clock;
+  border-radius: 50%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  background-color: #e5fcff;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #abdafc;
+  border: 10px solid #acacde;
+
+  @include circle($clock-diameter);
+
+  &__minute-hand {
+    position: absolute;
+    top: $clock-diameter / 2 - $minute-hand-height;
+    width: $minute-hand-width;
+    height: $minute-hand-height;
+    background-color: #c490d1;
+
+    animation: hands-move 3600s ease-in step(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: $clock-diameter / 2 - $second-hand-height;
+    width: $second-hand-width;
+    height: $second-hand-height;
+    background-color: #b8336a;
+
+    animation: hands-move 60s step(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__center {
+    position: absolute;
+    @include circle($clock-diameter * 0.05);
+    background-color: #b8336a;
+  }
+}
+
+@keyframes hands-move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
