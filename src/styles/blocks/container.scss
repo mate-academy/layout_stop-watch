@@ -1,0 +1,56 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  &__clock {
+    position: relative;
+    border-radius: 50%;
+    border-left: 10px inset $clock-border-color;
+    border-right: 10px inset $clock-border-color;
+    border-top: 1px solid $clock-border-color;
+    border-bottom: 1px solid $clock-border-color;
+    background-image: url("../images/hypno2.jpg");
+    background-position: center;
+    height: $clock-size;
+    width: $clock-size;
+    animation: rotateDigit 1s infinite alternate;
+    box-shadow: 7px -11px 24px 5px rgba(0,0,0,0.78);
+  }
+}
+
+.minutes-container {
+  @extend %arrow-position;
+  animation: rotate 3600s infinite steps(60);
+
+  &__arrow {
+    background: $clock-arrow-color;
+    border-radius: 50%;
+    height: 40%;
+    left: 49%;
+    position: absolute;
+    top: 10%;
+    transform-origin: 50% 100%;
+    width: 2%;
+  }
+}
+
+.seconds-container {
+  @extend %arrow-position;
+  animation: rotate 60s infinite steps(60);
+
+  &__arrow {
+    background: $clock-arrow-color;
+    border-radius: 50%;
+    height: 45%;
+    left: 49.5%;
+    position: absolute;
+    top: 14%;
+    transform-origin: 50% 80%;
+    width: 1%;
+    z-index: 8;
+  }
+}
