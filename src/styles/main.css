@@ -1,0 +1,60 @@
+.point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.line {
+  position: absolute;
+  height: 45px;
+  width: 5px;
+  background-color: aqua;
+  top: 8px;
+  left: 48px;
+  border-radius: 5px;
+  animation-name: move;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: 2px 42px;
+}
+
+.lineHour {
+  position: absolute;
+  height: 30px;
+  width: 5px;
+  background-color: red;
+  left: 48px;
+  top: 20px;
+  border-radius: 5px;
+  animation-name: move;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: 2px 29px;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
