@@ -1,0 +1,64 @@
+.clock {
+  border-radius: 50%;
+  background: #fff url(../styles/images/Ios_clock.svg) no-repeat center;
+  background-size: 88%;
+  height: 20em;
+  padding-bottom: 31%;
+  position: relative;
+  width: 20em;
+  margin: auto;
+}
+
+.clock::after {
+  background: #000;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  z-index: 10;
+}
+
+.minutes-container,
+
+.seconds-container {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.minutes {
+  background: orange;
+  height: 100px;
+  left: 49.45%;
+  position: absolute;
+  top: 24.5%;
+  transform-origin: 50% 100%;
+  width: 5px;
+  animation: rotate 3600s infinite steps(60);
+  border-radius: 10px;
+}
+
+.seconds {
+  background: red;
+  height: 135px;
+  left: 49.45%;
+  position: absolute;
+  top: 18.5%;
+  transform-origin: 50% 100%;
+  width: 3px;
+  z-index: 8;
+  animation: rotate 60s infinite steps(60);
+  border-radius: 10px;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
