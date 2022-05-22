@@ -1,0 +1,43 @@
+.clock {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: aqua;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  &__big-arrow {
+    height: 200px;
+    width: 20px;
+    border-radius: 5px;
+    background-color: brown;
+    position: absolute;
+    top: -185px;
+    left: 5px;
+    animation: clock 60s linear infinite;
+    transform-origin: bottom;
+    z-index: -1;
+  }
+
+  &__small-arrow {
+    height: 150px;
+    width: 20px;
+    border-radius: 5px;
+    background-color: crimson;
+    position: absolute;
+    top: -135px;
+    left: 5px;
+    animation: clock 3600s linear infinite;
+    transform-origin: bottom;
+    z-index: -1;
+  }
+}
+
+@keyframes clock {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
