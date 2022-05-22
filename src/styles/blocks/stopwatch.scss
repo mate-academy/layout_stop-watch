@@ -1,0 +1,39 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: $clock-size;
+  width: $clock-size;
+  background-color: rgb(28, 31, 33);
+  border: 5px solid $first-color;
+  border-radius: $rounding;
+
+  &__hands-knot {
+    position: absolute;
+    align-self: center;
+    height: $clock-size / 30;
+    width: $clock-size / 30;
+    background-color: $first-color;
+    border-radius: 50%;
+  }
+
+  &__minutes-hand {
+    @include hand-set ($minutes-hand-width, $minutes-hand-height, 3600s);
+    background-color: $second-color;
+  }
+
+  &__seconds-hand {
+    @include hand-set ($seconds-hand-width, $seconds-hand-height, 60s);
+    background-color: $first-color;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
