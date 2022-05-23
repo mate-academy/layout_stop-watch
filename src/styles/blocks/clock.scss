@@ -1,0 +1,44 @@
+.clock {
+  width: $clock-size;
+  height: $clock-size;
+  border: 4px solid black;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+
+  &--page {
+    margin: 0 auto;
+  }
+
+  &__heart {
+    width: 5%;
+    height: 5%;
+    position: absolute;
+    left: 47.5%;
+    top: 47.5%;
+    background-color: black;
+    border-radius: 50%;
+  }
+
+  &__seconds-hand,
+  &__minutes-hand {
+    width: 8px;
+    border-radius: 4px;
+    position: absolute;
+    left: calc(50% - 4px);
+    bottom: 50%;
+    transform-origin: bottom center;
+  }
+
+  &__seconds-hand {
+    height: 220px;
+    background-color: darkgrey;
+    animation: hand-spin 60s steps(60) infinite;
+  }
+
+  &__minutes-hand {
+    height: 160px;
+    background-color: grey;
+    animation: hand-spin 3600s linear infinite;
+  }
+}
