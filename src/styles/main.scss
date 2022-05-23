@@ -1,9 +1,41 @@
 @import "./keyframes";
-@import "./minuteHand";
-@import "./secondHand";
 
-body {
+@mixin arrow ($arrowWidth, $arrowHeight, $arrowBorderRadius) {
+  width: $arrowWidth;
+  height: $arrowHeight;
+  border-radius: $arrowBorderRadius;
+}
+
+.watch {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &__minuteHand {
+    position: absolute;
+    top: 200px;
+    background-color: orangered;
+    animation: oborot linear 3600s infinite;
+    transform-origin: bottom;
+
+    @include arrow(15px, 250px, 7px);
+  }
+
+  &__secondHand {
+    position: absolute;
+    top: 100px;
+    background-color: #00acdc;
+    animation: oborot steps(60) 60s infinite;
+    transform-origin: bottom;
+
+    @include arrow(10px, 350px, 5px);
+  }
+
+  &__secondBall {
+    position: absolute;
+    top: 435px;
+    background-color: #00acdc;
+
+    @include arrow(30px, 30px, 50%);
+  }
 }
