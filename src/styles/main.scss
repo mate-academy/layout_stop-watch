@@ -1,0 +1,63 @@
+$clock-hand-width: 20px;
+
+@keyframes move-watch-hand {
+  0% {
+    transform: rotate(-180deg);
+    transform-origin: ($clock-hand-width / 2) ($clock-hand-width / 2);
+  }
+  
+  100% {
+    transform: rotate(180deg);
+    transform-origin: ($clock-hand-width / 2) ($clock-hand-width / 2);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.watch {
+  display: flex;
+
+  &__central {
+    position: absolute;
+    transform: translate(- $clock-hand-width / 2, - $clock-hand-width / 2);
+    z-index: 1;
+    width: 2 * $clock-hand-width;
+    height: 2 * $clock-hand-width;
+    border-radius: 50%;
+    background-color: darkcyan;
+  }
+
+  &__minute {
+    position: absolute;
+    width: $clock-hand-width;
+    height: $clock-hand-width * 12;
+    border-radius: 20px;
+    background-color: indianred;
+
+    transform: rotate(180deg);
+    transform-origin: ($clock-hand-width / 2) ($clock-hand-width / 2);
+    animation: move-watch-hand 3600s steps(60) infinite;
+  }
+
+  &__second {
+    position: absolute;
+    width: $clock-hand-width;
+    height: $clock-hand-width * 16;
+    border-radius: 20px;
+    background-color: darkcyan;
+
+    transform: rotate(180deg);
+    transform-origin: ($clock-hand-width / 2) ($clock-hand-width / 2);
+    animation: move-watch-hand 60s steps(60) infinite;
+  }
+}
