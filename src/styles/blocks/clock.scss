@@ -1,0 +1,61 @@
+@import "../utils/_keyframes.scss";
+@import "../utils/_variables.scss";
+
+.clock {
+  position: relative;
+  width: $clock-radius * 2;
+  height: $clock-radius * 2;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: #222;
+  z-index: -1;
+  background-image: url("https://animalsglobe.ru/wp-content/uploads/2011/10/jaba.jpg");
+  background-position: center;
+
+  &__minutes-arrow {
+    position: absolute;
+    width: $minutes-arrow-width;
+    height: $minutes-arrow-height;
+    bottom: $clock-radius;
+    left: $clock-radius - $minutes-arrow-width / 2;
+    border: 1px solid black;
+    border-radius: 10%;
+
+    background-color: $minutes-arrow-color;
+    transform-origin: bottom;
+
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-name: minutes-animation;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__seconds-arrow {
+    position: absolute;
+    width: $seconds-arrow-width;
+    height: $seconds-arrow-height;
+    bottom: $clock-radius;
+    left: $clock-radius - $seconds-arrow-width / 2;
+    border: 1px solid black;
+    border-radius: 10%;
+
+    background-color: $seconds-arrow-color;
+    transform-origin: bottom;
+
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-name: seconds-animation;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__middle {
+    position: absolute;
+    left: $clock-radius - $clock-middle-radius;
+    bottom: $clock-radius - $clock-middle-radius;
+    width: $clock-middle-radius * 2;
+    height: $clock-middle-radius * 2;
+    background-color: #111;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
