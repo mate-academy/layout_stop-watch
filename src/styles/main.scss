@@ -1,0 +1,91 @@
+$min-hand-length: 200px;
+$hand-width: 10px;
+$sec-hand-length: 1.25 * $min-hand-length;
+$hand-border-radius: $hand-width / 2;
+$hand-center-coordinate: $hand-width / 2;
+$pivot-size: 2 * $hand-width;
+$pivot-center-coordinate: -$pivot-size / 2;
+$sec-hand-anim-duration: 60s;
+$min-hand-anim-duration: 60 * $sec-hand-anim-duration;
+$rotation-start-angle: 0;
+$rotation-end-angle: 360deg;
+
+@mixin pivot-size($size) {
+  width: $size;
+  height: $size;
+  top: -$size / 2;
+  left: -$size / 2;
+}
+
+@mixin hand-shared-params() {
+  position: absolute;
+  left: -$hand-center-coordinate;
+  width: $hand-width;
+  border-radius: $hand-border-radius;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+body {
+  margin: 0;
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stop-watch {
+  position: relative;
+
+  &__minute-hand {
+    @include hand-shared-params();
+    top: -$min-hand-length;
+    height: $min-hand-length;
+    background-color: #d15559;
+    animation-name: rotation-min;
+    animation-duration: $min-hand-anim-duration;
+  }
+
+  &__second-hand {
+    @include hand-shared-params();
+    top: -$sec-hand-length;
+    height: $sec-hand-length;
+    background-color: #4b9aaa;
+    animation-name: rotation-sec;
+    animation-duration: $sec-hand-anim-duration;
+  }
+
+  &__pivot {
+    @include pivot-size($pivot-size);
+    position: absolute;
+    border-radius: 50%;
+    background-color: #4b9aaa;
+  }
+
+  @keyframes rotation-sec {
+    0% {
+      transform: rotate($rotation-start-angle);
+      transform-origin: $hand-center-coordinate $sec-hand-length;
+    }
+
+    100% {
+      transform: rotate($rotation-end-angle);
+      transform-origin: $hand-center-coordinate $sec-hand-length;
+    }
+  }
+
+  @keyframes rotation-min {
+    0% {
+      transform: rotate($rotation-start-angle);
+      transform-origin: $hand-center-coordinate $min-hand-length;
+    }
+
+    100% {
+      transform: rotate($rotation-end-angle);
+      transform-origin: $hand-center-coordinate $min-hand-length;
+    }
+  }
+}
