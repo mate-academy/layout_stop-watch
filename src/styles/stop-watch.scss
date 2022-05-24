@@ -1,0 +1,39 @@
+.stop-watch {
+  &__second-hand {
+    position: relative;
+    bottom: 290px;
+    left: 5px;
+    @include clock_hand(300px,10px,#5090E2);
+
+    animation: move 60s infinite 0s;
+    transform-origin: bottom;
+  }
+
+  &__minute-hand {
+    position: relative;
+    bottom: 470px;
+    left: 5px;
+    @include clock_hand(180px, 10px, #FF3E8A);
+
+    animation: move 3600s infinite 0s;
+    transform-origin: bottom;
+  }
+
+  &__container,
+  &__middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include middle(20px, 20px, #5090e2);
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
