@@ -1,0 +1,56 @@
+@import "./variable";
+@import "./reset.scss";
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  %type-hands {
+    position: absolute;
+    bottom: 50%;
+
+    width: $arrow-hand;
+    border-radius: 10px;
+    transform-origin: bottom;
+
+  }
+
+  @mixin round($size) {
+    width: $size;
+    height: $size;
+  }
+
+  &__circle {
+    position: absolute;
+    @include round($diameter);
+
+    border-radius: 50%;
+    background-color: rgba($color: #11c56e, $alpha: 0.5);
+  }
+
+  &__minute {
+    @extend %type-hands;
+    height: 300px;
+    background-color: rgba($color: #7561e9, $alpha: 0.5);
+    animation: watch 3600s linear infinite;
+  }
+
+  &__second {
+    @extend %type-hands;
+    height: 150px;
+    background-color: rgba($color: #9c1414, $alpha: 0.5);
+    animation: watch 60s linear infinite;
+  }
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
