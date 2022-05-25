@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+}
+
+@keyframes watch {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: #6495ed;
+  border-radius: 50%;
+  border: 15px solid #c0c0c0;
+  margin: 50px auto;
+
+  &__circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 15px;
+    height: 15px;
+    background-color: #c71585;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    left: 201px;
+    top: 72px;
+    width: 12px;
+    height: 130px;
+    background-color: #db7093;
+    border-radius: 35%;
+    animation: watch 3600s linear infinite;
+    transform-origin: 6px 130px;
+  }
+
+  &__second-hand {
+    position: absolute;
+    left: 202px;
+    top: 35px;
+    height: 170px;
+    width: 10px;
+    background-color: #ffb6c1;
+    border-radius: 45%;
+    animation: watch 60s linear infinite;
+    transform-origin: 5px 170px;
+  }
+}
