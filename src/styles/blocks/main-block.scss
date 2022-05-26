@@ -1,0 +1,20 @@
+.main-block {
+  width: $commonWidth * 2;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main-block::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: $secondsHeight - $beforePlace;
+  left: -($dotSizes - $commonWidth) / 2;
+  @include dotSize($dotSizes);
+  border-radius: 50%;
+  background-color: rgb(0, 153, 255);
+  z-index: 1;
+}
