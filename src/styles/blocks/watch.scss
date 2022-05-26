@@ -1,0 +1,28 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  height: $second-hand-height;
+  position: relative;
+
+  &__minute-hand {
+    position: absolute;
+    bottom: 0;
+    @include watchItem($minute-hand-height, $minute-hand-width, 10px, red);
+    transform-origin: bottom;
+    animation: rotation steps(60) 3600s infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    @include watchItem($second-hand-height, $second-hand-width, 10px, blue);
+    transform-origin: bottom;
+    animation: rotation steps(60) 60s infinite;
+  }
+
+  &__center {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    @include watchItem($center-width, $center-width, 50%, yellow);
+  }
+}
