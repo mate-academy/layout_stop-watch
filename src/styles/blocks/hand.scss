@@ -1,0 +1,20 @@
+.hand {
+  position: absolute;
+  bottom: 0;
+  transform-origin: bottom;
+
+  &--minute {
+    @include watchItem($minute-hand-height, $minute-hand-width, 10px, red);
+    animation: rotation steps(60) 3600s infinite;
+  }
+
+  &--second {
+    @include watchItem($second-hand-height, $second-hand-width, 10px, blue);
+    animation: rotation steps(60) 60s infinite;
+  }
+
+  &--center {
+    @include watchItem($center-width, $center-width, 50%, yellow);
+    transform: translateY(50%);
+  }
+}
