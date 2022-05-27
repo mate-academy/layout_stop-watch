@@ -1,0 +1,39 @@
+.watch {
+  width: $watchRadius * 2;
+  height: $watchRadius * 2;
+  border-radius: $circle;
+  background-image: url(../image/stop_watch.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__hand {
+    position: absolute;
+    top: $shiftHand + ($watchRadius - $secHandLength);
+    width: $secHandWidth;
+    height: $secHandLength;
+    border: 1px solid black;
+    border-radius: $circle;
+    background-color: red;
+    transform-origin: $secHandWidth / 2  $secHandLength - $shiftHand;
+    animation: move_sec_hand 60s linear infinite;
+  }
+
+  &__hand--minute {
+    top: $shiftHand + ($watchRadius - $minuteHandLength);
+    width: $minuteHandWidth;
+    height: $minuteHandLength;
+    background-color: black;
+    transform-origin: $minuteHandWidth / 2 $minuteHandLength - $shiftHand;
+    animation: move_minute_hand 3600s linear infinite;
+  }
+
+  &__center-point {
+    position: absolute;
+    top: $watchRadius - $minuteHandWidth;
+    height: $minuteHandWidth * 2;
+    width: $minuteHandWidth * 2;
+    border: 1px solid rgb(203, 200, 200);
+    border-radius: $circle;
+    background-color: rgb(203, 200, 200);
+  }
+}
