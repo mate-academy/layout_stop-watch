@@ -1,0 +1,49 @@
+@import "./utils/mixins";
+
+.body {
+  margin: 0;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  position: relative;
+  margin: 200px auto;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 10%;
+}
+
+.seconds-hand {
+  @include hand;
+
+  animation: rotation 60s steps(60, start) 0.5s infinite;
+}
+
+.minutes-hand {
+  @include hand;
+  background-color: blueviolet;
+  height: 20%;
+
+  animation: rotation 3600s linear 0.5s infinite;
+}
+
+.center {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: yellowgreen;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
