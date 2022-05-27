@@ -1,0 +1,76 @@
+$middle: 50%;
+$handsSize: 10px;
+
+.page {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@mixin clock-hand {
+  position: absolute;
+
+  bottom: $middle;
+  left: $middle;
+  width: $handsSize;
+
+  transform-origin: center bottom;
+  animation-timing-function: steps(60);
+  animation-iteration-count: infinite;
+}
+
+.stopwatch {
+  &__second {
+    height: 380px;
+    @include clock-hand;
+
+    background-color: rgb(13, 218, 233);
+
+    animation-name: moveSecond;
+    animation-duration: 60s;
+
+    @keyframes moveSecond {
+      from {
+        transform: rotate(1);
+      }
+
+      to {
+        transform: rotate(1turn);
+      }
+    }
+  }
+
+  &__minute {
+    height: 200px;
+    @include clock-hand;
+
+    background-color: rgb(248, 59, 59);
+
+    animation-name: moveMinute;
+    animation-duration: 3600s;
+
+    @keyframes moveMinute {
+      from {
+        transform: rotate(0);
+      }
+
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
+  }
+
+  &__middle {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: $middle;
+    left: 50.2%;
+
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 2;
+
+    background-color: rgb(13, 218, 233);
+  }
+}
