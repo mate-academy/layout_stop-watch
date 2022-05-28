@@ -8,34 +8,33 @@
   border-radius: 50%;
 
   &__minutes {
-    @extend %leftBottom;
+    @extend%minutesPosition;
     @extend %absoluteBlock;
     width: 8px;
     height: 105px;
     background-color: black;
     border-radius: $borderRadius;
-    animation: time-rotate 3600s linear infinite;
+    animation: time-rotate $hour linear infinite;
     transform-origin: bottom;
   }
 
   &__seconds {
-    @extend %leftBottom;
+    @extend %secondsPosition;
     @extend %absoluteBlock;
     width: 4px;
     height: 145px;
     background-color: aqua;
     border-radius: $borderRadius;
-    animation: time-rotate 60s steps(60, end) infinite;
+    animation: time-rotate $minute infinite;
 
     transform-origin: bottom;
+
   }
 
   &__circle {
-    @extend %leftBottom;
+    @extend %circlePosition;
     @extend %absoluteBlock;
     @include clockCircle($circleDiametr);
-    margin-left: -10px;
-    margin-bottom: -10px;
     background-color: aqua;
     border-radius: 50%;
   }
