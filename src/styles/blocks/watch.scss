@@ -1,0 +1,41 @@
+.watch {
+  @include clockCircle($clockDiameter);
+  position: relative;
+  background: radial-gradient(#115b5e, #14c5c5, rgb(0, 0, 0));
+  background-color: aqua;
+  border: 10px solid aqua;
+  border-style: solid;
+  border-radius: 50%;
+
+  &__minutes {
+    @extend%minutesPosition;
+    @extend %absoluteBlock;
+    width: 8px;
+    height: 105px;
+    background-color: black;
+    border-radius: $borderRadius;
+    animation: time-rotate $hour linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    @extend %secondsPosition;
+    @extend %absoluteBlock;
+    width: 4px;
+    height: 145px;
+    background-color: aqua;
+    border-radius: $borderRadius;
+    animation: time-rotate $minute infinite;
+
+    transform-origin: bottom;
+
+  }
+
+  &__circle {
+    @extend %circlePosition;
+    @extend %absoluteBlock;
+    @include clockCircle($circleDiametr);
+    background-color: aqua;
+    border-radius: 50%;
+  }
+}
