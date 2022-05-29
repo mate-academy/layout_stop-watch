@@ -1,0 +1,132 @@
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 2px solid black;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    align-self: center;
+    border: 1px solid white;
+    border-radius: 10px 10px 0 0;
+    background-color: black;
+    transform: translateX(-50%);
+    transform-origin: bottom center;
+
+    &--minute {
+      width: 10px;
+      height: 40%;
+      animation: rotation 3600s infinite linear;
+      transform-origin: bottom;
+    }
+
+    &--hour {
+      width: 10px;
+      height: 35%;
+      animation: rotation 86400s infinite linear;
+      transform-origin: bottom;
+    }
+
+    &--seconds {
+      width: 4px;
+      height: 45%;
+      background-color: red;
+      animation: rotation 60s infinite linear;
+      animation-timing-function: steps(60, end);
+      transform-origin: bottom;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    // $rotations:
+    //   '1' 0deg,
+    //   '2' 30deg,
+    //   '3' 60deg,
+    //   '4' 90deg,
+    //   '5' 120deg,
+    //   '6' 150deg,
+    //   '7' 180deg,
+    //   '8' 210deg,
+    //   '9' 240deg,
+    //   '10' 270deg,
+    //   '11' 300deg,
+    //   '12' 330deg;
+
+    // @for $index from 1 through 12 {
+    //   &:nth-child(#{$index})::after {
+    //     content: "#{$index}";
+    //   }
+
+    // @each $index, $number in $rotations {
+    //   &--#{$index} {
+    //     transform: rotate(#{$rotations});
+    //   }
+    // }
+
+    &--1 {
+      transform: rotate(30deg);
+    }
+    &--2 {
+      transform: rotate(60deg);
+    }
+    &--3 {
+      transform: rotate(90deg);
+    }
+    &--4 {
+      transform: rotate(120deg);
+    }
+    &--5 {
+      transform: rotate(150deg);
+    }
+    &--6 {
+      transform: rotate(180deg);
+    }
+    &--7 {
+      transform: rotate(210deg);
+    }
+    &--8 {
+      transform: rotate(240deg);
+    }
+    &--9 {
+      transform: rotate(270deg);
+    }
+    &--10 {
+      transform: rotate(300deg);
+    }
+    &--11 {
+      transform: rotate(330deg);
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
