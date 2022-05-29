@@ -1,0 +1,90 @@
+@import './variables.scss';
+
+* { 
+  margin: 0;
+}
+
+body { 
+background-image: url(https://i.pinimg.com/736x/74/d9/0c/74d90cc05c5fdd48b005ece6dbff2d4f--hand-clock-wood-clocks.jpg);
+background-repeat: no-repeat;
+background-position: center;
+}
+
+.watch {
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://art-oboi.com.ua/img/gallery/61/thumbs/thumb_l_17044.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+  background-size: 1500px;
+}
+
+.minute-arrow {
+  box-sizing: border-box;
+  position: relative;
+  right: 250px;
+  bottom: 150px;
+  height: 300px;
+  width: 500px;
+  border-right: 15px solid rgb(54, 108, 195);
+  animation: one-minute 3600s infinite;
+  animation-timing-function: ease-out;
+
+  @keyframes one-minute {
+    0% { 
+      transform-origin: right bottom;
+    }
+    
+    100% { 
+      transform: rotate(360deg);
+      transform-origin: right bottom;
+    }
+  }
+
+  &__second-arrow {
+    position: relative;
+    top: 50px;
+    box-sizing: border-box;
+    height: 250px;
+    width: 500px;
+    border-right: 15px solid yellow; 
+    border-top-right-radius: 1%;
+    animation: sixty-seconds 60s infinite;
+    animation-timing-function: ease-out;
+
+    @keyframes sixty-seconds{
+      0% { 
+        transform-origin: right bottom;
+      }
+
+      100% { 
+        transform: rotate(360deg);
+        transform-origin: right bottom;
+      }
+    }
+  }
+
+  .middle {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    top: 23px;
+    left: 474px;
+    border-radius: 50%;
+    background-image: url(https://i.obozrevatel.com/news/2022/4/19/94e363cf98cd0ea5cceffc620ffcc680-1.jpg?size=1944x924);
+    background-position: center;
+    background-size: 105px;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+}
+
+
+
+
+
+
