@@ -1,43 +1,54 @@
 @import './variables.scss';
+@import './mixins.scss';
+@import './extends.scss';
+@import './variables.scss';
+
+%bg-position { 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+%arrow-basics { 
+  box-sizing: border-box;
+  position: relative;
+  width: 500px;
+}
 
 * { 
   margin: 0;
 }
 
 body { 
-background-image: url(https://i.pinimg.com/736x/74/d9/0c/74d90cc05c5fdd48b005ece6dbff2d4f--hand-clock-wood-clocks.jpg);
-background-repeat: no-repeat;
-background-position: center;
+  @extend %bg-position;
+  background-image: url(https://i.pinimg.com/736x/74/d9/0c/74d90cc05c5fdd48b005ece6dbff2d4f--hand-clock-wood-clocks.jpg);
 }
 
 .watch {
-  height: 800px;
+  @extend %bg-position;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 800px;
   background-image: url(https://art-oboi.com.ua/img/gallery/61/thumbs/thumb_l_17044.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.5;
   background-size: 1500px;
+  opacity: 0.6;
 }
 
 .minute-arrow {
-  box-sizing: border-box;
-  position: relative;
+  @extend %arrow-basics;
+  height: 300px;
   right: 250px;
   bottom: 150px;
-  height: 300px;
-  width: 500px;
   border-right: 15px solid rgb(54, 108, 195);
   animation: one-minute 3600s infinite;
   animation-timing-function: ease-out;
 
-  @keyframes one-minute {
+
+  @keyframes one-minute{
     0% { 
       transform-origin: right bottom;
     }
-    
+
     100% { 
       transform: rotate(360deg);
       transform-origin: right bottom;
@@ -45,13 +56,10 @@ background-position: center;
   }
 
   &__second-arrow {
-    position: relative;
+    @extend %arrow-basics;
     top: 50px;
-    box-sizing: border-box;
     height: 250px;
-    width: 500px;
     border-right: 15px solid yellow; 
-    border-top-right-radius: 1%;
     animation: sixty-seconds 60s infinite;
     animation-timing-function: ease-out;
 
@@ -67,7 +75,8 @@ background-position: center;
     }
   }
 
-  .middle {
+  &__middle {
+    @extend %bg-position;
     display: block;
     position: relative;
     width: 50px;
@@ -76,15 +85,22 @@ background-position: center;
     left: 474px;
     border-radius: 50%;
     background-image: url(https://i.obozrevatel.com/news/2022/4/19/94e363cf98cd0ea5cceffc620ffcc680-1.jpg?size=1944x924);
-    background-position: center;
     background-size: 105px;
-    background-repeat: no-repeat;
-    z-index: 1;
   }
-}
 
+  &__middle:hover { 
+      animation: russkiy-korabl 6s infinite;
+      animation-timing-function: linear;
+    }
 
+    @keyframes russkiy-korabl{
+      0% { 
+        transform-origin: center;
+      }
 
-
-
-
+      100% { 
+        transform: rotate(360deg);
+        transform-origin: center;
+      }
+    }
+  }
