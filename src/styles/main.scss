@@ -1,106 +1,11 @@
-@import './variables.scss';
-@import './mixins.scss';
-@import './extends.scss';
-@import './variables.scss';
-
-%bg-position { 
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-%arrow-basics { 
-  box-sizing: border-box;
-  position: relative;
-  width: 500px;
-}
-
-* { 
-  margin: 0;
-}
+@import './tools/variables';
+@import './tools/extends';
+@import './tools/resets';
+@import './watch.scss';
 
 body { 
   @extend %bg-position;
   background-image: url(https://i.pinimg.com/736x/74/d9/0c/74d90cc05c5fdd48b005ece6dbff2d4f--hand-clock-wood-clocks.jpg);
 }
 
-.watch {
-  @extend %bg-position;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 800px;
-  background-image: url(https://art-oboi.com.ua/img/gallery/61/thumbs/thumb_l_17044.jpg);
-  background-size: 1500px;
-  opacity: 0.6;
-}
 
-.minute-arrow {
-  @extend %arrow-basics;
-  height: 300px;
-  right: 250px;
-  bottom: 150px;
-  border-right: 15px solid rgb(54, 108, 195);
-  animation: one-minute 3600s infinite;
-  animation-timing-function: ease-out;
-
-
-  @keyframes one-minute{
-    0% { 
-      transform-origin: right bottom;
-    }
-
-    100% { 
-      transform: rotate(360deg);
-      transform-origin: right bottom;
-    }
-  }
-
-  &__second-arrow {
-    @extend %arrow-basics;
-    top: 50px;
-    height: 250px;
-    border-right: 15px solid yellow; 
-    animation: sixty-seconds 60s infinite;
-    animation-timing-function: ease-out;
-
-    @keyframes sixty-seconds{
-      0% { 
-        transform-origin: right bottom;
-      }
-
-      100% { 
-        transform: rotate(360deg);
-        transform-origin: right bottom;
-      }
-    }
-  }
-
-  &__middle {
-    @extend %bg-position;
-    display: block;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    top: 23px;
-    left: 474px;
-    border-radius: 50%;
-    background-image: url(https://i.obozrevatel.com/news/2022/4/19/94e363cf98cd0ea5cceffc620ffcc680-1.jpg?size=1944x924);
-    background-size: 105px;
-  }
-
-  &__middle:hover { 
-      animation: russkiy-korabl 6s infinite;
-      animation-timing-function: linear;
-    }
-
-    @keyframes russkiy-korabl{
-      0% { 
-        transform-origin: center;
-      }
-
-      100% { 
-        transform: rotate(360deg);
-        transform-origin: center;
-      }
-    }
-  }
