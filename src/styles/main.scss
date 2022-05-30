@@ -13,33 +13,33 @@ body {
   border: 5px solid rgb(16, 17, 16);
   background-color: rgb(226, 214, 214);
 
-  &__time{
+  &__time {
     position: absolute;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, Times, serif;
     font-size: 30px;
     font-weight: 700;
     width: 40px;
     height: 40px;
     border-radius: 20px;
-    color: red;
+    color: rgb(255, 0, 0);
   }
 
-  &__12 {
+  &-twelve {
     top: 0;
     left: 230px;
   }
   
-  &__3 {
+  &-three {
     top: 230px;
     left: 460px;
   }
 
-  &__6 {
+  &-six {
     top: 460px;
     left: 230px;
   }
 
-  &__9 {
+  &-nine {
     top: 230px;
     left: 20px;
   }
@@ -51,11 +51,9 @@ body {
     height: 170px;
     width: 10px;
     border-radius: 5px;
-    background-color: red;
-    animation: watch 3600s 1 reverse;
+    background-color: rgb(255, 0, 0);
+    animation: watch 3600s infinite reverse;
     transform-origin: bottom center;
-    
-
   }
 
   &__second-hand {
@@ -87,4 +85,3 @@ body {
     transform: rotate(360deg);
   }
 }
-
