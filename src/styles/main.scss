@@ -1,0 +1,87 @@
+body {
+  display: flex;
+}
+
+.watch {
+  position: relative;
+  margin-top: calc((100vh - 500px) / 2);
+  margin-left: calc((100vw - 500px) / 2);
+  width: 500px;
+  height: 500px;
+  min-width: 500px;
+  border-radius: 250px;
+  border: 5px solid rgb(16, 17, 16);
+  background-color: rgb(226, 214, 214);
+
+  &__time {
+    position: absolute;
+    font-family: Georgia, Times, serif;
+    font-size: 30px;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    color: rgb(255, 0, 0);
+  }
+
+  &-twelve {
+    top: 0;
+    left: 230px;
+  }
+  
+  &-three {
+    top: 230px;
+    left: 460px;
+  }
+
+  &-six {
+    top: 460px;
+    left: 230px;
+  }
+
+  &-nine {
+    top: 230px;
+    left: 20px;
+  }
+  
+  &__minute-hand {
+    position: absolute;
+    top: 80px;
+    left: 245px;
+    height: 170px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+    animation: watch 3600s 1 reverse;
+    transform-origin: bottom center;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 50px;
+    left: 249px;
+    height: 200px;
+    width: 2px;
+    border-radius: 1px;
+    background-color: black;
+    animation: watch 60s linear 60 reverse;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    position: absolute;
+    top: 225px;
+    left: 225px;
+    background-color: black;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+
+  }
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(360deg);
+  }
+}
