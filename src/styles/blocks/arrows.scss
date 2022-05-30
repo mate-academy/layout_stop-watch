@@ -1,0 +1,42 @@
+.hours {
+  @extend %moving-arrow;
+  @extend %arrow-position;
+  border: 0.01 * $watch-size solid black;
+  width: 0.01 * $watch-size;
+  height: 0.2 * $watch-size;
+  background-color: #f5f5dc;
+  animation-duration: 43200s;
+  transform-origin: top;
+}
+
+.minute {
+  @extend %moving-arrow;
+  @extend %arrow-position;
+  border: 0.01 * $watch-size solid black;
+  width: 0.01 * $watch-size;
+  height: 0.3 * $watch-size;
+  background-color: #f5f5dc;
+  animation-duration: 3600s;
+  transform-origin: top;
+}
+
+.second {
+  @extend %moving-arrow;
+  @extend %arrow-position;
+  border: (0.01 * $watch-size) / 4
+    solid red;
+  width: (0.01 * $watch-size) / 4;
+  height: 0.37 * $watch-size;
+  background-color: black;
+  animation-duration: 60s;
+  transform-origin: top;
+}
+
+.center {
+  @extend %arrow-position;
+  width: 0.05 * $watch-size;
+  height: 0.05 * $watch-size;
+  background-color: black;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
