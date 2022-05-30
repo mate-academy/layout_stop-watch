@@ -1,0 +1,134 @@
+.stopwatch {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: $watch-size;
+  height: $watch-size;
+  background-color: rgb(172, 169, 169);
+  border-radius: 50%;
+  box-shadow: 25px 25px 50px rgba(128, 128, 128, 0.85), -25px -25px 50px #fff;
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(100.5%);
+    box-shadow: 50px 50px 75px rgba(128, 128, 128, 0.85), -50px -50px 75px #fff;
+  }
+
+  &__bazel {
+    position: absolute;
+    width: $watchface-size;
+    height: $watchface-size;
+    background-color: rgb(230, 230, 230);
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 5px rgba(100, 100, 100, 0.75),
+      inset -5px -5px 10px rgba(255, 255, 255, 0.75);
+    transition: 0.5s;
+  }
+
+  &__marks {
+    position: absolute;
+    width: $watchface-size - 50px;
+    height: $watchface-size - 50px;
+    background-color: transparent;
+    border: 3px dotted gray;
+    border-radius: 50%;
+  }
+
+  &__minutes {
+    position: absolute;
+    z-index: 1;
+    bottom: 50%;
+    width: 10px;
+    border-radius: 5px;
+    height: $watchface-size / 2 - 30px;
+    background-color: red;
+    transform-origin: bottom;
+    animation: minutes 3600s infinite;
+  }
+
+  &__center1 {
+    bottom: 50%;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  &__seconds {
+    position: absolute;
+    z-index: 3;
+    bottom: 50%;
+    width: 3px;
+    height: $watchface-size / 2 - 15px;
+    background-color: black;
+    transform-origin: bottom;
+    animation: seconds 60s steps(60, start) 1s infinite;
+  }
+
+  &__center2 {
+    position: absolute;
+    z-index: 4;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes seconds {
+  0% {
+    transform: rotate(0);
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  25% {
+    transform: rotate(90deg);
+    box-shadow: 5px -5px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  50% {
+    transform: rotate(180deg);
+    box-shadow: -5px -5px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  75% {
+    transform: rotate(270deg);
+    box-shadow: -5px 5px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes minutes {
+  0% {
+    transform: rotate(0);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  25% {
+    transform: rotate(90deg);
+    box-shadow: 3px -3px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  50% {
+    transform: rotate(180deg);
+    box-shadow: -3px -3px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  75% {
+    transform: rotate(270deg);
+    box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  }
+}
