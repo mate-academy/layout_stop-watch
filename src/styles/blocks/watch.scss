@@ -1,0 +1,29 @@
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.watch {
+  @include square($watch-size);
+  position: absolute;
+  display: flex;
+  background-color: #f5f5dc;
+  transform: translateY(-50%);
+  top: 50%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+
+  &__field {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-image: url(../images/wathes_2.jpg);
+    background-size: cover;
+    width: 0.9 * $watch-size;
+    height: 0.9 * $watch-size;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+  }
+}
