@@ -1,0 +1,89 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  background-color: $main-color-deep;
+  border: ($stopwatch-size * 0.01) solid $light-color;
+  border-radius: 50%;
+  box-shadow: inset 5px 5px 0 5px rgba(219, 88, 107, 0.4),
+    inset 20px 40px 0 5px rgba(219, 88, 107, 0.2),
+    5px 5px 0 0 rgba(219, 88, 107, 0.5);
+
+  &__dot {
+    position: relative;
+    width: $dot-border-size;
+    height: $dot-border-size;
+    background-color: $main-color-deep;
+    border: ($dot-border-size / 2 * 0.1) dashed $light-color;
+    border-radius: 50%;
+    box-shadow: inset 2px 2px 0 2px rgba(219, 88, 107, 0.4),
+      inset 7px 14px 0 2px rgba(219, 88, 107, 0.2),
+      3px 3px 0 0 rgba(219, 88, 107, 0.5);
+    animation: move steps(60) $min infinite;
+    z-index: 2;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: $dot-size;
+      height: $dot-size;
+      border-radius: 50%;
+      background-color: $light-color;
+      box-shadow: 3px 3px 0 0 rgba(219, 88, 107, 0.5);
+    }
+  }
+
+  &__sec,
+  &__min {
+    position: absolute;
+    background-color: $light-color;
+    transform-origin: center bottom;
+    box-shadow: 3px 3px 5px 0 rgba(219, 88, 107, 0.5);
+  }
+
+  &__sec {
+    top: $stopwatch-size / 2 - $sec-hand-height;
+    width: $sec-hand-width;
+    height: $sec-hand-height;
+    border-radius: $sec-hand-width / 2;
+    animation: move steps(60) $min infinite;
+    z-index: 1;
+  }
+
+  &__min {
+    top: $stopwatch-size / 2 - $min-hand-height;
+    width: $min-hand-width;
+    height: $min-hand-height;
+    border-radius: $min-hand-width / 2;
+    animation: move linear $hour infinite;
+  }
+
+  &__indicator {
+    position: absolute;
+    top: $dot-size / 2;
+    left: calc(50% - (#{$indicator-size} / 2));
+    width: $indicator-size;
+    height: $indicator-size;
+    background-color: rgba(244, 247, 252, 0.5);
+    border-radius: 50%;
+    transform-origin: center (($stopwatch-size / 2) - ($dot-size / 2));
+
+    &:nth-of-type(5n) {
+      height: $indicator-size * 5;
+      border-radius: $indicator-size / 2;
+      background-color: rgba(244, 247, 252, 1);
+    }
+
+    @for $index from 1 through 60 {
+      &:nth-of-type(#{$index}) {
+        transform: rotateZ(calc(6deg * #{$index}));
+      }
+    }
+  }
+}
