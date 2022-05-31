@@ -1,0 +1,84 @@
+.watch {
+  @include circle($watch-size);
+  position: relative;
+
+  background-image: url(../images/pngkit_stop-watch-png_725766.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 101%;
+
+  border: double rgb(123, 123, 122) 7px;
+  box-shadow: $watch-shadow;
+
+  &:before {
+    content: "";
+    height: $sec-arrow-size;
+    background-color: rgb(227, 54, 71);
+    z-index: 2;
+
+    @extend %arrow-style;
+    @extend %arrow-position;
+    @extend %arrow-animation;
+    animation-duration: 60s;
+  }
+
+  &:after {
+    content: "";
+    height: $min-arrow-size;
+    background-color: rgb(40, 188, 191);
+    z-index: 1;
+
+    @extend %arrow-style;
+    @extend %arrow-position;
+    @extend %arrow-animation;
+    animation-duration: 3600s;
+  }
+
+  &__center {
+    @include circle($gear-size);
+    @extend %circles-position;
+    background-color: antiquewhite;
+    border: solid rgb(186, 192, 189) 2px;
+    z-index: 3;
+  }
+
+  &__rings {
+    @include circle($circle-size);
+    @extend %circles-position;
+    border: double rgb(170, 170, 170) 4px;
+  }
+
+  &__rings-small {
+    @include circle($circle-size/8);
+    @extend %circles-position;
+    border: double rgb(224, 224, 224) 2px;
+  }
+
+  &__button-ring {
+    z-index: -1;
+    width: 38px;
+    height: 30px;
+
+    border: solid rgb(172, 168, 168) 4px;
+    border-radius: 50%;
+    box-shadow: $button-ring-shadow;
+
+    @extend %button-position;
+    transform: translate(-50%, -15%);
+
+    &:after {
+      content: "";
+      width: 16px;
+      height: 17px;
+
+      border: rgb(201, 199, 199) solid 1px;
+      border-radius: 2px;
+      background: linear-gradient(to right, #ccc9c8 0%,
+      #9da2a4 25%, #d5d5d4 100%);
+
+      @extend %button-position;
+      bottom: -10%;
+      transform: translate(-50%);
+    }
+  }
+}
