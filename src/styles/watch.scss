@@ -1,0 +1,77 @@
+.watch {
+  @extend %bg-position;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  background-image: url(https://art-oboi.com.ua/img/gallery/61/thumbs/thumb_l_17044.jpg);
+  background-size: 1500px;
+  opacity: 0.6;
+
+  &__minute-arrow { 
+    @extend %arrow-basics;
+    right: 220px;
+    bottom: 148px;
+  }
+
+  .minute-arrow { 
+    width: $arrow-width;
+    height: 300px;
+    border-right: 15px solid rgb(54, 108, 195);
+    animation: one-minute 3600s infinite;
+    animation-timing-function: linear;
+  
+  
+    @keyframes one-minute{
+      0% { 
+        transform-origin: $arrow-start;
+      }
+
+      100% {
+        transform: rotate(360deg);
+        transform-origin: $arrow-start;
+      }
+    }
+
+    &__second-arrow {
+      @extend %arrow-basics;
+      top: 50px;
+
+    }
+
+    .second-arrow { 
+      width: $arrow-width;
+      height: 250px;
+      border-right: 15px solid yellow; 
+      animation: one-minute 60s infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  &__middle { 
+    position: relative;
+    right: 250px;
+  }
+
+  .middle { 
+    @extend %bg-position;
+    width: $middle-s;
+    height: $middle-s;
+    background-image: url(https://i.obozrevatel.com/news/2022/4/19/94e363cf98cd0ea5cceffc620ffcc680-1.jpg?size=1944x924);
+    background-size: 105px;
+    border-radius: 50%;
+  
+    &:hover { 
+      animation: russkiy-korabl 6s infinite;
+      animation-timing-function: linear;
+    
+      @keyframes russkiy-korabl{
+  
+        100% { 
+          transform: rotate(360deg);
+          transform-origin: $middle-start;
+        }
+      }
+    }
+  }  
+}
