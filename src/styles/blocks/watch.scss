@@ -1,0 +1,81 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}  
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $watch-size;
+  height: $watch-size;
+  border: 2px solid #000;
+  border-radius: 30px;
+  box-shadow: 2px 5px 20px 1px rgba(0, 0, 0, 0.3);
+
+  &__second-hand,
+  &__minute-hand {
+    position: absolute;
+    border-radius: 2px;
+    transform-origin: center bottom;
+  }
+
+  &__second-hand {
+    width: 3px;
+    height: $height-second-hand;
+  }
+
+  &__minute-hand {
+    width: 6px;
+    height: $height-minute-hand;
+  }
+
+  &__second-hand { 
+    top: $second-hand-position;
+    animation: round 60s steps(60 ) infinite;
+    background-color: #f90;
+  }
+
+  &__minute-hand { 
+    top: $minute-hand-position;
+    animation: round 3600s linear infinite;
+    background-color: #099;
+  }
+
+  &__center-point {
+    position: absolute;
+    width: $center-point;
+    height: $center-point;
+    border-radius: 50%;
+    background-color: #f90;
+    z-index: 1;
+  }
+
+  &__number {
+    position: absolute;
+    font-size: 40px;
+  
+  }
+}
+
+.number-3 {
+  right: 10px;
+}
+.number-6 {
+  bottom: 5px;
+}
+.number-9 {
+  left: 10px;
+}
+.number-12 {
+  top: 5px;
+}
+
+@keyframes round {
+  100% {
+    transform: rotate(360deg);
+  }
+}
