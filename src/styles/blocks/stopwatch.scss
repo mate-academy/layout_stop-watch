@@ -1,0 +1,63 @@
+.stopwatch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  content: "";
+  width: $watch-size;
+  height: $watch-size;
+  border: 1px solid purple;
+  background-color: pink;
+  border-radius: 50%;
+
+  &__min {
+    position: absolute;
+    margin-top: 25%;
+    content: "";
+    height: $watch-size / 4;
+    width: $wight-hand * 1.5;
+    border: 2px solid orange;
+    border-radius: 50%;
+    background-color: orange;
+
+    transform-origin: bottom;
+    animation: stopwatch-rotate 3600s linear infinite;
+  }
+
+  &__sec {
+    position: absolute;
+    content: "";
+    height: $watch-size / 2;
+    width: $wight-hand;
+    border: 2px solid purple;
+    border-radius: 50%;
+    background-color: purple;
+
+    transform-origin: bottom;
+    animation: stopwatch-rotate 60s linear infinite;
+  }
+
+  &__point {
+    position: absolute;
+    margin-top: ($watch-size / 2) - ($watch-size / 40);
+    content: "";
+    border: 1px solid purple;
+    background-color: purple;
+    height: $watch-size / 20;
+    width: $watch-size / 20;
+    border-radius: 50%;
+  }
+
+  @keyframes stopwatch-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
