@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.watch {
+  position: relative;
+  width: 650px;
+  height: 650px;
+  background-image: url(../img/stopwatch.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  &__dial {
+    position: relative;
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -32.5%);
+    background-image: url(../img/mate_logo.svg);
+    background-repeat: no-repeat;
+    background-size: 44px;
+    background-position: 50% 75%;
+  }
+
+  &__minutes {
+    position: absolute;
+    width: 12px;
+    height: 140px;
+    border-radius: 5px;
+    background-color: #f00;
+    top: 18%;
+    left: 48.5%;
+    transform-origin: bottom left;
+    animation: minutes 3600s steps(60) infinite;
+    animation-play-state: paused;
+  }
+
+  &__seconds {
+    position: absolute;
+    width: 6px;
+    height: 185px;
+    border-radius: 5px;
+    background-color: #000;
+    top: 7.8%;
+    left: 49.5%;
+    transform-origin: bottom left;
+    animation: example 60s steps(60) infinite;
+    animation-play-state: paused;
+  }
+
+  &:hover .watch__seconds {
+    cursor: pointer;
+    animation-play-state: running;
+  }
+  &:hover .watch__minutes {
+    animation-play-state: running;
+  }
+
+  &__round {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+    rgba(175,175,175,1) 0%, rgba(0,0,0,1) 50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+  }
+}
+
+@keyframes example {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minutes {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
