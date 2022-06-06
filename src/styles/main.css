@@ -1,0 +1,112 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 500px;
+}
+
+@keyframes tick {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background-color: grey;
+  position: relative;
+  display: flex;
+  transition: 1s transform;
+}
+
+.clock:hover {
+  transform: scale(1.1);
+}
+
+.clock__twelve {
+  position: absolute;
+  width: 10px;
+  height: 40px;
+  background-color: rgb(65, 57, 57);
+  left: 295px;
+}
+
+.clock__six {
+  position: absolute;
+  width: 10px;
+  height: 40px;
+  background-color: rgb(65, 57, 57);
+  align-self: flex-end;
+  left: 295px;
+}
+
+.clock__three {
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  background-color: rgb(65, 57, 57);
+  top: 295px;
+  left: 560px;
+}
+
+.clock__nine {
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  background-color: rgb(65, 57, 57);
+  top: 295px;
+  right: 560px;
+}
+
+.clock__hour {
+  height: 120px;
+  width: 25px;
+  border-radius: 45%;
+  background-color: rgb(54, 54, 54);
+  position: absolute;
+  left: 287.5px;
+  top: 180px;
+  animation: tick 43200s infinite linear;
+  transform-origin: 2px 100%;
+}
+
+.clock__circle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: rgb(226, 200, 200);
+  position: absolute;
+  left: 267.5px;
+  top: 267.5px;
+  opacity: 0.2;
+}
+
+.clock__minute {
+  height: 180px;
+  width: 15px;
+  border-radius: 45%;
+  background-color: rgb(157, 157, 157);
+  position: absolute;
+  left: 292.5px;
+  top: 120px;
+  animation: tick 3600s infinite linear;
+  transform-origin: 2px 100%;
+}
+
+.clock__second {
+  height: 235px;
+  width: 5px;
+  border-radius: 45%;
+  background-color: rgb(178, 178, 178);
+  position: absolute;
+  left: 297.5px;
+  top: 65px;
+  animation: tick 60s infinite linear;
+  transform-origin: 2px 100%;
+}
+
+/*# sourceMappingURL=main.css.map */
