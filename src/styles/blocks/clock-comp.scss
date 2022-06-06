@@ -1,0 +1,96 @@
+@import "../utils/variables";
+@import "../utils/animation";
+@import "../utils/mixins";
+
+.clock {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background-color: grey;
+  position: relative;
+  display: flex;
+  transition: 1s transform;
+}
+
+.clock:hover {
+  transform: scale(1.1);
+}
+
+.clock__twelve {
+  position: absolute;
+  width: $vert-scale_width;
+  height: $vert-scale_height;
+  background-color: $scale-color;
+  left: 0.5 * $clock-width - 0.5 * $vert-scale_width;
+}
+
+.clock__six {
+  position: absolute;
+  width: $vert-scale_width;
+  height: $vert-scale_height;
+  background-color: $scale-color;
+  align-self: flex-end;
+  left: 0.5 * $clock-width - 0.5 * $vert-scale_width;
+}
+
+.clock__three {
+  position: absolute;
+  width: $hor-scale_width;
+  height: $hor-scale_height;
+  background-color: $scale-color;
+  top: 0.5 * $clock-height - 0.5 * $hor-scale_height;
+  left: $clock-width - $hor-scale_width;
+}
+
+.clock__nine {
+  position: absolute;
+  width: $hor-scale_width;
+  height: $hor-scale_height;
+  background-color: $scale-color;
+  top: 0.5 * $clock-height - 0.5 * $hor-scale_height;
+  right: $clock-width - $hor-scale_width;
+}
+
+.clock__hour {
+  height: $hour-hand_height;
+  width: $hour-hand_width;
+  border-radius: 45%;
+  background-color: rgb(54, 54, 54);
+  position: absolute;
+  left: 0.5 * $clock-width - 0.5 * $hour-hand_width;
+  top: 0.5 * $clock-height - $hour-hand_height;
+  animation: tick 43200s infinite linear;
+  transform-origin: 2px 100%;
+}
+
+.clock__circle {
+  @include center-circle;
+  position: absolute;
+  left: 0.5 * $clock-width - 0.5 * $center-circle-width;
+  top: 0.5 * $clock-width - 0.5 * $center-circle-height;
+  opacity: 0.2;
+}
+
+.clock__minute {
+  height: $minute-hand_height;
+  width: $minute-hand_width;
+  border-radius: 45%;
+  background-color: rgb(157, 157, 157);
+  position: absolute;
+  left: 0.5 * $clock-width - 0.5 * $minute-hand_width;
+  top: 0.5 * $clock-height -  $minute-hand_height;
+  animation: tick 3600s infinite linear;
+  transform-origin: 2px 100%;
+}
+
+.clock__second {
+  height: $second_hand-height;
+  width: $second_hand-width;
+  border-radius: 45%;
+  background-color: rgb(178, 178, 178);
+  position: absolute;
+  left: 0.5 * $clock-width - 0.5 * $second-hand_width;
+  top: 0.5 * $clock-height - $second-hand_height;
+  animation: tick 60s infinite linear;
+  transform-origin: 2px 100%;
+}
