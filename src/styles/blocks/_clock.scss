@@ -1,0 +1,80 @@
+$container-min-size: 200px;
+$container-size: 25vh;
+$minutes-arrow-size: 75px;
+$seconds-arrow-size: 100px;
+$arrow-size: 4px;
+
+@keyframes stop-clock {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(calc(270deg + 360deg));
+  }
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: $container-size;
+  height: $container-size;
+  min-width: $container-min-size;
+  min-height: $container-min-size;
+  margin: 50px auto;
+  background-color: #03dac6;
+  border-radius: 50%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - calc(#{$arrow-size} * 4 / 2));
+    left: calc(50% - calc(#{$arrow-size} * 4 / 2));
+    display: block;
+    box-sizing: border-box;
+    width: calc(#{$arrow-size} * 4);
+    height: calc(#{$arrow-size} * 4);
+    background-color: #6200ee;
+    border: $arrow-size solid #b00020;
+    border-radius: 50%;
+  }
+
+  &__minutes {
+    transform: rotate(270deg);
+    animation: stop-clock calc(60s * 60s) linear infinite;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(-1 * #{$arrow-size} * 2 / 2);
+      left: calc(-1 * #{$arrow-size} * 2 / 2);
+      display: block;
+      box-sizing: border-box;
+      width: $minutes-arrow-size;
+      height: calc(#{$arrow-size} * 2);
+      background-color: #b00020;
+      border-radius: calc(#{$arrow-size} * 2 / 2);
+    }
+  }
+
+  &__seconds {
+    transform: rotate(270deg);
+    animation: stop-clock 60s linear infinite;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(-1 * #{$arrow-size} / 2);
+      left: calc(-1 * #{$arrow-size} / 2);
+      display: block;
+      box-sizing: border-box;
+      width: $seconds-arrow-size;
+      height: $arrow-size;
+      background-color: #6200ee;
+      border-radius: calc(#{$arrow-size} / 2);
+    }
+  }
+}
