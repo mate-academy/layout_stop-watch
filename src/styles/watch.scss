@@ -1,0 +1,105 @@
+//local variables
+$radius: 100px;
+
+//styles
+
+.watch {
+  width: $radius*2;
+  height: $radius*2 ;
+  background: rgb(246, 234, 109) ;
+  border: solid 5px gray;
+  border-radius: 50% ;
+  position: relative;
+
+  &__number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        transform: rotate(#{30* $i}deg);
+
+        &::after {
+          content: "#{$i}";
+          font-family: "Kdam Thmor Pro" , sans-serif;
+        }
+
+      }
+
+    }
+
+    &::after {
+      position: absolute;
+      top: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+  }
+
+  &__center {
+    width: 12px;
+    height: 12px;
+    border: 4px solid black;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &__minutes ,
+  &__seconds {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px) ;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
+    transform-origin: bottom;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__seconds {
+    width: 3px;
+    height: $radius*0.7;
+    background: red;
+    border-radius: 2px;
+    top: $radius*0.3 ;
+    animation-name: seconds;
+    animation-duration: 60s;
+  }
+
+  &__minutes {
+    width: 6px;
+    height: $radius*0.6;
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+    border: 3px solid black;
+    top: $radius*0.4 ;
+    animation-name: minutes;
+    animation-duration: 3600s;
+  }
+
+}
+
+@keyframes seconds {
+  0% {
+    transform: translateX(-50%) translateY(-5px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-5px) rotate(360deg);
+  }
+
+}
+
+@keyframes minutes {
+  0% {
+    transform: translateX(-50%) translateY(-5px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-5px) rotate(360deg);
+  }
+  
+}
