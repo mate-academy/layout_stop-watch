@@ -67,7 +67,7 @@ $radius: 100px;
     background: red;
     border-radius: 2px;
     top: $radius*0.3 ;
-    animation-name: seconds;
+    animation-name: rotate;
     animation-duration: 60s;
   }
 
@@ -78,13 +78,13 @@ $radius: 100px;
     border-radius: 3px;
     border: 3px solid black;
     top: $radius*0.4 ;
-    animation-name: minutes;
+    animation-name: rotate;
     animation-duration: 3600s;
   }
 
 }
 
-@keyframes seconds {
+@keyframes rotate {
   0% {
     transform: translateX(-50%) translateY(-5px) rotate(0deg);
   }
@@ -92,14 +92,4 @@ $radius: 100px;
     transform: translateX(-50%) translateY(-5px) rotate(360deg);
   }
 
-}
-
-@keyframes minutes {
-  0% {
-    transform: translateX(-50%) translateY(-5px) rotate(0deg);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-5px) rotate(360deg);
-  }
-  
 }
