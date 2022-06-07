@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 600px;
+}
+
+.clock {
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 2 * $arrows-length;
+  height: 2 * $arrows-length;
+  margin: 0 auto;
+
+  &__minute {
+    position: relative;
+    top: 0%;
+    left: 50%;
+    background-color: blue;
+    height: $arrows-length;
+    width: $arrows-width;
+    animation: clock-hand-rotate 3600s linear infinite;
+    transform-origin: 0% 100% 0;
+  }
+
+  &__circle {
+    position: relative;
+    top: -51%;
+    left: 49%; //чтобы стал ровно по центру, учитывая ширину стрелок
+    background-color: #000;
+    border-radius: 50%;
+    width: 3* $arrows-width;
+    height: 3* $arrows-width;
+  }
+
+  &__second {
+    position: relative;
+    top: -50%;
+    left: 50%;
+    background-color: red;
+    height: $arrows-length;
+    width: $arrows-width;
+    animation: clock-hand-rotate 60s linear infinite;
+    transform-origin: 0% 100% 0;
+  }
+}
+
+@keyframes clock-hand-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
