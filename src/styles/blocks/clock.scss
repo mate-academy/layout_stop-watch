@@ -1,0 +1,33 @@
+.clock {
+  @include square($size);
+  position: relative;
+  border: 4px solid;
+  border-radius: 50%;
+
+  &__center {
+    @include arrow;
+    @include square($center-size);
+    left: $center-shift;
+    top: $center-shift;
+    border-radius: 50%;
+    background-color: #b3f0f0;
+  }
+
+  &__minute {
+    @include arrow;
+    animation: time 3600s infinite linear;
+    background-color: #b3f0f0;
+  }
+
+  &__second {
+    @include arrow;
+    animation: time 60s infinite steps(60);
+    background-color: #336868;
+  }
+
+  @keyframes time {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
