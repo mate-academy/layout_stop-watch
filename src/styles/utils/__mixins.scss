@@ -1,0 +1,19 @@
+@mixin arrow {
+  position: absolute;
+  transform-origin: 50% 100%;
+  height: $arrow-height;
+  width: $arrow-width;
+  top: $arrow-top;
+  left: $arrow-leftShift;
+  border-radius: 2px;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin square($center-size) {
+  width: $center-size;
+  height: $center-size;
+}
