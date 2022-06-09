@@ -1,0 +1,67 @@
+@import "utils/reset.css";
+@import "utils/variables";
+@import "utils/mixins";
+
+.watch {
+  position: relative;
+  margin: 20px auto 0;
+  @include circle($watch-size);
+  border: 1px solid silver;
+  background-color: #eee;
+
+  &__second {
+    position: absolute;
+    height: $height-second;
+    width: $width-hand;
+    @include position($position-top-second, $position-left);
+
+    border-radius: 50%;
+
+    background-color: #4b99a9;
+
+    animation: hand 60s steps(60, end) infinite;
+    transform-origin: center bottom;
+
+    @keyframes hand {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+  }
+
+  &__minute {
+    position: absolute;
+    height: $height-minute;
+    width: $width-hand;
+    @include position($position-top-minute, $position-left);
+
+    border-radius: 50%;
+
+    background-color: #d05559;
+
+    animation: hand 3600s steps(60, end) infinite;
+    transform-origin: center bottom;
+
+    @keyframes hand {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    @include circle($circle-size);
+    @include position($position-circle, $position-circle);
+    background-color: #4b99a9;
+  }
+}
