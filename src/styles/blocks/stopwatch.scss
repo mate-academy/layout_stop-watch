@@ -43,10 +43,8 @@
   &__dot {
     position: relative;
 
-    width: $dotWidth;
-    height: $dotWidth;
+    @include circle($dotWidth);
 
-    border-radius: 50%;
     background-color: $dotColor;
   }
 }
