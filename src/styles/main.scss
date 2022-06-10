@@ -3,14 +3,32 @@
 
 .watch {
   position: relative;
-  height: 2 * $seconds-hand-lenght;
+  height: 2 * $seconds-hand-length;
+  width: 2 * $seconds-hand-length;
+  padding: 10px;
+  margin: 30px auto 0;
+
+  border: 2px solid #000;
+  border-radius: 50%;
 
   &__minute-hand {
-    @include hand-formating($minutes-hand-lenght, #d05559, 3600s);
+    @include hand-formating(
+      $minutes-hand-length,
+      $minutes-hand-color,
+      $hour-duration
+    );
+
+    animation-timing-function: linear;
   }
 
   &__second-hand {
-    @include hand-formating($seconds-hand-lenght, $seconds-hand-color, 60s);
+    @include hand-formating(
+      $seconds-hand-length,
+      $seconds-hand-color,
+      $minute-duration
+    );
+
+    animation-timing-function: steps(60, end);
 
     &::after {
       content: "";
