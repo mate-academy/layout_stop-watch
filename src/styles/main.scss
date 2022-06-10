@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1000px;
+  width: 1000px;
+  margin: 0 auto;
+  border: 2px solid #22577a;
+  border-radius: 50%;
+  background-color: #e2fce4;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.minute {
+  position: absolute;
+  bottom: 50%;
+  height: 300px;
+  width: 10px;
+  background-color: #7de194;
+  border-radius: 5px;
+  transform-origin: bottom center;
+  animation: spin 360s linear infinite;
+}
+
+.sec {
+  position: absolute;
+  bottom: 50%;
+  height: 450px;
+  width: 6px;
+  background-color: #38a3a5;
+  border-radius: 5px;
+  transform-origin: bottom center;
+  animation: spin 60s linear infinite;
+}
+
+.circle {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background-color: #38a3a5;
+  border-radius: 50%;
+}
