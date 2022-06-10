@@ -1,0 +1,55 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+.watch {
+  position: relative;
+  height: 2 * $seconds-hand-length;
+  width: 2 * $seconds-hand-length;
+  padding: 10px;
+  margin: 30px auto 0;
+
+  border: 2px solid #000;
+  border-radius: 50%;
+
+  &__minute-hand {
+    @include hand-formating(
+      $minutes-hand-length,
+      $minutes-hand-color,
+      $hour-duration
+    );
+
+    animation-timing-function: linear;
+  }
+
+  &__second-hand {
+    @include hand-formating(
+      $seconds-hand-length,
+      $seconds-hand-color,
+      $minute-duration
+    );
+
+    animation-timing-function: steps(60, end);
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -$hand-width;
+      left: -$hand-width/2;
+
+      height: $hand-width * 2;
+      width: $hand-width * 2;
+      border-radius: 50%;
+
+      background-color: $seconds-hand-color;
+    }
+  }
+
+  @keyframes watch-spin {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
