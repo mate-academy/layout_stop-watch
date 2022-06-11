@@ -1,0 +1,100 @@
+@import "../styles/utils/_variables";
+@import "../styles/utils/_mixins";
+@import "../styles/utils/_animation";
+
+.animation {
+  display: flex;
+  position: relative;
+  @include watchSize($watchWidth, $watcHeight);
+  border-radius: $watchBorderRadius;
+  background-color: $watchColour;
+  margin: $watchTopMargin auto;
+  box-shadow: $watchShadow;
+  cursor: pointer;
+  transition-duration: 1s;
+ 
+
+  &:hover {
+    transform: scale(1.2);
+  }
+  
+  &__image {
+    display: flex;
+    position: absolute;
+    height: $watcHeight/4;
+    top: $watcHeight/1.5;
+    left: $watchWidth/1.3;
+
+  }
+
+  &__circle {
+    @include watchCircle($watchWidth);
+    justify-content: center;
+    position: absolute;
+    left: $watchWidth /15;
+    bottom: -$handsMarginTop/2;
+    border: $circleBorder;
+    background-color: #fffc;
+    border-radius: 50%;
+  }
+
+  &__hands {
+    display: flex;
+    position: relative;
+     
+    &-minute {
+      position: absolute;
+      left: $watchWidth /4;
+      bottom: $handsMarginTop;
+      @include watchMinuteHand($handsWidth, $watcHeight);
+      animation-name: handMove;
+      animation-duration: 720s;
+      animation-timing-function: steps(12);
+      animation-iteration-count: infinite;
+    }
+
+    &-second {
+      position: absolute;
+      left: $watchWidth /4;
+      bottom: $handsMarginTop;
+      @include watchSecondsHand($handsWidth, $watcHeight);
+      animation-name: handMove;
+      animation-duration: 60s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &__timer {
+    display: flex;
+    position: relative;
+    left: $watchWidth/2;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $watcHeight * 0.3;
+  }
+
+  &__quote {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin-left: $watchWidth/1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $watcHeight/5;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-style: italic;
+
+    &-1 {
+      margin-bottom: 0;
+    }
+
+    &-2 {
+      margin-top: 0;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+  }
+}

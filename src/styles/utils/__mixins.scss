@@ -1,0 +1,25 @@
+@import "../styles/utils/_variables";
+
+@mixin watchSize($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin watchCircle($size) {
+  width: $size / 3;
+  height: $size / 3;
+}
+
+@mixin watchMinuteHand($width, $height) {
+  width: $width;
+  height: $height / 1.7;
+  border-radius: 10px;
+  background-color: #000;
+}
+
+@mixin watchSecondsHand($width, $height) {
+  width: $width;
+  height: $height / 1.2;
+  border-radius: 10px;
+  background-color: #000;
+}
