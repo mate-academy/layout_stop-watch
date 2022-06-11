@@ -1,0 +1,63 @@
+$radius: 800px;
+
+.stopwatch {
+  margin: auto;
+  width: $radius;
+  height: $radius;
+  border-radius: 50%;
+  
+  &__second {
+    position: relative;
+    top: 0%;
+    left: 50%;
+    height: $radius / 2 - 1;
+    width: 30px;
+    border-radius: 20%;
+    background-color: black;
+    transform-origin: bottom;
+    animation: spin 1s linear infinite;
+   
+    @keyframes spin {
+      50% {
+        transform: rotate(180deg);
+      }
+      
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  
+  &__minute {
+    position: relative;
+    top: -33%;
+    left: 50%;
+    height: $radius / 3 - 1;
+    width: 30px;
+    border-radius: 20%;
+    background-color: rgb(255, 0, 0);
+    transform-origin: bottom;
+    animation: spin 60s linear infinite;
+   
+    @keyframes spin {
+      50% {
+        transform: rotate(180deg);
+      }
+      
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__center {
+    position: relative;
+    top: -34%;
+    left: 51%;
+    height: $radius / 10;
+    width: $radius / 10;
+    transform: translate(-40%, -40%);
+    background-color: black;
+    border-radius: 50%;
+  }
+}
