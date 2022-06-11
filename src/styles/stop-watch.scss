@@ -1,0 +1,49 @@
+.stop-watch {
+  position: relative;
+  width: $watch-side;
+  height: $watch-side;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: $light-blue-color;
+  border: 14px solid $blue-color;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px 15px $light-blue-color;
+
+  &__central-circle {
+    position: absolute;
+
+    background: $blue-color;
+    box-shadow: 0 4px 10px 2px $blue-color;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+  }
+
+  &__arrow {
+    position: absolute;
+    width: 16px;
+    border-radius: 20px;
+    transform-origin: bottom;
+    animation: spin 60s steps(60, end) infinite;
+
+    &--second {
+      top: 5%;
+      height: 300px;
+      background: $red-color;
+      box-shadow: 0 4px 10px 2px $red-color;
+    }
+
+    &--minute {
+      top: 10%;
+      height: 270px;
+      background: $purple-color;
+      box-shadow: 0 4px 10px 2px $purple-color;
+
+      animation-duration: 3600s;
+    }
+  }
+}
