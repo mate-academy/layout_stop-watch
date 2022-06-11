@@ -1,0 +1,67 @@
+.clock {
+  position: relative;
+  margin: auto;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background: url(../images/clock.png);
+  background-size: cover;
+
+  border: 4px solid #091921;
+  border-radius: 50%;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+              inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+              0 15px 15px rgba(0, 0, 0, 0.3),
+              inset 0 15px 15px rgba(0, 0, 0, 0.3);
+
+  &:before {
+    display: block;
+    content: "";
+    background-image: url('../images/ma_logo.png');
+    background-size: 28px 28px;
+    background-position: center;
+    position: absolute;
+    top: 46%;
+    left: 46%;
+    width: 30px;
+    height: 30px;
+    background-color: #777;
+    border-radius: 50%;
+    z-index: 1;
+      }
+
+  &__seconds {
+    height: 40%;
+    width: 0px;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    top: 10%;
+    left: 50%;
+    position: absolute;
+    transform-origin: bottom;
+    animation: time 60s infinite linear;
+  }
+
+  &__minutes {
+    height: 30%;
+    width: 0px;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    top: 20%;
+    left: 50%;
+    position: absolute;
+    transform-origin: bottom;
+    animation: time 3600s infinite linear;
+  }
+}
+
+@keyframes time {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
