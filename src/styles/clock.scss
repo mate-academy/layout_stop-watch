@@ -3,11 +3,9 @@
   width: 600px;
   height: 600px;
 
-  margin: 150px auto;
-
   box-sizing: border-box;
   border-radius: 50%;
-  border: 9px solid #424242;
+  border: 9px solid var(--gray-c);
 
   &::after {
     content: "";
@@ -23,12 +21,12 @@
 
   &__center {
     position: absolute;
-    top: calc(50% - 13px);
-    left: calc(50% - 13px);
+    top: var(--centered-position);
+    left: var(--centered-position);
     height: 36px;
     width: 36px;
 
-    background-color: #424242;
+    background-color: var(--gray-c);
     border-radius: 50%;
   }
 
@@ -40,9 +38,9 @@
     height: 250px;
     width: 1px;
 
-    background-color: #424242;
+    background-color: var(--gray-c);
     transform-origin: bottom;
-    animation: rotate 60s infinite linear;
+    animation: rotate var(--one-min) infinite;
   }
 
   &__min {
@@ -53,9 +51,9 @@
     height: 225px;
     width: 5px;
 
-    background-color: #424242;
+    background-color: var(--gray-c);
     transform-origin: bottom;
-    animation: rotate 3600s infinite linear;
+    animation: rotate var(--one-hour) infinite;
   }
 
   &__hour {
@@ -66,9 +64,9 @@
     height: 150px;
     width: 9px;
 
-    background-color: #424242;
+    background-color: var(--gray-c);
     transform-origin: bottom;
-    animation: rotate 86400s steps(60) infinite linear;
+    animation: rotate var(--one-day) steps(60) infinite;
   }
 }
 
