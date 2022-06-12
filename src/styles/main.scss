@@ -1,0 +1,64 @@
+.watch {
+  display: flex;
+  height: 500px;
+  width: 500px;
+  margin: auto;
+  position: relative;
+}
+
+.seconds {
+  border: 1px solid blueviolet;
+  height: 250px;
+  width: 4px;
+  background: blueviolet;
+  border-radius: 3px;
+  position: absolute;
+  left: 246px;
+  animation-name: spin;
+  animation-duration: 60000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: bottom;
+}
+
+.minutes {
+  border: 1px solid orangered;
+  height: 150px;
+  width: 4px;
+  background: orangered;
+  border-radius: 3px;
+  position: absolute;
+  left: 246px;
+  bottom: 248px;
+  z-index: 1;
+  animation-name: spin;
+  animation-duration: 3600000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: bottom;
+}
+
+.circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  border: 1px solid orangered;
+  background: orangered;
+  margin: auto;
+  z-index: 1;
+}
+
+@keyframes spin {
+  from {
+    
+    transform: rotate(0deg);
+
+  }
+
+  to {
+
+    transform: rotate(360deg);
+  
+  }
+
+}
