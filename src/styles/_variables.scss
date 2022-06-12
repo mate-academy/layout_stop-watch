@@ -1,0 +1,15 @@
+$clock-side: 600px;
+
+@mixin clock-size ($side) {
+  height: $side;
+  width: $side;
+}
+
+$center-side: 25px;
+
+$minute-hand-height: $clock-side/3;
+$minute-hand-top-gap: $clock-side/2 - $minute-hand-height;
+
+$second-hand-height: $clock-side/2;
+$second-hand-top-gap: $clock-side/2 - $second-hand-height;
+
