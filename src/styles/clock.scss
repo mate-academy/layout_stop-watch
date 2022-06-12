@@ -1,0 +1,81 @@
+.clock {
+  position: relative;
+  width: 600px;
+  height: 600px;
+
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 9px solid var(--gray-c);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    border-radius: 50%;
+    border: 4px solid #ff4040;
+  }
+
+  &__center {
+    position: absolute;
+    top: var(--centered-position);
+    left: var(--centered-position);
+    height: 36px;
+    width: 36px;
+
+    background-color: var(--gray-c);
+    border-radius: 50%;
+  }
+
+  &__sec {
+    position: absolute;
+    top: 50px;
+    left: calc(50% + 4px);
+
+    height: 250px;
+    width: 1px;
+
+    background-color: var(--gray-c);
+    transform-origin: bottom;
+    animation: rotate var(--one-min) infinite;
+  }
+
+  &__min {
+    position: absolute;
+    top: 75px;
+    left: calc(50% + 2px);
+
+    height: 225px;
+    width: 5px;
+
+    background-color: var(--gray-c);
+    transform-origin: bottom;
+    animation: rotate var(--one-hour) infinite;
+  }
+
+  &__hour {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+
+    height: 150px;
+    width: 9px;
+
+    background-color: var(--gray-c);
+    transform-origin: bottom;
+    animation: rotate var(--one-day) steps(60) infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
