@@ -1,0 +1,70 @@
+$circle-size:20px;
+$container-size:300px;
+$hands-width:6px;
+$radius: 10px;
+
+* {
+  margin: 0;
+}
+
+.container {
+  margin: 200px auto;
+  border: 2px solid black;
+  width: $container-size;
+  height: $container-size;
+  position: relative;
+  border-radius: 50%;
+
+  &__circle {
+    display: flex;
+    border-radius: 50%;
+    height: $circle-size;
+    width: $circle-size;
+    background-color: yellow;
+    border: 1px;
+    position: absolute;
+    top: ($container-size - $circle-size) / 2;
+    left: ($container-size - $circle-size) / 2;
+  }
+
+  &__minutes {
+    display: flex;
+    border-radius: $radius;
+    height: 150px;
+    width: $hands-width;
+    background-color: blue;
+    border: 1px;
+    position: absolute;
+    left: 147px;
+    transform-origin: 50% 100%;
+    animation: minute 10s linear;
+  
+    @keyframes minute {
+      100% {
+        transform-origin: bottom;
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__hours {
+    display: flex;
+    border-radius: $radius;
+    height: 100px;
+    width: $hands-width;
+    background-color: red;
+    border: 1px;
+    position: absolute;
+    left: ($container-size - $hands-width) / 2;
+    top: 50px;
+    transform-origin: 50% 100%;
+    animation: hour 20s linear;
+  
+    @keyframes hour {
+      100% {
+        transform-origin: bottom;
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
