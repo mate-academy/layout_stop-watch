@@ -1,5 +1,6 @@
-$dot-size: 30px;
-$minute-thick: 10px;
+@import "utils/_variables";
+@import "blocks/minute";
+@import "blocks/second";
 
 * {
   margin: 0;
@@ -19,29 +20,6 @@ $minute-thick: 10px;
   z-index: 1;
   transform: rotate(-90deg);
   border-radius: 50%;
-  &__second {
-    width: 30vw;
-    max-width: 50vh;
-    height: 5px;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: red;
-    border-radius: 5px;
-  }
-  
-  &__minute {
-    width: 20vw;
-    max-width: 40vh;
-    height: $minute-thick;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: blue;
-    border-radius: 5px;
-  }
   &__dot {
     z-index: 1;
     width: $dot-size;
