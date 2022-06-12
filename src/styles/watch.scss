@@ -1,0 +1,46 @@
+.watch {
+  position: relative;
+
+  &__minute-hand {
+    position: absolute;
+    width: $hand-width;
+    height: 250px;
+    border-radius: 5px;
+    background-color: #f54a92;
+    left: $shift;
+    top: -250px + $hand-width;
+    animation: clock 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__second-hand {
+    position: absolute;
+    width: $hand-width;
+    height: 350px;
+    border-radius: 5px;
+    background-color: #5251ce;
+    left: $shift;
+    top: -350px + $hand-width;
+    animation: clock 60s steps(60, end) infinite;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    position: absolute;
+    height: $center-size;
+    width: $center-size;
+    border-radius: 50%;
+    background-color: #5251ce;
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
