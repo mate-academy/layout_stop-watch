@@ -1,0 +1,51 @@
+@keyframes minutArrow {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes secondArrow {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__minut-arrow {
+    position: absolute;
+    bottom: 50%;
+    width: 5px;
+    height: 150px;
+    background-color: rgb(0, 0, 0);
+    animation-name: minutArrow;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom left;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    bottom: 50%;
+    width: 3px;
+    height: 200px;
+    background-color: rgb(255, 0, 0);
+    animation-name: secondArrow;
+    transform-origin: bottom left;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
