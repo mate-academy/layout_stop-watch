@@ -1,0 +1,67 @@
+@import "./utils/null";
+@import "./utils/variables";
+
+.watch {
+  position: relative;
+  margin: 5% auto 0;
+  height: $watch-side;
+  width: $watch-side;
+  border-radius: 50%;
+  box-shadow: 0 0 140px 30px rgba(233, 196, 10, 0.31),
+    0 0 40px 25px rgba(133, 28, 194, 0.46),
+    0 0 93px 61px rgba(216, 195, 43, 0.46) inset;
+  background: url("../images/clock-face.png") no-repeat center / 700px 700px;
+
+  &__center {
+    position: absolute;
+    border-radius: 50%;
+    height: $watch-side;
+    width: $watch-side;
+    box-shadow: 19px 64px 96px 5px rgba(216, 104, 43, 0.5) inset;
+    background: url("../images/spiral.png") no-repeat center / 100px 100px;
+    animation: spiral 3s linear reverse infinite running;
+  }
+
+  @keyframes spiral {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__minute {
+    position: absolute;
+    top: $arrow-top;
+    left: 40%;
+    height: $arrow-height;
+    width: 140px;
+    background: url("../images/lolipop_2.png")
+      center 25% / 100% 260px no-repeat;
+    animation: second 3600s steps(60, end) infinite;
+    transform: translate(-50% -50%);
+    transform-origin: bottom center;
+  }
+
+  &__second {
+    position: absolute;
+    top: $arrow-top;
+    left: 42%;
+    height: $arrow-height;
+    width: 110px;
+    background: url("../images/lolipop_1.png") center 20% / 100% 260px no-repeat;
+    animation: second 60s steps(60, end) infinite;
+    transform: translate(-50% -50%);
+    transform-origin: bottom center;
+  }
+  @keyframes second {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
