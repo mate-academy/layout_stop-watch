@@ -1,10 +1,7 @@
 .clock {
-  position: relative;
-  margin: auto;
-  width: 350px;
-  height: 350px;
+  @include square($clock-size);
+
   border-radius: 50%;
-  border: 2px solid black;
   background: url(../images/clock.png);
   background-size: cover;
 
@@ -24,45 +21,24 @@
     position: absolute;
     top: 46%;
     left: 46%;
-    width: 30px;
-    height: 30px;
+
+    @include logo(30px);
+
     background-color: #777;
     border-radius: 50%;
     z-index: 1;
-      }
+  }
 
   &__seconds {
-    height: 40%;
-    width: 0px;
-    box-sizing: border-box;
-    border: 1px solid #fff;
-    top: 10%;
-    left: 50%;
-    position: absolute;
-    transform-origin: bottom;
-    animation: time 60s infinite linear;
-    animation-timing-function: steps(60, end);
+    @include hand(40%, 1px, 10%, 60s, 60)
   }
 
   &__minutes {
-    height: 30%;
-    width: 0px;
-    box-sizing: border-box;
-    border: 2px solid #fff;
-    top: 20%;
-    left: 50%;
-    position: absolute;
-    transform-origin: bottom;
-    animation: time 3600s infinite linear;
-    animation-timing-function: steps(3600, end);
+    @include hand(30%, 2px, 20%, 3600s, 3600)
   }
 }
 
 @keyframes time {
-  0% {
-    transform: rotate(0deg);
-  }
-
   100% {
     transform: rotate(360deg);
   }

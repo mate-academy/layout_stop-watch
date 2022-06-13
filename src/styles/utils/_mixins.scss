@@ -1,0 +1,22 @@
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin logo($logo-size) {
+  width: $logo-size;
+  height: $logo-size;
+}
+
+@mixin hand ($hand-height, $hand-border, $hand-top, $hand-time, $hand-steps) {
+    height: $hand-height;
+    width: 0px;
+    box-sizing: border-box;
+    border: $hand-border solid #fff;
+    top: $hand-top;
+    left: 50%;
+    position: absolute;
+    transform-origin: bottom;
+    animation: time $hand-time infinite linear;
+    animation-timing-function: steps($hand-steps, end);
+}
