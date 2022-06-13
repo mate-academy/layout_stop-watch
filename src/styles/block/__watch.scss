@@ -1,0 +1,70 @@
+.watch {
+  position: relative;
+
+  display: flex;
+  margin: 0 auto;
+  width: 900px;
+  height: 900px;
+
+  align-items: center;
+  justify-content: center;
+
+  &__center {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    background-color: blue;
+  }
+
+  &__seconds {
+    position: absolute;
+
+    display: flex;
+    width: 900px;
+    height: 30px;
+
+    animation-name: clock;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__second-hand {
+    width: 450px;
+    height: 30px;
+
+    border-radius: 20px;
+    background-color: red;
+  }
+
+  &__minutes {
+    position: absolute;
+
+    display: flex;
+    width: 600px;
+    height: 20px;
+
+    animation-name: clock;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute-hand {
+    width: 300px;
+    height: 20px;
+    border-radius: 15px;
+    background-color: black;
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
