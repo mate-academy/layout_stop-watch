@@ -1,4 +1,4 @@
-$radius: 800px;
+$radius: 600px;
 
 .stopwatch {
   margin: auto;
@@ -15,19 +15,9 @@ $radius: 800px;
     border-radius: 20%;
     background-color: black;
     transform-origin: bottom;
-    animation: spin 1s linear infinite;
-   
-    @keyframes spin {
-      50% {
-        transform: rotate(180deg);
-      }
-      
-      100% {
-        transform: rotate(360deg);
-      }
-    }
+    animation: spin 60s infinite steps(30);
   }
-  
+
   &__minute {
     position: relative;
     top: -33%;
@@ -37,17 +27,7 @@ $radius: 800px;
     border-radius: 20%;
     background-color: rgb(255, 0, 0);
     transform-origin: bottom;
-    animation: spin 60s linear infinite;
-   
-    @keyframes spin {
-      50% {
-        transform: rotate(180deg);
-      }
-      
-      100% {
-        transform: rotate(360deg);
-      }
-    }
+    animation: spin 3600s linear infinite;
   }
 
   &__center {
@@ -59,5 +39,15 @@ $radius: 800px;
     transform: translate(-40%, -40%);
     background-color: black;
     border-radius: 50%;
+  }
+
+  @keyframes spin {
+    50% {
+      transform: rotate(180deg);
+    }
+    
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
