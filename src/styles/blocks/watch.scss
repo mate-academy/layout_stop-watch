@@ -1,0 +1,88 @@
+.watch {
+  margin: 50px auto;
+  height: $watch-height;
+  width: $watch-width;
+  background-color: #aebede;
+  border-radius: 50%;
+  border: 6px solid #414141;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+   &__minute-hand {
+    height: $watch-height * 0.4;
+    width: $watch-width * 0.035;
+    background-color: rgb(127, 95, 135);
+    position: absolute;
+    bottom: 50%;
+    border-radius: 50%;
+
+    animation: move 3600s steps(60, end) infinite;
+    transform-origin: center bottom;
+
+    @keyframes move {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__second-hand{
+    height: $watch-height * 0.28;
+    width: $watch-width * 0.025;
+    background-color: rgb(140, 57, 108);
+    position: absolute;
+    bottom: 50%;
+    border-radius: 50%;
+
+    animation: move 60s steps(60, end) infinite;
+    transform-origin: center bottom;
+
+    @keyframes move {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__centre-circle {
+    position: absolute;
+    @include circle ($watch-width * 0.05);
+    background-color: #414141;
+  }
+
+  &__number {
+    position: absolute;
+    background-color: #414141;
+    @include circle ($watch-width * 0.05);
+
+    &:nth-of-type(1) {
+      top: 4px;
+    }
+
+    &:nth-of-type(2) {
+      right: 4px;
+    }
+
+    &:nth-of-type(3) {
+      bottom: 4px;
+    }
+
+    &:nth-of-type(4) {
+      left: 4px;
+    }
+  }
+}
+
+
