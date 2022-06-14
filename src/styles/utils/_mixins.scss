@@ -1,0 +1,14 @@
+@mixin clock-view($clock-width, $clock-height, $radius, $bg-color) {
+  max-width: $clock-width;
+  height: $clock-height;
+  border-radius: $radius;
+  background-color: bisque;
+}
+
+@mixin hand-view($width, $height, $bg, $radius) {
+  width: $width;
+  height: $height;
+
+  border-radius: $radius;
+  background-color: $bg;
+}
