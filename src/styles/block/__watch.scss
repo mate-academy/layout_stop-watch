@@ -1,0 +1,57 @@
+@import "../utils/animations.scss";
+
+.watch {
+  position: relative;
+
+  display: flex;
+  margin: 0 auto;
+  width: 900px;
+  height: 900px;
+
+  align-items: center;
+  justify-content: center;
+
+  &__center {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    background-color: blue;
+  }
+
+  &__seconds {
+    position: absolute;
+
+    display: flex;
+    width: 900px;
+    height: 30px;
+
+    animation: clock 60s linear infinite;
+  }
+
+  &__second-hand {
+    width: 450px;
+    height: 30px;
+
+    border-radius: 20px;
+    background-color: red;
+  }
+
+  &__minutes {
+    position: absolute;
+
+    display: flex;
+    width: 600px;
+    height: 20px;
+
+    animation: clock 3600s linear infinite;
+  }
+
+  &__minute-hand {
+    width: 300px;
+    height: 20px;
+    border-radius: 15px;
+    background-color: black;
+  }
+}
