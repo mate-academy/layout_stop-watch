@@ -1,0 +1,43 @@
+@keyframes handRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  position: relative;
+
+  width: $clock-size;
+  height: $clock-size;
+
+  background-image: url(../img/clock_bg.jpg);
+  border-radius: 50%;
+
+  &__hour-hand {
+    @include centerHand($clock-size, $hour-hand-height, $hour-hand-width);
+
+    width: $hour-hand-width;
+    height: $hour-hand-height;
+
+    background-color: #000;
+    border-radius: 5px;
+
+    animation: handRotate 60s steps(12, end) 1;
+  }
+
+  &__minute-hand {
+    @include centerHand($clock-size, $minute-hand-height, $minute-hand-width);
+
+    width: $minute-hand-width;
+    height: $minute-hand-height;
+
+    background-color: #0006;
+    border-radius: 10px;
+
+    animation: handRotate 60s steps(60, start) 1;
+  }
+}
