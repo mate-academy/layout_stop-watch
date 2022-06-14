@@ -1,6 +1,6 @@
 .watch {
   margin: 50px auto;
-  @include square ($watch-width);
+  @include circle ($watch-width);
   background-color: #aebede;
   border-radius: 50%;
   border: 6px solid #414141;
@@ -8,8 +8,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 
    &__minute-hand {
     height: $watch-width * 0.4;
@@ -40,26 +38,18 @@
 
     animation: move 60s steps(60, end) infinite;
     transform-origin: center bottom;
-
-    @keyframes move {
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
   }
 
   &__centre-circle {
     position: absolute;
-    @include square ($watch-width * 0.05);
+    @include circle ($watch-width * 0.05);
     background-color: #414141;
   }
 
   &__number {
     position: absolute;
     background-color: #414141;
-    @include square ($watch-width * 0.05);
+    @include circle ($watch-width * 0.07);
 
     &:nth-of-type(1) {
       top: 4px;
@@ -78,5 +68,3 @@
     }
   }
 }
-
-
