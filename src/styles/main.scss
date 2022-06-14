@@ -1,0 +1,67 @@
+body {
+  background-color: #06283d;
+}
+
+.watch {
+  position: relative;
+  margin: 200px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px dotted rgb(0, 0, 0);
+  outline: 8px solid rgba(74, 144, 226, 0.3);
+  box-shadow: 19px 9px 21px 7px rgba(83, 58, 213, 0.2);
+  background: rgba(180, 204, 233, 0.3);
+  border-radius: 50%;
+  height: 320px;
+  width: 320px;
+  z-index: -1;
+
+  &__minutes {
+    background: linear-gradient(
+      to bottom,
+      rgb(6, 166, 129) 6%,
+      rgb(8, 8, 103) 20% 50%,
+      rgba(3, 3, 4, 0) 50%
+    );
+    border-radius: 35%;
+    height: 250px;
+    width: 10px;
+    z-index: 1;
+    animation: tic 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    width: 5px;
+    height: 320px;
+    border-radius: 35%;
+    background-image: linear-gradient(
+      to bottom,
+      rgb(6, 166, 129) 6%,
+      rgb(8, 8, 103) 20% 50%,
+      rgba(115, 18, 18, 0) 50%
+    );
+    animation: watch 60s steps(60) infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    background-color: rgb(66, 66, 66);
+    border-radius: 50%;
+    border: 3px solid rgb(10, 201, 214);
+    outline: 5px solid rgb(0, 0, 0);
+    height: 8px;
+    width: 8px;
+    z-index: 2;
+  }
+}
+
+@keyframes watch {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
