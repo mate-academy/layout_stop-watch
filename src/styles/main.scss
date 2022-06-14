@@ -1,0 +1,58 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+.watches {
+  @include watch($watchSize, #e25544);
+
+  &__minutes-hand {
+    @include watchHand;
+
+    width: $watchSize / 100 * 3; // minutes
+    height: $watchSize / 100 * 34; // minutes
+
+    left: $offsetMin;
+    background: #e25544;
+    animation: time 3600s linear infinite;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__seconds-hand {
+    @include watchHand;
+
+    width: $watchSize / 100 * 2;
+    height: $watchSize / 100 * 43;
+
+    left: $offsetSec;
+    background: #1ccbe2;
+    animation: time 60s linear infinite;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate3d(-50%, -50%, 0);
+
+    width: 35px;
+    height: 35px;
+
+    background: #1ccbe2;
+    border-radius: 50%;
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
