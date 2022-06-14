@@ -1,11 +1,20 @@
+@import "../utils/_count";
+@import "../utils/arrow";
+
 .second {
-  width: 30vw;
-  max-width: 50vh;
-  height: 5px;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: red;
-  border-radius: 5px;
+  animation: count 60s infinite linear;
+  &__line {
+    width: 45vh;
+    max-width: 45vw;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    background-color: red;
+    border-radius: 5px;
+    transform: translateY(-50%);
+    &::after {
+      @include arrow(red);
+    }
+  }
 }

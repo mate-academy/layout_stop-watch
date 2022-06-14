@@ -1,13 +1,20 @@
-@import "../utils/_variables";
+@import "../utils/_count";
+@import "../utils/arrow";
 
 .minute {
-  width: 20vw;
-  max-width: 40vh;
-  height: $minute-thick;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: blue;
-  border-radius: 5px;
+  animation: count 3600s infinite linear;
+  &__line {
+    width: 25vh;
+    max-width: 35vw;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    background-color: blue;
+    border-radius: 5px;
+    transform: translateY(-50%);
+    &::after {
+      @include arrow(blue);
+    }
+  }
 }

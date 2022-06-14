@@ -1,0 +1,7 @@
+@keyframes count {
+  @for $i from 0 through 12 {
+    #{$i * 100% / 12} {
+      transform: rotate(calc((-90deg + 30 * #{$i}deg)));
+    }
+  }
+}
