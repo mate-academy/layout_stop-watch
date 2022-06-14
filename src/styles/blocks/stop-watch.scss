@@ -1,0 +1,45 @@
+.stop-watch {
+  position: relative;
+  display: block;
+
+  &__clock-hand {
+    position: absolute;
+    top: 50%;
+    left: $stop-watch-size / 2 - $stop-watch-size / 30 / 2;
+
+    display: block;
+
+    border-radius: 6px;
+
+    transform-origin: top center;
+
+    &--hours {
+      height: #{$stop-watch-size / 3};
+      width: #{$stop-watch-size / 30};
+
+      background-color: red;
+
+      animation: rotation 3600s linear infinite;
+    }
+
+    &--minutes {
+      height: #{$stop-watch-size / 2 - 5px};
+      width: #{$stop-watch-size / 30};
+
+      background-color: yellow;
+
+      animation: rotation 60s linear infinite;
+    }
+  }
+
+  &__clock-dot {
+    position: absolute;
+    top: $stop-watch-size / 2 - $stop-watch-size / 18 / 2;
+    left: $stop-watch-size / 2 - $stop-watch-size / 18 / 2;
+
+    @include square(#{$stop-watch-size / 18});
+
+    border-radius: 50%;
+    background-color: rgb(51, 194, 170);
+  }
+}
