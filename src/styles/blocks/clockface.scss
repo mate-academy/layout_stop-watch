@@ -1,0 +1,38 @@
+.clockface {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include circle($watch-size);
+  background-image: url(../../src/images/favpng_clock-face-template-minute-clip-art.png);
+  background-size: cover;
+  -webkit-box-shadow: 0 5px 36px 10px rgba(0, 0, 0, 0.32);
+  -moz-box-shadow: 0 5px 36px 10px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 5px 36px 10px rgba(0, 0, 0, 0.32);
+
+  &::before {
+    content: "";
+    position: absolute;
+    @include circle (80px);
+    background-color: black;
+  }
+
+  &__min-arrow {
+    @extend %arrow-set;
+    height: $min-arr-height;
+    background-image: url(../../src/images/favpng_clock-face-minute-clip-art.png);
+    animation: rotation 3660s steps(60) infinite;
+  }
+
+  &__sec-arrow {
+    @extend %arrow-set;
+    height: $sec-arr-height;
+    background-image: url(../../src/images/favpng_clock-face-minute-clip-art.png);
+    animation: rotation 60s steps(60, end) infinite;
+  }
+
+  @keyframes rotation {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
