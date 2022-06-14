@@ -1,0 +1,53 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  padding: $paddings;
+  border: 1px solid #000;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    width: $sides / 15;
+    height: $sides / 15;
+    z-index: 3;
+    background-color: $primeColor;
+    border-radius: 50%;
+  }
+
+  &__min_arrow {
+    position: absolute;
+    width: $arrowWidth;
+    height: $minHeight;
+    top: ($sides / 2) - $minHeight;
+    z-index: 1;
+    background-color: $secondaryColor;
+    border-radius: $border-radius;
+    transform-origin: bottom;
+    animation: move 60s linear infinite forwards;
+  }
+
+  &__sec_arrow {
+    position: absolute;
+    width: $arrowWidth;
+    height: $secHeight;
+    top: ($sides / 2) - $secHeight;
+    z-index: 2;
+    background-color: $primeColor;
+    border-radius: $border-radius;
+    transform-origin: bottom;
+    animation: move 1s linear infinite forwards;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
