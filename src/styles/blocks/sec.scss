@@ -1,0 +1,27 @@
+.watch__sec {
+  position: absolute;
+  top: $border;
+  left: $secCenter;
+  display: flex;
+  justify-content: center;
+  @include sec;
+  background-color: rgb(207, 190, 39);
+  border-radius: $secWidth;
+
+  transform-origin: bottom center;
+  animation-name: sec;
+  animation-duration: 60s;
+  animation-timing-function: steps(60, start);
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+
+@keyframes sec {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
