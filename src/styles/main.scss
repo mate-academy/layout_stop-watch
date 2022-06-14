@@ -1,0 +1,81 @@
+.timer {
+  display: flex;
+  position: relative;
+  border: 5px solid rgb(84, 11, 168);
+  height: 320px;
+  width: 320px;
+  border-radius: 50%;
+  background-color: cornsilk;
+
+  &__numbers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: rgb(41, 10, 77);
+  }
+  
+  &__number_0 {
+    align-self: center;
+  }
+
+  &__number_9-3 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__number_6 {
+    align-self: center;
+  }
+
+  &__dot {
+    position: absolute;
+    left: 49%;
+    height: 8px;
+    width: 8px;
+    margin-top: 165px;
+    border-radius: 50%;
+    background-color: brown;
+  }
+
+  &__hour {
+    position: absolute;
+    left: 49%;
+    width: 8px;
+    height: 145px;
+    margin-top: 25px;
+    border-radius: 50%;
+    background-color: blue;
+    animation: spin 3600s linear 0s infinite normal none;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    left: 49%;
+    width: 8px;
+    height: 135px;
+    margin-top: 35px;
+    border-radius: 50%;
+    background-color: red;
+    animation: spin 60s linear 0s infinite normal none;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
