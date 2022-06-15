@@ -1,0 +1,55 @@
+.page__watch {
+  margin: auto;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: silver;
+  border-radius: $watch-border;
+  height: $watch-size;
+  width: $watch-size;
+
+  &__small-arrow {
+    position: absolute;
+    top: $watch-size / 2 - $small-arrow-height;
+    height: $small-arrow-height;
+    background-color: black;
+    border-radius: 30%;
+    width: 4px;
+    animation-duration: 600s;
+    @include animation;
+  }
+
+  &__big-arrow {
+    position: absolute;
+    top: $watch-size / 2 - $big-arrow-height;
+    height: $big-arrow-height;
+    background-color: gray;
+    border-radius: 30%;
+    width: 3px;
+    animation-duration: 60s;
+    @include animation;
+
+  }
+
+  &__center {
+    position: absolute;
+    height: 6%;
+    width: 6%;
+    background-color: white;
+    border-radius: 50%;
+  }
+
+  @keyframes time {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
