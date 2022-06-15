@@ -1,0 +1,87 @@
+$height: 100px;
+
+.watch {
+  width: $height*3;
+  height: $height*3 ;
+  background: rgb(246, 234, 109) ;
+  border: solid 5px gray;
+  border-radius: 50% ;
+  position: relative;
+
+  &__number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    @for $y from 1 through 12 {
+      &:nth-child(#{$y}) {
+        transform: rotate(#{30* $y}deg);
+
+        &:after {
+          content: "#{$y}";
+          font-family:Verdana, sans-serif;
+        }
+      }
+    }
+
+    &:after {
+      position: absolute;
+      top: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__center {
+    width: 12px;
+    height: 12px;
+    border: 4px solid rgb(15, 88, 0);
+    border-radius: 50%;
+    background: rgb(255, 82, 82);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &__minutes ,
+  &__seconds {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px) ;
+    box-shadow: 0 0 5px 0 rgba(225, 225, 225, 0.7);
+    transform-origin: bottom;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__seconds {
+    width: 3px;
+    height: $height*1.2;
+    background: rgb(117, 3, 22);
+    border-radius: 2px;
+    top: $height*0.3 ;
+    animation-name: rotate;
+    animation-duration: 60s;
+  }
+
+  &__minutes {
+    width: 6px;
+    height: $height*1.1;
+    background: rgb(158, 64, 64);
+    border-radius: 3px;
+    border: 3px solid rgb(90, 146, 0);
+    top: $height*0.4 ;
+    animation-name: rotate;
+    animation-duration: 3600s;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateX(-50%) translateY(-5px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-5px) rotate(360deg);
+  }
+}
