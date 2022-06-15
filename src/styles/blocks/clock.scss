@@ -1,0 +1,55 @@
+.clock {
+  @include rectangle ($clock-size, $clock-size);
+  background-color: gold;
+  border-radius: 40%;
+
+  position: relative;
+
+  &__round {
+    @include rectangle ($round-clock, $round-clock);
+    @extend %watch-hands;
+    background-color: orangered;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
+  }
+
+  &__minutes {
+    background-color: orangered;
+    border-radius: 6px;
+
+    position: relative;
+
+    @include rectangle (10px, $minute-hand);
+    @extend %watch-hands;
+    transform-origin: top;
+    animation: move 60s linear infinite;
+    transform: translateX(-50%);
+
+  }
+
+  &__hours {
+    background-color: green;
+    border-radius: 6px;
+
+    @include rectangle (15px, $hour-hand);
+    @extend %watch-hands;
+    transform-origin: top;
+
+    animation: move 3600s linear infinite;
+    transform: translateX(-50%);
+
+  }
+
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(540deg);
+  }
+}
