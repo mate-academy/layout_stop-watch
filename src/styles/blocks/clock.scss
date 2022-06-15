@@ -1,13 +1,3 @@
-@keyframes handRotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .clock {
   position: relative;
 
@@ -26,7 +16,7 @@
     background-color: #000;
     border-radius: 5px;
 
-    animation: handRotate 60s steps(12, end) 1;
+    animation: handRotate 60s steps(12, start) 1 4s;
   }
 
   &__minute-hand {
@@ -39,5 +29,15 @@
     border-radius: 10px;
 
     animation: handRotate 60s steps(60, start) 1;
+  }
+}
+
+@keyframes handRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
