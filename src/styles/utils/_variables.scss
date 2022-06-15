@@ -1,5 +1,6 @@
 $clock-size: 500px;
 $clock-paddings: 20px;
 $round-clock: 25px;
-$minute-hand: ($clock-size - $clock-paddings) / 2 * 0.95;
-$hour-hand: $minute-hand / 1.5;
+$seconds-hand: ($clock-size - $clock-paddings) / 2 * 0.95;
+$shortage-mins-to-seconds: 60px;
+$minutes-hand: $seconds-hand - $shortage-mins-to-seconds;

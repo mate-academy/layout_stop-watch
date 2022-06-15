@@ -6,6 +6,8 @@
   position: relative;
 
   &__round {
+    top: 50%;
+
     @include rectangle ($round-clock, $round-clock);
     @extend %watch-hands;
     background-color: orangered;
@@ -15,30 +17,31 @@
 
   }
 
-  &__minutes {
+  &__seconds {
+    top: $clock-paddings;
+
     background-color: orangered;
     border-radius: 6px;
 
     position: relative;
 
-    @include rectangle (10px, $minute-hand);
+    @include rectangle (10px, $seconds-hand);
     @extend %watch-hands;
-    transform-origin: top;
-    animation: move 60s linear infinite;
     transform: translateX(-50%);
-
+    transform-origin: bottom right;
+    animation: move 60s linear infinite;
   }
 
-  &__hours {
+  &__minutes {
+    top: $clock-paddings + $shortage-mins-to-seconds;
     background-color: green;
     border-radius: 6px;
 
-    @include rectangle (15px, $hour-hand);
+    @include rectangle (15px, $minutes-hand);
     @extend %watch-hands;
-    transform-origin: top;
-
-    animation: move 3600s linear infinite;
     transform: translateX(-50%);
+    transform-origin: bottom left;
+    animation: move 3600s linear infinite;
 
   }
 
@@ -46,10 +49,10 @@
 
 @keyframes move {
   0% {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
   }
 
   100% {
-    transform: rotate(540deg);
+    transform: rotate(360deg);
   }
 }
