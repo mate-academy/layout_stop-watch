@@ -1,0 +1,52 @@
+.clock {
+  position: relative;
+
+  width: $clock_width;
+  height: $clock_width;
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  border: 2px solid $color-clock;
+  border-radius: 50%;
+  box-shadow: 10px 10px 5px 3px $shadow-color;
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__hand {
+    position: absolute;
+    top: 0.5 * $clock_width - 0.85 * $minute_hand_length;
+    left: 0.5 * $clock_width - 0.5 * $minute_hand_width;
+    transform-origin: 50% 85%;
+
+    width: $minute_hand_width;
+    height: $minute_hand_length;
+
+    background-color: $color-min;
+    border-radius: $minute_hand_width;
+
+    animation: rotate 3600s linear infinite;
+
+    &--second {
+      background-color: $color-sec;
+      top: 0.5 * $clock_width - 0.9 * $second_hand_length;
+      left: 0.5 * $clock_width - 0.5 * $second_hand_width;
+      transform-origin: 50% 90%;
+
+      width: $second_hand_width;
+      height: $second_hand_length;
+
+      border-radius: $second_hand_width;
+
+      animation-duration: 60s;
+    }
+
+  }
+}
