@@ -1,0 +1,17 @@
+@mixin animation($duration) {
+  transform-origin: center bottom;
+  animation-name: hands;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  @include square($size);
+  border-radius: 50%;
+}

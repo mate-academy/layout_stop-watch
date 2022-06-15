@@ -1,0 +1,36 @@
+.watch {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include circle(800px);
+  border: 2px solid #000;
+  background-color: rgb(233, 233, 233);
+
+  &__point {
+    position: $potisions-elements-of-watch;
+    background-color: $c-blue-hand;
+    @include circle(50px);
+  }
+
+  &__min-hand {
+    position: $potisions-elements-of-watch;
+    @extend %centering-hands;
+    height: 200px;
+    width: 25px;
+    background-color: $c-red-hand;
+    border-radius: $hands-border-radius;
+    @include animation(3600s);
+  }
+
+  &__sec-hand {
+    position: $potisions-elements-of-watch;
+    @extend %centering-hands;
+    height: 400px;
+    width: 10px;
+    background-color: $c-blue-hand;
+    border-radius: $hands-border-radius;
+    @include animation(60s);
+  }
+}
