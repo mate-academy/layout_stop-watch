@@ -1,0 +1,59 @@
+.clock {
+  position: relative;
+
+  width: $clock-size;
+  height: $clock-size;
+
+  background-image: url(../img/clock_bg.jpg);
+  border-radius: 50%;
+
+  &__hour-hand {
+    @include centerHand($clock-size, $hour-hand-height, $hour-hand-width);
+
+    width: $hour-hand-width;
+    height: $hour-hand-height;
+
+    background-color: #000;
+    border-radius: 5px;
+
+    animation: handRotate ($hour * 3600) steps(12, start) 1 ($hour - $second);
+  }
+
+  &__minute-hand {
+    @include centerHand($clock-size, $minute-hand-height, $minute-hand-width);
+
+    width: $minute-hand-width;
+    height: $minute-hand-height;
+
+    background-color: #0006;
+    border-radius: 10px;
+
+    animation: handRotate
+      ($minute * 60)
+      steps(60, start)
+      60
+      ($minute - $second);
+  }
+
+  &__second-hand {
+    @include centerHand($clock-size, $second-hand-height, $second-hand-width);
+
+    width: $second-hand-width;
+    height: $second-hand-height;
+
+    background-color: #000;
+    border-radius: 3px;
+
+    animation: handRotate $minute steps(60, start) 3600;
+  }
+}
+
+@keyframes handRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
