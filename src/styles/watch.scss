@@ -1,0 +1,56 @@
+.watch {
+  border-radius: 50%;
+  @include square(500px);
+  border: 1px solid black;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__hour_arrow {
+    background-color: orange;
+    height: $hour_arrow_size;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 95px;
+    transform-origin: bottom;
+    transition: transform 2s;
+    animation: timer 500s linear 15s infinite;
+    z-index: 1;
+  }
+
+  &__minute_arrow {
+    background-color: blue;
+    height: $minute_arrow_size;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    transform-origin: bottom;
+    transition: transform 2s;
+    animation: timer 15s linear 0.5s infinite;
+  }
+
+  &__point {
+    @include square(40px);
+    border-radius: 50%;
+    z-index: -2;
+    background-color: blue;
+  }
+}
+
+
+
+
+
+@keyframes timer {
+  from {
+  transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
