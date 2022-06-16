@@ -1,0 +1,62 @@
+.clock {
+  position: relative;
+  display: flex;
+  @include round(400px);
+  background-color: rgb(179, 176, 176);
+
+  &::after {
+    content: "";
+    @include pseudo-position(50%, 7%);
+    height: 2px;
+    background-color: black;
+
+    animation: circle 60s steps(60) infinite;
+  }
+
+  &::before {
+    content: "";
+    @include pseudo-position(50%, 17%);
+    height: 3px;
+    background-color: rgb(113, 19, 19);
+
+    animation: circle 3600s steps(60) infinite;
+  }
+
+  &__center {
+    margin: auto;
+  }
+
+  &__figures {
+    position: absolute;
+
+    &--12 {
+      @include figure-position(1%, 50%);
+      transform: translateX(-50%);
+    }
+
+    &--3 {
+      @include figure-position(50%, 93%);
+      transform: translateY(-75%);
+    }
+
+    &--6 {
+      @include figure-position(91%, 50%);
+      transform: translateX(-50%);
+    }
+
+    &--9 {
+      @include figure-position(50%, 3%);
+      transform: translateY(-75%);
+    }
+  }
+}
+
+@keyframes circle {
+  from {
+    transform: rotateZ(90deg);
+  }
+
+  to {
+    transform: rotateZ(450deg);
+  }
+}

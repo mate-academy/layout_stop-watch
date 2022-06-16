@@ -1,0 +1,19 @@
+@mixin round($size) {
+  height: $size;
+  width: $size;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+@mixin pseudo-position($right, $left) {
+  position: absolute;
+  top: 50%;
+  right: $right;
+  left: $left;
+  transform-origin: top right;
+}
+
+@mixin figure-position($top, $left) {
+  top: $top;
+  left: $left;
+}
