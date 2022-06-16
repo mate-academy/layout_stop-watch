@@ -1,0 +1,57 @@
+
+.clock {
+  height: 100vh;
+
+  &__circle {
+    position: relative;
+    margin: 50px auto;
+
+    @include circle($size-clock);
+    background-image: url(/images/background-space.jpg);
+    background-position: center;
+    box-shadow: 50px 50px 50px rgba($color: white, $alpha: 0.5);
+    border: 50px solid rgba($color: #000, $alpha: 0.1);
+
+    &::after {
+      content: "";
+      position: absolute;
+      @include circle($size-clock * 0.05);
+      background-color: rgb(255, 255, 255);
+      @include center-ps-element($size-clock * 0.05);
+    }
+  }
+
+  &__min-hand {
+    position: absolute;
+    @include center-ps-element($size-clock * 0.02);
+    height: $size-clock * 0.3;
+    width: $size-clock * 0.02;
+    border-radius: 40%;
+    background-color: $c-min-hand;
+
+    animation: move-hand 3600s linear infinite 1s;
+    transform-origin: bottom right;
+  }
+
+  &__sec-hand {
+    position: absolute;
+    @include center-ps-element($size-clock * 0.01);
+    height: $size-clock * 0.4;
+    width: $size-clock * 0.01;
+    border-radius: 40%;
+    background-color: $c-sec-hand;
+
+    animation: move-hand 60s linear infinite 1s;
+    transform-origin: bottom right;
+  }
+
+  @keyframes move-hand {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
