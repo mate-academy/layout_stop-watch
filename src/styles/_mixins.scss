@@ -1,0 +1,19 @@
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin arrow ($size-arrow, $width-arrow, $color-arrow,
+$boder-radius-arrow, $z-index) {
+  content: "";
+  position: absolute;
+  width: $width-arrow;
+  height: $size-arrow;
+  background-color: $color-arrow;
+  border-radius: $boder-radius-arrow;
+  z-index: $z-index;
+}
+
+@mixin animation ($time) {
+  animation: rotation $time linear infinite;
+}

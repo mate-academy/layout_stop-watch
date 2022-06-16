@@ -1,0 +1,66 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include square($size-watch);
+  background: center / contain no-repeat url("../image/watch.jpg");
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
+    -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+  &:before {
+    content: "";
+    position: absolute;
+    @include square($size-circle);
+    background-color: orange;
+    border-radius: 50%;
+    z-index: 4;
+  }
+
+  &__hr,
+  &__min,
+  &__sec {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__hr {
+    @include square($size-hr-area);
+    @include animation ($sec-in-24hr);
+
+    &:before {
+      @include arrow ($height-hr-arrow, $width-hr-arrow,
+      $color-hr-arrow, $br-hr-arrow, 1);
+    }
+  }
+
+  &__min {
+    @include square($size-min-area);
+    @include animation ($sec-in-hr);
+
+    &:before {
+      @include arrow ($height-min-arrow, $width-min-arrow,
+      $color-min-arrow, $br-min-arrow, 2);
+    }
+  }
+
+  &__sec {
+    @include square($size-sec-area);
+    @include animation ($sec-in-min);
+
+    &:before {
+      @include arrow ($height-sec-arrow, $width-sec-arrow,
+      $color-sec-arrow, $br-sec-arrow, 3);
+    }
+  }
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

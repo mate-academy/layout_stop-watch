@@ -1,0 +1,30 @@
+$size-watch: 500px;
+$size-circle: $size-watch * 0.04;
+$size-hr-area: $size-watch * 0.48;
+$size-min-area: $size-watch * 0.6;
+$size-sec-area: $size-watch * 0.8;
+$height-hr-arrow: $size-hr-area / 2;
+$height-min-arrow: $size-min-area / 2;
+$height-sec-arrow: $size-sec-area / 2 + $size-sec-area * 0.15;
+$width-hr-arrow: $size-watch / 62.5;
+$width-min-arrow: $size-watch / 125;
+$width-sec-arrow: $size-watch / 500;
+$br-hr-arrow: $width-hr-arrow / 2;
+$br-min-arrow: $width-min-arrow / 2;
+$br-sec-arrow: $width-sec-arrow / 2;
+$color-hr-arrow: black;
+$color-min-arrow: black;
+$color-sec-arrow: red;
+$sec-in-24hr: 86400s;
+$sec-in-hr: 3600s;
+$sec-in-min: 60s;
+
+@keyframes rotation {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
