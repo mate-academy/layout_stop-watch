@@ -1,7 +1,6 @@
 .clock {
   position: relative;
-  width: 350px;
-  height: 350px;
+  @include block($clock-size);
   background-color: rgb(201, 146, 79);
   border-radius: 50%;
   border: 5px solid rgb(91, 91, 25);
@@ -24,9 +23,6 @@
 }
 
 @keyframes move {
-  from {
-    transform: rotate(0);
-  }
   to {
     transform: rotate(360deg);
   }
