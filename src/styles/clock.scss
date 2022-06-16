@@ -1,0 +1,38 @@
+.clock {
+  @include circle (500px);
+  transform: translate(-50%, -50%);
+  border: 15px solid #405d27;
+  background-color: white;
+  box-shadow: -2px 2px 0 #82b74b, inset 0 0 20px rgba(0, 0, 0, 0.5);
+
+  &__seconds {
+    @include positionCenter();
+    @include hand();
+    width: 40%;
+    animation: start 60s linear infinite;
+  }
+
+  &__minutes {
+    @include positionCenter();
+    @include hand();
+    width: 30%;
+    animation: start 3600s linear infinite;
+  }
+
+  &__center {
+    @include positionCenter();
+    @include circle (20px);
+    background-color: #405d27;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+@keyframes start {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
