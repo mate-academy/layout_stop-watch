@@ -10,7 +10,8 @@
 
     @include rectangle ($round-clock, $round-clock);
     @extend %watch-hands;
-    background-color: orangered;
+    background-color: black;
+    opacity: 0.8;
     z-index: 1;
     transform: translate(-50%, -50%);
     border-radius: 50%;
@@ -18,41 +19,30 @@
   }
 
   &__seconds {
-    top: $clock-paddings;
-
-    background-color: orangered;
-    border-radius: 6px;
-
-    position: relative;
-
-    @include rectangle (10px, $seconds-hand);
     @extend %watch-hands;
-    transform: translateX(-50%);
-    transform-origin: bottom right;
+    @include rectangle (10px, $seconds-hand);
+    background-color: orangered;
+    border-radius: 10px;
+
+    transform: $arrows-positioning;
+    transform-origin: bottom;
     animation: move 60s linear infinite;
   }
 
   &__minutes {
-    top: $clock-paddings + $shortage-mins-to-seconds;
-    background-color: green;
-    border-radius: 6px;
-
-    @include rectangle (15px, $minutes-hand);
     @extend %watch-hands;
-    transform: translateX(-50%);
-    transform-origin: bottom left;
-    animation: move 3600s linear infinite;
+    @include rectangle (15px, $minutes-hand);
+    background-color: green;
+    border-radius: 16px;
 
+    transform: $arrows-positioning;
+    transform-origin: bottom;
+    animation: move 3600s steps(60) infinite;
   }
-
 }
 
 @keyframes move {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
+  to {
+    transform: $arrows-positioning rotate(360deg);
   }
 }
