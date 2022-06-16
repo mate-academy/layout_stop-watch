@@ -1,0 +1,34 @@
+.clock {
+  position: relative;
+  height: 100vh;
+  padding: 0 400px;
+  background-image: url(../Untitled_Artwork.png);
+  background-color: rgb(237, 248, 249);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &__item_sec {
+    @include center;
+    height: 300px;
+    width: 6px;
+    @include hand;
+    background-color: rgb(48, 131, 131);
+    animation: rotate 60s linear infinite;
+  }
+
+  &__item_min {
+    @include center;
+    height: 150px;
+    width: 7px;
+    @include hand;
+    background-color: rgb(237, 83, 0);
+    animation: rotate 3600s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
