@@ -1,0 +1,75 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include circle($watch-side);
+  border: 3px solid black;
+  background: linear-gradient(to bottom right, blue, pink);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+
+  &__centr {
+    position: relative;
+    @include circle($centr-circle-size);
+    background-color: #000;
+  }
+
+  &__minute {
+    position: absolute;
+    top: $position-minute;
+    height: $height-minute;
+    width: $width-minute;
+    background: linear-gradient(white, pink);
+    border: 1px solid black;
+    border-radius: 30%;
+    animation: move 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    top: $position-second;
+    height: $height-second;
+    width: $width_second;
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 40%;
+    animation: move 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__value {
+    position: absolute;
+    font-size: $font-size;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    color: #000;
+
+    &--12 {
+      top: 1px;
+    }
+
+    &--3 {
+      right: 1px;
+    }
+
+    &--6 {
+      bottom: 1px;
+    }
+
+    &--9 {
+      left: 1px;
+    }
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
