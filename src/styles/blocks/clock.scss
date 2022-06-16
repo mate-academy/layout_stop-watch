@@ -1,7 +1,7 @@
 .clock {
   position: relative;
   display: flex;
-  @include square(400px);
+  @include round(400px);
   background-color: rgb(179, 176, 176);
 
   &::after {
@@ -40,12 +40,12 @@
     }
 
     &--6 {
-      @include figure-position(90%, 50%);
+      @include figure-position(91%, 50%);
       transform: translateX(-50%);
     }
 
     &--9 {
-      @include figure-position(50%, 2%);
+      @include figure-position(50%, 3%);
       transform: translateY(-75%);
     }
   }
