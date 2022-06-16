@@ -6,25 +6,17 @@
   box-shadow: -2px 2px 0 #82b74b, inset 0 0 20px rgba(0, 0, 0, 0.5);
 
   &__seconds {
-    content: "";
     @include positionCenter();
+    @include hand();
     width: 40%;
-    height: 6px;
-    background-color: #82b74b;
-    border-radius: 3px;
     animation: run 60s linear infinite;
-    transform-origin: left;
   }
 
   &__minutes {
-    content: "";
     @include positionCenter();
+    @include hand();
     width: 30%;
-    height: 6px;
-    background-color: #82b74b;
-    border-radius: 3px;
     animation: run 3600s linear infinite;
-    transform-origin: left;
   }
 
   &__center {
