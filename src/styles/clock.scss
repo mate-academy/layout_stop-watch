@@ -1,5 +1,3 @@
-$size: 20px;
-
 .clock {
   position: relative;
   height: 100vh;
@@ -11,32 +9,26 @@ $size: 20px;
   background-size: contain;
 
   &__item_sec {
-    position: absolute;
-    bottom: 50%;
-    left:50%;
-    height:300px;
+    @include center;
+    height: 300px;
     width: 6px;
-    border-radius: 25%;
+    @include hand;
     background-color: rgb(48, 131, 131);
     animation: rotate 60s linear infinite;
-    transform-origin: bottom;
   }
 
   &__item_min {
-    position: absolute;
-    bottom: 50%;
-    left:50%;
+    @include center;
     height: 150px;
     width: 7px;
-    border-radius: 25%;
+    @include hand;
     background-color: rgb(237, 83, 0);
     animation: rotate 3600s linear infinite;
-    transform-origin: bottom;
   }
 }
 
-@keyframes rotate{
+@keyframes rotate {
   100% {
-   transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
   }
 }
