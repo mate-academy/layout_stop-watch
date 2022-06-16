@@ -1,0 +1,23 @@
+.minutes {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  height: 150px;
+  @include clock-arrow;
+  transform: translateX(-50%);
+  background-color: aquamarine;
+  animation-name: rotation;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
