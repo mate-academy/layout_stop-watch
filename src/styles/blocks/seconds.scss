@@ -1,26 +1,12 @@
 .seconds {
-  position: relative;
-  left: 50%;
+  @include page-center-align;
+  @include hand;
 
   display: inline-block;
-  height: 300px;
-  @include clock-arrow;
+  height: $seconds-hand-height;
 
   background-color: coral;
 
-  transform: translateX(-50%);
-  animation-name: rotation;
-  animation-duration: 60s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-
-  @keyframes rotation {
-    from {
-      transform: rotate(0);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  }
+  transform-origin: 0 0;
+  animation: rotation 60s linear infinite;
 }

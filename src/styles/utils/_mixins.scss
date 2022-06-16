@@ -4,7 +4,15 @@
   border-radius: 50%;
 }
 
-@mixin clock-arrow {
+@mixin hand {
   width: $object-width;
   border-radius: 5px;
+}
+
+@mixin page-center-align {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
 }

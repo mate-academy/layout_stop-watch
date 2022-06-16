@@ -1,9 +1,8 @@
 .center-circle {
-  position: relative;
-  left: 50%;
-  display: inline-block;
   @include circle(30px);
+  @include page-center-align;
+
+  display: inline-block;
 
   background-color: aquamarine;
-  transform: translate(-50%, -50%);
 }

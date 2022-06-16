@@ -1,23 +1,11 @@
 .minutes {
+  @include hand;
+  @include page-center-align;
+
   display: inline-block;
-  position: relative;
-  left: 50%;
-  height: 150px;
-  @include clock-arrow;
-  transform: translateX(-50%);
+  height: $seconds-hand-height / 2;
+
+  transform-origin: 0 0;
   background-color: aquamarine;
-  animation-name: rotation;
-  animation-duration: 3600s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-
-  @keyframes rotation {
-    from {
-      transform: rotate(0);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  }
+  animation: rotation 3600s linear infinite;
 }
