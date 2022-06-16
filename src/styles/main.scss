@@ -1,0 +1,107 @@
+.hasy {
+  position: relative;
+  display: flex;
+  width: 200px;
+  height: 200px;
+  margin: 5em;
+  border: 4px solid #36d3b9;
+  border-radius: 50%;
+}
+
+.minutes {
+  position: absolute;
+  width: 3px;
+  height: 100px;
+  left: 99px;
+  top: 0;
+  background: #36dbdb;
+  animation: now 1600s infinite steps(1600);
+  transform-origin: 0 100px;
+}
+
+.has {
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  left: 98px;
+  top: 0;
+  background: #112727;
+  animation: nov 43200s infinite steps(43200);
+  transform-origin: 0 100px;
+}
+
+.sekundes {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  left: 99px;
+  top: 00;
+  background: rgba(255, 0, 0, 0.84);
+  animation: nev 60s infinite steps(60);
+  transform-origin: 0 100px;
+}
+
+.position {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes nev {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes nov {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes now {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.onen,
+.threen,
+.sixn,
+.ninen {
+  position: absolute;
+  font-weight: bold;
+  font-size: 18px;
+  color: #48d1cc;
+}
+
+.onen {
+  top: 0;
+  left: 90px;
+}
+
+.threen {
+  top: 95px;
+  left: 190px;
+}
+
+.sixn {
+  top: 182px;
+  left: 95px;
+}
+
+.ninen {
+  top: 95px;
+  left: 0;
+}
+
+.sentr {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  top: 96px;
+  left: 92px;
+  background: #e94848;
+}
