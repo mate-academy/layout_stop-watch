@@ -29,7 +29,7 @@
   &__minute {
     position: absolute;
     z-index: 2;
-    top: $watch-face / 2 - $minute-hand-height;
+    top: $radius - $minute-hand-height;
     height: $minute-hand-height;
     width: $minute-hand-width;
     background-color: gray;
@@ -40,7 +40,7 @@
 
   &__second {
     position: absolute;
-    top: $watch-face / 2 - $second-hand-height;
+    top: $radius - $second-hand-height;
     height: $second-hand-height;
     width: $second-hand-width;
     z-index: 3;
@@ -52,12 +52,9 @@
 
   &__center {
     position: absolute;
-    bottom: 50%;
-    z-index: 4;
     width: $watch-face/20;
     height: $watch-face/20;
     background-color: gray;
-    transform-origin: center bottom;
     border-radius: 50%;
   }
 }
