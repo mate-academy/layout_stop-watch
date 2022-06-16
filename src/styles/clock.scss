@@ -1,0 +1,29 @@
+.clock {
+  position: relative;
+  @include block($clock-size);
+  background-color: rgb(201, 146, 79);
+  border-radius: 50%;
+  border: 5px solid rgb(91, 91, 25);
+
+  &__minute {
+    @include state;
+    width: 5px;
+    height: 120px;
+    background-color: yellow;
+    animation: move 3660s linear infinite;
+  }
+
+  &__second {
+    @include state;
+    width: 3px;
+    height: 160px;
+    background-color: blue;
+    animation: move 60s linear infinite;
+  }
+}
+
+@keyframes move {
+  to {
+    transform: rotate(360deg);
+  }
+}
