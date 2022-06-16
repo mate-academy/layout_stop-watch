@@ -1,0 +1,82 @@
+
+.ContainerWatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  @include square (800px);
+  margin: auto;
+  background-color: cadetblue;
+  border-radius: 400px;
+}
+
+.ContainerWatch__minute {
+  position: absolute;
+  width: 8px;
+  height: 400px;
+  bottom: 350px;
+  border-radius: 4px;
+  background-color: rgb(239, 22, 80);
+  animation: RotMinute;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  transform-origin: 4px 350px;
+}
+
+.ContainerWatch__minute::after {
+  @include square (60px);
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  border: 3px dotted rgb(239, 22, 80);
+  left: -30px;
+  top: 320px;
+}
+
+.ContainerWatch__second {
+  position: absolute;
+  width: 10px;
+  height: 320px;
+  bottom: 350px;
+  border-radius: 5px;
+  background-color: rgb(66, 65, 65);
+
+  animation: RotSec;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  transform-origin: 5px 270px;
+}
+
+.ContainerWatch__second::after {
+  content: "^";
+  position: absolute;
+  font-size: 119px;
+  color: rgb(66, 65, 65);
+  // background-color: rgb(45, 220, 39);
+  // border: 2px dotted black;
+  left: -23px;
+  top: -35px;
+}
+
+@keyframes RotMinute {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes RotSec {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
