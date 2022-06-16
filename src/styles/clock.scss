@@ -9,14 +9,14 @@
     @include positionCenter();
     @include hand();
     width: 40%;
-    animation: run 60s linear infinite;
+    animation: start 60s linear infinite;
   }
 
   &__minutes {
     @include positionCenter();
     @include hand();
     width: 30%;
-    animation: run 3600s linear infinite;
+    animation: start 3600s linear infinite;
   }
 
   &__center {
@@ -28,7 +28,7 @@
   }
 }
 
-@keyframes run {
+@keyframes start {
   0% {
     transform: rotate(-90deg);
   }
