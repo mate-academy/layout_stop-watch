@@ -1,0 +1,40 @@
+.watch {
+  @include center-position;
+
+  @include circle($watch-size);
+
+  background-color: #eee;
+
+  &__center-point {
+    @include center-position;
+
+    @include circle($point-size);
+
+    background-color: $c-main;
+  }
+
+  &__second-hand {
+    @include hand-position($second-hand-width);
+
+    width: $second-hand-width;
+    height: 250px;
+    border-radius: 10px;
+
+    background-color: $c-main;
+
+    @include hand-animation(second, 10s);
+  }
+
+  &__minute-hand {
+    @include hand-position($minute-hand-width);
+
+    width: $minute-hand-width;
+    height: 150px;
+    border-radius: 10px;
+
+    background-color: $c-secondary;
+
+    @include hand-animation(minute, 600s);
+    
+  }
+}
