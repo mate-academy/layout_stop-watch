@@ -1,0 +1,77 @@
+.clock {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include rectangle($clock-diameter, $clock-diameter);
+
+  background-color: orange;
+  border: 1px solid black;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: $position-left-clock;
+    left: $position-left-clock;
+    z-index: 2;
+
+    @include rectangle($clock-hand-width, $clock-hand-width);
+
+    background-color: cadetblue;
+    border-radius: 50%;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    top: $position-top-minute;
+    left: $position-left-clock;
+    z-index: 1;
+
+    @include rectangle($clock-minute-height, $clock-hand-width);
+
+    background-color: aqua;
+    border-radius: $clock-hand-width / 2;
+
+    animation: rotation 60s steps(60) infinite;
+    transform-origin: bottom center;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: $position-top-minute;
+    left: $position-left-clock;
+
+    @include rectangle($clock-minute-height, $clock-hand-width);
+
+    background-color: chocolate;
+    border-radius: $clock-hand-width / 2;
+
+    animation: rotation 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__hour-hand {
+    position: absolute;
+    top: $position-top-hour;
+    left: $position-left-clock;
+
+    @include rectangle($clock-hour-height, $clock-hand-width);
+
+    background-color: darkblue;
+    border-radius: $clock-hand-width / 2;
+
+    animation: rotation 86400s linear infinite;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
