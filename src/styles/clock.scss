@@ -1,0 +1,42 @@
+$size: 20px;
+
+.clock {
+  position: relative;
+  height: 100vh;
+  padding: 0 400px;
+  background-image: url(../Untitled_Artwork.png);
+  background-color: rgb(237, 248, 249);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &__item_sec {
+    position: absolute;
+    bottom: 50%;
+    left:50%;
+    height:300px;
+    width: 6px;
+    border-radius: 25%;
+    background-color: rgb(48, 131, 131);
+    animation: rotate 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__item_min {
+    position: absolute;
+    bottom: 50%;
+    left:50%;
+    height: 150px;
+    width: 7px;
+    border-radius: 25%;
+    background-color: rgb(237, 83, 0);
+    animation: rotate 3600s linear infinite;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes rotate{
+  100% {
+   transform: rotateZ(360deg);
+  }
+}
