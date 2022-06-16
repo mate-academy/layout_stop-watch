@@ -6,9 +6,9 @@
   flex-shrink: 0;
   flex-grow: 0;
 
-  border: 2px solid $color-clock;
+  border: 2px solid #f0e68c;
   border-radius: 50%;
-  box-shadow: 10px 10px 5px 3px $shadow-color;
+  box-shadow: 10px 10px 5px 3px #0101ff33;
 
   @keyframes rotate {
     from {
@@ -29,13 +29,13 @@
     width: $minute_hand_width;
     height: $minute_hand_length;
 
-    background-color: $color-min;
+    background-color: #f5f1d1;
     border-radius: $minute_hand_width;
 
-    animation: rotate 3600s linear infinite;
+    animation: rotate 3600s steps(60, end) infinite;
 
     &--second {
-      background-color: $color-sec;
+      background-color: #fd4141;
       top: 0.5 * $clock_width - 0.9 * $second_hand_length;
       left: 0.5 * $clock_width - 0.5 * $second_hand_width;
       transform-origin: 50% 90%;
@@ -45,7 +45,7 @@
 
       border-radius: $second_hand_width;
 
-      animation-duration: 60s;
+      animation: rotate 60s steps(60, end) infinite;
     }
 
   }
