@@ -1,12 +1,11 @@
 .watch {
   display: flex;
   justify-content: center;
-  width: 620px;
-  height: 620px;
-  transform: translateY(10px);
+  @include square ($watch-size);
+  transform: translateY(($watch-size - ($watch-size / 2.2) * 2) / 2);
   &__minute-arrow {
     position: relative;
-    height: 300px;
+    height: $watch-size / 2.2;
     width: 8px;
     background-color: blue;
     transform-origin: bottom;
@@ -24,7 +23,7 @@
   }
   &__second-arrow {
     position: absolute;
-    height: 300px;
+    height: $watch-size / 2.2;
     width: 5px;
     background-color: red;
     transform-origin: bottom;
