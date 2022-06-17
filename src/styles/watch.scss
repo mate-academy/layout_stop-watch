@@ -1,0 +1,38 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  @include square ($watch-size);
+  transform: translateY(($watch-size - ($watch-size / 2.2) * 2) / 2);
+  &__minute-arrow {
+    position: relative;
+    height: $watch-size / 2.2;
+    width: 8px;
+    background-color: blue;
+    transform-origin: bottom;
+    animation: watch 3600s 1s infinite;
+    &::after {
+      content: "";
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgb(57, 57, 53);
+      left: -6px;
+      bottom: -10px;
+    }
+  }
+  &__second-arrow {
+    position: absolute;
+    height: $watch-size / 2.2;
+    width: 5px;
+    background-color: red;
+    transform-origin: bottom;
+    animation: watch 60s 1s infinite;
+    animation-timing-function: steps(60, start);
+  }
+}
+@keyframes watch {
+  to {
+    transform: rotate(360deg);
+  }
+}
