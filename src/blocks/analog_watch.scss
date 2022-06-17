@@ -1,0 +1,37 @@
+.stop-watch {
+  display: flex;
+  height: 100vh;
+}
+
+.clock {
+  display: flex;
+  position: relative;
+  margin: auto;
+  height: 600px;
+  width: 600px;
+  border: 2px dotted grey;
+  border-radius: 50%;
+  background-color: lightgray;
+  transform: rotate(180deg);
+  
+  &__hand {
+    @include center;
+    width: $hand-width;
+    height: $hand-height;
+    border: 3px solid #fff;
+    border-radius: 60%;
+    animation: rotate $hour linear infinite;
+    transform-origin: top;
+
+    &--minute {
+      animation-duration: $hour;
+      background-color: rgb(0, 0, 0);
+    }
+
+    &--second {
+      animation-duration: $minute;
+      height: $hand-height*2;
+      background-color: rgb(165, 42, 42);
+    }
+  }
+}
