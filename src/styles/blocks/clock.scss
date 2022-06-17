@@ -37,9 +37,11 @@
 
   &__minutes-container {
     animation: rotate 3600s infinite steps(60);
+    transform: rotate(120deg);
   }
   &__seconds-container {
-    animation: rotate 60s infinite steps(60);
+    animation: rotate 60s infinite linear;
+    transform: rotate(110deg);
   }
 
   &__minutes-container, &__seconds-container {
@@ -49,4 +51,15 @@
     bottom: 0;
     left: 0;
   }
+}
+
+.timeRefresher{
+  width: $circle-size * 0.2;
+  cursor: pointer;
+  font-weight: bold;
+  position: fixed;
+  bottom: 10%;
+  border: none;
+  left: 44%;
+  background-color: rgb(240, 254, 9);
 }
