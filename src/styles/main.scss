@@ -1,0 +1,49 @@
+.stopwatch {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 0 auto;
+  background-image: url(../images/dial.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__long-clip {
+    position: absolute;
+    left: 146px;
+    top: 45px;
+    height: 105px;
+    border-left: 4px solid red;
+    margin: 0;
+    animation-name: time;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+
+    transform-origin: 2px 105px;
+  }
+
+  &__short-clip {
+    position: absolute;
+    left: 146px;
+    top: 60px;
+    height: 90px;
+    border-left: 4px solid black;
+    margin: 0;
+    padding: 0;
+    animation-name: time;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: 2px 90px;
+  }
+
+  @keyframes time {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
