@@ -1,0 +1,34 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include watchSize;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-image: url(../../images/fon.jpg);
+
+  &__point {
+    @include pointSize;
+    background-color: #4b9aaa;
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &__minute {
+    @include arrowSize;
+    top: 100px;
+    height: 200px;
+    background-color: #4b9aaa;
+    @include arrowAnimation (3600s);
+    z-index: 2;
+  }
+
+  &__second {
+    @include arrowSize;
+    top: 50px;
+    height: 250px;
+    background-color: #c25555;
+    @include arrowAnimation (60s);
+    z-index: 1;
+  }
+}

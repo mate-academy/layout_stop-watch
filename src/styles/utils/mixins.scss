@@ -1,0 +1,25 @@
+@mixin arrowAnimation ($duration) {
+  transform-origin: bottom;
+  animation-name: watch;
+  animation-duration: $duration;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@mixin pointSize {
+  height: 25px;
+  width: 25px;
+}
+
+@mixin watchSize {
+  width: 600px;
+  height: 600px;
+}
+
+@mixin arrowSize {
+  position: absolute;
+  width: 15px;
+  border-radius: 15px;
+}
