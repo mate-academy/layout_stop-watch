@@ -1,0 +1,43 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 350px;
+  z-index: -1;
+
+  &__hours {
+    @include center;
+    height: $hour-hand-height;
+    width: $hand-width;
+    @include hand;
+    background-color: rgb(177, 3, 3);
+    animation: rotate 3600s linear infinite;
+    z-index: 1;
+  }
+
+  &__seconds {
+    @include center;
+    height: $second-hand-height;
+    width: $hand-width;
+    @include hand;
+    background-color: rgb(48, 131, 131);
+    animation: rotate 60s linear infinite;
+  }
+
+  &__circle {
+    @include circle($center-radius);
+    margin-left: $hand-width;
+    background-color: rgb(48, 131, 131);
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

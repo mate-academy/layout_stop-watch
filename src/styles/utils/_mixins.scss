@@ -1,0 +1,20 @@
+@mixin center {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+}
+
+@mixin hand {
+  border-radius: 25%;
+  transform-origin: bottom;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  @include square($size);
+  border-radius: 50%;
+}
