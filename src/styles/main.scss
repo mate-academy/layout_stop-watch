@@ -1,4 +1,37 @@
-body {
-  margin: 0;
-  color: red;
+@import "./blocks/utils/vars";
+@import "./blocks/utils/mixins";
+
+.clock {
+  @include flex-circle($clock-size);
+
+  align-items: center;
+  border: 1px solid purple;
+
+  &__center {
+    @include flex-circle($center-size);
+
+    position: relative;
+    background-color: black;
+    transition: infinite;
+  }
+
+  &__minute-hand {
+    @include hand($minute-hand-width, 3600);
+
+    height: 150px;
+    background-color: orange;
+  }
+
+  &__second-hand {
+    @include hand($second-hand-width, 60);
+    
+    height: 300px;
+    background-color: red;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }

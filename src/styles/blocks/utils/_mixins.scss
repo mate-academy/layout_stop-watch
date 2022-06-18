@@ -1,0 +1,17 @@
+@mixin flex-circle($size) {
+  display: flex;
+  justify-content: center;
+  width: $size;
+  height: $size;
+  border-radius: 55%;
+}
+
+@mixin hand($width, $duration) {
+  position: absolute;
+  z-index: -1;
+  bottom: 50%;
+  width: $width;
+  border-radius: $width;
+  transform-origin: bottom;
+  animation: rotate #{$duration}s infinite steps(60, end);
+}
