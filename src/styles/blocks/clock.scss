@@ -1,0 +1,58 @@
+.clok {
+  @include square($clok-size);
+
+  background-image: url(./../image/dial.png);
+  background-size: cover;
+
+  border: 4px solid rgb(226, 93, 31);
+  border-radius: 50%;
+  box-shadow: 5px 5px 23px 22px rgba(80,120,31,0.86);
+
+  &::before {
+    content: '';
+    @include square(15px);
+    background-color: rgb(226, 93, 31);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &__sec {
+    height: 45%;
+    width: 0px;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    top: 5%;
+    margin: auto;
+
+    position: relative;
+
+    transform-origin: bottom;
+    animation: time 60s infinite linear;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__min {
+    height: 35%;
+    width: 0px;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    top: -30%;
+    margin: auto;
+    position: relative;
+
+    transform-origin: bottom;
+    animation: time 3600s infinite linear;
+    animation-timing-function: steps(60, end);
+  }
+
+}
+
+@keyframes time {
+  100% {
+    transform: rotate(360deg);
+  }
+}
