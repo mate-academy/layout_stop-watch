@@ -2,39 +2,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 600px;
-  height: 600px;
+  @include watchSize;
   border: 2px solid black;
   border-radius: 50%;
-  margin: 0 auto;
   background-image: url(../../images/fon.jpg);
 
   &__point {
-    height: 25px;
-    width: 25px;
+    @include pointSize;
     background-color: #4b9aaa;
     border-radius: 50%;
     z-index: 3;
   }
 
   &__minute {
-    position: absolute;
+    @include arrowSize;
     top: 100px;
     height: 200px;
-    width: 15px;
     background-color: #4b9aaa;
-    border-radius: 15px;
     @include arrowAnimation (3600s);
     z-index: 2;
   }
 
   &__second {
-    position: absolute;
+    @include arrowSize;
     top: 50px;
     height: 250px;
-    width: 15px;
     background-color: #c25555;
-    border-radius: 15px;
     @include arrowAnimation (60s);
     z-index: 1;
   }
