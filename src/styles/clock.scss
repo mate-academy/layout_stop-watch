@@ -1,0 +1,65 @@
+.clock {
+  @include range($clock-size);
+
+  position: relative;
+  margin: 250px auto;
+
+  border: 1px solid black;
+  background-color: darkblue;
+
+  &__range {
+    @include range($range-size);
+    @include position($position-range, $position-range);
+
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+  }
+
+  &__minute {
+    position: absolute;
+    height: $height-minute;
+    width: $range-size / 2;
+    @include position($position-top-minute, $position-left);
+
+    border-radius: 50%;
+    background-color: red;
+
+    animation: arrow-teak 3600s steps(60, end) infinite;
+    transform-origin: center bottom;
+
+    @keyframes arrow-teak {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__second {
+    @include position($position-top-second, $position-left);
+
+    position: absolute;
+    height: $height-second;
+    width: $range-size / 2;
+
+    border-radius: 50%;
+    background-color: green;
+
+    animation: arrow-teak 60s steps(60, end) infinite;
+    transform-origin: center bottom;
+
+    @keyframes arrow-teak {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
