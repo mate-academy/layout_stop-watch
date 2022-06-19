@@ -1,0 +1,34 @@
+.stop-watch {
+  position: relative;
+  height: 400px;
+  background-image: url(/images/pngwing.com.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &__min {
+    @include center;
+    @include watch-hand;
+    width: 8px;
+    background-color: cornflowerblue;
+    animation: move 3600s linear infinite;
+
+  }
+
+  &__sec {
+    @include center;
+    @include watch-hand;
+    width: 5px;
+    background-color: palegreen;
+    animation: move 60s linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
