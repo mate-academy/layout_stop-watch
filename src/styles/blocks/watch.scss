@@ -1,7 +1,6 @@
 .watch {
   @include square($watch-size);
-  top: 50%;
-  left: 50%;
+  margin: 0 auto;
   position: relative;
   display: flex;
   align-items: center;
@@ -10,25 +9,25 @@
   border-radius: $watch-border;
 
   &__minutehand {
+    $time: 600s;
     position: absolute;
     height: $minutehand-height;
     top: $watch-size / 2 - $minutehand-height;
     background-color: black;
     border-radius: 20%;
     width: 3px;
-    animation-duration: 600s;
-    @include animation;
+    @include animation($time);
   }
 
   &__secondhand {
+    $time: 60s;
     position: absolute;
     height: $secondhand-height;
     top: $watch-size / 2 - $secondhand-height;
     background-color: red;
     border-radius: 20%;
     width: 3px;
-    animation-duration: 60s;
-    @include animation;
+    @include animation ($time);
   }
 
   &__center {

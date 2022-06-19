@@ -1,11 +1,12 @@
-@mixin square($watch-size) {
-  width: $watch-size;
-  height: $watch-size;
+@mixin square($size) {
+  width: $size;
+  height: $size;
 }
 
-@mixin animation {
+@mixin animation ($time) {
   animation-name: watch;
   transform-origin: bottom;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  animation-duration: $time;
 }
