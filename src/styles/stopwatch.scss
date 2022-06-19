@@ -1,0 +1,47 @@
+.stopwatch {
+  height: 100vh;
+  position: relative;
+  
+  &__minute {
+    @include stopwatch_position;
+    height: $size-height;
+    width: $size-width;
+    background-color: #cd5c5c;
+    border-radius: $border-radius;
+    animation-duration: 360s;
+  }
+
+  &__second {
+    @include stopwatch_position;
+    height: $size-height + 140px;
+    width: $size-width - 2px;
+    background-color: $background-color;
+    border-radius: $border-radius;
+    animation-duration: 60s;
+  }
+  
+  &__center {
+    @include stopwatch_center;
+    height: $size-circle;
+    width: $size-circle;
+    background-color: $background-color;
+    border-radius: 50%;
+  }
+  
+  @keyframes myclock {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  &__minute,
+  &__second {
+    animation-name: myclock;
+    animation-iteration-count: infinite;
+    transform-origin: bottom center;
+    animation-timing-function: linear;
+  }
+}
