@@ -7,3 +7,8 @@
   width: $sizeX;
   height: $sizeY;
 }
+
+@mixin round($size) {
+  @include square($size);
+  border-radius: 50%;
+}

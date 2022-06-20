@@ -1,3 +1,6 @@
+.page__ContainerWatch {
+  margin: auto;
+}
 
 .ContainerWatch {
   position: relative;
@@ -5,63 +8,51 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  @include square (800px);
-  margin: auto;
+  @include round (800px);
   background-color: cadetblue;
-  border-radius: 50%;
-}
 
-.ContainerWatch__minute {
-  position: absolute;
-  @include rectangle (8px, 400px);
-  bottom: 350px;
-  border-radius: 4px;
-  background-color: rgb(239, 22, 80);
-  transform-origin: 4px 350px;
-  animation: RotMinute 60s linear infinite;
-}
+  &__minute {
+    position: absolute;
+    @include rectangle (8px, 400px);
+    bottom: 350px;
+    border-radius: 4px;
+    background-color: rgb(239, 22, 80);
 
-.ContainerWatch__minute::after {
-  @include square (60px);
-  border-radius: 50%;
-  content: "";
-  position: absolute;
-  border: 3px dotted rgb(239, 22, 80);
-  left: -30px;
-  top: 320px;
-}
-
-.ContainerWatch__second {
-  position: absolute;
-  @include rectangle (10px, 320px);
-  bottom: 350px;
-  border-radius: 5px;
-  background-color: rgb(66, 65, 65);
-
-  transform-origin: 5px 270px;
-  animation: RotSec 3600s linear infinite;
-}
-
-.ContainerWatch__second::after {
-  content: "^";
-  position: absolute;
-  font-size: 119px;
-  color: rgb(66, 65, 65);
-  left: -23px;
-  top: -35px;
-}
-
-@keyframes RotMinute {
-  0% {
-    transform: rotate(0deg);
+    transform-origin: 4px 350px;
+    animation: Rot 60s linear infinite;
   }
 
-  100% {
-    transform: rotate(360deg);
+  &__minute::after {
+    @include round (60px);
+    content: "";
+    position: absolute;
+    border: 3px dotted rgb(239, 22, 80);
+    left: -30px;
+    top: 320px;
+  }
+
+  &__second {
+    position: absolute;
+    @include rectangle (10px, 320px);
+    bottom: 350px;
+    border-radius: 5px;
+    background-color: rgb(66, 65, 65);
+
+    transform-origin: 5px 270px;
+    animation: Rot 3600s linear infinite;
+  }
+
+  &__second::after {
+    content: "^";
+    position: absolute;
+    font-size: 119px;
+    color: rgb(66, 65, 65);
+    left: -23px;
+    top: -35px;
   }
 }
 
-@keyframes RotSec {
+@keyframes Rot {
   0% {
     transform: rotate(0deg);
   }
