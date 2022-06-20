@@ -1,0 +1,59 @@
+.ContainerWatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  @include round (800px);
+  background-color: cadetblue;
+
+  &__minute {
+    position: absolute;
+    @include rectangle (8px, 400px);
+    bottom: 350px;
+    border-radius: 4px;
+    background-color: rgb(239, 22, 80);
+
+    transform-origin: 4px 350px;
+    animation: rotate 60s linear infinite;
+
+    &::after {
+      @include round (60px);
+      content: "";
+      position: absolute;
+      border: 3px dotted rgb(239, 22, 80);
+      left: -30px;
+      top: 320px;
+    }
+  }
+
+  &__second {
+    position: absolute;
+    @include rectangle (10px, 320px);
+    bottom: 350px;
+    border-radius: 5px;
+    background-color: rgb(66, 65, 65);
+
+    transform-origin: 5px 270px;
+    animation: rotate 3600s linear infinite;
+
+    &__second::after {
+      content: "^";
+      position: absolute;
+      font-size: 119px;
+      color: rgb(66, 65, 65);
+      left: -23px;
+      top: -35px;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
