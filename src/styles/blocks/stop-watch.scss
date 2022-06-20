@@ -1,15 +1,17 @@
 .stop-watch {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  margin: $margins;
+  &__field {
+    margin: $margins;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  @include circle(600px);
+    @include circle(600px);
 
-  background-color: $bgc;
-  border: 10px solid $border-color;
+    background-color: $bgc;
+    border: 10px solid $border-color;
+  }
 
   &__minutes {
     position: absolute;
@@ -43,10 +45,6 @@
   }
 
   @keyframes time {
-    from {
-      transform: rotate(0deg);
-    }
-
     to {
       transform: rotate(360deg);
     }
