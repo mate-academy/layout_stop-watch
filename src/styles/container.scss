@@ -1,5 +1,5 @@
 .watch-container {
-  @include square($watch-container-size);
+  @include circle($watch-container-size);
   position: relative;
   background-color: rgb(239, 237, 252);
   margin: auto;
@@ -60,11 +60,11 @@
     box-shadow: 1px -1px 9px 4px rgb(128, 180, 239);
   }
   &__center {
-    @include square($watch-container-center);
-    background-color: black;
     position: absolute;
     top: 50%;
     left: 50%;
+    @include circle($watch-container-center);
+    background-color: black;
     box-shadow: 1px -1px 18px 4px rgb(132, 123, 124);
     transform: translate(-50%, -50%);
   }
