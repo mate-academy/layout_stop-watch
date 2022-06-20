@@ -3,9 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50;
-  width: 300px;
-  height: 300px;
+  width: $clock-size;
+  height: $clock-size;
   border: 20px solid #7e7368;
   border-radius: 50%;
   background: #fefbf2;
@@ -55,7 +54,7 @@
   }
 }
 
-@keyframes time {
+@keyframes round {
   100% {
     transform: rotate(360deg);
   }
