@@ -1,5 +1,8 @@
-.stopwatch {
+.body__stopwatch {
   margin: 100px;
+}
+
+.stopwatch {
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -8,42 +11,42 @@
   height: $size;
   border-radius: $size/2;
   border: solid 1px black;
-}
 
-.stopwatch__center {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background-color: black;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
+  &__center {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-.stopwatch__seconds {
-  width: 4px;
-  height: $size/2;
-  background-color: blue;
-  position: absolute;
-  left: 50% -2px;
-  animation-name: spinSeconds;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-iteration-count: 100;
-}
+  &__seconds {
+    width: 4px;
+    height: $size/2;
+    background-color: blue;
+    position: absolute;
+    left: 50% -2px;
+    animation-name: spinSeconds;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
 
-.stopwatch__minutes {
-  width: 10px;
-  height: $size/3;
-  background-color: red;
-  position: absolute;
-  left: 50% -10px;
-  top: $size/6;
-  animation-name: spinMinutes;
-  animation-duration: 60s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
+  &__minutes {
+    width: 10px;
+    height: $size/3;
+    background-color: red;
+    position: absolute;
+    left: 50% -10px;
+    top: $size/6;
+    animation-name: spinMinutes;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
 }
 
 @keyframes spinSeconds {
@@ -53,7 +56,7 @@
   }
   to {
     transform-origin: bottom;
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 }
 
@@ -64,6 +67,6 @@
   }
   to {
     transform-origin: bottom;
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 }
