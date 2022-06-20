@@ -1,0 +1,52 @@
+.stop-watch {
+
+  &__field {
+    margin: $margins;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include circle(600px);
+
+    background-color: $bgc;
+    border: 10px solid $border-color;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 15%;
+
+    width: $minutes-hand-width;
+    height: $minutes-hand-height;
+    background-color: $c-minutes;
+
+    @extend %animation;
+    animation-duration: $hour;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: 5%;
+
+    width: $seconds-hand-width;
+    height: $seconds-hand-height;
+    background-color: $c-seconds;
+
+    @extend %animation;
+    animation-duration: $minute;
+  }
+
+  &__center {
+    position: absolute;
+
+    background-color: $center-color;
+    @include circle(40px);
+  }
+
+  @keyframes time {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
