@@ -1,0 +1,76 @@
+.watch-container {
+  @include circle($watch-container-size);
+  position: relative;
+  background-color: rgb(239, 237, 252);
+  box-shadow: 1px -1px 18px 4px rgb(57, 56, 56);
+
+  &__number-12:before {
+    content: "12 ";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 20%);
+  }
+
+  &__number-3:before {
+    content: "3";
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__number-9:before {
+    content: "9";
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__number-6:before {
+    content: "6";
+    position: absolute;
+    top: 92%;
+    right: 45%;
+    transform: translate(-20%, -50%);
+  }
+
+  &__second-hand {
+    bottom: 50%;
+    left: $watch-container-size / 2 - $second-hand-width / 2;
+    position: absolute;
+    height: 270px;
+    width: $second-hand-width;
+    background-color: rgb(7, 7, 7);
+    transform-origin: bottom center;
+    animation: watch 60s linear infinite;
+    box-shadow: 1px -1px 18px 4px rgb(239, 219, 131);
+  }
+
+  &__minute-hand {
+    bottom: 50%;
+    left: $watch-container-size / 2 - $minute-hand-width / 2;
+    position: absolute;
+    height: 180px;
+    width: $minute-hand-width;
+    background-color: black;
+    transform-origin: bottom center;
+    animation: watch 3660s linear infinite;
+    box-shadow: 1px -1px 9px 4px rgb(128, 180, 239);
+  }
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include circle($watch-container-center);
+    background-color: black;
+    box-shadow: 1px -1px 18px 4px rgb(132, 123, 124);
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes watch {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
