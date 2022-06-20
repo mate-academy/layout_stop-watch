@@ -15,7 +15,7 @@
     top: 95px;
     transform-origin: bottom;
     transition: transform 2s;
-    animation: timer 500s linear 15s infinite;
+    animation: timer 3600s linear 15s infinite;
     z-index: 1;
   }
 
@@ -28,7 +28,7 @@
     top: 10px;
     transform-origin: bottom;
     transition: transform 2s;
-    animation: timer 15s linear 0.5s infinite;
+    animation: timer 60s linear 0.5s infinite;
   }
 
   &__point {
@@ -40,11 +40,10 @@
 
 @keyframes timer {
   from {
-  transform: rotate(0);
+    transform: rotate(0);
   }
 
   to {
     transform: rotate(360deg);
   }
 }
-
