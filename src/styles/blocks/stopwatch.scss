@@ -1,0 +1,30 @@
+.stopwatch {
+  @include square(300px);
+  position: relative;
+  background-image: url(../images/dial.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__long-clip {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    margin: 0px -4px;
+    height: 105px;
+    border-left: 4px solid red;
+    animation: time 60s steps(60, end) infinite;
+    transform-origin: 2px 105px;
+  }
+
+  &__short-clip {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    height: 90px;
+    margin: 0px -4px;
+    border-left: 4px solid black;
+    animation: time 3600s linear infinite;
+    transform-origin: 2px 90px;
+  }
+}
