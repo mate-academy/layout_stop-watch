@@ -1,6 +1,5 @@
 .watch {
-  border-radius: 50%;
-  @include square(500px);
+  @include circle(500px);
   border: 1px solid black;
   margin: auto;
   display: flex;
@@ -33,16 +32,11 @@
   }
 
   &__point {
-    @include square(40px);
-    border-radius: 50%;
+    @include circle(40px);
     z-index: -2;
     background-color: blue;
   }
 }
-
-
-
-
 
 @keyframes timer {
   from {
