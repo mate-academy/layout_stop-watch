@@ -1,0 +1,40 @@
+.clock {
+  @include page-center-align;
+  @include circle(650px);
+
+  border: 2px solid black;
+
+  &__center-circle {
+    @include circle(30px);
+    @include page-center-align;
+
+    display: inline-block;
+
+    background-color: aquamarine;
+  }
+
+  &__minutes {
+    @include hand;
+    @include page-center-align;
+
+    display: inline-block;
+    height: $seconds-hand-height / 2;
+
+    transform-origin: 0 0;
+    background-color: aquamarine;
+    animation: rotation 3600s linear infinite;
+  }
+
+  &__seconds {
+    @include page-center-align;
+    @include hand;
+
+    display: inline-block;
+    height: $seconds-hand-height;
+
+    background-color: coral;
+
+    transform-origin: 0 0;
+    animation: rotation 60s linear infinite;
+  }
+}
