@@ -8,21 +8,17 @@
   @include square (800px);
   margin: auto;
   background-color: cadetblue;
-  border-radius: 400px;
+  border-radius: 50%;
 }
 
 .ContainerWatch__minute {
   position: absolute;
-  width: 8px;
-  height: 400px;
+  @include rectangle (8px, 400px);
   bottom: 350px;
   border-radius: 4px;
   background-color: rgb(239, 22, 80);
-  animation: RotMinute;
-  animation-duration: 5s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
   transform-origin: 4px 350px;
+  animation: RotMinute 60s linear infinite;
 }
 
 .ContainerWatch__minute::after {
@@ -37,17 +33,13 @@
 
 .ContainerWatch__second {
   position: absolute;
-  width: 10px;
-  height: 320px;
+  @include rectangle (10px, 320px);
   bottom: 350px;
   border-radius: 5px;
   background-color: rgb(66, 65, 65);
 
-  animation: RotSec;
-  animation-duration: 10s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
   transform-origin: 5px 270px;
+  animation: RotSec 3600s linear infinite;
 }
 
 .ContainerWatch__second::after {
@@ -55,8 +47,6 @@
   position: absolute;
   font-size: 119px;
   color: rgb(66, 65, 65);
-  // background-color: rgb(45, 220, 39);
-  // border: 2px dotted black;
   left: -23px;
   top: -35px;
 }
