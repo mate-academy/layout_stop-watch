@@ -27,7 +27,14 @@ $radius: 10px;
     left: ($container-size - $circle-size) / 2;
   }
 
-  &__minutes {
+  @keyframes hands {
+    100% {
+      transform-origin: bottom;
+      transform: rotateZ(360deg);
+    }
+  }
+
+  &__seconds {
     display: flex;
     border-radius: $radius;
     height: 150px;
@@ -37,17 +44,11 @@ $radius: 10px;
     position: absolute;
     left: 147px;
     transform-origin: 50% 100%;
-    animation: minute 3600s infinite steps(60);
+    animation: hands 60s infinite steps(60);
   
-    @keyframes minute {
-      100% {
-        transform-origin: bottom;
-        transform: rotateZ(360deg);
-      }
-    }
   }
 
-  &__hours {
+  &__minutes {
     display: flex;
     border-radius: $radius;
     height: 100px;
@@ -58,13 +59,6 @@ $radius: 10px;
     left: ($container-size - $hands-width) / 2;
     top: 50px;
     transform-origin: 50% 100%;
-    animation: hour 43200s infinite steps(12);
-  
-    @keyframes hour {
-      100% {
-        transform-origin: bottom;
-        transform: rotateZ(360deg);
-      }
-    }
+    animation: hands 3600s infinite steps(60);
   }
 }
