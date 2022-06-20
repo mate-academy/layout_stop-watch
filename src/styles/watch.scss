@@ -3,6 +3,12 @@
   justify-content: center;
   align-items: center;
 
+  &--wrapper {
+    @include circle(500px);
+    border: 1px solid black;
+    margin: auto;
+  }
+
   &__hour_arrow {
     background-color: orange;
     height: $hour_arrow_size;
