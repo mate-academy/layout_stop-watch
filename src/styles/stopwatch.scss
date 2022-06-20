@@ -1,0 +1,72 @@
+.body__stopwatch {
+  margin: 100px;
+}
+
+.stopwatch {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: $size;
+  height: $size;
+  border-radius: $size/2;
+  border: solid 1px black;
+
+  &__center {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__seconds {
+    width: 4px;
+    height: $size/2;
+    background-color: blue;
+    position: absolute;
+    left: 50% -2px;
+    animation-name: spinSeconds;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minutes {
+    width: 10px;
+    height: $size/3;
+    background-color: red;
+    position: absolute;
+    left: 50% -10px;
+    top: $size/6;
+    animation-name: spinMinutes;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes spinSeconds {
+  from {
+    transform-origin: bottom;
+    transform: rotate(0deg);
+  }
+  to {
+    transform-origin: bottom;
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes spinMinutes {
+  from {
+    transform-origin: bottom;
+    transform: rotate(0deg);
+  }
+  to {
+    transform-origin: bottom;
+    transform: rotate(1turn);
+  }
+}
