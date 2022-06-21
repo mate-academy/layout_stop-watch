@@ -52,33 +52,32 @@
     }
   }
 
-  &__min,
-  &__sec {
+  .arrows-style {
     position: absolute;
     left: 50%;
     transform: translateX(-50%) translateY(-5px);
     transform-origin: bottom;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-  }
 
-  &__sec--style {
-    width: 10px;
-    height: $size * 1.7;
-    background: $black-color;
-    top: $size * 0.3;
-    border-radius: $border-radius;
-    animation-name: rotate;
-    animation-duration: 60s;
-  }
+    &--sec {
+      width: 10px;
+      height: $size * 1.7;
+      background: $black-color;
+      top: $size * 0.3;
+      border-radius: $border-radius;
+      animation-name: rotate;
+      animation-duration: 60s;
+    }
 
-  &__min--style {
-    width: 10px;
-    height: $size;
-    background: $black-color;
-    top: $size;
-    border-radius: $border-radius;
-    animation-name: rotate;
-    animation-duration: 3600s;
+    &--min {
+      width: 10px;
+      height: $size;
+      background: $black-color;
+      top: $size;
+      border-radius: $border-radius;
+      animation-name: rotate;
+      animation-duration: 3600s;
+    }
   }
 }
