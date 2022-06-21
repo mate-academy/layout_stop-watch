@@ -1,0 +1,68 @@
+$center: 30px;
+$height-display: 20 * $center;
+$height-arrow: 7 * $center;
+
+.body {
+  margin: 0;
+}
+
+.watch {
+  margin: 0;
+  height: $height-display;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &__center {
+    height: $center;
+    width: $center;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: $height-display / 2 - $height-arrow;
+    width: $center;
+    height: $height-arrow;
+    background-color: green;
+    border-radius: 50%;
+    animation-name: step-second;
+    animation-timing-function: linear;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: $height-display / 2 - $height-arrow;
+    width: $center;
+    height: $height-arrow;
+    background-color: red;
+    border-radius: 50%;
+    animation-name: step-minute;
+    animation-timing-function: linear;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes step-second {
+  from {
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes step-minute {
+  from {
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
