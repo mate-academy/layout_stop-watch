@@ -1,0 +1,80 @@
+.watch {
+  @include container($size);
+  @extend %content;
+  border-radius: 50%;
+  background-color: #550e00;
+  border: 9px solid #450d02;
+  box-shadow: 0 -10px 10px rgba(56, 4, 4, 0.82),
+  0 10px 10px rgba(56, 4, 4, 0.82),
+  inset 0 -8px 8px rgba(0, 0, 0, 0.3),
+  inset 0 8px 8px rgba(0, 0, 0, 0.3);
+
+  &__point {
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: rgb(224, 162, 162);
+    box-shadow: 3px 3px 5px rgb(215, 0, 0);
+    z-index: 111;
+  }
+
+  &__second,
+  &__minute {
+    position: absolute;
+    background-color: rgb(224, 162, 162);
+    box-shadow: 3px 3px 5px rgb(215, 0, 0);
+    border-radius: 5px;
+    transform-origin: center bottom;
+  }
+
+  &__second {
+    height: 220px;
+    width: 5px;
+    z-index: 11;
+    margin-bottom: 210px;
+    animation: watch steps(60) $min infinite;
+  }
+
+  &__minute {
+    height: 160px;
+    width: 9px;
+    z-index: 10;
+    margin-bottom: 170px;
+    animation: watch linear $hour infinite;
+  }
+
+  &__line-1,
+  &__line-2,
+  &__line-3,
+  &__line-4 {
+    position: absolute;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.622);
+    box-shadow: 3px 3px 5px rgb(215, 0, 0);
+  }
+
+  &__line-1 {
+    height: 30px;
+    width: 7px;
+    top: 4px;
+  }
+
+  &__line-2 {
+    height: 7px;
+    width: 30px;
+    right: 4px;
+  }
+
+  &__line-3 {
+    height: 30px;
+    width: 7px;
+    bottom: 4px;
+  }
+
+  &__line-4 {
+    width: 30px;
+    height: 7px;
+    left: 4px;
+  }
+}
