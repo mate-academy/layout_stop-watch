@@ -59,24 +59,20 @@
     transform-origin: bottom;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    width: 10px;
+    background: $black-color;
+    border-radius: $border-radius;
+    animation-name: rotate;
 
     &--sec {
-      width: 10px;
       height: $size * 1.7;
-      background: $black-color;
       top: $size * 0.3;
-      border-radius: $border-radius;
-      animation-name: rotate;
       animation-duration: 60s;
     }
 
     &--min {
-      width: 10px;
       height: $size;
-      background: $black-color;
       top: $size;
-      border-radius: $border-radius;
-      animation-name: rotate;
       animation-duration: 3600s;
     }
   }
