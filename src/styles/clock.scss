@@ -1,0 +1,39 @@
+.clock {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 1px dashed black;
+
+  &__center {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #169;
+    border-radius: 5px;
+    z-index: 1;
+  }
+
+  &__hand {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    width: 5px;
+    height: 200px;
+    background-color: #169;
+    border-radius: 2.5px;
+
+    transform-origin: top center;
+    animation: rotate 60s steps(60, end) infinite -30s;
+  }
+
+  &__hand--min {
+    height: 100px;
+    top: 250px;
+    background-color: #f11;
+
+    animation: rotate 3600s steps(60, end) infinite -1800s
+  }
+}
