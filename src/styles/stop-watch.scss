@@ -1,0 +1,79 @@
+.stop-watch {
+  height: $size * 4;
+  width: $size * 4;
+  background-color: #fff;
+  border: 4px solid $black-color;
+  border-radius: $border-radius;
+  position: relative;
+
+  &__number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    @for $index from 1 through 12 {
+      &:nth-child(#{$index}) {
+        transform: rotate(#{30 * $index}deg);
+
+        &::after {
+          content: "#{$index * 5}";
+          font-size: 30px;
+        }
+      }
+    }
+    &::after {
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+
+  &__center {
+    position: absolute;
+    width: $size * 3.5;
+    height: $size * 3.5;
+    border: 4px solid $black-color;
+    border-radius: $border-radius;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &_point {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border: 5px solid $black-color;
+      border-radius: $border-radius;
+      background-color: $black-color;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .arrows-style {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px);
+    transform-origin: bottom;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    width: 10px;
+    background: $black-color;
+    border-radius: $border-radius;
+    animation-name: rotate;
+
+    &--sec {
+      height: $size * 1.7;
+      top: $size * 0.3;
+      animation-duration: 60s;
+    }
+
+    &--min {
+      height: $size;
+      top: $size;
+      animation-duration: 3600s;
+    }
+  }
+}
