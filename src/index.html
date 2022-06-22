@@ -1,14 +1,27 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+<html class="page" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body class="page__body">
+    <div class="stopwatch">
+      <div class="stopwatch__number stopwatch__number--position--top">60</div>
+      <div class="stopwatch__number stopwatch__number--position--right">15</div>
+      <div class="stopwatch__number stopwatch__number--position--bottom">30</div>
+      <div class="stopwatch__number stopwatch__number--position--left">45</div>
+      <div class="stopwatch__center">
+        <div class="stopwatch__minute-hand"></div>
+        <div class="stopwatch__second-hand"></div>
+      </div>
+
+    </div>
+  </body>
 </html>

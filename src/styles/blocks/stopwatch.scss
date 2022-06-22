@@ -1,0 +1,87 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  background-color: $main-bg-color;
+  flex: 0 0 $stopwatch-size;
+  height: $stopwatch-size;
+  border-radius: 50%;
+  border: 2px solid $main-border-color;
+  box-shadow: 12px 12px 20px 1px $main-border-color;
+
+  $numbers-list:
+  'top' 0,
+  'right' 90deg,
+  'bottom' 180deg,
+  'left' 270deg;
+
+  &__number {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 15px);
+    transform-origin: center 200px;
+    font-family: "Roboto Slab";
+    font-size: 30px;
+    line-height: 100%;
+    color: $second-color;
+  }
+
+  @each $var, $value in $numbers-list {
+    &__number--position--#{$var} {
+      transform: rotate($value);
+    }
+  }
+
+  &__center {
+    position: relative;
+    top: $center-place;
+    left: $center-place;
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+  }
+
+  @keyframes move-minute {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__minute-hand {
+    position: absolute;
+    bottom: $hand-place;
+    left: ($center-size - $width-min) / 2;
+    width: $width-min;
+    height: $hand-size;
+    border-radius: 50%;
+    background-color: $second-color;
+    animation: move-minute 3600s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  @keyframes move-second {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    bottom: $hand-place;
+    left: ($center-size - $width-sec) / 2;
+    width: $width-sec;
+    height: $hand-size;
+    border-radius: 70%;
+    background-color: $second-color;
+    animation: move-second 60s steps(60) infinite;
+    transform-origin: bottom;
+  }
+}
+
+
+
