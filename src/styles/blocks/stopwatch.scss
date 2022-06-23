@@ -56,18 +56,4 @@
       transform: rotate(360deg);
     }
   }
-
-  &__minute-hand {
-    left: ($center-size - $width-min) / 2;
-    width: $width-min;
-    border-radius: 50%;
-    animation: move-hand 3600s steps(60) infinite;
-  }
-
-  &__second-hand {
-    left: ($center-size - $width-sec) / 2;
-    width: $width-sec;
-    border-radius: 70%;
-    animation: move-hand 60s steps(60) infinite;
-  }
 }
