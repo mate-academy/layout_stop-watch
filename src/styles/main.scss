@@ -1,6 +1,6 @@
 $center: 30px;
 $height-display: 20 * $center;
-$height-arrow: 7 * $center;
+$height-hands: 7 * $center;
 
 .body {
   margin: 0;
@@ -12,7 +12,7 @@ $height-arrow: 7 * $center;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   &__center {
     height: $center;
     width: $center;
@@ -20,44 +20,26 @@ $height-arrow: 7 * $center;
     border-radius: 50%;
   }
 
-  &__seconds {
+  &__hands {
     position: absolute;
-    top: $height-display / 2 - $height-arrow;
+    top: $height-display / 2 - $height-hands;
     width: $center;
-    height: $height-arrow;
+    height: $height-hands;
+    border-radius: 50%;
+    animation-name: step-time;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     background-color: green;
-    border-radius: 50%;
-    animation-name: step-second;
-    animation-timing-function: linear;
     animation-duration: 60s;
-    animation-iteration-count: infinite;
-  }
 
-  &__minutes {
-    position: absolute;
-    top: $height-display / 2 - $height-arrow;
-    width: $center;
-    height: $height-arrow;
-    background-color: red;
-    border-radius: 50%;
-    animation-name: step-minute;
-    animation-timing-function: linear;
-    animation-duration: 3600s;
-    animation-iteration-count: infinite;
+    &--minutes {
+      background-color: red;
+      animation-duration: 3600s;
+    }
   }
 }
 
-@keyframes step-second {
-  from {
-    transform-origin: bottom;
-  }
-  to {
-    transform: rotate(360deg);
-    transform-origin: bottom;
-  }
-}
-
-@keyframes step-minute {
+@keyframes step-time {
   from {
     transform-origin: bottom;
   }
