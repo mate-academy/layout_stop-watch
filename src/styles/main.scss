@@ -1,0 +1,50 @@
+$center: 30px;
+$height-display: 20 * $center;
+$height-hands: 7 * $center;
+
+.body {
+  margin: 0;
+}
+
+.watch {
+  margin: 0;
+  height: $height-display;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__center {
+    height: $center;
+    width: $center;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+
+  &__hands {
+    position: absolute;
+    top: $height-display / 2 - $height-hands;
+    width: $center;
+    height: $height-hands;
+    border-radius: 50%;
+    animation-name: step-time;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background-color: green;
+    animation-duration: 60s;
+
+    &--minutes {
+      background-color: red;
+      animation-duration: 3600s;
+    }
+  }
+}
+
+@keyframes step-time {
+  from {
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
