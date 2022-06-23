@@ -1,0 +1,59 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  background-color: $main-bg-color;
+  flex: 0 0 $stopwatch-size;
+  height: $stopwatch-size;
+  border-radius: 50%;
+  border: 2px solid $main-border-color;
+  box-shadow: 12px 12px 20px 1px $main-border-color;
+
+  $numbers-list:
+  'top' 0,
+  'right' 90deg,
+  'bottom' 180deg,
+  'left' 270deg;
+
+  &__number {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 15px);
+    transform-origin: center 200px;
+    font-family: "Roboto Slab";
+    font-size: 30px;
+    line-height: 100%;
+    color: $second-color;
+  }
+
+  @each $var, $value in $numbers-list {
+    &__number--position--#{$var} {
+      transform: rotate($value);
+    }
+  }
+
+  &__center {
+    position: relative;
+    top: $center-place;
+    left: $center-place;
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: $hand-place;
+    height: $hand-size;
+    background-color: $second-color;
+    transform-origin: bottom;
+  }
+
+  @keyframes move-hand {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
