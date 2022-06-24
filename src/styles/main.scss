@@ -1,0 +1,82 @@
+$watch-size: 700px;
+$watch-radius: $watch-size/2;
+$watch-secund-height: $watch-radius;
+$watch-minute-height: $watch-radius/2;
+$watch-secund-width: 10px;
+$watch-minute-width: 15px;
+$pin-size: 55px;
+
+@mixin watch-circle ($watch-size) {
+  height: $watch-size;
+  width: $watch-size;
+  border-radius: 50%;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__watch {
+    background-image: url(./../images.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    @include watch-circle($watch-size);
+    background-color: #0ff;
+  }
+}
+
+.watch {
+  &__hand {
+    position: absolute;
+  }
+
+  &__hand--secund {
+    position: absolute;
+    width: $watch-secund-width;
+    height: $watch-secund-height;
+    background-color: #f6ff00;
+    top: 0;
+    left: $watch-radius;
+    border-radius: 15px;
+    transform-origin: bottom center;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__hand--minute {
+    position: absolute;
+    width: $watch-minute-width;
+    height: $watch-minute-height;
+    background-color: rgb(33, 210, 230);
+    top: $watch-radius - $watch-minute-height;
+    left: $watch-radius;
+    border-radius: 15px;
+    transform-origin: bottom center;
+    animation: rotate 60s * 60 linear infinite;
+  }
+
+  &__hand--pin {
+    width: $pin-size;
+    height: $pin-size;
+    background-color: #008000;
+    top: 50%;
+    left: 51%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
