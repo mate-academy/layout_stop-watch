@@ -20,6 +20,8 @@
     width: 10px;
 
     background-color: black;
+
+    transform-origin: bottom center;
     animation: clock-rotate 3600s linear infinite;
   }
 
@@ -30,6 +32,8 @@
     width: 5px;
 
     background-color: red;
+
+    transform-origin: bottom center;
     animation: clock-rotate 60s linear infinite;
   }
 
@@ -49,12 +53,11 @@
   @keyframes clock-rotate {
     from {
       transform: rotate(0deg);
-      transform-origin: bottom center;
+
     }
 
     to {
       transform: rotate(360deg);
-      transform-origin: bottom center;
     }
   }
 }
