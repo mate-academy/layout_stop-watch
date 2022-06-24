@@ -1,0 +1,42 @@
+.watch {
+  width: 500px;
+  height: 500px;
+  background-color: rgba(74, 136, 136, 0.326);
+  border-radius: 50%;
+  margin: 100px auto;
+  position: relative;
+
+  &__min--hand {
+    width: 6px;
+    height: 250px;
+    border-radius: 5px;
+    background-color: black;
+    position: absolute;
+    left: 242px;
+    animation-duration: 60s;
+    transform-origin: bottom;
+    animation: watch 3600s infinite linear;
+  }
+
+  &__sec--hand {
+    width: 2px;
+    height: 250px;
+    border-radius: 5px;
+    background-color: red;
+    position: absolute;
+    left: 246px;
+    animation-duration: 1s;
+    transform-origin: bottom;
+    animation: watch  60s infinite linear;
+  }
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to{
+    transform: rotate(360deg);
+  }
+}
