@@ -25,22 +25,31 @@
   }
 
   &__second-hand {
-    @include handSize($sSizeW, $sSizeH, $black-color, -90deg, 2);
-    animation: rotate 60s steps(60, end) infinite;
+    @include handSize($sSizeW, $sSizeH, $black-color, $sState, 2);
+    animation: rotateSec 60s steps(60, end) infinite;
   }
 
   &__minute-hand {
-    @include handSize($mSizeW, $mSizeH, $orange-color, -90deg, 1);
-    animation: rotate 3600s steps(60, end) infinite;
-  }
-}
-
-@keyframes rotate {
-  from {
-    rotate: 0deg;
+    @include handSize($mSizeW, $mSizeH, $orange-color, $mState, 1);
+    animation: rotateMin 3600s steps(60, end) infinite;
   }
 
-  to {
-    rotate: 360deg;
+  @keyframes rotateSec {
+    from {
+      transform: rotate($sState);
+    }
+    to {
+      transform: rotate($sState + 360);
+    }
+  }
+
+  @keyframes rotateMin {
+    from {
+      transform: rotate($mState);
+    }
+
+    to {
+      transform: rotate($mState + 360);
+    }
   }
 }
