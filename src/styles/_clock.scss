@@ -1,0 +1,46 @@
+@import "./utils/mixins";
+@import "./utils/variables";
+
+.container {
+  height: 100vh;
+  @include flex(center, center);
+  background-color: $grey-color;
+}
+
+.stopwatch {
+  @include flex(center, center);
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  background-color: $primary-color;
+  border-radius: 50%;
+  position: relative;
+
+  &__center {
+    width: $cSize;
+    height: $cSize;
+    background-color: $green-color;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+  }
+
+  &__second-hand {
+    @include handSize($sSizeW, $sSizeH, $black-color, -90deg, 2);
+    animation: rotate 60s steps(60, end) infinite;
+  }
+
+  &__minute-hand {
+    @include handSize($mSizeW, $mSizeH, $orange-color, -90deg, 1);
+    animation: rotate 3600s steps(60, end) infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
