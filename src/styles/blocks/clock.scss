@@ -1,0 +1,52 @@
+.clock {
+  @include circle($stopwatch-size);
+  position: relative;
+  background-image: radial-gradient(rgb(44, 44, 44), grey);
+
+  &__hand {
+    position: absolute;
+
+    &--hour {
+      top: $center - $small-hand-height;
+      left: ($stopwatch-size / 2) - ($hand-width / 2);
+
+      animation-name: rotate;
+      animation-delay: 0.5s;
+      animation-duration: $minute-time * 60;
+      animation-timing-function: linear;
+
+      transform-origin: bottom center;
+      height: $small-hand-height;
+      width: $hand-width;
+
+      background-color: black;
+    }
+
+    &--min {
+      top: 0;
+      left: $center - ($hand-width / 4);
+
+      animation-name: rotate;
+      animation-duration: $minute-time;
+      animation-iteration-count: 60;
+      animation-timing-function: linear;
+
+      transform-origin: bottom center;
+      height: ($stopwatch-size / 2);
+      width: ($hand-width / 2);
+
+      background-color: black;
+    }
+
+    &--pin {
+      top: $center - $hand-width;
+      left: $center - $hand-width;
+
+      @include circle($hand-width * 2);
+
+      background-color: black;
+
+      animation: none;
+    }
+  }
+}
