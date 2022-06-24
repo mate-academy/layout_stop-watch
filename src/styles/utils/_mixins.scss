@@ -1,0 +1,17 @@
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin handSize($width, $height, $color, $rotate-deg, $z-index) {
+  position: absolute;
+  left: 50%;
+  width: $width;
+  height: $height;
+  background-color: $color;
+  border-radius: 5px;
+  transform-origin: center left;
+  transform: rotate($rotate-deg);
+  z-index: $z-index;
+}
