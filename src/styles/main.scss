@@ -1,0 +1,112 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+
+}
+
+$field_size: 250px;
+$center_dot_size: 10px;
+$number_size: 40px;
+$pointer_size: 100px;
+$width_pointer: 3px;
+$number_font-size: 30px;
+$number_font-family: "Arial, Helvetica, sans-serif";
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: $field_size;
+  height: $field_size;
+  border: 4px solid #091921;
+  border-radius: 50%;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+    0 15px 15px rgba(0, 0, 0, 0.3),
+    inset 0 15px 15px rgba(0, 0, 0, 0.3);
+  background-image: url(../pictures/sec.png);
+  object-position: top left;
+  object-fit: cover;
+
+  &__dot {
+    position: absolute;
+    width: $center_dot_size;
+    height: $center_dot_size;
+    border: 2px solid #091921;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: black;
+    z-index: 999;
+  }
+
+  &__min {
+    position: absolute;
+
+    .minutes {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      animation: minutes 3600s linear infinite;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 60px;
+        background: crimson;
+        z-index: 10;
+        border-radius: 6px 6px 0 0;
+      }
+    }
+  }
+
+  &__sec {
+    position: absolute;
+
+    .seconds {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      animation: seconds 60s linear infinite;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 75px;
+        background: #6a5acd;
+        z-index: 11;
+        border-radius: 6px 6px 0 0;
+      }
+    }
+  }
+
+  @keyframes seconds {
+    0% {}
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes minutes {
+    0%{}
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
