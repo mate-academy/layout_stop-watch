@@ -1,0 +1,65 @@
+$clock-size: 300px;
+
+@keyframes move {
+  from {
+    animation-timing-function: steps(60, end);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes round {
+  from {
+    animation-timing-function: steps(60, end);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  
+  &__clock-face {
+    position: relative;
+    width: $clock-size;
+    height: $clock-size;
+  }
+
+  &__second-hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 3px;
+    height: 150px;
+    background-color: #080;
+    transform-origin: bottom center;
+    animation-name: move;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 5px;
+    height: 100px;
+    background-color: #f00;
+    transform-origin: bottom center;
+    animation-name: round;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+  }
+}
