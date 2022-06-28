@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0;
+}
+
+/* #region Variables */
+$big-arrow-height: 200px;
+$watch-diameter: $big-arrow-height * 2 + 100px;
+$small-arrow-height: $big-arrow-height/1.5;
+$point-diameter: 15px;
+$arrows-width: 8px;
+$watch-shadow: 1px 2px 16px 1px rgba(3,54,12,0.87);
+/* #endregion Variables*/
+
+/* #region Mixins */
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin arrow($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 40%;
+}
+/* #endregion Mixins*/
+
+/* #region Watch css */
+.watch {
+  position: relative;
+  @include circle($watch-diameter);
+  box-shadow: $watch-shadow;
+  background-image: url(../img/png-transparent-clock-position-clock-face-digital-clock-clock-clock-position-clock-face-digital-clock.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.watch--position {
+  margin: 20px auto;
+}
+
+.watch__small-hand {
+  position: absolute;
+  left: $watch-diameter/2 - $arrows-width;
+  top: ($watch-diameter/2 - $small-arrow-height);
+  transform: translate(-50%, -50%);
+  @include arrow($arrows-width, $small-arrow-height);
+  border: 1px solid black;
+  box-shadow: $watch-shadow;
+  background-color: rgb(19, 112, 81);
+  transform-origin: bottom;
+  animation: time 3600s infinite steps(60, end);
+}
+
+.watch__big-hand {
+  position: absolute;
+  left: $watch-diameter/2 - $arrows-width;
+  top: ($watch-diameter/2 - $big-arrow-height);
+  @include arrow($arrows-width, $big-arrow-height);
+  border: 1px solid black;
+  box-shadow: $watch-shadow;
+  background-color: rgb(34, 73, 60);
+  transform-origin: bottom;
+  animation: time 60s infinite steps(60, end);
+}
+
+.watch__point {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-75%, -50%);
+  @include circle($point-diameter);
+  border: 1px solid black;
+  background-color: rgb(3, 90, 61);
+  box-shadow: $watch-shadow;
+}
+/* #endregion Watch css */
+
+/* #region Keyframes */
+@keyframes time {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* #endregion Keyframes */
