@@ -1,0 +1,114 @@
+$watch-size: 250px;
+$baze-shift-radius: 6deg;
+
+@function multiplication($mumber1, $number2) {
+  @return $mumber1 * $number2;
+}
+
+%position-start {
+  margin-left: multiplication(-0.5, $watch-size);
+  margin-top: multiplication(-0.5, $watch-size);
+  position: absolute;
+  height: $watch-size;
+  width: $watch-size;
+  left: 50%;
+  top: 50%;
+}
+
+%position-hands {
+  position: absolute;
+  display: block;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+}
+
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  border: 5px solid #00f;
+  border-radius: 50%;
+  position: relative;
+  height: $watch-size;
+  width: $watch-size;
+  margin: auto;
+  display: flex;
+  background-color: aqua;
+  top: 50%;
+  transform: translateY(50%);
+  
+  &__step {
+    @extend %position-start;
+
+    &::after {
+      content: "";
+      border-radius: 0 0 0.01 * $watch-size 0.01 * $watch-size;
+      height: multiplication(0.03, $watch-size);
+      width: multiplication(0.02, $watch-size);
+      background-color: #000;
+      margin-left: multiplication(-0.01, $watch-size);
+      position: absolute;
+      display: block;
+      top: multiplication(0.02, $watch-size);
+      left: 50%;
+    }
+
+    &:nth-child(5n)::after {
+      content: "";
+      border-radius: 0 0 0.02 * $watch-size 0.02 *$watch-size;
+      height: multiplication(0.05, $watch-size);
+      width: multiplication(0.02, $watch-size);
+    }
+    
+    @for $index from 1 through 60 {
+      &:nth-child(#{$index}) {
+        transform: rotate(multiplication($index, $baze-shift-radius));
+      }
+    }
+  }
+
+  &__hand {
+    @extend %position-start;
+  
+    &--minute::after {
+      content: "";
+      border-radius: 0.01 * $watch-size
+        0.01 * $watch-size
+        0.01 * $watch-size
+        0.01 * $watch-size;
+      background-color: #000;
+      margin-bottom: multiplication(-0.02, $watch-size);
+      margin-left: multiplication(-0.02, $watch-size);
+      height: multiplication(0.42, $watch-size);
+      width: multiplication(0.03, $watch-size);
+      @extend %position-hands;
+      animation: move-hand 3600s steps(60, end) infinite normal forwards;
+    }
+
+    &--second::after {
+      content: "";
+      border-radius: 0.01 * $watch-size
+        0.01 * $watch-size
+        0.01 * $watch-size
+        0.01 * $watch-size;
+      background-color: #f00;
+      margin-bottom: multiplication(-0.02, $watch-size);
+      margin-left: multiplication(-0.01, $watch-size);
+      height: multiplication(0.47, $watch-size);
+      width: multiplication(0.01, $watch-size);
+      @extend %position-hands;
+      animation: move-hand 60s linear infinite normal;
+    }
+  }
+}
+
+@keyframes move-hand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
