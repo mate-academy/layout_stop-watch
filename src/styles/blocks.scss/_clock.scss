@@ -1,0 +1,33 @@
+.container {
+  margin: 10px;
+  display: flex;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  margin: auto;
+  @include circle();
+  border: 0.5px solid $color-blue;
+}
+
+.stopwatch__point {
+  position: absolute;
+  background-color: $color-blue;
+  @include circle-small();
+  @include position-center;
+  z-index: 1;
+}
+
+.stopwatch__sec {
+  @extend %hand-generals;
+  @include hand-spesial(2, $color-blue, 60s);
+  z-index: 2;
+}
+
+.stopwatch__min {
+  @extend %hand-generals;
+  @include hand-spesial(3, brown, 3600s);
+  bottom: 50%;
+}
