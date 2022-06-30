@@ -1,0 +1,23 @@
+@mixin circle {
+  border-radius: 50%;
+  height: $container-size;
+  width: $container-size;
+}
+
+@mixin circle-small {
+  border-radius: 50%;
+  height: $container-size / 25;
+  width: $container-size / 25;
+}
+
+@mixin hand-spesial($length, $color, $duration) {
+  height: $container-size / $length;
+  background-color: $color;
+  animation-duration: $duration;
+}
+
+@mixin position-center {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
