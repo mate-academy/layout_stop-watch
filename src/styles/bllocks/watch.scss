@@ -1,0 +1,64 @@
+.watch {
+  position: relative;
+  @include circle-size($watch-size);
+  margin: 20px;
+
+  border: 1px solid black;
+  border-radius: 50%;
+
+  @keyframes move {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__hours {
+    @include hands-position-left($hours-width);
+    
+    width: $hours-width;
+    height: $hours-heigth;
+
+    background-color: rgb(238, 51, 18);
+    
+    @extend %position-hands;
+    animation: move 86400s linear infinite;
+  }
+
+  &__minutes {
+    @include hands-position-left($minutes-width);
+    width: $minutes-width;
+    height: $minutes-heigth;
+
+    background-color: blueviolet;
+
+    @extend %position-hands;
+    animation: move 3600s linear infinite;
+  }
+
+  &__seconds {
+    @include hands-position-left($seconds-width);
+
+    width: $seconds-width;
+    height: $seconds-heigth;
+
+    background-color: yellowgreen;
+
+    @extend %position-hands;
+    animation: move 60s steps(60, end) infinite;
+  }
+
+  &__clock-circle {
+    position: absolute;
+    @include hands-position-top($clock-circle-size);
+    @include hands-position-left($clock-circle-size);
+
+    @include circle-size($clock-circle-size);
+
+    background-color: black;
+    border-radius: 50%;
+  }
+}
