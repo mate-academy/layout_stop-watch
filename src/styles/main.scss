@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.watch {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border: 1px solid;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    z-index: 1;
+  }
+
+  &__second {
+    position: absolute;
+    width: 10px;
+    height: 250px;
+    left: 50%;
+    transform-origin: center bottom;
+    transform: translateX(-50%);
+    background-color: red;
+    border-radius: 5px;
+    animation: rotate 60s infinite steps(60);
+  }
+
+  &__minute {
+    position: absolute;
+    width: 10px;
+    height: 200px;
+    top: 50px;
+    left: 50%;
+    transform-origin: center bottom;
+    transform: translateX(-50%);
+    background-color: green;
+    border-radius: 5px;
+    animation: rotate 3600s infinite steps(60);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%) rotate(360deg);
+  }
+}
