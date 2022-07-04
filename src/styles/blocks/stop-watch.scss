@@ -1,0 +1,70 @@
+.watch {
+  @include watch($watch-size);
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+
+  border: 10px solid $hand-color;
+  border-radius: 50%;
+  background-color: rgba(79, 79, 219, 0.5);
+  box-shadow: 6px 6px 100px #9d9d9d;
+
+  transition: box-shadow, transform, 500ms;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.6);
+    transform: scale(1.07);
+  }
+
+  &__dot {
+    @include watch($dot-size);
+
+    position: absolute;
+    top: 48%;
+    z-index: 2;
+
+    border: 1px solid $hand-color;
+    border-radius: 50%;
+    background-color: $hand-color;
+    box-shadow: 6px -6px 8px #9d9d9d;
+  }
+
+  &__second-hand {
+    @extend %watch-position;
+
+    height: 230px;
+    width: 7px;
+
+    border: 1px solid $hand-color;
+    border-radius: 5px;
+    background-color: $hand-color;
+    box-shadow: 6px -6px 8px #9d9d9d;
+
+    transform-origin: bottom center;
+    animation: rotate 60s infinite linear;
+  }
+
+  &__minute-hand {
+    @extend %watch-position;
+
+    z-index: 1;
+    height: 150px;
+    width: 5px;
+
+    border: 1px solid $hand-color;
+    border-radius: 5px;
+    background-color: $hand-color;
+    box-shadow: 6px -6px 8px #9d9d9d;
+
+    transform-origin: bottom center;
+    animation: rotate 3600s infinite linear;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
