@@ -1,0 +1,22 @@
+.second {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 198px;
+  border: 2px solid yellow;
+  background-color: yellow;
+  height: 190px;
+  transform-origin: 50% bottom;
+  animation-name: sec_rotation;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  @keyframes sec_rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
