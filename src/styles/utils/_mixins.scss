@@ -1,0 +1,16 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin hand($width, $height, $top, $color) {
+  position: absolute;
+  top: $top;
+  left: $shift-hand-left;
+  width: $width;
+  height: $height;
+  background-color: $color;
+  border-radius: $hand-border-radius;
+  transform-origin: bottom center;
+}
