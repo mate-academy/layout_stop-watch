@@ -1,0 +1,83 @@
+$minutes:40;
+$hours:2;
+
+$faceClockSize: 500px;
+
+$faceClockBorder: $faceClockSize/20;
+$minHandLength: $faceClockSize / 2 * 0.9;
+$minHandWidth: $minHandLength * 0.13;
+$hrsHandLength: $faceClockSize * 0.85 / 2;
+$hrsHandWidth: $hrsHandLength * 0.25;
+$axisSize: $minHandWidth * 1.33;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.clock {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  &__Face {
+    border: $faceClockSize/20 solid goldenrod;
+    background-color: teal;
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: $faceClockSize;
+    height: $faceClockSize;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__axis {
+    background-color: cadetblue;
+    border-radius: 50%;
+    width: $axisSize;
+    height: $axisSize;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minHand {
+    transition: 0.33s;
+    background-color: cadetblue;
+    border-radius: $minHandWidth/2;
+    width: $minHandLength;
+    height: $minHandWidth;
+    position: absolute;
+    top: ($faceClockSize/2) - ($minHandWidth/2) - $faceClockBorder;
+    left: ($faceClockSize/2) - ($minHandWidth/2) - $faceClockBorder;
+    transform-origin: $minHandWidth/2 center;
+    transform: rotate(270deg);
+
+    &:hover {
+      transform: rotate($minutes * 6 + 270deg);
+    }
+  }
+
+  &__hrsHand {
+    transition: 0.33s;
+    background-color: orange;
+    border-radius: $hrsHandWidth/2;
+    width: $hrsHandLength;
+    height: $hrsHandWidth;
+    position: absolute;
+    top: ($faceClockSize/2) - ($hrsHandWidth/2) - $faceClockBorder;
+    left: ($faceClockSize/2) - ($hrsHandWidth/2) - $faceClockBorder;
+    transform-origin: $hrsHandWidth/2 center;
+    transform: rotate(270deg);
+
+    &:hover {
+      transform: rotate($hours * 30 + 270deg);
+    }
+  }
+}
