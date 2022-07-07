@@ -2,15 +2,15 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   @include circle($circle);
   background-color: $back-color;
 
   border: 7px solid $back-color;
   box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
-              inset 4px 4px 10px rgba(0,0,0,0.5),
-              inset -4px -4px 10px rgba(67,67,67,0.5),
-              4px 4px 10px rgba(0,0,0,0.3);
+    inset 4px 4px 10px rgba(0,0,0,0.5),
+    inset -4px -4px 10px rgba(67,67,67,0.5),
+    4px 4px 10px rgba(0,0,0,0.3);
 
   &__face {
     position: relative;
@@ -21,19 +21,19 @@
     border-radius: 100%;
 
     &::after {
-      transform: rotate(90deg)
+      transform: rotate(90deg);
     }
   
     &::after,
     &::before,
     & .marking {
-      content: '';
+      content: "";
       position: absolute;
       width: 5px;
       height: 100%;
       background: #58e8e9;
-      left: 49%;      
-    } 
+      left: 49%;
+    }
   }
 }
 
@@ -48,7 +48,7 @@
   z-index: 1;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
