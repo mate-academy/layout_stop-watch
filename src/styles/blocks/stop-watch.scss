@@ -1,72 +1,53 @@
 .stop-watch {
+  position: relative;
   display: flex;
-  height: 100vh;
+  @include square($stop-watch-width-and-height);
+  background-color: rgba(72, 33, 72, 0.82);
+  border: 3px solid transparent;
+  border-radius: 100%;
 
-  &__minutes {
+  &__arrow {
     position: absolute;
-    top: 25%;
+    bottom: $arrow-bottom;
     left: 50%;
-    height: 120px;
     width: 5px;
-    margin: auto;
-    background-color: palevioletred;
     border: 1px solid transparent;
     border-radius: 30px;
-    animation-name: minutes;
-    animation-duration: 3600s;
-    animation-delay: 60s;
+    background-color: $color;
+    animation-name: arrow;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    transform-origin: bottom;
+
+    &--minutes {
+      height: 120px;
+      animation-duration: 3600s;
+      animation-delay: 60s;
+    }
+
+    &--seconds {
+      height: 250px;
+      animation-duration: 60s;
+    }
   }
 
-  @keyframes minutes {
+  @keyframes arrow {
     from {
       transform: rotateZ(0deg);
-      transform-origin: bottom;
     }
 
     to {
       transform: rotateZ(360deg);
-      transform-origin: bottom;
-    }
-  }
-
-  &__seconds {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    height: 250px;
-    width: 5px;
-    margin: auto;
-    background-color: rgba(0, 157, 255, 0.9);
-    border: 1px solid transparent;
-    border-radius: 30px;
-    animation-name: seconds;
-    animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-
-  @keyframes seconds {
-    from {
-      transform: rotateZ(0deg);
-      transform-origin: bottom;
-    }
-
-    to {
-      transform: rotateZ(360deg);
-      transform-origin: bottom;
     }
   }
 
   &__circle {
     position: absolute;
-    top: 44%;
+    bottom: 50%;
     left: 50%;
     width: 10px;
-    height: 10px;
-    margin: auto;
-    background-color: rgba(0, 157, 255, 1);
+    height: $circle-height;
+    background-color: $color;
     border: 1px solid transparent;
     border-radius: 50%;
     transform: translateX(-25%);
