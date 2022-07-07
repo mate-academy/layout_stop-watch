@@ -1,0 +1,60 @@
+$circle-size:20px;
+$container-size:300px;
+$hands-width:6px;
+$radius: 10px;
+
+* {
+  margin: 0;
+}
+
+.container {
+  margin: 200px auto;
+  border: 2px solid black;
+  width: $container-size;
+  height: $container-size;
+  position: relative;
+  border-radius: 50%;
+
+  &__circle {
+    display: flex;
+    border-radius: 50%;
+    height: $circle-size;
+    width: $circle-size;
+    background-color: yellow;
+    border: 1px;
+    position: absolute;
+    top: ($container-size - $circle-size) / 2;
+    left: ($container-size - $circle-size) / 2;
+  }
+
+  @keyframes hands {
+    100% {
+      transform-origin: bottom;
+      transform: rotateZ(360deg);
+    }
+  }
+
+  &__hands {
+    display: flex;
+    border-radius: $radius;
+    width: $hands-width;
+    border: 1px;
+    position: absolute;
+    transform-origin: 50% 100%;
+  }
+}
+
+.seconds {
+  height: 150px;
+  background-color: blue;
+  left: 147px;
+  animation: hands 60s infinite steps(60);
+}
+
+.minutes {
+  height: 100px;
+  background-color: red;
+  left: ($container-size - $hands-width) / 2;
+  top: 50px;
+  animation: hands 3600s infinite steps(60);
+}
