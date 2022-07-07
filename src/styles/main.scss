@@ -1,0 +1,32 @@
+@import "blocks/minute";
+@import "blocks/second";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watch {
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+  &__dot {
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: green;
+    border-radius: 50%;
+  }
+}
