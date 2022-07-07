@@ -1,0 +1,115 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  @include circle($circle);
+  background-color: $back-color;
+
+  border: 7px solid $back-color;
+  box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
+              inset 4px 4px 10px rgba(0,0,0,0.5),
+              inset -4px -4px 10px rgba(67,67,67,0.5),
+              4px 4px 10px rgba(0,0,0,0.3);
+
+  &__face {
+    position: relative;
+    background: $back-color;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+
+    &::after {
+      transform: rotate(90deg)
+    }
+  
+    &::after,
+    &::before,
+    & .marking {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 100%;
+      background: #58e8e9;
+      left: 49%;      
+    } 
+  }
+}
+
+.face__inside-point {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: $back-color;
+  border-radius: 100%;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 18px;
+    margin-left: -9px;
+    margin-top: -6px;
+    background: #4d4b63;
+  }
+}
+
+// #region watchHand
+.hand {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 50%;
+
+  background: #61afff;
+  border-radius: 6px;
+  transform-origin: 100%;
+  transform: rotate(89deg);
+  animation: rotate linear infinite;
+}
+
+.stopwatch__hand--minute {
+  height: 3px;
+  width: 25%;
+  z-index: 2;
+  animation-duration: 3600s;
+}
+
+.stopwatch__hand--second {
+  background: #ee791a;
+  height: 2px;
+  width: 37%;
+  z-index: 1;
+  animation-duration: 60s;
+}
+// #endregion
+
+// #region markingTime
+.stopwatch__face .marking {
+  background: #bdbdcb;
+  width: 3px;
+}
+
+.face__marking--1 {
+  transform: rotate(30deg);
+}
+
+.face__marking--2 {
+  transform: rotate(60deg);
+}
+
+.face__marking--3 {
+  transform: rotate(120deg);
+}
+
+.face__marking--4 {
+  transform: rotate(150deg);
+}
+// #endregion
