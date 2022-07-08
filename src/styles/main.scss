@@ -34,7 +34,6 @@
   background-color: rgb(16, 16, 126);
   position: absolute;
   animation: rot 60s infinite linear -45s;
-  transform-origin: bottom center;
 }
 
 .minute-hand {
@@ -43,15 +42,16 @@
   height: 20px;
   background-color: rgb(133, 109, 163);
   animation: rot 3600s infinite steps(60) -2700s;
-  transform-origin: bottom center;
 }
 
 @keyframes rot {
-  from {
-    transform: rotate(0);
+  0% {
+    transform-origin: bottom center;
+    transform: rotate(0deg);
   }
 
-  to {
+  100% {
+    transform-origin: bottom center;
     transform: rotate(360deg);
   }
 }
