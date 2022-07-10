@@ -32,7 +32,7 @@
       width: 5px;
       height: 100%;
       background: #58e8e9;
-      left: 49%;
+      left: 49.5%;
     }
   }
 }
@@ -64,28 +64,28 @@
 // #region watchHand
 .hand {
   position: absolute;
-  top: 50%;
+  bottom: 50%;
   right: 50%;
   width: 50%;
-
+  
   background: #61afff;
   border-radius: 6px;
-  transform-origin: 100%;
-  transform: rotate(89deg);
+  transform-origin: bottom;
+  // transform: rotate(89deg);
   animation: rotate linear infinite;
 }
 
 .stopwatch__hand--minute {
-  height: 3px;
-  width: 25%;
+  height: 25%;
+  width: 3px;
   z-index: 2;
   animation-duration: 3600s;
 }
 
 .stopwatch__hand--second {
   background: #ee791a;
-  height: 2px;
-  width: 37%;
+  height: 37%;
+  width: 2px;
   z-index: 1;
   animation-duration: 60s;
 }
