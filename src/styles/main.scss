@@ -1,0 +1,48 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  &-seconds {
+    position: absolute;
+    top: $main-gap;
+    width: $size-clockwise;
+    height: $height-clockwise * 1.5;
+    background-color: $color-blue;
+    border-radius: $size-clockwise;
+    animation: clock-animation 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &-minutes {
+    position: absolute;
+    top: $main-gap * 2;
+    width: $size-clockwise * 2;
+    height: $height-clockwise;
+    background-color: $color-red;
+    border-radius: $size-clockwise;
+    animation: clock-animation 3600s infinite;
+    transform-origin: bottom;
+  }
+
+  &-center {
+    position: absolute;
+    top: $main-gap * 3 + $size-of-circle * 2 + $size-of-circle / 2;
+    @include center-sizes;
+    border-radius: 50%;
+    background-color: $color-grey;
+  }
+}
+
+@keyframes clock-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
