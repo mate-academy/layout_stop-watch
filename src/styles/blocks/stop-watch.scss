@@ -1,0 +1,65 @@
+
+$watch-size: 360px;
+$center-size: 10px;
+$second-size: $watch-size /2;
+
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+}
+
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include circle($watch-size);
+  margin-top: 100px;
+
+  border: 4px solid rgb(79, 32, 3);
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(167,11,11,1) 0%,
+  rgba(102,192,23,1) 39%, rgba(126,2,23,1) 100%);
+
+  &__center {
+    position: relative;
+    @include circle($center-size);
+
+    background-color: #66c017;
+    border: 1px solid rgb(79, 32, 3);
+    border-radius: 50%;
+  }
+
+  &__second {
+    position: relative;
+    align-self: flex-start;
+    left: 11px;
+    bottom: 2px;
+
+    width: 6px;
+    height: $second-size;
+
+    background-color: #66c017;
+    border: 1px solid rgb(79, 32, 3);
+    border-radius: 4px;
+
+    animation: move 1s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__minute {
+    position: relative;
+    align-self: flex-start;
+    left: -10px;
+    bottom: -47px;
+
+    width: 6px;
+    height: 130px;
+
+    background-color: rgb(154, 4, 4);
+    border: 1px solid rgb(79, 32, 3);
+    border-radius: 4px;
+
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+  }
+}
