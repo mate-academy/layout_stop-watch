@@ -47,7 +47,7 @@ body {
     transform: translate(-50%, -50%);
   }
 
-  &__minHand {
+  &__min-hand {
     transition: 0.33s;
     background-color: cadetblue;
     border-radius: $minHandWidth/2;
@@ -59,12 +59,14 @@ body {
     transform-origin: $minHandWidth/2 center;
     transform: rotate(270deg);
 
-    &:hover {
-      transform: rotate($minutes * 6 + 270deg);
+    @for $i from 1 to 60 {
+      &_time--#{$i} {
+        transform: rotate($i * 6 + 270deg);
+      }
     }
   }
 
-  &__hrsHand {
+  &__hrs-hand {
     transition: 0.33s;
     background-color: orange;
     border-radius: $hrsHandWidth/2;
@@ -76,8 +78,10 @@ body {
     transform-origin: $hrsHandWidth/2 center;
     transform: rotate(270deg);
 
-    &:hover {
-      transform: rotate($hours * 30 + 270deg);
+    @for $i from 1 to 12 {
+      &_time--#{$i} {
+        transform: rotate($i * 30 + 270deg);
+      }
     }
   }
 }
