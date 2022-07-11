@@ -1,0 +1,46 @@
+@import "../utils/mixins.scss";
+
+.watch {
+  @include circle(500px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+
+  &__center {
+    @include circle(15px);
+    position: absolute;
+    background-color: black;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    border-radius: 50%;
+    background-color: black;
+    transform: translate(0, 50%);
+    transform-origin: bottom center;
+
+    &--minute {
+      height: 150px;
+      width: 10px;
+      animation: move 3600s linear infinite;
+    }
+
+    &--second {
+      height: 240px;
+      width: 5px;
+      animation: move 60s linear infinite;
+    }
+
+    @keyframes move {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
