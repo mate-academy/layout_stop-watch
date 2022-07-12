@@ -1,0 +1,52 @@
+.stopwatch {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  margin: auto;
+
+  &__second-hand {
+    position: absolute;
+    height: 300px;
+    width: 5px;
+    background: linear-gradient(0deg, transparent, aqua);
+    border-radius: 10px;
+    top: 100px;
+    left: 400px;
+    animation: second 60s steps(60) infinite;
+
+    @keyframes second {
+      0% {
+        transform: rotate(0deg);
+        transform-origin: bottom;
+      }
+
+      100% {
+        transform: rotate(360deg);
+        transform-origin: bottom;
+      }
+    }
+  }
+
+  &__minute-hand {
+    position: absolute;
+    height: 200px;
+    width: 5px;
+    background: linear-gradient(0deg, transparent, red);
+    border-radius: 10px;
+    top: 200px;
+    left: 400px;
+    animation: minute 3600s steps(60) infinite;
+
+    @keyframes minute {
+      0% {
+        transform: rotate(0deg);
+        transform-origin: bottom;
+      }
+
+      100% {
+        transform: rotate(360deg);
+        transform-origin: bottom;
+      }
+    }
+  }
+}
