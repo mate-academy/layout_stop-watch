@@ -1,0 +1,47 @@
+.watch {
+  position: relative;
+
+  border: 10px solid violet;
+  border-radius: 50%;
+
+  &__point {
+    position: absolute;
+    left: $left-top-position-point;
+    top: $left-top-position-point;
+
+    width: $point-size;
+    height: $point-size;
+    border-radius: 50%;
+    background-color: black;
+
+    z-index: 1;
+  }
+
+  &__seconds {
+    position: absolute;
+    left: $left-position-seconds-minutes;
+
+    display: inline-block;
+    width: $seconds-width;
+    height: $seconds-height;
+    border-radius: 5px;
+    transform-origin: bottom;
+    background-color: violet;
+
+    animation: knock 60s infinite steps(60);
+  }
+
+  &__minutes {
+    position: absolute;
+    left: $left-position-seconds-minutes;
+    top: $top-position-minutes;
+
+    background-color: blue;
+    width: 10px;
+    height: $minutes-height;
+    border-radius: 5px;
+    transform-origin: bottom;
+
+    animation: knock $seconds-in-hour s infinite steps($seconds-in-hour);
+  }
+}
