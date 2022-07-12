@@ -1,0 +1,96 @@
+
+@mixin hands-position-left ($width-objects) {
+  left: ($watch-size / 2) - ($width-objects/2);
+}
+
+@mixin hands-position-top ($size) {
+  top: ($watch-size / 2) - ($size/2);
+}
+
+@mixin circle-size ($size) {
+  width: $size;
+  height: $size;
+}
+
+%position-hands {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: center bottom;
+}
+
+$watch-size: 500px;
+$hours-width: 10px;
+$hours-heigth: 130px;
+$minutes-width: 10px;
+$minutes-heigth: 190px;
+$seconds-width: 4px;
+$seconds-heigth: 215px;
+$clock-circle-size: 20px;
+
+.body__watch {
+  margin: 20px auto;
+}
+
+.watch {
+  position: relative;
+  @include circle-size($watch-size);
+
+  border: 1px solid black;
+  border-radius: 50%;
+
+  @keyframes move {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__hours {
+    @include hands-position-left($hours-width);
+
+    width: $hours-width;
+    height: $hours-heigth;
+
+    background-color: rgb(238, 51, 18);
+
+    @extend %position-hands;
+    animation: move 86400s linear infinite;
+  }
+
+  &__minutes {
+    @include hands-position-left($minutes-width);
+    width: $minutes-width;
+    height: $minutes-heigth;
+
+    background-color: blueviolet;
+
+    @extend %position-hands;
+    animation: move 3600s linear infinite;
+  }
+
+  &__seconds {
+    @include hands-position-left($seconds-width);
+
+    width: $seconds-width;
+    height: $seconds-heigth;
+
+    background-color: yellowgreen;
+
+    @extend %position-hands;
+    animation: move 60s steps(60, end) infinite;
+  }
+
+  &__clock-circle {
+    position: absolute;
+    @include hands-position-top($clock-circle-size);
+    @include hands-position-left($clock-circle-size);
+
+    @include circle-size($clock-circle-size);
+
+    background-color: black;
+    border-radius: 50%;
+  }
+}
