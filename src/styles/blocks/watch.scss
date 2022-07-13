@@ -1,0 +1,44 @@
+.watch {
+  position: relative;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(250, 196, 155);
+  border: 1px solid rgb(24, 18, 150);
+  @include round(400px);
+
+  &__center {
+    @include round(30px);
+    background-color: rgb(218, 78, 47);
+    position: absolute;
+  }
+
+  &__second-hand {
+    @include hand(5px, 150px);
+    left: 200px;
+    background-color: rgb(16, 16, 126);
+    position: absolute;
+    animation: rot 60s infinite linear -45s;
+    transform-origin: left center;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    left: 200px;
+    @include hand(15px, 130px);
+    background-color: rgb(133, 109, 163);
+    animation: rot 3600s infinite steps(60) -2700s;
+    transform-origin: left center;
+  }
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

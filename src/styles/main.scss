@@ -1,57 +1,9 @@
+@import "./utils/mixins";
+@import "./blocks/watch.scss";
+
 .page {
   background-color: rgb(190, 248, 248);
   display: flex;
   margin: 0;
   justify-content: center;
-}
-
-@mixin round ($size) {
-  height: $size;
-  width: $size;
-  border-radius: 50%;
-}
-
-.container {
-  position: absolute;
-  top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(250, 196, 155);
-  border: 1px solid rgb(24, 18, 150);
-  @include round(400px);
-}
-
-.watch-center {
-  @include round(30px);
-  background-color: rgb(218, 78, 47);
-  position: absolute;
-}
-
-.second-hand {
-  width: 180px;
-  height: 10px;
-  background-color: rgb(16, 16, 126);
-  position: absolute;
-  animation: rot 60s infinite linear -45s;
-}
-
-.minute-hand {
-  position: absolute;
-  width: 150px;
-  height: 20px;
-  background-color: rgb(133, 109, 163);
-  animation: rot 3600s infinite steps(60) -2700s;
-}
-
-@keyframes rot {
-  0% {
-    transform-origin: bottom center;
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform-origin: bottom center;
-    transform: rotate(360deg);
-  }
 }
