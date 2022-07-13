@@ -4,7 +4,6 @@
   align-items: center;
   min-height: 100vh;
   background: #25283d;
-
 }
 
 .stopwatch {
@@ -13,7 +12,6 @@
   display: flex;
   justify-content: center;
   border: 5px solid #07f3df;
-  border-radius: 50%;
   position: relative;
 
   &::after {
@@ -22,7 +20,6 @@
     @include square(40px);
 
     position: absolute;
-    border-radius: 50%;
     background-color: #07f3df;
     left: 50%;
     top: 50%;
@@ -33,24 +30,36 @@
     position: absolute;
     border-radius: 10px;
     bottom: 50%;
-    left: $arrow-position;
+    left: $arrows-position;
     transform-origin: bottom center;
   }
 
   &__arrow-min {
+    position: absolute;
     width: 10px;
     height: 150px;
     background-color: #bed4fd;
+    border-radius: 10px;
+    bottom: 50%;
+    left: $arrows-position;
+    transform-origin: bottom center;
 
-    animation: sec 3600s steps(60, end) infinite;
+    @extend %arrow-animation;
+    animation-duration: 3600s;
   }
 
   &__arrow-sec {
+    position: absolute;
     width: 10px;
     height: 200px;
     background-color: #fd2e62;
+    border-radius: 10px;
+    bottom: 50%;
+    left: $arrows-position;
+    transform-origin: bottom center;
 
-    animation: sec 60s steps(60, end) infinite;
+    @extend %arrow-animation;
+    animation-duration: 60s;
   }
 }
 
