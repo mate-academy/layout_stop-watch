@@ -1,0 +1,37 @@
+.stopwatch {
+  position: relative;
+  @include circle($circle-size);
+  margin: auto;
+
+  &__hand {
+    position: absolute;
+    width: $hand-width;
+    left: positionX($circle-size);
+
+    &--second {
+      height: $hand-second-height;
+      background: linear-gradient(0deg, transparent, aqua);
+      top: positionY($circle-size, $hand-second-height);
+      animation: stopwatch 60s steps(60) infinite;
+    }
+
+    &--minute {
+      height: $hand-minute-height;
+      background: linear-gradient(0deg, transparent, red);
+      top: positionY($circle-size, $hand-minute-height);
+      animation: stopwatch 3600s steps(60) infinite;
+    }
+
+    @keyframes stopwatch {
+      0% {
+        transform: rotate(0deg);
+        transform-origin: bottom;
+      }
+
+      100% {
+        transform: rotate(360deg);
+        transform-origin: bottom;
+      }
+    }
+  }
+}
