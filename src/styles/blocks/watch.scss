@@ -1,6 +1,8 @@
 @import "../utils/mixins.scss";
+@import "../utils/variables.scss";
 
 .watch {
+  margin: 0 auto;
   @include circle(500px);
   position: relative;
   display: flex;
@@ -19,28 +21,19 @@
     bottom: 50%;
     border-radius: 50%;
     background-color: black;
-    transform: translate(0, 50%);
+    transform: translateY(50%);
     transform-origin: bottom center;
 
     &--minute {
-      height: 150px;
-      width: 10px;
+      height: $height-minute;
+      width: $width-minute;
       animation: move 3600s linear infinite;
     }
 
     &--second {
-      height: 240px;
-      width: 5px;
+      height: $height-second;
+      width: $width-second;
       animation: move 60s linear infinite;
-    }
-
-    @keyframes move {
-      from {
-        transform: rotate(0);
-      }
-      to {
-        transform: rotate(360deg);
-      }
     }
   }
 }
