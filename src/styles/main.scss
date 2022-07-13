@@ -1,0 +1,64 @@
+@import "./reset.scss";
+@import "./extends";
+@import "./variables";
+
+.body {
+  height: 100vh;
+  display: flex;
+}
+
+.clock {
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  min-width: 500px;
+  margin: auto;
+
+  position: relative;
+
+  &__circle {
+    background-color: $big-arrow-color;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  &__big-arrow {
+    height: 50%;
+    width: 15px;
+    background-color: $big-arrow-color;
+    border-radius: $arrow-border-radius;
+
+    position: absolute;
+    top: 0;
+
+    @extend %clock-animation;
+    animation-duration: 60s;
+  }
+
+  &__small-arrow {
+    height: 35%;
+    width: 15px;
+    background-color: rgb(202, 41, 41);
+    border-radius: $arrow-border-radius;
+
+    position: absolute;
+    top: 75px;
+    z-index: -1;
+
+    @extend %clock-animation;
+    animation-duration: 3600s;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
