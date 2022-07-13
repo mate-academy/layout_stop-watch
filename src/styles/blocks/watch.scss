@@ -1,0 +1,39 @@
+@import "../utils/mixins.scss";
+@import "../utils/variables.scss";
+
+.watch {
+  margin: 0 auto;
+  @include circle(500px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+
+  &__center {
+    @include circle(15px);
+    position: absolute;
+    background-color: black;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    border-radius: 50%;
+    background-color: black;
+    transform: translateY(50%);
+    transform-origin: bottom center;
+
+    &--minute {
+      height: $height-minute;
+      width: $width-minute;
+      animation: move 3600s linear infinite;
+    }
+
+    &--second {
+      height: $height-second;
+      width: $width-second;
+      animation: move 60s linear infinite;
+    }
+  }
+}
