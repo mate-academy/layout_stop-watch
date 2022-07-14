@@ -26,39 +26,25 @@
     transform: translate(-50%, -50%);
   }
 
-  &__arrow {
-    position: absolute;
-    border-radius: 10px;
-    bottom: 50%;
-    left: $arrows-position;
-    transform-origin: bottom center;
-  }
-
   &__arrow-min {
-    position: absolute;
     width: 10px;
     height: 150px;
     background-color: #bed4fd;
-    border-radius: 10px;
-    bottom: 50%;
-    left: $arrows-position;
-    transform-origin: bottom center;
 
-    @extend %arrow-animation;
+    @extend %arrows-position;
+
+    @extend %arrows-animation;
     animation-duration: 3600s;
   }
 
   &__arrow-sec {
-    position: absolute;
     width: 10px;
     height: 200px;
     background-color: #fd2e62;
-    border-radius: 10px;
-    bottom: 50%;
-    left: $arrows-position;
-    transform-origin: bottom center;
 
-    @extend %arrow-animation;
+    @extend %arrows-position;
+
+    @extend %arrows-animation;
     animation-duration: 60s;
   }
 }
