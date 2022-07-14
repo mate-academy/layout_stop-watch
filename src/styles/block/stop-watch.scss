@@ -1,0 +1,38 @@
+
+.stop-watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  height: 800px;
+  margin-top: 50vh;
+  border: 3px solid rgb(27, 108, 110);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: bgcolor 62s infinite ease;
+
+  &::before {
+    position: absolute;
+    height: 360px;
+    bottom: 50%;
+    content: "";
+    border: 2px solid rgb(16, 240, 210);
+    border-radius: 3px;
+    z-index: 2;
+    animation: watch 60s 2s infinite normal linear ;
+    transform-origin: bottom;
+  }
+
+  &::after {
+    position: absolute;
+    height: 250px;
+    bottom: 50%;
+    content: " ";
+    border: 4px solid rgb(55, 242, 255);
+    border-radius: 5px;
+    z-index: 3;
+    animation: watch 3600s 2s infinite normal linear ;
+    transform-origin: bottom;
+  }
+}
