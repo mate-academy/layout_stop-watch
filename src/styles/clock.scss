@@ -1,6 +1,6 @@
 
 body {
-  background-color: rgb(13, 41, 43);
+  background-color: rgb(163, 158, 158);
 }
 
 .clock {
@@ -8,9 +8,11 @@ body {
   height: $watch-size;
   width: $watch-size;
   margin: 100px auto;
-  border: $watch-size * 0.01 solid $pink-color;
-  background-color: #260738;
+  border: $watch-size * 0.02 solid $light-pink;
+  background: linear-gradient(10deg, $pink, $light-pink);
   border-radius: 50%;
+  box-shadow: 3px 3px 7px $pink;
+
 
   &::before {
     content: "";
@@ -20,12 +22,13 @@ body {
     z-index: 1;
 
     display: block;
-    margin-top: -2%;
-    margin-left: -2%;
-    height: $watch-size * 0.04;
-    width: $watch-size * 0.04;
+    margin-top: -($watch-size * 0.06 / 2);
+    margin-left: -($watch-size * 0.06 / 2);
+    height: $watch-size * 0.06;
+    width: $watch-size * 0.06;
 
-    background-color: $pink-color;
+    background-color: $light-pink;
+    box-shadow: 3px 3px 6px #530750;
     border-radius: 50%;
   }
 
@@ -47,7 +50,8 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    border-radius: 50%;
+    background-color: #36046670;
+    box-shadow: 3px 3px 6px #530750;
     transform: rotate(-90deg);
     transform-origin: left;
   }
