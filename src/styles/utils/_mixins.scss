@@ -1,0 +1,14 @@
+@mixin arrow-animation($time, $name) {
+  transform-origin: bottom;
+  animation-name: $name;
+  animation-duration: $time;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60, end);
+}
+
+@mixin arrow($b-color, $bg-color) {
+  border: 7px solid $b-color;
+  background-color: $bg-color;
+  border-radius: 8px;
+  position: absolute;
+}
