@@ -1,4 +1,3 @@
-
 body {
   background-color: rgb(163, 158, 158);
 }
@@ -8,11 +7,15 @@ body {
   height: $watch-size;
   width: $watch-size;
   margin: 100px auto;
-  border: $watch-size * 0.02 solid $light-pink;
-  background: linear-gradient(10deg, $pink, $light-pink);
-  border-radius: 50%;
-  box-shadow: 3px 3px 7px $pink;
 
+  border: $watch-size * 0.03 solid $light-pink;
+  background: radial-gradient(
+    circle,
+    rgb(190, 153, 169) 0%,
+    rgba(148,221,233,1) 100%
+  );
+  border-radius: 50%;
+  box-shadow: 3px 3px 10px $pink;
 
   &::before {
     content: "";
@@ -22,27 +25,58 @@ body {
     z-index: 1;
 
     display: block;
-    margin-top: -($watch-size * 0.06 / 2);
-    margin-left: -($watch-size * 0.06 / 2);
-    height: $watch-size * 0.06;
-    width: $watch-size * 0.06;
+    height: $watch-size * 0.08;
+    width: $watch-size * 0.08;
+    margin-top: -($watch-size * 0.08 / 2);
+    margin-left: -($watch-size * 0.08 / 2);
 
-    background-color: $light-pink;
-    box-shadow: 3px 3px 6px #530750;
+    background-color: #36046670;
+    box-shadow: 2px 5px 10px #271b27;
     border-radius: 50%;
   }
 
-  &__arrow-minute {
-    height: $watch-size * 0.02;
-    width: $watch-size * 0.34;
-    background-color: $black-color;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+
+    display: block;
+    margin-top: -($watch-size * 0.05 / 2);
+    margin-left: -($watch-size * 0.05 / 2);
+    height: $watch-size * 0.05;
+    width: $watch-size * 0.05;
+
+    background-color: $light-pink;
+    box-shadow: 0 0 6px #530750;
+    border-radius: 50%;
   }
 
-  &__arrow-second {
-    height: $watch-size * 0.01;
-    width: $watch-size * 0.45;
-    background-color: $black-color;
-    animation: rotate 60s infinite linear;
+  &__watch-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: $point-size;
+    height: $point-size;
+    margin-left: -($point-size / 2);
+    margin-top: -($watch-size / 2.1);
+
+    border-radius: 100%;
+    background-color: #ffc2d4e5;
+    box-shadow: 1px 4px 10px #271b27;
+    transform-origin: 50% $watch-size / 2.1;
+  }
+
+  @for $i from 1 through 11 {
+    &__watch-point--#{$i} {
+      transform: rotate($rotate-point * $i);
+    }
+  }
+
+  &__watch-point--12 {
+    transform: rotate(0deg);
   }
 
   &__arrow-minute,
@@ -50,10 +84,23 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+
     background-color: #36046670;
     box-shadow: 3px 3px 6px #530750;
     transform: rotate(-90deg);
     transform-origin: left;
+  }
+
+  &__arrow-minute {
+    height: $arrow-minute-height;
+    width: $arrow-minute-width;
+    animation: rotate 3600s infinite linear;
+  }
+
+  &__arrow-second {
+    height: $arrow-second-height;
+    width: $arrow-second-width;
+    animation: rotate 60s infinite linear;
   }
 
   @keyframes rotate {
