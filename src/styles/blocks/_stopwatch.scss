@@ -1,0 +1,207 @@
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  & * {
+    box-sizing: border-box;
+  }
+
+  &__control {
+
+    display: none;
+
+    &-label {
+      position: absolute;
+      z-index: 3;
+
+      transition-property: transform;
+      transition-duration: 300ms;
+
+      animation-name: control-label_intro;
+      animation-duration: 0.5s;
+      animation-timing-function: ease;
+      animation-delay: $animation-intro-duration - 0.5;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-play-state: paused;
+
+      filter: invert(100%);
+
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.6);
+      }
+
+      &::after {
+        content: "";
+
+        display: block;
+        width: $controlWidth;
+        height: $controlHeight;
+
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1024' width='512'%3E%3Cpath d='M0 192l512 320L0 832V192z'/%3E%3C/svg%3E");
+        background-size: cover;
+      }
+    }
+
+    &:checked {
+      & + .stopwatch__control-label::after {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1024' width='512'%3E%3Cpath d='M0 832h192V192H0V832zM320 192v640h192V192H320z'/%3E%3C/svg%3E");
+        background-size: cover;
+      }
+
+      // Data attribute is used here for detect elements, that have animations
+      & ~ [data-animate],
+      & ~ .stopwatch__container [data-animate] {
+        animation-play-state: running;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+
+    width: $stopwatchDiameter;
+    height: $stopwatchDiameter;
+
+    border-radius: 50%;
+
+  }
+
+  &__rotary {
+    position: relative;
+    top: calc(50% - #{$controlWidth * 0.4});
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    width: $controlWidth * 6;
+    height: $controlHeight;
+    margin: 0 auto;
+    overflow: hidden;
+
+    border-radius: $controlHeight * 0.15;
+    box-shadow: inset 0 0 10px $color-dark-100;
+
+    &-digit,
+    &-separator {
+      width: 1ch;
+
+      font-family: monospace;
+      font-size: $controlHeight;
+      color: $color-dark-900;
+      line-height: $controlHeight;
+    }
+
+    &-separator {
+      animation: rotary-separator_blink 1s steps(1, end) 0s infinite backwards;
+      animation-play-state: paused;
+    }
+
+    &-digit--1 {
+      animation: rotary-digit-6_move 3600s steps(6, end)  0s infinite backwards;
+      animation-play-state: paused;
+    }
+
+    &-digit--2 {
+      animation: rotary-digit-10_move 600s steps(10, end) 0s infinite backwards;
+      animation-play-state: paused;
+    }
+
+    &-digit--3 {
+      animation: rotary-digit-6_move 60s steps(6, end) 0s infinite backwards;
+      animation-play-state: paused;
+    }
+
+    &-digit--4 {
+      animation: rotary-digit-10_move 10s steps(10, end) 0s infinite backwards;
+      animation-play-state: paused;
+    }
+  }
+
+  $index: 0;
+
+  @each $type in $stopwatchTypes {
+
+    $thisOffset: $index * $wheelWidth;
+    $thisDiameter: $stopwatchDiameter - $thisOffset * 2;
+
+    &__#{$type}-wheel {
+      position: absolute;
+      left: ($stopwatchDiameter - $thisDiameter) / 2;
+      top: ($stopwatchDiameter - $thisDiameter) / 2;
+
+      width: $thisDiameter;
+      height: $thisDiameter;
+
+      border-radius: 50%;
+      box-shadow: 0 0 10px $color-dark-500;
+    }
+
+    &__#{$type}-hand {
+      position: absolute;
+      left: $thisOffset + ($thisDiameter - $handSize) / 2;
+      top: $thisOffset + $handSize * 0.4;
+
+      height: (($thisDiameter - $wheelWidth) / 2) + $handSize * 0.4;
+
+      animation-name: hand_move;
+      animation-duration: 60s * if($index == 0, 60, 1);
+      animation-timing-function: steps(60, end);
+      animation-iteration-count: infinite;
+      animation-fill-mode: backwards;
+      animation-play-state: paused;
+
+      &-arrow {
+        width: $handSize;
+        height: $handSize;
+
+        background-color: $color-light;
+
+        transform: rotate(45deg);
+      }
+    }
+
+    &__#{$type}-mask {
+      position: absolute;
+      left: $thisOffset + $wheelWidth / 2;
+      top: $thisOffset + $wheelWidth / 2;
+
+      width: $thisDiameter - $wheelWidth;
+      height: $thisDiameter - $wheelWidth;
+
+      border-radius: 50%;
+      background-color: $color-light;
+    }
+
+    $index: $index + 1;
+  }
+
+  &__big-wheel {
+    background-color: $color-primary;
+  }
+
+  &__secondary-wheel {
+    background-color: $color-secondary;
+  }
+
+  &__overlay {
+    position: absolute;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $color-primary;
+
+    animation: overlay_intro $animation-intro-duration ease 1 forwards;
+    animation-play-state: paused;
+  }
+}
