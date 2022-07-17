@@ -1,14 +1,45 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Stop watch</title>
+
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <div class="stopwatch">
+      <!-- Stopwatch controls -->
+      <label for="control" class="stopwatch__control-label"></label>
+      <input
+        type="checkbox"
+        class="stopwatch__control"
+        name="control"
+        id="control"
+      >
+
+      <!-- Stopwatch rotary digits -->
+      <div class="stopwatch__rotary-digits">
+        <div class="stopwatch__rotary-digit-1">0 1 2 3 4 5 6 7 8 9 0</div>
+        <div class="stopwatch__rotary-digit-2">0 1 2 3 4 5 6 7 8 9 0</div>
+        <div class="stopwatch__rotary-separator">:</div>
+        <div class="stopwatch__rotary-digit-3">0 1 2 3 4 5 6 7 8 9 0</div>
+        <div class="stopwatch__rotary-digit-4">0 1 2 3 4 5 6 7 8 9 0</div>
+      </div>
+
+      <!-- Stopwatch hands -->
+      <div class="stopwatch_big-wheel"></div>
+      <div class="stopwatch__big-hand"></div>
+      <div class="stopwatch__big-mask"></div>
+      <div class="stopwatch_secondary-wheel"></div>
+      <div class="stopwatch__secondary-hand"></div>
+      <div class="stopwatch__secondary-mask"></div>
+
+      <!-- Stopwatch overlay -->
+      <div class="stopwatch__overlay"></div>
+    </div>
+  </body>
 </html>
