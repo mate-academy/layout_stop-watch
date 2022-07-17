@@ -1,0 +1,76 @@
+body {
+  background-color: rgb(163, 158, 158);
+}
+
+.clock {
+  position: relative;
+  @include circle($watch-size);
+  margin: 100px auto;
+
+  border: $clock-border-size solid $light-pink;
+  background: radial-gradient(
+    circle,
+    rgb(190, 153, 169) 0%,
+    rgba(148,221,233,1) 100%
+  );
+  box-shadow: 3px 3px 10px $pink;
+
+  &::before {
+    @include axle-position($external-size-axle);
+    background-color: $indigo;
+    box-shadow: 2px 5px 10px $dark-purple;
+  }
+
+  &::after {
+    @include axle-position($internal-size-axle);
+    background-color: $light-pink;
+    box-shadow: 3px 3px 10px $pink;
+  }
+
+  &__watch-point {
+    @include position();
+    @include circle($point-size);
+    margin-left: -($point-size / 2);
+    margin-top: -($watch-size / 2.1);
+
+    background-color: $light-pink;
+    box-shadow: 3px 3px 10px $pink;
+    transform-origin: 50% $watch-size / 2.1;
+  }
+
+  @for $i from 1 through 11 {
+    &__watch-point--#{$i} {
+      transform: rotate(getRotate($rotate-point, $i));
+    }
+  }
+
+  &__watch-point--12 {
+    transform: rotate(0deg);
+  }
+
+  &__arrow-minute,
+  &__arrow-second {
+    @include position();
+
+    background-color: $indigo;
+    box-shadow: 3px 3px 6px $purple;
+    transform-origin: left;
+    transform: rotate(-90deg);
+  }
+
+  &__arrow-minute {
+    @include hands($arrow-minute-height, $arrow-minute-width);
+    animation: rotate 3600s infinite linear;
+  }
+
+  &__arrow-second {
+    @include hands($arrow-second-height, $arrow-second-width);
+    animation: rotate 60s infinite linear;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
