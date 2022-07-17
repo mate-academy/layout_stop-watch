@@ -1,0 +1,26 @@
+@mixin circle ($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin position () {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+
+@mixin hands ($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin axle-position($size) {
+  @include circle($size);
+  @include position();
+  content: "";
+  display: block;
+  margin-top: -($size / 2);
+  margin-left: -($size / 2);
+}
