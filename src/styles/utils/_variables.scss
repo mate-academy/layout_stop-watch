@@ -1,11 +1,12 @@
 $stopwatchTypes: "big", "secondary";
 
-$stopwatchDiameter: 500px;
-$wheelWidth: 50px;
-$handSize: 30px;
-$controlWidth: 40px;
+$baseUnit: 16px;
+$stopwatchDiameter: 31.25rem;
+$wheelWidth: $stopwatchDiameter / 10;
+$handSize: $wheelWidth * 0.6;
+$controlWidth: $wheelWidth * 0.8;
 $controlHeight: $controlWidth * 2;
-$rotarySize: 40px;
+$rotarySize: $wheelWidth * 0.8;
 
 $color-light: #fff;
 $color-dark-100: #dee2ed;

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Stop watch</title>
@@ -24,6 +24,7 @@
         class="stopwatch__control-label"
         data-animate="true"
       ></label>
+      <a href="/" class="stopwatch__refresh"></a>
 
       <div class="stopwatch__container">
         <!-- Stopwatch rotary digits -->
@@ -51,7 +52,10 @@
         </div>
 
         <!-- Stopwatch hands -->
-        <div class="stopwatch__big-wheel"></div>
+        <div
+          class="stopwatch__big-wheel"
+          data-animate="true"
+          ></div>
         <div class="stopwatch__big-mask"></div>
         <div
           class="stopwatch__big-hand"
@@ -59,7 +63,10 @@
         >
           <div class="stopwatch__big-hand-arrow"></div>
         </div>
-        <div class="stopwatch__secondary-wheel"></div>
+        <div
+          class="stopwatch__secondary-wheel"
+          data-animate="true"
+        ></div>
         <div class="stopwatch__secondary-mask"></div>
         <div
           class="stopwatch__secondary-hand"
