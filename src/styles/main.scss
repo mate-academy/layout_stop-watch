@@ -1,0 +1,99 @@
+@import "./utils/variables";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+
+  font-family: "Audiowide", cursive;
+  background-color: #000;
+}
+
+.stop-watch {
+  min-width: $sw-size;
+  min-height: $sw-size;
+
+  border-radius: 50%;
+  background: radial-gradient(#000 #{$sw-size / 3}, #e76033);
+
+  &__dial {
+    position: relative;
+  }
+
+  &__dial-number {
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    font-size: $sw-size / 8;
+    text-align: center;
+    text-shadow: 0 0 3px #ff0;
+
+    @each $name, $position in $number-alignment-x {
+      &:nth-child(#{$name}) {
+        top: $position;
+      }
+    }
+
+    @each $name, $position in $number-alignment-y {
+      &:nth-child(#{$name}) {
+        left: $position;
+      }
+    }
+  }
+
+  &__hands {
+    position: relative;
+  }
+
+  &__hand-minutes,
+  &__hand-seconds {
+    position: absolute;
+
+    width: $sw-size / 50;
+    height: $sw-size * 0.3;
+    left: $sw-size / 2 - $sw-size / 100;
+    bottom: -$sw-size / 2;
+
+    border-radius: 40% 40% 0 0;
+    background-color: #87ceeb;
+
+    animation: rotate 3600s linear infinite;
+    transform-origin: 50% 100%;
+  }
+  
+  &__hand-seconds {
+    width: $sw-size / 100;
+    height: $sw-size * 0.4;
+    left: $sw-size / 2 - $sw-size / 200;
+
+    background-color: #ff0;
+    
+    animation: rotate 60s infinite steps(60);
+    
+    &::after {
+      position: absolute;
+      display: block;
+      width: $sw-size / 18;
+      height: $sw-size / 18;
+      transform: translate(-50%, 50%);
+      left: 50%;
+      bottom: 0;
+
+      content: "";
+      background-color: #000;
+      border-radius: 50%;
+      box-shadow: 0 0 6px 3px #ff0;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
