@@ -1,0 +1,186 @@
+@import "./utils/variables";
+@import "./utils/extends";
+@import "./reset.scss";
+
+.watch {
+  @extend %flex-center;
+  align-items: center;
+  height: 100vh;
+  background-color: $bgr-color;
+
+  &__body {
+    @extend %flex-center;
+    position: relative;
+    background-color: $watch-bgr-color;
+    height: $watch-height;
+    width: $watch-width;
+    border-radius: 50%;
+    border: 5px solid rgb(255, 255, 255);
+    text-shadow: $ts-watch-body;
+    box-shadow: $bs-watch-body;
+
+    @media (max-width: 660px) {
+      height: $watch-height/1.6;
+      width: $watch-width/1.6;
+    }
+  }
+
+  &__number {
+    display: flex;
+    position: absolute;
+    color: #fff;
+    left: 45%;
+    top: -14%;
+    font-size: $fz-number;
+    text-shadow: $ts-number;
+    transition: 1s;
+    animation-name: test;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @for $i from 1 through 12 {
+      $number: $i * 5;
+      &:nth-child(#{$i})::after {
+        content: "#{$number}";
+        position: absolute;
+        transform: rotate($number * 6deg);
+        transform-origin: 50% 315px;
+
+        @media (max-width: 660px) {
+          position: absolute;
+          top: 9px;
+          left: 3px;
+          font-size: 1.5rem;
+          transform-origin: 50% 185px;
+        }
+      }
+    }
+  }
+
+  &__sec-arrow {
+    position: absolute;
+    width: 4px;
+    height: 250px;
+    z-index: 10;
+    background-color: rgba(255, 0, 0, 0.58);
+    animation: spin-arrow-sec 60s linear infinite;
+    box-shadow: 0 0 15px 5px #ff1721;
+    transform-origin: 0 98%;
+
+    @media (max-width: 660px) {
+      height: 150px;
+      top: 5px;
+    }
+  }
+
+  &__min-arrow {
+    @extend %flex-center;
+    align-items: center;
+    position: absolute;
+    z-index: 5;
+    font-family: monospace;
+    font-size: 1.2rem;
+    top: 47%;
+    left: 46%;
+    width: 245px;
+    height: 20px;
+    animation: spin-arrow-min 3600s linear infinite;
+    transform-origin: 20px 10px;
+
+    @media (max-width: 660px) {
+      width: 200px;
+      left: 44%;
+    }
+
+    &::after {
+      content: "run, batman, run ➤";
+      padding-left: 40px;
+      color: white;
+
+      @media (max-width: 660px) {
+        content: "run, batman ➤";
+        width: 200px;
+        font-size: 0.8rem;
+        padding-left: 55px;
+      }
+    }
+  }
+
+  &__batman {
+    position: absolute;
+    top: 412px;
+    left: 195px;
+    height: 80px;
+    width: 100px;
+    background-image: url("/images/batman.gif");
+    background-size: 100px 80px;
+    transform-origin: 50% -167px;
+    animation: batman-run 50s linear infinite;
+    cursor: url(../images/batman_cursor.png) 10 10, auto;
+
+    @media (max-width: 660px) {
+      background-size: contain;
+      height: 60px;
+      width: 70px;
+      top: 245px;
+      left: 117px;
+      transform-origin: 50% -93px;
+    }
+  }
+
+  &__superman {
+    display: block;
+    position: absolute;
+    top: 61%;
+    left: 45.5%;
+    height: 130px;
+    width: 130px;
+    transform: translate(-50%, -50%);
+    transform-origin: top right;
+    background: no-repeat url(/images/superman.gif);
+    cursor: url(../images/superman-cursor.png) 10 10, auto;
+
+    &:hover + .watch__sec-arrow {
+      width: 0;
+      border-radius: 10%;
+      box-shadow: 0 0 15px 5px red, 0 0 15px 5px yellow;
+      transition: 0.2s;
+    }
+
+    @media (max-width: 660px) {
+      height: 80px;
+      width: 80px;
+      top: 60%;
+      left: 44%;
+      background-size: contain;
+    }
+  }
+}
+
+@keyframes spin-arrow-sec {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-arrow-min {
+  0% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(630deg);
+  }
+}
+
+@keyframes batman-run {
+  0% {
+    transform: rotate(190deg);
+  }
+  100% {
+    transform: rotate(550deg);
+  }
+}
