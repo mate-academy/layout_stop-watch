@@ -164,6 +164,7 @@
       width: $thisDiameter;
       height: $thisDiameter;
 
+      background-color: if($index == 0, $color-primary, $color-secondary);
       border-radius: 50%;
       box-shadow: 0 0 10px $color-dark-500;
     }
@@ -205,14 +206,6 @@
     }
 
     $index: $index + 1;
-  }
-
-  &__big-wheel {
-    background-color: $color-primary;
-  }
-
-  &__secondary-wheel {
-    background-color: $color-secondary;
   }
 
   &__overlay {
