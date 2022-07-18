@@ -1,0 +1,223 @@
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  & * {
+    box-sizing: border-box;
+  }
+
+  &__control {
+
+    display: none;
+
+    &-label {
+      position: absolute;
+      z-index: 3;
+
+      transition-property: transform;
+      transition-duration: 300ms;
+
+      animation-name: control-label_intro;
+      animation-duration: 0.5s;
+      animation-timing-function: ease;
+      animation-delay: $animation-intro-duration - 0.5;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-play-state: paused;
+
+      filter: invert(100%);
+
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.6);
+      }
+
+      &::after {
+        content: "";
+
+        display: block;
+        width: $controlWidth;
+        height: $controlHeight;
+
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1024' width='512'%3E%3Cpath d='M0 192l512 320L0 832V192z'/%3E%3C/svg%3E");
+        background-size: cover;
+      }
+    }
+
+    &:checked {
+      & + .stopwatch__control-label::after {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1024' width='512'%3E%3Cpath d='M0 832h192V192H0V832zM320 192v640h192V192H320z'/%3E%3C/svg%3E");
+        background-size: cover;
+      }
+
+      // Data attribute is used here for detect elements, that have animations
+      & ~ [data-animate],
+      & ~ .stopwatch__container [data-animate] {
+        animation-play-state: running;
+      }
+    }
+  }
+
+  &__refresh {
+    position: absolute;
+    top: calc(50% + #{$controlHeight});
+    z-index: 1;
+
+    width: $controlWidth * 1.2;
+    height: $controlWidth * 1.2;
+
+    background: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 492.883 492.883' style='enable-background:new 0 0 492.883 492.883;' xml:space='preserve'%3E%3Cpath d='M122.941,374.241c-20.1-18.1-34.6-39.8-44.1-63.1c-25.2-61.8-13.4-135.3,35.8-186l45.4,45.4c2.5,2.5,7,0.7,7.6-3 l24.8-162.3c0.4-2.7-1.9-5-4.6-4.6l-162.4,24.8c-3.7,0.6-5.5,5.1-3,7.6l45.5,45.5c-75.1,76.8-87.9,192-38.6,282 c14.8,27.1,35.3,51.9,61.4,72.7c44.4,35.3,99,52.2,153.2,51.1l10.2-66.7C207.441,421.641,159.441,407.241,122.941,374.241z'/%3E%3Cpath d='M424.941,414.341c75.1-76.8,87.9-192,38.6-282c-14.8-27.1-35.3-51.9-61.4-72.7c-44.4-35.3-99-52.2-153.2-51.1l-10.2,66.7 c46.6-4,94.7,10.4,131.2,43.4c20.1,18.1,34.6,39.8,44.1,63.1c25.2,61.8,13.4,135.3-35.8,186l-45.4-45.4c-2.5-2.5-7-0.7-7.6,3 l-24.8,162.3c-0.4,2.7,1.9,5,4.6,4.6l162.4-24.8c3.7-0.6,5.4-5.1,3-7.6L424.941,414.341z'/%3E%3C/svg%3E");
+    background-size: cover;
+
+    &:hover {
+      // Filter values calculated using this great tool:
+      // https://codepen.io/sosuke/pen/Pjoqqp
+      filter: invert(63%)
+        sepia(74%)
+        saturate(5809%)
+        hue-rotate(337deg)
+        brightness(95%)
+        contrast(85%);
+    }
+  }
+
+  &__container {
+    position: relative;
+
+    width: $stopwatchDiameter;
+    height: $stopwatchDiameter;
+
+    border-radius: 50%;
+
+  }
+
+  &__rotary {
+    position: relative;
+    top: calc(50% - #{$controlHeight / 2});
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    width: $controlWidth * 6;
+    height: $controlHeight;
+    margin: 0 auto;
+    overflow: hidden;
+
+    border-radius: $controlHeight * 0.15;
+    box-shadow: inset 0 0 $baseUnit $color-dark-100;
+
+    &-digit,
+    &-separator {
+      width: 1ch;
+
+      font-family: monospace;
+      font-size: $controlHeight;
+      color: $color-dark-900;
+      line-height: $controlHeight;
+    }
+
+    &-separator {
+      animation: rotary-separator_blink 1s steps(1, end) 0s infinite backwards;
+      animation-play-state: paused;
+    }
+
+    &-digit--1 {
+      animation: rotary-digit-6_move 3600s steps(6, end)  0s infinite backwards;
+      animation-play-state: paused;
+    }
+
+    &-digit--2 {
+      animation: rotary-digit-10_move 600s steps(10, end) 0s infinite backwards;
+      animation-play-state: paused;
+    }
+
+    &-digit--3 {
+      animation: rotary-digit-6_move 60s steps(6, end) 0s infinite backwards;
+      animation-play-state: paused;
+    }
+
+    &-digit--4 {
+      animation: rotary-digit-10_move 10s steps(10, end) 0s infinite backwards;
+      animation-play-state: paused;
+    }
+  }
+
+  $index: 0;
+
+  @each $type in $stopwatchTypes {
+
+    $thisOffset: $index * $wheelWidth;
+    $thisDiameter: $stopwatchDiameter - $thisOffset * 2;
+
+    &__#{$type}-wheel {
+      position: absolute;
+      left: ($stopwatchDiameter - $thisDiameter) / 2;
+      top: ($stopwatchDiameter - $thisDiameter) / 2;
+
+      width: $thisDiameter;
+      height: $thisDiameter;
+
+      background-color: if($index == 0, $color-primary, $color-secondary);
+      border-radius: 50%;
+      box-shadow: 0 0 10px $color-dark-500;
+    }
+
+    &__#{$type}-hand {
+      position: absolute;
+      left: $thisOffset + ($thisDiameter - $handSize) / 2;
+      top: $thisOffset + $handSize * 0.4;
+
+      height: (($thisDiameter - $wheelWidth) / 2) + $handSize * 0.4;
+
+      animation-name: hand_move;
+      animation-duration: 60s * if($index == 0, 60, 1);
+      animation-timing-function: steps(60, end);
+      animation-iteration-count: infinite;
+      animation-fill-mode: backwards;
+      animation-play-state: paused;
+
+      &-arrow {
+        width: $handSize;
+        height: $handSize;
+
+        background-color: $color-light;
+
+        transform: rotate(45deg);
+      }
+    }
+
+    &__#{$type}-mask {
+      position: absolute;
+      left: $thisOffset + $wheelWidth / 2;
+      top: $thisOffset + $wheelWidth / 2;
+
+      width: $thisDiameter - $wheelWidth;
+      height: $thisDiameter - $wheelWidth;
+
+      border-radius: 50%;
+      background-color: $color-light;
+    }
+
+    $index: $index + 1;
+  }
+
+  &__overlay {
+    position: absolute;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $color-primary;
+
+    animation: overlay_intro $animation-intro-duration ease 1 forwards;
+    animation-play-state: paused;
+  }
+}
