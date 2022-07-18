@@ -1,0 +1,89 @@
+$watch-size: 500px;
+$orange-color: #e25544;
+$black-color: black;
+$minute: 60s;
+
+.container {
+  display: flex;
+  height: 100vh;
+
+  &__stop-watch {
+    position: relative;
+    margin: auto;
+  }
+}
+
+.stop-watch {
+  display: flex;
+  height: $watch-size;
+  width: $watch-size;
+  background-color: lightgrey;
+  border-radius: 50%;
+  justify-content: center;
+  border: $watch-size * 0.02 double $black-color;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-weight: bold;
+  color: $black-color;
+
+  &__arrow {
+    box-sizing: border-box;
+    position: absolute;
+    animation-name: move;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border: 2px solid $black-color;
+  }
+
+  &__arrow--second {
+    z-index: 2;
+    height: $watch-size / 2;
+    width: $watch-size * 0.02;
+    background-color: $orange-color;
+    animation-duration: $minute;
+    animation-timing-function: linear;
+
+  }
+
+  &__arrow--minute {
+    z-index: 1;
+    height: $watch-size / 2.5;
+    margin-top: $watch-size / 10;
+    width: $watch-size * 0.03;
+    background-color: gray;
+    animation-duration: 60 * $minute;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__bracing {
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    align-self: center;
+    height: $watch-size * 0.06;
+    width: $watch-size * 0.06;
+    background-color: $orange-color;
+    border-radius: 50%;
+    border: 4px double $black-color;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+  }
+
+  &__inscription {
+    position: absolute;
+    font-size: $watch-size * 0.04;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
