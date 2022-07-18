@@ -1,6 +1,9 @@
 .watch {
   @include watch-style();
   @include background-image();
+  @media (max-width: 500px) {
+     transform: scale(0.6);
+  }
   position: relative;
   display: flex;
 
@@ -26,7 +29,7 @@
     background-color: $minutes-color;
     transform-origin: bottom;
     z-index: 1;
-    animation: arrowMovement 3600s linear infinite;
+    // animation: arrowMovement 3600s linear infinite;
 
     &::after {
       content:"";
