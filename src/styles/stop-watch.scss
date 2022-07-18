@@ -6,12 +6,15 @@ $minute: 60s;
 .container {
   display: flex;
   height: 100vh;
+
+  &__stop-watch {
+    position: relative;
+    margin: auto;
+  }
 }
 
 .stop-watch {
-  position: relative;
   display: flex;
-  margin: auto;
   height: $watch-size;
   width: $watch-size;
   background-color: lightgrey;
