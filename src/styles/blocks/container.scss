@@ -1,0 +1,48 @@
+.container {
+  position: relative;
+
+  &__second-hand {
+    position: absolute;
+    right: -2%;
+    top: 51%;
+    @extend %border-heigth;
+    width: 400px;
+    background-color: $maimColor;
+
+    transform: rotateZ(90deg);
+    transform-origin: left center;
+    animation: clock 60s linear infinite;
+  }
+
+  &__hour-hand {
+    position: absolute;
+    right: 17%;
+    top: 51%;
+    @extend %border-heigth;
+    width: 250px;
+    background-color: crimson;
+
+    transform: rotateZ(-90deg);
+    transform-origin: left center;
+    animation: clock 3600s linear infinite;
+  }
+
+  &__clock-face {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include circle($circleSize);
+
+    background-color: $maimColor;
+  }
+
+  @keyframes clock {
+    0% {
+      transform: rotate(-90deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
