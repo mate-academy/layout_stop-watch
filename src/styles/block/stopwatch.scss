@@ -1,0 +1,36 @@
+.stopwatch {
+  margin: auto;
+  display: flex;
+  position: relative;
+  @include size (700px, 700px);
+  @extend %stopwatch-border-style;
+
+  &__arrow-small {
+    position: absolute;
+    bottom: 50%;
+    left: 49%;
+    @include size (8px, 200px);
+    @extend %arrow-style;
+    @extend %stopwatch-animation;
+    animation-duration: 3600s;
+  }
+
+  &__arrow-big {
+    position: absolute;
+    bottom: 50%;
+    left: 49%;
+    @include size (8px, 300px);
+    @extend %arrow-style;
+    @extend %stopwatch-animation;
+    animation-duration: 60s;
+  }
+}
+
+@keyframes run {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
