@@ -1,8 +1,17 @@
 .watch {
-  @extend %flex-center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: $bgr-color;
+  min-height: 100vh;
+
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+    width: 650px;
+  }
 
   &__body {
     @extend %flex-center;
