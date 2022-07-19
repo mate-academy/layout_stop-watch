@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Georgia, serif;
+  background-color: $dark-grey;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  &__container {
+    @include square($container-size);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-grey;
+    border-radius: $radius;
+
+    box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset,
+      rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset,
+      rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset,
+      rgba(0, 0, 0, 0.06) 0 2px 1px,
+      rgba(0, 0, 0, 0.09) 0 4px 2px,
+      rgba(0, 0, 0, 0.09) 0 8px 4px,
+      rgba(0, 0, 0, 0.09) 0 16px 8px,
+      rgba(0, 0, 0, 0.09) 0 32px 16px,
+      rgba(0, 0, 0, 0.49) 0 22px 70px 4px;
+  }
+}

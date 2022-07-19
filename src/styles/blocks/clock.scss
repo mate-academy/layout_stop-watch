@@ -1,0 +1,87 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include square($clock-size);
+
+  background-image: url(../images/forest.jpg);
+  background-position: top;
+  border-radius: $radius;
+  box-shadow: rgba(0, 0, 0, 0.58) 0 2px 8px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    @include square($dot-size);
+
+    background-color: $light-grey;
+    border-radius: $radius;
+    z-index: 1;
+  }
+
+  & :nth-child(n+3) {
+    position: absolute;
+    inset: 20px;
+    text-align: center;
+    opacity: 0.5;
+    font-weight: 600;
+    font-size: 25px;
+    display: inline-block;
+    color: $white;
+  }
+
+  @for $index from 1 through 11 {
+    &__#{$index} {
+      transform: rotate(30deg * $index);
+
+      & :first-child {
+        transform: rotate(-30deg * $index);
+      }
+    }
+  }
+
+  &__second {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    @include square($second-size);
+
+    & :first-child {
+      position: absolute;
+      width: 1px;
+      height: 50%;
+      background-color: $white;
+      opacity: 0.5;
+      border-radius: $radius;
+      transform-origin: 50% 100%;
+      animation: hand 60s linear infinite;
+    }
+  }
+
+  &__minute {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    @include square($minute-size);
+
+    & :first-child {
+      position: absolute;
+      width: 1px;
+      height: 50%;
+      background-color: $white;
+      opacity: 0.5;
+      border-radius: $radius;
+      transform-origin: 50% 100%;
+      animation: hand 3600s linear infinite;
+    }
+  }
+}
+
+@keyframes hand {
+  100% {
+    transform: rotate(360deg);
+  }
+}
