@@ -1,0 +1,62 @@
+@import "./mixin";
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  &__container {
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: relative;
+  }
+  &__item1 {
+    height: 230px;
+    width: 20px;
+    background-color: #102dd0;
+    border-radius: 50px;
+    position: absolute;
+    left: 50%;
+    bottom: 48%;
+    transform-origin: bottom;
+    animation: watch 60s infinite linear;
+  }
+  &__item2 {
+    height: 180px;
+    width: 24px;
+    background-color: #c8da20;
+    border-radius: 50px;
+    z-index: -1;
+    position: absolute;
+    left: 49.5%;
+    bottom: 48%;
+    transform-origin: bottom;
+    animation: watch 3600s infinite linear;
+  }
+  &__dot {
+    background-color: #f3bb47;
+    height: $dot_size;
+    width: $dot_size;
+    border-radius: 50%;
+    position: absolute;
+    top: 49%;
+    left: 49%;
+    z-index: 3;
+  }
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
