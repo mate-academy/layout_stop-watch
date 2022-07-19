@@ -20,7 +20,7 @@
     z-index: 1;
   }
 
-  & span {
+  & :nth-child(n+3) {
     position: absolute;
     inset: 20px;
     text-align: center;
@@ -35,7 +35,7 @@
     &__#{$index} {
       transform: rotate(30deg * $index);
 
-      & div {
+      & :first-child {
         transform: rotate(-30deg * $index);
       }
     }
