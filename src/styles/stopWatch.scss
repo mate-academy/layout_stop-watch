@@ -1,0 +1,90 @@
+.stop-watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+
+  &__face {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    opacity: 0.7;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+
+    border: 10px solid black;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &__seconds::after {
+    content: "";
+    position: absolute;
+
+    height: 45%;
+    top: 5%;
+    left: 49%;
+    width: 1%;
+    background-color: transparent;
+    border-radius: 6px;
+    animation: tick 60s infinite linear,
+      color 5s ease infinite;
+    transform-origin: 50% 100%;
+  }
+
+  &__minutes::after {
+    content: "";
+    position: absolute;
+
+    height: 30%;
+    width: 2%;
+    border-radius: 6px;
+    z-index: 1;
+    left: 49%;
+    top: 20%;
+
+    animation: tick 3600s infinite linear,
+      color 5s ease infinite;
+    transform-origin: 50% 100%;
+  }
+}
+
+@keyframes tick {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes color {
+
+  0% {
+    background-color: rgb(96, 46, 94);
+  }
+
+  20% {
+    background-color: rgb(67, 54, 94);
+  }
+  
+  50% {
+    background-color: rgb(44, 97, 136);
+  }
+
+  80% {
+    background-color: rgb(67, 54, 94);
+  }
+
+  100% {
+    background-color: rgb(96, 46, 94);
+  }
+}
