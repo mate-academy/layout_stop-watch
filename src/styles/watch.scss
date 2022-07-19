@@ -1,14 +1,19 @@
+
 .watch {
   position: relative;
-  margin: auto;
+  margin: 100px auto;
+  width: 600px;
+  height: 600px;
 
+  border: 1px solid #000;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
 
   &__center {
     position: absolute;
-    bottom: -415px;
+    bottom: 47%;
 
     width: 30px;
     height: 30px;
@@ -20,10 +25,10 @@
 
   &__minute {
     position: absolute;
-    bottom: -400px;
+    bottom: 50%;
 
     width: 15px;
-    height: 300px;
+    height: 200px;
 
     background-color: brown;
     border-radius: 80% / 5%;
@@ -31,11 +36,11 @@
 
   &__second {
     position: absolute;
-    bottom: -400px;
+    bottom: 50%;
 
     width: 15px;
-    height: 400px;
-    
+    height: 300px;
+
     background-color: cadetblue;
     border-radius: 80% / 5%;
     animation-name: move;
