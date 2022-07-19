@@ -5,7 +5,7 @@
   width: 600px;
   height: 600px;
 
-  border: 1px solid #000;
+  border: 10px solid cadetblue;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -32,6 +32,11 @@
 
     background-color: brown;
     border-radius: 80% / 5%;
+    animation-name: move;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-timing-function: linear;
   }
 
   &__second {
