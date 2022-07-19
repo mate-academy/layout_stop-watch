@@ -1,0 +1,54 @@
+.container {
+  position: relative;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: rgb(40, 40, 48);
+}
+
+.clock {
+  width: 385px;
+  height: 385px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-image: url(../image/5693e5540266115231b7d02a.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  transition: transform 60s;
+
+  &__minutes {
+    @extend %position-arrow;
+    width: 16px;
+    height: 130px;
+
+    border-radius: 8px;
+    background-color: black;
+
+    @extend %watch-animation;
+    animation-duration: 3600s;
+  }
+
+  &__seconds {
+    @extend %position-arrow;
+    width: 10px;
+    height: 160px;
+
+    border-radius: 5px;
+    background-color: black;
+
+    @extend %watch-animation;
+    animation-duration: 60s;
+  }
+}
+
+@keyframes run {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
