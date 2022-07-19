@@ -1,0 +1,46 @@
+.clock {
+  position: relative;
+  width: $size-clock;
+  height: $size-clock;
+  margin: auto;
+  background-color: antiquewhite;
+  border-radius: 50%;
+
+  &:after {
+    content: "";
+    width: 4%;
+    height: 4%;
+    background: cadetblue;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hand {
+    position: absolute;
+    border: 1px solid black;
+    border-radius: $border-radius-hand;
+    transform-origin: bottom  center;
+
+    &--minute {
+      background-color: rgb(140, 230, 230);
+      height: $heigh-hand-minite;
+      width: $width-hand-minite;
+      top: $size-clock/2 - $heigh-hand-minite;
+      left: $size-clock/2 -$width-hand-minite/2;
+      animation: move 3600s linear infinite;
+    }
+
+    &--second {
+      background-color: cadetblue;
+      height: $heigh-hand-second;
+      width: $width-hand-second;
+      top: $size-clock/2 - $heigh-hand-second;
+      left: $size-clock/2 - $width-hand-second/2;
+      animation: move 60s linear infinite;
+    }
+  }
+}
