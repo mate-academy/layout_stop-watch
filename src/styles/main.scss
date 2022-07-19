@@ -1,6 +1,6 @@
 @import "./utils/variables";
 
-body {
+.body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,11 +50,11 @@ body {
   &__hand-minutes,
   &__hand-seconds {
     position: absolute;
+    left: $sw-size / 2 - $sw-size / 100;
+    bottom: -$sw-size / 2;
 
     width: $sw-size / 50;
     height: $sw-size * 0.3;
-    left: $sw-size / 2 - $sw-size / 100;
-    bottom: -$sw-size / 2;
 
     border-radius: 40% 40% 0 0;
     background-color: #87ceeb;
@@ -64,22 +64,24 @@ body {
   }
   
   &__hand-seconds {
+    left: $sw-size / 2 - $sw-size / 200;
+    
     width: $sw-size / 100;
     height: $sw-size * 0.4;
-    left: $sw-size / 2 - $sw-size / 200;
 
     background-color: #ff0;
     
     animation: rotate 60s infinite steps(60);
     
     &::after {
-      position: absolute;
       display: block;
-      width: $sw-size / 18;
-      height: $sw-size / 18;
-      transform: translate(-50%, 50%);
+      position: absolute;
       left: 50%;
       bottom: 0;
+      transform: translate(-50%, 50%);
+
+      width: $sw-size / 18;
+      height: $sw-size / 18;
 
       content: "";
       background-color: #000;
@@ -91,9 +93,9 @@ body {
 
 @keyframes rotate {
   from {
-    transform: rotateZ(0);
+    transform: rotate(0);
   }
   to {
-    transform: rotateZ(360deg);
+    transform: rotate(360deg);
   }
 }
