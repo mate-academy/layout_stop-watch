@@ -1,0 +1,53 @@
+.watch {
+  position: relative;
+  margin: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  &__center {
+    position: absolute;
+    bottom: -415px;
+
+    width: 30px;
+    height: 30px;
+
+    background-color: brown;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__minute {
+    position: absolute;
+    bottom: -400px;
+
+    width: 15px;
+    height: 300px;
+
+    background-color: brown;
+    border-radius: 80% / 5%;
+  }
+
+  &__second {
+    position: absolute;
+    bottom: -400px;
+
+    width: 15px;
+    height: 400px;
+    
+    background-color: cadetblue;
+    border-radius: 80% / 5%;
+    animation-name: move;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: rotate(360deg);
+  }
+}
