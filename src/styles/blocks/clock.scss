@@ -1,0 +1,52 @@
+
+.clock {
+  border: $border-width solid black;
+  border-radius: 50%;
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    @include circle-size($clock-size);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: $minutes-position;
+      @include arrows-size($minutes-width, $minutes-height);
+      background-color: red;
+      border-radius: 50% 50% 0 0;
+      transform-origin: bottom;
+      animation: motion 3600s linear infinite;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      @include circle-size($circle-size);
+      background-color: green;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__seconds {
+    position: relative;
+    @include arrows-size($seconds-width, $seconds-height);
+    background-color: green;
+    transform-origin: bottom;
+    border-radius: 50% 50% 0 0;
+    animation: motion 30s linear infinite;
+  }
+}
+
+@keyframes motion {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
