@@ -1,0 +1,77 @@
+.watch {
+  margin: auto;
+  display: flex;
+  position: relative;
+
+  width: $size;
+  height: $size;
+
+  border: 8px solid black;
+  border-radius: 100%;
+
+  &__hand-second {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+
+    height: 8px;
+    width: 350px;
+
+    border: 2px solid red;
+
+    transform: translate(50% 0);
+
+    animation-name: tik-tak;
+    animation-duration: 60s;
+    transform-origin: center left;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__hand-minute {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+
+    height: 8px;
+    width: 330px;
+
+    border: 2px solid blue;
+
+    transform: translate(50% 0);
+
+    animation-name: tik-tak;
+    animation-duration: 3600s;
+    transform-origin: center left;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__hand-hour {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+
+    height: 8px;
+    width: 200px;
+
+    border: 2px solid black;
+
+    transform: translate(50% 0);
+
+    animation-name: tik-tak;
+    animation-duration: 216000s;
+    transform-origin: center left;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes tik-tak {
+  100% {
+    transform: rotate(1turn);
+  }
+}
