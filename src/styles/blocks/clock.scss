@@ -1,31 +1,34 @@
 
 .clock {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  @include circle-size($clock-size);
   border: $border-width solid black;
   border-radius: 50%;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: $minutes-position;
-    @include arrows-size($minutes-width, $minutes-height);
-    background-color: red;
-    border-radius: 50% 50% 0 0;
-    transform-origin: bottom;
-    animation: motion 3600s linear infinite;
-  }
+  &__wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    @include circle-size($clock-size);
 
-  &::after {
-    content: "";
-    position: absolute;
-    @include circle-size($circle-size);
-    background-color: green;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
+    &::before {
+      content: "";
+      position: absolute;
+      top: $minutes-position;
+      @include arrows-size($minutes-width, $minutes-height);
+      background-color: red;
+      border-radius: 50% 50% 0 0;
+      transform-origin: bottom;
+      animation: motion 3600s linear infinite;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      @include circle-size($circle-size);
+      background-color: green;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   &__seconds {
@@ -34,9 +37,8 @@
     background-color: green;
     transform-origin: bottom;
     border-radius: 50% 50% 0 0;
-    animation: motion 60s linear infinite;
+    animation: motion 30s linear infinite;
   }
-
 }
 
 @keyframes motion {
@@ -45,6 +47,6 @@
   }
 
   to {
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 }
