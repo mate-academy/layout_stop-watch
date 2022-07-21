@@ -1,0 +1,55 @@
+.stopwatch {
+  position: relative;
+  width: $watchSize;
+  height: $watchSize;
+  background-image: url(../../src/images/clock.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(137, 70, 119);
+  border: 6px solid rgb(21, 119, 86);
+  border-radius: 15%;
+
+  &__minutes {
+    position: absolute;
+    height: 150px;
+    width: 9px;
+    background-color: black;
+    border-radius: 20px;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    animation: rotate 3600s infinite linear;
+  }
+
+  &__seconds {
+    position: absolute;
+    height: 200px;
+    width: 5px;
+    background-color: rgb(187, 228, 97);
+    border-radius: 50%;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    animation: rotate 60s infinite steps(60);
+  }
+
+  &__center {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: rgb(6, 6, 6);
+    border-radius: 100%;
+    bottom: 48%;
+    left: 49%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+
+}
