@@ -1,0 +1,38 @@
+%animation-hend {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+  animation-name: second;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60,start);
+  background-image: $hend-color;
+  border-radius: 20px;
+}
+
+%animation-text {
+  animation-name: every-second;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  position: absolute;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+%for-animation-text {
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 2s;
+    }
+  }
+}
+
+%flex-center-content {
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+}

@@ -1,0 +1,45 @@
+.watch {
+  @include circle(500px);
+  @extend %flex-center-content;
+
+  border: 5px solid gray ;
+  background-image: $watch-color;
+  box-shadow: $shadow-watch;
+
+  &__circle {
+    z-index: 6;
+    @include circle(40px);
+    background-color: #ffdee9;
+    box-shadow: 10px 10px 24px -12px #000;
+  }
+
+  &__minute {
+    width: 23px;
+    height: 210px;
+    @extend %animation-hend;
+    animation-duration: 60 * 60s;
+    animation-delay: 60s;
+  }
+
+  &__second {
+    z-index: 5;
+    width: 20px;
+    height: 240px;
+    @extend %animation-hend;
+    animation-duration: 60s;
+    animation-delay: 1s;
+  }
+}
+
+.text {
+  margin: 0;
+  top: 38%;
+  left: 3%;
+
+  text-transform: uppercase;
+  font-size: 80px;
+  color: $invisible-text;
+
+  @extend %animation-text;
+  @extend %for-animation-text;
+}
