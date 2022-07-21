@@ -1,0 +1,51 @@
+$clock-size: 70vmin; //depends on page size
+
+$big-arrow-size: 25%; //depends on clock size
+$small-arrow-size: 20%; //depends on clock size
+
+$clock-padding-size: $clock-size / 16;
+$block-size: 100% / 7; //depends on clock size
+
+$block-container_row-number-2-6-position-vertical: - $block-size / 1.3;
+$block-container_row-number-2-6-gap: $block-size * 2;
+$block-container_row-number-3-5-position-vertical: - $block-size / 2;
+$block-container_row-number-3-5-gap: $block-size *4.5;
+
+$block-container_row-number_index-2-3-and-position-top: (
+  "2": $block-container_row-number-2-6-position-vertical,
+  "3": $block-container_row-number-3-5-position-vertical,
+);
+
+$block-container_row-number_index-5-6-and-position-bottom: (
+  "5": $block-container_row-number-3-5-position-vertical,
+  "6": $block-container_row-number-2-6-position-vertical,
+);
+
+$block-container_row-number_index-and-gap: (
+  "2": $block-container_row-number-2-6-gap,
+  "3": $block-container_row-number-3-5-gap,
+  "4": $block-size * 5,
+  "5": $block-container_row-number-3-5-gap,
+  "6": $block-container_row-number-2-6-gap,
+);
+
+$anim_big-arrow_rotate-time: 15s;
+$anim_small-arrow_rotate-time: 10s;
+
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin arrow-anim_position_top-left($size) {
+  top: 50% - $size;
+  left: 50% - $size / 2;
+}
+
+@mixin background-image ($url) {
+  background-image: $url;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  image-rendering: pixelated;
+}

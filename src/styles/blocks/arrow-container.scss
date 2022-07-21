@@ -1,0 +1,31 @@
+.arrow-container {
+
+  display: inline-block;
+
+  transform-origin: bottom center;
+
+  &__arrow-rotated {
+    @include square(100%);
+
+    transform-origin: center;
+    transform: rotate(-45deg);
+
+    &--big-arrow {
+      @include background-image (url(../images/wooden_pickaxe.png));
+
+    }
+
+    &--small-arrow {
+      @include background-image (url(../images/diamond_pickaxe.png));
+
+    }
+  }
+
+  &--anim-big-arrow--rotate {
+    @include anim-arrow-rotate ($anim_big-arrow_rotate-time);
+  }
+
+  &--anim-small-arrow--rotate {
+    @include anim-arrow-rotate ($anim_small-arrow_rotate-time);
+  }
+}

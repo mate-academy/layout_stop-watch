@@ -1,0 +1,33 @@
+.clock {
+  padding: $clock-padding-size;
+
+  @include background-image (url(../images/item_frame.png));
+
+  &--arrow-container-position--absolute {
+    position: absolute;
+
+  }
+
+  &--arrow-container-size--big {
+    @include square($big-arrow-size);
+    @include arrow-anim_position_top-left($big-arrow-size);
+
+  }
+
+  &--arrow-container-size--small {
+    @include square($small-arrow-size);
+    @include arrow-anim_position_top-left ($small-arrow-size);
+  }
+
+  &--block-container-size {
+
+    height: $block-size;
+    width: 100%;
+
+  }
+
+  &--block-container-position--relative {
+    position: relative;
+  }
+
+}
