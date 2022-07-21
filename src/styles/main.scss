@@ -1,0 +1,29 @@
+@import "./_utils/resets";
+@import "./_utils/mixins.scss";
+@import "./_utils/variables";
+@import "./blocks/watches.scss";
+
+
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: gray;
+
+}
+
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+
+}
