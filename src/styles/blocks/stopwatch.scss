@@ -1,0 +1,35 @@
+.watch {
+  @include watch($watch-size);
+  
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin: 50px auto;
+  border: 10px solid red;
+  background-color: teal;
+  border-radius: 30%;
+
+  &__point {
+    @include watch($dot-size);
+    @extend %watch-position;
+    
+    top: 47%;
+  }
+
+  &__seconds {
+    @extend %watch-position;
+
+    width: 7px;
+    height: 245px;
+    background-color: yellow;
+    animation: rotate 60s infinite linear;
+  }
+  
+  &__minutes {
+    @extend %watch-position;
+
+    width: 5px;
+    height: 200px;
+    animation: rotate 3600s infinite linear;
+  }
+}
