@@ -1,0 +1,25 @@
+
+@mixin watch-style () {
+  min-height: $watch-size;
+  min-width: $watch-size;
+  border-radius: 50%;
+  border: $watch-size / 200 solid $minutes-color;
+  box-shadow:
+  0px -#{$border-width} #{$border-width} $border-color,
+  inset 0px -#{$border-width} #{$border-width} $border-color,
+  0px #{$border-width} #{$border-width} $border-color,
+  inset 0px #{$border-width} #{$border-width} $border-color;
+}
+
+@mixin background-image () {
+  background: url(../images/clock.png);
+  background-size: contain;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin arrows-design () {
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+}

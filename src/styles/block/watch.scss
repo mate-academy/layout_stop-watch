@@ -1,0 +1,45 @@
+.watch {
+  @include watch-style();
+  @include background-image();
+  @media (max-width: 600px) {
+     transform: scale(0.6);
+  }
+  position: relative;
+  display: flex;
+
+  &__seconds {
+    @include arrows-design();
+    position: relative;
+    left: 50%;
+    margin-top: 4%;
+    height: $watch-size*0.47;
+    width: $watch-size * 0.005;
+    background-color: rgb(248, 245, 147);
+    transform-origin: bottom;
+    animation: arrowMovement 60s linear infinite;
+  }
+
+  &__minutes {
+    @include arrows-design();
+    position: relative;
+    margin: 0 auto;
+    margin-top: 18%;
+    height: $watch-size*0.33;
+    width: $watch-size * 0.008;
+    background-color: $minutes-color;
+    transform-origin: bottom;
+    z-index: 1;
+    animation: arrowMovement 3600s linear infinite;
+
+    &::after {
+      content:"";
+      position: absolute;
+      top: 100%;
+      transform: translate(-30%, -50%);
+      background-color: $minutes-color;
+      border-radius: 50%;
+      width: $watch-size * 0.02;
+      height: $watch-size * 0.02;
+    }
+  }
+}
