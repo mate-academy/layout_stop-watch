@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  background: url(https://i.pinimg.com/originals/9a/89/90/9a8990e3a8371970cb7c16e2c9fff615.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.watch {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+
+  @include square($watch-size);
+  border: 15px solid rgba(99, 81, 30, 0.50);
+  border-radius: $watch-b-radius;
+  background: url(https://i.pinimg.com/564x/92/db/11/92db113ace27b348a2916dc32ee8d140.jpg) no-repeat center center fixed;
+  background-size:contain;
+  box-shadow: rgba(115, 87, 8, 0.58) 0 10px 10px;
+}
