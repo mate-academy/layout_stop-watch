@@ -6,6 +6,7 @@
   width: $main-size;
   border-radius: 50%;
   border: 5px solid #000;
+  transform: translateY(25%);
 
   &::after {
     position: absolute;
@@ -20,7 +21,7 @@
 
   &__second {
     position: absolute;
-    left: $main-size / 2 - $arrow-width / 2;
+    left: ($main-size / 2) - ($arrow-width / 2);
     top: 250px - $second-height;
     height: $second-height;
     width: $arrow-width;
@@ -33,7 +34,7 @@
 
   &__minute {
     position: absolute;
-    left: $main-size / 2 - $arrow-width / 2;
+    left: ($main-size / 2) - ($arrow-width / 2);
     top: 250px - $minute-height;
     height: $minute-height;
     width: $arrow-width;
