@@ -1,0 +1,44 @@
+.watch {
+  display: flex;
+
+  &__container {
+    margin: auto;
+  }
+
+  &__minute {
+    @extend %arrow;
+    margin: auto;
+    animation: rotate 3600s infinite linear;
+
+    &::before {
+      content: "";
+      width: 7px;
+      height: 230px;
+      background: $minute-color;
+      bottom: 15px;
+      left: 50%;
+      position: absolute;
+      border-radius: 2px;
+      transform: translateX(-50%);
+
+    }
+  }
+
+  &__second {
+    @extend %arrow;
+    margin-top: -30px;
+    animation: rotate 60s infinite linear;
+
+    &::after {
+      content: "";
+      width: 7px;
+      height: 150px;
+      background: $second-color;
+      bottom: 15px;
+      left: 50%;
+      position: absolute;
+      border-radius: 2px;
+      transform: translateX(-50%);
+    }
+  }
+}
