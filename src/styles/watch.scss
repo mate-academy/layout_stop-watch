@@ -1,0 +1,147 @@
+.watch {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 495px;
+  height: 495px;
+  border: 2px solid rgb(72, 119, 301);
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    width: 490px;
+    height: 490px;
+    border-radius: 50%;
+    background: linear-gradient(180deg,
+    rgba(0,3,36,1) 0%,
+    rgba(112,77,154,1) 0%,
+    rgba(145,107,163,1) 41%,
+    rgba(0,134,225,1) 100%);
+    opacity: 40%;
+    z-index: 1;
+  }
+
+  &__hand {
+    position: absolute;
+    transform-origin: bottom;
+    animation-name: watch;
+    left: 50%;
+    bottom: 50%;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+
+    &--second {
+      animation-duration: 60s;
+      border: 1px solid rgb(255, 187, 238);
+      height: $hand-height;
+    }
+
+    &--minute {
+      animation-duration: 3600s;
+      border: 2px solid rgb(255, 187, 238);
+      height: $hand-height;
+      border-radius: 2px;
+    }
+
+    @keyframes watch {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+}
+
+.bgVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.watch__hour {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+  color: rgb(255, 253, 118);
+  list-style: none;
+  z-index: 1;
+}
+
+.watch__hour:nth-child(1) {
+  right: 30%;
+  top: 5%;
+}
+
+.watch__hour:nth-child(2) {
+  right: 10%;
+  top: 22%;
+}
+
+.watch__hour:nth-child(3) {
+  right: 1%;
+  top: calc(50% - 10px);
+  color: rgb(255, 187, 238);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.watch__hour:nth-child(4) {
+  right: 6%;
+  top: 69%;
+}
+
+.watch__hour:nth-child(5) {
+  right: 20%;
+  top: 84%;
+}
+
+.watch__hour:nth-child(6) {
+  right: calc(50% - 10px);
+  top: calc(99% - 20px);
+  color: rgb(255, 187, 238);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.watch__hour:nth-child(7) {
+  left: 20%;
+  top: 84%;
+}
+
+.watch__hour:nth-child(8) {
+  left: 6%;
+  top: 69%;
+}
+
+.watch__hour:nth-child(9) {
+  left: 1%;
+  top: calc(50% - 10px);
+  color: rgb(255, 187, 238);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.watch__hour:nth-child(10) {
+  left: 10%;
+  top: 22%;
+}
+
+.watch__hour:nth-child(11) {
+  left: 30%;
+  top: 5%;
+}
+
+.watch__hour:nth-child(12) {
+  right: calc(50% - 10px);
+  top: 1%;
+  color: rgb(255, 187, 238);
+  font-size: 20px;
+  font-weight: bold;
+}
