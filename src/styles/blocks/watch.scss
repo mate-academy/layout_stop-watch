@@ -1,0 +1,71 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include circle($watch-size);
+  background-color: rgb(247, 218, 218);
+  border: solid 20px rgb(253, 198, 198);
+  box-shadow: rgba(17, 12, 46, 0.15) 0 48px 100px 0;
+
+  &__center-circle {
+    @include circle($center-circle-size);
+    background-color: rgb(152, 255, 241);
+    z-index: 2;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: $watch-minute-hand-top;
+    width: 15px;
+    height: $minute-hand-height;
+    background-color: rgb(25, 181, 181);
+    border-radius: 50%;
+    animation: rotate 3600s linear infinite;
+    transform-origin: bottom;
+    z-index: 1;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: $seconds-hand-height;
+    background-color: rgb(129, 238, 238);
+    border-radius: 45%;
+    animation: rotate 60s steps(60, end) infinite;
+    transform-origin: bottom;
+    z-index: 1;
+  }
+
+  &__digits {
+    position: absolute;
+    font-size: $digit-font-size;
+    color: rgb(42, 112, 112);
+  }
+
+  &__digits--12 {
+    bottom: $digit-position-vertical;
+  }
+
+  &__digits--3 {
+    left: $digit-position-horizontal;
+  }
+
+  &__digits--6 {
+    top: $digit-position-vertical;
+  }
+
+  &__digits--9 {
+    right: $digit-position-horizontal;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
