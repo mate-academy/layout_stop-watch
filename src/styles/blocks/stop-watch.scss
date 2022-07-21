@@ -1,0 +1,37 @@
+.stop-watch {
+  margin: auto;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  
+  &__second {
+    display: flex;
+    height: 300px;
+    width: 10px;
+    background-color: rgb(106, 199, 199);
+    border-radius: 5px;
+    transform-origin: 5px 295px;
+    position: fixed;
+    animation: round 1s linear infinite;
+  }
+  
+  &__minute {
+    height: 200px;
+    width: 10px;
+    background-color: rgb(186, 100, 113);
+    border-radius: 5px;
+    position: fixed;
+    transform-origin: 5px 195px;
+    animation: round 60s linear infinite;
+  }
+  
+  &__circle {
+    @include circle($circle-size);
+  
+    display: flex;
+    background-color: rgb(106, 199, 199);
+    border-radius: 50%;
+    position: fixed;
+    transform: scale(3);
+  }
+}
