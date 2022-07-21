@@ -1,0 +1,53 @@
+.watches {
+  position: relative;
+  display: flex;
+  border-radius: 100%;
+  background-image: url(../images/back.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 5px solid black;
+  box-shadow: rgba(0, 0, 0, 20) 0 10px 10px;
+  margin: auto;
+  @include size();
+
+  &__face {
+    position: absolute;
+    @include size();
+    background-image: url(../images/watches.png);
+    background-size: contain;
+    border-radius: 100%;
+  }
+
+  &__seconds {
+    position: absolute;
+    height: 210px;
+    width: 5px;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: rgba(255, 255, 255, 10) 0 10px 10px;
+    @include animation-position();
+    animation: rotate 60s infinite linear;
+  }
+
+  &__minutes {
+    position: absolute;
+    height: 180px;
+    width: 6px;
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 20) 0 10px 10px;
+    border-radius: 20px;
+    @include animation-position();
+    animation: rotate 3600s infinite linear;
+  }
+
+  &__center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 100%;
+    bottom: 48%;
+    left: 49%;
+    box-shadow: rgba(0, 0, 0, 20) 0 2px 2px;
+  }
+}
