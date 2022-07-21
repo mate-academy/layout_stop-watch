@@ -15,9 +15,7 @@
     width: 9px;
     background-color: black;
     border-radius: 20px;
-    bottom: 50%;
-    left: 50%;
-    transform-origin: bottom center;
+    @include position();
     animation: rotate 3600s infinite linear;
   }
 
@@ -27,9 +25,7 @@
     width: 5px;
     background-color: rgb(187, 228, 97);
     border-radius: 50%;
-    bottom: 50%;
-    left: 50%;
-    transform-origin: bottom center;
+    @include position();
     animation: rotate 60s infinite steps(60);
   }
 
@@ -42,6 +38,7 @@
     bottom: 48%;
     left: 49%;
   }
+
 }
 
 @keyframes rotate {
