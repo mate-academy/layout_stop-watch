@@ -1,0 +1,100 @@
+.stopwatch {
+  position: relative;
+  margin: auto;
+
+  @include stopwatch-size;
+
+  background-image: url(../images/img.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 630px;
+
+  background-color: #FFFACD;
+  border: 1px solid #696969;
+  border-radius: 50%;
+  box-shadow: 20px 5px 15px #D3D3D3;
+
+  &__min {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+
+    width: 1%;
+    height: 25%;
+
+    background-color: #DC143C;
+    border: 1px solid #000;
+    border-radius: 30px;
+
+    animation: rotate 3600s linear infinite 1s;
+    transform-origin: bottom center;
+  }
+
+  &__sec {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+
+    width: 1%;
+    height: 45%;
+    background-color: #FF69B4;
+    border-radius: 30px;
+    border: 1px solid #000;
+
+    animation: rotate 60s steps(60, end) infinite;
+    transform-origin: bottom center;
+    transition: rotate 300ms;
+  }
+
+  &__circle {
+    position: absolute;
+    left: 49%;
+    bottom: 48%;
+
+    width: 3%;
+    height: 3%;
+    background-color: #FF69B4;
+    border-radius: 30px;
+    border: 1px solid black;
+  }
+
+  &__time-1 {
+    position: absolute;
+    left: 43%;
+    font-size: 50px;
+    color: #000;
+  }
+
+  &__time-2 {
+    position: absolute;
+    left: 85%;
+    top: 44%;
+    font-size: 50px;
+    transform: rotate(90deg);
+  }
+
+  &__time-3 {
+    position: absolute;
+    right: 43%;
+    bottom: 0;
+    font-size: 50px;
+    transform: rotate(-180deg);
+  }
+
+  &__time-4 {
+    position: absolute;
+    right: 85%;
+    top: 44%;
+    font-size: 50px;
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
