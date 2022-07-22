@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  background-color: #fcc8f8;
+}
+
+.stopwatch {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+
+  &__svg {
+    position: absolute;
+    width: 30%;
+  }
+}
+
+.hand-m {
+  display: flex;
+  justify-content: center;
+
+  &__svg {
+    position: absolute;
+    width: 25%;
+    transform:rotate(62deg);
+    animation: s 3600s steps(60, end) infinite;
+  }
+
+  @keyframes s {
+    from {
+      transform:rotate(62deg);
+    }
+
+    to {
+      transform:rotate(422deg);
+    }
+  }
+}
+
+.hand-s {
+  display: flex;
+  justify-content: center;
+
+  &__svg {
+    position: absolute;
+    width: 35%;
+    transform:rotate(62deg);
+    animation: s 60s steps(60, end) infinite;
+  }
+
+  @keyframes s {
+    from {
+      transform:rotate(62deg);
+    }
+
+    to {
+      transform:rotate(422deg);
+    }
+  }
+}
