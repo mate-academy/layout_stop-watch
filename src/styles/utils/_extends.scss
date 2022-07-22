@@ -1,0 +1,44 @@
+%frame-size {
+  width: 500px;
+  height: 500px;
+}
+
+%line-position {
+  position: absolute;
+  right: 50%;
+}
+
+%line-size {
+  width: 3px;
+  height: 250px;
+}
+
+%line-decoration {
+  border-radius: 3px;
+  background-color: #bdc3c7;
+}
+
+%stopwatch-animation-min {
+  animation-name: circle;
+  animation-duration: 60s;
+  transform-origin: bottom;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+%stopwatch-animation-sec {
+  animation-name: circle;
+  animation-duration: 1s;
+  transform-origin: bottom;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+%button-hover {
+  transition: transform 0.2s;
+
+  &:hover {
+
+    transform: scale(1.2);
+  }
+}
