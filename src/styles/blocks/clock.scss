@@ -1,0 +1,66 @@
+
+.clock {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+  margin: auto;
+  border-radius: 100%;
+  border: 4px solid rgb(8, 30, 31);
+
+  box-shadow: 10px 10px 10px red;
+  border-color: $border-color;
+  background: url(./images/stopwatch.svg) no-repeat ;
+  background-size: $clock-size;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__arrow-big::after {
+    width: 220px;
+    height: 5px;
+    content: '';
+    position: absolute;
+
+
+    background-color: white;
+    border: 2px solid rgb(116, 4, 4);
+    border-radius: 40% 25%;
+    box-shadow: $arrow-shadow;
+    animation: sec 60s linear infinite;
+    transform-origin: 2% 50%;
+  }
+
+  &__arrow-small::after {
+    width: 160px;
+    height: 10px;
+    content: '';
+    position: absolute;
+
+
+    background-color: white;
+    border: 5px solid rgb(116, 4, 4);
+    border-radius: 40% 25%;
+    box-shadow: $arrow-shadow;
+    animation: min 3600s linear infinite;
+    transform-origin: 2% 50%;
+  }
+
+  @keyframes sec{
+    from {
+      transform: rotate(-90deg);
+    }
+    to {
+      transform: rotate(270deg);
+    }
+  }
+
+  @keyframes min{
+    from {
+      transform: rotate(-90deg);
+    }
+    to {
+      transform: rotate(270deg);
+    }
+  }
+}
