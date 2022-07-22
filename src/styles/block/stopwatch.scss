@@ -11,6 +11,9 @@
   &__frame {
     @extend %frame-size;
 
+    display: flex;
+    justify-content: center;
+
     position: relative;
 
     border-radius: 50%;
@@ -58,6 +61,17 @@
     @extend %line-position;
     @extend %line-decoration;
     @extend %stopwatch-animation-sec;
+  }
+
+  &__center-point {
+    align-self: center;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    background-color: #bdc3c7;
   }
 
   &__start {
