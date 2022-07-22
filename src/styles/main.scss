@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__clock-body {
+    height: 600px;
+    width: 600px;
+    background-color: aquamarine;
+    border-radius: 50%;
+  }
+
+  &__minutes-hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 250px;
+    width: 10px;
+    background-color: red;
+    border-radius: 5px;
+    animation: rotate 60s infinite linear;
+    transform-origin: center top;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 200px;
+    width: 10px;
+    background-color: blue;
+    border-radius: 5px;
+    animation: rotate 15s infinite linear;
+    transform-origin: center top;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: 0;
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
