@@ -1,0 +1,56 @@
+$watch-dia: 400px;
+
+body {
+  display: flex;
+}
+
+.watch {
+  width: $watch-dia;
+  height: $watch-dia;
+  border: 5px solid black;
+  border-radius: 50%;
+  background-color: rgb(236, 231, 231);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  &__screw {
+    width: $watch-dia / 15;
+    height: $watch-dia / 15;
+    border-radius: 50%;
+    background-color: #4b9aaa;
+    position: absolute;
+  }
+
+  &__hand {
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: bottom;
+  }
+
+  &__hand--sec {
+    width: $watch-dia / 50;
+    height: $watch-dia / 2.2;
+    border-radius: $watch-dia / 100;
+    background-color: #4b9aaa;
+    animation: move-hand steps(60, end) infinite normal 60s forwards;
+  }
+
+  &__hand--min {
+    width: $watch-dia / 30;
+    height: $watch-dia / 3;
+    border-radius: $watch-dia / 50;
+    background-color: #d15559;
+    animation: move-hand steps(60, end) infinite normal 3600s forwards;
+  }
+}
+
+@keyframes move-hand {
+  from {
+    transform: translateY(-50%) rotate(0);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
