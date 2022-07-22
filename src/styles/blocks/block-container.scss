@@ -1,0 +1,36 @@
+.block-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @each $row-number,
+    $block-container-position-top in
+    $block-container_row-number_index-2-3-and-position-top {
+    &--row-number--#{$row-number} {
+      top: $block-container-position-top;
+    }
+  }
+
+  @each $row-number,
+    $block-container-position-bottom in
+    $block-container_row-number_index-5-6-and-position-bottom {
+    &--row-number--#{$row-number} {
+      bottom: $block-container-position-bottom;
+    }
+  }
+
+  @each $row-number,
+    $block-container-gap in $block-container_row-number_index-and-gap {
+
+    &--row-number--#{$row-number} > :first-child {
+      margin-right: $block-container-gap;
+    }
+  }
+
+  &__block {
+    @include background-image (url(../images/blocks/diamond_ore.png));
+
+    height: 100%;
+    width: $block-size;
+  }
+}

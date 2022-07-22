@@ -1,0 +1,30 @@
+.page {
+  @include background-image (url(../images/background.jpg));
+
+  height: 100vmin;
+
+  min-height: 1000px;
+  min-width: 1000px;
+
+  &__filter-blur {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    backdrop-filter: blur(5px);
+
+  }
+
+  &--clock-position--relative {
+    position: relative;
+  }
+
+  &--clock-size {
+    @include square ($clock-size);
+  }
+
+}

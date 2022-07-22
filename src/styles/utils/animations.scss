@@ -1,0 +1,24 @@
+@mixin anim-arrow-rotate ($time) {
+
+  transform-origin: bottom center;
+
+  animation: rotate360 $time linear infinite;
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.anim--big-arrow--rotate {
+  @include anim-arrow-rotate ($anim_big-arrow_rotate-time);
+}
+
+.anim--small-arrow--rotate {
+  @include anim-arrow-rotate ($anim_small-arrow_rotate-time);
+}

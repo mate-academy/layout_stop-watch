@@ -1,14 +1,66 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <div class="page">
+
+      <div class="page__filter-blur">
+
+        <div
+          class="clock page--clock-position--relative page--clock-size"
+        >
+
+          <div class="arrow-container clock--arrow-container-position--absolute clock--arrow-container-size--big arrow-container--anim-big-arrow--rotate">
+
+            <div class="arrow-container__arrow-rotated arrow-container__arrow-rotated--big-arrow"></div>
+          </div>
+
+          <div class="arrow-container clock--arrow-container-position--absolute clock--arrow-container-size--small arrow-container--anim-small-arrow--rotate">
+
+            <div class="arrow-container__arrow-rotated arrow-container__arrow-rotated--small-arrow"></div>
+          </div>
+
+          <div class="block-container clock--block-container-position--relative clock--block-container-size clock--padding-for-block-container-first">
+            <div class="block-container__block"></div>
+          </div>
+
+          <div class="block-container clock--block-container-position--relative clock--block-container-size clock--padding-for-block-container block-container--row-number--2">
+            <div class="block-container__block"></div>
+            <div class="block-container__block"></div>
+          </div>
+
+          <div class="block-container clock--block-container-position--relative clock--block-container-size clock--padding-for-block-container block-container--row-number--3">
+            <div class="block-container__block"></div>
+            <div class="block-container__block"></div>
+          </div>
+
+          <div class="block-container clock--block-container-position--relative clock--block-container-size clock--padding-for-block-container block-container--row-number--4">
+            <div class="block-container__block"></div>
+            <div class="block-container__block"></div>
+          </div>
+
+          <div class="block-container clock--block-container-position--relative clock--block-container-size clock--padding-for-block-container block-container--row-number--5">
+            <div class="block-container__block"></div>
+            <div class="block-container__block"></div>
+          </div>
+
+          <div class="block-container clock--block-container-position--relative clock--block-container-size clock--padding-for-block-container block-container--row-number--6">
+            <div class="block-container__block"></div>
+            <div class="block-container__block"></div>
+          </div>
+
+          <div class="block-container clock--block-container-position--relative clock--block-container-size clock--padding-for-block-container-last">
+            <div class="block-container__block"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
