@@ -1,12 +1,14 @@
 .watch {
-  position: relative;
   box-sizing: border-box;
-  margin: auto;
   height: $main-size;
   width: $main-size;
   border-radius: 50%;
   border: 5px solid #000;
   transform: translateY(25%);
+
+  &--position {
+    margin: auto;
+  }
 
   &::after {
     position: absolute;
@@ -20,29 +22,21 @@
   }
 
   &__second {
-    position: absolute;
-    left: ($main-size / 2) - ($arrow-width / 2);
+    @extend %arrow-setings;
+
     top: 250px - $second-height;
     height: $second-height;
-    width: $arrow-width;
-
     background-color: #f00;
-    border-radius: 50px;
     animation: arrow-motion 60s linear infinite;
-    transform-origin: 50% 100%;
   }
 
   &__minute {
-    position: absolute;
-    left: ($main-size / 2) - ($arrow-width / 2);
+    @extend %arrow-setings;
+
     top: 250px - $minute-height;
     height: $minute-height;
-    width: $arrow-width;
-
     background-color: #000;
-    border-radius: 50px;
     animation: arrow-motion 3600s linear infinite;
-    transform-origin: 50% 100%;
 
   }
 
