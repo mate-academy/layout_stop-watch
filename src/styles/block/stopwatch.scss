@@ -1,0 +1,99 @@
+
+.stopwatch {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+
+  &__frame {
+    @extend %frame-size;
+
+    position: relative;
+
+    border-radius: 50%;
+
+    border: 1px solid #bdc3c7;
+  }
+
+  &__button-start {
+    position: absolute;
+    right: 0;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid $color-button-start;
+    border-radius: 50%;
+
+    cursor: pointer;
+    @extend %button-hover;
+  }
+
+  &__button-stop {
+    position: absolute;
+    left: 0;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid $color-button-stop;
+    border-radius: 50%;
+
+    cursor: pointer;
+    @extend %button-hover;
+  }
+
+  &__line-min {
+    @extend %line-size;
+    @extend %line-position;
+    @extend %line-decoration;
+    @extend %stopwatch-animation-min;
+  }
+
+  &__line-sec {
+    @extend %line-size;
+    @extend %line-position;
+    @extend %line-decoration;
+    @extend %stopwatch-animation-sec;
+  }
+
+  &__start {
+
+    &:checked {
+      & ~ .stopwatch__line-sec,
+      & ~ .stopwatch__line-min {
+        animation-play-state: running;
+      }
+
+      & ~ .stopwatch__button-start {
+        background-color: $color-button-start;
+      }
+    }
+  }
+
+  &__stop {
+
+    &:checked {
+      & ~ .stopwatch__line-sec,
+      & ~ .stopwatch__line-min {
+        animation-play-state: paused;
+      }
+
+      & ~ .stopwatch__button-stop {
+        background-color: $color-button-stop;
+      }
+    }
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(1turn);
+  }
+}
