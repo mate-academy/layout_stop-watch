@@ -1,0 +1,59 @@
+.clock {
+  
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  background-image: url("../images/space.jpg");
+  background-size: cover;
+  box-shadow: 0 0 5px 5px rgba(34, 60, 80, 0.2);
+
+  &__hand {
+    
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(8, 8, 8);
+    box-shadow: 8px 8px 8px 10px rgba(247, 217, 19, 0.71);
+    z-index: 1;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+  }
+
+  &::after {
+    width: 180px;
+    height: 10px;
+    background-color: rgb(11, 11, 11);
+    box-shadow: 5px 5px 5px 0 rgba(232, 225, 12, 0.71);
+    transform-origin: 0 0;
+    animation: move 60s linear infinite;
+    
+  }
+
+  &::before {
+    width: 100px;
+    height: 10px;
+    background-color: rgb(12, 12, 11);
+    box-shadow: 5px 5px 5px rgb(235, 232, 24);
+    transform-origin: 0 0;
+    animation: move 360s linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
