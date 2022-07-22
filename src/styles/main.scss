@@ -23,26 +23,25 @@ body {
     position: absolute;
   }
 
-  &__sec-hand {
+  &__hand {
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: bottom;
+  }
+
+  &__hand--sec {
     width: $watch-dia / 50;
     height: $watch-dia / 2.2;
     border-radius: $watch-dia / 100;
     background-color: #4b9aaa;
-    position: absolute;
-    transform: translateY(-50%);
-    transform-origin: bottom;
     animation: move-hand steps(60, end) infinite normal 60s forwards;
   }
 
-  &__min-hand {
+  &__hand--min {
     width: $watch-dia / 30;
     height: $watch-dia / 3;
     border-radius: $watch-dia / 50;
     background-color: #d15559;
-    position: absolute;
-    transform: translateY(-50%);
-    transform-origin: bottom;
-    transition: transform 1s linear;
     animation: move-hand steps(60, end) infinite normal 3600s forwards;
   }
 }
