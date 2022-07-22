@@ -1,0 +1,80 @@
+.container__watch {
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  &--number--1 {
+    height: 180px;
+    width: 180px;
+
+    &::before {
+      content: "";
+      @include watch-position;
+      width: 40%;
+      height: 4px;
+      background-color: $arrow;
+      border-radius: 5px;
+      animation: tick 5s linear infinite;
+    }
+
+    &::after {
+      content: "";
+      @include watch-position;
+      width: 30%;
+      height: 6px;
+      background-color: $arrow;
+      border-radius: 5px;
+      animation: tick 50s linear infinite reverse;
+    }
+  }
+
+  &--number--2 {
+    height: 220px;
+    width: 220px;
+
+    &::before {
+      content: "";
+      @include watch-position;
+      width: 40%;
+      height: 4px;
+      background-color: $arrow;
+      border-radius: 5px;
+      animation: tick 60s linear infinite;
+    }
+    &::after {
+      content: "";
+      @include watch-position;
+      width: 30%;
+      height: 6px;
+      background-color: $arrow;
+      border-radius: 5px;
+      animation: tick 3600s linear infinite;
+    }
+  }
+
+  &--number--3 {
+    height: 200px;
+    width: 200px;
+    &::before {
+      content: "";
+      @include watch-position;
+      width: 40%;
+      height: 4px;
+      background-color: $arrow;
+      border-radius: 5px;
+      animation: tick 10s linear infinite reverse;
+    }
+
+    &::after {
+      content: "";
+      @include watch-position;
+      width: 30%;
+      height: 6px;
+      background-color: $arrow;
+      border-radius: 5px;
+      animation: tick 100s linear infinite reverse;
+    }
+  }
+}
