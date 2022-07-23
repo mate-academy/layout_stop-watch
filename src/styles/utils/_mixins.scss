@@ -31,8 +31,8 @@
 
   @for $i from 1 through $dash-number {
     & :nth-child(#{$i}) {
-      transform:
-        translateX(#{$dial-size * $sizing / 2 - $dash-width * $sizing * $i})
+      transform: translateX(#{$dial-size * $sizing / 2 -
+      $dash-width * $sizing * $i})
         rotate(#{$i * 360 / $dash-number}deg);
       transform-origin: $dash-width * $sizing $dial-size * $sizing / 2;
     }
@@ -59,8 +59,8 @@
   border-radius: 50%;
   z-index: 1;
   background: radial-gradient( #000 3px, #bb0 5px, #000 7px);
-  transform:
-    translate($size * 3px + $axis-size / 2, 0.25 * $size * $pointer-size);
+  transform: translate($size * 3px + $axis-size / 2,
+  0.25 * $size * $pointer-size);
 }
 
 @mixin make-axis-shadow($size) {
@@ -68,8 +68,7 @@
   width: $axis-size;
   border-radius: 50%;
   background-color: #000;
-  transform:
-    translate(-($size * 3px + $axis-size / 2), 0.25 * $size * $pointer-size);
+  transform: translate(-($size * 3px + $axis-size / 2),
+  0.25 * $size * $pointer-size);
   filter: blur($axis-size / 2);
 }
-
