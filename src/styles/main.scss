@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.clock {
+  display: flex;
+  margin: auto;
+  width: 600px;
+  height: 600px;
+  position: relative;
+
+  background-image: url("../../img/face.jpeg");
+  background-repeat: no-repeat;
+  background-size: 600px 600px;
+  background-color: yellow;
+
+  transform: rotate(180deg);
+}
+
+.hand {
+  top: 292px;
+  left: 292px;
+  position: absolute;
+  
+  transform-origin: center top;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#hours {
+  width: 20px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: black;
+
+  animation: rotate 43200s infinite linear;
+}
+
+#minutes {
+  width: 15px;
+  height: 290px;
+  border-radius: 10px;
+  background-color: gray;
+
+  animation: rotate 3600s infinite linear;
+}
+
+#seconds {
+  width: 10px;
+  height: 290px;
+  border-radius: 10px;
+  background-color: red;
+
+  animation: rotate 60s steps(60, end) infinite;
+}
