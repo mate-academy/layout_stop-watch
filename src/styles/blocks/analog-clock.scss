@@ -1,0 +1,77 @@
+$minute: 60s;
+$hour: $minute * 60;
+$half-day: $hour * 12;
+
+.analog-clock {
+  position: relative;
+  width: 500px;
+  height: 500px;
+
+  background-color: rgba(148, 144, 187, 0.78);
+  border-radius: 50%;
+
+  &__clock-hand {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+
+    border-radius: 50% 50% 0 0;
+
+    animation-name: ticking;
+    animation-iteration-count: infinite;
+
+    transform-origin: bottom;
+  }
+
+  &__clock-hand--hour {
+    width: 10px;
+    height: 150px;
+
+    background-color: blue;
+
+    animation-duration: $half-day;
+  }
+
+  &__clock-hand--min {
+    width: 10px;
+    height: 200px;
+
+    background-color: yellow;
+
+    animation-duration: $hour;
+  }
+
+  &__clock-hand--sec {
+    width: 2px;
+    height: 250px;
+
+    background-color: red;
+
+    animation-timing-function: steps(60);
+    animation-duration: $minute;
+  }
+
+  &__nail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 25px;
+    height: 25px;
+
+    transform: translate(-50%, -50%);
+
+    background-color: #271414;
+    border-radius: 50%;
+  }
+}
+
+@keyframes ticking {
+  from {
+    transform: translate(-50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%) rotate(360deg);
+  }
+}
