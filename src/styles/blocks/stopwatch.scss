@@ -4,31 +4,6 @@
   align-items: flex-end;
   justify-content: center;
 
-  &__circlic {
-    position: absolute;
-    left: -1000px;
-    top: -500px;
-    display: flex;
-    background-color: #db96ff;
-    border-radius: 50%;
-    width: $s_height / 5;
-    height: $s_height / 5;
-    animation: circlic 15s ease-out infinite;
-  }
-
-  @keyframes circlic {
-
-    0% {
-      opacity: 99%;
-      transform: scale(0%) translate(100px, 0);
-    }
-
-    100% {
-      opacity: 0%;
-      transform: scale(100%) translate(100px, -500px);
-    }
-  }
-
   &__time-layer-1 {
     position: absolute;
     display: flex;
@@ -80,7 +55,7 @@
     }
 
     100% {
-      opacity: 0%;
+      opacity: 0;
       transform: scale(125%) rotate(720deg);
     }
   }
