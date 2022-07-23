@@ -1,0 +1,43 @@
+@function get-reset-x(){
+  @return 1.5 * $btn-size + $sizing * 1.3 * $dial-size / 2;
+}
+
+@function get-reset-y(){
+  @return - $btn-size - $pin-size;
+}
+
+@function get-start-x(){
+  @return - $btn-size + $sizing * 1.3 * $dial-size;
+}
+
+@function get-dial-min-x(){
+  @return - ($sizing * 1.3 + 1) * $dial-size / 2;
+}
+
+@function get-dial-min-y(){
+  @return $sizing * (0.3 * $dial-size + 2 * $dash-hight) / 2;
+}
+
+@function get-hand-sec-x(){
+  @return
+    - ($sizing * 1.3 * $dial-size / 2 + $dial-size +
+    2 * (2 * $sizing-small * 3px + $axis-size)) - $axis-size - $sizing * 3px;
+}
+
+@function get-hand-sec-y(){
+  @return ($sizing * 1.3 * $dial-size / 2) - 0.75 * $sizing * $pointer-size;
+}
+
+@function get-hand-min-x(){
+  @return
+    - ($sizing * 1.3 * $dial-size / 2 +
+    $dial-size + $sizing-small * 3px + $axis-size);
+}
+
+@function get-hand-min-y(){
+  @return ($axis-size + $dial-size) / 2;
+}
+
+@function get-dash-x(){
+  @return $dial-size * $sizing / 2 - $dash-width * $sizing * $i;
+}
