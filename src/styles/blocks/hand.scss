@@ -1,0 +1,60 @@
+.hand-sec {
+  @extend %hands;
+
+  &__pointer {
+    @include make-pointer($sizing, 60s);
+  }
+
+  &__pointer-shadow {
+    @include make-pointer-shadow($sizing, 60s);
+  }
+
+  &__axis {
+    @include make-axis($sizing);
+  }
+
+  &__axis-shadow {
+    @include make-axis-shadow($sizing);
+  }
+}
+
+.hand-min {
+  @extend %hands;
+
+  &__pointer {
+    @include make-pointer($sizing-small, 3600s);
+  }
+
+  &__pointer-shadow {
+    @include make-pointer-shadow($sizing-small, 3600s);
+  }
+
+  &__axis {
+    @include make-axis($sizing-small);
+  }
+
+  &__axis-shadow {
+    @include make-axis-shadow($sizing-small);
+  }
+}
+
+.animation-control {
+  display: none;
+}
+
+.animation-control:checked ~ div > .hand-min__pointer,
+.animation-control:checked ~ div > .hand-min__pointer-shadow,
+.animation-control:checked ~ div > .hand-sec__pointer,
+.animation-control:checked ~ div > .hand-sec__pointer-shadow {
+  animation-play-state: running;
+}
+
+@keyframes timego {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

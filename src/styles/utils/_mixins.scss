@@ -1,0 +1,74 @@
+@mixin make-body($koef) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: $sizing * $koef * $dial-size;
+  height: $sizing * $koef * $dial-size;
+  border-radius: 50%;
+}
+
+@mixin make-dial($sizing) {
+  display: flex;
+  flex-shrink: 0;
+  width: $dial-size * $sizing;
+  height: $dial-size * $sizing;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #000;
+
+  & :nth-child(-n+#{$dash-number}) {
+    width: $dash-width * $sizing;
+    height: $dash-hight * $sizing;
+    background-color: #000;
+  }
+
+  @for $i from 1 through $dash-number / $dash-main-step {
+    & :nth-child(#{$i * $dash-main-step}) {
+      height: $dash-hight * 2 * $sizing;
+    }
+  }
+
+  @for $i from 1 through $dash-number {
+    & :nth-child(#{$i}) {
+      transform: translateX(#{$dial-size * $sizing / 2 -
+      $dash-width * $sizing * $i})
+        rotate(#{$i * 360 / $dash-number}deg);
+      transform-origin: $dash-width * $sizing $dial-size * $sizing / 2;
+    }
+  }
+}
+
+@mixin make-pointer($size, $duration) {
+  border-left: $size * 3px solid transparent;
+  border-right: $size * 3px solid transparent;
+  border-bottom: $size * $pointer-size solid #000;
+  animation: timego $duration linear infinite;
+  animation-play-state: paused;
+  transform-origin: center 0.75 * $size * $pointer-size;
+}
+
+@mixin make-pointer-shadow($size, $duration) {
+  @include make-pointer($size, $duration);
+  filter: blur(10px);
+}
+
+@mixin make-axis($size) {
+  height: $axis-size;
+  width: $axis-size;
+  border-radius: 50%;
+  z-index: 1;
+  background: radial-gradient( #000 3px, #bb0 5px, #000 7px);
+  transform: translate($size * 3px + $axis-size / 2,
+  0.25 * $size * $pointer-size);
+}
+
+@mixin make-axis-shadow($size) {
+  height: $axis-size;
+  width: $axis-size;
+  border-radius: 50%;
+  background-color: #000;
+  transform: translate(-($size * 3px + $axis-size / 2),
+  0.25 * $size * $pointer-size);
+  filter: blur($axis-size / 2);
+}
