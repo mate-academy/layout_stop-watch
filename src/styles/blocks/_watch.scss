@@ -1,0 +1,48 @@
+@import "../utils/_vars.scss";
+@import "../utils/_keyframes.scss";
+
+.watch {
+  height: 250px;
+  width: 250px;
+  border: 5px solid yellowgreen;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__center {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #00acdc;
+    z-index: 2;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 45px;
+    width: 80px;
+    height: 4px;
+    background: red;
+    border-radius: 8px;
+    z-index: 1;
+    transform: rotate(270deg);
+    transform-origin: left;
+    animation: $minutes-circle linear infinite move-arrow;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 125px;
+    width: 120px;
+    height: 4px;
+    background: #00acdc;
+    border-radius: 8px;
+    transform: rotate(270deg);
+    transform-origin: left;
+    animation: $seconds-circle linear infinite move-arrow;
+  }
+}
