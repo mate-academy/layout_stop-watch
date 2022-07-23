@@ -55,12 +55,12 @@
     width: 2px;
     height: $sec-height; //350px
     left: #{$wrap-size / 2 - 1}px;
-    bottom: 260px; //260px
+    bottom: 260px;
     background: $main-color;
     border-radius: 1px;
     box-shadow: 1px 1px 5px $main-color;
 
     transform-origin: center 300px;
-    animation: 60s linear infinite rotate;
+    animation: 60s steps(60, end) infinite rotate;
   }
 }
