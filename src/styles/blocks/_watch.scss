@@ -1,0 +1,86 @@
+
+.watch {
+  display: flex;
+  width: $watch-size;
+  height: $watch-size;
+  margin: auto;
+  position: relative;
+  background: rgba(0, 178, 242, 0.14);
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px $main-color;
+
+  &__decoration {
+    position: absolute;
+    border-bottom: 3px solid $main-color;
+    border-left: 3px solid $main-color;
+    border-radius: 50%;
+
+    &--s {
+      width: $decoration-size_s;
+      height: $decoration-size_s;
+      left: shiftEl(50%, $decoration-size_s);
+      bottom: shiftEl(50%, $decoration-size_s);
+      transform: rotateZ(45deg);
+    }
+
+    &--m {
+      width: $decoration-size_m;
+      height: $decoration-size_m;
+      left: shiftEl(50%, $decoration-size_m);
+      bottom: shiftEl(50%, $decoration-size_m);
+      transform: rotateZ(-135deg);
+    }
+
+    &--l {
+      width: $decoration-size_l;
+      height: $decoration-size_l;
+      left: shiftEl(50%, $decoration-size_l);
+      bottom: shiftEl(50%, $decoration-size_l);
+      transform: rotateZ(45deg);
+    }
+  }
+
+  &__display {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background: #fff;
+    border: 3px solid #fff;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px $main-color;
+    font-family: "Poiret One", sans-serif;
+    font-size: 30px;
+
+    &--logo {
+      width: #{$logo-width}px;
+      height: #{$d-height}px;
+      left: shiftEl(shiftEl(50%, $decoration-size_m),
+      elPer($logo-width, $wrap-size));
+      bottom: shiftEl(50%, elPer($d-height, $wrap-size));
+    }
+
+    &--12 {
+      width: #{$d-width}px;
+      height: #{$d-height}px;
+      left: shiftEl(50%, elPer($d-height, $wrap-size));
+      top: shiftEl(shiftEl(50%, $decoration-size_m),
+      elPer($d-width, $wrap-size));
+    }
+
+    &--3 {
+      width: #{$d-width}px;
+      height: #{$d-height}px;
+      right: shiftEl(shiftEl(50%, $decoration-size_m),
+      elPer($d-width, $wrap-size));
+      top: shiftEl(50%, elPer($d-height, $wrap-size));
+    }
+
+    &--6 {
+      width: #{$d-width}px;
+      height: #{$d-height}px;
+      left: shiftEl(50%, elPer($d-height, $wrap-size));
+      bottom: shiftEl(shiftEl(50%, $decoration-size_m),
+      elPer($d-width, $wrap-size));
+    }
+  }
+}

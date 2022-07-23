@@ -1,0 +1,66 @@
+.gear {
+  width: 100%;
+
+  &__dot {
+    width: $gear-size_dot;
+    height: $gear-size_dot;
+    position: absolute;
+    left: shiftEl(50%, $gear-size_dot);
+    bottom: shiftEl(50%, $gear-size_dot);
+    z-index: 1;
+    background: $main-color;
+    border-radius: 50%;
+    box-shadow: $main-color;
+  }
+
+  &-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    width: #{$d-width}px;
+    height: #{$d-hour}px;
+    position: absolute;
+    right: shiftEl(12%, elPer($d-width, $wrap-size));
+    bottom: shiftEl(50%, elPer($d-hour, $wrap-size));
+    background: #fff;
+    border: 3px solid #fff;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px $main-color;
+
+    &__digit {
+      font-family: "Poiret One", sans-serif;
+      font-size: 30px;
+      animation: 360s linear infinite slide;
+      text-align: center;
+    }
+  }
+
+  &__min {
+    position: absolute;
+    width: 8px;
+    height: $min-height;
+    left: #{$wrap-size / 2 - 4}px;
+    bottom: 50%;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px $main-color;
+
+    transform-origin: center 160px;
+    animation: 180s linear infinite rotate;
+  }
+
+  &__sec {
+    position: absolute;
+    width: 2px;
+    height: $sec-height; //350px
+    left: #{$wrap-size / 2 - 1}px;
+    bottom: 260px;
+    background: $main-color;
+    border-radius: 1px;
+    box-shadow: 1px 1px 5px $main-color;
+
+    transform-origin: center 300px;
+    animation: 60s steps(60, end) infinite rotate;
+  }
+}
