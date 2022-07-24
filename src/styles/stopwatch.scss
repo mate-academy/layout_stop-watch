@@ -1,65 +1,65 @@
 .stopwatch {
-    position: relative;
-    width: $watchwidth;
-    height: $watchwidth;
-    border: 5px solid #000;
+  position: relative;
+  width: $watchwidth;
+  height: $watchwidth;
+  border: 5px solid #000;
+  border-radius: 50%;
+
+  &__centr {
+    position: absolute;
+    width: $centr;
+    height: $centr;
+    left: $watchwidth / 2 - $centr / 2;
+    top: $watchwidth / 2 - $centr / 2;
+    border: 4px solid #000;
     border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #a99;
+  }
 
-    &__centr {
-        position: absolute;
-        width: $centr;
-        height: $centr;
-        left: $watchwidth / 2 - $centr / 2;
-        top: $watchwidth / 2 - $centr / 2;
-        border: 4px solid #000;
-        border-radius: 50%;
-        box-sizing: border-box;
-        background-color: #a99;
-    }
+  &__minhand {
+    position: absolute;
+    box-sizing: border-box;
+    height: 10px;
+    width: $min;
+    border: 1px solid red;
+    background-color: red;
+    border-radius: 5px;
+    left: $watchwidth / 2;
+    top: $watchwidth / 2 - 5px;
+    transform-origin: center left;
+    animation-name: turn;
+    animation-duration: 600s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+  }
 
-    &__minhand {
-        position: absolute;
-        box-sizing: border-box;
-        height: 10px;
-        width: $min;
-        border: 1px solid red;
-        background-color: red;
-        border-radius: 5px;
-        left: $watchwidth / 2;
-        top: $watchwidth / 2 - 5px;
-        transform-origin: center left;
-        animation-name: turn;
-        animation-duration: 600s;
-        animation-timing-function: linear;
-        animation-direction: normal;
-        animation-iteration-count: infinite;
-    }
-
-    &__sechand {
-        position: absolute;
-        box-sizing: border-box;
-        height: 10px;
-        width: $sec;
-        border: 1px solid #000;
-        background-color: #000;
-        border-radius: 5px;
-        left: $watchwidth / 2;
-        top: $watchwidth / 2 - 5px;
-        transform-origin: center left;
-        animation-name: turn;
-        animation-duration: 10s;
-        animation-timing-function: linear;
-        animation-direction: normal;
-        animation-iteration-count: infinite;
-    }
+  &__sechand {
+    position: absolute;
+    box-sizing: border-box;
+    height: 10px;
+    width: $sec;
+    border: 1px solid #000;
+    background-color: #000;
+    border-radius: 5px;
+    left: $watchwidth / 2;
+    top: $watchwidth / 2 - 5px;
+    transform-origin: center left;
+    animation-name: turn;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+  }
 }
 
 @keyframes turn {
-    0% {
-        transform: rotate(-90deg);
-    }
+  0% {
+    transform: rotate(-90deg);
+  }
 
-    100% {
-        transform: rotate(270deg);
-    }
+  100% {
+    transform: rotate(270deg);
+  }
 }
