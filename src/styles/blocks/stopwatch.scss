@@ -1,0 +1,149 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  &__time-layer-1 {
+    position: absolute;
+    display: flex;
+    align-self: center;
+    background-color: #000;
+    border-radius: 50%;
+    width: $s_height * 3;
+    height: $s_height * 3;
+    box-shadow: 10px 0 #fcc8f8, -10px 0 #3023ae;
+    animation: time 15s ease-in infinite;
+    animation-delay: -14s;
+  }
+
+  &__time-layer-2 {
+    position: absolute;
+    display: flex;
+    align-self: center;
+    background-color: #070707;
+    border-radius: 50%;
+    width: $s_height * 3;
+    height: $s_height * 3;
+    box-shadow: 10px 0 #fcc8f8, -10px 0 #3023ae;
+    animation: time 15s ease-in infinite;
+    animation-delay: -10s;
+  }
+
+  &__time-layer-3 {
+    position: absolute;
+    display: flex;
+    align-self: center;
+    background-color: #000;
+    border-radius: 50%;
+    width: $s_height * 3;
+    height: $s_height * 3;
+    box-shadow: 10px 0 #fcc8f8, -10px 0 #3023ae;
+    animation: time 15s ease-in infinite;
+    animation-delay: -6s;
+  }
+
+  @keyframes time {
+
+    0% {
+      opacity: 0;
+      transform: scale(95%) rotate(0deg);
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(125%) rotate(720deg);
+    }
+  }
+
+  &__light-and-shadow {
+    position: absolute;
+    display: flex;
+    align-self: center;
+    background-color: $color1-m;
+    border-radius: 50%;
+    width: $s_height * 3.75 - 20px;
+    height: $s_height * 3.75;
+    transform: rotate(-150deg);
+    box-shadow: 10px 0 #d9d5ff, -10px 0 #241a80;
+  }
+
+  &__outer-border {
+    position: absolute;
+    display: flex;
+    align-self: center;
+    background-color: #010101;
+    border-radius: 50%;
+    width: $s_height * 3.85;
+    height: $s_height * 3.85;
+  }
+
+  &__face {
+    position: absolute;
+    display: flex;
+    align-self: center;
+    border-radius: 50%;
+    border: 5px solid #010101;
+    width: $s_height * 2.75;
+    height: $s_height * 2.75;
+    animation: face 15s ease-in-out alternate infinite;
+
+    @keyframes face {
+      from {
+        transform: scale(100%);
+        background-color: #161616;
+      }
+
+      to {
+        transform: scale(105%);
+        background-color: #0a0a0a;
+      }
+    }
+  }
+
+  &__hand-s {
+    position: absolute;
+    display: flex;
+    width: $s_width;
+    height: $s_height;
+    background-image: $hand-s-color;
+    border-radius: 50% 50% 50% 50% / 95% 95% 5% 5%;
+    animation: hand 60s steps(60, end) infinite;
+    transform-origin: center bottom;
+  }
+
+  &__hand-m {
+    position: absolute;
+    display: flex;
+    width: $m_width;
+    height: $m_height;
+    background-image: $hand-m-color;
+    border-radius: 50% 50% 50% 50% / 95% 95% 5% 5%;
+    animation: hand 3600s steps(60, end) infinite;
+    transform-origin: center bottom;
+  }
+
+  @keyframes hand {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    display: flex;
+    align-self: center;
+    background-color: #e4e4e4;
+    border-radius: 50%;
+    width: $s_height / 5;
+    height: $s_height / 5;
+  }
+}
