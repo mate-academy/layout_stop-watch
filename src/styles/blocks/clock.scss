@@ -1,0 +1,77 @@
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @include square ($clock-size);
+
+  background: rgb(233, 233, 233);
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ee/Mariupol_coat.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  border-radius: $radius;
+  border: $color-blue solid 5px;
+  box-shadow: rgba($color: $color-blue, $alpha: 1) 0 0 50px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    @include square(10px);
+
+    background-color: $color-blue;
+    border-radius: $radius;
+    z-index: 1;
+  }
+
+  & :nth-child(n+3) {
+    position: absolute;
+    inset: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    display: inline-block;
+    color: rgb(80, 79, 79);
+  }
+
+
+  @for $index from 1 through 11 {
+    &__#{$index} {
+      transform: rotate(30deg * $index);
+
+      & :first-child {
+        transform: rotate(-30deg * $index);
+      }
+    }
+  }
+
+  &__hand {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    @include square($minute-size);
+
+    & :first-child {
+      position: absolute;
+      width: 5px;
+      height: 50%;
+      background-color: rgb(80, 79, 79);
+      opacity: 1;
+      border-radius: $radius;
+      transform-origin: 50% 100%;
+      animation: hand 3600s linear infinite;
+    }
+
+    &--second {
+      @include square($second-size);
+      animation: hand 60s linear infinite;
+    }
+  }
+}
+
+@keyframes hand {
+  100% {
+    transform: rotate(1turn);
+  }
+}
