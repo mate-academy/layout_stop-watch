@@ -1,0 +1,44 @@
+.watch {
+  margin: auto;
+  display: flex;
+  position: relative;
+
+  width: $size;
+  height: $size;
+
+  border: 8px solid black;
+  border-radius: 100%;
+
+  &__hand {
+    &-second {
+      animation-duration: 60s;
+      width: 350px;
+
+      @include handParameters;
+
+      border-color: red;
+    }
+    &-minute {
+      width: 330px;
+      animation-duration: 3600s;
+
+      @include handParameters;
+
+      border-color: blue;
+    }
+    &-hour {
+      width: 200px;
+      animation-duration: 216000s;
+
+      @include handParameters;
+
+      border-color: black;
+    }
+  }
+}
+
+@keyframes tik-tak {
+  100% {
+    transform: rotate(1turn);
+  }
+}
