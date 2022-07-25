@@ -9,65 +9,31 @@
   border: 8px solid black;
   border-radius: 100%;
 
-  &__hand-second {
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
+  &__hand {
+    &-second {
+      animation-duration: 60s;
+      width: 350px;
 
-    height: 8px;
-    width: 350px;
+      @include handParameters;
 
-    transform: translate(50% 30%);
+      border-color: red;
+    }
+    &-minute {
+      width: 330px;
+      animation-duration: 3600s;
 
-    border: 2px solid red;
-    animation-name: tik-tak;
-    animation-duration: 60s;
-    transform-origin: center left;
-    animation-delay: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
+      @include handParameters;
 
-  &__hand-minute {
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
+      border-color: blue;
+    }
+    &-hour {
+      width: 200px;
+      animation-duration: 216000s;
 
-    height: 8px;
-    width: 330px;
+      @include handParameters;
 
-    border: 2px solid blue;
-
-    transform: translate(50% 30%);
-
-    animation-name: tik-tak;
-    animation-duration: 3600s;
-    transform-origin: center left;
-    animation-delay: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-
-  &__hand-hour {
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
-
-    height: 8px;
-    width: 200px;
-
-    transform: translate(50% 30%);
-
-    border: 2px solid black;
-
-    animation-name: tik-tak;
-    animation-duration: 216000s;
-
-    transform-origin: center left;
-
-    animation-delay: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+      border-color: black;
+    }
   }
 }
 
