@@ -1,17 +1,19 @@
 .container {
-  display: block;
-  background-color: rgb(186, 185, 175);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000;
 
   &__clock {
     position: relative;
-    height: 500px;
-    width: 500px;
-    padding: 20px;
-    margin: auto;
-    background-color: rgb(186, 185, 175);
-    border: 7px solid rgb(0, 0, 100);
+    @include watch($size);
+    background-image: url(https://pngimg.com/uploads/moon/moon_PNG49.png);
+    background-size: 111%;
+    background-position: center;
+    border: 7px solid rgb(93, 93, 99);
     border-radius: 50%;
-    box-shadow: 0 0 4em rgb(0, 0, 100);
+    box-shadow: 0 0 4em rgb(93, 93, 99);
 
     &::before {
       position: absolute;
