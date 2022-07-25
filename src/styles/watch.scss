@@ -1,0 +1,53 @@
+.watch {
+  height: $watch-height;
+  width: $watch-width;
+  border: 5px groove rgba(254, 98, 0, 0.43);
+  border-radius: 50%;
+  position: relative;
+  transform: translate(0%, 50%);
+  background-color: #deff0a;
+
+  &:after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #000;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hours {
+    background: #010003;
+    height: 30%;
+    top: 20%;
+    left: 48.5%;
+    border-radius: 45%;
+    position: absolute;
+
+    transform-origin: 50% 100%;
+    width: 3%;
+    animation: rotate 3600s infinite linear;
+  }
+
+  &__seconds {
+    background: #aa1e1e;
+    height: 45%;
+    width: 2%;
+    border-radius: 40%;
+    position: absolute;
+    top: 5%;
+    left: 49%;
+    transform-origin: 50% 100%;
+    z-index: -1;
+    animation: rotate 60s infinite steps(60, end);
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
