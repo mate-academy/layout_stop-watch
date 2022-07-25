@@ -1,0 +1,66 @@
+
+.stopWatch {
+  position: relative;
+  margin: auto;
+  display: flex;
+  height: $watch-size;
+  width: $watch-size;
+  background: linear-gradient(90deg, rgba(2,0,36,1)
+  0%, rgba(9,45,121,1) 35%,
+  rgba(0,212,255,1) 100%);
+  border-radius: 50%;
+  justify-content: center;
+  border: 10px double black;
+
+  &__arrow {
+    box-sizing: border-box;
+    position: absolute;
+    animation-name: move;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border: 2px solid black;
+  }
+
+  &__arrow--second {
+    z-index: 2;
+    height: $watch-size / 2;
+    width: $watch-size / 60;
+    background-color: rgba(0,212,255,1);
+    animation-duration: $minute;
+    animation-timing-function: linear;
+  }
+
+  &__arrow--minute {
+    z-index: 1;
+    height: $watch-size / 2.2;
+    margin-top: $watch-size / 15;
+    width: $watch-size / 40;
+    background-color: black;
+    animation-duration: 60 * $minute;
+    animation-timing-function: linear(60, end);
+  }
+
+  &__centerPoint {
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    align-self: center;
+    height: $watch-size / 20;
+    width: $watch-size / 20;
+    background-color: rgba(0,212,255,1);
+    border-radius: 50%;
+    border: 2px solid black;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
