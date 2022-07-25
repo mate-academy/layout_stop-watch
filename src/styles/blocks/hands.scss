@@ -1,0 +1,70 @@
+@mixin list-of-properties {
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+}
+
+.watch {
+  @include list-of-properties();
+  position: absolute;
+  border: 20px solid pink;
+  border-radius: 50%;
+  background: rgb(255, 216, 222);
+  transform: translate(-50%, -50%);
+
+  &__face {
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(https://media.istockphoto.com/vectors/silver-glitter-shiny-vector-background-vector-id1061398870?s=612x612);
+    opacity: 0.4;
+    @include list-of-properties();
+  }
+
+  &__minute {
+    position: absolute;
+    height: 130px;
+    width: 3px;
+    background: crimson;
+    top: 50%;
+    left: calc(50% - 5px);
+    border-radius: 1px;
+    animation: spin 60s linear infinite;
+    transform-origin: top;
+  }
+
+  &__second {
+    position: absolute;
+    height: 100px;
+    width: 3px;
+    background: crimson;
+    top: 50%;
+    left: calc(50% - 5px);
+    border-radius: 1px;
+    animation: spin 1s linear infinite;
+    transform-origin: top;
+  }
+
+  &::before {
+    content: "WATCH";
+    position: absolute;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    color: black;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
