@@ -1,0 +1,56 @@
+.clock {
+  @include square($clock-size);
+
+  background-color: rgb(98, 100, 90);
+  border-radius: 50%;
+  box-shadow: 5px 5px 23px 22px rgba(146, 198, 51, 0.86);
+
+  &::before {
+    @include square(41px);
+
+    content: "";
+    background-color: rgb(104, 103, 109);
+    box-shadow: 1px 1px 70px 42px rgba(165, 180, 167, 1);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &__second {
+    height: 44%;
+    width: 8px;
+    border-radius: 50%;
+    top: 6%;
+    margin: auto;
+    position: relative;
+    background-color: greenyellow;
+    box-shadow: 1px 1px 13px 7px rgba(57, 73, 248, 0.86);
+    transform-origin: bottom;
+    animation: time 60s infinite linear;
+    animation-timing-function: steps(60, end);
+    z-index: 1;
+  }
+
+  &__minute {
+    height: 33%;
+    width: 10px;
+    border-radius: 45%;
+    top: -27%;
+    margin: auto;
+    position: relative;
+    background-color: rgb(47, 50, 255);
+    box-shadow: 1px 1px 16px 8px rgba(195, 231, 32, 0.86);
+    transform-origin: bottom;
+    animation: time 3600s infinite linear;
+    animation-timing-function: steps(60, end);
+  }
+}
+
+@keyframes time {
+  100% {
+    transform: rotate(360deg);
+  }
+}
