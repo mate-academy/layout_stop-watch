@@ -32,7 +32,7 @@
     top: 50%;
 
     transform: translate(-50%, -100%);
-    transform-origin: center bottom;
+    transform-origin: bottom;
 
     width: 10px;
     height: 150px;
@@ -41,7 +41,7 @@
 
   &__watch-minutes {
     background-color: yellow;
-    animation: rotate2 3600s linear infinite;
+    animation: rotate 3600s linear infinite;
   }
 
   &__watch-seconds {
@@ -61,14 +61,14 @@
     }
   }
 
-  @keyframes rotate2 {
-    0% {
-      transform: translate(-50%, -100%) rotate(0);
-    }
+  // @keyframes rotate2 {
+  //   0% {
+  //     transform: translate(-50%, -100%) rotate(0);
+  //   }
 
-    100% {
-      transform: translate(-50%, -100%)
-      rotate(360deg);
-    }
-  }
+  //   100% {
+  //     transform: translate(-50%, -100%)
+  //     rotate(360deg);
+  //   }
+  // }
 }
