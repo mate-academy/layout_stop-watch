@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  &__watch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: $watch-size;
+    height: $watch-size;
+    background-color: grey;
+    border: 7px solid blue;
+    border-radius: 50%;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: lime;
+    }
+  }
+
+  &__watch-minutes,
+  &__watch-seconds {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -100%);
+    transform-origin: bottom;
+
+    width: 10px;
+    height: 150px;
+    border-radius: 10px;
+  }
+
+  &__watch-minutes {
+    background-color: yellow;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__watch-seconds {
+    height: 230px;
+    background-color: lime;
+
+    animation: rotate 60s linear infinite;
+  }
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, -100%) rotate(0);
+    }
+
+    100% {
+      transform: translate(-50%, -100%)
+      rotate(360deg);
+    }
+  }
+
+  // @keyframes rotate2 {
+  //   0% {
+  //     transform: translate(-50%, -100%) rotate(0);
+  //   }
+
+  //   100% {
+  //     transform: translate(-50%, -100%)
+  //     rotate(360deg);
+  //   }
+  // }
+}
