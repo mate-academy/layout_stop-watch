@@ -1,0 +1,31 @@
+.clock {
+  display: flex;
+  height: $clock-height;
+  width: $clock-width;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid black;
+  border-radius: 50%;
+
+  &__dot {
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    position: absolute;
+  }
+
+  &__minutes {
+    @include arrow-set;
+    height: $arrow-min-height;
+    background-color: #e3d87e;
+    animation-duration: 60s;
+  }
+
+  &__seconds {
+    @include arrow-set;
+    height: $arrow-sec-height;
+    background-color: #bbcea8;
+    animation-duration: 1s;
+  }
+}
