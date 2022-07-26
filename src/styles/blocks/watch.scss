@@ -1,4 +1,5 @@
 @import "./utils/keyframes";
+@import "./utils/variables";
 
 .watch {
   position: relative;
@@ -29,7 +30,7 @@
     width: 1%;
     border-radius: 50%;
     z-index: 1;
-    animation: rotate 60s infinite linear;
+    animation: $var-second;
   }
   
   &__minutes {
@@ -42,6 +43,6 @@
     background: rgb(71, 68, 68);
     border-radius: 40%;
     z-index: 2;
-    animation: rotate 3600s infinite linear;
+    animation: $var-min;
   }
 }
