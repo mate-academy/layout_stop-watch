@@ -1,0 +1,68 @@
+.watch {
+  @include circle($watch-diameter);
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: aquamarine;
+  border: solid 1px;
+  background-image: url("../images/clock.png");
+  background-size: cover;
+
+  &__circle {
+    @include circle($circle-diameter);
+
+    position: absolute;
+    display: flex;
+  
+    background-color: black;
+  }
+
+  &__minutes {
+    position: absolute;
+    display: flex;
+    top: $watch-diameter / 2 - $minutes-height;
+
+    height: $minutes-height;
+    width: $hand-width;
+    background-color: green;
+  
+    animation: 3600s steps(60, end) infinite minutes;
+    transform-origin: bottom center;
+  }
+
+  @keyframes minutes {
+    from {
+      transform: rotate(0);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  &__seconds {
+    position: absolute;
+    display: flex;
+    top: $watch-diameter / 2 - $seconds-height;
+
+    height: $seconds-height;
+    width: $hand-width;
+    background-color: blue;
+  
+    animation: 60s steps(60, end) infinite seconds;
+    transform-origin: bottom center;
+  }
+
+  @keyframes seconds {
+    from {
+      transform: rotate(0);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
