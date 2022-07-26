@@ -39,10 +39,10 @@
     background-color: $colorgeneral;
     animation-name: watch;
     animation-duration: 60 * $time-animation;
-    transform-origin: bottom center;
+    transform-origin: bottom;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-
+    transition-timing-function: steps(60, end);
   }
 
   &__second {
@@ -53,7 +53,7 @@
     background-color: $colorgeneral;
     animation-name: watch;
     animation-duration: $time-animation;
-    transform-origin: bottom center;
+    transform-origin: bottom;
     animation-timing-function: linear;
     transition: $time-animation;
     transition-timing-function: steps(60, end);
