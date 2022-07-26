@@ -1,0 +1,89 @@
+.content {
+  @include flex;
+
+  height: 100vh;
+  width: 100%;
+  background: #033242;
+}
+
+.clock {
+  @include flex;
+
+  height: $clock-size;
+  width: $clock-size;
+
+  position: relative;
+
+  @extend %clock-style;
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    @extend %center;
+  }
+
+  &__hours {
+    position: absolute;
+    animation: rotation 86400s linear infinite;
+
+    &-arrow {
+      width: 150px;
+      height: 150px;
+
+      @extend %arrow;
+
+      &::before {
+        @extend %pseudo-element;
+        @extend %hours-row;
+
+        z-index: 1;
+      }
+    }
+
+  }
+
+  &__minutes {
+    position: absolute;
+    animation: rotation 3600s linear infinite;
+
+    &-arrow {
+      width: 200px;
+      height: 200px;
+
+      @extend %arrow;
+
+      &::before {
+        @extend %pseudo-element;
+        @extend %minutes-row;
+
+        z-index: 2;
+      }
+    }
+  }
+
+  &__seconds {
+    position: absolute;
+    animation: rotation 60s linear infinite;
+
+    &-arrow {
+      width: 250px;
+      height: 250px;
+
+      @extend %arrow;
+
+      &::before {
+        @extend %pseudo-element;
+        @extend %seconds-row;
+
+        z-index: 3;
+      }
+    }
+  }
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}

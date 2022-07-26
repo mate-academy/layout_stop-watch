@@ -1,0 +1,49 @@
+%clock-style {
+  background-image: url(../imagimes/clock-face.png);
+  background-position: center;
+  background-size: contain;
+  border: 10px solid #0d1c22;
+  border-radius: 50%;
+
+  box-shadow: #0599ca;
+}
+
+%center {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+
+  background-color: whitesmoke;
+}
+
+%arrow {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  border-radius: 50%;
+
+  transform-origin: bottom;
+}
+
+%pseudo-element {
+  content: "";
+  position: absolute;
+  background: #fff;
+  border-radius: 5px 5px 0 0;
+}
+
+%hours-row {
+  width: 8px;
+  height: 100px;
+}
+
+%minutes-row {
+  width: 5px;
+  height: 130px;
+}
+
+%seconds-row {
+  height: 150px;
+  width: 2px;
+}
