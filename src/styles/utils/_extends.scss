@@ -18,18 +18,26 @@
   background-color: $color-frame;
 }
 
+%line {
+  @extend %line-size;
+  @extend %line-position;
+  @extend %line-decoration;
+}
+
 %stopwatch-animation-min {
-  animation-name: circle;
   animation-duration: 60s;
-  transform-origin: bottom;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-play-state: paused;
+
+  @extend %stopwatch-animation;
 }
 
 %stopwatch-animation-sec {
-  animation-name: circle;
   animation-duration: 1s;
+
+  @extend %stopwatch-animation;
+}
+
+%stopwatch-animation {
+  animation-name: circle;
   transform-origin: bottom;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
