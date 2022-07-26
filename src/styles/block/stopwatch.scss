@@ -1,0 +1,109 @@
+
+.stopwatch {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+
+  &__frame {
+    @extend %frame-size;
+
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+
+    border-radius: 50%;
+
+    border: 1px solid $color-frame;
+  }
+
+  &__button {
+    position: absolute;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+    @extend %button-hover;
+
+    &--start {
+      right: 0;
+
+      border: 1px solid $color-button-start;
+    }
+
+    &--stop {
+      left: 0;
+
+      border: 1px solid $color-button-stop;
+    }
+  }
+
+  &__line-min {
+    @extend %line;
+    @extend %stopwatch-animation-min;
+  }
+
+  &__line-sec {
+    @extend %line;
+    @extend %stopwatch-animation-sec;
+  }
+
+  &__center-point {
+    position: absolute;
+    right: 244px;
+    bottom: 50%;
+
+    transform: translateY(50%);
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    background-color: $color-frame;
+  }
+
+  &__start {
+
+    &:checked {
+      & ~ .stopwatch__line-sec,
+      & ~ .stopwatch__line-min {
+        animation-play-state: running;
+      }
+
+      & ~ .stopwatch__button--start {
+        background-color: $color-button-start;
+      }
+    }
+  }
+
+  &__stop {
+
+    &:checked {
+      & ~ .stopwatch__line-sec,
+      & ~ .stopwatch__line-min {
+        animation-play-state: paused;
+      }
+
+      & ~ .stopwatch__button--stop {
+        background-color: $color-button-stop;
+      }
+    }
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(1turn);
+  }
+}
