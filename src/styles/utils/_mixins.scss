@@ -1,0 +1,12 @@
+@mixin clock-center($radius) {
+  width: $radius;
+  height: $radius;
+  border-radius: 50%;
+}
+
+@mixin hand($height, $width) {
+  height: $height;
+  width: $width;
+  top: -($height / 2);
+  border-radius: 50px;
+}

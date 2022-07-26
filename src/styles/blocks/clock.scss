@@ -1,0 +1,40 @@
+.clock {
+  @extend %pos-center;
+
+  &::after {
+    content: "";
+    @extend %pos-center;
+    @include clock-center(($clock-center-radius));
+    background-color: $color-second;
+  }
+
+  &__second-wrapper {
+    animation: rotate 60s infinite steps(60);
+  }
+
+  &__second-hand {
+    @extend %pos-center;
+    @include hand($second-hand-height, $second-hand-width);
+    background: $color-second;
+  }
+
+  &__minute-wrapper {
+    animation: rotate 3600s infinite linear;
+  }
+
+  &__minute-hand {
+    @extend %pos-center;
+    @include hand($minute-hand-height, $minute-hand-width);
+    background: $color-minute;
+  }
+
+  &__hour-wrapper {
+    animation: rotate 43200s infinite linear;
+  }
+
+  &__hour-hand {
+    @extend %pos-center;
+    @include hand($hour-hand-height, $hour-hand-width);
+    background: $color-hour;
+  }
+}
