@@ -1,0 +1,66 @@
+.watch {
+  display: flex;
+  position: relative;
+  margin: auto;
+  justify-content: center;
+
+  height: $watch-size;
+  width: $watch-size;
+
+  border-radius: 800px;
+
+  border: 0 solid transparent;
+  box-shadow: 0 0 50px #c800fa;
+
+  &__seconds {
+    position: absolute;
+    height: 400px;
+    width: 5px;
+    z-index: 2;
+
+    border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid #c800fa;
+    box-shadow: 0 0 50px #c800fa;
+
+    transform-origin: $transformations;
+    animation: rotate 60s infinite linear;
+  }
+
+  &__minutes {
+    position: absolute;
+    height: 350px;
+    width: 10px;
+    z-index: 1;
+    margin-top: 50px;
+
+    background-color: #fff;
+    border: 1px solid #4903b9;
+    box-shadow: 0 0 50px #4903b9;
+    border-radius: 25px;
+
+    transform-origin: $transformations;
+    animation: rotate 3600s infinite linear;
+
+  }
+
+  &__center {
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    align-self: center;
+    height: 30px;
+    width: 30px;
+
+    border: 0 solid transparent;
+    box-shadow: 0 0 50px #c800fa;
+    background-color: #cc4bec;
+    border-radius: 30px;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
