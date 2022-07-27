@@ -1,7 +1,5 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @extend %block-align-column-center;
 
   padding: 40px 20px;
 
@@ -25,9 +23,7 @@
     .card {
       position: relative;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @extend %block-align-column-center;
 
       width: #{$card-width};
       padding: 10px 10px 30px;
@@ -175,9 +171,7 @@
       }
 
       &__price {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        @extend %block-align-row-center;
 
         @extend %gradient-color;
 
