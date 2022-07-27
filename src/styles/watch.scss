@@ -1,46 +1,27 @@
 .watch {
+  display: flex;
   position: relative;
   margin: auto;
+  justify-content: center;
 
-  height: 500px;
-  width: 500px;
+  height: $watch-size;
+  width: $watch-size;
 
-  border-radius: 50%;
-  border: 5px solid #5700e2;
-  box-shadow: $purple-shadow;
+  border-radius: 800px;
 
-  transform: translate(0%, 50%);
-
-  &__center {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 1;
-
-    width: 5%;
-    height: 5%;
-
-    border-radius: 50%;
-
-    box-shadow: $purple-shadow;
-    background: #5700e2;
-
-    transform: translate(-50%, -50%);
-  }
+  border: 0 solid transparent;
+  box-shadow: 0 0 50px #c800fa;
 
   &__seconds {
     position: absolute;
-    top: 5%;
-    left: 49%;
+    height: 400px;
+    width: 5px;
+    z-index: 2;
 
-    height: 45%;
-    width: 1%;
-
-    border-radius: $hand-b-r;
-    border: 1px solid transparent;
-    box-shadow: $purple-shadow;
-    background: #5700e2;
+    border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid #c800fa;
+    box-shadow: 0 0 50px #c800fa;
 
     transform-origin: $transformations;
     animation: rotate 60s infinite linear;
@@ -48,23 +29,38 @@
 
   &__minutes {
     position: absolute;
-    top: 20%;
-    left: 48.5%;
+    height: 350px;
+    width: 10px;
+    z-index: 1;
+    margin-top: 50px;
 
-    height: 30%;
-    width: 2%;
-
-    border-radius: $hand-b-r;
-    box-shadow: $purple-shadow;
-    background: #8b08b3;
+    background-color: #fff;
+    border: 1px solid #4903b9;
+    box-shadow: 0 0 50px #4903b9;
+    border-radius: 25px;
 
     transform-origin: $transformations;
     animation: rotate 3600s infinite linear;
-  }
-}
 
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
+  }
+
+  &__center {
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    align-self: center;
+    height: 30px;
+    width: 30px;
+
+    border: 0 solid transparent;
+    box-shadow: 0 0 50px #c800fa;
+    background-color: #cc4bec;
+    border-radius: 30px;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
