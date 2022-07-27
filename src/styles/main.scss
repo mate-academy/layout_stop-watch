@@ -1,0 +1,51 @@
+$color-blue: rgb(0, 106, 141);
+
+@mixin hand {
+  position: absolute;
+  left: 25%;
+  bottom: 50%;
+  width: 10px;
+  border-radius: 10px;
+  transform-origin: center bottom;
+}
+
+.watch {
+  position: relative;
+  width: 20px;
+  height: 20px;
+
+  &--position-top {
+    margin: 300px auto;
+  }
+
+  &__minute {
+    @include hand();
+    height: 200px;
+    background-color: rgb(194, 40, 47);
+    animation: watch 3600s infinite linear;
+  }
+
+  &__second {
+    @include hand();
+    height: 300px;
+    background: $color-blue;
+    animation: watch 60s infinite linear;
+  }
+
+  &__center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $color-blue;
+  }
+}
+
+@keyframes watch {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
