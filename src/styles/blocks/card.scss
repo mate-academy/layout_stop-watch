@@ -1,0 +1,215 @@
+.container {
+  @extend %block-align-column-center;
+
+  padding: 40px 20px;
+
+  background-image: url(/imgs/spider-web.png);
+  background-size: 80%;
+
+  &__title {
+    @extend %gradient-color;
+    margin-bottom: 50px;
+
+    text-align: center;
+    font-size: 70px;
+  }
+
+  .card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+
+    .card {
+      position: relative;
+
+      @extend %block-align-column-center;
+
+      width: #{$card-width};
+      padding: 10px 10px 30px;
+
+      border-radius: 25px;
+      box-shadow: -4px 6px 18px 1px grey;
+      background-color: #fff;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: $dial-back-top;
+
+        width: #{$dial-back-width};
+        height: #{$dial-back-height};
+
+        background-color: #e9eade;
+        border-radius: 50%;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: $dial-front-top;
+
+        width: $dial-front-width;
+        height: $dial-front-height;
+
+        background-image: url(../imgs/dial.png);
+        background-size: $dial-front-width;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+      }
+
+      &__quote {
+        position: absolute;
+        top: 157px;
+
+        font-size: 18px;
+        color: red;
+
+        opacity: 80%;
+
+        .quote-hero {
+          padding-top: 18px;
+          padding-left: 8px;
+
+          font-weight: 700;
+          color: blue;
+        }
+      }
+
+      &__second {
+        position: absolute;
+        top: 134px;
+
+        width: 3px;
+        height: 52px;
+
+        border-radius: 50%;
+        background-color: $color-blue;
+
+        animation-duration: 60s;
+        transform-origin: bottom;
+        animation-iteration-count: infinite;
+        animation-timing-function: liner;
+        animation-name: move;
+
+        @keyframes move {
+          from {
+            transform: rotate(0deg);
+          }
+
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        &::before {
+          position: absolute;
+          top: 44px;
+          left: -6px;
+
+          content: "";
+          width: 10px;
+          height: 10px;
+          z-index: 2;
+
+          border: 2px solid transparent;
+          border-radius: 50%;
+          background-color: $color-red;
+        }
+
+        &::after {
+          position: absolute;
+          top: 40px;
+          left: -10px;
+          z-index: 2;
+
+          content: "";
+          width: 17px;
+          height: 17px;
+
+          border: 2.5px solid $color-blue;
+          border-radius: 50%;
+          background-color: transparent;
+        }
+      }
+
+      &__minute {
+        position: absolute;
+        top: 142px;
+        left: 182px;
+
+        width: 4px;
+        height: 44px;
+
+        border-radius: 20%;
+        background-color: $color-red;
+
+        animation-name: move;
+        animation-duration: 240s;
+        animation-iteration-count: infinite;
+        transform-origin: bottom;
+
+        @keyframes move {
+          from {
+            transform: rotate(0deg);
+          }
+
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      }
+
+      &__img {
+        width: $img-size;
+      }
+
+      &__title {
+        @extend %gradient-color;
+        margin-bottom: 10px;
+        font-size: 40px;
+      }
+
+      &__price {
+        @extend %block-align-row-center;
+
+        @extend %gradient-color;
+
+        &-title {
+          padding-right: 30px;
+
+          font-size: 26px;
+          font-weight: 700;
+        }
+
+        &-usd {
+          font-size: 22px;
+          font-weight: 700;
+        }
+      }
+
+      &__button {
+        margin-top: 20px;
+        padding: 10px 20px;
+
+        font-size: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        color: $color-red;
+
+        background-color: $color-blue;
+        border-radius: 40px;
+        border: 2px solid transparent;
+
+        transition-duration: 0.5s;
+
+        &:hover {
+          color: #fff;
+          background-color: blue;
+          opacity: 0.7;
+          border: 2px solid red;
+        }
+      }
+    }
+  }
+}
