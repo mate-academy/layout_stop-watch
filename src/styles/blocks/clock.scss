@@ -4,51 +4,31 @@
   align-items: center;
   width: $clock-width;
   height: $clock-height;
+  position: relative;
 
   border-radius: 50%;
-  border: 10px solid $clock-border-color;
+  border: 5px solid $clock-border-color;
+  background: linear-gradient(to right, $clock-bg-firstcolor, $clock-bg-secondcolor);
   cursor: pointer;
 
-  &__circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: $circle-color;
+  &__longArrow {
+    width: $clock-longArrow-width;
+    height: $clock-Arrows-height;
+
+    animation: rotate 30s linear infinite;
+    background-color: hsla(175, 95%, 55%);
   }
 
-  &__second {
-    top: 5px;
-    left: 18px;
-    width: $clockSecond-width;
-    height: $clockSecond-height;
+  &__shortArrow {
+    width: $clock-shortArrow-width;
+    height: $clock-Arrows-height;
 
-    animation: minute 30s linear infinite;
-    transform-origin: 4% 50%;
+    animation: rotate 70s steps(30, jump-both) infinite;
+    background-color: hsla(285, 95%, 85%);
   }
 
-  &__minute {
-    top: 5px;
-    left: 18px;
-    width: $clockMinute-width;
-    height: $clockMinute-height;
-
-    animation: second 80s steps(30, jump-both) infinite;
-    transform-origin: 3% 50%;
-  }
-
-  &__hour {
-    top: 18px;
-    left: 18px;
-    width: $clockHour-width;
-    height: $clockHour-height;
-
-    transform: rotate(90deg);
-    transform-origin: 5% 50%;
-  }
-
-  &__second,
-  &__minute,
-  &__hour {
+  &__longArrow,
+  &__shortArrow {
     @extend %arrow-position;
   }
 }
