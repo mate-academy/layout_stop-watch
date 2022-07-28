@@ -26,13 +26,11 @@ title {
   flex-grow: 0;
   flex-shrink: 0;
   position: relative;
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,1) 15%, rgba(255,0,0,1) 85%);
 
   @include square($watch-size);
-  border: 15px solid rgba(0, 0, 0, 0.3);
+  border: 15px solid rgba(0, 0, 0, 0.5);
   border-radius: $watch-b-radius;
-
-  background: url(./img/thumb_l_25498.jpeg)no-repeat center center fixed;
-  background-size:contain;
-
   box-shadow: rgba(88, 8, 8, 0.58) 0 10px 10px;
 }
