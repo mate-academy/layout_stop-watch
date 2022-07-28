@@ -1,10 +1,13 @@
 .stop-watch {
+  display: flex;
+  justify-content: center;
   &__container {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 500px;
 
     &:hover > * {
       animation-play-state: paused;
@@ -19,6 +22,7 @@
     height: 30px;
     background-color: rgb(101, 201, 231);
     border-radius: 50%;
+
   }
 
   &__second {
