@@ -16,9 +16,9 @@ title {
   align-items: center;
   flex-grow: 0;
   flex-shrink: 0;
+  background: rgb(227,178,22);
+  background: linear-gradient(90deg, rgba(227,178,22,1) 0%, rgba(228,217,12,1) 33%, rgba(0,191,255,1) 100%);
 
-  background: url(./img/wall.jpg)no-repeat center center fixed;
-  background-size: cover;
 }
 
 .watch {
@@ -28,9 +28,11 @@ title {
   position: relative;
 
   @include square($watch-size);
-  border: 15px solid rgba(99, 81, 30, 0.50);
+  border: 15px solid rgba(0, 0, 0, 0.3);
   border-radius: $watch-b-radius;
-  background: url(./img/smile.jpg)no-repeat center center fixed;
+
+  background: url(./img/thumb_l_25498.jpeg)no-repeat center center fixed;
   background-size:contain;
-  box-shadow: rgba(115, 87, 8, 0.58) 0 10px 10px;
+
+  box-shadow: rgba(88, 8, 8, 0.58) 0 10px 10px;
 }
