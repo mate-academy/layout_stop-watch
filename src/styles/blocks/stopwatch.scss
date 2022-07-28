@@ -10,12 +10,14 @@
   border-radius: 15%;
 
   &__minutes {
+    @include position();
     position: absolute;
+
     height: 150px;
-    width: 9px;
+    width: 10px;
+
     background-color: black;
     border-radius: 20px;
-    @include position();
     animation: rotate 3600s infinite linear;
   }
 
@@ -31,14 +33,14 @@
 
   &__center {
     position: absolute;
-    width: 22px;
-    height: 22px;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
     background-color: rgb(6, 6, 6);
     border-radius: 100%;
-    bottom: 48%;
-    left: 49%;
+    bottom: 300px;
+    left: 300px;
   }
-
 }
 
 @keyframes rotate {
@@ -48,5 +50,4 @@
   to {
     transform: rotate(360deg);
   }
-
 }
