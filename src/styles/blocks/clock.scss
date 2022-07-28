@@ -1,0 +1,35 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $clock-width;
+  height: $clock-height;
+  position: relative;
+
+  border-radius: 50%;
+  border: 5px solid $clock-border-color;
+  transform: rotate(265deg);
+  background: linear-gradient(to right, $clock-bg-firstcolor, $clock-bg-secondcolor);
+  cursor: pointer;
+
+  &__longArrow {
+    width: $clock-longArrow-width;
+    height: $clock-Arrows-height;
+
+    animation: rotate 30s linear infinite;
+    background-color: hsla(175, 95%, 55%);
+  }
+
+  &__shortArrow {
+    width: $clock-shortArrow-width;
+    height: $clock-Arrows-height;
+
+    animation: rotate 70s steps(30, jump-both) infinite;
+    background-color: hsla(285, 95%, 85%);
+  }
+
+  &__longArrow,
+  &__shortArrow {
+    @extend %arrow-position;
+  }
+}
