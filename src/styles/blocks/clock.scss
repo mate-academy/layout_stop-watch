@@ -1,0 +1,70 @@
+$minutes-color: #4b9aaa;
+$seconds-color: #d15559;
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  height: 700px;
+  border: 1px solid silver;
+
+  &__face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-image: url(../img/clockFace.png);
+    background-position: center;
+    background-size: cover;
+
+    &::before {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      content: "";
+      width: 10px;
+      height: 150px;
+      background-color: $seconds-color;
+      border-radius: 50%;
+      animation: move 60s steps(60) infinite backwards;
+      transform-origin: bottom;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      content: "";
+      width: 5px;
+      height: 180px;
+      background-color: $minutes-color;
+      border-radius: 50%;
+      animation: move 3600s steps(60) infinite backwards;
+      transform-origin: bottom;
+    }
+
+    &-center {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: black;
+      z-index: 2;
+    }
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
