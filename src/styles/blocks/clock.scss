@@ -1,0 +1,54 @@
+$minutes-color: #4b9aaa;
+$seconds-color: #d15559;
+
+.clock {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 700px;
+  height: 700px;
+  border: 1px solid silver;
+
+  &__minutes {
+    width: 20px;
+    height: 50%;
+    border-radius: 25%;
+    background-color: $minutes-color;
+    animation: move 60s linear 2s infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    width: 20px;
+    height: 35%;
+    border-radius: 25%;
+    background-color: $seconds-color;
+    animation: move 1s linear 2s infinite;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, 5%);
+  }
+
+  &__ball {
+    width: 35px;
+    height: 35px;
+    background-color: $minutes-color;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
