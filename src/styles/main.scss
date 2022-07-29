@@ -1,0 +1,66 @@
+$hands-border-radius: 25%;
+
+.stopwatch {
+  &__container {
+    position: relative;
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: solid 1px black;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: blue;
+    z-index: 3;
+  }
+
+  &__minutes-hand {
+    position: absolute;
+    left: 49%;
+    bottom: 50%;
+    width: 10px;
+    height: 60px;
+    border-radius: $hands-border-radius;
+    background-color: red;
+    transform-origin: 3px 60px;
+    animation-name: move-hand;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+    z-index: 1;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    left: 49.5%;
+    bottom: 50%;
+    width: 5px;
+    height: 100px;
+    border-radius: $hands-border-radius;
+    background-color: blue;
+    transform-origin: 3px 100px;
+    animation-name: move-hand;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+    z-index: 2;
+  }
+}
+
+@keyframes move-hand {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
