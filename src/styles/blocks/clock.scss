@@ -16,8 +16,10 @@ $seconds-color: #d15559;
     position: relative;
     height: 500px;
     width: 500px;
-    border: 2px dotted black;
     border-radius: 50%;
+    background-image: url(../img/clockFace.png);
+    background-position: center;
+    background-size: cover;
 
     &::before {
       position: absolute;
@@ -27,9 +29,9 @@ $seconds-color: #d15559;
       content: "";
       width: 10px;
       height: 150px;
-      background-color: rgb(0, 0, 100);
+      background-color: $seconds-color;
       border-radius: 50%;
-      animation: move 1s steps(59) infinite backwards;
+      animation: move 60s steps(60) infinite backwards;
       transform-origin: bottom;
     }
 
@@ -40,11 +42,11 @@ $seconds-color: #d15559;
       transform: translate(-50%, 0);
       content: "";
       width: 5px;
-      height: 230px;
-      background-color: rgb(212, 66, 29);
+      height: 180px;
+      background-color: $minutes-color;
       border-radius: 50%;
-      animation: move 60s steps(60) infinite backwards;
-      transform-origin: bottom left;
+      animation: move 3600s steps(60) infinite backwards;
+      transform-origin: bottom;
     }
 
     &-center {
