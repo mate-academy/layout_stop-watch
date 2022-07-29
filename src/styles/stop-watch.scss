@@ -6,54 +6,40 @@
   align-items: center;
   width: $watch-side;
   height: $watch-side;
-  background-image: url(../img/deal1.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background: url(../img/deal1.png) center center /cover no-repeat;
   background-color: antiquewhite;
   border-radius: 50%;
   border: 4px solid black;
 
+  &__minutes {
+    position: absolute;
+    bottom: 200px;
+    width: 10px;
+    height: 140px;
+    background-color: blue;
+    border-radius: 8px;
+    transform-origin: bottom;
+    animation: hand-animation $hour infinite linear;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: 200px;
+    width: 10px;
+    height: 100px;
+    background-color: red;
+    border-radius: 8px;
+    transform-origin: bottom;
+    animation: hand-animation $minute infinite linear;
+  }
+
   &__point {
-    display: flex;
     position: absolute;
     width: 20px;
     height: 20px;
     background-color: black;
     border-radius: 50%;
-    z-index: 2;
-  }
-
-  &__minutes {
-    display: flex;
-    position: absolute;
-    bottom: 200px;
-    width: 10px;
-    height: 140px;
-    z-index: 0;
-    background-color: blue;
-    border-radius: 8px;
-    transform-origin: bottom;
-    animation-name: hand-animation;
-    animation-iteration-count: infinite;
-    animation-duration: $hour;
-    animation-timing-function: linear;
-  }
-
-  &__seconds {
-    display: flex;
-    position: absolute;
-    bottom: 200px;
-    width: 10px;
-    height: 100px;
     z-index: 1;
-    background-color: red;
-    border-radius: 8px;
-    transform-origin: bottom;
-    animation-name: hand-animation;
-    animation-iteration-count: infinite;
-    animation-duration: $minute;
-    animation-timing-function: linear;
   }
 }
 
