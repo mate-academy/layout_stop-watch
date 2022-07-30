@@ -1,0 +1,90 @@
+@use "./utils/variables.scss" as *;
+
+body {
+  background: linear-gradient(to right, #cddef3, #e0eafc);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  background-color: transparent;
+  border: 3px solid $stopwatch-color;
+  border-radius: 100px;
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  &__minutes {
+    height: $minutes-height;
+    width: $dot-size;
+    background-color: transparent;
+    border: 3px solid $stopwatch-color;
+    border-radius: ($dot-size * 1) ($dot-size * 1) 0 0;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 0;
+    top: (($stopwatch-size / 2) - $minutes-height);
+    left: ($stopwatch-size / 2) - ($dot-size / 2);
+    animation: rotationMinutes 3600s infinite linear;
+  }
+
+  &__seconds {
+    height: $seconds-height;
+    width: $dot-size;
+    background-color: $stopwatch-color;
+    border: 3px solid $stopwatch-color;
+    border-radius: ($dot-size * 1) ($dot-size * 1) 0 0;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+    top: (($stopwatch-size / 2) - $seconds-height);
+    left: ($stopwatch-size / 2) - ($dot-size / 2);
+    animation: rotationSeconds 60s infinite linear;
+  }
+
+  &__centre {
+    height: $dot-size;
+    width: $dot-size;
+    border-radius: 50%;
+    background-color: #7b7a7f;
+    border: 3px solid $stopwatch-color;
+    box-sizing: border-box;
+    position: absolute;
+    top: ($stopwatch-size / 2) - ($dot-size / 2);
+    left: ($stopwatch-size / 2) - ($dot-size / 2);
+    margin-right: -50%;
+    z-index: 3;
+  }
+}
+
+@keyframes rotationMinutes {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: 50% 100%;
+  }
+}
+
+@keyframes rotationSeconds {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: 50% 100%;
+  }
+}
