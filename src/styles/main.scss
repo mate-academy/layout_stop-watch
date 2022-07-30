@@ -1,0 +1,60 @@
+@import "./utils/variables";
+
+body {
+  margin: auto 0;
+}
+
+.stopwatch {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: $stopwatch-width;
+  height: $stopwatch-height;
+  transform: translate( -50%, -50%);
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: $stopwatch-height / 2 - $stopwatch-after-height / 2;
+    right: $stopwatch-width / 2 - $stopwatch-after-width / 2;
+    width: $stopwatch-after-width;
+    height: $stopwatch-after-height;
+    background-color: $main-color;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  &__minutes {
+    position: absolute;
+    bottom: $stopwatch-height / 2;
+    right: $stopwatch-height / 2 - $minute-hand-width / 2;
+    width: 10px;
+    height: 150px;
+    background-color: $minute-hand-color;
+    border-radius: $minute-hand-width / 2;
+    animation: second 3600s linear both infinite;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: $stopwatch-height / 2;
+    right: $stopwatch-height / 2 - $second-hand-width / 2;
+    width: $second-hand-width;
+    height: $second-hand-height;
+    background-color: $main-color;
+    border-radius: $second-hand-width / 2;
+    z-index: 1;
+    animation: second 60s linear both infinite;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
