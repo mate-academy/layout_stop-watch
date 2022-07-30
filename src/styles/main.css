@@ -1,0 +1,86 @@
+body {
+  background: linear-gradient(to right, #cddef3, #e0eafc);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: 500px;
+  height: 500px;
+  background-color: transparent;
+  border: 3px solid #7b7a7f;
+  border-radius: 100px;
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.stopwatch__minutes {
+  height: 212.5px;
+  width: 60px;
+  background-color: transparent;
+  border: 3px solid #7b7a7f;
+  border-radius: 60px 60px 0 0;
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 0;
+  top: 37.5px;
+  left: 220px;
+  animation: rotationMinutes 3600s infinite linear;
+}
+
+.stopwatch__seconds {
+  height: 225px;
+  width: 60px;
+  background-color: #7b7a7f;
+  border: 3px solid #7b7a7f;
+  border-radius: 60px 60px 0 0;
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 2;
+  top: 25px;
+  left: 220px;
+  animation: rotationSeconds 60s infinite linear;
+}
+
+.stopwatch__centre {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #7b7a7f;
+  border: 3px solid #7b7a7f;
+  box-sizing: border-box;
+  position: absolute;
+  top: 220px;
+  left: 220px;
+  margin-right: -50%;
+  z-index: 3;
+}
+
+@keyframes rotationMinutes {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: 50% 100%;
+  }
+}
+@keyframes rotationSeconds {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: 50% 100%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
