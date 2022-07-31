@@ -1,0 +1,36 @@
+@mixin arrow ($height, $color, $deg) {
+  position: absolute;
+  width: 10px;
+  height: $height;
+  left: 145px;
+  background-color: $color;
+  border-radius: 5px;
+  transform: rotate($deg);
+  transform-origin: bottom;
+}
+
+.page {
+  position: relative;
+}
+
+.page__container {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.container {
+  border-radius: 50%;
+  background-color: rgb(158, 245, 216);
+
+  &__big-arrow {
+    @include arrow(150px, rgb(64, 64, 221), 30deg);
+  }
+
+  &__small-arrow {
+    @include arrow(70px, rgb(197, 62, 62), 0deg);
+    bottom: 150px;
+  }
+}
