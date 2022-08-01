@@ -1,0 +1,61 @@
+.clock {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &--positon {
+    margin: 0 auto;
+  }
+  
+  &__minute-hand {
+    background-color: red;
+    width: 15px;
+    height: 300px;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 60s;
+      
+  
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+        transform-origin: bottom;
+      }
+  
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  
+  &__second-hand {
+    background-color: black;
+    width: 10px;
+    height: 450px;
+    transform: translateY(-50%);
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+  
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+  
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  
+  &__centre {
+    background-color: black;
+    width: $centre-size;
+    height: $centre-size;
+    border-radius: getCircle($centre-size);
+    position: absolute;
+  }
+}
