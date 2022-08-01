@@ -1,37 +1,41 @@
 $clockSize: 400px;
 
-.clock {
-  top: 50%;
-  left: 50%;
+@mixin position {
   position: absolute;
   display: flex;
   justify-content: center;
+}
+
+@mixin transform {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock {
+  @include position;
+  @include transform;
   height: $clockSize;
   width: $clockSize;
   border-radius: 50%;
   background-color: #c9bfe0;
   border: $clockSize/40 solid #524575;
-  transform: translate(-50%, -50%);
   box-shadow: 0 0 15px 2px #8b74a6 inset;
 
   &:before {
+    @include transform;
     position: absolute;
     z-index: 3;
     box-shadow: 0 0 2px 2px #8b74a6 inset;
     height: $clockSize/20;
     width: $clockSize/20;
-    content: '';
+    content: "";
     border-radius: 50%;
     background-color: #433365;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
   }
 
   &__secondHand {
-    align-items: center;
-    justify-content: center;
-    position: absolute;
+    @include position;
     height: $clockSize/2;
     width: $clockSize/100;
     background-color: #74559b;
@@ -41,9 +45,7 @@ $clockSize: 400px;
   }
 
   &__minuteHand {
-    align-items: center;
-    justify-content: center;
-    position: absolute;
+    @include position;
     height: $clockSize/3;
     margin-top: $clockSize/6;
     border-radius: 50% 50% 0 0;
@@ -58,7 +60,7 @@ $clockSize: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #495C83;
+  color: #495c83;
 
   &__number {
     font-family: sans-serif;
@@ -76,8 +78,6 @@ $clockSize: 400px;
     }
   }
 }
-
-
 
 @keyframes rotate {
   from {
