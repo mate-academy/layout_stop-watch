@@ -4,6 +4,12 @@ body {
   margin: auto 0;
 }
 
+.clock {
+  position: absolute;
+  transform-origin: bottom;
+  bottom: $stopwatch-height / 2;
+}
+
 .stopwatch {
   position: absolute;
   left: 50%;
@@ -14,7 +20,6 @@ body {
 
   &::after {
     content: "";
-    position: absolute;
     bottom: $stopwatch-height / 2 - $stopwatch-after-height / 2;
     right: $stopwatch-width / 2 - $stopwatch-after-width / 2;
     width: $stopwatch-after-width;
@@ -24,20 +29,15 @@ body {
     z-index: 2;
   }
   &__minutes {
-    position: absolute;
-    bottom: $stopwatch-height / 2;
     right: $stopwatch-height / 2 - $minute-hand-width / 2;
     width: 10px;
     height: 150px;
     background-color: $minute-hand-color;
     border-radius: $minute-hand-width / 2;
     animation: second 3600s linear both infinite;
-    transform-origin: bottom;
   }
 
   &__seconds {
-    position: absolute;
-    bottom: $stopwatch-height / 2;
     right: $stopwatch-height / 2 - $second-hand-width / 2;
     width: $second-hand-width;
     height: $second-hand-height;
@@ -45,7 +45,6 @@ body {
     border-radius: $second-hand-width / 2;
     z-index: 1;
     animation: second 60s linear both infinite;
-    transform-origin: bottom;
   }
 }
 
