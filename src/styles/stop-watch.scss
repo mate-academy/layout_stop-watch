@@ -9,7 +9,7 @@
     height: 100vh;
     width: 500px;
 
-    &:hover > * {
+    &:hover {
       animation-play-state: paused;
     }
   }
@@ -36,6 +36,10 @@
 
     animation: circle 60s steps(60, end) infinite backwards;
     transform-origin: bottom;
+    
+    &:hover {
+      animation-play-state: paused;
+    }
   }
 
   &__minute {
@@ -52,8 +56,6 @@
     transform-origin: bottom;
   }
 }
-
-@import "./normalize.scss";
 
 @keyframes circle {
   from {
