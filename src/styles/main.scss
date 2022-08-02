@@ -1,0 +1,63 @@
+$widthArrow: 15px;
+$heightArrow: 150px;
+
+@mixin circle {
+  height: $widthArrow * 2;
+  width: $widthArrow * 2;
+  border-radius: 50%;
+}
+
+@mixin arrowStyle {
+  position: absolute;
+  display: inline-block;
+  width: $widthArrow;
+  border-radius: $widthArrow;
+  transform-origin: bottom center;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60);
+  // animation-timing-function: linear ;
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  margin: auto;
+  width: 100vh;
+  position: relative;
+  
+  &__second {
+    @include arrowStyle();
+    background-color: rgb(255, 0, 0);
+    animation-name: time;
+    animation-duration: 60s;
+    height: $heightArrow;
+    top: $heightArrow;
+  }
+
+  &__minute {
+    @include arrowStyle();
+    background-color: rgb(0, 132, 255);
+    animation-name: time;
+    animation-duration: 3600s;
+    height: $heightArrow * 2;
+  }
+  
+  &__circle {
+    top: (2 * $heightArrow) - $widthArrow;
+    left: 0 - ($widthArrow / 2) ;
+    position: absolute;
+    @include circle();
+    display: inline-block;
+    transform-origin: middle center;
+    background-color: rgb(0, 132, 255);
+
+  }
+}
