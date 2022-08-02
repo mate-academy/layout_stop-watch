@@ -1,0 +1,125 @@
+.clock {
+  position: absolute;
+  height: $clock-size;
+  width: $clock-size;
+  background-color: #fff;
+  border-radius: 100%;
+  border: 10px solid #34626c;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  &__top {
+    position: absolute;
+    width: 3px;
+    height: 8px;
+    background-color: $repeated-color;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  &__right {
+    position: absolute;
+    width: 8px;
+    height: 3px;
+    background-color: $repeated-color;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &__bottom {
+    position: absolute;
+    width: 3px;
+    height: 8px;
+    background-color: $repeated-color;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+  &__left {
+    position: absolute;
+    width: 8px;
+    height: 3px;
+    background-color: $repeated-color;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  &__center {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: $repeated-color;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  &__hour {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    &::before {
+      content: "";
+      background-color: $repeated-color;
+      height: 60px;
+      width: 3px;
+      position: absolute;
+      top: 30px;
+    }
+  }
+
+  &__minute {
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: move 3600s infinite linear;
+
+    &::before {
+      content: "";
+      background-color: $repeated-color;
+      height: 40px;
+      width: 2px;
+      position: absolute;
+      top: 50px;
+    }
+  }
+
+  &__second {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: move 60s steps(60) infinite;
+
+    &::before {
+      content: "";
+      background-color: $repeated-color;
+      height: 80px;
+      width: 1px;
+      position: absolute;
+      top: 10px;
+    }
+  }
+}
