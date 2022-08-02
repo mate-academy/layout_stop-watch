@@ -48,7 +48,7 @@ BAD example:
 
 GOOD example
 ```html
-<!--index.html-->
+<!--ind.html-->
 <div class="container">
   <div class="container__card card">
     ...
@@ -69,7 +69,7 @@ GOOD example
 
 BAD example
 ```html
-<!--index.html-->
+<!--ind.html-->
 <div class="container">
   <div class="card">
     ...
