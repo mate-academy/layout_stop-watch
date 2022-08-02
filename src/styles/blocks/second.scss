@@ -1,0 +1,30 @@
+.second {
+  width: 2px;
+  height: 50%;
+  z-index: 99;
+  background-color: #000;
+  border-radius: 5px;
+
+  -webkit-animation: second 60s infinite steps(60);
+  animation: second 60s infinite steps(60);
+
+  &::before {
+    content: "";
+    width: 2px;
+    height: 50%;
+    left: 50%;
+    margin-left: -1px;
+    background: #000;
+  }
+}
+
+@keyframes second {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: bottom right;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: bottom right;
+  }
+}
