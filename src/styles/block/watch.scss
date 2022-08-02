@@ -1,0 +1,41 @@
+.watch {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 60px auto;
+  width: 600px;
+  height: 600px;
+  border: 1px solid #000;
+  border-radius: 50%;
+
+  &__bigarrow {
+    height: 285px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: #f0f;
+    animation-duration: 60s;
+    @extend %arrowsposition;
+    @extend %movearrow;
+  }
+
+  &__circle {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #f0f;
+    z-index: 1;
+  }
+
+  &__smallarrow {
+    height: 185px;
+    width: 8px;
+    border-radius: 5px;
+    background-color: #0f0;
+    animation-duration: 3600s;
+    @extend %arrowsposition;
+    @extend %movearrow;
+  }
+}
+
