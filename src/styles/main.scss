@@ -1,0 +1,54 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.stop-watch {
+  margin: auto;
+  width: 600px;
+  height: 600px;
+  border: 1px solid rgb(87, 134, 216);
+  border-radius: 50%;
+  transform: rotate(180deg);
+  background-image: linear-gradient(to top, #00c3ff, #ffff1c);
+
+  &__hand {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 4px);
+    transform-origin: center 0;
+  }
+
+  &__hand--s {
+    width: 8px;
+    height: 270px;
+    background-color: yellow;
+    animation: rotate steps(60) 1s infinite;
+    
+  }
+
+  &__hand--m {
+    width: 8px;
+    height: 180px;
+    background-color: blue;
+    animation: rotate linear 60s infinite;
+  }
+
+  &__hand--circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: blue;
+    left: calc(50% - 10px);
+    top: calc(50% - 10px);
+  }
+}
