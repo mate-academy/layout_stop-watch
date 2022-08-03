@@ -1,0 +1,72 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: $size;
+  height: $size;
+  border-radius: 15%;
+  box-shadow: 0 0 40px 25px #ddd;
+  border: solid 2px $main-color;
+  background-color: #fff;
+
+  &__seconds {
+    box-sizing: border-box;
+    width: 7px;
+    height: $size / 2 - 30px;
+    border-radius: 4px;
+    background-color: $main-color;
+    position: absolute;
+    left: $size / 2 - 3px;
+    top: 30px;
+    animation: rot 60s steps(60, end) infinite;
+    transform-origin: 5px #{$size / 2 - 30px};
+  }
+
+  &__minutes {
+    box-sizing: border-box;
+    width: 11px;
+    height: $size / 2 - 50px;
+    border-radius: 4px;
+    background-color: #f00;
+    position: absolute;
+    left: $size / 2 - 5px;
+    top: 50px;
+    animation: rot 3600s infinite;
+    transform-origin: 5px #{$size / 2 - 50px};
+  }
+
+  &__center {
+    background-color: $main-color;
+    z-index: 9999;
+    height: $size / 12;
+    width: $size / 12;
+    border-radius: 50%;
+  }
+
+  &__marker {
+    box-sizing: border-box;
+    width: 11px;
+    height: 20px;
+    background-color: $main-color;
+    position: absolute;
+    left: $size / 2 - 5px;
+    top: 10px;
+    transform-origin: 6px #{$size / 2 - 10px};
+   
+    @each $degree in $deg {
+      &--#{$degree} {
+        transform: rotate(#{$degree * 1deg});
+      }
+    }
+  }
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
