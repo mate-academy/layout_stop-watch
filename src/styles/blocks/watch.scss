@@ -1,0 +1,52 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &__hands {
+    background-image: url(http://st.depositphotos.com/1000209/4915/v/950/depositphotos_49156621-stock-illustration-template-of-clock-dial.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    height: $height-page;
+    width: $width-page;
+  }
+
+  &__minutes {
+    @extend %position;
+    width: $minutes-width;
+    height: $height-minutes;
+    position: absolute;
+    border: none;
+    background-color: yellow;
+    animation: rotation;
+    animation-duration: 3600s;
+    transform-origin: bottom center;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+  }
+
+  &__seconds {
+    @extend %position;
+    width: $seconds-width;
+    height: $height-seconds;
+    position: absolute;
+    border: none;
+    border-radius: 1px;
+    background-color: blue;
+    animation: rotation;
+    animation-duration: 60s;
+    transform-origin: bottom center;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+  }
+
+  &__center {
+    position: absolute;
+    bottom: 48%;
+    left: 48.3%;
+    @include circle($size);
+    background-color: #000;
+  }
+}
