@@ -1,0 +1,24 @@
+.center {
+  @include center($width-center);
+  border-radius: 50%;
+  background-color: $base-color;
+  position: relative;
+
+  &__seconds-line {
+    @extend %position-lines;
+    @extend %transform-lines;
+    @extend %animation;
+    width: $width-seconds-line;
+    background-color: $base-color;
+    animation-duration: 60s;
+  }
+
+  &__minutes-line {
+    @extend %position-lines;
+    @extend %transform-lines;
+    @extend %animation;
+    width: $width-seconds-line / 1.5;
+    background-color: $minutes-color;
+    animation-duration: 3600s;
+  }
+}
