@@ -1,3 +1,7 @@
+$width-hand: 8px;
+$width-circle: 20px;
+$height-circle: 20px;
+
 @keyframes rotate {
   from {
     transform: rotate(0);
@@ -24,12 +28,12 @@
   &__hand {
     position: absolute;
     top: 50%;
-    left: calc(50% - 4px);
+    left: calc(50% - (#{$width-hand} / 2));
     transform-origin: center 0;
   }
 
   &__hand--s {
-    width: 8px;
+    width: $width-hand;
     height: 270px;
     background-color: yellow;
     animation: rotate steps(60) 1s infinite;
@@ -37,18 +41,18 @@
   }
 
   &__hand--m {
-    width: 8px;
+    width: $width-hand;
     height: 180px;
     background-color: blue;
     animation: rotate linear 60s infinite;
   }
 
   &__hand--circle {
-    width: 20px;
-    height: 20px;
+    width: $width-circle;
+    height: $height-circle;
     border-radius: 50%;
     background-color: blue;
-    left: calc(50% - 10px);
-    top: calc(50% - 10px);
+    left: calc(50% - (#{$width-circle} / 2));
+    top: calc(50% - (#{$height-circle} / 2));
   }
 }
