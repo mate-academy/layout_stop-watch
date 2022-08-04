@@ -6,8 +6,8 @@
   background-color: blueviolet;
   border-radius: 5px;
   
-  -webkit-animation: minute 3600s infinite steps(60);
-  animation: minute 3600s infinite steps(60);
+  -webkit-animation: second 3600s infinite steps(60);
+  animation: second 3600s infinite steps(60);
 
   &::before {
     content: "";
@@ -16,16 +16,5 @@
     left: 50%;
     margin-left: -1px;
     background: blueviolet;
-  }
-}
-
-@keyframes minute {
-  0% {
-    transform: rotate(0deg);
-    transform-origin: bottom right;
-  }
-  100% {
-    transform: rotate(360deg);
-    transform-origin: bottom right;
   }
 }
