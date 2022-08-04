@@ -1,0 +1,58 @@
+$width-hand: 8px;
+$width-circle: 20px;
+$height-circle: 20px;
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.stop-watch {
+  margin: auto;
+  width: 600px;
+  height: 600px;
+  border: 1px solid rgb(87, 134, 216);
+  border-radius: 50%;
+  transform: rotate(180deg);
+  background-image: linear-gradient(to top, #00c3ff, #ffff1c);
+
+  &__hand {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - (#{$width-hand} / 2));
+    transform-origin: center 0;
+  }
+
+  &__hand--s {
+    width: $width-hand;
+    height: 270px;
+    background-color: yellow;
+    animation: rotate steps(60) 1s infinite;
+    
+  }
+
+  &__hand--m {
+    width: $width-hand;
+    height: 180px;
+    background-color: blue;
+    animation: rotate linear 60s infinite;
+  }
+
+  &__hand--circle {
+    width: $width-circle;
+    height: $height-circle;
+    border-radius: 50%;
+    background-color: blue;
+    left: calc(50% - (#{$width-circle} / 2));
+    top: calc(50% - (#{$height-circle} / 2));
+  }
+}
