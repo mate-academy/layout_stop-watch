@@ -1,0 +1,53 @@
+@keyframes circle {
+
+  from {
+    transform: rotate(0) ;
+    transform-origin: bottom center;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom center;
+  }
+}
+
+.box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  &__logo {
+    position: absolute;
+    bottom: 49%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: url(https://blog.mate.academy/wp-content/uploads/2019/03/logo_square_small.png);
+    background-size: contain;
+  }
+
+  &__min {
+    position: absolute;
+    bottom: 50%;
+    width: 5px;
+    height: 100px;
+    background-color: rgb(228, 67, 67);
+    border-radius: 20px;
+
+    animation: circle 3600s steps(60) infinite;
+  }
+
+  &__sec {
+    position: absolute;
+    bottom: 50%;
+    width: 5px;
+    height: 150px;
+    background-color: rgb(13, 142, 165);
+    border-radius: 20px;
+
+    animation: circle 60s steps(60) infinite;
+  }
+}
