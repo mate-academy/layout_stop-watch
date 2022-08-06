@@ -1,0 +1,54 @@
+$seconds-color: #d15559;
+$minutes-color: #4b9aaa;
+$dot-size: 30px;
+$arrow-width: 15px;
+
+@mixin stopwatch-arrows($size, $color, $duration) {
+  height: $size;
+  background-color: $color;
+  animation: move $duration infinite linear;
+}
+
+@keyframes move {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  max-width: 944px;
+  margin: 300px auto;
+}
+
+.stop-watch {
+  position: relative;
+
+  &__arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $dot-size;
+    height: $dot-size;
+    border-radius: 50%;
+    background-color: $minutes-color;
+  }
+
+  &__arrows::before,
+  &__arrows::after {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    left: 25%;
+    width: $arrow-width;
+    border-radius: 7px;
+    transform-origin: bottom;
+  }
+
+  &__arrows::before {
+    @include stopwatch-arrows(200px, $minutes-color, 3600s);
+  }
+
+  &__arrows::after {
+    @include stopwatch-arrows(300px, $seconds-color, 60s) z-index: -1;
+  }
+}
