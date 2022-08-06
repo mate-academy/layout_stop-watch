@@ -1,0 +1,52 @@
+@function getHandData (
+  $type,
+  $lower-visible-part: 40px,
+  $top-gap: 10px
+) {
+  $upper-part: 
+    ($background-circle / 2 - 
+    $digit-gap - 
+    $line-height - 
+    $top-gap);
+
+  $lower-part: 
+    ($center-circle / 2 + 
+    $border) +
+    $lower-visible-part;
+
+  $hand-height: $upper-part + $lower-part;
+
+  $hand-bottom-shift: 
+    $outer-circle / 2 - 
+    $lower-part;
+
+  $big-hand-transfofm-y: $upper-part;
+
+  $small-hand-height: $hand-height / 2;
+
+  $small-bottom-shift: $outer-circle / 2;
+
+  @if $type == "height" {
+    @return $hand-height;
+  }
+
+  @if $type == "bottom-shift" {
+    @return $hand-bottom-shift;
+  }
+
+  @if $type == "transfofm-y" {
+    @return $big-hand-transfofm-y;
+  }
+
+  @if $type == "smaller-height" {
+    @return $small-hand-height;
+  }
+
+  @if $type == "smaller-shift" {
+    @return $small-bottom-shift;
+  }
+}
+
+@function getMaxWidth() {
+  @return ($outer-circle + $border * 2 + $container-gap * 4) - 1px;
+}

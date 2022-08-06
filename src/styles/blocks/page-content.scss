@@ -1,0 +1,18 @@
+.page-content {
+  @extend %adjust-flex;
+  height: 100vh;
+  font-family: 'Quantico', Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: $line-height;
+  font-weight: bold;
+  text-align: center;
+
+  &__stop-watch {
+    margin: auto auto;
+
+    @media (max-width:getMaxWidth()) {
+      transform: scale(0.7);
+      margin: auto $container-gap;
+    }
+  }
+}

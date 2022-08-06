@@ -1,0 +1,131 @@
+.mechanical-stop-watch {
+  position: relative;
+  @extend %adjust-flex;
+  @extend %container-appearance;
+  @include background(
+    $bg-color-1, 
+    $bg-color-2, 
+    $bg-color-3, 
+    0, 
+    50%, 
+    radial
+  );
+
+
+  &__button {
+    @extend %adjust-flex;
+    transform: translateY($border);
+
+    &:first-child {
+      position: absolute;
+      left: 0px;
+      transform: translate(45px, 45px) rotate(-35deg) scale(0.7);
+      transform-origin: bottom;
+    }
+  }
+
+  &__button-element {
+    &:first-child {
+      @include shape (120px, 40px, 16px);
+      @include background(
+        $watch-color-1, 
+        $watch-color-2, 
+        $watch-color-3
+      );
+    }
+
+    &:nth-child(2) {
+      @include shape (48px, 20px, 0, $border / 2);
+      background-color: $watch-color-1;
+    }
+  }
+
+  &__outer-circle {
+    position: inherit;
+    @include circle($outer-circle);
+    @include background(
+      $watch-color-1, 
+      $watch-color-2, 
+      $watch-color-3
+    );  
+  }
+
+  &__inner-circle {
+    @include align-element("center");
+    @include circle($inner-circle);
+
+    &:first-child{
+      @include animation(bg-timer, "sec");
+    }
+
+    &:nth-child(2) {
+      @extend %adjust-flex;
+      @include circle($background-circle);
+      background-color: $bg-color-1;
+    }
+
+    &:last-child {
+      @include circle($center-circle);
+      @include background(
+        $watch-color-1, 
+        $watch-color-2, 
+        $watch-color-3
+      );
+    }
+  }
+
+  &__dail {
+    position: absolute;
+    transform-origin: 50% $background-circle / 2;
+    @include circle(20px);
+    @include background(
+      $watch-color-1, 
+      $watch-color-2, 
+      $watch-color-3
+    );
+
+    @for $index from 1 through 12 {
+      &:nth-child(#{$index}) {
+        transform: rotate(#{$index * 30}deg);
+
+        &::after {
+          display: block;
+          height: $line-height;
+          content: "#{5 * $index}";
+          transform: rotate(-#{$index * 30}deg);
+          margin-top: $digit-gap;
+        }
+      }
+    }
+  }
+
+  &__hand {
+    @include align-element("top-center");
+    bottom: getHandData("bottom-shift");
+    @include shape(
+      14px, 
+      getHandData("height"), 
+      16px
+    );
+    @include background(
+      $watch-color-1,
+      $watch-color-2, 
+      $watch-color-3
+    );
+    @include animation(rotation, "sec");
+    transform-origin: center getHandData("transfofm-y");
+
+    &:nth-last-child(2) {
+      bottom: getHandData("smaller-shift");
+      height: getHandData("smaller-height");
+      @include background(
+        $watch-color-1, 
+        $watch-color-4, 
+        $watch-color-2, 
+        25
+      );
+      @include animation(rotation, "min");
+      transform-origin: 50% 100%;
+    }
+  }
+}

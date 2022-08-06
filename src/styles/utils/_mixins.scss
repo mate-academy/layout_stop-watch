@@ -1,0 +1,119 @@
+@mixin shape (
+  $width,
+  $height: $width,
+  $radius: 0,
+  $border: 0
+) {
+  width: $width;
+  height: $height;
+  border: $border solid $bg-color-1;
+  border-radius: $radius;
+}
+
+@mixin circle($size) {
+  @include shape($size, $size, 50%, $border);
+}
+
+@mixin background (
+  $color-1,
+  $color-2,
+  $color-3,
+  $deg: 90,
+  $start: 25%,
+  $type: linear
+) {
+  @if $type == radial {
+    background: #{$type}-gradient($color-1 $start, $color-2 75%, $color-3 100%);
+  }
+
+  @else {
+    background: #{$type}-gradient(#{$deg}deg, $color-1 $start, $color-2 75%, $color-3 100%);
+  }
+}
+
+@mixin digits($count) {
+  $step: (100 / $count);
+  $progress: 0%;
+  $content: 0;
+
+  @for $index from 0 through 60 {
+    @if $index < 10 {
+      #{$progress} {
+        content: "0#{$index}";
+      }
+    }
+
+    @else if $index < 60 {
+      #{$progress} {
+        content: "#{$index}";
+      }
+    }
+
+    @else {
+      #{$progress} {
+        content: "00";
+      }
+    }
+
+  $progress: $progress + $step;
+  $content: $content + 1;
+  }
+}
+
+@mixin animation ($name, $type, $delay: 0) {
+  animation-name: $name;
+  animation-iteration-count: infinite;
+  animation-delay: $delay;
+  animation-timing-function: linear;
+
+  @if $name == rotation {
+    @keyframes #{$name} {
+      from {
+        transform: translate(-50%) rotate(0deg);
+      }
+
+      to {
+        transform: translate(-50%) rotate(360deg);
+      }
+    }
+  }
+
+  @else if $name == bg-timer {
+    @keyframes #{$name} {
+      from {
+          background: $watch-color-3;
+      }
+    
+      to {
+        background: $watch-color-4;
+      }
+    }
+  }
+  
+  @else {
+    animation-timing-function: steps(60, start);
+
+    @keyframes #{$name} {
+      @include digits(60);
+    }
+  }
+
+  @if $type == "sec" {
+    animation-duration: 60s;
+  }
+
+  @else {
+    animation-duration: 3600s;
+  }
+}
+
+@mixin align-element ($position) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @if $position == "center" {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
