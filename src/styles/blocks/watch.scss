@@ -1,0 +1,42 @@
+.watch {
+  position: relative;
+  margin: auto;
+  margin-top: 50%;
+  transform: translateY(-50%);
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 50%;
+
+  &__hand-min {
+    @extend %centering;
+    top: 50px;
+    height: 100px;
+    width: 6px;
+    background-color: goldenrod;
+    border-radius: 5px;
+    animation: hand-rotate 3600s steps(60, end);
+    transform-origin: bottom center;
+  }
+
+  &__hand-sec {
+    @extend %centering;
+    top: 50px;
+    height: 100px;
+    width: 4px;
+    background-color: red;
+    border-radius: 5px;
+    animation: hand-rotate 60s steps(60, end) infinite;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes hand-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
