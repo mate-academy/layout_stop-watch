@@ -1,0 +1,74 @@
+.stop-watch {
+  left: 50%;
+  top: 50%;
+  height: 70vh;
+  width: 70vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #311919;
+  background: linear-gradient(#0057b8 50%, #ffd700 50%);
+  translate: -50% -50%;
+
+  box-shadow: 0 0 40px 25px #ddd;
+
+  & :nth-child(n) {
+    position: absolute;
+  }
+
+  &__start {
+    top: 0;
+    width: 3px;
+    height: 30px;
+    background: #000;
+  }
+
+  &__quarter {
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: #000;
+  }
+
+  &__half {
+    bottom: 0;
+    width: 3px;
+    height: 30px;
+    background: #000;
+  }
+
+  &__quarter-to {
+    right: 0;
+    width: 30px;
+    height: 3px;
+    background: #000;
+  }
+
+  &__dot {
+    width: 30px;
+    height: 30px;
+    background: #000;
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &__minutes {
+    height: 40%;
+    top: 10%;
+    width: 2%;
+    background: #222020;
+    z-index: 2;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__seconds {
+    height: 45%;
+    top: 5%;
+    width: 1%;
+    background: #d80d0d;
+    z-index: 1;
+    animation: rotate 60s linear infinite;
+  }
+}
