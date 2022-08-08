@@ -1,0 +1,49 @@
+@import "../utils/variables.scss";
+@import "../utils/keyframes.scss";
+
+.stop-watch {
+  height: $stop-watch-seize;
+  width: $stop-watch-seize;
+  position: relative;
+  background-color: rgb(197, 197, 197);
+  border-radius: 50%;
+  transform: rotate(180deg);
+  
+  &__center {
+    position: absolute;
+    background-color: blue;
+    height: $stop-watch-center-size;
+    width: $stop-watch-center-size;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+  
+  &__second-hand {
+    position: absolute;
+    border-radius: 5px;
+    background-color: red;
+    height: $second-hand-height;
+    width: $second-hand-width;
+    left: calc(50% - $second-hand-width/2);
+    top: 50%;
+    z-index: 8;
+    transform-origin: center 0;
+    animation: rotate steps(60) $minute infinite;
+  }
+  
+  &__minute-hand {
+    position: absolute;
+    border-radius: 5px;
+    background-color: yellow;
+    height: $minute-hand-height;
+    width: $minute-hand-width;
+    left: calc(50% - $minute-hand-width/2);
+    top: 50%;
+    z-index: 9;
+    transform-origin: center 0;
+    animation: rotate linear $hour infinite;
+  }
+}
