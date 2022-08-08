@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   min-width: 800px;
+  max-width: 1000px;
   border: 1px solid green;
   border-radius: 500px;
   background-color: rgb(231, 231, 231);
@@ -12,17 +13,16 @@
   height: 800px;
   align-items: center;
 
-  &__miliseconds {
+  &__seconds {
     width: 200px;
     height: 20px;
     background-color: red;
     margin-right: -15px;
-    animation-name: miliseconds;
-    animation-duration: 1000ms;
+    animation-name: seconds;
+    animation-duration: 60s;
     animation-iteration-count: infinite;
     transform-origin: right;
-    transform: rotate(90deg);
-    animation-timing-function: linear;
+    animation-timing-function: steps(60, end);
     border-radius: 10px;
 
   }
@@ -35,21 +35,20 @@
     z-index: 3;
   }
 
-  &__seconds {
+  &__minutes {
     width: 150px;
     height: 20px;
     background-color: brown;
     border-radius: 10px;
     margin-left: -15px;
-    transform: rotate(-90deg);
-    animation-name: seconds;
-    animation-duration: 60s;
+    animation-name: minutes;
+    animation-duration: 3600s;
     animation-iteration-count: infinite;
     transform-origin: left;
     animation-timing-function: steps(60, end);
   }
 
-  @keyframes miliseconds {
+  @keyframes seconds {
     from {
       transform: rotate(90deg);
     }
@@ -59,7 +58,7 @@
     }
   }
 
-  @keyframes seconds {
+  @keyframes minutes {
     from {
       transform: rotate(-90deg);
     }
