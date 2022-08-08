@@ -1,0 +1,47 @@
+.container__watch {
+  margin: auto;
+}
+
+.watch {
+  background-image: url(../img/clock.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  @include watch-size($watch_size);
+  border: 3px solid red;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__big-arrow {
+    @extend %arrow-position;
+    @extend %move-arrow;
+    height: $big_hight;
+    width: $big_width;
+    border-radius: 5px;
+    background-color: red;
+    border: 2px solid black;
+    animation-duration: 60s;
+  }
+
+  &__circle {
+    @include circle-size($circle_size);
+    border-radius: 50px;
+    background-color: black;
+    border: 2px solid red;
+    z-index: 1;
+  }
+
+  &__small-arrow {
+    @extend %arrow-position;
+    @extend %move-arrow;
+    height: $small_hight;
+    width: $small_width;
+    border-radius: 5px;
+    background-color: black;
+    border: 2px solid red;
+    animation-duration: 3600s;
+  }
+}
