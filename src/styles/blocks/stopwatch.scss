@@ -1,0 +1,52 @@
+$handPositionTop: 330px;
+$handPositionLeft: -15px;
+$circleSize: 40px;
+
+.stopwatch {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, -100%);
+
+  &__minute-hand {
+    position: absolute;
+    top: 150px;
+    left: 6px;
+    width: 12px;
+    height: 200px;
+    background-color: yellowgreen;
+    border-radius: 20px;
+
+    animation-name: round;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    position: relative;
+    left: 6px;
+    width: 10px;
+    height: 350px;
+    background-color: green;
+    border-radius: 20px;
+    animation-name: round;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    transform-origin: bottom;
+
+    &::after {
+      position: absolute;
+      top: $handPositionTop;
+      left: $handPositionLeft;
+      width: $circleSize;
+      height: $circleSize;
+      background-color: green;
+      border-radius: 50%;
+      content: "";
+    }
+  }
+}
