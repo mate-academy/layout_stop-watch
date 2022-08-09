@@ -1,0 +1,87 @@
+.stopwatch {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__screen {
+    position: relative;
+    display: flex;
+    width: 500px;
+    height: 500px;
+    border: 4px solid #565555;
+    background-color: #8d8888;
+    border-radius: 50%;
+  }
+  
+  &__mark {
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: #d1c9c9;
+    left: 49.5%;
+
+    &--hour--two {
+      transform: rotate(30deg);
+    }
+      
+    &--hour--three {
+      transform: rotate(60deg);
+    }
+      
+    &--hour--four {
+      transform: rotate(90deg);
+    }
+      
+    &--hour--five {
+      transform: rotate(120deg);
+    }
+      
+    &--hour--six {
+      transform: rotate(150deg);
+    }
+  }
+
+  &__dot {
+    background-color: #61afff;
+    border-radius: 50%;
+    position: absolute;
+    top: 47.3%;
+    left: 47.3%;
+    width: 6%;
+    height: 6%;
+  }
+  
+  &__inner-sreen {
+    background-color: #565555;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+  }
+
+  &__hand {
+    width: 35%;
+    right: 50%;
+    height: 6px;
+    background: #61afff;
+    position: absolute;
+    top: 50%;
+    border-radius: 6px;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    
+    &--hand--min {
+      animation: minutes 3600s infinite;
+    }
+      
+    &--hand--sec {
+      background: #bc4586;
+      width: 48%;
+      height: 3px;
+      animation: seconds 60s infinite steps(60);
+    }
+  }
+}
