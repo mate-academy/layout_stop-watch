@@ -1,52 +1,73 @@
-$handPositionTop: 330px;
-$handPositionLeft: -15px;
-$circleSize: 40px;
+$leftPosition: 46%;
 
 .stopwatch {
   display: flex;
+  align-content: center;
+  justify-content: center;
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-100%, -100%);
+  top: 50%;
+  translate: -50% -75%;
+
+  &__image {
+    position: relative;
+    width: 700px;
+    height: 600px;
+  }
+
+  &__hour-hand {
+    position: absolute;
+    top: 32%;
+    left: $leftPosition;
+    width: 5px;
+    height: 90px;
+    background-color: rgb(235, 235, 8);
+    border: 1px solid blue;
+    border-radius: 20px;
+
+    animation-name: round;
+    animation-duration: 36000s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+  }
 
   &__minute-hand {
     position: absolute;
-    top: 150px;
-    left: 6px;
-    width: 12px;
-    height: 200px;
-    background-color: yellowgreen;
+    top: 28%;
+    left: $leftPosition;
+    width: 3px;
+    height: 110px;
+    background-color: orange;
+    border: 1px solid blue;
     border-radius: 20px;
-
     animation-name: round;
-    animation-duration: 60s;
+    animation-duration: 3600s;
     animation-timing-function: linear;
-    animation-iteration-count: 1;
-    transform-origin: bottom;
+    animation-iteration-count: infinite;
   }
 
   &__second-hand {
-    position: relative;
-    left: 6px;
-    width: 10px;
-    height: 350px;
-    background-color: green;
+    position: absolute;
+    top: 26%;
+    left: $leftPosition;
+    width: 2px;
+    height: 120px;
+    background-color: blue;
     border-radius: 20px;
+
     animation-name: round;
     animation-duration: 60s;
     animation-timing-function: linear;
-    animation-iteration-count: 1;
-    transform-origin: bottom;
+    animation-iteration-count: infinite;
+  }
 
-    &::after {
-      position: absolute;
-      top: $handPositionTop;
-      left: $handPositionLeft;
-      width: $circleSize;
-      height: $circleSize;
-      background-color: green;
-      border-radius: 50%;
-      content: "";
-    }
+  &__center {
+    position: absolute;
+    background-image: url(../images/center.svg);
+    height: 600px;
+    width: 700px;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
