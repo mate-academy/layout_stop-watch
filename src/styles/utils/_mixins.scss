@@ -1,0 +1,13 @@
+@mixin size($size) {
+  width: #{$size}px;
+  height: #{$size}px;
+}
+
+@mixin hand-size($hand-height) {
+  position: absolute;
+  left: #{$indent-left}px;
+  width: #{$hand-width}px;
+  height: #{$hand-height}px;
+  border-radius: 5px;
+  transform-origin: center bottom;
+}
