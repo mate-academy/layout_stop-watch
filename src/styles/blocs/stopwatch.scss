@@ -22,7 +22,7 @@
     left: 49.5%;
 
     &--hour--two {
-      transform: rotate(30deg);
+      transform: rotate($hour-step);
     }
       
     &--hour--three {
@@ -44,7 +44,8 @@
 
   &__dot {
     background-color: #61afff;
-    @extend %absolute_radiuse;
+    border-radius: 50%;
+    position: absolute;
     top: 47.3%;
     left: 47.3%;
     width: 6%;
