@@ -1,0 +1,78 @@
+.stopwatch {
+  position: relative;
+  width: #{$width-stopwatch}px;
+  height: #{$height-stopwatch}px;
+  margin: auto;
+  background-color: #2c2c2b;
+  border: #{$border-size}px solid #202020;
+  border-radius: 50%;
+
+  &__second {
+    position: absolute;
+    top: 0;
+    left: #{$indent-left}px;
+    width: #{$hand-width}px;
+    height: #{$hand-height-second}px;
+    transform-origin: bottom;
+
+    @for $i from 1 to 61 {
+      $sec: 6 * $i;
+      &:nth-child(#{$i}) {
+        transform: rotate(#{$sec}deg);
+      }
+    }
+  }
+
+  &__square {
+    width: #{$hand-width}px;
+    height: 17px;
+    background-color: cadetblue;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: #40fafa;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__hand-second {
+    position: absolute;
+    top: 0;
+    left: #{$indent-left}px;
+    width: #{$hand-width}px;
+    height: #{$hand-height-second}px;
+    background-color: #40fafa;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: stopwatch 60s steps(60, end) infinite;
+    z-index: 1;
+  }
+
+  &__hand-minute {
+    position: absolute;
+    top: 50px;
+    left: #{$indent-left}px;
+    width: #{$hand-width}px;
+    height: #{$hand-height-minute}px;
+    background-color: #b93232;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: stopwatch 3600s linear infinite;
+  }
+}
+
+@keyframes stopwatch {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
