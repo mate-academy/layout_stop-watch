@@ -1,76 +1,96 @@
+$mark-step:30deg;
+$main-screen-size:500px;
+$inner-screen-size: 0.8 * $main-screen-size;
+$dot-size: 0.06 * $main-screen-size;
+$screen-shift: ($main-screen-size - $inner-screen-size) / 2;
+$dot-shift: ($main-screen-size - $dot-size) / 2;
+$hand-shift: ($main-screen-size /2);
+
+@mixin square ($measure) {
+  width: $measure;
+  height: $measure;
+}
+
+@mixin general-shift ($measure) {
+  top: $measure;
+  left: $measure;
+}
+
+@mixin hand-shift ($measure) {
+  top: $measure;
+  right: $measure;
+}
+
+%absolute-circle {
+  border-radius: 50%;
+  position: absolute;
+}
+
 .stopwatch {
-  height: 100vh;
+  height: $main-screen-size;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 
-  &__screen {
+  &__screen {    
     position: relative;
     display: flex;
-    width: 500px;
-    height: 500px;
-    border: 4px solid #565555;
+    @include square ($main-screen-size);    
     background-color: #8d8888;
     border-radius: 50%;
   }
   
   &__mark {
     position: absolute;
-    width: 4px;
-    height: 100%;
+    width: $main-screen-size * 0.004;
+    height: $main-screen-size;
     background: #d1c9c9;
-    left: 49.5%;
+    left: 49.8%;
 
     &--hour--two {
-      transform: rotate($hour-step);
+      transform: rotate($mark-step);
     }
       
     &--hour--three {
-      transform: rotate(60deg);
+      transform: rotate(2*$mark-step);
     }
       
     &--hour--four {
-      transform: rotate(90deg);
+      transform: rotate(3*$mark-step);
     }
       
     &--hour--five {
-      transform: rotate(120deg);
+      transform: rotate(4*$mark-step);
     }
       
     &--hour--six {
-      transform: rotate(150deg);
+      transform: rotate(5*$mark-step);
     }
   }
 
   &__dot {
     background-color: #61afff;
-    border-radius: 50%;
-    position: absolute;
-    top: 47.3%;
-    left: 47.3%;
-    width: 6%;
-    height: 6%;
+    @extend %absolute-circle;
+    @include general-shift($dot-shift);
+    @include square ($dot-size);
   }
   
   &__inner-sreen {
     background-color: #565555;
-    border-radius: 50%;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    width: 80%;
-    height: 80%;
+    @extend %absolute-circle;
+    @include general-shift($screen-shift);
+    @include square ($inner-screen-size);
   }
 
   &__hand {
-    width: 35%;
-    right: 50%;
-    height: 6px;
+    width: $main-screen-size * 0.35;
+    height: $main-screen-size * 0.01;
+    @include hand-shift($hand-shift);
     background: #61afff;
     position: absolute;
-    top: 50%;
-    border-radius: 6px;
-    transform-origin: 100%;
+    border-radius: $main-screen-size * 0.01;
+    transform-origin: right;
     transform: rotate(90deg);
     
     &--hand--min {
@@ -79,8 +99,8 @@
       
     &--hand--sec {
       background: #bc4586;
-      width: 48%;
-      height: 3px;
+      width: $main-screen-size * 0.48;
+      height: $main-screen-size * 0.005;
       animation: seconds 60s infinite steps(60);
     }
   }

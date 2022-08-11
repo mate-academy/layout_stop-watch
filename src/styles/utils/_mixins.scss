@@ -1,4 +1,14 @@
-@mixin absolute-circle {
-  border-radius: 50%;
-  position: absolute;  
-} 
+@mixin square ($measure) {
+  width: $measure;
+  height: $measure;
+}
+
+@mixin general-shift ($measure) {
+  top: $measure;
+  left: $measure;
+}
+
+@mixin hand-shift ($measure) {
+  top: $measure;
+  right: $measure;
+}
