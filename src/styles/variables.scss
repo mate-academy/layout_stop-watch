@@ -1,0 +1,14 @@
+$clock-width: 580px;
+$min: 60s;
+
+@mixin square($size) {
+  width: $clock-width;
+  height: $clock-width;
+  border-radius: 50%;
+}
+
+@mixin round($size) {
+  width: $clock-width*0.035;
+  height: $clock-width*0.035;
+  border-radius: 50%;
+}
