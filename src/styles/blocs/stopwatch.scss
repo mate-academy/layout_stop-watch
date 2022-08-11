@@ -33,17 +33,17 @@ $hand-shift: ($main-screen-size /2);
   align-items: center;
   
 
-  &__screen {    
+  &__screen {
     position: relative;
     display: flex;
-    @include square ($main-screen-size);    
+    @include square ($main-screen-size);
     background-color: #8d8888;
     border-radius: 50%;
   }
   
   &__mark {
     position: absolute;
-    width: $main-screen-size * 0.004;
+    width: $main-screen-size * 0.01;
     height: $main-screen-size;
     background: #d1c9c9;
     left: 49.8%;
@@ -85,7 +85,7 @@ $hand-shift: ($main-screen-size /2);
 
   &__hand {
     width: $main-screen-size * 0.35;
-    height: $main-screen-size * 0.01;
+    height: $main-screen-size * 0.02;
     @include hand-shift($hand-shift);
     background: #61afff;
     position: absolute;
@@ -100,7 +100,7 @@ $hand-shift: ($main-screen-size /2);
     &--hand--sec {
       background: #bc4586;
       width: $main-screen-size * 0.48;
-      height: $main-screen-size * 0.005;
+      height: $main-screen-size * 0.01;
       animation: seconds 60s infinite steps(60);
     }
   }
