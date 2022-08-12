@@ -1,0 +1,79 @@
+.stopwatch {
+  height: $main-screen-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  &__screen {
+    position: relative;
+    display: flex;
+    @include square ($main-screen-size);
+    background-color: #8d8888;
+    border-radius: 50%;
+  }
+  
+  &__mark {
+    position: absolute;
+    width: $main-screen-size * 0.01;
+    height: $main-screen-size;
+    background: #d1c9c9;
+    left: 49.8%;
+
+    &--hour--two {
+      transform: rotate($mark-step);
+    }
+      
+    &--hour--three {
+      transform: rotate(2*$mark-step);
+    }
+      
+    &--hour--four {
+      transform: rotate(3*$mark-step);
+    }
+      
+    &--hour--five {
+      transform: rotate(4*$mark-step);
+    }
+      
+    &--hour--six {
+      transform: rotate(5*$mark-step);
+    }
+  }
+
+  &__dot {
+    background-color: #61afff;
+    @extend %absolute-circle;
+    @include general-shift($dot-shift);
+    @include square ($dot-size);
+  }
+  
+  &__inner-sreen {
+    background-color: #565555;
+    @extend %absolute-circle;
+    @include general-shift($screen-shift);
+    @include square ($inner-screen-size);
+  }
+
+  &__hand {
+    width: $main-screen-size * 0.35;
+    height: $main-screen-size * 0.02;
+    @include hand-shift($hand-shift);
+    background: #61afff;
+    position: absolute;
+    border-radius: $main-screen-size * 0.01;
+    transform-origin: right;
+    transform: rotate(90deg);
+    
+    &--hand--min {
+      animation: minutes 3600s infinite;
+    }
+      
+    &--hand--sec {
+      background: #bc4586;
+      width: $main-screen-size * 0.48;
+      height: $main-screen-size * 0.01;
+      animation: seconds 60s infinite steps(60);
+    }
+  }
+}
