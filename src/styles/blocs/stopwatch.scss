@@ -1,31 +1,3 @@
-$mark-step:30deg;
-$main-screen-size:500px;
-$inner-screen-size: 0.8 * $main-screen-size;
-$dot-size: 0.06 * $main-screen-size;
-$screen-shift: ($main-screen-size - $inner-screen-size) / 2;
-$dot-shift: ($main-screen-size - $dot-size) / 2;
-$hand-shift: ($main-screen-size /2);
-
-@mixin square ($measure) {
-  width: $measure;
-  height: $measure;
-}
-
-@mixin general-shift ($measure) {
-  top: $measure;
-  left: $measure;
-}
-
-@mixin hand-shift ($measure) {
-  top: $measure;
-  right: $measure;
-}
-
-%absolute-circle {
-  border-radius: 50%;
-  position: absolute;
-}
-
 .stopwatch {
   height: $main-screen-size;
   display: flex;
