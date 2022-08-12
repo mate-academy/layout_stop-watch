@@ -1,0 +1,74 @@
+.stopwatch {
+  @extend %position-center-circle;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+
+  &__seconds-hand {
+    position: absolute;
+    @extend %position-center-hands;
+    left: 49.5%;
+    width: $stopwatch-size / 100;
+    height: $stopwatch-size / 2 - $stopwatch-size / 18;
+    background-color: rgb(247, 207, 209);
+    border-radius: $stopwatch-size / 200;
+    animation: rotate-second-hands 1s linear infinite -0.5s;
+    
+  }
+
+  &__minutes-hand {
+    @extend %position-center-hands;
+    left: 49%;
+    width: $stopwatch-size / 50;
+    height: $stopwatch-size / 4;
+    background-color: rgb(105, 233, 147);
+    border-radius: $stopwatch-size / 100;
+    animation: rotate-minute-hands 60s linear infinite -30s;
+  }
+
+  &__circle {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+
+    &--l {
+      width: $stopwatch-size;
+      height: $stopwatch-size;
+      background: radial-gradient(
+        circle, rgba(63,94,251,1) 0%, rgba(168,78,96,1) 94%
+      );
+      border: 2px solid #000;
+      border-radius: 50%;
+    }
+
+    &--m {
+      @extend %position-center-circle;
+      width: $stopwatch-size / 20;
+      height: $stopwatch-size / 20;
+    }
+
+    &--s {
+      width: $stopwatch-size / 60;
+      height: $stopwatch-size / 60;
+    }
+
+    &--12 {
+      @extend %position-center-X;
+      top: 2.2%;
+    }
+
+    &--6 {
+      @extend %position-center-X;
+      bottom: 2.2%;
+    }
+
+    &--3 {
+      @extend %position-center-Y;
+      left: 2.2%;
+    }
+
+    &--9 {
+      @extend %position-center-Y;
+      right: 2.2%;
+    }
+  }
+}

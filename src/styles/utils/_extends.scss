@@ -1,0 +1,26 @@
+%position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+%position-center-X {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+%position-center-Y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+%position-center-hands {
+  @extend %position-center;
+}
+
+%position-center-circle {
+  @extend %position-center;
+  transform: translate(-50%, -50%);
+}
