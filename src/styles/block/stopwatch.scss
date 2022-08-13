@@ -1,0 +1,64 @@
+@import "../utils/mixin";
+@import "../utils/variables";
+
+.stopwatch {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include circle($size);
+  border: 1px solid red;
+  background-color: aquamarine;
+
+  &__hand {
+    display: flex;
+    position: absolute;
+    border-radius: 2px;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+
+    &--min {
+      top: $sec_hand_size -  $min_hand_size;
+      animation-name: minute;
+      animation-duration: 3600s;
+      height: $min_hand_size;
+      width: $width_hands;
+      background-color: red;
+      transform-origin: $width_hands/2 $min_hand_size;
+    }
+
+    &--sec {
+      top: 0;
+      animation-name: second;
+      animation-duration: 60s;
+      height: $sec_hand_size;
+      width: $width_hands;
+      background-color: blue;
+      transform-origin: $width_hands/2 $sec_hand_size;
+    }
+
+    &--center {
+      @include circle(10px);
+      background-color: blue;
+    }
+  }
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minute {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
