@@ -1,0 +1,38 @@
+.container-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+
+  &__clock-center {
+    position: absolute;
+    z-index: 1;
+    height: 15px;
+    width: 15px;
+    background-color: aqua;
+    border-radius: 50%;
+  }
+
+  &__clock-hands {
+    display: flex;
+    width: $watch-width;
+  }
+
+  &__item {
+    height: $height-clock-item;
+    width: 50%;
+    background-color: blue;
+    border-radius: $border-radius-clock-item;
+    transform-origin: right;
+    transform: rotate(90deg);
+    animation: watch-second 60s linear infinite 1s;
+
+    &--minute {
+      width: 25%;
+      background-color: tomato;
+      transform-origin: left;
+      transform: rotate(-90deg);
+      animation: watch-minute 3600s linear infinite 1s;
+    }
+  }
+}
