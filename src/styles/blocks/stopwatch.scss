@@ -1,0 +1,30 @@
+.stopwatch {
+  display: flex;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+
+  border: 4px dashed #aaa7a7;
+  border-radius: 50%;
+
+  &__second-hand {
+    @include sw-hands($hand-width, $second-hand-length, #217a9c, 8px);
+  }
+
+  &__minute-hand {
+    @include sw-hands($hand-width, $minute-hand-length, #b94d1b, 8px);
+  }
+
+  &__center-detail {
+    @include sw-elements($center-detail-size, $center-detail-size, #000, 50%);
+  }
+
+  @keyframes hand-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

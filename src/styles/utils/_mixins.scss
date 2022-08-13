@@ -1,0 +1,26 @@
+@mixin sw-elements($width, $height, $color, $radius) {
+  position: absolute;
+  bottom: 0.5 * ($stopwatch-size - $center-detail-size);
+  left: 0.5 * ($stopwatch-size - $width);
+  width: $width;
+  height: $height;
+
+  background-color: $color;
+  border-radius: $radius;
+}
+
+@mixin sw-hands($width, $height, $color, $radius) {
+  @include sw-elements($width, $height, $color, $radius);
+
+  bottom: 0.5 * $stopwatch-size;
+
+  transform-origin: bottom center;
+  animation: hand-rotate infinite steps(60);
+
+  @if $height == $minute-hand-length {
+    animation-duration: $hour;
+  }
+  @else {
+    animation-duration: $minute;
+  }
+}
