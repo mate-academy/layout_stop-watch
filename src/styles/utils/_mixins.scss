@@ -1,0 +1,11 @@
+@mixin time-arrows ($height, $color, $duration) {
+  position: absolute;
+  left: 48%;
+  bottom: 50%;
+  height: #{$height}vh;
+  width: 3vh;
+  transform-origin: bottom center;
+  background-color: $color;
+  animation: watch #{$duration}s steps(60) infinite;
+  border-radius: 50% 50% 0% 0%;
+}
