@@ -1,0 +1,41 @@
+.watch {
+  background-image: url(../image/pngwing.com.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  @include square($clock-size);
+  box-shadow: rgba(0, 229, 255, 0.2) 0 7px 29px 0;
+  border-radius: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__arrow {
+    @extend %arrow-position;
+    @extend %move-arrow;
+    background-color: rgb(10, 69, 91);
+    border: 2px solid rgb(201, 201, 201);
+    border-radius: 5px;
+    
+
+    &--big {
+      width: $big-width;
+      height: $big-height;
+      animation-duration: 60s;
+    }
+
+    &--small {
+      width: $small-width;
+      height: $small-height;
+      animation-duration: 3600s;
+    }
+  }
+
+  &__circle {
+    @include square($circle-size);
+    z-index: 20;
+    border-radius: 50px;
+    background-color: rgb(10, 69, 91);
+    border: 2px solid rgb(201, 201, 201);
+  }
+}
