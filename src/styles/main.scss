@@ -1,0 +1,52 @@
+@import "./utils/_variables.scss";
+@import "./normalisation.scss";
+
+.container__seconds {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  height: $height;
+  width: $width;
+  border-radius: 8px;
+  background-color: turquoise;
+  animation-name: tick;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: bottom right;
+}
+
+.container__hours {
+  position: absolute;
+  height: $height / 2;
+  width: $width;
+  border-radius: 8px;
+  background-color: purple;
+  animation-name: tick;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: bottom right;
+  top: 40%;
+  left: 50%;
+}
+
+.container__point {
+  background-color: red;
+  height: $height / 10;
+  width: $height / 10;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 53.5%;
+  z-index: 1;
+}
+
+@keyframes tick {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
