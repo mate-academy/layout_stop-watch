@@ -1,0 +1,44 @@
+@import "../utility/var.scss";
+@import "../utility/keyframe.scss";
+
+.clock {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: $clock-size;
+  height: $clock-size;
+  position: relative;
+
+  &__center {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+    border-radius: 50%;
+    bottom: 235px;
+  }
+
+  &__hour {
+    position: absolute;
+    transform: translateY(50px);
+    transform-origin: bottom center;
+    animation: around 3600s linear infinite;
+    width: 10px;
+    height: 250px;
+    background-color: red;
+    border: 1px transparent;
+    border-radius: 20px;
+  }
+
+  &__minute {
+    position: absolute;
+    animation: around 60s linear infinite;
+    transform-origin: bottom center;
+    width: 10px;
+    height: 250px;
+    background-color: mediumturquoise;
+    border: 1px transparent;
+    border-radius: 20px;
+  }
+}
