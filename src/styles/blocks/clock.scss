@@ -5,17 +5,20 @@
 
   @for $index from 1 through 60 {
     & *:nth-child(1n + #{$index}) {
-      transform: rotate(clock($index));
-      transform-origin: 2px 210px;
+      transform: translateX(-50%) rotate(clock($index));
+      transform-origin: 50% 220px;
     }
   }
 
   & *:nth-child(5n + 5) {
     height: 50px;
+
   }
 
   &__pointer {
     position: absolute;
+    top: 0;
+    left: 50%;
     @include pointer;
   }
 }
