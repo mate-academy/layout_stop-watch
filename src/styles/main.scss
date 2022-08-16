@@ -1,0 +1,139 @@
+@import "until/reset";
+@import "until/nomalize";
+@import "until/variables";
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: $c-pink;
+}
+
+.watch {
+  min-height: 550px;
+  min-width: 550px;
+
+  border-radius: 50%;
+  border: 1px solid $c-border;
+
+  box-shadow: rgba(0, 0, 0, 0.45) 2px 10px 35px 1px;
+
+  transition: height 1s, width 1s, min-width 1s, min-height 1s;
+
+  background-color: $c-lite-white;
+
+  &__hand-minute {
+    @extend %center-position;
+
+    transform: rotate(-90deg);
+    transform-origin: left;
+    animation: animate 3600s linear infinite;
+
+    transition: height 1s,
+      width 1s,
+      min-width 1s,
+      min-height 1s,
+      border-radius 500ms;
+
+    box-shadow: -4px 4px 2px -2px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+
+    border-radius: 15%;
+    background-color: $c-black;
+    width: 180px;
+    height: 6px;
+  }
+
+  &__hand-second {
+    @extend %center-position;
+
+    transform-origin: left;
+    animation: animate 60s linear infinite;
+
+    transition: height 1s, width 1s, min-width 1s, min-height 1s;
+
+    width: 210px;
+    height: 5px;
+
+    border-radius: 50%;
+    background-color: $c-lite-red;
+    box-shadow: 0 1px 4px -2px rgba(0, 0, 1, 0.4);
+  }
+
+  &__hand-center {
+    @extend %center-position;
+
+    transform: rotate(-90deg);
+    transform-origin: left;
+
+    transition: height 500ms, width 500ms;
+
+    border-radius: 10px;
+    background-color: $c-black;
+
+    width: 20px;
+    height: 20px;
+    box-shadow: -2px 2px 2px -1px rgba(0, 0, 0, 0.8);
+  }
+
+  @keyframes animate {
+    0% {
+      transform: rotate(-90deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+}
+
+@media (max-width: 549px) {
+  .watch {
+    min-width: 350px;
+    min-height: 350px;
+  }
+
+  .watch__hand-minute {
+    width: 120px;
+    height: 6px;
+  }
+
+  .watch__hand-second {
+    width: 150px;
+    height: 5px;
+
+  }
+
+  .watch__hand-center {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 349px) {
+  .watch {
+    min-width: 250px;
+    min-height: 250px;
+  }
+
+  .watch__hand-minute {
+    width: 75px;
+    height: 6px;
+    border-radius: 30%;
+  }
+
+  .watch__hand-second {
+    width: 110px;
+    height: 5px;
+
+  }
+
+  .watch__hand-center {
+    width: 10px;
+    height: 10px;
+  }
+}
