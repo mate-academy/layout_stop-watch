@@ -1,0 +1,56 @@
+.clock {
+  &_center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+    z-index: 2;
+  }
+
+  &_minute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    width: 4px;
+    background-color: blue;
+    animation: minute 3600s steps(60, end) infinite;
+    transform-origin: 0 0;
+    transform: rotate(180deg);
+    @keyframes minute {
+      0% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(540deg);
+      }
+    }
+  }
+
+  &_sec {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 2px;
+    background-color: green;
+    animation: second 60s linear infinite;
+    transform-origin: 0 0;
+    transform: rotate(180deg);
+    @keyframes second {
+      0% {
+        transform: rotate(180deg);
+      }
+      50% {
+        transform: rotate(360deg);
+      }
+      100% {
+        transform: rotate(540deg);
+      }
+    }
+  }
+}
