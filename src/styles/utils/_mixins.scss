@@ -1,0 +1,45 @@
+@mixin clock {
+  width: $clock-size;
+  height: $clock-size;
+  border-radius: 50%;
+  border: 5px solid brown;
+  background-color: $clock-background;
+}
+@mixin pointer {
+  // top: 10px;
+  // bottom: 400px;
+  // left: 218px;
+  // right: 218px;
+  height: $pointer-height;
+  width: $pointer-width;
+  border-radius: 2px;
+  background-color: $pointer-color;
+}
+
+@mixin second-hands {
+  height: $second-height;
+  width: $second-width;
+  border-radius: 4px;
+  background-color: $secons-color;
+}
+
+@mixin minute-hands {
+  height: $minute-height;
+  width: $minute-width;
+  border-radius: 4px;
+  background-color: $minute-color;
+}
+
+@mixin hour-hands {
+  height: $hour-height;
+  width: $hour-width;
+  border-radius: 4px;
+  background-color: $hour-color;
+}
+
+@mixin circle {
+  width: $size-circle;
+  height: $size-circle;
+  border-radius: 50%;
+  border: $border-circle solid $clock-background;
+}

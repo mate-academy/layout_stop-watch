@@ -1,0 +1,51 @@
+.container {
+  position: relative;
+
+  &__hour {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include hour-hands;
+
+    animation-name: move;
+    animation-duration: 43200s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 100%;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include minute-hands;
+
+    animation-name: move;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 100%;
+  }
+
+  &__second {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include second-hands;
+
+    animation-name: move;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+    transform-origin: 50% 100%;
+  }
+
+  &__circle {
+    position: absolute;
+    @include circle;
+    background-color: $secons-color;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
