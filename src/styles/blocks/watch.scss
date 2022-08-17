@@ -1,0 +1,94 @@
+//VARIABLES:
+@import "../variables.scss";
+
+//WATCH BLOCK:
+
+@mixin animations($name, $duration) {
+  transform-origin: bottom;
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.watch {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+
+  border: 1px solid #3e0e00;
+  border-radius: 50%;
+
+  background-color: lightgrey;
+  background-image: url("../imgs/img.png");
+  background-size: cover;
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 250px;
+      left: 7px;
+      top: -970%;
+
+      background-color: #600;
+      border: 1px solid black;
+      border-radius: 6px;
+
+      @include animations(seconds, $sec-duration);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 150px;
+      left: 4px;
+      top: -570%;
+
+      background-color: #000b3d;
+      border: 1px solid black;
+      border-radius: 6px;
+
+      @include animations(minutes, $min-duration);
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: black;
+
+    z-index: 2;
+  }
+
+  &__name {
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+
+    font-family: Arial, sans-serif;
+    color: darkslategray;
+    font-size: 20px;
+
+    z-index: 0;
+  }
+}
