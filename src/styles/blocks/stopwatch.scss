@@ -1,0 +1,52 @@
+.stopwatch {
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: $stopwatch-size * 0.01 solid black;
+  border-radius: 50%;
+
+  &__arrow {
+    width: $stopwatch-size * 0.01;
+    transform-origin: bottom center;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%);
+
+    &--unit-minute {
+      height: $stopwatch-size * 0.4;
+      background-color: $minute-arrow;
+      animation: arrowMove 60s linear infinite;
+    }
+
+    &--unit-second {
+      height: $stopwatch-size * 0.3;
+      background-color: $second-arrow;
+      animation: arrowMove 1s linear infinite;
+    }
+
+  }
+
+  &__center-dot {
+    position: absolute;
+    width: $stopwatch-size * 0.02;
+    height: $stopwatch-size * 0.02;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border-radius: 50%;
+  }
+}
+
+@keyframes arrowMove {
+  from {
+    transform: translate(-50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%) rotate(360deg);
+  }
+
+}
