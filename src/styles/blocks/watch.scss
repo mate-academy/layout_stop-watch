@@ -1,0 +1,120 @@
+//VARIABLES:
+@import "../variables.scss";
+
+//MIXINS:
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin animations($name, $duration) {
+  transform-origin: bottom;
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+//WATCH BLOCK:
+.watch {
+  position: relative;
+  margin: auto;
+  @include circle(600px);
+
+  border: 1px solid #3e0e00;
+
+  background-color: $main-background-color;
+  background-image: url("../imgs/img.png");
+  background-size: cover;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(0.95);
+  }
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @include circle(25px);
+
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 250px;
+      left: 7px;
+      top: -970%;
+
+      background-color: $seconds-color;
+      border: 1px solid black;
+      border-radius: 6px;
+
+      @include animations(seconds, $sec-duration);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 150px;
+      left: 4px;
+      top: -570%;
+
+      background-color: $minutes-color;
+      border: 1px solid black;
+      border-radius: 6px;
+
+      @include animations(minutes, $min-duration);
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    @include circle(25px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $center-color;
+
+    z-index: 2;
+  }
+
+  &__name {
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+
+    font-family: Arial, sans-serif;
+    color: $name-color;
+    font-size: 20px;
+
+    z-index: 0;
+  }
+
+  //Its a bit adaptive for now =))
+  @media (max-width: 640px) {
+    & {
+      @include circle(300px);
+    }
+    &__dot {
+      @include circle(15px);
+    }
+    &__center:before {
+      width: 7px;
+      height: 100px;
+      top: -350%;
+    }
+    &__center::after {
+      width: 9px;
+      height: 80px;
+      top: -280%;
+    }
+  }
+}
