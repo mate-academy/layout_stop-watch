@@ -1,7 +1,12 @@
 //VARIABLES:
 @import "../variables.scss";
 
-//WATCH BLOCK:
+//MIXINS:
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
 
 @mixin animations($name, $duration) {
   transform-origin: bottom;
@@ -11,16 +16,15 @@
   animation-iteration-count: infinite;
 }
 
+//WATCH BLOCK:
 .watch {
   position: relative;
-  width: 600px;
-  height: 600px;
   margin: auto;
+  @include circle(600px);
 
   border: 1px solid #3e0e00;
-  border-radius: 50%;
 
-  background-color: lightgrey;
+  background-color: $main-background-color;
   background-image: url("../imgs/img.png");
   background-size: cover;
 
@@ -35,9 +39,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
+    @include circle(25px);
 
     z-index: 1;
 
@@ -49,7 +51,7 @@
       left: 7px;
       top: -970%;
 
-      background-color: #600;
+      background-color: $seconds-color;
       border: 1px solid black;
       border-radius: 6px;
 
@@ -64,7 +66,7 @@
       left: 4px;
       top: -570%;
 
-      background-color: #000b3d;
+      background-color: $minutes-color;
       border: 1px solid black;
       border-radius: 6px;
 
@@ -74,13 +76,11 @@
 
   &__dot {
     position: absolute;
+    @include circle(25px);
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: black;
+    background-color: $center-color;
 
     z-index: 2;
   }
@@ -92,9 +92,29 @@
     transform: translate(-50%, -50%);
 
     font-family: Arial, sans-serif;
-    color: darkslategray;
+    color: $name-color;
     font-size: 20px;
 
     z-index: 0;
+  }
+
+  //Its a bit adaptive for now =))
+  @media (max-width: 640px) {
+    & {
+      @include circle(300px);
+    }
+    &__dot {
+      @include circle(15px);
+    }
+    &__center:before {
+      width: 7px;
+      height: 100px;
+      top: -350%;
+    }
+    &__center::after {
+      width: 9px;
+      height: 80px;
+      top: -280%;
+    }
   }
 }
