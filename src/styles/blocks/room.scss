@@ -1,0 +1,37 @@
+.wall {
+  position: absolute;
+  display: block;
+  flex-wrap: wrap;
+  width: $room-width;
+  height: $room-heigth;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../../src/images/cement-wall-texture-background_76539-221.jpg");
+  background-repeat: no-repeat;
+
+  &__left-wall {
+    @include left-right;
+    background-color: red;
+  }
+
+  &__central-wall {
+    @include border;
+    width: $wall-width;
+    height: $wall-heigth;
+    background-color: yellow;
+  }
+
+  &__right-wall {
+    @include left-right;
+    background-color: green;
+  }
+
+  &__ceil {
+    @include top-bottom;
+  }
+
+  &__floor {
+    @include top-bottom;
+  }
+}

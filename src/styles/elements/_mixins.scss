@@ -1,0 +1,17 @@
+@mixin border {
+  border: 1px solid black;
+}
+
+@mixin top-bottom {
+  @include border;
+
+  height: $wall-perspective;
+  width: $wall-width;
+}
+
+@mixin left-right {
+  @include border;
+
+  height: $wall-heigth;
+  width: $wall-perspective;
+}
