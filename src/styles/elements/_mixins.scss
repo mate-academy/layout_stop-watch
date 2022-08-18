@@ -1,17 +1,21 @@
 @mixin border {
-  border: 1px solid black;
+  border: 5px solid black;
 }
 
 @mixin top-bottom {
-  @include border;
-
   height: $wall-perspective;
   width: $wall-width;
+  margin-left: $wall-perspective;
 }
 
 @mixin left-right {
-  @include border;
-
   height: $wall-heigth;
   width: $wall-perspective;
 }
+
+@mixin circle($x) {
+  width: $x / 2;
+  height: $x / 2;
+  border-radius: 50%;
+}
+

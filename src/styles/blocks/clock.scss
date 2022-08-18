@@ -1,0 +1,67 @@
+.clock {
+  position: absolute;
+  @include circle($wall-heigth);
+  background-color: black;
+  top: 0.35 * $wall-heigth;
+  left: 0.5 * $wall-width;
+  transform: translate(50%, -50%);
+  box-shadow: 0 0 20px 20px #fff;
+
+  &__numbers {
+
+    @each $hour, $top, $left, $x, $y in $hours {
+      &--#{$hour} {
+        &::before {
+          content: "#{$hour}";
+          font-size: 20px;
+          position: absolute;
+          color: #fff;
+          font-weight: bold;
+          left: $left;
+          top: $top;
+          transform: translate($x, $y);
+        }
+      }
+    }
+  }
+
+  &__center {
+    position: absolute;
+    @include circle (40px);
+    background-color: red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hand {
+    position: absolute;
+    fill: #fff;
+    width: 0.05 * $wall-width;
+    height: 0.125 * $wall-width;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding-top: 0.025 * $wall-width;
+
+
+  &--hours {
+    transform-origin: 0 110px;
+    animation: clock-moves 3600s infinite;
+  }
+
+  &--minutes {
+    transform-origin: 0 110px;
+    animation: clock-moves 60s infinite;
+  }
+
+  @keyframes clock-moves {
+    0% {
+      rotate: 0deg;
+    }
+    100% {
+      rotate: 360deg;
+    }
+  }
+  }
+}

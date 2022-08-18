@@ -10,16 +10,51 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Stop watch</title>
     <link rel="stylesheet" href="./styles/main.scss">
+    <script src="https://kit.fontawesome.com/fc1de9358e.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <div class="room">
-      123
-      <div class="room__ceil">1</div>
-      <div class="room__left-wall">1</div>
-      <div class="room__central-wall">1</div>
-      <div class="room__right-wall">1</div>
-      <div class="room__floor">1</div>
+      <div class="room__ceil"></div>
+      <div class="room__central-part">
+        <div class="room__left-wall room__left-wall--top"></div>
+        <div class="room__left-wall room__left-wall--bottom"></div>
+        <div class="room__central-wall">
+
+          <div class="clock">
+            <div class="clock__hand clock__hand--hours">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path d="M310.6 182.6c-12.51 12.51-32.76 12.49-45.25
+                  0L192 109.3V480c0 17.69-14.31 32-32 32s-32-14.31-32-32V109.3L54.63
+                  182.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l128-128c12.5-12.5 32.75-12.5 45.25 0l128
+                  128C323.1 149.9 323.1 170.1 310.6 182.6z">
+                </path>
+              </svg>
+            </div>
+            <div class="clock__center"></div>
+            <div class="clock__numbers clock__numbers--12"></div>
+            <div class="clock__numbers clock__numbers--3"></div>
+            <div class="clock__numbers clock__numbers--6"></div>
+            <div class="clock__numbers clock__numbers--9"></div>
+            <div class="clock__hand clock__hand--minutes">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path d="M310.6 182.6c-12.51 12.51-32.76 12.49-45.25
+                  0L192 109.3V480c0 17.69-14.31 32-32 32s-32-14.31-32-32V109.3L54.63
+                  182.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l128-128c12.5-12.5 32.75-12.5 45.25 0l128
+                  128C323.1 149.9 323.1 170.1 310.6 182.6z">
+                </path>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+        <div class="room__right-wall room__right-wall--top"></div>
+        <div class="room__right-wall room__right-wall--bottom"></div>
+      </div>
+      <div class="room__floor">
+        <div class="room__floor--right room__floor--background--picture"></div>
+        <div class="room__floor--left room__floor--background--picture"></div>
+      </div>
     </div>
   </body>
 

@@ -1,6 +1,6 @@
-.wall {
+.room {
   position: absolute;
-  display: block;
+  display: flex;
   flex-wrap: wrap;
   width: $room-width;
   height: $room-heigth;
@@ -10,21 +10,58 @@
   background-image: url("../../src/images/cement-wall-texture-background_76539-221.jpg");
   background-repeat: no-repeat;
 
+  &__central-part{
+    position: relative;
+  }
+
   &__left-wall {
     @include left-right;
-    background-color: red;
+    position: absolute;
+
+    &--top {
+      top: -$wall-perspective / 2;
+      transform: skewY(45deg);
+      border-top: 5px solid black;
+    }
+
+    &--bottom {
+      bottom: -$wall-perspective / 2;
+      transform: skewY(-45deg);
+      border-bottom: 5px solid black;
+
+    }
   }
 
   &__central-wall {
+    position: relative;
     @include border;
     width: $wall-width;
     height: $wall-heigth;
-    background-color: yellow;
+    margin-left: $wall-perspective;
+
+    background-image: url("../../src/images/window.png");
+    background-repeat: no-repeat;
+    background-size: 55%;
+    background-position: 10% -20px;
   }
 
   &__right-wall {
     @include left-right;
-    background-color: green;
+    position: absolute;
+    right: - $wall-perspective;
+    transform-origin: $wall-perspective $wall-heigth / 2;
+
+    &--top {
+      top: -$wall-perspective;
+      transform: skewY(-45deg);
+      border-top: 5px solid black;
+    }
+
+    &--bottom {
+      top: $wall-perspective;
+      transform: skewY(45deg);
+      border-bottom: 5px solid black;
+    }
   }
 
   &__ceil {
@@ -33,5 +70,25 @@
 
   &__floor {
     @include top-bottom;
+    position: relative;
+
+    &--background--picture {
+      background-image: url("../../src/images/sand-on-the-beach-as-background_102618-461.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &--left{
+      @include top-bottom;
+      position: absolute;
+      transform: skewX(-45deg);
+      right: $wall-perspective / 2;
+    }
+    &--right{
+      @include top-bottom;
+      position: absolute;
+      transform: skewX(45deg);
+      right: - $wall-perspective / 2;
+    }
   }
 }
