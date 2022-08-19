@@ -1,0 +1,37 @@
+@mixin circle($x) {
+  height: $x;
+  width: $x;
+  border-radius: 50%;
+  position: absolute;
+  top: 61.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin arrow {
+  top: 61.5%;
+  left: 50%;
+  transform-origin: 0 0;
+  transform: translate(-50%, -100%);
+  position: absolute;
+  width: 0.01 * $clock-side;
+}
+
+@mixin light-button-pos {
+  position: absolute;
+  top: 21%;
+  right: 20%;
+  border-radius: 50%;
+}
+
+@mixin start-button-pos {
+  position: absolute;
+  top: 21%;
+  left: 20%;
+  border-radius: 50%;
+}
+
+@mixin button-dimensions {
+  width: 0.05 * $clock-side;
+  height: 0.05 * $clock-side;
+}
