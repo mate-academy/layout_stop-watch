@@ -1,55 +1,47 @@
 .clock {
   &_center {
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: green;
+    top: 50%;
+    transform: translate(-3px, -50%);
+    @include centerCircle($center-size);
+    @include border-shadow-bgc($color-sec);
     z-index: 2;
   }
 
   &_minute {
     position: absolute;
-    top: 50%;
     left: 50%;
-    height: 100px;
-    width: 4px;
-    background-color: blue;
+    top: 25%;
+    height: 25%;
+    width: $minute-width;
+    @include border-shadow-bgc($color-minute);
+    transform-origin: bottom;
     animation: minute 3600s steps(60, end) infinite;
-    transform-origin: 0 0;
-    transform: rotate(180deg);
     @keyframes minute {
       0% {
-        transform: rotate(180deg);
+        transform: rotate(0);
       }
       100% {
-        transform: rotate(540deg);
+        transform: rotate(360deg);
       }
     }
   }
 
   &_sec {
     position: absolute;
-    top: 50%;
     left: 50%;
-    height: 200px;
-    width: 2px;
-    background-color: green;
-    animation: second 60s linear infinite;
-    transform-origin: 0 0;
-    transform: rotate(180deg);
-    @keyframes second {
+    height: 50%;
+    width: $second-width;
+    @include border-shadow-bgc($color-sec);
+    transform-origin: bottom;
+    animation: sec 60s linear infinite;
+    @keyframes sec {
       0% {
-        transform: rotate(180deg);
-      }
-      50% {
-        transform: rotate(360deg);
+        transform: rotate(0);
       }
       100% {
-        transform: rotate(540deg);
+        transform: rotate(360deg);
       }
     }
   }
