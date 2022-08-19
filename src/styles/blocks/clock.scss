@@ -1,0 +1,115 @@
+.clock {
+  position: absolute;
+  height: $clock-size;
+  width: $clock-size;
+  background-color: #fff;
+  border-radius: 100%;
+  border: 10px solid #34626c;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  &__breakpoint {
+    position: absolute;
+    width: 3px;
+    height: 8px;
+    background-color: $repeated-color;
+    margin: auto;
+  }
+
+  &__breakpoint--top--position {
+    left: 0;
+    right: 0;
+  }
+
+  &__breakpoint--right--position {
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+   
+  &__breakpoint--right--size {
+    width: 8px;
+    height: 3px;
+  }
+
+  &__breakpoint--bottom--position {
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__breakpoint--left--position {
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &__breakpoint--left--size {
+    width: 8px;
+    height: 3px;
+  }
+
+  &__breakpoint--center--position {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__breakpoint--center--size {
+    width: 8px;
+    height: 8px;
+  }
+
+  &__hand {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  &__hand--hour {
+    width: 3px;
+
+    &::before {
+      content: "";
+      background-color: $repeated-color;
+      height: 60px;
+      width: 3px;
+      position: absolute;
+      top: 30px;
+    }
+  }
+
+  &__hand--minute {
+    width: 2px;
+    animation: move 3600s infinite linear;
+
+    &::before {
+      content: "";
+      background-color: $repeated-color;
+      height: 40px;
+      width: 2px;
+      position: absolute;
+      top: 50px;
+    }
+  }
+
+  &__hand--second {
+    width: 1px;
+    animation: move 60s steps(60) infinite;
+
+    &::before {
+      content: "";
+      background-color: $repeated-color;
+      height: 80px;
+      width: 1px;
+      position: absolute;
+      top: 10px;
+    }
+  }
+}
