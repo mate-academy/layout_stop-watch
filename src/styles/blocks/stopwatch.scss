@@ -2,8 +2,7 @@
   position: relative;
   width: 0.9 * $clock-side;
   height: $clock-side;
-
-  background-image: url('../../src/image/stopwatch.png');
+  background-image: url("../../src/image/stopwatch.png");
   background-size: cover;
 
   &__light-button-label {
@@ -11,12 +10,16 @@
     @include button-dimensions;
   }
 
-  &__light-button--on {
+  &__panel {
+    @include circle(0.55 * $clock-side);
+  }
+
+  &__light-button-on {
     @include light-button-pos;
 
     &:checked ~ .stopwatch__panel {
       background-color: rgba(100%, 100%, 10%, 0.7);
-      box-shadow: 0 0 0.05 * $clock-side 0.05 * $clock-side rgba(100%, 100%, 10%, 0.7);
+      box-shadow: 0 0 $shadow-prop $shadow-prop rgba(100%, 100%, 10%, 0.7);
     }
   }
 
@@ -30,27 +33,23 @@
     transform: translate(-50%, 0);
   }
 
-  &__panel {
-    @include circle(0.55 * $clock-side);
-  }
-
   &__center {
     @include circle(0.05 * $clock-side);
     background-color: black;
   }
 
-  &__minutes {
+  &__seconds {
     @include arrow;
     height: 0.3 * $clock-side;
     background-color: blue;
-    animation: round 60s infinite paused;
+    animation: round 60s linear infinite paused;
   }
 
-  &__hours {
+  &__minutes {
     @include arrow;
     background-color: red;
     height: 0.15 * $clock-side;
-    animation: round 120s infinite paused;
+    animation: round 3600s linear infinite paused;
   }
 
   @keyframes round {
@@ -67,8 +66,12 @@
     @include start-button-pos;
   }
 
-  &__start-button--on {
+  &__start-button-on {
     @include start-button-pos;
+
+    &:checked ~ .stopwatch__seconds {
+      animation-play-state: running;
+    }
 
     &:checked ~ .stopwatch__minutes {
       animation-play-state: running;

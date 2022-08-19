@@ -1,0 +1,46 @@
+.wrapper {
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 640px) {
+    justify-content: space-around;
+  }
+}
+
+.mohito-label {
+  display: block;
+  position: absolute;
+  width: 65px;
+  height: 60px;
+  fill: limegreen;
+  top: 10px;
+  left: 20px;
+
+  & > svg {
+    width: 65px;
+    height: 60px;
+  }
+
+  & > svg > path {
+    transform: scale(11%);
+  }
+}
+
+.mohito-checkbox {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+
+  &:checked ~ .wrapper {
+    background-image: url("../../src/image/mohito.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+  }
+  &:checked ~ .wrapper > .stopwatch {
+    z-index: -1;
+  }
+}
