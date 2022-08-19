@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &__minute {
+    position: absolute;
+    right: 0;
+    width: 100px;
+    height: 20px;
+    background-color: red;
+    border-radius: 100px;
+    animation-name: minute;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    transform-origin: right;
+  }
+
+  &__second {
+    position: absolute;
+    left: 0;
+    width: 225px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 100px;
+    animation-name: seconds;
+    animation-iteration-count: infinite;
+    transform-origin: left;
+    animation-timing-function: linear;
+    animation-duration: 60s;
+  }
+
+  @keyframes minute {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes seconds {
+    from {
+      transform: rotate(-90deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
