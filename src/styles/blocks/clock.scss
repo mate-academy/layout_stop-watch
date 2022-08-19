@@ -11,69 +11,69 @@
   bottom: 0;
   margin: auto;
 
-  &__top {
+  &__breakpoint {
     position: absolute;
     width: 3px;
     height: 8px;
     background-color: $repeated-color;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-  }
-
-  &__right {
-    position: absolute;
-    width: 8px;
-    height: 3px;
-    background-color: $repeated-color;
-    top: 0;
-    bottom: 0;
-    right: 0;
     margin: auto;
   }
 
-  &__bottom {
-    position: absolute;
-    width: 3px;
-    height: 8px;
-    background-color: $repeated-color;
+  &__breakpoint--top--position {
     left: 0;
+    right: 0;
+  }
+
+  &__breakpoint--right--position {
+    top: 0;
     bottom: 0;
     right: 0;
-    margin: auto;
   }
-  
-  &__left {
-    position: absolute;
+   
+  &__breakpoint--right--size {
     width: 8px;
     height: 3px;
-    background-color: $repeated-color;
+  }
+
+  &__breakpoint--bottom--position {
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__breakpoint--left--position {
     left: 0;
     top: 0;
     bottom: 0;
-    margin: auto;
   }
-  
-  &__center {
-    position: absolute;
+
+  &__breakpoint--left--size {
     width: 8px;
-    height: 8px;
-    border-radius: 100%;
-    background-color: $repeated-color;
+    height: 3px;
+  }
+
+  &__breakpoint--center--position {
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    margin: auto;
   }
-  
-  &__hour {
-    width: 3px;
+
+  &__breakpoint--center--size {
+    width: 8px;
+    height: 8px;
+  }
+
+  &__hand {
     height: 100%;
     position: absolute;
     left: 0;
     right: 0;
     margin: 0 auto;
+  }
+
+  &__hand--hour {
+    width: 3px;
 
     &::before {
       content: "";
@@ -85,13 +85,8 @@
     }
   }
 
-  &__minute {
+  &__hand--minute {
     width: 2px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
     animation: move 3600s infinite linear;
 
     &::before {
@@ -104,13 +99,8 @@
     }
   }
 
-  &__second {
+  &__hand--second {
     width: 1px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
     animation: move 60s steps(60) infinite;
 
     &::before {
