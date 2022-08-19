@@ -1,0 +1,68 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  counter-reset: seconds;
+  @include circle($stopwatch-size);
+  position: relative;
+  background-image: linear-gradient(#00fc 50%, #ff0c 50%);
+  border: $stopwatch-border solid red;
+
+  &__minute-hand {
+    @extend %hand-position;
+    @include rectangle($minute-hand-length, $hand-width);
+    background-color: black;
+    border-radius: (50% 50% 0 0);
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__second-hand {
+    @extend %hand-position;
+    @include rectangle($second-hand-length, $hand-width);
+    background-color: red;
+    border-radius: (50% 50% 0 0);
+    animation: rotate 60s steps(60) infinite;
+  }
+
+  &__center {
+    @include circle($hand-width * 2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+  }
+
+  &__second {
+    @extend %hand-position;
+    @include rectangle($second-hand-length, $hand-width);
+
+    @for $index from 1 to 60 {
+      &:nth-child(#{$index}) {
+        transform: rotate($index * 6deg);
+      }
+    }
+
+    &::before {
+      position: absolute;
+      @include rectangle(5%, 100%);
+      background-color: black;
+      content: "";
+
+      @if ($stopwatch-size >= 400px and $hand-width >= 10px) {
+        counter-increment: seconds;
+        content: counter(seconds);
+        color: red;
+        font-size: 10px;
+        text-align: center;
+      }
+    }
+  }
+}
