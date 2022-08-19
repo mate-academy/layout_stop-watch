@@ -1,0 +1,30 @@
+.clock__hand {
+  width: 50%;
+  right: 50%;
+  height: 6px;
+  position: absolute;
+  top: 50%;
+  border-radius: 6px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition-timing-function: ease-in-out;
+}
+
+.clock__hand--h {
+  width: 30%;
+  z-index: 3;
+  background: #f00a;
+}
+
+.clock__hand--m {
+  height: 3px;
+  z-index: 10;
+  width: 40%;
+  background: #00fa;
+}
+
+.clock__hand--s {
+  background: #000a;
+  width: 45%;
+  height: 2px;
+}

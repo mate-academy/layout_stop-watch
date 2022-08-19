@@ -1,14 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <title>Clocky McClockface</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <div class="clock">
+      <div class="clock__outer">
+        <div class="clock__marking clock__marking--1"></div>
+        <div class="clock__marking clock__marking--2"></div>
+        <div class="clock__marking clock__marking--3"></div>
+        <div class="clock__marking clock__marking--4"></div>
+        <div class="clock__inner">
+          <div class="clock__hand clock__hand--h"></div>
+          <div class="clock__hand clock__hand--m"></div>
+          <div class="clock__hand clock__hand--s"></div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>
