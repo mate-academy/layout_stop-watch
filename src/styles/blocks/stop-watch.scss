@@ -1,0 +1,37 @@
+.stop-watch {
+  &__circle {
+    display: flex;
+    align-items: center;
+
+    width: 500px;
+    height: 500px;
+
+    position: relative;
+
+    border: $border-size solid transparent;
+
+    border-radius: 50%;
+    background-color: #fff;
+    background-clip: padding-box;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+
+      margin: -$border-size;
+
+      border-radius: inherit;
+      background: linear-gradient(
+        50deg,
+        rgba(46,57,156,1) 0%,
+        rgba(82,204,172,1) 100%
+      );
+    }
+  }
+}
