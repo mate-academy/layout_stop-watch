@@ -41,4 +41,26 @@
 
     background: $gradient;
   }
+
+  &__minutes-arrow {
+    @include arrow($arrow-width, $minutes-arrow-height);
+
+    position: absolute;
+    bottom: 50%;
+    left: calc(50% - #{$arrow-width} / 2);
+
+    border-radius: inherit;
+    background: $gradient;
+  }
+
+  &__seconds-arrow {
+    @include arrow($arrow-width, $seconds-arrow-height);
+
+    position: absolute;
+    bottom: 50%;
+    left: calc(50% - #{$arrow-width} / 2);
+
+    border-radius: inherit;
+    background: $gradient;
+  }
 }
