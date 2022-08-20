@@ -1,0 +1,40 @@
+.clock {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  
+  &--positon {
+    margin: 0 auto;
+  }
+
+  &__hand {
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    &--minute {
+      background-color: red;
+      width: 15px;
+      height: 300px;
+      animation-duration: 60s;
+    }
+
+    &--second {
+      background-color: black;
+      width: 10px;
+      height: 450px;
+      animation-duration: 1s;
+    }
+  }
+  
+  &__centre {
+    background-color: black;
+    width: $centre-size;
+    height: $centre-size;
+    border-radius: getCircle($centre-size);
+    position: relative;
+    bottom: -10px;
+    right: 30px;
+  }
+}
