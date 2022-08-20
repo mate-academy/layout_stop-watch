@@ -1,16 +1,17 @@
 .stop-watch {
-  &__circle {
-    display: flex;
-    align-items: center;
+  height: 100vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 500px;
-    height: 500px;
+  &__circle {
+    @include circle($circle-size);
 
     position: relative;
 
     border: $border-size solid transparent;
 
-    border-radius: 50%;
     background-color: #fff;
     background-clip: padding-box;
 
