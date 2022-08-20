@@ -1,0 +1,349 @@
+$watch-size: 400px;
+$min-arrow-height: 10px;
+$hour-arrow-height: 20px;
+$hour-animation-time: 30s;
+$min-animation-time: 15s;
+
+.watch {
+  position: relative;
+
+  &__container {
+    width: $watch-size;
+    height: $watch-size;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  &::after {
+    content: "";
+    width: $watch-size/15;
+    height: $watch-size/15;
+    background-color: #111;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 30;
+  }
+
+  &__item {
+    width: $watch-size/2;
+    position: absolute;
+    top: $watch-size/2;
+    left: $watch-size/2;
+    display: flex;
+    justify-content: end;
+
+    @for $i from 1 through 6 {
+      &--stripes--#{$i} {
+        display: flex;
+        justify-content: space-between;
+        width: $watch-size;
+        height: 5px;
+        background-color: #eee0;
+        top: 50%;
+        left: 50%;
+        $deg-counter: 30deg * $i - 90deg;
+        transform: translate(-50%, -50%) rotate(#{$deg-counter});
+      }
+    }
+  }
+
+  &__item-stripe {
+    align-self: center;
+    width: 20px;
+    height: 5px;
+    background-color: #111;
+  }
+
+  &__minute-arrow {
+    width: $watch-size/2;
+    position: absolute;
+    top: $watch-size/2;
+    left: $watch-size/2;
+    display: flex;
+    justify-content: end;
+    height: 5px;
+    background-color: #4440;
+    z-index: 20;
+    transform: translate(0 , -50%) rotate(-90deg);
+    transform-origin: 0 50%;
+    animation: spin $min-animation-time infinite linear;
+
+    & > * {
+      width: 180px;
+      height: 5px;
+      align-self: center;
+      background-color: #aaa;
+      border-radius: 5px;
+      margin-right: 30px;
+    }
+  }
+
+  &__hour-arrow {
+    width: $watch-size/2;
+    position: absolute;
+    top: $watch-size/2;
+    left: $watch-size/2;
+    display: flex;
+    justify-content: end;
+    height: 10px;
+    background-color: #0000;
+    z-index: 10;
+    transform: translate(0%, 50%) rotate(-90deg);
+    transform-origin: 0 50% ;
+    animation: spin $hour-animation-time infinite linear;
+
+    & > * {
+      width: 150px;
+      height: 10px;
+      align-self: center;
+      background-color: #444;
+      border-radius: 5px;
+      margin-right: 50px;
+    }
+  }
+
+  /* --watch-type--dots */
+  &--watch-type--dots {
+
+    & .watch__item-stripe {
+      border-radius: 50%;
+      width: 10px;
+      height: 5px;
+    }
+
+    & .watch__minute-arrow > * {
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+    }
+
+    & .watch__hour-arrow > * {
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  /* --watch-theme--dark */
+  &--watch-theme--dark {
+
+    color: #fff;
+
+    & > .watch__container {
+      background-color: #222;
+    }
+
+    &::after {
+      background-color: #eee;
+    }
+
+    & .watch__item-stripe {
+      background-color: #eee;
+    }
+
+    & .watch__minute-arrow > * {
+      background-color: #ddd;
+    }
+
+    & .watch__hour-arrow > * {
+      background-color: #aaa;
+    }
+  }
+
+  /* --watch-type--numbered */
+  &--watch-type--numbered {
+
+    & .watch__item-stripe {
+      font-size: 24px;
+      width: 5px;
+      position: relative;
+
+    }
+
+    & .watch__item-stripe::after {
+      position: absolute;
+    }
+
+    @for $i from 1 through 6 {
+      & .watch__item--stripes--#{$i} div:first-child::after {
+        content: "#{$i+6}";
+        top: -10px;
+        right: -20px;
+        $rotation: 60deg * $i;
+        @if $i == 2 {
+          $rotation: 15deg * $i;
+        }
+        @else if $i == 3 {
+          $rotation: 0deg * $i;
+        }
+        @else if $i == 4 {
+          $rotation: -7deg * $i;
+          right: -25px;
+        }
+        @else if $i == 5 {
+          right: -25px;
+        }
+        @else if $i == 6 {
+          $rotation: -15deg * $i;
+          right: -25px;
+        }
+        transform: rotate($rotation);
+      }
+
+      & .watch__item--stripes--#{$i} div:last-child::after {
+        content: "#{$i}";
+        top: -10px;
+        left: -20px;
+        $rotation: 60deg * $i;
+        @if $i == 2 {
+          $rotation: 15deg * $i;
+        }
+        @else if $i == 3 {
+          $rotation: 0deg * $i;
+        }
+        @else if $i == 4 {
+          $rotation: -7deg * $i;
+        }
+        @else if $i == 6 {
+          $rotation: -15deg * $i;
+        }
+        transform: rotate($rotation);
+      }
+    }
+
+  }
+
+  /* --watch-type--numbered-arrow */
+  &--watch-type--numbered-arrow {
+
+    & .watch__hour-arrow > div {
+      position: relative;
+      background: 0;
+    }
+    & .watch__minute-arrow > div {
+      position: relative;
+      background: 0;
+    }
+
+    & .watch__hour-arrow > div::after {
+      content: "12";
+      font-size: 36px;
+      position: absolute;
+      right: 30px;
+      top: -10px;
+      transform: rotate(-90deg);
+      animation: spin_with_number #{$hour-animation-time} 1s infinite linear ;
+    }
+    & .watch__minute-arrow > div::after {
+      content: "12";
+      font-size: 20px;
+      position: absolute;
+      right: 20px;
+      top: -10px;
+      transform: rotate(-90deg);
+      animation: spin_with_number-minutes
+        #{$min-animation-time}
+        0.3s
+        infinite
+        linear;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: translate(0 , -50%) rotate(-90deg);
+    }
+    100% {
+      transform: translate(0 , -50%) rotate(270deg);
+    }
+  }
+
+  @keyframes spin_with_number {
+    0% {
+      content: "12";
+    }
+    9% {
+      content: "1";
+    }
+    18% {
+      content: "2";
+    }
+    26% {
+      content: "3";
+    }
+    34% {
+      content: "4";
+    }
+    43% {
+      content: "5";
+    }
+    52% {
+      content: "6";
+    }
+    60% {
+      content: "7";
+    }
+    67% {
+      content: "8";
+    }
+    77% {
+      content: "9";
+    }
+    84% {
+      content: "10";
+    }
+    93% {
+      content: "11";
+    }
+    100% {
+      content: "12";
+    }
+
+  }
+  @keyframes spin_with_number-minutes {
+    0% {
+      content: "0";
+    }
+    9% {
+      content: "5";
+    }
+    18% {
+      content: "10";
+    }
+    26% {
+      content: "15";
+    }
+    34% {
+      content: "20";
+    }
+    43% {
+      content: "25";
+    }
+    52% {
+      content: "30";
+    }
+    60% {
+      content: "35";
+    }
+    67% {
+      content: "40";
+    }
+    77% {
+      content: "45";
+    }
+    84% {
+      content: "50";
+    }
+    93% {
+      content: "55";
+    }
+    100% {
+      content: "60";
+    }
+
+  }
+
+}
