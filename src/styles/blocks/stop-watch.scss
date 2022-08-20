@@ -8,10 +8,11 @@
   &__container {
     @include circle($circle-size);
 
-    transition: transform 500ms;
+    transition: transform 500ms ease, opacity 500ms ease;
 
     &:hover {
-      transform: scale(80%);
+      transform: scale(90%);
+      opacity: 25%;
     }
   }
 
