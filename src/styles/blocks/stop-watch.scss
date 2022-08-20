@@ -1,6 +1,6 @@
 .stop-watch {
   height: 100vh;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,11 +28,17 @@
       margin: -$border-size;
 
       border-radius: inherit;
-      background: linear-gradient(
-        50deg,
-        rgba(46,57,156,1) 0%,
-        rgba(82,204,172,1) 100%
-      );
+      background: $gradient;
     }
+  }
+
+  &__dot {
+    @include circle($dot-size);
+
+    position: absolute;
+    top: calc(50% - #{$dot-size} / 2);
+    left: calc(50% - #{$dot-size} / 2);
+
+    background: $gradient;
   }
 }
