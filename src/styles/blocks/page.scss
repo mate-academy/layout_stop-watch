@@ -27,15 +27,35 @@
   }
 
   &:checked ~ .box {
-    background-image: url("../../src/image/mohito.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
+    animation: color-to-mohito 0.5s ease-out 1;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes color-to-mohito {
+    from {
+      background-color: white;
+    }
+    to {
+      background-image: url("../../src/image/mohito.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50%;
+    }
   }
 }
 
 .light-button-on:checked ~ .box {
-  background-color: black;
+  animation: color-to-black 1s linear 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes color-to-black {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: black;
+  }
 }
 
 .light-button-on:checked ~ .mohito-label{
