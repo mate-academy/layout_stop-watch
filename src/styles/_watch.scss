@@ -1,8 +1,6 @@
-$watch-size: 400px;
-$min-arrow-height: 10px;
-$hour-arrow-height: 20px;
-$hour-animation-time: 30s;
-$min-animation-time: 15s;
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_animations.scss";
 
 .watch {
   position: relative;
@@ -28,12 +26,7 @@ $min-animation-time: 15s;
   }
 
   &__item {
-    width: $watch-size/2;
-    position: absolute;
-    top: $watch-size/2;
-    left: $watch-size/2;
-    display: flex;
-    justify-content: end;
+    @include item-positioning();
 
     @for $i from 1 through 6 {
       &--stripes--#{$i} {
@@ -58,12 +51,7 @@ $min-animation-time: 15s;
   }
 
   &__minute-arrow {
-    width: $watch-size/2;
-    position: absolute;
-    top: $watch-size/2;
-    left: $watch-size/2;
-    display: flex;
-    justify-content: end;
+    @include item-positioning();
     height: 5px;
     background-color: #4440;
     z-index: 20;
@@ -82,12 +70,7 @@ $min-animation-time: 15s;
   }
 
   &__hour-arrow {
-    width: $watch-size/2;
-    position: absolute;
-    top: $watch-size/2;
-    left: $watch-size/2;
-    display: flex;
-    justify-content: end;
+    @include item-positioning();
     height: 10px;
     background-color: #0000;
     z-index: 10;
@@ -251,99 +234,4 @@ $min-animation-time: 15s;
         linear;
     }
   }
-
-  @keyframes spin {
-    0% {
-      transform: translate(0 , -50%) rotate(-90deg);
-    }
-    100% {
-      transform: translate(0 , -50%) rotate(270deg);
-    }
-  }
-
-  @keyframes spin_with_number {
-    0% {
-      content: "12";
-    }
-    9% {
-      content: "1";
-    }
-    18% {
-      content: "2";
-    }
-    26% {
-      content: "3";
-    }
-    34% {
-      content: "4";
-    }
-    43% {
-      content: "5";
-    }
-    52% {
-      content: "6";
-    }
-    60% {
-      content: "7";
-    }
-    67% {
-      content: "8";
-    }
-    77% {
-      content: "9";
-    }
-    84% {
-      content: "10";
-    }
-    93% {
-      content: "11";
-    }
-    100% {
-      content: "12";
-    }
-
-  }
-  @keyframes spin_with_number-minutes {
-    0% {
-      content: "0";
-    }
-    9% {
-      content: "5";
-    }
-    18% {
-      content: "10";
-    }
-    26% {
-      content: "15";
-    }
-    34% {
-      content: "20";
-    }
-    43% {
-      content: "25";
-    }
-    52% {
-      content: "30";
-    }
-    60% {
-      content: "35";
-    }
-    67% {
-      content: "40";
-    }
-    77% {
-      content: "45";
-    }
-    84% {
-      content: "50";
-    }
-    93% {
-      content: "55";
-    }
-    100% {
-      content: "60";
-    }
-
-  }
-
 }
