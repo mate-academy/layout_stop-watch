@@ -1,0 +1,26 @@
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 100%;
+}
+
+@mixin animation-second() {
+  animation-name: move;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@mixin animation-minute() {
+  animation-name: move;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@mixin background() {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
