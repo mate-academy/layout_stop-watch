@@ -22,14 +22,15 @@
   top: 25px;
   left: 25px;
 
+  &:checked ~ .mohito-label{
+    fill: white;
+  }
+
   &:checked ~ .box {
     background-image: url("../../src/image/mohito.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
-  }
-  &:checked ~ .box > .stopwatch {
-    z-index: -1;
   }
 }
 
@@ -38,9 +39,7 @@
 }
 
 .light-button-on:checked ~ .box > .stopwatch {
-  background-image: url("../../src/image/stopwatch.7c63fcf4.png");
-  background-size: 101%;
-  background-position: center;
+  background-image: url("../../src/image/night-mode.png");
 }
 
 .light-button-on:checked ~ .box > .stopwatch > .stopwatch__panel {
