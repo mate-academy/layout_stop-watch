@@ -1,41 +1,74 @@
-.explication {
-  position: relative;
+.intro {
+  position: absolute;
+  background-color: yellow;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  &__title {
-    margin-right: 10px;
-    text-transform: uppercase;
+  &__container {
+    width: 100%;
+    height: 100%;
   }
 
-  &__logo {
-    padding: 20px;
+  &__welcome {
     position: relative;
+    padding: 20px;
     display: flex;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 60px;
+    justify-self: center;
+
+    @media (max-width: 640px) {
+      font-size: 40px;
+    }
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    font-size: 18px;
   }
 
   &__info {
+    position: absolute;
     text-align: center;
-    margin-top: -10px;
-    display: none;
+    transform: translate(0, 75%);
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    border: 2px solid green;
+    border-radius: 15px;
+    visibility: hidden;
+
+    & > p > strong {
+      font-size: 20px;
+    }
 
     & > p {
       padding: 0;
-      font-size: 14px;
+      font-size: 16px;
 
       @media (max-width: 640px) {
-        font-size: 10px;
+        font-size: 12px;
       }
 
       @media (max-height: 640px) {
-        font-size: 10px;
+        font-size: 12px;
       }
     }
   }
 
   &__label {
-    width: 50px;
+    display: flex;
     height: 50px;
     fill: orangered;
+    align-items: center;
 
     & > svg {
       width: 50px;
@@ -51,9 +84,9 @@
     position: absolute;
     top: 40%;
     left: 40%;
+  }
 
-    &:checked ~ .explication__info {
-      display: block;
-    }
+  &__tips-checkbox:checked ~ &__info {
+    visibility: visible;
   }
 }
