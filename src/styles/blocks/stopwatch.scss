@@ -1,9 +1,25 @@
+.box {
+  position: absolute;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 640px) {
+    justify-content: space-around;
+  }
+}
+
 .stopwatch {
   position: relative;
   width: 0.9 * $clock-side;
   height: $clock-side;
   background-image: url("../../src/image/stopwatch.png");
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 99%;
+  background-position: center;
 
   &__light-button-label {
     @include light-button-pos;
@@ -12,12 +28,6 @@
 
   &__panel {
     @include circle(0.55 * $clock-side);
-  }
-
-  &__light-button-on {
-    // @include light-button-pos;
-    top: 0;
-    right: 0;
   }
 
   &__refresh {

@@ -1,23 +1,12 @@
-.wrapper {
-  flex-direction: column;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (max-width: 640px) {
-    justify-content: space-around;
-  }
-}
-
 .mohito-label {
   display: block;
   position: absolute;
   width: 65px;
   height: 60px;
   fill: limegreen;
-  top: 10px;
-  left: 20px;
-
+  top: 30px;
+  left: 30px;
+  z-index: 2;
   & > svg {
     width: 65px;
     height: 60px;
@@ -33,28 +22,28 @@
   top: 25px;
   left: 25px;
 
-  &:checked ~ .wrapper {
+  &:checked ~ .box {
     background-image: url("../../src/image/mohito.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
   }
-  &:checked ~ .wrapper > .stopwatch {
+  &:checked ~ .box > .stopwatch {
     z-index: -1;
   }
 }
 
-.light-button-on:checked ~ .wrapper {
+.light-button-on:checked ~ .box {
   background-color: black;
 }
 
-.light-button-on:checked ~ .wrapper > .stopwatch {
+.light-button-on:checked ~ .box > .stopwatch {
   background-image: url("../../src/image/stopwatch.7c63fcf4.png");
   background-size: 101%;
+  background-position: center;
 }
 
-.light-button-on:checked ~ .wrapper > .stopwatch > .stopwatch__panel {
+.light-button-on:checked ~ .box > .stopwatch > .stopwatch__panel {
   background-color: rgba(100%, 100%, 10%, 0.7);
   box-shadow: 0 0 $shadow-prop $shadow-prop rgba(100%, 100%, 10%, 0.7);
 }
-

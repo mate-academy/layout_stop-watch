@@ -15,9 +15,14 @@
 
   <body class="body">
 
-    <div class="intro intro__container">
-      <div class="intro__welcome">
-        <label for="intro" class="intro__label">
+    <input
+      type="checkbox"
+      id="intro"
+      class="intro-checkbox"
+    >
+    <div class="wrapper">
+      <div class="wrapper__intro intro">
+        <label for="intro" class="intro__start">
           <svg xmlns="http://www.w3.org/2000/svg">
             <path d="M276 256C276 249.4 281.4 244 288 244C294.6 244 300 249.4 300 256V352C300 358.6 294.6
               364 288 364C281.4 364 276 358.6 276 352V256zM272 0C289.7 0 304 14.33 304 32C304 49.67 289.7 64
@@ -57,11 +62,6 @@
           <p><strong>HINT</strong><br> Tap glass in top left corner to take some relax</p>
         </div>
       </div>
-      <input
-        type="checkbox"
-        id="intro"
-        class="intro__checkbox"
-      >
     </div>
 
     <label for="mohito" class="mohito-label">
@@ -85,9 +85,8 @@
     class="light-button-on"
     >
 
-    <div class="wrapper">
-
-      <div class="stopwatch">
+    <div class="box">
+      <div class="box__stopwatch stopwatch">
         <label for="light" class="stopwatch__light-button-label"></label>
         <a href="./index.html" class="stopwatch__refresh"></a>
         <label for="start-pause" class="stopwatch__start-button-label"></label>
@@ -101,8 +100,6 @@
         <div class="stopwatch__minutes"></div>
         <div class="stopwatch__center"></div>
       </div>
-
-      <footer class="footer">&copy; all rights reserved</footer>
     </div>
 
   </body>

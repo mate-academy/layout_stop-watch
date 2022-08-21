@@ -1,24 +1,21 @@
-.intro {
+.wrapper {
   position: absolute;
   background-color: yellow;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+}
 
-  &__container {
-    width: 100%;
-    height: 100%;
-  }
-
-  &__welcome {
-    position: relative;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+.intro {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
   &__title {
     text-transform: uppercase;
@@ -38,7 +35,7 @@
   &__info {
     position: absolute;
     text-align: center;
-    transform: translate(0, 75%);
+    transform: translate(0, 100%);
     width: 100%;
     background-color: #fff;
     padding: 10px;
@@ -66,11 +63,14 @@
 
   &__label {
     display: flex;
-    height: 50px;
     fill: orangered;
     align-items: center;
+    margin-top: -20px;
 
     & > svg {
+      display: flex;
+      justify-content: start;
+      align-items: flex-start;
       width: 50px;
       height: 50px;
     }
@@ -80,13 +80,41 @@
     }
   }
 
-  &__checkbox {
-    position: absolute;
-    top: 40%;
-    left: 40%;
+  &__start {
+    fill: orangered;
+    animation: pulse 2s ease infinite;
+
+    & > svg {
+      width: 108px;
+      height: 132px;
+    }
+
+    & > svg > path {
+      transform: scale(25%);
+    }
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      scale: 1;
+    }
+    50% {
+      scale: 1.25;
+    }
+    100% {
+      scale: 1;
+    }
   }
 
   &__tips-checkbox:checked ~ &__info {
     visibility: visible;
   }
+}
+
+.intro-checkbox:checked ~ .wrapper {
+  z-index: 0;
 }
