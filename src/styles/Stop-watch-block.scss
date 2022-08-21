@@ -6,10 +6,10 @@
   width: #{$stopwatch-width};
   height: #{$stopwatch-width};
   border-radius: 50%;
-  box-shadow: 0px 2px 83px -2px rgba(66, 68, 90, 1);
+  box-shadow: 1px 2px 83px -2px rgba(66, 68, 90, 1);
   background-color: azure;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     width: #{$stopwatch-center};
     height: #{$stopwatch-center};
@@ -29,7 +29,7 @@
     height: #{$stopwatch__seconds-width};
     border-radius: 50%;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       width: #{$seconds-clockhand-width};
       height: #{$seconds-clockhand};
@@ -37,11 +37,11 @@
       background-color: rgba(122, 156, 193, 1);
       border: 1px solid rgba(36, 83, 144, 1);
       transform-origin: bottom;
-      animation: seconds 60s linear infinite;
+      animation: timer 60s linear infinite;
       z-index: 97;
     }
   }
-  &__minutes {
+  &__minute {
     position: absolute;
   }
   &__minutes {
@@ -52,7 +52,7 @@
     height: #{$stopwatch__minutes-width};
     border-radius: 50%;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       width: #{$seconds-clockhand-width};
       height: #{$minutes-clockhand};
@@ -60,7 +60,7 @@
       background-color: rgba(122, 156, 193, 1);
       border: 1px solid rgba(36, 83, 144, 1);
       transform-origin: bottom;
-      animation: minutes 3600s linear infinite;
+      animation: timer 3600s linear infinite;
       z-index: 98;
     }
   }
@@ -75,7 +75,7 @@
     height: #{$stopwatch__hours-width};
     border-radius: 50%;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       width: #{$seconds-clockhand-width};
       height: #{$hours-clockhand};
@@ -84,7 +84,7 @@
       border: 1px solid rgba(36, 83, 144, 1);
      
       transform-origin: bottom;
-      animation: hours 21600s linear infinite;
+      animation: timer 21600s linear infinite;
       z-index: 99;
     }
   }
