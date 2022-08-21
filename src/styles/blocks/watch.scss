@@ -1,14 +1,26 @@
 .watch {
   box-sizing: border-box;
-  position: relative;
   height: 100vh;
+  background-color: gray;
   display: flex;
   justify-content: center;
-  background-color: gray;
+  align-items: center;
+
+  &__round {
+    border-radius: 50%;
+    padding: $watch-round-padding;
+    height: $big-array-length * 2;
+    width: $big-array-length * 2;
+    background-color: aqua;
+    border: 10px solid coral;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
 
   &__minutes {
     position: absolute;
-    bottom: 50vh;
+    bottom: $big-array-length + $watch-round-padding;
 
     @include minutes-arrow;
     background-color: #000;
@@ -19,18 +31,18 @@
 
   &__seconds {
     position: absolute;
-    bottom: 50vh;
+    bottom: $big-array-length + $watch-round-padding;
 
     @include seconds-arrow;
     background-color: #fff;
 
-    animation: arrow-moving 60s linear infinite;
+    animation: arrow-moving 5s linear infinite;
     transform-origin: bottom center;
   }
 
   &__center {
     position: absolute;
-    bottom: calc(50vh - #{$watch-center-radius});
+    bottom: $big-array-length - $watch-center-radius + $watch-round-padding;
     height: $watch-center-radius * 2;
     width: $watch-center-radius * 2;
     border-radius: 50%;
@@ -46,4 +58,4 @@
       transform: rotateZ(360deg);
     }
   }
- }
+}
