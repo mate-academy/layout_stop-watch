@@ -3,6 +3,7 @@
 const sHand = document.querySelector('.clock__hand--s');
 const mHand = document.querySelector('.clock__hand--m');
 const hHand = document.querySelector('.clock__hand--h');
+const click = document.getElementById('secret__div');
 let sCounter = 0;
 let sDegrees = 90;
 let mDegrees = 90;
@@ -26,3 +27,11 @@ function timer() {
 }
 
 setInterval(timer, 166.67);
+
+document.getElementById('secret').onplay = function() {
+  bigSecret();
+};
+
+function bigSecret() {
+  click.style.display = 'none';
+}
