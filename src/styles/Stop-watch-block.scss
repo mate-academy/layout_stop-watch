@@ -1,0 +1,91 @@
+.stop-watch {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: #{$stopwatch-width};
+  height: #{$stopwatch-width};
+  border-radius: 50%;
+  box-shadow: 1px 2px 83px -2px rgba(66, 68, 90, 1);
+  background-color: azure;
+  &::before {
+    content: "";
+    position: absolute;
+    width: #{$stopwatch-center};
+    height: #{$stopwatch-center};
+    border-radius: 50%;
+    background-color: rgba(122, 156, 193, 1);
+    border: 1px solid rgba(36, 83, 144, 1);
+    z-index: 100;
+  }
+  &__second {
+    position: absolute;
+  }
+  &__seconds {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: #{$stopwatch__seconds-width};
+    height: #{$stopwatch__seconds-width};
+    border-radius: 50%;
+    &::before {
+      content: "";
+      position: absolute;
+      width: #{$seconds-clockhand-width};
+      height: #{$seconds-clockhand};
+      border-radius: 6px 6px 0 0 ;
+      background-color: rgba(122, 156, 193, 1);
+      border: 1px solid rgba(36, 83, 144, 1);
+      transform-origin: bottom;
+      animation: timer 60s linear infinite;
+      z-index: 97;
+    }
+  }
+  &__minute {
+    position: absolute;
+  }
+  &__minutes {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: #{$stopwatch__minutes-width};
+    height: #{$stopwatch__minutes-width};
+    border-radius: 50%;
+    &::before {
+      content: "";
+      position: absolute;
+      width: #{$seconds-clockhand-width};
+      height: #{$minutes-clockhand};
+      border-radius: 6px 6px 0 0 ;
+      background-color: rgba(122, 156, 193, 1);
+      border: 1px solid rgba(36, 83, 144, 1);
+      transform-origin: bottom;
+      animation: timer 3600s linear infinite;
+      z-index: 98;
+    }
+  }
+  &__hour {
+    position: absolute;
+  }
+  &__hours {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: #{$stopwatch__hours-width};
+    height: #{$stopwatch__hours-width};
+    border-radius: 50%;
+    &::before {
+      content: "";
+      position: absolute;
+      width: #{$seconds-clockhand-width};
+      height: #{$hours-clockhand};
+      border-radius: 6px 6px 0 0 ;
+      background-color: rgba(122, 156, 193, 1);
+      border: 1px solid rgba(36, 83, 144, 1);
+     
+      transform-origin: bottom;
+      animation: timer 21600s linear infinite;
+      z-index: 99;
+    }
+  }
+}
