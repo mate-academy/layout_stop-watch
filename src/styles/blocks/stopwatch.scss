@@ -1,0 +1,36 @@
+.stopwatch {
+  position: relative;
+
+  @include circle($stopwatch-size);
+
+  border: 10px solid $stopwatch-border-color;
+
+  &__dot {
+    @extend %pos-absolute-center;
+    @include circle($stopwatch-dot-size);
+
+    z-index: 1;
+
+    background-color: $stopwatch-dot-color;
+  }
+
+  &::before {
+    @extend %pos-absolute-center;
+    @extend %stopwatch-line;
+    @include animation-rotate-duration(1s);
+
+    height: $stopwatch-seconds-size;
+
+    background-color: $stopwatch-seconds-color;
+  }
+
+  &::after {
+    @extend %pos-absolute-center;
+    @extend %stopwatch-line;
+    @include animation-rotate-duration(60s);
+
+    height: $stopwatch-minutes-size;
+
+    background-color: $stopwatch-minutes-color;
+  }
+}
