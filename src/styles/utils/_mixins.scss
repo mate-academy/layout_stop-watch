@@ -9,3 +9,11 @@
   width: $width;
   height: $height;
 }
+
+@mixin spin($duration) {
+  transform-origin: bottom;
+  animation-name: rotate;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

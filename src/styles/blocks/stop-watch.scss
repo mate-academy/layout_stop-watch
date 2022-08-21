@@ -8,7 +8,8 @@
   &__container {
     @include circle($circle-size);
 
-    transition: transform 500ms ease, opacity 500ms ease;
+    transition: transform $smooth-transition ease,
+      opacity $smooth-transition ease;
 
     &:hover {
       transform: scale(90%);
@@ -50,7 +51,7 @@
     top: calc(50% - #{$dot-size} / 2);
     left: calc(50% - #{$dot-size} / 2);
 
-    background: #4b9aaa;
+    background: $gradient;
   }
 
   &__m-arrow {
@@ -63,11 +64,7 @@
     border-radius: 10px;
     background: #4cb3a9;
 
-    transform-origin: bottom;
-    animation-name: rotate;
-    animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    @include spin($m-duration);
   }
 
   &__s-arrow {
@@ -80,10 +77,6 @@
     border-radius: 10px;
     background: #34509f;
 
-    transform-origin: bottom;
-    animation-name: rotate;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    @include spin($s-duration);
   }
 }
