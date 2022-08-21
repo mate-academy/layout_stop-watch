@@ -1,0 +1,69 @@
+.watch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(../images/divan.jpeg);
+  background-size: cover;
+  background-position: bottom;
+}
+
+.stopwatch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include square ($watch-size);
+
+  background-image: url(../images/1626811877.jpg);
+  @include background;
+  border: 2px solid black;
+
+  transition-duration: 1s;
+
+  &__center {
+    @include square(60px);
+    background-image: url(../images/flower.png);
+    @include background;
+    z-index: 1;
+  }
+
+  &__minute {
+    position: absolute;
+
+    height: 150px;
+    width: 10px;
+    top: 150px;
+    right: 300px;
+
+    background-image: url(../images/pngwing.com.png);
+    @include background;
+
+    transform-origin: bottom;
+    @include animation-minute();
+  }
+
+  &__second {
+    position: absolute;
+
+    height: 200px;
+    width: 10px;
+    top: 100px;
+    right: 300px;
+
+    background-image: url(../images/pngwing.com.png);
+    @include background;
+
+    transform-origin: bottom;
+    @include animation-second();
+  }
+
+  &:hover > * {
+    animation-play-state: paused;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
