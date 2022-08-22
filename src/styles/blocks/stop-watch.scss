@@ -1,0 +1,75 @@
+.stop-watch {
+  @include circle($circle-size);
+
+  transition: transform $smooth-transition ease,
+    opacity $smooth-transition ease;
+
+  &:hover {
+    transform: scale(90%);
+    opacity: 0%;
+  }
+
+  &__circle {
+    @include circle($circle-size);
+
+    position: relative;
+
+    border: $border-size solid transparent;
+
+    background-color: #fff;
+    background-clip: padding-box;
+
+    // border-gradient
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+
+      margin: -$border-size;
+
+      border-radius: inherit;
+      background: $gradient;
+    }
+  }
+
+  &__dot {
+    @include circle($dot-size);
+
+    position: absolute;
+    top: getCenter($dot-size);
+    left: getCenter($dot-size);
+
+    background: $gradient;
+  }
+
+  &__m-arrow {
+    @include arrow(
+      $arrow-width,
+      $m-arrow-height,
+      $arrow-border-radius,
+      $m-arrow-color
+    );
+
+    @extend %pos-arrow-center;
+
+    @include spin($m-duration);
+  }
+
+  &__s-arrow {
+    @include arrow(
+      $arrow-width,
+      $s-arrow-height,
+      $arrow-border-radius,
+      $s-arrow-color
+    );
+
+    @extend %pos-arrow-center;
+
+    @include spin($s-duration);
+  }
+}

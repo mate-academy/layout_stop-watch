@@ -1,0 +1,23 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+
+  border-radius: 50%;
+}
+
+@mixin arrow($width, $height, $border-radius, $color) {
+  width: $width;
+  height: $height;
+
+  border-radius: $border-radius;
+  background: $color;
+}
+
+@mixin spin($duration) {
+  transform-origin: bottom;
+
+  animation-name: rotate;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
