@@ -1,4 +1,4 @@
-.watch-container {
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@
   @include background;
   border: 2px solid black;
 
-  transition-duration: 1s;
+  transition: transform 1s;
 
   &__center {
     @include square(60px);
@@ -41,7 +41,7 @@
     @include background;
 
     transform-origin: bottom;
-    @include animation-minute();
+    @include animation($duration-minute);
   }
 
   &__second {
@@ -56,7 +56,7 @@
     @include background;
 
     transform-origin: bottom;
-    @include animation-second();
+    @include animation($duration-second);
   }
 
   &:hover > * {

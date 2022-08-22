@@ -4,16 +4,9 @@
   border-radius: 100%;
 }
 
-@mixin animation-second() {
+@mixin animation($duration) {
   animation-name: move;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@mixin animation-minute() {
-  animation-name: move;
-  animation-duration: 60s;
+  animation-duration: $duration;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
