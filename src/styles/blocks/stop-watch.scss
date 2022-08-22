@@ -40,8 +40,8 @@
     @include circle($dot-size);
 
     position: absolute;
-    top: calc(50% - #{$dot-size} / 2);
-    left: calc(50% - #{$dot-size} / 2);
+    top: getCenter($dot-size);
+    left: getCenter($dot-size);
 
     background: $gradient;
   }
@@ -53,8 +53,8 @@
     bottom: 50%;
     left: getCenter($arrow-width);
 
-    border-radius: 10px;
-    background: #4cb3a9;
+    border-radius: $arrow-border-radius;
+    background: $m-arrow-color;
 
     @include spin($m-duration);
   }
@@ -66,8 +66,8 @@
     bottom: 50%;
     left: getCenter($arrow-width);
 
-    border-radius: 10px;
-    background: #34509f;
+    border-radius: $arrow-border-radius;
+    background: $s-arrow-color;
 
     @include spin($s-duration);
   }
