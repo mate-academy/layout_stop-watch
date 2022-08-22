@@ -19,6 +19,7 @@
     background-color: #fff;
     background-clip: padding-box;
 
+    // border-gradient
     &::before {
       content: "";
 
@@ -47,27 +48,27 @@
   }
 
   &__m-arrow {
-    @include arrow($arrow-width, $m-arrow-height);
+    @include arrow(
+      $arrow-width,
+      $m-arrow-height,
+      $arrow-border-radius,
+      $m-arrow-color
+    );
 
-    position: absolute;
-    bottom: 50%;
-    left: getCenter($arrow-width);
-
-    border-radius: $arrow-border-radius;
-    background: $m-arrow-color;
+    @extend %pos-arrow-center;
 
     @include spin($m-duration);
   }
 
   &__s-arrow {
-    @include arrow($arrow-width, $s-arrow-height);
+    @include arrow(
+      $arrow-width,
+      $s-arrow-height,
+      $arrow-border-radius,
+      $s-arrow-color
+    );
 
-    position: absolute;
-    bottom: 50%;
-    left: getCenter($arrow-width);
-
-    border-radius: $arrow-border-radius;
-    background: $s-arrow-color;
+    @extend %pos-arrow-center;
 
     @include spin($s-duration);
   }
