@@ -1,0 +1,29 @@
+.start {
+  fill: orangered;
+  animation: pulse 2s ease infinite;
+
+  &__svg {
+    width: 108px;
+    height: 132px;
+  }
+
+  &__path {
+    transform: scale(25%);
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.25;
+  }
+  100% {
+    scale: 1;
+  }
+}

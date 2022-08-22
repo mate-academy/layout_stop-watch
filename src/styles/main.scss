@@ -1,49 +1,11 @@
 @import "./reset.scss";
-
-.page {
-  font-size: 18px;
-
-  @media (max-width: 1024px) {
-    font-size: 14px;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 10px;
-  }
-
-  @media (max-height: 980px) {
-    font-size: 10px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 7px;
-  }
-
-  @media (max-height: 580px) {
-    font-size: 7px;
-  }
-}
-
-.body {
-  & input {
-    position: absolute;
-    top: -9999px;
-  }
-
-  &::after {
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    z-index: -5;
-    content: url("../../src/image/stopwatch.7c63fcf4.png")
-      url("../../src/image/mohito.jpg")
-      url("../../src/image/night-mode.png");
-  }
-}
-
+@import "./blocks/body.scss";
 @import "./elements/_variables.scss";
 @import "./elements/_mixin.scss";
 @import "./blocks/page.scss";
-@import "./blocks/stopwatch.scss";
+@import "./blocks/start.scss";
+@import "./blocks/label.scss";
 @import "./blocks/intro.scss";
+@import "./blocks/info.scss";
+@import "./blocks/mohito.scss";
+@import "./blocks/stopwatch.scss";

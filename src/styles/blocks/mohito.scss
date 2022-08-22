@@ -1,0 +1,46 @@
+.mohito-label {
+  display: block;
+  position: absolute;
+  width: 65px;
+  height: 60px;
+  fill: limegreen;
+  top: 30px;
+  left: 30px;
+  z-index: 2;
+
+  &__svg {
+    width: 65px;
+    height: 60px;
+  }
+
+  &__path {
+    transform: scale(11%);
+  }
+}
+
+.mohito-checkbox {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+
+  &:checked ~ .mohito-label {
+    fill: white;
+  }
+
+  &:checked ~ .box {
+    animation: color-to-mohito 0.5s ease-out 1;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes color-to-mohito {
+    from {
+      background-color: white;
+    }
+    to {
+      background-image: url("../../src/image/mohito.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50%;
+    }
+  }
+}
