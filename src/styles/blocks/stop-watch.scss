@@ -1,20 +1,12 @@
 .stop-watch {
-  height: 100vh;
+  @include circle($circle-size);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transition: transform $smooth-transition ease,
+    opacity $smooth-transition ease;
 
-  &__container {
-    @include circle($circle-size);
-
-    transition: transform $smooth-transition ease,
-      opacity $smooth-transition ease;
-
-    &:hover {
-      transform: scale(90%);
-      opacity: 0%;
-    }
+  &:hover {
+    transform: scale(90%);
+    opacity: 0%;
   }
 
   &__circle {
