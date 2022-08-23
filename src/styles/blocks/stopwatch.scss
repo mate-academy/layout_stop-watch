@@ -1,0 +1,44 @@
+.stopwatch {
+  position: relative;
+  @include watchSize($watch-size);
+
+  border: 8px solid yellowgreen;
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 50%;
+    width: 3px;
+
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: aqua;
+
+    animation: rotation 60s linear infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    height: 40%;
+    width: 5px;
+
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: blue;
+
+    animation: rotation 3600s linear infinite;
+  }
+}
+
+@keyframes rotation {
+  100% {
+  transform: rotate(360deg);
+  transform-origin: (bottom);
+  }
+}
