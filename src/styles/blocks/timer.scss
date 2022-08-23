@@ -1,0 +1,27 @@
+.timer {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  &__clock {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    &::before {
+      position: absolute;
+      content: " ";
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background-color: black;
+      transform-origin: center;
+    }
+  }
+}

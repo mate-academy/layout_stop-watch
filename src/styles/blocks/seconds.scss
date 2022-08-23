@@ -1,0 +1,15 @@
+.second {
+  position: absolute;
+  animation: sec 60s steps(60, end) infinite;
+
+  &::before {
+    position: absolute;
+    left: -5px;
+    bottom: 1px;
+    background-color: red;
+    height: 200px;
+    width: 10px;
+    content: " ";
+    border-radius: 5px;
+  }
+}
