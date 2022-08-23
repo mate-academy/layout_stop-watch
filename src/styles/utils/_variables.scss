@@ -1,7 +1,10 @@
 $watch-size: 500px;
 $center-size: 25px;
-$second-height: $watch-size / 2;
-$second-width: 3px;
+$second-height: ($watch-size - $center-size) / 2.2;
+$second-width: 2px;
+
 $minute-height: $watch-size / 2.2;
 $minute-width: $second-width * 1.8;
+
+$second-shift: ($watch-size / 2 - $second-height);
 $minute-shift: $second-height - $minute-height;
