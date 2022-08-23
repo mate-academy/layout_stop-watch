@@ -1,0 +1,88 @@
+.box {
+  position: absolute;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 640px) {
+    justify-content: space-around;
+  }
+}
+
+.stopwatch {
+  position: relative;
+  width: 0.9 * $clock-side;
+  height: $clock-side;
+  background-image: url("../../src/image/stopwatch.7c63fcf4.png");
+  background-repeat: no-repeat;
+  background-size: 99%;
+  background-position: center;
+  z-index: 1;
+
+  &__light-button-label {
+    @include light-button-pos;
+    @include button-dimensions;
+  }
+
+  &__panel {
+    @include circle(0.55 * $clock-side);
+  }
+
+  &__refresh {
+    display: block;
+    position: absolute;
+    width: 0.1 * $clock-side;
+    height: 0.03 * $clock-side;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  &__center {
+    @include circle(0.05 * $clock-side);
+    background-color: black;
+  }
+
+  &__seconds {
+    @include arrow;
+    height: 0.3 * $clock-side;
+    background-color: blue;
+    animation: round 60s linear infinite paused;
+  }
+
+  &__minutes {
+    @include arrow;
+    background-color: red;
+    height: 0.15 * $clock-side;
+    animation: round 3600s linear infinite paused;
+  }
+
+  @keyframes round {
+    from {
+      rotate: 0deg;
+    }
+    to {
+      rotate: 360deg;
+    }
+  }
+
+  &__start-button-label {
+    @include button-dimensions;
+    @include start-button-pos;
+  }
+
+  &__start-button-on {
+    @include start-button-pos;
+
+    &:checked ~ .stopwatch__seconds {
+      animation-play-state: running;
+    }
+
+    &:checked ~ .stopwatch__minutes {
+      animation-play-state: running;
+    }
+  }
+}

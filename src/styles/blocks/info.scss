@@ -1,0 +1,26 @@
+.info {
+  text-align: center;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  border: 2px solid green;
+  border-radius: 15px;
+  visibility: hidden;
+
+  &__bold {
+    font-size: 20px;
+  }
+
+  &__text {
+    padding: 0;
+    font-size: 16px;
+
+    @media (max-width: 640px) {
+      font-size: 12px;
+    }
+
+    @media (max-height: 640px) {
+      font-size: 12px;
+    }
+  }
+}

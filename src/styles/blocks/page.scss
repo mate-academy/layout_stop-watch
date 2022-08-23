@@ -1,0 +1,25 @@
+.light-button-on:checked ~ .box {
+  animation: color-to-black 1s linear 1 forwards;
+}
+
+@keyframes color-to-black {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: black;
+  }
+}
+
+.light-button-on:checked ~ .mohito-label {
+  fill: white;
+}
+
+.light-button-on:checked ~ .box > .stopwatch {
+  background-image: url("../../src/image/night-mode.png");
+}
+
+.light-button-on:checked ~ .box > .stopwatch > .stopwatch__panel {
+  background-color: rgba(100%, 100%, 10%, 0.7);
+  box-shadow: 0 0 $shadow-prop $shadow-prop rgba(100%, 100%, 10%, 0.7);
+}
