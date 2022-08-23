@@ -1,9 +1,7 @@
 .stopwatch {
   position: relative;
-  @include size($watch-size);
-
+  @include circleSize($watch-size);
   border: 8px solid yellowgreen;
-  border-radius: 50%;
 
   &__center {
     position: absolute;
@@ -11,36 +9,36 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    @include size($center-size);
+    @include circleSize($center-size);
     background-color: yellowgreen;
-    border-radius: 50%;
   }
 
   &::before {
     content: "";
     position: absolute;
     z-index: -1;
-    top: 50%;
+    top: 0%;
     left: 50%;
     height: $second-height;
-    width: 3px;
     transform: translateX(-50%);
+    width: $second-width;
+
     border: 2px solid black;
     border-radius: 8px;
     background-color: aqua;
 
-    animation: rotation 1s linear infinite;
+    animation: rotation s linear infinite;
   }
 
   &::after {
     content: "";
     position: absolute;
     z-index: -1;
-    transform: translateX(-50%);
-    top: 10%;
+    top: $minute-shift;
     left: 50%;
-    height: 40%;
-    width: 5px;
+    transform: translateX(-50%);
+    height: $minute-height;
+    width: $minute-width;
 
     border: 2px solid black;
     border-radius: 8px;
@@ -49,4 +47,3 @@
     animation: rotation 0s linear infinite;
   }
 }
-
