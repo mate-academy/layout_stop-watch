@@ -1,0 +1,38 @@
+.wrapper {
+  position: relative;
+  height: 100vh;
+
+  &__clock-hand-min {
+    @extend %absolute-bottom-left;
+    @include size(200px);
+
+    background-color: indianred;
+    animation: move 60s linear infinite normal 2s;
+  }
+
+  &__clock-hand-sec {
+    @extend %absolute-bottom-left;
+    @include size(300px);
+
+    background-color: steelblue;
+    animation: move 1s linear infinite normal 2s;
+    z-index: 1;
+  }
+
+  &__circle {
+    @include absolute-top-left;
+    @include circle(20px);
+
+    background-color: steelblue;
+    z-index: 2;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
