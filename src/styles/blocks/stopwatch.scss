@@ -1,28 +1,42 @@
 .stopwatch {
   position: relative;
-  @include watchSize($watch-size);
+  @include size($watch-size);
 
   border: 8px solid yellowgreen;
   border-radius: 50%;
 
+  &__center {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @include size($center-size);
+    background-color: yellowgreen;
+    border-radius: 50%;
+  }
+
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    z-index: -1;
+    top: 50%;
     left: 50%;
-    height: 50%;
+    height: $second-height;
     width: 3px;
-
+    transform: translateX(-50%);
     border: 2px solid black;
     border-radius: 8px;
     background-color: aqua;
 
-    animation: rotation 60s linear infinite;
+    animation: rotation 1s linear infinite;
   }
 
   &::after {
     content: "";
     position: absolute;
+    z-index: -1;
+    transform: translateX(-50%);
     top: 10%;
     left: 50%;
     height: 40%;
@@ -32,13 +46,7 @@
     border-radius: 8px;
     background-color: blue;
 
-    animation: rotation 3600s linear infinite;
+    animation: rotation 0s linear infinite;
   }
 }
 
-@keyframes rotation {
-  100% {
-  transform: rotate(360deg);
-  transform-origin: (bottom);
-  }
-}
