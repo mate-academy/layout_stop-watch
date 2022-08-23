@@ -1,0 +1,20 @@
+@each $type, $seconds in $move {
+  .watch__#{$type} {
+    animation-name: #{$type}-move;
+    animation-duration: $seconds;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: left top;
+
+  }
+
+  @keyframes #{$type}-move {
+    from {
+      transform: rotate(0deg) translate(-50%, -100%);
+    }
+
+    to {
+      transform: rotate(360deg) translate(-50%, -100%);
+    }
+  }
+}
