@@ -1,10 +1,13 @@
 $watch-size: 500px;
-$center-size: 25px;
-$second-height: ($watch-size - $center-size) / 2.2;
-$second-width: 2px;
+$center-size: $watch-size / 12;
+$watch-border: 8px;
+$watch--color: yellowgreen;
+$backgroud-color: rgb(2, 0, 36) linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(29, 116, 77, 1) 0%, rgba(23, 179, 210, 1) 100%);
 
-$minute-height: $watch-size / 2.2;
-$minute-width: $second-width * 1.8;
+$second-height: $watch-size / 2.4;
+$second-width: 5px;
+$second-shift: $watch-size /2 - $second-height - $watch-border;
 
-$second-shift: ($watch-size / 2 - $second-height);
-$minute-shift: $second-height - $minute-height;
+$minute-height: $second-height / 1.4;
+$minute-width: $second-width * 1.2;
+$minute-shift: $watch-size /2 - $minute-height - $watch-border;

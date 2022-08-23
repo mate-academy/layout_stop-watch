@@ -2,53 +2,33 @@
   position: relative;
   z-index: -2;
   @include circleSize($watch-size);
-  border: 8px solid yellowgreen;
+  border: $watch-border solid $watch--color;
   background-image: url(./../img/stopwatch-3.png);
   background-size: cover;
 
   &__center {
-    display: none;
     position: absolute;
     z-index: 0;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     @include circleSize($center-size);
-    background-color: yellowgreen;
+    background-color: $watch--color;
   }
 
   &::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: $second-shift;
-    left: 50%;
-    transform: translateX(-50%);
-    height: $second-height;
-    width: $second-width;
+    @include handsPosition($second-height, $second-width, $second-shift);
 
-    border: 2px solid black;
-    border-radius: 8px;
     background-color: aqua;
 
-    animation: rotation 0s linear infinite;
+    animation: rotation 1s linear infinite;
   }
 
   &::after {
-    display: none;
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: $minute-shift;
-    left: 50%;
-    transform: translateX(-50%);
-    height: $minute-height;
-    width: $minute-width;
+    @include handsPosition($minute-height, $minute-width, $minute-shift);
 
-    border: 2px solid black;
-    border-radius: 8px;
     background-color: blue;
 
-    animation: rotation s linear infinite;
+    animation: rotation 60s linear infinite;
   }
 }
