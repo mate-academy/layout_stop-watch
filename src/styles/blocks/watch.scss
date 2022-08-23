@@ -1,0 +1,43 @@
+.watch {
+  &__arrows {
+    @include center-positioning;
+
+    &::before {
+      @include arrow-styling;
+
+      width: 250px;
+
+      background-color: $yellow;
+
+      animation-duration: 60s;
+    }
+
+    &::after {
+      @include arrow-styling;
+
+      width: 400px;
+
+      background-color: $blue;
+
+      animation-duration: 1s;
+    }
+  }
+
+  &__center {
+    @include center-positioning;
+    z-index: 1;
+
+    background-color: $black;
+    border-radius: 50%;
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
