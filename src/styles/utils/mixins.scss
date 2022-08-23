@@ -1,0 +1,13 @@
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin clock-arrow($width, $lenght, $color) {
+  width: $width;
+  height: $lenght;
+
+  background-color: $color;
+
+  @extend %center-of-the-clock;
+}

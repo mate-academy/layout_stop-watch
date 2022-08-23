@@ -1,0 +1,24 @@
+$clock-size: 100vh;
+
+$watch-timing: 60;
+
+$background-color-page: #000;
+
+$hour-arrow-width: 8px;
+$hour-arrow-length: $clock-size/3;
+$hour-arrow-color: #ddd;
+
+$minute-arrow-width: $clock-size/75;
+$minute-arrow-length: $clock-size/2.5;
+$minute-arrow-color: #eee;
+
+$second-arrow-width: $clock-size/100;
+$second-arrow-length: $clock-size/2;
+$second-arrow-color: #fff;
+
+$size-mid-circle: 0.03 * $clock-size;
+
+$move:
+  hour #{$watch-timing*$watch-timing*$watch-timing}s,
+  minute #{$watch-timing*$watch-timing}s,
+  second #{$watch-timing}s;

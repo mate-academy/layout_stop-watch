@@ -1,0 +1,49 @@
+@import "./utils/extends.scss";
+
+.watch {
+  @include square($clock-size);
+
+  position: relative;
+
+  border-radius: 50%;
+
+  animation-name: scale;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  &__hour {
+    @include clock-arrow(
+      $hour-arrow-width,
+      $hour-arrow-length,
+      $hour-arrow-color
+    );
+  }
+
+  &__minute {
+    @include clock-arrow(
+      $minute-arrow-width,
+      $minute-arrow-length,
+      $minute-arrow-color
+    );
+  }
+
+  &__second {
+    @include clock-arrow(
+      $second-arrow-width,
+      $second-arrow-length,
+      $second-arrow-color
+    );
+  }
+
+  &__mid-circle {
+    @include square($size-mid-circle);
+
+    @extend %center-of-the-clock;
+
+    transform: translate(-50%, -50%);
+
+    background-color: #fff;
+    border-radius: 50%;
+  }
+}
