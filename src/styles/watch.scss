@@ -1,0 +1,38 @@
+.watch {
+  @include square($watch-size);
+
+  &__nail {
+    @include circle($nail-size);
+    display: inline-block;
+    background-color: rgb(184, 41, 151);
+    position: absolute;
+    left: $position-of-nail;
+    top: $position-of-nail;
+    z-index: 1;
+  }
+  
+  &__second-hand {
+    @extend %hands;
+    height: $second-hand-hight;
+    background-color: rgb(184, 41, 151);
+    top: hands-shiftTop($watch-size, $second-hand-decrease);
+    animation: watch 60s infinite linear;
+  }
+  
+  &__minute-hand {
+    @extend %hands;
+    height: $minute-hand-hight;
+    background-color: rgb(101, 14, 230);
+    top: hands-shiftTop($watch-size, $minute-hand-decrease);
+    animation: watch 3600s infinite linear;
+  }
+
+  @keyframes watch {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
