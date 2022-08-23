@@ -17,7 +17,7 @@
   @include square ($watch-size);
 
   background-image: url(../images/1626811877.jpg);
-  @include background;
+  @extend %background-image-properties;
   border: 2px solid black;
 
   transition: transform 1s;
@@ -25,45 +25,39 @@
   &__center {
     @include square(60px);
     background-image: url(../images/flower.png);
-    @include background;
+    @extend %background-image-properties;
     z-index: 1;
   }
 
   &__minute {
     position: absolute;
 
-    height: 150px;
-    width: 10px;
-    top: 150px;
-    right: 300px;
+    @extend %minute-hand-values;
 
     background-image: url(../images/pngwing.com.png);
-    @include background;
+    @extend %background-image-properties;
 
     transform-origin: bottom;
-    @include animation($duration-minute);
+    @include animation(60s);
   }
 
   &__second {
     position: absolute;
 
-    height: 200px;
-    width: 10px;
-    top: 100px;
-    right: 300px;
+    @extend %second-hand-values;
 
     background-image: url(../images/pngwing.com.png);
-    @include background;
+    @extend %background-image-properties;
 
     transform-origin: bottom;
-    @include animation($duration-second);
-  }
-
-  &:hover > * {
-    animation-play-state: paused;
+    @include animation(1s);
   }
 
   &:hover {
     transform: scale(1.2);
+  }
+
+  &:hover > * {
+    animation-play-state: paused;
   }
 }
