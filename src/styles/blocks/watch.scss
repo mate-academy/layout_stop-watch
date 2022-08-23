@@ -1,0 +1,63 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(../images/divan.jpeg);
+  background-size: cover;
+  background-position: bottom;
+}
+
+.stopwatch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include square ($watch-size);
+
+  background-image: url(../images/1626811877.jpg);
+  @extend %background-image-properties;
+  border: 2px solid black;
+
+  transition: transform 1s;
+
+  &__center {
+    @include square(60px);
+    background-image: url(../images/flower.png);
+    @extend %background-image-properties;
+    z-index: 1;
+  }
+
+  &__minute {
+    position: absolute;
+
+    @extend %minute-hand-values;
+
+    background-image: url(../images/pngwing.com.png);
+    @extend %background-image-properties;
+
+    transform-origin: bottom;
+    @include animation(60s);
+  }
+
+  &__second {
+    position: absolute;
+
+    @extend %second-hand-values;
+
+    background-image: url(../images/pngwing.com.png);
+    @extend %background-image-properties;
+
+    transform-origin: bottom;
+    @include animation(1s);
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover > * {
+    animation-play-state: paused;
+  }
+}
