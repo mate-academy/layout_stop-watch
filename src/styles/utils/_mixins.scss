@@ -5,16 +5,12 @@
   border-radius: 50%;
 }
 
-@mixin size($size) {
+@mixin hand-length($size) {
   height: $size;
   width: 10px;
   border-radius: 10px;
 }
 
-@mixin absolute-top-left {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
+@mixin animation-duration($seconds) {
+  animation: move $seconds linear infinite normal 2s;
 }

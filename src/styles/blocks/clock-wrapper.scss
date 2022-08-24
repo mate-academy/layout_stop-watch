@@ -1,0 +1,33 @@
+.clock-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+
+  &__hand-min {
+    @extend %absolute-bottom;
+    @include hand-length(200px);
+
+    background-color: $indianred;
+
+    @include animation-duration(60s);
+  }
+
+  &__hand-sec {
+    @extend %absolute-bottom;
+    @include hand-length(300px);
+
+    background-color: $steelblue;
+    z-index: 1;
+
+    @include animation-duration(1s);
+  }
+
+  &__circle {
+    @include circle(20px);
+
+    background-color: $steelblue;
+    z-index: 2;
+  }
+}
