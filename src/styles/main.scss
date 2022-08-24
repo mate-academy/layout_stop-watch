@@ -1,51 +1,10 @@
-.container {
+body {
+  margin: 0;
   height: 100vh;
+
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-.stopwatch {
-  position: relative;
-  &__center {
-    width: 30px;
-    height: 30px;
-    background: rgb(11, 48, 128);
-    border: 1px solid rgb(13, 30, 68);
-    border-radius: 50%;
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    z-index: -1;
-    width: 10px;
-    bottom: 15px;
-    left: 11px;
-    border-radius: 5px;
-    transform-origin: bottom;
-  }
-
-  &::before {
-    height: 150px;
-    background-color: rgb(14, 34, 78);
-    animation: move 60s linear infinite;
-  }
-
-  &::after {
-    height: 95px;
-    background-color: rgb(199, 16, 77);
-    animation: move 1s linear infinite;
-  }
-}
-
-@keyframes move {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+@import "./blocks/stopwatch";
