@@ -1,0 +1,46 @@
+.watch {
+  background-color: pink;
+  height: 100vh;
+  position: relative;
+
+  &__minutes {
+    @include watchPosition;
+    transform: translate(-50%, -100%);
+    height: 300px;
+    background-color: black;
+    width: 15px;
+    border-radius: 10px;
+    transform-origin: top;
+    animation: circle 60s linear infinite;
+  }
+
+  &__seconds {
+    @include watchPosition;
+    transform: translate(-50%, -100%);
+    height: 250px;
+    width: 15px;
+    border-radius: 10px;
+    background-color: darkgreen;
+    transform-origin: top;
+    animation: circle 2s linear infinite;
+  }
+
+  &__circle {
+    @include watchPosition;
+    transform: translate(-50%, -50%);
+    @include circleSize($circle-size);
+    border-radius: 50%;
+    background-color: black;
+    border: 5px white solid;
+  }
+}
+
+@keyframes circle {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
