@@ -1,0 +1,80 @@
+.watch-container {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+
+  &__border {
+    @include square ($border-side-size);
+
+    border: $border-width solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(
+      90deg,
+      $dot-border-color 0%,
+      $minute-hand-color 44%,
+      $second-hand-color 100%
+    );
+  }
+
+  &__minute-hand {
+    position: absolute;
+    transform: translateY(-50%);
+
+    &::before {
+      content: "";
+      display: block;
+
+      height: $minute-hand-height;
+      width: $hand-width;
+
+      background-color: $minute-hand-color;
+      border-radius: $hand-border-radius;
+
+      animation: rotate $rotation-duration-minute linear infinite;
+      transform-origin: $rotation-center-x-shift
+        $rotation-center-y-shift-minute;
+
+      z-index: 1;
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    transform: translateY(-50%);
+
+    &::before {
+      content: "";
+      display: block;
+
+      height: $second-hand-height;
+      width: $hand-width;
+
+      background-color: $second-hand-color;
+      border-radius: $hand-border-radius;
+
+      animation: rotate $rotation-duration-second linear infinite;
+      transform-origin: $rotation-center-x-shift
+        $rotation-center-y-shift-second;
+
+      z-index: 2;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    transform: translateY(-50%);
+
+    @include square ($dot-side-size);
+
+    border-radius: 50%;
+    background-color: $dot-color;
+    border: $dot-border-radius solid $dot-border-color;
+
+    z-index: 3;
+  }
+}
