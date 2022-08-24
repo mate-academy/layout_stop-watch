@@ -23,12 +23,16 @@
     height: $secondsArrowHeight;
 
     background-color: $secondsArrowBgColor;
+
+    @include animation-rotation(1s);
   }
 
   &::after {
     height: $minutesArrowHeight;
 
     background-color: $minutesArrowBgColor;
+
+    @include animation-rotation(60s);
   }
 
   &__center {
