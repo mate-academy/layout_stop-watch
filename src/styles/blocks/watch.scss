@@ -1,0 +1,52 @@
+@keyframes moveHand {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  position: relative;
+  border: $border-size solid #14a76c;
+  border-radius: 50%;
+  width: $watch-size;
+  height: $watch-size;
+  background-color: #747474;
+
+  &__detail {
+    position: absolute;
+    transform-origin: bottom center;
+
+    &--form--hand-minute {
+      width: $minute-hand-width;
+      height: $minute-hand-height;
+      background-color: #ffe400;
+      border-radius: $minute-hand-border-radius;
+      left: getHorizontalShift($watch-size, $minute-hand-width);
+      top: getVerticalShift($watch-size, $minute-hand-height);
+      animation: moveHand 60s linear infinite;
+    }
+
+    &--form--hand-second {
+      width: $second-hand-width;
+      height: $second-hand-height;
+      background-color: #ff652f;
+      border-radius: $second-hand-border-radius;
+      left: getHorizontalShift($watch-size, $second-hand-width);
+      top: getVerticalShift($watch-size, $second-hand-height);
+      animation: moveHand 1s linear infinite;
+    }
+
+    &--form--center-dot {
+      width: $center-point-size;
+      height: $center-point-size;
+      background-color: #14a76c;
+      border-radius: 50%;
+      left: $watch-size / 2 - $center-point-size / 2;
+      top: $watch-size / 2 - $center-point-size / 2;
+    }
+  }
+}
