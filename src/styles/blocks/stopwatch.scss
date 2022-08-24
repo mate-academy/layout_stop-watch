@@ -1,0 +1,34 @@
+.stopwatch {
+  position: relative;
+  z-index: -2;
+  @include circleSize($watch-size);
+  border: $watch-border solid $watch--color;
+  background-image: url(./../img/stopwatch-3.png);
+  background-size: cover;
+
+  &__center {
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @include circleSize($center-size);
+    background-color: $watch--color;
+  }
+
+  &::before {
+    @include handsPosition($second-height, $second-width, $second-shift);
+
+    background-color: $second-color;
+
+    @include handsAnimation($second-time);
+  }
+
+  &::after {
+    @include handsPosition($minute-height, $minute-width, $minute-shift);
+
+    background-color: $minute-color;
+
+    @include handsAnimation($minute-time);
+  }
+}

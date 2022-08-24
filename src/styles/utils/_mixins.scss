@@ -1,0 +1,20 @@
+@mixin circleSize($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin handsPosition($h, $w,$shift) {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: $shift;
+  left: 50%;
+  transform: translateX(-50%);
+  height: $h;
+  width: $w;
+}
+
+@mixin handsAnimation($time) {
+  animation: rotation $time linear infinite;
+}
