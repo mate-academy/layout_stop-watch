@@ -1,0 +1,51 @@
+.watch {
+  position: relative;
+
+  @include form ($watch-width);
+
+  background-color: $watch-background-color;
+  border: 5px solid $border-arrow-color;
+  box-shadow: 0 8px #600;
+
+  animation: blinking 1s infinite linear;
+
+  &__center {
+    z-index: 1;
+    @extend %pos-abs-cen;
+
+    @include form ($center-width);
+
+    background-color: $border-arrow-color;
+  }
+
+  &__minute {
+    @extend %pos-abs-cen;
+
+    width: $minute-width;
+    height: $minute-height;
+    border-radius: $border-radius;
+
+    background-color: $border-arrow-color;
+
+    transform-origin: bottom;
+    animation: time 60s infinite linear;
+  }
+
+  &__second {
+    @extend %pos-abs-cen;
+
+    width: $second-width;
+    height: $second-height;
+    border-radius: $border-radius;
+
+    background-color: $border-arrow-color;
+
+    transform-origin: bottom;
+    animation: time 1s infinite linear;
+  }
+
+  &:hover,
+  &:hover > * {
+    animation-play-state: paused;
+  }
+}
