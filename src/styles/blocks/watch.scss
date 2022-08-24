@@ -1,0 +1,45 @@
+.watch {
+
+  &__hands {
+    @include positioning;
+
+    &::before {
+      @include hand-style;
+
+      height: 16px;
+      width: $small-hand-size;
+      background-color: $small-hand-color;
+
+      animation-duration: 60s;
+    }
+
+    &::after {
+      @include hand-style;
+
+      height: 8px;
+      width: $big-hand-size;
+      background-color: $big-hand-color;
+
+      animation-duration: 1s;
+    }
+  }
+
+  &__center {
+    @include positioning;
+
+    z-index: 1;
+
+    border-radius: 50%;
+    background-color: $center-color;
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
