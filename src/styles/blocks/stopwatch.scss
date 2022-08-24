@@ -1,0 +1,41 @@
+.stopwatch {
+  position: relative;
+
+  @include circle($watchSize);
+  border: #{$watchBorderSize} solid $watchBorderColor;
+
+  background-color: $watchBgColor;
+
+  &::before,
+  &::after {
+    content: "";
+
+    @extend %absolute-centering;
+
+    width: $arrowsWidth;
+
+    border-radius: $arrowsBorderRadius;
+
+    transform-origin: bottom;
+  }
+
+  &::before {
+    height: $secondsArrowHeight;
+
+    background-color: $secondsArrowBgColor;
+  }
+
+  &::after {
+    height: $minutesArrowHeight;
+
+    background-color: $minutesArrowBgColor;
+  }
+
+  &__center {
+    @extend %absolute-centering;
+
+    @include circle($watchCenterSize);
+
+    background-color: $watchBorderColor;
+  }
+}
