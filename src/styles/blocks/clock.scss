@@ -1,0 +1,12 @@
+.clock {
+  @extend %flex-center;
+  @include circle(640px);
+
+  background-image: url("../images/clock.svg");
+  box-shadow: 4px 4px 16px #ccc;
+
+  &__center {
+    @include circle(16px);
+    background-color: #111;
+  }
+}
