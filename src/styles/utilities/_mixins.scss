@@ -1,0 +1,45 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin dot-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin clock-hands-position {
+  position: absolute;
+  bottom: $watch-size * 0.5;
+
+}
+
+@mixin clock-hands-color {
+  background: linear-gradient(
+    90deg,
+    rgba(0,87,184,1) 0%,
+    rgba(9,9,121,1) 40%,
+    rgba(255,215,0,1) 100%);
+}
+
+@mixin clock-center-color {
+  background: linear-gradient(
+    0deg,
+    rgba(255,215,0,1) 0%,
+    rgba(9,9,121,1) 60%,
+    rgba(0,87,184,1) 100%);
+}
+
+@mixin duration-turn-clockwise($duration-turn-clockwise) {
+  transform-origin: bottom;
+  animation: turn-clockwise $duration-turn-clockwise linear infinite;
+}

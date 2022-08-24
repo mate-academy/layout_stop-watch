@@ -1,0 +1,50 @@
+.stop-watch {
+  @include flex-center;
+  position: relative;
+  @include circle($watch-size);
+
+  background-image: url(../images/3dmoon.jpg);
+  background-size: cover;
+  background-position: center;
+  border: 2px solid black;
+
+  transition: transform
+    1.2s
+    cubic-bezier(0, -0.65, 0.72, 1.5);
+
+  &__dot {
+    @include dot-center;
+    @include circle($dot-size);
+
+    @include clock-center-color;
+    border: 0.5px solid black;
+
+    z-index: 1;
+  }
+
+  &__seconds-hand {
+    @include clock-hands-position;
+    width: $clockhand-width;
+    height: $watch-size * 0.45;
+
+    @include clock-hands-color;
+    border-radius: 15px;
+
+    @include duration-turn-clockwise(1s);
+  }
+
+  &__minutes-hand {
+    @include clock-hands-position;
+    width: $clockhand-width * 2;
+    height: $watch-size * 0.25;
+
+    @include clock-hands-color;
+    border-radius: 10px;
+
+    @include duration-turn-clockwise(60s);
+  }
+
+  &:hover {
+    transform: scale($transform-scale);
+  }
+}
