@@ -1,0 +1,149 @@
+.stopWatch {
+  width: 600px;
+  height: 350px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #444;
+  border: 5px solid #333;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.75), inset 0 0 200px  rgba(0,0,0,0.5);
+
+  &__watch {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__item {
+    width: 165px;
+    height: 165px;
+    display: flex;
+    color: #fff;
+  }
+
+  &__textTwoDigits {
+    transform: translate(90%, 25%);
+  }
+
+  &__textThreeDigits {
+    transform: translate(50%, 25%);
+  }
+
+  &__circle {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 7px solid #f00;
+    border-radius: 50%;
+    color: #fff;
+  }
+
+  &__circleDot {
+    position: relative;
+    top: -80px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  &__circle--minutes {
+    animation: circulerProgress 3600s infinite linear var(--animation);
+  }
+
+  &__circle--seconds {
+    animation: circulerProgress 60s infinite linear var(--animation);
+  }
+
+  &__circle--miliSec {
+    animation: circulerProgress 1s infinite linear var(--animation);
+  }
+
+  @keyframes circulerProgress {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__timeText {
+    display: flex;
+    font-size: 50px;
+  }
+
+  // Code for stop watch numbers display
+  &__mTens::after {
+    content: '0';
+    animation: tens 3600s infinite linear var(--animation);
+    animation-delay: 295s;
+  }
+
+  &__mSingle::after {
+    content: '0';
+    animation: single 600s infinite linear var(--animation);
+    animation-delay: 30s;
+  }
+
+  &__sTens:after {
+      content: '0';
+      animation: tens 60s infinite linear var(--animation);
+      animation-delay: 4.5s;
+  }
+
+  &__sSingle::after {
+      // content: '0';
+      content: '';
+      animation: single 10s infinite linear var(--animation);
+  }
+
+  &__msSingle::after {
+    content: '0';
+      animation: single 10ms infinite linear var(--animation);
+  }
+
+  &__msTens::after {
+    content: '0';
+      animation: single 100ms infinite linear var(--animation);
+  }
+
+  &__msThousands::after {
+    content: '0';
+      animation: single 1000ms infinite linear var(--animation);
+  }
+
+  @keyframes single {
+    @for $digit from 0 through 10 {
+      $percent: $digit/10*100%;
+      @if $digit < 10 {
+        #{$percent} {
+          content: '#{$digit}';
+        }
+      }
+    }
+  }
+
+  @keyframes tens {
+    @for $digit2 from 0 through 6 {
+      $percent: $digit2/6*100%;
+      @if $digit2 < 6 {
+        #{$percent} {
+          content: '#{$digit2}';
+        }
+      }
+    }
+  }
+}

@@ -3,12 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width,
+        user-scalable=no,
+        initial-scale=1.0,
+        maximum-scale=1.0,
+        minimum-scale=1.0"
+  >
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Stop watch</title>
   <link rel="stylesheet" href="./styles/main.scss">
 </head>
 <body>
-  <h1>Stop watch</h1>
+  <div class="page">
+    <h1 class="page__title">
+      Digital Stop Watch
+    </h1>
+
+    <form class="page__form" action="" method="post">
+      <input type="checkbox" id="btnStartStop" class="btn" >
+      <input type="checkbox" id="btnReset" class="btn" >
+
+      <label class="page__btn" for="btnStartStop">Start / Pause</label>
+      <label class="page__btn" for="btnReset">Reset</label>
+
+        <!-- <button class="btn" id="reset" type="reset" >Reset</button> -->
+
+      <div class="stopWatch">
+        <div class="stopWatch__watch">
+          <div class="stopWatch__item">
+            <div class="stopWatch__circle stopWatch__circle--minutes">
+              <div class="stopWatch__circleDot"></div>
+            </div>
+
+            <div class="stopWatch__textTwoDigits">
+              <div class="stopWatch__timeText">
+                <div class="stopWatch__mTens"></div>
+                <div class="stopWatch__mSingle"></div>
+              </div>
+
+              <div class="stopWatch__text">Minutes</div>
+            </div>
+          </div>
+
+          <div class="stopWatch__item">
+            <div class="stopWatch__circle stopWatch__circle--seconds">
+              <div class="stopWatch__circleDot"></div>
+            </div>
+
+            <div class="stopWatch__textTwoDigits">
+              <div class="stopWatch__timeText">
+                <div class="stopWatch__sTens"></div>
+                <div class="stopWatch__sSingle"></div>
+              </div>
+
+              <div class="stopWatch__text">Seconds</div>
+            </div>
+          </div>
+
+          <div class="stopWatch__item">
+            <div class="stopWatch__circle stopWatch__circle--miliSec">
+              <div class="stopWatch__circleDot"></div>
+            </div>
+
+            <div class="stopWatch__textThreeDigits">
+              <div class="stopWatch__timeText">
+                <div class="stopWatch__msThousands"></div>
+                <div class="stopWatch__msTens"></div>
+                <div class="stopWatch__msSingle"></div>
+              </div>
+
+              <div class="stopWatch__text">Miliseconds</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
