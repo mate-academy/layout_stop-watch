@@ -10,3 +10,19 @@
   border: $arrow-width solid $watch-color;
   border-radius: 50%;
 }
+
+@mixin arrow-centration {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin arrow-animation($time, $starting-point) {
+  transform-origin: 0 $starting-point;
+
+  animation-name: rotate;
+  animation-duration: $time;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

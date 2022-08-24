@@ -1,5 +1,4 @@
-@import "./utils/variables";
-@import "./utils/mixins";
+
 
 .watch {
   position: relative;
@@ -9,9 +8,7 @@
   box-shadow: 0 0 15px $watch-color;
 
   &__minutes-arrow {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
+    @include arrow-centration;
 
     background-color: $minutes-color;
     box-shadow: 0 0 15px $minutes-color;
@@ -19,21 +16,11 @@
     width: $arrow-width;
     border-radius: 8px;
 
-    transform: translateX(-50%);
-
-    transform-origin: 0 $minutes-heigh;
-
-    animation-name: rotate;
-    animation-duration: 36s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-
+    @include arrow-animation($time-for-minute-round, $minutes-heigh);
   }
 
   &__seconds-arrow {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
+    @include arrow-centration;
 
     background-color: $seconds-color;
     box-shadow: 0 0 15px $seconds-color;
@@ -41,13 +28,7 @@
     height: $seconds-heigh;
     width: $arrow-width;
 
-    transform: translateX(-50%);
-    transform-origin: 0 $seconds-heigh;
-
-    animation-name: rotate;
-    animation-duration: 6s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    @include arrow-animation($time-for-seconds-round, $seconds-heigh)
   }
 
   &__pin {
