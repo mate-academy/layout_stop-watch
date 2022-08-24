@@ -1,0 +1,73 @@
+@import "../utils/mixins";
+
+.stopwatch {
+  position: relative;
+
+  @include square (300px);
+
+  @keyframes move {
+    from {
+      rotate: 0;
+    }
+
+    to {
+      rotate: 1turn;
+    }
+  }
+  background-image: url(../img/pngegg.png);
+  background-size: 300px;
+  &__center {
+    @include square (16px);
+    position: absolute;
+    top: 142px;
+    left: 142px;
+
+    z-index: 2;
+
+    border-radius: 50%;
+    background-color: #2972cc;
+  }
+
+  &__hours {
+    position: absolute;
+    left: 146px;
+    top: 70px;
+
+    height: 150px;
+    width: 9px;
+
+    animation: move;
+    animation-duration: 1230s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    z-index: -1;
+
+    border-radius: 100%;
+    background-image: linear-gradient(red 50%, transparent 50%);
+  }
+
+  &__second {
+
+
+    position: absolute;
+    top: 25px;
+    left: 145px;
+
+    height: 250px;
+    width: 10px;
+
+    animation: move;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    border-radius: 100%;
+    background-image: linear-gradient(#2972cc 50%, transparent 50%);
+  }
+
+
+
+
+}
+
