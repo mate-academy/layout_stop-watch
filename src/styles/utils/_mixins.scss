@@ -1,0 +1,27 @@
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin arrow-shape ($width, $length) {
+  width: $width;
+  height: $length;
+  border-radius: 10px;
+}
+
+@mixin animations ($name, $duration) {
+  transform-origin: bottom;
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@mixin position-arrow ($length) {
+  position: absolute;
+  left: 50%;
+  top: $watch-size / 2 - $length;
+  transform-origin: center;
+  transform: translate(-50%, -100%);
+}
