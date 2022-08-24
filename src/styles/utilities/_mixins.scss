@@ -17,6 +17,12 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin clock-hands-position {
+  position: absolute;
+  bottom: $watch-size * 0.5;
+
+}
+
 @mixin clock-hands-color {
   background: linear-gradient(
     90deg,

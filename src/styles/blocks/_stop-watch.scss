@@ -23,8 +23,7 @@
   }
 
   &__seconds-hand {
-    position: absolute;
-    bottom: $watch-size * 0.5;
+    @include clock-hands-position;
     width: $clockhand-width;
     height: $watch-size * 0.45;
 
@@ -35,8 +34,7 @@
   }
 
   &__minutes-hand {
-    position: absolute;
-    bottom: $watch-size * 0.5;
+    @include clock-hands-position;
     width: $clockhand-width * 2;
     height: $watch-size * 0.25;
 
