@@ -1,0 +1,16 @@
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+
+  border-radius: 50%;
+}
+
+@mixin hand-length($size) {
+  height: $size;
+  width: 10px;
+  border-radius: 10px;
+}
+
+@mixin animation-duration($seconds) {
+  animation: move $seconds linear infinite normal 2s;
+}
