@@ -19,16 +19,16 @@
   &::before {
     @include handsPosition($second-height, $second-width, $second-shift);
 
-    background-color: aqua;
+    background-color: $second-color;
 
-    animation: rotation 1s linear infinite;
+    @include handsAnimation($second-time);
   }
 
   &::after {
     @include handsPosition($minute-height, $minute-width, $minute-shift);
 
-    background-color: blue;
+    background-color: $minute-color;
 
-    animation: rotation 60s linear infinite;
+    @include handsAnimation($minute-time);
   }
 }
