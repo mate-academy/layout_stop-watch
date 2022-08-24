@@ -1,0 +1,25 @@
+.watch {
+  &__point {
+    @include elem_position-Sizes($point-size, $point-size);
+
+    @include elem_bacgColor-borRadius(lightcoral, $position-value);
+
+    transform: translate(-5px, 10px);
+  }
+
+  &__hour-arrow {
+    @include elem_position-Sizes(250px, $width-arrow);
+
+    @include elem_bacgColor-borRadius(lightblue, $radius-arrow);
+
+    @include animation-set($slow-duration);
+  }
+
+  &__minute-arrow {
+    @include elem_position-Sizes(300px, $width-arrow);
+
+    @include elem_bacgColor-borRadius(lightseagreen, $radius-arrow);
+
+    @include animation-set($fast-duration);
+  }
+}

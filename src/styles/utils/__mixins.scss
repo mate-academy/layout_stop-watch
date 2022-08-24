@@ -1,0 +1,22 @@
+// when word in upperCase you can change this value
+@mixin animation-set($duration) {
+  animation-name: circle;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+
+@mixin elem_position-Sizes($height, $width) {
+  position: absolute;
+  bottom: $position-value;
+  left: $position-value;
+
+  height: $height;
+  width: $width;
+}
+
+@mixin elem_bacgColor-borRadius($color, $radius) {
+  background-color: $color;
+  border-radius: $radius;
+}
