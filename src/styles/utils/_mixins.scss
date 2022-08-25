@@ -1,0 +1,15 @@
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 100%;
+}
+
+@mixin arrow ($size-w, $size-h) {
+  width: $size-w;
+  height: $size-h;
+  border-radius: 10px;
+}
+
+@mixin animation ($duration) {
+  animation: watch $duration linear infinite;
+}

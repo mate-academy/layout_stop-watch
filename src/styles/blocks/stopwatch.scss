@@ -1,0 +1,57 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+
+  background-image: url(../images/wall.jpg);
+  background-size: cover;
+}
+
+.stop-watch {
+  @include circle ($stop-watch-size);
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 1s;
+
+  background-color: $stop-watch-color;
+  border: 24px solid $arrow-color;
+
+  &__minute-hand {
+    @include arrow ($minute-hand-width, $minute-hand-height);
+    @include animation (60s);
+
+    position: absolute;
+
+    background-color: $arrow-color;
+  }
+
+  &__second-hand {
+    @include arrow ($second-hand-width, $second-hand-height);
+    @include animation (1s);
+
+    position: absolute;
+
+    background-color: $arrow-color;
+  }
+
+  &__center {
+    @include circle ($center-size);
+
+    background-color: $arrow-color;
+  }
+
+  &:hover {
+    transform: scale(104%);
+  }
+
+  &:hover > * {
+    animation-play-state: paused;
+  }
+}
