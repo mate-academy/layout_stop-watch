@@ -1,0 +1,29 @@
+
+@mixin clock-dial($size, $rim-bg, $bg) {
+  height: $size;
+  width: $size;
+  border: 8px solid $rim-bg;
+  background: $bg;
+}
+
+@mixin numRotation($deg) {
+  transform: rotate(($deg)+deg);
+}
+
+@mixin clockArrow($height) {
+  background-color: $arrows-color;
+  width: 5px;
+  height: $height;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+}
+
+@mixin arrowAnimation($counter, $duration) {
+  animation-name: arrowRotation;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: $counter;
+}
