@@ -1,0 +1,11 @@
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+
+  border-radius: 50%;
+}
+
+@mixin spin($duration) {
+  transform-origin: bottom;
+  animation: rotate $duration linear infinite;
+}
