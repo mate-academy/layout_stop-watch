@@ -3,6 +3,13 @@
   height: 500px;
 }
 
+%hands {
+  min-height: 250px;
+  background-color: rgb(134, 187, 140);
+  border-radius: 50%;
+  margin: auto;
+}
+
 .watch {
   height: 100vh;
   display: flex;
@@ -19,22 +26,15 @@
 
 .content {
   &__hands-minute {
-    background-color: rgb(134, 187, 140);
-    min-height: 250px;
     width: 20px;
-    border-radius: 50%;
-    margin: auto;
-
+    @extend %hands;
     transform-origin: bottom;
     animation: move-minute 60s linear infinite;
   }
 
   &__hands-seconds {
-    background-color: rgb(134, 187, 140);
-    min-height: 250px;
     width: 10px;
-    border-radius: 50%;
-    margin: auto;
+    @extend %hands;
     transform-origin: top;
     animation: move-seconds 1s linear infinite;
   }
