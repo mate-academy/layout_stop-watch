@@ -1,0 +1,26 @@
+@mixin horizontal-center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 100%;
+}
+
+@mixin watchHand($height, $width) {
+  height: $height;
+  width: $width;
+
+  position: absolute;
+  border-radius: 100%;
+  bottom: 50%;
+  background-color: $color-blue-gray;
+}
+
+@mixin animation($duration) {
+  transform-origin: bottom;
+  animation: circularMove $duration linear infinite;
+}
