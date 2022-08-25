@@ -1,0 +1,75 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+
+  height: 100vh;
+}
+
+.clock {
+  background-color: #dbd090;
+
+  @include radius;
+
+  @include c-size($clock-size);
+
+  &__clock-hand-minutes {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      transform: translate(-50%, -100%);
+      transform-origin: 0 0;
+
+      @include clock-minutes-size;
+      @include position($clock-position);
+
+      animation-name: move;
+      animation-timing-function: linear;
+      animation-duration: 3600s;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &__clock-hand-seconds {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      transform: translate(-50%, -100%);
+      transform-origin: 0 0;
+
+      @include clock-seconds-size;
+      @include position($clock-position);
+
+      animation-name: move;
+      animation-timing-function: linear;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &__clock-dot {
+    @include clock-dot($clock-dot-size);
+    @include position($clock-position);
+    @include radius;
+
+    background-color: #000;
+
+    position: absolute;
+    display: block;
+
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes move {
+    from {
+      rotate: 0;
+    }
+
+    to {
+      rotate: 360deg;
+    }
+  }
+}
