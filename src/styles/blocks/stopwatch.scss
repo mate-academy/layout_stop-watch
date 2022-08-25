@@ -1,15 +1,9 @@
 .stopwatch {
-  position: relative;
-
-  &__image {
-    width: 600px;
-  }
 
   &__cirlce {
-    @include circle(70px);
     position: absolute;
-    top: 380px;
-    left: 261px;
+    @include circle(75px, 50%);
+
     background-color: $basic-color;
   }
 
@@ -17,9 +11,8 @@
     content: "";
     position: absolute;
     width: $hands-width;
-    height: 110px;
-    top: 310px;
-    left: 288px;
+    height: $seconds-hand;
+    @extend %hands-position;
 
     border-radius: $hands-border;
     background-color: $basic-color;
@@ -32,18 +25,12 @@
     content: "";
     position: absolute;
     width: $hands-width;
-    height: 150px;
-    top: 270px;
-    left: 288px;
+    height: $minutes-hand;
+    @extend %hands-position;
 
     border-radius: $hands-border;
     background-color: $basic-color;
-
     transform-origin: bottom;
     animation: minutes 60s infinite linear;
-  }
-
-  &:hover {
-    animation: rotate 1s linear 0.3s;
   }
 }
