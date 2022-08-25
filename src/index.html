@@ -1,91 +1,91 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width,
-        user-scalable=no,
-        initial-scale=1.0,
-        maximum-scale=1.0,
-        minimum-scale=1.0"
-  >
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop Watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <div class="page">
-    <h1 class="page__title">
-      Digital Stop Watch
-    </h1>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,
+            user-scalable=no,
+            initial-scale=1.0,
+            maximum-scale=1.0,
+            minimum-scale=1.0"
+    >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <div class="watch">
+      <h1 class="watch__title">
+        Digital Stop Watch
+      </h1>
 
-    <div class="page_watch">
-      <input
-        type="checkbox"
-        id="btnStartStop"
-        class="btn" >
+      <div class="watch__contents">
+        <input
+          type="checkbox"
+          id="btnStartStop"
+          class="btn" >
 
-      <label class="page__btn" for="btnStartStop">
-        Start / Pause
-      </label>
+        <label class="watch__btn" for="btnStartStop">
+          Start / Pause
+        </label>
+        
+        <input
+          class="watch__btn"
+          type="button"
+          value="Reset"
+          onclick="window.location.reload(true)"
+        >
 
-      <input
-        class="page__btn"
-        type="button"
-        value="Reset"
-        onClick="window.location.reload(true)"
-      >
-
-      <div class="stopWatch">
-        <div class="stopWatch__watch">
-          <div class="stopWatch__item">
-            <div class="stopWatch__circle stopWatch__circle--minutes">
-              <div class="stopWatch__circleDot"></div>
-            </div>
-
-            <div class="stopWatch__textTwoDigits">
-              <div class="stopWatch__timeText">
-                <div class="stopWatch__mTens"></div>
-                <div class="stopWatch__mSingle"></div>
+        <div class="watch__display">
+          <div class="watch__digitsDials">
+            <div class="watch__dial">
+              <div class="watch__circle watch__circle--minutes">
+                <div class="watch__circleDot"></div>
               </div>
 
-              <div class="stopWatch__text">Minutes</div>
-            </div>
-          </div>
+              <div class="watch__textTwoDigits">
+                <div class="watch__timeText">
+                  <div class="watch__mTens"></div>
+                  <div class="watch__mSingle"></div>
+                </div>
 
-          <div class="stopWatch__item">
-            <div class="stopWatch__circle stopWatch__circle--seconds">
-              <div class="stopWatch__circleDot"></div>
+                <div class="watch__text">Minutes</div>
+              </div>
             </div>
 
-            <div class="stopWatch__textTwoDigits">
-              <div class="stopWatch__timeText">
-                <div class="stopWatch__sTens"></div>
-                <div class="stopWatch__sSingle"></div>
+            <div class="watch__dial">
+              <div class="watch__circle watch__circle--seconds">
+                <div class="watch__circleDot"></div>
               </div>
 
-              <div class="stopWatch__text">Seconds</div>
-            </div>
-          </div>
+              <div class="watch__textTwoDigits">
+                <div class="watch__timeText">
+                  <div class="watch__sTens"></div>
+                  <div class="watch__sSingle"></div>
+                </div>
 
-          <div class="stopWatch__item">
-            <div class="stopWatch__circle stopWatch__circle--miliSec">
-              <div class="stopWatch__circleDot"></div>
+                <div class="watch__text">Seconds</div>
+              </div>
             </div>
 
-            <div class="stopWatch__textThreeDigits">
-              <div class="stopWatch__timeText">
-                <div class="stopWatch__msThousands"></div>
-                <div class="stopWatch__msTens"></div>
-                <div class="stopWatch__msSingle"></div>
+            <div class="watch__dial">
+              <div class="watch__circle watch__circle--miliSec">
+                <div class="watch__circleDot"></div>
               </div>
 
-              <div class="stopWatch__text">Miliseconds</div>
+              <div class="watch__textThreeDigits">
+                <div class="watch__timeText">
+                  <div class="watch__msThousands"></div>
+                  <div class="watch__msTens"></div>
+                  <div class="watch__msSingle"></div>
+                </div>
+
+                <div class="watch__text">Miliseconds</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
