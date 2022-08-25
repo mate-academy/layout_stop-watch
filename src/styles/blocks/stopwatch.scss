@@ -1,7 +1,5 @@
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %flex;
 
   min-height: 100vh;
 
@@ -10,39 +8,38 @@
 }
 
 .stop-watch {
+  @extend %flex;
   @include circle ($stop-watch-size);
 
   position: relative;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  transition: transform 1s;
+  transition: transform 0.5s;
 
   background-color: $stop-watch-color;
   border: 24px solid $arrow-color;
 
   &__minute-hand {
+    @extend %position;
     @include arrow ($minute-hand-width, $minute-hand-height);
     @include animation (60s);
-
-    position: absolute;
+    transform-origin: right;
 
     background-color: $arrow-color;
   }
 
   &__second-hand {
+    @extend %position;
     @include arrow ($second-hand-width, $second-hand-height);
     @include animation (1s);
-
-    position: absolute;
+    transform-origin: right;
 
     background-color: $arrow-color;
   }
 
   &__center {
     @include circle ($center-size);
+
+    position: absolute;
 
     background-color: $arrow-color;
   }
