@@ -1,41 +1,27 @@
 .stopwatch {
   position: relative;
-  width: 30px;
-  height: 30px;
   background: rgb(11, 48, 128);
-  border: 1px solid rgb(13, 30, 68);
-  border-radius: 50%;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    z-index: -1;
-    left: 33%;
-    width: 10px;
-    border-radius: 5px;
-    transform-origin: bottom;
-  }
+  border: 3px solid rgb(13, 30, 68);
+  @include stopwatch-center(25px);
 
   &::before {
-    top: -75px;
+    @extend %pseudo-classes;
     height: 90px;
     background-color: rgb(14, 34, 78);
-    animation: move 60s linear infinite;
+    @include animation(60s);
   }
 
   &::after {
-    top: -130px;
+    @extend %pseudo-classes;
     height: 150px;
     background-color: rgb(199, 16, 77);
-    animation: move 1s linear infinite;
+    @include animation(1s);
   }
 }
 
 @keyframes move {
   from {
-    transform: rotate(0);
+    transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
