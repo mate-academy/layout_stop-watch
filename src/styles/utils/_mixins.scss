@@ -1,0 +1,41 @@
+@mixin circle($diameter) {
+  height: $diameter;
+  width: $diameter;
+  border-radius: 50%;
+}
+
+@mixin hand($duration, $mode) {
+  position: absolute;
+
+  animation: hand-rotation #{$duration}s infinite;
+
+  @if $mode == "smooth" {
+    animation-timing-function: linear;
+  }
+
+  @if $mode == "steps" {
+    animation-timing-function: steps($duration, end);
+  }
+}
+
+@mixin straight-hand($length, $thickness, $inner-offset) {
+  bottom: $inner-offset;
+  left: - $thickness / 2;
+  height: $length;
+  width: $thickness;
+
+  background-color: $c-black;
+  border-radius: $thickness / 2;
+
+  transform-origin: center #{$length + $inner-offset};
+}
+
+@mixin circle-hand($diameter, $outer-offset) {
+  @include circle($diameter);
+  bottom: $outer-offset - $diameter;
+  left: - $diameter / 2;
+
+  border: 1px solid $c-black;
+
+  transform-origin: center $outer-offset;
+}
