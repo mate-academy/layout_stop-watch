@@ -1,0 +1,14 @@
+@mixin arrow($height, $color, $index, $duration, $iteration) {
+  position: absolute;
+  bottom: $fifty;
+  height: $height;
+  width: 20px;
+  background-color: $color;
+  border-radius: 10px;
+  z-index: $index;
+  transform-origin: bottom;
+  animation-timing-function: linear;
+  animation-name: cycle;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration;
+}
