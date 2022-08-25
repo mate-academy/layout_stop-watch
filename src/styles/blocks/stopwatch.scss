@@ -1,0 +1,54 @@
+.main {
+  @extend %flex;
+
+  min-height: 100vh;
+
+  background-image: url(../images/wall.jpg);
+  background-size: cover;
+}
+
+.stop-watch {
+  @extend %flex;
+  @include circle ($stop-watch-size);
+
+  position: relative;
+
+  transition: transform 0.5s;
+
+  background-color: $stop-watch-color;
+  border: 24px solid $arrow-color;
+
+  &__minute-hand {
+    @extend %position;
+    @include arrow ($minute-hand-width, $minute-hand-height);
+    @include animation (60s);
+    transform-origin: right;
+
+    background-color: $arrow-color;
+  }
+
+  &__second-hand {
+    @extend %position;
+    @include arrow ($second-hand-width, $second-hand-height);
+    @include animation (1s);
+    transform-origin: right;
+
+    background-color: $arrow-color;
+  }
+
+  &__center {
+    @include circle ($center-size);
+
+    position: absolute;
+
+    background-color: $arrow-color;
+  }
+
+  &:hover {
+    transform: scale(104%);
+  }
+
+  &:hover > * {
+    animation-play-state: paused;
+  }
+}
