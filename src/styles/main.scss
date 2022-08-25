@@ -1,0 +1,57 @@
+$main-blue-color: rgb(111, 164, 191);
+
+@keyframes stop-watch {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin watch ($duration) {
+  animation-name: stop-watch;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: bottom;
+}
+
+.watch {
+  &__seconds {
+    position: relative;
+    width: 10px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: rgb(161, 56, 56);
+    border-radius: 4px;
+    @include watch(60s);
+    &::before {
+      position: absolute;
+      top: 100%;
+      display: block;
+      height: 40px;
+      width: 40px;
+
+      border-radius: 50%;
+
+      background-color: $main-blue-color;
+
+      transform: translate(-15px,-50%);
+
+      content: "";
+    }
+  }
+  &__minutes {
+    position: relative;
+    top: 300px;
+    margin: 0 auto;
+    height: 200px;
+    width: 10px;
+    border-radius: 4px 4px 0 0;
+    background-color: $main-blue-color;
+    @include watch(3600s);
+
+  }
+}
