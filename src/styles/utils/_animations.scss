@@ -1,0 +1,31 @@
+@keyframes border-pulsate {
+  0% {
+    box-shadow: $normal-condition;
+  }
+  50% {
+    box-shadow: $changed-condition;
+  }
+  100% {
+    box-shadow: $normal-condition;
+  }
+}
+
+@keyframes bigHand {
+  from {
+    transform: $starting-position;
+  }
+
+  to {
+    transform: $ending-position;
+  }
+}
+
+@keyframes smallHand {
+  from {
+    transform: $starting-position;
+  }
+
+  to {
+    transform: $ending-position;
+  }
+}
