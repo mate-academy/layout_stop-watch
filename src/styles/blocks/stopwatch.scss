@@ -14,8 +14,10 @@
       rotate: 1turn;
     }
   }
+
   background-image: url(../img/pngegg.png);
   background-size: 300px;
+
   &__center {
     @include square (16px);
     position: absolute;
@@ -28,28 +30,26 @@
     background-color: #2972cc;
   }
 
-  &__hours {
+  &__minutes {
     position: absolute;
     left: 146px;
-    top: 70px;
+    top: 75px;
 
     height: 150px;
     width: 9px;
 
     animation: move;
-    animation-duration: 1230s;
+    animation-duration: 3600s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 
     z-index: -1;
 
     border-radius: 100%;
-    background-image: linear-gradient(red 50%, transparent 50%);
+    background-image: linear-gradient(#9b61c2 50%, transparent 50%);
   }
 
   &__second {
-
-
     position: absolute;
     top: 25px;
     left: 145px;
@@ -65,9 +65,4 @@
     border-radius: 100%;
     background-image: linear-gradient(#2972cc 50%, transparent 50%);
   }
-
-
-
-
 }
-
