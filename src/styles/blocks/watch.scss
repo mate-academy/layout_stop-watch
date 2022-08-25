@@ -1,19 +1,22 @@
 .stop-watch {
   background: url("../images/clock_scale.png") center / cover no-repeat;
 
+  height: $watch-size;
+  width: $watch-size;
+
   &__center {
     @extend %position;
     @include circle($circle-size);
     z-index: 1;
     border-radius: 50%;
-    background-color: $circle-colore;
+    background-color: $circle-color;
   }
 
   &::before {
     content: "";
-    @include position-arrow ($millisecond-lengh);
-    @include arrow-shape ($arrow-width, $millisecond-lengh);
-    @include animations(arrows-animation, $milisecond-arrow-duration);
+    @include position-arrow ($millisecond-length);
+    @include arrow-shape ($arrow-width, $millisecond-length);
+    @include animations(arrows-animation, $millisecond-arrow-duration);
 
     background-color: $millisecond-color;
   }
