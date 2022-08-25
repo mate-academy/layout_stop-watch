@@ -1,0 +1,31 @@
+.stopwatch {
+  @include clock($clock-size);
+
+  position: relative;
+  border: 10px solid $stopwatch-color;
+
+  &__center {
+    @include clock($dot-size);
+    @extend %center-styles;
+
+    background-color: $stopwatch-color;
+
+    &::before {
+      @extend %center-styles;
+      @extend %stopwatch-arrow;
+      @include animation-rotate(1s);
+
+      height: $sec-arrow-height;
+      background-color: $stopwatch-color;
+    }
+
+    &::after {
+      @extend %center-styles;
+      @extend %stopwatch-arrow;
+      @include animation-rotate(60s);
+
+      height: $min-arrow-height;
+      background-color: $stopwatch-color;
+    }
+  }
+}
