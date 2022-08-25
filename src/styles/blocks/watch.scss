@@ -33,7 +33,7 @@
       background-color: $c-yellow;
       border-radius: $minute-hand-border-radius;
 
-      animation: moveHand 60s linear infinite;
+      animation: moveHand $transition-duration-minute-hand linear infinite;
     }
 
     &--form--hand-second {
@@ -46,7 +46,7 @@
       background-color: $c-orange;
       border-radius: $second-hand-border-radius;
 
-      animation: moveHand 1s linear infinite;
+      animation: moveHand $transition-duration-second-hand linear infinite;
     }
 
     &--form--center-dot {
