@@ -1,0 +1,39 @@
+.watch {
+  position: relative;
+
+  @include color-circle($watch-size, $c-gray);
+  border: $border-size solid $c-green;
+
+  &__detail {
+    position: absolute;
+
+    transform-origin: bottom center;
+
+    &--form--hand-minute {
+      @include hand-shape(
+        $watch-size,
+        $minute-hand-width,
+        $minute-hand-height,
+        $c-yellow
+      );
+      @include animation(moveHand, $transition-duration-minute-hand);
+    }
+
+    &--form--hand-second {
+      @include hand-shape(
+        $watch-size,
+        $second-hand-width,
+        $second-hand-height,
+        $c-orange
+      );
+      @include animation(moveHand, $transition-duration-second-hand);
+    }
+
+    &--form--center-dot {
+      left: $watch-size / 2 - $center-point-size / 2;
+      top: $watch-size / 2 - $center-point-size / 2;
+
+      @include color-circle($center-point-size, $c-green);
+    }
+  }
+}
