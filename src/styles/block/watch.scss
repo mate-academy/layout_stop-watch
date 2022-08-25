@@ -1,0 +1,60 @@
+@mixin size {
+  width: 500px;
+  height: 500px;
+}
+
+%hands {
+  min-height: 250px;
+  background-color: rgb(134, 187, 140);
+  border-radius: 50%;
+  margin: auto;
+}
+
+.watch {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    background-image: url(../../img/watch.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include size;
+  }
+}
+
+.content {
+  &__hands-minute {
+    width: 20px;
+    @extend %hands;
+    transform-origin: bottom;
+    animation: move-minute 60s linear infinite;
+  }
+
+  &__hands-seconds {
+    width: 10px;
+    @extend %hands;
+    transform-origin: top;
+    animation: move-seconds 1s linear infinite;
+  }
+  
+}
+
+@keyframes move-minute {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move-seconds {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(540deg);
+  }
+}
