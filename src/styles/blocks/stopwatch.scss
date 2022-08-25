@@ -1,0 +1,36 @@
+.stopwatch {
+
+  &__cirlce {
+    position: absolute;
+    @include circle(75px, 50%);
+
+    background-color: $basic-color;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: $hands-width;
+    height: $seconds-hand;
+    @extend %hands-position;
+
+    border-radius: $hands-border;
+    background-color: $basic-color;
+
+    transform-origin: bottom;
+    animation: seconds 1s infinite linear;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: $hands-width;
+    height: $minutes-hand;
+    @extend %hands-position;
+
+    border-radius: $hands-border;
+    background-color: $basic-color;
+    transform-origin: bottom;
+    animation: minutes 60s infinite linear;
+  }
+}
