@@ -1,0 +1,22 @@
+@mixin hand-shape($container-size, $hand-width, $hand-heigth, $hand-color) {
+  left: getHorizontalShift($container-size, $hand-width);
+  top: getVerticalShift($container-size, $hand-heigth);
+
+  width: $hand-width;
+  height: $hand-heigth;
+
+  background-color: $hand-color;
+  border-radius: 0.5 * $hand-width;
+}
+
+@mixin animation($name, $duration) {
+  animation: $name $duration linear infinite;
+}
+
+@mixin color-circle($diameter, $color) {
+  width: $diameter;
+  height: $diameter;
+
+  background-color: $color;
+  border-radius: 50%;
+}

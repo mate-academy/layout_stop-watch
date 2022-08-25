@@ -1,22 +1,8 @@
-@keyframes moveHand {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .watch {
   position: relative;
 
-  width: $watch-size;
-  height: $watch-size;
-
-  background-color: $c-gray;
+  @include color-circle($watch-size, $c-gray);
   border: $border-size solid $c-green;
-  border-radius: 50%;
 
   &__detail {
     position: absolute;
@@ -24,40 +10,30 @@
     transform-origin: bottom center;
 
     &--form--hand-minute {
-      left: getHorizontalShift($watch-size, $minute-hand-width);
-      top: getVerticalShift($watch-size, $minute-hand-height);
-
-      width: $minute-hand-width;
-      height: $minute-hand-height;
-
-      background-color: $c-yellow;
-      border-radius: $minute-hand-border-radius;
-
-      animation: moveHand $transition-duration-minute-hand linear infinite;
+      @include hand-shape(
+        $watch-size,
+        $minute-hand-width,
+        $minute-hand-height,
+        $c-yellow
+      );
+      @include animation(moveHand, $transition-duration-minute-hand);
     }
 
     &--form--hand-second {
-      left: getHorizontalShift($watch-size, $second-hand-width);
-      top: getVerticalShift($watch-size, $second-hand-height);
-
-      width: $second-hand-width;
-      height: $second-hand-height;
-
-      background-color: $c-orange;
-      border-radius: $second-hand-border-radius;
-
-      animation: moveHand $transition-duration-second-hand linear infinite;
+      @include hand-shape(
+        $watch-size,
+        $second-hand-width,
+        $second-hand-height,
+        $c-orange
+      );
+      @include animation(moveHand, $transition-duration-second-hand);
     }
 
     &--form--center-dot {
       left: $watch-size / 2 - $center-point-size / 2;
       top: $watch-size / 2 - $center-point-size / 2;
 
-      width: $center-point-size;
-      height: $center-point-size;
-
-      background-color: $c-green;
-      border-radius: 50%;
+      @include color-circle($center-point-size, $c-green);
     }
   }
 }
