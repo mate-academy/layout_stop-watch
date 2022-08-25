@@ -1,0 +1,49 @@
+.stop-watch {
+  display: flex;
+  @include point($container-size);
+  background-color: $bacground-color;
+  border: 2px solid $main-color;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    @include point($point-size);
+    margin-left: $point-margin;
+    margin-top: $point-margin;
+    background-color: $main-color;
+  }
+
+  &__minutes {
+    position: absolute;
+    margin-top: $minutes-margin-top;
+    margin-left: $minutes-margin-left;
+    width: $minutes-width;
+    height: $minutes-height;
+    background-color: $add-color;
+    border-radius: 6px 6px 0 0;
+
+    animation-duration: 60s;
+    @extend %animation-char;
+  }
+
+  &__seconds {
+    position: absolute;
+    margin-top: $seconds-margin-top;
+    margin-left: $seconds-margin-left;
+
+    width: $seconds-width;
+    height: $seconds-height;
+    background-color: $main-color;
+    border-radius: 4px 4px 0 0;
+
+    animation-duration: 1s;
+    @extend %animation-char;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
