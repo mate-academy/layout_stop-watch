@@ -1,0 +1,51 @@
+.watch {
+  position: relative;
+  @include circle($watch-size);
+  background-color: $background-dial;
+  border: 3px solid $border-color;
+
+  &__dial {
+    display: block;
+    height: 100%;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include circle($center-size);
+    background-color: $center-color;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hand {
+    position: absolute;
+    left: $watch-size / 2 - $hand-width / 2;
+    bottom: $watch-size / 2;
+    border-radius: 50%;
+    width: $hand-width;
+    &--second {
+      height: $second-hand-length;
+      background-color: $second-color;
+      z-index: 2;
+      transform-origin: bottom center;
+      animation: rotate 60s linear infinite;
+    }
+
+    &--minute {
+      height: $minute-hand-length;
+      background-color: $minute-color;
+      transform-origin: bottom center;
+      animation: rotate 3600s linear infinite;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
