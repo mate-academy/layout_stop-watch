@@ -5,8 +5,39 @@
   background-image: url("../images/clock.svg");
   box-shadow: 4px 4px 16px #ccc;
 
+  transition-property: transform, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    transform: scale(0.98);
+    box-shadow: 2px 2px 32px #cacaca;
+  }
+
+  @media (max-width: 720px), (max-height: 720px) {
+    @include circle(480px);
+  }
+
   &__center {
-    @include circle(16px);
-    background-color: #111;
+    position: relative;
+  }
+
+  &__second-hand {
+    @include hand(60, "smooth");
+    @include circle-hand(100px, 320px);
+
+    @media (max-width: 720px), (max-height: 720px) {
+      @include hand(60, "steps");
+      @include circle-hand(12px, 180px);
+    }
+  }
+
+  &__minute-hand {
+    @include hand(3600, "smooth");
+    @include straight-hand(240px, 1px, 80px);
+
+    @media (max-width: 720px), (max-height: 720px) {
+      @include straight-hand(80px, 1px, 160px);
+    }
   }
 }
