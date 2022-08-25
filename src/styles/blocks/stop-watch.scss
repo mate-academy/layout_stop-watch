@@ -1,0 +1,68 @@
+.watch-container {
+  position: relative;
+
+  height: 200px;
+  width: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__border {
+    height: 200px;
+    width: 200px;
+    border: 6px solid antiquewhite;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    transform: translateY(50%);
+
+    &::before {
+      content: "";
+      display: block;
+
+      height: 70px;
+      width: 6px;
+
+      background-color: darkgoldenrod;
+      z-index: 1;
+
+      animation: rotate 60s linear infinite;
+      transform-origin: 5px 0;
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    transform: translateY(50%);
+
+    &::before {
+      content: "";
+      display: block;
+
+      height: 90px;
+      width: 4px;
+
+      background-color: floralwhite;
+      z-index: 2;
+
+      animation: rotate 1s linear infinite;
+      transform-origin: 5px 0;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+
+    height: 4px;
+    width: 4px;
+
+    border-radius: 50%;
+    background-color: floralwhite;
+    border: 10px solid floralwhite;
+
+    z-index: 3;
+  }
+}
