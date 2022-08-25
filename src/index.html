@@ -10,7 +10,7 @@
         minimum-scale=1.0"
   >
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
+  <title>Stop Watch</title>
   <link rel="stylesheet" href="./styles/main.scss">
 </head>
 <body>
@@ -19,14 +19,22 @@
       Digital Stop Watch
     </h1>
 
-    <form class="page__form" action="" method="post">
-      <input type="checkbox" id="btnStartStop" class="btn" >
-      <input type="checkbox" id="btnReset" class="btn" >
+    <div class="page_watch">
+      <input
+        type="checkbox"
+        id="btnStartStop"
+        class="btn" >
 
-      <label class="page__btn" for="btnStartStop">Start / Pause</label>
-      <label class="page__btn" for="btnReset">Reset</label>
+      <label class="page__btn" for="btnStartStop">
+        Start / Pause
+      </label>
 
-        <!-- <button class="btn" id="reset" type="reset" >Reset</button> -->
+      <input
+        class="page__btn"
+        type="button"
+        value="Reset"
+        onClick="window.location.reload(true)"
+      >
 
       <div class="stopWatch">
         <div class="stopWatch__watch">
@@ -77,7 +85,7 @@
           </div>
         </div>
       </div>
-    </form>
+    </div>
   </div>
 </body>
 </html>

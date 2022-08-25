@@ -1,33 +1,21 @@
 :root {
-  // --animation:running;
   --animation: paused;
 }
 
-
-
-#btnReset:checked ~ .stopWatch {
-  // --animation: running;
-  animation: none;
-}
-#reset:active ~ .stopWatch {
-  animation: none;
-  font-size: 100px;
-}
 #btnStartStop:checked ~ .stopWatch {
   --animation: running;
 }
 
 .page {
   height: 100vh;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  background-image: linear-gradient(to right top, #000000, #180d13, #241723, #2c2037, #2c2c4e);
+  background-image: linear-gradient(to right top,
+    #000000, #180d13, #241723, #2c2037, #2c2c4e);
   color: #fff;
-
   font-family: Arial, Helvetica, sans-serif;
 
   &__title {
@@ -36,7 +24,7 @@
     letter-spacing: 5px;
   }
 
-  &__form {
+  &__watch {
     padding: 50px;
     border: 5px solid white;
   }
