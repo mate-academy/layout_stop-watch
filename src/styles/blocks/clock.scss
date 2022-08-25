@@ -1,0 +1,76 @@
+.clock {
+  @include circle ($clock-size);
+	margin-top: 150px;
+	background-color: #ddd;
+	border: 10px solid #999;
+	box-shadow: 0 0 20px $shadow-color;
+	position: relative;
+
+&__number {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	font-size: 30px;
+	text-shadow: 0 0 1px $shadow-color;
+	text-align: center;
+}
+
+@for $index from 1 through 12 {
+  &__number-#{$index} {
+    transform: rotate($index*30deg);
+}
+}
+
+&__hand {
+  background-color: $silver;
+  @extend %center;
+  transform: translate(-50%);
+	z-index: 1;
+	transform-origin: bottom;
+	border-radius: 10px;
+	box-shadow: 0 0 2px $shadow-color;
+}
+&__second-hand {
+	width: 1px;
+	height: 45%;
+	background-color: $red;
+
+  @include animation (10s);
+}
+&__minute-hand {
+	width: 5px;
+	height: 40%;
+	background-color: $silver;
+
+  @include animation (100s);
+}
+&__hour-hand {
+	width: 5px;
+	height: 30%;
+	background-color: $silver;
+
+  @include animation (1000s);
+}
+&__center-dot {
+	@extend %center;
+	@include circle($dot-size);
+  transform: translate(-50%, 50%);
+	background-color: $black;
+    box-shadow: 0 0 5px $shadow-color;
+	z-index: 2;
+}
+
+&:hover {
+  transform: scale(1.2);
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+}
