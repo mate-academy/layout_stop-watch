@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+}
+
+.main {
+  @include square($size);
+  border: 1px solid black;
+  position: relative;
+}
+
+.main__hour {
+  position: absolute;
+  height: 100px;
+  width: $width;
+  background-color: red;
+  border-radius: $border-radius;
+  top: 100px;
+  left: $position-left;
+  animation: move 3600s linear infinite;
+  transform-origin: $trans-origin;
+}
+
+.main__minutes {
+  position: absolute;
+  height: 150px;
+  width: $width;
+  background-color: green;
+  border-radius: $border-radius;
+  top: 50px;
+  left: $position-left;
+  animation: move 60s linear infinite;
+  transform-origin: $trans-origin;
+}
