@@ -14,16 +14,15 @@
     display: flex;
     justify-content: center;
     padding: $watch-round-padding;
-    height: $big-array-length * 2;
-    width: $big-array-length * 2;
+
+    @include round ($big-array-length, $round-border-r);
 
     border: 10px solid coral;
-    border-radius: 50%;
     background-color: aqua;
   }
 
   &__minutes {
-    @include arrow(240px, 16px, 8px);
+    @include arrow($short-array-length, $array-width, $array-border-r);
 
     position: absolute;
     bottom: $big-array-length + $watch-round-padding;
@@ -35,7 +34,7 @@
   }
 
   &__seconds {
-    @include arrow(320px, 16px, 8px);
+    @include arrow($big-array-length, $array-width, $array-border-r);
 
     position: absolute;
     bottom: $big-array-length + $watch-round-padding;
@@ -50,10 +49,8 @@
     position: absolute;
     bottom: $big-array-length - $watch-center-radius + $watch-round-padding;
 
-    height: $watch-center-radius * 2;
-    width: $watch-center-radius * 2;
+    @include round($watch-center-radius, $round-border-r);
 
-    border-radius: 50%;
     background-color: #000;
   }
 
