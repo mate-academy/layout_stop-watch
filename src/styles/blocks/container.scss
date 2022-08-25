@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  position: fixed;
+  top: $fifty;
+  left: $fifty;
+  transform: translate(-$fifty, -$fifty);
+  justify-content: center;
+  width: $size;
+  height: $size;
+  margin: auto;
+  border: 1px solid $colorBlack;
+  border-radius: $fifty;
+
+  &__minutes {
+    @include arrow($heightMin, $colorBlack, $indexMin,
+    $durationMin, $iterationMin);
+  }
+
+  &__seconds {
+    @include arrow($heightSec, $colorRed, $indexSec,
+    $durationSec, $iterationSec);
+  }
+
+  &__circle {
+    position: absolute;
+    bottom: $fifty;
+    height: 30px;
+    width: 30px;
+    border-radius: $fifty;
+    z-index: 3;
+    transform: translateY($fifty);
+    background-color: $colorBlack;
+  }
+}
