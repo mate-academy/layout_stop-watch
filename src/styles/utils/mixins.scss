@@ -1,0 +1,28 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin positioning {
+  @include circle(25px);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+@mixin hand-style {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 15px;
+
+  border-radius: 5px;
+
+  transform-origin: left;
+
+  animation: circle infinite linear;
+}
