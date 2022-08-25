@@ -1,0 +1,33 @@
+@mixin clock-dot($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin c-size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin radius {
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+@mixin clock-minutes-size {
+  height: $clock-minutes-height;
+  width: $clock-hand-width;
+  background-color: rgb(103, 97, 160);
+  border-radius: $clock-hand-radius;
+}
+
+@mixin clock-seconds-size {
+  height: $clock-seconds-height;
+  width: $clock-hand-width;
+  background-color: rgb(66, 38, 75);
+  border-radius: $clock-hand-radius;
+}
+
+@mixin position($percent) {
+  top: $percent;
+  left: $percent;
+}
