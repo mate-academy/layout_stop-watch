@@ -7,13 +7,17 @@
   transform-origin: bottom;
 }
 
-@mixin elem_position-Sizes($height, $width) {
-  position: absolute;
-  bottom: $position-value;
-  left: $position-value;
-
+@mixin size-box($height, $width) {
   height: $height;
   width: $width;
+}
+
+@mixin elem_position-Sizes($height, $width) {
+  position: absolute;
+  bottom: $circle;
+  left: $circle;
+
+  @include size-box($height, $width)
 }
 
 @mixin elem_bacgColor-borRadius($color, $radius) {

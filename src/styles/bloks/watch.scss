@@ -1,14 +1,22 @@
 .watch {
+  position: relative;
+  left: 25%;
+  top: 80px;
+
+  @include size-box(600px, 600px);
+
+  @include elem_bacgColor-borRadius(lightcoral, $circle);
+
   &__point {
     @include elem_position-Sizes($point-size, $point-size);
 
-    @include elem_bacgColor-borRadius(lightcoral, $position-value);
+    @include elem_bacgColor-borRadius(bisque, $circle);
 
     transform: translate(-5px, 10px);
   }
 
   &__hour-arrow {
-    @include elem_position-Sizes(250px, $width-arrow);
+    @include elem_position-Sizes(170px, $width-arrow);
 
     @include elem_bacgColor-borRadius(lightblue, $radius-arrow);
 
@@ -16,7 +24,7 @@
   }
 
   &__minute-arrow {
-    @include elem_position-Sizes(300px, $width-arrow);
+    @include elem_position-Sizes(220px, $width-arrow);
 
     @include elem_bacgColor-borRadius(lightseagreen, $radius-arrow);
 
