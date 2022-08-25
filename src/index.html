@@ -1,14 +1,57 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clocky McClockface</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <div class="buttons">
+      <div class="buttons__pause">
+        <input
+          type="checkbox"
+          class="buttons__input"
+          id="pause"
+        >
+        <div class="buttons__button"></div>
+        <div class="buttons__label">⏯</div>
+      </div>
+
+      <div class="buttons__pause">
+        <input
+          type="button"
+          class="buttons__input"
+          id="stop"
+        >
+        <div class="buttons__button"></div>
+        <div class="buttons__label">⏹</div>
+      </div>
+    </div>
+
+    <div class="clock">
+      <div class="clock__outer">
+        <div class="clock__marking clock__marking--1"></div>
+        <div class="clock__marking clock__marking--2"></div>
+        <div class="clock__marking clock__marking--3"></div>
+        <div class="clock__marking clock__marking--4"></div>
+        <div class="clock__inner">
+          <div id="secret__div" class="secret">
+            <audio
+            controls
+            autoplay
+            id="secret"
+            src="./audio.mp3"
+            ></audio>
+          </div>
+          <div class="clock__hand clock__hand--h"></div>
+          <div class="clock__hand clock__hand--m"></div>
+          <div class="clock__hand clock__hand--s"></div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>
