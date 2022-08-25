@@ -1,0 +1,41 @@
+@import "../utils/variables";
+
+body {
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background-color: $background-color;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@mixin clock($clock-size) {
+  width: $clock-size;
+  height: $clock-size;
+}
+
+@mixin dot($dot-size) {
+  width: $dot-size;
+  height: $dot-size;
+}
+
+.stopwatch {
+  @include clock($clock-size);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid white;
+  border-radius: 50%;
+}
+
+.stopwatch-center {
+  background-color: white;
+  @include dot($dot-size);
+}
