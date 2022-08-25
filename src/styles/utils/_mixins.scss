@@ -27,7 +27,7 @@
   background-color: $c-black;
   border-radius: $thickness / 2;
 
-  transform-origin: #{$thickness / 2} #{$length + $inner-offset};
+  transform-origin: center #{$length + $inner-offset};
 }
 
 @mixin circle-hand($diameter, $outer-offset) {
@@ -37,5 +37,5 @@
 
   border: 1px solid $c-black;
 
-  transform-origin: #{$diameter / 2} $outer-offset;
+  transform-origin: center $outer-offset;
 }
