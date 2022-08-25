@@ -1,0 +1,48 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $watchsize;
+  width: $watchsize;
+  border-radius: 50%;
+  border: $arrow-width solid navy;
+  background-color: lightblue;
+    
+  &__minute {
+    height: $m-high;
+    width: $arrow-width;
+    border-radius: 30%;
+    top: $arrow-top;
+    position: absolute;
+    transform-origin: bottom center;
+    background-color: rgb(2, 25, 32);
+    animation: anim 3600s infinite linear;
+  }
+    
+  &__second {
+    height: $arrow-top;
+    width: $arrow-width;
+    border-radius: 30%;
+    top: $m-high;
+    position: absolute;
+    transform-origin: bottom center;
+    background-color: steelblue;
+    animation: anim 60s infinite linear;
+  }
+    
+  &__center {
+    position: absolute;
+    height: $arrow-width;
+    width: $arrow-width;
+    border-radius: 50%;
+    background-color: navy;
+    z-index: 1;
+  }
+}
