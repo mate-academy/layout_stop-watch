@@ -18,6 +18,10 @@
     @include circle(480px);
   }
 
+  @media (max-width: 500px), (max-height:500px) {
+    @include circle(240px);
+  }
+
   &__center {
     position: relative;
   }
@@ -30,6 +34,11 @@
       @include hand(60, "steps");
       @include circle-hand(12px, 180px);
     }
+
+    @media (max-width: 500px), (max-height: 500px) {
+      @include straight-hand(120px, 1px, 0);
+      border: none;
+    }
   }
 
   &__minute-hand {
@@ -38,6 +47,10 @@
 
     @media (max-width: 720px), (max-height: 720px) {
       @include straight-hand(80px, 1px, 160px);
+    }
+
+    @media (max-width: 500px), (max-height: 500px) {
+      @include straight-hand(80px, 3px, 0);
     }
   }
 }
