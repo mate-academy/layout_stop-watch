@@ -1,5 +1,5 @@
 .watch {
-  position: relative;
+  @extend %flex-center;
 
   @include form ($watch-width);
 
@@ -10,8 +10,8 @@
   animation: blinking 1s infinite linear;
 
   &__center {
+    position: relative;
     z-index: 1;
-    @extend %pos-abs-cen;
 
     @include form ($center-width);
 
@@ -19,7 +19,7 @@
   }
 
   &__minute {
-    @extend %pos-abs-cen;
+    @extend %pos-abs-transform;
 
     width: $minute-width;
     height: $minute-height;
@@ -32,7 +32,7 @@
   }
 
   &__second {
-    @extend %pos-abs-cen;
+    @extend %pos-abs-transform;
 
     width: $second-width;
     height: $second-height;
