@@ -14,8 +14,8 @@
   width: $watch-size;
   height: $watch-size;
 
-  background-color: #747474;
-  border: $border-size solid #14a76c;
+  background-color: $c-gray;
+  border: $border-size solid $c-green;
   border-radius: 50%;
 
   &__detail {
@@ -30,7 +30,7 @@
       width: $minute-hand-width;
       height: $minute-hand-height;
 
-      background-color: #ffe400;
+      background-color: $c-yellow;
       border-radius: $minute-hand-border-radius;
 
       animation: moveHand 60s linear infinite;
@@ -43,7 +43,7 @@
       width: $second-hand-width;
       height: $second-hand-height;
 
-      background-color: #ff652f;
+      background-color: $c-orange;
       border-radius: $second-hand-border-radius;
 
       animation: moveHand 1s linear infinite;
@@ -56,7 +56,7 @@
       width: $center-point-size;
       height: $center-point-size;
 
-      background-color: #14a76c;
+      background-color: $c-green;
       border-radius: 50%;
     }
   }
