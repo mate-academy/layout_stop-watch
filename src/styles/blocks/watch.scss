@@ -23,7 +23,7 @@
   }
 
   &__minutes {
-    @include minutes-arrow;
+    @include arrow(240px, 16px, 8px);
 
     position: absolute;
     bottom: $big-array-length + $watch-round-padding;
@@ -31,11 +31,11 @@
     background-color: #000;
 
     transform-origin: bottom center;
-    animation: arrow-moving 3600s linear infinite ;
+    animation: arrow-moving $transition-minutes-arrow linear infinite ;
   }
 
   &__seconds {
-    @include seconds-arrow;
+    @include arrow(320px, 16px, 8px);
 
     position: absolute;
     bottom: $big-array-length + $watch-round-padding;
@@ -43,7 +43,7 @@
     background-color: #fff;
 
     transform-origin: bottom center;
-    animation: arrow-moving 60s linear infinite;
+    animation: arrow-moving $transition-seconds-arrow linear infinite;
   }
 
   &__center {
