@@ -1,0 +1,70 @@
+.clock {
+  position: absolute;
+  height: $clock-size;
+  width: $clock-size;
+  background: #fff;
+  border-radius: 100%;
+  border: 10px solid #535a5a;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  &__center {
+    height: 6px;
+    width: 6px;
+    background-color: #262626;
+    position: absolute;
+    border-radius: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &__minutes {
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 60s infinite linear;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: #262626;
+      height: 60px;
+      width: 4px;
+      top: 30px;
+    }
+  }
+
+  &__seconds {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 1s infinite linear;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: #fd1111;
+      height: 40px;
+      width: 3px;
+      top: 50px;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
