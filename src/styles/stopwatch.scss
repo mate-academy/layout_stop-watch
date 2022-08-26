@@ -1,0 +1,52 @@
+@import "./variables.scss";
+
+.stopwatch {
+  position: relative;
+  height: 100vh;
+
+  &__arrow-minutes {
+    position: absolute;
+    @extend %positioning;
+
+    width: $minute-arrow-width;
+    height: $minute-arrow-height;
+
+    border-radius: 10px;
+    background-color: $coral;
+
+    @extend %transforming;
+
+    animation: move 60s linear infinite normal;
+  }
+
+  &__arrow-seconds {
+    position: absolute;
+    @extend %positioning;
+    z-index: 1;
+
+    width: $seconds-arrow-width;
+    height: $second-arrow-height;
+
+    border-radius: 10px;
+    background-color: $blue-color;
+
+    @extend %transforming;
+
+    animation: move 1s linear infinite normal;
+  }
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+    background-color: $blue-color;
+
+    transform: translate(-50%, -50%);
+  }
+}
