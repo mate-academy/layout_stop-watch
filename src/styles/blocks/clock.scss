@@ -1,0 +1,34 @@
+.clock {
+  &_center {
+    @include position(absolute, 50%, 50%);
+    transform: translate(-25%, -50%);
+    @include centerCircle($center-size);
+    @include border-shadow-bgc($color-sec);
+    z-index: 2;
+  }
+
+  &_minute {
+    @include position(absolute, 50%, 25%);
+    @include size-arrow($arrow-width, 25%);
+    @include border-shadow-bgc($color-minute);
+    transform-origin: bottom;
+    animation: move 3600s steps(60, end) infinite;
+  }
+
+  &_sec {
+    @include position(absolute, 50%, 0);
+    @include size-arrow($arrow-width, 50%);
+    @include border-shadow-bgc($color-sec);
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+
+  @keyframes move {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
