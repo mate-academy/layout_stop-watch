@@ -2,7 +2,7 @@
   position: absolute;
 
   @include center-position;
-  @include clock-size;
+  @include size(500px);
 
   border: 5px solid black;
   border-radius: 50%;
@@ -10,46 +10,45 @@
   background: url("../img/5-55539_transparent-broken-clock-clipart-transparent-background-clock-face.png") #fff no-repeat center;
   background-size: cover;
 
-}
+  &::before {
+    content: "";
 
-.clock::before {
-  content: "";
+    position: absolute;
+    top: calc(50% - 3px);
+    left: 50%;
+    @include minute-arrow;
 
-  position: absolute;
-  top: calc(50% - 3px);
-  left: 50%;
-  @include minute-arrow;
+    background-color: $arrow-and-dot-color;
+    border-radius: $border-radius;
 
-  background-color: $arrow-and-dot-color;
-  border-radius: 5px;
+    animation: rotate 60s infinite steps(60);
+    transform-origin: left;
+  }
 
-  animation: rotate 60s infinite steps(60);
-  transform-origin: left;
-}
+  &::after {
+    content: "";
 
-.clock::after {
-  content: "";
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 50%;
+    @include hour-arrow;
 
-  position: absolute;
-  top: calc(50% - 5px);
-  left: 50%;
-  @include hour-arrow;
+    background-color: $arrow-and-dot-color;
+    border-radius: $border-radius;
 
-  background-color: $arrow-and-dot-color;
-  border-radius: 5px;
+    animation: rotate 180s infinite linear;
+    transform-origin: left;
+  }
 
-  animation: rotate 180s infinite linear;
-  transform-origin: left;
-}
+  &__dot {
+    display: block;
+    position: absolute;
+    @include center-position;
 
-.clock__dot {
-  display: block;
-  position: absolute;
-  @include center-position;
+    @include size(20px);
+    background: $arrow-and-dot-color;
+    border-radius: 50%;
 
-  @include dot-size;
-  background: $arrow-and-dot-color;
-  border-radius: 50%;
-
-  z-index: 1;
+    z-index: 1;
+  }
 }
