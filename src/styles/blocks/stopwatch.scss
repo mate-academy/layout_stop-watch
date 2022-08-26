@@ -1,0 +1,32 @@
+.stopwatch {
+  position: relative;
+  @include circle(450px);
+  border: 15px solid $color-dark-gray;
+
+  &__point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include circle(25px);
+    background-color: $color-dark-gray;
+  }
+
+  &::before {
+    @include arrow (200px, 1s)
+  }
+
+  &::after {
+    @include arrow (150px, 60s)
+  }
+}
+
+@keyframes rotating-arrow {
+  0% {
+    transform: translate(-50%, -100%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -100%) rotate(1turn);
+  }
+}
