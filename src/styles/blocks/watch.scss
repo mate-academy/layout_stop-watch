@@ -8,7 +8,7 @@
     background-color: $m-arrow-color;
     border-radius: $arrows-border-r-value;
 
-    transform-origin: bottom;
+    transform-origin: $bottom-origin;
     animation: rotation 60s linear infinite;
   }
 
@@ -21,7 +21,7 @@
     background-color: $s-arrow-color;
     border-radius: $arrows-border-r-value;
 
-    transform-origin: bottom;
+    transform-origin: $bottom-origin;
     animation: rotation 1s linear infinite;
   }
 
@@ -30,7 +30,7 @@
 
     @include circle($dot-watch-size);
 
-    background-color: $dot-watch-color
+    background-color: $dot-watch-color;
   }
 }
 
