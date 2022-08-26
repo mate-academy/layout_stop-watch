@@ -1,0 +1,56 @@
+.watch {
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-color: $color-gray;
+
+  &__round {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    padding: $watch-round-padding;
+
+    @include round ($big-array-length, $round-border-r);
+
+    border: 10px solid $color-coral;
+    background-color: $color-aqua;
+  }
+
+  &__minutes {
+    @include arrow($short-array-length, $array-width, $array-border-r);
+
+    position: absolute;
+    bottom: $big-array-length + $watch-round-padding;
+
+    background-color: $color-black;
+
+    transform-origin: bottom center;
+    animation: arrow-moving $transition-minutes-arrow linear infinite ;
+  }
+
+  &__seconds {
+    @include arrow($big-array-length, $array-width, $array-border-r);
+
+    position: absolute;
+    bottom: $big-array-length + $watch-round-padding;
+
+    background-color: $color-white;
+
+    transform-origin: bottom center;
+    animation: arrow-moving $transition-seconds-arrow linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    bottom: $big-array-length - $watch-center-radius + $watch-round-padding;
+
+    @include round($watch-center-radius, $round-border-r);
+
+    background-color: $color-black;
+  }
+}
