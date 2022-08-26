@@ -1,0 +1,53 @@
+.watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include square($watchSize, $radius);
+
+  background-image: url(../image/watch.jpg);
+  background-size: 100%;
+  background-position: center;
+  cursor: pointer;
+
+  &__center {
+    position: absolute;
+
+    @include square($centerSize, $radius);
+
+    background-color: #f00;
+  }
+
+  &__small-hand {
+    position: absolute;
+    top: $watchSize / 2 - $heightSmallHand;
+    height: $heightSmallHand;
+    width: $widthSmallHand;
+    border-radius: 17px;
+    background-color: rgb(217, 255, 0);
+    @extend %animation;
+    animation-duration: 72s;
+  }
+
+  &__big-hand {
+    position: absolute;
+    height: $heightBigHand;
+    width: $widthBigHand;
+    top: $watchSize / 2 - $heightBigHand;
+    background-color: rgb(75, 238, 42);
+    animation-name: move;
+    @extend %animation;
+    animation-duration: 6s;
+  }
+
+  :hover &__small-hand,
+  :hover &__big-hand {
+    animation-play-state: paused;
+  }
+  
+  &:hover {
+    transform: scale(1.5);
+    transition-duration: 1s;
+  }
+}
