@@ -9,8 +9,7 @@
 
   &_minute {
     @include position(absolute, 50%, 25%);
-    height: 25%;
-    width: $arrow-width;
+    @include size-arrow($arrow-width, 25%);
     @include border-shadow-bgc($color-minute);
     transform-origin: bottom;
     animation: move 3600s steps(60, end) infinite;
@@ -18,8 +17,7 @@
 
   &_sec {
     @include position(absolute, 50%, 0);
-    height: 50%;
-    width: $arrow-width;
+    @include size-arrow($arrow-width, 50%);
     @include border-shadow-bgc($color-sec);
     transform-origin: bottom;
     animation: move 60s linear infinite;
