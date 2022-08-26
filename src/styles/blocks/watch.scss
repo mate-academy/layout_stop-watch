@@ -1,0 +1,40 @@
+%arrow {
+  min-height: 320px;
+  background-color: black;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.watch {
+  &__arrow-seconds {
+    width: 10px;
+    @extend %arrow;
+    transform-origin: bottom;
+    animation: roll-seconds 2s linear infinite;
+  }
+
+  &__arrow-minute {
+    width: 20px;
+    @extend %arrow;
+    transform-origin: top;
+    animation: roll-minute 60s linear infinite;
+  }
+
+  @keyframes roll-minute {
+    0% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes roll-seconds {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
