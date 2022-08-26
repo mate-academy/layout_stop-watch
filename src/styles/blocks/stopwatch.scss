@@ -1,0 +1,42 @@
+.stop-watch {
+  position: relative;
+  @include sizeWatch($watch-size);
+  border-radius: 50%;
+  background-color: $back-color-watch;
+  transition: $sizing-clock;
+
+  &__center {
+    @extend %center-position;
+    @include sizeCenter($center-size);
+    z-index: 1;
+    border-radius: 50%;
+    background-color: $color-sec-hand-and-center;
+  }
+
+  &::after {
+    @extend %hands;
+    width: $long-min-hand;
+    background-color: $color-min-hand;
+    animation: $animation-min-hand;
+  }
+
+  &::before {
+    width: $long-sec-hand;
+    @extend %hands;
+    background-color: $color-sec-hand-and-center;
+    animation: $animation-sec-hand;
+  }
+
+  &:hover {
+    transform: $trasform-watch;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
