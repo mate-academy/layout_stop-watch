@@ -1,0 +1,18 @@
+@mixin size {
+  width: 800px;
+  height: 800px;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    background-image: url("./watch.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    @include size;
+  }
+}
