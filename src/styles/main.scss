@@ -1,0 +1,45 @@
+@import "../ulils/variables";
+@import "../ulils/mixins";
+
+.watch {
+  @include watch_position;
+
+  &__minutes {
+    @include arrows_position;
+    @include seconds-arrow_gabarits;
+    @include default-arrows_position;
+
+    background-color: $seconds-arrow_color;
+
+    animation: rotate 1s linear infinite;
+  }
+
+  &__seconds {
+    @include arrows_position;
+    @include minutes-arrow_gabarits;
+    @include default-arrows_position;
+
+    background-color: $minute-arrow_color;
+
+    animation: rotate 60s linear infinite;
+
+    animation-delay: 1s;
+  }
+
+  &__point {
+    @include point_position;
+    @include point_gabarites;
+
+    background-color: $point_color;
+  }
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
