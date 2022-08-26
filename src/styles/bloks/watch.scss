@@ -1,0 +1,33 @@
+.watch {
+  position: relative;
+
+  @include size-box(500px, 500px);
+
+  @include elem_bacgColor-borRadius(#8fbc8f, $circle);
+
+  border: 10px solid #556b2f;
+
+  &__point {
+    @include elem_position-Sizes($point-size, $point-size);
+
+    @include elem_bacgColor-borRadius(#fff, $circle);
+
+    transform: translate(-5px, 10px);
+  }
+
+  &__hour-arrow {
+    @include elem_position-Sizes(170px, $width-arrow);
+
+    @include elem_bacgColor-borRadius(#fff, $radius-arrow);
+
+    @include animation-set($slow-duration);
+  }
+
+  &__minute-arrow {
+    @include elem_position-Sizes(220px, $width-arrow);
+
+    @include elem_bacgColor-borRadius(#fff, $radius-arrow);
+
+    @include animation-set($fast-duration);
+  }
+}
