@@ -6,45 +6,33 @@
 
   &__arrow-minutes {
     position: absolute;
-    bottom: 50%;
-    left: 50%;
+    @extend %positioning;
 
-    width: 15px;
-    height: 300px;
+    width: $minute-arrow-width;
+    height: $minute-arrow-height;
 
     border-radius: 10px;
     background-color: $coral;
 
-    transform: translateX(-50%);
-    transform-origin: bottom;
+    @extend %transforming;
 
-    animation-name: move;
-    animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
+    animation: move 60s linear infinite normal;
   }
 
   &__arrow-seconds {
     position: absolute;
-    bottom: 50%;
-    left: 50%;
+    @extend %positioning;
     z-index: 1;
 
-    width: 10px;
-    height: 400px;
+    width: $seconds-arrow-width;
+    height: $second-arrow-height;
 
     border-radius: 10px;
     background-color: $blue-color;
 
-    transform: translateX(-50%);
-    transform-origin: bottom;
+    @extend %transforming;
 
-    animation-name: move;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
+    animation: move 1s linear infinite normal;
   }
 
   &__circle {
@@ -60,14 +48,5 @@
     background-color: $blue-color;
 
     transform: translate(-50%, -50%);
-  }
-}
-
-@keyframes move {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
