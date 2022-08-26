@@ -1,47 +1,34 @@
-.body {
-  background: radial-gradient(
-    circle, rgba(174,238,234,1) 0%, rgba(148,173,233,1) 100%
-  );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
 .stop-watch {
   position: relative;
   @include sizeWatch($watch-size);
   border-radius: 50%;
   background-color: $back-color-watch;
-  transition: transform 0.3s ease-in-out;
+  transition: $sizing-clock;
 
   &__center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @extend %center-position;
     @include sizeCenter($center-size);
     z-index: 1;
     border-radius: 50%;
-    background-color: rgb(78, 131, 245);
+    background-color: $color-sec-hand-and-center;
   }
 
   &::after {
     @extend %hands;
-    width: 30%;
+    width: $long-min-hand;
     background-color: $color-min-hand;
-    animation: rotation 60s linear infinite;
+    animation: $animation-min-hand;
   }
 
   &::before {
-    width: 40%;
+    width: $long-sec-hand;
     @extend %hands;
-    background-color: $color-sec-hand;
-    animation: rotation 5s linear infinite;
+    background-color: $color-sec-hand-and-center;
+    animation: $animation-sec-hand;
   }
 
   &:hover {
-    transform: scale(1.1);
+    transform: $trasform-watch;
   }
 }
 
