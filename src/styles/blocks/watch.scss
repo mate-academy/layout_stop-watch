@@ -1,0 +1,45 @@
+.watch {
+  &__m-arrow {
+    @include center-position;
+
+    width: 25px;
+    height: 200px;
+
+    background-color: $m-arrow-color;
+    border-radius: $arrows-border-r-value;
+
+    transform-origin: $bottom-origin;
+    animation: rotation 60s linear infinite;
+  }
+
+  &__s-arrow {
+    @include center-position;
+
+    width: 15px;
+    height: 350px;
+
+    background-color: $s-arrow-color;
+    border-radius: $arrows-border-r-value;
+
+    transform-origin: $bottom-origin;
+    animation: rotation 1s linear infinite;
+  }
+
+  &__dot {
+    @include center-position;
+
+    @include circle($dot-watch-size);
+
+    background-color: $dot-watch-color;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: $position-arrows-in-dot rotate(0deg);
+  }
+
+  to {
+    transform: $position-arrows-in-dot rotate(360deg);
+  }
+}
