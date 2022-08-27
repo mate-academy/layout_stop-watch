@@ -1,0 +1,47 @@
+@keyframes move_hand {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.second {
+
+  &__hand {
+    position: absolute;
+
+    height: $height_second;
+    width: $width_hand;
+
+    left: $coordinates;
+    bottom: $coordinates;
+
+    background-color: $color_second;
+    border-radius: 5px;
+
+    transform-origin: 50% 100%;
+    animation: move_hand 60s infinite steps(60);
+  }
+}
+
+.minute {
+
+  &__hand {
+    position: absolute;
+
+    height: $height_minute;
+    width: $width_hand;
+
+    left: $coordinates;
+    bottom: $coordinates;
+
+    background-color: $color_minute;
+    border-radius: 5px;
+
+    transform-origin: 50% 100%;
+    animation: move_hand 3600s infinite steps(60);
+  }
+}
