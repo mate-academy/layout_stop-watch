@@ -31,18 +31,24 @@
 
   @keyframes rotate {
     100% {
-      transform: rotate(360deg)
+      transform: rotate(360deg);
     }
   }
 
   &__minutes-box {
     animation: rotate 3600s infinite steps(60);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
+
   &__seconds-container {
     animation: rotate 60s infinite steps(60);
   }
 
-  &__minutes-box, &__seconds-box {
+  &__seconds-box {
     position: absolute;
     top: 0;
     right: 0;
