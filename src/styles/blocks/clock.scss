@@ -1,0 +1,38 @@
+.clock {
+  @include clock-size ($clock-size);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(/images/vinyl_PNG109.png) center;
+  background-color: $background-clock;
+  border-radius: 50%;
+
+  &__center {
+    @include center-size ($center-size);
+    background-color: $hand-color;
+    border-radius: 50%;
+  }
+
+  &__hours {
+    @extend %centering;
+
+    width: $hours-widht;
+    height: $hours-height;
+    border-radius: $hands-border-radius;
+    background-color: $hand-color;
+
+    animation: rotate 60s infinite linear;
+  }
+
+  &__minutes {
+    @extend %centering;
+
+    width: $minute-widht;
+    height: $minute-heigth;
+    border-radius: $hands-border-radius;
+    background-color: $hand-color;
+
+    animation: rotate 5s infinite linear;
+  }
+}
