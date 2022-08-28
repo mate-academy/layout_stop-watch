@@ -1,0 +1,56 @@
+
+$second: 1s;
+$minute: $second * 60;
+$hour: $minute * 60;
+$position: 50%;
+
+$second-width: 5px;
+$second-height: 140px;
+
+$minute-width: 10px;
+$minute-height: 130px;
+
+.clock {
+  position: relative;
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: grey;
+  transform: rotate(180deg);
+
+  .hand {
+    position: absolute;
+    top: $position;
+    left: $position;
+    transform-origin: center 0;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(1turn);
+    }
+
+  }
+
+  &__second {
+    animation: rotate steps(60) $minute infinite;
+    width: $second-width;
+    height: $second-height;
+    background-color: white;
+    border-radius: $second-width / 2 ;
+  }
+  
+  &__minute {
+    animation: rotate linear $hour infinite;
+    width: $minute-width;
+    height: $minute-height;
+    background-color: black;
+    border-radius: $minute-width / 2 ;
+  }
+
+}
