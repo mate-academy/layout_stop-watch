@@ -1,0 +1,36 @@
+.container {
+  @include center-flex;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  @include center-flex;
+  @include circle($container-size);
+
+  border-radius: 0%;
+  background-color: rgb(192, 189, 189);
+
+  border: 5px solid rgb(129, 124, 124);
+
+  &__hand--dot {
+    @include circle(10px);
+
+    position: absolute;
+    background-color: rgba(52, 52, 53, 0.91);
+  }
+
+  &__hand--minutes {
+    @include stopwatchArrow($hand--minutes-h, $hand--minutes-w);
+    @include animation(60s);
+  }
+
+  &__hand--seconds {
+    @include stopwatchArrow($hand--seconds-h, $hand--seconds-w);
+    @include animation(1s);
+  }
+
+  &:hover > * {
+    animation-play-state: paused;
+  }
+}
