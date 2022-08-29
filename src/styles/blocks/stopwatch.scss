@@ -1,0 +1,41 @@
+.watch {
+  position: relative;
+  @include circle($watch-size);
+  background-color: $background-field;
+  border: 3px solid $main-color;
+
+  &__field {
+    display: block;
+    height: 100%;
+  }
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include circle($dot-size);
+    background-color: $main-color;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hand {
+    position: absolute;
+    left: $watch-size / 2 - $hand-width / 2;
+    bottom: $watch-size / 2;
+    border-radius: 50%;
+    width: $hand-width;
+    &--second {
+      height: $length-seconds;
+      @include arrow ($main-color, bottom center);
+      z-index: 2;
+      animation: rotate $seconds-animation-diration linear infinite;
+    }
+
+    &--minute {
+      height: $length-minutes;
+      @include arrow ($main-color, bottom center);
+      animation: rotate $minutes-animation-duration linear infinite;
+      z-index: 3;
+    }
+  }
+}
