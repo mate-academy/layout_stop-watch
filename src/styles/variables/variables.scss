@@ -1,0 +1,44 @@
+$clock-size: 500px;
+$center-size: 30px;
+$centerX: -50%;
+$centerY: -100%;
+
+@mixin object-parameters($height, $width, $radius, $position, $backcolor) {
+  height: $height;
+  width: $width;
+  border-radius: $radius;
+
+  position: $position;
+
+  background-color: $backcolor;
+}
+
+@mixin rotate($time) {
+  transform-origin: bottom;
+  animation: rotation $time linear infinite;
+}
+
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%clockhands {
+  content: "";
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate($centerX, $centerY);
+}
+
+@keyframes rotation {
+  0% {
+    transform: translate($centerX, $centerY) rotate(0deg);
+  }
+
+  100% {
+    transform: translate($centerX, $centerY) rotate(360deg);
+  }
+}

@@ -1,0 +1,32 @@
+.clock {
+  @extend %flex;
+
+  min-height: 100vh;
+
+  &__circle {
+
+    @extend %flex;
+
+    @include object-parameters($clock-size, $clock-size, 50%, relative, #000);
+
+    &::after {
+      @extend %clockhands;
+
+      @include rotate(60s);
+
+      @include object-parameters(150px, 6px, 5px, absolute, #fff);
+    }
+
+    &::before {
+      @extend %clockhands;
+
+      @include rotate(400s);
+
+      @include object-parameters(200px, 10px, 5px, absolute, #fff);
+    }
+  }
+
+  &__center {
+    @include object-parameters($center-size, $center-size, 50%, absolute, #fff);
+  }
+}
