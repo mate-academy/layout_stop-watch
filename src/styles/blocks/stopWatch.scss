@@ -1,0 +1,58 @@
+.section__stopWatch {
+  position: relative;
+}
+
+.stopWatch {
+  @include circleStyle(#b5bb3b, $watchFace);
+  background: radial-gradient(circle,
+  rgba(14,127,200,1) 16%,rgba(245,255,0,1) 82%);
+  border: 1px dotted black;
+  &__minute {
+    @include arrow($arrowLong - $watchPercent, $arrowHeight, #01015d);
+    @extend %pos_arrow;
+    animation: rotate 3600s infinite linear;
+    @media (min-width: 1024px) and (min-height: 600px) {
+      @include arrow($arrowLong*2 - $watchPercent, $arrowHeight*2, #01015d);
+    }
+  }
+
+  &__second {
+    @include arrow($arrowLong, $arrowHeight/2, #450108);
+    @extend %pos_arrow;
+    transition: transform 1s;
+    animation: rotate 60s infinite linear;
+
+    @media (min-width: 1024px) and (min-height: 600px) {
+      @include arrow($arrowLong*2, $arrowHeight, #450108);
+    }
+  }
+
+  &__circle {
+    @include circleStyle(#e4ff00, $circleSize);
+    background-image: radial-gradient(circle,
+    #c4e100, #c9d600, #cc0, #cec100, #cfb700,
+    #ca9e0d, #c1851a, #b46f22, #904b2a, #642f29, #351b1d, #000);
+    animation: circleLittle 2s infinite linear;
+
+    @media (min-width: 1024px) and (min-height: 600px) {
+      @include circleStyle(#e4ff00, $circleSize*2);
+    }
+  }
+
+  @media (min-width: 1024px) and (min-height: 600px) {
+    @include circleStyle(#b5bb3b, $watchFace * 2);
+  }
+}
+
+.minute {
+  @extend %pos_center;
+}
+
+.second {
+  @extend %pos_center;
+}
+
+.circle {
+  @extend %pos_center;
+  transform: translate(-50%, -50%);
+}

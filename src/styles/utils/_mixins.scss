@@ -1,0 +1,13 @@
+@mixin circleStyle($color, $size) {
+  background-color: $color;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin arrow($long, $height, $color) {
+  background-color: $color;
+  width: $long;
+  height: $height;
+  border-radius: 10% 50% 50% 10%;
+}
