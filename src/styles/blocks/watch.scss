@@ -1,0 +1,89 @@
+
+.watch {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  height: $clock-size;
+  min-width: $clock-size;
+  background-color: rgb(231, 233, 233);
+  border: 20px solid rgb(174, 172, 172);
+  box-shadow: 0 2px 4px rgba(1, 1, 1, 1);
+  border-radius: 50%;
+  transition: 300ms;
+
+  &__minutes {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    height: 50%;
+    animation: move 60*$one-minute linear infinite;
+
+    &-hand {
+      height: 0.25*$clock-size;
+      width: 11px;
+      background-color: blue;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+  }
+
+  &__seconds {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    height: 50%;
+    animation: move $one-minute steps(60) infinite;
+  
+    &-hand {
+      height: 0.35*$clock-size;
+      width: 8px;
+      background-color: yellow;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+  }
+
+  &__center {
+    top: 0.5 * ($clock-size - $center-size);
+    position: absolute;
+    z-index: 2;
+    height: $center-size;
+    width: $center-size;
+    background-color: rgb(96, 10, 10);
+    border-radius: 50%;
+  }
+  
+  &__time {
+    font-size: $text-size;
+    font-weight: bold;
+    color: rgb(79, 77, 73);
+    margin: 0 10px;
+  }
+  
+  &__time--12 {
+    position: absolute;
+  }
+  
+  &__time--3 {
+    position: absolute;
+    top: 0.5 * ($clock-size - $text-size);
+    right: 0;
+  }
+  
+  &__time--6 {
+    position: absolute;
+    bottom: 0;
+  }
+  
+  &__time--9 {
+    position: absolute;
+    top: 0.5 * ($clock-size - $text-size);
+    left: 0;
+  }
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
