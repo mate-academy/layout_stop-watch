@@ -1,0 +1,66 @@
+.watch-container {
+  @include square($clock-size);
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(./images/clock.svg);
+  background-size: cover;
+
+  &__minute-hand {
+    position: absolute;
+    transform: translateY(50%);
+
+    &::before {
+      content: "";
+      display: block;
+
+      height: $minute-hand-length;
+      width: 6px;
+
+      border-radius: 4px;
+
+      background-color: #907851;
+      z-index: 1;
+
+      animation: rotateClockArrows 60s steps(60) infinite;
+      transform-origin: 50% 0;
+
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    transform: translateY(50%);
+
+    &::before {
+      content: "";
+      display: block;
+
+      height: $second-hand-length;
+      width: 4px;
+
+      background-color: $arrow-color;
+      z-index: 2;
+
+      animation: rotateClockArrows 1s linear infinite;
+      transform-origin: 50% 0;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+
+    height: 4px;
+    width: 4px;
+
+    border-radius: 50%;
+    background-color: $arrow-color;
+    border: 6px solid $arrow-color;
+
+    z-index: 3;
+  }
+}
