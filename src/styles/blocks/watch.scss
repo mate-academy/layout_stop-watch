@@ -1,0 +1,34 @@
+.watch {
+  @include circle(absolute, 700px, $c-background);
+  display: flex;
+
+  &__circle {
+    @include circle(relative, 30px, $c-primary);
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+  }
+
+  &__second {
+    @include arrow(300px, 10px, $c-primary);
+    @include animation($second-anim-duration);
+    top: 52%;
+    left: 47%;
+  }
+
+  &__minute {
+    @include arrow(250px, 10px, $c-secondary);
+    @include animation($minute-anim-duration);
+    top: 52%;
+    left: 45.5%;
+  }
+}
+
+@keyframes rotation {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
