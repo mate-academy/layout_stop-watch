@@ -1,0 +1,52 @@
+@import "./utils/keyframe";
+@import "./utils/mixins";
+@import "./utils/variables";
+@import "./utils/reset.scss";
+
+.watch {
+  position: relative;
+  @include circle($watch-size);
+  background-color: $field-color;
+  border: 5px solid $border-color;
+
+  &__field {
+    display: block;
+    height: 100%;
+  }
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include circle($dot-size);
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hand {
+    position: absolute;
+    left: $watch-size / 2 - $hand-width / 2;
+    bottom: $watch-size / 2;
+    border-radius: 50%;
+    width: $hand-width;
+
+    &--seconds {
+      height: $length-hand-seconds;
+      background-color: $hand-color;
+      z-index: 2;
+      transform-origin: bottom center;
+      animation: rotate 60s linear infinite;
+      animation-delay: 1s;
+    }
+
+    &--minutes {
+      height: $length-hand-minutes;
+      background-color: $hand-color;
+      z-index: 3;
+      transform-origin: bottom center;
+      animation: rotate 1s linear infinite;
+      animation-delay: 1s;
+
+    }
+  }
+}
