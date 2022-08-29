@@ -1,7 +1,14 @@
+$border-radius-50: 50%;
+$border-radius-40: 40%;
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
 .watch {
-  height: 650px;
-  width: 650px;
-  border-radius: 50%;
+  @include size(650px);
+  border-radius: $border-radius-50;
   border: 2px solid rgb(184, 207, 172);
   background-color: rgb(253, 253, 67);
   position: relative;
@@ -9,10 +16,9 @@
   transition: 1s;
 
   &__start {
-    height: 30px;
-    width: 30px;
+    @include size(30px);
     background-color: rgb(184, 207, 172);
-    border-radius: 50%;
+    border-radius: $border-radius-50;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -25,7 +31,7 @@
     height: 325px;
     width: 10px;
     background-color: #99cd32;
-    border-radius: 40%;
+    border-radius: $border-radius-40;
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
@@ -38,7 +44,7 @@
     height: 200px;
     width: 6px;
     background-color: rgb(228, 195, 103);
-    border-radius: 40%;
+    border-radius: $border-radius-40;
     left: 50%;
     top: 50%;
     transform-origin: top center;
@@ -61,13 +67,13 @@
     transition-delay: 0.4s;
   }
 
-  &:hover::before {
-    opacity: 1;
-  }
-
   &:hover {
     box-shadow: 0 0 40px 2px #34acdc;
     transform: scale(0.8);
+
+    &::before {
+      opacity: 1;
+    }
   }
 }
 
