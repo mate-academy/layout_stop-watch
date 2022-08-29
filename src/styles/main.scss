@@ -1,17 +1,25 @@
 @import "src/styles/blocks/sound-icon";
 @import "src/styles/utils/keyframes";
-@import "src/styles/blocks/stop-watch";
+@import "src/styles/utils/vars";
+@import "src/styles/utils/mixins";
+@import "blocks/watch-container";
 
 .body {
   background: url("images/no-time-to-die-1.jpeg") no-repeat;
   background-size: cover;
+  position: relative;
 
   overflow-y: hidden;
 }
 
+.audio {
+  position: absolute;
+  top: 300px;
+  left: 30px;
+}
+
 .container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
