@@ -1,0 +1,88 @@
+$border-radius-50: 50%;
+$border-radius-40: 40%;
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+.watch {
+  @include size(650px);
+  border-radius: $border-radius-50;
+  border: 2px solid rgb(184, 207, 172);
+  background-color: rgb(253, 253, 67);
+  position: relative;
+  margin: 50px auto;
+  transition: 1s;
+
+  &__start {
+    @include size(30px);
+    background-color: rgb(184, 207, 172);
+    border-radius: $border-radius-50;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &__arrow-sec {
+    position: absolute;
+    height: 325px;
+    width: 10px;
+    background-color: #99cd32;
+    border-radius: $border-radius-40;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: move 1s linear infinite;
+    transform-origin: top center;
+  }
+
+  &__arrow-min {
+    position: absolute;
+    height: 200px;
+    width: 6px;
+    background-color: rgb(228, 195, 103);
+    border-radius: $border-radius-40;
+    left: 50%;
+    top: 50%;
+    transform-origin: top center;
+    animation: move 60s linear infinite;
+    transform: translateX(-50%);
+  }
+
+  &::before {
+    content: "Доброго вечора!Ми з України!";
+    height: 100px;
+    width: 500px;
+    position: absolute;
+    color: rgb(98, 172, 252);
+    font-style: italic;
+    font-size: 30px;
+    transform: translate(25%, 150%);
+    z-index: 1;
+    opacity: 0;
+    transition: 1s;
+    transition-delay: 0.4s;
+  }
+
+  &:hover {
+    box-shadow: 0 0 40px 2px #34acdc;
+    transform: scale(0.8);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translateX(-50%) rotate(180deg);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(540deg);
+  }
+}
