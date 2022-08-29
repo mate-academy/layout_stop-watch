@@ -1,0 +1,21 @@
+@mixin circle($position, $diameter, $bg-color) {
+  border-radius: 50%;
+  position: $position;
+  width: $diameter;
+  height: $diameter;
+  background-color: $bg-color;
+}
+
+@mixin arrow($height, $width, $bg-color) {
+  position: relative;
+  transform-origin: top;
+  border-radius: 30px;
+  height: $height;
+  width: $width;
+  background-color: $bg-color;
+  transform: translateY(-100%);
+}
+
+@mixin animation($duration) {
+  animation: rotation $duration linear infinite;
+}
