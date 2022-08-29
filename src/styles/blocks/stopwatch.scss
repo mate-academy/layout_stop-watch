@@ -1,0 +1,39 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  @include circle($watch-size);
+  border: ($watch-size * 0.02) solid $main-color;
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    width: $hands-width;
+    border-radius: 50%;
+
+    &--second {
+      height: $watch-size * 0.3;
+      background-color: #f00;
+      transform-origin: bottom center;
+      z-index: 1;
+      animation: rotation 15s steps(60) infinite;
+    }
+
+    &--minute {
+      height: $watch-size * 0.4;
+      background-color: $main-color;
+      transform-origin: bottom center;
+      z-index: 2;
+      animation: rotation 900s steps(60) infinite;
+    }
+
+  }
+
+  &__dot {
+    @include circle($dot-size);
+    background-color: $main-color;
+    z-index: 3;
+  }
+}
