@@ -1,48 +1,7 @@
 .stop-watch {
-  @include circle($stop-watch-size);
-  border: 2px solid #000;
-  position: relative;
-
-  &__center-ball {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    @include circle($center-ball-size);
-    background-color: darkblue;
-  }
-
-  &__min {
-    position: absolute;
-    left: 50%;
-    top: 50px;
-    animation: rotate 3600s infinite steps(60);
-    width: 3px;
-    height: 100px;
-    border-radius: 4px;
-    background-color: blue;
-  }
-
-  &__sec {
-    position: absolute;
-    left: 50%;
-    top: 30px;
-    animation: rotate 60s infinite  steps(60);
-    width: 3px;
-    height: 120px;
-    border-radius: 3px;
-    background-color: red;
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-    transform-origin: bottom;
-  }
-
-  to {
-    transform: rotate(359deg);
-    transform-origin: bottom;
-  }
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

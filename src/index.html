@@ -8,11 +8,21 @@
     <title>Stop watch</title>
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
-  <body class="page">
-    <div class="stop-watch">
-      <div class="stop-watch__center-ball"></div>
-      <div class="stop-watch__min"></div>
-      <div class="stop-watch__sec"></div>
-    </div>
+  <body>
+    <main class="stop-watch">
+      <div class="clock">
+        <div class="clock__center-ball"></div>
+        <div class="clock__hand clock__hand--hour"></div>
+        <div class="clock__hand clock__hand--min"></div>
+        <div class="clock__hand clock__hand--sec"></div>
+      </div>
+      <div class="buttons">
+        <button class="btn btn__start">Start</button>
+        <button class="btn btn__stop">Stop/Resume</button>
+        <button class="btn btn__reset">Reset</button>
+      </div>
+    </main>
+
+    <script src="./main.js"></script>
   </body>
 </html>

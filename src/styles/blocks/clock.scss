@@ -1,0 +1,75 @@
+.clock {
+  @include circle($stop-watch-size);
+  border: 2px solid #000;
+  position: relative;
+
+  &__center-ball {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @include circle($center-ball-size);
+    background-color: darkblue;
+  }
+
+  &__hand {
+    position: absolute;
+    transform: translateX(-50%);
+
+    &--hour {
+      left: 50%;
+      top: 60px;
+      width: 6px;
+      height: 90px;
+      border-radius: 4px;
+      background-color: greenyellow;
+    }
+
+    &--min {
+      left: 50%;
+      top: 40px;
+      width: 4px;
+      height: 110px;
+      border-radius: 4px;
+      background-color: blue;
+    }
+
+    &--sec {
+      left: 50%;
+      top: 20px;
+      width: 3px;
+      height: 130px;
+      border-radius: 4px;
+      background-color: red;
+    }
+  }
+}
+
+.hour-animation--start {
+  animation: rotate infinite 3600s steps(60);
+}
+
+.min-animation--start {
+  animation: rotate infinite 60s steps(60);
+}
+
+.sec-animation--start {
+  animation: rotate infinite 1s steps(60);
+}
+
+.animation--paused {
+  animation-play-state: paused;
+}
+
+@keyframes rotate {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: translateX(-50%) rotate(359deg);
+    transform-origin: bottom;
+  }
+}

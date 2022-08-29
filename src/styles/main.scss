@@ -1,5 +1,35 @@
 @import "utils/_variables";
 @import "utils/_mixins";
+@import "utils/reset";
 
-@import "blocks/page.scss";
+@import "blocks/clock.scss";
 @import "blocks/stop-watch.scss";
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  padding: 10px;
+  column-gap: 20px;
+  border: 2px solid #000;
+  border-radius: 6px;
+}
+
+.btn {
+  padding: 10px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &__start {
+    background-color: #00aa00;
+  }
+
+  &__stop {
+    background-color: #ff0000;
+  }
+
+  &__reset {
+    background-color: #0000ff;
+  }
+}
