@@ -1,0 +1,34 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include size($page-height);
+  border: $borders-width $c-watch-border;
+  border-radius: $circle;
+
+  // minutes-hand
+  &::before {
+    @extend %hands-settings;
+    height: $minutes-height;
+    width: $minutes-width;
+    background-color: $c-minutes;
+    animation: rotation $minutes-speed linear infinite;
+  }
+
+  // seconds-hand
+  &::after {
+    @extend %hands-settings;
+    height: $seconds-height;
+    width: $seconds-widht;
+    background-color: $c-seconds;
+    animation: rotation $seconds-speed linear infinite;
+  }
+
+  &__center-point {
+    position: absolute;
+    @include size($center-point-size);
+    background-color: $c-center-point;
+    border-radius: $circle;
+  }
+
+}
