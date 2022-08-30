@@ -1,0 +1,44 @@
+.watch {
+  position: relative;
+  @include square($watch-size);
+
+  border: 1px solid $border-color;
+  border-radius: 50%;
+
+  &__long-hand {
+    @extend %position__long-hand;
+
+    width: $long-hand-width;
+    height: $long-hand-height;
+
+    background-color: #c8b0c4;
+    border-radius: 20px;
+
+    transform-origin: $hands__transform-origin;
+    animation: rotation 60s linear infinite;
+
+  }
+
+  &__short-hand {
+    @extend %position__short-hand;
+
+    width: $short-hand-width;
+    height: $short-hand-height;
+
+    background-color: rgb(225, 240, 12);
+    border-radius: 10px;
+
+    transform-origin: $hands__transform-origin;
+    animation: rotation 1s linear infinite;
+  }
+
+  &__dot {
+    @extend %position-center;
+
+    @include square (2vh);
+
+    background-color: rgb(165, 143, 141);
+    border: 0.5px solid rgb(243, 228, 228);
+    border-radius: 50%;
+  }
+}

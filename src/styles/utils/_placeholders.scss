@@ -1,0 +1,19 @@
+%position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+%position__long-hand {
+  position: absolute;
+  top: 5%;
+  @include position($hands__position);
+}
+
+%position__short-hand {
+  position: absolute;
+  top: 20%;
+  @include position($hands__position);
+}
