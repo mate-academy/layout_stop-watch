@@ -13,19 +13,19 @@
 
   border: 5px solid rgb(129, 124, 124);
 
-  &__hand--dot {
+  &__dot {
     @include circle(10px);
 
     position: absolute;
     background-color: rgba(52, 52, 53, 0.91);
   }
 
-  &__hand--minutes {
+  &__minutes {
     @include stopwatchArrow($hand--minutes-h, $hand--minutes-w);
     @include animation(60s);
   }
 
-  &__hand--seconds {
+  &__seconds {
     @include stopwatchArrow($hand--seconds-h, $hand--seconds-w);
     @include animation(1s);
   }
