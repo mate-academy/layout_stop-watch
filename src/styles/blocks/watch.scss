@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @include watch-size($page-height);
+  @include size($page-height);
   border: $borders-width $c-watch-border;
   border-radius: $circle;
 
@@ -24,9 +24,9 @@
     animation: rotation $seconds-speed linear infinite;
   }
 
-  .center-point {
+  &__center-point {
     position: absolute;
-    @include watch-size($center-point-size);
+    @include size($center-point-size);
     background-color: $c-center-point;
     border-radius: $circle;
   }
