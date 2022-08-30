@@ -1,17 +1,17 @@
 .container {
   @include center-flex;
   height: 100vh;
+  position: relative;
 }
 
 .stopwatch {
-  position: relative;
   @include center-flex;
   @include circle($container-size);
 
   border-radius: 0%;
-  background-color: rgb(192, 189, 189);
+  background-color: $grey-color;
 
-  border: 5px solid rgb(129, 124, 124);
+  border: 5px solid $dark-grey-color;
 
   &__dot {
     @include circle(10px);
