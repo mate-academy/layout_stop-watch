@@ -1,0 +1,57 @@
+.watch {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+
+  &__field {
+    position: relative;
+    @include circle($watch-size);
+    border: $watch-border solid $main-color;
+    background-color: #f5f8fc;
+
+    box-shadow: 0 0 0 ($watch-border * 3) rgba($main-color, 0.1),
+      0 0 0 ($watch-border * 1.5) rgba($main-color, 0.2);
+  }
+
+  &__minute-hand {
+    @extend %object-position;
+
+    width: $hand-minute-width;
+    height: $hand-minute-height;
+
+    background-color: $second-color;
+    @include hand-border($hand-border);
+
+    animation: move-hand 3600s steps(60, end) infinite;
+  }
+
+  &__second-hand {
+    @extend %object-position;
+
+    width: $hand-second-width;
+    height: $hand-second-height;
+
+    background-color: $main-color;
+    @include hand-border($hand-border);
+
+    animation: move-hand 60s linear infinite;
+  }
+
+  &__field:hover &__minute-hand,
+  &__field:hover &__second-hand {
+    animation-play-state: paused;
+  }
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    @include circle($watch-center);
+
+    background-color: $main-color;
+    border: 6px solid $second-color;
+  }
+}
