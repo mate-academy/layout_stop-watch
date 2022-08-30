@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+}
+
+.watch {
+  height: 100vh;
+
+  &__circle {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include circle-size($circle-height, $circle-width);
+
+    border-radius: 50%;
+    border: 5px $animation-second-color;
+    border-style: double dotted;
+  }
+
+  &__dot {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 30px;
+    width: 30px;
+
+    animation-name: switchColor;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    background-color: $animation-start-color;
+
+    border-radius: 50%;
+  }
+
+  &__minute-hand::before {
+    display: block;
+
+    position: absolute;
+    transform: translateX(50%);
+    top: minute-hand-positionY($circle-height, $minute-hand-length);
+    right: 50%;
+
+    content: "";
+
+    height: $minute-hand-length;
+    width: 15px;
+    border-radius: 10px;
+
+    background-color: $animation-start-color;
+    animation-name: switchColor, rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom right;
+  }
+
+  &__second-hand::before {
+    display: block;
+
+    position: absolute;
+    top: second-hand-positionY($circle-height, $second-hand-length);
+    right: 50%;
+
+    border-radius: 10px;
+
+    content: "";
+
+    height: $second-hand-length;
+    width: 8px;
+
+    background-color: rgb(211, 200, 200);
+
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+}
