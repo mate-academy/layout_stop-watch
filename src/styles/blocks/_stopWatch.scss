@@ -1,0 +1,61 @@
+.stop-watch {
+  @include watchSize();
+  background-color: $watch--color;
+  border-radius: 300px;
+  margin: 40px auto;
+  border: 5px solid $watch--border-color;
+
+  &__logo {
+    position: absolute;
+    @include logoSize();
+    border-radius: 100px;
+    top: 150px;
+    left: 670px;
+  }
+
+  &__titel {
+    text-transform: uppercase;
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    color: $coral--color;
+
+    &::before {
+      position: absolute;
+      top: 450px;
+      left: 680px;
+      content: "stop watch";
+    }
+  }
+
+  &__center {
+    position: relative;
+    display: flex;
+    @include centerPoint();
+    background-color: #000;
+    margin: auto;
+    top: 300px;
+    left: 2px;
+    border-radius: 10px;
+    z-index: 1;
+  }
+
+  &__second {
+    position: relative;
+    top: 0;
+    border-radius: 10px;
+    margin: 15px auto;
+    @include secondsLine();
+    background-color: $coral--color;
+    transform-origin: bottom;
+    animation: moveSec 1s linear infinite;
+  }
+
+  &__minute {
+    border-radius: 10px;
+    @include minutesLine();
+    margin: -210px auto;
+    background-color: blue;
+    transform-origin: bottom;
+    animation: moveMin 60s linear infinite;
+  }
+}
