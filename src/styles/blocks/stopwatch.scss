@@ -1,4 +1,5 @@
 @import "../utils/mixins";
+@import "../utils/vars";
 
 .stopwatch {
   position: relative;
@@ -16,13 +17,13 @@
   }
 
   background-image: url(../img/pngegg.png);
-  background-size: 300px;
+  background-size: $watch-size;
 
   &__center {
     @include square (16px);
     position: absolute;
-    top: 142px;
-    left: 142px;
+    top: ($watch-size / 2) - 8;
+    left: ($watch-size / 2) - 8;
 
     z-index: 2;
 
@@ -32,11 +33,11 @@
 
   &__minutes {
     position: absolute;
-    left: 146px;
-    top: 75px;
+    left: ($watch-size / 2) - 5;
+    top: ($watch-size - $minutes-size) / 2;
 
-    height: 150px;
-    width: 9px;
+    height: $minutes-size;
+    width: $arrow-width;
 
     animation: move 3600s linear infinite;
 
@@ -48,14 +49,14 @@
 
   &__second {
     position: absolute;
-    top: 25px;
-    left: 145px;
+    top: ($watch-size - $seconds-size) / 2;
+    left: ($watch-size / 2) - 5;
 
-    height: 250px;
-    width: 10px;
+    height: $seconds-size;
+    width: $arrow-width;
 
     animation: move 60s linear infinite;
-    
+
     border-radius: 100%;
     background-image: linear-gradient(#2972cc 50%, transparent 50%);
   }
