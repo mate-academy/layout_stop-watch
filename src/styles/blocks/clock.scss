@@ -1,15 +1,14 @@
 .clock {
-  @include clock-size ($clock-size);
+  @include object($clock-size);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(/images/vinyl_PNG109.png) center;
-  background-color: $background-clock;
+  background: url(/images/vinyl_PNG109.png) center, $background-clock;
   border-radius: 50%;
 
   &__center {
-    @include center-size ($center-size);
+    @include object($center-size);
     background-color: $hand-color;
     border-radius: 50%;
   }
