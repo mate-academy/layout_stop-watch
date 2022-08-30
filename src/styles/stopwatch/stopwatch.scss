@@ -1,0 +1,41 @@
+.main {
+  @include horizontal-center-flex;
+
+  min-height: 100vh;
+
+  margin: 0;
+}
+
+.stopwatch {
+  @include horizontal-center-flex;
+  @include circle($watch-size);
+
+  position: relative;
+  border: 15px solid $border-watch-color;
+  background-color: $watch-background-color;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover > * {
+    animation-play-state: paused;
+  }
+
+  &__center {
+    @include circle(20px);
+
+    position: absolute;
+    background-color: $watch-center-color;
+  }
+
+  &__seconds {
+    @include watchHand($seconds-hand-h, $seconds-hand-w);
+    @include animation(1s);
+  }
+
+  &__minutes {
+    @include watchHand($minutes-hand-h,$minutes-hand-w);
+    @include animation(60s);
+  }
+}
