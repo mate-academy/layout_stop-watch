@@ -1,6 +1,6 @@
 .watch {
   position: relative;
-  @include square ($watch-size);
+  @include square($watch-size);
 
   border: 1px solid $border-color;
   border-radius: 50%;
@@ -12,7 +12,6 @@
     height: $long-hand-height;
 
     background-color: #c8b0c4;
-    border: 0.1px solid $border-color;
     border-radius: 20px;
 
     transform-origin: $hands__transform-origin;
@@ -27,7 +26,6 @@
     height: $short-hand-height;
 
     background-color: rgb(225, 240, 12);
-    border: 0.1px solid $border-color;
     border-radius: 10px;
 
     transform-origin: $hands__transform-origin;
@@ -35,7 +33,7 @@
   }
 
   &__dot {
-    @extend %position50percent;
+    @extend %position-center;
 
     @include square (2vh);
 

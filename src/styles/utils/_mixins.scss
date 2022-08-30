@@ -2,3 +2,8 @@
   width: $size;
   height: $size;
 }
+
+@mixin position ($position) {
+  left: $position;
+  transform: translate(-$position, 0);
+}

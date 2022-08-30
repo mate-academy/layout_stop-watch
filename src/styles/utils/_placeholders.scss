@@ -1,4 +1,4 @@
-%position50percent {
+%position-center {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -9,15 +9,11 @@
 %position__long-hand {
   position: absolute;
   top: 5%;
-  left: 50%;
-
-  transform: translate(-50%, 0);
+  @include position($hands__position);
 }
 
 %position__short-hand {
   position: absolute;
   top: 20%;
-  left: 50%;
-
-  transform: translate(-50%, 0);
+  @include position($hands__position);
 }
