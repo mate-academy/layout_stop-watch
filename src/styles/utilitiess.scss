@@ -1,0 +1,12 @@
+@function second-hand-positionY($circle-height, $second-hand-length) {
+  @return $circle-height / 2 - $second-hand-length;
+}
+
+@function minute-hand-positionY($circle-height, $minute-hand-length) {
+  @return $circle-height / 2 - $minute-hand-length;
+}
+
+@mixin circle-size($circle-height, $circle-width) {
+  height: $circle-height;
+  width: $circle-width;
+}
