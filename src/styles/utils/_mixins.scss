@@ -1,0 +1,25 @@
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin stopwatchArrow($height, $width) {
+  position: absolute;
+  bottom: 50%;
+
+  height: $height;
+  width: $width;
+
+  background-color: $blue-color;
+}
+
+@mixin animation($duration) {
+  transform-origin: bottom;
+  animation: move $duration linear infinite;
+}
+
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+}
