@@ -1,0 +1,63 @@
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.stopwatch {
+  position: relative;
+
+  @include square (300px);
+
+  @keyframes move {
+    from {
+      rotate: 0;
+    }
+
+    to {
+      rotate: 1turn;
+    }
+  }
+
+  background-image: url(../img/pngegg.png);
+  background-size: $watch-size;
+
+  &__center {
+    @include square (16px);
+    position: absolute;
+    top: ($watch-size / 2) - 8;
+    left: ($watch-size / 2) - 8;
+
+    z-index: 2;
+
+    border-radius: 50%;
+    background-color: #2972cc;
+  }
+
+  &__minutes {
+    position: absolute;
+    left: ($watch-size / 2) - 5;
+    top: ($watch-size - $minutes-size) / 2;
+
+    height: $minutes-size;
+    width: $arrow-width;
+
+    animation: move 3600s linear infinite;
+
+    z-index: -1;
+
+    border-radius: 100%;
+    background-image: linear-gradient(#9b61c2 50%, transparent 50%);
+  }
+
+  &__second {
+    position: absolute;
+    top: ($watch-size - $seconds-size) / 2;
+    left: ($watch-size / 2) - 5;
+
+    height: $seconds-size;
+    width: $arrow-width;
+
+    animation: move 60s linear infinite;
+
+    border-radius: 100%;
+    background-image: linear-gradient(#2972cc 50%, transparent 50%);
+  }
+}
