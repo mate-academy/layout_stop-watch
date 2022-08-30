@@ -1,0 +1,21 @@
+.stopwatch__second-hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: $width-hands;
+  height: $secondHand-height;
+  background-color: rgb(63, 63, 184);
+  border-radius: 10px;
+  animation: second-hand-move 60s steps(60) infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes second-hand-move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
