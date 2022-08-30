@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container__hands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 50%;
+  }
+  
+  .hands {
+    position: relative;
+  
+    &__hand {
+      position: absolute;
+      bottom: 50%;
+      border-radius: 3px;
+      transform-origin: bottom center;
+  
+      &--minute {
+        height: 70px;
+        width: 4px;
+        background-color: crimson;
+        animation: rotate 36s linear infinite;
+      }
+    
+      &--second {
+        height: 100px;
+        width: 2px;
+        background-color: royalblue;
+        animation: rotate 6s linear infinite;
+    
+        &::after {
+          position: absolute;
+          display: block;
+          top: 100%;
+          content: "";
+          width: 10px;
+          height: 10px;
+          background-color: inherit;
+          border-radius: 50%;
+          transform: translate(-40%, -50%);
+        }
+      }
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+  
