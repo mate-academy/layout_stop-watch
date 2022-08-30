@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  &__border {
+    border: 3px solid $border-color;
+    border-radius: 50%;
+    background-color: $background-color;
+    @include square($watch-size);
+  }
+
+  &__minute {
+    @extend %position;
+
+    &::before {
+      content: "";
+      display: block;
+
+      height: $big-hand-heigth;
+      width: $big-hand-width;
+
+      background-color: $minute-color;
+      border-radius: 10px;
+
+      animation: rotate 60s linear infinite;
+      transform-origin: bottom;
+    }
+  }
+  &__second {
+    @extend %position;
+
+    &::before {
+      content: "";
+      display: block;
+
+      height: $small-hand-heigth;
+      width: $small-hand-width;
+
+      background-color: $second-color;
+      border-radius: 10px;
+
+      animation: rotate 1s linear infinite;
+      transform-origin: bottom ;
+
+    }
+  }
+
+  &__center {
+
+    @include square ($center-size);
+    background-color: $center-color;
+    @extend %position;
+    border-radius: 50%;
+    margin-top: $center-size;
+    z-index: 1;
+  }
+}
