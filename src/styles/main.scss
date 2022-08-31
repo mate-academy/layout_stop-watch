@@ -1,0 +1,60 @@
+$size-clock:500px;
+
+body {
+  margin: 0;
+}
+
+.main {
+  background-color: rgb(169, 207, 194);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: $size-clock;
+  height: $size-clock;
+  border: 20px solid mediumturquoise;
+  border-radius: 50%;
+  margin: 0 auto;
+
+  &__short-stick , &__long-stick {
+    position: relative;
+    width: 10px;
+    border-radius: 50%;
+    transform-origin: bottom center;
+  }
+
+  &__long-stick {
+    display: inline-block;
+    position: relative;
+    height: $size-clock/2;
+    bottom: 25%;
+    background-color: aqua;
+    animation: timing 1s linear infinite;
+  }
+
+  &__short-stick {
+    position: relative;
+    height: 125px;
+    bottom: 12%;
+    right: 2%;
+    background-color: aqua;
+    animation: timing 60s linear infinite;
+  }
+  }
+
+
+
+@keyframes timing {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+
