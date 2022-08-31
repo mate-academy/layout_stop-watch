@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  padding: auto;
+}
+
+.minute {
+  position: absolute;
+  top: 25.3%;
+  left: 49.46%;
+  width: 9px;
+  height: 150px;
+  background-color: #004;
+  animation-name: min;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.second {
+  box-sizing: border-box;
+  position: absolute;
+  top: 17%;
+  left: 49.5%;
+  width: 8px;
+  height: 200px;
+  background-color: red;
+  animation-name: sec;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.clock {
+  margin: auto;
+  box-sizing: border-box;
+  width: 410px;
+  height: 410px;
+  border-radius: 100%;
+  background-color: white;
+  border: 1px thick double #004;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
+}
+
+@keyframes sec {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: bottom center;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes min {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: bottom center;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: bottom center;
+  }
+}
