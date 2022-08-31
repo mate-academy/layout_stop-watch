@@ -1,67 +1,6 @@
 * {
   margin: 0;
+  padding: 0;
 }
 
-$minLength: 30vh;
-$secLength: 40vh;
-
-.stopwatch {
-  position: relative;
-
-  border: 1px solid blue;
-  height: 100vh;
-
-  &__minutes {
-    animation: turn 60s infinite linear;
-
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-
-    border-radius: 40%;
-    border: 1px solid black;
-    height: $minLength;
-    width: 3vh;
-
-    background-color: brown;
-
-    transform-origin: bottom;
-  }
-
-  &__seconds {
-    animation: turn 1s infinite linear;
-
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-
-    border-radius: 40%;
-    border: 1px solid black;
-    height: $secLength;
-    width: 4vh;
-
-    background-color: burlywood;
-
-    transform-origin: bottom;
-  }
-
-  &__mid {
-    position: absolute;
-    bottom: 45%;
-    left: 51%;
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-    border: 1px solid black;
-    height: 5vh;
-    width: 5vh;
-
-    background-color: cadetblue;
-  }
-}
-
-@keyframes turn {
-  to {
-    transform: rotate(360deg);
-  }
-}
+@import "./stopwatch.scss";
