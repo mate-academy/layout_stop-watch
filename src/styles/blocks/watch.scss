@@ -1,0 +1,64 @@
+.watch {
+  position: relative;
+  @extend %flex-center;
+
+  &__minutes-hand {
+    position: fixed;
+    width: 8px;
+    height: 175px;
+    background-color: #b2d732;
+    margin-bottom: 175px;
+    border-radius: 3px;
+
+    @include rotate($hour);
+    animation-timing-function: linear;
+  }
+
+  &__seconds-hand {
+    position: fixed;
+    width: 4px;
+    height: 200px;
+    background-color: #fe2712;
+    margin-bottom: 200px;
+    border-radius: 2px;
+
+    @include rotate($minute);
+    animation-timing-function: steps(60);
+  }
+
+  &__center {
+    position: fixed;
+    background-color: #347b89;
+
+    @include circle(50px);
+  }
+
+  &__decoration {
+    position: fixed;
+    background-color: #f0f7d4;
+
+    @include circle(45px);
+    width: 10px;
+
+    @include rotate($minute);
+    animation-timing-function: steps(60);
+    transform-origin: center;
+  }
+
+  &__clock-face {
+    @include circle(435px);
+
+    background-color: #092834;
+    border: 1px solid #092834;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
