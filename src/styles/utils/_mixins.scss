@@ -1,0 +1,13 @@
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin rotate($duration) {
+  animation-name: rotate;
+  animation-duration: $duration;
+  animation-fill-mode: forwards;
+  transform-origin: bottom;
+  animation-iteration-count: infinite;
+}
