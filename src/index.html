@@ -1,14 +1,54 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+  </head>
+  <body>
+    <div class="clock">
+      <div class="clock__contents">
+        <div class="clock__face"></div>
+        <div class="clock__hour hand"></div>
+        <div class="clock__minute hand"></div>
+        <div class="clock__cover"></div>
+        <div class="clock__second-bulb"></div>
+        <div class="clock__second hand"></div>
+        <div class="clock__number">12</div>
+        <div class="clock__number">3</div>
+      </div>
+      <div class="buttons">
+        <div class="buttons__pause">
+          <input
+            type="checkbox"
+            class="buttons__input"
+            id="pause"
+          >
+          <label for="pause">
+            <div class="buttons__label">
+              <span class="fas"><span class="fa-play"></span></span>
+            </div>
+          </label>
+        </div>
+        <div class="buttons__pause">
+          <input
+            type="button"
+            class="buttons__input"
+            id="stop"
+          >
+          <label for="stop">
+            <div class="buttons__label2">
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>
