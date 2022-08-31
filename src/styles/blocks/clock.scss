@@ -1,6 +1,6 @@
 .clock {
-  background-color: aqua;
   @include circle($circle-size);
+  background-color: aqua;
   border: 10px solid black;
   border-radius: 50%;
   background-size: 110%;
@@ -10,7 +10,7 @@
   &__minutes {
     background-color: #000;
     height: $circle-size * 0.4;
-    width: 8px;
+    width: 5px;
     position: absolute;
     left: 50%;
     top: 13.5%;
@@ -20,7 +20,7 @@
 
   &__seconds {
     height: $circle-size * 0.49;
-    width: 4px;
+    width: 3px;
     background-color: black;
     position: absolute;
     left: 50%;
@@ -43,12 +43,9 @@
     bottom: 0;
     left: 0;
   }
-
-  &__seconds-container {
-    animation: rotate 60s infinite steps(60);
-  }
-
+  
   &__seconds-box {
+    animation: rotate 60s infinite steps(60);
     position: absolute;
     top: 0;
     right: 0;
