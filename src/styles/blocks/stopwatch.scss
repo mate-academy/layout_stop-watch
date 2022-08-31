@@ -8,13 +8,15 @@
   background-color: $main-bg;
 
   &__dial {
-    @include circle($clock-dial-size, $clock_background);
+    @include circle($clock-dial-size);
+    background: $clock_background;
     border: $rim-size solid $rim-color;
     position: relative;
 
     &::before {
       content: "";
-      @include circle(15px, $arrows-color);
+      @include circle(15px);
+      background-color: $arrows-color;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -24,12 +26,12 @@
 
   &__minute {
     @include clockArrow(100px);
-    @include arrowAnimation($minutes-count, $seconds-in-minute + s);
+    @include arrowAnimation($minutes-iteration-count, $seconds-in-minute + s);
   }
 
   &__seconds {
     @include clockArrow(150px);
-    @include arrowAnimation($seconds, $one-second);
+    @include arrowAnimation($seconds, $transition-duration);
   }
 
   &__number {
@@ -41,7 +43,11 @@
 
     @for $i from 1 through 12 {
       &:nth-child(#{$i + 2}) {
-        @include numRotation($i*30);
+        transform: rotate(($i*30)+deg);
+      }
+
+      &:nth-child(#{$i + 2})::before {
+        content: "#{$i}";
       }
     }
   }

@@ -7,10 +7,14 @@ $clock-dial-size: 400px;
 $rim-size: 8px;
 
 $main-bg: aquamarine;
-$clock_background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
-rgba(58,58,168,1) 23%, rgba(0,212,255,1) 56%);
+$clock_background: linear-gradient(
+  90deg,
+  rgba(2,0,36,1) 0%,
+  rgba(58,58,168,1) 23%,
+  rgba(0,212,255,1) 56%
+);
 
-$minutes-count: 1;
-$one-second: 1s;
+$transition-duration: 1s;
+$minutes-iteration-count: 1;
 $seconds-in-minute: 60;
-$seconds: $minutes-count * $seconds-in-minute;
+$seconds: $minutes-iteration-count * $seconds-in-minute;
