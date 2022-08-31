@@ -1,0 +1,17 @@
+html {
+  font-size: 1vw;
+  @media screen and (min-width: 700px) {
+    font-size: 7px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 4px;
+  }
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, $a, $g);
+  font-family: $sans;
+  filter: hue-rotate(5deg) saturate(130%) blur(0.3px);
+}

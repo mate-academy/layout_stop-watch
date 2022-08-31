@@ -1,0 +1,181 @@
+.clock {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 40rem;
+  transform: translate3d(-50%,-50%,0);
+  background: $a;
+  box-shadow: 1.5rem 3rem 2rem rgba($c, 0.15),
+    0.5rem 1rem 1.5rem rgba($d, 0.8),
+    inset 0 0 0.4rem rgba($d, 0.2),
+    inset -0.2rem -0.1rem 0.4rem rgba($c, 0.4),
+    2rem 6rem 7rem rgba($c, 0.3);
+
+  &__face {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 35rem;
+    height: 35rem;
+    border-radius: 50rem;
+    transform: translateX(-50%) translateY(-50%);
+    background: $a;
+    box-shadow: 0 0 0.4rem rgba($d, 0.5),
+      inset 0.2rem 0.1rem 0.4rem rgba($c, 0.4),
+      inset 0.5rem 1rem 2rem rgba($c, 0.2),
+      inset 0.25rem 0.5rem 1rem rgba($d, 0.4);
+  }
+
+  &__hour {
+    height: 11rem;
+    transform-origin: 50% 10rem;
+    top: calc(50% - 10rem);
+    animation-play-state: paused;
+  }
+
+  &__minute {
+    height: 14rem;
+    transform-origin: 50% 13rem;
+    top: calc(50% - 13rem);
+    animation-play-state: paused;
+  }
+
+  &__cover {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%,-50%,0 );
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50rem;
+    background: $d;
+    box-shadow: inset 0.4rem 0.8rem 1rem rgba(lighten($d,15%), 0.6),
+      inset -0.4rem -0.8rem 1rem rgba(darken($d,10%), 0.6),
+      0.2rem 0.2rem 0.2rem rgba(darken($d,10%), 0.8);
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      transform: rotate(-25deg) scaleX(0.6);
+      box-shadow: -0.5rem 1rem 2.5rem rgba($d, 0.8);
+    }
+    filter: blur(0.4px);
+  }
+
+  &__second-bulb {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%,-50%,0 );
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50rem;
+    background: $f;
+    box-shadow: 0.1rem 0.15rem 0.2rem rgba(darken($d,12%), 1);
+    filter: blur(0.6px);
+  }
+
+  &__second {
+    height: 17rem;
+    transform-origin: 1rem 14rem;
+    top: calc(50% - 14rem);
+    background: $f;
+    width: 0.3rem;
+    left: calc(50% - 0.15rem);
+    border-radius: 0.2rem;
+    box-shadow: 1rem -0.5rem 0.7rem rgba($d, 0.4);
+    animation-play-state: paused;
+  }
+
+  &__number {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 14.5rem);
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translate3d(-50%,-50%,0 );
+    color: darken($e, 15%);
+    filter: blur(0.4px);
+
+    &:last-child {
+      top: 50%;
+      left: calc(50% + 15rem);
+    }
+  }
+}
+
+.animation {
+  &:nth-of-type(1) {
+    animation: big-tick 43200s infinite linear;
+  }
+
+  &:nth-of-type(2) {
+    animation: big-tick 3600s infinite linear;
+  }
+
+  &:nth-of-type(3) {
+    animation: little-tick 60s infinite steps(15);
+  }
+}
+
+@keyframes big-tick {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: inset -0.2rem -0.2rem 0.2rem rgba(darken($d,10%), 0.5),
+      inset 0.2rem 0.2rem 0.2rem rgba(lighten($d,20%), 1),
+      0.3rem 0.5rem 0.5rem rgba($d, 0.4);
+  }
+  25% {
+    transform: rotate(90deg);
+    box-shadow: inset -0.2rem 0.2rem 0.2rem rgba(darken($d,10%), 0.5),
+      inset 0.2rem -0.2rem 0.2rem rgba(lighten($d,20%), 1),
+      0.3rem -0.5rem 0.5rem rgba($d, 0.4);
+  }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: inset 0.2rem 0.2rem 0.2rem rgba(darken($d,10%), 0.5),
+      inset -0.2rem -0.2rem 0.2rem rgba(lighten($d,20%), 1),
+      -0.3rem -0.5rem 0.5rem rgba($d, 0.4);
+  }
+  75% {
+    transform: rotate(270deg);
+    box-shadow: inset 0.2rem -0.2rem 0.2rem rgba(darken($d,10%), 0.5),
+      inset -0.2rem 0.2rem 0.2rem rgba(lighten($d,20%), 1),
+      -0.3rem 0.5rem 0.5rem rgba($d, 0.4);
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: inset -0.2rem -0.2rem 0.2rem rgba(darken($d,10%), 0.5),
+      inset 0.2rem 0.2rem 0.2rem rgba(lighten($d,20%), 1),
+      0.3rem 0.5rem 0.5rem rgba($d, 0.4);
+  }
+}
+
+@keyframes little-tick {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 0.5rem 1rem 0.7rem rgba($d, 0.4);
+  }
+  25% {
+    transform: rotate(90deg);
+    box-shadow: 1rem -0.5rem 0.7rem rgba($d, 0.4);
+  }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: -0.5rem -1rem 0.7rem rgba($d, 0.4);
+  }
+  75% {
+    transform: rotate(270deg);
+    box-shadow: -1rem 0.5rem 0.7rem rgba($d, 0.4);
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 0.5rem 1rem 0.7rem rgba($d, 0.4);
+  }
+}
