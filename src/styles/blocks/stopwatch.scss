@@ -1,0 +1,55 @@
+
+.stopwatch {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $main-bg;
+
+  &__dial {
+    @include circle($clock-dial-size);
+    background: $clock_background;
+    border: $rim-size solid $rim-color;
+    position: relative;
+
+    &::before {
+      content: "";
+      @include circle(15px);
+      background-color: $arrows-color;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__minute {
+    @include clockArrow(100px);
+    @include arrowAnimation($minutes-iteration-count, $seconds-in-minute + s);
+  }
+
+  &__seconds {
+    @include clockArrow(150px);
+    @include arrowAnimation($seconds, $transition-duration);
+  }
+
+  &__number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: $num-color;
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i + 2}) {
+        transform: rotate(($i*30)+deg);
+      }
+
+      &:nth-child(#{$i + 2})::before {
+        content: "#{$i}";
+      }
+    }
+  }
+
+}
