@@ -1,14 +1,128 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+
+  <body>
+    <div class="stopwatch">
+      <img
+        src="./butterfly.png"
+        alt="butterfly"
+        class="stopwatch__butterfly stopwatch__butterfly--1"
+      >
+
+      <img
+        src="./butterfly.png"
+        alt="butterfly"
+        class="stopwatch__butterfly stopwatch__butterfly--2"
+      >
+
+      <img
+        src="./butterfly.png"
+        alt="butterfly"
+        class="stopwatch__butterfly stopwatch__butterfly--3"
+      >
+
+      <img
+        src="./butterfly.png"
+        alt="butterfly"
+        class="stopwatch__butterfly stopwatch__butterfly--4"
+      >
+
+      <img
+        src="./butterfly.png"
+        alt="butterfly"
+        class="stopwatch__butterfly stopwatch__butterfly--5"
+      >
+
+      <div class="stopwatch__timer">
+        <span class="stopwatch__time" id="stopwatch__time">
+          00:00
+        </span>
+
+        <button class="stopwatch__button" id="stopwatch__button">
+          START
+        </button>
+      </div>
+
+      <ul class="stopwatch__clock" id="stopwatch__clock">
+        <li class="stopwatch__numbers">
+          <span class="stopwatch__span">
+          </span>
+        </li>
+
+        <li class="stopwatch__numbers">
+          <span class="stopwatch__span">
+          </span>
+        </li>
+
+        <li class="stopwatch__numbers">
+          <span class="stopwatch__span">
+          </span>
+        </li>
+
+        <li class="stopwatch__numbers">
+          <span class="stopwatch__span">
+          </span>
+        </li>
+
+        <li class="stopwatch__numbers">
+          <span class="stopwatch__span">
+          </span>
+        </li>
+
+        <li class="stopwatch__numbers">
+          <span class="stopwatch__span">
+          </span>
+        </li>
+
+        <li class="stopwatch__numbers">
+          <span class="stopwatch__span">
+          </span>
+        </li>
+
+        <li class="stopwatch__numbers">
+          <span class="stopwatch__span">
+          </span>
+        </li>
+
+        <li class="stopwatch__numbers">
+          <span class="stopwatch__span">
+          </span>
+        </li>
+
+        <li class="stopwatch__numbers">
+          <span class="stopwatch__span">
+          </span>
+        </li>
+
+        <li class="stopwatch__numbers">
+          <span class="stopwatch__span">
+          </span>
+        </li>
+
+        <li class="stopwatch__numbers">
+          <span class="stopwatch__span">
+          </span>
+        </li>
+
+        <li class="stopwatch__minute" id="min-hand">
+          <span>
+          </span>
+        </li>
+
+        <li class="stopwatch__second" id="sec-hand">
+          <span></span>
+        </li>
+      </ul>
+    </div>
+    <script src="./main.js"></script>
+  </body>
 </html>
+
