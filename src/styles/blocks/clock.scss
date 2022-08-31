@@ -2,16 +2,14 @@
   @include square($clock-size);
 
   background-color: rgb(98, 100, 90);
-  border-radius: 50%;
   box-shadow: 5px 5px 23px 22px rgba(146, 198, 51, 0.86);
 
   &::before {
-    @include square(41px);
+    @include square($direct-size);
 
     content: "";
     background-color: rgb(104, 103, 109);
     box-shadow: 1px 1px 70px 42px rgba(165, 180, 167, 1);
-    border-radius: 50%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -35,8 +33,8 @@
   }
 
   &__minute {
-    height: 33%;
-    width: 10px;
+    height: $min_height;
+    width: $min_width;
     border-radius: 45%;
     top: -27%;
     margin: auto;
