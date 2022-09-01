@@ -16,50 +16,46 @@
   &__hand {
     position: absolute;
     transform: translateX(-50%);
+    left: 50%;
+    border-radius: 4px;
 
     &--hour {
-      left: 50%;
       top: 60px;
-      width: 6px;
+      width: 8px;
       height: 90px;
-      border-radius: 4px;
-      background-color: greenyellow;
+      background-color: green;
     }
 
     &--min {
-      left: 50%;
       top: 40px;
       width: 4px;
       height: 110px;
-      border-radius: 4px;
       background-color: blue;
     }
 
     &--sec {
-      left: 50%;
       top: 20px;
-      width: 3px;
+      width: 2px;
       height: 130px;
-      border-radius: 4px;
       background-color: red;
     }
   }
-}
 
-.hour-animation--start {
-  animation: rotate infinite 3600s steps(60);
-}
+  &__animation-start--hour {
+    animation: rotate infinite 3600s steps(60);
+  }
 
-.min-animation--start {
-  animation: rotate infinite 60s steps(60);
-}
+  &__animation-start--min {
+    animation: rotate infinite 60s steps(60);
+  }
 
-.sec-animation--start {
-  animation: rotate infinite 1s steps(60);
-}
+  &__animation-start--sec {
+    animation: rotate infinite 1s steps(60);
+  }
 
-.animation--paused {
-  animation-play-state: paused;
+  &__animation-paused {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes rotate {
