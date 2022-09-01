@@ -1,0 +1,48 @@
+.watches-container {
+  @extend %centered;
+
+  min-height: 100vh;
+}
+
+.watches {
+  @include watchesSize($watches-size);
+  @extend %centered;
+
+  &__center {
+    @include watchesSize($watches-size-center);
+
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: $color-primary;
+      border-radius: 50%;
+      z-index: 10;
+    }
+  }
+
+  &__clock-hand {
+    position: absolute;
+    bottom: 50%;
+    border-radius: $clock-hand-size-radius;
+    transform-origin: bottom;
+
+    &--type--minute {
+      @include clockHandProperty($clock-hand-size, $clock-hand-size-minute, $color-secondary);
+      @include animationClockHand($clock-hand-time-minute);
+
+      z-index: 1;
+    }
+
+    &--type--second {
+      @include clockHandProperty($clock-hand-size, $clock-hand-size-second, $color-primary);
+      @include animationClockHand($clock-hand-time-second);
+
+      z-index: 2;
+    }
+  }
+}

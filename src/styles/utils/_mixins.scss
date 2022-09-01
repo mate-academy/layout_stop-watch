@@ -1,0 +1,14 @@
+@mixin watchesSize($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin clockHandProperty($width, $height, $background) {
+  width: $width;
+  height: $height;
+  background-color: $background;
+}
+
+@mixin animationClockHand($time) {
+  animation: watches #{$time}s linear infinite;
+}
