@@ -1,11 +1,11 @@
 .clock {
-  @include square($clock-size);
+  @include circle($clock-size);
 
   background-color: rgb(98, 100, 90);
   box-shadow: 5px 5px 23px 22px rgba(146, 198, 51, 0.86);
 
   &::before {
-    @include square($direct-size);
+    @include circle($direct-size);
 
     content: "";
     background-color: rgb(104, 103, 109);
@@ -38,7 +38,6 @@
     width: $min_width;
     border-radius: 45%;
     top: -27%;
-
 
     background-color: rgb(47, 50, 255);
     box-shadow: 1px 1px 16px 8px rgba(195, 231, 32, 0.86);
