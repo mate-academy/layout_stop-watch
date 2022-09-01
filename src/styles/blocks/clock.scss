@@ -1,0 +1,53 @@
+.clock {
+  @include circle($clock-size);
+
+  background-color: rgb(98, 100, 90);
+  box-shadow: 5px 5px 23px 22px rgba(146, 198, 51, 0.86);
+
+  &::before {
+    @include circle($direct-size);
+
+    content: "";
+    background-color: rgb(104, 103, 109);
+    box-shadow: 1px 1px 70px 42px rgba(165, 180, 167, 1);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &__second {
+    @include arrow ();
+    height: 44%;
+    width: 8px;
+    border-radius: 50%;
+    top: 6%;
+
+    background-color: greenyellow;
+    box-shadow: 1px 1px 13px 7px rgba(57, 73, 248, 0.86);
+
+    animation: time 60s infinite linear;
+
+    z-index: 1;
+  }
+
+  &__minute {
+    @include arrow ();
+    height: $min_height;
+    width: $min_width;
+    border-radius: 45%;
+    top: -27%;
+
+    background-color: rgb(47, 50, 255);
+    box-shadow: 1px 1px 16px 8px rgba(195, 231, 32, 0.86);
+
+    animation: time 3600s infinite linear;
+  }
+}
+
+@keyframes time {
+  100% {
+    transform: rotate(360deg);
+  }
+}
