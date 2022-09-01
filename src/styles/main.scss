@@ -1,0 +1,75 @@
+
+$baseMargin: 50%;
+$handsSize: 10px;
+
+body {
+  margin: 0;
+}
+
+@mixin clock-hand {
+  position: absolute;
+  bottom: $baseMargin;
+  left: $baseMargin;
+  width: $handsSize;
+  transform-origin: center bottom;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.stopwatch {
+  &__second {
+    height: 350px;
+    @include clock-hand;
+
+    background-color: rgb(92, 92, 234);
+
+    animation-name: moveSecond;
+    animation-duration: 60s;
+  }
+
+  &__minute {
+    height: 300px;
+    @include clock-hand;
+
+    background-color: rgb(215, 99, 99);
+
+    animation-name: moveMinute;
+    animation-duration: 3600s;
+  }
+
+  &__circle {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: $baseMargin;
+    left: $baseMargin;
+
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 2;
+
+    background-color: rgb(92, 92, 234);
+  }
+}
+
+@keyframes moveMinute {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes moveSecond {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+ 
