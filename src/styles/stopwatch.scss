@@ -1,0 +1,290 @@
+.stopwatch {
+  height: 100vh;
+  width: 100%;
+
+  background-image: url("../bgclock.jpg");
+  background-size: cover;
+
+  font-family: "Courier New", Courier, monospace;
+
+  &__butterfly {
+    position: absolute;
+
+    display: inline-block;
+
+    &--1 {
+      left: 10vw;
+      top: 13vh;
+      width: 8vw;
+      height: 8vw;
+      animation: fly 5s infinite;
+    }
+
+    &--2 {
+      left: 10vw;
+      top: 60vh;
+      width: 18vw;
+      height: 18vw;
+      animation: rotate 5s infinite;
+    }
+
+    &--3 {
+      left: 80vw;
+      top: 5vh;
+      width: 12vw;
+      height: 12vw;
+      animation: rotate 5s infinite;
+    }
+
+    &--4 {
+      left: 70vw;
+      top: 70vh;
+      width: 11vw;
+      height: 11vw;
+      animation: fly 5s infinite;
+    }
+
+    &--5 {
+      left: 87vw;
+      top: 40vh;
+      width: 10vw;
+      height: 10vw;
+      animation: rotate 5s infinite;
+    }
+  }
+
+  &__timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 50px;
+
+    font-size: 100px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  &__time {
+    z-index: 2;
+  }
+
+  &__button {
+    z-index: 2;
+
+    transition: opacity 300ms, transform 300ms;
+
+    margin-left: 80px;
+    box-shadow: 5px 5px 20px 5px #65133e;
+    border: 1px inset #65133e;
+    border-radius: 10px;
+
+    width: 5em;
+    height: 2em;
+
+    background: #304534;
+    cursor: pointer;
+
+    font-size: 30px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-shadow: 0 3px 3px rgba(200,100,200,0.5);
+    color: #fff;
+    outline: #dbe7fd;
+
+    &:hover {
+      transform: scale(110%);
+      opacity: 0.9;
+    }
+  }
+
+  &__clock {
+    position: relative;
+
+    margin: 100px auto;
+    box-shadow: inset 0 5px 25px #00000080,
+      0 5px 25px #00000080,
+      0 5px 30px #00000080,
+      0 5px 35px #00000080,
+      0 5px 35px #00000080,
+      0 5px 35px #00000080;
+    border: 18px solid #1e213a;
+    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+
+    background: #25283d;
+
+    &::before {
+      content: "";
+
+      z-index: -2;
+
+      position: absolute;
+      left: -18px;
+      top: -10px;
+
+      border: 18px solid rgba(204, 204, 204, 0.5);
+      border-radius: 50%;
+      width: 280px;
+      height: 280px;
+    }
+
+    &::after {
+      content: "";
+
+      z-index: 5;
+
+      position: absolute;
+      left: calc(50% - 9px);
+      top: calc(50% - 9px);
+
+      box-shadow: 0 2px 4px #00000026;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+
+      background: goldenrod;
+    }
+  }
+
+  &__numbers {
+    position: absolute;
+
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+
+    text-align: center;
+    list-style: none;
+  }
+
+  @for $i from 1 through 12 {
+    &__numbers:nth-child(#{$i}) ::before {
+      content: "#{$i}";
+    }
+    &__numbers:nth-child(#{$i}) {
+      transform: rotate($i * 30deg);
+    }
+    &__numbers:nth-child(#{$i}) span {
+      transform: rotate($i * -30deg);
+    }
+  }
+
+  &__span {
+    display: block;
+
+    font-size: 38px;
+    text-shadow: 0 5px 18px #00000026, 0 2px 3px #0003;
+
+    color: #dbe7fd;
+  }
+
+  &__minute {
+    position: absolute;
+
+    animation-fill-mode: forwards;
+
+    width: 100%;
+    height: 100%;
+
+    list-style: none;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      left: calc(50% - 4px);
+      top: 55px;
+
+      animation-fill-mode: forwards;
+
+      box-shadow: -1px 0 5px #00000026;
+      border-radius: 4px 4px 2px 2px;
+      width: 8px;
+      height: 79px;
+
+      background: #bed4fd;
+    }
+  }
+
+  &__second {
+    position: absolute;
+    z-index: 5;
+
+    animation-fill-mode: forwards;
+
+    width: 100%;
+    height: 100%;
+
+    list-style: none;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 55px;
+      left: calc(50% - 2px);
+
+      animation-fill-mode: forwards;
+
+      box-shadow: 1px 2px 3px #00000026;
+      border-radius: 2px;
+      width: 4px;
+      height: 107px;
+
+      background: #fd2e62;
+    }
+  }
+}
+
+@keyframes turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0%) rotate(0deg);
+  }
+  25% {
+    transform: translateY(7%) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(12%) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(12%) rotateZ(-4deg);
+  }
+  100% {
+    transform: translateY(0%) rotate(0deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotateZ(-4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate--min {
+  animation: turn 3600s steps(60, end) infinite;
+}
+
+.animate--sec {
+  animation: turn 60s steps(60, end) infinite;
+}
