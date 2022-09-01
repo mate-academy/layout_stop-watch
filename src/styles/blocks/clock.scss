@@ -18,32 +18,32 @@
   }
 
   &__second {
+    @include arrow ();
     height: 44%;
     width: 8px;
     border-radius: 50%;
     top: 6%;
-    margin: auto;
-    position: relative;
+
     background-color: greenyellow;
     box-shadow: 1px 1px 13px 7px rgba(57, 73, 248, 0.86);
-    transform-origin: bottom;
+
     animation: time 60s infinite linear;
-    animation-timing-function: steps(60, end);
+
     z-index: 1;
   }
 
   &__minute {
+    @include arrow ();
     height: $min_height;
     width: $min_width;
     border-radius: 45%;
     top: -27%;
-    margin: auto;
-    position: relative;
+
+
     background-color: rgb(47, 50, 255);
     box-shadow: 1px 1px 16px 8px rgba(195, 231, 32, 0.86);
-    transform-origin: bottom;
+
     animation: time 3600s infinite linear;
-    animation-timing-function: steps(60, end);
   }
 }
 
