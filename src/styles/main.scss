@@ -1,3 +1,6 @@
+@import "./mixim.scss";
+@import "./value.scss";
+
 body {
   margin: 0;
   padding: 0;
@@ -14,17 +17,8 @@ body {
   transform: rotate(180deg);
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 #container-min {
-  width: 10px;
+  width: $width;
   height: 180px;
   background-color: brown;
   border-radius: 5px;
@@ -32,7 +26,7 @@ body {
 }
 
 #container-sec {
-  width: 10px;
+  width: $width;
   height: 250px;
   border-radius: 5px;
   background-color: rgb(112, 119, 177);
