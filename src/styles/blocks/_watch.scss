@@ -1,0 +1,87 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+
+  &__circle {
+    @include circle(600px);
+
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+
+    animation: blobs $clockface-duration ease-in-out infinite alternate,
+      bg-gradient $clockface-duration ease infinite;
+    transition: scale 2s;
+
+    &:hover {
+      scale: 80%;
+    }
+  }
+
+  &__seconds-pointer {
+    position: absolute;
+    bottom: 300px;
+    width: 10px;
+    height: 300px;
+
+    border-radius: 8px;
+    background-color: $secondary-color;
+
+    transform-origin: bottom;
+    animation: minute-pointer 3s linear infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 2px;
+      right: 2px;
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+      animation: blinking 2s ease infinite;
+    }
+  }
+
+  &__minutes-pointer {
+    position: absolute;
+    bottom: 300px;
+    width: 10px;
+    height: 100px;
+
+    background-color: $secondary-color;
+    border-radius: 6px;
+
+    transform-origin: bottom;
+    animation: minute-pointer 20s linear infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 2px;
+      right: 2px;
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      animation: blinking 1s ease infinite;
+    }
+  }
+
+  &__center-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include circle(20px);
+
+    background: $primary-color;
+
+    animation: blobs 15s ease-in-out infinite alternate;
+  }
+}
