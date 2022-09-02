@@ -1,0 +1,23 @@
+@mixin hands($height, $width, $color, $radius) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: $height;
+  width: $width;
+  background-color: $color;
+  border-radius: $radius;
+  transform-origin: bottom;
+}
+
+@mixin face-items($top, $left, $X, $Y) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($X, $Y);
+}
+
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
