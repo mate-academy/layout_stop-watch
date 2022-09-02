@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+
+  &__stop-watch {
+    @include square($watch-size);
+    position: relative;
+    border: 20px solid $primary-color;
+    border-radius: $fifty-percent;
+  }
+
+  &__center {
+    @include circle($center-size, $fifty-percent);
+    position: absolute;
+    left: $fifty-percent;
+    transform: translate(-50%, -50%);
+    top: $fifty-percent;
+    background-color: $primary-color;
+  }
+
+  &__second-hand {
+    @extend %positioning;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    height: 40%;
+    width: 10px;
+    top: 10%;
+    background-color: $blue-color;
+  }
+
+  &__minute-hand {
+    @extend %positioning;
+    height: 30%;
+    width: 15px;
+    top: 20%;
+    background-color: $gold-color;
+    z-index: -5;
+  }
+}
