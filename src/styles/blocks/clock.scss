@@ -1,9 +1,7 @@
 .clock {
+  @include circle(200px);
   position: absolute;
-  height: $clock-size;
-  width: $clock-size;
   background: #fff;
-  border-radius: 100%;
   border: 10px solid #535a5a;
   top: 0;
   left: 0;
@@ -12,11 +10,9 @@
   margin: auto;
 
   &__center {
-    height: 6px;
-    width: 6px;
+    @include circle(6px);
     background-color: #262626;
     position: absolute;
-    border-radius: 100%;
     top: 0;
     left: 0;
     right: 0;
@@ -31,7 +27,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    animation: time 60s infinite linear;
+    @include animation(60s);
 
     &::before {
       position: absolute;
@@ -50,7 +46,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    animation: time 1s infinite linear;
+    @include animation(1s);
 
     &::before {
       position: absolute;
@@ -63,7 +59,7 @@
   }
 }
 
-@keyframes time {
+@keyframes move {
   to {
     transform: rotate(360deg);
   }
