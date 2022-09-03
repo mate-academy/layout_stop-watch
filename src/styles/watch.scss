@@ -1,0 +1,78 @@
+$size-conteiner: 600px;
+
+@mixin size {
+  transform: rotate(90deg);
+  transform-origin: top right;
+  height: $size-conteiner;
+  width: $size-conteiner;
+}
+
+@mixin animation {
+  animation-name: transform;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.conteiner {
+  @include size;
+  border: 1px solid red;
+  border-radius: 50%;
+  background-color: greenyellow;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  &__center-watch {
+    width: 30px;
+    height: 30px;
+    border: 1px solid red;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: green;
+    position: absolute;
+  }
+
+  @keyframes transform {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(450deg);
+    }
+  }
+
+  &__minute {
+    position: absolute;
+    content: "";
+    width: 305px;
+    height: 10px;
+    background-color: red;
+    top: 52%;
+    left: 0%;
+    border-radius: 20px;
+    transform: rotate(90deg);
+    transform-origin: top right;
+    animation-duration: 3600s;
+
+    @include animation;
+  }
+
+  &__second {
+    position: absolute;
+    content: "";
+    width: 250px;
+    height: 5px;
+    background-color: aqua;
+    top: 50%;
+    left: 9%;
+    border-radius: 20px;
+    transform: rotate(90deg);
+    transform-origin: top right;
+    animation-duration: 60s;
+
+    @include animation;
+  }
+}
