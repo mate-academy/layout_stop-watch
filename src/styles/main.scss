@@ -5,13 +5,14 @@ body {
 }
 
 .clock {
-  margin: 0 auto;
-  top: calc(50% - 150px / 2);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: plum;
   clip-path: circle(50%);
   height: 150px;
   width: 150px;
-  position: relative;
 }
 
 .minutes-container,
