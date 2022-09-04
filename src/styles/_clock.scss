@@ -2,8 +2,8 @@
   position: relative;
   @include circle($size-clock);
   border-radius: 50%;
-  border: 2px solid rgb(218, 22, 152);
-  background-color: rgb(7, 0, 0,);
+  border: 2px solid $color;
+  background-color: rgb(17, 2, 2);
   margin: auto;
   transform: rotate(180deg);
 
@@ -13,26 +13,57 @@
     transform-origin: center 0;
   }
   
+  &__hour-3,
+  &__hour-6,
+  &__hour-9,
+  &__hour-12 {
+    position: absolute;
+    color: $color;
+    transform: rotate(180deg);
+    font-size: 20px;
+  }
+
+  &__hour-12 {
+    right: $size-med;
+    top: $size-max;
+  }
+
+  &__hour-6 {
+    right: $size-med;
+    top: $size-min;
+  }
+
+  &__hour-9 {
+    left: $size-max;
+    top: $size-med;
+  }
+
+  &__hour-3 {
+    top: $size-med;
+    left: $size-min;
+  }
+
+  
   &__seconds {
     width: 1px;
     height: 140px;
-    background-color: aqua;
+    background-color: $color-arrow;
     border: 1px;
     border-radius: 10px;
-    animation: rotate steps(60) $second infinite;
+    animation: rotate steps(60) $minute infinite;
   }
   
   &__minutes {
     width: 3px;
     height: 100px;
-    background-color: red;
+    background-color: $color;
     border-radius: 10px;
-    animation: rotate linear $minute infinite;
+    animation: rotate linear $hour infinite;
   }
   
   &__center {
     @include circle($size-centerclock);
-    background: aqua;
+    background: $color-arrow;
     border-radius: 50%;
     transform: translate(-40%, -30%);
   }
