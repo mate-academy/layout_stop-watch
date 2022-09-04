@@ -1,0 +1,80 @@
+.clock {
+  position: relative;
+  @include circle($size-clock);
+  border-radius: 50%;
+  border: 2px solid $color;
+  background-color: rgb(17, 2, 2);
+  margin: auto;
+  transform: rotate(180deg);
+
+  &_arrows-position {
+    position: absolute;
+    @include arrows($placing-arrows);
+    transform-origin: center 0;
+  }
+  
+  &__hour-3,
+  &__hour-6,
+  &__hour-9,
+  &__hour-12 {
+    position: absolute;
+    color: $color;
+    transform: rotate(180deg);
+    font-size: 20px;
+  }
+
+  &__hour-12 {
+    right: $size-med;
+    top: $size-max;
+  }
+
+  &__hour-6 {
+    right: $size-med;
+    top: $size-min;
+  }
+
+  &__hour-9 {
+    left: $size-max;
+    top: $size-med;
+  }
+
+  &__hour-3 {
+    top: $size-med;
+    left: $size-min;
+  }
+
+  
+  &__seconds {
+    width: 1px;
+    height: 140px;
+    background-color: $color-arrow;
+    border: 1px;
+    border-radius: 10px;
+    animation: rotate steps(60) $minute infinite;
+  }
+  
+  &__minutes {
+    width: 3px;
+    height: 100px;
+    background-color: $color;
+    border-radius: 10px;
+    animation: rotate linear $hour infinite;
+  }
+  
+  &__center {
+    @include circle($size-centerclock);
+    background: $color-arrow;
+    border-radius: 50%;
+    transform: translate(-40%, -30%);
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
