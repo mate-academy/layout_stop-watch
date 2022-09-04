@@ -26,6 +26,7 @@
     transform: translate(-50%,-50%);
     z-index: 2;
   }
+
   &__small {
     position: relative;
     width: 3px;
@@ -34,9 +35,12 @@
     border-radius: 50%;
     background-color: blue;
     top: 50%;
-    left: 46%;
-    transform: translate(-389%,-100%);
+    left: 37%;
+    transform: translate(-0%,0%);
+    animation: run 3600s linear infinite normal;
+    transform-origin: top ;
   }
+
   &__big {
     position: relative;
     width: 3px;
@@ -47,12 +51,22 @@
     top: 50%;
     left: 39%;
     transform: translate(-0%,0%);
-    animation: move 10s linear infinite normal;
+    animation: move 60s linear infinite normal;
     transform-origin: top;
     z-index: 1;
   }
 }
+
 @keyframes move {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+@keyframes run {
   0% {
     rotate: 0deg;
   }
