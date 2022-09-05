@@ -1,0 +1,11 @@
+@mixin stopwatch-size {
+  width: $stopwatch-width;
+  height: $stopwatch-height;
+  border-radius: 50%;
+}
+
+@mixin hands-position {
+  position: absolute;
+  bottom: 50%;
+  left: $stopwatch-width / 2 - $border-width * 2;
+}
