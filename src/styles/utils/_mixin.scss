@@ -1,0 +1,19 @@
+@import "../utils/variables";
+
+@mixin clock ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin point($sizee) {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  width: $sizee;
+  height:  $sizee;
+  border-radius: 50%;
+}
+ 
+@mixin arrow($long, $height) {
+  width: $long;
+  height: $height;
+}

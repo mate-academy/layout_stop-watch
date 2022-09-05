@@ -1,0 +1,66 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+@import "../utils/placehoder";
+@import "../utils/reset";
+
+
+.watch {
+  position: relative;
+  &:hover{
+    cursor: pointer;
+  }
+  &__minute {
+    @extend %move;
+    animation: rotate 3600s infinite linear;
+    @include arrow($long*2 - $point/25, $height*2);
+    background-color: #00d4ff;
+    border-style: outset;
+    &:hover {
+      animation: none;
+    }
+  }
+
+  &__second {
+    @extend %move;
+    transition: transform 1s;
+    animation: rotate 60s infinite linear;
+    @include arrow($long*2, $height);
+    background-color: #fd1d1d;
+    border-style: outset;
+    &:hover {
+      animation: none;
+    }
+  }
+
+  &__point {
+    position: relative;
+    z-index: 1;
+    @include point($sizee);
+    border-style: outset;
+    &:hover {
+      animation: none;
+    }
+  }
+}
+
+.minute {
+  @extend %center;
+}
+
+.second {
+  @extend %center;
+}
+
+.circle {
+  @extend %center;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
