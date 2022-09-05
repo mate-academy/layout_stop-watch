@@ -1,0 +1,13 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin animation-property($name, $duration, $timing-function) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $timing-function;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
