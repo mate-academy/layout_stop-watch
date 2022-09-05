@@ -15,37 +15,33 @@ body {
   border: 2px solid black;
   background-color: aquamarine;
   transform: rotate(180deg);
-}
 
-#container-min {
-  width: $width;
-  height: 180px;
-  background-color: brown;
-  border-radius: 5px;
-  animation: rotate 3600s linear infinite;
-}
+  &__min {
+    @include onCentr;
+    width: $width;
+    height: 180px;
+    background-color: brown;
+    border-radius: 5px;
+    animation: rotate 3600s linear infinite;
+  }
 
-#container-sec {
-  width: $width;
-  height: 250px;
-  border-radius: 5px;
-  background-color: rgb(112, 119, 177);
-  animation: rotate 60s infinite steps(60);
-}
+  &__sec {
+    @include onCentr;
+    width: $width;
+    height: 250px;
+    border-radius: 5px;
+    background-color: #7077b1;
+    animation: rotate 60s infinite steps(60);
+  }
 
-.container-centr {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: center top;
-}
-
-#container-dot {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: burlywood;
-  top: 49%;
-  left: 49%;
-  transform-origin: center;
+  &__dot {
+    @include onCentr;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: burlywood;
+    top: 49%;
+    left: 49%;
+    transform-origin: center;
+  }
 }
