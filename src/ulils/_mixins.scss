@@ -22,7 +22,7 @@
 @mixin arrows_position {
   position: absolute;
   top: 0;
-  left: 10px;
+  left: $point_size / 2;
 }
 
 @mixin point_position {
@@ -32,6 +32,6 @@
 }
 
 @mixin default-arrows_position {
-  transform-origin: 0 10px;
+  transform-origin: 0 $point_size / 2;
   transform: rotate(-90deg);
 }
