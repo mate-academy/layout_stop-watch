@@ -1,0 +1,61 @@
+$second-height: 7em;
+$minute-height: $second-height * 3;
+$width: 2em;
+
+.body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: ($minute-height * 2) + $width;
+  height: ($minute-height * 2) + $width;
+  border: $width solid burlywood;
+  border-radius: 50%;
+  margin: 0 auto;
+
+  &__minute,
+  &__second,
+  &__circle {
+    position: absolute;
+    width: $width;
+    transform-origin: bottom center;
+  }
+
+  &__second {
+    height: $second-height;
+    top: $second-height * 2 + $width / 2;
+    background-color: beige;
+    border-radius: 1em;
+    animation: animation 1s linear infinite;
+  }
+
+  &__minute {
+    height: $minute-height;
+    top: $width / 2;
+    background-color: bisque;
+    border-radius: 1em;
+    animation: animation 60s linear infinite;
+  }
+
+  &__circle {
+    height: $width * 2;
+    width: $width * 2;
+    border-radius: 50%;
+    background-color: burlywood;
+  }
+
+  @keyframes animation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
