@@ -1,0 +1,56 @@
+.clock {
+  @include circle(200px);
+  position: absolute;
+  background: #fff;
+  border: 10px solid #535a5a;
+
+  &--middle {
+    @include onMiddle;
+  }
+
+  &__center {
+    @include circle(6px);
+    @include onMiddle;
+    background-color: #262626;
+
+    position: absolute;
+  }
+
+  &__minutes {
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    @include animation(60s);
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: #262626;
+      height: 60px;
+      width: 4px;
+      top: 30px;
+    }
+  }
+
+  &__seconds {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    @include animation(1s);
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: #fd1111;
+      height: 40px;
+      width: 3px;
+      top: 50px;
+    }
+  }
+}
