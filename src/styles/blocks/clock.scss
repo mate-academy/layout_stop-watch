@@ -3,21 +3,17 @@
   position: absolute;
   background: #fff;
   border: 10px solid #535a5a;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
+
+  &--middle {
+    @include onMiddle;
+  }
 
   &__center {
     @include circle(6px);
+    @include onMiddle;
     background-color: #262626;
+
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
   }
 
   &__minutes {
@@ -56,11 +52,5 @@
       width: 3px;
       top: 50px;
     }
-  }
-}
-
-@keyframes move {
-  to {
-    transform: rotate(360deg);
   }
 }
