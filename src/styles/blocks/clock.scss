@@ -24,7 +24,7 @@
       background-color: rgb(233, 204, 40);
       border-radius: 40%;
       transform-origin: center 0;
-      animation: minute 3600s linear infinite;
+      animation: arrowRotate 3600s linear infinite;
     }
 
     &--second {
@@ -33,7 +33,7 @@
       background-color: rgb(24, 106, 230);
       border-radius: 40%;
       transform-origin: center 0;
-      animation: second 60s linear infinite;
+      animation: arrowRotate 60s linear infinite;
     }
 
     &--center {
@@ -46,17 +46,7 @@
   }
 }
 
-@keyframes minute {
-  from {
-    transform: rotate(180deg);
-  }
-
-  to {
-    transform: rotate(540deg);
-  }
-}
-
-@keyframes second {
+@keyframes arrowRotate {
   from {
     transform: rotate(180deg);
   }
