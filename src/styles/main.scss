@@ -3,16 +3,14 @@
 }
 
 body {
-  margin: 0;
   display: flex;
   height: 100vh;
-  padding: auto;
 }
 
 .minute {
   position: absolute;
-  top: 25.3%;
-  left: 49.46%;
+  top: 25%;
+  left: 49%;
   width: 9px;
   height: 150px;
   background-color: #004;
@@ -28,14 +26,11 @@ body {
   box-sizing: border-box;
   position: absolute;
   top: 17%;
-  left: 49.5%;
+  left: 49%;
   width: 8px;
   height: 200px;
   background-color: red;
-  animation-name: sec;
-  animation-duration: 60s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: sec 60s linear infinite;
   border-radius: 50%;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
 }
@@ -43,8 +38,8 @@ body {
 .clock {
   margin: auto;
   box-sizing: border-box;
-  width: 410px;
-  height: 410px;
+  width: 430px;
+  height: 430px;
   border-radius: 100%;
   background-color: white;
   border: 1px thick double #004;
