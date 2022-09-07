@@ -1,0 +1,93 @@
+$bottom-coodinates: 250px;
+@mixin circle ($width, $height, $border-radius) {
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+}
+
+@mixin  alignHands {
+  position: absolute;
+  bottom: $bottom-coodinates;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wall {
+  height: 100vh;
+  width: 100vw;
+  &__watch {
+    width: 100%;
+    height: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 50px;
+  }
+}
+
+.watch {
+  width: 100%;
+  height: 100%;
+  &__wraper {
+    margin: 0 auto;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-image: url("/watch-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__hand {
+    height: 80px;
+    width: 5px;
+    background: #000;
+    position: absolute;
+    left: 145px;
+    bottom: 50%;
+
+    &--minute {
+      animation: rotate 3600s linear 0s infinite;
+      transform-origin: bottom;
+    }
+
+    &--second {
+      left: 146px;
+      height: 100px;
+      width: 3px;
+      background: rgb(255, 0, 0);
+      animation: rotate 60s linear 0s infinite;
+      transform-origin: bottom;
+    }
+
+    &--screw {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      z-index: 1;
+      position: relative;
+      left: 0%;
+      bottom: 0;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
