@@ -15,7 +15,7 @@ body {
   width: 9px;
   height: 150px;
   background-color: #004;
-  animation: min 3600s linear infinite;
+  animation: clock-hand 3600s linear infinite;
   border-radius: 50%;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
 }
@@ -27,7 +27,7 @@ body {
   width: 8px;
   height: 200px;
   background-color: red;
-  animation: sec 60s linear infinite;
+  animation: clock-hand 60s linear infinite;
   border-radius: 50%;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
 }
@@ -42,18 +42,7 @@ body {
   box-shadow: 0 0 8px 0;
 }
 
-@keyframes sec {
-  0% {
-    transform: rotate(0deg);
-    transform-origin: bottom center;
-  }
-  100% {
-    transform: rotate(360deg);
-    transform-origin: bottom center;
-  }
-}
-
-@keyframes min {
+@keyframes clock-hand {
   0% {
     transform: rotate(0deg);
     transform-origin: bottom center;
