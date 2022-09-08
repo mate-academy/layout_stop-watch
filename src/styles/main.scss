@@ -1,0 +1,74 @@
+@import "../styles/utils/variables";
+
+.container {
+  position: relative;
+  height: 100vh;
+  background: #457b9d;
+  &__circle {
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.circle {
+  width: $circle-size;
+  height: $circle-size;
+  background-color: #f1faee;
+  border: 30px solid #1d3557;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  &__min-arrow {
+    position: absolute;
+    left: $circle-size/2 - $min-arrow-thickness/2;
+    top: $min-arrow-cut;
+    transform-origin: $min-arrow-thickness/2 $circle-size/2 - $min-arrow-cut;
+  }
+  
+  &__sec-arrow {
+    position: absolute;
+    transform: translateX(-50%);
+    left: $circle-size/2 - $sec-arrow-thickness/2;
+    transform-origin: $sec-arrow-thickness/2 $circle-size/2;
+  }
+}
+
+.center {
+  width: $center-size;
+  height: $center-size;
+  background-color: #a8dadc;
+  border-radius: 50%;
+}
+
+.min-arrow {
+  width: $min-arrow-thickness;
+  height: $min-arrow-length;
+  background-color: #1d3557;
+  border-radius: $min-arrow-radius;
+  animation: goRound 3600s linear 0s infinite forwards;
+}
+
+.sec-arrow {
+  width: $sec-arrow-thickness;
+  height: $sec-arrow-length;
+  background-color: #e63946;
+  border-radius: $sec-arrow-radius;
+  animation: goRound 60s linear 0s infinite forwards;
+}
+
+@keyframes goRound {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
