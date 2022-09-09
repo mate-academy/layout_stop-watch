@@ -1,0 +1,58 @@
+@use "./reset/reset";
+@use "./mixins/mixins" as *;
+@use "./vars/vars" as *;
+
+@keyframes clockRotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  border: 2px solid black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  &__dot {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    z-index: 2;
+  }
+
+  &__arrow {
+    position: absolute;
+
+    &--minute {
+      width: 10px;
+      height: 50%;
+      background: gray;
+      border-radius: $arrow-radius;
+      bottom: 50%;
+      @include clockRotate(60s);
+    }
+
+    &--hour {
+      width: 13px;
+      height: 35%;
+      bottom: 50%;
+      background: blue;
+      border-radius: $arrow-radius;
+      z-index: 1;
+      @include clockRotate(3600s);
+    }
+  }
+}
