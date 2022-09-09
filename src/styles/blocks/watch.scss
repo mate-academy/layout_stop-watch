@@ -1,0 +1,48 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  height: $watch-size;
+  width: $watch-size;
+  border: 10px solid $color-dark-blue;
+  border-radius: 50%;
+  background-color: rgb(253, 250, 250);
+
+  &__minute-hand {
+
+    width: 12px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: $color_minute;
+    @include animation;
+    animation: watch 3600s linear infinite;
+  }
+
+  &__second-hand {
+    width: 8px;
+    height: 260px;
+    border-radius: 8px;
+    background-color: $color_second;
+    @include animation;
+    animation: watch 60s linear infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    width: $circle-size;
+    height: $circle-size;
+    top: 50%;
+    border-radius: 50%;
+    background-color: $color-dark-blue;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
