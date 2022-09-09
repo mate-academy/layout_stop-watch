@@ -1,0 +1,52 @@
+@import "./keyframes";
+@import "./placeholder";
+
+body {
+  margin: 0;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff8dc;
+}
+
+.watch {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: #fff8dc;
+  border-radius: 50%;
+  border: 15px solid #f5deb3;
+
+  &__center {
+    @extend %arrow-position;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #deb887;
+    transform: translate(-50%, -50%);
+  }
+
+  &__smallarrow {
+    @extend %arrow-position;
+    width: 8px;
+    height: 130px;
+    border-radius: 10px;
+    background-color: #cd853f;
+    animation: watch 60s linear infinite;
+    transform-origin: center bottom;
+  }
+
+  &__bigarrow {
+    @extend %arrow-position;
+    width: 8px;
+    height: 185px;
+    border-radius: 10px;
+    background-color: #a0522d;
+    animation: watch 1s linear infinite;
+    transform-origin: center bottom;
+  }
+}
