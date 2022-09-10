@@ -1,0 +1,33 @@
+@import "./utils/mixins";
+@import "./utils/keyframes";
+
+.page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.page__container {
+  margin: 0;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  border-radius: 50%;
+  background-color: rgb(158, 245, 216);
+
+  &__big-arrow {
+    @include arrow(150px, rgb(64, 64, 221), 0deg, 60s);
+  }
+
+  &__small-arrow {
+    @include arrow(70px, rgb(197, 62, 62), 0deg, 1s);
+    bottom: 150px;
+  }
+}
