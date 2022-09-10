@@ -1,5 +1,6 @@
 @import "./keyframes";
 @import "./placeholder";
+@import "./variables";
 
 body {
   margin: 0;
@@ -10,16 +11,16 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #fff8dc;
+  background-color: $biege-color;
 }
 
 .watch {
   position: relative;
   width: 400px;
   height: 400px;
-  background-color: #fff8dc;
+  background-color: $biege-color;
   border-radius: 50%;
-  border: 15px solid #f5deb3;
+  border: 15px solid $border-watch-color;
   @extend %watch-image;
 
   &__center {
@@ -27,7 +28,7 @@ body {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #deb887;
+    background-color: $center-watch-color;
     transform: translate(-50%, -50%);
   }
 
@@ -37,7 +38,7 @@ body {
     width: 10px;
     height: 130px;
     border-radius: 10px;
-    background-color: #cd853f;
+    background-color: $hour-arrow-color;
     transform-origin: center bottom;
   }
 
@@ -47,7 +48,7 @@ body {
     width: 4px;
     height: 185px;
     border-radius: 10px;
-    background-color: #a0522d;
+    background-color: $minutes-arrow-color;
     transform-origin: center bottom;
   }
 }
