@@ -1,0 +1,11 @@
+@mixin arrow ($height, $color, $deg, $speed) {
+  position: absolute;
+  width: 10px;
+  height: $height;
+  left: 145px;
+  background-color: $color;
+  border-radius: 5px;
+  transform: rotate($deg);
+  transform-origin: bottom;
+  animation: speed_rotate $speed linear 0s infinite;
+}

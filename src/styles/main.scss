@@ -1,23 +1,5 @@
-@mixin arrow ($height, $color, $deg, $speed) {
-  position: absolute;
-  width: 10px;
-  height: $height;
-  left: 145px;
-  background-color: $color;
-  border-radius: 5px;
-  transform: rotate($deg);
-  transform-origin: bottom;
-  animation: speed_rotate $speed linear 0s infinite;
-}
-
-@keyframes speed_rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+@import "./utils/mixins";
+@import "./utils/keyframes";
 
 .page {
   position: relative;
@@ -41,11 +23,11 @@
   background-color: rgb(158, 245, 216);
 
   &__big-arrow {
-    @include arrow(150px, rgb(64, 64, 221), 0deg, 1s);
+    @include arrow(150px, rgb(64, 64, 221), 0deg, 60s);
   }
 
   &__small-arrow {
-    @include arrow(70px, rgb(197, 62, 62), 0deg, 60s);
+    @include arrow(70px, rgb(197, 62, 62), 0deg, 1s);
     bottom: 150px;
   }
 }
