@@ -14,7 +14,7 @@
     border-radius: 10px;
     background-color: $color_minute;
     @include animation;
-    animation: watch 3600s linear infinite;
+    animation: watch $animation-time-minute linear infinite;
   }
 
   &__second-hand {
@@ -23,7 +23,7 @@
     border-radius: 8px;
     background-color: $color_second;
     @include animation;
-    animation: watch 60s linear infinite;
+    animation: watch $animation-time-second linear infinite;
   }
 
   &__circle {
