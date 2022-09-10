@@ -30,23 +30,23 @@ body {
     transform: translate(-50%, -50%);
   }
 
-  &__smallarrow {
+  &__hour-arrow {
     @extend %arrow-position;
-    width: 8px;
+    @extend %animation-hour-arrow;
+    width: 10px;
     height: 130px;
     border-radius: 10px;
     background-color: #cd853f;
-    animation: watch 60s linear infinite;
     transform-origin: center bottom;
   }
 
-  &__bigarrow {
+  &__minutes-arrow {
     @extend %arrow-position;
-    width: 8px;
+    @extend %animation-minutes-arrow;
+    width: 4px;
     height: 185px;
     border-radius: 10px;
     background-color: #a0522d;
-    animation: watch 1s linear infinite;
     transform-origin: center bottom;
   }
 }
