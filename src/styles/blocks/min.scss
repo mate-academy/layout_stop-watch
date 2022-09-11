@@ -1,0 +1,13 @@
+.min {
+  @include watch-center;
+  border: 5px solid #000067;
+  background-color: #000067;
+  border-radius: 50%;
+  left: ($watch-size - $min-width) / 2;
+  top: $watch-size * 0.1;
+  height: $min-length;
+  animation-name: round;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
