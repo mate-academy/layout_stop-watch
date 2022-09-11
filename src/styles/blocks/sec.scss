@@ -1,0 +1,13 @@
+.sec {
+  @include watch-center;
+  left: ($watch-size - $sec-width) / 2;
+  top: $watch-size * 0.05;
+  height: $sec-length;
+  border: $sec-width solid #0f20bc;
+  border-radius: 70%;
+  background-color: #0f20bc;
+  animation-name: round;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
