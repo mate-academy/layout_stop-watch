@@ -1,0 +1,48 @@
+@import "./util/extends";
+
+.clock {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  &::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: calc(50% - 15px);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: grey;
+    z-index: 1;
+  }
+
+  &__sec-arrow {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    height: 150px;
+    width: 5px;
+    border: 2px solid aquamarine;
+    border-radius: 2.5px;
+    background-color: aquamarine;
+    animation-name: rotation;
+    animation-duration: 60s;
+    @extend %animation;
+  }
+
+  &__min-arrow {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    height: 110px;
+    width: 6px;
+    border: 2px solid rgb(219, 35, 41);
+    border-radius: 5px;
+    background-color: rgb(219, 35, 41);
+  
+    animation-name: rotation;
+    animation-duration: 3600s;
+    @extend %animation;
+  }
+}
