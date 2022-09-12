@@ -1,0 +1,106 @@
+.watch {
+  display: flex;
+  position: relative;
+  width: 500px;
+  height: 500px;
+
+  &--center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__number {
+
+    &--0::after {
+      content: "0";
+      display: block;
+      position: absolute;
+      left: 50%;
+      transform: translate(-40%, 10%);
+    }
+
+    &--15::after {
+      content: "15";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translate(-110%, -60%);
+    }
+
+    &--30::after {
+      content: "30";
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translate(-60%, -110%);
+    }
+
+    &--45::after {
+      content: "45";
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translate(10%, -60%);
+    }
+  }
+
+  &__case {
+    position: relative;
+    margin: auto;
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    border-radius: 125px;
+    background-color: rgb(215, 249, 250);
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      height: 14px;
+      width: 14px;
+      background-color: #000;
+      border-radius: 50%;
+    }
+  }
+
+  &__minute-arrow {
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    background-color: #00f;
+    border-radius: 0 20px 20px 0;
+    top: 50%;
+    left: 50%;
+    transform: translateY(50%) rotate(-90deg);
+    transform-origin: left;
+    animation: 3600s clockRotate linear infinite;
+  }
+
+  &__seconds-arrow {
+    width: 120px;
+    height: 3px;
+    position: absolute;
+    background-color: #ff0;
+    border-radius: 0 20px 20px 0;
+    top: 50%;
+    left: 50%;
+    transform: translateY(50%) rotate(-90deg);
+    transform-origin: left;
+    animation: 60s clockRotate linear infinite;
+  }
+}
+
+@keyframes clockRotate {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
