@@ -1,0 +1,52 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid black;
+  border-radius: 50%;
+  width: $widthclock;
+  height: $heightclock;
+  position: relative;
+  
+  &__bighand {
+    position: absolute;
+    bottom: 50%;
+    height: $bighandheight;
+    width: 8px;
+    border: 1px solid blue;
+    border-radius: 50%;
+    background-color: blue;
+    animation: goclock 60s linear infinite;
+    transform-origin: bottom;
+  }
+  
+  &__smallhand {
+    position: absolute;
+    bottom: 50%;
+    width: 10px;
+    height: $smallhandheight;
+    border: 1px solid rgb(235, 83, 83);
+    border-radius: 50%;
+    background-color: rgb(235, 83, 83);
+    animation: goclock 3600s linear infinite;
+    transform-origin: bottom;
+  }
+  
+  &__center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid blue;
+    border-radius: 50%;
+    background-color: blue;
+  }
+}
+
+@keyframes goclock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
