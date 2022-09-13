@@ -1,0 +1,44 @@
+@import "./mixin.scss";
+@import "./variables.scss";
+
+.container {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  border: 1px solid $c-container;
+  background-color: $c-container;
+  @include circle(600px);
+
+  &__minutes {
+    @include strilka(
+      $heightMin, 
+      $circle-color, 
+      2,
+      3600s, 
+      1
+    );
+
+  }
+
+  &__seconds {
+    @include strilka(
+      $heightSec, 
+      $c-gray, 
+      1,
+      60s, 
+      60
+    );
+  }
+
+  &__circle {
+    position: absolute;
+    bottom: 50%;
+    @include circle(30px);
+    z-index: 3;
+    transform: translateY(50%);
+    background-color: $circle-color;
+  }
+}

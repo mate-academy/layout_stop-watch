@@ -1,0 +1,20 @@
+@mixin strilka ($height, $color, $index, $duration, $iteration) {
+  position: absolute;
+  bottom: 50%;
+  height: $height;
+  width: 25px;
+  background-color: $color;
+  border-radius: 15px;
+  z-index: $index;
+  transform-origin: bottom;
+  animation-timing-function: linear;
+  animation-name: watch;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration;
+}
+
+@mixin circle ($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
