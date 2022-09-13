@@ -1,0 +1,51 @@
+$clock-size: 400px;
+$max-hand-size: $clock-size / 2;
+$seconds: 00;
+$minutes: 00;
+$hours: 00;
+
+.watch {
+  display: flex;
+  background-color: white;
+  border: 5px solid gold;
+  width: $clock-size;
+  height: $clock-size;
+  border-radius: 50%;
+  justify-content: center;
+  animation: second 1s infinite;
+
+  @mixin hand($width, $height, $bgc, $animation-duration, $animation-delay, $animation-timing-function){
+    width: #{$width};
+    height: #{$height};
+    margin-top: #{$max-hand-size - $height};
+    position: absolute;
+    background-color: $bgc;
+    border-radius: #{$width};
+    animation: hand-rotate #{$animation-duration} #{$animation-delay}s #{$animation-timing-function} infinite;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    @include hand(5px, $max-hand-size, red, 60s, -1 * $seconds, steps(60));
+  }
+
+  &__minute-hand {
+    @include hand(10px, $max-hand-size - 20px, black, 3600s, -1 * $minutes * 60, linear)
+  }
+
+  &__hour-hand {
+    @include hand(15px, $max-hand-size - 40px, rgb(29, 29, 156), 86400s, -1 * $hours * 3600, linear)
+  }
+
+  @keyframes hand-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes second {
+    50% {
+      background-color: rgb(109, 212, 88);
+    }
+  }
+}
