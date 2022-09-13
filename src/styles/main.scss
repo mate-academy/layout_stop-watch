@@ -1,0 +1,54 @@
+@import "./variables";
+@import "./keyframes";
+@import "./placeholder";
+
+body {
+  margin: 0;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $biege-color;
+}
+
+.watch {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: $biege-color;
+  border-radius: 50%;
+  border: 15px solid $border-watch-color;
+  @extend %watch-image;
+
+  &__center {
+    @extend %arrow-position;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $center-watch-color;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hour-arrow {
+    @extend %arrow-position;
+    @extend %animation-hour-arrow;
+    width: 10px;
+    height: 130px;
+    border-radius: 10px;
+    background-color: $hour-arrow-color;
+    transform-origin: center bottom;
+  }
+
+  &__minutes-arrow {
+    @extend %arrow-position;
+    @extend %animation-minutes-arrow;
+    width: 4px;
+    height: 185px;
+    border-radius: 10px;
+    background-color: $minutes-arrow-color;
+    transform-origin: center bottom;
+  }
+}
