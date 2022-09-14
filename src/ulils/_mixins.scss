@@ -1,0 +1,37 @@
+@mixin watch_position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@mixin seconds-arrow_gabarits {
+  width: $seconds-arrow_width;
+  height: $seconds-arrow_height;
+}
+
+@mixin minutes-arrow_gabarits {
+  width: $minute-arrow_width;
+  height: $minute-arrow_height;
+}
+
+@mixin point_gabarites {
+  width: $point_size;
+  height: $point_size;
+  border-radius: 50%;
+}
+@mixin arrows_position {
+  position: absolute;
+  top: 0;
+  left: $point_size / 2;
+}
+
+@mixin point_position {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@mixin default-arrows_position {
+  transform-origin: 0 $point_size / 2;
+  transform: rotate(-90deg);
+}
