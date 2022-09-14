@@ -1,0 +1,16 @@
+@mixin square($sizeclock) {
+  width: $sizeclock;
+  height: $sizeclock;
+}
+
+@mixin circle($sizeclock) {
+  @include square($sizeclock);
+  border-radius: 50%;
+}
+
+@mixin hands {
+  position: absolute;
+  bottom: 50%;
+  border-radius: 50%;
+  transform-origin: bottom;
+}
