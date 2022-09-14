@@ -1,0 +1,53 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid black;
+  @include circle($heightclock);
+  position: relative;
+  
+  &__bighand {
+    @include hands;
+    height: $bighandheight;
+    width: 8px;
+    border: 1px solid blue;
+    background-color: blue;
+    animation: goclock 60s linear infinite;
+  }
+  
+  &__smallhand {
+    @include hands;
+    width: 10px;
+    height: $smallhandheight;
+    border: 1px solid rgb(235, 83, 83);
+    background-color: rgb(235, 83, 83);
+    animation: goclock 3600s linear infinite;
+  }
+  
+  &__center {
+    position: absolute;
+    @include circle($heightcenter);
+    border: 1px solid blue;
+    background-color: blue;
+  }
+}
+
+@keyframes goclock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
