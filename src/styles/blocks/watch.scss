@@ -1,0 +1,42 @@
+.watch {
+  position: relative;
+  height: 100vh;
+
+  &__img {
+    background-image: url(../images/_watch.jpg);
+
+    @include circle(320px);
+
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -2;
+  }
+
+  &__center {
+    z-index: 1;
+    transform: translate(-35%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 40%;
+  }
+
+  &__second-hand {
+    height: 120px;
+    width: 5px;
+    background-color: #666;
+
+    @include animation(5s);
+  }
+
+  &__minute-hand {
+    z-index: -1;
+    height: 110px;
+    width: 5px;
+    background-color: red;
+
+    @include animation(60s);
+  }
+}
