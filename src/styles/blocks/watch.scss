@@ -1,0 +1,55 @@
+@import "../utils/variables";
+@import "../utils/extends";
+
+.watch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border: $watch-border solid black;
+  margin: auto;
+  border-radius: 50%;
+
+  &__seconds {
+    top: $position-top-sec;
+    left: $position-left-sec;
+    width: $width-sec;
+    height: $height-sec;
+    @extend %general;
+    background-color: yellow;
+    border-radius: $border-radius-sec;
+    animation-name: seconds;
+    animation-duration: 60s;
+  }
+
+  &__minutes {
+    top: $position-top-min;
+    left: $position-left-min;
+    width: $width-min;
+    height: $height-min;
+    @extend %general;
+    background-color: blue;
+    border-radius: $border-radius-min;
+    animation-name: minutes;
+    animation-duration: 3600s;
+  }
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minutes {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
