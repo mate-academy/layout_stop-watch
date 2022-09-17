@@ -1,0 +1,70 @@
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+
+  &__watch-face {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(../images/watch-face2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: $watch-face-size;
+    height: $watch-face-size;
+  }
+
+  &__center {
+    position: absolute;
+    z-index: 3;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  &__second {
+    position: relative;
+    top: (-$second-height) / 2;
+    left: $second-width;
+    z-index: 2;
+
+    width: $second-width;
+    height: $second-height;
+
+    border: 1px solid black;
+    border-radius: $second-width;
+    background-color: red;
+
+    @extend %animation-properties;
+    animation-duration: 60s;
+  }
+
+  &__minute {
+    position: relative;
+    top: (-$minute-height) / 2;
+    left: (-$minute-width) / 4;
+    z-index: 1;
+
+    width: $minute-width;
+    height: $minute-height;
+
+    border: 1px solid black;
+    border-radius: $minute-width;
+    background-color: blue;
+
+    @extend %animation-properties;
+    animation-duration: 3600s;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
