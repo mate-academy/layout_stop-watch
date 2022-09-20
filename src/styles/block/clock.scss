@@ -1,3 +1,4 @@
+
 .clock {
   display: flex;
   justify-content: center;
@@ -8,19 +9,19 @@
   box-sizing: border-box;
 
   &__circle {
+    position: absolute;
     background-color: #c6ecff ;
     border: 5px solid grey;
     height: 400px;
     width: 400px;
     border-radius: 50%;
-    position: absolute;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   &__center {
     position: absolute;
-    top: 50%;
+    top: 48%;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -32,7 +33,7 @@
 
   &__hour {
     position: absolute;
-    top: 38%;
+    bottom: 50%;
     width: 5px;
     height: 100px;
     background-color: #3356f5 ;
@@ -42,8 +43,8 @@
 
   &__minute {
     position: absolute;
-    top: 32%;
-    width: 5px;
+    bottom: 50%;
+    width: 3px;
     height: 150px;
     background-color: #f55c16;
     animation: rotate $minute infinite linear;
