@@ -1,0 +1,63 @@
+.stop-watch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/in-yan.jpg);
+    background-size: contain;
+    background-position: center;
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 85%;
+    
+  }
+
+  &__hand {
+    position: absolute;
+    left: $hand-left-shift;
+    width: $hand-width;
+    transform-origin: $transform-shift 100%;
+    animation-name: move;
+    animation-iteration-count: infinite;
+    border-radius: 50%;
+
+    &--second-hand {
+      height: $second-hand-height;
+      animation-duration: 60s;
+      animation-timing-function: steps(60, end);
+      background-color: #c80dda;
+  
+      &::after {
+        position: absolute;
+        top: $hand-left-shift;
+        content: "";
+        width: $hand-width;
+        height: $hand-width;
+        background-color: #cac71c;
+        border-radius: 50%;
+      }
+    }
+
+    &--minute-hand {
+      top: $minute-hand-height / 2;
+      height: $minute-hand-height;
+      animation-duration: 3600s;
+      animation-timing-function: linear;
+      background-color: #11c948;
+    }
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(-360deg);
+  }
+}
