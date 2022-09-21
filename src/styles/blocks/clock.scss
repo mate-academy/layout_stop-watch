@@ -1,0 +1,64 @@
+.clock {
+  border-radius: 50%;
+  background: #bab86c;
+  height: $clock-size;
+  width: $clock-size;
+  position: relative;
+
+  &::before {
+    background: #000;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: $center-width;
+    height: $center-height;
+  }
+
+  &__minute-container,
+  &__second-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__minute-container {
+    animation: rotate 3600s infinite steps($animation-step);
+  }
+
+  &__second-container {
+    animation: rotate 60s infinite steps($animation-step);
+  }
+
+  &__minute,
+  &__second {
+    border-radius: 50px;
+    background: #000;
+  }
+
+  &__minute {
+    position: absolute;
+    height: $minute-height;
+    width: $minute-width;
+    left: 49%;
+    top: 10%;
+  }
+
+  &__second {
+    position: absolute;
+    height: $second-height;
+    width: $second-width;
+    left: calc((100% - #{$second-width}) / 2);
+    top: calc(50% - #{$second-height});
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
