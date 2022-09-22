@@ -1,0 +1,28 @@
+.wall {
+  @include wall($wall-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__clock {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: blueviolet;
+
+    &::before {
+      content: "";
+      @include clockHands(300px);
+      background-color: $minute-color;
+      animation: rotation 60s linear infinite;
+    }
+
+    &::after {
+      content: "";
+      @include clockHands(250px);
+      background-color: $hour-color;
+      animation: rotation 3600s linear infinite;
+    }
+  }
+}
