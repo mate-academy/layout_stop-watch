@@ -1,0 +1,25 @@
+.axis-rotation {
+  @include square ($azis-size);
+
+  border-radius: 50%;
+  border: 2px solid $basic-color-2;
+  background-color: $basic-color-1;
+}
+
+.hand-min {
+  width: ($watch-size / 2) * 0.05;
+  height: ($watch-size / 2) * 0.75;
+  border-radius: 30px;
+  background-color: $basic-color-2;
+  animation: move 3600s linear infinite;
+  transform-origin: bottom;
+}
+
+.hand-sec {
+  width: ($watch-size / 2) * 0.03;
+  height: ($watch-size / 2) * 0.9;
+  border-radius: 30px;
+  background-color: $basic-color-1;
+  animation: move 60s linear infinite;
+  transform-origin: bottom;
+}
