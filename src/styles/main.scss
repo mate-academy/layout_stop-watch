@@ -1,0 +1,38 @@
+@keyframes example {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  position: absolute;
+}
+
+.clock__sek {
+  height: 200px;
+  width: 7px;
+  background-color: red;
+  animation-name: example;
+  transform-origin: bottom left;
+  animation-duration: 60s;
+  margin: 150px 500px;
+  display: inline-block;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.clock__min {
+  height: 120px;
+  width: 5px;
+  margin: 230px 500px;
+  background-color: blue;
+  animation-name: example;
+  animation-duration: 3600s;
+  transform-origin: bottom left;
+  position: absolute;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
