@@ -15,14 +15,14 @@
       content: "";
       @include clockHands(300px);
       background-color: $minute-color;
-      animation: rotation 60s linear infinite;
+      animation: rotation $animation-duration linear infinite;
     }
 
     &::after {
       content: "";
       @include clockHands(250px);
       background-color: $hour-color;
-      animation: rotation 3600s linear infinite;
+      animation: rotation $animation-duration * 60 linear infinite;
     }
   }
 }
