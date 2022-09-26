@@ -1,0 +1,17 @@
+@mixin wall($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin clockHands($height) {
+  position: absolute;
+  top: -$height + 15px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 10px;
+  height: $height;
+  transform-origin: bottom;
+  border-radius: 20px;
+  z-index: -1;
+}
