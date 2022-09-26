@@ -1,0 +1,33 @@
+.stopwatch {
+  @include clock-face($watch-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(233, 224, 224);
+  border: 1px solid black;
+  position: relative;
+
+  &::before {
+    content: "";
+    @include center-сircle($сircle-size);
+    position: absolute;
+    background-color: green;
+    z-index: 2;
+  }
+
+  &__minute {
+    @extend %arrow-rules;
+    width: 15px;
+    height: 150px;
+    background: red;
+    animation-duration: $min-animation;
+  }
+
+  &__second {
+    @extend %arrow-rules;
+    width: 10px;
+    height: 195px;
+    background: green;
+    animation-duration: $sec-animation;
+  }
+}
