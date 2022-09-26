@@ -1,0 +1,26 @@
+/* #region minute-hand*/
+.minute-hand {
+  display: flex;
+  position: relative;
+  top: $center-position;
+  left: $center-position;
+  @include round($center-size);
+  border-radius: 50%;
+  z-index: 2;
+  background-color: var(--color-cadetblue);
+
+  &::before {
+    position: relative;
+    display: flex;
+    content: "";
+    height: 400px;
+    width: $hands-width;
+    left: 7px;
+    bottom: 385px;
+    border-radius: $hands-border-radius;
+    background-color: var(--color-cadetblue);
+    animation: go 3600s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+}
+/* #endregion*/
