@@ -1,0 +1,34 @@
+.watch {
+  @include square ($watch-size);
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(180deg, #33ed334d, #33ed33b3);
+  border-radius: 50%;
+
+  &__axis-rotation {
+    position: absolute;
+    z-index: 3;
+  }
+
+  &__hand-min {
+    position: absolute;
+    bottom: 50%;
+    z-index: 1;
+  }
+
+  &__hand-sec {
+    position: absolute;
+    bottom: 50%;
+    z-index: 2;
+  }
+
+  &:active {
+    .hand-sec,
+    .hand-min {
+      animation-play-state: paused;
+    }
+  }
+}
