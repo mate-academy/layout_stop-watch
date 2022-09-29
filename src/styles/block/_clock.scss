@@ -1,0 +1,63 @@
+.clock {
+  position: relative;
+  width: 860px;
+  height: 860px;
+  background-color: rgb(230, 230, 223);
+  border: 1px solid rgb(91, 89, 89);
+  border-radius: 50%;
+
+  &__hand {
+    transform-origin: bottom;
+
+    &--seconds {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+
+      width: $arrow-width;
+      height: $second-arrow-length;
+
+      background-color: rgb(24, 82, 169);
+      border-radius: 10px;
+
+      animation: move-s 60s linear infinite reverse 0.5s;
+    }
+
+    &--minute {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+
+      width: $arrow-width;
+      height: $minute-arrow-length;
+
+      background-color: rgb(228, 222, 21);
+      border-radius: 10px;
+
+      animation: move-m 3600s linear infinite reverse 0.5s;
+    }
+  }
+
+  @keyframes move-s {
+    0% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes move-m {
+    0% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.clock::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: rgb(24, 82, 169);
+  border-radius: 50%;
+  position: absolute;
+  top: 48%;
+  left: 49.5%;
+}
