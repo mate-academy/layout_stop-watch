@@ -1,0 +1,97 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  &__conteiner {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    width: $clock-size;
+    height: $clock-size;
+
+    position: relative;
+  }
+
+  &__dial {
+    width: $clock-size;
+    height: $clock-size;
+
+    position: absolute;
+  }
+
+  &__background {
+    box-sizing: border-box;
+    width: $clock-size;
+    height: $clock-size;
+    border-radius: 50%;
+    background-color: #aaa;
+    border: 1px #000 solid;
+
+    position: absolute;
+  }
+  
+  &__center {
+    width: $center-dot-size;
+    height: $center-dot-size;
+    border-radius: 50%;
+  
+    background-color: #000;
+  
+    position: absolute;
+  }
+
+  &__secondArrow {
+    width: $second-arrow-width;
+    height: $second-arrow-heigth;
+    border-radius: 30%;
+    top: $clock-size / 2 - $second-arrow-heigth;
+
+    background-color: #000;
+
+    position: absolute;
+    display: flex;
+
+    animation: 60s steps(60, end) infinite seconds;
+    transform-origin: bottom center;
+  }
+
+  @keyframes seconds {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__hourArrow {
+    width: $hour-arrow-width;
+    height: $hour-arrow-heigth;
+    border-radius: 30%;
+    top: $clock-size / 2 - $hour-arrow-heigth;
+
+    background-color: #f00;
+
+    position: absolute;
+
+    animation: 3600s steps(60, end) infinite seconds;
+    transform-origin: bottom center;
+  }
+
+  @keyframes seconds {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
