@@ -1,0 +1,94 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__box {
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    border: 1px solid rgb(65, 64, 64);
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5);
+    position: relative;
+    background-size: cover;
+  }
+
+  &__second {
+    width: 4px;
+    height: 150px;
+    @include arrStyle();
+    background-color: rgb(255, 0, 0);
+    right: 152px;
+    top: 5px;
+    animation-name: second;
+    animation-duration: $second;
+    @include animationOtpion();
+  }
+
+  &__minute {
+    width: 6px;
+    height: 130px;
+    @include arrStyle();
+    right: 152px;
+    top: 25px;
+    animation-name: minute;
+    animation-duration: $minute;
+    @include animationOtpion();
+  }
+
+  &__hour {
+    width: 100px;
+    height: 8px;
+    @include arrStyle();
+    background-color: rgb(45, 45, 45);
+    right: 108px;
+    top: 100px;
+    rotate: 90deg;
+    animation-name: hour;
+    animation-duration: $hour;
+    @include animationOtpion();
+  }
+
+  &__middleCircle {
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    background-color: rgb(46, 46, 46);
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 149px;
+    top: 147px;
+  }
+}
+
+@keyframes second {
+  0% {
+    @include startPosition();
+  }
+
+  100% {
+    @include endPosition();
+  }
+}
+
+@keyframes minute {
+  0% {
+    @include startPosition();
+  }
+
+  100% {
+    @include endPosition();
+  }
+}
+
+@keyframes hour {
+  0% {
+    @include startPosition();
+
+  }
+
+  100% {
+    @include endPosition();
+  }
+}
