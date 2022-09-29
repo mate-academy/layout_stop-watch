@@ -1,0 +1,48 @@
+@import "../utils/variables";
+@import "./animations.scss";
+
+.watch {
+  display: flex;
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  background-color: blue;
+  border: 5px double yellow;
+  align-items: center;
+  justify-content: center;
+
+  &__circle {
+    position: absolute;
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: 50px;
+   
+    background-color: green;
+    z-index: 3;
+  }
+
+  &__second {
+    position: absolute;
+    height: $second-height;
+    width: $second-width;
+    bottom: $watch-size/2;
+    border-radius: 50px;
+    background-color: red;
+    transform-origin: center bottom;
+    animation: animation 60s steps(60) infinite;
+    z-index: 2;
+  }
+
+  &__minute {
+    position: absolute;
+    height: $minute-height;
+    width: $minute-width;
+    bottom: $watch-size/2;
+    border-radius: 50px;
+    background-color: black;
+    transform-origin: center bottom;
+    animation: animation 3600s linear infinite;
+    z-index: 1;
+  }
+}
