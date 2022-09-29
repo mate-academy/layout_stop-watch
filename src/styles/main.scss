@@ -6,32 +6,48 @@ body {
 
 .seconds {
   display: flex;
-  width: 3px;
-  height: 200px;
+  width: 5px;
+  height: 230px;
   background-color: black;
-  position: relative;
   animation-name: seconds;
   animation-duration: 60s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  transform-origin: bottom;
+  position: absolute;
+  top: 20px;
 
 }
 
 @keyframes seconds {
   from {
-    left: 3px;
+    transform: rotate(0deg);
   }
+
   to {
-    left: 303px;
+    transform: rotate(360deg);
   }
+}
+
+.watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  position: relative;
 }
 
 .minutes {
   display: flex;
   width: 5px;
-  height: 300px;
-  background-color: grey;
-  position: relative;
+  height: 250px;
+  background-color: yellow;
+  transform-origin: bottom;
+  position: absolute;
+  top: 0;
   animation-name: minutes;
   animation-duration: 3600s;
   animation-timing-function: linear;
@@ -40,9 +56,10 @@ body {
 
 @keyframes minutes {
   from {
-    left: 0;
+    transform: rotate(0deg);
   }
+
   to {
-    left: 303px;
+    transform: rotate(360deg);
   }
 }
