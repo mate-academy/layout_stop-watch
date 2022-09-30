@@ -1,0 +1,78 @@
+$size-watch: 400px;
+$size-s: $size-watch / 2.5;
+$size-m: $size-watch / 3.5;
+$width-m: 12px;
+$width-s: 7px;
+$width-p: 15px;
+
+* {
+  margin: 0;
+}
+
+.body {
+  position: relative;
+  margin: auto;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  &__watch {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $size-watch;
+    height: $size-watch;
+    background-color: aqua;
+    border: 5px solid #630a81;
+    border-radius: 50%;
+    background-position: center;
+  }
+}
+
+.point {
+  margin: auto;
+  width: $width-p;
+  height: $width-p;
+  border-radius: 50%;
+  background-color: rgb(80, 16, 16);
+  z-index: 1;
+}
+
+.second {
+  width: $width-s;
+  height: $size-s;
+  bottom: $size-watch / 2;
+  background-color: rgb(255, 0, 238);
+  position: absolute;
+  animation-name: time;
+  animation-duration: 60s;
+  transform-origin: bottom left;
+  animation-iteration-count: infinite;
+  border-radius: 10px;
+}
+
+.minute {
+  width: $width-m;
+  height: $size-m;
+  bottom: $size-watch / 2;
+  background-color: rgb(190, 32, 119);
+  position: absolute;
+  animation-name: time;
+  animation-duration: 3600s;
+  transform-origin: bottom left;
+  animation-iteration-count: infinite;
+  border-radius: 20px;
+}
+
+@keyframes time {
+  from {
+    transform: rotateZ(0);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
