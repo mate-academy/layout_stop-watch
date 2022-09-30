@@ -1,0 +1,82 @@
+.clock {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  &__dial {
+    position: absolute;
+    width: $clock-size;
+    height: $clock-size;
+  }
+
+  &__background {
+    position: absolute;
+    width: $clock-size;
+    height: $clock-size;
+
+    border-radius: 50%;
+    background-color: $circle-color;
+    border: 1px $black-color solid;
+    box-sizing: border-box;
+  }
+  
+  &__center {
+    position: absolute;
+    width: $center-dot-size;
+    height: $center-dot-size;
+  
+    background-color: $black-color;
+    border-radius: 50%;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    width: $second-arrow-width;
+    height: $second-arrow-heigth;
+    top: $clock-size / 2 - $second-arrow-heigth;
+
+    background-color: $black-color;
+    border-radius: 30%;
+
+    animation: 60s steps(60, end) infinite seconds;
+    transform-origin: bottom center;
+  }
+
+  @keyframes seconds {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__hour-arrow {
+    position: absolute;
+    width: $hour-arrow-width;
+    height: $hour-arrow-heigth;
+    top: $clock-size / 2 - $hour-arrow-heigth;
+
+    background-color: $red-color;
+    border-radius: 30%;
+
+    animation: 3600s steps(60, end) infinite seconds;
+    transform-origin: bottom center;
+  }
+
+  @keyframes seconds {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
