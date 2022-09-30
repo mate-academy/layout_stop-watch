@@ -1,61 +1,47 @@
 .clock {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
 
-  height: 100vh;
-
-  &__conteiner {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-
-    width: $clock-size;
-    height: $clock-size;
-
-    position: relative;
-  }
-
   &__dial {
+    position: absolute;
     width: $clock-size;
     height: $clock-size;
-
-    position: absolute;
   }
 
   &__background {
-    box-sizing: border-box;
+    position: absolute;
     width: $clock-size;
     height: $clock-size;
-    border-radius: 50%;
-    background-color: #aaa;
-    border: 1px #000 solid;
 
-    position: absolute;
+    border-radius: 50%;
+    background-color: $circle-color;
+    border: 1px $black-color solid;
+    box-sizing: border-box;
   }
   
   &__center {
+    position: absolute;
     width: $center-dot-size;
     height: $center-dot-size;
+  
+    background-color: $black-color;
     border-radius: 50%;
-  
-    background-color: #000;
-  
-    position: absolute;
   }
 
-  &__secondArrow {
+  &__second-arrow {
+    position: absolute;
     width: $second-arrow-width;
     height: $second-arrow-heigth;
-    border-radius: 30%;
     top: $clock-size / 2 - $second-arrow-heigth;
 
-    background-color: #000;
-
-    position: absolute;
-    display: flex;
+    background-color: $black-color;
+    border-radius: 30%;
 
     animation: 60s steps(60, end) infinite seconds;
     transform-origin: bottom center;
@@ -71,15 +57,14 @@
     }
   }
 
-  &__hourArrow {
+  &__hour-arrow {
+    position: absolute;
     width: $hour-arrow-width;
     height: $hour-arrow-heigth;
-    border-radius: 30%;
     top: $clock-size / 2 - $hour-arrow-heigth;
 
-    background-color: #f00;
-
-    position: absolute;
+    background-color: $red-color;
+    border-radius: 30%;
 
     animation: 3600s steps(60, end) infinite seconds;
     transform-origin: bottom center;
