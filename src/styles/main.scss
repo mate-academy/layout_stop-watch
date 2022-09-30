@@ -1,0 +1,65 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stop-watch {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  &__minute {
+    position: absolute;
+    top: 0;
+    bottom: 200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 10px;
+    height: 200px;
+    background-color: rgb(182, 21, 21);
+    border-radius: 25px;
+    transform-origin: bottom center;
+    animation: circle 3600s steps(360, end) infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 300px;
+    left: 0;
+    margin: auto;
+    width: 10px;
+    height: 300px;
+    background-color: rgb(0, 109, 128);
+    border-radius: 25px;
+    transform-origin: bottom center;
+    animation: circle 60s infinite steps(60, end);
+  }
+
+  &__circle {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(0, 109, 128);
+  }
+
+  @keyframes circle {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
