@@ -1,0 +1,35 @@
+.stopwatch {
+  position: relative;
+  margin: 50px auto;
+  @include circle($watchSize, circleRadius);
+  border: 5px solid #f47a60;
+  background-color: #ced7d8;
+
+  &__center {
+    position: absolute;
+    top: $centerPosition;
+    left: $centerPosition;
+    @include circle($centerSize, $circleRadius);
+    background-color: #f47a60;
+  }
+
+  &__second {
+    @extend %large-text;
+    @include topShift($watchSize, $secondHeight);
+    @include leftShift($watchSize, $secondWidth);
+    width: $secondWidth;
+    height: $secondHeight;
+    background-color: #316879;
+    animation: rotate 60s infinite steps(60, end);
+  }
+
+  &__minute {
+    @extend %large-text;
+    @include topShift($watchSize, $minuteHeight);
+    @include leftShift($watchSize, $minuteWidth);
+    width: $minuteWidth;
+    height: $minuteHeight;
+    background-color: #3ac9b3;
+    animation: rotate 3600s infinite;
+  }
+}
