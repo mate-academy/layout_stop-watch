@@ -1,0 +1,65 @@
+@import "./utils/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border-radius: 50%;
+  background-color: rgb(236, 228, 216);
+  margin: 100px auto;
+  border: #000 solid 5px;
+
+  &__minute-arrow {
+    position: absolute;
+    height: $minute-arrow-height;
+    width: $arrow-width;
+    border-radius: $arrow-width;
+    background-color: #333;
+    bottom: 50%;
+    left: calc(50% - #{$arrow-width} / 2);
+    transform-origin: bottom center;
+    z-index: 1;
+    animation: seconds 3600s infinite;
+  }
+  
+  &__second-arrow {
+    position: absolute;
+    height: $second-arrow-height;
+    width: $arrow-width;
+    border-radius: $arrow-width;
+    background-color: #d00;
+    bottom: 50%;
+    left: calc(50% - #{$arrow-width} / 2);
+    transform-origin: bottom center;
+    animation: seconds 60s infinite steps(60);
+  }
+  
+  &__center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #333;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 1;
+  }
+}
+
+@keyframes seconds {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
