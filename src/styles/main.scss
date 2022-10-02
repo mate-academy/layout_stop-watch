@@ -1,13 +1,5 @@
-$size-watch: 400px;
-$size-s: $size-watch / 2.5;
-$size-m: $size-watch / 3.5;
-$width-m: 12px;
-$width-s: 7px;
-$width-p: 15px;
-
-* {
-  margin: 0;
-}
+@import "./blocks/variables";
+@import"./blocks/frames";
 
 .body {
   position: relative;
@@ -48,7 +40,7 @@ $width-p: 15px;
   background-color: rgb(255, 0, 238);
   position: absolute;
   animation-name: time;
-  animation-duration: 60s;
+  animation-duration: $animation-duration;
   transform-origin: bottom left;
   animation-iteration-count: infinite;
   border-radius: 10px;
@@ -61,18 +53,8 @@ $width-p: 15px;
   background-color: rgb(190, 32, 119);
   position: absolute;
   animation-name: time;
-  animation-duration: 3600s;
+  animation-duration: $animation-duration * 60;
   transform-origin: bottom left;
   animation-iteration-count: infinite;
   border-radius: 20px;
-}
-
-@keyframes time {
-  from {
-    transform: rotateZ(0);
-  }
-
-  to {
-    transform: rotateZ(360deg);
-  }
 }
