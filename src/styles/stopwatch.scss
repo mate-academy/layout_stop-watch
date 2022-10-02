@@ -2,19 +2,19 @@
   position: relative;
   width: $stopwatch-size;
   height: $stopwatch-size;
-  border-radius: 50%;
+  border-radius: $watch-change;
   margin: auto;
   background-color: rgb(226, 211, 211);
 
   &__center {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: $watch-change;
+    left: $watch-change;
     background-color: black;
     width: $center-circle;
     height: $center-circle;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
+    border-radius: $watch-change;
+    transform: translate(-$watch-change, -$watch-change);
   }
 
   &__second-arrow {
@@ -24,8 +24,8 @@
     width: $arrow-width;
     height: $arrow-height;
     top: $stopwatch-size/2 - $arrow-height;
-    left: 50%;
-    transform: translateX(-50%);
+    left: $watch-change;
+    transform: translateX(-$watch-change);
     transform-origin: bottom left;
     animation: move 60s steps(60, end) infinite;
   }
@@ -37,9 +37,9 @@
     width: $arrow-width;
     height: $arrow-heightL;
     top: $stopwatch-size/2 - $arrow-heightL;
-    transform: translateX(-50%);
+    transform: translateX(-$watch-change);
     transform-origin: bottom left;
-    left: 50%;
+    left: $watch-change;
     animation: move 3600s infinite linear;
   }
 
@@ -47,10 +47,10 @@
 
 @keyframes move {
   from {
-    transform: rotate(0) translateX(-50%);
+    transform: rotate(0) translateX(-$watch-change);
   }
 
   to {
-    transform: rotate(360deg) translateX(-50%);
+    transform: rotate(360deg) translateX(-$watch-change);
   }
 }
