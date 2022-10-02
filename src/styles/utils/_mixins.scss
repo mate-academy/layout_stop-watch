@@ -1,0 +1,21 @@
+@mixin startPosition {
+  transform: rotate(0deg);
+  transform-origin: bottom;
+}
+
+@mixin endPosition {
+  transform: rotate(360deg);
+  transform-origin: bottom;
+}
+
+@mixin arrStyle {
+  background-color: rgb(45, 45, 45);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  position: absolute;
+}
+
+@mixin animationOtpion {
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60, end);
+}
