@@ -1,0 +1,46 @@
+@import "./variables.scss";
+@import "./animation-clock.scss";
+
+.watch {
+  background-image: url(../clock.png);
+  background-size: 100%;
+  background-color: #fff;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+  &__min {
+    top: $min-hand-position;
+    position: absolute;
+    background-color: rgb(54, 0, 53);
+    width: $hand-width;
+    height: $min-hand-height;
+    border-radius: $hand-radius;
+    transform-origin: bottom;
+    animation: clock $minutes-transition-duration linear infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: $second-hand-position;
+    width: $hand-width;
+    height: $second-hand-height;
+    border-radius: $hand-radius;
+    background-color: rgb(1, 48, 63);
+    animation: clock $second-transition-duration infinite;
+    animation-timing-function: steps(60);
+    transform-origin: bottom;
+  }
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: black;
+    margin-top: $center-position;
+  }
+}
