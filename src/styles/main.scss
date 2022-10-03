@@ -1,0 +1,123 @@
+$watch-width: 400px;
+$indicator-width: $watch-width * 0.15;
+$indicator-shift-one: ($watch-width /2) - ($indicator-width / 2 );
+$indicator-shift-two: $watch-width - ($indicator-width + 5);
+$brand-left-shift: ($watch-width - 267) / 2;
+$brand-top-shift: $watch-width * 0.6;
+$bigArrowHeight: 120px;
+$smallArrowHeight: 80px;
+
+body {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  &__face {
+    position: relative;
+    height: $watch-width;
+    width: $watch-width;
+    background-color: pink;
+    border: 20px solid lightblue;
+    border-radius: 100px;
+  }
+
+  &__brand {
+    position: absolute;
+    top: $brand-top-shift;
+    left: $brand-left-shift;
+    z-index: 0;
+    
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 10%;
+    width: 10%;
+    background-color: red;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__hand {
+    position: absolute;
+    left: calc(50% - 5px);
+    border-radius: 10px;
+    transform-origin: bottom;
+    
+    &--second-hand {
+      height: $bigArrowHeight;
+      width: 10px;
+      top: ($watch-width / 2) - $bigArrowHeight;
+      background-color: rgb(44, 104, 20);
+      animation: move 60s linear infinite;
+      animation-delay: 1s;
+      z-index: 1;
+    
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+    
+    &--minute-hand {
+      height: $smallArrowHeight;
+      width: 10px;
+      top: ($watch-width /2) - $smallArrowHeight;
+      background-color: rgb(128, 50, 50);
+      animation: move 3600s linear infinite;
+      animation-delay: 1s;
+      
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  &__indicator {
+    position: absolute;
+    height: $indicator-width;
+    width: $indicator-width;
+    background-color: white;
+    text-align: center;
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+    line-height: $indicator-width;
+    
+    &--one {
+      left: $indicator-shift-one;
+      top: 5px;
+    }
+    
+    &--two {
+      left: $indicator-shift-two;
+      top: $indicator-shift-one;
+    }
+
+    &--three {
+      left: $indicator-shift-one;
+      top: $indicator-shift-two;
+    }
+
+    &--four {
+      left: 5px;
+      top: $indicator-shift-one;
+    }
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+} 
