@@ -1,15 +1,5 @@
-$watch-size: 500px;
-$hand-width: 0.01 * $watch-size;
-$hand-radius: 0.5 * $hand-width;
-$second-hand-height: 0.4 * $watch-size;
-$second-hand-position: ($watch-size / 2) - $second-hand-height;
-$min-hand-height: 0.3 * $watch-size;
-$min-hand-position: ($watch-size / 2) - $min-hand-height;
-$center-size: 0.03 * $watch-size;
-$center-position: $watch-size / 2 - $center-size;
-
-$second-transition-duration: 60s;
-$minutes-transition-duration: 3600s;
+@import "./variables.scss";
+@import "./animation-clock.scss";
 
 .watch {
   background-image: url(../clock.png);
@@ -52,15 +42,5 @@ $minutes-transition-duration: 3600s;
     z-index: 1;
     background-color: black;
     margin-top: $center-position;
-  }
-}
-
-@keyframes clock {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 }
