@@ -1,0 +1,34 @@
+.clock {
+  @include circle($size-clock-circle);
+  @extend %flex-align;
+  position: relative;
+  background-color: lightgrey;
+  border: 5px solid black;
+  border-radius: 50%;
+  
+  .clock__second {
+    @extend %min-sec;
+    width: $second-width;
+    height: $height-second;
+    background-color: $color-second;
+    animation: move $time-second linear infinite ;
+    
+    
+  }
+  
+  .clock__minute {
+    @extend %min-sec;
+    width: $minute-width;
+    height: $height-minute;
+    background-color: $color-minute;
+    animation: move $time-minute linear infinite;
+  }
+
+  &::after {
+    @include circle($size-small-circle);
+    position: absolute;
+    content: "";
+    background-color: black;
+    border-radius: 50%;
+  }
+}

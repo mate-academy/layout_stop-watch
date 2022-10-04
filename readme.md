@@ -1,9 +1,9 @@
 # Stopwatch task
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_stop-watch/)
+- [DEMO LINK](https://Ilya-Osoben.github.io/layout_stop-watch/)
 
 ___
-> Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
+> Follow [this instructions](https://Ilya-Osoben/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 
 - There are no tests for this task so don't run `npm test`
 ___
