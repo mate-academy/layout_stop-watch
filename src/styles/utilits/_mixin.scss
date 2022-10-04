@@ -1,0 +1,9 @@
+@mixin centerDotSize ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin positionOfHand ($hand-height) {
+  top: calc(50% - #{$hand-height});
+  left: calc(50% - (#{$hand-width} / 2));
+}

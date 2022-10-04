@@ -1,0 +1,49 @@
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  position: relative;
+  height: $second-hand-height * 2;
+  padding: 35px;
+
+  &__minute-hand {
+    position: absolute;
+    @include positionOfHand ($minute-hand-height);
+
+    width: $hand-width;
+    height: $minute-hand-height;
+    border-radius: 10px;
+    background-color: #d15559;
+
+    transform-origin: bottom center;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    @include positionOfHand($second-hand-height);
+
+    width: $hand-width;
+    height: $second-hand-height;
+    border-radius: 10px;
+    background-color: #4b9aaa;
+
+    transform-origin: bottom center;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    @include centerDotSize ($dot-size);
+    border-radius: 50%;
+    background-color: #4b9aaa;
+
+    transform: translate(-50%, -50%);
+  }
+}
