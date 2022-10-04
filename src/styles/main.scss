@@ -1,0 +1,104 @@
+@import "../styles/utils/variables";
+@import "../styles/utils/animation";
+
+body {
+  font-weight: 700;
+  font-size: 32px;
+  font-family: Arial, serif;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  width: 500px;
+
+  &__face {
+    position: relative;
+    height: $watch-width;
+    width: $watch-width;
+    background-color: #ffbf00;
+    border: 10px solid #ff0;
+    border-radius: 20px;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 10%;
+    width: 10%;
+    background-color: rgb(255, 123, 0);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__hand {
+    position: absolute;
+    left: calc(50% - 5px);
+    border-radius: 10px;
+    transform-origin: bottom;
+
+    &--second-hand {
+      height: $bigArrow;
+      width: 10px;
+      top: ($watch-width / 2) - $bigArrow;
+      background-color: rgb(38, 20, 104);
+      animation: move 60s linear infinite;
+      animation-delay: 1s;
+      z-index: 1;
+
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+
+    &--minute-hand {
+      height: $smallArrow;
+      width: 10px;
+      top: ($watch-width /2) - $smallArrow;
+      background-color: rgb(0, 6, 83);
+      animation: move 3600s linear infinite;
+      animation-delay: 1s;
+
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  &__indicator {
+
+    position: absolute;
+    height: $indicator-width;
+    width: $indicator-width;
+    color: rgb(0, 6, 95);
+    background-color: rgb(255, 240, 24);
+    text-align: center;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    line-height: $indicator-width;
+
+    &--12 {
+      left: $indicator-shift-one;
+      top: 5px;
+    }
+
+    &--15 {
+      left: $indicator-shift-two;
+      top: $indicator-shift-one;
+    }
+
+    &--18 {
+      left: $indicator-shift-one;
+      top: $indicator-shift-two;
+    }
+
+    &--21 {
+      left: 5px;
+      top: $indicator-shift-one;
+    }
+  }
+}
