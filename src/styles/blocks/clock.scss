@@ -1,35 +1,27 @@
 .clock {
   @include circle($size-clock-circle);
+  @extend %flex-align;
   position: relative;
-  width: $size-clock-circle;
-  height: $size-clock-circle;
   background-color: lightgrey;
   border: 5px solid black;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   
   .clock__second {
-    position: absolute;
-    bottom: $bottom-position;
+    @extend %min-sec;
     width: $second-width;
     height: $height-second;
     background-color: $color-second;
-    border-radius: $border-radius-arrow;
     animation: move $time-second linear infinite ;
-    transform-origin: bottom;
+    
+    
   }
   
   .clock__minute {
-    position: absolute;
+    @extend %min-sec;
     width: $minute-width;
     height: $height-minute;
-    bottom: $bottom-position;
-    border-radius: $border-radius-arrow;
     background-color: $color-minute;
     animation: move $time-minute linear infinite;
-    transform-origin: bottom;
   }
 
   &::after {
