@@ -1,0 +1,37 @@
+$size: 10px;
+$arrow-color: #3a3a3a;
+$count:
+  "1"  30deg,
+  "2"  60deg,
+  "3"  90deg,
+  "4"  120deg,
+  "5"  150deg,
+  "6"  180deg,
+  "7"  210deg,
+  "8"  240deg,
+  "9"  270deg,
+  "10" 300deg,
+  "11" 330deg,
+  "12" 360deg;
+
+@mixin arrow {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: 50% 100%;
+}
+@mixin arrow_after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -$size;
+  border-bottom: $size solid red;
+}
+
+@mixin pos_abs_center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
