@@ -1,0 +1,45 @@
+@import "mixin.scss";
+
+.clock {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid #000;
+
+    transform: translate(-12px, -17px);
+  }
+  &__big-arrow {
+    @include arrows;
+
+    width: 250px;
+    background-color: #f00;
+    animation: rotateArrow 60s linear infinite;
+  }
+
+  &__small-arrow {
+    @include arrows;
+
+    width: 150px;
+    background-color: #00f;
+    animation: rotateArrow 3600s linear infinite;
+  }
+
+  @keyframes rotateArrow {
+    0% {
+      transform: rotate(-90deg);
+    }
+
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+}
