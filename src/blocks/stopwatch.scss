@@ -1,0 +1,61 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include watchSize;
+
+  border: 1px solid #6b7679;
+  border-radius: 50%;
+
+  background-color: #aaa;
+  box-shadow: (10px 10px 10px #aaaa);
+
+  &__center {
+    @include centerSize;
+    background-color: #0baa;
+    border-radius: 50%;
+  }
+
+  &__long-hand {
+    position: absolute;
+
+    height: $longHandSize;
+    width: 3px;
+    margin-bottom: 180px;
+
+    border: 0 solid transparent;
+    border-radius: 50%;
+
+    background-color: #000;
+
+    animation: rotate 60s linear infinite normal;
+    transform-origin: bottom center;
+  }
+
+  &__short-hand {
+    position: absolute;
+
+    height: $shortHandSize;
+    width: 6px;
+    margin-bottom: 90px;
+
+    border: 0 solid transparent;
+    border-radius: 50%;
+
+    background-color: #a0a0ff;
+
+    animation: rotate 3600s linear infinite normal;
+    transform-origin: bottom center;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
