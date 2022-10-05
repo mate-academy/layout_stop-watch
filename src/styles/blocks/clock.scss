@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.clock {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+
+  &__minutes {
+    position: relative;
+    left: 7px;
+    bottom: 100px;
+    height: 200px;
+    width: 7px;
+    border-radius: 5px;
+    background-color: blue;
+    transform-origin: bottom;
+    animation: minutes 3600s linear infinite;
+  }
+  
+  &__seconds {
+    position: relative;
+    bottom: 75px;
+    height: 150px;
+    width: 7px;
+    border-radius: 5px;
+    background-color: red;
+    transform-origin: bottom;
+    animation: seconds 60s linear infinite;
+  }
+  
+  &__circle-in-center {
+    position: relative;
+    right: 14px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+}
