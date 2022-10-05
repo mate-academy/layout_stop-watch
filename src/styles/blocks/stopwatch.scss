@@ -3,51 +3,59 @@
 .stopwatch {
   display: flex;
   justify-content: center;
-  align-items: center;
-  @include stopwatchSize($stopwatch-size);
+
   background-color: $primary-color;
+  align-items: center;
   border-radius: 50%;
   border: 3px solid $secondary-color;
+
   box-shadow: (5px 5px 5px black);
+  @include stopwatchSize($stopwatch-size);
 
   &__center {
-    @include center-size ($center-size);
     background-color: $secondary-color;
     border-radius: 50%;
+    @include center-size ($center-size);
   }
 
   &__seconds {
     position: absolute;
     height: $second-hand;
     width: 3px;
+
     background-color: $secondary-color;
+    border-radius: 3px;
+    margin-bottom: $second-hand;
+
     animation: rotate 60s steps(60, end) infinite normal;
     transform-origin: bottom center;
-    margin-bottom: $second-hand;
-    border-radius: 3px;
   }
 
   &__minutes {
     position: absolute;
     height: $minute-hand;
     width: 5px;
+    margin-bottom: $minute-hand;
+
     background-color: $secondary-color;
+    border-radius: 3px;
+
     animation: rotate 3600s linear infinite normal;
     transform-origin: bottom center;
-    border-radius: 3px;
-    margin-bottom: $minute-hand;
   }
 
   &__transparent {
     height: $stopwatch-size - $stopwatch-color-height * 2
       + $stopwatch-color-width;
     width: $stopwatch-color-width;
+
     background-color: transparent;
   }
 
   &__color {
     height: $stopwatch-color-height;
     width: $stopwatch-color-width;
+
     background-color: $secondary-color;
     border-radius: 3px;
   }
