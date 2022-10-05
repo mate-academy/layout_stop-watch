@@ -1,0 +1,56 @@
+.clock {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include clock();
+
+  background-image: url(../clock2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid black;
+  border-radius: 50%;
+
+  &__center {
+    z-index: 2;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: red;
+    border-radius: 50%;
+  }
+
+  &__second {
+    position: absolute;
+    top: getTopSecond($clocksize, $standartSpace);
+    z-index: 1;
+
+    width: 5px;
+    height: getHeightSecond($clocksize, $standartSpace);
+
+    background-color: yellow;
+    border-radius: 10px;
+
+    animation: time 60s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+  }
+
+  &__hour {
+    position: absolute;
+    top: getTopHour($clocksize, $standartSpace);
+
+    width: 10px;
+    height: getHeightHour($clocksize, $standartSpace);
+
+    background-color: black;
+    border-radius: 10px;
+
+    animation: time 3600s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+  }
+}
