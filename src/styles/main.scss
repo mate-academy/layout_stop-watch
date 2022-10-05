@@ -1,0 +1,51 @@
+@import "./utils/reset";
+@import "./utils/variables";
+@import "./utils/mixins";
+
+.page__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  @include circle($stopwatch-width);
+  background-color: rgb(182, 222, 217);
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include circle(10px);
+    background-color: black;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 15%;
+    left: $left-position;
+    height: 70px;
+    @include arrow;
+    @include animation(3600s);
+  }
+
+  &__second {
+    position: absolute;
+    left: $left-position;
+    height: 100px;
+    @include arrow;
+    @include animation(60s);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

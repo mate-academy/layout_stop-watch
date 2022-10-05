@@ -1,0 +1,16 @@
+@mixin  circle ($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin arrow {
+  width: 4px;
+  background-color: black;
+  border-radius: 20%;
+}
+
+@mixin animation ($duration) {
+  animation: rotate $duration linear infinite;
+  transform-origin: bottom left;
+}
