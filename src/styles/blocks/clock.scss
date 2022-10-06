@@ -1,0 +1,99 @@
+.clock {
+  position: relative;
+  @include clockSize($clock-size);
+
+  background-color: $clock-color;
+  border: 10px solid $border-color;
+  border-radius: 50%;
+  margin: 200px auto;
+
+  &::after {
+    content: "";
+    position: absolute;
+    @include dotSize($dot-size);
+    background-color: $main-color;
+    border-radius: 50%;
+    left: $dot-expression;
+    top: $dot-expression;
+  }
+
+  &__item {
+    list-style: none;
+    position: absolute;
+  }
+
+  .second {
+    width: 100%;
+    height: 100%;
+    animation: sec 60s steps(60, end) infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: $second-expression;
+      top: 20px;
+      @include arrowSecondSize($second-width, $second-height);
+
+      background: $arrow-second;
+      border-radius: 2px;
+    }
+  }
+
+  .minute {
+    width: 100%;
+    height: 100%;
+    animation: sec 3600s steps(60, end) infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: $minute-expression;
+      top: 65px;
+
+      @include arrowMinuteSize($minute-width, $minute-height);
+      background-color: $main-color;
+      border-radius: 4px 4px 2px 2px;
+    }
+  }
+
+  .numbers {
+    width: 75%;
+    height: 75%;
+    text-align: center;
+
+    &__digit {
+      display: block;
+      color: $main-color;
+    }
+
+    &:nth-child(1) {
+      position: absolute;
+      bottom: -50px;
+      right: -95px;
+    }
+
+    &:nth-child(2) {
+      position: absolute;
+      bottom: -180px;
+      right: 35px;
+    }
+
+    &:nth-child(3) {
+      position: absolute;
+      bottom: -50px;
+      right: 170px;
+    }
+
+    &:nth-child(4) {
+      position: absolute;
+      bottom: 70px;
+      right: 40px;
+    }
+  }
+
+  @keyframes sec {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
