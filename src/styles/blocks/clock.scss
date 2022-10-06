@@ -11,27 +11,8 @@
     width: 15px;
     height: 15px;
     border-radius: 50px;
-    background: rgb(255, 255, 255);
-    z-index: 5;
-  }
-
-  &__hour {
-    position: absolute;
-
-    .hours {
-      @include hour;
-      animation: $time-hour;
-
-      &:before {
-        content: "";
-        position: absolute;
-        width: 8px;
-        height: 100px;
-        background-color: rgb(212, 61, 61);
-        border-radius: 25% 10%;
-        z-index: 1;
-      }
-    }
+    background: #fff;
+    z-index: 3;
   }
 
   &__minute {
@@ -46,9 +27,9 @@
         position: absolute;
         width: 7px;
         height: 130px;
-        background-color: rgb(255, 255, 255);
+        background-color: #d42222;
         border-radius: 10px 10px 0 0;
-        z-index: 2;
+        z-index: 1;
       }
     }
   }
@@ -65,9 +46,9 @@
         position: absolute;
         width: 3px;
         height: 190px;
-        background-color: rgb(3, 3, 3);
+        background-color: #fff;
         border-radius: 10px 10px 0 0;
-        z-index: 3;
+        z-index: 2;
       }
     }
   }
