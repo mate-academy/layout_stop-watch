@@ -1,0 +1,63 @@
+@import "./variables";
+
+.page__clock {
+  margin: auto;
+  margin-top: 50px;
+}
+
+.clock {
+  display: flex;
+  width: $size-clock;
+  height: $size-clock;
+  border: 2px solid #0a8127;
+  border-radius: 50%;
+  background-image: url(../images/watch.jpg);
+  background-position: center;
+}
+
+.point {
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  z-index: 1;
+}
+
+.second {
+  margin-top: $shift-second;
+  margin-left: $shift-left-second;
+  width: $second-width;
+  height: $second-size;
+  background-color: blue;
+  position: absolute;
+  animation-name: time;
+  animation-duration: 60s;
+  transform-origin: bottom left;
+  animation-iteration-count: infinite;
+  border-radius: 5px;
+}
+
+.minute {
+  margin-top: $shift-minute;
+  margin-left: $shift-left-minute;
+  width: $minute-width;
+  height: $minute-size;
+  background-color: red;
+  position: absolute;
+  animation-name: time;
+  animation-duration: 3600s;
+  transform-origin: bottom left;
+  animation-iteration-count: infinite;
+  border-radius: 10px;
+}
+
+@keyframes time {
+  from {
+    transform: rotateZ(0);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
