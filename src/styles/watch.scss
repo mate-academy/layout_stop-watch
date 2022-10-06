@@ -1,0 +1,41 @@
+@import "./variables";
+@import "./keyframes";
+@import "./extends";
+
+.stopwatch {
+  @extend %center-item;
+  background-color: rgb(58, 58, 58);
+  position: relative;
+  flex-shrink: 0;
+  padding: 20px;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  box-shadow: 14px 9px 41px -19px rgba(0,0,0,0.57);
+
+  &__point {
+    background-color: blue;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__minutes {
+    @extend %watch-hands;
+    height: 0.3 * $watch-size;
+    width: 2 * $seconds-width;
+    background-color: blue;
+    border-radius: 8px;
+    animation: arrow-move $minutes-duration steps(60, start) 60s infinite;
+  }
+
+  &__seconds {
+    @extend %watch-hands;
+    height: 0.45 * $watch-size;
+    width: $seconds-width;
+    background-color: yellow;
+    border-radius: 8px;
+    animation: arrow-move $seconds-duration steps(60, start) 1s infinite;
+  }
+}
