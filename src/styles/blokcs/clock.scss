@@ -1,0 +1,53 @@
+@keyframes turnover {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  height: 100%;
+
+  &__minute {
+    position: absolute;
+    top: calc(50% - #{$minute-height});
+    left: calc(50% - #{$hand-width / 2});
+    transform-origin: bottom;
+
+    height: $minute-height;
+    width: $hand-width;
+
+    background-color: rgb(80%, 40%, 20%);
+
+    animation: turnover 3600s linear infinite;
+  }
+
+  &__second {
+    position: absolute;
+    top: calc(50% - #{$second-height});
+    left: calc(50% - #{$hand-width / 2});
+    transform-origin: bottom;
+
+    height: $second-height;
+    width: $hand-width;
+
+    background-color: rgb(20%, 60%, 20%);
+
+    animation: turnover 60s linear infinite;
+  }
+
+  &__dot {
+    position: absolute;
+    top: calc(50% - #{$dot-diam / 2});
+    left: calc(50% - #{$dot-diam / 2});
+
+    height: $dot-diam;
+    width: $dot-diam;
+
+    background-color: rgb(15%, 40%, 100%);
+    border-radius: 50%;
+  }
+}
