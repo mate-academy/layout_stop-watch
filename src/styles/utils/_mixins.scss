@@ -1,0 +1,15 @@
+@mixin handSize($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin arrow($color, $duration, $timing) {
+  position: absolute;
+
+  background-color: $color;
+  border-radius: 50%;
+  bottom: 50%;
+
+  transform-origin: bottom center;
+  animation: rotate $duration $timing infinite;
+}
