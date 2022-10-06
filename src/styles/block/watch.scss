@@ -1,0 +1,26 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__min {
+    @include handSize($s-min-height, $s-min-width);
+    @include arrow($c-min, 3600s, linear);
+  }
+
+  &__sec {
+    @include handSize($s-sec-height, $s-sec-width);
+    @include arrow($c-sec, 60s, steps(60, end));
+  }
+
+  &__dot {
+    @include handSize($s-dot, $s-dot);
+    position: absolute;
+
+    background-color: $c-dot;
+    border-radius: 100%;
+    z-index: 1;
+  }
+}
