@@ -16,7 +16,7 @@
 
     background-color: $colorSecondary;
 
-    animation: move 3600s linear infinite normal;
+    animation: move 60s linear infinite normal;
     transform-origin: bottom center;
   }
 
@@ -30,13 +30,13 @@
 
     background-color: $colorSeconds;
 
-    animation: move 60s steps(60, end) infinite normal;
+    animation: move 1s linear infinite normal;
     transform-origin: bottom center;
   }
 
   &__center {
     position: absolute;
-    
+
     @extend %display;
     @include circle($sizeCenter);
 
