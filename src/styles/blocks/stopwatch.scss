@@ -1,0 +1,20 @@
+.stopwatch {
+  &__min-hand {
+    width: 10px;
+    height: 100px;
+    background-color: green;
+    border-radius: 5px;
+    animation: watch 3600s linear infinite;
+    transform-origin: bottom;
+  }
+  
+  &__sec-hand {
+    width: 7px;
+    height: 150px;
+    background-color: red;
+    border-radius: 5px;
+    animation: watch 60s linear infinite;
+    transform-origin: top;
+    animation-delay: -30s;
+  }
+}
