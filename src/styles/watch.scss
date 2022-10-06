@@ -1,0 +1,72 @@
+.watch {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+
+  border-radius: $clock-size / 2;
+  background-color: $main-color-1;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $center-size;
+    height: $center-size;
+    margin-left: -($center-size / 2);
+    margin-top: -($center-size / 2);
+  
+    border-radius: $center-size / 2;
+    background-color: $main-color-2;
+
+    z-index: 4;
+  }
+
+  &__hour-hand {
+    position: absolute;
+    left: 50%;
+    width: $hour-width;
+    height: $hour-height;
+    margin-top: $hour-margin;
+    margin-left: -($hour-width / 2);
+
+    background-color: $main-color-3;
+
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    left: 50%;
+    width: $minute-width;
+    height: $minute-height;
+    margin-left: -($minute-width / 2);
+    margin-top: $minute-margin;
+
+    background-color: $main-color-3;
+
+    animation-name: watch;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    z-index: 2;
+  }
+
+  &__second-hand {
+    position: absolute;
+    left: 50%;
+    width: $second-width;
+    height: $second-height;
+    margin-left: -($second-width / 2);
+    margin-top: $second-margin;
+
+    background-color: $main-color-2;
+
+    animation-name: watch;
+    animation-timing-function: linear;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+
+    z-index: 3;
+  }
+}
