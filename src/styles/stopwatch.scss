@@ -1,0 +1,45 @@
+.stopwatch {
+  box-sizing: border-box;
+  position: relative;
+  padding: 20px 0;
+  height: 100vh;
+  &__seconds {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    transform-origin: 5px 300px;
+    animation: moveSeconds 60s steps(60, end);
+    animation-iteration-count: infinite;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 24px;
+      width: 24px;
+      background-color: blue;
+      bottom: -12px;
+      border-radius: 50%;
+      left: -7px;
+    }
+  }
+  &__minutes {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 23%;
+    transform-origin: 5px 170px;
+    animation-name: moveMinutes;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+  }
+  .arrow-seconds {
+    height: 300px;
+    width: 10px;
+    background-color: blue;
+  }
+  .arrow-minutes {
+    height: 170px;
+    width: 10px;
+    background-color: red;
+  }
+}
