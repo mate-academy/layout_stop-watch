@@ -1,0 +1,57 @@
+.arrows {
+  &__center {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+    border: 1px solid #000;
+    background-color: #f00;
+    z-index: 1;
+
+  }
+
+  &__sec {
+    position: absolute;
+    bottom: 0.5 * $center-size;
+    left: $left;
+
+    height: $length-sec;
+    width: $width-row-sec;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    background-color: #33f;
+    transform-origin: bottom;
+
+    animation: rotate steps(60, end) 60s infinite;
+  }
+
+  &__min {
+    position: absolute;
+    bottom: 0.5 * $center-size;
+    left: $left;
+
+    width: $width-row-sec;
+    height: $length-min;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    background-color: rgb(109, 255, 51);
+    transform-origin: bottom;
+
+    animation: rotate 3600s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
