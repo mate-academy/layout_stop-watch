@@ -1,0 +1,45 @@
+.watch {
+  @extend %display;
+  @include circle($sizeWatch);
+
+  background-color: $colorMain;
+  border: 2px solid $colorSecondary;
+  box-shadow: 5px 3px 10px rgba(61, 78, 97, 0.5);
+
+  &__minutes {
+    position: absolute;
+
+    height: $heightMinutes;
+    width: $widthMinutes;
+    margin-bottom: $heightMinutes;
+    border-radius: $borderRadiusHand;
+
+    background-color: $colorSecondary;
+
+    animation: move 60s linear infinite normal;
+    transform-origin: bottom center;
+  }
+
+  &__seconds {
+    position: absolute;
+
+    height: $heightSeconds;
+    width: $widthSeconds;
+    margin-bottom: $heightSeconds;
+    border-radius: $borderRadiusHand;
+
+    background-color: $colorSeconds;
+
+    animation: move 1s linear infinite normal;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    position: absolute;
+
+    @extend %display;
+    @include circle($sizeCenter);
+
+    background-color: $colorSecondary;
+  }
+}
