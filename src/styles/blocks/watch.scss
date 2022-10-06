@@ -1,0 +1,60 @@
+.watch {
+  position: relative;
+
+  display: flex;
+
+  @include watch-round($big-circle);
+
+  margin: 100px auto;
+
+  border: 5px solid darkblue;
+  border-radius: 50%;
+
+  &__seconds {
+    position: absolute;
+
+    top: calc(50% - #{$seconds-height});
+    left: calc(50% - #{$seconds-width / 2});
+
+    width: $seconds-width;
+    height: $seconds-height;
+
+    background-color: #a30202;
+    border-radius: 6px;
+
+    transform-origin: bottom center;
+    animation: turn 1s linear infinite;
+
+  }
+
+  &__minutes {
+    position: absolute;
+
+    top: calc(50% - #{$minutes-height});
+    left: calc(50% - #{$minutes-width / 2});
+
+    width: $minutes-width;
+    height: $minutes-height;
+
+    background-color: #ffde82;
+    border-radius: 6px;
+
+    transform-origin: bottom center;
+    animation: turn 60s steps(60, end) infinite;
+
+  }
+
+  &__round {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    @include round-diametr($diametr);
+
+    transform: translate(-50%, -50%);
+
+    background-color: #000;
+    border-radius: 50%;
+  }
+}
