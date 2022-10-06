@@ -3,7 +3,7 @@
   width: $clock-size;
   height: $clock-size;
 
-  border-radius: $clock-size / 2;
+  border-radius: 50%;
   background-color: $main-color-1;
 
   &__center {
@@ -15,23 +15,10 @@
     margin-left: -($center-size / 2);
     margin-top: -($center-size / 2);
   
-    border-radius: $center-size / 2;
+    border-radius: 50%;
     background-color: $main-color-2;
 
-    z-index: 4;
-  }
-
-  &__hour-hand {
-    position: absolute;
-    left: 50%;
-    width: $hour-width;
-    height: $hour-height;
-    margin-top: $hour-margin;
-    margin-left: -($hour-width / 2);
-
-    background-color: $main-color-3;
-
-    z-index: 1;
+    z-index: 3;
   }
 
   &__minute-hand {
@@ -49,7 +36,7 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 
-    z-index: 2;
+    z-index: 1;
   }
 
   &__second-hand {
@@ -67,6 +54,6 @@
     animation-duration: 60s;
     animation-iteration-count: infinite;
 
-    z-index: 3;
+    z-index: 2;
   }
 }
