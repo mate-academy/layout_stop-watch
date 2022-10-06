@@ -7,7 +7,6 @@
   background-color: rgb(58, 58, 58);
   position: relative;
   flex-shrink: 0;
-  box-sizing: border-box;
   padding: 20px;
   width: $watch-size;
   height: $watch-size;
@@ -28,7 +27,7 @@
     width: 2 * $seconds-width;
     background-color: blue;
     border-radius: 8px;
-    animation: minutes 3600s steps(60, start) 60s infinite;
+    animation: arrow-move $minutes-duration steps(60, start) 60s infinite;
   }
 
   &__seconds {
@@ -37,6 +36,6 @@
     width: $seconds-width;
     background-color: yellow;
     border-radius: 8px;
-    animation: seconds 60s steps(60, start) 1s infinite;
+    animation: arrow-move $seconds-duration steps(60, start) 1s infinite;
   }
 }
