@@ -1,8 +1,9 @@
 .watch {
   position: relative;
 
-  height: 600px;
-  width: 600px;
+  display: flex;
+
+  @include watch-round($big-circle);
 
   margin: 100px auto;
 
@@ -22,7 +23,7 @@
     border-radius: 6px;
 
     transform-origin: bottom center;
-    animation: turn 60s steps(60, end) infinite;
+    animation: turn 1s linear infinite;
 
   }
 
@@ -39,7 +40,7 @@
     border-radius: 6px;
 
     transform-origin: bottom center;
-    animation: turn 3600s infinite;
+    animation: turn 60s steps(60, end) infinite;
 
   }
 
