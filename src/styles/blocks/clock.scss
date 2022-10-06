@@ -1,0 +1,46 @@
+.clock {
+  padding: 30px;
+  display: flex;
+  align-items: flex-end;
+
+  &__second {
+    position: relative;
+    left: $hand-width;
+
+    height: $height-hand-minute * 2;
+    width: $hand-width;
+    border-radius: $border-radius;
+
+    background-color: $main-color;
+    animation: move 60s linear infinite;
+  }
+
+  &__minute {
+    height: $height-hand-minute;
+    width: $hand-width;
+    border-radius: $border-radius;
+    background-color: #d15559;
+
+    animation: move 3600s linear infinite;
+  }
+
+  &__center {
+    @include circle($hand-width);
+    background-color: $main-color;
+    transform: translate(-75%, 50%);
+  }
+}
+
+@keyframes move {
+  from {
+    transition: none;
+    transform-origin: bottom;
+    transform: none;
+  }
+
+  to {
+    transition: transform;
+    transform-origin: bottom;
+    transform: rotate(360deg);
+  }
+}
