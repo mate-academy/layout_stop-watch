@@ -1,0 +1,47 @@
+.clock {
+  position: relative;
+
+  display: flex;
+  @include square($clockSize);
+
+  background-image: url(../../src/imeges/clock.jpg);
+  background-size: cover;
+
+  &__arrow {
+    position: absolute;
+    left: position($arrowWidth);
+    top: positionTopArrow($minArrowHeight);
+
+    height: $minArrowHeight;
+    width: $arrowWidth;
+
+    background-color: green;
+    border-radius: 100% 100% 0 0;
+
+    transform-origin: center $minArrowHeight;
+    animation: move 3600s linear infinite;
+
+    &--second {
+      top: positionTopArrow($secArrowHeight);
+
+      height: $secArrowHeight;
+
+      background-color: yellowgreen;
+
+      transform-origin: center $secArrowHeight;
+      animation-duration: 60s;
+      animation-timing-function: steps(60, end);
+    }
+  }
+
+  &__center {
+    position: absolute;
+    left: position($centerSize);
+    top: position($centerSize);
+
+    @include square($centerSize);
+
+    background-image: url(../../src/imeges/star-active.svg);
+    background-size: cover;
+  }
+}
