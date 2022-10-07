@@ -1,0 +1,58 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+
+  &__dot {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    background-color: #000;
+    box-shadow: 0 0  15px #fff;
+  }
+
+  &__arrow-min {
+    position: absolute;
+
+    @include arrowPosition($min-arrow-height);
+    width: $arrow-width;
+    height: $min-arrow-height;
+
+    background-color: #db3eb1;
+    box-shadow: 0 0  15px #db3eb1;
+
+    transform-origin: bottom;
+    animation: round 3600s linear infinite;
+  }
+
+  &__arrow-sec {
+    position: absolute;
+    @include arrowPosition($sec-arrow-height);
+
+    width: $arrow-width;
+    height: $sec-arrow-height;
+
+    background-color: #e0e722;
+    box-shadow: 0 0  15px #e0e722;
+
+    transform-origin: bottom;
+    animation: round 60s linear infinite;
+  }
+}
+
+@keyframes round {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
