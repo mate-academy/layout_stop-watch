@@ -1,0 +1,44 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__min {
+    display: flex;
+    position: absolute;
+    animation: s360m60 3600s normal infinite linear;
+    transform-origin: 0 170px;
+  }
+
+  &__min::before {
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 3px;
+    height: 200px;
+    border: 1px solid #000;
+    background-color: rgb(228, 23, 181);
+  }
+
+  &__sec {
+    display: flex;
+    position: relative;
+    animation: s360m60 60s normal infinite linear;
+    transform-origin: 0 170px;
+  }
+
+  &__sec::before {
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 200px;
+    width: 1px;
+    background-color: blueviolet;
+    border-radius: 50%;
+    border: 1px solid #000;
+  }
+}
