@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  @include flex-justify-align(center, center);
+}
+
+.stopwatch {
+  width: 500px;
+  height: 500px;
+  background-color: aqua;
+  border-radius: 50%;
+  @include flex-justify-align(center, center);
+
+  &__hands {
+    width: 400px;
+    height: 400px;
+    position: relative;
+
+    &-circle {
+      width: 20px;
+      height: 20px;
+      background-color: yellow;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-8px, -10px);
+      z-index: 3;
+    }
+
+    &-minutes {
+      position: absolute;
+      left: 50%;
+      top: 30px;
+      width: 5px;
+      height: 170px;
+      box-sizing: border-box;
+      background-color: rgb(0, 174, 255);
+      animation: rotate steps(60) var(--hour) infinite;
+      transform-origin: center bottom;
+      z-index: 2;
+    }
+
+    &-seconds {
+      position: absolute;
+      left: calc(50% + 1.5px);
+      width: 2px;
+      height: 200px;
+      background-color: rgb(255, 0, 0);
+      animation: rotate steps(60) var(--minute) infinite;
+      transform-origin: center bottom;
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0);
+        }
+
+        to {
+          transform: rotate(1turn);
+        }
+      }
+    }
+  }
+}
