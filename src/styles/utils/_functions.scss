@@ -1,0 +1,15 @@
+@function calcLeft($arrowWidth, $clockWidth) {
+  @return ($clockWidth - $arrowWidth) / 2;
+}
+
+@function calcWiOrig($clockArrowWidth) {
+  @return $clockArrowWidth / 2;
+}
+
+@function calcHeOrig($clockArrowHeight) {
+  @return $clockArrowHeight + $clockStartSize / 2;
+}
+
+@function calcArrowTop($clockSize, $clockArrowHeight, $clockStartSize) {
+  @return ($clockSize - ($clockArrowHeight * 2 + $clockStartSize)) / 2;
+}

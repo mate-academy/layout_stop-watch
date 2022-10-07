@@ -1,0 +1,52 @@
+.clock {
+  @include circle($clockSize);
+
+  position: relative;
+  display: flex;
+  background-color: #fea;
+  border: 1px solid #000;
+  margin: auto;
+
+  &__start-point {
+    @include circle($clockStartSize);
+
+    background-color: #aeb;
+    margin: auto;
+  }
+
+  &__seconds-arrow {
+    position: absolute;
+    width: $arrowWidth;
+    height: $arrowHeight;
+    left: calcLeft($arrowWidth, $clockSize);
+    top: calcArrowTop($clockSize, $arrowHeight, $clockStartSize);
+
+    background-color: #0af;
+
+    transform-origin: calcWiOrig($arrowWidth) calcHeOrig($arrowHeight);
+    animation: move 60s steps(60, end) infinite;
+  }
+
+  &__minutes-arrow {
+    position: absolute;
+    width: $arrowWidth;
+    height: $arrowHeight - 40px;
+    left: calcLeft($arrowWidth, $clockSize);
+    top: calcArrowTop($clockSize, $arrowHeight, $clockStartSize) + 40px;
+
+    background-color: #f00;
+
+    transform-origin: calcWiOrig($arrowWidth) calcHeOrig($arrowHeight) - 40px;
+    animation: move 3600s linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
