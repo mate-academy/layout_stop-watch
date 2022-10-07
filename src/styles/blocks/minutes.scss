@@ -1,0 +1,19 @@
+.minutes {
+  @extend %handsPosition;
+
+  animation: rotate 3600s infinite steps(60);
+
+  &__hand {
+    position: absolute;
+    top: 15%;
+    left: 49%;
+
+    height: 42%;
+    width: 1.75%;
+    border-radius: 15px;
+
+    transform-origin: 50% 90%;
+
+    background: #0b0b45;
+  }
+}

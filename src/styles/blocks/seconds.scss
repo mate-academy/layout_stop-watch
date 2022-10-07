@@ -1,0 +1,20 @@
+.seconds {
+  @extend %handsPosition;
+
+  animation: rotate 60s infinite steps(60);
+
+  &__hand {
+    position: absolute;
+    top: 14%;
+    left: 49%;
+
+    height: 45%;
+    width: 1%;
+    border-radius: 20px;
+
+    transform-origin: 50% 80%;
+    z-index: 1;
+
+    background: $secondsHandColor;
+  }
+}
