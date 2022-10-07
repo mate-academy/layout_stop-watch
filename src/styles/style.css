@@ -1,3 +1,4 @@
+/* stylelint-disable rule-empty-line-before */
 * {
   margin: 0;
   padding: 0;
@@ -17,18 +18,16 @@
   justify-content: center;
   align-items: center;
 }
-
 .watch__min {
   display: flex;
   position: absolute;
-  animation-name: m60;
+  animation-name: s360m60;
   animation-duration: 3600s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: normal;
   transform-origin: 0 170px;
 }
-
 .watch__min::before {
   content: "";
   position: absolute;
@@ -37,18 +36,16 @@
   border: 1px solid #000;
   background-color: rgb(228, 23, 181);
 }
-
 .watch__sec {
   display: flex;
   position: relative;
-  animation-name: s360;
+  animation-name: s360m60;
   animation-duration: 60s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: normal;
   transform-origin: 0 170px;
 }
-
 .watch__sec::before {
   content: "";
   position: absolute;
@@ -58,16 +55,7 @@
   border-radius: 50%;
   border: 1px solid #000;
 }
-
-@keyframes s360 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes m60 {
+@keyframes s360m60 {
   0% {
     transform: rotate(0deg);
   }
