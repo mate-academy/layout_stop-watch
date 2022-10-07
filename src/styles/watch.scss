@@ -1,0 +1,62 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: $watchSize;
+  width: $watchSize;
+  margin: 0 auto;
+  padding: 5px;
+
+  border: 4px solid #062550;
+  border-radius: 50%;
+  background-color: #c396aa;
+
+  &__minute-arrow {
+    position: absolute;
+    height: $arrowHeight;
+    width: $arrowWidth;
+
+    background-color: #451a49;
+    border-radius: 8px;
+
+    transform-origin: bottom;
+    animation-name: move;
+    animation-duration: 3660s;
+    animation-timing-function: linear;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    height: $arrowHeight;
+    width: $arrowWidth;
+
+    background-color: #062550;
+    border-radius: 8px;
+
+    transform-origin: bottom;
+    animation-name: move;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+  }
+
+  &__center {
+    position: absolute;
+    height: $centerSize;
+    width: $centerSize;
+    align-self: center;
+
+    background-color: #062550;
+    border: 1px solid #854362;
+    border-radius: 50%;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
