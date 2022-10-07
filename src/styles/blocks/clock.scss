@@ -1,0 +1,82 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include circle($clockSize);
+
+  border: 5px solid #f2ed63;
+
+  background: linear-gradient(180deg, #2117e659 12%,
+  #cfdd1259 100%, #00d4ff59 100%);
+
+  &__second {
+    position: absolute;
+
+    height: $secondHandSize;
+    width: 3px;
+    margin-bottom: $secondHandSize;
+
+    border-radius: 50%;
+
+    background-color: #454545;
+
+    animation: time 60s linear infinite normal;
+    transform-origin: bottom;
+  }
+
+  &__minute {
+    position: absolute;
+
+    height: $minuteHandSize;
+    width: 7px;
+    margin-bottom: $minuteHandSize;
+
+    border: 2px solid #2d2c2c;
+    border-radius: 35%;
+
+    background-color: #97eeda;
+
+    animation: time 3600s linear infinite normal;
+    transform-origin: bottom;
+  }
+
+  &__hour {
+    position: absolute;
+
+    height: $hourHandSize;
+    width: 10px;
+    margin-bottom: $hourHandSize;
+
+    border: 2px solid #2d2c2c;
+    border-radius: 35%;
+
+    background-color: #47c3ca;
+
+    animation: time 216000s linear infinite normal;
+    transform-origin: bottom;
+  }
+
+  &__shadow {
+    position: relative;
+    left: 175px;
+    top: 175px;
+
+    @include square($clockSize);
+
+    transform: rotate(135deg);
+    background: linear-gradient(transparent, rgba(#000, 0.1));
+  }
+
+  &__center {
+    position: absolute;
+    @include circle($centerSize);
+    background-color: #000;
+  }
+
+  @keyframes time {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
