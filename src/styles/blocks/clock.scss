@@ -1,0 +1,79 @@
+.clock {
+  @include clockSize;
+  display: flex;
+  margin: auto;
+
+  background: url(../images/pngwing.com.png) no-repeat;
+  background-size: cover;
+  background-color: #ddd;
+
+  border: transparent;
+  border-radius: $circle-radius;
+  box-shadow: 3px 3px 5px #222;
+
+  position: relative;
+
+  &__seconds {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    z-index: 3;
+
+    height: 180px;
+    width: 4px;
+
+    background-color: red;
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    animation: arrowRotation 60s steps(3600) infinite;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    z-index: 2;
+
+    height: 150px;
+    width: 6px;
+
+    background-color: brown;
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    animation: arrowRotation 3600s steps(216000) infinite;
+  }
+
+  &__hours {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    z-index: 1;
+
+    height: 120px;
+    width: 10px;
+
+    background-color: black;
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    animation: arrowRotation 216000s steps(216000) infinite;
+  }
+}
+
+.clock::before {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include centerDot;
+
+  transform: translate(-50%, -50%);
+  background: #000;
+  border-radius: $circle-radius;
+  z-index: 5;
+}
