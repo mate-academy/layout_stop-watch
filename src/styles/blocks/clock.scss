@@ -1,0 +1,43 @@
+@import "../utils/variables.scss";
+
+.clock {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border: 5px solid rgb(201, 33, 235);
+  border-radius: 50%;
+  width: $clock-size;
+  height: $clock-size;
+
+  &__center {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: rgb(122, 122, 122);
+    bottom: 240px;
+  }
+
+  &__hour {
+    position: absolute;
+    transform: translateY(50px);
+    transform-origin: bottom center;
+    animation: around 3600s linear infinite;
+    width: 5px;
+    height: 250px;
+    background-color: blue;
+    border: 1px transparent;
+    border-radius: 20px;
+  }
+
+  &__minute {
+    position: absolute;
+    animation: around 60s linear infinite;
+    transform-origin: bottom center;
+    width: 3px;
+    height: 250px;
+    background-color: yellow;
+    border: 1px transparent;
+    border-radius: 20px;
+  }
+}
