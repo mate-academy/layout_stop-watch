@@ -1,0 +1,68 @@
+/* stylelint-disable rule-empty-line-before */
+@keyframes s360m60 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.watch__min {
+  display: flex;
+  position: absolute;
+  animation: s360m60 3600s normal infinite linear;
+  transform-origin: 0 170px;
+}
+.watch__min::before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 3px;
+  height: 200px;
+  border: 1px solid #000;
+  background-color: #e417b5;
+}
+.watch__sec {
+  display: flex;
+  position: relative;
+  animation: s360m60 60s normal infinite linear;
+  transform-origin: 0 170px;
+}
+.watch__sec::before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 200px;
+  width: 1px;
+  background-color: #8a2be2;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+/*# sourceMappingURL=style.css.map */
