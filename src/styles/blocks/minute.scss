@@ -1,0 +1,20 @@
+.minute {
+  position: absolute;
+
+  @include size ($minuteArrowHeight * 2, $minuteArrowWidth * 2);
+  margin-bottom: $minuteArrowHeight * 2;
+
+  animation: move 3600s linear infinite;
+  transform-origin: bottom;
+
+  @include arrow ($minuteArrowHeight, $minuteArrowWidth, $minuteColor);
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
