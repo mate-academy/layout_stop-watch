@@ -1,0 +1,63 @@
+.clock {
+  display: flex;
+  justify-content: center;
+
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+  position: relative;
+
+  &__second {
+    @include clockArrows();
+
+    height: #{($size / 2) - 30};
+    margin-top: 30px;
+    background: $feature;
+    animation: time 60s infinite steps(60);
+    z-index: 3;
+  }
+
+  &__minute {
+    @include clockArrows();
+
+    height: #{($size / 2) - 60};
+    margin-top: 60px;
+    opacity: 0.75;
+    animation: time 3600s linear infinite;
+  }
+
+  &__indicator {
+    @include clockArrows();
+
+    height: #{($size / 2) - 2};
+    border-top: 8px solid $feature;
+    background: none;
+  }
+
+  &__indicator:nth-of-type(5n) {
+    height: #{($size / 2) - 7};
+    border-top: 14px solid $white;
+  }
+
+  &__axis {
+    background: $feature;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 4;
+    top: #{$size / 2 - 4};
+  }
+
+  @for $i from 1 through 60 {
+    section:nth-of-type(#{$i}) {
+      transform: rotateZ(calc(6deg * #{$i}));
+    }
+  }
+
+  @keyframes time {
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+}
