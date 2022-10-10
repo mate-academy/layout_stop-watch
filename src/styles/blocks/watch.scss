@@ -1,50 +1,40 @@
 .watch {
   position: absolute;
-  @include circle ($watch-size);
-  @include shift ($watch-centering);
+  @include circle($watch-size);
+  @include shift($watch-centering);
   display: flex;
   justify-content: center;
   align-items: flex-end;
   background-color: $blue;
-  border-radius: 100%;
+  border-radius: 50%;
   border: $border-width solid $yellow;
   transform: translate(-50%, -50%);
 
-  &__hand {
+  &__arrow {
     position: absolute;
     bottom: $watch-centering;
 
     &--second {
-      @include second-hand ($second-hand-height);
-      background-color: #ffd700;
+      @include second-arrow($second-arrow-height);
+      background-color: $yellow;
       border-radius: 5px;
-      animation: rotate 60s linear infinite;
+      animation: rotate $second-hand-duration linear infinite;
       transform-origin: bottom;
     }
 
     &--minute {
-      @include minute-hand ($minute-hand-height);
-      background-color: #ffd700;
-      border-radius: $hand-border-radius;
-      animation: rotate 3600s steps(60) infinite;
+      @include minute-arrow($minute-arrow-height);
+      background-color: $yellow;
+      border-radius: $arrow-border-radius;
+      animation: rotate $minute-arrow-duration steps(60) infinite;
       transform-origin: bottom;
     }
 
     &--center {
-      @include circle ($center-size);
-      border-radius: 100%;
-      background-color: #ffd700;
+      @include circle($center-size);
+      border-radius: 50%;
+      background-color: $yellow;
       transform: translateY($watch-centering);
     }
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 }
