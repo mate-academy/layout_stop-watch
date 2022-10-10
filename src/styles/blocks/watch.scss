@@ -1,0 +1,54 @@
+.watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  height: 100vh;
+  padding: 25px;
+
+  &__minute {
+    position: absolute;
+    @include positionOfHand ($minute-hand-height);
+
+    width: $hand-width;
+    height: $minute-hand-height;
+    border-radius: 10px;
+    background-color: #619cde;
+
+    transform-origin: bottom center;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__second {
+    position: absolute;
+    @include positionOfHand($second-hand-height);
+
+    width: $hand-width;
+    height: $second-hand-height;
+    border-radius: 10px;
+    background-color: #f3fa79;
+
+    transform-origin: bottom center;
+    animation: rotate 60s steps(60, end) infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    @include center ($dot-size);
+    border-radius: 50%;
+    background-color: #000;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
