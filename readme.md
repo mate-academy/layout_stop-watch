@@ -1,6 +1,6 @@
 # Stopwatch task
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://AntonKabanets.github.io/layout_stop-watch/)
+- [DEMO LINK](https://antonkabanets.github.io/layout_stop-watch/)
 
 ___
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
