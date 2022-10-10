@@ -1,0 +1,81 @@
+.clock {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  &__face {
+    position: relative;
+    @include faceSize($faceSize);
+    background-image: url(../../src/img/clock-face.png);
+    background-size: cover;
+  }
+
+  &__middle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0a334d;
+    @include middleSize($middleSize);
+    border-radius: 50%;
+  }
+
+  &__second {
+    position: absolute;
+    top: 1%;
+    left: $faceSize / 2 - $secondWidth / 2;
+
+    background-color: #fa4454;
+    border: 1px solid #dc3d4b;
+    border-radius: 50% 50% 0 0;
+    width: $secondWidth;
+    height: $secondHeight;
+
+    animation-name: second;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &__minute {
+    position: absolute;
+    top: $faceSize / 2 - $minuteHeight;
+    left: $faceSize / 2 - $minuteWidth / 2;
+
+    background-color: #5a7d9b;
+    border: 1px solid #3c6c8c;
+    border-radius: 40% 40% 0 0;
+    width: $minuteWidth;
+    height: $minuteHeight;
+
+    animation-name: minute;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+  }
+}
+
+@keyframes second {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: center $faceSize/2 - $secondWidth;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: center $faceSize/2 - $secondWidth;
+  }
+}
+
+@keyframes minute {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
