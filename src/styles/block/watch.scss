@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 300px;
+}
+
+.watch {
+  width: 100px;
+  height: 100px;
+  background: #39a879;
+  border-radius: 50%;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 370px;
+    height: 30px;
+    background-color: #c44e4e;
+    transform: rotate(140deg);
+    bottom: 182px;
+    left: 44px;
+    border-radius: 20px 0 0 20px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 570px;
+    height: 30px;
+    background-color: #39a879;
+    transform: rotate(160deg);
+    left: -545px;
+    top: 151px;
+    border-radius: 0 20px 20px 0;
+  }
+
+}
