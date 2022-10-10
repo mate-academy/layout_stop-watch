@@ -1,0 +1,70 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $clock-size;
+  width: $clock-size;
+  border-radius: $clock-border-radius;
+
+  background-image: url(../img/clock.png);
+  background-size: cover;
+
+  box-shadow: rgba(0, 0, 0, 0.56) 1px 22px 70px 4px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: $clock-border-radius;
+    z-index: 1;
+
+    background: black;
+  }
+
+  &__hour {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 125px;
+      width: 8px;
+      bottom: $animation-start-position;
+      border-radius: $arrow-border-radius;
+
+      background: black;
+
+      transform-origin: bottom;
+      animation: time 60s infinite linear;
+    }
+  }
+
+  &__minute {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 155px;
+      width: 5px;
+      bottom: $animation-start-position;
+      border-radius: $arrow-border-radius;
+
+      background: white;
+
+      transform-origin: bottom;
+      animation: time 30s infinite linear;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
