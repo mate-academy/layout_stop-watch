@@ -1,0 +1,65 @@
+.watch {
+  position: relative;
+
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  height: $watch-size;
+  width: $watch-size;
+
+  background-color: #c2c6c8;
+  background-image: url(../images/strelki.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border: 3px solid #000;
+  border-radius: $border-radius;
+
+  &__circle {
+    position: relative;
+    width: $circle-size;
+    height: $circle-size;
+
+    background-color: #4b9aaa;
+    border-radius: $border-radius;
+    border: 1px solid #000;
+
+    z-index: 1;
+  }
+
+  &__minute {
+    position: absolute;
+    width: $arrow-width;
+    height: $minute-hight;
+    margin-bottom: 33%;
+
+    border-radius: $border-radius;
+
+    background-color: #d15559;
+
+    transform-origin: $coordinateX $minute-hight;
+    animation: move 3600s steps(60, end) infinite;
+  }
+
+  &__second {
+    position: absolute;
+
+    width: $arrow-width;
+    height: $second-hight;
+    margin-bottom: 50%;
+
+    border-radius: $border-radius;
+
+    background-color: #4b9aaa;
+
+    transform-origin: $coordinateX $second-hight;
+    animation: move 60s steps(60, end) infinite;
+  }
+}
+
+@keyframes move {
+  to {
+    transform: rotate(360deg);
+  }
+}
