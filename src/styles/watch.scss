@@ -1,0 +1,42 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/extends";
+
+.watch {
+  list-style: none;
+  background: center/contain no-repeat url("../images/watches.png");
+  @include watch($watch-width);
+  position: relative;
+
+  &__point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-blue;
+    @include watch($watch-width / 10);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__second {
+    @extend %arrow;
+    background-color: $color-red;
+    z-index: 1;
+    animation: move 60s linear infinite reverse;
+
+  }
+
+  &__minute {
+    @extend %arrow;
+    background-color: $color-blue;
+    z-index: 2;
+    animation: move 3600s linear infinite reverse;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(360deg);
+  }
+}
