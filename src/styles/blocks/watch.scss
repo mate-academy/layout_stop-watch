@@ -1,0 +1,58 @@
+.stopwatch {
+  @include clockSize;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #b7cdc9;
+  border: 3px solid #0f1312;
+  border-radius: 50%;
+  box-shadow: 20px 20px 20px #999;
+
+  &__point {
+    position: absolute;
+    z-index: 4;
+
+    @include pointSize;
+    background-color: #0f1312;
+
+    border-radius: 50%;
+  }
+
+  &__long-arrow {
+    position: absolute;
+    top: $top-long;
+    left: 50%;
+    z-index: 3;
+
+    height: $long-arrow-height;
+    width: 4px;
+
+    background-color: #e9e8e5;
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    animation: rotation 60s linear infinite;
+  }
+
+  &__short-arrow {
+    position: absolute;
+    top: $top-short;
+    left: 50%;
+    z-index: 2;
+
+    height: $short-arrow-height;
+    width: 6px;
+
+    background-color: #e9e8e5;
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    animation: rotation 3600s linear infinite;
+  }
+}
