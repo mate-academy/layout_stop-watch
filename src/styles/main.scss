@@ -1,0 +1,60 @@
+@import "./blocks/variables";
+@import"./blocks/frames";
+
+.body {
+  position: relative;
+  margin: auto;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  &__watch {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $size-watch;
+    height: $size-watch;
+    background-color: aqua;
+    border: 5px solid #630a81;
+    border-radius: 50%;
+    background-position: center;
+  }
+}
+
+.point {
+  margin: auto;
+  width: $width-p;
+  height: $width-p;
+  border-radius: 50%;
+  background-color: rgb(80, 16, 16);
+  z-index: 1;
+}
+
+.second {
+  width: $width-s;
+  height: $size-s;
+  bottom: $size-watch / 2;
+  background-color: rgb(255, 0, 238);
+  position: absolute;
+  animation-name: time;
+  animation-duration: $animation-duration;
+  transform-origin: bottom;
+  animation-iteration-count: infinite;
+  border-radius: 10px;
+}
+
+.minute {
+  width: $width-m;
+  height: $size-m;
+  bottom: $size-watch / 2;
+  background-color: rgb(190, 32, 119);
+  position: absolute;
+  animation-name: time;
+  animation-duration: $animation-duration * 60;
+  transform-origin: bottom;
+  animation-iteration-count: infinite;
+  border-radius: 20px;
+}
