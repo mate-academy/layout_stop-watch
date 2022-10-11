@@ -9,7 +9,7 @@
     transform: translateX(-50%);
     z-index: 1;
     transform-origin: 5px 300px;
-    animation: moveSeconds 60s steps(60, end);
+    animation: move 60s steps(60, end);
     animation-iteration-count: infinite;
     &::before {
       content: "";
@@ -28,7 +28,7 @@
     transform: translateX(-50%);
     top: 23%;
     transform-origin: 5px 170px;
-    animation-name: moveMinutes;
+    animation-name: move;
     animation-duration: 3600s;
     animation-timing-function: linear;
   }
