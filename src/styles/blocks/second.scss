@@ -1,0 +1,19 @@
+.second {
+  display: flex;
+  position: absolute;
+  background-color: $color-second;
+  width: $width-second;
+  height: $height-second;
+  top: $top-second;
+  left: $left-second;
+  border-radius: 100%;
+  animation-name: second;
+  animation-duration: 60s;
+  transform-origin: 10px 250px;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  &:hover {
+    transform: rotate(360deg);
+  }
+}
