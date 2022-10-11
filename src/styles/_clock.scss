@@ -1,0 +1,39 @@
+.clock-position {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: bottom center;
+  border-radius: 40%;
+  animation: clock linear infinite;
+}
+
+.clock {
+  &__center {
+    @include element-size(40px, 40px);
+    background-color: #81760c;
+    transform: translate(-50%, 50%);
+    z-index: 100;
+  }
+
+  &__hour-hand {
+    @include element-size(30px, 25vh);
+    background-color: #41c50d;
+    z-index: 3;
+    animation-duration: $hour;
+  }
+
+  &__minute-hand {
+    @include element-size(30px, 40vh);
+    background-color: #0a24b9;
+    z-index: 2;
+    animation-duration: $minute;
+  }
+
+  &__second-hand {
+    @include element-size(20px, 50vh);
+    background-color: #4e1d4b;
+    z-index: 4;
+    animation-duration: $second;
+  }
+}
