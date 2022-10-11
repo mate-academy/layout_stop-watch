@@ -4,10 +4,7 @@
 
 .watch {
   list-style: none;
-  background-image: url("../images/watches.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  background: center/contain no-repeat url("../images/watches.png");
   @include watch($watch-width);
   position: relative;
 
@@ -16,25 +13,25 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #0ff;
-    @include watch($watch-width/10);
+    background-color: $color-blue;
+    @include watch($watch-width / 10);
     border-radius: 50%;
-    z-index: 4;
+    z-index: 2;
   }
 
   &__second {
     @extend %arrow;
-    background-color: #d85e5e;
-    z-index: 3;
-    animation: move 60s linear infinite reverse -500ms;
+    background-color: $color-red;
+    z-index: 1;
+    animation: move 60s linear infinite reverse;
 
   }
 
   &__minute {
     @extend %arrow;
-    background-color: #0ff;
-    z-index: 4;
-    animation: move 3600s linear infinite reverse -500ms;
+    background-color: $color-blue;
+    z-index: 2;
+    animation: move 3600s linear infinite reverse;
   }
 }
 
