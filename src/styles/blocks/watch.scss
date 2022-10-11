@@ -8,10 +8,8 @@
   align-items: center;
 
   background-color: #b7cdc9;
-
   border: 3px solid #0f1312;
   border-radius: 50%;
-
   box-shadow: 20px 20px 20px #999;
 
   &__point {
@@ -26,11 +24,11 @@
 
   &__long-arrow {
     position: absolute;
-    top: 20px;
+    top: $top-long;
     left: 50%;
     z-index: 3;
 
-    height: 180px;
+    height: $long-arrow-height;
     width: 4px;
 
     background-color: #e9e8e5;
@@ -43,11 +41,11 @@
 
   &__short-arrow {
     position: absolute;
-    top: 50px;
+    top: $top-short;
     left: 50%;
     z-index: 2;
 
-    height: 150px;
+    height: $short-arrow-height;
     width: 6px;
 
     background-color: #e9e8e5;
