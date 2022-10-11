@@ -1,37 +1,18 @@
 $size: 500px;
-$width-hour: 20px;
+$width-arrow: 20px;
 $height-hour: 200px;
-$left-hour: calc($size / 2 - $width-hour / 2);
-$top-hour: 50px;
-$transform-hourX: calc($width-hour / 2);
-$transform-hourY: $height-hour;
-
-$left-second: calc($size / 2 - $width-second / 2);
+$height-second: $size / 2;
+$top-hour: $size / 2 - $height-hour;
+$left-indent: calc( $size / 2 - $width-arrow / 2);
 $top-second: 0;
-$width-second: 20px;
-$height-second: 250px;
-$transform-secondX: calc($width-second / 2);
-$transform-secondY: $height-second;
-$transform-secondXY: $transform-secondX, $transform-secondY;
 
 $color-hour: blue;
 $color-second:yellow;
 $color-watch: black;
 
-@keyframes second {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
+@keyframes arrow {
+  100%{
     transform: rotate(360deg);
   }
 }
 
-@keyframes hour {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}

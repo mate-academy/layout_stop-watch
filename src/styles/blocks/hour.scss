@@ -1,19 +1,8 @@
 .hour {
-  display: flex;
-  position: absolute;
+  @extend %size;
   background-color: $color-hour;
-  width: $width-hour;
   height: $height-hour;
-  border-radius: 100%;
   top: $top-hour;
-  left: $left-hour;
-  animation-name: hour;
-  animation-duration: 360s;
   transform-origin: 10px 200px;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-
-  &:hover {
-    transform: rotate(360deg);
-  }
+  animation: arrow 3600s linear infinite;
 }
