@@ -1,0 +1,97 @@
+$watchSize: 600px;
+
+$circleSize: 20px;
+$circleDistance: ($watchSize - $circleSize) / 2;
+
+$hourHandHeight: $watchSize / 4;
+$hourHandWidth: 10px;
+$hourHandDistanceTop: ($watchSize / 2) - $hourHandHeight;
+$hourHandDistanceLeft: ($watchSize - $hourHandWidth) / 2;
+
+$minuteHandHeight: $watchSize / 3;
+$minuteHandWidth: 6px;
+$minuteHandDistanceTop: ($watchSize / 2) - $minuteHandHeight;
+$minuteHandDistanceLeft: ($watchSize - $minuteHandWidth) / 2;
+
+$secondHandHeight: ($watchSize / 2) - 10px;
+$secondHandWidth: 4px;
+$secondHandDistanceTop: 10px;
+$secondHandDistanceLeft: ($watchSize - $secondHandWidth) / 2;
+
+* {
+  margin: 0;
+}
+
+.watch {
+  position: relative;
+  margin: 50px auto;
+
+  background-color: #f3f3f3;
+  height: $watchSize;
+  width: $watchSize;
+  border: 5px solid #000;
+  border-radius: 50%;
+}
+
+.watch__circle {
+  position: absolute;
+  top: $circleDistance;
+  left: $circleDistance;
+
+  background-color: #000;
+  height: $circleSize;
+  width: $circleSize;
+  border-radius: 50%;
+}
+
+.watch__hourhand {
+  position: absolute;
+  top: $hourHandDistanceTop;
+  left: $hourHandDistanceLeft;
+
+  height: $hourHandHeight;
+  width: $hourHandWidth;
+  background-color: #000;
+  border-radius: 10px;
+
+  animation: round 43200s infinite linear;
+  transform-origin: bottom center;
+}
+
+.watch__minutehand {
+  position: absolute;
+  top: $minuteHandDistanceTop;
+  left: $minuteHandDistanceLeft;
+
+  height: $minuteHandHeight;
+  width: $minuteHandWidth;
+  background-color: #1870d5;
+  border-radius: 10px;
+
+  animation: round 3600s infinite linear;
+  transform-origin: bottom center;
+}
+
+.watch__secondhand {
+  position: absolute;
+  top: $secondHandDistanceTop;
+  left: $secondHandDistanceLeft;
+
+  height: $secondHandHeight;
+  width: $secondHandWidth;
+  background-color: #ff0000;
+  border-radius: 10px;
+
+  animation: round 60s infinite linear;
+  transform-origin: bottom center;
+}
+
+@keyframes round {
+  0% {
+    transform: rotate(0deg);
+  }
+    
+  100% {
+    transform: rotate(360deg);
+  }
+}
