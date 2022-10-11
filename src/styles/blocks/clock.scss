@@ -1,9 +1,4 @@
-$watch-size:600px;
-$hour-hand-size:$watch-size/4;
-$hour-minute-size:$watch-size/3;
-$hour-second-size:$watch-size/2.5;
-$width-hand:$watch-size/100;
-$centr-size:$watch-size/150;
+@import "../utils/variables.scss";
 
 .clock {
   display: flex;
@@ -11,8 +6,8 @@ $centr-size:$watch-size/150;
   background-image: url(./../images/watch.png);
   background-size: cover;
   background-repeat: no-repeat;
-  height: $watch-size;
-  width: $watch-size;
+  height: $clock-size;
+  width: $clock-size;
   border: 4px double blue;
   border-radius: 50%;
 
