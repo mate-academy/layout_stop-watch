@@ -1,0 +1,51 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 50px auto;
+
+  @include size($sizeOfWatch);
+  border-radius: $halfBorderRadius;
+
+  background-color: $defaultBackColor;
+  box-shadow: -4px -4px 5px rgba(255, 255, 255, 0.31),
+    4px 4px 8px rgba(0, 0, 0, 0.07),
+    inset -4px -4px 4px rgba(253, 253, 253, 0.35),
+    inset 4px 4px 6px rgba(0, 0, 0, 0.07);
+
+  &__seconds {
+    position: absolute;
+    width: 2px;
+    height: 240px;
+    bottom: $centringElements;
+
+    background-color: $mainBlueColor;
+    border-radius: 2px;
+
+    transform-origin: center bottom;
+    animation: moving 60s linear infinite;
+  }
+
+  &__point {
+    position: absolute;
+    @include size($sizeOfPoint);
+    bottom: $centringOfPoint;
+
+    background-color: $mainBlueColor;
+    border: $borderOfPoint solid #fff;
+    border-radius: $halfBorderRadius;
+  }
+
+  &__minutes {
+    position: absolute;
+    width: 5px;
+    height: 160px;
+    bottom: $centringElements;
+
+    background-color: #001546;
+    border-radius: 5px;
+
+    transform-origin: center bottom;
+    animation: moving 3600s linear infinite;
+  }
+}
