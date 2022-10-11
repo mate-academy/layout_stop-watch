@@ -1,0 +1,79 @@
+@import "./utils/var.scss";
+
+* {
+  margin: 0;
+}
+
+.watch {
+  position: relative;
+  margin: 50px auto;
+
+  background-color: #f3f3f3;
+  height: $watchSize;
+  width: $watchSize;
+  border: 5px solid #000;
+  border-radius: $circleBorderRadius;
+
+  &__circle {
+    position: absolute;
+    top: $circleDistance;
+    left: $circleDistance;
+  
+    background-color: #000;
+    height: $circleSize;
+    width: $circleSize;
+    border-radius: $circleBorderRadius;
+  }
+  
+  &__hourhand {
+    position: absolute;
+    top: $hourHandDistanceTop;
+    left: $hourHandDistanceLeft;
+  
+    height: $hourHandHeight;
+    width: $hourHandWidth;
+    background-color: #000;
+    border-radius: $handBorderRadius;
+  
+    animation: round 43200s infinite linear;
+    transform-origin: $transformOrigin;
+  }
+  
+  &__minutehand {
+    position: absolute;
+    top: $minuteHandDistanceTop;
+    left: $minuteHandDistanceLeft;
+  
+    height: $minuteHandHeight;
+    width: $minuteHandWidth;
+    background-color: #1870d5;
+    border-radius: $handBorderRadius;
+  
+    animation: round 3600s infinite linear;
+    transform-origin: $transformOrigin;
+  }
+  
+  &__secondhand {
+    position: absolute;
+    top: $secondHandDistanceTop;
+    left: $secondHandDistanceLeft;
+  
+    height: $secondHandHeight;
+    width: $secondHandWidth;
+    background-color: #f00;
+    border-radius: $handBorderRadius;
+  
+    animation: round 60s infinite linear;
+    transform-origin: $transformOrigin;
+  }
+  
+  @keyframes round {
+    0% {
+      transform: rotate(0deg);
+    }
+      
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
