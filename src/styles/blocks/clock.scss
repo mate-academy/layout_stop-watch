@@ -1,0 +1,65 @@
+@import "../utils/variables.scss";
+
+.clock {
+  display: flex;
+  justify-content: center;
+  background-image: url(./../images/watch.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: $clock-size;
+  width: $clock-size;
+  border: 4px double blue;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    width: $centr-size;
+    height: $centr-size;
+    border-radius: 50%;
+    background-color: white;
+    transform: translateY(-50%);
+  }
+
+  &__hour-hand {
+    position: absolute;
+    bottom: 50%;
+    width: $width-hand;
+    height: $hour-hand-size;
+    border-radius: 50%;
+    background-color: red;
+    animation: move 43200s linear infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    bottom: 50%;
+    width: $width-hand;
+    height: $hour-minute-size;
+    border-radius: 50%;
+    background-color: yellow;
+    animation: move 3600s linear infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    bottom: 50%;
+    width: $width-hand;
+    height: $hour-second-size;
+    border-radius: 50%;
+    background-color: blue;
+    animation: move 60s linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform-origin: bottom center;
+    transform: rotate(360deg);
+  }
+}
