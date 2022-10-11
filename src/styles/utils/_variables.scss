@@ -1,0 +1,18 @@
+$size: 500px;
+$width-arrow: 20px;
+$height-hour: 200px;
+$height-second: $size / 2;
+$top-hour: $size / 2 - $height-hour;
+$left-indent: calc( $size / 2 - $width-arrow / 2);
+$top-second: 0;
+
+$color-hour: blue;
+$color-second:yellow;
+$color-watch: black;
+
+@keyframes arrow {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
