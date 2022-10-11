@@ -1,0 +1,42 @@
+.watch {
+  position: absolute;
+  width: $watch-size;
+  height: $watch-size;
+  @include shift($watch-centering);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: $blue;
+  border-radius: 50%;
+  border: $border-width solid $yellow;
+  transform: translate(-50%, -50%);
+
+  &__hand {
+    @extend %position;
+
+    &--second {
+      @include second-hand;
+      background-color: $yellow;
+      border-radius: 5px;
+      animation: rotate $second-hand-duration linear infinite;
+      transform-origin: bottom;
+    }
+
+    &--minute {
+      @include minute-hand;
+      background-color: $yellow;
+      border-radius: $hand-border-radius;
+      animation: rotate $minute-hand-duration steps(60) infinite;
+      transform-origin: bottom;
+    }
+  }
+
+  &__center {
+    @extend %position;
+    height: $center-size;
+    width: $center-size;
+    border-radius: 50%;
+    background-color: $yellow;
+    transform: translateY($watch-centering);
+  }
+}
