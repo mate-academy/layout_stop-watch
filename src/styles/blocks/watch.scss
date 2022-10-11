@@ -10,12 +10,11 @@
   border: $border-width solid $yellow;
   transform: translate(-50%, -50%);
 
-  &__arrow {
-    position: absolute;
-    bottom: $watch-centering;
+  &__hand {
+    @extend %position;
 
     &--second {
-      @include second-arrow($second-arrow-height);
+      @include second-hand;
       background-color: $yellow;
       border-radius: 5px;
       animation: rotate $second-hand-duration linear infinite;
@@ -23,18 +22,19 @@
     }
 
     &--minute {
-      @include minute-arrow($minute-arrow-height);
+      @include minute-hand;
       background-color: $yellow;
-      border-radius: $arrow-border-radius;
-      animation: rotate $minute-arrow-duration steps(60) infinite;
+      border-radius: $hand-border-radius;
+      animation: rotate $minute-hand-duration steps(60) infinite;
       transform-origin: bottom;
     }
+  }
 
-    &--center {
-      @include circle($center-size);
-      border-radius: 50%;
-      background-color: $yellow;
-      transform: translateY($watch-centering);
-    }
+  &__center {
+    @extend %position;
+    @include circle($center-size);
+    border-radius: 50%;
+    background-color: $yellow;
+    transform: translateY($watch-centering);
   }
 }
