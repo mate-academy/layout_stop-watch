@@ -1,0 +1,49 @@
+.stop-watch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url(../images/clock.png);
+  background-size: cover;
+  background-color: #eee;
+  border: 1px solid black;
+  border-radius: 50%;
+  
+  @include circle ($watch-size);
+
+  &__second-hand {
+    height: $second-hand-size;
+    width: 1px;
+    border: 2px solid red;
+    border-radius: 20%;
+    margin-bottom: $second-hand-size;
+    position: absolute;
+    transform-origin: bottom;
+    animation: hand-rotation 60s steps(60,end) infinite;
+  }
+
+  &__minute-hand {
+    height: $minute-hand-size;
+    width: 1px;
+    background-color: black;
+    border: 3px solid black;
+    border-radius: 10%;
+    margin-bottom: $minute-hand-size;
+    position: absolute;
+    transform-origin: bottom;
+    animation: hand-rotation 3600s linear infinite;
+  }
+
+  &__center {
+    z-index: 1;
+    background-color: black ;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include circle ($center-size);
+  }
+}

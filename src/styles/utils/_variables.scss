@@ -1,0 +1,24 @@
+$watch-size: 400px;
+$center-size: 4%;
+$second-hand-size: 45%;
+$minute-hand-size: 30%;
+
+@mixin circle ($watch-size) {
+  width: $watch-size;
+  height: $watch-size;
+}
+
+@mixin circle ($center-size) {
+  width: $center-size;
+  height: $center-size;
+}
+
+@keyframes hand-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+}
