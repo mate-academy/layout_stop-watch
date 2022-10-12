@@ -1,59 +1,49 @@
-.clock {
-  position: relative;
-
+.stop-watch {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  height: 600px;
-  width: 600px;
-
-  background-color: $color-light-pink;
+  position: relative;
+  background-image: url(../images/clock.png);
+  background-size: cover;
+  background-color: #eee;
+  border: 1px solid black;
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.45) 2px 10px 35px 1px;
+  
+  @include circle ($watch-size);
 
-  &__center-hand {
-    height: 20px;
-    width: 20px;
-    
-    border-radius: 50%;
-
-    background-color: $color-black;
+  &__second-hand {
+    height: $second-hand-size;
+    width: 1px;
+    border: 2px solid red;
+    border-radius: 20%;
+    margin-bottom: $second-hand-size;
+    position: absolute;
+    transform-origin: bottom;
+    animation: hand-rotation 60s steps(60,end) infinite;
   }
 
   &__minute-hand {
+    height: $minute-hand-size;
+    width: 1px;
+    background-color: black;
+    border: 3px solid black;
+    border-radius: 10%;
+    margin-bottom: $minute-hand-size;
     position: absolute;
-    bottom: 50%;
-    left: 50%;
-
-    height: 250px;
-    width: 5px;
-
-    transform: translateX(-50%);
-    transform-origin: 0 bottom;
-
-    background-color: $color-black;
-    border-radius: 50%;
-
-    animation: move 60s linear infinite;
+    transform-origin: bottom;
+    animation: hand-rotation 3600s linear infinite;
   }
 
-  &__hour-hand {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-
-    height: 100px;
-    width: 5px;
-
-    background-color: $color-black;
-    border-radius: 15%;
-
+  &__center {
     z-index: 1;
+    background-color: black ;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    transform: translateX(-50%);
-    transform-origin: 0 bottom;
-
-    animation: move 3600s linear infinite;
+    @include circle ($center-size);
   }
 }
