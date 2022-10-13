@@ -8,9 +8,9 @@
   background-size: cover;
   background-color: #eee;
   border: 1px solid black;
-  border-radius: 100%;
+  border-radius: 50%;
 
-  @include watch-circle ($watch-size);
+  @include circle ($watch-size);
 
   &__second-hand {
     height: $second-hand-size;
@@ -44,6 +44,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    @include center-circle ($center-size);
+    @include circle ($center-size);
   }
 }
