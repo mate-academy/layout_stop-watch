@@ -1,0 +1,42 @@
+.watch {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  @include square(400px);
+  margin: 50px auto;
+  border-radius: 50%;
+  border: 2px solid #000;
+
+  &:before {
+    content: " ";
+    display: block;
+    width: 190px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: #34568b;
+    transform: rotate(90deg);
+    transform-origin: 200px;
+    animation: move-hands 60s linear infinite backwards;
+  }
+
+  &:after {
+    content: " ";
+    display: block;
+    width: 80px;
+    height: 10px;
+    border-radius: 25%;
+    transform: rotate(-90deg);
+    transform-origin: -10px;
+    background-color: rgb(223, 12, 12);
+    animation: move-hands 3600s linear infinite backwards;
+  }
+
+  &__central-point {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #34568b;
+
+  }
+  
+}
