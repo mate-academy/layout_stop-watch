@@ -11,17 +11,9 @@
   border: 5px double yellow;
   align-items: center;
   justify-content: center;
+}
 
-  &__circle {
-    position: absolute;
-    width: $circle-size;
-    height: $circle-size;
-    border-radius: 50px;
-   
-    background-color: green;
-    z-index: 3;
-  }
-
+.hand {
   &__second {
     position: absolute;
     height: $second-height;
@@ -44,5 +36,14 @@
     transform-origin: center bottom;
     animation: animation 3600s linear infinite;
     z-index: 1;
+  }
+
+  &__circle {
+    position: absolute;
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: 50px;
+    background-color: green;
+    z-index: 3;
   }
 }
