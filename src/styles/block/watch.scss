@@ -1,13 +1,22 @@
+@keyframes step_watch {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .container {
   display: flex;
   justify-content: center;
-  margin-top: 300px;
+  margin-top: 280px;
 }
 
 .watch {
   width: 100px;
   height: 100px;
-  background: #39a879;
+  background: #c44e4e;
   border-radius: 50%;
   position: relative;
 
@@ -15,26 +24,26 @@
     content: "";
     position: absolute;
     display: inline-block;
-    width: 370px;
+    width: 300px;
     height: 30px;
     background-color: #c44e4e;
-    transform: rotate(140deg);
-    bottom: 182px;
-    left: 44px;
-    border-radius: 20px 0 0 20px;
+    bottom: 32px;
+    left: 45px;
+    border-radius: 0 20px 20px 0 ;
+    animation: step_watch 10s infinite steps(1600) ;
+    transform-origin: 0 10px;
   }
 
   &:after {
     content: "";
     position: absolute;
     display: inline-block;
-    width: 570px;
+    width: 200px;
     height: 30px;
     background-color: #39a879;
     transform: rotate(160deg);
-    left: -545px;
-    top: 151px;
+    left: -187px;
+    top: 88px;
     border-radius: 0 20px 20px 0;
   }
-
 }
