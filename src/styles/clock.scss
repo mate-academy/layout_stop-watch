@@ -1,0 +1,42 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: $border-radius;
+  height: $watch-area-size;
+  width: $watch-area-size;
+    
+  &__circle {
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: $border-radius;
+    background-color: $main-color;
+    z-index: 2;
+  }
+      
+  &__minute {
+    display: flex;
+    position: absolute;
+    top: $minute-top;
+    width: $hand-width;
+    height: $minute-size;
+    background-color: $secondary-color;
+    border-radius: $hand-radius;
+    transform-origin: bottom;
+    animation: rotation linear 3600s infinite;
+    z-index: 1;
+  }
+      
+  &__second {
+    display: flex;
+    position: absolute;
+    top: $second-top;
+    width: $hand-width;
+    height: $second-size;
+    background-color: $main-color;
+    border-radius: $hand-radius;
+    transform-origin: bottom;
+    animation: rotation linear 60s infinite;
+  }
+}
