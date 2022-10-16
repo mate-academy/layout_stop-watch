@@ -3,39 +3,45 @@
   height: $watch-size;
   background: $color-red;
   border-radius: 50%;
+  margin-top: 385px;
   position: relative;
-  transform-origin: 100px;
+  top: -90px;
+  z-index: 1;
 
   &__min {
     position: absolute;
     display: flex;
     width: 300px;
     height: 10px;
-    right: 300px;
     transform: rotate(270deg);
-    transform-origin: 0 10px;
-    top: 304px;
+    top: 160px;
+
+    &::after {
+      content: "";
+      width: 300px;
+      height: 10px;
+      background-color: black;
+      animation: step_watch 60s infinite steps(1600);
+      transform-origin: 0 5px;
+    }
   }
 
-  &__min::before {
-    content: "";
-    width: 300px;
-    height: 10px;
-    right: 300px;
-    background-color: black;
-    animation: step_watch 10s infinite steps(1600);
-    transform-origin: 0 10px;
-  }
-
-  &:after {
-    content: "";
+  &__hour {
     position: absolute;
+    display: flex;
+    content: "";
     width: 200px;
-    height: 20px;
-    background-color: $color-green;
+    height: 10px;
     transform: rotate(270deg);
-    left: -51px;
-    top: -109px;
     border-radius: $border-radius-array;
+
+    &::after {
+      content: "";
+      width: 200px;
+      height: 10px;
+      background-color: $color-green;
+      animation: step_watch 3600s infinite steps(1600);
+      transform-origin: 0 5px;
+    }
   }
 }
