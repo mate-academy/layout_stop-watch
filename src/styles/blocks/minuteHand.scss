@@ -1,0 +1,11 @@
+@import "./utils/extends";
+@import "./utils/variables";
+@import "./utils/mixins";
+
+.minuteHand {
+  @include handPosition($handPosition);
+  @extend %hands;
+  height: $minHand;
+  background-color: $green;
+  animation: rotate 3600s linear infinite;
+}
