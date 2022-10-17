@@ -1,12 +1,11 @@
+@import "./utils/extends";
+@import "./utils/variables";
+@import "./utils/mixins";
+
 .secondHand {
-  position: absolute;
-  left: 50%;
-  bottom: 50%;
-  margin-left: -5px;
-  width: 10px;
-  height: 300px;
+  @include handPosition($handPosition);
+  @extend %hands;
+  height: $secHand;
   background-color: red;
-  border-radius: 5px;
-  transform-origin: bottom;
-  animation: rotate 1s linear infinite;
+  animation: rotate 60s linear infinite;
 }

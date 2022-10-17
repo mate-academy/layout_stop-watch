@@ -1,12 +1,11 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
 .center {
+  @include centerPos($centerPosition);
+  @include circle($size);
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   margin: auto;
-  width: 20px;
-  height: 20px;
-  background-color: green;
+  background-color: $green;
   border-radius: 10px;
 }

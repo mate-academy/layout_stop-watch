@@ -1,12 +1,11 @@
+@import "./utils/extends";
+@import "./utils/variables";
+@import "./utils/mixins";
+
 .minuteHand {
-  position: absolute;
-  left: 50%;
-  bottom: 50%;
-  margin-left: -5px;
-  width: 10px;
-  height: 280px;
-  background-color: green;
-  border-radius: 5px;
-  transform-origin: bottom;
-  animation: rotate 60s linear infinite;
+  @include handPosition($handPosition);
+  @extend %hands;
+  height: $minHand;
+  background-color: $green;
+  animation: rotate 3600s linear infinite;
 }
