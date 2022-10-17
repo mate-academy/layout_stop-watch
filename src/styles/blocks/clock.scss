@@ -5,7 +5,6 @@
   background-color: $clock-color;
   border: 10px solid $border-color;
   border-radius: 50%;
-  margin: 200px auto;
 
   &::after {
     content: "";
@@ -53,47 +52,6 @@
       @include arrowMinuteSize($minute-width, $minute-height);
       background-color: $main-color;
       border-radius: 4px 4px 2px 2px;
-    }
-  }
-
-  .numbers {
-    width: 75%;
-    height: 75%;
-    text-align: center;
-
-    &__digit {
-      display: block;
-      color: $main-color;
-    }
-
-    &:nth-child(1) {
-      position: absolute;
-      bottom: -50px;
-      right: -95px;
-    }
-
-    &:nth-child(2) {
-      position: absolute;
-      bottom: -180px;
-      right: 35px;
-    }
-
-    &:nth-child(3) {
-      position: absolute;
-      bottom: -50px;
-      right: 170px;
-    }
-
-    &:nth-child(4) {
-      position: absolute;
-      bottom: 70px;
-      right: 40px;
-    }
-  }
-
-  @keyframes sec {
-    to {
-      transform: rotate(360deg);
     }
   }
 }
