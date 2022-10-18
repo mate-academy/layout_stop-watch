@@ -1,0 +1,90 @@
+@import "./var.scss";
+
+.clock {
+  position: relative;
+  margin: 50px auto;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  border: 10px solid #ff884b;
+
+  &__center {
+    position: absolute;
+    margin: auto;
+    height: 6px;
+    width: 6px;
+    background: #ff884b;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 100%;
+  }
+
+  &__hours {
+    position: absolute;
+    width: $hour-width;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 60s infinite linear;
+  }
+
+  &__hours::before {
+    position: absolute;
+    content: "";
+    background: #ff884b;
+    height: $hour-height;
+    width: $hour-width;
+    top: 20px;
+  }
+
+  &__minutes {
+    position: absolute;
+    width: $minutes-width;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 30s infinite linear;
+  }
+
+  &__minutes::before {
+    position: absolute;
+    content: "";
+    background: #ea5c2b;
+    height: $minutes-height;
+    width: $minutes-width;
+    top: 50px;
+  }
+
+  &__second {
+    position: absolute;
+    width: $second-width;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 15s infinite linear;
+  }
+
+  &__second::before {
+    position: absolute;
+    content: "";
+    background: #fd1111;
+    height: $second-height;
+    width: $second-width;
+    top: 47px;
+  }
+
+  &__shadow {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    left: 60px;
+    top: 60px;
+    transform: rotate(135deg);
+    background: linear-gradient(transparent, rgba(#000, 0.1));
+  }
+}
