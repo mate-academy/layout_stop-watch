@@ -1,0 +1,18 @@
+@mixin animation {
+  transform-origin: bottom center;
+  animation-name: animation-hand;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60);
+}
+
+@mixin circle ($size) {
+  width: $size-watch;
+  height: $size-watch;
+  border-radius: 50%;
+}
+
+@mixin center-circle ($size) {
+  width: $size-center-circle;
+  height: $size-center-circle;
+  border-radius: 50%;
+}

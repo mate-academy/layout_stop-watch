@@ -1,0 +1,47 @@
+@keyframes animation-hand {
+  to {
+    transform: rotate(360deg);
+  }
+  from {
+    transform: rotate(0deg);
+  }
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  @include circle($size-watch);
+  border: 2px solid black;
+
+  &__hand {
+    position: absolute;
+    width: 15px;
+    height: $height-minute;
+    background-color: darkblue;
+    border-radius: 10px;
+
+    &--minute {
+      top: shift($size-watch, $height-minute);
+      @include animation ();
+      animation-duration: 3600s;
+    }
+
+    &--second {
+      top: shift($size-watch, $height-second);
+      width: 10px;
+      height: $height-second;
+      background-color: blue;
+      @include animation ();
+      animation-duration: 60s;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    @include center-circle($size-center-circle);
+    background-color: aqua;
+    border-radius: 50%;
+  }
+}
