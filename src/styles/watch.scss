@@ -1,0 +1,48 @@
+@import "./mixin";
+@import "./variables";
+
+@keyframes clock {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container__watch {
+  position: relative;
+}
+
+.watch {
+  height: 100vh;
+
+  &__item {
+    list-style: none;
+
+    &--seconds-arrow {
+      @include watch-item-position($seconds-arrow-width);
+      width: $seconds-arrow-width;
+      height: 280px;
+      background-color: #4a879e;
+      @include animation(60s);
+    }
+
+    &--circle {
+      @include watch-item-position($circle-diameter, $circle-diameter);
+      width: $circle-diameter;
+      height: $circle-diameter;
+      background-color: #4a879e;
+      border-radius: 50%;
+    }
+
+    &--minutes-arrow {
+      @include watch-item-position($minutes-arrow-width);
+      width: $minutes-arrow-width;
+      height: 200px;
+      background-color: #f78166;
+      @include animation(3600s);
+    }
+  }
+}
