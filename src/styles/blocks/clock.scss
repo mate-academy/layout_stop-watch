@@ -1,0 +1,132 @@
+.clock {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  @include circle($radius-clock);
+
+  background-color: $color-clock-background;
+  border: 1px solid black;
+
+  &__indicator {
+    position: absolute;
+    @include rectangle($height-indicator, $width-indicator);
+    background-color: $color-indicator-small;
+    transform-origin: center $radius-clock;
+
+    // @for $index from 3 would start looping from the 3rd child
+    @for $index from 1 through 60 {
+      &:nth-child(#{$index}) {
+        transform: rotate(calc(6deg * #{$index}));
+      }
+    }
+
+    &:nth-child(15n) {
+      background-color: $color-indicator-large;
+      height: $height-indicator * 1.5;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: $radius-clock * 0.5;
+
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 6px 8px;
+
+    color: #444;
+    font-size: 22px;
+    line-height: 22px;
+    text-align: center;
+
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  &__center {
+    align-self: center;
+
+    z-index: 3;
+    top: $radius-clock - $radius-dot;
+    left: $radius-clock - $radius-dot;
+
+    @include circle($radius-dot);
+
+    background-color: $color-dot;
+    border: 4px solid $color-clock-background;
+  }
+
+  &__hand-second {
+    z-index: 2;
+    position: absolute;
+    top: $radius-clock;
+    left: $radius-clock - $width-hand-seconds;
+
+    @include rectangle($length-hand-seconds, $width-hand-seconds * 2);
+
+    background-color: $color-hand-seconds;
+
+    transform-origin: top center;
+
+    animation-name: rotate-hand;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    // animation-timing-function: steps(60);
+  }
+
+  &__hand-minute {
+    z-index: 1;
+    position: absolute;
+
+    top: $radius-clock;
+    left: $radius-clock - $width-hand-minutes;
+
+    @include rectangle($length-hand-minutes, $width-hand-minutes * 2);
+
+    background-color: $color-hand-minutes;
+
+    transform-origin: top center;
+
+    animation-name: rotate-hand;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+  }
+
+  &__number {
+    position: absolute;
+
+    color: $color-number;
+    font-size: $font-size-number;
+    font-weight: bold;
+    line-height: $font-size-number;
+
+    &--12 {
+      top: $offset-number;
+    }
+
+    &--3 {
+      top: $radius-clock - $font-size-number * 0.5;
+      right: $offset-number;
+    }
+
+    &--6 {
+      bottom: $offset-number;
+    }
+
+    &--9 {
+      left: $offset-number;
+      top: $radius-clock - $font-size-number * 0.5;
+    }
+
+    &:hover {
+      cursor: default;
+    }
+  }
+}
