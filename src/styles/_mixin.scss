@@ -1,0 +1,17 @@
+@mixin animation($duration) {
+  animation: watch $duration steps(60, end) infinite;
+  transform-origin: bottom center;
+}
+
+@mixin watch-item-position ($width, $height: 0) {
+  position: absolute;
+
+  @if $height == 0 {
+    bottom: 50%;
+  }
+  @else {
+    bottom: calc(50% - #{$height / 2});
+  }
+
+  left: calc(50% - #{$width / 2});
+}
