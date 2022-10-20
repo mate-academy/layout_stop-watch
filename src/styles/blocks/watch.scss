@@ -1,0 +1,58 @@
+.watch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
+  border-radius: 50%;
+  background-image: url(/images/dial.svg);
+  background-color: $dial-color;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &__minutes-hand {
+    @include minutes-hand-position;
+    width: $minutes-hand-width;
+    height: $minutes-hand-height;
+    background-color: $minutes-hand-color;
+    border-radius: 10px;
+    transform-origin: bottom;
+    animation: rotate 3600s linear infinite;
+  
+    @keyframes rotate {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__seconds-hand {
+    @include seconds-hand-position;
+    width: $seconds-hand-width;
+    height: $seconds-hand-height;
+    background-color: $seconds-hand-color;
+    border-radius: 10px;
+    transform-origin: bottom ;
+    animation: rotate 60s linear infinite;
+    
+    @keyframes rotate {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  
+  &__circle {
+    @include circle-position;
+    width: $circle-size;
+    height: $circle-size;
+    background-color: $seconds-hand-color;
+    border-radius: 50%;
+  }
+}

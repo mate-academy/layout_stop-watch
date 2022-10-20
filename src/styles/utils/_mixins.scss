@@ -1,0 +1,17 @@
+@mixin minutes-hand-position {
+  position: absolute;
+  top: ($watch-size / 2) - $minutes-hand-height;
+  left: ($watch-size - $minutes-hand-width) / 2;
+}
+
+@mixin seconds-hand-position {
+  position: absolute;
+  top: ($watch-size / 2) - $seconds-hand-height;
+  left: ($watch-size - $seconds-hand-width) / 2;
+}
+
+@mixin circle-position {
+  position: absolute;
+  top: ($watch-size - $circle-size) / 2;
+  left: ($watch-size - $circle-size) / 2;
+}
