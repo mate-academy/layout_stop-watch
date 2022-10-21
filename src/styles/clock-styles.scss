@@ -1,0 +1,68 @@
+.clock-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 3px solid $border-color;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  &::after {
+    content: "";
+    width: $center-size;
+    height: $center-size;
+    display: block;
+    background-color: $main-color;
+    border-radius: 50%;
+    position: absolute;
+    left: ($wrap-size - $center-size)/2;
+    top: ($wrap-size - $center-size)/2;
+  }
+
+  &__seconds {
+    position: absolute;
+    width: $sec-size;
+    height: $sec-size;
+    border-radius: 50%;
+    top: ($wrap-size - $sec-size)/2;
+    left: ($wrap-size - $sec-size)/2;
+
+    animation: rotate 60s infinite linear;
+
+    &::after {
+      content: "";
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: ($sec-size - $hand-width)/2;
+      height: $sec-size/2;
+      width: $hand-width;
+      border-radius: $hand-width/2;
+      background-color: $main-color;
+    }
+  }
+
+  &__minutes {
+    position: absolute;
+    width: $min-size;
+    height: $min-size;
+    border-radius: 50%;
+    top: ($wrap-size - $min-size)/2;
+    left: ($wrap-size - $min-size)/2;
+    animation: rotate 3600s infinite linear;
+
+    &::after {
+      content: "";
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: ($min-size - $hand-width)/2;
+      height: $min-size/2;
+      width: $hand-width;
+      border-radius: $hand-width/2;
+      background-color: $main-color;
+    }
+  }
+}
