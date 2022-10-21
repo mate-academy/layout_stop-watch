@@ -1,0 +1,39 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border: 5px solid rgb(201, 33, 235);
+  border-radius: 50%;
+  width: $clock-size;
+  height: $clock-size;
+
+  &__center {
+    position: absolute;
+    height: $clock-center;
+    width: $clock-center;
+    border-radius: 50%;
+    background-color: rgb(122, 122, 122);
+    bottom: 240px;
+  }
+
+  &__hour {
+    @include arrow ();
+    animation: around 43200s linear infinite;
+    width: 10px;
+    background-color: red;
+  }
+
+  &__minute {
+    @include arrow ();
+    animation: around 3600s linear infinite;
+    width: 5px;
+    background-color: green;
+  }
+
+  &__second {
+    @include arrow ();
+    animation: around 60s linear infinite;
+    width: 3px;
+    background-color: blue;
+  }
+}
