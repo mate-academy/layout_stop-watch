@@ -18,7 +18,7 @@ Create a working stopwatch with minute and second hands using only CSS animation
 
 ## Requirements:
 - Use SCSS and follow BEM
-- Don't forget about fstopwatch__hand-iles stucture
+- Don't forget about files stucture
 
 ---
 ![demo](stopwatch.png)
