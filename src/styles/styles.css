@@ -24,8 +24,9 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  box-shadow: 0px 0px 71px 23px rgb(224, 172, 220);
+  box-shadow: 0 0 71px 23px rgb(224, 172, 220);
 }
+
 .clock__hand-minute {
   position: absolute;
   left: 300px;
@@ -37,6 +38,7 @@ body {
   animation: rotation 3600s linear infinite -2700s;
   transform-origin: left;
 }
+
 @keyframes rotation {
   from {
     rotate: 0deg;
@@ -45,6 +47,7 @@ body {
     rotate: 360deg;
   }
 }
+
 .clock__hand-second {
   position: absolute;
   left: 300px;
@@ -56,6 +59,7 @@ body {
   animation: rotation 60s linear infinite -45s;
   transform-origin: left;
 }
+
 @keyframes rotation {
   from {
     rotate: 0deg;
@@ -64,6 +68,7 @@ body {
     rotate: 360deg;
   }
 }
+
 .clock__center {
   display: flex;
   position: absolute;
