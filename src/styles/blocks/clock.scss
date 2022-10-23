@@ -1,0 +1,64 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: solid 6px transparentize($color: #FF1493, $amount: 0.45);
+  @include makeClock();
+  background-image: url(https://i.pinimg.com/736x/b6/4f/50/b64f50d796d425de6247378ddd0659a3.jpg);
+  @include setBackground();
+  box-shadow: 0px 0px 71px 23px rgba(224, 172, 220, 1) ;
+
+  &__hand-minute {
+    position: absolute;
+    left: clockRadius($clock-size);
+    width: $hand-minute-length;
+    height: 15px;
+
+    background-color: skyblue;
+    border: $elements-border;
+    border-radius: 15px;
+
+    animation: rotation 3600s linear infinite -2700s;
+    transform-origin: left ;
+    @keyframes rotation {
+      from
+      {rotate: 0deg;}
+
+      to {
+        rotate: 360deg;
+      }
+    }
+  }
+
+  &__hand-second {
+    position: absolute;
+    left: clockRadius($clock-size);
+    width: $hand-second-length;
+    height: 10px;
+
+    background-color: #FF1493;
+    border-radius: 15px;
+    border: $elements-border;
+
+    animation: rotation 60s linear infinite -45s;
+    transform-origin: left ;
+    @keyframes rotation {
+      from
+      {rotate: 0deg;}
+
+      to {
+        rotate: 360deg;
+      }
+    }
+  }
+
+  &__center {
+    display: flex;
+    position: absolute;
+    @include makeClockCenter();
+    border: $elements-border;
+    background-color: yellow;
+  }
+}
