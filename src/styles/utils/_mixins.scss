@@ -1,0 +1,22 @@
+@mixin circle ($size) {
+  min-height: $size;
+  min-width: $size;
+
+  border-radius: 50%;
+}
+
+@mixin hand-width ($size) {
+  width: $size;
+
+  border-radius: $size;
+}
+
+@mixin hand-properties ($height, $color, $animation-duration) {
+  top: getShiftTop($height);
+
+  height: $height;
+
+  background-color: $color;
+
+  animation-duration: $animation-duration;
+}

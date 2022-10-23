@@ -1,0 +1,35 @@
+.stopwatch {
+  border: 2px dashed black;
+
+  &__center {
+    @include circle ($stopwatch-center-size);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+
+    background-color: #1f6dd4;
+  }
+
+  &__hand {
+    @include hand-width ($width-hand);
+
+    position: absolute;
+    left: getShiftLeft($width-hand);
+    
+    transform-origin: bottom center;
+    animation-name: rotate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &--minute {
+      @include hand-properties ($height-minute-hand, #c03737, 3600s);
+    }
+
+    &--second {
+      @include hand-properties ($height-second-hand, #1f6dd4, 60s);
+    }
+  }
+}
