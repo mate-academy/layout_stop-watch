@@ -1,0 +1,67 @@
+.stop-watch {
+  @extend %flex-center;
+  @include circle($clock-size);
+  box-sizing: border-box;
+  background-color: white;
+  border: 4px solid black;
+  transform: rotate(180deg);
+
+  &__center {
+    @include circle($center-size);
+    background-color: black;
+  }
+
+  &__hou {
+    @extend %flex-arrow;
+    @extend %animation-prop;
+    background-color: black;
+    animation-name: move;
+    animation-duration: $animation-hou;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: $sec-width * 4;
+      height: $sec-height * 0.6;
+      background-color: black;
+      border-radius: 4px;
+    }
+  }
+
+  &__min {
+    @extend %flex-arrow;
+    @extend %animation-prop;
+    background-color: black;
+    animation-name: move;
+    animation-duration: $animation-min;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: $sec-width * 2;
+      height: $sec-height * 0.8;
+      background-color: black;
+      border-radius: 4px;
+    }
+  }
+
+  &__sec {
+    @extend %flex-arrow;
+    @extend %animation-prop;
+    background-color: red;
+    animation-name: move;
+    animation-duration: $animation-sec;
+
+    @include circle($center-size / 2);
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: $sec-width;
+      height: $sec-height;
+      background-color: red;
+      border-radius: 4px;
+    }
+  }
+
+}
