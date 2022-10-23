@@ -4,6 +4,7 @@
   box-sizing: border-box;
   background-color: white;
   border: 4px solid black;
+  transform: rotate(180deg);
 
   &__center {
     @include circle($center-size);
@@ -12,6 +13,7 @@
 
   &__hou {
     @extend %flex-arrow;
+    @extend %animation-prop;
     background-color: black;
     animation-name: move;
     animation-duration: $animation-hou;
@@ -28,6 +30,7 @@
 
   &__min {
     @extend %flex-arrow;
+    @extend %animation-prop;
     background-color: black;
     animation-name: move;
     animation-duration: $animation-min;
@@ -44,6 +47,7 @@
 
   &__sec {
     @extend %flex-arrow;
+    @extend %animation-prop;
     background-color: red;
     animation-name: move;
     animation-duration: $animation-sec;
@@ -61,5 +65,3 @@
   }
 
 }
-
-
