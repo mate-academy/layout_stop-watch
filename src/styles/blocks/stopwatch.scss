@@ -1,0 +1,77 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    @include stopwatch-size($stopwatch-size);
+    border: 2px solid #033c86;
+    border-radius: 50%;
+    background: radial-gradient(#ffff007b 5%, #007efd7b 80%);
+  }
+
+  &__second-hand {
+    position: absolute;
+    left: $stopwatch-size / 2 - $hand-width / 2;
+    top: 5%;
+    height: 45%;
+    width: $hand-width;
+    border-radius: 50% 50% 4px 4px;
+    background: linear-gradient(#ff0, #008efd);
+    transform-origin: bottom;
+    animation: hand-move 60s linear infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    left: $stopwatch-size / 2 - $hand-width / 2;
+    top: 15%;
+    height: 35%;
+    width: $hand-width;
+    border-radius: 50% 50% 4px 4px;
+    background: linear-gradient(#ff0, #006efd);
+    transform-origin: bottom;
+    animation: hand-move 3600s steps(60, end) infinite;
+  }
+
+  &__indicator {
+    position: absolute;
+    left: $stopwatch-size / 2 - $indicator-width / 2;
+    width: $indicator-width;
+    height: 10px;
+    border-radius: 0 0 50% 50%;
+    background-color: #004ead;
+    transform-origin: center (#{$stopwatch-size / 2});
+
+    @for $indicator from 1 through 60 {
+      &:nth-child(#{$indicator}) {
+        transform: rotate(6deg * $indicator);
+      }
+    }
+
+    &:nth-child(5n) {
+      height: 13px;
+      width: $indicator-width;
+      background-color: #00affd;
+    }
+
+    &:nth-child(15n) {
+      height: 15px;
+      width: $indicator-width;
+      background-color: #ff0;
+    }
+  }
+
+  &__center {
+    align-self: center;
+    z-index: 1;
+    @include stopwatch-center-size($stopwatch-center-size);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: radial-gradient(#004efd, #ff0);
+  }
+}
