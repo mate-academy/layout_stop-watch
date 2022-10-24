@@ -11,13 +11,10 @@
   box-shadow: 0px 0px 71px 23px rgba(224, 172, 220, 1) ;
 
   &__hand-minute {
-    position: absolute;
-    left: clockRadius($clock-size);
     width: $hand-minute-length;
     height: 15px;
 
     background-color: skyblue;
-    border: $elements-border;
     border-radius: 15px;
 
     animation: rotation 3600s linear infinite -2700s;
@@ -33,25 +30,11 @@
   }
 
   &__hand-second {
-    position: absolute;
-    left: clockRadius($clock-size);
     width: $hand-second-length;
     height: 10px;
-
     background-color: #FF1493;
-    border-radius: 15px;
-    border: $elements-border;
-
     animation: rotation 60s linear infinite -45s;
     transform-origin: left ;
-    @keyframes rotation {
-      from
-      {rotate: 0deg;}
-
-      to {
-        rotate: 360deg;
-      }
-    }
   }
 
   &__center {
