@@ -1,0 +1,50 @@
+.watch {
+  @include WatchSize($watch-size);
+  border: 4px solid $watch-color;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(270deg);
+
+  &__center {
+    @include WatchCenter($watch-size);
+    background-color: $watch-color;
+    z-index: 1;
+  }
+
+  &__second-hand {
+    position: absolute;
+    animation: handRun 60s linear infinite;
+
+    &::before {
+      content: "";
+      @include HandsGeneralStyle;
+      width: $watch-size / 2;
+      border-bottom: solid 2px #f0273c;
+      border-radius: 20px;
+    }
+  }
+
+  &__minute-hand {
+    position: absolute;
+    animation: handRun 3600s linear infinite;
+
+    &::before {
+      content: "";
+      @include HandsGeneralStyle;
+      width: $watch-size / 2 - 20;
+      border-bottom: dashed 4px #f0de27;
+    }
+  }
+
+  @keyframes handRun {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+}
