@@ -1,19 +1,24 @@
-@mixin circle ($wrap-size) {
-  width: $wrap-size;
-  height: $wrap-size;
+@mixin circle ($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 50%;
 }
 
-@mixin center ($center-size) {
-  width: $center-size;
-  height: $center-size;
+@mixin element ($size) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  top: ($wrap-size - $size)/2;
+  left: ($wrap-size - $size)/2;
 }
 
-@mixin minute ($min-size) {
-  width: $min-size;
-  height: $min-size;
-}
-
-@mixin second ($sec-size) {
-  width: $sec-size;
-  height: $sec-size;
+@mixin content ($size) {
+  position: absolute;
+  top: 0;
+  left: ($size - $hand-width)/2;
+  height: $size/2;
+  width: $hand-width;
+  border-radius: $hand-width/2;
+  background-color: $main-color;
 }

@@ -1,6 +1,5 @@
 .stopwatch {
-  @include circle ($wrap-size);
-  @extend %border-radius;
+  @include circle ($wrap-size, $wrap-size);
   border: 3px solid $border-color;
   position: absolute;
   margin: auto;
@@ -10,53 +9,26 @@
   left: 0;
   &::after {
     content: "";
-    @include center ($center-size);
-    @extend %border-radius;
+    @include element ($center-size);
     z-index: 2;
-    display: block;
     background-color: $main-color;
-    position: absolute;
-    left: ($wrap-size - $center-size)/2;
-    top: ($wrap-size - $center-size)/2;
   }
   &__minute {
-    position: absolute;
-    @include minute ($min-size);
-    @extend %border-radius;
-    top: ($wrap-size - $min-size)/2;
-    left: ($wrap-size - $min-size)/2;
+    @include element ($min-size);
     animation: rotate 3600s infinite linear;
 
     &::after {
       content: "";
-      display: flex;
-      position: absolute;
-      top: 0;
-      left: ($min-size - $hand-width)/2;
-      height: $min-size/2;
-      width: $hand-width;
-      border-radius: $hand-width/2;
-      background-color: $main-color;
+      @include content ($min-size);
     }
   }
   &__second {
-    position: absolute;
-    @include second ($sec-size);
-    @extend %border-radius;
-    top: ($wrap-size - $sec-size)/2;
-    left: ($wrap-size - $sec-size)/2;
-
+    @include element ($sec-size);
     animation: rotate 60s infinite linear;
 
     &::after {
       content: "";
-      position: absolute;
-      top: 0;
-      left: ($sec-size - $hand-width)/2;
-      height: $sec-size/2;
-      width: $hand-width;
-      border-radius: $hand-width/2;
-      background-color: $main-color;
+      @include content ($sec-size);
     }
   }
 }
