@@ -1,0 +1,117 @@
+body {
+  background-color: #644c8f;
+}
+
+.clock {
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  background-color: #fff;
+  border-radius: 100%;
+  border: 15px solid #262626;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  &__top {
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    background-color: #262626;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  &__right {
+    position: absolute;
+    width: 8px;
+    height: 10px;
+    background-color: #262626;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &__bottom {
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    background-color: #262626;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+  }
+
+  &__left {
+    position: absolute;
+    width: 8px;
+    height: 10px;
+    background-color: #262626;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  &__center {
+    height: 10px;
+    width: 10px;
+    background-color: #262626;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &__minute {
+    width: 6px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 3600s infinite linear;
+
+    &:before {
+      position: absolute;
+      content: "";
+      background-color: #262626;
+      height: 167px;
+      width: 5px;
+      top: 79px;
+    }
+  }
+
+  &__second {
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 60s infinite linear;
+
+    &:before {
+      position: absolute;
+      content: "";
+      background-color: #fd1111;
+      height: 225px;
+      width: 3px;
+      top: 20px;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+} 
