@@ -1,12 +1,8 @@
 .watch {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   @include circle($size);
   border: $border-circle solid #ffbeed;
   background: radial-gradient(circle, #8a2be2 0%, #ffbeed 88%, #fff 100%);
-  margin: 0 auto;
 
   &__min {
     position: absolute;
@@ -15,18 +11,8 @@
     @extend %position-of-the-arrows;
     background: $color;
     border-radius: 10px;
-    animation: min 3600s linear infinite -2700s;
+    animation: movement 3600s linear infinite -2700s;
     transform-origin: left;
-
-    @keyframes min {
-      from {
-        rotate: 0deg;
-      }
-
-      to {
-        rotate: 360deg;
-      }
-    }
   }
 
   &__second {
@@ -36,20 +22,27 @@
     @extend %position-of-the-arrows;
     background: $color;
     border-radius: 10px;
-    animation: min 60s linear -45s infinite;
+    animation: movement 60s linear -45s infinite;
     transform-origin: left;
-
   }
 
   &__center {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 49%;
-    left: 48%;
+    @include  minicircle($minisize);
+    @extend %position-of-the-arrows;
     background: $color;
     border-radius: 50%;
     z-index: 1;
+    transform: translate(-50%);
+  }
+}
 
+@keyframes movement {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
   }
 }
