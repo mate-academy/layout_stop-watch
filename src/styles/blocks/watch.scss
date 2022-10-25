@@ -1,0 +1,35 @@
+.watch {
+  display: inline-block;
+  width: 10px;
+  height: 150px;
+  border-radius: 15px;
+  background-color: lightblue;
+  animation: arrow 3600s linear infinite;
+  transform-origin: bottom center;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10px;
+    height: 250px;
+    border-radius: 15px;
+    background-color: red;
+    animation: arrow 60s linear infinite, color 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+}
