@@ -2,16 +2,8 @@
   width: $size;
   height: $size;
 }
+
 @mixin circle($size) {
   @include square($size);
-  border-radius: 50%;
-}
-
-@mixin minisquare($minisize) {
-  width: $minisize;
-  height: $minisize;
-}
-@mixin minicircle($minisize) {
-  @include minisquare($minisize);
   border-radius: 50%;
 }

@@ -1,7 +1,7 @@
 .watch {
   position: relative;
   @include circle($size);
-  border: $border-circle solid #ffbeed;
+  border: 15px solid #ffbeed;
   background: radial-gradient(circle, #8a2be2 0%, #ffbeed 88%, #fff 100%);
 
   &__min {
@@ -28,7 +28,7 @@
 
   &__center {
     position: absolute;
-    @include  minicircle($minisize);
+    @include circle($minisize);
     @extend %position-of-the-arrows;
     background: $color;
     border-radius: 50%;
