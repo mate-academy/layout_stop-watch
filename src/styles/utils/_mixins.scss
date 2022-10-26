@@ -1,0 +1,21 @@
+@mixin hand () {
+  width: 8px;
+  background-color: #53260a;
+  border-radius: 5px;
+  border: 1px solid $border-color;
+}
+
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+  border-radius: $size / 2;
+}
+
+@mixin position {
+  position: absolute;
+  bottom: 50%;
+}
+
+@mixin translate-hands {
+  transform: translate(0, 8px);
+}
