@@ -1,0 +1,48 @@
+.watch {
+  position: relative;
+  @include circle($size);
+  border: 15px solid #ffbeed;
+  background: radial-gradient(circle, #8a2be2 0%, #ffbeed 88%, #fff 100%);
+
+  &__min {
+    position: absolute;
+    width: 185px;
+    height: 20px;
+    @extend %position-of-the-arrows;
+    background: $color;
+    border-radius: 10px;
+    animation: movement 3600s linear infinite -2700s;
+    transform-origin: left;
+  }
+
+  &__second {
+    position: absolute;
+    width: 285px;
+    height: 15px;
+    @extend %position-of-the-arrows;
+    background: $color;
+    border-radius: 10px;
+    animation: movement 60s linear -45s infinite;
+    transform-origin: left;
+  }
+
+  &__center {
+    position: absolute;
+    @include circle($minisize);
+    @extend %position-of-the-arrows;
+    background: $color;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translate(-50%);
+  }
+}
+
+@keyframes movement {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
