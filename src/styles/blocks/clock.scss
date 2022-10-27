@@ -1,0 +1,98 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 310px;
+  height: 310px;
+  border-radius: $border-radius;
+  border: 5px solid $secs-color;
+  animation: cose 3s ease-in;
+  transition: transform 0.6s;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25), 0 0 48px rgba(0, 0, 0, 0.35);
+
+  &:hover {
+    transform: scale(1.1) rotate(1deg);
+    transform-origin: center center;
+
+  }
+
+  &__border {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: $border-radius;
+    border: 2px solid $clock-color;
+    animation: cose 3s ease-in;
+  }
+
+  &__middle {
+    position: absolute;
+    top: 45%;
+    left: 48%;
+    border: 2px solid $clock-color;
+    background-color: $clock-color;
+    border-radius: $border-radius;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+  }
+
+  &__time-3 {
+    position: absolute;
+    top: 43%;
+    left: 93%;
+  }
+
+  &__time-6 {
+    position: absolute;
+    top: 90%;
+    left: 48%;
+  }
+
+  &__time-9 {
+    position: absolute;
+    top: 43%;
+    left: 1%;
+  }
+
+  &__time-12 {
+    position: absolute;
+    left: 47%;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    border: 1px solid $mins-color;
+    background-color: $mins-color;
+    width: 10px;
+    height: 100px;
+    border-radius: $border-radius;
+    animation: rotation 3600s infinite linear;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: 22%;;
+    left: 50%;
+    border: 1px solid $secs-color;
+    background-color: $secs-color;
+    width: 10px;
+    height: 80px;
+    border-radius: $border-radius;
+    animation: rotation 60s infinite linear;
+    transform-origin: bottom;
+  }
+
+}
+
+
+
+
+
+
+
+
