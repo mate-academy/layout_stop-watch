@@ -1,0 +1,24 @@
+@mixin circle ($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+}
+
+@mixin element ($size) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  top: ($wrap-size - $size)/2;
+  left: ($wrap-size - $size)/2;
+}
+
+@mixin content ($size) {
+  position: absolute;
+  top: 0;
+  left: ($size - $hand-width)/2;
+  height: $size/2;
+  width: $hand-width;
+  border-radius: $hand-width/2;
+  background-color: $main-color;
+}
