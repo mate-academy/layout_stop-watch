@@ -1,0 +1,99 @@
+@import "variables";
+@import "mixin";
+
+body {
+  background-color: #644c8f;
+}
+
+.clock {
+  position: $position;
+  height: 500px;
+  width: 500px;
+  background-color: #fff;
+  border-radius: 100%;
+  border: 15px solid $base-color;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  &__top {
+    left: 0;
+    right: 0;
+
+    @include default-size;
+  }
+
+  &__right {
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    @include default-size;
+  }
+
+  &__bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    @include default-size;
+  }
+
+  &__left {
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    @include default-size;
+  }
+  
+  &__center {
+    border-radius: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    @include default-size;
+  }
+
+  &__minute {
+    width: 6px;
+    animation: time 3600s infinite linear;
+
+    @include minsec-position;
+
+    &:before {
+      content: "";
+      height: 167px;
+      width: 5px;
+      top: 79px;
+
+      @include default-2;
+    }
+  }
+
+  &__second {
+    width: 2px;
+    animation: time 60s infinite linear;
+
+    @include minsec-position;
+
+    &:before {
+      position: absolute;
+      content: "";
+      background-color: #fd1111;
+      height: 225px;
+      width: 3px;
+      top: 20px;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+} 
