@@ -1,0 +1,64 @@
+.clock {
+  position: relative;
+  &__pin {
+    @include Square(20px);
+    position: absolute;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__image {
+    z-index: 1;
+    display: block;
+    @include Square($cloak-size);
+  }
+
+  &__hand {
+    @include ClockHand;
+
+    &--1 {
+      height: 4px;
+      width: 25%;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+      background-color: red;
+      animation: ClockHandSeconds 60s linear infinite;
+      transform-origin: 2px 2px;
+    }
+
+    &--2 {
+      height: 15%;
+      width: 4px;
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+      background-color: blue;
+
+      animation: ClockHandMinutes 3600s linear infinite;
+      transform-origin: 2px 2px;
+    }
+  }
+}
+
+@keyframes ClockHandSeconds {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes ClockHandMinutes {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
