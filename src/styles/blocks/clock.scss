@@ -1,0 +1,28 @@
+.clock {
+  width: $clock-size;
+  height: $clock-size;
+  border-radius: 50%;
+  background-color: aquamarine;
+
+  &::after {
+    @extend %stopwatch-hand;
+    height: 25%;
+  }
+
+  &::before {
+    @extend %stopwatch-hand;
+    height: 35%;
+  }
+
+  &__vert-numbers {
+    @include numbers-position;
+    flex-direction: column;
+    gap: 65%;
+
+  }
+
+  &__hor-numbers {
+    @include numbers-position;
+    gap: 80%;
+  }
+}

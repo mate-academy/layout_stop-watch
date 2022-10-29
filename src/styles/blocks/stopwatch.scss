@@ -1,0 +1,52 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  &__button-on {
+    display: none;
+
+    &-label::after {
+      @extend %stopwatch-button;
+      content: "ON";
+    }
+
+    &:checked ~ &-label::after {
+      content: "RESET";
+    }
+  }
+
+  &__button-pause {
+    display: none;
+
+    &-label::after {
+      @extend %stopwatch-button;
+      content: "PAUSE-ON";
+    }
+
+    &:checked ~ &-label::after {
+      content: "PAUSE-OFF";
+    }
+  }
+
+  &__button-on:checked ~ &__clock::after {
+    animation: move 3600s linear infinite forwards;
+  }
+
+  &__button-on:checked ~ &__clock::before {
+    animation: move 60s linear infinite forwards;
+  }
+
+  &__button-pause:checked ~ &__clock::before {
+    animation-play-state: paused;
+  }
+
+  &__button-pause:checked ~ &__clock::after {
+    animation-play-state: paused;
+  }
+
+  &__clock {
+    position: absolute;
+    top: 100px;
+  }
+}
