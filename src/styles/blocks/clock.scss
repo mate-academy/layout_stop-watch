@@ -1,4 +1,5 @@
 .clock {
+  display: flex;
   position: relative;
   &__pin {
     @include Square(20px);
@@ -12,9 +13,11 @@
   }
 
   &__image {
-    z-index: 1;
-    display: block;
     @include Square($cloak-size);
+    position: relative;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
   }
 
   &__hand {
