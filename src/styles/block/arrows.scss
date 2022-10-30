@@ -1,0 +1,55 @@
+@import "../utils/variables";
+@import "../utils/functions";
+@import "../utils/scenario";
+
+.arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $arrows-size;
+  height: $arrows-size;
+  border: $border-size solid $frame-color;
+  border-radius: $half;
+  background-color: $arrows-color;
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+    border-radius: $half;
+    background-color: $center-color;
+  }
+
+  &__second {
+    position: absolute;
+    top: 0;
+    right: $half;
+    width: $thickness;
+    height: $half;
+    background-color: $center-color;
+    transform-origin: center bottom;
+    animation: round 60s steps(60, end) infinite normal 0s backwards;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 0;
+    right: $half;
+    width: getMinuteThickness($thickness, $doublemultiplier);
+    height: $half;
+    background-color: $center-color;
+    transform-origin: center bottom;
+    animation: round 3600s steps(60, end) infinite normal 0s backwards;
+  }
+
+  &__hour {
+    position: absolute;
+    top: 0;
+    right: $half;
+    width: getHourThickness($thickness, $triplemultiplier);
+    height: $half;
+    background-color: $center-color;
+    transform-origin: center bottom;
+    animation: round 86400s steps(12, end) infinite normal 0s backwards;
+  }
+}

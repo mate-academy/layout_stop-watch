@@ -1,0 +1,24 @@
+@import "../utils/variables";
+
+.frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: $top auto;
+  width: $frame-size;
+  height: $frame-size;
+  border-radius: $half;
+  background-color: $frame-color;
+
+  &__clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: $clock-size;
+    height: $clock-size;
+    border-radius: $half;
+    background-color: $clock-color;
+  }
+}
