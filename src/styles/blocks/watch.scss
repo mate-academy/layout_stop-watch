@@ -1,0 +1,39 @@
+.watch {
+  position: relative;
+  list-style: none;
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #783937ff;
+  }
+
+  &__hand {
+    position: absolute;
+    border-radius: 10px;
+    transform-origin: bottom center;
+
+    &--minutes {
+      height: $minute-height;
+      width: 15px;
+      background-color: #fc766aff;
+      left: calc(50% - #{$minute-width / 2});
+      top: calc(50% - #{$minute-height});
+      animation: rotate 3600s steps(60, end) infinite;
+    }
+
+    &--seconds {
+      height: $second-height;
+      width: $second-width;
+      background-color: #f1ac88ff;
+      left: calc(50% - #{$second-width / 2});
+      top: calc(50% - #{$second-height});
+      animation: rotate 60s steps(60, end) infinite;
+    }
+  }
+}
