@@ -1,4 +1,5 @@
 @import "./variavles.scss";
+@import "./animations.scss";
 
 .clock {
   position: relative;
@@ -38,14 +39,14 @@
     }
 
     &--minute {
-      animation: move-minute 3600s linear infinite 0.5s;
+      animation: clock 3600s linear infinite 0.5s;
     }
 
     &--seconds {
       width: $clock-size / 60;
       height: $clock-size / 2.1;
       background-color: red;
-      animation: move-minute 60s linear infinite 0.5s;
+      animation: clock 60s linear infinite 0.5s;
       
       &::before {
         left: -1px;
@@ -53,26 +54,6 @@
         border-color: red;
         border-bottom-color: transparent;
         border-right-color: transparent;
-      }
-    }
-
-    @keyframes move-minute {
-      0% {
-        transform: rotate(0);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes move-seconds {
-      0% {
-        transform: rotate(0);
-      }
-
-      100% {
-        transform: rotate(360deg);
       }
     }
   }
