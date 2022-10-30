@@ -1,0 +1,60 @@
+@import "./variavles.scss";
+@import "./animations.scss";
+
+.clock {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  margin: 0;
+  padding: 0;
+  border: 5px solid #eee;
+  border-radius: 50%;
+  list-style: none;
+  
+  &__arrow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    width: $clock-size / 25;
+    height: $clock-size / 2.5;
+    margin: auto;
+    border-radius: 0 0 10px 10px;
+    background-color: cornflowerblue;
+    transform-origin: bottom;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -$clock-size / 80;
+      left: 0;
+      right: 0;
+      display: block;
+      margin: auto;
+      box-sizing: border-box;
+      border: $clock-size / 50 solid cornflowerblue;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      transform: rotate(45deg);
+    }
+
+    &--minute {
+      animation: clock 3600s linear infinite 0.5s;
+    }
+
+    &--seconds {
+      width: $clock-size / 60;
+      height: $clock-size / 2.1;
+      background-color: red;
+      animation: clock 60s linear infinite 0.5s;
+      
+      &::before {
+        left: -1px;
+        border-width: $clock-size / 80;
+        border-color: red;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+      }
+    }
+  }
+}
