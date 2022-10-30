@@ -1,9 +1,9 @@
 @import "../utils/variables";
 
-@function minuteThickness($thickness) {
-  @return ($thickness * 2);
+@function getMinuteThickness($thickness, $doublemultiplier) {
+  @return ($thickness * $doublemultiplier);
 }
 
-@function hourThickness($thickness) {
-  @return ($thickness * 3);
+@function getHourThickness($thickness, $triplemultiplier) {
+  @return ($thickness * $triplemultiplier);
 }

@@ -1,5 +1,6 @@
 @import "../utils/variables";
 @import "../utils/functions";
+@import "../utils/scenario";
 
 .arrows {
   display: flex;
@@ -34,7 +35,7 @@
     position: absolute;
     top: 0;
     right: $half;
-    width: minuteThickness($thickness);
+    width: getMinuteThickness($thickness, $doublemultiplier);
     height: $half;
     background-color: $center-color;
     transform-origin: center bottom;
@@ -45,20 +46,10 @@
     position: absolute;
     top: 0;
     right: $half;
-    width: hourThickness($thickness);
+    width: getHourThickness($thickness, $triplemultiplier);
     height: $half;
     background-color: $center-color;
     transform-origin: center bottom;
     animation: round 86400s steps(12, end) infinite normal 0s backwards;
-  }
-
-  @keyframes round {
-    from {
-      transform: rotate(0);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
   }
 }
