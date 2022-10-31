@@ -1,0 +1,94 @@
+@import "./utility/variables";
+@import "./normalize.scss";
+@import "./utility/extends";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-shrink: 0;
+
+  height: $size_clock;
+  width: $size_clock;
+  background-color: lightcoral;
+  border-radius: 50%;
+
+  &__minute_hand {
+    height: 400px;
+    width: 15px;
+
+    background-color: gray;
+    transform: translateY(-100%);
+
+    @extend %hand;
+    animation-name: clock_minute_move;
+
+    animation-duration: 3600s;
+    animation-delay: 60s;
+  }
+
+  &__second_hand {
+    height: 300px;
+    width: 10px;
+
+    background-color: maroon;
+    transform: translateY(-133%);
+
+    @extend %hand;
+    animation-name: clock_second_move;
+    animation-duration: 60s;
+  }
+
+  &__center {
+    transform: translateY(-1300%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: black;
+  }
+
+  &__around {
+    position: absolute;
+    z-index: 0;
+    
+    transform: translateY(-3%);
+    background-image: url(../images/image.png);
+    background-position: 50% 45%;
+    background-size: 115%;
+
+    height: 750px;
+    width: 750px;
+
+    border: 2px dashed black;
+    border-radius: 50%;
+  }
+
+  @keyframes clock_minute_move {
+    from {
+      transform: translateY(-100%) rotate(0deg);
+    }
+
+    to {
+      transform: translateY(-100%) rotate(360deg);
+    }
+  }
+
+  @keyframes clock_second_move {
+    from {
+      transform: translateY(-133%) rotate(0deg);
+    }
+
+    to {
+      transform: translateY(-133%) rotate(360deg);
+    }
+  }
+}
