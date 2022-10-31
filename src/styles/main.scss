@@ -13,46 +13,46 @@
 }
 
 .clock {
-  height: 400px;
-  width: 400px;
-  border-radius: 50%;
-  border: 2px solid black;
   position: relative;
   display: flex;
-  justify-content: center;
   align-content: center;
+  justify-content: center;
+  height: $clock-height;
+  width: $clock-width;
+  border-radius: $bdr-circle;
+  border: 2px solid black;
 
   &__dot {
-    width: 17px;
-    height: 17px;
-    border-radius: 50%;
-    background: red;
     position: absolute;
+    z-index: 2;
     bottom: 50%;
     transform: translateY(50%);
-    z-index: 2;
+    background: $clr-red;
+    width: $dot-height;
+    height: $dot-width;
+    border-radius: $bdr-circle;
   }
 
   &__arrow {
     position: absolute;
 
     &--minute {
+      bottom: 50%;
+      @include clockRotate($minute-time);
       width: 10px;
       height: 50%;
-      background: gray;
+      background: $clr-gey;
       border-radius: $arrow-radius;
-      bottom: 50%;
-      @include clockRotate(60s);
     }
 
     &--hour {
+      z-index: 1;
+      bottom: 50%;
+      @include clockRotate($hour-time);
       width: 13px;
       height: 35%;
-      bottom: 50%;
-      background: blue;
+      background: $clr-blue;
       border-radius: $arrow-radius;
-      z-index: 1;
-      @include clockRotate(3600s);
     }
   }
 }
