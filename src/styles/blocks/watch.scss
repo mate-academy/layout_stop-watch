@@ -1,16 +1,12 @@
 .watch {
-  box-sizing: border-box;
   position: relative;
 
-  width: $watch-size;
-  height: $watch-size;
-  border-radius: 50%;
+  @include circle($watch-size);
   border: $watch-border solid #000;
   background-color: #f2f3f4;
   margin: 50px auto;
 
   &__minute-hand {
-    box-sizing: border-box;
     position: absolute;
 
     top: 50%;
@@ -36,7 +32,6 @@
   }
 
   &__second-hand {
-    box-sizing: border-box;
     position: absolute;
 
     top: 50%;
@@ -62,14 +57,11 @@
   }
 
   &__center {
-    box-sizing: border-box;
     position: absolute;
 
     top: 50%;
     left: 50%;
-    width: $center-size;
-    height: $center-size;
-    border-radius: 50%;
+    @include circle($center-size);
     transform: translate(-50%, -50%);
     background-color: $sec-hand-color;
   }
