@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $color-for-bg-body-and-hands;
+}
+
+.stopwatch {
+  @extend %position-trans-br-for-stopwatch-and-circle;
+  @include circle-stopwatch($size-stopwatch);
+
+  border: 20px solid rgb(16, 55, 59);
+  background: rgb(222, 227, 224);
+
+  &::before {
+    @extend %position-height-bgc-br-tra-ori;
+    width: 40%;
+    animation: stopwatch-animation 1s linear infinite;
+  }
+
+  &::after {
+    @extend %position-height-bgc-br-tra-ori;
+    width: 30%;
+    animation: stopwatch-animation 60s linear infinite;
+  }
+
+  &__center-circle {
+    @extend %position-trans-br-for-stopwatch-and-circle;
+    @include center-circle($size-center-circle);
+    display: block;
+    background: $color-for-bg-body-and-hands;
+  }
+}
+
+@keyframes stopwatch-animation {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
