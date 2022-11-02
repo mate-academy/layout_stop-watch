@@ -6,54 +6,29 @@
   background-color: #f2f3f4;
   margin: 50px auto;
 
-  &__minute-hand {
+  &__minute-hand,
+  &__second-hand {
     position: absolute;
-
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -100%);
+    transform-origin: 0 0;
+  }
+
+  &__minute-hand {
     width: $min-hand-width;
     height: $min-hand-size;
-    transform: translate(-50%, -100%);
 
     background-color: #000;
-    animation: minute 3600s linear 0s infinite;
-    transform-origin: 0 0;
-
-    @keyframes minute {
-      from {
-        rotate: 0deg;
-      }
-      
-      to {
-        rotate: 360deg;
-      }
-    }
-
+    animation: rotation 3600s linear 0s infinite;
   }
 
   &__second-hand {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
     width: $sec-hand-width;
     height: $sec-hand-size;
-    transform: translate(-50%, -100%);
 
     background-color: $sec-hand-color;
-    animation: second 60s linear 0s infinite;
-    transform-origin: 0 0;
-
-    @keyframes second {
-      from {
-        rotate: 0deg;
-      }
-      
-      to {
-        rotate: 360deg;
-      }
-    }
-
+    animation: rotation 60s linear 0s infinite;
   }
 
   &__center {
