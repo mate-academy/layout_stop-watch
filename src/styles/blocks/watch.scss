@@ -1,19 +1,23 @@
 .axis {
-  display: block;
   position: absolute;
-
-  width: $axis-width;
-  height: $axis-height;
   top: calc(50% - #{$axis-height});
   left: calc(50% - #{$axis-width} / 2);
+
+  display: block;
+  width: $axis-width;
+  height: $axis-height;
   transform-origin: center $axis-height;
+
   border-radius: 5px;
+
 }
 
 .watch {
   position: relative;
+
   width: $watch-size;
   height: $watch-size;
+
   background: #f7f3d9;
   border: 20px solid $grey-color;
   border-radius: 50%;
@@ -32,16 +36,16 @@
   }
 
   &__center {
-    display: block;
     position: absolute;
-
-    background-color: $grey-color;
-    border-radius: 50%;
-    width: $center-size;
-    height: $center-size;
-
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+
+    display: block;
+    width: $center-size;
+    height: $center-size;
+
+    background-color: $grey-color;
+    border-radius: 50%;
   }
 }
