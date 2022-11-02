@@ -1,0 +1,47 @@
+.watch {
+  position: relative;
+
+  @include watch-size($watch-size);
+
+  background: #f7f3d9;
+  border: 20px solid $grey-color;
+
+  &__axis {
+    position: absolute;
+    top: calc(50% - #{$axis-height});
+    left: calc(50% - #{$axis-width} / 2);
+
+    display: block;
+    @include axis-size($axis-height, $axis-width);
+    transform-origin: center $axis-height;
+
+    border-radius: 5px;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    display: block;
+    width: $center-size;
+    height: $center-size;
+
+    background-color: $grey-color;
+    border-radius: 50%;
+  }
+}
+
+.minutes {
+
+  background-color: $brown-color;
+
+  animation: stopWatch 3600s infinite linear;
+}
+
+.seconds {
+  background-color: $grey-color;
+
+  animation: stopWatch 60s infinite linear;
+}
