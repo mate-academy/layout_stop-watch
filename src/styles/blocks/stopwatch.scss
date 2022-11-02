@@ -2,32 +2,26 @@ body {
   margin: 0;
   min-height: 100vh;
 
-  @include flex-justify-align(center, center);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .stopwatch {
+  position: relative;
   width: 500px;
   height: 500px;
   background-color: aqua;
   border-radius: 50%;
-  @include flex-justify-align(center, center);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 
   &__hands {
     width: 400px;
     height: 400px;
     position: relative;
-
-    &-circle {
-      width: 20px;
-      height: 20px;
-      background-color: yellow;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-8px, -10px);
-      z-index: 3;
-    }
 
     &-minutes {
       position: absolute;
@@ -39,7 +33,6 @@ body {
       background-color: rgb(0, 174, 255);
       animation: rotate steps(60) var(--hour) infinite;
       transform-origin: center bottom;
-      z-index: 2;
     }
 
     &-seconds {
@@ -61,5 +54,16 @@ body {
         }
       }
     }
+  }
+
+  &__circle {
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
   }
 }
