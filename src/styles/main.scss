@@ -1,0 +1,155 @@
+$size: 300px;
+$center-size: 10px;
+
+$clock-bg: #ddd;
+$clock-hand-color: #222;
+$clock-hand-in-color: #020;
+$clock-small-interval-color: #222;
+$clock-interval-color: #222;
+$center-color: #222;
+$clock-border-color: #333;
+
+$clock-border: 3px solid $clock-border-color;
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  min-width: $size;
+  min-height: $size;
+  border-radius: 50%;
+}
+
+.showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.stopwatch {
+
+  position: relative;
+  @include circle($size);
+  z-index: 9;
+  border: $clock-border;
+  background-color: $clock-bg;
+
+  &__hand {
+    position: absolute;
+    width: 46%;
+    height: 1px;
+    box-sizing: border-box;
+    transform-origin: 0 0;
+    border-top: 1px solid $clock-hand-color;
+    border-bottom: 1px solid $clock-hand-color;
+    border-left: 12px solid $clock-hand-color;
+    border-radius: 1.5px;
+    background-color: $clock-hand-in-color;
+    animation: clock-tick 60s linear infinite;
+  }
+
+  &__image {
+    position: absolute;
+    top: 8%;
+    left: 19%;
+    width: $size * 0.49;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include circle($center-size);
+    transform: translate(-50%, -50%);
+    background-color: $center-color;
+
+  }
+
+  &__second-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include circle($size);
+  }
+
+  &-second {
+    position: absolute;
+    width: 2.7%;
+    height: 0.3px;
+    top: 50%;
+    left: 50%;
+    transform: translate($size / 2 - $size * 0.02, 0);
+    border-top: 1px solid $clock-small-interval-color;
+    border-bottom: 1px solid $clock-small-interval-color;
+    background-color: $clock-small-interval-color;
+
+    border-radius: 50%;
+  }
+
+  @for $i from 1 to 60 {
+    &__second-wrapper:nth-child(#{$i}) {
+      transform: rotate(#{$i * 6}deg);
+    }
+  }
+
+  &__second-wrapper:nth-child(15) > &-second {
+    width: 3%;
+    transform: translate($size / 2 - $size * 0.03, 0);
+    background-color: $clock-interval-color;
+    border-color: $clock-interval-color;
+  }
+  &__second-wrapper:nth-child(30) > &-second {
+    width: 3%;
+    transform: translate($size / 2 - $size * 0.03, 0);
+    background-color: $clock-interval-color;
+    border-color: $clock-interval-color;
+  }
+  &__second-wrapper:nth-child(45) > &-second {
+    width: 3%;
+    transform: translate($size / 2 - $size * 0.03, 0);
+    background-color: $clock-interval-color;
+    border-color: $clock-interval-color;
+  }
+  &__second-wrapper:nth-child(60) > &-second {
+    width: 3%;
+    transform: translate($size / 2 - $size * 0.03, 0);
+    background-color: $clock-interval-color;
+    border-color: $clock-interval-color;
+  }
+}
+
+@keyframes clock-tick {
+
+  0% {
+
+    top: calc(50%);
+    left: calc(50% - 1.5px);
+    transform: rotate(-90deg);
+  }
+
+  25% {
+    top: calc(50% - 1.5px);
+    left: calc(50%);
+    transform: rotate(0);
+  }
+
+  50% {
+    top: calc(50%);
+    left: calc(50% + 1.5px);
+    transform: rotate(90deg);
+  }
+
+  75% {
+    top: calc(50% + 1.5px);
+    left: calc(50%);
+    transform: rotate(180deg);
+  }
+
+  100% {
+    top: calc(50%);
+    left: calc(50% - 1.5px);
+    transform: rotate(270deg);
+  }
+}
