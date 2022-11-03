@@ -1,8 +1,10 @@
 .clock {
-  @include defaultCenter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: $clockSize;
   height: $clockSize;
-  border-radius: $borderRadius;
+  border-radius: 50%;;
   border: 2px solid $mainColor;
 
   &__number-3 {
@@ -33,83 +35,59 @@
     position: absolute;
     width: ($clockSize - 60);
     color: $itemsColor;
-    transform: rotate(450deg);
+    transform: rotate(446deg);
     @include selectChild(-90deg);
   }
 
   &__second {
-    @include defaultCenter;
     position: absolute;
-    padding: $secondPadding;
-    border-radius: $borderRadius;
-    animation: timeSecondAnimation 60s infinite linear;
+    padding: 0;
+    animation: clockAnimation 60s infinite linear;
     z-index: 2;
+  }
 
-    &-line {
-      position: absolute;
-      left: ($secondPadding * 2);
-      height: 1px;
-      width: ($clockSize / 2.6);
-      background: $mainColor;
-    }
+  &__second-line {
+    position: absolute;
+    left: 0;
+    height: 1px;
+    width: ($clockSize / 3);
+    background: $mainColor;
   }
 
   &__minute {
-    @include defaultCenter;
     position: absolute;
-    padding: $minutePadding;
-    border-radius: $borderRadius;
-    animation: timeMinuteAnimation 1440s infinite linear;
+    padding: 0;
+    animation: clockAnimation 3600s infinite linear;
     z-index: 1;
+  }
 
-    &-line {
-      position: absolute;
-      left: ($minutePadding * 2);
-      height: 3px;
-      width: ($clockSize / 3.2);
-      background: $mainColor;
-    }
+  &__minute-line {
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: ($clockSize / 4);
+    background: $mainColor;
   }
 
   &__hour {
-    @include defaultCenter;
     position: absolute;
-    padding: $hourPadding;
-    border-radius: $borderRadius;
-    animation: timeHourAnimation 86400s infinite linear;
+    padding: 0;
+    animation: clockAnimation 86400s infinite linear;
     z-index: 0;
+  }
 
-    &-line {
-      position: absolute;
-      left: ($hourPadding * 2);
-      height: 6px;
-      width: ($clockSize / 4.6);
-      background: $mainColor;
-    }
+  &__hour-line {
+    position: absolute;
+    left: 0;
+    height: 6px;
+    width: ($clockSize / 6);
+    background: $mainColor;
   }
 }
 
-@keyframes timeSecondAnimation {
+@keyframes clockAnimation {
   from {
-    transform: rotate(45deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes timeMinuteAnimation {
-  from {
-    transform: rotate(90deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes timeHourAnimation {
-  from {
-    transform: rotate(135deg);
+    transform: rotate(-90deg);
   }
   to {
     transform: rotate(360deg);
