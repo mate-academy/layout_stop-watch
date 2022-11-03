@@ -21,39 +21,40 @@ body {
   &__hands {
     width: 400px;
     height: 400px;
-    position: relative;
+  }
 
-    &-minutes {
-      position: absolute;
-      left: 50%;
-      top: 30px;
-      width: 5px;
-      height: 170px;
-      box-sizing: border-box;
-      background-color: rgb(0, 174, 255);
-      animation: rotate steps(60) var(--hour) infinite;
-      transform-origin: center bottom;
-    }
+  &__hands-minutes {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    width: 6px;
+    height: 230px;
+    box-sizing: border-box;
+    background-color: rgb(0, 174, 255);
+    animation: rotate steps(60) $hour infinite;
+    transform-origin: center bottom;
+    transform: translateX(-50%);
+  }
 
-    &-seconds {
-      position: absolute;
-      left: calc(50% + 1.5px);
-      width: 2px;
-      height: 200px;
-      background-color: rgb(255, 0, 0);
-      animation: rotate steps(60) var(--minute) infinite;
-      transform-origin: center bottom;
+  &__hands-seconds {
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 200px;
+    background-color: rgb(255, 0, 0);
+    animation: rotate steps(60) $minute infinite;
+    transform-origin: center bottom;
+    transform: translateX(-50%);
 
-      @keyframes rotate {
-        from {
-          transform: rotate(0);
-        }
-
-        to {
-          transform: rotate(1turn);
-        }
+    /* @keyframes rotate {
+      from {
+        transform: rotate(0);
       }
-    }
+
+      to {
+        transform: rotate(1turn);
+      }
+    } */
   }
 
   &__circle {
@@ -62,8 +63,5 @@ body {
     background-color: yellow;
     border-radius: 50%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-40%, -50%);
   }
 }
