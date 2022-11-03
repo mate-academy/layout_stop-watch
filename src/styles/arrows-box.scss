@@ -1,0 +1,34 @@
+@import "./mixins.scss";
+
+.arrows-minutes {
+  @include arrows-property;
+  height: 230px;
+  margin-top: 20px;
+  animation: turn 60s steps(60) infinite;
+}
+
+.arrows-seconds {
+  @include arrows-property;
+  height: 200px;
+  margin-top: 50px;
+  animation: turn 3600s steps(60) infinite;
+}
+
+.arrows-center {
+  position: absolute;
+  width: $size-arrows-center;
+  height: $size-arrows-center;
+  background-color: black;
+  border-radius: 50%;
+  left: $position-arrows-center;
+  top: $position-arrows-center;
+}
+
+@keyframes turn {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 1turn;
+  }
+}
