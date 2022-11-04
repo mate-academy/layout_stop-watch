@@ -1,0 +1,74 @@
+.watch {
+  &__hours {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 50px;
+      height: 3px;
+      position: absolute;
+      
+      background-color: red;
+      border-radius: 2px;
+      
+      transform: rotate(-90deg);
+      transform-origin: left;
+      animation-name: rotate;
+      animation-timing-function: linear;
+      animation-duration: 86400s;
+    }
+  }
+
+  &__minutes {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 80px;
+      height: 3px;
+      position: absolute;
+
+      background-color: green;
+      border-radius: 2px;
+
+      transform: rotate(-90deg);
+      transform-origin: left;
+      animation-name: rotate;
+      animation-timing-function: linear;
+      animation-duration: 3600s;
+    }
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: green;
+
+      position: absolute;
+      z-index: 1;
+      left: -5px;
+      top: -5px;
+    }
+  }
+
+  &__seconds {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 90px;
+      height: 3px;
+      position: absolute;
+
+      background-color: yellow;
+      border-radius: 2px;
+      transform: rotate(-90deg);
+      transform-origin: left;
+
+      animation-name: rotate;
+      animation-timing-function: linear;
+      animation-duration: 60s;
+    }
+  }
+}
