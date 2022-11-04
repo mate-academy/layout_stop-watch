@@ -1,0 +1,33 @@
+.watch {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  
+  &__second {
+    height: $second-height;
+    width: $hand-width;
+    background-color: #399;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: hand 60s linear 1s infinite running;
+  }
+
+  &__minute {
+    position: absolute;
+    height: $second-height/2;
+    width: $hand-width;
+    background-color: #700000;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: hand 3600s linear 1s infinite running;
+  }
+
+  &__center {
+    position: absolute;
+    height: $center-side;
+    width: $center-side;
+    background-color: black;
+    border-radius: 50%;
+    top: $second-height + $margin-body - $center-side/2;
+  }
+}
