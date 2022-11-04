@@ -1,0 +1,95 @@
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $clockSize;
+  height: $clockSize;
+  border-radius: 50%;;
+  border: 2px solid $mainColor;
+
+  &__number-3 {
+    position: absolute;
+    width: ($clockSize - 60);
+    color: $itemsColor;
+    transform: rotate(180deg);
+    @include selectChild(180deg);
+  }
+
+  &__number-6 {
+    position: absolute;
+    width: ($clockSize - 60);
+    color: $itemsColor;
+    transform: rotate(270deg);
+    @include selectChild(90deg);
+  }
+
+  &__number-9 {
+    position: absolute;
+    width: ($clockSize - 40);
+    color: $itemsColor;
+    transform: rotate(360deg);
+    @include selectChild(10deg);
+  }
+
+  &__number-12 {
+    position: absolute;
+    width: ($clockSize - 60);
+    color: $itemsColor;
+    transform: rotate(446deg);
+    @include selectChild(-90deg);
+  }
+
+  &__second {
+    position: absolute;
+    padding: 0;
+    animation: clockAnimation 60s infinite linear;
+    z-index: 2;
+  }
+
+  &__second-line {
+    position: absolute;
+    left: 0;
+    height: 1px;
+    width: ($clockSize / 3);
+    background: $mainColor;
+  }
+
+  &__minute {
+    position: absolute;
+    padding: 0;
+    animation: clockAnimation 3600s infinite linear;
+    z-index: 1;
+  }
+
+  &__minute-line {
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: ($clockSize / 4);
+    background: $mainColor;
+  }
+
+  &__hour {
+    position: absolute;
+    padding: 0;
+    animation: clockAnimation 86400s infinite linear;
+    z-index: 0;
+  }
+
+  &__hour-line {
+    position: absolute;
+    left: 0;
+    height: 6px;
+    width: ($clockSize / 6);
+    background: $mainColor;
+  }
+}
+
+@keyframes clockAnimation {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
