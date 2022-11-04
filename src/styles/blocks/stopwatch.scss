@@ -1,0 +1,36 @@
+.stopwatch {
+  @extend %position-stopwatch;
+  @include circle($stopwatch-size);
+  background-color: #eee;
+  border: $main-element-size solid $main-color;
+  margin: auto;
+
+  &::before {
+    content: "";
+    @include circle($center-point-size);
+    z-index: 1;
+    @extend %position-stopwatch;
+    background-color: $main-color;
+    border: 3px solid #fff;
+  }
+  
+  &__minute-hand::before {
+    @extend %position-hand;
+    animation: spin 3600s linear infinite;
+  }
+
+  &__second-hand::before {
+    @extend %position-hand;
+    animation: spin 60s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0) ;
+    }
+    
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
