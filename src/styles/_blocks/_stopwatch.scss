@@ -31,36 +31,34 @@
     background-color: black;
   }
 
-  &__minute-hand {
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    transform-origin: bottom;
-    animation: move 3600s linear infinite;
-    border-radius: 66px 66px 66px 66px / 77px 77px 68px 68px;
-    width: 15px;
-    height: 300px;
-    background-color: blue;
-  }
-
-  &__second-hand {
+  &__hand {
     position: absolute;
     top: 0;
     transform-origin: bottom;
-    animation: move 60s linear infinite;
     border-radius: 66px 66px 66px 66px / 77px 77px 68px 68px;
-    width: 7px;
     height: 300px;
-    background-color: red;
-  }
 
-  @keyframes move {
-    from {
-      rotate: 0deg;
+    &--minute {
+      z-index: 1;
+      animation: move 3600s linear infinite;
+      width: 15px;
+      background-color: $minute-hand-color;
     }
 
-    to {
-      rotate: 360deg;
+    &--second {
+      animation: move 60s linear infinite;
+      width: 7px;
+      background-color: $second-hand-color;
+    }
+
+    @keyframes move {
+      from {
+        rotate: 0deg;
+      }
+
+      to {
+        rotate: 360deg;
+      }
     }
   }
 }
