@@ -1,0 +1,9 @@
+@mixin squere($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  @include squere($size);
+  border-radius: 50%;
+}
