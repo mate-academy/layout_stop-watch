@@ -1,74 +1,52 @@
 .watch {
-  &__hours {
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    &::after {
-      content: "";
-      width: 50px;
-      height: 3px;
-      position: absolute;
-      
-      background-color: #F96167;
-      border-radius: 2px;
-      
-      transform: rotate(-90deg);
-      transform-origin: left;
-      animation-name: rotate;
-      animation-timing-function: linear;
-      animation-duration: 86400s;
-    }
+  cursor: pointer;
+  @extend %watch-size;
+
+
+  &--screen {
+    background-image: url(../images/digital.png);
+    background-position: -10px 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
 
   &__minutes {
-    position: relative;
+    width: 170px;
+    height: 9px;
+    position: absolute;
 
-    &::after {
-      content: "";
-      width: 80px;
-      height: 3px;
-      position: absolute;
+    background-color: #eea47fff;
 
-      background-color: #EEA47FFF;
-      border-radius: 2px;
-
-      transform: rotate(-90deg);
-      transform-origin: left;
-      animation-name: rotate;
-      animation-timing-function: linear;
-      animation-duration: 3600s;
-    }
-
-    &::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #EEA47FFF;
-
-      position: absolute;
-      z-index: 1;
-      left: -5px;
-      top: -5px;
-    }
+    @extend %animation-hand;
+    animation-duration: 3600s;
   }
 
   &__seconds {
+    width: 200px;
+    height: 6px;
+    position: absolute;
+
+    background-color: $color-second-hand;
+
+    @extend %animation-hand;
+    animation-duration: 60s;
+
+  } 
+  
+  &__dot {
+    content: "";
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: $color-second-hand;
+  
     position: relative;
-
-    &::after {
-      content: "";
-      width: 90px;
-      height: 3px;
-      position: absolute;
-
-      background-color: #00539CFF;
-      border-radius: 2px;
-      transform: rotate(-90deg);
-      transform-origin: left;
-
-      animation-name: rotate;
-      animation-timing-function: linear;
-      animation-duration: 60s;
-    }
+    z-index: 1;
+    left: -10px;
+    top: -10px;
   }
 }
