@@ -1,23 +1,17 @@
 .watch {
   display: flex;
-  justify-content: center;
   align-items: center;
 
-  cursor: pointer;
   @extend %watch-size;
-
+  @extend %bg-clock-face;
 
   &--screen {
-    background-image: url(../images/digital.png);
-    background-position: -10px 0;
-    background-size: 100%;
-    background-repeat: no-repeat;
+    position: relative;
   }
 
-  &__minutes {
-    width: 170px;
-    height: 9px;
-    position: absolute;
+  &__minutes-hand {
+    @include watch-hand-size($height-minute-hand, $width-minute-hand);
+    @extend %hand-position;
 
     background-color: #eea47fff;
 
@@ -25,28 +19,25 @@
     animation-duration: 3600s;
   }
 
-  &__seconds {
-    width: 200px;
-    height: 6px;
-    position: absolute;
-
+  &__seconds-hand {
+    @include watch-hand-size($height-second-hand, $width-second-hand);
+    @extend %hand-position;
+    
     background-color: $color-second-hand;
 
     @extend %animation-hand;
     animation-duration: 60s;
+  }
 
-  } 
-  
-  &__dot {
+  &::before {
     content: "";
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: calc(#{$left-hand-position} - 10px);
+
     background-color: $color-second-hand;
-  
-    position: relative;
+    border-radius: 50%;
     z-index: 1;
-    left: -10px;
-    top: -10px;
   }
 }

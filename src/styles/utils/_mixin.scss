@@ -1,13 +1,4 @@
-%watch-size {
-  height: 550px;
-  width: 550px;
-}
-
-%animation-hand {
-  border-radius: $border-radius-hand;
-  transform: $position-start-hand;
-  transform-origin: left;
-  animation-name: rotate;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+@mixin watch-hand-size ($hand-height-size, $hand-width-size) {
+  height: $hand-height-size;
+  width: $hand-width-size;
 }

@@ -1,0 +1,25 @@
+%watch-size {
+  height: 500px;
+  width: 500px;
+}
+
+%animation-hand {
+  border-radius: $border-radius-hand;
+  transform: $position-start-hand;
+  transform-origin: left;
+  animation-name: rotate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+%bg-clock-face {
+  background-image: url(../images/digital.png);
+  background-repeat: no-repeat;
+  background-size: 107%;
+  background-position: -12px -7px;
+}
+
+%hand-position {
+  position: absolute;
+  left: $left-hand-position;
+}
