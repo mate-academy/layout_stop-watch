@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @include square($size-sw, $size-sw);
+  @include size-box($size-stopwatch, $size-stopwatch);
   background-color: #464646;
   border: 10px solid $color-black;
   border-radius: 50%;
-  box-shadow: inset 1px 3px 30px $color-shadow-sw;
+  box-shadow: inset 1px 3px 30px $color-shadow-stopwatch;
 
   &--pos {
     position: absolute;
@@ -16,30 +16,32 @@
   }
 
   &__dot {
-    @include square($size-dot, $size-dot);
+    @include size-box($size-dot, $size-dot);
     background-color: $color-black;
     border-radius: 50px;
-    z-index: 2;
-    box-shadow: inset 1px 2px 5px $color-shadow-sw;
+    z-index: 1;
+    box-shadow: inset 1px 2px 5px $color-shadow-stopwatch;
   }
 
-  &__min-arrow {
+  &__arrow {
     position: absolute;
     bottom: 50%;
-    @include square(30%, 20px);
+    transform-origin: bottom;
+  }
+
+  &__arrow--minute {
+    @include size-box(30%, 20px);
     background-color: #eee;
     border-radius: 10px;
     box-shadow: 10px 10px 20px $color-shadow-arrow;
-    @include animation(3600s);
+    @include stopwatch-animation(3600s);
   }
 
-  &__sec-arrow {
-    position: absolute;
-    bottom: 50%;
-    @include square(45%, 10px);
+  &__arrow--second {
+    @include size-box(45%, 10px);
     background-color: tomato;
     border-radius: 5px;
     box-shadow: 5px 5px 10px $color-shadow-arrow;
-    @include animation(60s);
+    @include stopwatch-animation(60s);
   }
 }
