@@ -1,0 +1,24 @@
+// Circle for stop watch shape
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+// Hand
+@mixin hand($height, $color, $time) {
+  $width: 1%;
+
+  position: absolute;
+  left: 50% - $width / 2;
+  top: 50% - $height;
+
+  height: $height;
+  width: $width;
+
+  border-radius: 50% 50% 0 0;
+  background: $color;
+  
+  transform-origin: bottom;
+  animation: hand-rotation $time linear infinite;
+}

@@ -1,0 +1,36 @@
+.stop-watch {
+
+  &__container {
+    position: relative;
+    @include circle($stop-watch-size);
+
+    background: $color-stop-watch-background;
+
+    // border = 2% of size
+    border: ($stop-watch-size * 0.02) solid $color-stop-watch-border;
+
+    // Middle circle
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      // Inner circle size = 5% of stop watch size
+      @include circle($stop-watch-size * 0.05);
+      background: $color-stop-watch-border;
+
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__minute-hand {
+    // size, color, duration
+    @include hand(45%, $color-minute-hand, 3600s);
+  }
+
+  &__second-hand {
+    // size, color, duration
+    @include hand(50%, $color-second-hand, 60s);
+  }
+}
