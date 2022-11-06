@@ -9,6 +9,16 @@
     // border = 2% of size
     border: ($stop-watch-size * 0.02) solid $color-stop-watch-border;
 
+    // Wavy background
+    &::before {
+      content: "";
+      position: absolute;
+      @include circle(100%);
+
+      background: $color-wave;
+      animation: wave 3s ease-in-out infinite;
+    }
+
     // Middle circle
     &::after {
       content: "";
