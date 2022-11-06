@@ -11,22 +11,16 @@
 
   &__minutes-hand {
     @include watch-hand-size($height-minute-hand, $width-minute-hand);
+    @include watch-hand-duration($duration-minute-hand);
     @extend %hand-position;
-
     background-color: #eea47fff;
-
-    @extend %animation-hand;
-    animation-duration: 3600s;
   }
 
   &__seconds-hand {
     @include watch-hand-size($height-second-hand, $width-second-hand);
+    @include watch-hand-duration($duration-second-hand);
     @extend %hand-position;
-    
     background-color: $color-second-hand;
-
-    @extend %animation-hand;
-    animation-duration: 60s;
   }
 
   &::before {

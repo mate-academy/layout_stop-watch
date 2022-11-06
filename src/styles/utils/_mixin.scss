@@ -2,3 +2,8 @@
   height: $hand-height-size;
   width: $hand-width-size;
 }
+
+@mixin watch-hand-duration ($duration) {
+  animation-duration: $duration;
+  @extend %animation-hand;
+}
