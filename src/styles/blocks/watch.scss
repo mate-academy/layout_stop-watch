@@ -11,14 +11,14 @@
 
   &__minutes-hand {
     @include watch-hand-size($height-minute-hand, $width-minute-hand);
-    @include watch-hand-duration($duration-minute-hand);
+    @include watch-hand-animation($duration-minute-hand);
     @extend %hand-position;
     background-color: #eea47fff;
   }
 
   &__seconds-hand {
     @include watch-hand-size($height-second-hand, $width-second-hand);
-    @include watch-hand-duration($duration-second-hand);
+    @include watch-hand-animation($duration-second-hand);
     @extend %hand-position;
     background-color: $color-second-hand;
   }
