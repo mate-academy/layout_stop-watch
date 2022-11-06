@@ -1,0 +1,62 @@
+.clock {
+  position: relative;
+  @include closk-size($clock-size);
+
+  background-image: url(../clock.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &__item {
+    position: absolute;
+    @include hands-square($hands-size);
+
+    &::after {
+      position: absolute;
+      @include middle-position($middle-posiiton);
+      transform: translate(-50%, -100%);
+      content: "";
+      width: 4px;
+
+      border-radius: 2px;
+    }
+
+    &--minute-hand {
+      animation: sec 3600s steps(60, end) infinite;
+
+      &::after {
+        height: 100px;
+
+        background-color: blue;
+
+      }
+    }
+
+    &--second-hand {
+      animation: sec 60s steps(60, end) infinite;
+
+      &::after {
+        height: 150px;
+
+        background-color: red;
+      }
+    }
+  }
+
+  &__middle-point {
+    position: absolute;
+    @include middle-position($middle-posiiton);
+    transform: translate(-50%, -50%);
+
+    @include middle-square($middle-point-size);
+
+    border-radius: 50%;
+    background-color: #000;
+
+  }
+
+  @keyframes sec {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
