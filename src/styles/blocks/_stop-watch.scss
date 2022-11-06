@@ -40,7 +40,23 @@
   }
 
   &__second-hand {
+    position: relative;
     // size, color, duration
     @include hand(50%, $color-second-hand, 60s);
+
+    &::before {
+      @include leaf(40%);
+
+      transform: translate(-100%);
+      border-radius: 0 100%;
+
+    }
+
+    &::after {
+      @include leaf(15%);
+      border-radius: 100% 0;
+
+      box-shadow: 0 (($stop-watch-size / 2) * 0.45) 0 0 #b3c7a8;
+    }
   }
 }

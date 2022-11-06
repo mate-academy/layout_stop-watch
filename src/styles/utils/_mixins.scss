@@ -22,3 +22,16 @@
   transform-origin: bottom;
   animation: hand-rotation $time linear infinite;
 }
+
+// Leafs
+@mixin leaf($top) {
+  content: "";
+  position: absolute;
+  top: $top;
+  left: 50%;
+
+  height: $stop-watch-size * 0.06;
+  width: $stop-watch-size * 0.04;
+
+  background: $color-leaf;
+}
