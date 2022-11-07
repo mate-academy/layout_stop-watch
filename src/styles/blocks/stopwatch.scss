@@ -1,0 +1,114 @@
+.stopwatch {
+  border: 10px solid #000;
+  border-radius: 50%;
+  background-color: #ddd;
+
+  &__number {
+    position: absolute;
+    font-size: 40px;
+    font-weight: 700;
+
+    &--00 {
+      top: 10px;
+      left: 225px;
+    }
+
+    &--05 {
+      top: 40px;
+      right: 120px;
+    }
+
+    &--10 {
+      top: 120px;
+      right: 40px;
+    }
+
+    &--15 {
+      top: 220px;
+      right: 15px;
+
+    }
+
+    &--20 {
+      bottom: 120px;
+      right: 40px;
+    }
+
+    &--25 {
+      bottom: 40px;
+      right: 120px;
+    }
+
+    &--30 {
+      bottom: 10px;
+      left: 225px;
+    }
+
+    &--35 {
+      bottom: 40px;
+      left: 120px;
+    }
+
+    &--40 {
+      bottom: 120px;
+      left: 40px;
+    }
+
+    &--45 {
+      top: 220px;
+      left: 15px;
+
+    }
+
+    &--50 {
+      top: 120px;
+      left: 40px;
+
+    }
+
+    &--55 {
+      top: 40px;
+      left: 120px;
+    }
+  }
+
+  &__second-hand,
+  &__minute-hand {
+    position: absolute;
+    top: 60px;
+    left: 240px;
+    width: 10px;
+    height: 190px;
+    background-color: indianred;
+    border-radius: 20px;
+    transform-origin: bottom;
+    animation: rolate 60s linear infinite;
+  }
+
+  &__minute-hand {
+    top: 80px;
+    height: 170px;
+    background-color: cadetblue;
+    animation: rolate 3600s linear infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    top: 240px;
+    left: 233px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: cadetblue;
+  }
+
+  @keyframes rolate {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
