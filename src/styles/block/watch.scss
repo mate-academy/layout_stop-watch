@@ -5,44 +5,29 @@
   background-color: #9e74d6;
 
   &__min {
-    position: absolute;
+    @extend %position;
     width: 185px;
     height: 20px;
-    @extend %position;
-    background: $color;
-    border-radius: 15px;
+    border-radius: 20px;
     animation: move 3600s linear infinite -2700s;
-    transform-origin: left;
+    transform-origin: left ;
   }
 
   &__second {
-    position: absolute;
     width: 285px;
     height: 15px;
     @extend %position;
-    background: $color;
-    border-radius: 15px;
+    border-radius: 20px;
     animation: move 60s linear -45s infinite;
-    transform-origin: left;
+    transform-origin: left ;
   }
 
   &__center {
-    position: absolute;
-    @include circle ($minisize);
+    @include circle($minisize);
     @extend %position;
-    background: $color;
-    border-radius: 50%;
     z-index: 1;
     transform: translate(-50%);
   }
 }
 
-@keyframes move {
-  from {
-    rotate: 0deg;
-  }
-
-  to {
-    rotate: 360deg;
-  }
-}
+@import "./animation.scss";
