@@ -4,6 +4,7 @@
   width: $clock-size;
   height: $clock-size;
   border: 1px solid #000;
+  border-radius: 80px;
 
   background: url(../../src/images/1602313045_1.jpg);
   background-repeat: no-repeat;
@@ -15,17 +16,51 @@
     top: 50%;
     left: 50%;
     transform: translateY(-50%) rotate(-90deg);
-    transform-origin: center left ;
+    transform-origin: center left;
 
-    width: $clock-arrow-size;
-    height: 5px;
-
-    background-color: #000;
     border-radius: 5px;
+    background-color: #000;
 
     animation-name: move;
-    animation-duration: $duration-of-arrorw;
     animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &--seconds {
+      width: $clock-arrow-size-seconds;
+      height: 3px;
+
+      background: red;
+
+      animation-duration: 60s;
+    }
+
+    &--minutes {
+      width: $clock-arrow-size-minutes;
+      height: 5px;
+
+      animation-duration: 60s * 60;
+    }
+
+    &--hours {
+      width: $clock-arrow-size-hours;
+      height: 8px;
+      border-radius: 30%;
+
+      animation-duration: 60s * 60 * 60;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: $dot-size;
+    height: $dot-size;
+    border-radius: 50%;
+
+    background-color: #000;
   }
 }
 
