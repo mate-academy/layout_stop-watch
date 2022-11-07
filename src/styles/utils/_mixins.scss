@@ -1,0 +1,22 @@
+@mixin detailsDesign () {
+  position: absolute;
+  width: $detail-size;
+  height: $detail-size;
+  left: getPosition($detail-size);
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+@mixin hands {
+  position: absolute;
+  left: ($watch-size / 2) - ($hands-width / 2);
+  width: $hands-width;
+
+  background-color: #fff;
+  border-radius: 2px;
+
+  animation: rotate;
+  transform-origin: bottom center;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

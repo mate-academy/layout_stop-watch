@@ -1,0 +1,55 @@
+.stopwatch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+
+  border-radius: 50%;
+  background: linear-gradient(#feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+
+  &__pointer {
+    @include detailsDesign();
+
+    transform-origin: center (300px / 2);
+
+    @for $pointer from 1 through 4 {
+      &:nth-child(#{$pointer}) {
+        transform: rotate(90deg * $pointer);
+      }
+    }
+  }
+
+  &__minutes {
+    @include hands();
+
+    top: 90px;
+    height: 60px;
+
+    animation-duration: 3600s;
+  }
+
+  &__seconds {
+    @include hands();
+
+    top: 30px;
+    height: 120px;
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(-360deg);
+    }
+  }    animation-duration: 60s;
+  }
+
+  &:hover>&__seconds,
+  &:hover>&__minutes {
+    animation-play-state: paused;
+  }
+
+
+
+  &__center {
+    @include detailsDesign ();
+
+    top: getPosition($detail-size);
+  }
+}
