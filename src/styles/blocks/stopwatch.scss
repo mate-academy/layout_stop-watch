@@ -1,0 +1,37 @@
+.stopwatch {
+  padding-top: 50vh;
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  &__center {
+    position: relative;
+    @include circle;
+    background: blue;
+  }
+
+  &__minute {
+    position: absolute;
+    left: ($cell-size / 2) - ($arrows-width / 2);
+    bottom: $cell-size / 2;
+    width: $arrows-width;
+    height: $arrow-min-height;
+    background: rgb(191, 10, 10);
+    border-radius: $radius-arrows;
+    animation: stopwatch 3600s steps(12, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    left: ( $cell-size / 2) - ($arrows-width / 2);
+    bottom: $cell-size / 2;
+    width: $arrows-width;
+    height: $arrow-sec-height;
+    background: blue;
+    border-radius: $radius-arrows;
+    animation: stopwatch 60s linear infinite;
+    transform-origin: bottom;
+  }
+}
