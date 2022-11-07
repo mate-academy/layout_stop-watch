@@ -1,0 +1,73 @@
+.watch {
+  position: relative;
+  @extend %flex-centering;
+  @include circle($watch-size);
+  box-sizing: border-box;
+  background: $watch-background-color;
+
+  &__number {
+    position: absolute;
+    padding: 15px;
+
+    @each $number, $position in $number-positions {
+      &--#{$number} {
+        #{$position}: 0;
+      }
+    }
+  }
+
+  &__center {
+    @include circle($watch-center-size);
+    background-color: $watch-center-color;
+    box-shadow: $box-shadow-hands;
+    z-index: 3;
+  }
+
+  &__hour {
+    @extend %hands-positioning;
+    width: 14px;
+    height: 200px;
+    border-radius: 40% 40% 0 0;
+    background-color: #000 ;
+    box-shadow: $box-shadow-hands;
+
+    transform-origin: bottom;
+    animation: move 43200s linear infinite;
+  }
+
+  &__min {
+    @extend %hands-positioning;
+    width: 10px;
+    height: 250px;
+    border-radius: 40% 40% 0 0;
+    background-color: rgb(20, 18, 18) ;
+    box-shadow: $box-shadow-hands;
+    z-index: 1;
+
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+  }
+
+  &__sec {
+    @extend %hands-positioning;
+    width: 5px;
+    height: 220px;
+    border-radius: 50% 50% 0 0;
+    background-color: rgb(145, 14, 14) ;
+    box-shadow: $box-shadow-hands;
+    z-index: 2;
+
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
