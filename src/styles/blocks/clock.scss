@@ -1,0 +1,75 @@
+.clock {
+  position: relative;
+
+  width: $clock-size;
+  height: $clock-size;
+  border: $clock-border;
+  border-radius: $clock-border-radius;
+
+  background: url(../../src/images/1602313045_1.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: center left;
+
+    border-radius: 5px;
+    background-color: #000;
+
+    animation-name: move;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &--seconds {
+      width: $clock-arrow-size-seconds;
+      height: 3px;
+
+      background: red;
+
+      animation-duration: 60s;
+    }
+
+    &--minutes {
+      width: $clock-arrow-size-minutes;
+      height: 5px;
+
+      animation-duration: 60s * 60;
+    }
+
+    &--hours {
+      width: $clock-arrow-size-hours;
+      height: 8px;
+      border-radius: 30%;
+
+      animation-duration: 60s * 60 * 60;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: $dot-size;
+    height: $dot-size;
+    border-radius: 50%;
+
+    background-color: #000;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
