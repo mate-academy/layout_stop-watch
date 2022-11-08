@@ -1,0 +1,44 @@
+.stopwatch {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  border: 3px solid green;
+  border-radius: 50%;
+  justify-content: center;
+
+  &__minute {
+    position: absolute;
+    height: 150px;
+    width: 18px;
+    background-color: yellowgreen;
+    border-radius: 9px;
+    top: 50px;
+    animation: time 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+  
+  &__second {
+    position: absolute;
+    height: 180px;
+    width: 10px;
+    background-color: green;
+    border-radius: 5px;
+    top: 20px;
+    animation: time 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    border-radius: 50%;
+    top: 185px;
+  }
+}
+
+.stopwatch--position {
+  position: relative;
+  margin: 100px auto;
+}
