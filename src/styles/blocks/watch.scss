@@ -3,12 +3,10 @@
 
   position: relative;
 
-  display: flex;
-
   border: 3px solid #000;
 
   &__minute-hand {
-    @extend %hands-position-transform-properties;
+    @extend %hands-position-center;
 
     width: 300px;
     height: $hands-height;
@@ -16,30 +14,26 @@
     background-color: #a81b35;
     border-radius: $hands-radius;
 
-    animation: minute-hand 3600s steps(60, end) infinite normal;
+    animation: spin 3600s steps(60, end) infinite normal;
   }
 
   &__second-hand {
-    @extend %hands-position-transform-properties;
-    
+    @extend %hands-position-center;
+
     width: 400px;
     height: $hands-height;
 
     background-color: #167a80;
     border-radius: $hands-radius;
 
-    animation: second-hand 60s linear infinite normal;
+    animation: spin 60s linear infinite normal;
   }
 
   &__dot {
     @include circle($dot-width, $dot-height, $circle-radius);
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    @extend %hands-position-center;
 
     background-color: #167a80;
-
-    transform: translate(-50%, -50%);
   }
 }
