@@ -1,0 +1,70 @@
+@import "./utils/variables";
+
+.stopwatch {
+  $sw: &;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $stopwatch-2r;
+  width: $stopwatch-2r;
+  border-radius: 50%;
+  background-color: #ffd;
+
+  &:hover {
+    & #{$sw}__seconds {
+      transform: rotateZ($deg * 60);
+      transform-origin: bottom;
+      transition: transform $dur linear;
+    }
+
+    & #{$sw}__minutes {
+      transform: rotateZ($deg);
+      transform-origin: bottom;
+      transition: transform $dur linear;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 50vh - #{$center-2r} * 0.5;
+
+    content: "";
+    height: $center-2r;
+    width: $center-2r;
+    border-radius: 50%;
+    background-color: #cca;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: calc(50vh - #{$sec-hand-h});
+
+    height: $sec-hand-h;
+    width: $sec-hand-w;
+    border-radius: 5px;
+    background-color: #f66;
+
+    // comment these out to make it work on hover
+    transform: rotateZ($deg * 60);
+    transform-origin: bottom;
+    transition: transform #{$dur} linear;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: calc(50vh - #{$min-hand-h});
+
+    height: $min-hand-h;
+    width: $min-hand-w;
+    border-radius: 5px;
+    background: #bb9;
+
+    // comment these out to make it work on hover
+    transform: rotateZ($deg);
+    transform-origin: bottom;
+    transition: transform $dur linear;
+  }
+
+}
