@@ -1,6 +1,7 @@
 .stopwatch {
   padding-top: 50vh;
   width: 500px;
+  height: 500px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -13,18 +14,20 @@
 
   &__minute {
     position: absolute;
+    z-index: -1;
     left: ($cell-size / 2) - ($arrows-width / 2);
     bottom: $cell-size / 2;
     width: $arrows-width;
     height: $arrow-min-height;
     background: rgb(191, 10, 10);
     border-radius: $radius-arrows;
-    animation: stopwatch 720s steps(12, end) infinite;
+    animation: stopwatch 3600s steps(60, end) infinite;
     transform-origin: bottom;
   }
 
   &__second {
     position: absolute;
+    z-index: -1;
     left: ( $cell-size / 2) - ($arrows-width / 2);
     bottom: $cell-size / 2;
     width: $arrows-width;
