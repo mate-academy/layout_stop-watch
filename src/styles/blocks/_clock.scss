@@ -1,0 +1,64 @@
+.clock {
+  position: relative;
+
+  width: $dimension;
+  height: $dimension;
+
+  color: $colorPurple;
+
+  border-radius: 50%;
+  border: 2px solid $colorPurple;
+  background-color: white;
+
+  &__minute {
+    @include position;
+
+    width: $dimension / 4;
+    height: 4px;
+
+    background: $colorPurple;
+    rotate: $rotate;
+
+    @include animationClock;
+  }
+
+  &__second {
+    @include position;
+
+    width: $dimension / 2.5;
+    height: 2px;
+
+    background: $colorGrey;
+    rotate: $rotate;
+
+    @include animationClock(60s);
+  }
+
+  &__number {
+    position: absolute;
+
+    font-size: $dimension / 10;
+    font-weight: bold;
+
+    &:nth-child(3) {
+      left: $dimension / 2 - $dimension / 20;
+      color: $colorGrey;
+    }
+
+    &:nth-child(4) {
+      right: $dimension /100;
+      top: $dimension / 2 - $dimension / 20;
+    }
+
+    &:nth-child(5) {
+      bottom: 0;
+      left: $dimension / 2 - $dimension / 40;
+      color: $colorGrey;
+    }
+
+    &:nth-child(6) {
+      left: $dimension /100;
+      top: $dimension / 2 - $dimension / 20;
+    }
+  }
+}
