@@ -10,9 +10,18 @@
   height: $stopwatch-2r;
   width: $stopwatch-2r;
   border-radius: 50%;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  font-weight: bold;
+  text-indent: -$min-hand-h;
+  color: #bb9;
   background-color: #ffd;
 
+  &:focus,
   &:hover {
+    cursor: default;
+
     & #{$sw}__seconds {
       transform: rotateZ($deg * 60);
       transform-origin: bottom;
@@ -28,7 +37,7 @@
 
   &::after {
     position: absolute;
-    top: 50vh - #{$center-2r} * 0.5;
+    top: calc(50vh - #{$center-2r} * 0.5);
 
     content: "";
     height: $center-2r;
@@ -45,11 +54,6 @@
     width: $sec-hand-w;
     border-radius: 5px;
     background-color: #f66;
-
-    // comment these out to make it work on hover
-    transform: rotateZ($deg * 60);
-    transform-origin: bottom;
-    transition: transform #{$dur} linear;
   }
 
   &__minutes {
@@ -60,11 +64,6 @@
     width: $min-hand-w;
     border-radius: 5px;
     background: #bb9;
-
-    // comment these out to make it work on hover
-    transform: rotateZ($deg);
-    transform-origin: bottom;
-    transition: transform $dur linear;
   }
 
 }
