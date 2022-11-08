@@ -1,12 +1,24 @@
 $stopwatch-2r: 500px;
-$work-for-x-mins: 5;
-
 $stopwatch-r: $stopwatch-2r * 0.5;
-$center-2r: $stopwatch-r * 0.05;
-$min-hand-h: $stopwatch-r * 0.8;
-$sec-hand-h: $stopwatch-r;
-$min-hand-w: $center-2r * 0.8;
-$sec-hand-w: $center-2r * 0.5;
+$center-2r: $stopwatch-r * 0.06;
+$seconds-2r: $stopwatch-r *0.6;
 
-$dur: 60s * $work-for-x-mins;
-$deg: 360deg * $work-for-x-mins;
+$min-hand-h: $stopwatch-r * 0.8;
+$hour-hand-h: $stopwatch-r * 0.65;
+$sec-hand-h: $seconds-2r * 0.5;
+
+$min-hand-w: $center-2r * 0.5;
+$hour-hand-w: $center-2r * 0.6;
+$sec-hand-w: $center-2r * 0.25;
+
+$line-size-a: $stopwatch-2r * 0.1;
+$line-size-b: $line-size-a * 0.05;
+
+$page-color: #cca;
+$page-bg-color: #ffd;
+
+@keyframes turn {
+  0% {
+    transform: rotateZ(360deg);
+  }
+}
