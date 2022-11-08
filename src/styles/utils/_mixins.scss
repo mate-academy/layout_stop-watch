@@ -1,0 +1,13 @@
+@mixin animationClock ($duration: 3600s) {
+  animation-name: clock;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+  transform-origin: left center;
+  animation-timing-function: linear;
+}
+
+@mixin position {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
