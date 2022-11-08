@@ -5,8 +5,10 @@
 
   border: 3px solid #000;
 
+  transform: rotate(270deg);
+
   &__minute-hand {
-    @extend %hands-position-center;
+    @extend %watch-items-position;
 
     width: 300px;
     height: $hands-height;
@@ -18,7 +20,7 @@
   }
 
   &__second-hand {
-    @extend %hands-position-center;
+    @extend %watch-items-position;
 
     width: 400px;
     height: $hands-height;
@@ -32,8 +34,10 @@
   &__dot {
     @include circle($dot-width, $dot-height);
 
-    @extend %hands-position-center;
+    @extend %watch-items-position;
 
     background-color: #167a80;
+
+    transform: translate(-50%, -50%);
   }
 }
