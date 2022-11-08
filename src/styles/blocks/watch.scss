@@ -1,0 +1,43 @@
+.watch {
+  @include circle($watch-width, $watch-height);
+
+  position: relative;
+
+  border: 3px solid #000;
+
+  transform: rotate(270deg);
+
+  &__minute-hand {
+    @extend %watch-items-position;
+
+    width: 300px;
+    height: $hands-height;
+
+    background-color: #a81b35;
+    border-radius: $hands-radius;
+
+    animation: spin 3600s steps(60, end) infinite normal;
+  }
+
+  &__second-hand {
+    @extend %watch-items-position;
+
+    width: 400px;
+    height: $hands-height;
+
+    background-color: #167a80;
+    border-radius: $hands-radius;
+
+    animation: spin 60s linear infinite normal;
+  }
+
+  &__dot {
+    @include circle($dot-width, $dot-height);
+
+    @extend %watch-items-position;
+
+    background-color: #167a80;
+
+    transform: translate(-50%, -50%);
+  }
+}
