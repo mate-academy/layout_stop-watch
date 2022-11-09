@@ -9,8 +9,9 @@
   height: $stopwatch-2r;
   width: $stopwatch-2r;
 
+  box-sizing: border-box;
   border-radius: 50%;
-  border: $stopwatch-2r * 0.01 dotted $hand-color;
+  border: $stopwatch-r * 0.01 dotted $page-color;
   background: $page-bg-color;
 
   &::after {
@@ -31,13 +32,6 @@
     border-radius: 50%;
     transform: rotateZ(90deg);
     background: $page-color;
-
-    $pos: (
-      "top": 1,
-      "left": 2,
-      "bottom": 3,
-      "right": 4
-    );
 
     @each $side, $i in $pos {
       &:nth-child(#{$i}) {
@@ -88,6 +82,6 @@
 
   &__brand {
     height: $stopwatch-2r * 0.25;
-    transform: translateY(-$stopwatch-2r * 0.15);
+    transform: translateY(-$stopwatch-2r * 0.25);
   }
 }
