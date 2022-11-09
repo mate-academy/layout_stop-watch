@@ -1,0 +1,24 @@
+@each $hand, $animTime in $hourHands {
+  .clock__#{$hand} {
+    position: absolute;
+    margin-bottom: $handPosition;
+    height: $handPosition;
+    width: 10px;
+
+    border-radius: $circle;
+    background-color: #680000;
+    animation: second $animTime linear infinite;
+    transform-origin: bottom;
+  }
+
+}
+
+@each $number, $marginDirection in $numbers {
+  .clock__number-#{$number} {
+    margin-#{$marginDirection}: 400px;
+    color: $numbersColor;
+
+    position: absolute;
+    font-size: 50px;
+  }
+}
