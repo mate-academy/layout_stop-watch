@@ -33,6 +33,13 @@
     transform: rotateZ(90deg);
     background: $page-color;
 
+    $pos: (
+      "top": 1,
+      "left": 2,
+      "bottom": 3,
+      "right": 4
+    );
+
     @each $side, $i in $pos {
       &:nth-child(#{$i}) {
         #{$side}: $stopwatch-2r * 0.98;
