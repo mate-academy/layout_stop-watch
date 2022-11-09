@@ -1,5 +1,4 @@
 .stopwatch {
-  position: relative;
   height: $watch-size;
   width: $watch-size;
 
@@ -11,7 +10,7 @@
     position: absolute;
     height: 200px;
     width: 5px;
-    left: $watch-size / 2;
+    left: calc($watch-size / 2);
 
     background-color: black;
     border-radius: 5px;
@@ -25,12 +24,12 @@
     height: 180px;
     width: 5px;
     top: 20px;
-    left: $watch-size / 2;
+    left: calc($watch-size / 2);
 
     background-color: coral;
     border-radius: 5px;
 
-    animation: rotate 60s * 60 linear infinite;
+    animation: rotate calc(60s * 60) linear infinite;
     transform-origin: bottom;
   }
 }
