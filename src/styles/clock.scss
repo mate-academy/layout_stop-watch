@@ -1,33 +1,35 @@
 .clock {
   position: relative;
-
   left: 50%;
   top: 50%;
-  transform: translate(-50%, 50%);
+
+  height: 500px;
+  width: 500px;
 
   border-radius: 50%;
   background: #fff url(../images/ios_clock.svg) no-repeat center;
   background-size: 88%;
-  height: 500px;
-  width: 500px;
+
+
+  transform: translate(-50%, 50%);
 
   &:after {
-    background: #000;
+    background-color: #000;
     border-radius: 50%;
     content: "";
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+
     width: 25px;
     height: 25px;
-    z-index: 10;
+
+    transform: translate(-50%, -50%);
   }
 
   &__minutes-container,
   &__seconds-container {
     position: absolute;
-
     top: 0;
     right: 0;
     bottom: 0;
