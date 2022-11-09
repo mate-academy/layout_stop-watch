@@ -1,0 +1,37 @@
+.watch {
+  display: flex;
+  align-items: center;
+
+  @include watch-size(500px, 500px);
+  @extend %bg-clock-face;
+
+  &--screen {
+    position: relative;
+  }
+
+  &__minutes-hand {
+    @include watch-hand-size($height-minute-hand, $width-minute-hand);
+    @include watch-hand-animation(3600s);
+    @extend %hand-position;
+    background-color: #eea47fff;
+  }
+
+  &__seconds-hand {
+    @include watch-hand-size($height-second-hand, $width-second-hand);
+    @include watch-hand-animation(60s);
+    @extend %hand-position;
+    background-color: #00539cff;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: calc(250px - 10px);
+
+    background-color: #00539cff;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}

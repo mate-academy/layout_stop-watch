@@ -1,0 +1,14 @@
+@mixin watch-size($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin watch-hand-size ($hand-height-size, $hand-width-size) {
+  height: $hand-height-size;
+  width: $hand-width-size;
+}
+
+@mixin watch-hand-animation ($duration) {
+  animation-duration: $duration;
+  @extend %animation-hand;
+}
