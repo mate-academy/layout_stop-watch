@@ -3,11 +3,17 @@
   @extend %flex-centering;
   @include circle($watch-size);
   box-sizing: border-box;
-  background: $watch-background-color;
+  background: radial-gradient(circle,#8f587b 20%, #e8f6c3 100%);
 
   &__number {
     position: absolute;
     padding: 15px;
+
+    $number-positions:
+      "twelve" "top",
+      "three" "right",
+      "six" "bottom",
+      "nine" "left";
 
     @each $number, $position in $number-positions {
       &--#{$number} {
@@ -19,7 +25,7 @@
   &__center {
     @include circle($watch-center-size);
     background-color: $watch-center-color;
-    box-shadow: $box-shadow-hands;
+    box-shadow: 6px 5px 5px 0 rgba(64,41,41,0.75);
     z-index: 3;
   }
 
@@ -29,7 +35,7 @@
     height: 200px;
     border-radius: 40% 40% 0 0;
     background-color: $hour-hand-color ;
-    box-shadow: $box-shadow-hands;
+    box-shadow: 6px 5px 5px 0 rgba(64,41,41,0.75);
 
     transform-origin: bottom;
     animation: move 43200s linear infinite;
@@ -41,7 +47,7 @@
     height: 250px;
     border-radius: 40% 40% 0 0;
     background-color: $min-hand-color ;
-    box-shadow: $box-shadow-hands;
+    box-shadow: 6px 5px 5px 0 rgba(64,41,41,0.75);
     z-index: 1;
 
     transform-origin: bottom;
@@ -54,7 +60,7 @@
     height: 220px;
     border-radius: 50% 50% 0 0;
     background-color: $sec-hand-color;
-    box-shadow: $box-shadow-hands;
+    box-shadow: 6px 5px 5px 0 rgba(64,41,41,0.75);
     z-index: 2;
 
     transform-origin: bottom;
