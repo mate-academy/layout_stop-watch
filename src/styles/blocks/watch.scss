@@ -11,16 +11,16 @@
 
   &__minutes-hand {
     @include watch-hand-size($height-minute-hand, $width-minute-hand);
-    @include watch-hand-animation($duration-minute-hand);
+    @include watch-hand-animation(3600s);
     @extend %hand-position;
     background-color: #eea47fff;
   }
 
   &__seconds-hand {
     @include watch-hand-size($height-second-hand, $width-second-hand);
-    @include watch-hand-animation($duration-second-hand);
+    @include watch-hand-animation(60s);
     @extend %hand-position;
-    background-color: $color-second-hand;
+    background-color: #00539cff;
   }
 
   &::before {
@@ -28,9 +28,9 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    right: calc(#{$left-hand-position} - 10px);
+    right: calc(250px - 10px);
 
-    background-color: $color-second-hand;
+    background-color: #00539cff;
     border-radius: 50%;
     z-index: 1;
   }
