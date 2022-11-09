@@ -7,6 +7,12 @@
   background-repeat: no-repeat;
   background-size: contain;
 
+  transition: all 0.3s ease;
+
+  &:hover {
+    @include watch-square-hover;
+  }
+
   &__element {
     position: absolute;
 
@@ -42,5 +48,4 @@
       }
     }
   }
-
 }
