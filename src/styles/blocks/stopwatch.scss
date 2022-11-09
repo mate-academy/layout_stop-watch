@@ -1,0 +1,30 @@
+.stopwatch {
+  padding-top: 50vh;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  &__center {
+    position: relative;
+    @include circle;
+    background: blue;
+  }
+
+  &__minute {
+    @include position-arrow;
+    width: $arrows-width;
+    height: $arrow-min-height;
+    background: rgb(191, 10, 10);
+    animation: stopwatch 3600s steps(60, end) infinite;
+  }
+
+  &__second {
+    @include position-arrow;
+    width: $arrows-width;
+    height: $arrow-sec-height;
+    background: blue;
+    animation: stopwatch 60s linear infinite;
+  }
+}

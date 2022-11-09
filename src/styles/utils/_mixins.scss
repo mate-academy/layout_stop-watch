@@ -1,0 +1,14 @@
+@mixin circle {
+  width: $cell-size;
+  height: $cell-size;
+  border-radius: 50%;
+}
+
+@mixin position-arrow {
+  position: absolute;
+  z-index: -1;
+  left: ($cell-size / 2) - ($arrows-width / 2);
+  bottom: $cell-size / 2;
+  border-radius: $radius-arrows;
+  transform-origin: bottom;
+}
