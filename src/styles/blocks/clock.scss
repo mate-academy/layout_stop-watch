@@ -1,0 +1,82 @@
+.clock {
+  &__outer-face {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include clock-outer-face-size;
+
+    background-color: #89837f;
+    border: 2px solid #655952;
+    border-radius: #{$circle};
+    box-shadow: 5px 10px 20px #bf584c;
+  }
+
+  &__inner-face {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include clock-inner-face-size;
+
+    background-image: url(clock.png);
+    object-fit: contain;
+    background-color: #eee4dd;
+    border: 2px solid #655952;
+    border-radius: #{$circle};
+
+    box-shadow: inset 5px 5px 15px #9a8e86,
+    5px 5px 20px #a09891;
+  }
+
+  &__center {
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: #655952;
+    border-radius: #{$circle};
+  }
+
+  &__minute-hands {
+    position: absolute;
+
+    top: 110px;
+    width: 8px;
+    height: 100px;
+
+    background-color: #655952;
+    border-radius: 25px;
+
+    animation: rotate 3600s steps(60, end) infinite;
+  }
+
+  &__second-hands {
+    position: absolute;
+    top: 70px;
+    width: 8px;
+    height: 140px;
+
+    background-color: #655952;
+    border-radius: 25px;
+
+    animation: rotate 60s steps(60, end) infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+      transform-origin: bottom;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      transform-origin: bottom;
+    }
+  }
+}
