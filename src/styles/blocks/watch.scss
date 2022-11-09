@@ -1,0 +1,79 @@
+.watch {
+  position: relative;
+  @extend %flex-centering;
+  @include circle($watch-size);
+  box-sizing: border-box;
+  background: radial-gradient(circle,#8f587b 20%, #e8f6c3 100%);
+
+  &__number {
+    position: absolute;
+    padding: 15px;
+
+    $number-positions:
+      "twelve" "top",
+      "three" "right",
+      "six" "bottom",
+      "nine" "left";
+
+    @each $number, $position in $number-positions {
+      &--#{$number} {
+        #{$position}: 0;
+      }
+    }
+  }
+
+  &__center {
+    @include circle($watch-center-size);
+    background-color: $watch-center-color;
+    box-shadow: 6px 5px 5px 0 rgba(64,41,41,0.75);
+    z-index: 3;
+  }
+
+  &__hour {
+    @extend %hands-positioning;
+    width: 14px;
+    height: 200px;
+    border-radius: 40% 40% 0 0;
+    background-color: $hour-hand-color ;
+    box-shadow: 6px 5px 5px 0 rgba(64,41,41,0.75);
+
+    transform-origin: bottom;
+    animation: move 43200s linear infinite;
+  }
+
+  &__min {
+    @extend %hands-positioning;
+    width: 10px;
+    height: 250px;
+    border-radius: 40% 40% 0 0;
+    background-color: $min-hand-color ;
+    box-shadow: 6px 5px 5px 0 rgba(64,41,41,0.75);
+    z-index: 1;
+
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+  }
+
+  &__sec {
+    @extend %hands-positioning;
+    width: 5px;
+    height: 220px;
+    border-radius: 50% 50% 0 0;
+    background-color: $sec-hand-color;
+    box-shadow: 6px 5px 5px 0 rgba(64,41,41,0.75);
+    z-index: 2;
+
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
