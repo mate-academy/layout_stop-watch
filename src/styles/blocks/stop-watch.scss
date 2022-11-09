@@ -1,0 +1,56 @@
+.stop-watch {
+  @include circle($watch-size);
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  border: 5px solid $color-main-accent;
+
+  &__center {
+    @include circle($center-size);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: $color-main-accent;
+    z-index: 100;
+  }
+
+  &__minute-hand {
+    width: $hand-width;
+    height: 30%;
+
+    @include hand-position;
+
+    border-radius: $hand-radius;
+    background-color: #f75f28;
+    z-index: 50;
+
+    animation: go-around 3600s linear infinite;
+  }
+
+  &__second-hand {
+    width: $hand-width;
+    height: 45%;
+
+    @include hand-position;
+
+    border-radius: $hand-radius;
+    background-color: #6495ed;
+
+    animation: go-around 60s linear infinite;
+  }
+
+  @keyframes go-around {
+    0% {
+      transform: rotate(0);
+      transform-origin: bottom center;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      transform-origin: bottom center;
+    }
+  }
+}
