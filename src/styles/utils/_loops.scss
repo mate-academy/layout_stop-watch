@@ -1,7 +1,5 @@
 @each $hand, $animTime in $hourHands {
-
   .clock__#{$hand} {
-
     position: absolute;
     margin-bottom: $handPosition;
     height: $handPosition;
@@ -16,9 +14,7 @@
 }
 
 @each $number, $marginDirection in $numbers {
-
   .clock__number-#{$number} {
-    
     margin-#{$marginDirection}: 400px;
     color: $numbersColor;
 
