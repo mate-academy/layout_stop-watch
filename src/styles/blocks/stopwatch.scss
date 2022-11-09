@@ -1,0 +1,94 @@
+@import "./utils/variables";
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  height: $stopwatch-2r;
+  width: $stopwatch-2r;
+
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: $stopwatch-r * 0.01 dotted $page-color;
+  background: $page-bg-color;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: $center-2r;
+    width: $center-2r;
+
+    border-radius: 50%;
+    background: $hand-color;
+  }
+
+  &__lines {
+    position: absolute;
+    height: $line-size-a;
+    width: $line-size-b;
+
+    border-radius: 50%;
+    transform: rotateZ(90deg);
+    background: $page-color;
+
+    $pos: (
+      "top": 1,
+      "left": 2,
+      "bottom": 3,
+      "right": 4
+    );
+
+    @each $side, $i in $pos {
+      &:nth-child(#{$i}) {
+        #{$side}: $stopwatch-2r * 0.98;
+      }
+    }
+
+    &:nth-child(2n+1) {
+      height: $line-size-b;
+      width: $line-size-a;
+    }
+  }
+
+  &__seconds {
+    position: absolute;
+    right: $stopwatch-r * 0.25;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: $stopwatch-r * 0.2;
+    height: $min-hand-h;
+    width: $min-hand-w;
+
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: $stopwatch-2r / 150 solid $hand-color;
+
+    animation: turn 3600s linear infinite reverse;
+    transform-origin: bottom;
+    background: $page-bg-color;
+  }
+
+  &__hours {
+    position: absolute;
+    top: $stopwatch-r * 0.4;
+    height: $hour-hand-h;
+    width: $hour-hand-w;
+
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: $stopwatch-2r / 125 solid $hand-color;
+
+    animation: turn 3600s*12 linear infinite reverse;
+    transform-origin: bottom;
+    background: $page-bg-color;
+  }
+
+  &__brand {
+    height: $stopwatch-2r * 0.25;
+    transform: translateY(-$stopwatch-2r * 0.25);
+  }
+}
