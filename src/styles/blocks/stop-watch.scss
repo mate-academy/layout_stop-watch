@@ -11,18 +11,16 @@
   border-radius: 50%;
 
   &__number {
-
+    position: absolute;
     margin: 0;
 
     &--12 {
-      position: absolute;
       left: 50%;
 
       transform: translateX(-50%);
     }
 
     &--3 {
-      position: absolute;
       left: 100%;
       top: 50%;
 
@@ -30,7 +28,6 @@
     }
 
     &--6 {
-      position: absolute;
       left: 50%;
       top: 100%;
 
@@ -38,14 +35,13 @@
     }
 
     &--9 {
-      position: absolute;
       top: 50%;
 
       transform: translate(20%, -50%);
     }
   }
 
-  &__clock-hand {
+  &__clock-hand--seconds {
     position: absolute;
     left: 50%;
     top: 15%;
@@ -54,7 +50,7 @@
     height: 150px;
 
     background-color: #d00;
-    border-radius: 4px;
+    border-radius: 2px;
 
     transition: 300ms;
     transform-origin: bottom;
@@ -63,9 +59,16 @@
   }
 
   &__clock-hand--minutes {
+    position: absolute;
     top: 28%;
+    left: 50%;
 
+    width: 4px;
     height: 100px;
+
+    border-radius: 3px;
+
+    // transform: translateX(100%);
 
     background-color: #00d;
 
@@ -80,5 +83,10 @@
         transform: rotate(360deg);
       }
     }
+  }
+
+  &:hover &__clock-hand--seconds,
+  &__clock-hand--minutes {
+    animation-play-state: paused;
   }
 }
