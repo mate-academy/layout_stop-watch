@@ -1,0 +1,64 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__space {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: cornflowerblue;
+    border: 5px dotted black;
+  }
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000;
+    z-index: 2;
+  }
+
+  &__sec-hand {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 250px;
+    border-radius: 25%;
+    background-color: #000;
+    z-index: 1;
+    transform-origin: bottom center;
+    animation: count 60s linear infinite;
+
+  }
+
+  &__min-hand {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%, -50%);
+    width: 10px;
+    height: 125px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation: count 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  @keyframes count {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
