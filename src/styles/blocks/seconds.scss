@@ -9,19 +9,20 @@
   border-radius: 50%;
 
   box-sizing: border-box;
-  border: 1px dotted $page-color;
+  border: 2px dotted $page-color;
   background: $page-bg-color;
 
   &__hand {
     position: absolute;
-
     height: $sec-hand-h;
     width: $sec-hand-w;
     border-radius: 50%;
 
+    box-sizing: border-box;
+    border: $stopwatch-2r / 500 solid #f00;
     animation: turn 1s linear infinite reverse;
     transform-origin: bottom;
-    background: #f16;
+    background: #fff;
   }
 
   &__line {

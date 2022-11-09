@@ -5,43 +5,44 @@
   justify-content: center;
   align-items: center;
 
+  position: relative;
   height: $stopwatch-2r;
   width: $stopwatch-2r;
+
   border-radius: 50%;
+  border: $stopwatch-2r * 0.01 dotted $hand-color;
   background: $page-bg-color;
 
   &::after {
     position: absolute;
-
     content: "";
     height: $center-2r;
     width: $center-2r;
+
     border-radius: 50%;
-    background: $page-color;
+    background: $hand-color;
   }
 
   &__lines {
     position: absolute;
     height: $line-size-a;
     width: $line-size-b;
+
     border-radius: 50%;
     transform: rotateZ(90deg);
     background: $page-color;
 
-    &:nth-child(1) {
-      top: calc(50vh - #{$stopwatch-r});
-    }
+    $pos: (
+      "top": 1,
+      "left": 2,
+      "bottom": 3,
+      "right": 4
+    );
 
-    &:nth-child(2) {
-      left: calc(50vw - #{$stopwatch-r});
-    }
-
-    &:nth-child(3) {
-      bottom: calc(50vh - #{$stopwatch-r});
-    }
-
-    &:nth-child(4) {
-      right: calc(50vw - #{$stopwatch-r});
+    @each $side, $i in $pos {
+      &:nth-child(#{$i}) {
+        #{$side}: $stopwatch-2r * 0.98;
+      }
     }
 
     &:nth-child(2n+1) {
@@ -52,32 +53,41 @@
 
   &__seconds {
     position: absolute;
-    top: calc(50vh - #{$seconds-2r * 1.25});
+    right: $stopwatch-r * 0.25;
   }
 
   &__minutes {
     position: absolute;
-    top: calc(50vh - #{$min-hand-h});
-
+    top: $stopwatch-r * 0.2;
     height: $min-hand-h;
     width: $min-hand-w;
+
+    box-sizing: border-box;
     border-radius: 50%;
+    border: $stopwatch-2r / 150 solid $hand-color;
 
     animation: turn 60s linear infinite reverse;
     transform-origin: bottom;
-    background: #bb9;
+    background: $page-bg-color;
   }
 
   &__hours {
     position: absolute;
-    top: calc(50vh - #{$hour-hand-h});
-
+    top: $stopwatch-r * 0.4;
     height: $hour-hand-h;
     width: $hour-hand-w;
-    border-radius: 50%;
 
-    animation: turn 360s linear infinite reverse;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: $stopwatch-2r / 125 solid $hand-color;
+
+    animation: turn 3600s linear infinite reverse;
     transform-origin: bottom;
-    background: #885;
+    background: $page-bg-color;
+  }
+
+  &__brand {
+    height: $stopwatch-2r * 0.25;
+    transform: translateY(-$stopwatch-2r * 0.15);
   }
 }
