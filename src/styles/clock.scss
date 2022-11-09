@@ -1,0 +1,39 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 150px;
+  height: 400px;
+
+  &__hour {
+    position: absolute;
+    bottom: 40px;
+    top: 50%;
+    width: $min-width;
+    border-radius: $arrow-radius;
+    background-color: $min-color;
+    animation: move linear 3600s infinite;
+    transform-origin: bottom;
+  }
+
+  &__sec {
+    position: absolute;
+    bottom: 40px;
+    top: 0;
+    width: $sec-width;
+    border-radius: $arrow-radius;
+    background-color: $sec-color;
+    animation: move linear 60s infinite;
+    transform-origin: bottom;
+  }
+
+  &__circle {
+    position: absolute;
+    bottom: 0;
+    width: $circle-size;
+    height: $circle-size;
+    background-color: $circle-color;
+    border-radius: $arrow-radius;
+  }
+}
