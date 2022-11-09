@@ -1,0 +1,57 @@
+.clock {
+  position: relative;
+  width: 660px;
+  height: 660px;
+  background: linear-gradient(110.5deg, rgba(248, 196, 249, 0.66) 22.8%, rgba(253, 122, 4, 0.15) 64.6%);  border: 1px solid #EF719A;
+  border-radius: 50%;
+  margin: 10px;
+
+  &__row {
+    transform-origin: bottom;
+
+    &--seconds {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      width: $arrow-width;
+      height: $second-arrow-length;
+      background: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+      border-radius: 10px;
+      animation: move-seconds 60s linear infinite reverse 0.5s;
+    }
+
+    &--minutes {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      width: $arrow-width;
+      height: $minute-arrow-length;
+      background: radial-gradient(circle at 7.5% 24%, rgb(237, 161, 193) 0%, rgb(250, 178, 172) 25.5%, rgb(190, 228, 210) 62.3%, rgb(215, 248, 247) 93.8%);
+      border-radius: 10px;
+      animation: move-minutes 3600s linear infinite reverse 0.5s;
+    }
+  }
+
+  @keyframes move-seconds {
+    0% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes move-minutes {
+    0% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.clock::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 48%;
+  left: 49.5%;
+}
