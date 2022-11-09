@@ -1,0 +1,51 @@
+.stopwatch {
+  position: relative;
+
+  @include watch-square;
+
+  background-image: url(../images/clock-old.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    @include watch-square-hover;
+  }
+
+  &__element {
+    position: absolute;
+
+    @include elements-square;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      @include after-positions;
+      transform: translate(-50%, -100%);
+
+      width: 5px;
+    }
+
+    &--minute-hand {
+      animation: move 3600s linear infinite;
+
+      &::after {
+        height: $minute-hand;
+
+        background-color: black;
+      }
+    }
+
+    &--second-hand {
+      animation: move 60s linear infinite;
+
+      &::after {
+        height: $second-hand;
+
+        background-color: black;
+      }
+    }
+  }
+}
