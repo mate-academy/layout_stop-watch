@@ -9,7 +9,7 @@
     @include clock-outer-face-size;
 
     background-color: #89837f;
-    border: 2px solid #655952;
+    border: 2px solid #{$clock-borders-color};
     border-radius: #{$circle};
     box-shadow: 5px 10px 20px #bf584c;
   }
@@ -27,7 +27,7 @@
     background-position: center;
     background-color: #eee4dd;
     object-fit: contain;
-    border: 2px solid #655952;
+    border: 2px solid #{$clock-borders-color};
     border-radius: #{$circle};
 
     box-shadow: inset 5px 5px 15px #9a8e86,
@@ -40,43 +40,43 @@
     width: 20px;
     height: 20px;
 
-    background-color: #655952;
+    background-color: #{$clock-inner-parts-color};
     border-radius: #{$circle};
   }
 
   &__minute-hands {
     position: absolute;
 
-    top: 110px;
+    // top: 110px;
     width: 8px;
     height: 100px;
 
-    background-color: #655952;
+    background-color: #{$clock-inner-parts-color};
     border-radius: 25px;
 
     animation: rotate 3600s steps(60, end) infinite;
   }
 
   &__second-hands {
-    position: absolute;
-    top: 70px;
-    width: 8px;
-    height: 140px;
+      position: absolute;
 
-    background-color: #655952;
-    border-radius: 25px;
+      width: 8px;
+      height: 140px;
 
-    animation: rotate 60s steps(60, end) infinite;
-  }
+      background-color: #{$clock-inner-parts-color};
+      border-radius: 25px;
 
-  @keyframes rotate {
-    0% {
-      transform: rotate(0);
+      animation: rotate 60s steps(60, end) infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+      transform: translateY(-50%) rotate(0);
       transform-origin: bottom;
     }
 
     100% {
-      transform: rotate(360deg);
+      transform: translateY(-50%) rotate(360deg);
       transform-origin: bottom;
     }
   }
