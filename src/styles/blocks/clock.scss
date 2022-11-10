@@ -1,0 +1,130 @@
+.clock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+
+  @include watch-size($watch-size);
+
+  background-color: beige;
+  border-radius: 100%;
+  border: 10px solid $clock-color;
+
+  /* box-shadow: 40px 5px 2px #787d7e; */
+
+  &__top {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    width: $indicator-size;
+    height: $indicator-size * 2;
+    background-color: $clock-color;
+  }
+
+  &__right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+
+    width: $indicator-size * 2;
+    height: $indicator-size;
+    background-color: $clock-color;
+  }
+
+  &__bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+
+    width: $indicator-size;
+    height: $indicator-size * 2;
+    background-color: $clock-color;
+  }
+
+  &__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+
+    width: $indicator-size * 2;
+    height: $indicator-size;
+    background-color: $clock-color;
+  }
+
+  &__center {
+    @include center-size($center-size);
+
+    border-radius: 100%;
+    background-color: $clock-color;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &__shadow {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+    height: $watch-size;
+    width: $watch-size;
+
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    transform: rotate(135deg);
+  }
+
+  &__minute {
+    width: 5px;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    animation: move 3600s linear infinite;
+
+    &:before {
+      content: "";
+      height: 30%;
+      width: 5px;
+      background-color: $clock-color;
+      position: absolute;
+      top: 20%;
+    }
+  }
+
+  &__second {
+    width: 3px;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    animation: move 60s linear infinite;
+
+    &:before {
+      content: "";
+      width: 3px;
+      height: 43%;
+      background-color: #2f5862;
+      position: absolute;
+      top: 20px;
+    }
+  }
+}
