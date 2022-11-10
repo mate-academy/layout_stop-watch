@@ -1,5 +1,5 @@
 .stop-watch {
-  @include circle($watch-size);
+  @include circle(600px);
   position: relative;
   display: flex;
   justify-content: center;
@@ -7,7 +7,7 @@
   border: 5px solid $color-main-accent;
 
   &__center {
-    @include circle($center-size);
+    @include circle(30px);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -27,7 +27,7 @@
     background-color: #f75f28;
     z-index: 50;
 
-    animation: go-around 3600s linear infinite;
+    @include animation(3600s);
   }
 
   &__second-hand {
@@ -39,7 +39,7 @@
     border-radius: $hand-radius;
     background-color: #6495ed;
 
-    animation: go-around 60s linear infinite;
+    @include animation(60s);
   }
 
   @keyframes go-around {
