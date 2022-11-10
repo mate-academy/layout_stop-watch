@@ -16,19 +16,25 @@
   }
 
   &__minute {
-    @include arrowsPositionAndWidth(); //position: absolute and width of the arrow 10px
+    @include arrowsPositionAndWidth(); 
+    //position: absolute and width of the arrow 10px
 
     height: $minuteHeight;
-    top: calc-top($centerPosition, $minuteHeight); // 250px(center of watch) - 150px(height of arrow)
+    top: calc-top($centerPosition, $minuteHeight); 
+    // 250px(center of watch) - 150px(height of arrow)
     background-color: red;
     @include transform-arrows(); //transform-origin: bottom center;
     @include animation(3600s);//animation: rotate $time infinite linear;
   }
 
   &__second {
-    @include arrowsPositionAndWidth(); //position: absolute and width of the arrow 10px
+    @include arrowsPositionAndWidth(); 
+    //position: absolute and width of the arrow 10px
+
     height: $secondHeight;
-    top: calc-top($centerPosition, $secondHeight); // 250px(center of watch) - 150px(height of arrow)
+    top: calc-top($centerPosition, $secondHeight); 
+    // 250px(center of watch) - 150px(height of arrow)
+
     background-color: blue;
     @include transform-arrows(); //transform-origin: bottom center;
     @include animation(60s);//animation: rotate $time infinite linear;
