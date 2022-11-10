@@ -8,7 +8,7 @@
     position: relative;
     width: 500px;
     height: 500px;
-    border-radius: 50%;
+    @include circleBorder;
     background-color: cornflowerblue;
     border: 5px dotted black;
   }
@@ -20,7 +20,7 @@
     transform: translate(-50%, -50%);
     width: 15px;
     height: 15px;
-    border-radius: 50%;
+    @include circleBorder;
     background-color: #000;
     z-index: 2;
   }
@@ -28,10 +28,9 @@
   &__sec-hand {
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 5px;
     height: 250px;
-    border-radius: 25%;
+    @include handBorderRadius;
     background-color: #000;
     z-index: 1;
     transform-origin: bottom center;
@@ -43,10 +42,9 @@
     position: absolute;
     top: 25%;
     left: 50%;
-    transform: translateX(-50%, -50%);
     width: 10px;
     height: 125px;
-    border-radius: 50%;
+    @include handBorderRadius;
     background-color: #fff;
     animation: count 3600s linear infinite;
     transform-origin: bottom center;
@@ -54,11 +52,11 @@
 
   @keyframes count {
     from {
-      transform: rotate(0);
+      transform: translateX(-50%) rotate(0);
     }
 
     to {
-      transform: rotate(360deg);
+      transform: translateX(-50%) rotate(360deg);
     }
   }
 }
