@@ -1,0 +1,40 @@
+.easy-clock {
+  position: relative;
+  box-sizing: border-box;
+  width: #{$side};
+  height: #{$side};
+  background-color: #{$background-primary};
+  border: 0.5px solid black;
+  border-radius: 50%;
+
+  &__hour {
+    @extend %hands;
+    width: 50px;
+    transform: rotate(1deg);
+    animation: move-clock #{$duration-hour} linear infinite;
+  }
+  &__minute {
+    @extend %hands;
+    width: 80px;
+    animation: move-clock #{$duration-minute} linear infinite;
+  }
+  &__second {
+    @extend %hands;
+    width: 40px;
+    animation: move-clock #{$duration-second} linear infinite;
+  }
+  &__microsecond {
+    @extend %hands;
+    width: 20px;
+    animation: move-clock #{$duration-microsecond} linear infinite;
+  }
+}
+
+@keyframes move-clock {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(269deg);
+  }
+}

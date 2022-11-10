@@ -1,0 +1,29 @@
+$side : 200px;
+$duration-hour : 216000s;
+$duration-minute : 3600s;
+$duration-second : 60s;
+$duration-microsecond : 1s;
+$background-primary : #eee;
+$clock-hand-primary: #000;
+
+%hands {
+  position: absolute;
+  height: 4px;
+  background-color: black;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform-origin: left;
+}
+
+%position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%clock-hand {
+  background-color: #{$clock-hand-primary};
+  border-radius: 10px;
+}
