@@ -1,0 +1,39 @@
+.watch {
+  position: relative;
+  @extend %flexCenter;
+  height: $watchSize;
+  width: $watchSize;
+  border: 2px solid black;
+  border-radius: 50%;
+
+  background-image: url(/img/sunrice.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__center {
+    position: absolute;
+    @extend %circle;
+  }
+
+  &__minute {
+    @extend %arrowPositionAndWidth; 
+
+    height: $minuteHeight;
+    top: calc-top($centerPosition, $minuteHeight); 
+
+    background-color: red;
+    @extend %transformArrows;
+    @include animation(3600s);
+  }
+
+  &__second {
+    @extend %arrowPositionAndWidth; 
+
+    height: $secondHeight;
+    top: calc-top($centerPosition, $secondHeight); 
+
+    background-color: blue;
+    @extend %transformArrows; 
+    @include animation(60s);
+  }
+}
