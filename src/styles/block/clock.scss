@@ -21,7 +21,7 @@
       height: $second-arrow-length;
       background: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
       border-radius: 10px;
-      animation: move-seconds 60s linear infinite reverse 0.5s;
+      animation: move-arrow 60s linear infinite reverse 0.5s;
     }
 
     &--minutes {
@@ -37,17 +37,11 @@
         rgb(190, 228, 210) 62.3%,
         rgb(215, 248, 247) 93.8%);
       border-radius: 10px;
-      animation: move-minutes 3600s linear infinite reverse 0.5s;
+      animation: move-arrow 3600s linear infinite reverse 0.5s;
     }
   }
 
-
-  @keyframes move-seconds {
-    0% {
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes move-minutes {
+  @keyframes move-arrow {
     0% {
       transform: rotate(360deg);
     }
