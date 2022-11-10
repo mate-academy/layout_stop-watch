@@ -1,74 +1,69 @@
 .watch {
   display: flex;
+  height: 100vh;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 
-  &__hand {
+  &__page {
     position: relative;
     display: flex;
-    height: $watch-size;
-    width: $watch-size;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,28,1) 35%, rgba(0,212,255,1) 100%);
-    border: 1px transparent;
+    justify-content: center;
+
+    @include watch-size;
+
     border-radius: 50%;
+    @include background-color;
   }
 
-  &__logo {
-    height: 50px;
+  &__minute {
     position: $absolut-position;
-    left: 255px;
-    top: 120px;
-    }
+    top: 20px;
+
+    height: 180px;
+    width: 2px;
+
+    border: 2px solid transparent;
+    @include arrow-gradient;
+    border-radius: 3px;
+
+    transform-origin: bottom;
+    animation: $animation-name 60s $time-duration linear;
+  }
+
+  &__second {
+    position: $absolut-position;
+    top: 70px;
+
+    height: 130px;
+    width: 2px;
+
+    border: 2px solid transparent;
+    @include arrow-seconds-color;
+    border-radius: 3px;
+
+    transform-origin: bottom;
+    animation: $animation-name 1s $time-duration linear;
+  }
 
   &__middle {
     position: $absolut-position;
-    display: flex;
-    top: 300px;
-    left: 300px;
-    width: 9px;
-    height: 9px;
-    background-color: $color-second-arrow;
-    border: 1px solid $color-second-arrow;
-    margin: auto;
-    align-items: flex-end;
+    top: 198px;
+    z-index: 2;
+
+    @include size-middle;
+
+    @include arrow-gradient;
+
+    border: 2px solid transparent;
     border-radius: 50%;
   }
-
-  &__minutes {
-    position: $absolut-position;
-    background: #785667;
-    bottom: 1px;
-    width: 5px;
-    height: 170px;
-    border: 1px solid #785667;
-    border-radius: 5px;
-    transform-origin: bottom;
-    animation: $animation-name 60s $time-duration;
-
-  }
-
-  &__seconds {
-    position: $absolut-position;
-    background: $color-second-arrow;
-    width: 5px;
-    height: 260px;
-    border: 1px solid $color-second-arrow;
-    border-radius: 5px;
-    transform-origin: bottom;
-    animation: $animation-name 1s $time-duration;
-  }
 }
-
-
 
 @keyframes rotate {
   from {
     transform: rotate(0);
   }
-
   to {
     transform: rotate(360deg);
   }
 }
-
