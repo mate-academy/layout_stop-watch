@@ -1,0 +1,50 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  @include circle($watch-size);
+  border: 3px solid $border-color;
+  background-color: $dial-color;
+
+  &__long-hand {
+    position: absolute;
+    bottom: 50%;
+
+    @include big-oval($hand-long);
+    background-color: #93f88a;
+
+    animation: spin 60s linear 0s infinite;
+    transform-origin: bottom center;
+
+  }
+
+  &__short-hand {
+    position: absolute;
+    bottom: 50%;
+
+    @include small-oval($hand-short);
+    background-color: #93f88a;
+
+    animation: spin 3600s linear 0s infinite;
+    transform-origin: bottom center;
+  }
+
+  &__small-circle {
+    position: absolute;
+    bottom: 47%;
+
+    @include circle($small-circle-size);
+    background-color: $border-color;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

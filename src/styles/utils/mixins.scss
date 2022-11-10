@@ -1,0 +1,33 @@
+@mixin big-rectangle($size) {
+  width: $size/30;
+  height: $size;
+}
+
+@mixin small-rectangle($size) {
+  width: $size/21;
+  height: $size;
+}
+
+@mixin big-oval($size) {
+  @include big-rectangle($size);
+  border-radius: 10px;
+  border: 2px solid #f8ee8a;
+  box-sizing: border-box;
+}
+
+@mixin small-oval($size) {
+  @include small-rectangle($size);
+  border-radius: 10px;
+  border: 2px solid #f8ee8a;
+  box-sizing: border-box;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  @include square($size);
+  border-radius: 50%;
+}
