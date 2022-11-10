@@ -1,0 +1,50 @@
+.stopwatch {
+  @include square (500px);
+  border-radius: 50%;
+  background-image: url(../pictures/stopwatch-bachground.svg);
+  background-size: cover;
+  background-position: center;
+  margin: 50px auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border: 10px solid $stopwatch-color;
+
+  &__big-hand {
+    position: absolute;
+    width: 7px;
+    height: 60%;
+    border-radius: 50%;
+    background-color: $big-hand-color;
+    animation: roll 60s infinite steps(60, start);
+    transform-origin: 1px 83%;
+  }
+
+  &__small-hand {
+    position: absolute;
+    top: 10%;
+    width: 10px;
+    height: 40%;
+    border-radius: 50%;
+    background-color: $small-hand-color;
+    animation: roll 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__center-dot {
+    @include square (20px);
+    border-radius: 50%;
+    position: absolute;
+    align-self: center;
+    background-color: #2f2a89;
+  }
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
