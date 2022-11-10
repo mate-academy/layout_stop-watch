@@ -1,0 +1,39 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform: translate(40vw, 30vh);
+  @include circle ($clock-diametr);
+
+  border: 1px solid black;
+  border-radius: 50%;
+  box-shadow: 10px 5px 5px #aaa;
+
+  &__minute-hand {
+    position: absolute;
+    background-color: #00f;
+    height: $minutes-hand-length;
+    @extend %hand-design;
+    animation: turn 3600s linear infinite ;
+  }
+
+  &__second-hand {
+    position: absolute;
+    background-color: #f00;
+    height: $secunds-hand-length;
+    margin-top: $minutes-hand-length - $secunds-hand-length;
+    @extend %hand-design;
+    animation: turn 60s linear infinite;
+  }
+
+  @keyframes turn {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
