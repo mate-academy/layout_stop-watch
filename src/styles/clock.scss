@@ -3,13 +3,11 @@
   left: 50%;
   top: 50%;
 
-  height: 500px;
-  width: 500px;
+  @include clockSize(500px);
 
   border-radius: 50%;
   background: #fff url(../images/ios_clock.svg) no-repeat center;
   background-size: 88%;
-
 
   transform: translate(-50%, 50%);
 
@@ -21,8 +19,7 @@
     left: 50%;
     top: 50%;
 
-    width: 25px;
-    height: 25px;
+    @include dotSize(25px);
 
     transform: translate(-50%, -50%);
   }
