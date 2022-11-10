@@ -47,7 +47,6 @@
   &__minute-hands {
     position: absolute;
 
-    // top: 110px;
     width: 8px;
     height: 100px;
 
@@ -58,19 +57,19 @@
   }
 
   &__second-hands {
-      position: absolute;
+    position: absolute;
 
-      width: 8px;
-      height: 140px;
+    width: 8px;
+    height: 140px;
 
-      background-color: #{$clock-inner-parts-color};
-      border-radius: 25px;
+    background-color: #{$clock-inner-parts-color};
+    border-radius: 25px;
 
-      animation: rotate 60s steps(60, end) infinite;
-    }
+    animation: rotate 60s steps(60, end) infinite;
+  }
 
-    @keyframes rotate {
-      0% {
+  @keyframes rotate {
+    0% {
       transform: translateY(-50%) rotate(0);
       transform-origin: bottom;
     }
