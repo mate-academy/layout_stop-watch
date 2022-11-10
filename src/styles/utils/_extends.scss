@@ -1,0 +1,31 @@
+@use "../utils/variables" as *;
+
+%centre-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%watch-centre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+%watch-size {
+  height: #{$watch-size};
+  width: #{$watch-size};
+}
+
+%watch-radius {
+  border-radius: 50%;
+}
+
+%animaton-time-directon {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+%clock-hand-centre {
+  transform-origin: 0% 50%;
+}

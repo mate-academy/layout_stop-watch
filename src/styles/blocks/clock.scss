@@ -1,0 +1,103 @@
+@use "../utils/extends";
+@use "../utils/variables" as *;
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #FFEEDB;
+  @extend %centre-flex;
+  font-size: 44px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+}
+
+.watch {
+  position: relative;
+  @extend %watch-size;
+  @extend %watch-radius;
+  background-color: #F9DC5C;
+  border: 16px solid #0b4f6c43;
+
+}
+
+.watch__centre {
+  @extend %centre-flex;
+  @extend %watch-centre;
+  flex-direction: column;
+  text-transform: uppercase;
+  @extend %watch-radius;
+  height: calc(#{$watch-size * 0.095});
+  width: calc(#{$watch-size * 0.095});
+  background-color: #3185FC;
+  z-index: 5;
+  transform: translate(-#{$centre-absolute}, -#{$centre-absolute});
+
+}
+
+.watch__hand1 {
+  @extend %watch-centre;
+  background-color: #EFBCD5;
+  height: calc(#{$watch-size} * 0.02);
+  width: calc(#{$watch-size} * 0.30);
+  top: calc(50% - #{$watch-size} * 0.02);
+  z-index: 3;
+  left: #{$centre-absolute};
+  @extend %clock-hand-centre;
+  @extend %animaton-time-directon;
+  transform-origin: 0% 50%;
+  animation-delay: -2700s;
+  animation-name: seconds;
+  animation-duration: 3600s;
+
+
+}
+
+.watch__hand2 {
+  @extend %watch-centre;
+  background-color: #E84855;
+  height: calc(#{$watch-size} * 0.01);
+  width: calc(#{$watch-size} * 0.40);
+  top: calc(50% - #{$watch-size} * 0.01);
+  left: #{$centre-absolute};
+  z-index: 4;
+  @extend %clock-hand-centre;
+  @extend %animaton-time-directon;
+  animation-delay: -45s;
+  animation-name: seconds;
+  animation-duration: 60s;
+
+}
+
+@keyframes seconds {
+  0% {
+  transform: rotate(1deg);
+}
+
+100% {
+  transform: rotate(360deg);
+
+}
+}
+
+.watch__time {
+  @extend %watch-centre;
+  display: flex;
+  justify-content: end;
+  width: calc(#{$watch-size} * 0.65);
+  color: #0B4F6C;
+  top: calc(50% - 25.5px);
+  left: #{$centre-absolute};
+}
+
+
+@for $index from 1 to 13{
+  .watch__time-#{$index} {
+    transform-origin:0 50%;
+    transform: rotate(calc(#{$index} * 30deg + 270deg) );
+  }
+  .watch__time-#{$index}-digit {
+    transform: rotate(calc(#{$index} * -30deg + -270deg) );
+  }
+}
+
