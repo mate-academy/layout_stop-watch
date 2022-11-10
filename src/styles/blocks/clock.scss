@@ -14,23 +14,17 @@
     position: absolute;
     background-color: #00f;
     height: $minutes-hand-length;
-    width: 2px;
-    box-shadow: 10px 5px 5px #aaa;
-    margin-bottom: $minutes-hand-length;
-    transform-origin: bottom;
-    animation: turn 60s linear infinite ;
+    @extend %hand-design;
+    animation: turn 3600s linear infinite ;
   }
 
   &__second-hand {
     position: absolute;
     background-color: #f00;
     height: $secunds-hand-length;
-    width: 2px;
-    box-shadow: 10px 5px 5px #aaa;
     margin-top: $minutes-hand-length - $secunds-hand-length;
-    margin-bottom: $minutes-hand-length;
-    transform-origin: bottom;
-    animation: turn 1000ms linear infinite;
+    @extend %hand-design;
+    animation: turn 60s linear infinite;
   }
 
   @keyframes turn {
