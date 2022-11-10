@@ -1,6 +1,6 @@
 .watch {
   position: relative;
-  @include flex();// center
+  @extend %flexCenter;// center
   height: $watchSize;
   width: $watchSize;
   border: 2px solid black;
@@ -12,23 +12,23 @@
 
   &__center {
     position: absolute;
-    @include circle(); //makes a circle in the center of the clock
+    @extend %circle; //makes a circle in the center of the clock
   }
 
   &__minute {
-    @include arrowsPositionAndWidth(); 
+    @extend %arrowPositionAndWidth; 
     //position: absolute and width of the arrow 10px
 
     height: $minuteHeight;
     top: calc-top($centerPosition, $minuteHeight); 
     // 250px(center of watch) - 150px(height of arrow)
     background-color: red;
-    @include transform-arrows(); //transform-origin: bottom center;
+    @extend %transformArrows; //transform-origin: bottom center;
     @include animation(3600s);//animation: rotate $time infinite linear;
   }
 
   &__second {
-    @include arrowsPositionAndWidth(); 
+    @extend %arrowPositionAndWidth; 
     //position: absolute and width of the arrow 10px
 
     height: $secondHeight;
@@ -36,7 +36,7 @@
     // 250px(center of watch) - 150px(height of arrow)
 
     background-color: blue;
-    @include transform-arrows(); //transform-origin: bottom center;
+    @extend %transformArrows; //transform-origin: bottom center;
     @include animation(60s);//animation: rotate $time infinite linear;
   }
 }
