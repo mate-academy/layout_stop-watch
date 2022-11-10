@@ -1,0 +1,76 @@
+.stopWatch {
+  display: block;
+
+  &__frame {
+    width: $clock-size;
+    height: $clock-size;
+
+    border: 5px double $color-brownish;
+    box-shadow: 5;
+    border-radius: 100%;
+
+    position: relative;
+    margin: 130px auto;
+
+    background-color: whitesmoke;
+  }
+
+  &__stick {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: $clock-size / 2;
+    margin: 0 auto;
+    transform-origin: bottom center;
+
+    &--minute {
+      width: 6px;
+      height: 135px;
+      z-index: 9;
+
+      background-color: $color-brownish;
+      border: 1px solid $color-brownish;
+      border-radius: 20px;
+
+      transform-origin: 1px 115px;
+      transition: transform 60s;
+      bottom: 130px;
+
+      animation: time 60s linear infinite 1s forwards;
+
+      &::before {
+        content: "";
+        width: 25px;
+        height: 25px;
+        z-index: 10;
+
+        border: 1px solid $color-brownish;
+        background-color: $color-brownish;
+        border-radius: 100%;
+
+        position: absolute;
+        bottom: 7px;
+        left: -11px;
+
+      }
+    }
+
+    &--hour {
+      width: 8px ;
+      height: 90px ;
+      z-index: 8;
+
+      background-color: #090a37;
+      border: 1px solid rgb(53, 52, 54);
+      border-radius: 20px;
+
+      animation: time 3600s linear infinite 1s forwards;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
