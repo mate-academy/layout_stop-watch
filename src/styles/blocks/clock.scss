@@ -4,8 +4,7 @@
   align-items: center;
   position: relative;
   transform: translate(40vw, 30vh);
-  height: $clock-diametr;
-  width: $clock-diametr;
+  @include circle ($clock-diametr);
 
   border: 1px solid black;
   border-radius: 50%;
@@ -19,9 +18,7 @@
     box-shadow: 10px 5px 5px #aaa;
     margin-bottom: $minutes-hand-length;
     transform-origin: bottom;
-    animation-name: turn;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
+    animation: turn 60s linear infinite ;
   }
 
   &__second-hand {
@@ -33,9 +30,7 @@
     margin-top: $minutes-hand-length - $secunds-hand-length;
     margin-bottom: $minutes-hand-length;
     transform-origin: bottom;
-    animation-name: turn;
-    animation-duration: 1000ms;
-    animation-iteration-count: infinite;
+    animation: turn 1000ms linear infinite;
   }
 
   @keyframes turn {
