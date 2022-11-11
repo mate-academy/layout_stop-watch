@@ -28,6 +28,7 @@
     z-index: 50;
 
     @include animation(3600s);
+    transform-origin: bottom center;
   }
 
   &__second-hand {
@@ -40,17 +41,16 @@
     background-color: #6495ed;
 
     @include animation(60s);
+    transform-origin: bottom center;
   }
 
   @keyframes go-around {
     0% {
       transform: rotate(0);
-      transform-origin: bottom center;
     }
 
     100% {
       transform: rotate(360deg);
-      transform-origin: bottom center;
     }
   }
 }
