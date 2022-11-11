@@ -1,0 +1,38 @@
+.watch {
+  position: relative;
+  height: $watch-size;
+  width: $watch-size;
+  background-image: url("../image/watch.png");
+  background-position: center;
+  border-radius: 50%;
+
+  &__small-hand {
+    position: absolute;
+    left: $left-position;
+    top: $distance-to-center-for-small-hand;
+    height: $width-of-hand;
+    width: $small-hand-size;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.6);
+    animation: turn 3600s linear infinite ;
+    transform-origin: 0 0;
+  }
+
+  &__big-hand {
+    position: absolute;
+    left: $left-position;
+    top: $distance-to-center-for-big-hand;
+    height: $big-hand-size;
+    width: $width-of-hand;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform-origin: 0 170px;
+    animation: turn 60s linear infinite;
+  }
+
+  @keyframes turn {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
