@@ -9,9 +9,9 @@
   &__small-hand {
     position: absolute;
     left: $left-position;
-    top: 190px;
-    height: 4px;
-    width: 140px;
+    top: $distance-to-center-for-small-hand;
+    height: $width-of-hand;
+    width: $small-hand-size;
     border-radius: 3px;
     background-color: rgba(255, 255, 255, 0.6);
     animation: turn 3600s linear infinite ;
@@ -21,9 +21,9 @@
   &__big-hand {
     position: absolute;
     left: $left-position;
-    top: 24px;
-    height: 170px;
-    width: 4px;
+    top: $distance-to-center-for-big-hand;
+    height: $big-hand-size;
+    width: $width-of-hand;
     border-radius: 3px;
     background-color: rgba(255, 255, 255, 0.3);
     transform-origin: 0 170px;
