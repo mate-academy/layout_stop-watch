@@ -1,3 +1,9 @@
+$minute-arrow-height: $watch-height / 2 - 0.1 * $watch-height / 2;
+$second-arrow-height: $watch-height / 2 - 0.4 * $watch-height / 2;
+$top-for-second: $watch-height / 2 - $second-arrow-height;
+$top-for-minute: $watch-height / 2 - $minute-arrow-height;
+$top-for-middle: $watch-height / 2;
+
 .watch {
   display: flex;
   height: 100vh;
@@ -17,7 +23,7 @@
 
   &__minute {
     position: $absolut-position;
-    top: calc(#{$watch-height} / 2 - #{$minute-arrow-height});
+    top: $top-for-minute;
 
     height: $minute-arrow-height;
     width: 2px;
@@ -32,7 +38,7 @@
 
   &__second {
     position: $absolut-position;
-    top: calc(#{$watch-height} / 2 - #{$second-arrow-height});
+    top: $top-for-second;
 
     height: $second-arrow-height;
     width: 2px;
@@ -47,7 +53,7 @@
 
   &__middle {
     position: $absolut-position;
-    top: calc(#{$watch-height / 2});
+    top: $top-for-middle;
     z-index: 2;
 
     @include size-middle;
