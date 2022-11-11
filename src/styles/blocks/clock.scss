@@ -1,24 +1,17 @@
 .clock {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  @include watch-size($watch-size);
+  @include clock-circle($watch-size);
 
   background-color: beige;
-  border-radius: 100%;
   border: 10px solid $clock-color;
-
-  /* box-shadow: 40px 5px 2px #787d7e; */
 
   &__top {
     position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    right: 50%;
 
     width: $indicator-size;
     height: $indicator-size * 2;
@@ -27,10 +20,8 @@
 
   &__right {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 50%;
     right: 0;
-    margin: auto;
 
     width: $indicator-size * 2;
     height: $indicator-size;
@@ -39,10 +30,8 @@
 
   &__bottom {
     position: absolute;
-    left: 0;
-    right: 0;
+    right: 50%;
     bottom: 0;
-    margin: 0 auto;
 
     width: $indicator-size;
     height: $indicator-size * 2;
@@ -51,10 +40,8 @@
 
   &__left {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
-    bottom: 0;
-    margin: auto;
 
     width: $indicator-size * 2;
     height: $indicator-size;
@@ -62,17 +49,17 @@
   }
 
   &__center {
-    @include center-size($center-size);
+    @include center-circle($center-size);
 
-    border-radius: 100%;
     background-color: $clock-color;
 
+    z-index: 1;
+
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    top: 50%;
+    left: 50%;
+    margin-left: -$center-size / 2;
+    margin-top: -$center-size / 2;
   }
 
   &__shadow {
@@ -91,9 +78,8 @@
     height: 100%;
 
     position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    left: 50%;
+    margin-left: -2.5px;
 
     animation: move 3600s linear infinite;
 
@@ -112,9 +98,8 @@
     height: 100%;
 
     position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    left: 50%;
+    margin-left: -1.5px;
 
     animation: move 60s linear infinite;
 
