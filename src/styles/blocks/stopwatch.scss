@@ -1,13 +1,9 @@
 .stopwatch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   height: 100vh;
 
   &__face {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     @include square(300px);
     border-radius: 100%;
     border: 2px solid goldenrod;
