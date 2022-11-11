@@ -1,0 +1,57 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  @include clock-circle($clock-diameter);
+  background-color: yellowgreen;
+  border: $clock-border solid black;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+
+    background-color: black;
+    border-top-left-radius: 70%;
+    border-top-right-radius: 70%;
+
+    transform: translateX(-50%);
+    transform-origin: bottom;
+
+    &--hour {
+      height: $hour-height;
+      width: $hour-width;
+
+      animation: roll 3600s linear infinite;
+    }
+
+    &--minute {
+      width: $minute-width;
+      height: $minute-height;
+      top: $minute-height / 2;
+
+      animation: roll 60s linear infinite;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include center-circle($center-diameter);
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes roll {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
