@@ -1,0 +1,160 @@
+.clock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  @include clockShape ($clockWidth, $clockHeight, $clockBorderRadius);
+
+  margin: auto;
+
+  background: white;
+  box-sizing: border-box;
+
+  border: 10px solid #d3d3d3;
+
+  &__top {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    margin: 0 auto;
+    width: 3px;
+    height: 8px;
+    background-color: $colorMainParts;
+  }
+
+  &__right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    width: 8px;
+    height: 3px;
+    background-color: $colorMainParts;
+    margin: auto 0;
+  }
+
+  &__bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    width: 3px;
+    height: 8px;
+    background-color: $colorMainParts;
+    margin: 0 auto;
+  }
+
+  &__left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+
+    width: 8px;
+    height: 3px;
+    background-color: $colorMainParts;
+    margin: auto 0;
+  }
+
+  &__center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    height: 6px;
+    width: 6px;
+    margin: auto;
+    background-color: $colorMainParts;
+    border-radius: 50%;
+  }
+
+  &__shadow {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+
+    @include clockShape ($clockWidth, $clockHeight, $clockBorderRadius);
+
+    background: linear-gradient(transparent, rgba(#000, 0.1));
+
+  }
+
+  &__hour {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    width: 3px;
+    height: 100%;
+    margin: 0 auto;
+
+    animation: time 60s infinite linear;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $colorHourHand;
+      height: 60px;
+      width: 3px;
+      top: 30px;
+    }
+  }
+
+  &__minute {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    width: 1px;
+    height: 100%;
+
+    margin: 0 auto;
+    animation: time 30s infinite linear;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $colorMinuteHand;
+      height: 40px;
+      width: 1px;
+      top: 50px;
+    }
+  }
+
+  &__second {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    width: 2px;
+    height: 100%;
+    margin: 0 auto;
+    animation: time 15s infinite linear;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $colorSecondHand;
+      height: 45px;
+      width: 2px;
+      top: 45px;
+    }
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
