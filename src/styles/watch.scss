@@ -1,0 +1,74 @@
+.watch {
+  position: relative;
+  box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+  background-color: $background-primary;
+  border: 0.5px solid black;
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    @extend %position;
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    background-color: $background-primary;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 24px;
+    right: 16px;
+    width: 63px;
+    height: 63px;
+    border: 0.5px solid black;
+    border-radius: 50%;
+  }
+
+  &__hour {
+    @extend %clock-hand;
+    position: absolute;
+    width: 48px;
+    height: 8px;
+    transform-origin: 4px 4px;
+    top: 95.5px;
+    left: 95.5px;
+    animation: move-clock $duration-hour linear infinite;
+  }
+
+  &__minute {
+    @extend %clock-hand;
+    position: absolute;
+    width: 75px;
+    height: 6px;
+    transform-origin: 1px 3px;
+    top: 96.5px;
+    left: 98.5px;
+    animation: move-clock $duration-minute linear infinite;
+  }
+
+  &__second {
+    @extend %clock-hand;
+    position: absolute;
+    width: 75px;
+    height: 2px;
+    transform-origin: 1px 1px;
+    top: 98.5px;
+    left: 98.5px;
+    animation: move-clock $duration-second linear infinite;
+  }
+
+  &__microsecond {
+    @extend %clock-hand;
+    position: absolute;
+    width: 32px;
+    height: 1px;
+    transform-origin: 0.5px 0.5px;
+    top: 143px;
+    left: 150px;
+    animation: move-clock $duration-microsecond linear infinite;
+  }
+}
