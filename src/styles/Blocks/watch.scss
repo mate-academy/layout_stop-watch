@@ -1,0 +1,46 @@
+.watch {
+  display: flex;
+  position: relative;
+  justify-content: center;
+
+  height: $watchHeight;
+  width: $watchWidth;
+  background-color: $mainColor;
+  border-radius: 50%;
+
+  &__center {
+    z-index: 1;
+    position: absolute;
+    top: $watchCenter;
+
+    height: $watchHeight / 10;
+    width: $watchWidth / 10;
+    
+    border-radius: 50%;
+    background-color: $colorCenter;
+  }
+
+  &__min {
+    position: absolute;
+    
+    height: $watchHeight/2;
+    width: 5%;
+    border-radius: 50%;
+    background-color: $colorMin;
+
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+  }
+
+  &__sec {
+    position: absolute;
+
+    height: $watchHeight/2;
+    width: 5%;
+    border-radius: 50%;
+    background-color: $colorSec;
+
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+}
