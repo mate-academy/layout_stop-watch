@@ -1,51 +1,4 @@
 .stop-watch {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-  &::before {
-    position: absolute;
-    content: "";
-    height: 80px;
-    width: 4px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    animation: spin 3600s linear infinite;
-    transform-origin: top;
-  }
-
-  &::after {
-    position: absolute;
-    content: "";
-    height: 110px;
-    width: 2px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    animation: spin 60s linear infinite;
-    transform-origin: top;
-    animation-play-state: running;
-  }
-
-  &:hover {
-    &::after {
-      animation-play-state: paused;
-    }
-
-    &::before {
-      animation-play-state: paused;
-    }
-  }
-}
-
-.stop-watch-body {
   &::after {
     content: "";
     position: absolute;
@@ -60,5 +13,65 @@
     box-shadow: 140px 145px 0 0 white,
       -140px 145px 0 0 white,
       0 280px 0 0 white;
+  }
+
+  &__background {
+    max-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__body {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 80px;
+      width: 4px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      animation: spin 3600s linear infinite;
+      transform-origin: top;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 110px;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      animation: spin 60s linear infinite;
+      transform-origin: top;
+      animation-play-state: running;
+    }
+
+    &:hover {
+      &::after {
+        animation-play-state: paused;
+      }
+
+      &::before {
+        animation-play-state: paused;
+      }
+    }
   }
 }
