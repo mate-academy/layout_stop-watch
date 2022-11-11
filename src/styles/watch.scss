@@ -3,7 +3,7 @@
   box-sizing: border-box;
   width: 200px;
   height: 200px;
-  background-color: #{$background-primary};
+  background-color: $background-primary;
   border: 0.5px solid black;
   border-radius: 50%;
 
@@ -13,7 +13,7 @@
     border-radius: 50%;
     width: 7px;
     height: 7px;
-    background-color: #{$background-primary};
+    background-color: $background-primary;
     z-index: 1;
   }
 
@@ -36,7 +36,7 @@
     transform-origin: 4px 4px;
     top: 95.5px;
     left: 95.5px;
-    animation: move #{$duration-hour} linear infinite;
+    animation: move-clock $duration-hour linear infinite;
   }
 
   &__minute {
@@ -47,7 +47,7 @@
     transform-origin: 1px 3px;
     top: 96.5px;
     left: 98.5px;
-    animation: move #{$duration-minute} linear infinite;
+    animation: move-clock $duration-minute linear infinite;
   }
 
   &__second {
@@ -58,7 +58,7 @@
     transform-origin: 1px 1px;
     top: 98.5px;
     left: 98.5px;
-    animation: move #{$duration-second} linear infinite;
+    animation: move-clock $duration-second linear infinite;
   }
 
   &__microsecond {
@@ -69,15 +69,6 @@
     transform-origin: 0.5px 0.5px;
     top: 143px;
     left: 150px;
-    animation: move #{$duration-microsecond} linear infinite;
-  }
-}
-
-@keyframes move {
-  from {
-    transform: rotate(-90deg);
-  }
-  to {
-    transform: rotate(270deg);
+    animation: move-clock $duration-microsecond linear infinite;
   }
 }
