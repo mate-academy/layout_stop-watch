@@ -17,9 +17,9 @@
 
   &__minute {
     position: $absolut-position;
-    top: 20px;
+    top: calc(#{$watch-height} / 2 - #{$minute-arrow-height});
 
-    height: 180px;
+    height: $minute-arrow-height;
     width: 2px;
 
     border: 2px solid transparent;
@@ -32,9 +32,9 @@
 
   &__second {
     position: $absolut-position;
-    top: 70px;
+    top: calc(#{$watch-height} / 2 - #{$second-arrow-height});
 
-    height: 130px;
+    height: $second-arrow-height;
     width: 2px;
 
     border: 2px solid transparent;
@@ -47,14 +47,14 @@
 
   &__middle {
     position: $absolut-position;
-    top: 198px;
+    top: calc(#{$watch-height / 2});
     z-index: 2;
 
     @include size-middle;
 
     @include arrow-gradient;
 
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     border-radius: 50%;
   }
 }
