@@ -1,0 +1,80 @@
+.watch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  @include size ($watch-size);
+
+  background-color: #87ceeb;
+  background-image: linear-gradient(#87ceeb, gold);
+  box-shadow: 20px 20px 20px rgba(0,0,0,0.25);
+  border-radius: 50%;
+  border: 3px solid black;
+
+  &__center {
+    position: relative;
+    align-self: center;
+    z-index: 100;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid black;
+  }
+
+  &__hand {
+    position: absolute;
+    top: 75px;
+
+    height: 30%;
+    width: $hand-width;
+    border-radius: 40%;
+
+    background-color: white;
+    border: 2px solid black;
+
+    &--sec {
+      width: $hand-width;
+      left: $watch-size / 2 - $hand-width / 2;
+      height: 45%;
+      top: 5%;
+      background-color: white;
+
+      animation: watch 60s infinite linear;
+      transform-origin: bottom;
+    }
+  }
+
+  &__time {
+    position: absolute;
+
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+
+    background-color: white;
+    border: 1px solid black;
+
+    &--1 {
+      left: 195px;
+    }
+
+    &--2 {
+      right: 195px;
+      top: 386px;
+    }
+
+    &--3 {
+      left: 386px;
+      bottom: 195px;
+    }
+
+    &--4 {
+      right: 386px;
+      bottom: 195px;
+    }
+  }
+}
