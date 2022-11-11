@@ -7,20 +7,32 @@
       @include square(20px);
       background: transparent;
       left: 47%;
-      top: 9%;
+      top: 5%;
       border-radius: 100%;
-      transform-origin: 50% 126px;
+      transform-origin: 50% 136px;
       text-align: center;
 
-      @each $i, $deg in $points {
+
+      @each $i, $char, $deg in $points {
         &--#{$i} {
           transform: rotate(#{$deg});
 
-          &::after {
-            content: "#{$i}";
+          &::before {
+            display: inline-flex;
+            content: "#{$char}";
             font-family: inherit;
+            transform: scale(-1, -1);
           }
         }
+      }
+
+      &--12 {
+        margin-left: -2px;
+      }
+
+      &--8 {
+        margin-top: 5px;
+        margin-left: 1px;
       }
     }
 
