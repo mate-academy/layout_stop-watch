@@ -1,0 +1,99 @@
+.clock {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include clock-circle($watch-size);
+
+  background-color: beige;
+  border: 10px solid $clock-color;
+
+  &__top {
+    @include indicator-settings;
+    @include vertical-indicator-settings;
+  }
+
+  &__right {
+    @include indicator-settings;
+    @include horizontal-indicator-settings;
+    right: 0;
+  }
+
+  &__bottom {
+    @include indicator-settings;
+    @include vertical-indicator-settings;
+    bottom: 0;
+  }
+
+  &__left {
+    @include indicator-settings;
+    @include horizontal-indicator-settings;
+    left: 0;
+  }
+
+  &__center {
+    @include center-circle($center-size);
+
+    background-color: $clock-color;
+
+    z-index: 1;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -$center-size / 2;
+    margin-top: -$center-size / 2;
+  }
+
+  &__shadow {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+    height: $watch-size;
+    width: $watch-size;
+
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    transform: rotate(135deg);
+  }
+
+  &__minute {
+    width: 5px;
+    height: 100%;
+
+    position: absolute;
+    left: 50%;
+    margin-left: -2.5px;
+
+    animation: move 3600s linear infinite;
+
+    &:before {
+      content: "";
+      height: 30%;
+      width: 5px;
+      background-color: $clock-color;
+      position: absolute;
+      top: 20%;
+    }
+  }
+
+  &__second {
+    width: 3px;
+    height: 100%;
+
+    position: absolute;
+    left: 50%;
+    margin-left: -1.5px;
+
+    animation: move 60s linear infinite;
+
+    &:before {
+      content: "";
+      width: 3px;
+      height: 43%;
+      background-color: $clock-color;
+      position: absolute;
+      top: 20px;
+    }
+  }
+}
