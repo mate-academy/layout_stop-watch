@@ -21,10 +21,7 @@
     top: 50% - $second-hand-height;
     width: $stop-watch-element-width;
     height: $second-hand-height;
-
-    background-color: $stop-watch-secondary-color;
-    border-radius: 50% 50% 0 0;
-    transform-origin: bottom;
+    @include stop-watch-properties;
     animation: hand-rotation 60s linear infinite;
   }
 
@@ -33,10 +30,7 @@
     top: 50% - $hour-hand-height;
     width: $stop-watch-element-width;
     height: $hour-hand-height;
-
-    background-color: $stop-watch-secondary-color;
-    border-radius: 50% 50% 0 0;
-    transform-origin: bottom;
+    @include stop-watch-properties;
     animation: hand-rotation 3600s linear infinite;
   }
 }
