@@ -1,0 +1,15 @@
+.page {
+  &__content {
+    @extend %flexedCentered;
+    
+    margin: 0;
+
+    height: 100vh;
+
+    background-color: $colorPageBackground;
+  }
+
+  &__clock {
+    @include squared(400px);
+  }
+}

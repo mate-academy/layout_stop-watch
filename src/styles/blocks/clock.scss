@@ -1,0 +1,145 @@
+.clock {
+  position: relative;
+
+  @extend %flexedCentered;
+
+  background-color: $colorClockBackground;
+  box-shadow: $shadowClock;
+
+  border-radius: 50%;
+  border: 5px solid $colorClockBorder;
+  outline: 3px double $colorClockOutline;
+
+  &::before {
+    content: "";
+    z-index: 1;
+
+    @include squared(3%);
+
+    background: $backgroundSecondsPointer;
+    background-size: 15px 15px;
+    box-shadow: $shadowPointer;
+
+    border-radius: 50%;
+  }
+
+  &__marker {
+    position: absolute;
+
+    display: flex;
+    justify-content: space-between;
+
+    width: 87%;
+
+    &::after,
+    &::before {
+      content: "";
+
+      @include squared(10px);
+
+      border-radius: 50%;
+      background-color: $colorMarkers;
+    }
+
+    &:nth-of-type(3n + 3) {
+      width: 92%;
+
+      &::after,
+      &::before {
+        border-radius: 2px;
+        height: 8px;
+        width: 30px;
+      }
+    }
+
+    @for $n from 1 through 5 {
+      &:nth-child(#{$n}) {
+        transform: rotate(#{$n * 30}deg);
+      }
+    }
+  }
+
+  &__pointer {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+    &--minutes {
+      height: 70%;
+      width: 5%;
+      animation: rotation 3600s steps(3600, end) infinite;
+    }
+
+    &--hours {
+      height: 40%;
+      width: 6%;
+      animation: rotation #{3600 * 12}s steps(#{3600 * 12}, end) infinite;
+    }
+
+    &::before,
+    &::after {
+      @extend %fullSize;
+
+      content: "";
+
+      background-color: $colorPointerBackground;
+      border-radius: 40% 40% 0 0;
+      border: 3px outset $colorPointerBorder;
+      box-shadow: $shadowPointer;
+    }
+
+    &::before {
+      border-bottom: 0;
+      transform-origin: bottom center;
+      transform: perspective(3px) rotateX(0.7deg);
+    }
+
+    &::after {
+      border-radius: 0 0 50% 50%;
+      border-top: 0;
+
+      transform-origin: top center;
+      transform: perspective(3px) rotateX(-2deg);
+    }
+  }
+
+  &__ticker {
+    position: absolute;
+
+    @extend %flexedCentered;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    height: 107%;
+    width: 3%;
+
+    animation: rotation 60s steps(60) infinite;
+
+    &::before,
+    &::after {
+      content: "";
+      box-shadow: $shadowPointer;
+      background: $backgroundSecondsPointer;
+    }
+
+    &::before {
+      height: 200px;
+      width: 5px;
+      margin-top: 30px;
+      border-radius: 2px 2px 0 0;
+    }
+
+    &::after {
+      border-radius: 5px;
+      height: 20px;
+      width: 100%;
+    }
+  }
+
+  @keyframes rotation {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
