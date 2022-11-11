@@ -1,0 +1,49 @@
+.watch {
+  position: relative;
+
+  width: $watch-width;
+  height: $watch-width;
+
+  background-color: #f5f5f5;
+  border: 6px solid #86aa47;
+  border-radius: 50%;
+
+  &__arrow-sec {
+    @extend %arrows-position;
+    @extend %arrows-style;
+
+    @include animation-watch($duration-sec);
+
+    height: 200px;
+    width: 2px;
+  }
+
+  &__arrow-min {
+    @extend %arrows-position;
+    @extend %arrows-style;
+
+    @include animation-watch($duration-min);
+
+    height: 150px;
+    width: 3px;
+  }
+
+  &__name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+
+    color: $main-color;
+    font-size: 38px;
+  }
+}
+
+@keyframes sec {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
