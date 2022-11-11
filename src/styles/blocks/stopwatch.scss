@@ -1,0 +1,61 @@
+.stopwatch {
+  @include circleShape($bigDiameter);
+  border: 1px solid $mainColor;
+  background-color: bisque;
+
+  &__center-dot {
+    position: absolute;
+    bottom: $bigDiameter / 2 - $smallDiameter / 2;
+    left: $bigDiameter / 2 - $smallDiameter / 2;
+    z-index: 2;
+
+    @include circleShape($smallDiameter);
+    background-color: $mainColor;
+  }
+
+  &__second-hand {
+    position: absolute;
+    bottom: $bigDiameter / 2;
+    left: $bigDiameter / 2 - $secondHandWidth / 2;
+    z-index: 1;
+
+    height: 140px;
+    width: $secondHandWidth;
+    border-radius: $handsBorderRadius;
+    background-color: $mainColor;
+    transform-origin: bottom;
+
+    animation-name: HandRotation;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    bottom: $bigDiameter / 2;
+    left: $bigDiameter / 2 - $minuteHandWidth / 2;
+
+    height: 125px;
+    width: $minuteHandWidth;
+    border-radius: $handsBorderRadius;
+    background-color: $mainColor;
+
+    transform-origin: bottom;
+
+    animation-name: HandRotation;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes HandRotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
