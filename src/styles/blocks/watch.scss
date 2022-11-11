@@ -1,0 +1,60 @@
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background-color: grey;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 300px;
+  width: 300px;
+  background-color: #fff;
+  border: 5px solid black ;
+  border-radius: 50%;
+
+  &__minutes {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 120px;
+    background: black;
+    border-radius: 5px;
+    top: 30px;
+
+    animation: watch-animation 4s infinite linear;
+    transform-origin: center calc(100% - 5px);
+  }
+
+  &__second {
+    content: "";
+    position: absolute;
+    width: 10px;
+    top: 60px;
+    height: 90px;
+    background: black;
+    border-radius: 5px;
+
+    animation: watch-animation 15s infinite linear;
+    transform-origin: center calc(100% - 5px);
+  }
+
+  &:hover>&__second,
+  &:hover>&__minutes {
+    animation-play-state: paused;
+  }
+
+  @keyframes watch-animation {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg)
+    }
+  }
+}
