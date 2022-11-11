@@ -10,42 +10,26 @@
   border: 10px solid $clock-color;
 
   &__top {
-    position: absolute;
-    right: 50%;
-
-    width: $indicator-size;
-    height: $indicator-size * 2;
-    background-color: $clock-color;
+    @include indicator-settings;
+    @include vertical-indicator-settings;
   }
 
   &__right {
-    position: absolute;
-    top: 50%;
+    @include indicator-settings;
+    @include horizontal-indicator-settings;
     right: 0;
-
-    width: $indicator-size * 2;
-    height: $indicator-size;
-    background-color: $clock-color;
   }
 
   &__bottom {
-    position: absolute;
-    right: 50%;
+    @include indicator-settings;
+    @include vertical-indicator-settings;
     bottom: 0;
-
-    width: $indicator-size;
-    height: $indicator-size * 2;
-    background-color: $clock-color;
   }
 
   &__left {
-    position: absolute;
-    top: 50%;
+    @include indicator-settings;
+    @include horizontal-indicator-settings;
     left: 0;
-
-    width: $indicator-size * 2;
-    height: $indicator-size;
-    background-color: $clock-color;
   }
 
   &__center {
@@ -107,7 +91,7 @@
       content: "";
       width: 3px;
       height: 43%;
-      background-color: #2f5862;
+      background-color: $clock-color;
       position: absolute;
       top: 20px;
     }

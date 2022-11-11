@@ -9,3 +9,20 @@
   height: #{$center-size};
   border-radius: 100%;
 }
+
+@mixin indicator-settings {
+  background-color: $clock-color;
+  position: absolute;
+}
+
+@mixin horizontal-indicator-settings {
+  width: $indicator-size * 2;
+  height: $indicator-size;
+  top: 50%;
+}
+
+@mixin vertical-indicator-settings {
+  width: $indicator-size;
+  height: $indicator-size * 2;
+  right: 50%;
+}
