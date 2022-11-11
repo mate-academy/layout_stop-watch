@@ -1,6 +1,7 @@
 .clock {
   display: flex;
   position: relative;
+  height: $cloak-size;
   &__pin {
     @include Square(20px);
     position: absolute;
@@ -43,6 +44,10 @@
       animation: ClockHandMinutes 3600s linear infinite;
       transform-origin: 2px 2px;
     }
+  }
+
+  &:hover > .clock__hand {
+    animation-play-state: paused;
   }
 }
 
