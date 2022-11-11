@@ -1,0 +1,46 @@
+.clock {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  margin: 10px;
+  border-radius: 50%;
+  border: $arrow-width solid $main-color;
+
+  &__minute {
+    @include arrows-position;
+    height: 200px;
+    background: $main-color;
+
+    @include arrows-properties;
+
+    animation: move 3600s linear infinite ;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    @include arrows-position;
+    height: 300px;
+    background: #008000;
+
+    @include arrows-properties;
+
+    animation: move 60s linear 0.3s infinite;
+  }
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+    background-color: #ffe100;
+  }
+
+  @keyframes move {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
