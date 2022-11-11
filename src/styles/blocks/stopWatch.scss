@@ -2,12 +2,10 @@
   display: block;
 
   &__frame {
-    width: $clock-size;
-    height: $clock-size;
+    @include objSize($clock-size, $clock-size);
 
     border: 5px double $color-brownish;
-    box-shadow: 5;
-    border-radius: 25%;
+    border-radius: 35%;
 
     position: relative;
     margin: 130px auto;
@@ -24,8 +22,7 @@
     transform-origin: bottom center;
 
     &--minute {
-      width: 6px;
-      height: 135px;
+      @include objSize(8px, 135px);
       z-index: 9;
 
       background-color: $color-brownish;
@@ -40,8 +37,7 @@
 
       &::before {
         content: "";
-        width: 25px;
-        height: 25px;
+        @include objSize(25px, 25px);
         z-index: 10;
 
         border: 1px solid $color-brownish;
@@ -56,8 +52,7 @@
     }
 
     &--hour {
-      width: 8px ;
-      height: 90px ;
+      @include objSize(8px, 90px);
       z-index: 8;
 
       background-color: #090a37;
