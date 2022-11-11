@@ -1,0 +1,64 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__space {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    @include circleBorder;
+    background-color: cornflowerblue;
+    border: 5px dotted black;
+  }
+
+  &__circle {
+    width: 20px;
+    height: 20px;
+    @include circleBorder;
+    background-color: #000;
+    z-index: 2;
+  }
+
+  &__sec-hand {
+    position: absolute;
+    bottom: 50%;
+    width: 5px;
+    height: 250px;
+    @include handBorderRadius;
+    background-color: #000;
+    z-index: 1;
+    animation: count 60s linear infinite;
+    transform-origin: bottom center;
+
+  }
+
+  &__min-hand {
+    position: absolute;
+    bottom: 50%;
+    width: 10px;
+    height: 125px;
+    @include handBorderRadius;
+    background-color: #fff;
+    animation: count 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  @keyframes count {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__space:hover > div {
+    animation-play-state: paused;
+  }
+}
