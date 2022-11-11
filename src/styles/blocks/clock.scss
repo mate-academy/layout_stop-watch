@@ -1,0 +1,93 @@
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  margin: 0 auto;
+  height: $width-clock;
+  width: $width-clock;
+  border-radius: 50%;
+
+  background-color: aquamarine;;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  &,&__circle {
+    background: linear-gradient(-45deg, #ee7752, #d9739a, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    }
+
+  &__circle {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: $width-clock / 2;
+    left: $width-clock / 2;
+    background: rgb(255,55,10);
+
+    border: 1px solid #000;
+    z-index: 1;
+    transform: translate(-75%, -55%);
+
+  }
+
+
+
+  &__hand {
+    bottom: 50%;
+    right: 50%;
+
+    border-radius: 2px;
+
+    transform: translate(-50%, -50%);
+    width: 5px;
+    position: absolute;
+    animation-name: roll;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin:  center bottom;
+    &--minute {
+      height: 100px;
+      background: #000;;
+      animation-duration: 3600s;
+    }
+    &--second {
+      height: 190px;
+      background: red;
+      animation-duration: 60s;
+    }
+  }
+
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
