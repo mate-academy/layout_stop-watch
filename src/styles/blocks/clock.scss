@@ -1,4 +1,4 @@
-.clock {
+.stop-watch {
   position: absolute;
   width: 300px;
   height: 300px;
@@ -31,15 +31,26 @@
     left: 50%;
     animation: spin 60s linear infinite;
     transform-origin: top;
+    animation-play-state: running;
+  }
+
+  &:hover {
+    &::after {
+      animation-play-state: paused;
+    }
+
+    &::before {
+      animation-play-state: paused;
+    }
   }
 }
 
-body {
+.stop-watch-body {
   &::after {
     content: "";
     position: absolute;
     width: 4px;
-    height: 8px;
+    height: 4px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     left: 50%;
