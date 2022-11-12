@@ -1,12 +1,12 @@
 .watch {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: $watch-size;
+  height: $watch-size;
 
   background-image: url(../images/cat-its-mouth-open.jpeg);
   background-size: contain;
   background-repeat: no-repeat;
-  box-shadow: 0px 0px 22px 34px rgba(54, 43, 54, 0.4);
+  box-shadow: 0 0 40px 34px rgba(54, 43, 54, 0.4);
   border-radius: 50%;
 
   transition: transform 0.3s linear;
@@ -16,10 +16,7 @@
   }
 
   &::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @extend %centered-el;
 
     content: "";
     background-color: #fff;
@@ -28,38 +25,22 @@
     border-radius: 50%;
   }
 
-  &__minutes-container {
-   @include position-absolute-hands;
-  }
-
   &__minutes {
-    position: absolute;
-    top: 10%;
-    left: 49%;
-    height: 40%;
-    width: 2%;
+    @include pa-t-l-h-w(10%, 49%, 40%, 2%);
 
     background-color: #fff;
 
-    transform-origin: 50% 100%;
-    animation: $animation-name 3600s $time-duration steps(60);
-  }
-
-  &__seconds-container {
-    @include position-absolute-hands;
+    transform-origin: $trans-or-value;
+    animation: $animation-name 3600s $time-duration $step;
   }
 
   &__seconds {
-    position: absolute;
-    top: 5%;
-    left: 49.5%;
-    height: 45%;
-    width: 1%;
+    @include pa-t-l-h-w(5%, 49.5%, 45%, 1%);
 
     background-color: #fff;
 
-    transform-origin: 50% 100%;
-    animation: $animation-name 60s $time-duration steps(60);
+    transform-origin: $trans-or-value;
+    animation: $animation-name 60s $time-duration $step;
   }
 }
 
