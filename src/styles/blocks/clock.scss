@@ -9,8 +9,8 @@
     @include clock-outer-face-size;
 
     background-color: #89837f;
-    border: 2px solid #{$clock-borders-color};
-    border-radius: #{$circle};
+    border: 2px solid $clock-borders-color;
+    border-radius: $circle;
     box-shadow: 5px 10px 20px #bf584c;
   }
 
@@ -27,8 +27,8 @@
     background-position: center;
     background-color: #eee4dd;
     object-fit: contain;
-    border: 2px solid #{$clock-borders-color};
-    border-radius: #{$circle};
+    border: 2px solid $clock-borders-color;
+    border-radius: $circle;
 
     box-shadow: inset 5px 5px 15px #9a8e86,
       5px 5px 20px #a09891;
@@ -40,8 +40,8 @@
     width: 20px;
     height: 20px;
 
-    background-color: #{$clock-inner-parts-color};
-    border-radius: #{$circle};
+    background-color: $clock-inner-parts-color;
+    border-radius: $circle;
   }
 
   &__minute-hands {
@@ -50,7 +50,7 @@
     width: 8px;
     height: 100px;
 
-    background-color: #{$clock-inner-parts-color};
+    background-color: $clock-inner-parts-color;
     border-radius: 25px;
 
     animation: rotate 3600s steps(60, end) infinite;
@@ -62,7 +62,7 @@
     width: 8px;
     height: 140px;
 
-    background-color: #{$clock-inner-parts-color};
+    background-color: $clock-inner-parts-color;
     border-radius: 25px;
 
     animation: rotate 60s steps(60, end) infinite;
