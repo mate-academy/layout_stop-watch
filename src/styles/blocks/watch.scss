@@ -1,0 +1,51 @@
+.watch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+
+  background-image: url(../images/cat-its-mouth-open.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 40px 34px rgba(54, 43, 54, 0.4);
+  border-radius: 50%;
+
+  transition: transform 0.3s linear;
+
+  &:hover {
+    transform: scale(110%);
+  }
+
+  &::after {
+    @extend %centered-el;
+
+    content: "";
+    background-color: #fff;
+    height: 5%;
+    width: 5%;
+    border-radius: 50%;
+  }
+
+  &__minutes {
+    @include pa-t-l-h-w(10%, 49%, 40%, 2%);
+
+    background-color: #fff;
+
+    transform-origin: $trans-or-value;
+    animation: $animation-name 3600s $time-duration $step;
+  }
+
+  &__seconds {
+    @include pa-t-l-h-w(5%, 49.5%, 45%, 1%);
+
+    background-color: #fff;
+
+    transform-origin: $trans-or-value;
+    animation: $animation-name 60s $time-duration $step;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
