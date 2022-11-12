@@ -1,0 +1,51 @@
+.stopwatch {
+
+  background: center no-repeat url(../images/clockface-12.jpg);
+  background-size: cover;
+
+  &__second-arrow {
+    position: absolute;
+    left: 50%;
+    top: 49%;
+    z-index: 2;
+
+    width: 200px;
+    height: 6px;
+
+    background-color: #000;
+    border-radius: 10px;
+
+    @include arrowAnimation (clockwise, 60s);
+  }
+
+  &__minute-arrow {
+    position: absolute;
+    left: 50%;
+    top: 49%;
+
+    width: 100px;
+    height: 6px;
+
+    background-color: #f00;
+    border-radius: 10px;
+
+    @include arrowAnimation (clockwise, 720s);
+  }
+
+  @include animationRotate(clockwise, -90deg, 270deg);
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+    background-color: #000;
+    
+    transform: translate(-50%, -50%);
+  }
+}
