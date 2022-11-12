@@ -21,26 +21,76 @@
     content: "";
     position: absolute;
     width: 10px;
-    height: 120px;
+    height: 90px;
     background: black;
     border-radius: 5px;
-    top: 30px;
+    top: 60px;
 
-    animation: watch-animation 30s infinite steps(60, end);
+    animation: watch-animation 1800s infinite steps(60, end);
     transform-origin: center calc(100% - 5px);
   }
 
   &__second {
     content: "";
     position: absolute;
-    width: 10px;
-    top: 60px;
-    height: 90px;
-    background: black;
-    border-radius: 5px;
+    width: 5px;
+    top: 30px;
+    height: 120px;
+    background: red;
+    border-radius: 50%;
 
-    animation: watch-animation 1800s infinite steps(60, end);
+    animation: watch-animation 30s infinite steps(60, end);
     transform-origin: center calc(100% - 5px);
+  }
+
+  &__center {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: black;
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+
+  &__top {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 8px;
+    height: 20px;
+    background: black;
+    border: 2px solid white;
+  }
+
+  &__right {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 20px;
+    height: 8px;
+    background: black;
+    border: 2px solid white;
+  }
+
+  &__bottom {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 8px;
+    height: 20px;
+    background: black;
+    border: 2px solid white;
+  }
+
+  &__left {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 8px;
+    background: black;
+    border: 2px solid white;
   }
 
   &:hover>&__second,
