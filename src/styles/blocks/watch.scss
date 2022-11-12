@@ -1,0 +1,61 @@
+.watch {
+  position: relative;
+  background-color: white;
+  border: 15px solid rgb(255, 255, 255);
+  border-radius: 50%;
+
+  width: 500px;
+  height: 500px;
+  box-shadow: 0 10px 13px 3px rgba(101, 101, 101, 0.5),
+    inset 0 5px 10px 0 rgba(133, 133, 133, 0.5);
+
+  &__nums {
+    @each $number, $top-position, $left-position in $number-positions {
+      .nums--num--#{$number}::before {
+        content: "#{$number}";
+        position: absolute;
+        top: $top-position;
+        left: $left-position;
+        font-size: 23px;
+      }
+    }
+  }
+
+  &__mini-circle {
+    @include size-circle-mini;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    background-color: rgb(141, 141, 141);
+    border-radius: 50%;
+  }
+
+  &__second {
+    @include size_position-for-hand;
+    height: 190px;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: $hand-b-radius;
+    box-shadow: 0 0 10px 0 rgba(153, 153, 153, 0.5);
+
+    transform: translate(-50%);
+    transform-origin: bottom;
+    animation: hand-motion 60s linear infinite;
+  }
+
+  &__minute {
+    @include size_position-for-hand;
+    z-index: 1;
+    height: 140px;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: $hand-b-radius;
+    box-shadow: 0 0 10px 0 rgba(153, 153, 153, 0.5);
+
+    transform: translate(-50%);
+    transform-origin: bottom;
+    animation: hand-motion 3600s linear infinite;
+  }
+}
