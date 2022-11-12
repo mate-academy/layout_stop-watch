@@ -1,0 +1,17 @@
+@mixin animationRotate ($name, $start, $stop) {
+  @keyframes #{$name} {
+    0% {
+      transform: rotate(#{$start});
+    }
+
+    100% {
+      transform: rotate(#{$stop});
+    }
+  }
+}
+
+@mixin arrowAnimation ($name, $time) {
+  transform-origin: center left;
+  animation: #{$name} #{$time} linear infinite;
+  animation-fill-mode: forwards;
+}
