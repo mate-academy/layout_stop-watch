@@ -1,16 +1,16 @@
 .stopwatch {
+  background: center / cover no-repeat url(../images/clockface-12.jpg);
 
-  background: center no-repeat url(../images/clockface-12.jpg);
-  background-size: cover;
+  @include animationRotate(clockwise, -90deg, 270deg);
 
   &__second-arrow {
     position: absolute;
     left: 50%;
-    top: 49%;
+    top: calc(#{$stopwatch-size} / 2 - #{$arrow-height} / 2);
     z-index: 2;
 
     width: 200px;
-    height: 6px;
+    height: $arrow-height;
 
     background-color: #000;
     border-radius: 10px;
@@ -21,18 +21,16 @@
   &__minute-arrow {
     position: absolute;
     left: 50%;
-    top: 49%;
+    top: calc(#{$stopwatch-size} / 2 - #{$arrow-height} / 2);
 
     width: 100px;
-    height: 6px;
+    height: $arrow-height;
 
     background-color: #f00;
     border-radius: 10px;
 
     @include arrowAnimation (clockwise, 720s);
   }
-
-  @include animationRotate(clockwise, -90deg, 270deg);
 
   &__center {
     position: absolute;
