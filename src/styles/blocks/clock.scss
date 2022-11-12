@@ -1,34 +1,28 @@
 .clock {
   display: flex;
   position: relative;
-  height: $cloak-size;
+  height: $clock-size;
+
   &__pin {
     @include Square(20px);
     position: absolute;
     background-color: black;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
+    @include centering;
+    border-radius: $border-radius;
     z-index: 2;
   }
 
   &__image {
-    @include Square($cloak-size);
+    @include Square($clock-size);
     position: relative;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
   }
 
   &__hand {
-    @include ClockHand;
-
     &--1 {
       height: 4px;
       width: 25%;
-      border-top-right-radius: 50%;
-      border-bottom-right-radius: 50%;
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
       background-color: red;
       animation: ClockHandSeconds 60s linear infinite;
       transform-origin: 2px 2px;
@@ -37,13 +31,15 @@
     &--2 {
       height: 15%;
       width: 4px;
-      border-bottom-left-radius: 50%;
-      border-bottom-right-radius: 50%;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
       background-color: blue;
 
       animation: ClockHandMinutes 3600s linear infinite;
       transform-origin: 2px 2px;
     }
+
+    @include ClockHand;
   }
 
   &:hover > .clock__hand {

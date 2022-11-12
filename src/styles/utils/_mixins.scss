@@ -6,8 +6,12 @@
 @mixin ClockHand {
   display: block;
   position: absolute;
-  top: 49.5%;
-  left: 49.75%;
+  @include centering;
   content: "";
-  bottom: 0;
+}
+
+@mixin centering {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
