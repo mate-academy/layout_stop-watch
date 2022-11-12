@@ -1,0 +1,17 @@
+@mixin Square ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin ClockHand {
+  display: block;
+  position: absolute;
+  @include centering;
+  content: "";
+}
+
+@mixin centering {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
