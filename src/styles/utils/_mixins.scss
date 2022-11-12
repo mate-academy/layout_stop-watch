@@ -1,0 +1,18 @@
+@mixin hand($width, $length, $color, $opacity, $interval) {
+  border-width: 0 $width * 0.5 $length $width * 0.5;
+  border-bottom-color: rgba($color, $opacity);
+  animation-duration: $interval;
+}
+
+@mixin diameter($diameter) {
+  height: $diameter;
+  width: $diameter;
+}
+
+@mixin ring($fraction, $color, $opacity, $z-index) {
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  @include diameter($diameter * $fraction);
+  background-color: rgba($color, $opacity);
+  z-index: $z-index;
+}
