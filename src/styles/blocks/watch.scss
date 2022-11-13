@@ -7,8 +7,8 @@
   width: $size-watch;
   height: $size-watch;
 
-  background-color: antiquewhite;
-  border: 10px solid dimgray;
+  background-color: #faebd7;
+  border: 10px solid #696969;
   border-radius: 50%;
 
   &__circle {
@@ -16,7 +16,7 @@
     height: 20px;
     z-index: 1;
 
-    background-color: dimgray;
+    background-color: #696969;
     border-radius: 50%;
   }
 
@@ -24,7 +24,7 @@
     transform-origin: bottom;
     @include hand-position;
 
-    @include hands ($hand-minute-width, $hand-minute-length, #615c5c);
+    @include hands ($hand-minute-width, $hand-minute-length, #696969);
     animation: hand-rotate 3600 steps(60s, end) infinite;
   }
 
