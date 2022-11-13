@@ -5,13 +5,12 @@
     &-point {
       position: absolute;
       @include square(20px);
-      background: transparent;
+      background-color: transparent;
       left: 47%;
       top: 5%;
       border-radius: 100%;
-      transform-origin: 50% 136px;
+      transform-origin: 50% 140px;
       text-align: center;
-
 
       @each $i, $char, $deg in $points {
         &--#{$i} {
@@ -26,13 +25,8 @@
         }
       }
 
-      &--12 {
-        margin-left: -2px;
-      }
-
       &--8 {
-        margin-top: 5px;
-        margin-left: 1px;
+        margin-left: -5px;
       }
     }
 
@@ -40,10 +34,10 @@
       position: absolute;
       width: 1px;
       height: 10px;
-      background: $black-color;
+      background-color: $black-color;
       left: 50%;
       top: 11%;
-      transform-origin: 50% 119px;
+      transform-origin: 50% 120px;
       text-align: center;
 
       @each $i, $deg in $sticks {
@@ -66,7 +60,7 @@
     &-second {
       position: absolute;
       top: 24px;
-      left: 49.7%;
+      left: 49.5%;
       width: 2px;
       height: 150px;
       background-color: $black-color;
