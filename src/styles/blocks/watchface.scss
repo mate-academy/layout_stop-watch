@@ -1,0 +1,84 @@
+.watchface {
+  position: relative;
+
+  &__outline {
+    &-point {
+      position: absolute;
+      @include square(20px);
+      background-color: transparent;
+      left: 47%;
+      top: 5%;
+      border-radius: 100%;
+      transform-origin: 50% 140px;
+      text-align: center;
+
+      @each $i, $char, $deg in $points {
+        &--#{$i} {
+          transform: rotate(#{$deg});
+
+          &::before {
+            display: inline-flex;
+            content: "#{$char}";
+            font-family: inherit;
+            transform: scale(-1, -1);
+          }
+        }
+      }
+
+      &--8 {
+        margin-left: -5px;
+      }
+    }
+
+    &-stick {
+      position: absolute;
+      width: 1px;
+      height: 10px;
+      background-color: $black-color;
+      left: 50%;
+      top: 11%;
+      transform-origin: 50% 120px;
+      text-align: center;
+
+      @each $i, $deg in $sticks {
+        &--#{$i} {
+          transform: rotate(#{$deg});
+        }
+      }
+    }
+  }
+
+  &__center {
+    position: relative;
+    @include square(10px);
+    background-color: $black-color;
+    border-radius: 100%;
+    z-index: 1;
+  }
+
+  &__hand {
+    &-second {
+      position: absolute;
+      top: 24px;
+      left: 49.5%;
+      width: 2px;
+      height: 150px;
+      background-color: $black-color;
+      border-radius: 10px;
+      transform-origin: center 125px;
+      animation: clock 60s linear infinite;
+    }
+
+    &-minute {
+      position: absolute;
+      top: 38px;
+      left: 49.4%;
+      width: 3px;
+      height: 120px;
+      background-color: $black-color;
+      border-radius: 10px;
+      transform-origin: center 110px;
+      animation: clock 3600s linear infinite;
+    }
+  }
+}
