@@ -1,0 +1,58 @@
+.stopwatch {
+  @include watch(600px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  border: 5px solid $color-main;
+  background-image: linear-gradient(to right top, blue, red );
+
+  &__center {
+    @include watch(20px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background-color: $color-main;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute-arrow {
+    width: $arrow-width;
+    height: 40%;
+
+    @include arrow-position;
+
+    border-radius: $arrow-radius;
+    background-color: aqua;
+    z-index: 2;
+
+    @include animation (3600s);
+    transform-origin: bottom center;
+  }
+
+  &__second-arrow {
+    width: $arrow-width;
+    height: 50%;
+
+    @include arrow-position;
+
+    border-radius: $arrow-radius;
+    background-color: lightgreen;
+    z-index: 1;
+
+    @include animation (60s);
+    transform-origin: bottom center;
+  }
+
+  @keyframes go-watch {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
