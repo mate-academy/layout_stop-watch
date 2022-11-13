@@ -1,0 +1,21 @@
+body {
+  box-sizing: border-box;
+  background-color: $body-bg-color;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.stop-watch {
+  position: absolute;
+  top: 20vh;
+}
+
+.hand {
+  @include hand-properties($hand-width,
+  $hand-top-border-radius, $hand-bottom-border-radius);
+  position: absolute;
+  width: $hand-width;
+}
