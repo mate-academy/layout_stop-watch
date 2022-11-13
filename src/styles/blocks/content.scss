@@ -19,31 +19,28 @@
     background-color: #000;
     border-radius: 50%;
 
-    &--minute::after {
+    &--time::after {
       content: "";
       border-radius: $border-radius;
-      background-color: #000;
       position: absolute;
-      margin-left: -0.01em;
-      height: 0.25em;
-      width: 0.03em;
       bottom: 50%;
       left: 50%;
       transform-origin: bottom;
+    }
+
+    &--minute::after {
+      background-color: #000;
+      margin-left: -0.01em;
+      height: 0.25em;
+      width: 0.03em;
       animation: rotate-hand 3600s linear infinite;
     }
 
     &--second::after {
-      content: "";
-      border-radius: $border-radius;
       background-color: #f00;
-      position: absolute;
       margin-left: -0.01em;
       height: 0.35em;
       width: 0.02em;
-      bottom: 50%;
-      left: 50%;
-      transform-origin: bottom;
       animation: rotate-hand 60s linear infinite;
     }
   }
@@ -80,14 +77,5 @@
     font-size: 0.2em;
     top: 50%;
     left: 0;
-  }
-
-  @keyframes rotate-hand {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
   }
 }
