@@ -1,0 +1,70 @@
+.wall {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: url(../images/wall.jpg) center center no-repeat;
+  background-size: cover;
+
+  &_clock {
+    position: relative;
+
+    width: $w-h;
+    height: $w-h;
+
+    background: url(../images/clock.png) center center no-repeat;
+    background-size: cover;
+
+    &-second {
+      position: absolute;
+      width: $w-h;
+      height: $w-h;
+
+      background: url(../images/second.png) center center no-repeat;
+      background-size: cover;
+
+      @include animation;
+      animation-duration: 60s;
+      animation-timing-function: steps(60, end);
+    }
+
+    &-minute {
+      position: absolute;
+      width: $w-h;
+      height: $w-h;
+
+      background: url(../images/minute.png) center center no-repeat;
+      background-size: cover;
+
+      @include animation;
+      animation-duration: 3600s;
+      animation-timing-function: linear;
+    }
+
+    &-hour {
+      position: absolute;
+      width: $w-h;
+      height: $w-h;
+
+      background: url(../images/hour.png) center center no-repeat;
+      background-size: cover;
+
+      @include animation;
+      animation-duration: 86400s;
+      animation-timing-function: linear;
+    }
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
