@@ -1,21 +1,18 @@
 .clock {
   position: relative;
 
-  @include clockSize(500px);
+  @include circle (20em);
 
-  border-radius: 50%;
   background: #fff url(../images/ios_clock.svg) no-repeat center;
   background-size: 88%;
 
   &:after {
     background-color: #000;
-    border-radius: 50%;
     content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
 
-    @include dotSize(25px);
+    @include positioning (absolute, 50%, 50%);
+
+    @include circle(5%);
 
     transform: translate(-50%, -50%);
   }

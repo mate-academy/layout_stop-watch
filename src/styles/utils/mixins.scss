@@ -1,9 +1,11 @@
-@mixin clockSize($size) {
+@mixin circle($size) {
   height: $size;
   width: $size;
+  border-radius: 50%;;
 }
 
-@mixin dotSize($size) {
-  height: $size;
-  width: $size;
+@mixin positioning ($position, $top, $right) {
+  position: $position;
+  top: $top;
+  left: $right;
 }
