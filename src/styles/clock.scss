@@ -1,0 +1,39 @@
+.clock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: $clock-base-size;
+  width: $clock-base-size;
+  border-radius: $clock-base-size / 2;
+
+  background-image: radial-gradient(circle, #afeeea, #9acd39, #2e8b52);
+
+  &__center {
+    @extend %clock-center;
+    background-color: green;
+  }
+
+  &__second-hand {
+    position: absolute;
+
+    @extend %second-hand-position;
+
+    background-color: yellow;
+
+    animation: rotate 60s infinite linear;
+    transform-origin: bottom;
+  }
+
+  &__minute-hand {
+    position: absolute;
+  
+    @extend %minute-hand-position;
+  
+    background-color: green;
+
+    animation: rotate 3600s infinite linear;
+    transform-origin: bottom;
+  }
+}
