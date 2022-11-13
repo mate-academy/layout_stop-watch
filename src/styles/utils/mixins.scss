@@ -1,0 +1,21 @@
+@mixin rectangle($size, $divider) {
+  width: $size/$divider;
+  height: $size;
+}
+
+@mixin oval($size, $divider) {
+  @include rectangle($size, $divider);
+  border-radius: $border-radius;
+  border: 2px solid $border-color;
+  box-sizing: border-box;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  @include square($size);
+  border-radius: 50%;
+}
