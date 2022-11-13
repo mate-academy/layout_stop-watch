@@ -1,0 +1,48 @@
+.clock {
+  position: relative;
+  z-index: -3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include clock-size($clock-side);
+
+  border-radius: 50%;
+  border: 11px dotted brown;
+  background-color: antiquewhite;
+
+  &__center {
+    @include center-size($center-side);
+
+    border-radius: 50%;
+    background-color: brown;
+  }
+
+  &__arrow {
+    position: absolute;
+    transform-origin: bottom;
+  }
+
+  &__arrow--minute {
+    top: 0;
+    z-index: -2;
+    height: $arrow-length;
+    width: $arrow-width;
+
+    border-radius: 5px;
+    background-color: darksalmon;
+
+    @include minute-arrow-animation;
+  }
+
+  &__arrow--hour {
+    top: 100px;
+    z-index: -1;
+    height: $arrow-length / 2;
+    width: $arrow-width * 2;
+
+    border-radius: 10px;
+    background-color: brown;
+
+    @include hour-arrow-animation;
+  }
+}

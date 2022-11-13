@@ -1,0 +1,23 @@
+@mixin clock-size($clock-side) {
+  width: $clock-side;
+  height: $clock-side;
+}
+
+@mixin center-size($center-side) {
+  width: $center-side;
+  height: $center-side;
+}
+
+@mixin minute-arrow-animation {
+  animation-name: move;
+  animation-duration: 60s;
+  animation-timing-function: steps(60);
+  animation-iteration-count: infinite;
+}
+
+@mixin hour-arrow-animation {
+  animation-name: move;
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
