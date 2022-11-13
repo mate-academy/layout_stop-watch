@@ -1,0 +1,88 @@
+.stopwatch {
+  @include flex-center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+
+  background-image: url(./clockface.png);
+  background-size: cover;
+  border: 30px solid black;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px $main-color,
+    10px 10px 10px 10px black;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 4;
+
+    width: 15px;
+    height: 15px;
+
+    background-color: $main-color;
+    border-radius: 50%;
+  }
+
+  &__hours {
+    z-index: 1;
+
+    @include flex-center;
+    align-items: flex-end;
+    height: 50px;
+
+    animation: rotate 43200s linear infinite;
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      width: 10px;
+      height: 150px;
+
+      background-color: $hour-hand-color;
+      border-radius: $hand-border;
+    }
+  }
+
+  &__minutes {
+    z-index: 2;
+
+    @include flex-center;
+    align-items: flex-end;
+    height: 50px;
+
+    animation: rotate 3600s linear infinite;
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      width: 7px;
+      height: 190px;
+
+      background-color: $minute-hand-color;
+      border-radius: $hand-border;
+    }
+  }
+
+  &__seconds {
+    z-index: 3;
+
+    @include flex-center;
+    align-items: flex-end;
+    height: 50px;
+
+    animation: rotate 60s steps(60) infinite;
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      width: 4px;
+      height: 220px;
+
+      background-color: $second-hand-color;
+      border-radius: $hand-border;
+    }
+  }
+}
