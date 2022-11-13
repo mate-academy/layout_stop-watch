@@ -1,0 +1,50 @@
+@import './utils/extends';
+@import './utils/variables';
+@import './utils/keyframe';
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  &__minutes {
+    margin-top: 150px;
+    width: 14px;
+    height: 250px;
+    z-index: 1;
+    background-color: #c41f4b;
+    border-radius: $arrow-border;
+    animation-duration: $one-minute * 60;
+  
+    @extend %position-absolute;
+    @extend %animation-rotation;
+  }
+  &__seconds {
+    width: 10px;
+    height: 400px;
+    z-index: 2;
+    background-color: $seconds-arrow-colour;
+    animation-duration: $one-minute;
+    border-radius: $arrow-border;
+  
+    @extend %position-absolute;
+    @extend %animation-rotation;
+  }
+  &__middle {
+    margin-top: 390px;
+    width: 25px;
+    height: 25px;
+    z-index: 3;
+    border-radius: $arrow-border * 3;
+    background-color: $seconds-arrow-colour;
+
+    @extend %position-absolute;
+  }
+  &__seconds:hover {
+    @extend %stop-clocks;
+  }
+  
+  &__minutes:hover {
+    @extend %stop-clocks;
+  }
+}
