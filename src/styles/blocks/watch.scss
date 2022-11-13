@@ -13,9 +13,8 @@
   border: 3px solid black;
 
   &__center {
-    position: relative;
     align-self: center;
-    z-index: 100;
+    z-index: 1;
 
     width: 15px;
     height: 15px;
@@ -26,10 +25,13 @@
   }
 
   &__hand {
-    position: absolute;
-    top: 75px;
+    animation: watch 3600s infinite linear;
+    transform-origin: bottom;
 
+    position: absolute;
+    bottom: 50%;
     height: 30%;
+
     width: $hand-width;
     border-radius: 40%;
 
@@ -38,9 +40,9 @@
 
     &--sec {
       width: $hand-width;
-      left: $watch-size / 2 - $hand-width / 2;
+
       height: 45%;
-      top: 5%;
+      bottom: 50%;
       background-color: white;
 
       animation: watch 60s infinite linear;
@@ -59,22 +61,21 @@
     border: 1px solid black;
 
     &--1 {
-      left: 195px;
+      top: 0;
     }
 
     &--2 {
-      right: 195px;
-      top: 386px;
+      bottom: 0;
     }
 
     &--3 {
-      left: 386px;
-      bottom: 195px;
+      left: 0;
+      top: 50%;
     }
 
     &--4 {
-      right: 386px;
-      bottom: 195px;
+      right: 0;
+      bottom: 50%;
     }
   }
 }
