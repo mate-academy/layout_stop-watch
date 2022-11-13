@@ -1,64 +1,62 @@
-.page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: grey;
-}
-
 .watch {
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  height: 300px;
-  width: 300px;
+  @include surcle (300px);
+
   background-color: #fff;
   border: 5px solid black ;
-  border-radius: 50%;
 
   &__minutes {
     content: "";
     position: absolute;
-    width: 10px;
-    height: 90px;
-    background: black;
-    border-radius: 5px;
     top: 60px;
 
-    animation: watch-animation 1800s infinite steps(60, end);
+    width: 10px;
+    height: 90px;
+
+    background: black;
+    border-radius: $radius-from-1-side;
+
+    animation: watch-animation 3600s infinite steps(60, end);
     transform-origin: center calc(100% - 5px);
   }
 
   &__second {
     content: "";
     position: absolute;
-    width: 5px;
     top: 30px;
-    height: 120px;
-    background: red;
-    border-radius: 50%;
 
-    animation: watch-animation 30s infinite steps(60, end);
+    width: 5px;
+    height: 120px;
+
+    background: red;
+    border-radius: $radius-from-1-side;
+
+    animation: watch-animation 60s infinite steps(60, end);
     transform-origin: center calc(100% - 5px);
   }
 
   &__center {
     content: "";
     position: absolute;
-    width: 25px;
-    height: 25px;
+
+    @include surcle (25px);
+
     background: black;
     border: 2px solid white;
-    border-radius: 50%;
   }
 
   &__top {
     content: "";
     position: absolute;
     top: 0;
+
     width: 8px;
     height: 20px;
+
     background: black;
     border: 2px solid white;
   }
@@ -67,8 +65,10 @@
     content: "";
     position: absolute;
     right: 0;
+
     width: 20px;
     height: 8px;
+
     background: black;
     border: 2px solid white;
   }
@@ -77,8 +77,10 @@
     content: "";
     position: absolute;
     bottom: 0;
+
     width: 8px;
     height: 20px;
+
     background: black;
     border: 2px solid white;
   }
@@ -87,19 +89,12 @@
     content: "";
     position: absolute;
     left: 0;
+
     width: 20px;
     height: 8px;
+
     background: black;
     border: 2px solid white;
-  }
-
-  &__comment {
-    content: "";
-    position: absolute;
-    bottom: 20px;
-    width: 20px;
-    height: 8px;
-    color: black;
   }
 
   &:hover>&__second,
