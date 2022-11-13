@@ -1,0 +1,40 @@
+.clock {
+  position: relative;
+
+  width: $dimension;
+  height: $dimension;
+
+  color: $colorPurple;
+
+  border-radius: 50%;
+  border: 2px solid $colorPurple;
+  background-color: white;
+
+  &__minute {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: $dimension / 4;
+    height: 4px;
+
+    background: $colorPurple;
+    rotate: -90deg;
+
+    @include animationClock;
+  }
+
+  &__second {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: $dimension / 2.5;
+    height: 2px;
+
+    background: $colorGrey;
+    rotate: -90deg;
+
+    @include animationClock(60s);
+  }
+}
