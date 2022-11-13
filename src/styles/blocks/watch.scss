@@ -1,0 +1,71 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  &__box{
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    @include watch-size;
+
+    border: 3px solid $main-color-accent;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+  }
+
+  &__pin {
+    position: absolute;
+    z-index: 1;
+    top: $pin-top;
+
+    @include pin-size;
+
+    background-color: $main-color-accent;
+    border: 0.5px $main-color-accent;
+    border-radius: 50%;
+  }
+
+  &__minute {
+    position: absolute;
+    top: $minute-top;
+
+    height: $minute-height;
+    width: 10px;
+
+    background-color: $minute-color-accent;
+    border: 0.5px transparent;
+    border-radius: 50%;
+
+    animation: $animation-type 3600s $animation-duration linear;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    top: $second-top;
+
+    height: $second-height;
+    width: 7px;
+
+    background-color: $second-color-accent;
+    border: 0.5px transparent;
+    border-radius: 50%;
+
+    animation: $animation-type 60s $animation-duration linear;
+    transform-origin: bottom;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
