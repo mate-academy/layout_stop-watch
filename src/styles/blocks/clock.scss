@@ -1,0 +1,45 @@
+@import "../utils/variables";
+
+.clock {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: $clockSize;
+  width: $clockSize;
+  padding: $clockPadding;
+
+  border: 1px solid black;
+  border-radius: 50%;
+
+  &__minute-hand {
+    position: absolute;
+    top: $minuteHandPosition;
+    width: $handWidth;
+    height: $minuteHandSize;
+    animation: timer 3600s linear forwards infinite;
+    &::after {
+      display: block;
+      content: "";
+      border-bottom: $minuteHandSizeVisible solid $color-MinuteHand;
+    }
+  }
+  &__second-hand {
+    width: $handWidth;
+    height: $secondHandSize;
+    animation: timer 60s linear forwards infinite;
+    &::after {
+      display: block;
+      content: "";
+      border-bottom: $secondHandSizeVisible solid $color-SecondHand;
+    }
+  }
+  @keyframes timer {
+    100% {
+      transform: rotate(360deg);
+      transform-origin: center center;
+    }
+  }
+}
