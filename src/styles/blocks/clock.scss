@@ -1,0 +1,35 @@
+.clock {
+  position: relative;
+
+  @include circle (20em);
+
+  background: #fff url(../images/ios_clock.svg) no-repeat center;
+  background-size: 88%;
+
+  &:after {
+    background-color: #000;
+    content: "";
+
+    @include positioning (absolute, 50%, 50%);
+
+    @include circle(5%);
+
+    transform: translate(-50%, -50%);
+  }
+
+  &__minutes-container,
+  &__seconds-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__minutes-container {
+    animation: rotate 3600s infinite linear;
+  }
+  &__seconds-container {
+    animation: rotate 60s infinite linear;
+  }
+}
