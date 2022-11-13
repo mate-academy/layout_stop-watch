@@ -1,0 +1,38 @@
+.watch {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: $size-watch;
+  height: $size-watch;
+
+  background-color: antiquewhite;
+  border: 10px solid dimgray;
+  border-radius: 50%;
+
+  &__circle {
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+
+    background-color: dimgray;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    transform-origin: bottom;
+    @include hand-position;
+
+    @include hands ($hand-minute-width, $hand-minute-length, #615c5c);
+    animation: hand-rotate 3600 steps(60s, end) infinite;
+  }
+
+  &__second-hand {
+    transform-origin: bottom;
+    @include hand-position;
+
+    @include hands ($hand-second-width, $hand-second-length, #990404);
+    animation: hand-rotate 60s steps(60, end) infinite;
+  }
+}
