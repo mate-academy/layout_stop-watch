@@ -1,0 +1,30 @@
+.stop-watch {
+  @include watch($watch-size, $watch-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30%;
+  border: $watch-border-size solid $watch-border-color;
+
+  &__minute-hand {
+    top: topValue($watch-size, $minute-hand-height);
+    height: $minute-hand-height;
+    background-color: $hand-minute-color;
+    animation: rotate 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    top: topValue($watch-size, $second-hand-height);
+    height: $second-hand-height;
+    background-color: $hand-second-color;
+    animation: rotate 60s linear infinite;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
