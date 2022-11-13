@@ -1,0 +1,114 @@
+.watch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include surcle (300px);
+
+  background-color: #fff;
+  border: 5px solid black ;
+
+  &__minutes {
+    content: "";
+    position: absolute;
+    top: 60px;
+
+    width: 10px;
+    height: 90px;
+
+    background: black;
+    border-radius: $radius-from-1-side;
+
+    animation: watch-animation 3600s infinite steps(60, end);
+    transform-origin: center calc(100% - 5px);
+  }
+
+  &__second {
+    content: "";
+    position: absolute;
+    top: 30px;
+
+    width: 5px;
+    height: 120px;
+
+    background: red;
+    border-radius: $radius-from-1-side;
+
+    animation: watch-animation 60s infinite steps(60, end);
+    transform-origin: center calc(100% - 5px);
+  }
+
+  &__center {
+    content: "";
+    position: absolute;
+
+    @include surcle (25px);
+
+    background: black;
+    border: 2px solid white;
+  }
+
+  &__top {
+    content: "";
+    position: absolute;
+    top: 0;
+
+    width: 8px;
+    height: 20px;
+
+    background: black;
+    border: 2px solid white;
+  }
+
+  &__right {
+    content: "";
+    position: absolute;
+    right: 0;
+
+    width: 20px;
+    height: 8px;
+
+    background: black;
+    border: 2px solid white;
+  }
+
+  &__bottom {
+    content: "";
+    position: absolute;
+    bottom: 0;
+
+    width: 8px;
+    height: 20px;
+
+    background: black;
+    border: 2px solid white;
+  }
+
+  &__left {
+    content: "";
+    position: absolute;
+    left: 0;
+
+    width: 20px;
+    height: 8px;
+
+    background: black;
+    border: 2px solid white;
+  }
+
+  &:hover>&__second,
+  &:hover>&__minutes {
+    animation-play-state: paused;
+  }
+
+  @keyframes watch-animation {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg)
+    }
+  }
+}
