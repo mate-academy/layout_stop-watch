@@ -1,34 +1,32 @@
 .watch {
-  box-sizing: border-box;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: $watch-size;
-  height: $watch-size;
+  @include mainSize($watch-size);
   background-image: url("../image/round.jpg");
   background-position: center;
   border-radius: 50%;
   opacity: 0.5;
 
   &__small-hand {
-    position: absolute;
-    bottom: 50%;
-    height: $small-hand-height;
-    width: $hand-width;
-    border-radius: $hand-radius;
-    background-color: $hand-color;
+    @include position;
+
+    @include smallHandSize;
+
+    @include styles;
+
     animation: move 3600s linear infinite ;
     transform-origin: 0 0;
   }
-  
+
   &__big-hand {
-    position: absolute;
-    bottom: 50%;
-    height: $big-hand-height;
-    width: $hand-width;
-    border-radius: $hand-radius;
-    background-color: $hand-color;
+    @include position;
+
+    @include bigHandSize;
+
+    @include styles;
+
     transform-origin: 0 350px;
     animation: move 60s linear infinite;
   }
