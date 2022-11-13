@@ -13,17 +13,17 @@
   }
 
   &__seconds {
+    position: absolute;
+    top: 8%;
     z-index: 1;
-    width: 250px;
-    height: $arrow-height;
-    margin-left: -50px;
+    width: $arrow-width;
+    height: 250px;
 
     background-color: $stopwatch-color;
     border-radius: $arrow-border-radius;
 
-    transform-origin: center right;
-    transform: rotate(90deg);
-    animation: seconds
+    transform-origin: center bottom;
+    animation: reversal
       60s
       $arrow-timing-f
       60
@@ -32,14 +32,15 @@
   }
 
   &__minutes {
-    width: 200px;
-    height: $arrow-height;
+    position: absolute;
+    top: 16%;
+    width: $arrow-width;
+    height: 200px;
     background-color: darkblue;
     border-radius: $arrow-border-radius;
 
-    transform-origin: center left;
-    transform: rotate(-90deg);
-    animation: minutes
+    transform-origin: center bottom;
+    animation: reversal
       3600s
       $arrow-timing-f
       1
@@ -49,7 +50,9 @@
 
   &__dot {
     position: absolute;
+    top: 47.5%;
     z-index: 1;
+
     @include circle($dot-size);
     background-color: $stopwatch-color;
   }
