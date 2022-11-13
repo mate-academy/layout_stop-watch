@@ -1,0 +1,14 @@
+@mixin watch($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin arrow-position {
+  position: absolute;
+  bottom: 50%;
+}
+
+@mixin animation ($duration) {
+  animation: go-watch $duration linear infinite;
+}
