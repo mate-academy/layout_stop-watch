@@ -8,10 +8,9 @@
   background-color: $dial-color;
 
   &__long-hand {
-    position: absolute;
-    bottom: 50%;
+    @extend %handPosition;
 
-    @include big-oval($hand-long);
+    @include oval($hand-long, $big-divider);
     background-color: #93f88a;
 
     animation: spin 60s linear 0s infinite;
@@ -20,10 +19,9 @@
   }
 
   &__short-hand {
-    position: absolute;
-    bottom: 50%;
+    @extend %handPosition;
 
-    @include small-oval($hand-short);
+    @include oval($hand-short, $small-divider);
     background-color: #93f88a;
 
     animation: spin 3600s linear 0s infinite;
@@ -32,7 +30,8 @@
 
   &__small-circle {
     position: absolute;
-    bottom: 47%;
+    bottom: 50%;
+    transform: translate(0, 50%);
 
     @include circle($small-circle-size);
     background-color: $border-color;
@@ -47,4 +46,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+%handPosition {
+  position: absolute;
+  bottom: 50%;
 }

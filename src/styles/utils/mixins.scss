@@ -1,24 +1,12 @@
-@mixin big-rectangle($size) {
-  width: $size/30;
+@mixin rectangle($size, $divider) {
+  width: $size/$divider;
   height: $size;
 }
 
-@mixin small-rectangle($size) {
-  width: $size/21;
-  height: $size;
-}
-
-@mixin big-oval($size) {
-  @include big-rectangle($size);
-  border-radius: 10px;
-  border: 2px solid #f8ee8a;
-  box-sizing: border-box;
-}
-
-@mixin small-oval($size) {
-  @include small-rectangle($size);
-  border-radius: 10px;
-  border: 2px solid #f8ee8a;
+@mixin oval($size, $divider) {
+  @include rectangle($size, $divider);
+  border-radius: $border-radius;
+  border: 2px solid $border-color;
   box-sizing: border-box;
 }
 
