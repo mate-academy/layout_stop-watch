@@ -1,6 +1,7 @@
 .watch {
   height: 100%;
   display: flex;
+  flex-shrink: 0;
   position: relative;
   width: 550px;
   height: 550px;
@@ -21,20 +22,7 @@
     border-radius: 20px;
 
     &::before {
-      content: "";
-
-      position: absolute;
-      bottom: 50%;
-      left: 0;
-      right: 0;
-
-      display: block;
-      margin: auto;
-      width: 10px;
-
-      border-radius: 20px;
-      transform-origin: bottom center;
-      animation: move 60s linear infinite;
+      @include location;
 
       height: 250px;
       background-color:  #00acdc;
@@ -42,25 +30,11 @@
     }
 
     &::after {
-      content: "";
-
-      position: absolute;
-      bottom: 50%;
-      left: 0;
-      right: 0;
-
-      display: block;
-      margin: auto;
-      width: 10px;
-
-      border-radius: 20px;
-      transform-origin: bottom center;
-      animation: move 60s linear infinite;
+      @include location;
 
       height: 225px;
       background-color: #00acdc;
       animation-duration: 3600s;
-
     }
   }
 }
