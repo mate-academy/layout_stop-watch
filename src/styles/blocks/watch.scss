@@ -1,0 +1,66 @@
+.watch {
+  height: 100%;
+  display: flex;
+  position: relative;
+  width: 550px;
+  height: 550px;
+
+  border: 5px solid;
+  border-radius: 50%;
+  border-color: #00acdc;
+  background-color: yellow;
+
+  &__position {
+    position: relative;
+    margin: auto;
+
+    width: 30px;
+    height: 30px;
+
+    background-color: #00acdc;
+    border-radius: 20px;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      bottom: 50%;
+      left: 0;
+      right: 0;
+
+      display: block;
+      margin: auto;
+      width: 10px;
+
+      border-radius: 20px;
+      transform-origin: bottom center;
+      animation: move 60s linear infinite;
+
+      height: 250px;
+      background-color:  #00acdc;
+      border-radius: 5px;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: 50%;
+      left: 0;
+      right: 0;
+
+      display: block;
+      margin: auto;
+      width: 10px;
+
+      border-radius: 20px;
+      transform-origin: bottom center;
+      animation: move 60s linear infinite;
+
+      height: 225px;
+      background-color: #00acdc;
+      animation-duration: 3600s;
+
+    }
+  }
+}
