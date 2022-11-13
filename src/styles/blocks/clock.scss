@@ -1,11 +1,4 @@
-.wrapper {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-}
-
 .clock {
-  margin: 0 auto;
   height: $width-clock;
   width: $width-clock;
   border-radius: 50%;
@@ -14,30 +7,24 @@
   justify-content: center;
   align-items: center;
 
+  @include background-animation;
+
   &__circle {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    display: block;
+    @include background-animation;
+
     width: $width-circle;
     height: $width-circle;
     border-radius: 50%;
 
     border: 1px solid #000;
 
-    background: rgb(255,55,10);
     z-index: 1;
   }
-
-  &,
-  &__circle {
-    background: linear-gradient(-45deg, #ee7752, #d9739a, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-  }
-
 
   &__hand {
     position: absolute;
@@ -53,11 +40,11 @@
     background: #000;
 
     &--minute {
-      height: 100px;
+      height: 18%;
       animation-duration: 3600s;
     }
     &--second {
-      height: 190px;
+      height: 31%;
       background: red;
       animation-duration: 60s;
     }
