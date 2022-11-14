@@ -5,8 +5,8 @@
 
   &__center-dot {
     position: absolute;
-    bottom: $bigDiameter / 2 - $smallDiameter / 2;
-    left: $bigDiameter / 2 - $smallDiameter / 2;
+    bottom: $center-dot-positioning;
+    left: $center-dot-positioning;
     z-index: 2;
 
     @include circleShape($smallDiameter);
@@ -15,8 +15,8 @@
 
   &__second-hand {
     position: absolute;
-    bottom: $bigDiameter / 2;
-    left: $bigDiameter / 2 - $secondHandWidth / 2;
+    bottom: $radius;
+    left: $second-hand-positioning;
     z-index: 1;
 
     height: 140px;
@@ -33,8 +33,8 @@
 
   &__minute-hand {
     position: absolute;
-    bottom: $bigDiameter / 2;
-    left: $bigDiameter / 2 - $minuteHandWidth / 2;
+    bottom: $radius;
+    left: $minute-hand-positioning;
 
     height: 125px;
     width: $minuteHandWidth;
