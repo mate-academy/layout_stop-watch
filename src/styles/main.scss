@@ -1,3 +1,5 @@
+@import"variable";
+
 body {
   margin: 0;
 }
@@ -6,8 +8,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  
+  margin: 0 auto;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -23,45 +24,29 @@ body {
 .clock__centr {
   width: 6px;
   height: 6px;
-  border-radius: 50px;
+  border-radius: 100%;
   background-color: black;
-  position: absolute;
 }
 
 .clock__hours {
-  width: 4px;
+  width: $widthArrowHour;
   height: 100px;
   background-color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   animation: 43200s linear infinite rotate;
-  transform-origin: left top;
 }
 
 .clock__minutes {
-  width: 3px;
+  width: $widthArrowMinute;
   height: 60px;
   background-color: aquamarine;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   animation: 3600s linear infinite rotate;
-  transform-origin: left top;
 }
 
 .clock__seconds {
-  width: 1px;
+  width: $widthArrowSecond;
   height: 120px;
   background-color: crimson;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   animation: 60s linear infinite rotate;
-  transform-origin: left top;
 }
 
 @keyframes rotate {
