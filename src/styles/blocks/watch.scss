@@ -1,12 +1,10 @@
-.watch {
-
-  display: flex;
+.container {
   @extend %watch-size;
+  display: flex;
   @extend %content-center;
   border: 1px solid $border-color;
   border-radius: 50%;
   @extend %purple-soft-color;
-
 }
 
 .clock {
@@ -29,14 +27,6 @@
 
     animation: rotate 60s infinite linear;
     transform-origin: bottom;
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
   }
 
   &__minute {
@@ -51,14 +41,6 @@
 
     animation: rotate 3600s infinite linear;
     transform-origin: bottom;
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
   }
 
   &__dot {
