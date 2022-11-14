@@ -1,0 +1,67 @@
+.clock {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  box-sizing: border-box;
+  border: $padding-clock solid #000;
+  border-radius: 50%;
+  font-size: $size-clock;
+  text-align: center;
+
+  &__hand::after {
+    content: "";
+    border-radius: $border-radius;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    margin-left: -0.02em;
+  }
+
+  &__hand--minute::after {
+    background-color: #000;
+    height: 0.25em;
+    width: 0.03em;
+    animation: rotate-hand 3600s linear infinite;
+  }
+
+  &__hand--second::after {
+    background-color: #f00;
+    height: 0.35em;
+    width: 0.02em;
+    animation: rotate-hand 60s linear infinite;
+  }
+
+  &__numbers {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    font-size: 0.2em;
+  }
+
+  &__numbers--vertical {
+    flex-direction: column;
+    margin: auto -0.4em;
+    height: $size-clock - $padding-clock;
+    top: 0%;
+    left: 50%;
+  }
+
+  &__numbers--horizon {
+    flex-direction: row;
+    margin: -0.4em auto;
+    width: $size-clock - $padding-clock;
+    top: 50%;
+    left: 0;
+  }
+
+  &__number {
+    padding: $padding-clock;
+    margin: 0;
+    height: 1em;
+    width: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
