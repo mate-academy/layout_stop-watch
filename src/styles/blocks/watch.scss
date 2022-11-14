@@ -1,22 +1,21 @@
 .watch {
+  @include circle;
+
   height: 100%;
   display: flex;
   flex-shrink: 0;
   position: relative;
-  width: 550px;
-  height: 550px;
+  width: $size;
+  height: $size;
 
-  border: 5px solid;
-  border-radius: 50%;
   border-color: #00acdc;
   background-color: yellow;
 
   &__position {
+    @include square;
+
     position: relative;
     margin: auto;
-
-    width: 30px;
-    height: 30px;
 
     background-color: #00acdc;
     border-radius: 20px;
