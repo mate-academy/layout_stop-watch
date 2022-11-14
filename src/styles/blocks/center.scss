@@ -1,7 +1,8 @@
 .clock {
   position: relative;
-  width: $clock-size;
-  height: $clock-size;
+
+  @include clock-size;
+
   margin: 10px;
   border-radius: 50%;
   border: $arrow-width solid $main-color;
@@ -32,8 +33,9 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    width: $center-size;
-    height: $center-size;
+
+    @include center-size;
+    
     border-radius: 50%;
     background-color: #ffe100;
   }
