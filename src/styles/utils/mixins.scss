@@ -1,0 +1,26 @@
+@mixin location {
+  content: "";
+
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+
+  display: block;
+  margin: auto;
+  width: 10px;
+
+  border-radius: 20px;
+  transform-origin: bottom center;
+  animation: move 60s linear infinite;
+}
+
+@mixin circle {
+  border: 5px solid;
+  border-radius: 50%;
+}
+
+@mixin square {
+  width: 30px;
+  height: 30px;
+}

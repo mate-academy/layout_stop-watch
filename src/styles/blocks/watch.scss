@@ -1,0 +1,39 @@
+.watch {
+  @include circle;
+
+  height: 100%;
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+  width: $size;
+  height: $size;
+
+  border-color: #00acdc;
+  background-color: yellow;
+
+  &__position {
+    @include square;
+
+    position: relative;
+    margin: auto;
+
+    background-color: #00acdc;
+    border-radius: 20px;
+
+    &::before {
+      @include location;
+
+      height: 250px;
+      background-color:  #00acdc;
+      border-radius: 5px;
+    }
+
+    &::after {
+      @include location;
+
+      height: 225px;
+      background-color: #00acdc;
+      animation-duration: 3600s;
+    }
+  }
+}
