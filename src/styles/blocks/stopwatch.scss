@@ -5,7 +5,7 @@
   align-items: center;
   @include circle($stopwatch-size);
   margin: 0 auto;
-  border: 5px solid $stopwatch-color;
+  border: $stopwatch-border solid $stopwatch-color;
   cursor: pointer;
 
   &:hover .animated {
@@ -14,10 +14,12 @@
 
   &__seconds {
     position: absolute;
-    top: 8%;
+    top: getArrowIndent($stopwatch-size,
+    $stopwatch-border,
+    $seconds-arrow-height);
     z-index: 1;
     width: $arrow-width;
-    height: 250px;
+    height: $seconds-arrow-height;
 
     background-color: $stopwatch-color;
     border-radius: $arrow-border-radius;
@@ -33,9 +35,11 @@
 
   &__minutes {
     position: absolute;
-    top: 16%;
+    top: getArrowIndent($stopwatch-size,
+    $stopwatch-border,
+    $minutes-arrow-height);
     width: $arrow-width;
-    height: 200px;
+    height: $minutes-arrow-height;
     background-color: darkblue;
     border-radius: $arrow-border-radius;
 
@@ -50,7 +54,9 @@
 
   &__dot {
     position: absolute;
-    top: 47.5%;
+    top: getIndent($stopwatch-size,
+    $stopwatch-border,
+    $dot-size);
     z-index: 1;
 
     @include circle($dot-size);

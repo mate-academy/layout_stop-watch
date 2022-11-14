@@ -1,0 +1,7 @@
+@function getIndent ($parent-size, $border-size, $elem-size) {
+  @return ($parent-size - 2 * $border-size - $elem-size) / 2;
+}
+
+@function getArrowIndent ($parent-size, $border-size, $elem-size) {
+  @return getIndent($parent-size, $border-size, $elem-size) - ($elem-size / 2);
+}
