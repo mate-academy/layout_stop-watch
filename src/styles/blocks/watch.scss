@@ -1,0 +1,54 @@
+.watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: $watch-size;
+  width: $watch-size;
+  border: 1px solid #33ffc1;
+  box-shadow: 15px 5px 13px #33c4ff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: $dot-size;
+    width: $dot-size;
+    border-radius: 50%;
+    background-color: #d71e37;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute {
+    position: absolute;
+    left: $watch-size/2 - $arrow-width/2;
+    top: $watch-size/2 * 0.4;
+    background-color: #1e75d7;
+    height: $watch-size/2 * 0.6;
+    width: $arrow-width;
+    border-radius: 8px;
+    box-shadow: 15px 5px 13px #33c4ff;
+    transition: transform 6s linear;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    left: $watch-size/2 - $arrow-width/2;
+    top: $watch-size/2 * 0.2;
+    background-color: #9e2014;
+    height: $watch-size/2 * 0.8;
+    width: $arrow-width;
+    border-radius: 4px;
+    box-shadow: 15px 5px 13px #d75c1e;
+    transition: transform 0.5s linear;
+    transform-origin: bottom;
+  }
+
+  &:hover > &__minute,
+  &:hover > &__second {
+    cursor: pointer;
+    transform: rotate(360deg);
+  }
+}
