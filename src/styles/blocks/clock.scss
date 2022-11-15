@@ -1,0 +1,48 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.clock {
+  background-color: #fff;
+  border-radius: 100%;
+  border: 10px solid $clockBorderColor;
+
+  &__centered-circle {
+    @include positioning (absolute, 0, 0, 0, 0);
+    @include sizes (35px, 35px, auto);
+
+    background-color: $centerCircleBgr;
+    border-radius: 100%;
+  }
+
+  &__minute {
+    @include positioning (absolute, unset, 0, 0, unset);
+    @include sizes (10px, 100%, 0 auto);
+    animation: time 3600s infinite linear;
+
+    &::before {
+      content: "";
+      @include positioning (absolute, 40px, unset, unset, unset);
+      @include sizes (10px, 210px, 0);
+      background-color: $centerCircleBgr;
+    }
+  }
+
+  &__second {
+    @include sizes (5px, 100%, 0 auto);
+    @include positioning (absolute, unset, 0, 0, unset);
+    animation: time 60s infinite linear;
+
+    &::before {
+      content: "";
+      @include positioning (absolute, 50px, unset, unset, unset);
+      @include sizes (5px, 173px, 0);
+      background-color: $minuteColor;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
