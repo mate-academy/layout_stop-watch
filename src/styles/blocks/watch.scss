@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $clock-diameter;
+  width: $clock-diameter;
+
+  background-color: $clock-background;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+
+    width: 7px;
+    border-radius: 2px;
+
+    animation-name: roll;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: center bottom;
+    background: #ff6e40;
+
+    &--long {
+      height: 15%;
+      animation-duration: 3600s;
+    }
+    &--short {
+      height: 21%;
+      background: #ffc13b;
+      animation-duration: 60s;
+    }
+  }
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
