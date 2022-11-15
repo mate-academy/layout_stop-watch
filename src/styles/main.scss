@@ -1,0 +1,54 @@
+$minutes-arow-width: 20px;
+$minutes-arow-height: 30%;
+$seconds-arow-width: 10px;
+$seconds-arow-height: 40%;
+$center-width: 30px;
+$center-height: 30px;
+
+body {
+  margin: 0;
+}
+
+.watch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+
+  &__center {
+    height: $center-height;
+    width: $center-width;
+    border-radius: 50%;
+    background-color: rgb(37, 57, 122);
+  }
+
+  &__minutes-arrow {
+    position: absolute;
+    top: 50% - $minutes-arow-height;
+    height: $minutes-arow-height;
+    width: $minutes-arow-width;
+    border-radius: 10px;
+    background-color: rgb(37, 57, 122);
+    transform-origin: bottom;
+    animation: rotation 3600s linear infinite;
+  }
+
+  &__seconds-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50% - $seconds-arow-height;
+    height: $seconds-arow-height;
+    width: $seconds-arow-width;
+    border-radius: 10px;
+    background-color: rgb(199, 77, 40);
+    transform-origin: bottom;
+    animation: rotation 60s linear infinite;
+  }
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
