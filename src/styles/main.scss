@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+$arrow-with: 6px;
+$clock-size: 500px;
+
+@mixin box-size($clock-size) {
+  width: $clock-size;
+  height: $clock-size;
+}
+
+body {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  @include box-size($clock-size);
+  position: relative;
+  background-color: rgb(202, 192, 192);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second {
+  position: absolute;
+  width: $arrow-with;
+  border-radius: $arrow-with;
+  height: $clock-size / 2 - $clock-size * 0.01;
+  background-color: palevioletred;
+  bottom: $clock-size / 2;
+  animation: rotation 60s infinite linear;
+  transform-origin: bottom center;
+}
+
+.minute {
+  position: absolute;
+  width: $arrow-with;
+  border-radius: $arrow-with;
+  height: $clock-size / 2 - $clock-size * 0.1;
+  background-color: rgb(68, 152, 190);
+  bottom: $clock-size / 2;
+  animation: rotation 3600s infinite linear;
+  transform-origin: bottom center;
+  z-index: 1;
+}
+
+.center {
+  z-index: 1;
+  width: $clock-size * 0.05;
+  height: $clock-size * 0.05;
+  border-radius: 50%;
+  background-color: palevioletred;
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
