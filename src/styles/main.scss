@@ -1,0 +1,71 @@
+@import "./utils/variables";
+
+.watch {
+
+  &__box {
+    position: relative;
+    height: $boxSize;
+    width: $boxSize;
+    border: 10px solid #00acdc;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  &__central-point::before {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    border-radius: 50%;
+    height: $sizePoint;
+    width: $sizePoint;
+    left: $posPoint;
+    top: $posPoint;
+    z-index: 2;
+
+  }
+
+  &__minute-arrow {
+    height: $hightMin;
+    width: $widthMin;
+    background-color: #d00;
+    position: absolute;
+    left: $posMinLeft;
+    top: $posMinTop;
+    border-radius: $borderRadius;
+    animation: minutes 3600s linear infinite;
+    animation-timing-function: steps(60);
+    transform-origin: bottom center;
+  }
+
+  &__second-arrow {
+    height: $hightSec;
+    width: $widthSec;
+    left: $posSecLeft;
+    top: $posSecTop;
+    position: absolute;
+    background-color: #00f;
+    border-radius: $borderRadius;
+    z-index: 1;
+    transform-origin: bottom center;
+    animation: seconds 60s linear infinite;
+    animation-timing-function: steps(60);
+  }
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minutes {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
