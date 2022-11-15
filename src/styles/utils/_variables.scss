@@ -1,1 +1,11 @@
 $dots-size: 4px;
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin dots($size) {
+  @include square($size);
+  border-radius: 50%;
+}
