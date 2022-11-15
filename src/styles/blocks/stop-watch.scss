@@ -1,0 +1,82 @@
+.stop-watch {
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 145px);
+    z-index: 2;
+
+    @include dots($dots-size);
+
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateX(-50%);
+    box-shadow: 140px 145px 0 0 white,
+      -140px 145px 0 0 white,
+      0 280px 0 0 white;
+  }
+
+  &__background {
+    max-height: 100vh;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__body {
+    width: 300px;
+    height: 300px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+
+    &::before {
+      position: absolute;
+      height: 80px;
+      width: 4px;
+      content: "";
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform-origin: top;
+      animation: spin 3600s linear infinite;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+
+      height: 110px;
+      width: 2px;
+
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      animation: spin 60s linear infinite;
+      transform-origin: top;
+      animation-play-state: running;
+    }
+
+    &:hover {
+      &::after {
+        animation-play-state: paused;
+      }
+
+      &::before {
+        animation-play-state: paused;
+      }
+    }
+  }
+}
