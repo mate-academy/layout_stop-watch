@@ -1,0 +1,70 @@
+@use "../utils/variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: $clock-size;
+  width: $clock-size;
+  margin: 0 auto;
+  border: 1px solid $clock-color;
+  border-radius: 50%;
+
+  &__minute {
+    position: relative;
+    top: $minute-arrow-position;
+    height: $minute-arrow-height;
+    width: 6px;
+    background-color: $minute-arrow-color;
+    transform-origin: bottom;
+    animation: minute 3600s linear backwards infinite;
+  }
+
+  &__second {
+    position: relative;
+    bottom: $second-arrow-position;
+    height: $second-arrow-height;
+    width: 4px;
+    background-color: $second-arrow-color;
+    transform-origin: bottom;
+    animation: second 60s linear backwards infinite;
+  }
+
+  &__round-decoration {
+    position: relative;
+    bottom: $clock-decoration-position;
+    width: $clock-decoration-size;
+    height: $clock-decoration-size;
+    border-radius: 50%;
+    background-color: $clock-decoration-color;
+  }
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minute {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

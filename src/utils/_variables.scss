@@ -1,0 +1,14 @@
+$clock-size: 500px;
+$clock-color: rgb(77, 20, 20);
+$minute-arrow-color: rgb(219, 50, 166);
+$second-arrow-color: rgb(232, 155, 155);
+$clock-decoration-color: rgb(232, 155, 155);
+$minute-arrow-height: 140px;
+$second-arrow-height: 200px;
+$clock-decoration-size: 20px;
+
+$clock-center:
+  ($minute-arrow-height + $second-arrow-height + $clock-decoration-size) / 2;
+$minute-arrow-position: $clock-center - $minute-arrow-height;
+$second-arrow-position: $second-arrow-height - $minute-arrow-position;
+$clock-decoration-position: $second-arrow-position + $clock-decoration-size / 2;
