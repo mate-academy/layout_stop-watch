@@ -1,0 +1,27 @@
+.inner-clock-face {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: #424242;
+  border-radius: 100%;
+  z-index: 1;
+  box-shadow:
+  inset 4px 4px 10px rgba(23, 23, 23, 0.675),
+  inset -4px -4px 10px rgba(26, 26, 26, 0.773);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 18px;
+    margin-left: -9px;
+    margin-top: -6px;
+    background: #4d4b63;
+    z-index: 5;
+  }
+}
