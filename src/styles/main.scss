@@ -1,0 +1,55 @@
+@import "./_utils/variables";
+
+.page {
+
+  &__round {
+    position: absolute;
+    top: $position-round;
+    left: $position-round;
+
+    height: $size-round;
+    width: $size-round;
+
+    border-radius: 50%;
+    background-color: $main-color;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 50%;
+    left: $position-arrays;
+    width: $width-array;
+    height: $height-big-array;
+
+    border-radius: 15px;
+    background-color: $main-color;
+
+    transform-origin: top;
+    animation: rotate $hour linear infinite;
+  }
+
+  &__second {
+    position: absolute;
+    top: 50%;
+    left: $position-arrays;
+    width: $width-array;
+    height: $height-small-array;
+
+    border-radius: 15px;
+    background-color: rgb(178, 235, 81);
+
+    transform-origin: top;
+    animation: rotate $minute linear infinite;
+
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(180deg);
+  }
+
+  to {
+    transform: rotate(540deg);
+  }
+}
