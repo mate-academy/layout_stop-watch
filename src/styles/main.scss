@@ -1,0 +1,82 @@
+$clock-size: 650px;
+$hand-width: 10px;
+$minute-hand-height: 200px;
+$second-hand-height: 300px;
+$second: 1s;
+$minute: $second * 60;
+$hour: $minute * 60;
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin rectangle($height) {
+  width: $hand-width;
+  height: $height;
+}
+
+%position-center {
+  top: 50%;
+  left: calc(50% - #{$hand-width} / 2);
+}
+
+@keyframes rotate-bottom {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.clock {
+  @include square(#{$clock-size});
+  margin: 50px auto;
+  position: relative;
+  background-color: #ff9;
+  transform: rotate(180deg);
+
+  &__center {
+    @include square(30px);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    background-color: #f99;
+  }
+
+  &__minute {
+    @include rectangle(#{$minute-hand-height});
+    border-radius: 10px;
+    position: absolute;
+    @extend %position-center;
+    z-index: 3;
+    background-color: rgb(153, 175, 255);
+    //animation
+    animation-name: rotate-bottom;
+    animation-duration: $hour;
+    animation-timing-function: steps(60);
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: (center 0);
+  }
+
+  &__second {
+    @include rectangle(#{$second-hand-height});
+    border-radius: 10px;
+    position: absolute;
+    @extend %position-center;
+    z-index: 2;
+    background-color: rgb(153, 255, 192);
+    //animation
+    animation-name: rotate-bottom;
+    animation-duration: $minute;
+    animation-timing-function: steps(60);
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: (center 0);
+  }
+}
