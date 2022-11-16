@@ -1,42 +1,36 @@
 .watch {
+  @include circle($clockSize);
   position: relative;
-  width: $clockSize;
-  height: $clockSize;
   border: 2px solid rgba(20, 20, 20, 0.9);
   background: rgb(241, 241, 90);
   border-radius: 50%;
 
   &__minute {
-    @include Arrow;
-    width: 10px;
+    @include arrow;
     bottom: 50%;
     left: 50%;
     transform: translate(-50%);
-    border-radius: 5px;
     transform-origin: bottom center;
     height: 30%;
     animation: arrow-move 3600s linear infinite;
   }
 
   &__second {
-    @include Arrow;
+    @include arrow;
     height: 49%;
     animation: arrow-move 60s linear infinite;
-    width: 10px;
-    border-radius: 5px;
     left: 50%;
   }
 
   &__round {
-    height: $smallRoundSize;
-    width: $smallRoundSize;
+    @include smallCircle($smallRoundSize);
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 51%;
     transform: translate(-50%,-50%);
     background-color: #000;
-    z-index: 100;
+    z-index: 2;
   }
 
   @keyframes arrow-move {
