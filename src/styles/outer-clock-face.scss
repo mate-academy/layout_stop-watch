@@ -7,15 +7,13 @@
   border-radius: 100%;
 
   &::after {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    transform: rotate(90deg)
+    transform: rotate(90deg);
   }
 
   &::after,
   &::before,
-  & .marking{
-    content: '';
+  & .marking {
+    content: "";
     position: absolute;
     width: 6px;
     height: 100%;
@@ -25,22 +23,23 @@
   }
 
   & .marking {
-    background: radial-gradient(circle, rgba(0,39,135,1) 85%, rgba(0,228,255,1) 100%);
+    background: radial-gradient(circle, rgba(0,39,135,1) 85%,
+    rgba(0,228,255,1) 100%);
     width: 4px;
 
-    &.marking-one {
+    &.marking--one {
       transform: rotate(30deg);
     }
 
-    &.marking-two {
+    &.marking--two {
       transform: rotate(60deg);
     }
 
-    &.marking-three {
+    &.marking--three {
       transform: rotate(120deg);
     }
 
-    &.marking-four {
+    &.marking--four {
       transform: rotate(150deg);
     }
   }
