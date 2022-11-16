@@ -1,0 +1,109 @@
+$watch-size: 500px;
+$minute-size: $watch-size * 0.4;
+$hours-size: $watch-size * 0.25;
+$width-size: $watch-size * 0.04;
+$seconds-size: $watch-size / 2;
+$seconds-width: $watch-size * 0.01;
+$font-size-watch: $watch-size * 0.1;
+
+@keyframes circle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@for $hours from 1 to 13 {
+  .watch__number--#{$hours}::before {
+    content: "#{$hours}";
+  }
+}
+
+.body {
+  margin: 0;
+}
+
+.main {
+  height: 100vh;
+}
+
+.watch {
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  background-color: grey;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  border: solid 4px black;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__center {
+    z-index: 2;
+    height: $width-size;
+    width: $width-size;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  &__hands {
+    transform-origin: bottom;
+    border-radius: 50%;
+    bottom: 50%;
+
+    &--hours {
+      z-index: 1;
+      width: $width-size;
+      height: $hours-size;
+      background-color: blue;
+      position: absolute;
+      animation: circle 43200s infinite linear;
+    }
+  
+    &--minutes {
+      width: $width-size;
+      height: $minute-size;
+      background-color: green;
+      position: absolute;
+      animation: circle 3600s infinite linear;
+    }
+  
+    &--seconds {
+      width: $seconds-width;
+      height: $seconds-size;
+      background-color: red;
+      position: absolute;
+      animation: circle 60s infinite steps(60);
+    }
+  }
+
+  &__number {
+    color: black;
+    z-index: 3;
+    font-size: $font-size-watch;
+
+    &::before {
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__number--12::before {
+    top: 5%;
+  }
+
+  &__number--9::before {
+    left: 5%;
+  }
+
+  &__number--6::before {
+    bottom: -5%;
+  }
+
+  &__number--3::before {
+    right: 0%;
+  }
+}
