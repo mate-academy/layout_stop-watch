@@ -21,7 +21,12 @@
   }
 
   &__minute {
-    position: absolute;
+
+    @include animation;
+    animation-duration: 12s;
+    animation-timing-function: steps(12, end);
+
+    position: relative;
     left: $watch-size/2 - $arrow-width/2;
     top: $watch-size/2 * 0.4;
     background-color: #1e75d7;
@@ -29,26 +34,31 @@
     width: $arrow-width;
     border-radius: 8px;
     box-shadow: 15px 5px 13px #33c4ff;
-    transition: transform 6s linear;
-    transform-origin: bottom;
+
   }
 
   &__second {
-    position: absolute;
+
+    @include animation;
+    animation-duration: 1s;
+
+    position: relative;
     left: $watch-size/2 - $arrow-width/2;
-    top: $watch-size/2 * 0.2;
+    top: -100px;
     background-color: #9e2014;
     height: $watch-size/2 * 0.8;
     width: $arrow-width;
     border-radius: 4px;
     box-shadow: 15px 5px 13px #d75c1e;
-    transition: transform 0.5s linear;
-    transform-origin: bottom;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
   }
 
-  &:hover > &__minute,
-  &:hover > &__second {
-    cursor: pointer;
+  100% {
     transform: rotate(360deg);
   }
 }
