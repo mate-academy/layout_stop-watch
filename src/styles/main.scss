@@ -1,0 +1,90 @@
+@import "./utils/utils";
+@import "./mixin.scss";
+@import "./animation.scss";
+// .main {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+// }
+
+.watch {
+  height: $watch;
+  width: $watch;
+  border: 2px solid $border-color;
+  border-radius: $border-radius;
+  background-color: pink;
+  position: relative;
+
+  &__border {
+    display: flex;
+    height: $small-watch;
+    width: $small-watch;
+    background-color: black;
+    border: 2px solid $border-color;
+    border-radius: $border-radius;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: $padding-circle;
+    left: $padding-circle;
+
+  }
+
+  &__numbers {
+    display: flex;
+    font-size: 40px;
+
+    &-12 {
+      position: absolute;
+      top: 10px;
+      left: 276px;
+    }
+
+    &-6 {
+      position: absolute;
+      left: 286px;
+      top: 550px;
+    }
+
+    &-3 {
+      position: absolute;
+      left: 550px;
+      top: 278px;
+    }
+
+    &-9 {
+      position: absolute;
+      left: 10px;
+      top: 278px;
+    }
+  }
+
+  &__minute {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 150px;
+    height: 4px;
+
+    background: black;
+    rotate: -90deg;
+
+    @include animationClock;
+  }
+
+  &__second {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 240px;
+    height: 2px;
+
+    background: black;
+    rotate: -90deg;
+
+    @include animationClock(60s);
+  }
+}
