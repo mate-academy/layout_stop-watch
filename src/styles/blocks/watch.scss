@@ -1,0 +1,45 @@
+.watch {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__point {
+    position: relative;
+    @include point($point-size);
+    background-color: $main-color-accent;
+    border-radius: 50%;
+  }
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include point($circle-size);
+    border-radius: $clock-shape;
+    border: 3px solid $main-color-accent;
+  }
+
+  &__hour-arrow {
+    @extend %position-arrow;
+    top: 6px;
+    left: 15px;
+
+    @include arrow-size($length-hour-arrow, $width-hour-arrow);
+    background-color: $main-color-accent;
+    z-index: 0;
+    animation: animation-arrows 3600s linear infinite;
+  }
+
+  &__minute-arrow {
+    @extend %position-arrow;
+    top: 8px;
+    left: 15px;
+
+    @include arrow-size($minute-arrow, $width-minute-arrow);
+    background-color: $minute-arrow-color;
+    z-index: 1;
+    animation: animation-arrows 60s steps(60, end) infinite;
+  }
+}
