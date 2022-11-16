@@ -12,6 +12,12 @@ $font-size-watch: $watch-size * 0.1;
   }
 }
 
+@for $hours from 1 to 13 {
+  .watch__number--#{$hours}::before {
+    content: "#{$hours}";
+  }
+}
+
 .body {
   margin: 0;
 }
@@ -43,71 +49,61 @@ $font-size-watch: $watch-size * 0.1;
     position: absolute;
   }
 
-  &__hours {
-    z-index: 1;
-    width: $width-size;
-    height: $hours-size;
-    background-color: blue;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 50%;
-    animation: circle 43200s infinite linear;
+  &__hands {
     transform-origin: bottom;
-  }
-
-  &__minutes {
-    width: $width-size;
-    height: $minute-size;
-    background-color: green;
     border-radius: 50%;
-    position: absolute;
     bottom: 50%;
-    animation: circle 3600s infinite linear;
-    transform-origin: bottom;
-  }
 
-  &__seconds {
-    width: $seconds-width;
-    height: $seconds-size;
-    background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 50%;
-    animation: circle 60s infinite steps(60);
-    transform-origin: bottom;
-  }
-
-  &__number--12::before {
-    content: "12";
-    position: absolute;
-    top: 5%;
-    transform: translate(-50%, -50%);
-  }
-
-  &__number--9::before {
-    content: "9";
-    position: absolute;
-    left: 5%;
-    transform: translate(-50%, -50%);
-  }
-
-  &__number--6::before {
-    content: "6";
-    position: absolute;
-    bottom: -5%;
-    transform: translate(-50%, -50%);
-  }
-
-  &__number--3::before {
-    content: "3";
-    position: absolute;
-    right: 0%;
-    transform: translate(-50%, -50%);
+    &--hours {
+      z-index: 1;
+      width: $width-size;
+      height: $hours-size;
+      background-color: blue;
+      position: absolute;
+      animation: circle 43200s infinite linear;
+    }
+  
+    &--minutes {
+      width: $width-size;
+      height: $minute-size;
+      background-color: green;
+      position: absolute;
+      animation: circle 3600s infinite linear;
+    }
+  
+    &--seconds {
+      width: $seconds-width;
+      height: $seconds-size;
+      background-color: red;
+      position: absolute;
+      animation: circle 60s infinite steps(60);
+    }
   }
 
   &__number {
     color: black;
     z-index: 3;
     font-size: $font-size-watch;
+
+    &::before {
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__number--12::before {
+    top: 5%;
+  }
+
+  &__number--9::before {
+    left: 5%;
+  }
+
+  &__number--6::before {
+    bottom: -5%;
+  }
+
+  &__number--3::before {
+    right: 0%;
   }
 }
