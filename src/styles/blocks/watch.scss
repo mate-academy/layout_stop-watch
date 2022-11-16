@@ -22,51 +22,24 @@
   }
 
   &__hour-arrow {
-    position: relative;
+    @extend %position-arrow;
     top: 6px;
     left: 15px;
+
     @include arrow-size($length-hour-arrow, $width-hour-arrow);
-
     background-color: $main-color-accent;
-    border-radius: $border-radius-arrow;
-    transform-origin: left center;
-    transform: rotate(270deg);
-    z-index: 3;
-    animation: hour 3600s linear infinite;
-
-    @keyframes hour {
-      0% {
-        transform-origin: left center;
-        transform: rotate(270deg);
-      }
-      100% {
-        transform-origin: left center;
-        transform: rotate(630deg);
-      }
-    }
+    z-index: 0;
+    animation: animation-arrows 3600s linear infinite;
   }
 
   &__minute-arrow {
-    position: absolute;
+    @extend %position-arrow;
     top: 8px;
     left: 15px;
-    transform-origin: left center;
-    transform: rotate(270deg);
+
     @include arrow-size($minute-arrow, $width-minute-arrow);
     background-color: $minute-arrow-color;
-    border-radius: $border-radius-arrow;
-    z-index: 2;
-    animation: minute 60s steps(60, end) infinite;
-  
-    @keyframes minute {
-      0% {
-        transform-origin: left center;
-        transform: rotate(270deg);
-      }
-      100% {
-        transform-origin: left center;
-        transform: rotate(630deg);
-      }
-    }
+    z-index: 1;
+    animation: animation-arrows 60s steps(60, end) infinite;
   }
 }
