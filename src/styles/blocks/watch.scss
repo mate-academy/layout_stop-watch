@@ -1,0 +1,38 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include size($watch-size);
+  background-image: url("../image/round.jpg");
+  background-position: center;
+  border-radius: 50%;
+  opacity: 0.5;
+
+  &__small-hand {
+    @include styles;
+
+    height: 250px;
+    animation: move 3600s linear infinite ;
+    transform-origin: 0 0;
+  }
+
+  &__big-hand {
+    @include styles;
+
+    height: 350px;
+    transform-origin: 0 350px;
+    animation: move 60s linear infinite;
+  }
+
+  @keyframes move {
+    0% {
+      transform: rotate(0);
+      transform-origin: bottom center;
+    }
+    100% {
+      transform: rotate(360deg);
+      transform-origin: bottom center;
+    }
+  }
+}
