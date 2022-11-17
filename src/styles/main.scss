@@ -1,0 +1,88 @@
+@import "./animation/animation.scss";
+@import "./mixins/mixin.scss";
+@import "./ulits/ulits";
+
+body {
+  background: black;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 400px;
+}
+
+.watch {
+  height: $height-and-width-main;
+  width: $height-and-width-main;
+  border: 2px solid $border-color;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  background-color: $background-big-watch;
+
+  &__small-circle {
+    height: $height-and-width-small;
+    width: $height-and-width-small;
+    border: 1px solid $border-color;
+    border-radius: 50%;
+    background-color: $background-small-wacth;
+    position: absolute;
+    left: $leftTop-small;
+    top: $leftTop-small;
+  }
+
+  .watch__number {
+    font-size: 40px;
+    font-style: italic;
+    position: absolute;
+    
+    &-12 {
+      position: absolute;
+      top: 10px;
+      left: 230px;
+    }
+
+    &-6 {
+      position: absolute;
+      top: 450px;
+      left: 235px;
+    }
+
+    &-3 {
+      position: absolute;
+      top: 220px;
+      left: 450px;
+    }
+
+    &-9 {
+      position: absolute;
+      top: 220px;
+      left: 20px;
+    }
+  }
+
+  &__secund {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 4px;
+    background: black;
+    rotate: -90deg;
+    @include animation-watch(60s);
+  }
+
+  &__minute {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 130px;
+    height: 6px;
+    background: black;
+    rotate: -90deg;
+    @include animation-watch(3600s);
+  }
+
+}
