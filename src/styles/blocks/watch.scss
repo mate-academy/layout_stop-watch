@@ -1,0 +1,53 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  top: calc(50vh - #{$top-shift});
+
+  &__circle {
+    display: flex;
+    position: relative;
+
+    @include circle ($circle-size);
+    box-sizing: border-box;
+    border: 2px solid var(--black);
+  }
+
+  &__second {
+    position: absolute;
+    box-sizing: border-box;
+    top: getShiftTop($circle-size, $big-hand-height);
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+    width: $big-hand-width;
+    height: $big-hand-height;
+    background-color: var(--red);
+    border: 0.2px solid var(--black);
+    border-radius: 50%;
+  }
+
+  &__minute {
+    position: absolute;
+    box-sizing: border-box;
+    top: getShiftTop($circle-size, $small-hand-height);
+    animation: move 3600s linear infinite;
+    transform-origin: bottom;
+
+    width: $small-hand-width;
+    height: $small-hand-height;
+    background-color: var(--blue);
+    border: 0.2px solid var(--black);
+    border-radius: 50%;
+  }
+
+  &__center {
+    position: absolute;
+    box-sizing: border-box;
+    top: getShiftTop($circle-size, $center-size) + ($center-size / 2);
+
+    @include circle($center-size);
+    border: 1px solid var(--grey-dark);
+    background-color: var(--grey-light);
+  }
+}
