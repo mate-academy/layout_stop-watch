@@ -1,0 +1,17 @@
+@mixin stopwatch-size($size) {
+  position: relative;
+
+  height: $size;
+  width: $size;
+
+  border-radius: 10%;
+}
+
+@mixin hand($width, $height) {
+  position: absolute;
+  top: $size / 2 - $height;
+  left: ($size - $width) / 2;
+
+  width: $width;
+  height: $height;
+}

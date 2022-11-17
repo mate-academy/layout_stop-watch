@@ -1,0 +1,54 @@
+.stopwatch {
+  @include stopwatch-size(500px);
+
+  background-image: linear-gradient(
+    174.2deg,
+    rgba(255,244,228,1) 7.1%,
+    rgba(240,246,238,1) 67.4%);
+
+  &__center {
+    position: absolute;
+    top: ($size - $center-size) / 2;
+    left: ($size - $center-size) / 2;
+
+    width: #{$center-size};
+    height: #{$center-size};
+
+    border-radius: 50%;
+
+    background-color: #000;
+  }
+
+  &__hours {
+    @include hand (15px, 100px);
+
+    border-radius: 40% 40% 0 0;
+
+    background-color: #000;
+
+    transform-origin: bottom;
+    animation: mooving 216000s linear infinite;
+  }
+
+  &__minutes {
+    @include hand (7.5px, 200px);
+
+    border-radius: 50% 50% 0 0;
+
+    background-color: #000;
+
+    transform-origin: bottom;
+    animation: mooving 3600s steps(60, end) infinite;
+  }
+
+  &__seconds {
+    @include hand (2px, 200px);
+
+    border-radius: 50% 50% 0 0;
+
+    background-color: #000;
+
+    transform-origin: bottom;
+    animation: mooving 60s linear infinite;
+  }
+}
