@@ -1,0 +1,25 @@
+@mixin round-pin {
+  height: $pin-size;
+  width: $pin-size;
+  border-radius: 50%;
+}
+  
+@mixin watch-size {
+  height: 2 * $seconds-heigh + 10vh;
+  width: 2 * $seconds-heigh + 10vh;
+  border: $arrow-width solid $watch-color;
+  border-radius: 50%;
+}
+  
+@mixin arrow-centration {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+  
+@mixin arrow-animation($time, $starting-point) {
+  transform-origin: 0 $starting-point;
+  
+  animation: $time linear rotate infinite;
+}

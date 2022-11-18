@@ -1,0 +1,47 @@
+.watch {
+  position: relative;
+  
+  @include watch-size;
+  
+  box-shadow: 0 0 15px $watch-color;
+  
+  &__minutes-arrow {
+    @include arrow-centration;
+    
+    height: $minutes-heigh;
+    width: $arrow-width;
+  
+    background-color: $minutes-color;
+    box-shadow: 0 0 15px $minutes-color;
+    border-radius: 8px;
+  
+    @include arrow-animation($time-for-minute-round, $minutes-heigh);
+  }
+  
+  &__seconds-arrow {
+    @include arrow-centration;
+    
+    height: $seconds-heigh;
+    width: $arrow-width;
+  
+    background-color: $seconds-color;
+    box-shadow: 0 0 15px $seconds-color;
+    border-radius: 8px;
+  
+  
+    @include arrow-animation($time-for-seconds-round, $seconds-heigh);
+  }
+  
+  &__pin {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  
+    @include round-pin;
+  
+    background-color: $pin-color;
+    box-shadow: 0 0 15px $pin-color;
+  }
+}
+  
