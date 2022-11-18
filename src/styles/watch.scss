@@ -1,0 +1,38 @@
+.watch {
+  position: relative;
+  @include circle($size);
+  border: 15px solid #ffbeed;
+
+  &__min {
+    position: absolute;
+    width: 185px;
+    height: 20px;
+    @extend %position-arrows;
+    border-radius: 10px;
+  }
+
+  &__second {
+    position: absolute;
+    width: 285px;
+    height: 15px;
+    @extend %position-arrows;
+    border-radius: 10px;
+  }
+
+  &__center {
+    position: absolute;
+    @include circle($minisize);
+    @extend %position-arrows;
+    border-radius: 50%;
+  }
+}
+
+@keyframes presentation {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
