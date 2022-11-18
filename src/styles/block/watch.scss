@@ -1,0 +1,33 @@
+.watch {
+  position: relative;
+  @include circle($size);
+  border: 20px solid #3e3279;
+  background-color: #9e74d6;
+
+  &__min {
+    @extend %position;
+    width: 185px;
+    height: 20px;
+    border-radius: 20px;
+    animation: move 3600s linear infinite -2700s;
+    transform-origin: left;
+  }
+
+  &__second {
+    width: 285px;
+    height: 15px;
+    @extend %position;
+    border-radius: 15px;
+    animation: move 60s linear -45s infinite;
+    transform-origin: left;
+  }
+
+  &__center {
+    @include circle($minisize);
+    @extend %position;
+    z-index: 1;
+    transform: translate(-50%);
+  }
+}
+
+@import "./animation.scss";
