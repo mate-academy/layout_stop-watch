@@ -21,8 +21,5 @@
 @mixin arrow-animation($time, $starting-point) {
   transform-origin: 0 $starting-point;
   
-  animation-name: rotate;
-  animation-duration: $time;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation: $time linear rotate infinite;
 }
