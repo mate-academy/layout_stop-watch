@@ -18,24 +18,26 @@
   z-index: 1;
 }
   
-.clock__minute-hand,
-.clock__hour-hand {
+.clock__hand {
   position: absolute;
-  top: 8px;
   width: 5px;
-  height: 190px;
-  border: 2px solid #{$minute-hand-color};
   border-radius: 5px;
-  background-color: #{$minute-hand-color};
   transform-origin: bottom;
-  animation: rotate 60s linear infinite;
+  animation: rotate linear infinite;
 }
-  
-.clock__hour-hand {
-  top: 48px;
-  width: 5px;
+
+.clock__hand--minute {
+  height: 190px;
+  top: 8px;
+  border: 2px solid #{$minute-hand-color};
+  background-color: #{$minute-hand-color};
+  animation-duration: 60s;
+}
+
+.clock__hand--hour {
   height: 150px;
+  top: 48px;
   border: 2px solid #{$hour-hand-color};
   background-color: #{$hour-hand-color};
-  animation: rotate 3600s linear infinite;
+  animation-duration: 3600s;
 }
