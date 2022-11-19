@@ -1,0 +1,53 @@
+.watch {
+  margin: 50px auto;
+  height: 400px;
+  width: 400px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__arrows {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: green;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      width: 140px;
+      height: 6px;
+      background-color: green;
+      content: "";
+      animation: small-arrow 60s linear infinite;
+      transform-origin: right top;
+    }
+
+    &::after {
+      position: absolute;
+      top: 8px;
+      left: 15px;
+      width: 80px;
+      height: 6px;
+      background-color: green;
+      content: "";
+      animation: big-arrow 3600s linear infinite;
+      transform-origin: top left;
+    }
+  }
+}
+
+@keyframes small-arrow {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes big-arrow {
+  100% {
+    transform: rotate(360deg);
+  }
+}
