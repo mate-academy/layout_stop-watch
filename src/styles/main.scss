@@ -10,7 +10,6 @@ body {
   height: 700px;
 }
 
-
 .clock {
   display: flex;
   justify-content: center;
@@ -33,7 +32,7 @@ body {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
-    }
+  }
 
   &__minute {
     position: absolute;
@@ -60,13 +59,11 @@ body {
   }
 }
 
-  @keyframes move {
-    from {
-      transform: rotate(0);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+@keyframes move {
+  from {
+    transform: rotate(0);
   }
-
-
+  to {
+    transform: rotate(360deg);
+  }
+}
