@@ -1,0 +1,58 @@
+.wall {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(48, 0, 59);
+
+  &__clock_center {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    background-color: rgb(48, 0, 59);
+    box-shadow: 0 0 15px 10px #fff;
+  }
+
+  &__clock_minute {
+    position: absolute;
+
+    @include arrowPosition($min-arrow-height);
+    width: $arrow-width;
+    height: $min-arrow-height;
+
+    background-color: #03cbee;
+    box-shadow: 0 0 15px 5px #03cbee;
+
+    transform-origin: bottom;
+    animation: round 3600s linear infinite;
+  }
+
+  &__clock_hour {
+    position: absolute;
+    @include arrowPosition($sec-arrow-height);
+
+    width: $arrow-width;
+    height: $sec-arrow-height;
+
+    background-color: #22e743;
+    box-shadow: 0 0 15px 5px #22e743;
+
+    transform-origin: bottom;
+    animation: round 60s linear infinite;
+  }
+}
+
+@keyframes round {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
