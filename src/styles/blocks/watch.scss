@@ -1,0 +1,82 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0;
+  color: black;
+
+  @include circle($size-watch);
+  box-sizing: border-box;
+  border: 5px solid black;
+
+  &__center {
+    position: absolute;
+    display: flex;
+
+    @include circle($size-center);
+    box-sizing: border-box;
+    background-color: #00008B;
+  }
+
+  &__minute {
+    position: absolute;
+    display: flex;
+    top: 0;
+    height: $height-minute;
+    margin-top: $margin-top-minute;
+    width: 15px;
+    background-color: blue;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    animation-name: minute;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+
+    transform-origin: bottom;
+    transition: transform minute;
+
+    @keyframes minute {
+      from {
+        transform: rotate(0);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__second {
+    position: absolute;
+    display: flex;
+    top: 0;
+    margin-top: $margin-top-second;
+    height: $height-second;
+    width: 7px;
+    background-color: #00bfff;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    animation-name: second;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    transform-origin: bottom;
+    transition: transform minute;
+
+    @keyframes second {
+      from {
+        transform: rotate(0);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
