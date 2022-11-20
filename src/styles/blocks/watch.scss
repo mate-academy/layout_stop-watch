@@ -28,34 +28,27 @@
   }
 
   &__minute-hand {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-    width: 40%;
-    height: 4px;
+    @extend %hand-position;
+    width: 4px;
+    height: 40%;
     background-color: #6fa8dc;
     border: 2px solid #0b5394;
     border-radius: 5px;
-    transform: rotate(-90deg);
-    transform-origin: left center;
-    animation-name: minute-hand;
+    transform-origin: bottom;
+    animation-name: rotate-hand;
     animation-duration: calc(60s * 60);
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
 
   &__second-hand {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 40%;
+    @extend %hand-position;
+    height: 40%;
     background-color: #e69138;
     border: 2px solid #e69138;
     border-radius: 5px;
-    transform: rotate(-90deg);
-    transform-origin: left center;
-    animation-name: secons-hand;
+    transform-origin: bottom;
+    animation-name: rotate-hand;
     animation-duration: 60s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -63,6 +56,10 @@
 
   &__center {
     position: absolute;
+    top: 50%;
+    left: 51%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
     align-self: center;
     width: 25px;
@@ -72,20 +69,11 @@
   }
 }
 
-@keyframes secons-hand {
+@keyframes rotate-hand {
   0% {
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(270deg);
-  }
-}
-
-@keyframes minute-hand {
-  0% {
-    transform: rotate(-90deg);
-  }
-  100% {
-    transform: rotate(270deg);
+    transform: rotate(360deg);
   }
 }
