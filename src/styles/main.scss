@@ -11,7 +11,6 @@ body {
   width: 100%;
 }
 
-
 .watch {
   width: 350px;
   height: 350px;
@@ -46,15 +45,14 @@ body {
   border-radius: 50%;
   animation: clock-hand-rotate 43200s linear infinite;
 
-
-&::before {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 80px;
-  background-color: grey;
-  border-radius: 5px;
-}
+  &::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background-color: grey;
+    border-radius: 5px;
+  }
 }
 
 .watch__section-minutes {
@@ -82,9 +80,9 @@ body {
 
 @keyframes clock-hand-rotate {
   from {
-      transform: rotateZ(15deg)
+    transform: rotateZ(15deg);
   }
   to {
-      transform: rotateZ(360deg)
+    transform: rotateZ(360deg);
   }
 }
