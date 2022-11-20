@@ -1,0 +1,91 @@
+.watch {
+  width: 500px;
+  padding: 40px;
+  background-color: #6fa8dc;
+  border: 1px solid black;
+
+  &__inside-part {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border: 2px solid #6fa8dc;
+    border-radius: 250px;
+    background-image: url(../images/13-136101_clock-face-circle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 1px -17px;
+  }
+  
+  &__inside-part::before {
+    content: "APPLES STOPWATCH";
+    margin-top: 70%;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: 40%;
+    height: 4px;
+    background-color: #6fa8dc;
+    border: 2px solid #0b5394;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+    animation-name: minute-hand;
+    animation-duration: calc(60s * 60);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    background-color: #e69138;
+    border: 2px solid #e69138;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+    animation-name: secons-hand;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+    align-self: center;
+    width: 25px;
+    height: 25px;
+    background-color: #6fa8dc;
+    border-radius: 20px;
+  }
+}
+
+@keyframes secons-hand {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes minute-hand {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
