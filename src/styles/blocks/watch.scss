@@ -8,7 +8,7 @@
 
   @include circle($size-watch);
   box-sizing: border-box;
-  border: 5px solid black;
+  border: 5px solid $color-border;
 
   &__center {
     position: absolute;
@@ -16,7 +16,7 @@
 
     @include circle($size-center);
     box-sizing: border-box;
-    background-color: #00008B;
+    background-color: $color-center;
   }
 
   &__minute {
@@ -26,8 +26,8 @@
     height: $height-minute;
     margin-top: $margin-top-minute;
     width: 15px;
-    background-color: blue;
-    border: 1px solid black;
+    background-color: $color-minute;
+    border: 1px solid $color-border;
     border-radius: 10px;
 
     animation-name: minute;
@@ -57,8 +57,8 @@
     margin-top: $margin-top-second;
     height: $height-second;
     width: 7px;
-    background-color: #00bfff;
-    border: 1px solid black;
+    background-color: $color-second;
+    border: 1px solid $color-border;
     border-radius: 5px;
 
     animation-name: second;
