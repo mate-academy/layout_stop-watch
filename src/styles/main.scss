@@ -78,11 +78,34 @@ body {
   }
 }
 
+.watch__section-seconds {
+  position: absolute;
+}
+
+.watch__seconds {
+  width: 190px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  animation: clock-hand-rotate 60s linear infinite;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 140px;
+    background-color: pink;
+    border-radius: 5px;
+  }
+}
+
 @keyframes clock-hand-rotate {
   from {
-    transform: rotateZ(15deg);
+    transform: rotate(15deg);
   }
   to {
-    transform: rotateZ(360deg);
+    transform: rotate(360deg);
   }
 }
