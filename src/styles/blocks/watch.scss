@@ -1,0 +1,38 @@
+@import "var.scss";
+
+.watch {
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  background: radial-gradient(circle,blue 5%, darkblue 88%, violet 88%);
+  &__second {
+    left: calc(50% - 1.5px);
+    width: $width_sec;
+    height: $height * 0.45;
+    background-color: yellow;
+    animation: rotate steps(60) $min infinite;
+  }
+  &__minute {
+    left: calc(50% - 4px);
+    width: $width_min;
+    height: $height * 0.4;
+    background-color: red;
+    animation: rotate linear $hour infinite;
+  }
+  &__hour {
+    left: calc(50% - 5px);
+    width: 10px;
+    height: $height * 0.3;
+    background-color: green;
+    animation: rotate linear $hour * 12 infinite;
+  }
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  transform-origin: center 0;
+  border-radius: 90%;
+}
