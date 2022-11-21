@@ -7,6 +7,8 @@
   margin: 0 auto;
   position: relative;
   background: radial-gradient(circle,blue 5%, darkblue 88%, violet 88%);
+  transform: rotate(180deg);
+
   &__second {
     left: calc(50% - 1.5px);
     width: $width_sec;
@@ -14,6 +16,7 @@
     background-color: yellow;
     animation: rotate steps(60) $min infinite;
   }
+
   &__minute {
     left: calc(50% - 4px);
     width: $width_min;
@@ -21,6 +24,7 @@
     background-color: red;
     animation: rotate linear $hour infinite;
   }
+
   &__hour {
     left: calc(50% - 5px);
     width: 10px;
