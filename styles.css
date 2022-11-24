@@ -62,9 +62,7 @@ body {
   z-index: 3;
   left: 50%;
   transform-origin: 0% 50%;
-  animation-delay: -2700s;
-  animation-name: seconds;
-  animation-duration: 3600s;
+  animation: 3600s linear -2700s infinite;
 }
 
 .watch__hand2 {
@@ -74,9 +72,7 @@ body {
   top: calc(50% - 700px * 0.01);
   left: 50%;
   z-index: 4;
-  animation-delay: -45s;
-  animation-name: seconds;
-  animation-duration: 60s;
+  animation: 60s linear -45s linear;
 }
 
 @keyframes seconds {

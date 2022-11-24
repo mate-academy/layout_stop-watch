@@ -18,7 +18,6 @@ body {
   @extend %watch-radius;
   background-color: #F9DC5C;
   border: 16px solid #0b4f6c43;
-
 }
 
 .watch__centre {
@@ -32,7 +31,6 @@ body {
   background-color: #3185FC;
   z-index: 5;
   transform: translate(-#{$centre-absolute}, -#{$centre-absolute});
-
 }
 
 .watch__hand1 {
@@ -46,11 +44,7 @@ body {
   @extend %clock-hand-centre;
   @extend %animaton-time-directon;
   transform-origin: 0% 50%;
-  animation-delay: -2700s;
-  animation-name: seconds;
-  animation-duration: 3600s;
-
-
+  animation: 3600s linear -2700s infinite;
 }
 
 .watch__hand2 {
@@ -63,21 +57,19 @@ body {
   z-index: 4;
   @extend %clock-hand-centre;
   @extend %animaton-time-directon;
-  animation-delay: -45s;
-  animation-name: seconds;
-  animation-duration: 60s;
-
+  // animation-delay: -45s;
+  // animation-name: seconds;
+  // animation-duration: 60s;
+  animation: 60s linear -45s linear;
 }
 
 @keyframes seconds {
   0% {
   transform: rotate(1deg);
-}
-
-100% {
+  }
+  100% {
   transform: rotate(360deg);
-
-}
+  }
 }
 
 .watch__time {
