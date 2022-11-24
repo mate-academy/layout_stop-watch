@@ -1,0 +1,51 @@
+.clock {
+  @include full-centering();
+  @include circle($clock-size);
+
+  background-color: #fff;
+  border: $clock-border-size solid $clock-border-color;
+  box-shadow: 0 0 10px $clock-border-color, inset 0 0 25px rgba(0, 0, 0, 0.5);
+
+  &::before {
+    @include horizontal-centering();
+    content: "";
+    top: calc(50% - #{$big-hand-height} / 2);
+    width: $big-hand-width;
+    height: $big-hand-height;
+    background-color: $clock-hands-color;
+    border-radius: $clock-hands-radius;
+
+    animation: clockHands 60s linear infinite;
+    transform-origin: $clock-hands-origin;
+  }
+
+  &::after {
+    @include horizontal-centering();
+    content: "";
+    top: calc(50% - #{$small-hand-height} / 2);
+    width: $small-hand-width;
+    height: $small-hand-height;
+    background-color: $clock-hands-color;
+    border-radius: $clock-hands-radius;
+
+    animation: clockHands 3600s linear infinite;
+    transform-origin: $clock-hands-origin;
+  }
+
+  &__dot {
+    @include full-centering();
+    @include circle($clock-dot-size);
+    z-index: 1;
+    background-color: $clock-border-color;
+  }
+}
+
+@keyframes clockHands {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}

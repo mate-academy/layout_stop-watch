@@ -1,0 +1,20 @@
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  @include square($size);
+  border-radius: 50%;
+}
+
+@mixin horizontal-centering () {
+  position: absolute;
+  left: 50%;
+}
+
+@mixin full-centering () {
+  @include horizontal-centering();
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
