@@ -18,24 +18,18 @@
   background-color: rgb(255, 255, 255);
 
   &__minute {
-    position: absolute;
-    width: 10px;
     height: 45%;
-    bottom: 50%;
+		@include watch-style;
     border-radius: $border-half-radius;
     border: $border-size ridge yellow;
-    transform-origin: bottom;
     animation: watch 60s linear infinite;
   }
 
   &__second {
-    position: absolute;
-    width: 10px;
     height: 50%;
-    bottom: 50%;
+		@include watch-style;
     border-radius: $border-half-radius;
     border: $border-size ridge blue;
-    transform-origin: bottom;
     animation: watch 3600s linear infinite;
   }
 
@@ -49,14 +43,5 @@
     border-radius: $border-half-radius;
     border: 3px solid rgb(41, 41, 39);
     transform: translate(-50%, -50%);
-  }
-}
-
-@keyframes watch {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
