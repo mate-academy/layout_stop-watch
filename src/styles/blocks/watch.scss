@@ -2,6 +2,7 @@
 @import "../utils/variables";
 @import "../utils/functions";
 @import "./page.scss";
+@import "../utils/animations";
 
 .watch {
   position: relative;
@@ -38,14 +39,5 @@
     background-color: $secondary-color;
     top: getTop($after-height);
     animation: move 60s linear infinite;
-  }
-
-  @keyframes move {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
   }
 }
