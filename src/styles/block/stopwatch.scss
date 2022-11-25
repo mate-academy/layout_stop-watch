@@ -14,36 +14,35 @@
 
     &--second {
       position: absolute;
-      top: 50%;
       left: 50%;
-      // border-radius: 50%;
-      // transform: translate(-50%, -50%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
       height: 250px;
-      width: 100px;
+      width: 4px;
       background-color: rgb(174, 77, 77);
       animation-name: second;
       animation-duration: 60s;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
-      transform-origin: top center;
-      z-index: 3;
+      transform-origin: bottom center;
+      // z-index: 3;
     }
 
     &--minute {
       position: absolute;
+      top: 50px;
       left: 50%;
-      top: 50%;
-      width: 100px;
-      // border-radius: 50%;
-      transform: translate(-50%, -50%);
+      width: 8px;
+      border-radius: 50%;
+      // transform: translate(-50%, -50%);
       height: 200px;
       background-color: rgb(62, 187, 168);
       animation-name: minute;
       animation-duration: 360s;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
-      transform-origin: top center;
-      z-index: 2;
+      transform-origin: bottom center;
+      // z-index: 2;
     }
 
     &--will {
