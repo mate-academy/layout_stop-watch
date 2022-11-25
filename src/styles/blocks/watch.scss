@@ -1,0 +1,43 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+@import "../utils/functions";
+@import "./page.scss";
+@import "../utils/animations";
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 500px auto;
+
+  &__center {
+    position: relative;
+    @include circle(30px);
+    background-color: $primary-color;
+    z-index: 1;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    border-radius: 15px;
+    transform-origin: bottom;
+  }
+
+  &::before {
+    height: $before-height;
+    width: $before-width;
+    background-color: $primary-color;
+    top: getTop($before-height);
+    animation: move 3600s linear infinite;
+  }
+
+  &::after {
+    height: $after-height;
+    width: $after-width;
+    background-color: $secondary-color;
+    top: getTop($after-height);
+    animation: move 60s linear infinite;
+  }
+}
