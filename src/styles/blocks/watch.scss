@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(./images/background.jpeg);
+}
+
+.watch {
+	background-image: url(./images/watch.png);
+	position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+	background-size: $watch-size;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+
+  &__minute {
+    height: 45%;
+		@include watch-style;
+    border-radius: $border-half-radius;
+    border: $border-size ridge yellow;
+    animation: watch 60s linear infinite;
+  }
+
+  &__second {
+    height: 50%;
+		@include watch-style;
+    border-radius: $border-half-radius;
+    border: $border-size ridge blue;
+    animation: watch 3600s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    background-color: rgb(249, 249, 249);
+    border-radius: $border-half-radius;
+    border: 3px solid rgb(41, 41, 39);
+    transform: translate(-50%, -50%);
+  }
+}
