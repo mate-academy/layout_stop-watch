@@ -25,24 +25,22 @@
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       transform-origin: bottom center;
-      // z-index: 3;
     }
 
     &--minute {
+      transform-origin: bottom center;
+      transform: translateX(-50%);
       position: absolute;
       top: 50px;
       left: 50%;
-      width: 8px;
+      width: 6px;
       border-radius: 50%;
-      // transform: translate(-50%, -50%);
       height: 200px;
       background-color: rgb(62, 187, 168);
       animation-name: minute;
       animation-duration: 360s;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
-      transform-origin: bottom center;
-      // z-index: 2;
     }
 
     &--will {
