@@ -1,0 +1,49 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $clock-size;
+  height: $clock-size;
+
+  border: 10px solid $color-black;
+  border-radius: $clock-circle;
+  box-shadow: 0 0 60px 10px rgba(3,3,3,0.7);
+
+  &__center {
+    z-index: 1;
+
+    width: $clock-center-size;
+    height: $clock-center-size;
+
+    background-color: $color-black;
+    border-radius: $clock-circle;
+  }
+
+  &__minute-hand {
+    position: absolute;
+
+    width: 10px;
+    height: $minute-hand-size;
+    margin-bottom: $minute-hand-size;
+
+    background-color: $color-minute-hand;
+    border-radius: $hands-radius;
+
+    animation: move 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    position: absolute;
+
+    width: 2px;
+    height: $second-hand-size;
+    margin-bottom: $second-hand-size;
+
+    background-color: $color-second-hand;
+    border-radius: $hands-radius;
+
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+  }
+}
