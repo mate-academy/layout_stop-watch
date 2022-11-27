@@ -1,0 +1,22 @@
+.stopwatch {
+  position: relative;
+  width: $stopwatch-radius * 2;
+  height: $stopwatch-radius * 2;
+  border: 1px solid grey;
+  border-radius: 50%;
+
+  &__minutes-hand {
+    @include watch-element(1, 8px, 40%, red, 50% 50% 0 0);
+    animation: rotate-hand 3600s steps(60, end) infinite;
+  }
+
+  &__seconds-hand {
+    @include watch-element(2, 8px, 47%, blue, 50% 50% 0 0);
+    animation: rotate-hand 60s steps(60, end) infinite;
+  }
+
+  &__center-circle {
+    @include watch-element(3, 20px, 20px, blue, 50%);
+    transform: translate(-50%, -50%);
+  }
+}
