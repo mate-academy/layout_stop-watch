@@ -1,0 +1,31 @@
+.watches {
+  @include circle(70vh);
+  border: 1vh solid $color-black;
+  position: relative;
+
+  &__minutes {
+    width: 1%;
+    height: 30%;
+    background-color: $color-red;
+
+    @extend %position-abs-center;
+    @extend %clock-hands-animation;
+    animation-duration: $minutes-hand-value;
+  }
+
+  &__seconds {
+    width: 1%;
+    height: 40%;
+    background-color: $color-blue;
+
+    @extend %position-abs-center;
+    @extend %clock-hands-animation;
+    animation-duration: $seconds-hand-value;
+  }
+}
+
+@keyframes hands-rotation {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
