@@ -2,9 +2,10 @@
 @import "./../utils/variables";
 
 .watch {
-  left: 50%;
-  position: absolute;
-  
+  &--position {
+    left: 50%;
+    position: absolute;
+  }
   &__center {
     left: -150px;
     width: 300px;
@@ -19,7 +20,7 @@
     top: 6px;
     height: 145px;
     background-color: $light-color;
-    border: 0.5px solid $middle-color;
+    border: $hands-border-width solid $middle-color;
   }
 
   &__minutes-hand {
@@ -27,7 +28,7 @@
     top: 82px;
     height: 70px;
     background-color: $middle-color;
-    border: 0.5px solid $dark-color;
+    border: $hands-border-width solid $dark-color;
   }
 
   @keyframes move {
