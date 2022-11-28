@@ -1,0 +1,52 @@
+.clock {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    @include round($clock-size);
+    border: 1px solid #000;
+    position: relative;
+    box-sizing: border-box;
+    border: 5px solid lightblue;
+  }
+
+  &__center {
+    @include round($arrow-center);
+    background-color: yellowgreen;
+    position: absolute;
+    left: calc((#{$clock-size} / 2) - (#{$arrow-center} / 2));
+    top: calc((#{$clock-size} / 2) - (#{$arrow-center} / 2));
+  }
+
+  &__minutes {
+    content: "";
+    width: calc(#{$clock-size} / 30);
+    height: calc(#{$clock-size} / 3);
+    background-color: yellowgreen;
+    position: absolute;
+    left: calc((#{$clock-size} / 2) - (#{$arrow-center} / 4));
+    top: calc((#{$clock-size} / 2) - (#{$clock-size} / 3));
+    animation: time #{$minute} linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__seconds {
+    content: "";
+    width: calc(#{$clock-size} / 30);
+    height: calc(#{$clock-size} / 2.5);
+    background-color: blueviolet;
+    position: absolute;
+    left: calc((#{$clock-size} / 2) - (#{$arrow-center} / 4));
+    top: calc((#{$clock-size} / 2) - (#{$clock-size} / 2.5));
+    z-index: -1;
+    animation: time #{$second} linear infinite;
+    transform-origin: bottom center;
+  }
+
+}
+
+@keyframes time {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
