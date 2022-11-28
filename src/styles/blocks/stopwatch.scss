@@ -1,0 +1,60 @@
+.background {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(139, 139, 147);
+
+  &__stopWatch-center {
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+    background-color: rgb(51, 46, 196);
+    box-shadow: 0 0 17px 10px rgb(228, 223, 199);
+  }
+
+  &__stopWatch-minuteArrow {
+    position: absolute;
+
+    @include arrowPosition($min-arrow-height);
+    width: $arrow-width;
+    height: $min-arrow-height;
+    border-radius: 30%;
+
+    background-color: #bbc41d;
+    box-shadow: 0 0 15px 5px #bbc41d;
+
+    transform-origin: bottom;
+    animation: round 3600s linear infinite;
+  }
+
+  &__stopWatch-secondArrow {
+    position: absolute;
+    @include arrowPosition($sec-arrow-height);
+
+    width: $arrow-width;
+    height: $sec-arrow-height;
+    border-radius: 30%;
+
+    background-color: #2c6cda;
+    box-shadow: 0 0 15px 5px #2c6cda;
+
+    transform-origin: bottom;
+    animation: round 60s linear infinite;
+  }
+}
+
+@keyframes round {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
