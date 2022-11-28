@@ -1,0 +1,43 @@
+@import "./../utils/mixins";
+@import "./../utils/variables";
+
+.watch {
+  &--position {
+    left: 50%;
+    position: absolute;
+  }
+  &__center {
+    left: -150px;
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    position: absolute;
+    border: 3px dashed $dark-color;
+  }
+
+  &__seconds-hand {
+    @include hand(60s);
+    top: 6px;
+    height: 145px;
+    background-color: $light-color;
+    border: $hands-border-width solid $middle-color;
+  }
+
+  &__minutes-hand {
+    @include hand(3600s);
+    top: 82px;
+    height: 70px;
+    background-color: $middle-color;
+    border: $hands-border-width solid $dark-color;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
