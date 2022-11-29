@@ -1,0 +1,9 @@
+@mixin square($size-watch) {
+  width: $size-watch;
+  height: $size-watch;
+}
+
+@mixin circle($size-watch) {
+  @include square($size-watch);
+  border-radius: 50%;
+}
