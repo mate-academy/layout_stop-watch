@@ -1,0 +1,36 @@
+.stopwatch {
+
+  &__minutes {
+    @include arrow($minutes-arrow-length, #c25d5d);
+
+    animation: arrow-movement $hour linear infinite;
+  }
+
+  &__seconds {
+    @include arrow($seconds-arrow-length, $color-green);
+
+    animation: arrow-movement $minute linear infinite;
+  }
+
+  &__dot {
+    position: relative;
+    z-index: 1;
+    height: $dot-size;
+    width: $dot-size;
+
+    border-radius: 50%;
+    background-color: $color-green;
+  }
+}
+
+@keyframes arrow-movement {
+  from {
+    transform-origin: bottom;
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform-origin: bottom;
+    transform: rotate(360deg);
+  }
+}
