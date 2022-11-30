@@ -1,15 +1,15 @@
 .stopwatch {
 
   &__minutes {
-    @include arrow(200px, #c25d5d);
+    @include arrow($minutes-arrow-length, #c25d5d);
 
-    animation: arrow-movement 3600s linear infinite;
+    animation: arrow-movement $hour linear infinite;
   }
 
   &__seconds {
-    @include arrow(300px, $color-green);
+    @include arrow($seconds-arrow-length, $color-green);
 
-    animation: arrow-movement 60s linear infinite;
+    animation: arrow-movement $minute linear infinite;
   }
 
   &__dot {
