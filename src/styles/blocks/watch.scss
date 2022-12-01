@@ -1,0 +1,56 @@
+.watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  &_minute-hand,
+  &_second-hand,
+  &_center {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+  }
+
+  &_minute-hand::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: $minute-hand-h;
+    margin-bottom: $minute-hand-h;
+    background-color: grey;
+    animation: hand 1440s linear infinite;
+    @extend %transform;
+  }
+
+  &_second-hand::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: $second-hand-h;
+    margin-bottom: $second-hand-h;
+    background-color: red;
+    animation: hand 60s linear infinite;
+    @extend %transform;
+  }
+
+  &_center::after {
+    content: "";
+    position: absolute;
+    @include circle($center-size);
+    background-color: black;
+  }
+}
+
+@keyframes hand {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
