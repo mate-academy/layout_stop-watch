@@ -1,0 +1,45 @@
+.stop-watch {
+  @include square($size-watch);
+
+  &__center {
+    background-color: $color-start-point;
+    @include circle($start-point-size);
+    position: relative;
+    top: ($size-watch / 2) - ($start-point-size / 2);
+    left: ($size-watch / 2) - ($start-point-size / 2);
+    z-index: 1;
+  }
+
+  &__arrow {
+    position: relative;
+
+    &--seconds {
+      top: $size-watch / 2 - $height-seconds-arrow * 2 + $start-point-size ;
+      left: $size-watch / 2 - $width-seconds-arrow / 2;
+      height: $height-seconds-arrow;
+      width: $width-seconds-arrow;
+      border-end-end-radius: 30%;
+      background-color: $color-seconds-arrow;
+      transform-origin: bottom;
+      animation: watch-animation 
+        60s
+        linear
+        infinite;
+    }
+
+    &--minutes {
+      top: $size-watch / 2 - $height-minute-arrow - $start-point-size;
+      left: $size-watch / 2 - $width-minute-arrow / 2;
+      z-index: 0;
+      height: $height-minute-arrow;
+      width: $width-minute-arrow;
+      border-radius: 45px;
+      background-color: $color-minute-arrow;
+      transform-origin: bottom;
+      animation: watch-animation 
+        3600s
+        linear
+        infinite;
+    }
+  }
+}
