@@ -11,11 +11,11 @@
   }
 
   &__arrow {
-    position: absolute;
+    position: relative;
 
     &--seconds {
-      top: 50% - 35;
-      left: 50% - 0.2;
+      top: $size-watch / 2 - $height-seconds-arrow * 2 + $start-point-size ;
+      left: $size-watch / 2 - $width-seconds-arrow / 2;
       height: $height-seconds-arrow;
       width: $width-seconds-arrow;
       border-end-end-radius: 30%;
@@ -28,9 +28,9 @@
     }
 
     &--minutes {
+      top: $size-watch / 2 - $height-minute-arrow - $start-point-size;
+      left: $size-watch / 2 - $width-minute-arrow / 2;
       z-index: 0;
-      top: 50% - 29;
-      left: 50% - 0.4;
       height: $height-minute-arrow;
       width: $width-minute-arrow;
       border-radius: 45px;
