@@ -1,0 +1,19 @@
+$size-watch: 400px;
+$second-height: 190px;
+$second-width: 4px;
+$minute-height: 150px;
+$minute-width: 8px;
+$second-shift: ($size-watch - $second-width) / 2;
+$second-shift-top: ($size-watch / 2) - $second-height;
+$minute-shift: ($size-watch - $minute-width) / 2;
+$minute-shit-top: ($size-watch / 2) - $minute-height;
+
+
+@keyframes clock-hand-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
