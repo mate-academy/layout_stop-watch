@@ -1,47 +1,46 @@
 .watch {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: $center-position;
+  justify-content: $center-position;
   height: 100vh;
 
-  &_minute-hand,
-  &_second-hand,
-  &_center {
+  &__minute-hand,
+  &__second-hand,
+  &__center {
     position: absolute;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 300px;
+    justify-content: $center-position;
+    align-items: $center-position;
+    @include square($square-container);
   }
 
-  &_minute-hand::after {
+  &__minute-hand::after {
     content: "";
     position: absolute;
     width: 6px;
     height: $minute-hand-h;
     margin-bottom: $minute-hand-h;
-    background-color: grey;
-    animation: hand 1440s linear infinite;
+    background-color: $main-accent;
+    animation: hand $animation-time-hour linear infinite;
     @extend %transform;
   }
 
-  &_second-hand::after {
+  &__second-hand::after {
     content: "";
     position: absolute;
     width: 2px;
     height: $second-hand-h;
     margin-bottom: $second-hand-h;
-    background-color: red;
-    animation: hand 60s linear infinite;
+    background-color: $secondary-accent;
+    animation: hand $animation-time-minute linear infinite;
     @extend %transform;
   }
 
-  &_center::after {
+  &__center::after {
     content: "";
     position: absolute;
     @include circle($center-size);
-    background-color: black;
+    background-color: $black-accent;
   }
 }
 
