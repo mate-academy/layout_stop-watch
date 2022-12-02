@@ -1,0 +1,58 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  border: 5px solid #000;
+  border-radius: 50%;
+
+  @for $index from 1 through 60 {
+    &__sec--#{$index} {
+      transform: rotate(calc(6deg * #{$index}));
+    }
+  }
+
+  @for $index from 1 through 60 {
+    &__min--#{$index} {
+      transform: rotate(calc(6deg * #{$index}));
+    }
+  }
+
+  &__sec {
+    width: 10px;
+    height: 200px;
+    background-color: #f00;
+    border-radius: 10px;
+
+    transform-origin: bottom;
+
+    position: absolute;
+    bottom: 50%;
+    z-index: 1;
+  }
+
+  &__min {
+    width: 10px;
+    height: 150px;
+    background-color: #000;
+    border-radius: 10px;
+
+    transform-origin: bottom;
+
+    position: absolute;
+    bottom: 50%;
+    z-index: 2;
+  }
+
+  &__center {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+
+    position: relative;
+    z-index: 3;
+  }
+}
