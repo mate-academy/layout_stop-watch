@@ -1,0 +1,55 @@
+.watch {
+  display: flex;
+  align-items: $center-position;
+  justify-content: $center-position;
+  height: 100vh;
+
+  &__minute-hand,
+  &__second-hand,
+  &__center {
+    position: absolute;
+    display: flex;
+    justify-content: $center-position;
+    align-items: $center-position;
+    @include square($square-container);
+  }
+
+  &__minute-hand::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: $minute-hand-h;
+    margin-bottom: $minute-hand-h;
+    background-color: $main-accent;
+    animation: hand $animation-time-hour linear infinite;
+    @extend %transform;
+  }
+
+  &__second-hand::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: $second-hand-h;
+    margin-bottom: $second-hand-h;
+    background-color: $secondary-accent;
+    animation: hand $animation-time-minute linear infinite;
+    @extend %transform;
+  }
+
+  &__center::after {
+    content: "";
+    position: absolute;
+    @include circle($center-size);
+    background-color: $black-accent;
+  }
+}
+
+@keyframes hand {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
