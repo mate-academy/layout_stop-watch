@@ -8,15 +8,23 @@
   border: 5px solid #000;
   border-radius: 50%;
 
-  @for $index from 1 through 60 {
-    &__sec--#{$index} {
-      transform: rotate(calc(6deg * #{$index}));
+  @keyframes sec {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
     }
   }
 
-  @for $index from 1 through 60 {
-    &__min--#{$index} {
-      transform: rotate(calc(6deg * #{$index}));
+  @keyframes minn {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
     }
   }
 
@@ -27,6 +35,9 @@
     border-radius: 10px;
 
     transform-origin: bottom;
+    animation-name: sec;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
 
     position: absolute;
     bottom: 50%;
@@ -40,6 +51,9 @@
     border-radius: 10px;
 
     transform-origin: bottom;
+    animation-name: minn;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
 
     position: absolute;
     bottom: 50%;
