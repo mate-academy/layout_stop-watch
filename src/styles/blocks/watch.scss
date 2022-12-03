@@ -1,0 +1,11 @@
+.watch {
+  @include watch-size($watch-size);
+  background: #000;
+  transform: rotate(180deg);
+
+  &__hand {
+    position: absolute;
+    left: calc(50% - #{$hans-width / 2});
+    top: 50%;
+  }
+}
