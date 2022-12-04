@@ -18,19 +18,18 @@
     height: $circle-height;
     background-color: red;
     border-radius: 100%;
+    // z-index: 1;
   }
 
   &__seconds {
     position: absolute;
     bottom: $container-height / 2;
-    width: 10px;
+    width: 5px;
     height: $seconds-height;
     background-color: yellow;
-    border-radius: 5px;
-    animation-name: move-seconds-array;
-    animation-duration: $seconds-animation-duration;
+    border-radius: 10px;
+    animation: move $seconds-animation-duration infinite;
     transform-origin: bottom;
-    animation-iteration-count: infinite;
   
     &:hover {
       animation-play-state: paused;
@@ -40,12 +39,11 @@
   &__minutes {
     position: absolute;
     bottom: $container-height / 2;
-    width: 10px;
+    width: 5px;
     height: $minutes-height;
     background-color: orange;
-    border-radius: 5px;
-    animation-name: move-minutes-array;
-    animation-duration: $seconds-animation-duration * 60;
+    border-radius: 10px;
+    animation: move ($seconds-animation-duration * 60);
     transform-origin: bottom;
 
     &:hover {
