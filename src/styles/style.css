@@ -1,0 +1,60 @@
+body {
+  margin: 0 auto;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: 2px solid #3d0326;
+}
+
+.watch__minute,
+.watch__second,
+.watch__center {
+  display: flex;
+  position: absolute;
+}
+
+.watch__minute,
+.watch__second {
+  animation-name: watch-rotate;
+  animation-fill-mode: forwards;
+}
+
+.watch__minute {
+  width: 4px;
+  height: 140px;
+  background-color: black;
+  transform-origin: 150px 150px;
+  top: 10px;
+  animation-duration: 3600s;
+}
+
+.watch__second {
+  width: 4px;
+  height: 120px;
+  background-color: rgb(175, 49, 49);
+  transform-origin: 150px;
+  top: 30px;
+  animation-duration: 60s;
+}
+
+.watch__center {
+  border-radius: 50%;
+  background-color: #3d0326;
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes watch-rotate {
+  100% {
+    rotate: 360deg;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
