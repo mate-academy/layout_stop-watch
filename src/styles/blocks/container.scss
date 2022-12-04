@@ -18,35 +18,29 @@
     height: $circle-height;
     background-color: red;
     border-radius: 100%;
-    // z-index: 1;
+    z-index: 1;
   }
 
   &__seconds {
-    position: absolute;
-    bottom: $container-height / 2;
-    width: 5px;
     height: $seconds-height;
     background-color: yellow;
-    border-radius: 10px;
     animation: move $seconds-animation-duration infinite;
-    transform-origin: bottom;
-  
-    &:hover {
-      animation-play-state: paused;
-    }
   }
 
   &__minutes {
+    height: $minutes-height;
+    background-color: orange;
+    animation: move ($seconds-animation-duration * 60);
+  }
+
+  .common {
     position: absolute;
     bottom: $container-height / 2;
     width: 5px;
-    height: $minutes-height;
-    background-color: orange;
     border-radius: 10px;
-    animation: move ($seconds-animation-duration * 60);
     transform-origin: bottom;
 
-    &:hover {
+    .common:hover {
       animation-play-state: paused;
     }
   }
