@@ -33,14 +33,15 @@
     animation: move ($seconds-animation-duration * 60);
   }
 
-  .common {
+  &__seconds,
+  &__minutes {
     position: absolute;
     bottom: $container-height / 2;
     width: 5px;
     border-radius: 10px;
     transform-origin: bottom;
 
-    .common:hover {
+    &:hover {
       animation-play-state: paused;
     }
   }
