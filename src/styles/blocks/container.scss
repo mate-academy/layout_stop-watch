@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: $container-width;
+  height: $container-height;
+
+  &--position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__circle {
+    width: 20px;
+    height: $circle-height;
+    background-color: red;
+    border-radius: 100%;
+    z-index: 1;
+  }
+
+  &__seconds {
+    height: $seconds-height;
+    background-color: yellow;
+    animation: move $seconds-animation-duration infinite;
+  }
+
+  &__minutes {
+    height: $minutes-height;
+    background-color: orange;
+    animation: move ($seconds-animation-duration * 60);
+  }
+
+  &__seconds,
+  &__minutes {
+    position: absolute;
+    bottom: $container-height / 2;
+    width: 5px;
+    border-radius: 10px;
+    transform-origin: bottom;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+}
