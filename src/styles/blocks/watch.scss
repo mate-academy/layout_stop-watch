@@ -1,0 +1,52 @@
+.watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $watch-radius;
+  width: $watch-radius;
+  border-radius: 50%;
+  @include watch-background;
+
+  &__minute,
+  &__second,
+  &__center,
+  &__hour {
+    position: absolute;
+    box-shadow: -2px 2px 1px 0 rgba(0,0,0,0.3);
+  }
+
+  &__hour {
+    width: $hand-width;
+    height: $hour-height;
+    background-color: $special-black;
+    transform-origin: bottom;
+    top: $watch-radius / 2 - $hour-height;
+    animation: watch $hour-round steps(43200)infinite forwards;
+  }
+
+  &__minute {
+    width: $hand-width;
+    height: $minute-height;
+    background-color: $special-black;
+    transform-origin: bottom;
+    top: $watch-radius / 2 - $minute-height;
+    animation: watch $minute-round steps(3600) infinite forwards;
+  }
+
+  &__second {
+    width: $hand-width;
+    height: $second-height;
+    background-color: rgb(118, 34, 34);
+    transform-origin: bottom;
+    top: $watch-radius / 2 - $second-height;
+    animation: watch $second-round steps(60) infinite forwards;
+  }
+
+  &__center {
+    border-radius: 50%;
+    background-color: $special-black;
+    width: $center-radius;
+    height: $center-radius;
+  }
+}
