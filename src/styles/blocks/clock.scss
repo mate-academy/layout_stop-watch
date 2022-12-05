@@ -1,0 +1,45 @@
+.clock {
+  @include square($clock-size);
+
+  position: relative;
+  margin: 0 auto;
+  padding: #{$minutes-width * 0.2};
+  transform: rotate(180deg);
+
+  &__minutes {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: top;
+    width: $heigth;
+    height: $hour-width;
+    border-radius: $border-radius;
+    background: rgb(54, 45, 45);
+
+    animation: seconds 60s linear infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: top;
+    width: $heigth;
+    height: $minutes-width;
+    border-radius: $border-radius;
+    background: rgb(158, 144, 144);
+
+    animation: seconds 1s linear infinite;
+
+  }
+
+  &__center {
+    @include circle($size-center);
+
+    position: absolute;
+    background: rgb(196, 9, 9);
+    top: 50%;
+    left: 50%;
+    transform: translate(-20%, -50%);
+  }
+}
