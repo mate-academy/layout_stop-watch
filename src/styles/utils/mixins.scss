@@ -1,46 +1,6 @@
-@mixin watch-parameters {
-  height: $watch-radius;
-  width: $watch-radius;
-  border-radius: 50%;
-}
-
 @mixin watch-background {
   background-image: url(./images/clock.jpg);
   background-repeat: no-repeat;
   background-size: $watch-radius + 30;
   background-position: -17px -10px;
-}
-
-@mixin minute {
-  width: 4px;
-  height: $minute-height;
-  background-color: $special-black;
-  transform-origin: bottom;
-  top: $watch-radius / 2 - $minute-height;
-  animation: minute-rotate $minute-round steps(3600) infinite forwards;
-}
-
-@mixin watch-center {
-  border-radius: 50%;
-  background-color: $special-black;
-  width: $center-radius;
-  height: $center-radius;
-}
-
-@mixin second {
-  width: 4px;
-  height: $second-height;
-  background-color: rgb(118, 34, 34);
-  transform-origin: bottom;
-  top: $watch-radius / 2 - $second-height;
-  animation: second-rotate $second-round steps(60) infinite forwards;
-}
-
-@mixin hour {
-  width: 4px;
-  height: $hour-height;
-  background-color: $special-black;
-  transform-origin: bottom;
-  top: $watch-radius / 2 - $hour-height;
-  animation: hour-rotate $hour-round steps(86400)infinite forwards;
 }
