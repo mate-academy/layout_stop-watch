@@ -65,6 +65,7 @@
     text-align: center;
     line-height: 35px;
     cursor: pointer;
+    user-select: none;
   }
 
   &__stop-btn {
@@ -72,10 +73,10 @@
     background-color: green;
     color: silver;
     rotate: 45deg;
-  }
 
-  &__stop-btn:active {
-    transform: translateY(5px);
+    &:active {
+      transform: translateY(5px);
+    }
   }
 
   &__reset-btn {
