@@ -1,0 +1,103 @@
+#pause:checked ~ .hand {
+  animation-play-state: running;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  width: 500px;
+  margin: 50px auto;
+  background-image: url(../images/stopwatch.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &__minutes-watch {
+    position: absolute;
+    top: 200px;
+    height: 80px;
+    width: 80px;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    top: 170px;
+    height: 125px;
+    width: 8px;
+    border-radius: 10px;
+    background-color: red;
+    transform: rotate(0);
+    transform-origin: bottom center;
+    animation: rotate 60s linear infinite paused;
+  }
+
+  &__minutes-hand {
+    position: absolute;
+    top: 215px;
+    height: 25px;
+    width: 3px;
+    border-radius: 10px;
+    background-color: black;
+    transform: rotate(0);
+    transform-origin: bottom center;
+    animation: rotate 3600s linear infinite paused;
+  }
+
+  &__center {
+    position: absolute;
+    top: 285px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  &__stop-btn,
+  &__reset-btn {
+    position: absolute;
+    top: 118px;
+    width: 60px;
+    height: 35px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__stop-btn {
+    right: 60px;
+    background-color: green;
+    color: silver;
+    rotate: 45deg;
+
+    &:active {
+      transform: translateY(5px);
+    }
+  }
+
+  &__reset-btn {
+    left: 60px;
+    background-color: #d50000;
+    rotate: -45deg;
+    color: black;
+    font-size: 17px;
+    text-decoration: none;
+  }
+
+  &__reset-btn:active {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
