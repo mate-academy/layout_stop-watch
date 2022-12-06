@@ -34,16 +34,6 @@
   animation: rotate 3600s steps(60, end) infinite 1s;
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .stop-watch__second {
   position: absolute;
   bottom: 50%;
@@ -55,15 +45,5 @@
   border-radius: 5px;
 
   transform-origin: bottom;
-  animation: roll 60s linear infinite;
-}
-
-@keyframes roll {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+  animation: rotate 60s linear infinite;
 }
