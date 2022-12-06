@@ -11,45 +11,29 @@
   border: 10px solid #53a2be;
   box-shadow: 0 0 20px 10px #ccc;
 
-  &__arrow-minute {
+  &__arrow {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 10px;
-    height: 200px;
-    background-color: #176087;
     transform-origin: bottom center;
     transform: translate(-50%, -100%);
     animation-name: minute;
-    animation-duration: 3600s;
     animation-iteration-count: infinite;
     animation-timing-function: steps($steps);
     animation-delay: 1s;
-  }
 
-  &__arrow-second {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 250px;
-    background-color: #53a2be;
-    transform-origin: bottom center;
-    transform: translate(-50%, -100%);
-    animation-name: minute;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps($steps);
-    // animation-delay: 1s;
-  }
-
-  @keyframes minute {
-
-    from {
-      transform: translate(-50%, -100%) rotate(0deg);
+    &--minute {
+      width: 10px;
+      height: 200px;
+      background-color: #176087;
+      animation-duration: 3600s;
     }
-    to {
-      transform: translate(-50%, -100%) rotate(360deg);
+
+    &--second {
+      width: 5px;
+      height: 250px;
+      background-color: #53a2be;
+      animation-duration: 60s;
     }
   }
 
