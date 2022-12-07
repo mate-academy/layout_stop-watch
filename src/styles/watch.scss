@@ -1,0 +1,41 @@
+.stopwatch {
+  box-sizing: border-box;
+  @include circle($watch-size);
+  border: 2px solid black;
+  background: url(../images/Циферблат-часов-шаблон-распечатать-для-детей-интересные-картинки-23-штуки-13.jpg);
+  background-size: cover;
+
+  &__center {
+    @include circle($center-size);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    background: black;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minutes {
+    position: relative;
+    left: 193px;
+    top: -$center-size;
+    width: $arrows-width;
+    height: 198px;
+    background: gray;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    animation: minutes 60s linear;
+  }
+
+  &__seconds {
+    position: relative;
+    left: 193px;
+    top: -$center-size;
+    width: $arrows-width;
+    height: 150px;
+    border-radius: 5px;
+    background: darkgreen;
+    transform-origin: top center;
+    animation: seconds 1000ms linear 60 forwards;
+  }
+}
