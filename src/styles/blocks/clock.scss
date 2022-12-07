@@ -1,0 +1,42 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $watch-size;
+  height: $watch-size;
+
+  background-image: url("https://clipartix.com/wp-content/uploads/2016/07/Pink-fairy-clipart.jpg");
+  background-position: center;
+  background-size: cover;
+
+  border: 5px solid $color-main;
+  border-radius: 50%;
+
+  &__center-dot {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $center-size;
+    height: $center-size;
+    background-color: $color-main;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    background-color: $color-main;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    height: $watch-size * 0.45;
+    width: 8px;
+    animation: rotate 3600s linear infinite;
+
+    &--second {
+      height: $watch-size * 0.5;
+      width: 6px;
+      animation-duration: 60s;
+    }
+  }
+}
