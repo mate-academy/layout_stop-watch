@@ -1,0 +1,37 @@
+.clock {
+  position: relative;
+  height: $watch-size;
+  width: $watch-size;
+  border: 3px solid black;
+  margin: 50px auto;
+  border-radius: 50%;
+
+  &__hand {
+    &-second {
+      position: absolute;
+      height: $second-height;
+      width: $second-width;
+      margin-left: $second-shift;
+      margin-top: $second-shift-top;
+      background-color: rgb(255, 0, 0);
+      border-radius: 2px;
+
+      animation: clock-hand-rotate 60s linear infinite;
+      transform-origin: bottom;
+    }
+
+    &-minute {
+      position: absolute;
+      height: $minute-height;
+      width: $minute-width;
+      margin-top: $minute-shit-top;
+      margin-left: $minute-shift;
+      background-color: rgb(7, 7, 7);
+      border-radius: 0 0 10px 10px;
+
+      animation: clock-hand-rotate 3600s linear infinite;
+      animation-timing-function: steps(60, end);
+      transform-origin: bottom;
+    }
+  }
+}
