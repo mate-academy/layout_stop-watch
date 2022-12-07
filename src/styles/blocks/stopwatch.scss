@@ -6,17 +6,35 @@
   border-radius: 50%;
 
   &__minutes-hand {
-    @include watch-element(1, 8px, 40%, red, 50% 50% 0 0);
+    @include watch-element(
+      1,
+      $minutes-hand-width,
+      $minutes-hand-height,
+      red,
+      $minutes-hand-border-radius
+    );
     animation: rotate-hand 3600s steps(60, end) infinite;
   }
 
   &__seconds-hand {
-    @include watch-element(2, 8px, 47%, blue, 50% 50% 0 0);
+    @include watch-element(
+      2,
+      $seconds-hand-width,
+      $seconds-hand-height,
+      blue,
+      $seconds-hand-border-radius
+    );
     animation: rotate-hand 60s steps(60, end) infinite;
   }
 
   &__center-circle {
-    @include watch-element(3, 20px, 20px, blue, 50%);
+    @include watch-element(
+      3,
+      $center-circle-width,
+      $center-circle-height,
+      blue,
+      $center-circle-border-radius
+    );
     transform: translate(-50%, -50%);
   }
 }
