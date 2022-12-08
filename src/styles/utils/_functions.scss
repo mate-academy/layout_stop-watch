@@ -1,0 +1,11 @@
+@function getTopCenter($size) {
+  @return -($size * 2) +  -($size / 2);
+}
+
+@function getLeftCenter($size, $hand) {
+  @return ($size / 2) - ($hand / 2);
+}
+
+@function getSecTopCenter($size) {
+  @return (-$size + -($size / 2));
+}

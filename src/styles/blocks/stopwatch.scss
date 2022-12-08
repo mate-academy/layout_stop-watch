@@ -1,0 +1,53 @@
+.stopwatch {
+  @extend %display;
+
+  z-index: -2;
+  height: $minute-hand * 2;
+  width: $minute-hand * 2;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+
+  &__center {
+    position: relative;
+    height: $stopwatch-size;
+    width: $stopwatch-size;
+    background-color: $main-color;
+    border-radius: 50%;
+
+    &::before {
+      @extend %pseudoClass;
+      @extend %animation;
+
+      top: getTopCenter($stopwatch-size);
+      left: getLeftCenter($stopwatch-size, $hand-width);
+      height: $minute-hand;
+      width: $hand-width;
+      background-color: $main-color;
+      animation-duration: 60s;
+      animation-iteration-count: 1;
+    }
+
+    &::after {
+      @extend %pseudoClass;
+      @extend %animation;
+
+      top: -$stopwatch-size + (-$stopwatch-size / 2);
+      left: getLeftCenter($stopwatch-size, $hand-width);
+      height: $second-hand;
+      width: $hand-width;
+      background-color: $accent-color;
+      animation-duration: 1s;
+      animation-iteration-count: 60;
+    }
+
+    @keyframes move {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
