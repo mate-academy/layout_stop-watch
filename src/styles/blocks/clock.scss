@@ -1,0 +1,74 @@
+$circle-size: 20px;
+
+$color-red: red;
+$color-green: green;
+$color-black: black;
+
+$hand-width: 10px;
+$border-radius: 100vw;
+$base-shift: 50%;
+$small-hand-height: 100px;
+$big-hand-height: $small-hand-height * 1.5;
+$clock-size: $big-hand-height * 2;
+$time: 60s;
+
+
+.clock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  height: $clock-size;
+  width: $clock-size;
+  border: 1px solid $color-black;
+  border-radius: $border-radius;
+
+  &__circle {
+    width: $circle-size;
+    height: $circle-size;
+    background-color: $color-red;
+    border-radius: $border-radius;
+    z-index: 3;
+  }
+
+  &__hand {
+    width: $hand-width;
+    border-radius: $border-radius;
+    position: absolute;
+    transform-origin: bottom;
+
+    &--small {
+      height: $small-hand-height;
+      background-color: $color-green;
+      bottom: $base-shift;
+      z-index: 2;
+      animation: rotation-small $time infinite linear;
+    }
+
+    &--big {
+      height: $big-hand-height;
+      background-color: $color-black;
+      bottom: $base-shift;
+      animation: rotation-big $time * 60 infinite linear;
+    }
+
+    @keyframes rotation-small {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+      @keyframes rotation-big {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+    }
+  }
+}
