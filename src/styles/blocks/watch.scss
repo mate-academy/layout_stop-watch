@@ -1,0 +1,50 @@
+@import "../utils/variables";
+
+.watch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $watch-size;
+  height: $watch-size;
+
+  border: 5px solid $color-main;
+  border-radius: $border-radius;
+
+  background-image: url("/images/watch.png");
+  background-position: center;
+  background-size: cover;
+
+  &__center {
+    position: absolute;
+    align-self: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: $center-size;
+    height: $center-size;
+
+    background-color: $color-main;
+    border: 1px solid $color-main;
+    border-radius: $border-radius;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+
+    border-left: 5px solid $color-main;
+    height: $hand-height;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+
+    &--small {
+      border-left: 8px solid $color-main;
+      height: $hand-height-small;
+      animation-play-state: paused;
+    }
+  }
+}
