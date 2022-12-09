@@ -1,0 +1,30 @@
+.watch {
+  display: flex;
+  height: $watch-size;
+  width: $watch-size;
+  justify-content: center;
+  background-image: url("../images/clockface_nocircle.png");
+  background-position: center;
+  background-size: cover;
+  border: $watch-border-size solid $watch-color-secondary;
+  border-radius: 50%;
+
+  &__minutes {
+    @include position(12.5%, 37.5%, 4.5%);
+    @include design($watch-color-main, 5px);
+    animation: time 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__seconds {
+    @include position(5%, 45%, 2.5%);
+    @include design($watch-color-main, 3px);
+    animation: time 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    @include position(46.25%, 7.5%, 7.5%);
+    @include design($watch-color-main, 50%);
+  }
+}
