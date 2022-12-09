@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
 
-  @include centeringFlex();
+  @extend %centeringFlex;
 
   &__content {
     @include square(300px);
@@ -21,7 +21,7 @@
     top: 50%;
     left: 51%;
     transform: translate(-50%, -50%);
-    z-index: 999;
+    z-index: 2;
   }
 
   &__minute-hand {
@@ -29,8 +29,8 @@
     width: 6px;
     background-color: $primaryColor;
 
-    @include centeringPositionBottom();
-    z-index: 99;
+    @extend %centeringPositionBottom;
+    z-index: 1;
 
     transform-origin: bottom;
     animation: hand 60s linear 0s infinite;
@@ -41,7 +41,7 @@
     width: 6px;
     background-color: $secondHandColor;
 
-    @include centeringPositionBottom();
+    @extend %centeringPositionBottom;
 
     transform-origin: bottom;
     animation: hand 1s linear 0s infinite;
