@@ -16,26 +16,18 @@
   }
 
   &__minutes {
-    position: relative;
-    left: 193px;
-    top: -$center-size;
-    width: $arrows-width;
+    @include styles;
     height: 198px;
     background: gray;
-    border-radius: 5px;
     transform-origin: bottom center;
-    animation: minutes 60s linear;
+    animation: minutes 3600s linear;
   }
 
   &__seconds {
-    position: relative;
-    left: 193px;
-    top: -$center-size;
-    width: $arrows-width;
+    @include styles;
     height: 150px;
-    border-radius: 5px;
     background: darkgreen;
     transform-origin: top center;
-    animation: seconds 1000ms linear 60 forwards;
+    animation: seconds 60s linear 60 forwards;
   }
 }
