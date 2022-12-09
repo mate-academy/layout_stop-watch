@@ -1,0 +1,53 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 550px;
+  border: 2px solid $arrow-accent-color;
+  border-radius: 50%;
+  outline: 2px solid rgb(82, 90, 82);
+  outline-offset: 4px;
+
+  &__circle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: $arrow-accent-color;
+    border-radius: 50%;
+  }
+
+  &__minute {
+    position: absolute;
+    top: $arrow-top;
+    z-index: -1;
+    width: $arrow-width;
+    height: $arrow-height * 1.4;
+    background-color: $arrow-accent-color;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform-origin: bottom;
+    animation: tik-tak 60s steps(60) infinite;
+  }
+
+  &__hour {
+    position: absolute;
+    top: $arrow-top * 2;
+    z-index: -2;
+    width: $arrow-width;
+    height: $arrow-height;
+    background-color: rgb(82, 90, 82);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+}
+
+@keyframes tik-tak {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
