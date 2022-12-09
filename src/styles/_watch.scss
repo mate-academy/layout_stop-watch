@@ -1,0 +1,37 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: $hands-height * 2;
+    
+  &__center {
+    position: absolute;
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+    background-color: pink;
+  }
+    
+  &__min {
+    position: absolute;
+    top: 160px;
+    width: $hands-width;
+    height: $hands-height / 2;
+    background-color: purple;
+    border-radius: $hands-radius;
+    transform-origin: bottom;
+    animation: anim 60s linear 0s infinite;
+  }
+    
+  &__sec {
+    position: absolute;
+    top: 10px;
+    width: $hands-width;
+    height: $hands-height;
+    background-color: pink;
+    border-radius: $hands-radius;
+    transform-origin: bottom;
+    animation: anim 1s linear 0s infinite;
+  }
+}
