@@ -1,0 +1,17 @@
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  @include square($size);
+  border-radius: 50%;
+}
+
+@mixin styles {
+  position: relative;
+  left: 193px;
+  top: -$center-size;
+  width: $arrows-width;
+  border-radius: 5px;
+}

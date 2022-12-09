@@ -1,0 +1,33 @@
+.stopwatch {
+  box-sizing: border-box;
+  @include circle($watch-size);
+  border: 2px solid black;
+  background: url(https://klike.net/uploads/posts/2020-10/1602313003_5.jpg);
+  background-size: cover;
+
+  &__center {
+    @include circle($center-size);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    background: black;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minutes {
+    @include styles;
+    height: 198px;
+    background: gray;
+    transform-origin: bottom center;
+    animation: minutes 3600s linear;
+  }
+
+  &__seconds {
+    @include styles;
+    height: 150px;
+    background: darkgreen;
+    transform-origin: top center;
+    animation: seconds 60s linear 60 forwards;
+  }
+}
