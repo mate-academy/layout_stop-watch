@@ -3,45 +3,28 @@
   height: $watch-size;
   width: $watch-size;
   justify-content: center;
-  background-image: url("../images/clockface.png");
+  background-image: url("../images/clockface_nocircle.png");
   background-position: center;
   background-size: cover;
   border: $watch-border-size solid $watch-color-secondary;
   border-radius: 50%;
 
   &__minutes {
-    position: absolute;
-    top: 12.5%;
-    height: 37.5%;
-    width: 4.5%;
-    background-color: $watch-color-main;
-    border-radius: 5px;
+    @include position(12.5%, 37.5%, 4.5%);
+    @include design($watch-color-main, 5px);
     animation: time 3600s linear infinite;
     transform-origin: bottom center;
   }
 
   &__seconds {
-    position: absolute;
-    top: 5%;
-    height: 45%;
-    width: 2.5%;
-    background-color: $watch-color-main;
-    border-radius: 3px;
+    @include position(5%, 45%, 2.5%);
+    @include design($watch-color-main, 3px);
     animation: time 60s linear infinite;
     transform-origin: bottom center;
   }
 
   &__center {
-    position: absolute;
-    top: 46.25%;
-    height: 7.5%;
-    width: 7.5%;
-    background-color: $watch-color-main;
-    border-radius: 50%;
+    @include position(46.25%, 7.5%, 7.5%);
+    @include design($watch-color-main, 50%);
   }
-}
-
-.watch--position {
-  position: relative;
-  margin: auto;
 }
