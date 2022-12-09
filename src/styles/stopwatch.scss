@@ -4,7 +4,7 @@
   align-items: center;
   width: 550px;
   height: 550px;
-  border: 2px solid rgb(204, 72, 171);
+  border: 2px solid $arrow-accent-color;
   border-radius: 50%;
   outline: 2px solid rgb(82, 90, 82);
   outline-offset: 4px;
@@ -13,17 +13,17 @@
     position: relative;
     width: 30px;
     height: 30px;
-    background-color: rgb(204, 72, 171);
+    background-color: $arrow-accent-color;
     border-radius: 50%;
   }
 
   &__minute {
     position: absolute;
-    top: 57px;
+    top: $arrow-top;
     z-index: -1;
-    width: 10px;
-    height: 250px;
-    background-color: rgb(204, 72, 171);
+    width: $arrow-width;
+    height: $arrow-height * 1.4;
+    background-color: $arrow-accent-color;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
     transform-origin: bottom;
@@ -32,10 +32,10 @@
 
   &__hour {
     position: absolute;
-    top: 120px;
+    top: $arrow-top * 2;
     z-index: -2;
-    width: 10px;
-    height: 180px;
+    width: $arrow-width;
+    height: $arrow-height;
     background-color: rgb(82, 90, 82);
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
