@@ -1,0 +1,54 @@
+.watch {
+  position: relative;
+  width: $size_watch;
+  height: $size_watch;
+  border: 10px dotted red;
+  border-radius: 50%;
+
+  .hand {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 10px;
+    border-radius: 50px;
+    transform-origin: bottom center;
+  }
+
+  &__minute-hand {
+    top: 90px;
+    height: 250px;
+    background-color: #d15559;
+  }
+
+  &__second-hand {
+    top: 20px;
+    height: 320px;
+    background-color: #4b9aaa;
+  }
+
+  &__circle {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #4b9aaa;
+  }
+}
+
+.start-second {
+  animation: rotate 60s linear infinite;
+}
+
+.start-minute {
+  animation: rotate 3600s linear infinite;
+}
+
+.pause {
+  animation-play-state: paused;
+}
