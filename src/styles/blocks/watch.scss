@@ -1,0 +1,88 @@
+.watch {
+  position: relative;
+  @include size-circle(400px);
+  background-color: #fff;
+  border: 5px solid $color-borders;
+  border-radius: 50%;
+  box-shadow: 4px 4px 15px rgba(3, 3, 3, 0.54);
+}
+
+.watch__center {
+  position: absolute;
+  @include size-circle(20px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $color-borders;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.watch__minute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 42%;
+  width: $width-hand;
+  border: 2px solid $color-borders;
+  border-radius: 20px;
+  background-color: $color-minute-arrow;
+  z-index: 1;
+  transform-origin: center bottom;
+  animation: minutes-hand 3600s steps(60) infinite;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background-color: $color-borders;
+  }
+}
+
+.watch__second {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 47%;
+  width: $width-hand;
+  border: 2px solid $color-borders;
+  border-radius: 20px;
+  background-color: $color-second-arrow;
+  transform-origin: center bottom;
+  animation: seconds-hand 60s steps(60) infinite;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background-color: $color-borders;
+  }
+}
+
+@keyframes seconds-hand {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+@keyframes minutes-hand {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
