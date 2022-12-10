@@ -1,35 +1,30 @@
 .watch {
   position: relative;
-  width: 700px;
-  height: 700px;
+  width: $size_watch;
+  height: $size_watch;
   border: 10px dotted red;
   border-radius: 50%;
-  box-sizing: border-box;
 
-  &__minute-hand {
+  .hand {
     position: absolute;
     margin: auto;
-    top: 90px;
     left: 0;
     right: 0;
     width: 10px;
-    height: 250px;
-    background-color: #d15559;
     border-radius: 50px;
     transform-origin: bottom center;
   }
 
+  &__minute-hand {
+    top: 90px;
+    height: 250px;
+    background-color: #d15559;
+  }
+
   &__second-hand {
-    position: absolute;
-    margin: auto;
     top: 20px;
-    left: 0;
-    right: 0;
-    width: 10px;
     height: 320px;
     background-color: #4b9aaa;
-    border-radius: 50px;
-    transform-origin: bottom center;
   }
 
   &__circle {
