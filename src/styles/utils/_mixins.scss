@@ -1,0 +1,22 @@
+@mixin watch ($watchSize, $handsBackground, $watchBackground) {
+  box-sizing: border-box;
+  width: $watchSize;
+  height: $watchSize;
+  border-radius: 50%;
+  border: 5px solid $handsBackground;
+  background-color: $watchBackground;
+}
+
+@mixin handMinute ($widthHandMinute, $heightHandMinute, $handsBackground) {
+  width: $widthHandMinute;
+  height: $heightHandMinute;
+  background-color: $handsBackground;
+  border-radius: $widthHandMinute / 2;
+}
+
+@mixin handSecond ($widthHandSecond, $heightHandSecond, $handsBackground) {
+  width: $widthHandSecond;
+  height: $heightHandSecond;
+  background-color: $handsBackground;
+  border-radius: $widthHandSecond / 2;
+}

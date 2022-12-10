@@ -1,0 +1,23 @@
+.watch {
+  @include watch($watchSize, $handsBackground, $watchBackground);
+  position: relative;
+  transform: rotate(180deg);
+
+  &__hand-minute {
+    @include handMinute($widthHandMinute, $heightHandMinute, $handsBackground);
+    position: absolute;
+    top: 50%;
+    left: calc(50% - #{$widthHandMinute} / 2);
+    animation: move steps(60) 3600s infinite;
+    transform-origin: center 0;
+  }
+
+  &__hand-second {
+    @include handSecond($widthHandSecond, $heightHandSecond, $handsBackground);
+    position: absolute;
+    top: 50%;
+    left: calc(50% - #{$widthHandSecond} / 2);
+    animation: move steps(60) 60s infinite;
+    transform-origin: center 0;
+  }
+}
