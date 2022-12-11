@@ -1,0 +1,38 @@
+.stop-watch {
+  @include square($watch-size);
+  margin: 0 auto;
+  position: relative;
+
+  &__minute-arrow {
+    height: $watch-size / 3;
+    width: $arrow-width;
+    background-color: red;
+    border-radius: 8px;
+    @include arrowPosition($watch-size);
+    animation-name: rotate;
+    animation-duration: 3600s;
+    animation-timing-function: steps(60, end);
+    transform-origin: bottom;
+    animation-iteration-count: infinite;
+  }
+
+  &__second-arrow {
+    height: $watch-size / 2;
+    width: $arrow-width;
+    background-color: blue;
+    border-radius: 8px;
+    z-index: -1;
+    @include arrowPosition($watch-size);
+    animation-name: rotate;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(-360deg);
+  }
+}
