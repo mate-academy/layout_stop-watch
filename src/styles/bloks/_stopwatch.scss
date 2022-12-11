@@ -1,0 +1,49 @@
+.stopwatch {
+  @include position;
+  justify-content: center;
+  margin: 0 auto;
+
+  &__circle {
+    @include position;
+    @include width-height;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-image: url(https://kartinkin.net/uploads/posts/2022-03/1647029752_2-kartinkin-net-p-tsiferblat-chasov-bez-strelok-kartinki-2.jpg);
+    background-size: contain;
+  }
+
+  &__sec {
+    @include arrow;
+    @include top-left;
+    width: 150px;
+    height: 10px;
+    border-radius: 50px;
+    border: 1px solid black;
+    background-color: rgb(71, 61, 61);
+    animation: arrows 60s linear -45s infinite;
+    transform-origin: center left;
+  }
+
+  &__minute {
+    @include arrow;
+    @include top-left;
+    width: 180px;
+    height: 10px;
+    background-color: rgb(35, 33, 33);
+    border: 1px solid rgb(137, 123, 123);
+    border-radius: 50px;
+    transition: transform 1s;
+    animation: arrows 3600s linear infinite -2700s;
+    transform-origin: center left;
+  }
+
+  &__point {
+    @include arrow;
+    @include top-left;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(24, 24, 24);
+    border: 1px solid black;
+  }
+}
