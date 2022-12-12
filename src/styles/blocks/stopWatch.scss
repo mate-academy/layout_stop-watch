@@ -1,27 +1,20 @@
 .stopWatch {
   position: relative;
-  height: 500px;
-  width: 500px;
-  background-color: #fff;
+  @include circle(500px, 500px, 50%);
   border: 3px solid #000;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 
   &__center {
-    left: 240px;
-    top: 240px;
-    width: 20px;
-    height: 20px;
+    @include circle(20px, 20px, 50%);
     background-color: #000;
-    border-radius: 50%;
     z-index: 2;
   }
 
   &__second {
     transform-origin: bottom;
-    animation: seconds 60s linear infinite;
+    animation: rotation 60s linear infinite;
     position: absolute;
     bottom: 50%;
     left: 247.5px;
@@ -32,7 +25,7 @@
   }
 
   &__minute {
-    animation: minutes 3600s linear infinite;
+    animation: rotation 3600s linear infinite;
     transform-origin: bottom;
     position: absolute;
     top: 123px;
@@ -45,13 +38,7 @@
   }
 }
 
-@keyframes seconds {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minutes {
+@keyframes rotation {
   100% {
     transform: rotate(360deg);
   }
