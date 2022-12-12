@@ -1,0 +1,34 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include circle($clock-size);
+  border: 4px solid coral;
+  background-color: lightcyan;
+
+  &__center {
+    position: relative;
+    @include circle($center-size);
+    background-color: $color;
+  }
+
+  &__minute {
+    position: absolute;
+    left: $center-size/2;
+    top: $center-size/2 - ($minute-thickness/2);
+    width: $clock-size/4;
+    border: $minute-thickness/2 solid $color;
+    border-radius: $minute-thickness/2;
+    @include go-clock(3600s);
+  }
+
+  &__second {
+    position: absolute;
+    left: $center-size/2;
+    top: $center-size/2 - ($sec-thickness/2);
+    width: $clock-size/2 - 5px;
+    border: $sec-thickness/2 solid $color;
+    border-radius: $sec-thickness/2;
+    @include go-clock(60s);
+  }
+}
