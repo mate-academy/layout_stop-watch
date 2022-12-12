@@ -1,0 +1,16 @@
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin go-clock($tempo) {
+  animation: move;
+  animation-duration: $tempo;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: left center;
+  transform: rotate(-90deg);
+}
+
+
