@@ -15,42 +15,40 @@
     background-color: $color-black;
   }
 
-  &__hand--small {
-    height: 100px;
+  &__hand {
     width: $hand-width;
-    background-color: #00f;
     border-radius: 10px;
     position: absolute;
     bottom: 50%;
-    animation: circle 60s steps(60) infinite;
     transform-origin: bottom center;
+  
+    &--small {
+      height: 100px;
+      background-color: #00f;
+      animation: circle 60s steps(60) infinite;
 
-    @keyframes circle {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
+      @keyframes circle {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
     }
-  }
+    
+    &__hand--big {
+      height: 150px;
+      background-color: rgb(255, 234, 0);
+      animation: circle 3600s steps(60) infinite;
 
-  &__hand--big {
-    height: 150px;
-    width: $hand-width;
-    background-color: rgb(255, 234, 0);
-    border-radius: 10px;
-    position: absolute;
-    bottom: 50%;
-    animation: circle 3600s steps(60) infinite;
-    transform-origin: bottom center;
-
-    @keyframes circle {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
+      @keyframes circle {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
     }
   }
