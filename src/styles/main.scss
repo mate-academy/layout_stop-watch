@@ -10,20 +10,12 @@ body {
   position: relative;
   cursor: pointer;
 
-  &:active {
-    .stopwach__arrow--sec,
-    .stopwach__arrow--min {
-      animation-play-state: paused;
-    }
-  }
-
   &__arrow {
     position: absolute;
     border-radius: 10px;
     bottom: 50%;
     cursor: pointer;
     transform-origin: bottom;
-
 
     &--sec {
       height: 400px;
@@ -37,6 +29,14 @@ body {
       width: 30px;
       background-color: #e23d14;
       animation: move 3600s steps(60, end) infinite;
+    }
+
+    &:active {
+
+      .stopwach__arrow--sec,
+      .stopwach__arrow--min {
+        animation-play-state: paused;
+      }
     }
   }
 
