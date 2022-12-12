@@ -1,0 +1,18 @@
+@mixin watch-sizing($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin animation-move($height, $color, $time) {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: $height;
+  border-radius: 100% 0 0 100%;
+  background-color: $color;
+  animation-name: move;
+  animation-duration: $time;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: right;
+}

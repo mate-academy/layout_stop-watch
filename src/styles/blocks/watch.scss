@@ -1,0 +1,35 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include watch-sizing($watch-face-size);
+
+  &__center {
+    display: flex;
+    z-index: 1;
+
+    @include watch-sizing($watch-center-size);
+
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  &__second {
+    @include animation-move(5%, red, 60s);
+  }
+
+  &__minute {
+    @include animation-move(2.5%, black, 3600s);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(450deg);
+  }
+}

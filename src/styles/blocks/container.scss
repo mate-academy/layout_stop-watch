@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__watch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include watch-sizing($watch-size);
+
+    min-width: 600px;
+    background-image: url(../images/watchface.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
