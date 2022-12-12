@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+}
+
+.stopwach {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  cursor: pointer;
+
+  &:active {
+    .stopwach__arrow--sec,
+    .stopwach__arrow--min {
+      animation-play-state: paused;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    border-radius: 10px;
+    bottom: 50%;
+    cursor: pointer;
+    transform-origin: bottom;
+
+
+    &--sec {
+      height: 400px;
+      width: 30px;
+      background-color: #00acdc;
+      animation: move 60s steps(60, start) infinite;
+    }
+
+    &--min {
+      height: 300px;
+      width: 30px;
+      background-color: #e23d14;
+      animation: move 3600s steps(60, end) infinite;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: #00acdc;
+    border-radius: 50%;
+  }
+}
+
+@keyframes move {
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
