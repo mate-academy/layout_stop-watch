@@ -6,8 +6,6 @@
   width: $watch--size;
   border: $watch--size * 0.01 solid $watch--border;
   border-radius: 50%;
-  margin: auto;
-  background-color: white;
   align-items: center;
   justify-content: center;
   background-image: url(https://mail.google.com/mail/u/0?ui=2&ik=c7973b9708&attid=0.1&permmsgid=msg-a:r-3259148504878398343&th=1850893c6417c5d8&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ8J8J3RDT0A7Qfjz9kOG5NRqdYja7W1VoAWalHL8hQOkUys51VwT1nWCLYxB4vb9_YwwVnLH8_rySci6HAyGstcG5STbhxrWOMzj054jDq-YdkXwwA6KR8yHKU&disp=emb&realattid=1850893b7fa32b536301);
@@ -20,22 +18,22 @@
     width: $watch--size * 0.06;
     background-color: $watch--line--color;
     border-radius: 50%;
+    z-index: 1;
   }
 
   &__time {
     position: absolute;
     width: $watch--size * 0.02;
-    height: $watch--size * 0.4;
     bottom: 50%;
     border-radius: 50% 50% 0 0;
     background-color: $watch--line--color;
     transform-origin: bottom;
-    animation: move 60s steps(60, start) infinite;
 
-    &--hours {
-      height: $watch--size * 0.22;
-      background-color: $watch--line--color ;
-      animation: move 3600s linear infinite;
+    @each $hand, $time, $coef in $watch--hands {
+      &--#{$hand} {
+        height: $watch--size * $coef;
+        animation: move $time linear infinite;
+      }
     }
 
   }
