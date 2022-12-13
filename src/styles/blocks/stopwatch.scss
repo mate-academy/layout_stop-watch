@@ -1,0 +1,39 @@
+.stopwatch {
+  padding: $stopwatch-padding;
+
+  &__min-hand {
+    position: absolute;
+    top: $sec-hand-length - $min-hand-length +  $stopwatch-padding;
+    width: $stopwatch-hand-width;
+    height: 160px;
+    background-color: $secondary-color;
+    transform-origin: $stopwatch-hands-transform;
+    @include rotate-animation;
+  }
+
+  &__sec-hand {
+    width: $stopwatch-hand-width;
+    height: $sec-hand-length;
+    background-color: $primary-color;
+    transform-origin: $stopwatch-hands-transform;
+    @include rotate-animation;
+    animation-duration: 60s;
+  }
+
+  &__circle {
+    position: relative;
+    right: $circle-size / 2;
+    bottom: $circle-size / 2;
+    width: $circle-size;
+    height: $circle-size;
+    background-color: $primary-color;
+    border: 2px solid $secondary-color;
+    border-radius: 50%;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
