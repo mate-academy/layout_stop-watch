@@ -1,0 +1,36 @@
+@import "../utils/mixins";
+
+.watch {
+  @include circle($watch-size);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__center-point {
+    @include center-dot($center-size);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: 50%;
+    background-color: $color-minute;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    width: 10px;
+    height: $watch-size * 0.4;
+    animation: rotate 3600s infinite;
+
+    &--second {
+      height: $watch-size / 2;
+      width: 8px;
+      animation-duration: 60s;
+      background-color: $color-second;
+    }
+  }
+}
