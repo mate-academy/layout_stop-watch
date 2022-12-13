@@ -1,21 +1,19 @@
+@import "../utils/mixins";
+
 .watch {
+  @include circle($watch-size);
+
   display: flex;
   justify-content: center;
   align-items: center;
-  width: $watch-size;
-  height: $watch-size;
-  border: 7px solid $color-border;
-  border-radius: 50%;
 
   &__center-point {
+    @include center-dot($center-size);
+
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: $center-size;
-    height: $center-size;
-    background-color: $color-border;
-    border-radius: 50%;
   }
 
   &__arrow {
