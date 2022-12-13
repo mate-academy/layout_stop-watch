@@ -1,0 +1,154 @@
+.clock {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -200px;
+
+  & .main-timer {
+    width: 300px;
+    height: 300px;
+    background-color: #000;
+    border: 5px solid goldenrod;
+    border-radius: 150px;
+    box-shadow: 6px 6px 15px 0 #848484;
+  }
+  
+  & .main-timer .hour-hand,
+  & .main-timer .hour-hand::before,
+  & .main-timer .minute-hand {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    top: 50%;
+    margin-left: -5px;
+    margin-top: -5px;
+    z-index: 2;
+  }
+
+  & .main-timer .hour-hand {
+    width: 20px;
+    height: 20px;
+    z-index: 3;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+
+    animation: hour 3s linear 1 forwards;
+
+  }
+
+  & .main-timer .hour-hand::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    z-index: 2;
+    background-color: #000;
+    border-radius: 14px;
+    margin-left: -7px;
+    margin-top: -7px;
+    
+  }
+
+  & .main-timer .hour-hand::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 90px;
+    background-color: #fff;
+    bottom: -20px;
+    left: 6px;
+    border-radius: 10px;
+  }
+
+  & .main-timer .minute-hand {
+    animation: minute 3s linear 1 forwards;
+  }
+
+  & .main-timer .minute-hand::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 130px;
+    background-color: #fff;
+    bottom: -20px;
+    left: 2px;
+    border-radius: 10px;
+  }
+
+  & .markers {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    top: 50%;
+    margin-left: -5px;
+  }
+
+  & .main-timer .markers .hour-marker {
+    position: absolute;
+    width: 10px;
+    height: 150px;
+    transform-origin: top;
+  }
+
+  & .main-timer .markers .hour-marker::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+  }
+
+  & .main-timer .markers .hour-marker:nth-child(1) {
+    transform: rotate(-180deg);
+  }
+
+  & .main-timer .markers .hour-marker:nth-child(2) {
+    transform: rotate(-150deg);
+  }
+
+  & .main-timer .markers .hour-marker:nth-child(3) {
+    transform: rotate(-120deg);
+  }
+
+  & .main-timer .markers .hour-marker:nth-child(4) {
+    transform: rotate(-90deg);
+  }
+
+  & .main-timer .markers .hour-marker:nth-child(5) {
+    transform: rotate(-60deg);
+  }
+
+  & .main-timer .markers .hour-marker:nth-child(6) {
+    transform: rotate(-30deg);
+  }
+
+  & .main-timer .markers .hour-marker:nth-child(7) {
+    transform: rotate(0deg);
+  }
+
+  & .main-timer .markers .hour-marker:nth-child(8) {
+    transform: rotate(30deg);
+  }
+
+  & .main-timer .markers .hour-marker:nth-child(9) {
+    transform: rotate(60deg);
+  }
+
+  & .main-timer .markers .hour-marker:nth-child(10) {
+    transform: rotate(90deg);
+  }
+
+  & .main-timer .markers .hour-marker:nth-child(11) {
+    transform: rotate(120deg);
+  }
+
+  & .main-timer .markers .hour-marker:nth-child(12) {
+    transform: rotate(150deg);
+  }
+}
