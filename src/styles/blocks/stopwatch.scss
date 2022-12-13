@@ -1,0 +1,48 @@
+.stopwatch {
+  position: relative;
+  @include circle($sizeOfStopwatch);
+  background-color: antiquewhite;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    @include circle($sizeOfCenter);
+    margin-top: -#{$sizeOfCenter / 2};
+    margin-left: -#{$sizeOfCenter / 2};
+
+    background-color: black;
+  }
+
+  &__arr-sec {
+    position: absolute;
+    left: 50%;
+    top: 1%;
+
+    width: $widthOfArr;
+    height: $lenghtOfSec;
+    margin-left: -#{$widthOfArr};
+
+    background-color: red;
+    border-radius: $widthOfArr / 2;
+
+    @include go-stopwatch($timeForSec);
+
+  }
+
+  &__arr-min {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+
+    width: $widthOfArr;
+    height: $lenghtOfMin;
+    margin-left: -#{$widthOfArr};
+
+    background-color: blue;
+    border-radius: $widthOfArr / 2;
+
+    @include go-stopwatch($timeForMin);
+  }
+}
