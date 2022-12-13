@@ -1,0 +1,48 @@
+.page-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+ @include clockSize();
+  background-image: url("/images/clockface.jpeg");
+  background-repeat: no-repeat;
+
+  &__center {
+    @include centerCircleSize();
+    background-color: $main-color;
+    border: 1px solid $main-color;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    height: $hand-height;
+    border-left: 5px solid $main-color;
+    bottom: 50%;
+    transform-origin: bottom;
+    animation: move 1s linear infinite;
+
+    @keyframes move{
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(1turn);
+      }
+    }
+
+    &--small {
+      height: $hand-height / 2;
+      border-left: 10px solid $main-color;
+      animation: move 60s linear infinite;
+    }
+  }
+}
