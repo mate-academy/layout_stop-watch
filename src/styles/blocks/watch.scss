@@ -29,7 +29,7 @@
   background-color: $color-minute-arrow;
   z-index: 1;
   transform-origin: center bottom;
-  animation: minutes-hand 3600s steps(60) infinite;
+  animation: move-hand 3600s steps(60) infinite;
 
   &:before {
     content: "";
@@ -53,7 +53,7 @@
   border-radius: 20px;
   background-color: $color-second-arrow;
   transform-origin: center bottom;
-  animation: seconds-hand 60s steps(60) infinite;
+  animation: move-hand 60s steps(60) infinite;
 
   &:before {
     content: "";
@@ -67,17 +67,7 @@
   }
 }
 
-@keyframes seconds-hand {
-  from {
-    transform: translate(-50%, -100%) rotate(0deg);
-  }
-
-  to {
-    transform: translate(-50%, -100%) rotate(360deg);
-  }
-}
-
-@keyframes minutes-hand {
+@keyframes move-hand {
   from {
     transform: translate(-50%, -100%) rotate(0deg);
   }
