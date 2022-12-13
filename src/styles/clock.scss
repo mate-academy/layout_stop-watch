@@ -1,0 +1,37 @@
+.clock {
+  display: flex;
+  margin: 0 auto;
+  background-color: rgb(189, 229, 234);
+  @include circle($clock-size);
+  justify-content: center;
+  align-items: center;
+
+  &_seconds {
+    background-color: rgb(48, 158, 158);
+    @include hand($hand);
+    animation: move 60s linear 0s infinite;
+  }
+
+  &_minutes {
+    @include hand($hand);
+    background-color: rgb(10, 10, 58);
+    animation: move 3600s linear 0s infinite;
+
+  }
+
+  &_circle {
+    position: absolute;
+    @include circle($circle-size);
+    background-color: rgb(45, 45, 96);
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
