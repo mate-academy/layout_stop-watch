@@ -1,0 +1,41 @@
+.stopwatch {
+  @include circle;
+  @extend %display;
+
+  z-index: -2;
+  background-color: #f2f2f2;
+
+  &__center {
+    position: relative;
+    width: $stopwatch-size;
+    height: $stopwatch-size;
+    background-color: $main-color;
+    border-radius: 50%;
+
+    &::before {
+      @extend %pseudoClass;
+      @extend %animation;
+
+      top: getTopCenter($stopwatch-size);
+      left: getLeftCenter($stopwatch-size, $hand-width);
+      width: $hand-width;
+      height: $minute-hand;
+      background-color: $main-color;
+      animation-duration: 3600s;
+      animation-iteration-count: infinite;
+    }
+
+    &::after {
+      @extend %pseudoClass;
+      @extend %animation;
+
+      top: -$stopwatch-size + (-$stopwatch-size / 2);
+      left: getLeftCenter($stopwatch-size, $hand-width);
+      width: $hand-width;
+      height: $second-hand;
+      background-color: $accent-color;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+    }
+  }
+}
