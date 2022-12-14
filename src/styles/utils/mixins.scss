@@ -1,0 +1,21 @@
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin arrow($height, $zIndex) {
+  width: $arrow-width;
+  height: $height;
+  background-color: $arrow-color;
+  border: 2px solid $dark-accent;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 50%;
+  z-index: $zIndex;
+}

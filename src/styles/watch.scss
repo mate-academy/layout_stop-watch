@@ -1,0 +1,33 @@
+.watch {
+  @include square($watch-size);
+  border-radius: 15px;
+  border: 10px solid $dark-accent;
+  background-color: $light-accent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
+  &__minute {
+    @include arrow($minutes-height, 1);
+
+    transform-origin: center bottom;
+    animation: move 3600s steps(60) infinite;
+  }
+
+  &__second {
+    @include arrow($seconds-height, 2);
+
+    transform-origin: center bottom;
+    animation: move 60s steps(60) infinite;
+  }
+
+  &__circle {
+    @include circle(25px);
+    background-color: $dark-accent;
+
+    position: absolute;
+    z-index: 3;
+  }
+}
