@@ -1,0 +1,40 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $watch-size;
+  height: $watch-size;
+  background-image: url("https://w7.pngwing.com/pngs/688/384/png-transparent-clock-face-movement-alarm-clocks-time-angle-white-text.png");
+  background-position: center;
+  background-size: cover;
+  border: 10px solid black;
+  border-radius: 80%;
+
+  &__center {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $center-size;
+    height: $center-size;
+    background-color: burlywood;
+    border-radius: 50%;
+  }
+
+  &__move {
+    position: absolute;
+    bottom: 50%;
+    background-color: yellowgreen;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    height: $watch-size * 0.45;
+    width: 8px;
+    animation: rotate 3600s linear infinite;
+
+    &--moving {
+      height: $watch-size * 0.5;
+      width: 6px;
+      animation-duration: 60s;
+    }
+  }
+}
