@@ -1,14 +1,48 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <div class="container">
+      <div class="clock">
+        <input
+          type="radio"
+          id="button-start"
+          class="clock__start"
+          name="action"
+          value="start"
+        >
+        <label
+          for="button-start"
+          class="clock__label"
+        >
+          START
+        </label>
+
+        <input
+          type="radio"
+          id="button-stop"
+          class="clock__stop"
+          name="action"
+          value="stop"
+        >
+        <label
+          for="button-stop"
+          class="clock__label"
+        >
+          STOP
+        </label>
+
+        <div class="clock__dot"></div>
+        <div class="clock__seconds"></div>
+        <div class="clock__minutes"></div>
+      </div>
+    </div>
+  </body>
 </html>

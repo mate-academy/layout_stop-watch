@@ -1,0 +1,98 @@
+.clock {
+  display: flex;
+  position: relative;
+  @include range($clock-size);
+
+  background-color: #{$light-color};
+  border: 25px solid #{$color-accent};
+  box-shadow: inset 0 0 12px #{$dark-color};
+  border-radius: 50%;
+
+  background-image: url(../images/kisspng-clock-face-time-attendance-clocks-clip-art-5b00e3add0acd3.9065028715267849418547.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include range($dot-size);
+    background-color: #{$dark-color};
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__seconds {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 5px;
+    height: 200px;
+    @extend %clock-hand;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 30%;
+    left: calc(50% - 5px);
+    width: 10px;
+    height: 100px;
+    @extend %clock-hand;
+  }
+
+  @keyframes sweep {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__label {
+    display: block;
+    width: 150px;
+    height: 30px;
+    background: #{$light-color};
+    border: 3px solid #{$color-accent};
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #{$dark-color};
+    cursor: pointer;
+  }
+
+  &__start,
+  &__stop {
+    opacity: 0;
+  }
+
+  &__start + &__label {
+    margin-top: 110%;
+  }
+
+  &__stop + &__label {
+    margin-top: 110%;
+    margin-left: 30%;
+  }
+
+  &__label:hover {
+    background: #{$color-hover};
+  }
+
+  input[type="radio"]:checked + &__label {
+    background: #{$color-accent};
+  }
+
+  &__start:checked ~ &__seconds {
+    animation: sweep 60s infinite linear;
+  }
+
+  &__start:checked ~ &__minutes {
+    animation: sweep 3600s infinite linear;
+  }
+}
