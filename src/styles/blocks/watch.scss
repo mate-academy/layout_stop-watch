@@ -1,0 +1,74 @@
+.watch {
+  position: relative;
+  height: $watch-size;
+  width: $watch-size;
+  background-color: $watch-background-color;
+  border-radius: 50%;
+  border: $watch-border-size solid $watch-background-color;
+
+  &__numbers {
+    position: absolute;
+    font-size: $number-fs;
+    transform: translate(-50%, -50%);
+    color: $color-defailt-white;
+    &--number {
+      &-12 {
+        left: 50%;
+      }
+      &-3 {
+        left: 100%;
+        top: 50%;
+      }
+      &-6 {
+        left: 50%;
+        top: 100%;
+      }
+      &-9 {
+        left: 0;
+        top: 50%;
+      }
+    }
+  }
+
+  &__center {
+    @include watch-element-position-size-color-index (
+      50%,
+      50%,
+      20px,
+      20px,
+      $color-defailt-white,
+      3
+    );
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid #bbb;
+  }
+
+  &__minute {
+    @include watch-element-position-size-color-index (
+      $minute-top, 
+      $minute-left, 
+      $minute-width, 
+      $minute-height, 
+      $minute-color, 
+      1
+    );
+    transform-origin: bottom center;
+    animation: rotate-hands 3600s linear infinite;
+    
+
+  }
+
+  &__second {
+    @include watch-element-position-size-color-index (
+      $second-top,
+      $second-left,
+      $second-width,
+      $second-height,
+      $second-color,
+      1
+    );
+    transform-origin: bottom center;
+    animation: rotate-hands 60s linear infinite;
+  }
+}

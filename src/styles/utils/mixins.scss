@@ -1,0 +1,16 @@
+@mixin watch-element-position-size-color-index (
+  $top,
+  $left,
+  $width,
+  $height,
+  $color,
+  $index
+) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: $width;
+  height: $height;
+  background-color: $color;
+  z-index: $index;
+}
