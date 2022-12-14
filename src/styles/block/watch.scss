@@ -23,19 +23,9 @@
     transform: translate(-50%, -50%);
   }
 
-  &__hand {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+  &__hand-min {
+    @include watch-hand();
 
-    width: 5px;
-
-    border-radius: 40%;
-    transform-origin: center bottom;
-  }
-
-  &__hand--min {
     height: $handHeightMin;
     top: 3%;
 
@@ -44,7 +34,9 @@
     animation: moveHand 3600s infinite steps(60);
   }
 
-  &__hand--sek {
+  &__hand-sek {
+    @include watch-hand();
+
     height: $handHeightSek;
     top: 25%;
 
