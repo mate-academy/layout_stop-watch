@@ -1,0 +1,43 @@
+.watch {
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 500px;
+
+  &__circle {
+    position: absolute;
+    background-color: $color-secondary;
+    height: $circle-size;
+    width:$circle-size;
+    border-radius: 50%;
+  }
+
+
+  &__minutes-hand {
+    position: absolute;
+    height: 100px;
+    width: $hand-width;
+    top: 30%;
+    margin-left: $margin-left;
+    background-color: $color-primarly;
+    border-radius: 2 * $min-border-radius;
+    animation-duration: 60s;
+    animation-name: rotate;
+
+    @include animationType;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    top: 27%;
+    margin-left: $margin-left;
+    height: 120px;
+    width: $hand-width;
+    background-color: $color-secondary;
+    border-radius: $min-border-radius;
+    animation-duration: 1s;
+    animation-name: rotate;
+
+    @include animationType;
+  }
+}
