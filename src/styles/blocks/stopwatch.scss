@@ -1,19 +1,32 @@
 .stopwatch {
   padding: $stopwatch-padding;
 
+  &__clockface {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: $sec-hand-length * 2;
+    height: $sec-hand-length * 2;
+    border: 4px solid $primary-color;
+    border-radius: 50%;
+  }
+
   &__min-hand {
-    position: absolute;
-    top: $sec-hand-length - $min-hand-length +  $stopwatch-padding;
+    position: relative;
+    top: $sec-hand-length - $min-hand-length;
     width: $stopwatch-hand-width;
-    height: 160px;
+    height: $min-hand-length;
+    border-radius: 5px;
     background-color: $secondary-color;
     transform-origin: $stopwatch-hands-transform;
     @include rotate-animation;
   }
 
   &__sec-hand {
+    position: absolute;
     width: $stopwatch-hand-width;
     height: $sec-hand-length;
+    border-radius: 4px;
     background-color: $primary-color;
     transform-origin: $stopwatch-hands-transform;
     @include rotate-animation;
@@ -21,13 +34,11 @@
   }
 
   &__circle {
-    position: relative;
-    right: $circle-size / 2;
-    bottom: $circle-size / 2;
+    position: absolute;
+    align-self: center;
     width: $circle-size;
     height: $circle-size;
     background-color: $primary-color;
-    border: 2px solid $secondary-color;
     border-radius: 50%;
   }
 }
