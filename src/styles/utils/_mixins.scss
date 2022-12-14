@@ -1,0 +1,21 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin watch-element($z-index, $width, $height) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  height: $height;
+  width: $width;
+
+  background-color: white;
+
+  border: 3px solid $color-watch-dark;
+
+  z-index: $z-index;
+  transform-origin: center bottom;
+}
