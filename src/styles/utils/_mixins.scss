@@ -1,0 +1,12 @@
+@mixin go-stopwatch($time) {
+  transform-origin: bottom center;
+  animation: rotate $time linear infinite;
+  border-radius: $border-radius;
+}
+@mixin circle($size) {
+  box-sizing: border-box;
+  border: 1px solid black;
+  height: $size;
+  width: $size;
+  border-radius: $border-radius;
+}

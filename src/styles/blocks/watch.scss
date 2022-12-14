@@ -1,0 +1,33 @@
+.watch {
+  position: relative;
+  @include circle($watch-size);
+  background-color: lavender;
+
+  &__center {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    background-color: goldenrod;
+    @include circle($circle-size);
+  }
+
+  &__seconds {
+    position: absolute;
+    top: 0%;
+    left: 49%;
+    width: 12px;
+    height: 250px;
+    background-color: red;
+    @include go-stopwatch($loop-second);
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 25%;
+    left: 49%;
+    width: 10px;
+    height: 125px;
+    background-color: blue;
+    @include go-stopwatch($loop-minute);
+  }
+}
