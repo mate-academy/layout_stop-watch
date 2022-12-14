@@ -21,7 +21,7 @@
     left: 50%;
     border-radius: 3px;
     transform-origin: center 0;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%);
 
     &--minute {
       width: 6px;
@@ -36,5 +36,18 @@
       background-color: #181d31;
       animation: rotate steps(60) $minute infinite;
     }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #181d31;
   }
 }
