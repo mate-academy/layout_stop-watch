@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &__stopwatch {
+    border: 1px solid black;
+    @include square ($stopwatch-size);
+    border-radius: 50%;
+    position: relative;
+    background-image: url("../images/watch.jpg");
+    background-size: cover;
+  }
+  
+  &__seconds {
+    background-color: blue;
+    height: $seconds-height;
+    width: $seconds-width;
+    border-radius: 2px;
+    position: absolute;
+    right: $seconds-position-right;
+    top: $seconds-position-top;
+    animation: move 60s infinite linear;
+    transform-origin: bottom center;
+  }
+  
+  &__minutes {
+    background-color: yellow;
+    height: $minutes-height;
+    width: $minutes-width;
+    border-radius: 2px;
+    position: absolute;
+    right: $minutes-position-right;
+    top: $minutes-position-top;
+    animation: move 3600s infinite linear;
+    transform-origin: bottom center;
+  }
+  
+  &__center-dot {
+    @include square ($center-dot-size);
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: $center-dot-position-right;
+    right: $center-dot-position-top;
+  }
+  
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
