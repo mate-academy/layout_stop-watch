@@ -1,0 +1,48 @@
+.watch {
+  position: relative;
+
+  &__stopwatch {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: cadetblue;
+    border-radius: 50%;
+    transform: translate(-30%, -50%);
+    z-index: 1;
+  }
+
+  &__arrow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 3px;
+    transform: translateX(-50%);
+    transform-origin: center 0;
+
+    &--min {
+      width: $min-arrow-width;
+      height: $min-arrow-height;
+      background-color: brown;
+      animation: move 3600s linear infinite;
+    }
+
+    &--sec {
+      width: $sec-arrow-width;
+      height: $sec-arrow-height;
+      background-color: cadetblue;
+      animation: move 60s linear infinite;
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
