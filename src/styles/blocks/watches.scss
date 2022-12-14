@@ -1,0 +1,46 @@
+.watches {
+  position: relative;
+  width: $watch-width;
+  height: $watch-height;
+  background-image: url(https://c0.klipartz.com/pngpicture/314/392/gratis-png-reloj-cara-reloj-digital-reloj-s-gratis.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    width: $watch-middle-width;
+    height: $watch-middle-height;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background-color: $item-bgc;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute-arrow {
+    @include similarItemValues;
+    left: ($watch-width - $watch-min-width) / 2;
+    width: $watch-min-width;
+    height: $watch-min-height;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__second-arrow {
+    @include similarItemValues;
+    left: ($watch-width - $watch-sec-width) / 2;
+    width: $watch-sec-width;
+    height: $watch-sec-height;
+    animation: rotate 60s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
