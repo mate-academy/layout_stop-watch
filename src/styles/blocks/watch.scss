@@ -1,0 +1,49 @@
+.watch {
+  position: relative;
+  @include square($watch-size);
+  margin: 150px auto ;
+  background-image: url(https://geekach.com.ua/content/images/14/383x480l99nn0/kartyna-za-nomeramy.-palauchyi-kreml-83073057032989.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+
+  &__seconds {
+    @include position($watch-size, $element-size-seconds);
+    height: 150px;
+    width: 4px;
+    background-color: $arrows-color;
+    border-radius: $style-for-arrows;
+    animation: move 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__minutes {
+    @include position($watch-size, $element-size-minutes);
+    height: 130px;
+    width: 8px;
+    background-color: $arrows-color;
+    border-radius: $style-for-arrows;
+    animation: move 3600s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__dotted {
+    @include position($watch-size, $element-size-dotted);
+    z-index: 1;
+    @include square($element-size-dotted);
+    border: 5px solid black;
+    background-color: grey;
+    border-radius: 50%;
+  }
+}
+
+@keyframes move {
+  from{
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,10 @@
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin position($watch-size, $element-size) {
+  position: absolute;
+  left: ($watch-size - $element-size) / 2;
+  bottom: ($watch-size - $element-size) / 2;
+}
