@@ -1,0 +1,45 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $clock-size;
+  width: $clock-size;
+  border: 4px solid pink;
+  border-radius: 50%;
+
+  background-image: url(https://pbs.twimg.com/media/E-cz9miXoAEf1Qq.jpg);
+  background-position: center;
+  background-size: cover;
+
+  &__center {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $center-dot-size;
+    width: $center-dot-size;
+
+    background-image: url(https://avatars.githubusercontent.com/u/3237782?v=4);
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    background-color: pink;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    height: $clock-size * 0.45;
+    width: 8px;
+    animation: rotate 360s linear infinite;
+
+    &--2 {
+      height: $clock-size * 0.5;
+      width: 6px;
+      animation-duration: 60s;
+    }
+  }
+}
