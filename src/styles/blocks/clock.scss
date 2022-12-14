@@ -1,18 +1,15 @@
 .clock {
   background-color: #FAEAB1;
   margin: 0 auto;
-  width: $clock-size;
-  height: $clock-size;
+  @include circle($clock-size);
   border: 1px solid black;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 
   &__circle {
-    width: $circle-size;
-    height: $circle-size;
+    @include circle($circle-size);
     border-radius: 50%;
     background-color: black;
   }
@@ -49,3 +46,4 @@
     transform: rotate(360deg);
   }
 }
+
