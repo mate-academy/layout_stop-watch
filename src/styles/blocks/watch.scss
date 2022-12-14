@@ -1,0 +1,48 @@
+
+.watch {
+  position: absolute;
+  display: flex;
+  height: $watch--size;
+  width: $watch--size;
+  border: $watch--size * 0.01 solid $watch--border;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../styles/images/0.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__circle {
+    height: $watch--size * 0.06;
+    width: $watch--size * 0.06;
+    background-color: $watch--line--color;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__time {
+    position: absolute;
+    width: $watch--size * 0.02;
+    bottom: 50%;
+    border-radius: 50% 50% 0 0;
+    background-color: $watch--line--color;
+    transform-origin: bottom;
+
+    @each $hand, $time, $coef in $watch--hands {
+      &--#{$hand} {
+        height: $watch--size * $coef;
+        animation: move $time linear infinite;
+      }
+    }
+
+  }
+  @keyframes move {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
