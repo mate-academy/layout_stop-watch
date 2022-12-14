@@ -1,6 +1,6 @@
 .stopwatch {
   position: relative;
-  @include stopwatch-size(300px);
+  @include stopwatch-size($watch-width);
 
   background-color: $main-clock-color;
   border: 7px solid $secondary-color;
@@ -15,12 +15,11 @@
 
   &__hand {
     position: absolute;
-    left: 50%;
     left:0;
     right:0;
     margin:0 auto;
 
-    height: 150px;
+    height: watch-hand($watch-width);
 
     border-radius: 8px;
     transform-origin: bottom left;
