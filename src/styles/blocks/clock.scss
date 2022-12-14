@@ -1,0 +1,46 @@
+@import "../utils/variables";
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $clock-size;
+  height: $clock-size;
+
+  background-image: url("https://i.pinimg.com/564x/0d/6c/ee/0d6cee31684de840b86f7360d3e4bbcd.jpg");
+  background-position: center;
+  background-size: cover;
+  border: 10px solid $color-first;
+  border-radius: 50%;
+
+  &__center {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    width: $center-size;
+    height: $center-size;
+    position: absolute;
+    background-color: $color-second;
+    border: 5px solid $color-first;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+
+    border-left: 5px solid $color-second;
+    height: $hand-size;
+
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+
+    &--second {
+      border-left: 8.5px solid $color-second;
+      height: $hand-size--second;
+
+      animation: move 60s linear infinite;
+    }
+  }
+}
