@@ -1,0 +1,41 @@
+.clock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: blue;
+  border-radius: 50%;
+  height: $height-clock;
+  width: $height-clock;
+  transform: rotate(-90deg);
+
+  &__hand {
+    position: absolute;
+    width: 200px;
+    height: 10px;
+    left: 50%;
+    background-color: red;
+    border-radius: 50%;
+
+    transform-origin: left;
+    animation: move 60s linear infinite;
+
+    &--smaller {
+      width: 150px;
+      height: 10px;
+      background-color: pink;
+      animation: move 3600s linear infinite;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    background-color: yellow;
+    border-radius: 50%;
+    height: $height-clock-center;
+    width: $height-clock-center;
+    margin: $margin-clock-center $margin-clock-center;
+  }
+
+}
