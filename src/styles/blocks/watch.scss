@@ -1,0 +1,37 @@
+.watch {
+  @include circle;
+  background-color: rgb(187, 3, 3);
+  width: $watch-size;
+  height: $watch-size;
+  margin-top: 50px;
+  border: 7px solid $main-color;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &__center {
+    @include main-features;
+    @include circle;
+    height: $center-size;
+    width: $center-size;
+  }
+
+  &__seconds {
+    @include main-features;
+    width: 1%;
+    height: 36%;
+    top: 14%;
+    transform-origin: bottom;
+    animation: time 60s infinite steps(60);
+  }
+
+  &__minutes {
+    @include main-features;
+    width: 1.5%;
+    height: 28%;
+    top: 22%;
+    animation: time 3200s infinite steps(3200);
+    transform-origin: bottom;
+  }
+}
