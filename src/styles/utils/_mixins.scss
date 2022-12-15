@@ -1,0 +1,23 @@
+@mixin handStyle($height, $width) {
+  position: absolute;
+  top: $dile-size/2 -$height;
+  height: $height;
+  width: $width;
+  border-radius: $width*0.5;
+  background-color: $c-darkgrey;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+}
+
+@mixin handAnimation($speed) {
+  transform-origin: bottom center;
+  animation-name: rotate;
+  animation-duration: $speed;
+  animation-timing-function: steps(60);
+  animation-iteration-count: infinite;
+}
+
+@mixin circle($circleSize) {
+  height: $circleSize;
+  width: $circleSize;
+  border-radius: 50%;
+}

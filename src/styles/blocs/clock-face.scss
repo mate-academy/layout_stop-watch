@@ -1,0 +1,29 @@
+.clock-face {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  border: 2px solid $c-grey;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+
+  &__center {
+    position: absolute;
+    @include circle($center-circle-size);
+    background-color: $c-darkgrey;
+  }
+
+  &__second-hand {
+    @include handStyle($second-hand-height,$second-hand-width);
+    @include handAnimation($second-speed);
+  }
+  &__minute-hand {
+    @include handStyle($minute-hand-height,$minute-hand-width);
+    @include handAnimation($minute-speed);
+  }
+  &__hour-hand {
+    @include handStyle($hour-hand-height,$hour-hand-width);
+    @include handAnimation($hour-speed);
+  }
+}
