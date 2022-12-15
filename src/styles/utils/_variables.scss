@@ -1,2 +1,16 @@
 $second-timer: 60s;
 $minute-timer: 3600s;
+
+$stopwatch-size: 500px;
+$item-size: 20px;
+$minute-heigth: 170px;
+$stopwatch-half: calc(#{$stopwatch-size} / 2);
+$item-half: calc(#{$item-size} / 2);
+$detail-size: calc(#{$item-size} / 2);
+
+$second-x: calc(#{$stopwatch-half} - (2 * #{$item-size}) - #{$item-half});
+$minute-x: calc(#{$stopwatch-half} - #{$item-size} - #{$item-half});
+$minute-y: calc(#{$stopwatch-half} - #{$minute-heigth});
+
+$second-translate: translateX(#{$second-x});
+$minute-translate: translate(#{$minute-x}, #{$minute-y});
