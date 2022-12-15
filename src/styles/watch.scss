@@ -1,0 +1,37 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__box-circle {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border-radius: 50%;
+  }
+
+  &__minute {
+    height: 200px;
+    background-color: blue;
+    animation: timeHands 3600s linear infinite;
+    z-index: -1;
+  }
+
+  &__second {
+    height: 250px;
+    background-color: red;
+    animation: timeHands 60s linear infinite;
+    z-index: -2;
+  }
+}
+
+.watch-hands {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  transform-origin: bottom center;
+  width: 10px;
+  border-radius: 50px;
+}
