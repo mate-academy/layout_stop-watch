@@ -1,0 +1,11 @@
+@mixin clockCircle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin clockHandAnim ($time) {
+  animation: linear infinite;
+  animation-name: clock;
+  animation-duration: $time;
+}
