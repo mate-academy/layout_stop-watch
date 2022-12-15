@@ -1,0 +1,26 @@
+.clock {
+  padding: 400px 0;
+
+  &__center {
+    position: relative;
+
+    margin: auto;
+    width: $center-size;
+    height: $center-size;
+
+    border: 2px solid $main-accent-color;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px #fff;
+  }
+
+  &__minutes {
+    @extend %arrows-properties;
+    @include arrows($main-accent-color, -1, 300px, 3600s);
+  }
+
+  &__seconds {
+    @extend %arrows-properties;
+    @include arrows($secondary-color, -2, 400px, 60s);
+  }
+}
