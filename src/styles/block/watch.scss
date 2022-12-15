@@ -1,0 +1,33 @@
+.watch {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+  border: 1px solid goldenrod;
+  border-radius: $border-radius;
+  background-color: $watch-color;
+  transform: rotate(180deg);
+
+  &__minute {
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    border: 5px solid $minute-color;
+    border-radius: $border-radius;
+    height: $minute-height;
+    transform-origin: center 0;
+    animation: move $hour linear infinite;
+  }
+
+  &__second {
+    position: absolute;
+    border: 5px solid $second-color;
+    border-radius: $border-radius;
+    height: $second-height;
+    top: 50%;
+    left: 50%;
+    transform-origin: center 0;
+    z-index: -1;
+    animation: move $minute linear infinite;
+  }
+}
