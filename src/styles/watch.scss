@@ -13,28 +13,25 @@
   }
 
   &__minute {
-    position: absolute;
-    bottom: 10px;
-    right: 5px;
-    transform-origin: bottom center;
     height: 200px;
-    width: 10px;
     background-color: blue;
-    border-radius: 50px;
-    animation: minute 60s linear infinite;
+    animation: timeHands 3600s linear infinite;
     z-index: -1;
   }
 
   &__second {
-    position: absolute;
-    bottom: 10px;
-    right: 5px;
-    transform-origin: bottom center;
-    height: 300px;
-    width: 10px;
+    height: 250px;
     background-color: red;
-    border-radius: 50px;
-    animation: second 1s linear infinite;
+    animation: timeHands 60s linear infinite;
     z-index: -2;
   }
+}
+
+.watch-hands {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  transform-origin: bottom center;
+  width: 10px;
+  border-radius: 50px;
 }
