@@ -1,0 +1,34 @@
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @include circle($clock-size);
+  border: 1px solid #000;
+
+  &__center {
+    @include circle($center-size);
+    background-color: $center-color;
+  }
+
+  &__minute {
+    position: absolute;
+    width: $center-size / 2;
+    height: $clock-size / 4;
+    background-color: $center-color;
+    bottom: $clock-size / 2;
+    border-radius: $circumference;
+    @include rotate(3600s);
+  }
+
+  &__second {
+    position: absolute;
+    width: $center-size / 3;
+    height: $clock-size / 2.5;
+    background-color: $second-color;
+    bottom: $clock-size / 2;
+    border-radius: $circumference;
+    @include rotate(60s);
+  }
+
+}
