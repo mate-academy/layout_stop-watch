@@ -9,13 +9,14 @@
   &__center {
     @include circle($center-size);
     background-color: $center-color;
+    z-index: 1;
   }
 
   &__minute {
     position: absolute;
     width: $center-size / 2;
     height: $clock-size / 4;
-    background-color: $center-color;
+    background-color: $minute-color;
     bottom: $clock-size / 2;
     border-radius: $circumference;
     @include rotate(3600s);
