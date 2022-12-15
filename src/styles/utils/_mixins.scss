@@ -1,0 +1,15 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin styles {
+  position: absolute;
+  border-radius: 100% 100% 0 0;
+  animation-name: roll;
+  animation-timing-function: linear;
+  bottom: 50%;
+  transform-origin: bottom center;
+  animation-iteration-count: infinite;
+}

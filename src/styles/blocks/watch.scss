@@ -1,0 +1,37 @@
+.watch {
+  position: relative;
+  @include flex-center;
+  width: $watch-width;
+  height: $watch-height;
+  background-color: #ffe700;
+  border-radius: 50%;
+  border: 3px solid black;
+
+  &__short-arrow {
+    @include styles;
+    width: $short-arrow-width;
+    height: $short-arrow-height;
+    background-color: #001eff;
+    border: 3px solid black;
+    animation-duration: 3600s;
+  }
+
+  &__long-arrow {
+    width: $long-arrow-width;
+    height: $long-arrow-height;
+    background-color: #c724b1;
+    @include styles;
+    border: 3px solid black;
+    animation-duration: 60s;
+  }
+
+  &::before {
+    content: "";
+    width: $spot-width;
+    height: $spot-height;
+    border-radius: 50%;
+    background-color: #046a38;
+    border: 3px solid black;
+    z-index: 5;
+  }
+}
