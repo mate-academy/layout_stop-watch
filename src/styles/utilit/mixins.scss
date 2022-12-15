@@ -1,0 +1,25 @@
+@mixin watch {
+  height: $clock-size;
+  width: $clock-size;
+  border: 1px solid goldenrod;
+  border-radius: $border-radius;
+  background-color: $watch-color;
+}
+
+@mixin secondhand {
+  border: 5px solid $second-color;
+  border-radius: $border-radius;
+  height: $second-height;
+}
+
+@mixin minutehand {
+  box-sizing: border-box;
+  border: 5px solid $minute-color;
+  border-radius: $border-radius;
+  height: $minute-height;
+}
+
+@mixin position {
+  top: 50%;
+  left: 50%;
+}

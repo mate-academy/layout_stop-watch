@@ -1,0 +1,22 @@
+.watch {
+  @include watch;
+  position: relative;
+  transform: rotate(180deg);
+
+  &__minute {
+    position: absolute;
+    @include minutehand;
+    @include position;
+    transform-origin: center 0;
+    animation: move $hour linear infinite;
+  }
+
+  &__second {
+    position: absolute;
+    @include secondhand;
+    @include position;
+    transform-origin: center 0;
+    z-index: -1;
+    animation: move $minute linear infinite;
+  }
+}
