@@ -1,0 +1,33 @@
+$watch-frame-size: 650px;
+$watch-center-point-size: 60px;
+$watch-second-point-size: 60px;
+$second-hand-width: 10px;
+$color-second-hand: rgb(218, 31, 31);
+$color-minute-hand: #ddd;
+$round-hand: 60px;
+$minute-hand-speed: 240s;
+$second-hand-speed: 6s;
+
+@keyframes round-hand {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom left;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom right;
+  }
+}
+
+@keyframes round-tail {
+  from {
+    transform: rotate(0deg);
+    transform-origin: top left;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: top right;
+  }
+}

@@ -1,0 +1,60 @@
+.stop-watch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include circle ($watch-frame-size);
+  background-image: url(../stopwatch-svgrepo-com.svg);
+
+  &__minute-hand {
+    position: absolute;
+    z-index: 1;
+    bottom: 50%;
+
+    width: 16px;
+    height: 215px;
+
+    border-radius: $round-hand;
+    background-color: $color-minute-hand;
+
+    @include animation (round-hand, $minute-hand-speed);
+  }
+
+  &__second-hand {
+    position: absolute;
+    z-index: 2;
+    bottom: 50%;
+
+    width: $second-hand-width;
+    height: 280px;
+
+    background-color: $color-second-hand;
+    border-radius: $round-hand;
+
+    @include animation (round-hand, $second-hand-speed);
+  }
+
+  &__second-hand-tail {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+
+    width: $second-hand-width;
+    height: 60px;
+
+    background-color: $color-second-hand;
+    border-radius: $round-hand;
+
+    @include animation (round-tail, $second-hand-speed);
+  }
+
+  &::after {
+    display: inline-block;
+    content: '';
+    z-index: 3;
+    @include circle ($watch-center-point-size);
+    background-color: $color-minute-hand;
+    border: 5px solid $color-second-hand;
+  }
+}

@@ -1,0 +1,14 @@
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin animation ($name, $speed) {
+  animation-name: $name;
+  animation-duration: $speed;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+  transform-origin: left;
+}
