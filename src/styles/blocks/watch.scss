@@ -1,48 +1,50 @@
+.watch-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 10px;
+}
+
 .watch {
   position: relative;
+  width: 650px;
+  height: 650px;
+  border: 5px solid #ccc;
+  border-radius: 50%;
 
   &__stopwatch {
-    position: fixed;
+    @include position;
     top: 50%;
-    left: 50%;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-color: cadetblue;
     border-radius: 50%;
-    transform: translate(-30%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
   }
 
   &__arrow {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    border-radius: 3px;
-    transform: translateX(-50%);
-    transform-origin: center 0;
+    @include position;
+    border-radius: 5px;
+    transform-origin: bottom;
+    translate: -50%;
 
     &--min {
+      @include animation;
+      top: 120px;
       width: $min-arrow-width;
       height: $min-arrow-height;
-      background-color: brown;
-      animation: move 3600s linear infinite;
+      background-color: coral;
+      animation-duration: 3600s;
     }
 
     &--sec {
+      @include animation;
+      top: 20px;
       width: $sec-arrow-width;
       height: $sec-arrow-height;
       background-color: cadetblue;
-      animation: move 60s linear infinite;
+      animation-duration: 60s;
     }
-  }
-}
-
-@keyframes move {
-  0% {
-    transform: rotate(-180deg);
-  }
-
-  100% {
-    transform: rotate(180deg);
   }
 }
