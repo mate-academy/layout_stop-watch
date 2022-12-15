@@ -1,49 +1,26 @@
 .clock {
-  padding: 400px;
+  padding: 400px 0;
 
   &__center {
     position: relative;
 
-    width: 30px;
-    height: 30px;
+    margin: auto;
+    width: $center-size;
+    height: $center-size;
 
-    border: 2px solid rgb(115, 115, 255);
+    border: 2px solid $main-accent-color;
     border-radius: 50%;
     background-color: #fff;
     box-shadow: 0 0 0 2px #fff;
   }
 
   &__minutes {
-    position: absolute;
-    left: 8px;
-    bottom: 15px;
-    z-index: -1;
-
-    transform-origin: bottom center;
-
-    width: 14px;
-    height: 300px;
-
-    background-color: rgb(115, 115, 255);
-    border-radius: 7px;
-
-    animation: rotate 3600s linear infinite;
+    @extend %arrows-properties;
+    @include arrows($main-accent-color, -1, 300px, 3600s);
   }
 
   &__seconds {
-    position: absolute;
-    left: 8px;
-    bottom: 15px;
-    z-index: -2;
-
-    transform-origin: bottom center;
-
-    width: 14px;
-    height: 400px;
-
-    background-color: rgb(255, 163, 179);
-    border-radius: 7px;
-
-    animation: rotate 60s linear infinite;
+    @extend %arrows-properties;
+    @include arrows($secondary-color, -2, 400px, 60s);
   }
 }
