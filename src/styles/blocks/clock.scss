@@ -1,0 +1,40 @@
+.clock {
+  @include clockCircle($clockSize);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px $white solid;
+  background-color: $greyLight-2;
+  box-shadow: inset 0.2rem 0.2rem 0.5rem var($greyLight-2),
+    inset -0.2rem -0.2rem 0.5rem var($white)
+  ;
+
+  &__center {
+    @include clockCircle($centerDotSize);
+    border: 1px $greyLight-3 solid;
+    position: absolute;
+    background-color: $primary;
+    z-index: 3;
+  }
+
+  &__minutes {
+    @include clockHandAnim(3600s);
+    position: absolute;
+    margin-bottom: $secondsHandHeight;
+    width: $secondsHandWidth;
+    height: $secondsHandHeight;
+    border-radius: 5px;
+    background-color: $greyDark;
+    z-index: 1;
+  }
+
+  &__seconds {
+    @include clockHandAnim(60s);
+    margin-bottom: $minutesHandHeight;
+    width: $minutesHandWidth;
+    height: $minutesHandHeight;
+    border-radius: 5px;
+    background-color: $primary;
+    z-index: 2;
+  }
+}
