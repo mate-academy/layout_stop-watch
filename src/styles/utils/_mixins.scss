@@ -1,3 +1,10 @@
-@mixin rotate-animation {
-  animation: rotate 3600s $rotate-time-func $rotate-duration;
+@mixin rotate-animation ($duration) {
+  animation: rotate $duration $rotate-time-func $rotate-duration;
+}
+
+@mixin appearance ($width, $height, $border-radius, $bgc) {
+  height: $height;
+  width: $width;
+  border-radius: $border-radius;
+  background-color: $bgc;
 }

@@ -14,37 +14,30 @@
   &__min-hand {
     position: relative;
     top: $sec-hand-length - $min-hand-length;
-    width: $stopwatch-hand-width;
-    height: $min-hand-length;
-    border-radius: 5px;
-    background-color: $secondary-color;
+    @include appearance ($stopwatch-hand-width,
+    $min-hand-length,
+    5px,
+    $secondary-color);
     transform-origin: $stopwatch-hands-transform;
-    @include rotate-animation;
+    @include rotate-animation (3600s);
   }
 
   &__sec-hand {
     position: absolute;
-    width: $stopwatch-hand-width;
-    height: $sec-hand-length;
-    border-radius: 4px;
-    background-color: $primary-color;
+    @include appearance ($stopwatch-hand-width,
+    $sec-hand-length,
+    4px,
+    $primary-color);
     transform-origin: $stopwatch-hands-transform;
-    @include rotate-animation;
-    animation-duration: 60s;
+    @include rotate-animation (60s);
   }
 
   &__circle {
     position: absolute;
     align-self: center;
-    width: $circle-size;
-    height: $circle-size;
-    background-color: $primary-color;
-    border-radius: 50%;
-  }
-}
-
-@keyframes rotate {
-  100% {
-    transform: rotateZ(360deg);
+    @include appearance ($circle-size,
+    $circle-size,
+    50%,
+    $primary-color);
   }
 }
