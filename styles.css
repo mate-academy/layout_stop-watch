@@ -1,10 +1,10 @@
-body, .watch__centre {
+.body, .watch__centre {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.watch__centre, .watch__hand1, .watch__hand2, .watch__time {
+.watch__centre, .watch__minute-hand, .watch__second-hand, .watch__time {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -19,62 +19,64 @@ body, .watch__centre {
   border-radius: 50%;
 }
 
-.watch__hand1, .watch__hand2 {
+.watch__minute-hand, .watch__second-hand {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
-.watch__hand1, .watch__hand2 {
+.watch__minute-hand, .watch__second-hand {
   transform-origin: 0% 50%;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background-color: #FFEEDB;
+html {
   font-size: 44px;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
 }
 
-.watch {
-  position: relative;
-  background-color: #F9DC5C;
-  border: 16px solid rgba(11, 79, 108, 0.262745098);
+.body {
+  margin: 0;
+  height: 100vh;
+  background-color: #FFEEDB;
 }
 
+.watch {
+  position: relative;
+  background-color: #f9dc5c;
+  border: 16px solid #558564;
+}
 .watch__centre {
   flex-direction: column;
+  height: calc(35px);
+  width: calc(35px);
   text-transform: uppercase;
-  height: calc(66.5px);
-  width: calc(66.5px);
   background-color: #3185FC;
   z-index: 5;
   transform: translate(-50%, -50%);
 }
-
-.watch__hand1 {
+.watch__minute-hand {
   background-color: #EFBCD5;
-  height: calc(700px * 0.02);
-  width: calc(700px * 0.30);
+  height: calc(700px / 35);
+  width: calc(700px / 3);
   top: calc(50% - 700px * 0.02);
+  left: 50%;
+  border-radius: 30%;
   z-index: 3;
-  left: 50%;
   transform-origin: 0% 50%;
-  animation: 3600s linear -2700s infinite;
+  animation: seconds 360s infinite linear;
+  animation-delay: -270s;
 }
-
-.watch__hand2 {
+.watch__second-hand {
   background-color: #E84855;
-  height: calc(700px * 0.01);
-  width: calc(700px * 0.40);
-  top: calc(50% - 700px * 0.01);
+  height: calc(700px / 35);
+  width: calc(700px / 2 - 5px);
+  top: calc((700px / 2) - (700px / 35) / 2);
   left: 50%;
+  border-radius: 30%;
   z-index: 4;
-  animation: 60s linear -45s linear;
+  animation: seconds 60s infinite linear;
+  animation-delay: -45s;
 }
-
 @keyframes seconds {
   0% {
     transform: rotate(1deg);
@@ -85,118 +87,94 @@ body {
 }
 .watch__time {
   display: flex;
+  width: calc(700px - 240 px);
   justify-content: end;
-  width: calc(700px * 0.65);
-  color: #0B4F6C;
-  top: calc(50% - 25.5px);
+  top: calc(50% - 25px);
   left: 50%;
+  color: #0B4F6C;
 }
-
-.watch__time-1 {
+.watch__time--1 {
   transform-origin: 0 50%;
   transform: rotate(calc(1 * 30deg + 270deg));
 }
-
-.watch__time-1-digit {
+.watch__time--1--digit {
   transform: rotate(calc(1 * -30deg + -270deg));
 }
-
-.watch__time-2 {
+.watch__time--2 {
   transform-origin: 0 50%;
   transform: rotate(calc(2 * 30deg + 270deg));
 }
-
-.watch__time-2-digit {
+.watch__time--2--digit {
   transform: rotate(calc(2 * -30deg + -270deg));
 }
-
-.watch__time-3 {
+.watch__time--3 {
   transform-origin: 0 50%;
   transform: rotate(calc(3 * 30deg + 270deg));
 }
-
-.watch__time-3-digit {
+.watch__time--3--digit {
   transform: rotate(calc(3 * -30deg + -270deg));
 }
-
-.watch__time-4 {
+.watch__time--4 {
   transform-origin: 0 50%;
   transform: rotate(calc(4 * 30deg + 270deg));
 }
-
-.watch__time-4-digit {
+.watch__time--4--digit {
   transform: rotate(calc(4 * -30deg + -270deg));
 }
-
-.watch__time-5 {
+.watch__time--5 {
   transform-origin: 0 50%;
   transform: rotate(calc(5 * 30deg + 270deg));
 }
-
-.watch__time-5-digit {
+.watch__time--5--digit {
   transform: rotate(calc(5 * -30deg + -270deg));
 }
-
-.watch__time-6 {
+.watch__time--6 {
   transform-origin: 0 50%;
   transform: rotate(calc(6 * 30deg + 270deg));
 }
-
-.watch__time-6-digit {
+.watch__time--6--digit {
   transform: rotate(calc(6 * -30deg + -270deg));
 }
-
-.watch__time-7 {
+.watch__time--7 {
   transform-origin: 0 50%;
   transform: rotate(calc(7 * 30deg + 270deg));
 }
-
-.watch__time-7-digit {
+.watch__time--7--digit {
   transform: rotate(calc(7 * -30deg + -270deg));
 }
-
-.watch__time-8 {
+.watch__time--8 {
   transform-origin: 0 50%;
   transform: rotate(calc(8 * 30deg + 270deg));
 }
-
-.watch__time-8-digit {
+.watch__time--8--digit {
   transform: rotate(calc(8 * -30deg + -270deg));
 }
-
-.watch__time-9 {
+.watch__time--9 {
   transform-origin: 0 50%;
   transform: rotate(calc(9 * 30deg + 270deg));
 }
-
-.watch__time-9-digit {
+.watch__time--9--digit {
   transform: rotate(calc(9 * -30deg + -270deg));
 }
-
-.watch__time-10 {
+.watch__time--10 {
   transform-origin: 0 50%;
   transform: rotate(calc(10 * 30deg + 270deg));
 }
-
-.watch__time-10-digit {
+.watch__time--10--digit {
   transform: rotate(calc(10 * -30deg + -270deg));
 }
-
-.watch__time-11 {
+.watch__time--11 {
   transform-origin: 0 50%;
   transform: rotate(calc(11 * 30deg + 270deg));
 }
-
-.watch__time-11-digit {
+.watch__time--11--digit {
   transform: rotate(calc(11 * -30deg + -270deg));
 }
-
-.watch__time-12 {
+.watch__time--12 {
   transform-origin: 0 50%;
   transform: rotate(calc(12 * 30deg + 270deg));
 }
-
-.watch__time-12-digit {
+.watch__time--12--digit {
   transform: rotate(calc(12 * -30deg + -270deg));
 }
 
