@@ -1,0 +1,46 @@
+.stopWatch {
+  position: relative;
+  @include circle(500px, 500px, 50%);
+  border: 10px solid rgb(7, 7, 150);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+
+  &__center {
+    @include circle(20px, 20px, 50%);
+    background-color: white;
+    z-index: 2;
+  }
+
+  &__second {
+    transform-origin: bottom;
+    animation: rotation 60s linear infinite;
+    position: absolute;
+    bottom: 50%;
+    left: 245px;
+    background-color: rgb(248, 3, 3);
+    width: 5px;
+    height: 245px;
+    border-radius: 8px;
+  }
+
+  &__minute {
+    animation: rotation 3600s linear infinite;
+    transform-origin: bottom;
+    position: absolute;
+    top: 123px;
+    left: 247px;
+    background-color: rgba(45, 11, 197, 0.77);
+    width: 5px;
+    height: 125px;
+    border-radius: 8px;
+    z-index: 1;
+  }
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
