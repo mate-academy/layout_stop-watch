@@ -1,0 +1,42 @@
+.clock {
+  height: $clock-size;
+  width: $clock-size;
+  border: $border-size black solid;
+  border-radius: 50pc;
+  background-color: #e8f9fd;
+  margin: 0 auto;
+  position: relative;
+
+  &__seconds {
+    @include center-and-hands;
+    @include hands;
+    height: $seconds-height;
+    top: $seconds-top-indent;
+
+    &--rotation {
+      transform-origin: bottom center;
+      animation: rotation 60s linear infinite;
+    }
+  }
+
+  &__minutes {
+    @include center-and-hands;
+    @include hands;
+    height: $minutes-height;
+    top: $minutes-top-indent;
+
+    &--rotation {
+      transform-origin: bottom;
+      animation: rotation 3600s linear infinite;
+    }
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
