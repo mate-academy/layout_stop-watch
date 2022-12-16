@@ -1,0 +1,82 @@
+.stopwatch {
+  width: 100%;
+  height: 100vh;
+  @include flex-center;
+  background: center url(../images/ukr_flag.jpg);
+
+  &__board {
+    width: 45rem;
+    height: 45rem;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: $b-radius;
+    border: 15px solid rgba(255, 251, 3, 0.84);
+    position: $p-relative;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 60px 40px -7px;
+  }
+
+  &__numbers {
+    @include w-h-inherit;
+    position: $p-relative;
+  }
+
+  &__number {
+    position: $p-absolut;
+    font-size: 3rem;
+    color: #0555b1ef;
+  }
+
+  &__number--twelve {
+    @include twelve-possition;
+  }
+
+  &__number--three {
+    @include three-possition;
+  }
+
+  &__number--six {
+    @include six-possition;
+  }
+
+  &__number--nine {
+    @include nine-possition;
+  }
+
+  &__arrows {
+    @include w-h-inherit;
+    position: $p-absolut;
+    top: 0;
+    left: 0;
+    @include flex-center;
+  }
+
+  &__arrows::before {
+    content: "";
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: white;
+    border-radius: $b-radius;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgb(82, 76, 76);
+    z-index: 10;
+  }
+
+  &__arrow {
+    width: 0.7rem;
+    position: $p-absolut;
+    bottom: 50%;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgb(82, 76, 76);
+    border-radius: 100% 100% 0 0;
+    transform-origin: bottom center;
+  }
+
+  &__arrow--second {
+    height: 17rem;
+    background-color: #ecdd0ad5;
+    animation: rotate steps(3600) 60s infinite;
+  }
+
+  &__arrow--mitute {
+    height: 11rem;
+    background-color: #0555b1ef;
+    animation: rotate linear 3600s infinite;
+  }
+}
