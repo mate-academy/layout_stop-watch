@@ -1,0 +1,33 @@
+.watch {
+  position: relative;
+  @include flex-center;
+  @include circle;
+  background-color: #ffe700;
+  border: $border-for-elements;
+
+  &__short-arrow {
+    @include styles;
+    width: $short-arrow-width;
+    height: $short-arrow-height;
+    background-color: #001eff;
+    animation-duration: 3600s;
+  }
+
+  &__long-arrow {
+    width: $long-arrow-width;
+    height: $long-arrow-height;
+    background-color: #c724b1;
+    @include styles;
+    animation-duration: 60s;
+  }
+
+  &::before {
+    content: "";
+    width: $spot-width;
+    height: $spot-height;
+    border-radius: 50%;
+    background-color: #046a38;
+    border: $border-for-elements;
+    z-index: 5;
+  }
+}
