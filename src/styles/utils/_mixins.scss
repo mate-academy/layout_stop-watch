@@ -1,0 +1,16 @@
+@mixin specification ($z-index-of-hand, $hand-with,
+$height, $watch-bottom, $color, $border-radius-hand) {
+  position: absolute;
+  z-index: $z-index-of-hand;
+  width: $hand-width;
+  height: $height;
+  bottom: $watch-bottom;
+  transform-origin: bottom center;
+  background-color: $color;
+  border-radius: $border-radius-hand;
+}
+
+@mixin square ($circle-width, $circle-height) {
+  width: $circle-width;
+  height: $circle-height;
+}

@@ -1,0 +1,28 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $watch-size;
+  height: $watch-size;
+  border: 2px solid $main-color;
+  border-radius: $border-radius-circle;
+
+  &__circle {
+    @include square($circle-width, $circle-height);
+    background-color: $second-color;
+    border-radius: $border-radius-circle;
+    border: 2px solid $main-color;
+  }
+
+  &__minute {
+    @include specification(-2, $hand-width, 190px, $watch-bottom,
+    $main-color, $border-radius-hand);
+    animation: tik 3600s linear infinite;
+  }
+
+  &__second {
+    @include specification(-1, $hand-width, 230px, $watch-bottom,
+    $second-color, $border-radius-hand);
+    animation: tik 60s linear infinite;
+  }
+}
