@@ -1,29 +1,23 @@
-@import "../utils/variables";
+@import "../utils/mixins.scss";
 
 .clock {
+  @include clock;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  width: $clock-size;
-  height: $clock-size;
 
   background-image: url("https://i.pinimg.com/564x/0d/6c/ee/0d6cee31684de840b86f7360d3e4bbcd.jpg");
   background-position: center;
   background-size: cover;
   border: 10px solid $color-first;
-  border-radius: 50%;
 
   &__center {
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    align-items: center;
-    width: $center-size;
-    height: $center-size;
+    @include clock-center;
+
     position: absolute;
     background-color: $color-second;
     border: 5px solid $color-first;
-    border-radius: 50%;
   }
 
   &__hand {
