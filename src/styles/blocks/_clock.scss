@@ -4,8 +4,11 @@
   border: $border-size black solid;
   border-radius: 50pc;
   background-color: #e8f9fd;
-  margin: 0 auto;
-  position: relative;
+
+  &__wrapper {
+    margin: 0 auto;
+    position: relative;
+  }
 
   &__seconds {
     @include center-and-hands;
@@ -15,7 +18,7 @@
 
     &--rotation {
       transform-origin: bottom center;
-      animation: rotation 60s linear infinite;
+      animation: rotation 3600s linear infinite;
     }
   }
 
@@ -27,16 +30,7 @@
 
     &--rotation {
       transform-origin: bottom;
-      animation: rotation 3600s linear infinite;
+      animation: rotation 60s linear infinite;
     }
-  }
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg)
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
