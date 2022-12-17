@@ -1,4 +1,5 @@
 .dial {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,14 +14,11 @@
   border-radius: 50%;
 
   &__center-dot {
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: $center-size;
-    height: $center-size;
-    background-color: $color-second;
-    border-radius: 50%;
+
   }
 
   &__hand {
@@ -31,13 +29,36 @@
     transform-origin: bottom center;
     height: $watch-size * 0.45;
     width: 8px;
+    z-index: 1;
     animation: rotate 3600s linear infinite;
 
     &--second {
+      position: absolute;
       background-color: $color-second;
       height: $watch-size * 0.5;
       width: 6px;
       animation-duration: 60s;
+      z-index: 2;
     }
+
+    &--circle {
+      top:$circle-position;
+      position: absolute;
+      width: $center-size;
+      height: $center-size;
+      background-color: $color-second;
+      border-radius: 50%;
+      z-index: 3;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
   }
 }
