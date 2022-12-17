@@ -1,0 +1,14 @@
+$clock-size: 450px;
+$clock-border-color: #000;
+$minute-arrow-color: #000;
+$second-arrow-color: #f00;
+$clock-center-color: #f00;
+$minute-height: 180px;
+$second-height: 220px;
+$clock-center-size: 20px;
+
+$clock-center-calc:
+  ($minute-height + $second-height + $clock-center-size) / 2;
+$minute-arrow-position: $clock-center-calc - $minute-height;
+$second-arrow-position: $second-height - $minute-arrow-position;
+$clock-center-position: $second-arrow-position + $clock-center-size / 2;
