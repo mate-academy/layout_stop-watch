@@ -1,5 +1,5 @@
 $second-timer: 60s;
-$minute-timer: 3600s;
+$minute-timer: $second-timer * 60;
 
 $stopwatch-size: 500px;
 $item-size: 20px;
@@ -7,6 +7,7 @@ $minute-heigth: 170px;
 $stopwatch-half: calc(#{$stopwatch-size} / 2);
 $item-half: calc(#{$item-size} / 2);
 $detail-size: calc(#{$item-size} / 2);
+$center: calc(#{$stopwatch-half} - #{$item-size} / 2);
 
 $second-x: calc(#{$stopwatch-half} - (2 * #{$item-size}) - #{$item-half});
 $minute-x: calc(#{$stopwatch-half} - #{$item-size} - #{$item-half});

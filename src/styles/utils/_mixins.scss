@@ -1,4 +1,24 @@
-@mixin animation {
+@mixin animation($timer) {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  animation-name: move;
+  transform-origin: bottom;
+  animation-duration: $timer;
+}
+
+@mixin circle($width, $radius, $bg-c) {
+  width: #{$width};
+  height: #{$width};
+  border-radius: #{$radius};
+  background-color: #{$bg-c};
+}
+
+@mixin hand($width,$height, $radius, $bg-c) {
+  width: #{$width};
+  height: #{$height};
+  border-radius: #{$radius};
+  border: 1px solid;
+  background-color: #{$bg-c} ;
+  position: absolute;
+  left: calc(#{$stopwatch-size} / 2 - #{$item-size} / 2);
 }
