@@ -1,0 +1,33 @@
+@mixin flex-centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin arrow-position {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  margin: 0 auto;
+}
+
+@mixin arrow-styles($height, $width, $color) {
+  height: $height;
+  width: $width;
+  border-radius: $width*0.5;
+  background-color: $color;
+}
+
+@mixin arrow-animation($speed) {
+  animation-name: circle;
+  animation-duration: $speed;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: bottom center;
+}
+
+@mixin circle-size ($size) {
+  height: $size;
+  width: $size;
+}
