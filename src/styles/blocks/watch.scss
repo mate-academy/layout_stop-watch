@@ -1,0 +1,33 @@
+.watch {
+  position: relative;
+  @include flex-centre;
+  @include circle-size($watch-size);
+  background-color: yellow;
+  border: 10px solid red;
+  border-radius: 50%;
+
+  &__hour-arrow {
+    @include arrow-position;
+    @include arrow-styles($height-hour-arrow, $width-hour-arrow, #000);
+    @include arrow-animation($speed-hour-arrow);
+  }
+
+  &__minute-arrow {
+    @include arrow-position;
+    @include arrow-styles($height-minute-arrow, $width-minute-arrow, #0f0);
+    @include arrow-animation($speed-minute-arrow);
+  }
+
+  &__second-arrow {
+    @include arrow-position;
+    @include arrow-styles($height-second-arrow, $width-second-arrow, #f00);
+    @include arrow-animation($speed-second-arrow);
+  }
+
+  &__center {
+    position: absolute;
+    @include circle-size($watch-centre-size);
+    border-radius: 50%;
+    background: red;
+  }
+}
