@@ -1,0 +1,53 @@
+@import "./utils/variables";
+@import "./utils/keyframes";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: $clock-size;
+  width: $clock-size;
+  margin: 0 auto;
+  border: 1px solid $clock-border-color;
+  border-radius: 50%;
+
+  &__minute {
+    position: relative;
+    top: $minute-arrow-position;
+    height: $minute-height;
+    width: 7px;
+    background-color: $minute-arrow-color;
+    transform-origin: bottom;
+    animation: clock-rotation 3600s linear backwards infinite;
+  }
+
+  &__second {
+    position: relative;
+    bottom: $second-arrow-position;
+    height: $second-height;
+    width: 2px;
+    background-color: $second-arrow-color;
+    transform-origin: bottom;
+    animation: clock-rotation 60s linear backwards infinite;
+  }
+
+  &__center {
+    position: relative;
+    bottom: $clock-center-position;
+    width: $clock-center-size;
+    height: $clock-center-size;
+    border-radius: 50%;
+    background-color: $clock-center-color;
+  }
+}
