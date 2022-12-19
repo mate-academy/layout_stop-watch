@@ -1,0 +1,31 @@
+.watch {
+  @include circle ($diameter-watch);
+  border: 5px solid $main-color;
+  background-color: rgb(221, 225, 228);
+  position: relative;
+
+  &__minute {
+    @include arrow (
+      $minute-arrow-height,
+      $minute-arrow-width,
+      $main-color
+    );
+    animation: move 3600s linear infinite;
+  }
+
+  &__second {
+    @include arrow (
+      $second-arrow-height,
+      $second-arrow-width,
+      $second-arrow-color
+    );
+    animation: move 60s linear infinite;
+  }
+  
+  &__center {
+    @include circle ($center-size);
+    background-color: $main-color;
+    @extend %central-position;
+    transform: translate(-50%, 50%);
+  }
+}
