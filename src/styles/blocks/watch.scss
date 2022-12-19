@@ -5,23 +5,21 @@
   position: relative;
 
   &__minute {
-    height: $minute-arrow-height;
-    width: $minute-arrow-width;
-    background-color: $main-color;
-    border-radius: 20%;
-    @extend %central-position;
+    @include arrow (
+      $minute-arrow-height,
+      $minute-arrow-width,
+      $main-color
+    );
     animation: move 3600s linear infinite;
-    transform-origin: bottom;
   }
-  
+
   &__second {
-    height: $second-arrow-height;
-    width: $second-arrow-width;
-    background-color: $second-arrow-color;
-    border-radius: 20%;
-    @extend %central-position;
+    @include arrow (
+      $second-arrow-height,
+      $second-arrow-width,
+      $second-arrow-color
+    );
     animation: move 60s linear infinite;
-    transform-origin: bottom;
   }
   
   &__center {
