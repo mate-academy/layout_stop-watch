@@ -8,17 +8,13 @@
     position: absolute;
     top: 0;
     left: 50%;
-    @include line(2%, 37%, 5px, $main-color);
+    @include line(2%, 50%, 5px, $main-color);
     transform-origin: bottom;
 
     &--second--yes {
-      @include line(2%, 50%, 5px, #f00);
+      background: $secondary-color;
       z-index: -1;
       animation: clock-active 60s steps(60) infinite;
-    }
-
-    &--minute--yes {
-      top: 14%;
     }
   }
 
