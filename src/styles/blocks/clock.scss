@@ -11,10 +11,16 @@
     @include line(2%, 50%, 5px, $main-color);
     transform-origin: bottom;
 
-    &--second--yes {
+    &--second {
       background: $secondary-color;
       z-index: -1;
-      animation: clock-active 60s steps(60) infinite;
+      animation: clock-active 60s linear infinite;
+    }
+
+    &--minute {
+      top: 14%;
+      @include line(2%, 37%, 5px, $main-color);
+      animation: clock-active 86400s steps(60) infinite;
     }
   }
 
