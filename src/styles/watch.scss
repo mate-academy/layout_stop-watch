@@ -1,0 +1,38 @@
+.container__watch {
+  margin: auto;
+}
+
+.watch {
+  position: relative;
+  max-width: 700px;
+  height: 700px;
+
+  &__min {
+    @include arrow-position;
+    height: $minute-height;
+    width: $arrow-width;
+    background-color: #af3236;
+    animation: watch 3600s linear infinite;
+    transform-origin: $arrow-axis;
+  }
+
+  &__sec {
+    @include arrow-position;
+    height: $minute-height * 2;
+    width: $arrow-width;
+    background-color: #277f91;
+    opacity: 0.7;
+    animation: watch 60s linear infinite;
+    transform-origin: $arrow-axis;
+  }
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+    background-color: #277f91;
+    border-radius: 50%;
+    position: absolute;
+    right: calc(50% - #{$arrow-width});
+    bottom: calc(50% - (#{$center-size} / 2));
+  }
+}
