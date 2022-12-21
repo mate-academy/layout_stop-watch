@@ -1,0 +1,49 @@
+
+.time {
+  position: relative;
+  margin: 40px auto;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+
+  background:
+    url(https://st2.depositphotos.com/1431107/9079/i/950/depositphotos_90796066-stock-photo-blank-clock-dial-without-hands.jpg)
+    center
+    no-repeat ;
+  background-size: 143%;
+
+  &__min {
+    position: absolute;
+    left: 149px;
+    height: 270px;
+    top: 15px;
+
+    z-index: 1;
+    width: 2px;
+    border-radius: 40%;
+    animation: go 3600s linear infinite;
+  }
+
+  &__centr {
+    position: absolute;
+    top: 135px;
+    left: 135px;
+
+    z-index: 2;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: rgba(243, 163, 88, 0.993);
+  }
+
+  &__second {
+    position: absolute;
+    left: 149px;
+    top: 50px;
+
+    height: 200px;
+    width: 2px;
+    border-radius: 40%;
+    animation: go 60s linear infinite;
+  }
+}
