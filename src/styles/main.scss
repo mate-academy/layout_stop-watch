@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+$size-container: 500px;
+$size-watch__center: 4%;
+$color-primary: rgb(255, 80, 49);
+$color-secondary: rgb(173, 0, 0);
+$size-outline: ($size-container / 100);
+
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+%watch-arrows {
+  position: absolute;
+  bottom: 50%;
+  width: 1.5%;
+  background-color: $color-primary;
+  border-radius: 50%;
+  transform-origin: center bottom;
+}
+
+.watch {
+  @include square($size-container);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: $color-secondary $size-outline solid;
+  border-radius: 50%;
+}
+
+.watch__center {
+  @include square($size-watch__center);
+  background-color: $color-secondary;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.watch__minutes {
+  @extend %watch-arrows;
+  height: $size-container / 3.3;
+  animation: move 3660s infinite linear;
+}
+
+.watch__seconds {
+  @extend %watch-arrows;
+  height: $size-container / 2.3;
+  animation: move 60s infinite linear;
+}
