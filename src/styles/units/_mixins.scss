@@ -1,0 +1,11 @@
+@mixin makeCircle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin position($watchSize, $elSize) {
+  position: absolute;
+  left: ($watchSize - $elSize) / 2;
+  bottom: ($watchSize - $elSize) / 2;
+}

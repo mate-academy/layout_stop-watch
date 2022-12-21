@@ -1,0 +1,47 @@
+.watch {
+  position: relative;
+  @include makeCircle($watchSize);
+  margin: 150px auto;
+  background-color: rgb(255, 255, 17);
+  border: 2px solid #0d15b7;
+
+  &__seconds {
+    @include position($watchSize, $elSizeSec);
+    width: 4px;
+    height: 150px;
+    background-color: $arrowsColor;
+    border-radius: $styleForArrows;
+    animation: spinAround 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__minutes {
+    @include position($watchSize, $elSizeMin);
+    width: 8px;
+    height: 130px;
+    background-color: $arrowsColor;
+    border-radius: $styleForArrows;
+    transform-origin: bottom;
+    animation: spinAround 3600s steps(60, end) infinite;
+  }
+
+  &__dotted {
+    @include position($watchSize, $elSizeDotted);
+    @include makeCircle($elSizeDotted);
+    border: 5px solid $dottedBorderColor;
+    background-color: $dottedColor;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+@keyframes spinAround {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
