@@ -1,0 +1,48 @@
+.watch {
+  position: relative;
+  @include makeCircle($watch-size);
+  margin: 150px auto;
+  background-color: rgb(255, 255, 17);
+  border-radius: 50%;
+  border: 2px solid #0d15b7;
+
+  &__seconds {
+    @include positionAbsolute($watch-size, $el-size-sec);
+    width: 4px;
+    height: 150px;
+    background-color: $arrows-color;
+    border-radius: $style-for-arrows;
+    animation: AnimationWatch 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__minutes {
+    @include positionAbsolute($watch-size, $el-size-min);
+    width: 8px;
+    height: 130px;
+    background-color: $arrows-color;
+    border-radius: $style-for-arrows;
+    transform-origin: bottom;
+    animation: AnimationWatch 3600s steps(60, end) infinite;
+  }
+
+  &__dotted {
+    @include positionAbsolute($watch-size, $el-size-dotted);
+    @include makeCircle($el-size-dotted);
+    border: 5px solid $dotted-border-color;
+    background-color: $dotted-color;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+@keyframes AnimationWatch {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
