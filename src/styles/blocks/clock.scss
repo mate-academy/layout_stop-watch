@@ -1,0 +1,94 @@
+.clock {
+  position: absolute;
+
+  padding: 240px;
+
+  border: 8px solid #101ca1;
+  border-radius: $bradius;
+
+  font-size: 40px;
+
+  background-image: url(../images/bg2.jpg);
+  opacity: $opacity;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__center {
+    position: relative;
+
+    @include square($ball-size);
+
+    background-image: url(../images/golf.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+    &__arrow-minutes {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+
+    width: 12px;
+    height: 260px;
+
+    border-radius: $bradius;
+    background-color: $figuremin;
+
+    animation: cycle 20s linear infinite;
+    transform-origin: top left;
+  }
+
+  &__arrow-seconds {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+
+    width: 7px;
+    height: 200px;
+
+    border-radius: $bradius;
+    background-color: $figuresec;
+
+    animation: cycle 10s linear infinite;
+    transform-origin: top left;
+  }
+}
+
+@keyframes cycle {
+  from {transform: rotate(180deg);}
+  to {transform: rotate(540deg);}
+}
+
+.clock__figure {
+  position: relative;
+
+  font-size: 40px;
+  color: $figurecol;
+  opacity: $opacity;
+
+  @for $index from 1 through 2 {
+    &--Y--#{$index} {
+      top: -270px + ($index - 1) * 545px;
+      left: 60px - ($index - 1) * 85px;
+      z-index: 1;
+    }
+  }
+
+  @for $index from 1 through 2 {
+    &--X--#{$index} {
+      top: -5px + ($index - 1) * 5px;
+      left: 280px - ($index - 1) * 615px;
+      transform: rotate(90deg);
+      z-index: 1;
+    }
+  }
+
+  &--Y--2 {
+    transform: scale(-1);
+  }
+}
