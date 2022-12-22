@@ -24,7 +24,7 @@
     background-position: center;
   }
 
-    &__arrow-minutes {
+  &__arrow-minutes {
     position: absolute;
 
     top: 50%;
@@ -60,12 +60,17 @@
 }
 
 @keyframes cycle {
-  from {transform: rotate(180deg);}
-  to {transform: rotate(540deg);}
+  from {
+    transform: rotate(180deg);
+  }
+
+  to {
+    transform: rotate(540deg);
+  }
 }
 
 .clock__figure {
-  position: relative;
+  position: absolute;
 
   font-size: 40px;
   color: $figurecol;
@@ -73,16 +78,16 @@
 
   @for $index from 1 through 2 {
     &--Y--#{$index} {
-      top: -270px + ($index - 1) * 545px;
-      left: 60px - ($index - 1) * 85px;
+      top: 0 + ($index - 1) * 555px;
+      left: 260px - ($index - 1) * -25px;
       z-index: 1;
     }
   }
 
   @for $index from 1 through 2 {
     &--X--#{$index} {
-      top: -5px + ($index - 1) * 5px;
-      left: 280px - ($index - 1) * 615px;
+      top: 275px + ($index - 1) * 5px;
+      left: 560px - ($index - 1) * 560px;
       transform: rotate(90deg);
       z-index: 1;
     }
