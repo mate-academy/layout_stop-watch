@@ -14,13 +14,17 @@
     &--second {
       background: $secondary-color;
       z-index: -1;
-      animation: clock-active 60s linear infinite;
+      animation: clock-active 60s steps(60) infinite;
     }
 
     &--minute {
       top: 14%;
       @include line(2%, 37%, 5px, $main-color);
-      animation: clock-active 86400s steps(60) infinite;
+      animation: clock-active 600s steps(60) infinite;
+      //Duration 10 minutes for test
+      // animation-duration: 3600s; 1 hour
+      // animation-duration: 86400s; 1 day
+
     }
   }
 
@@ -36,18 +40,6 @@
 @keyframes clock-active {
   0% {
     transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(90deg);
-  }
-
-  50% {
-    transform: rotate(180deg);
-  }
-
-  75% {
-    transform: rotate(270deg);
   }
 
   100% {
