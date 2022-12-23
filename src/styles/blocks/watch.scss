@@ -1,0 +1,27 @@
+.watch {
+  position: relative;
+  @include circle($size);
+  border: 1px solid black;
+
+  &__arrow--min {
+    width: 85px;
+    height: 5px;
+    background: red;
+    border-radius: 10px;
+    animation: movement 3600s linear infinite -2700s;
+  }
+
+  &__arrow--second {
+    width: 155px;
+    height: 5px;
+    background: green;
+    border-radius: 20px;
+    animation: movement 60s linear -45s infinite;
+  }
+
+  &__arrow {
+    position: absolute;
+    transform-origin: left;
+    @extend %position-of-the-arrows;
+  }
+}
