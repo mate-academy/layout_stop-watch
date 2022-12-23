@@ -1,5 +1,4 @@
-$clock-width: 500px;
-$clock-height: 500px;
+$clock-size: 500px;
 $main-height: 100%;
 $position-margin: 50%;
 
@@ -9,4 +8,10 @@ $color-center: #847878;
 $color-minute: #333539;
 $color-sec: #e19614;
 
-$margin-value: calc((#{$main-height} - #{$clock-height}) / 10);
+$margin-value: calc((#{$main-height} - #{$clock-size}) / 10);
+
+@mixin object-position {
+  position: absolute;
+  top: $position-margin;
+  left: $position-margin;
+}

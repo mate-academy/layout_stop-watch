@@ -8,13 +8,10 @@ body {
 .clock {
   display: block;
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: $margin-value;
-  margin-bottom: $margin-value;
+  margin: $margin-value auto;
 
-  width: $clock-width;
-  height: $clock-height;
+  width: $clock-size;
+  height: $clock-size;
   
   border: 3px solid $color-border;
   border-radius: 50%;
@@ -27,9 +24,7 @@ body {
   }
 
   &__center {
-    position: absolute;
-    top: $position-margin;
-    left: $position-margin;
+    @include object-position;
   
     width: 20px;
     height: 20px;
@@ -42,9 +37,7 @@ body {
 
   &__minute-arrow,
   &__secund-arrow {
-    position: absolute;
-    top: $position-margin;
-    left: $position-margin;
+    @include object-position;
   
     width: 1px;
     height: 1px;
