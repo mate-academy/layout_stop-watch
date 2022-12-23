@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+$width-clock: 600px;
+$rotate: "1"30deg,
+  "2"60deg,
+  "3"90deg,
+  "4"120deg,
+  "5"150deg,
+  "6"180deg,
+  "7"210deg,
+  "8"240deg,
+  "9"270deg,
+  "10"300deg,
+  "11"330deg;
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(50, 177, 227);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  width: $width-clock;
+  height: $width-clock;
+  border: 5px solid white;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 98%;
+    height: 98%;
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    border: 1px solid white;
+    border-radius: 50%;
+
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 93%;
+    height: 93%;
+    position: absolute;
+    top: 3.5%;
+    left: 3.5%;
+    border: 1px solid white;
+    border-radius: 50%;
+  }
+
+  &__number {
+    position: absolute;
+    text-align: center;
+    inset: 5%;
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+
+    @each $index,
+      $num in $rotate {
+      &--number--#{$index} {
+        transform: rotate(#{$num});
+      }
+    }
+    
+    @each $index,
+      $num in $rotate {
+      &--number--#{$index} span {
+        display: block;
+        transform: rotate(#{-$num});
+      }
+    }
+  }
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 3;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    left: 51.5%;
+    top: 51.5%;
+    z-index: 2;
+    border-radius: 5px;
+    transform-origin: top;
+   
+    &--minute {
+      width: 8px;
+      height: 150px;
+      background-color: white;
+      animation: round 3600s steps(60) infinite;
+    }
+
+    &--second {
+      width: 4px;
+      height: 250px;
+      background-color: white;
+      animation: round 60s steps(60) infinite;
+    }
+  }
+}
+
+@keyframes round {
+  from {
+    rotate: (0deg);
+  }
+  to {
+    rotate: (360deg);
+  }
+}
