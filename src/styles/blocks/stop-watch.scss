@@ -1,0 +1,40 @@
+.stop-watch {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include circle($circle-size);
+    background-color: $clock-hand-color;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    width: 5px;
+    height: 100px;
+    background-color: pink;
+    border-radius: $border-radius-clock-hand;
+    transform-origin: bottom;
+    animation: rotate 3600s steps(60, end) infinite 1s;
+  }
+
+  &__second {
+    position: absolute;
+    bottom: 50%;
+    width: 5px;
+    height: 150px;
+    background-color: $clock-hand-color;
+    border-radius: $border-radius-clock-hand;
+    z-index: 1;
+    transform-origin: bottom;
+    animation: rotate 60s linear infinite;
+  }
+}
