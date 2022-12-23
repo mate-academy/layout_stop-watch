@@ -1,0 +1,52 @@
+@import "./utils/variables.scss";
+
+body,
+hr {
+  margin: 0;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 400px;
+  justify-content: center;
+  align-items: flex-end;
+
+  &__minute {
+    background-color: aqua;
+    position: absolute;
+    height: $clock__minute-size;
+    width: $clock__arrows-height;
+    border-radius: 10px;
+    z-index: 1;
+    transition: transform 60s linear;
+    transform-origin: bottom center;
+  }
+
+  &__second {
+    background-color: red;
+    height: $clock__second-size;
+    position: absolute;
+    width: $clock__arrows-height;
+    border-radius: 10px;
+    transition: transform 60s linear;
+    transform-origin: bottom center;
+  }
+
+  &__circle {
+    height: 20px;
+    width: 20px;
+    background-color: aqua;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__minute:hover {
+    transform: rotate(180deg);
+  }
+
+  &__second:hover {
+    transform: rotate(180deg);
+  }
+}
