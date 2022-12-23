@@ -1,0 +1,59 @@
+$color-red: red;
+$color-blue: blue;
+$size: 300px;
+
+.watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: $size;
+  width: $size;
+  border: 2px solid black;
+  border-radius: 50%;
+
+  &__minutes {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    height: $size / 3;
+    width: 5px;
+    background-color: $color-red;
+    border-radius: 50%;
+    transform-origin: center bottom;
+    animation: move 3600s linear infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    height: $size / 2;
+    width: 3px;
+    background-color: $color-blue;
+    border-radius: 50%;
+    transform-origin: center bottom;
+    animation: move 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    bottom: 47%;
+    left: 47%;
+    height: 20px;
+    width: 20px;
+    background-color: $color-blue;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
