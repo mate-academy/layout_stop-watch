@@ -20,9 +20,7 @@
 
   &__seconds {
     @include design;
-    width: 1%;
-    height: 36%;
-    top: 14%;
+    @include position(1%, 36%, 14%);
     transform-origin: bottom;
     animation-name: seconds;
     animation-duration: 60s;
@@ -31,9 +29,7 @@
 
   &__minutes {
     @include design;
-    height: 30%;
-    width: 2%;
-    top: 20%;
+    @include position(2%, 30%, 20%);
     animation-name: minutes;
     animation-duration: 3600s;
     animation-iteration-count: 60;
