@@ -1,0 +1,16 @@
+.watch {
+  &__minute {
+    @include watch-stats;
+    z-index: 1;
+    height: 100px;
+    background-color: blue;
+    animation-duration: 3600s;
+  }
+
+  &__second {
+    @include watch-stats;
+    height: 150px;
+    background-color: yellow;
+    animation-duration: 60s;
+  }
+}
