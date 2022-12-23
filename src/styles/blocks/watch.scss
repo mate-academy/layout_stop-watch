@@ -1,0 +1,51 @@
+.watch {
+  position: relative;
+  height: 100vh;
+  margin: auto;
+
+  &__point {
+    position: absolute;
+    @extend %point-position;
+
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+
+    background-color: rgb(177, 99, 34);
+
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute-hand {
+    position: absolute;
+    width: $minute-width;
+    height: $minute-height;
+
+    top: calc(50% - #{$minute-height});
+    left: calc(50% - #{$minute-width} / 2);
+
+    border-radius: 10%;
+
+    background-color: black;
+
+    animation: move 3600s infinite;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    position: absolute;
+    width: $second-width;
+    height: $second-height;
+
+    top: calc(50% - #{$second-height});
+    left: calc(50% - #{$second-width} / 2);
+
+    border-radius: 10%;
+
+    background-color: rgb(48, 26, 216);
+
+    animation: move 60s infinite;
+    transform-origin: bottom;
+  }
+}
