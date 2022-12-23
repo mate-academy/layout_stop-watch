@@ -28,10 +28,8 @@
     border-radius: 10%;
 
     background-color: black;
-    
-    animation-name: move;
-    animation-duration: 3600s;
-    animation-iteration-count: infinite;
+
+    animation: move 3600s infinite;
     transform-origin: bottom;
   }
 
@@ -47,20 +45,7 @@
 
     background-color: rgb(48, 26, 216);
 
-    animation-name: move;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
+    animation: move 60s infinite;
     transform-origin: bottom;
-  }
-
-  @keyframes move {
-
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
   }
 }
