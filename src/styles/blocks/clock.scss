@@ -1,0 +1,44 @@
+.clock {
+  @include circle (80vmin);
+  border: 20px solid $main-color;
+  background: #fff9;
+  position: relative;
+
+  &__hand {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    @include line(2%, 50%, 5px, $main-color);
+    transform-origin: bottom;
+
+    &--second {
+      background: $secondary-color;
+      z-index: -1;
+      animation: clock-active 60s steps(60) infinite;
+    }
+
+    &--minute {
+      top: 14%;
+      @include line(2%, 37%, 5px, $main-color);
+      animation: clock-active 3600s steps(60) infinite;
+    }
+  }
+
+  &__center {
+    @include circle (4%);
+    background: $main-color;
+    position: absolute;
+    top: 49%;
+    left: 49%;
+  }
+}
+
+@keyframes clock-active {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
