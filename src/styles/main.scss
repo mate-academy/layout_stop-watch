@@ -1,0 +1,47 @@
+@import "./utils/variables.scss";
+@import "./utils/mixins.scss";
+
+body,
+hr {
+  margin: 0;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 400px;
+  justify-content: center;
+  align-items: flex-end;
+
+  &__minute {
+    background-color: $clock__minute_arrow-color;
+    height: $clock__minute-size;
+    width: $clock__arrows-height;
+    z-index: 1;
+    @include clock_arrow($clock__minute-anim);
+  }
+
+  &__second {
+    background-color: $clock__second_arrow-color;
+    height: $clock__second-size;
+    width: $clock__arrows-height;
+    @include clock_arrow($clock__second-anim);
+  }
+
+  &__circle {
+    background-color: $clock__minute_arrow-color;
+    @include circle($clock__circle-size);
+    z-index: 2;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
