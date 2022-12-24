@@ -1,0 +1,54 @@
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: $main-color;
+
+  &__center {
+    position: absolute;
+    @include circle($center-size);
+    background-color: rgb(190, 133, 75);
+    border-radius: 50%;
+    z-index: 100;
+  }
+
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: $minute-width;
+    height: $minute-heigth;
+    background-color: rgb(5, 75, 93);
+    border-radius: 30px;
+    transform-origin: bottom left;
+    animation: spin 3600s linear infinite;
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__second {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: $second-width;
+    height: $second-heigth;
+    background-color: rgb(166, 180, 48);
+    border-radius: 30px;
+    transform-origin: bottom left;
+    animation: spin 60s steps(60) infinite;
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@mixin square ($center-size) {
+  width: $center-size;
+  height: $center-size;
+}
+
+@mixin circle ($center-size) {
+  @include square($center-size);
+  border-radius: 50%;
+}
