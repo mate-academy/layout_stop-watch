@@ -1,0 +1,35 @@
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__minute {
+    width: $clock-hand-width;
+    height: 20%;
+    background-color: #ff3636;
+    border-radius: $clock-hand-radius;
+    animation: minute 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    width: $clock-hand-width;
+    height: 40%;
+    background-color: #5c6bf8;
+    border-radius: $clock-hand-radius;
+    animation: second 1000ms linear infinite;
+    transform-origin: top;
+
+    &::before {
+      @include circle($clock-dot-size);
+
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #5659f7;
+    }
+  }
+}
