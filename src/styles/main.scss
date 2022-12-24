@@ -1,4 +1,5 @@
 @import "./utils/variables.scss";
+@import "./utils/mixins.scss";
 
 body,
 hr {
@@ -14,39 +15,33 @@ hr {
   align-items: flex-end;
 
   &__minute {
-    background-color: aqua;
-    position: absolute;
+    background-color: $clock__minute_arrow-color;
     height: $clock__minute-size;
     width: $clock__arrows-height;
-    border-radius: 10px;
     z-index: 1;
-    transition: transform 60s linear;
-    transform-origin: bottom center;
+    @include clock_arrow($clock__minute-anim);
   }
 
   &__second {
-    background-color: red;
+    background-color: $clock__second_arrow-color;
     height: $clock__second-size;
-    position: absolute;
     width: $clock__arrows-height;
-    border-radius: 10px;
-    transition: transform 1s linear;
-    transform-origin: bottom center;
+    @include clock_arrow($clock__second-anim);
   }
 
   &__circle {
-    height: 20px;
-    width: 20px;
-    background-color: aqua;
-    border-radius: 50%;
+    background-color: $clock__minute_arrow-color;
+    @include circle($clock__circle-size);
     z-index: 2;
   }
+}
 
-  &__minute:hover {
-    transform: rotate(180deg);
+@keyframes move {
+  from {
+    transform: rotate(0deg);
   }
 
-  &__second:hover {
-    transform: rotate(180deg);
+  to {
+    transform: rotate(360deg);
   }
 }
