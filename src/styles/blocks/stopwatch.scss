@@ -1,0 +1,48 @@
+.stopwatch {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 860px;
+  height: 100vh;
+
+  background-color: rgb(226, 192, 231);
+  border: 4px solid #1d7d5b;
+  border-radius: $procent-fifty;
+
+  &__center {
+    @include positionCenter;
+
+    width: 25px;
+    height: 25px;
+    
+    background: #9f3737;
+    border-radius: 15px;
+    z-index: 4;
+  }
+
+  &__big {
+    @include positionBigSmall;
+
+    height: 350px;
+    width: $size-width;
+    
+    border-radius: 10px;
+    background: rgb(151, 82, 82);
+
+    animation: big 60s linear infinite;
+  }
+
+  &__small {
+    @include positionBigSmall;
+
+    height: 250px;
+    width: $size-width;
+
+    background: #e06161;
+    border-radius: 10px;
+
+    animation: small 1s linear infinite;
+  }
+}
