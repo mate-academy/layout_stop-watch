@@ -1,25 +1,31 @@
 .stopwatch {
+  margin: auto;
+  position: relative;
+  width: 100vh;
+  height: 100vh;
+  border: 20px solid #41f21094;
+  border-radius: 50%;
+  background: #41f2101c;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 
   &__minute {
-    width: $clock-hand-width;
+    @extend %clock-hand;
+
     height: 20%;
     background-color: #ff3636;
-    border-radius: $clock-hand-radius;
-    animation: minute 60s linear infinite;
-    transform-origin: bottom;
+    animation: minute 3600s linear infinite;
+    transform-origin: top;
   }
 
   &__second {
-    width: $clock-hand-width;
+    @extend %clock-hand;
+
     height: 40%;
     background-color: #5c6bf8;
-    border-radius: $clock-hand-radius;
-    animation: second 1000ms linear infinite;
+    animation: second 60s linear infinite;
     transform-origin: top;
 
     &::before {
