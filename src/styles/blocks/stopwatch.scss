@@ -19,12 +19,11 @@
   &__minute {
     position: absolute;
     bottom: 50%;
-    left: 50%;
     width: $minute-width;
     height: $minute-heigth;
     background-color: rgb(5, 75, 93);
     border-radius: 30px;
-    transform-origin: bottom left;
+    transform-origin: bottom center;
     animation: spin 3600s linear infinite;
 
     @keyframes spin {
@@ -37,12 +36,11 @@
   &__second {
     position: absolute;
     bottom: 50%;
-    left: 50%;
     width: $second-width;
     height: $second-heigth;
     background-color: rgb(166, 180, 48);
     border-radius: 30px;
-    transform-origin: bottom left;
+    transform-origin: bottom center;
     animation: spin 60s steps(60) infinite;
 
     @keyframes spin {
