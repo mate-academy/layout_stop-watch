@@ -7,11 +7,12 @@ body {
 
 .clock {
   display: block;
-  position: relative;
-  margin: $margin-value auto;
 
-  width: $clock-size;
-  height: $clock-size;
+  &--position {
+    position: relative;
+    margin: $margin-value auto;
+    @include square;
+  }
   
   border: 3px solid $color-border;
   border-radius: 50%;
