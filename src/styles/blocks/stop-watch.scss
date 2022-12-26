@@ -1,0 +1,49 @@
+@import "../utils/mixins";
+
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100px;
+
+  background-color: grey;
+  border: 4px solid black;
+  border-radius: 8px;
+
+  &__time {
+    background-color: #eee;
+    text-align: center;
+    font-size: 50px;
+
+    &::before {
+      content: "0";
+      font-size: 50px;
+    }
+
+    &--ten-min {
+      &::before {
+        content: "";
+        @include tenmin-animation;
+      }
+    }
+
+    &--min {
+      &::before {
+        @include min-animation;
+      }
+    }
+
+    &--ten-sec {
+      &::before {
+        @include tensec-animation;
+      }
+    }
+
+    &--sec {
+      &::before {
+        @include sec-animation;
+      }
+    }
+  }
+}
