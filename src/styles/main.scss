@@ -1,0 +1,93 @@
+@import "./variables.scss";
+@import "./animation.scss";
+
+body {
+  margin: 0;
+}
+
+.clock {
+  display: block;
+
+  &--position {
+    position: relative;
+    margin: $margin-value auto;
+    @include square;
+  }
+  
+  border: 3px solid $color-border;
+  border-radius: 50%;
+
+  &--time {
+    background-image: url("../img/clock.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__center {
+    @include object-position;
+  
+    width: 20px;
+    height: 20px;
+    background-color: $color-center;
+    
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__minute-arrow,
+  &__secund-arrow {
+    @include object-position;
+  
+    width: 1px;
+    height: 1px;
+    
+    transform-origin: left center;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute-arrow::after,
+  &__secund-arrow::after {
+    content: "";
+    position: absolute;
+    top: $position-margin;
+    left: $position-margin;
+  }
+
+  &__minute-arrow {
+    background-color: $color-minute;
+  
+    animation: time;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute-arrow::after {
+    width: 210px;
+    height: 10px;
+    background-color: $color-minute;
+  
+    border-radius: 0 40% 40% 0;
+    transform: translate(0, -50%);
+  }
+
+  &__secund-arrow {
+    background-color: $color-sec;
+  
+    animation: time;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__secund-arrow::after {
+    width: 250px;
+    height: 10px;
+    background-color: $color-sec;
+  
+    transform: translate(0, -50%);
+    border-radius: 0 30% 30% 0;
+  }
+}
