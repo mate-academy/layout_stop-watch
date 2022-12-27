@@ -5,7 +5,13 @@
   transform: translate(-$procent-fifty, -$procent-fifty);
 }
 
-@mixin positionBigSmall {
+@mixin positionBig {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+}
+
+@mixin positionSmall {
   position: absolute;
   bottom: 50%;
   transform-origin: bottom;

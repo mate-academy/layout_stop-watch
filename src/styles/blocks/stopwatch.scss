@@ -23,7 +23,7 @@
   }
 
   &__big {
-    @include positionBigSmall;
+    @include positionBig;
 
     height: 350px;
     width: $size-width;
@@ -31,11 +31,11 @@
     border-radius: 10px;
     background: rgb(151, 82, 82);
 
-    animation: big 60s linear infinite;
+    animation: stopwatch 60s linear infinite;
   }
 
   &__small {
-    @include positionBigSmall;
+    @include positionSmall;
 
     height: 250px;
     width: $size-width;
@@ -43,6 +43,6 @@
     background: #e06161;
     border-radius: 10px;
 
-    animation: small 1s linear infinite;
+    animation: stopwatch 1s linear infinite;
   }
 }
