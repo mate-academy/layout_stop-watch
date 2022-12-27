@@ -8,44 +8,32 @@
   border-radius: 50%;
   border: 4px solid $watch-border-color;
 
-  &__second-hand {
+  &__hand {
     position: absolute;
     bottom: 50%;
+    border-radius: 50%;
+    background-color: $watch-hand-color;
+    transform-origin: bottom;
 
-    &--style {
+    &--second {
       width: 5px;
       height: 200px;
-      border-radius: 50%;
-      background-color: $watch-hand-color;
-
       animation: clock 60s steps(60) infinite;
-      transform-origin: bottom;
     }
-  }
 
-  &__minute-hand {
-    position: absolute;
-    bottom: 50%;
-
-    &--style {
+    &--minute {
       width: 10px;
       height: 150px;
-      border-radius: 50%;
-      background-color: $watch-hand-color;
 
       animation: clock 3600s steps(60) infinite;
-      transform-origin: bottom;
     }
   }
 
   &__center {
     position: absolute;
-
-    &--style {
-      width: 20px;
-      height: 20px;
-      background-color: $watch-center-color;
-      border-radius: 50%;
-    }
+    width: 20px;
+    height: 20px;
+    background-color: $watch-center-color;
+    border-radius: 50%;
   }
 }
