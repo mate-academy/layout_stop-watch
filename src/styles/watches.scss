@@ -1,0 +1,43 @@
+.watches {
+  position: relative;
+  height: 620px;
+  width: 620px;
+  background: url(https://www.venzelyk.com/image/cache/catalog/products/6/gerb-680x680.jpg) center;
+  border: 1px solid black;
+  border-radius: 50%;
+
+  &__sec {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    background-color: rgb(244, 244, 11);
+    height: 280px;
+    width: 2px;
+    border: 1px black solid;
+    border-radius: 30%;
+
+    transform: translate(-50%);
+    transform-origin: bottom;
+    animation: sec-min 60s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+  
+  &__min {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    background-color: rgb(68, 59, 252);
+    height: 200px;
+    width: 3px;
+    border: 1px black solid;
+    border-radius: 20%;
+
+    transform: translate(-50%);
+    transform-origin: bottom;
+    animation: sec-min 3600s linear 60s infinite;
+  }
+
+}
