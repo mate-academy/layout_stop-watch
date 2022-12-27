@@ -1,0 +1,55 @@
+.clock {
+  @include square($clock-size);
+  @include flex-center-settings;
+  background-image: url(../images/pngwing.com.png);
+  background-size: 100% 100%;
+  background-position: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    @include circle($arrow-center-size);
+    background-color: $color-center-arrow;
+    z-index: 1;
+  }
+
+  &__hour {
+    position: absolute;
+  }
+
+  &__arrow-hour {
+    @include square($arrow-hour-size);
+    display: flex;
+    justify-content: center;
+    animation: $anim-hour;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 70px;
+      background-color: $color-hour-arrow;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+
+  &__minute {
+    position: absolute;
+  }
+
+  &__arrow-minute {
+    @include square($arrow-minute-size);
+    display: flex;
+    justify-content: center;
+    animation: $anim-minute;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 110px;
+      background-color: $color-minute-arrow;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+}
