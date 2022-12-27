@@ -1,0 +1,157 @@
+body {
+  background-color: $bgd-color;
+}
+
+.clock {
+  &__clock-face {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+ 
+    width: $clock-width;
+    height: $clock-height;
+
+    background-color: $face-bgd-color;
+    border: 15px solid $face-border-color;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
+      inset 4px 4px 10px rgba(0,0,0,0.5),
+      inset -4px -4px 10px rgba(67,67,67,0.5),
+      4px 4px 10px rgba(0,0,0,0.3);
+  }
+
+  &__ring {
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+
+    width: 18px;
+    height: 18px;
+
+    border: 6px solid $ring-color;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &__shadow {
+    position: absolute;
+    top: 37%;
+    left: 25%;
+  
+    width: 430px;
+    height: 330px;
+
+    transform: rotate(135deg);
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  }
+
+  &__minute-hand {
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    height: 100%;
+
+    animation: time 60s infinite linear;
+
+    &::before {
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      
+      width: 6px;
+      height: 195px;
+      
+      background-color: $minute-hand-color;
+      border-radius: 5px;
+      
+      content: "";
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    margin: auto;
+
+    animation: time 15s infinite linear;
+
+    &::before {
+      position: absolute;
+      top: 43%;
+      left: 50%;
+
+      width: 3px;
+      height: 170px;
+      
+      background-color: $second-hand-color;
+      border-radius: 5px;
+      
+      content: "";
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__seconds {
+    width: 4px;
+    height: 32px;
+
+    background-color: $seconds-color;
+    border-radius: 5px;
+
+    &--second-00 {
+      position: absolute;
+      left: 0;
+      right: 0;
+
+      margin: 10px auto;
+    }
+
+    &--second-15 {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      
+      width: 32px;
+      height: 4px;
+      margin: auto 10px;
+    }
+
+    &--second-30 {
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+
+      margin: 0 auto 10px;
+    }
+
+    &--second-45 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      
+      width: 32px;
+      height: 4px;
+      margin: auto 10px;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
