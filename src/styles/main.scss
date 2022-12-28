@@ -1,0 +1,59 @@
+.body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.minute {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 15px;
+  height: 190px;
+  border-radius: 10px;
+  background-color: #00acdc;
+  transition: transform;
+  transform-origin: bottom;
+
+  animation: 3600s linear infinite hands;
+}
+
+.circle {
+  position: absolute;
+  left: 49.5%;
+  top: 49.5%;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.second {
+  width: 15px;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  height: 360px;
+  border-radius: 10px;
+  background-color: #f00;
+  transition: transform;
+  transform-origin: bottom;
+
+  animation: 60s linear infinite hands;
+}
+
+@keyframes hands {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
