@@ -1,3 +1,47 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin colon-animation {
+  animation: colon 1s infinite;
+
+  @keyframes colon {
+    to {
+      color: $color-time-bg;
+    }
+  }
+}
+
+@mixin min-arrow-animation {
+  animation: min-arrow 3600s steps(60, end) infinite normal none;
+
+  @keyframes min-arrow {
+    from {
+      transform: rotateZ(0);
+    }
+
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+}
+
+@mixin sec-arrow-animation {
+  animation: sec-arrow 60s steps(60, end) infinite normal none;
+
+  @keyframes sec-arrow {
+    from {
+      transform: rotateZ(0);
+    }
+
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+}
+
 @mixin tenmin-animation {
   animation-name: tenminutes;
   animation-duration: 3600s;
