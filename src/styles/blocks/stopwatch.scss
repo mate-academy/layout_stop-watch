@@ -1,0 +1,56 @@
+.stopwatch {
+  position: absolute;
+  width: $mainWidth;
+  height: $mainHieght;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 10px solid $bordercolor;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: $marginAuto;
+  box-shadow: 20px 20px 10px 15px $shadowColor;
+}
+
+.stopwatch__center {
+  position: absolute;
+  z-index: 1;
+  top: 15px;
+  left: 15px;
+  bottom: 15px;
+  right: 15px;
+  width: $centerWidth;
+  height: $centerHieght;
+  margin: $marginAuto;
+  border-radius: 50%;
+  background-color: $mainColor;
+}
+
+.stopwatch__second {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: $marginAuto;
+  top: 50px;
+  width: 10px;
+  height: 200px;
+  background-color: $secondColor;
+  border-radius: $radious;
+  animation: move $animationSecond steps(60, end) infinite linear;
+  transform-origin: bottom;
+}
+
+.stopwatch__minute {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: $marginAuto;
+  top: 100px;
+  width: 10px;
+  height: 150px;
+  background-color: $minuteColor;
+  border-radius: $radious;
+  animation: move $ainmationMinute infinite;
+  transform-origin: bottom;
+}
