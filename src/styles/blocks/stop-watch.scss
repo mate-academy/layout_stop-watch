@@ -1,0 +1,77 @@
+.stop-watch {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  @include circle(200px);
+  padding-bottom: 20px;
+
+  background-color: rgb(170, 167, 167);
+  border: 4px solid black;
+
+  &__arrow-wrapper {
+    display: flex;
+    margin: 2px auto 0;
+  }
+
+  &__arrow {
+    height: 95px;
+    background-color: $color-main;
+    transform-origin: bottom;
+
+    &--min {
+      width: 3px;
+      @include min-arrow-animation;
+    }
+
+    &--sec {
+      width: 1px;
+      margin-left: -2px;
+      @include sec-arrow-animation;
+    }
+  }
+
+  &__time-wrapper {
+    display: flex;
+    align-self: center;
+  }
+
+  &__time {
+    background-color: $color-time-bg;
+    text-align: center;
+    font-size: 40px;
+    color: $color-main;
+    @include colon-animation;
+
+    &::before {
+      content: "0";
+      font-size: 40px;
+      color: $color-main;
+    }
+
+    &--ten-min {
+      &::before {
+        content: "";
+        @include tenmin-animation;
+      }
+    }
+
+    &--min {
+      &::before {
+        @include min-animation;
+      }
+    }
+
+    &--ten-sec {
+      &::before {
+        @include tensec-animation;
+      }
+    }
+
+    &--sec {
+      &::before {
+        @include sec-animation;
+      }
+    }
+  }
+}
