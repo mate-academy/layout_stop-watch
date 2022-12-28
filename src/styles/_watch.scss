@@ -1,0 +1,47 @@
+.watch {
+  @include flex-center;
+  height: 700px;
+  width: 700px;
+  background-color: $color-white;
+  border: 1px solid $color-gray--dark;
+  border-radius: $shape-circle;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  &__wrapper-second {
+    animation: hands-move 60s steps(60, start) infinite;
+  }
+
+  &__wrapper-minute {
+    position: absolute;
+    animation: hands-move 3600s linear infinite;
+  }
+
+  &__second {
+    @extend %hands-parent-style;
+
+    &::before {
+      content: "";
+      @extend %hands-positioning;
+      width: 10px;
+      height: 300px;
+      background-color: $color-red;
+      border-radius: $hands-br;
+      z-index: -1;
+    }
+  }
+
+  &__minute {
+    @extend %hands-parent-style;
+    background-color: $color-gray--dark;
+
+    &::after {
+      content: "";
+      @extend %hands-positioning;
+      width: 15px;
+      height: 200px;
+      background-color: $color-blue;
+      border-radius: $hands-br;
+      z-index: -1;
+    }
+  }
+}
