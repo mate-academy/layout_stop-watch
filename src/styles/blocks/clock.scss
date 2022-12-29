@@ -7,12 +7,10 @@
   background-size: cover;
 
   &__center {
-    @include position(
-      $top: 50%,
-      $right: unset,
-      $bottom: unset,
-      $left: 50%
-    );
+    @include position() {
+      top: 50%;
+      left: 50%;
+    }
     @include size($height: $center--side, $width: $center--side);
 
     background-color: $minute--color;
@@ -20,12 +18,10 @@
   }
 
   &__minute-hand {
-    @include position(
-      $top: unset,
-      $right: #{($clock--size - $minute-hand--width) / 2},
-      $bottom: 50%,
-      $left: unset
-    );
+    @include position() {
+      bottom: 50%;
+      right: ($clock--size - $minute-hand--width) / 2;
+    }
     @include size($height: $minute-hand--height, $width: $minute-hand--width);
 
     background-color: $second--color;
@@ -35,12 +31,11 @@
   }
 
   &__second-hand {
-    @include position(
-      $top: unset,
-      $right: #{($clock--size - $second-hand--width) / 2},
-      $bottom: 50%,
-      $left: unset
-    );
+    @include position() {
+      bottom: 50%;
+      right: ($clock--size - $second-hand--width) / 2;
+    }
+
     @include size($height: $second-hand--height, $width: $second-hand--width);
 
     background-color: rgb(113, 178, 239);

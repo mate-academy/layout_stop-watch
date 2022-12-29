@@ -1,9 +1,6 @@
-@mixin position($top: unset, $right: unset, $bottom: unset, $left: unset) {
+@mixin position() {
   position: absolute;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
+  @content;
 }
 
 @mixin size($height: unset, $width: unset) {
