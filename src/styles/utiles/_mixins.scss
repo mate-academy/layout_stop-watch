@@ -1,0 +1,16 @@
+@mixin position() {
+  position: absolute;
+  @content;
+}
+
+@mixin size($height: unset, $width: unset) {
+  height: $height;
+  width: $width;
+  border-radius: $width / 2;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

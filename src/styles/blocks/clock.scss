@@ -1,0 +1,46 @@
+.clock {
+  position: relative;
+  height: $clock--size;
+  width: $clock--size;
+
+  background: no-repeat url("../img/clock.png");
+  background-size: cover;
+
+  &__center {
+    @include position() {
+      top: 50%;
+      left: 50%;
+    }
+    @include size($height: $center--side, $width: $center--side);
+
+    background-color: $minute--color;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute-hand {
+    @include position() {
+      bottom: 50%;
+      right: ($clock--size - $minute-hand--width) / 2;
+    }
+    @include size($height: $minute-hand--height, $width: $minute-hand--width);
+
+    background-color: $second--color;
+
+    animation: rotate 3600s infinite linear;
+    transform-origin: bottom center;
+  }
+
+  &__second-hand {
+    @include position() {
+      bottom: 50%;
+      right: ($clock--size - $second-hand--width) / 2;
+    }
+
+    @include size($height: $second-hand--height, $width: $second-hand--width);
+
+    background-color: rgb(113, 178, 239);
+
+    animation: rotate 60s infinite linear;
+    transform-origin: bottom center;
+  }
+}
