@@ -1,0 +1,82 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $clock-size;
+  height: $clock-size;
+  background-color: #000;
+  border-radius: 50%;
+  position: relative;
+  
+  &__num-15 {
+    @extend %number-size;
+    right: 15px;
+  }
+  
+  &__num-30 {
+    @extend %number-size;
+    bottom: 15px;
+  }
+  
+  &__num-45 {
+    @extend %number-size;
+    left: 15px;
+  }
+  
+  &__num-60 {
+    @extend %number-size;
+    top: 15px;
+  }
+ 
+  &__dot {
+    z-index: 2;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  &__sec {
+    position: absolute;
+    z-index: 1;
+    top: ($clock-size / 2 ) - $height-sec;
+    width: 5px;
+    height: $height-sec;
+    background-color: green;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: second 60s steps(60, end) infinite;
+  }
+  
+  &__min {
+    position: absolute;
+    top: ($clock-size / 2 ) - $height-min;
+    width: 5px;
+    height: $height-min;
+    background-color: red;
+    border-radius: 5px;
+    transform-origin: bottom;
+    // animation-delay: 1s;
+    animation: minute 3600s steps(60, end) infinite;
+  }
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0deg)
+  }
+  
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes minute {
+  from {
+    transform: rotate(0deg)
+  }
+  
+  to {
+    transform: rotate(360deg)
+  }
+}
