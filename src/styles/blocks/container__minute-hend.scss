@@ -1,0 +1,21 @@
+.container__minute-hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  height: 200px;
+  width: 3px;
+  z-index: 1;
+  background-color: #5c0909;
+  animation: minutes 43200s linear infinite;
+  transform-origin: bottom;
+}
+
+@keyframes minutes {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
