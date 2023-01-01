@@ -1,0 +1,115 @@
+@import "./utils/variables";
+@import "./blocks/clock.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  background-color: $background-color;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  height: $clock-size;
+  width: $clock-size;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  box-shadow: -2px 0px 50px -25px rgba(244, 238, 215, 0.3);
+
+  &__axis {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $axis-size;
+    height: $axis-size;
+    border-radius: 50%;
+    background-color: gray;
+    z-index: 4;
+  }
+
+  &__second {
+    position: absolute;
+    top: $clock-size / 2;
+    left: 50%;
+    width: 1.5px;
+    height: ($clock-size / 2) - 20;
+    background-color: $main-color;
+    border-radius: 25%;
+    transform-origin: top;
+    z-index: 2;
+    animation: time-sec 60s steps(60) infinite;
+  }
+
+  &__minute {
+    position: absolute;
+    top: $clock-size / 2;
+    left: 50%;
+    width: 2px;
+    height: ($clock-size / 2) - 50;
+    background-color: $white;
+    opacity: 0.75;
+    // border-radius: 35%;
+    transform-origin: top center;
+    z-index: 2;
+    animation: time-sec 3600s linear infinite;
+  }
+
+  &__hour {
+    position: absolute;
+    top: $clock-size / 2;
+    left: 50%;
+    width: 2px;
+    height: ($clock-size / 2) - 90;
+    background-color: $white;
+    opacity: 1;
+    border-radius: 25%;
+    transform-origin: top center;
+    z-index: 2;
+    animation: time-sec 216000s linear infinite;
+  }
+
+  @keyframes time-sec {
+    0% {
+      transform: rotate(180deg);
+    }
+
+    100% {
+      transform: rotate(540deg);
+    }
+  }
+
+  &__indicator {
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1.5px;
+      height: $clock-size - 2px;
+      transform-origin: center;
+      border-top: 5px solid $main-color;
+    }
+
+    &:nth-of-type(5n) {
+      &:before {
+        border-top: 12px solid $white;
+      }
+    }
+  }
+
+  @for $index from 1 through 60 {
+    .clock__indicator {
+      &:nth-child(#{$index}):before {
+        transform: rotateZ(calc(6deg * #{$index}));
+      }
+    }
+  }
+}
+
+
+// desim @for i @mixinus, bandysim limitus.
