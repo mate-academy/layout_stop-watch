@@ -7,6 +7,30 @@
   align-items: center;
   position: relative;
 
+  &__number:first-child {
+    font-size: $numbers-size;
+    position: absolute;
+    top: 10px;
+  }
+
+  &__number:nth-child(2) {
+    font-size: $numbers-size;
+    position: absolute;
+    right: 10px;
+  }
+
+  &__number:nth-child(3) {
+    font-size: $numbers-size;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  &__number:nth-child(4) {
+    font-size: $numbers-size;
+    position: absolute;
+    left: 10px;
+  }
+
   &__circle {
     @include circle($circle-size);
     border-radius: 50%;
@@ -33,15 +57,5 @@
     transform-origin: bottom center;
     background-color: #e5ba73;
     animation: move 60s linear 0s infinite;
-  }
-}
-
-@keyframes move {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 }
