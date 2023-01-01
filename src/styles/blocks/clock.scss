@@ -1,0 +1,61 @@
+.clock {
+  background-color: #faeab1;
+  @include circle($clock-size);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__number:first-child {
+    font-size: $numbers-size;
+    position: absolute;
+    top: 10px;
+  }
+
+  &__number:nth-child(2) {
+    font-size: $numbers-size;
+    position: absolute;
+    right: 10px;
+  }
+
+  &__number:nth-child(3) {
+    font-size: $numbers-size;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  &__number:nth-child(4) {
+    font-size: $numbers-size;
+    position: absolute;
+    left: 10px;
+  }
+
+  &__circle {
+    @include circle($circle-size);
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 0;
+    width: 13px;
+    height: $second-arrow;
+    border-radius: 35%;
+    transform-origin: bottom center;
+    background-color: #62b6b7;
+    animation: move 3600s linear 0s infinite;
+  }
+
+  &__second {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: $second-arrow;
+    border-radius: 40%;
+    transform-origin: bottom center;
+    background-color: #e5ba73;
+    animation: move 60s linear 0s infinite;
+  }
+}
