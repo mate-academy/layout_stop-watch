@@ -1,0 +1,47 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(204, 203, 203);
+
+  &__watch {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: #{$watch-size};
+    width: #{$watch-size};
+    border-radius: 50%;
+    background-color: aliceblue;
+  }
+
+  &__center {
+    position: absolute;
+    height: #{$center-size};
+    width: #{$center-size};
+    border-radius: 50%;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__second {
+    height: 50%;
+    @include positions;
+    @include design;
+    background-color: black;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+
+  &__minute {
+    height: 30%;
+    @include positions;
+    @include design;
+    background-color: orange;
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+  }
+}
