@@ -1,8 +1,10 @@
 .page {
   padding: 20px;
   background-color: $main-color;
-}
 
-.page__clock {
-  @include square($watch-size);
+  &__clock {
+    position: relative;
+    margin: 0 auto;
+    @include square($watch-size);
+  }
 }

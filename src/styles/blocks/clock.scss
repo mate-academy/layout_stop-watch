@@ -1,7 +1,30 @@
 .clock {
-  position: relative;
-  margin: 0 auto;
   border: solid #f00 3px;
   border-radius: 50%;
-  background-color: lightgrey;
+  background-color: #d3d3d3;
+
+  &__center {
+    @extend %position;
+    z-index: 2;
+    transform: translate(-40%, 50%);
+    @include circle($circle-size);
+    border-radius: 50%;
+    background-color: $main-color;
+  }
+
+  .clock__minute-hand {
+    @extend %hand;
+    z-index: 1;
+    height: 240px;
+    width: 3px;
+    animation: arrow-movement 43200s linear infinite;
+  }
+
+  .clock__seconds-hand {
+    @extend %hand;
+    transform-origin: bottom;
+    height: 295px;
+    width: 2px;
+    animation: arrow-movement 60s linear infinite;
+  }
 }
