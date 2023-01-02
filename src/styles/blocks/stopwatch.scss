@@ -29,10 +29,8 @@
 
   &__second {
     height: 50%;
-    width: 10px;
     @include positions;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    @include design;
     background-color: black;
     transform-origin: bottom;
     animation: move 60s linear infinite;
@@ -40,10 +38,8 @@
 
   &__minute {
     height: 30%;
-    width: 10px;
     @include positions;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    @include design;
     background-color: orange;
     transform-origin: bottom;
     animation: move 3600s linear infinite;
