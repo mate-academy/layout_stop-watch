@@ -1,0 +1,44 @@
+.clock {
+  @include flex-center;
+  @include circle($size);
+
+  position: relative;
+  border: 7px solid #282828;
+  transform: rotate(180deg);
+ 
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    @include square($size-center);
+    border-radius: $size-center;
+    background-color: $color-second-hand;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  &__second-hand {
+    width: $width-hand;
+    height: 150px;
+    background-color: $color-second-hand;
+    transform-origin: center 0;
+    animation: rotate $time-animation-second-hand linear infinite;
+  }
+
+  &__minute-hand {
+    width: $width-hand;
+    height: 100px;
+    background-color: $color-minute-hand;
+    transform-origin: center 0;
+    animation: rotate $time-animation-minute-hand linear infinite;
+  }
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+}
