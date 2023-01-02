@@ -1,0 +1,45 @@
+.watch {
+  @include flex-center;
+  height: 700px;
+  width: 700px;
+  border-radius: $shape-circle;
+  background-color: $watch-color;
+
+  &__wrapper-second {
+    animation: arrows-move 60s steps(60, start) infinite;
+  }
+
+  &__wrapper-minute {
+    position: absolute;
+    animation: arrows-move 3600s linear infinite;
+  }
+
+  &__second {
+    @extend %arrows-parent-style;
+
+    &::before {
+      content: "";
+      @extend %arrows-positioning;
+      width: $arrow-width;
+      height: 300px;
+      background-color: $arrow-color;
+      border-radius: $arrow-corner;
+      z-index: -1;
+    }
+  }
+
+  &__minute {
+    @extend %arrows-parent-style;
+    background-color: $arrow-color;
+
+    &::after {
+      content: "";
+      @extend %arrows-positioning;
+      width: $arrow-width;
+      height: 200px;
+      background-color: $arrow-color;
+      border-radius: $arrow-corner;
+      z-index: -1;
+    }
+  }
+}
