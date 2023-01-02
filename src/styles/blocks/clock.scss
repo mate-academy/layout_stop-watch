@@ -1,0 +1,69 @@
+.clock {
+  position: relative;
+
+  &::after {
+    background-image: url(/img/clock.png);
+    background-size: $clock-size;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    @include clock($clock-size);
+    content: "";
+  }
+
+  &__center-dot {
+    position: absolute;
+    bottom: $dot-bottom-position;
+    left: $dot-left-position;
+
+    @include circle($dot-size);
+
+    background-color: #211e1f;
+    z-index: 1;
+  }
+
+  &__hour-arrow {
+    @include arrow();
+
+    bottom: $hour-bottom-position;
+    left: $arrow-left-position;
+
+    height: $hour-arrow-height;
+
+    background-image: url(/img/hr-arrow.png);
+
+    transform-origin: $horizontal-origin $vertical-hour-arrow-origin;
+    animation: clock-rotate $hour-duration infinite linear;
+  }
+
+  &__min-arrow {
+    @include arrow();
+
+    bottom: $min-bottom-position;
+    left: $arrow-left-position;
+
+    height: $min-arrow-height;
+
+    background-image: url(/img/min-arrow.png);
+
+    transform-origin: $horizontal-origin $vertical-min-arrow-origin;
+    animation: clock-rotate $min-duration infinite linear;
+  }
+
+  &:hover &__hour-arrow {
+    animation-play-state: paused;
+  }
+
+  &:hover &__min-arrow {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes clock-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

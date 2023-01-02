@@ -1,0 +1,21 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin clock($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin arrow() {
+  position: absolute;
+
+  width: $arrow-width;
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
