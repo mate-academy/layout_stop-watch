@@ -1,0 +1,41 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(101, 189, 184);
+
+  &__watch {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include square-watch;
+  }
+
+  &__center {
+    position: absolute;
+    @include square-center;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+  }
+
+  &__second {
+    height: 45%;
+    @include positions;
+    @include design;
+    background-color: black;
+    transform-origin: bottom;
+    animation: move  60s linear infinite;
+  }
+
+  &__minute {
+    height: 35%;
+    @include positions;
+    @include design;
+    background-color: #2f4f4f;
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+  }
+}
