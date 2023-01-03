@@ -9,7 +9,7 @@
   &__center {
     @include circle($center-size);
 
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     z-index: 5;
@@ -17,28 +17,23 @@
     transform: translate(-20%, -50%);
   }
 
-  &__hour {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: $hour-width;
-    height: $hour-height;
-    background-color: rgb(70, 70, 236);
+  &__hand {
     border-radius: $border-radius;
-    transform-origin: top;
-    animation: move 3600s linear infinite;
-  }
 
-  &__minute {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: $minute-width;
-    height: $minute-height;
-    background-color: rgb(58, 58, 149);
-    border-radius: $border-radius;
-    transform: translateX(50%);
-    transform-origin: top;
-    animation: move 60s linear infinite;
+    &-hour {
+      width: $hour-width;
+      height: $hour-height;
+      background-color: rgb(70, 70, 236);
+
+      @include clock_hand($clock_hour_animation);
+    }
+
+    &-minute {
+      width: $minute-width;
+      height: $minute-height;
+      background-color: rgb(58, 58, 149);
+
+      @include clock_hand($clock_minute_animation);
+    }
   }
 }
