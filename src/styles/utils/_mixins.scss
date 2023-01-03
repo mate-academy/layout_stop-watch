@@ -1,0 +1,17 @@
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin circle($size) {
+  @include square($size);
+  border-radius: 50%;
+}
+
+@mixin clock_hand($clock_hand_animation) {
+  animation: $clock_hand_animation;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top;
+}

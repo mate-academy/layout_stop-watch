@@ -1,0 +1,39 @@
+.clock {
+  @include square($clock-size);
+
+  position: relative;
+  margin: 0 auto;
+  padding: 30px;
+  transform: rotate(180deg);
+
+  &__center {
+    @include circle($center-size);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    background-color: rgb(47, 47, 243);
+    transform: translate(-20%, -50%);
+  }
+
+  &__hand {
+    border-radius: $border-radius;
+
+    &-hour {
+      width: $hour-width;
+      height: $hour-height;
+      background-color: rgb(70, 70, 236);
+
+      @include clock_hand($clock_hour_animation);
+    }
+
+    &-minute {
+      width: $minute-width;
+      height: $minute-height;
+      background-color: rgb(58, 58, 149);
+
+      @include clock_hand($clock_minute_animation);
+    }
+  }
+}
