@@ -1,0 +1,24 @@
+@mixin positions {
+  position: absolute;
+  bottom: 50%;
+  transform: translate(-50%);
+}
+
+@mixin design {
+  width: 10px;
+  border-radius: 50%;
+}
+
+@mixin square-watch {
+  height: #{$watch-size};
+  width: #{$watch-size};
+  border-radius: 50%;
+  background-color: #f0e68c;
+}
+
+@mixin square-center {
+  height: #{$center-size};
+  width: #{$center-size};
+  border-radius: 50%;
+  background-color: #bc8f8f;
+}
