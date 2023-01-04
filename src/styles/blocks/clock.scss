@@ -1,1 +1,79 @@
-// enter here
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  @include clock-size;
+  border-radius: 50%;
+  box-shadow: -2px 0 50px -25px inset rgba(244, 238, 215, 0.3);
+
+  &__axis {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 2px);
+    @include axis-size;
+    border-radius: 50%;
+    background-color: gray;
+    z-index: 4;
+  }
+
+  &__second {
+    @include clock-pointers;
+    width: 1.5px;
+    height: ($clock-size / 2) - 20;
+    background-color: $main-color;
+    border-radius: 25%;
+    transform-origin: top;
+    animation: time-sec 60s steps(60) infinite;
+  }
+
+  &__minute {
+    @include clock-pointers;
+    width: 2px;
+    height: ($clock-size / 2) - 50;
+    background-color: $white;
+    opacity: 0.75;
+    transform-origin: top;
+    animation: time-sec 3600s linear infinite;
+  }
+
+  &__hour {
+    @include clock-pointers;
+    width: 2px;
+    height: ($clock-size / 2) - 90;
+    background-color: $white;
+    opacity: 1;
+    border-radius: 25%;
+    transform-origin: top;
+    animation: time-sec 216000s linear infinite;
+  }
+
+  &__indicator {
+    &:before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: calc(50% - 1px);
+      width: 2px;
+      height: $clock-size - 20px;
+      transform-origin: center;
+      border-top: 5px solid $main-color;
+    }
+
+    &:nth-of-type(5n) {
+      &:before {
+        top: 3px;
+        border-top: 12px solid $white;
+      }
+    }
+  }
+
+  @for $index from 1 through 60 {
+    .clock__indicator {
+      &:nth-child(#{$index}):before {
+        transform: rotateZ(calc(6deg * #{$index}));
+      }
+    }
+  }
+}
