@@ -1,0 +1,25 @@
+.watch {
+  @include watch ($watch-size, $border-color, $background-color-watch);
+  position: relative;
+  transform: rotate(180deg);
+
+  &__hand-minute {
+    @include hand-minute ($width-hand-minute, 
+    $height-hand-minute, $color-hand-minute);
+    position: absolute;
+    top: 50%;
+    left: calc(50% - #{$width-hand-minute} / 2);
+    animation: move steps($step-animation) $time-animation-minute infinite;
+    transform-origin: center 0;
+  }
+
+  &__hand-second {
+    @include hand-second ($width-hand-second, 
+    $height-hand-second, $color-hand-second);
+    position: absolute;
+    top: 50%;
+    left: calc(50% - #{$width-hand-second} / 2);
+    animation: move steps($step-animation) $time-animation-second infinite;
+    transform-origin: center 0;
+  }
+}

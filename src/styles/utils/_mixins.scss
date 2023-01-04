@@ -1,0 +1,30 @@
+@mixin watch ($watch-size, $border-color, $background-color-watch) {
+  box-sizing: border-box;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  border: 5px solid $border-color;
+  background-color: $background-color-watch;
+}
+
+@mixin hand-minute ($width-hand-minute, 
+$height-hand-minute, $color-hand-minute) {
+  width: $width-hand-minute;
+  height: $height-hand-minute;
+  background-color: $color-hand-minute;
+  border-radius: $width-hand-minute / 2;
+}
+
+@mixin hand-second ($width-hand-second, 
+$height-hand-second, $color-hand-second) {
+  width: $width-hand-second;
+  height: $height-hand-second;
+  background-color: $color-hand-second;
+  border-radius: $width-hand-second / 2;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
