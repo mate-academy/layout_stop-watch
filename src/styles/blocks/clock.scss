@@ -1,0 +1,41 @@
+@import "../utils/variables.scss";
+@import "../utils/mixin.scss";
+@import "../utils/keyframes.scss";
+@import "../utils/extends.scss";
+
+.clock {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  &__point {
+    position: relative;
+    @include square($size);
+    background-color: $color-big-arrow;
+    border-radius: 50%;
+    align-self: center;
+  }
+  
+  &__red-arrow {
+    @extend %position-center;
+    width: $arrows-width;
+    height: $small-arrow-height;
+    background-color: $color-small-arrow;
+    border-radius: $border-radius;
+    @extend %animation-infinite;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+  }
+  
+  &__blue-arrow {
+    @extend %position-center;
+    width: $arrows-width;
+    height: $big-arrow-height;
+    background-color: $color-big-arrow;
+    border-radius: $border-radius;
+    @extend %animation-infinite;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+  }
+}
