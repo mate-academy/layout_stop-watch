@@ -1,0 +1,16 @@
+@mixin clock-size {
+  height: $clock-size;
+  width: $clock-size;
+}
+
+@mixin axis-size {
+  width: $axis-size;
+  height: $axis-size;
+}
+
+@mixin clock-pointers {
+  position: absolute;
+  top: $clock-size / 2;
+  left: 50%;
+  z-index: 2;
+}
