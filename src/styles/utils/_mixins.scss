@@ -1,0 +1,11 @@
+@mixin circle($radius) {
+  height: $radius * 2;
+  width: $radius * 2;
+  border-radius: 50%;
+}
+
+@mixin rectangle($length, $width) {
+  height: $length;
+  width: $width;
+  border-radius: 0 0 50% 50%;
+}
