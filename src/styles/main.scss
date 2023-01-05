@@ -1,17 +1,16 @@
-body {
-  margin: 0;
-}
+@import "./reset.scss";
 
 .clock {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 200px;
-  height: 200px;
-  // background: gray;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  height: 500px;
+  background: gray;
   border: 8px solid black;
   border-radius: 50%;
-  transition-delay: 1s;
+  transition-delay: 2s;
 }
 
 .clock::before {
@@ -20,7 +19,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  width: 40%;
+  width: 45%;
   height: 6px;
   background: blue;
   border-radius: 3px;
@@ -34,7 +33,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  width: 30%;
+  width: 35%;
   height: 6px;
   background: red;
   border-radius: 3px;
@@ -43,7 +42,7 @@ body {
   z-index: 0;
 }
 
-span {
+.clock__center {
   display: block;
   position: absolute;
   top: 50%;
