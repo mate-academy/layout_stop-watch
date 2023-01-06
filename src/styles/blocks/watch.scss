@@ -1,0 +1,45 @@
+.watch {
+  position: relative;
+  margin: auto;
+  @include circle;
+  border: 3px dashed $color-watch-border;
+  background-color: $color-watch-display;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__hand-second {
+    position: absolute;
+    height: 140px;
+    width: 5px;
+    @include position-arrow;
+    transform-origin: center bottom;
+    background-color: $color-watch-second;
+    animation: spin 60s linear infinite;
+  }
+
+  &__hand-minute {
+    position: absolute;
+    height: 90px;
+    width: 5px;
+    @include position-arrow;
+    transform-origin: center bottom;
+    background-color: $color-watch-minute;
+    animation: spin 3600s linear infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    @include position-arrow;
+    @include point;
+    background-color: $color-watch-minute;
+    transform: translate(-35%, 45%);
+  }
+}
