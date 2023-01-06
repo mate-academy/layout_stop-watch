@@ -1,25 +1,26 @@
 @import "./reset.scss";
 
-.clock {
+.container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   width: 500px;
   height: 500px;
-  background: gray;
+  background: url(../imageclock.jpg);
+  background-size: cover;
   border: 8px solid black;
   border-radius: 50%;
   transition-delay: 2s;
 }
 
-.clock::before {
+.container::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  width: 45%;
+  width: 35%;
   height: 6px;
   background: blue;
   border-radius: 3px;
@@ -27,13 +28,13 @@
   transform-origin: left;
 }
 
-.clock::after {
+.container::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  width: 35%;
+  width: 25%;
   height: 6px;
   background: red;
   border-radius: 3px;
@@ -42,7 +43,7 @@
   z-index: 0;
 }
 
-.clock__center {
+.container__clock {
   display: block;
   position: absolute;
   top: 50%;
