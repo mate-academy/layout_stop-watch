@@ -1,0 +1,85 @@
+.stopwatch {
+  @extend %stopwatch-position;
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  justify-content: center;
+
+  @include circle($size-hand-minute * 3);
+
+  background: linear-gradient(to bottom, #103dc3, #e9eb16);
+
+  &__hand {
+    @extend %stopwatch-position;
+    bottom: 50%;
+  
+    width: $width-hand;
+    border-radius: $width-hand / 2;
+    border: 1px solid #fff;
+
+    animation: clock linear infinite;
+    transform-origin: center bottom;
+
+    &--minute {
+      height: $size-hand-minute;
+      background-color: $color-hand-minute;
+
+      animation-duration: 60s;
+    }
+
+    &--second {
+      height: $size-hand-second;
+      background-color: $color-hand-second;
+
+      animation-duration: 3600s;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    @include circle($width-hand * 2);
+    border: 1px solid #fff;
+    background: radial-gradient(ellipse at center, #103dc3, #e9eb16);
+  }
+
+  @keyframes clock {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__num {
+    position: absolute;
+
+    font-size: $stopwatch-num-size;
+    text-transform: uppercase;
+    
+    color: #fff;
+
+    &--top {
+      top: $stopwatch-num-padding;
+    }
+
+    &--right {
+      right: $stopwatch-num-padding;
+      @extend %stopwatch-num-position;
+    }
+
+    &--bottom {
+      bottom: $stopwatch-num-padding;
+    }
+
+    &--left {
+      left: $stopwatch-num-padding;
+      @extend %stopwatch-num-position;
+    }
+  }
+}
