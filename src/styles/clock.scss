@@ -1,0 +1,70 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  height: 500px;
+  background: url(../imageclock.jpg);
+  background-size: cover;
+  border: 8px solid black;
+  border-radius: 50%;
+  transition-delay: 2s;
+
+  &__clock {
+
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 35%;
+    height: 6px;
+    background: blue;
+    border-radius: 3px;
+    animation: animate 4s linear infinite;
+    transform-origin: left;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 25%;
+    height: 6px;
+    background: red;
+    border-radius: 3px;
+    animation: animate 48s linear infinite;
+    transform-origin: left;
+    z-index: 0;
+  }
+
+  &__clock--center {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 10px;
+    height: 10px;
+    background: blue;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.clock {}
