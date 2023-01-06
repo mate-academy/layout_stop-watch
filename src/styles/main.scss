@@ -1,17 +1,20 @@
+@import "./_keyframes";
+@import "./_mixin";
+
 .container {
   position: relative;
   width: 100%;
   height: 100vh;
 }
 
-.clock {
+.container_clock {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
 }
 
-.circle {
+.container_circle {
   height: 20px;
   width: 20px;
   background-color: #4b9aaa;
@@ -21,12 +24,11 @@
   right: 8px;
 }
 
-.string-first {
+.container_string-first {
   position: relative;
   height: 100px;
-  width: 5px;
+  @include index(5px);
   background-color: #d15559;
-  border-radius: 5px;
   transform-origin: bottom left;
   transform: rotate(40deg);
   animation-name: name;
@@ -35,29 +37,14 @@
   animation-timing-function: linear;
 }
 
-.string-second {
+.container_string-second {
   height: 150px;
-  width: 5px;
+  @include index(5px);
   background-color: #4b9aaa;
-  border-radius: 5px;
   transform-origin: top right;
   transform: rotate(65deg);
   animation-name: name2;
   animation-duration: 60s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-}
-
-@keyframes name {
-  0% {
-    transform-origin: bottom;
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes name2 {
-  0% {
-    transform-origin: top;
-    transform: rotate(-360deg);
-  }
 }
