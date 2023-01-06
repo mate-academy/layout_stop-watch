@@ -1,0 +1,35 @@
+.watch {
+  @include circle ($size, $background-color-circle);
+  box-sizing: border-box;
+  position: relative;
+  border: 5px solid $border-color;
+  transform: rotate(180deg);
+
+  
+  &__hand-minute,
+  &__hand-second {
+    position: absolute;
+    top: 50%;
+    transform-origin: center 0;
+  }
+
+  &__hand-minute {
+    width: $width-hand-minute;
+    height: $height-hand-minute;
+    background-color: $color-hand-minute;
+    border-radius: $width-hand-minute / 2;
+    left: calc(50% - #{$width-hand-minute} / 2);
+    animation: move steps($step-animation) $time-animation-minute infinite;
+    
+  }
+
+  &__hand-second {
+    width: $width-hand-second;
+    height: $height-hand-second;
+    background-color: $color-hand-second;
+    border-radius: $width-hand-second / 2;
+    left: calc(50% - #{$width-hand-second} / 2);
+    animation: move steps($step-animation) $time-animation-second infinite;
+    
+  }
+}
