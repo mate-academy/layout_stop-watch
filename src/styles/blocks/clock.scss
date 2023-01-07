@@ -12,7 +12,7 @@
     background-color: $main-color;
   }
 
-  .clock__minute-hand {
+  &__minute-hand {
     @extend %hand;
     z-index: 1;
     height: 240px;
@@ -20,7 +20,7 @@
     animation: arrow-movement 43200s linear infinite;
   }
 
-  .clock__seconds-hand {
+  &__seconds-hand {
     @extend %hand;
     transform-origin: bottom;
     height: 295px;
