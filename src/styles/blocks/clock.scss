@@ -1,0 +1,72 @@
+.clock {
+  @include square ($size);
+
+  display: flex;
+  justify-content: center;
+  box-sizing: content-box;
+
+  position: relative;
+
+  &--position {
+    margin: 100px auto;
+  }
+
+  &__minute-hand {
+    @include minute-hand ($size);
+
+    position: absolute;
+    top: $minute-hand-space;
+
+    background-color: $minute-hand-color;
+    border-radius: 20px;
+
+    animation-name: minute;
+    animation-duration: $minute;
+    animation-timing-function: linear;
+    transform-origin: center bottom;
+
+    @keyframes minute {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__second-hand {
+    @include second-hand ($size);
+
+    position: absolute;
+    top: $second-hand-space;
+
+    background-color: $second-hand-color;
+    border-radius: 10px;
+
+    animation-name: second;
+    animation-duration: $second;
+    animation-timing-function: linear;
+    animation-iteration-count: 60;
+    transform-origin: center bottom;
+
+    @keyframes second {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__point {
+    @include round ($size);
+
+    background-color: $point-color;
+
+    position: absolute;
+    top: $point-position;
+  }
+}
