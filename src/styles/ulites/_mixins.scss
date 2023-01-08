@@ -1,15 +1,7 @@
-@mixin watch ($watchSize, $handsBackground, $watchBackground) {
-  box-sizing: border-box;
-  width: $watchSize;
-  height: $watchSize;
-  border-radius: 50%;
-  border: 5px solid $handsBackground;
-  background-color: $watchBackground;
-}
-
-@mixin handMinute ($widthHandMinute, $heightHandMinute, $handsBackground) {
-  width: $widthHandMinute;
-  height: $heightHandMinute;
-  background-color: $handsBackground;
-  border-radius: $widthHandMinute / 2;
+@mixin similarItemValues {
+  position: absolute;
+  bottom: 50%;
+  border-radius: 8px;
+  background-color: $item-bgc;
+  transform-origin: bottom;
 }
