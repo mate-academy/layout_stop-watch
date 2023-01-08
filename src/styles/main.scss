@@ -7,14 +7,14 @@
   height: 100vh;
 }
 
-.container_clock {
+.clock {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
 }
 
-.container_circle {
+.clock_central-dot {
   height: 20px;
   width: 20px;
   background-color: #4b9aaa;
@@ -24,27 +24,22 @@
   right: 8px;
 }
 
-.container_string-first {
+.clock_minutes-arrow {
   position: relative;
   height: 100px;
   @include index(5px);
   background-color: #d15559;
   transform-origin: bottom left;
   transform: rotate(40deg);
-  animation-name: name;
-  animation-duration: 360s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: clockwise 360s linear infinite;
 }
 
-.container_string-second {
+.clock_second-arrow {
   height: 150px;
   @include index(5px);
   background-color: #4b9aaa;
   transform-origin: top right;
   transform: rotate(65deg);
-  animation-name: name2;
-  animation-duration: 60s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: clockwise_second 60s linear infinite;
+
 }
