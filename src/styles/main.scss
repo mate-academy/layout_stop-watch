@@ -14,7 +14,26 @@
   left: 50%;
 }
 
-.clock_central-dot {
+.clock__minutes-arrow {
+  position: relative;
+  height: 100px;
+  @include index(5px);
+  background-color: #d15559;
+  transform-origin: bottom left;
+  animation: clockwise 360s linear infinite;
+}
+
+.clock__second-arrow {
+  position: relative;
+  bottom: 150px;
+  height: 150px;
+  @include index(5px);
+  background-color: #4b9aaa;
+  transform-origin: bottom left;
+  animation: clockwise_second 60s linear infinite;
+}
+
+.clock__central-dot {
   height: 20px;
   width: 20px;
   background-color: #4b9aaa;
@@ -22,24 +41,4 @@
   position: relative;
   bottom: 163px;
   right: 8px;
-}
-
-.clock_minutes-arrow {
-  position: relative;
-  height: 100px;
-  @include index(5px);
-  background-color: #d15559;
-  transform-origin: bottom left;
-  transform: rotate(40deg);
-  animation: clockwise 360s linear infinite;
-}
-
-.clock_second-arrow {
-  height: 150px;
-  @include index(5px);
-  background-color: #4b9aaa;
-  transform-origin: top right;
-  transform: rotate(65deg);
-  animation: clockwise_second 60s linear infinite;
-
 }
