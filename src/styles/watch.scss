@@ -1,0 +1,41 @@
+.watch {
+  position: absolute;
+  top: $main_position;
+  left: $main_position;
+  transform: translate(-50%, -50%) rotate(180deg);
+  background-color: rgb(100, 149, 237);
+
+  @include circle($sizeOfStopwatch);
+
+  &__center {
+    position: absolute;
+    top: $main_position;
+    left: $main_position;
+    background-color: $main_color;
+
+    @include circle($sizeOfCenter);
+    margin-top: -#{$sizeOfCenter / 4};
+    margin-left: -#{$sizeOfCenter / 4};
+  }
+
+  &__arrow {
+    position: absolute;
+    top: $main_position;
+    left: $main_position;
+    width: 11px;
+    transform-origin: top center;
+    border-radius: 10px;
+
+    &--big {
+      height: 250px;
+      background-color: $main_color;
+      animation: tick 60s infinite steps(60);
+    }
+
+    &--small {
+      height: 160px;
+      background-color: $main_color;
+      animation: tick 3600s linear infinite;
+    }
+  }
+}
