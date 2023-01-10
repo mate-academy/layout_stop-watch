@@ -1,31 +1,36 @@
 .clock {
-  position: absolute;
-  height: 200px;
-  width: 200px;
-  background-color: #fff;
-  border-radius: 100%;
-  border: 10px solid #34626c;
+  position: var( --position-of-elements);
+  height: var(--clock-and-shadow-height);
+  width: var(--clock-and-shadow-width);
+  background-color: var(--white-color);
+  border-radius: var(--circle-border-radius);
+  border: 10px solid var(--clock-big-border-color);
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
   bottom: 0;
   margin: auto;
 
+  &__left-right {
+    width: var(--bigger-pointer-width);
+    height: var(--smaller-pointer-height);
+  }
+
   &__top {
-    position: absolute;
-    width: 3px;
-    height: 8px;
-    background-color: #262626;
-    left: 0;
+    width: var(--smaller-pointer-width);
+    height: var(--bigger-pointer-height);
+    position: var( --position-of-elements);
+    background-color: var(--background-color);
     right: 0;
+    left: 0;
     margin: 0 auto;
   }
 
   &__right {
-    position: absolute;
-    width: 8px;
-    height: 3px;
-    background-color: #262626;
+    width: var(--bigger-pointer-width);
+    height: var(--smaller-pointer-height);
+    position: var( --position-of-elements);
+    background-color: var(--background-color);
     top: 0;
     right: 0;
     bottom: 0;
@@ -33,10 +38,10 @@
   }
 
   &__bottom {
-    position: absolute;
-    width: 3px;
-    height: 8px;
-    background-color: #262626;
+    width: var(--smaller-pointer-width);
+    height: var(--bigger-pointer-height);
+    position: var( --position-of-elements);
+    background-color: var(--background-color);
     right: 0;
     left: 0;
     bottom: 0;
@@ -44,10 +49,10 @@
   }
 
   &__left {
-    position: absolute;
-    width: 8px;
-    height: 3px;
-    background-color: #262626;
+    width: var(--bigger-pointer-width);
+    height: var(--smaller-pointer-height);
+    position: var( --position-of-elements);
+    background-color: var(--background-color);
     top: 0;
     left: 0;
     bottom: 0;
@@ -55,34 +60,35 @@
   }
 
   &__center {
+    position: var( --position-of-elements);
     height: 6px;
     width: 6px;
-    background-color: #262626;
-    border-radius: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
+    background-color: var(--background-color);
+    border-radius: var(--circle-border-radius);
     top: 0;
+    right: 0;
+    left: 0;
     bottom: 0;
     margin: auto;
   }
 
   &__shadow {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
-    height: 200px;
-    width: 200px;
-    position: absolute;
-    left: 60px;
+    position: var( --position-of-elements);
+    background: linear-gradient(var(--background-linear-gradient-var-1),
+    var(--background-linear-gradient-var-2));
+    height: var(--clock-and-shadow-height);
+    width: var(--clock-and-shadow-width);
     top: 60px;
+    left: 60px;
     transform: rotate(135deg);
   }
 
   &__hour {
     width: 3px;
     height: 100%;
-    position: absolute;
-    left: 0;
+    position: var( --position-of-elements);
     right: 0;
+    left: 0;
     margin: 0 auto;
     animation: time 43200s infinite linear;
 
@@ -90,8 +96,8 @@
       content: "";
       height: 60px;
       width: 3px;
-      background-color: #262626;
-      position: absolute;
+      background-color: var(--background-color);
+      position: var( --position-of-elements);
       top: 30px;
     }
   }
@@ -99,16 +105,16 @@
   &__minute {
     width: 1px;
     height: 100%;
-    position: absolute;
-    left: 0;
+    position: var( --position-of-elements);
     right: 0;
+    left: 0;
     margin: 0 auto;
     animation: time 3600s infinite linear;
 
     &::before {
-      position: absolute;
+      position: var( --position-of-elements);
       content: "";
-      background-color: #262626;
+      background-color: var(--background-color);
       height: 40px;
       width: 1px;
       top: 50px;
@@ -118,14 +124,14 @@
   &__second {
     width: 2px;
     height: 100%;
-    position: absolute;
-    left: 0;
+    position: var( --position-of-elements);
     right: 0;
+    left: 0;
     margin: 0 auto;
     animation: time 60s infinite linear;
 
     &::before {
-      position: absolute;
+      position: var( --position-of-elements);
       content: "";
       background-color: #fd1111;
       height: 45px;
