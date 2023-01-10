@@ -1,0 +1,44 @@
+@import "./_keyframes";
+@import "./_mixin";
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.clock {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.clock__minutes-arrow {
+  position: relative;
+  height: 100px;
+  @include index(5px);
+  background-color: #d15559;
+  transform-origin: bottom left;
+  animation: clockwise 3600s linear infinite;
+}
+
+.clock__second-arrow {
+  position: relative;
+  bottom: 150px;
+  height: 150px;
+  @include index(5px);
+  background-color: #4b9aaa;
+  transform-origin: bottom left;
+  animation: clockwise_second 60s linear infinite;
+}
+
+.clock__central-dot {
+  height: 20px;
+  width: 20px;
+  background-color: #4b9aaa;
+  border-radius: 50%;
+  position: relative;
+  bottom: 163px;
+  right: 8px;
+}
