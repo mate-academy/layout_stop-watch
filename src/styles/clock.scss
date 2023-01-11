@@ -1,0 +1,148 @@
+.clock {
+  position: absolute;
+  height: $clock-and-shadow-height;
+  width: $clock-and-shadow-width;
+  background-color: $white-color;
+  border-radius: $circle-border-radius;
+  border: 10px solid $clock-big-border-color;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+
+  &__left-right {
+    width: $bigger-pointer-width;
+    height: $smaller-pointer-height;
+  }
+
+  &__top {
+    width: $smaller-pointer-width;
+    height: $bigger-pointer-height;
+    position: absolute;
+    background-color: $background-color;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  &__right {
+    width: $bigger-pointer-width;
+    height: $smaller-pointer-height;
+    position: absolute;
+    background-color: $background-color;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &__bottom {
+    width: $smaller-pointer-width;
+    height: $bigger-pointer-height;
+    position: absolute;
+    background-color: $background-color;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: 0 auto;
+  }
+
+  &__left {
+    width: $bigger-pointer-width;
+    height: $smaller-pointer-height;
+    position: absolute;
+    background-color: $background-color;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &__center {
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    background-color: $background-color;
+    border-radius: $circle-border-radius;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &__shadow {
+    position: absolute;
+    background: linear-gradient($background-linear-gradient-var-1),
+      ($background-linear-gradient-var-2);
+    height: $clock-and-shadow-height;
+    width: $clock-and-shadow-width;
+    top: 60px;
+    left: 60px;
+    transform: rotate(135deg);
+  }
+
+  &__hour {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    animation: time 43200s infinite linear;
+
+    &::before {
+      content: "";
+      height: 60px;
+      width: 3px;
+      background-color: $background-color;
+      position: absolute;
+      top: 30px;
+    }
+  }
+
+  &__minute {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    animation: time 3600s infinite linear;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $background-color;
+      height: 40px;
+      width: 1px;
+      top: 50px;
+    }
+  }
+
+  &__second {
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    animation: time 60s infinite linear;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $clockhand-bg-color;
+      height: 45px;
+      width: 2px;
+      top: 45px;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
