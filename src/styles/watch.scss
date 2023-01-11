@@ -1,0 +1,50 @@
+.watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    transform-origin: top center;
+    border-radius: 10px;
+
+    &--seconds {
+      height: 250px;
+      background: linear-gradient
+        (96.2deg,
+        rgb(255, 230, 112) 10.4%,
+        rgb(255, 100, 100) 43.8%,
+        rgb(0, 93, 219) 105.8%);
+
+      animation: goRound 60s linear infinite;
+    }
+
+    &--minutes {
+      height: 150px;
+      background: linear-gradient
+        (122.3deg,
+        rgb(111, 71, 133) 14.6%,
+        rgb(232, 129, 166) 29.6%,
+        rgb(237, 237, 183) 42.1%,
+        rgb(244, 166, 215) 56.7%,
+        rgb(154, 219, 232) 68.7%,
+        rgb(238, 226, 159) 84.8%);
+        
+      animation: goRound 3600s linear infinite;
+    }
+  }
+}
+
+@keyframes goRound {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
