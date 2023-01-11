@@ -86,8 +86,8 @@ $rotate: "1"30deg,
 
   &__center {
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: calc(50% - 12.5px);
+    top: calc(50% - 12.5px);
     z-index: 3;
     width: 25px;
     height: 25px;
@@ -97,8 +97,8 @@ $rotate: "1"30deg,
 
   &__hand {
     position: absolute;
-    left: 51.5%;
-    top: 51.5%;
+    left: 49.5%;
+    top: 49.5%;
     z-index: 2;
     border-radius: 5px;
     transform-origin: top;
@@ -113,6 +113,9 @@ $rotate: "1"30deg,
     &--second {
       width: 4px;
       height: 250px;
+      left: calc(50% - 2px);
+      top: calc(50% - 250px);
+      transform-origin: bottom;
       background-color: white;
       animation: round 60s steps(60) infinite;
     }
