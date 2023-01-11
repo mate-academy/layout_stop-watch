@@ -1,0 +1,87 @@
+.watch {
+  position: relative;
+  isolation: isolate;
+  margin: auto;
+  min-width: $watch-size;
+  min-height: $watch-size;
+  border: 1px solid $color-total-black;
+  border-radius: $circle-radius;
+  background-image: linear-gradient($color-total-red, $color-total-black);
+
+  &__numbers-top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: $numbers-font-size;
+    color: $color-total-black;
+  }
+
+  &__numbers-right {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    font-size: $numbers-font-size;
+    color: $color-redder-black;
+  }
+
+  &__numbers-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: $numbers-font-size;
+    color: $color-total-red;
+  }
+
+  &__numbers-left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    font-size: $numbers-font-size;
+    color: $color-redder-black;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $watch-center;
+    height: $watch-center;
+    border-radius: $circle-radius;
+    background-color: $color-total-black;
+  }
+
+  &__small-hand {
+    position: absolute;
+    isolation: inherit;
+    z-index: -1;
+    top: 15%;
+    left: 49.25%;
+    width: $small-hand-width;
+    height: $small-hand-height;
+    transform: translate(-50%);
+    border: 1px solid $color-total-black;
+    background-color: $small-hand-color;
+    transform-origin: center bottom;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__big-hand {
+    position: absolute;
+    isolation: inherit;
+    z-index: -1;
+    top: 10%;
+    left: 49.5%;
+    width: $big-hand-width;
+    height: $big-hand-height;
+    transform: translate(-50%, -50%);
+    border: 1px solid $color-total-black;
+    background-color: $bid-hand-color;
+    transform-origin: center bottom;
+    animation: rotate 3600s linear infinite;
+  }
+}
