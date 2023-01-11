@@ -1,0 +1,55 @@
+.clock {
+  position: relative;
+  border-radius: 50%;
+  margin: auto;
+  border: 3px solid black;
+  height: $circle-height;
+  width: $circle-width;
+
+  // dot
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: $dot-height;
+    width: $dot-width;
+    background-color: red;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: -3px;
+    left: ($circle-width / 2) - $second-hand-width;
+    height: $second-hand-height;
+    width: $second-hand-width;
+    border-radius: 3px;
+    background-color: red;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    left: ($circle-width / 2) - $minute-hand-width;
+    top: $minute-hand-height / 4;
+    height: $minute-hand-height;
+    width: $minute-hand-width;
+    border-radius: 3px;
+    background-color: red;
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
