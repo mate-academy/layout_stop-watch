@@ -10,41 +10,35 @@
   border: 8px solid black;
   border-radius: 50%;
   transition-delay: 2s;
+}
 
-  &--arrow::before {
-    content: "";
+.arrows {
+
+  &__arrow {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    border-radius: 3px;
+    transform-origin: left;
+  }
+
+  &__arrow--minute {
     width: 35%;
     height: 6px;
     background: blue;
-    border-radius: 3px;
     animation: animate 4s linear infinite;
-    transform-origin: left;
   }
 
-  &--arrow::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+  &__arrow--second {
     width: 25%;
     height: 6px;
     background: red;
-    border-radius: 3px;
     animation: animate 48s linear infinite;
-    transform-origin: left;
     z-index: 0;
   }
 
-  &--center {
+  &__arrow--center {
     display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%,-50%);
     width: 10px;
     height: 10px;
