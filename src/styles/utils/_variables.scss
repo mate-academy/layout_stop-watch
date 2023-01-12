@@ -1,0 +1,29 @@
+$clock-width: 300px;
+$clock-height: 300px;
+$seconds-params: ticker 60s steps(60) infinite;
+$minutes-params: ticker 3600s steps(60) infinite;
+$hours-params: ticker 216000s steps(60) infinite;
+
+$bg-color: #fff;
+$primary-color: #6d5dfc;
+$primary-dark-color: #5b0eeb;
+$secondary-color: #9baacf;
+$secondary-light-color: #bec8e4;
+$secondary-extra-light-color: #c8d0e7;
+
+$shadow-in:
+  inset 3px 3px 8px $secondary-extra-light-color,
+  inset -3px -3px 8px $bg-color;
+$shadow-out:
+  3px 3px 8px $secondary-extra-light-color,
+  -3px -3px 8px $bg-color;
+
+$hours-lines:
+  "one" 30deg,
+  "two" 60deg,
+  "three" 120deg,
+  "four" 150deg;
+$arrows-params:
+  "sec" 45% 2px $seconds-params $primary-color,
+  "min" 35% 4px $minutes-params $secondary-color,
+  "hour" 25% 6px $hours-params $secondary-light-color;

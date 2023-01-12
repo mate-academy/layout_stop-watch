@@ -1,0 +1,49 @@
+.container__clock {
+  @include positioning;
+}
+
+.clock {
+  position: relative;
+
+  @include clock-size;
+
+  box-shadow: $shadow-out, $shadow-in;
+  border: 5px solid $bg-color;
+  @include b-radius;
+
+  &::after {
+    transform: rotate(90deg);
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+
+    width: 97%;
+    height: 5px;
+
+    background-color: $primary-dark-color;
+
+    content: "";
+  }
+
+  &__inner-block {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+  }
+}
+
+.hours-line {
+  position: absolute;
+  height: 2px;
+  width: 97%;
+
+  background-color: $secondary-color;
+
+  @each $number, $degree in $hours-lines {
+    &--#{$number} {
+      transform: rotate($degree);
+    }
+  }
+}
