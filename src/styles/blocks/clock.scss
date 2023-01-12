@@ -1,0 +1,42 @@
+.clock {
+  @include circle($big-circle-size);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  background-color: $clock-color;
+  border: 15px solid $border-color;
+  box-shadow: 10px 5px 10px $shadow-color;
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+
+    background-color: $hand-color;
+
+    transform-origin: bottom;
+
+    &--sec {
+      width: 3px;
+      height: 200px;
+
+      animation: move 60s infinite linear;
+    }
+
+    &--hour {
+      height: 120px;
+      width: 10px;
+
+      animation: move 3600s infinite linear ;
+    }
+  }
+
+  &__circle {
+    @include circle($small-circle-size);
+
+    background-color: $hand-color ;
+  }
+}
