@@ -20,20 +20,8 @@
     background-color: $minute-hand-color;
     border-radius: 20px;
 
-    animation-name: minute;
-    animation-duration: $minute;
-    animation-timing-function: linear;
+    animation: move $minute linear;
     transform-origin: center bottom;
-
-    @keyframes minute {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
   }
 
   &__second-hand {
@@ -45,20 +33,8 @@
     background-color: $second-hand-color;
     border-radius: 10px;
 
-    animation-name: second;
-    animation-duration: $second;
-    animation-timing-function: linear;
-    animation-iteration-count: 60;
+    animation: move $second linear 60;
     transform-origin: center bottom;
-
-    @keyframes second {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
   }
 
   &__point {
