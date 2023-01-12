@@ -1,0 +1,65 @@
+.watch__second {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation-name: clock;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.watch__second::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: #5f98a8;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  border-radius: 50%;
+}
+
+.watch__second::after {
+  content: "";
+  background-color: #5f98a8;
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 300px;
+  border-radius: 5px;
+}
+
+.watch__minute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation-name: clock;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.watch__minute::after {
+  content: "";
+  background-color: #c25d5d;
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.watch {
+  position: center;
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
