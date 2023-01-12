@@ -1,0 +1,20 @@
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin minute-hand ($size) {
+  height: $size * 0.4;
+  width: $size * 0.03;
+}
+
+@mixin second-hand ($size) {
+  height: $size * 0.35;
+  width: $size * 0.02;
+}
+
+@mixin round ($size) {
+  height: $size * 0.05;
+  width: $size * 0.05;
+  border-radius: 50%;
+}
