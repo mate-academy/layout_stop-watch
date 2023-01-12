@@ -1,0 +1,19 @@
+@keyframes seconds-arrow-move {
+  from {
+    transform: translateX(-50%) rotate(getSecondsStartPos($stopwatch-time));
+  }
+
+  to {
+    transform: translateX(-50%) rotate(0deg);
+  }
+}
+
+@keyframes minutes-arrow-move {
+  from {
+    transform: translateX(-50%) rotate(getMinutesStartPos($stopwatch-time));
+  }
+
+  to {
+    transform: translateX(-50%) rotate(0deg);
+  }
+}
