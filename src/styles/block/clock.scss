@@ -1,0 +1,60 @@
+@import "../utils/mixin";
+@import "../utils/variables";
+
+.clock {
+
+  display: flex;
+  margin: 0 auto;
+  background-color: #e5e4e2;
+  @include circle($clock-size);
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #98afc7;
+
+  &__center {
+    height: 30px;
+    width: 30px;
+    background-color: #728fce;
+    border-radius: 50%;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 20px ;
+    width: 10px;
+    height: 280px;
+    background-color: #36454f;
+    border-radius: 10px;
+
+    animation-name: movement;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    top: 20px;
+    width: 5px;
+    height: 280px;
+    background-color: #566d7e;
+    border-radius: 8px;
+
+    animation-name: movement;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes movement {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
