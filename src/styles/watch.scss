@@ -1,0 +1,39 @@
+.watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    transform-origin: top center;
+    border-radius: 10px;
+
+    &--seconds {
+      height: 250px;
+      background: #797ef6;
+
+      animation: goRound 60s linear infinite;
+    }
+
+    &--minutes {
+      height: 150px;
+      background: blue;
+
+      animation: goRound 3600s linear infinite;
+    }
+  }
+}
+
+@keyframes goRound {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
