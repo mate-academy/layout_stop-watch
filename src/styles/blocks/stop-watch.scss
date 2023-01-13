@@ -1,9 +1,11 @@
 @import "../utils/variables";
+@import "../utils/mixins";
 
 .stop-watch {
   position: relative;
   height: $watch-size;
   width: $watch-size;
+  box-sizing: border-box;
   border: $arrow-width dashed #ff2201;
   border-radius: 50%;
   background-color: #fff;
@@ -31,20 +33,6 @@
     animation: minute-arrow 3600s linear infinite;
   }
 
-  @keyframes minute-arrow {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    50% {
-      transform: rotate(180deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
   &__second-arrow {
     position: absolute;
     top: $top-secong;
@@ -56,17 +44,6 @@
     animation: second-arrow 60s linear infinite;
   }
 
-  @keyframes second-arrow {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    50% {
-      transform: rotate(180deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+  @include keyframes(minute-arrow);
+  @include keyframes(second-arrow);
 }
