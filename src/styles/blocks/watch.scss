@@ -6,28 +6,22 @@
   border: 5px solid;
   border-radius: 25%;
 
-  &__seconds-arrow {
-    height: $sec-arrow-height;
+  &__arrows {
     width: $arrow-width;
     background-color: $clock-border-clr;
     border-radius: $arrow-bd-rad;
-
     transform-origin: bottom;
-    animation: seconds 60s linear backwards infinite;
-
     @extend %arrow-position;
   }
 
-  &__minutes-arrow {
-    background-color: $clock-border-clr;
+  &__arrows--small {
+    height: $sec-arrow-height;
+    animation: move 3s linear backwards infinite;
+  }
+
+  &__arrows--big {
     height: $min-arrow-height;
-    width: $arrow-width;
-    border-radius: $arrow-bd-rad;
-
-    transform-origin: bottom;
-    animation: minutes 3600s linear backwards infinite;
-
-    @extend %arrow-position;
+    animation: move 3600s linear backwards infinite;
   }
 
   &__dot {
@@ -37,17 +31,7 @@
   }
 }
 
-@keyframes seconds {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minutes {
+@keyframes move {
   0% {
     transform: rotate(0);
   }

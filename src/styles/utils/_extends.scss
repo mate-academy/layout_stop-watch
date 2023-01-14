@@ -2,11 +2,11 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
 }
 
 %arrow-position {
   position: absolute;
-  left: calc(50% + 0.25 * #{$dot-size});
-  bottom: 50%;
+  left: calc(50% - 0.25 * #{$dot-size});
+  bottom: calc(50% - 0.13 * #{$dot-size});
 }
