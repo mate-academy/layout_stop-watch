@@ -1,0 +1,42 @@
+.watch {
+  position: relative;
+  background-color: $bcg-clr;
+
+  @include square($size);
+  border: 5px solid;
+  border-radius: 25%;
+
+  &__arrows {
+    width: $arrow-width;
+    background-color: $clock-border-clr;
+    border-radius: $arrow-bd-rad;
+    transform-origin: bottom;
+    @extend %arrow-position;
+  }
+
+  &__arrows--small {
+    height: $sec-arrow-height;
+    animation: move 60s linear backwards infinite;
+  }
+
+  &__arrows--big {
+    height: $min-arrow-height;
+    animation: move 3600s linear backwards infinite;
+  }
+
+  &__dot {
+    @include circle($dot-size);
+    background-color: $clock-border-clr;
+    @extend %dot-position;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
