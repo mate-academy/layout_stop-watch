@@ -1,0 +1,35 @@
+.stopwatch {
+  @include round-block($stopwatch-size);
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid #5c5045;
+  background-color: #ddcdb5;
+
+  &__point {
+    @include round-block($point-size);
+
+    background-color: #221301;
+    z-index: 1;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    width: $width-hand;
+    border-radius: 2px;
+    transform-origin: bottom;
+
+    &--second {
+      @include height-bgc-hand(250px, #f00);
+      animation: rotate 60s infinite;
+    }
+
+    &--minute {
+      @include height-bgc-hand(200px, #000);
+      animation: rotate 3600s infinite;
+    }
+  }
+}
