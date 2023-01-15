@@ -1,35 +1,39 @@
-.arrows__arrow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 3px;
-  transform-origin: left;
-
-  &--minute {
-    width: 35%;
-    height: 6px;
-    background: blue;
-    animation: animate 4s linear infinite;
-  }
-
-  &--second {
-    width: 25%;
-    height: 6px;
-    background: red;
-    animation: animate 48s linear infinite;
-    z-index: 0;
-  }
+.arrows {
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 3px;
+    transform-origin: left;
   
-  &--center {
-    display: block;
-    transform: translate(-50%,-50%);
-    width: 10px;
-    height: 10px;
-    background: blue;
-    border-radius: 50%;
-    z-index: 1;
+    &-minute {
+      width: 35%;
+      height: 6px;
+      background: blue;
+      animation: animate 4s linear infinite;
+    }
+  
+    &-second {
+      width: 25%;
+      height: 6px;
+      background: red;
+      animation: animate 48s linear infinite;
+      z-index: 0;
+    }
+    
+    &-center {
+      display: block;
+      transform: translate(-50%,-50%);
+      width: 10px;
+      height: 10px;
+      background: blue;
+      border-radius: 50%;
+      z-index: 1;
+    }
   }
 }
+
+
 
 @keyframes animate {
   0% {
