@@ -1,0 +1,36 @@
+.clock__numbers {
+  width: inherit;
+  height: inherit;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-style: italic;
+
+  &-12 {
+    position: absolute;
+    top: $number-gap;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-3 {
+    position: absolute;
+    right: $number-gap;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-6 {
+    position: absolute;
+    bottom: $number-gap;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-9 {
+    position: absolute;
+    left: $number-gap;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
