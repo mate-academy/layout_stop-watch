@@ -1,0 +1,41 @@
+.secund-line {
+  position: absolute;
+  top: 356px;
+  left: 766px;
+  height: 300px;
+  width: 2px;
+  background-color: rgb(12, 121, 188);
+  transform: rotate(0deg);
+  transform-origin: 0 0;
+  animation: 60s seconds linear infinite;
+}
+
+.minute-line {
+  position: absolute;
+  top: 356px;
+  left: 766px;
+  height: 200px;
+  width: 6px;
+  background-color: rgb(188, 12, 94);
+  transform-origin: 0 0;
+  animation: 3600s seconds linear infinite;
+}
+
+.circle {
+  position: absolute;
+  top: 346px;
+  left: 753px;
+  border-radius: 50%;
+  background-color: rgb(12, 121, 188);
+  width: 22px;
+  height: 22px;
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
