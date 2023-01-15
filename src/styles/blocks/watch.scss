@@ -1,0 +1,54 @@
+@import "utils/variables";
+
+.watch {
+  position: relative;
+  width: $cize-wath;
+  height: $cize-wath;
+  border-radius: 50%;
+  border: 10px solid black;
+
+  &__min {
+    position: absolute;
+    border-radius: 20px ;
+    transform-origin: bottom center;
+    width: $min-width;
+    height: $min-height;
+    background-color:black;
+    animation: rotate 3600s steps(60, end) infinite;
+    left: calc(50% - #{$min-width/ 2});
+    top: calc(50% - #{$min-height});
+  }
+
+  &__second {
+    position: absolute;
+    border-radius: 20px ;
+    transform-origin: bottom center;
+    width: $second-width;
+    height: $second-height;
+    background-color: darkgray;
+    animation: rotate 60s steps(60, end) infinite;
+    left: calc(50% - #{$second-width/ 2});
+    top: calc(50% - #{$second-height});
+    }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: red;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
