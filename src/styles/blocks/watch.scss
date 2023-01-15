@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  height: 100vh;
+}
+
+.watch {
+  position: relative;
+  margin: auto;
+  @include circle($watch-size);
+  background-color: $watch-color;
+  border: 10px solid $watch-second-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include circle($dot-size);
+    background-color: $watch-second-color;
+  }
+
+  &__second {
+    position: absolute;
+    left: $arrow-left;
+    background-color: $watch-second-color;
+    width: $arrow-width;
+    height: $second-height;
+    border-radius: $arrow-radius;
+    animation: move 60s;
+    animation-timing-function: steps(60, end);
+    transform-origin: bottom;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    left: $arrow-left;
+    background-color: $watch-second-color;
+    width: $arrow-width;
+    height: $minute-height;
+    border-radius: $arrow-radius;
+    animation: move 3600s;
+    transform-origin: bottom;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+  }
+}
