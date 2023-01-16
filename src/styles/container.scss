@@ -1,0 +1,21 @@
+$center-size: 15px;
+$watch-size: 500px;
+$width-hand: 3px;
+
+@mixin round-block ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin height-hand ($height, $color) {
+  height: $height;
+  background-color: $color;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
