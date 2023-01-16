@@ -1,0 +1,149 @@
+$color1: #25283d;
+
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  @include wh (100%, 100vh);
+  background-color: antiquewhite;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  float: left;
+}
+
+#clock {
+  @include wh (280px, 280px);
+  background: $color1;
+  border: 18px solid #1e213a;
+  border-radius: 50%;
+  margin: 200px auto;
+  position: relative;
+  box-shadow: inset 0 5px 25px #000,
+    0 5px 25px #000,
+    0 5px 40px #000;
+
+  &::before {
+    content: "";
+    position: absolute;
+    @include wh (280px, 280px);
+    left: -18px;
+    top: -10px;
+    border: 18px solid #ccc;
+    border-radius: 50%;
+    z-index: -2;
+  }
+
+  &::after {
+    content: "";
+    @include wh (18px, 18px);
+    background: #c7d8f8;
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - 9px);
+    top: calc(50% - 9px);
+    box-shadow: 0 2px 4px #000;
+  }
+
+  li {
+    list-style: none;
+    position: absolute;
+  }
+}
+
+.numbers {
+  position: absolute;
+  @include wh (90%, 90%);
+  padding: 5%;
+  text-align: center;
+
+  span {
+    display: block;
+    color: #dbe7fd;
+    font-size: 38px;
+    text-shadow: 0 5px 18px #000026, 0 2px 3px #003;
+  }
+}
+
+$hours: 1 30deg,
+  2 60deg,
+  3 90deg,
+  4 120deg,
+  5 150deg,
+  6 180deg,
+  7 210deg,
+  8 240deg,
+  9 270deg,
+  10 300deg,
+  11 330deg;
+
+@each $value, $rotate in $hours {
+  .numbers:nth-child(#{$value}) {
+    transform: rotate($rotate);
+  }
+  .numbers:nth-child(#{$value}) span {
+    transform: rotate(-$rotate);
+  }
+
+}
+
+#second {
+  @include wh (100%, 100%);
+  animation: sec 60s steps(60, end) infinite;
+
+  &::after {
+    content: "";
+    @include wh (4px, 107px);
+    border-radius: 2px;
+    background: #fd2e62;
+    position: absolute;
+    left: calc(50% - 2px);
+    top: 55px;
+    box-shadow: 1px 2px 3px #0026;
+  }
+
+}
+
+#minute {
+  @include wh (100%, 100%);
+  animation: sec 3600s steps(60, end) infinite;
+
+  &::after {
+    content: "";
+    @include wh (8px, 79px);
+    border-radius: 4px 4px 2px 2px;
+    background: #bed4fd;
+    position: absolute;
+    left: calc(50% + 30px);
+    top: 29%;
+    transform: rotate(-120deg);
+    box-shadow: -1px 0 5px #0026;
+  }
+}
+
+#hour {
+  @include wh (100%, 100%);
+  transform: rotate(120deg);
+
+  &::after {
+    content: "";
+    @include wh (12px, 65px);
+    border-radius: 6px 6px 3px 3px;
+    background: #c7c6e333;
+    position: absolute;
+    left: calc(50% - 4px);
+    top: 50%;
+    box-shadow: 1px 0 4px #000026;
+  }
+}
+
+@keyframes sec {
+  to {
+    transform: rotate(360deg);
+  }
+}
