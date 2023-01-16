@@ -1,0 +1,37 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background-color:white;
+
+    &__center-circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color:black;
+    }
+
+    &__hand {
+      position: absolute;
+      bottom: 50%;
+      width: 5px;
+      border-radius: 5px;
+      transform-origin: bottom;
+ 
+        &--second {
+          height: 200px;
+          background-color: black;
+          animation: circle 60s linear infinite;
+        }
+  
+        &--minute {
+          height: 120px;
+          background-color: black;
+          animation: circle 3600s linear infinite;
+        }
+    }
+}
