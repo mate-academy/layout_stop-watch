@@ -1,0 +1,62 @@
+$heigt-watch: 500px;
+$width-watch: 500px;
+
+.stop-watch {
+  width: $width-watch;
+  height: $heigt-watch;
+  background-color: #b8a3a3;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 50%;
+  border: 10px dotted black;
+
+  &__minute {
+    position: absolute;
+    height: $heigt-watch/60;
+    width: $width-watch/2.5;
+    background-color: #993636;
+    top: 50%;
+    left: 50%;
+    rotate: -90deg;
+    transform-origin: 2%;
+    translate: -2% -50%;
+    border-radius: 20px;
+    animation: run-watch 3600s linear infinite;
+  }
+
+  &__second {
+    position: absolute;
+    height: $heigt-watch/60;
+    width: $width-watch/2;
+    background-color: #10d0e9a4;
+    top: 50%;
+    left: 50%;
+    rotate: -90deg;
+    transform-origin: 2%;
+    translate: -2% -50%;
+    border-radius: 20px;
+    animation: run-watch 60s linear infinite;
+  }
+
+  &__point {
+    position: absolute;
+    height: $heigt-watch/20;
+    width: $width-watch/20;
+    background-color: #000;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+}
+   
+@keyframes run-watch {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
