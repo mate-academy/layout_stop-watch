@@ -1,0 +1,43 @@
+.watch {
+  @include center;
+  width: 500px;
+  height: 500px;
+  border: solid black 4px;
+  border-radius: $round;
+
+  &__center {
+    @include center;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: $round;
+    background-color: aqua;
+  }
+
+  &__second {
+    display: flex;
+    position: relative;
+    top: calc(#{$secheight} / -2);
+    right: calc(#{$width} / -2);
+    width: $width;
+    height: $secheight;
+    border-radius: $round;
+    background-color: red;
+    animation: move 60s linear forwards;
+    transform-origin: bottom;
+    z-index: 1;
+  }
+
+  &__min {
+    display: flex;
+    position: relative;
+    top: calc(#{$minheight} / -2);
+    left: calc(#{$width} / -2);
+    width: $width;
+    height: $minheight;
+    border-radius: $round;
+    background-color: greenyellow;
+    animation: move2 60s linear forwards;
+    transform-origin: bottom;
+  }
+}
