@@ -1,0 +1,84 @@
+.stop-watch {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  @include circle($watch-size);
+  
+  @keyframes rotate-hand {
+    from {
+      rotate: 0deg;
+    }
+  
+    to {
+      rotate: 360deg;
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    left: 50%;
+    top: ($watch-size / 2) - $second-hand-size;
+    width: 1px;
+    height: $second-hand-size;
+    background-color: #f00;
+
+    animation-name: rotate-hand;
+    animation-duration: 60s;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+    transform: translateX(-50%);
+    transform-origin: 0 $second-hand-size;
+  }
+  
+  &__minute-hand {
+    position: absolute;
+    left: 50%;
+    top: ($watch-size / 2) - $minute-hand-size;
+    width: $minute-hand-width;
+    height: $minute-hand-size;
+    background-color: #ccc;
+
+    animation-name: rotate-hand;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform: translateX(-50%);
+    transform-origin: 0 $minute-hand-size;
+  }
+  
+  &__axis {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    @include circle($axis-size);
+    
+    background-color: red;
+    transform: translate(-50%, -50%);
+  }
+  
+  &__dash {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: $dash-size;
+    background-color: #888;
+    
+    transform: translate(0, $dash-shift);
+    transform-origin: top;
+  
+  }
+  
+  &__dash:nth-child(5n) {
+    height: $dash-5n-size;
+    background-color: red;
+  }
+  
+  @for $index from 1 to 360 {
+    .stop-watch__dash:nth-child(#{$index /6}) {
+      rotate: (#{$index}deg);
+    }
+  }
+}
