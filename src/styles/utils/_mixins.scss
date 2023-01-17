@@ -8,3 +8,16 @@
   height: $size;
   border-radius: $size;
 }
+
+@mixin arrow ($position, $size, 
+$width, $height, 
+$border-radius, $animation, 
+$transform-origin) {
+  position: $position;
+  top: position($size, $height);
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+  animation: $animation;
+  transform-origin: $transform-origin;
+}

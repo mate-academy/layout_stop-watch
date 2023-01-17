@@ -9,25 +9,23 @@
   }
 
   &__minute-arrow {
-    position: absolute;
-    top: position($watchSize, $minArrowHeight);
+    @include arrow($arrowPosition, $watchSize,
+    $arrowWidth, $minArrowHeight, 
+    $arrowRounding, $arrowAnimation, 
+    $transformOrigin);
+
+    animation-duration: 3600s;
     z-index: 1;
-    width: $arrowWidth;
-    height: $minArrowHeight;
     background-color: #0057b7;
-    border-radius: $arrowRounding;
-    animation: rotate 3600s linear infinite;
-    transform-origin: bottom center;
   }
 
   &__second-arrow {
-    position: absolute;
-    top: position($watchSize, $secArrowHeight);
-    width: $arrowWidth;
-    height: $secArrowHeight;
+    @include arrow($arrowPosition, $watchSize, 
+    $arrowWidth, $secArrowHeight, 
+    $arrowRounding, $arrowAnimation, 
+    $transformOrigin);
+
+    animation-duration: 60s;
     background-color: #ffd700;
-    border-radius: $arrowRounding;
-    animation: rotate 60s linear infinite;
-    transform-origin: bottom center;
   }
 }
