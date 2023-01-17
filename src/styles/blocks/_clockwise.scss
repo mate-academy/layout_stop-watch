@@ -1,0 +1,37 @@
+.clockwise {
+  display: flex;
+  list-style: none;
+  background-color: $color-clockwise;
+  z-index: 1;
+
+  @include smallCircle($size-clockwise);
+
+  &__sec {
+    position: absolute;
+    height: 50%;
+    left: 49.6%;
+    top: 9%;
+    transform-origin: 50% 82%;
+    width: 0.8%;
+    background: $color-clockwise-second;
+    animation: rotate 60s infinite steps($steps-clockwise);
+    z-index: 1;
+  }
+
+  &__min {
+    position: absolute;
+    height: 35%;
+    left: 49.3%;
+    top: 17%;
+    transform-origin: 50% 95%;
+    width: 1.5%;
+    background: $color-clockwise;
+    animation: rotate 3600s infinite steps($steps-clockwise);
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+}

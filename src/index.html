@@ -1,14 +1,31 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <main class="main">
+      <div class="container main__container">
+        <ul class="clockwise">
+          <li class="clockwise__sec"></li>
+          <li class="clockwise__min"></li>
+        </ul>
+
+        <ul class="clock">
+          <li class="clock__time clock__time--12">XII</li>
+          <li class="clock__time clock__time--3">III</li>
+          <li class="clock__time clock__time--6">VI</li>
+          <li class="clock__time clock__time--9">IX</li>
+        </ul>
+      </div>
+    </main>
+  </body>
 </html>
