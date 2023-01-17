@@ -1,24 +1,26 @@
 $color1: #25283d;
 
-@mixin wh($width, $height) {
-  width: $width;
-  height: $height;
+@mixin square($value) {
+  width: $value;
+  height: $value;
 }
 
-* {
+body,
+.clock {
   margin: 0;
   padding: 0;
 }
 
 .wrapper {
-  @include wh (100%, 100vh);
+  width: 100%;
+  height: 100vh;
   background-color: antiquewhite;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   float: left;
 }
 
-#clock {
-  @include wh (280px, 280px);
+.clock {
+  @include square(280px);
   background: $color1;
   border: 18px solid #1e213a;
   border-radius: 50%;
@@ -31,7 +33,7 @@ $color1: #25283d;
   &::before {
     content: "";
     position: absolute;
-    @include wh (280px, 280px);
+    @include square(280px);
     left: -18px;
     top: -10px;
     border: 18px solid #ccc;
@@ -41,7 +43,7 @@ $color1: #25283d;
 
   &::after {
     content: "";
-    @include wh (18px, 18px);
+    @include square(18px);
     background: #c7d8f8;
     position: absolute;
     border-radius: 50%;
@@ -58,7 +60,7 @@ $color1: #25283d;
 
 .numbers {
   position: absolute;
-  @include wh (90%, 90%);
+  @include square(90%);
   padding: 5%;
   text-align: center;
 
@@ -92,13 +94,14 @@ $hours: 1 30deg,
 
 }
 
-#second {
-  @include wh (100%, 100%);
+.second {
+  @include square(100%);
   animation: sec 60s steps(60, end) infinite;
 
   &::after {
     content: "";
-    @include wh (4px, 107px);
+    width: 4px;
+    height: 107px;
     border-radius: 2px;
     background: #fd2e62;
     position: absolute;
@@ -109,13 +112,14 @@ $hours: 1 30deg,
 
 }
 
-#minute {
-  @include wh (100%, 100%);
+.minute {
+  @include square(100%);
   animation: sec 3600s steps(60, end) infinite;
 
   &::after {
     content: "";
-    @include wh (8px, 79px);
+    width: 8px;
+    height: 79px;
     border-radius: 4px 4px 2px 2px;
     background: #bed4fd;
     position: absolute;
@@ -126,13 +130,14 @@ $hours: 1 30deg,
   }
 }
 
-#hour {
-  @include wh (100%, 100%);
+.hour {
+  @include square(100%);
   transform: rotate(120deg);
 
   &::after {
     content: "";
-    @include wh (12px, 65px);
+    width: 12px;
+    height: 65px;
     border-radius: 6px 6px 3px 3px;
     background: #c7c6e333;
     position: absolute;
