@@ -1,0 +1,31 @@
+.watch {
+  @include circle($watchSize);
+  border: 5px solid $orangeColor;
+
+  &__dot {
+    z-index: 2;
+    @include circle($dotSize);
+    background-color: $orangeColor;
+  }
+
+  &__minute-arrow {
+    @include arrow($arrowPosition, $watchSize,
+    $arrowWidth, $minArrowHeight, 
+    $arrowRounding, $arrowAnimation, 
+    $transformOrigin);
+
+    animation-duration: 3600s;
+    z-index: 1;
+    background-color: #0057b7;
+  }
+
+  &__second-arrow {
+    @include arrow($arrowPosition, $watchSize, 
+    $arrowWidth, $secArrowHeight, 
+    $arrowRounding, $arrowAnimation, 
+    $transformOrigin);
+
+    animation-duration: 60s;
+    background-color: #ffd700;
+  }
+}
