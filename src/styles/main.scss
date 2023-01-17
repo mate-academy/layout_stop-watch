@@ -1,0 +1,49 @@
+@import "../styles/utils/_variables.scss";
+@import "../styles/utils/resets";
+
+.clock {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-container {
+  min-width: 2 * $second-hand-width;
+  background-color: white;
+  display: flex;
+  height: $sircle-size;
+  align-items: center;
+  position: relative;
+  justify-content: end;
+}
+
+.clock-minute-hand {
+  height: $hands-height;
+  width: $minute-hand-width;
+  background-color: rgb(206, 93, 117);
+  border: 2px solid rgb(206, 93, 117);
+  border-radius: 15px;
+  transform-origin: right;
+  animation: rotate-minute 3600s linear infinite;
+}
+
+.clock-second-hand {
+  height: $hands-height;
+  width: $second-hand-width;
+  background-color: rgb(17, 156, 199);
+  border: 2px solid rgb(17, 156, 199);
+  border-radius: 15px;
+  transform-origin: left;
+  animation: rotate-second 60s linear infinite;
+}
+
+.clock-point {
+  height: $sircle-size;
+  width: $sircle-size;
+  background-color: rgb(17, 156, 199);
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  left: $second-hand-width - $sircle-size / 2;
+}
