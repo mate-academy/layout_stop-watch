@@ -1,18 +1,16 @@
 @import "utils/variables";
 
 .watch {
+  @include watch-cize;
   position: relative;
-  width: $cize-wath;
-  height: $cize-wath;
   border-radius: 50%;
   border: 10px solid black;
 
   &__min {
+    @include min-cize;
     position: absolute;
     border-radius: 20px ;
     transform-origin: bottom center;
-    width: $min-width;
-    height: $min-height;
     background-color: black;
     animation: rotate 3600s steps(60, end) infinite;
     left: calc(50% - #{$min-width/ 2});
@@ -20,11 +18,10 @@
   }
 
   &__second {
+    @include second-cize;
     position: absolute;
     border-radius: 20px ;
     transform-origin: bottom center;
-    width: $second-width;
-    height: $second-height;
     background-color: darkgray;
     animation: rotate 60s steps(60, end) infinite;
     left: calc(50% - #{$second-width/ 2});
@@ -32,12 +29,11 @@
   }
 
   &__center {
+    @include circle-cize;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
     border-radius: 50px;
     background-color: red;
   }
