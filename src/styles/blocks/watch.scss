@@ -15,29 +15,21 @@
   }
 
   &__second {
-    display: flex;
-    position: relative;
+    @include needle;
     top: calc(#{$secheight} / -2);
     right: calc(#{$width} / -2);
-    width: $width;
     height: $secheight;
-    border-radius: $round;
     background-color: red;
     animation: move 60s linear infinite forwards;
-    transform-origin: bottom;
     z-index: 1;
   }
 
   &__min {
-    display: flex;
-    position: relative;
+    @include needle;
     top: calc(#{$minheight} / -2);
     left: calc(#{$width} / -2);
-    width: $width;
     height: $minheight;
-    border-radius: $round;
     background-color: greenyellow;
-    animation: move2 3600s linear infinite;
-    transform-origin: bottom;
+    animation: move 3600s linear infinite;
   }
 }
