@@ -7,9 +7,7 @@
   height: 100vh;
 
   &__core {
-    height: $core-size;
-    width: $core-size;
-    border-radius: 50%;
+    @include core($core-size);
     z-index: 1;
 
     background-color: red;
@@ -21,10 +19,7 @@
 
   &__second-hand {
     position: absolute;
-    bottom: -$half-core-size;
-    left: -$quarter-core-size;
-    height: $second-hand-height;
-    width: $half-core-size;
+    @include second-hand($half-core-size);
 
     animation: clock-hands-rotate 60s linear infinite;
     animation-timing-function: steps(60, end);
@@ -35,10 +30,7 @@
 
   &__minute-hand {
     position: absolute;
-    bottom: -$half-core-size;
-    left: -$quarter-core-size;
-    height: $minute-hand-height;
-    width: $half-core-size;
+    @include minute-hand($half-core-size);
 
     animation: clock-hands-rotate 3600s linear infinite;
     animation-timing-function: steps(60, end);
