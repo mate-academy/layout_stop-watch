@@ -1,0 +1,19 @@
+@mixin core ($core-size) {
+  height: $core-size;
+  width: $core-size;
+  border-radius: 50%;
+}
+
+@mixin second-hand ($half-core-size) {
+  bottom: -$half-core-size;
+  left: -$quarter-core-size;
+  height: $second-hand-height;
+  width: $half-core-size;
+}
+
+@mixin minute-hand ($half-core-size) {
+  bottom: -$half-core-size;
+  left: -$quarter-core-size;
+  height: $minute-hand-height;
+  width: $half-core-size;
+}
