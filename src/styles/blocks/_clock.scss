@@ -1,0 +1,31 @@
+.clock {
+  list-style: none;
+
+  &__time {
+    position: absolute;
+
+    &--12 {
+      top: 5%;
+      left: 50%;
+      transform: $displacement-clockwise;
+    }
+
+    &--3 {
+      top: 50%;
+      left: 95%;
+      transform: $displacement-clockwise;
+    }
+
+    &--6 {
+      top: 95%;
+      left: 50%;
+      transform: $displacement-clockwise;
+    }
+
+    &--9 {
+      top: 50%;
+      left: 5%;
+      transform: $displacement-clockwise;
+    }
+  }
+}
