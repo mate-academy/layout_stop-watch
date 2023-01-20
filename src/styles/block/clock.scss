@@ -18,25 +18,23 @@
   }
 
   &__minute {
-    position: absolute;
-    top: 20px ;
     width: 10px;
-    height: 280px;
     background-color: $color-minute;
     border-radius: 10px;
-
     animation: movement 3600s linear infinite;
-    transform-origin: bottom;
   }
 
   &__second {
-    position: absolute;
-    top: 20px;
     width: 5px;
-    height: 280px;
     background-color: $second-color;
     border-radius: 8px;
     animation: movement 60s linear infinite;
+  }
+
+  .general {
+    position: absolute;
+    top: 20px;
+    height: 280px;
     transform-origin: bottom;
   }
 }
