@@ -1,11 +1,15 @@
-.watch {
-  display: flex;
-  justify-content: center;
-  height: $clock-size;
-  width: $clock-size;
-  margin: 0 auto;
-  border: 2px solid #000;
-  border-radius: 40%;
+.stopwatch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__watch {
+    @include clock;
+
+    border: 2px solid #000;
+    border-radius: 40%;
+  }
 
   &__center {
     position: absolute;
@@ -16,24 +20,24 @@
     border-radius: 50%;
   }
 
-  &__hand-second {
+  &__second {
+    @include width-border;
+
     position: absolute;
-    width: $hand-width;
     height: 250px;
     background-color: #00f;
-    border-radius: 4px;
     animation: 60s infinite linear turnover;
     transform-origin: center 250px;
   }
+  
+  &__minute {
+    @include width-border;
 
-  &__hand-minute {
     position: relative;
     top: 130px;
-    width: $hand-width;
     height: 120px;
     background-color: #f00;
-    border-radius: 4px;
-    animation: 360s infinite linear turnover;
+    animation: 3600s infinite linear turnover;
     transform-origin: center 120px;
   }
 }
