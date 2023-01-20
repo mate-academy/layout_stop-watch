@@ -1,0 +1,40 @@
+.stopwatch {
+  @include stopwatch;
+
+  &__watch {
+    @include clock;
+
+    border: 2px solid #000;
+    border-radius: 40%;
+  }
+
+  &__center {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 245px;
+    background-color: #00f;
+    border-radius: 50%;
+  }
+
+  &__second {
+    @include width-border;
+
+    position: absolute;
+    height: 250px;
+    background-color: #00f;
+    animation: 60s infinite linear turnover;
+    transform-origin: center 250px;
+  }
+  
+  &__minute {
+    @include width-border;
+
+    position: relative;
+    top: 130px;
+    height: 120px;
+    background-color: #f00;
+    animation: 3600s infinite linear turnover;
+    transform-origin: center 120px;
+  }
+}

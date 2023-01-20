@@ -1,0 +1,29 @@
+@keyframes turnover {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@mixin clock {
+  display: flex;
+  justify-content: center;
+  height: $clock-size;
+  width: $clock-size;
+  margin: 0 auto;
+}
+
+@mixin width-border {
+  width: $hand-width;
+  border-radius: 4px;
+}
+
+@mixin stopwatch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
