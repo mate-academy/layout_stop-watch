@@ -1,0 +1,34 @@
+@import "utils/mixins";
+@import "utils/variables";
+
+@import "blocks/clocks";
+@import "blocks/clockwise";
+@import "blocks/container";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Libre Baskerville", serif;
+  font-size: 50px;
+  color: #020000;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 253);
+
+  &__container {
+    margin: 25px 0;
+  }
+}
+
+ul,
+li,
+body {
+  margin: 0;
+  padding: 0;
+}
