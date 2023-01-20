@@ -1,0 +1,40 @@
+@import "../utils/mixin";
+@import "../utils/variables";
+
+.clock {
+  @include circle($clock-size);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  border: 4px solid $clock-border;
+  background-color: $color-clock;
+
+  &__center {
+    height: 30px;
+    width: 30px;
+    background-color: $center-border;
+    border-radius: 50%;
+  }
+
+  &__minute {
+    width: 10px;
+    background-color: $color-minute;
+    border-radius: 10px;
+    animation: movement 3600s linear infinite;
+  }
+
+  &__second {
+    width: 5px;
+    background-color: $second-color;
+    border-radius: 8px;
+    animation: movement 60s linear infinite;
+  }
+
+  .general {
+    position: absolute;
+    top: 20px;
+    height: 280px;
+    transform-origin: bottom;
+  }
+}
