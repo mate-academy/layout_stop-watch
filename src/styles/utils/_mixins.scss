@@ -9,13 +9,8 @@
   border: 5px double #000;
 }
 
-@mixin smallSguare($size) {
-  width: $size;
-  height: $size;
-}
-
 @mixin smallCircle($size) {
-  @include smallSguare($size);
+  @include sguare($size);
   border-radius: 50%;
   border: 3px solid $color-clockwise-second;
 }
