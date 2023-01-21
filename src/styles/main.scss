@@ -4,55 +4,43 @@
   margin: 100px;
 }
 
-.arrow-minutes {
-  background-color: red;
+.arrow {
   width: 10px;
-  height: 150px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  margin-top: 50px;
-  margin-left: -11px;
+  border-radius: 5px;
   transform-origin: bottom;
-  animation: time 3s linear alternate forwards;
+}
+
+.arrow-minutes {
+  position: absolute;
+  background-color: red;
+  height: 150px;
+  margin-top: 50px;
+  animation: time 3600s linear  infinite;
 }
 
 @keyframes time {
   from {
-    left: 0;
+    transform: rotate(0);
   }
 
   to {
-    transform: rotate(60deg);
+    transform: rotate(360deg);
   }
 }
 
 .arrow-second {
-
+  position: relative;
   background-color: royalblue;
-  width: 10px;
   height: 200px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  transform-origin: bottom;
-  animation: second 3s linear  forwards;
-}
-
-@keyframes second {
-  from {
-    left: 0;
-  }
-
-  to {
-    transform: rotate(230deg);
-  }
+  animation: time 60s linear  infinite;
 }
 
 .circle {
   z-index: 1;
+  position: absolute;
   background-color: royalblue;
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  margin-top: 190px;
-  margin-right: -15px;
+  margin: 190px 0 0 3px;
 }
