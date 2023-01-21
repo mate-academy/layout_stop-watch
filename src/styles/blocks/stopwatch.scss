@@ -1,0 +1,47 @@
+.clock {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    min-width: $container-size;
+    height: $sircle-size;    
+    background-color: white;    
+  }
+ 
+  &__minute-hand, &__second-hand {
+    height: $hands-height;
+    border-radius: 15px;
+    transform-origin: left;
+  }
+  
+  &__minute-hand {
+    width: $minute-hand-width;
+    margin-right: -$minute-hand-width;
+    background-color: $minute-hand-color;
+    border: 2px solid $minute-hand-color;
+    animation: hands 3600s linear infinite;
+  }
+
+  &__second-hand {
+    width: $second-hand-width;
+    background-color: $second-hand-color;
+    border: 2px solid $second-hand-color;
+    animation: hands 60s linear infinite;
+  }
+
+  &__point {
+    position: absolute;
+    display: block;
+    left: $container-size * 0.5 - $sircle-size / 2;
+    height: $sircle-size;
+    width: $sircle-size;
+    background-color: $second-hand-color;
+    border-radius: 50%;
+  }
+}
