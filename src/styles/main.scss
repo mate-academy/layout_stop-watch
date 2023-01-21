@@ -1,0 +1,55 @@
+$second: 1s;
+$minute: $second * 60;
+$hour: $minute * 60;
+$day: $hour * 24;
+
+.body__minute-hand {
+  position: relative;
+  margin: auto;
+  width: 20px;
+  height: 100px;
+  background-color: crimson;
+  border-radius: 25px;
+  animation: circle $day linear infinite;
+  transform-origin: bottom;
+  z-index: 0;
+}
+
+.body__second-hand {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  width: 15px;
+  height: 300px;
+  background-color: cadetblue;
+  border-radius: 25px;
+  animation: circle $minute linear infinite;
+  transform-origin: bottom;
+  z-index: 1;
+}
+
+.body__watch {
+  height: 100vh;
+  width: 100%;
+}
+
+.body__clock-center {
+  position: relative;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  background-color: darkblue;
+  border-radius: 50px;
+  z-index: 2;
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
