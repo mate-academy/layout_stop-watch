@@ -1,0 +1,43 @@
+.watch {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  &__clock-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $cell-clock-center;
+    height: $cell-clock-center;
+    background-color: darkblue;
+    border-radius: 50px;
+    z-index: 2;
+  }
+
+  &__second-hand {
+    position: absolute;
+    left: calc(50% - 0.5 * #{$width-second});
+    top: calc(50% - #{$height-second});
+    width: $width-second;
+    height: $height-second;
+    background-color: cadetblue;
+    border-radius: #{$border-radius};
+    animation: circle $minute linear infinite;
+    transform-origin: bottom;
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    left: calc(50% - 0.5 * #{$width-minute});
+    top: calc(50% - #{$height-minute});
+    width: $width-minute;
+    height: $height-minute;
+    background-color: crimson;
+    border-radius: #{$border-radius};
+    animation: circle $day linear infinite;
+    transform-origin: bottom;
+    z-index: 0;
+  }
+}
