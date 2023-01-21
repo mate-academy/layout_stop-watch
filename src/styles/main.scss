@@ -1,0 +1,56 @@
+@import "utils/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.stop-watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  &__point {
+    position: inherit;
+    width: 20px;
+    height: 20px;
+    background-color: $primary-color;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__second {
+    position: inherit;
+    height: 350px;
+    width: $clock-hands-width;
+    background-color: $primary-color;
+    border-radius: $hands-radius;
+    z-index: 1;
+    transform-origin: bottom;
+    animation: move 60s infinite linear;
+  }
+
+  &__minute {
+    position: inherit;
+    height: 250px;
+    width: $clock-hands-width;
+    background-color: $secondary-color;
+    border-radius: $hands-radius;
+    transform-origin: bottom;
+    animation: move 3600s infinite linear;
+  }
+
+  @keyframes move {
+    from {
+      transform: translate(4px, -96.5%) rotate(0deg);
+    }
+    to {
+      transform: translate(4px, -96.5%) rotate(360deg);
+    }
+  }
+}
