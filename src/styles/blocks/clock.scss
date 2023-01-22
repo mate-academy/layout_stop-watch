@@ -1,0 +1,31 @@
+.clock {
+  @extend %clock-position;
+  @include circle($clock-size);
+  border: $color-main 5px solid;
+
+  &__seconds-arrow {
+    @extend %elements-position;
+    height: $arrow-height;
+    width: $arrow-width;
+    background-color: $color-main;
+    border-radius: 50%;
+    animation-duration: 60s;
+    @extend %arrow-animation;
+  }
+
+  &__minutes-arrow {
+    @extend %elements-position;
+    height: $small-arrow-height;
+    width: $arrow-width;
+    background-color: $color-secondary;
+    border-radius: 50%;
+    animation-duration: 3600s;
+    @extend %arrow-animation;
+  }
+
+  &__center-pointer {
+    @extend %elements-position;
+    @include circle ($center-pointer-size);
+    background-color: $color-main;
+  }
+}
