@@ -1,0 +1,48 @@
+.stop-watch {
+  @include position-center;
+  width: $stop-watch-size;
+  height: $stop-watch-size;
+  background-color: #ecf1f1;
+  border-radius: $watch-rod-circle;
+  transform: translate(-$watch-rod-circle, -$watch-rod-circle);
+  box-shadow: 1px 0 43px 8px #03ffec inset;
+
+  &__rod {
+    @include position-center;
+    height: $rod-size;
+    width: $rod-size;
+    background-color: #babbc0;
+    border-radius: $watch-rod-circle;
+    transform: translate(-$watch-rod-circle, -$watch-rod-circle);
+    z-index: 1;
+  }
+
+  &__minute {
+    @include position-transform-hands;
+    height: 250px;
+    width: 5px;
+    background-color: #0cccda;
+    border-radius: 8px;
+    animation: rotate 3600s steps(60) infinite;
+  }
+
+  &__second {
+    @include position-transform-hands;
+    top: 10%;
+    height: 200px;
+    width: 3px;
+    background-color: #f3d422;
+    border-radius: 8px;
+    animation: rotate 60s steps(60) infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translateX(-50%);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
