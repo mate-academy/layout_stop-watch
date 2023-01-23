@@ -1,0 +1,54 @@
+.clock {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  background-color: blanchedalmond;
+  border-radius: 50%;
+  margin: 0 auto;
+
+  &__axis {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 30px;
+    width: 30px;
+    transform: translate(-50%, -50%);
+    background-color: blueviolet;
+    border-radius: 50%;
+  }
+
+  &__hour {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    height: 125px;
+    width: 15px;
+    transform: translateX(-50%);
+    background-color: #db3892;
+    border-radius: 15px;
+    transform-origin: 0 125px;
+  }
+
+  &__minute {
+    position: absolute;
+    left: 50%;
+    height: 250px;
+    width: 10px;
+    transform: translateX(-50%);
+    background-color: #3884db;
+    border-radius: 15px;
+    transform-origin: 0 250px;
+  }
+
+  @for $index from 0 through 12 {
+    &__hour--#{$index} {
+      rotate: (360deg/12)*$index;
+    }
+  }
+
+  @for $index from 0 through 60 {
+    &__minute--#{$index} {
+      rotate: (360deg/60)*$index;
+    }
+  }
+}
