@@ -1,0 +1,52 @@
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  margin: 100px auto;
+  border: 5px solid black;
+  border-radius: 50%;
+  background-color: rgb(227, 219, 219);
+
+  &__minute {
+    position: absolute;
+    width: 8px;
+    height: $hand-height;
+    background-color: $blue-color;
+    border-radius: 5px;
+    animation: move 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    width: 5px;
+    height: $hand-height;
+    border-radius: 5px;
+    background-color: #d25559;
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $blue-color;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
