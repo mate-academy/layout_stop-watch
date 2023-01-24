@@ -1,54 +1,70 @@
-.clock {
-  position: relative;
-  height: 500px;
-  width: 500px;
-  background-color: blanchedalmond;
+$stopwatch-size: 500px;
+$axis-size: $stopwatch-size*0.06;
+$sArrow-height: $stopwatch-size*0.25;
+$sArrow-width: $stopwatch-size*0.03;
+$msArrow-height: $stopwatch-size*0.5;
+$msArrow-width: $stopwatch-size*0.02;
+
+@mixin circle($size) {
+  height: $size;
+  width: $size;
   border-radius: 50%;
+}
+
+@mixin position {
+  position: absolute;
+  left: 50%;
+}
+
+@mixin arrow($sArrow-height, $sArrow-width) {
+  @include position;
+  height: $sArrow-height;
+  width: $sArrow-width;
+  border-radius: $sArrow-width;
+  transform-origin: 0 $sArrow-height;
+  transform: translateX(-50%);
+}
+
+.stopwatch {
+  position: relative;
+  @include circle($stopwatch-size);
+  background-color: blanchedalmond;
   margin: 0 auto;
 
   &__axis {
+    @include position;
+    @include circle($axis-size);
     position: absolute;
     top: 50%;
-    left: 50%;
-    height: 30px;
-    width: 30px;
     transform: translate(-50%, -50%);
     background-color: blueviolet;
-    border-radius: 50%;
   }
 
-  &__hour {
-    position: absolute;
+  &__s {
     top: 25%;
-    left: 50%;
-    height: 125px;
-    width: 15px;
-    transform: translateX(-50%);
+    @include arrow($sArrow-height, $sArrow-width);
     background-color: #db3892;
-    border-radius: 15px;
-    transform-origin: 0 125px;
+    animation: seconds 60s step-start 0.5s 1 normal backwards;
   }
 
-  &__minute {
-    position: absolute;
-    left: 50%;
-    height: 250px;
-    width: 10px;
-    transform: translateX(-50%);
+  &__ms {
+    @include arrow($msArrow-height, $msArrow-width);
     background-color: #3884db;
-    border-radius: 15px;
-    transform-origin: 0 250px;
+    animation: seconds 10s step-start 0.5s 6 normal backwards;
   }
 
-  @for $index from 0 through 12 {
-    &__hour--#{$index} {
-      rotate: (360deg/12)*$index;
+  &:hover {
+    .stopwatch__ms,
+    .stopwatch__s {
+      animation-play-state: paused;
     }
   }
 
-  @for $index from 0 through 60 {
-    &__minute--#{$index} {
-      rotate: (360deg/60)*$index;
+  @keyframes seconds {
+    @for $index from 0 through 60 {
+      #{$index/60*100%} {
+        rotate: (360deg/60)*$index;
+      }
     }
   }
 }
