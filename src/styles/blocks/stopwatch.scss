@@ -1,0 +1,43 @@
+.stopwatch {
+  @include round($stopwatch-size);
+  background-color: $color-accent-dark;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &__center-circle {
+    @include round($stopwatch-center-circle-size);
+    @include absolute-center;
+    background-color: $color-accent-light;
+  }
+
+  &__hands {
+    width: $stopwatch-center-circle-size;
+    height: 50%;
+    position: relative;
+  }
+
+  &__minute-hand {
+    @extend %hands-properties;
+    background: $color-accent-purple;
+    clip-path: polygon(50% 25%, 10% 100%, 90% 100%);
+    animation: stopwatch-hand-rotation 3600s linear infinite;
+  }
+
+  &__second-hand {
+    @extend %hands-properties;
+    background: $color-accent-green;
+    clip-path: polygon(50% 5%, 30% 100%, 70% 100%);
+    animation: stopwatch-hand-rotation 60s linear infinite;
+  }
+}
+
+@keyframes stopwatch-hand-rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
