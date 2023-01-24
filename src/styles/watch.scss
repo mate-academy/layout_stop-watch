@@ -1,0 +1,44 @@
+.watch--circle {
+  display: flex;
+  margin: 50px auto;
+}
+
+.watch {
+  position: relative;
+  @include circle($size);
+  border-radius: 50%;
+  border: 2px solid $color-min;
+  background: $watch-color;
+
+  &__minutesArrow {
+    position: $arrows-location;
+    width: 160px;
+    height: $arrows-br;
+    @extend %arrows-position;
+    background: $color-min;
+    border-radius: $arrows-br;
+    animation: movement 3600s linear infinite -2700s;
+    transform-origin: left;
+  }
+
+  &__secondsArrow {
+    position: $arrows-location;
+    width: 230px;
+    height: 3px;
+    @extend %arrows-position;
+    border-radius: $arrows-br;
+    background: $color-sec;
+    animation: movement 60s linear -45s infinite;
+    transform-origin: left;
+  }
+
+  &__dot {
+    position: $arrows-location;
+    @include circle(15px);
+    @extend %arrows-position;
+    background: black;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translate(-50%);
+  }
+}
