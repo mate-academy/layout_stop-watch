@@ -25,4 +25,4 @@ Create a working stopwatch with minute and second hands using only CSS animation
 
 --> [CHECKLIST](https://github.com/mate-academy/layout_stop-watch/blob/master/checklist.md)
 
-Test
+Test1
