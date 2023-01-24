@@ -1,0 +1,85 @@
+$watch-size: 500px;
+$center-size: $watch-size * 0.05;
+$second-hand-length: $watch-size * 0.4;
+$minute-hand-length: $watch-size * 0.3;
+$hands-width: $center-size / 2;
+
+.stopwatch {
+  position: relative;
+  z-index: -2;
+
+  width: $watch-size;
+  height: $watch-size;
+
+  margin: 0 auto;
+
+  background-color: #888;
+  border: 2px solid #333;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+
+    width: $center-size;
+    height: $center-size;
+
+    background-color: #37a;
+    border-radius: 50%;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      bottom: 50%;
+      left: 25%;
+      z-index: -1;
+
+      display: block;
+      width: $hands-width;
+      height: $second-hand-length;
+
+      background-color: #37a;
+      border-radius: 35%;
+
+      transform-origin: bottom;
+      animation-name: hand-move;
+      animation-duration: 60s;
+      animation-timing-function: steps(60, end);
+      animation-iteration-count: infinite;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: 50%;
+      left: 25%;
+      z-index: -1;
+
+      display: block;
+      width: $hands-width;
+      height: $minute-hand-length;
+
+      background-color: #a46;
+      border-radius: 35%;
+
+      transform-origin: bottom;
+      animation-name: hand-move;
+      animation-duration: 3600s;
+      animation-timing-function: steps(3600, end);
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes hand-move {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
