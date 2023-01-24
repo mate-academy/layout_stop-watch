@@ -1,4 +1,6 @@
-.conteiner {
+@import "./animation.scss";
+
+.container {
   display: flex;
   justify-content: center;
   margin: 100px;
@@ -18,16 +20,6 @@
   animation: time 3600s linear  infinite;
 }
 
-@keyframes time {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .arrow--second {
   position: relative;
   background-color: royalblue;
@@ -42,5 +34,5 @@
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  margin: 190px 0 0 3px;
+  top: 290px;
 }
