@@ -1,0 +1,36 @@
+.stop-watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  margin: 100px auto;
+  border: $main-color 1.5px solid;
+  border-radius: 50%;
+
+  &__minute-hand {
+    @extend %element-position;
+    background-color: #d15559;
+    width: 1.5%;
+    height: 40%;
+    border-radius: 6px;
+    animation: sweep 60s linear infinite reverse forwards;
+  }
+
+  &__second-hand {
+    @extend %element-position;
+
+    background-color: $main-color;
+    width: 1%;
+    height: 50%;
+    border-radius: 6px;
+    animation: sweep 1000ms linear infinite reverse forwards;
+  }
+
+  &__axis {
+    @include circle ($axis-size);
+    @extend %element-position;
+
+    background-color: $main-color;
+  }
+}
