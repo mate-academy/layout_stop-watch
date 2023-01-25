@@ -1,0 +1,43 @@
+.watch {
+  @include circle($watch-size);
+  border: 1px solid $minutes-color;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &__minute {
+    height: 250px;
+    width: 15px;
+    border-radius: 8px;
+    background-color: $minutes-color;
+    z-index: 1;
+    transform-origin: center;
+    animation: time calculate-minutes($second-time) linear 0s infinite;
+    display: flex;
+    align-self: center;
+    position: absolute;
+  }
+
+  &__second {
+    z-index: 2;
+    height: 300px;
+    width: 15px;
+    border-radius: 8px;
+    background-color: $second-color;
+    animation: time $second-time steps(60) 0s infinite;
+    transform-origin: center;
+    display: flex;
+    align-self: center;
+    position: absolute;
+  }
+
+  &::after {
+    content: "";
+    @include circle(30px);
+    background-color: $second-color;
+    z-index: 3;
+    display: flex;
+    align-self: center;
+    position: absolute;
+  }
+}
