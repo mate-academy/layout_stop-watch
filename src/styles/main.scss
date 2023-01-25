@@ -16,24 +16,17 @@
     background-color: blueviolet;
   }
 
-  &__s {
+  &__m {
     top: 25%;
-    @include arrow($sArrow-height, $sArrow-width);
+    @include arrow($mArrow-height, $mArrow-width);
     background-color: #db3892;
-    animation: seconds 60s step-start 0.5s 1 normal backwards;
+    animation: seconds 60s step-start 0.5s infinite normal;
   }
 
-  &__ms {
-    @include arrow($msArrow-height, $msArrow-width);
+  &__s {
+    @include arrow($sArrow-height, $sArrow-width);
     background-color: #3884db;
-    animation: seconds 10s step-start 0.5s 6 normal backwards;
-  }
-
-  &:hover {
-    .stopwatch__ms,
-    .stopwatch__s {
-      animation-play-state: paused;
-    }
+    animation: seconds 1s linear 0.5s infinite normal;
   }
 
   @keyframes seconds {
