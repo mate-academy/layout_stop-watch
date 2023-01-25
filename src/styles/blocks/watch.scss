@@ -1,0 +1,53 @@
+.watch {
+  box-sizing: border-box;
+
+  background-color: lightblue;
+  border: $pointerWidth solid $accentColor;
+  @include circle(600px);
+
+  position: relative;
+
+  &__pointerBig {
+    position: absolute;
+    width: $pointerWidth;
+    height: 270px;
+    background-color: $accentColor;
+
+    left: 49%;
+    top: 20px;
+    border-radius: 30px;
+
+    animation: move 60s;
+    animation-timing-function: steps(60, end);
+    transform-origin: bottom;
+    animation-iteration-count: infinite;
+  }
+
+  &__pointerSmall {
+    position: absolute;
+    width: $pointerWidth;
+    height: 200px;
+    background-color: $accentColor;
+
+    left: 49%;
+    top: 90px;
+    border-radius: 30px;
+
+    animation: move 3600s;
+    animation-timing-function: steps(60, end);
+    transform-origin: bottom;
+    animation-iteration-count: infinite;
+
+  }
+
+  &__circle {
+    position: absolute;
+    background-color: $accentColor;
+    @include circle(20px);
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+}
