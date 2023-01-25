@@ -1,4 +1,4 @@
-$clock-size: 500px;
+$clock-size: 1000px;
 $min-arrow-height: $clock-size*0.3;
 $sec-arrow-height: ($clock-size/2)-10px;
 $min-arrow-color: black;
@@ -35,7 +35,7 @@ body {
   border: 2px solid black;
   border-radius: 50%;
 
-  background-size: 500px 504px;
+  background-size: $clock-size $clock-size+($clock-size/125);
   background-image: url("../images/clock.png");
 
   &::before {
