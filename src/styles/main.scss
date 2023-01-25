@@ -1,29 +1,6 @@
-$stopwatch-size: 500px;
-$axis-size: $stopwatch-size*0.06;
-$sArrow-height: $stopwatch-size*0.25;
-$sArrow-width: $stopwatch-size*0.03;
-$msArrow-height: $stopwatch-size*0.5;
-$msArrow-width: $stopwatch-size*0.02;
-
-@mixin circle($size) {
-  height: $size;
-  width: $size;
-  border-radius: 50%;
-}
-
-@mixin position {
-  position: absolute;
-  left: 50%;
-}
-
-@mixin arrow($sArrow-height, $sArrow-width) {
-  @include position;
-  height: $sArrow-height;
-  width: $sArrow-width;
-  border-radius: $sArrow-width;
-  transform-origin: 0 $sArrow-height;
-  transform: translateX(-50%);
-}
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/extends";
 
 .stopwatch {
   position: relative;
@@ -32,9 +9,8 @@ $msArrow-width: $stopwatch-size*0.02;
   margin: 0 auto;
 
   &__axis {
-    @include position;
+    @extend %position;
     @include circle($axis-size);
-    position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: blueviolet;
