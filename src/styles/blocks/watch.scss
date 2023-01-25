@@ -1,8 +1,6 @@
 .watch {
-  height: $watch-size;
-  width: $watch-size;
+  @include circle($watch-size);
   border: 1px solid $minutes-color;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   position: relative;
@@ -14,8 +12,10 @@
     background-color: $minutes-color;
     z-index: 1;
     transform-origin: center;
-    animation: time minute-rotate($second-time) linear 0s infinite;
-    @include placing;
+    animation: time calculate-minutes($second-time) linear 0s infinite;
+    display: flex;
+    align-self: center;
+    position: absolute;
   }
 
   &__second {
@@ -26,16 +26,18 @@
     background-color: $second-color;
     animation: time $second-time steps(60) 0s infinite;
     transform-origin: center;
-    @include placing;
+    display: flex;
+    align-self: center;
+    position: absolute;
   }
 
   &::after {
     content: "";
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
+    @include circle(30px);
     background-color: $second-color;
     z-index: 3;
-    @include placing;
+    display: flex;
+    align-self: center;
+    position: absolute;
   }
 }
