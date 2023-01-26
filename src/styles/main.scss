@@ -1,6 +1,6 @@
 $clock-size: 500px;
-$min-arrow-height: $clock-size*0.3;
-$sec-arrow-height: ($clock-size/2)-10px;
+$min-arrow-height: $clock-size * 0.3;
+$sec-arrow-height: ($clock-size / 2) - 10px;
 $min-arrow-color: black;
 $sec-arrow-color: rgb(207, 7, 7);
 
@@ -27,30 +27,23 @@ body {
 .clock {
   position: relative;
   margin: auto;
-
   width: $clock-size;
   min-width: $clock-size;
   height: $clock-size;
-
   border: 2px solid black;
   border-radius: 50%;
-
-  background-size: $clock-size $clock-size+($clock-size/125);
+  background-size: $clock-size $clock-size + ($clock-size / 125);
   background-image: url("../images/clock.png");
-
   &::before {
     content: "";
     display: block;
-
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-
     width: 25px;
     height: 25px;
-
     border-radius: 50%;
     background: radial-gradient(
       circle,
@@ -62,8 +55,8 @@ body {
   &__sec {
     position: absolute;
     width: 5px;
-    height: ($sec-arrow-height)-30px;
-    left: ($clock-size/2)-2.5px;
+    height: ($sec-arrow-height) - 30px;
+    left: ($clock-size / 2) - 2.5px;
     bottom: 50%;
     z-index: 3;
     transform-origin: 50% 100%;
@@ -78,8 +71,8 @@ body {
   &__min {
     position: absolute;
     width: 7px;
-    height: ($min-arrow-height)-30px;
-    left: ($clock-size/2)-3.5px;
+    height: ($min-arrow-height) - 30px;
+    left: ($clock-size / 2) - 3.5px;
     bottom: 50%;
     transform-origin: 50% 100%;
     background-color: $min-arrow-color;
