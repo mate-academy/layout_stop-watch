@@ -1,0 +1,95 @@
+$clock-size: 500px;
+$min-arrow-height: $clock-size * 0.3;
+$sec-arrow-height: ($clock-size / 2) - 10px;
+$min-arrow-color: black;
+$sec-arrow-color: rgb(207, 7, 7);
+
+@mixin arrows-tip {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 0 7.5px 40px;
+  border-style: solid;
+  left: 50%;
+  transform: translateX(-7.5px);
+  top: -25px;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  background-color: rgb(233, 229, 229);
+}
+
+.clock {
+  position: relative;
+  margin: auto;
+  width: $clock-size;
+  min-width: $clock-size;
+  height: $clock-size;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-size: $clock-size $clock-size + ($clock-size / 125);
+  background-image: url("../images/clock.png");
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      $sec-arrow-color 45%,
+      rgba(0,0,0,1) 48%
+    );
+  }
+
+  &__sec {
+    position: absolute;
+    width: 5px;
+    height: ($sec-arrow-height) - 30px;
+    left: ($clock-size / 2) - 2.5px;
+    bottom: 50%;
+    z-index: 3;
+    transform-origin: 50% 100%;
+    background-color: $sec-arrow-color;
+    animation: 60s steps(60, end) infinite move;
+    &::before {
+      @include arrows-tip;
+      border-color: transparent transparent $sec-arrow-color transparent;
+    }
+  }
+
+  &__min {
+    position: absolute;
+    width: 7px;
+    height: ($min-arrow-height) - 30px;
+    left: ($clock-size / 2) - 3.5px;
+    bottom: 50%;
+    transform-origin: 50% 100%;
+    background-color: $min-arrow-color;
+    animation: 3600s steps(60, end) infinite move;
+    &::before {
+      @include arrows-tip;
+      border-color: transparent transparent $min-arrow-color transparent;
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
