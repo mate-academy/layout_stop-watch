@@ -1,0 +1,28 @@
+.stop-watch {
+  @extend %adjust-flex;
+  gap: $container-gap;
+
+  &__reset-button {
+    position: relative;
+    @include shape(
+      $window-size * 2,
+      $container-gap,
+      $container-gap
+    );
+    @extend %container-appearance;
+    font-size: 20px;
+    color: $bg-color-1;
+    @include background(
+      $watch-color-1, 
+      $watch-color-2, 
+      $watch-color-3
+      );
+    text-decoration: none;
+    transition: all 500ms;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $watch-color-4
+    }
+  }
+}

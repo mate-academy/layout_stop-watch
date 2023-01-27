@@ -1,0 +1,32 @@
+.digital-stop-watch {
+  position: relative;
+  display: flex;
+  font-size: 50px;
+  line-height: $window-size;
+  @extend %container-appearance;
+  @include background(
+    $bg-color-1,
+    $bg-color-2,
+    $bg-color-3, 
+    45, 
+    5%
+  );
+
+  &::before {
+    content: ":";
+    @include align-element("center");
+  }
+
+  &__window {
+    @include shape($window-size);
+    
+    &::before {
+      content: "00";
+      @include animation(digits, "sec");
+    }
+
+    &:first-child::before {
+      @include animation(digits, "min", 30500ms);
+    }
+  }
+}
