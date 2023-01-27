@@ -1,0 +1,34 @@
+.stopwatch {
+  @include square($size-stopwatch);
+  position: relative;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 14px dotted slategrey;
+
+  &__hand-minute {
+    position: absolute;
+    align-self: center;
+    height: 130px;
+    width: 3px;
+    background-color: $color-handMinute;
+    animation: motion 3600s steps(60, end) infinite;
+  }
+
+  &__hand-second {
+    position: absolute;
+    align-self: center;
+    height: 180px;
+    width: 3px;
+    background-color: $color-handSecond;
+    animation: motion 60s steps(60, end) infinite;
+  }
+
+  &__center {
+    @include square(15px);
+    position: absolute;
+    align-self: center;
+    background-color: $color-centerPoint;
+  }
+}
