@@ -10,8 +10,12 @@
   }
 }
 
-.clock {
+@mixin circle {
   border-radius: 50%;
+}
+
+.clock {
+  @include circle();
   height: 65vh;
   position: absolute;
   width: 30%;
@@ -21,7 +25,7 @@
 
   &:after {
     background: #000;
-    border-radius: 50%;
+    @include circle();
     content: "";
     position: absolute;
     left: 50%;
@@ -49,6 +53,8 @@
     position: absolute;
     top: 30%;
     width: 2.5%;
+    animation: rotate 43200s infinite linear;
+    transform-origin: 45% 100%;
   }
 
   &__minutes {
@@ -58,6 +64,8 @@
     position: absolute;
     top: 10%;
     width: 2%;
+    animation: rotate 3600s infinite steps(60);
+    transform-origin: 45% 100%;
   }
 
   &__seconds {
@@ -68,17 +76,7 @@
     top: 14%;
     width: 1%;
     z-index: 8;
-  }
-
-  &__container_hours {
-    animation: rotate 43200s infinite linear;
-  }
-
-  &__container_minutes {
-    animation: rotate 3600s infinite steps(60);
-  }
-
-  &__container_seconds {
     animation: rotate 60s infinite steps(60);
+    transform-origin: 45% 80%;
   }
 }
