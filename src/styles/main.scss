@@ -20,13 +20,13 @@
     top: 25%;
     @include arrow($mArrow-height, $mArrow-width);
     background-color: #db3892;
-    animation: seconds 60s step-start 0.5s infinite normal;
+    animation: seconds 3600s step-end 0.5s infinite normal;
   }
 
   &__s {
     @include arrow($sArrow-height, $sArrow-width);
     background-color: #3884db;
-    animation: seconds 1s linear 0.5s infinite normal;
+    animation: seconds 60s step-end 0.5s infinite normal;
   }
 
   @keyframes seconds {
