@@ -1,0 +1,14 @@
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin arrow($sArrow-height, $sArrow-width) {
+  @extend %position;
+  height: $sArrow-height;
+  width: $sArrow-width;
+  border-radius: $sArrow-width;
+  transform-origin: 0 $sArrow-height;
+  transform: translateX(-50%);
+}

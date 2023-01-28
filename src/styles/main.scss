@@ -1,0 +1,39 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/extends";
+
+.stopwatch {
+  position: relative;
+  @include circle($stopwatch-size);
+  background-color: blanchedalmond;
+  margin: 0 auto;
+
+  &__axis {
+    @extend %position;
+    @include circle($axis-size);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: blueviolet;
+  }
+
+  &__m {
+    top: 25%;
+    @include arrow($mArrow-height, $mArrow-width);
+    background-color: #db3892;
+    animation: seconds 3600s step-end 0.5s infinite normal;
+  }
+
+  &__s {
+    @include arrow($sArrow-height, $sArrow-width);
+    background-color: #3884db;
+    animation: seconds 60s step-end 0.5s infinite normal;
+  }
+
+  @keyframes seconds {
+    @for $index from 0 through 60 {
+      #{$index/60*100%} {
+        rotate: (360deg/60)*$index;
+      }
+    }
+  }
+}
