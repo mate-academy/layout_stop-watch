@@ -2,57 +2,46 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 100px;
+  @include stopwatch-size;
   border: solid 5px;
   border-radius: 360px;
-  height: 500px;
-  width: 500px;
+  background-image: url(/styles/image/pngwing.com.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &--position {
+    margin-top: 100px;
+  }
 
   &__minute-hand {
     position: absolute;
-    left: 30px;
-    height: 5px;
-    width: 220px;
+    bottom: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8px;
+    height: 190px;
     border-radius: 10px;
     background-color: aqua;
-    transform-origin: right;
-    animation: rotate-minute 60s linear infinite normal;
+    transform-origin: bottom;
+    animation: rotate 1800s linear infinite normal;
   }
 
   &__center-hand {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: aqua;
-    border-radius: 90px;
-  }
-
-  &__second-hand {
-    position: absolute;
-    right: 50px;
-    height: 5px;
-    width: 200px;
-    border-radius: 10px;
+    bottom: 0;
+    display: flex;
+    @include center-hand-size;
+    justify-content: center;
     background-color: red;
-    transform-origin: 10px 10px;
-    animation: rotate-second 60s linear infinite normal;
+    border-radius: 90px;
+    animation: rotate 60s linear infinite normal;
   }
 }
 
-@keyframes rotate-minute {
+@keyframes rotate {
   from {
-    transform: rotate(-360deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-second {
-  from {
-    transform: rotate(-360deg);
+    transform: rotate(0deg);
   }
 
   to {
