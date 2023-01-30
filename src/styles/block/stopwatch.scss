@@ -5,9 +5,17 @@
   @include stopwatch-size;
   border: solid 5px;
   border-radius: 360px;
-  background-image: url(/styles/image/pngwing.com.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url(/styles/image/pngwing.com.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotate(1.6deg);
+  }
 
   &--position {
     margin-top: 100px;
@@ -24,7 +32,7 @@
     border-radius: 10px;
     background-color: aqua;
     transform-origin: bottom;
-    animation: rotate 1800s linear infinite normal;
+    animation: rotate 3600s linear infinite normal;
   }
 
   &__center-hand {
