@@ -1,0 +1,38 @@
+.watch {
+  @include circle($watch-size);
+  position: relative;
+  top: $shift-50;
+  left: $shift-50;
+  display: flex;
+  justify-content: center;
+  background-color: $watch-color;
+  border: 2px solid white;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+
+  &__second {
+    @extend %text;
+    position: absolute;
+    transform: translate(-50%, -50%) rotateZ(-0deg);
+  }
+
+  &__second:nth-child(n) {
+    top: $shift-2;
+    left: $shift-50;
+  }
+ 
+  &__second:nth-child(2) {
+    top: $watch-size / 2;
+    left: $shift-98;
+  }
+
+  &__second:nth-child(3) {
+    top: $shift-98;
+    left: $shift-50;
+  }
+
+  &__second:nth-child(4) {
+    top: $watch-size / 2;
+    left: $shift-2;
+  }
+}
