@@ -1,0 +1,34 @@
+.stopwatch {
+  @include circle--L;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $gradient_silber;
+
+  &__dot {
+    @include circle--S;
+    background-color: $color_silber;
+    z-index: 2;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    bottom: 50%;
+    height: $minute-hand_size;
+    width: 5px;
+    background: $gradient_gold;
+    z-index: 1;
+    animation: minute 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    position: absolute;
+    bottom: 50%;
+    height: $second-hand_size;
+    width: 1px;
+    background-color: #f00;
+    animation: second 60s steps(60) infinite;
+    transform-origin: bottom;
+  }
+}
