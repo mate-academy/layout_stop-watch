@@ -2,9 +2,13 @@
   @include circle($size);
   background-color: bisque;
   display: flex;
-  margin: 100px auto;
   position: relative;
   border: 2px dashed mediumblue;
+  
+  &__content{
+    margin: 100px auto;
+  }
+ 
   &::after {
     position: absolute;
     display: block;
@@ -16,6 +20,7 @@
     top: 48%;
     left: 48%;
   }
+  
   &__minute,
   &__second {
     position: absolute;
@@ -27,10 +32,12 @@
     left: 50%;
     transform-origin: bottom;
   }
+  
   &__second {
     transform: rotate(90deg);
     animation: rotation 3600s linear infinite;
   }
+ 
   &__minute {
     animation: rotation 60s linear infinite;
   }
