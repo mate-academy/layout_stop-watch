@@ -11,24 +11,24 @@
     z-index: 2;
   }
 
-  &__minute-hand {
+  &__hand {
     position: absolute;
     bottom: 50%;
-    height: $minute-hand_size;
-    width: 5px;
-    background: $gradient_gold;
-    z-index: 1;
-    animation: minute 3600s linear infinite;
     transform-origin: bottom;
-  }
 
-  &__second-hand {
-    position: absolute;
-    bottom: 50%;
-    height: $second-hand_size;
-    width: 1px;
-    background-color: #f00;
-    animation: second 60s steps(60) infinite;
-    transform-origin: bottom;
+    &--minute {
+      height: $minute-hand_size;
+      width: 5px;
+      background: $gradient_gold;
+      z-index: 1;
+      animation: clock 3600s linear infinite;
+    }
+
+    &--second {
+      height: $second-hand_size;
+      width: 1px;
+      background-color: #f00;
+      animation: clock 60s steps(60) infinite;
+    }
   }
 }
