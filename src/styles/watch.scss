@@ -10,14 +10,14 @@
   align-self: center;
 
   &__minute {
-    @include arrow($minutes-height, 1);
+    @include arrow($minutes-height);
 
     transform-origin: center bottom;
     animation: move 3600s steps(60) infinite;
   }
 
   &__second {
-    @include arrow($seconds-height, 2);
+    @include arrow($seconds-height);
 
     transform-origin: center bottom;
     animation: move 60s steps(60) infinite;
@@ -28,6 +28,5 @@
     background-color: $dark-accent;
 
     position: absolute;
-    z-index: 3;
   }
 }
