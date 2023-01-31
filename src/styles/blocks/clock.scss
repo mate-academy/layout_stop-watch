@@ -1,0 +1,74 @@
+@import "utils/variables";
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  &__dial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: $width-clock-dial;
+    height: $width-clock-dial;
+
+    border-radius: 50%;
+    background-color: $color-clock-dial;
+  }
+
+  &__minute-hand {
+    position: relative;
+    top: $top-shift-clock-minute-hand;
+
+    width: 0;
+    height: $height-clock-minute-hand;
+
+    border-right: $width-clock-minute-hand solid $color-clock-minute-hand;
+    border-radius: $border-radius-clock-hand;
+
+    transform-origin: bottom;
+    animation-name: rotate;
+    animation-duration: $animation-duration-clock-minute-hand;
+    animation-timing-function: linear;
+    animation-iteration-count: 12;
+  }
+
+  &__circle {
+    position: relative;
+    top: $top-shift-clock-circle;
+    z-index: 1;
+
+    width: $width-clock-circle;
+    height: $width-clock-circle;
+
+    border-radius: 50%;
+    background-color: $color-clock-circle;
+  }
+
+  &__hour-hand {
+    position: relative;
+    top: $top-shift-clock-hour-hand;
+
+    border-right: $width-clock-hour-hand solid $color-clock-hour-hand;
+    border-radius: $border-radius-clock-hand;
+    width: 0;
+    height: $height-clock-hour-hand;
+
+    transform-origin: bottom;
+    animation-name: rotate;
+    animation-duration: $animation-duration-clock-hour-hand;
+    animation-timing-function: linear;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
