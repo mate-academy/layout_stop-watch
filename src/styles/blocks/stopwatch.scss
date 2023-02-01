@@ -1,0 +1,125 @@
+@use "sass: color";
+
+.stopwatch {
+  position: relative;
+  @include circle(600px);
+  border: 3px solid darken($base-color, 25%);
+  margin: 0 auto;
+  background-color: $base-color;
+  
+  @for $index from 1 through 12 {
+    &__number:nth-child(#{$index}) {
+      background: url("../../src/images/#{$index}.png") center no-repeat;
+      background-size: $number-size $number-size;
+      @include square($number-size);
+    }
+  }
+  
+  &__number:nth-child(1) {
+    position: absolute;
+    top: 55px;
+    right: 185px;
+    transform: translateX(50%);
+  }
+
+  &__number:nth-child(2) {
+    position: absolute;
+    top: 140px;
+    right: 100px;
+    transform: translateX(50%);
+  }
+
+  &__number:nth-child(3) {
+    position: absolute;
+    top: 300px;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+
+  &__number:nth-child(4) {
+    position: absolute;
+    bottom: 150px;
+    right: -10px;
+    transform: translateX(-50%);
+  }
+  
+  &__number:nth-child(5) {
+    position: absolute;
+    bottom: 60px;
+    right: 70px;
+    transform: translateX(-50%);
+  }
+  
+  &__number:nth-child(6) {
+    position: absolute;
+    bottom: 20px;
+    right: 300px;
+    transform: translateX(50%);
+  }
+
+  &__number:nth-child(7) {
+    position: absolute;
+    bottom: 60px;
+    left: 70px;
+    transform: translateX(50%);
+  }
+  
+  &__number:nth-child(8) {
+    position: absolute;
+    bottom: 150px;
+    left: 10px;
+    transform: translateX(50%);
+  }
+  
+  &__number:nth-child(9) {
+    position: absolute;
+    top: 300px;
+    left: 10px;
+    transform: translateY(-50%);
+  }
+  
+  &__number:nth-child(10) {
+    position: absolute;
+    top: 145px;
+    left: 5px;
+    transform: translateX(50%);
+  }
+  
+  &__number:nth-child(11) {
+    position: absolute;
+    top: 55px;
+    left: 75px;
+    transform: translateX(50%);
+  }
+  
+  &__number:nth-child(12) {
+    position: absolute;
+    top: 20px;
+    right: 300px;
+    transform: translateX(50%);
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: 180px;
+    right: 300px;
+    height: 120px;
+    width: 10px;
+    border-radius: 10px;
+    background-color: #a7d44f;
+    transform-origin: bottom;
+    animation: 3600s linear 2s infinite move;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    top: 140px;
+    right: 300px;
+    height: 160px;
+    width: 10px;
+    border-radius: 10px;
+    background-color: #e59430;
+    transform-origin: bottom;
+    animation: 60s linear 2s infinite move;
+  }
+}
