@@ -19,21 +19,21 @@
     background-color: $color-clock-dial;
   }
 
-  &__minute-hand {
+  &__second-hand {
     position: relative;
-    top: $top-shift-clock-minute-hand;
+    top: $top-shift-clock-second-hand;
 
     width: 0;
-    height: $height-clock-minute-hand;
+    height: $height-clock-second-hand;
 
-    border-right: $width-clock-minute-hand solid $color-clock-minute-hand;
+    border-right: $width-clock-second-hand solid $color-clock-second-hand;
     border-radius: $border-radius-clock-hand;
 
     transform-origin: bottom;
     animation-name: rotate;
-    animation-duration: $animation-duration-clock-minute-hand;
+    animation-duration: $animation-duration-clock-second-hand;
     animation-timing-function: linear;
-    animation-iteration-count: 12;
+    animation-iteration-count: infinite;
   }
 
   &__circle {
@@ -48,19 +48,20 @@
     background-color: $color-clock-circle;
   }
 
-  &__hour-hand {
+  &__minute-hand {
     position: relative;
-    top: $top-shift-clock-hour-hand;
+    top: $top-shift-clock-minute-hand;
 
-    border-right: $width-clock-hour-hand solid $color-clock-hour-hand;
+    border-right: $width-clock-minute-hand solid $color-clock-minute-hand;
     border-radius: $border-radius-clock-hand;
     width: 0;
-    height: $height-clock-hour-hand;
+    height: $height-clock-minute-hand;
 
     transform-origin: bottom;
     animation-name: rotate;
-    animation-duration: $animation-duration-clock-hour-hand;
+    animation-duration: $animation-duration-clock-minute-hand;
     animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
   @keyframes rotate {
