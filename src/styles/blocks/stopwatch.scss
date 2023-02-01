@@ -1,0 +1,50 @@
+.stopwatch {
+  @include stopwatch($size-stopwatch);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 50px auto;
+  background-color: lavender;
+
+  &__minute-hand {
+    height: 150px;
+    top: 150px;
+    z-index: 1;
+    @extend %hands-style;
+    animation-duration: 3600s;
+    transform-origin: center 150px;
+  }
+
+  &__second-hand {
+    height: 300px;
+    @extend %hands-style;
+    animation-duration: 60s;
+    transform-origin: center 300px;
+  }
+
+  &__circle {
+    @include circle($size-circle);
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    z-index: 2;
+    background: $color-main;
+    border: $border;
+  }
+
+  &__clock-face {
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    background: $color-accent;
+    border: $border;
+    border-radius: 5px;
+    transform-origin: 50% 300px;
+
+    @each $name, $deg in $clock-face {
+      &--rotate-#{$name} {
+        transform: rotate(#{$deg});
+      }
+    }
+  }
+}
