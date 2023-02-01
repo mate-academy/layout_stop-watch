@@ -1,0 +1,67 @@
+// changeable
+$watch-scale: 1;
+
+@function size-with-scale($size) {
+  @return $size * $watch-scale;
+}
+
+$center-radius: size-with-scale(10px);
+
+$small-hand-width: size-with-scale(10px);
+$small-hand-height: size-with-scale(200px);
+
+$big-hand-width: size-with-scale(10px);
+$big-hand-height: size-with-scale(300px);
+
+@mixin hand-animation($duration) {
+  animation: tic $duration linear;
+  animation-iteration-count: infinite;
+  transform-origin: bottom center;
+}
+
+%hand-position {
+  position: absolute;
+  z-index: -1;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.watch {
+  &__center {
+    position: relative;
+
+    width: $center-radius * 2;
+    height: $center-radius * 2;
+    border-radius: $center-radius;
+    background-color: palevioletred;
+  }
+
+  &__small-hand {
+    @extend %hand-position;
+    @include hand-animation(60s);
+
+    width: $small-hand-width;
+    height: $small-hand-height;
+    background-color: blue;
+  }
+
+  &__long-hand {
+    @extend %hand-position;
+    @include hand-animation(30s);
+
+    width: $big-hand-width;
+    height: $big-hand-height;
+    background-color: red;
+  }
+
+  @keyframes tic {
+    from {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    to {
+      transform: translateX(-50%) rotate(360deg);
+    }
+  }
+
+}
