@@ -6,8 +6,7 @@
     transform: translate(-50%, -50%);
 
     background: rgb(2,0,30);
-    height: 500px;
-    width: 500px;
+    @include circle ($stopwatch-big-circle-diametr);
     border: $color-grey 8px solid;
     box-shadow: 0 0 5px black;
     border-radius: 50%;
@@ -18,7 +17,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    @include circle ($stopwatch-circle-diametr);
+    @include circle ($stopwatch-small-circle-diametr);
 
     background-color: $color-grey;
     box-shadow: 0 0 10px black;
@@ -26,9 +25,9 @@
 
   &__minutes-hand {
     position: absolute;
-    left: 48.5%;
+    left: 49%;
     top: 30%;
-    @include minutes-hand-size(
+    @include hands-size(
       $stopwatch-hands-width,
       $stopwatch-minutes-height
     );
@@ -39,12 +38,12 @@
     animation: hands-rotate 3600s linear infinite;
     transform-origin: bottom center;
   }
-  
+
   &__seconds-hand {
     position: absolute;
     top: 10%;
-    left: 48.5%;
-    @include seconds-hand-size(
+    left: 49%;
+    @include hands-size(
       $stopwatch-hands-width,
       $stopwatch-seconds-height
     );
