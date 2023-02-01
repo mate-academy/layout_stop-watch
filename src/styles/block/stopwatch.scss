@@ -1,0 +1,40 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+@import "../utils/animations";
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: $top-size;
+  @include circle($stopwatch-size);
+  border: 3px $just-black solid;
+  animation: change 12s linear infinite;
+
+  &__minute {
+    position: absolute;
+    width: 3px;
+    height: 350px;
+    background-color: $minute-color;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: go 3600s linear infinite;
+  }
+
+  &__second {
+    position: absolute;
+    width: 2px;
+    height: 300px;
+    background-color: $second-color;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: go 60s linear infinite;
+  }
+
+  &__center-point {
+    position: absolute;
+    @include circle(10px);
+    background-color: $poin-color;
+  }
+}
