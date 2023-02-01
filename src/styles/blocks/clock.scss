@@ -1,0 +1,77 @@
+.clock {
+  @include circle($clock-size);
+
+  background-color: #efc050;
+  border: $decor-border-size solid $c--violet;
+
+  &__decor {
+    position: absolute;
+    background-color: $c--violet;
+
+    &--position_top {
+      @extend %decorVertical;
+    }
+
+    &--position_bottom {
+      bottom: 0;
+      @extend %decorVertical;
+    }
+
+    &--position_right {
+      right: 0;
+      @extend %decorHorizontal;
+    }
+
+    &--position_left {
+      left: 0;
+      @extend %decorHorizontal;
+    }
+
+    &--position_center {
+      @extend %center-object;
+      @include circle($decor-center-size);
+    }
+  }
+
+  &__hand {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    &:before {
+      position: absolute;
+      content: "";
+      background-color: $c--violet;
+    }
+
+    &--time_minute {
+      width: $minute-hand-a-size;
+      animation: time 3600s infinite linear;
+
+      &::before {
+        width: $minute-hand-a-size;
+        height: $minute-hand-b-size;
+        top: $minute-hand-indent;
+      }
+    }
+
+    &--time_second {
+      width: $second-hand-a-size;
+      animation: time 60s infinite linear;
+
+      &::before {
+        width: $second-hand-a-size;
+        height: $second-hand-b-size;
+        top: $second-hand-indent;
+      }
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
