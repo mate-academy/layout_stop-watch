@@ -1,0 +1,31 @@
+.clock {
+  position: relative;
+  background-color: black;
+  border-radius: 50%;
+  @include circle(50px);
+
+  &__second {
+    left: 22px;
+    height: 250px;
+    width: 6px;
+    background-color: blue;
+    animation: round 60s;
+  }
+
+  &__minute {
+    left: 21px;
+    height: 150px;
+    width: 8px;
+    background-color: yellowgreen;
+    animation: round 3600s;
+  }
+
+  &-arrows {
+    position: absolute;
+    bottom: 25px;
+    border-radius: 50%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom center;
+  }
+}

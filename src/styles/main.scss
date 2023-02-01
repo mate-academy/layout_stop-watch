@@ -1,53 +1,10 @@
-@mixin circle($size) {
-  height: $size;
-  width: $size;
-}
+@import "./keyframes";
+@import "./mixins";
+@import "./clock";
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
-
-.clock {
-  position: relative;
-  background-color: black;
-  border-radius: 50%;
-  @include circle(50px);
-}
-
-.second {
-  left: 22px;
-  height: 250px;
-  width: 6px;
-  background-color: blue;
-  animation: round 60s;
-}
-
-.minute {
-  left: 21px;
-  height: 150px;
-  width: 8px;
-  background-color: yellowgreen;
-  animation: round 3600s;
-}
-
-.clock__arrows {
-  position: absolute;
-  bottom: 25px;
-  border-radius: 50%;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  transform-origin: bottom center;
-}
-
-@keyframes round {
-  from {
-    transform: rotateZ(0turn);
-  }
-
-  to {
-    transform: rotateZ(1turn);
-  }
 }
