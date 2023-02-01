@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+  transition: scale 1s;
+
+  @include circle-size($circle-diametr);
+  margin: 100px auto;
+  border: 3px solid black;
+  background: linear-gradient(green, aqua, green);
+
+  &__arrow {
+    @include circle-size($dot-diametr);
+    margin: 0 auto;
+
+    background-color: black;
+  }
+
+  &:hover {
+    scale: 1.1;
+  }
+}
