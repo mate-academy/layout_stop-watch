@@ -8,6 +8,8 @@
     background: rgb(2,0,30);
     height: 500px;
     width: 500px;
+    border: $color-grey 8px solid;
+    box-shadow: 0 0 5px black;
     border-radius: 50%;
   }
 
@@ -34,20 +36,10 @@
     background-color: $color-red;
     box-shadow: 0 0 7px black;
 
-    animation: minutes 3600s linear infinite;
+    animation: hands-rotate 3600s linear infinite;
     transform-origin: bottom center;
   }
-
-  @keyframes minutes {
-    0% {
-      transform: rotate(0);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
+  
   &__seconds-hand {
     position: absolute;
     top: 10%;
@@ -60,11 +52,11 @@
     background-color: $color-grey;
     box-shadow: 0 0 15px black;
 
-    animation: seconds 60s steps(60) infinite;
+    animation: hands-rotate 60s steps(60) infinite;
     transform-origin: bottom center;
   }
 
-  @keyframes seconds {
+  @keyframes hands-rotate {
     0% {
       transform: rotate(0);
     }
