@@ -1,0 +1,18 @@
+@mixin setSize {
+  width: $size;
+  height: $size;
+}
+
+@mixin positioning {
+  left: 50%;
+  top: 50%;
+  transform-origin: center 0;
+  position: absolute;
+  border-radius: $size / 2;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
