@@ -2,14 +2,11 @@
 
 .minute {
   background-color: red;
-  width: 110px;
+  width: $minute-size;
   height: 6px;
   border-radius: 50px;
 
-  position: absolute;
-  @include center(50%);
-
-  transform-origin: left;
+  @extend %position;
 
   animation-name: move;
   animation-duration: 3600s;

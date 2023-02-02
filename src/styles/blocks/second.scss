@@ -1,12 +1,10 @@
 .second {
   background-color: aqua;
-  width: 150px;
+  width: $second-size;
   height: 4px;
   border-radius: 50px;
 
-  position: absolute;
-  @include center(50%);
-  transform-origin: left;
+  @extend %position;
 
   animation-name: move;
   animation-duration: 60s;
