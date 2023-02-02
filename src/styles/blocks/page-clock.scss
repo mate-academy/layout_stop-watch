@@ -1,0 +1,42 @@
+.clockWrapper {
+  height: 700px;
+  display: flex;
+  justify-content: center;
+
+  &__hour {
+    width: 23px;
+    height: 333px;
+    background-color: red;
+    border-radius: 21px;
+    margin-top: 76px;
+    animation: roll 3600s linear;
+    transform-origin: bottom;
+    position: relative;
+  }
+
+  &__minute {
+    width: 21px;
+    height: 410px;
+    background-color: aqua;
+    border-radius: 21px;
+    position: absolute;
+    animation: roll 60s linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+
+  @keyframes roll {
+    to {
+      transform: rotate(360deg)
+    }
+  }
+  &__cercle {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    background-color: bisque;
+    bottom: 500px;
+    position: absolute;
+    z-index: 1;
+  }
+}
