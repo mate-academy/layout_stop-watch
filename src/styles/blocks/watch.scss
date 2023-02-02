@@ -1,0 +1,39 @@
+.watch {
+  width: 700px;
+  height: 700px;
+  position: relative;
+  background-color: antiquewhite;
+
+  &__min {
+    position: absolute;
+    display: inline-block;
+    width: 10px;
+    height: 100px;
+    background-color: red;
+    left: 50%;
+    top: 50%;
+    animation-name: min;
+    animation-duration: 3600s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-timing-function: steps(60);
+    transform: translate(-50%, -50%);
+  }
+
+  &__sec {
+    position: absolute;
+    display: inline-block;
+    width: 10px;
+    height: 220px;
+    background-color: green;
+    left: 50%;
+    top: 50%;
+    animation-name: sec;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-timing-function: steps(60);
+    transform: translate(-50%, -50%);
+  }
+}
