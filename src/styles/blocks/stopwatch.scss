@@ -1,0 +1,56 @@
+.stopwatch {
+  @include position-clock;
+  @include size($size);
+  background: #fff;
+  border-radius: 50%;
+  border: 4px solid black;
+  margin: auto;
+
+  &__center {
+    @include position-clock;
+    background: #000;
+    @include dot-size($dot-size);
+    margin: auto;
+    border-radius: 50%;
+  }
+
+  &__minute {
+    width: 1px;
+    height: 100%;
+    @include position-in;
+    margin: 0 auto;
+    animation: time 3600s infinite linear;
+
+    &:before {
+      position: absolute;
+      content: "";
+      background: #000;
+      height: 40px;
+      width: 1px;
+      top: 50px;
+    }
+  }
+
+  &__second {
+    width: 2px;
+    height: 100%;
+    @include position-in;
+    margin: 0 auto;
+    animation: time 60s infinite steps(60);
+
+    &:before {
+      position: absolute;
+      content: "";
+      background: red;
+      height: 45px;
+      width: 2px;
+      top: 45px;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
