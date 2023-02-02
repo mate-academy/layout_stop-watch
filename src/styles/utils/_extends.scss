@@ -1,0 +1,14 @@
+// code here
+@import "./mixins";
+@import "./variables";
+
+%watch-center {
+  @include center($center-size);
+  background-color: $c-white;
+}
+
+%clock-face-centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

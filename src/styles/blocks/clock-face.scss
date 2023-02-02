@@ -1,0 +1,34 @@
+.watch-center {
+  @extend %watch-center;
+}
+
+.clock-face {
+  @include circle($circle-size);
+  @extend %clock-face-centering;
+
+  background-color: $c-bg-color;
+
+  &__hand {
+    position: absolute;
+    top: 15vh;
+    height: 35%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+
+    &-minute {
+      animation: rotate 60s;
+      background-color: $c-minutes-hand;
+      border-radius: 50%;
+      width: 0.5vh;
+    }
+
+    &-second {
+      animation: rotate 360s;
+      background-color: $c-seconds-hand;
+      border-radius: 50%;
+      width: 0.3vh;
+      background-size: cover;
+    }
+  }
+}
