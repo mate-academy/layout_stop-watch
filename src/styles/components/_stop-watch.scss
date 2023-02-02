@@ -1,0 +1,69 @@
+.stop-watch {
+  &__emblem {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    height: 200px;
+  }
+
+  &__slogan {
+    position: absolute;
+    left: 12%;
+    bottom: 100px;
+
+    font-family: "Sassy Frass", cursive;
+    font-size: 40px;
+    color: $bg-color-red;
+  }
+
+  &__dial {
+    @extend %figure-position-center;
+
+    @include figure-size (600px, 500px);
+
+    background-color: $bg-color-black;
+
+    border: $bg-color-red 50px solid;
+    border-radius: $border-radius;
+  }
+
+  &__watch-axis {
+    @extend %figure-position-center;
+
+    @include figure-size (50px, 30px);
+
+    background-color: $bg-color-red;
+
+    box-shadow: inset 0 0 10px $bg-color-black;
+    border-radius: $border-radius;
+  }
+
+  &__hand-sec {
+    position: absolute;
+    top: 10%;
+    left: 49%;
+
+    @include figure-size ($hand-width, $hand-sec-height);
+
+    background-color: $bg-color-white;
+    border-radius: $border-radius;
+
+    animation: rotating $minute steps(60) infinite;
+    transform-origin: bottom center;
+  }
+
+  &__hand-min {
+    position: absolute;
+    top: 30%;
+    left: 49%;
+
+    @include figure-size ($hand-width, $hand-min-height);
+
+    background-color: $bg-color-white;
+    border-radius: $border-radius;
+
+    animation: rotating $hour linear infinite;
+    transform-origin: bottom center;
+  }
+}
