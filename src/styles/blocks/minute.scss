@@ -1,3 +1,5 @@
+@import "../utils/mixins";
+
 .minute {
   background-color: red;
   width: 110px;
@@ -5,8 +7,7 @@
   border-radius: 50px;
 
   position: absolute;
-  top: 50%;
-  left: 50%;
+  @include center(50%);
 
   transform-origin: left;
 
