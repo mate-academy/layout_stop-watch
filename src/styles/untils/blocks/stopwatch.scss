@@ -1,13 +1,12 @@
 .stopwatch {
   display: flex;
   justify-content: center;
-  align-items: center;
   position: relative;
 
   &__second {
+    @extend %width;
     position: absolute;
     top: $mainTop;
-    width: 8px;
     height: $mainHeight;
     background-color: rgb(226, 105, 105);
     border-radius: $mainRadius;
@@ -16,9 +15,9 @@
   }
 
   &__minute {
+    @extend %width;
     position: absolute;
     top: $mainTop;
-    width: 10px;
     height: $mainHeight;
     background-color: rgb(99, 193, 230);
     border-radius: $mainRadius;
