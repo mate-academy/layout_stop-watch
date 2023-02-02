@@ -1,0 +1,54 @@
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+
+@import "./reset.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes handRotation {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.stop-watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  width: $stop-watch-size;
+  height: $stop-watch-size;
+  border-radius: 50%;
+  background-color: #999;
+
+  &__second-hand {
+    @include setupHand($second-hand-length);
+    background-color: rgb(173, 17, 105);
+    animation: handRotation 60s steps(60, end) infinite;
+  }
+
+  &__minute-hand {
+    @include setupHand($minute-hand-length);
+    background-color: rgb(11, 11, 75);
+    animation: handRotation 3600s linear infinite;
+  }
+
+  &__hour-hand {
+    @include setupHand($hour-hand-length);
+    background-color: rgb(10, 72, 55);
+    animation: handRotation #{12 * 3600s} linear infinite;
+  }
+
+  &__bullet {
+    position: absolute;
+    top: ($stop-watch-size - $bullet-size) / 2;
+    height: $bullet-size;
+    width: $bullet-size;
+    border-radius: 50%;
+    background-color: black;
+  }
+}

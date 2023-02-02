@@ -1,0 +1,8 @@
+@mixin setupHand($hand-lengh) {
+  position: absolute;
+  top: #{$stop-watch-size / 2 - $hand-lengh};
+  width: $hand-width / 2;
+  height: $hand-lengh;
+  border-radius: $hand-width / 2;
+  transform-origin: bottom center;
+}
