@@ -1,0 +1,46 @@
+
+.watch {
+  display: flex;
+  @include square($size-watch);
+  border: 1px solid $color-border;
+
+  &__circle {
+    @include circle($size-center);
+    box-sizing: border-box;
+    border: 1px $color-border solid;
+    background-color: $color-hand;
+    position: absolute;
+    left: 50%;
+    top: $pos-top;
+    transform: translate(-50%, -50%);
+  }
+
+  &__big-hand {
+    position: absolute;
+    box-sizing: border-box;
+    top: $pos-top;
+    left: getLeftCenter($size-hand-width, $size-watch);
+    height: $size-hand-height;
+    width: $size-hand-width;
+    border-radius: $hand-b-radius;
+    background-color: #f00;
+    transform-origin: top;
+    animation: click-hand 60s steps(60,end) infinite;
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__small-hand {
+    position: absolute;
+    height: 0.75*$size-hand-height;
+    width: $size-hand-width;
+    background-color: $color-hand;
+    border-radius: $hand-b-radius;
+    top: $pos-top;
+    left: getLeftCenter($size-hand-width, $size-watch);
+    transform-origin: top;
+    animation: click-hand 3600s steps(60,end) infinite;
+  }
+
+}
