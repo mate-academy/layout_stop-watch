@@ -1,0 +1,107 @@
+.clock {
+  @include circle ($circle-size);
+  @include dotposition ($dot-position);
+
+  position: absolute;
+  background-color: #fff;
+  border-radius: $bdradius;
+  border: 10px solid $black-color;
+  margin: $margin-auto;
+
+  &__strip-top {
+    @include quarter ($quarter-size);
+
+    position: absolute;
+    background-color: $black-color;
+    left: 0;
+    right: 0;
+    margin: $margin-auto;
+  }
+
+  &__strip-right {
+    @include quarter ($quarter-size);
+
+    position: absolute;
+    background-color: $black-color;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    margin: $margin-auto;
+  }
+
+  &__strip-bottom {
+    @include quarter ($quarter-size);
+
+    position: absolute;
+    background-color: $black-color;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: $margin-auto;
+  }
+
+  &__strip-left {
+    @include quarter ($quarter-size);
+
+    position: absolute;
+    background-color: $black-color;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    margin: $margin-auto;
+  }
+
+  &__dot-center {
+    @include dotcircle($dot-size);
+    @include dotposition($dot-position);
+
+    position: absolute;
+    background-color: $black-color;
+    border-radius: $bdradius;
+    margin: $margin-auto;
+  }
+
+  &__arrow-hour {
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: $margin-auto;
+    animation: time 1000s infinite linear;
+  }
+
+  &__arrow-hour::before {
+    content: "";
+    height: 80px;
+    width: 5px;
+    background-color: $black-color;
+    position: absolute;
+    top: 56px;
+  }
+
+  &__arrow-minute {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: $margin-auto;
+    animation: time 10s infinite linear;
+  }
+
+  &__arrow-minute::before {
+    content: "";
+    height: 60px;
+    width: 3px;
+    background-color: red;
+    position: absolute;
+    top: 76px;
+  }
+
+  @keyframes time {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
