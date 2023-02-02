@@ -13,10 +13,8 @@
   }
 
   &__minute {
-    position: absolute;
-    align-self: center;
+    @include hands($width-line);
     height: $height-minute;
-    width: $width-line;
     background-color: $color-minute;
     border-radius: $border-radius;
     animation: round 3600s infinite;
@@ -24,10 +22,8 @@
   }
 
   &__second {
-    position: absolute;
-    align-self: center;
+    @include hands($width-line);
     height: $height-second;
-    width: $width-line;
     background-color: $color-circle-second;
     border-radius: $border-radius;
     animation: round 60s infinite;
