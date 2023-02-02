@@ -1,0 +1,66 @@
+.clock {
+  position: relative;
+
+  @include clock ($size-clock);
+
+  background-color: wheat;
+  border: 2px solid $clock-color;
+  border-radius: 100%;
+
+  &__point {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    height: 6px;
+    width: 6px;
+
+    background-color: $clock-color;
+    border-radius: 100%;
+  }
+
+  &__hour {
+    @extend %positions-for-stick;
+
+    width: 3px;
+    height: 100%;
+
+    animation: time 3600s infinite linear;
+
+    &::before {
+      content: "";
+      height: 60px;
+      width: 3px;
+      background-color: $clock-color;
+      position: absolute;
+      top: 35px;
+    }
+  }
+
+  &__minute {
+    @extend %positions-for-stick;
+
+    width: 1.5px;
+    height: 100%;
+
+    animation: time 60s infinite linear;
+
+    &::before {
+      content: "";
+      height: 80px;
+      width: 1.5px;
+      background-color: $clock-color;
+      position: absolute;
+      top: 15px;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
