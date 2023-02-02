@@ -1,28 +1,36 @@
 .clockWrapper {
-  height: 700px;
-  display: flex;
+  display:flex;
+  width:$clock-wrappers-size;
+  height: $clock-wrappers-size;
   justify-content: center;
+  align-items: center;
 
-  &__hour {
-    width: 23px;
-    height: 333px;
-    background-color: red;
-    border-radius: 21px;
-    margin-top: 76px;
-    animation: roll 3600s linear;
-    transform-origin: bottom;
+  &__cercle {
+    width: $cercle-diametr;
+    height: $cercle-diametr;
+    border-radius: 50%;
+    background-color: aqua;
     position: relative;
   }
 
-  &__minute {
-    width: 21px;
-    height: 410px;
-    background-color: aqua;
-    border-radius: 21px;
-    position: absolute;
-    animation: roll 60s linear;
-    animation-iteration-count: infinite;
+  &__hour {
+    width: $hands-width;
+    height: $hour-hand-height;
+    background-color: red;
+    @include hands;
+    animation: roll 3600s linear;
     transform-origin: bottom;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute {
+    width: $hands-width;
+    height: $minute-hand-height;
+    background-color: aqua;
+    @include hands;
+    animation: roll 60s linear;
+    transform-origin: bottom;
+    animation-iteration-count: infinite;
   }
 
   @keyframes roll {
@@ -30,13 +38,5 @@
       transform: rotate(360deg)
     }
   }
-  &__cercle {
-    width: 33px;
-    height: 33px;
-    border-radius: 50%;
-    background-color: bisque;
-    bottom: 500px;
-    position: absolute;
-    z-index: 1;
-  }
+
 }
