@@ -1,0 +1,61 @@
+.clock {
+  @extend %position;
+  @include square(500px);
+
+  border: 4px solid $c-main;
+  background-image: url("../images/il_fullxfull.1535564811_6uf6.avif");
+  background-size: cover;
+  border-radius: 50%;
+
+  &__center {
+    @extend %position;
+    @include square(40px);
+
+    background-color: $c-main;
+    border-radius: 50%;
+  }
+
+  &__second {
+    @extend %position;
+    width: 10px;
+    height: 100%;
+
+    border-radius: 50%;
+    animation: sec 60s steps(60, end) infinite;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 5px;
+      height: 150px;
+      top: 70px;
+      background-color: $c-main;
+      border-radius: 50%;
+    }
+  }
+
+  &__minite {
+    @extend %position;
+    width: 15px;
+    height: 100%;
+
+    border-radius: 50%;
+    animation: sec 3600s steps(60, end) infinite;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 8px;
+      height: 190px;
+      top: 30px;
+      background-color: $c-main;
+      border-radius: 50%;
+    }
+  }
+}
+
+@keyframes sec {
+  to {
+    transform: rotate(360deg);
+  }
+}
