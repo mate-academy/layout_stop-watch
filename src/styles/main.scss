@@ -1,0 +1,75 @@
+$radius: 200px;
+$minute-height: $radius * 0.7;
+
+@mixin set-params($line-height, $line-width, $line-color) {
+  position: absolute;
+  top: $radius;
+  left: $radius - $line-width / 2;
+  width: $line-width;
+  height: $line-height;
+  border-radius: $line-width / 2;
+  transform-origin: top center;
+  transform: rotate(180deg);
+  background-color: $line-color;
+  &::after {
+    top: - $line-width * 2;
+    left: - $line-width * 1.5;
+    width: $line-width * 4;
+    height: $line-width * 4;
+    border-radius: 50%;
+    background-color: inherit;
+    position: absolute;
+    content: "";
+  }
+}
+
+.clock {
+  position: relative;
+  margin: 0 auto;
+  width: $radius * 2;
+  height: $radius * 2;
+  border-radius: 50%;
+  background-color: aquamarine;
+
+  &__minutes {
+    @include set-params($radius * 0.7, 10px, darkred);
+
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__seconds {
+    @include set-params($radius * 0.9, 8px, darkslategray);
+
+    animation: rotate 60s linear infinite;
+  }
+
+  &__point {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 10px;
+    background-color: black;
+    transform-origin: 0 200px;
+
+    @for $i from 1 to 60 {
+      &:nth-child(#{$i}) {
+        transform: rotate(6deg * $i);
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
