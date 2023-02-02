@@ -1,0 +1,25 @@
+$width-clock-dial: 700px;
+$height-clock-second-hand: 300px;
+$height-clock-minute-hand: 250px;
+
+$width-clock-circle: 50px;
+$width-clock-second-hand: 20px;
+$width-clock-minute-hand: 20px;
+
+$border-radius-clock-hand: 20px;
+
+$top-shift-clock-second-hand:
+  $width-clock-dial / 2 - $height-clock-second-hand;
+$top-shift-clock-circle:
+  $width-clock-dial / 2 - $height-clock-second-hand - $width-clock-circle / 2;
+$top-shift-clock-minute-hand:
+  -$height-clock-minute-hand;
+
+$color-clock-dial: #f2efeb;
+$color-clock-second-hand: #d9918b;
+$color-clock-circle: #f2ce1b;
+$color-clock-minute-hand: #bf463b;
+
+$animation-duration-clock-second-hand: 60s;
+$animation-duration-clock-minute-hand:
+  $animation-duration-clock-second-hand * 60;

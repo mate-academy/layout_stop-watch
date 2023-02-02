@@ -1,0 +1,55 @@
+@import "../utils/variables";
+@import "../utils/extends";
+@import "../utils/keyframes";
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  &__dial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: $width-clock-dial;
+    height: $width-clock-dial;
+
+    border-radius: 50%;
+    background-color: $color-clock-dial;
+  }
+
+  &__second-hand {
+    @extend %hand;
+
+    top: $top-shift-clock-second-hand;
+    height: $height-clock-second-hand;
+    border-right: $width-clock-second-hand solid $color-clock-second-hand;
+
+    animation-duration: $animation-duration-clock-second-hand;
+  }
+
+  &__minute-hand {
+    @extend %hand;
+
+    top: $top-shift-clock-minute-hand;
+    height: $height-clock-minute-hand;
+    border-right: $width-clock-minute-hand solid $color-clock-minute-hand;
+
+    animation-duration: $animation-duration-clock-minute-hand;
+  }
+
+  &__circle {
+    position: relative;
+    top: $top-shift-clock-circle;
+    z-index: 1;
+
+    width: $width-clock-circle;
+    height: $width-clock-circle;
+
+    border-radius: 50%;
+    background-color: $color-clock-circle;
+  }
+}
