@@ -6,6 +6,7 @@
   @include circle($circle-size);
   @extend %clock-face-centering;
 
+  border: 0.3vh solid black;
   background-color: $c-bg-color;
 
   &__hand {
@@ -15,20 +16,20 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     transform-origin: bottom;
-
-    &-minute {
-      animation: rotate 60s;
-      background-color: $c-minutes-hand;
-      border-radius: 50%;
-      width: 0.5vh;
-    }
-
-    &-second {
-      animation: rotate 360s;
-      background-color: $c-seconds-hand;
-      border-radius: 50%;
-      width: 0.3vh;
-      background-size: cover;
-    }
   }
+}
+
+.hand-minute {
+  animation: rotate 360s infinite;
+  background-color: $c-minutes-hand;
+  border-radius: 50%;
+  width: 0.5vh;
+}
+
+.hand-second {
+  animation: rotate 60s infinite steps(60);
+  background-color: $c-seconds-hand;
+  border-radius: 50%;
+  width: 0.3vh;
+  background-size: cover;
 }
