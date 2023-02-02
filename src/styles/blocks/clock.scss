@@ -1,4 +1,6 @@
-@import "utils/variables";
+@import "../utils/variables";
+@import "../utils/extends";
+@import "../utils/keyframes";
 
 .clock {
   display: flex;
@@ -20,20 +22,23 @@
   }
 
   &__second-hand {
-    position: relative;
+    @extend %hand;
+
     top: $top-shift-clock-second-hand;
-
-    width: 0;
     height: $height-clock-second-hand;
-
     border-right: $width-clock-second-hand solid $color-clock-second-hand;
-    border-radius: $border-radius-clock-hand;
 
-    transform-origin: bottom;
-    animation-name: rotate;
     animation-duration: $animation-duration-clock-second-hand;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+  }
+
+  &__minute-hand {
+    @extend %hand;
+
+    top: $top-shift-clock-minute-hand;
+    height: $height-clock-minute-hand;
+    border-right: $width-clock-minute-hand solid $color-clock-minute-hand;
+
+    animation-duration: $animation-duration-clock-minute-hand;
   }
 
   &__circle {
@@ -46,30 +51,5 @@
 
     border-radius: 50%;
     background-color: $color-clock-circle;
-  }
-
-  &__minute-hand {
-    position: relative;
-    top: $top-shift-clock-minute-hand;
-
-    border-right: $width-clock-minute-hand solid $color-clock-minute-hand;
-    border-radius: $border-radius-clock-hand;
-    width: 0;
-    height: $height-clock-minute-hand;
-
-    transform-origin: bottom;
-    animation-name: rotate;
-    animation-duration: $animation-duration-clock-minute-hand;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
   }
 }
