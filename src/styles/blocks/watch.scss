@@ -1,7 +1,7 @@
 .watch {
-  width: 600px;
-  height: 600px;
-  border: 1px solid orange;
+  width: $time-square;
+  height: $time-square;
+  border: 1px solid $border-color;
   border-radius: 75%;
   position: relative;
   background-color: antiquewhite;
@@ -12,7 +12,7 @@
     display: block;
     width: 30px;
     height: 30px;
-    background-color: orange;
+    background-color: $border-color;
     top: 50%;
     left: 50%;
     border-radius: 100%;
@@ -23,14 +23,13 @@
   &__min {
     position: absolute;
     display: inline-block;
-    width: 10px;
-    height: 100px;
-    background-color: red;
-    left: 49%;
-    top: 33%;
+    width: $time-width;
+    height: $min-height;
+    background-color: $min-color;
+    left: posVert($time-width);
+    top: posHor($min-height);
     animation-name: time;
     animation-duration: 3600s;
-    animation-delay: 0s;
     animation-iteration-count: infinite;
     transform-origin: bottom;
     animation-timing-function: steps(60);
@@ -39,13 +38,13 @@
   &__sec {
     position: absolute;
     display: inline-block;
-    width: 10px;
-    height: 200px;
-    background-color: green;
-    left: 49%;
-    top: 16%;
+    width: $time-width;
+    height: $sec-height;
+    background-color: $sec-color;
+    left: posVert($time-width);
+    top: posHor($sec-height);
     animation-name: time;
-    animation-duration: 6s;
+    animation-duration: 60s;
     animation-iteration-count: infinite;
     transform-origin: bottom;
     animation-timing-function: steps(60);

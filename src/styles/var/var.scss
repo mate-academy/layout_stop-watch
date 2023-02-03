@@ -1,0 +1,15 @@
+$border-color: orange;
+$min-color: red;
+$sec-color: green;
+$time-square: 600px;
+$time-width: 10px;
+$sec-height: 200px;
+$min-height: 100px;
+
+@function posHor($sizeElem) {
+  @return $time-square / 2 - $sizeElem;
+}
+
+@function posVert($sizeElem) {
+  @return ($time-square / 2) - ($sizeElem / 2);
+}
