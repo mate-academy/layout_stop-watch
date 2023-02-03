@@ -13,46 +13,43 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: $watch-transform;
 
   &::before {
-    content: "";
-    position: absolute;
-    top: 100px;
-    left: 296px;
-    width: 8px;
-    height: 200px;
+    @include watch-hands-position;
 
-    border-radius: 5px;
+    content: "";
+    width: $big-hand-width;
+    height: $big-hand-height;
+    left: ($watch-size / 2) - ($big-hand-width / 2);
+    top: ($watch-size / 100 * 19);
+
     background: #090118;
-    transform-origin: bottom;
 
     animation: time 3600s infinite;
   }
 
   &:after {
+    @include watch-hands-position;
+    
     content: "";
-    position: absolute;
-    top: 105px;
-    left: 299px;
-    width: 2px;
-    height: 195px;
+    width: $small-hand-width;
+    height: $small-hand-height;
 
-    border-radius: 5px;
     background: #f03705;
-    transform-origin: bottom;
-
     animation: time 60s infinite linear;
   }
 
   &__center {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
     top: $watch-size / 2;
     left: $watch-size / 2;
-    transform: translate(-50%, -50%);
+    width: $center-size;
+    height: $center-size;
+
+    transform: translate(-50%);
+    border-radius: 50%;
+
     background: #f03705;
     z-index: 2;
   }
