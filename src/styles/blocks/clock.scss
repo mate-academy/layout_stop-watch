@@ -5,6 +5,8 @@
   width: $radius * 2;
   height: $radius * 2;
   border-radius: 50%;
+  border: 5px solid black;
+  box-shadow: 1px 3px 10px;
   background-color: aquamarine;
 
   &__minutes {
@@ -27,6 +29,10 @@
     height: 10px;
     background-color: black;
     transform-origin: 0 200px;
+
+    &:nth-child(5n) {
+      height: 30px;
+    }
 
     @for $i from 1 to 60 {
       &:nth-child(#{$i}) {
