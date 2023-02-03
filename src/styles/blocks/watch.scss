@@ -1,0 +1,48 @@
+.watch {
+  @include position-center;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: $rounding-radius;
+  background-image: url(../images/watch.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-shadow: 2px 0 40px 10px #2d4ea8 inset;
+
+  &__center {
+    @include position-center;
+    height: $center-size;
+    width: $center-size;
+    background-color: #000;
+    border-radius: $rounding-radius;
+    z-index: 1;
+  }
+
+  &__minutes {
+    @include position-transform-arrow;
+    top: 10%;
+    height: 200px;
+    width: 10px;
+    background-color: #0236e0;
+    border-radius: 7px;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__seconds {
+    @include position-transform-arrow;
+    height: 245px;
+    width: 5px;
+    background-color: #000;
+    border-radius: 7px;
+    animation: rotate 60s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translateX(-50%);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
