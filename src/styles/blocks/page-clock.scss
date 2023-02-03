@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clockWrapper {
+  display:flex;
+  width:$clock-wrappers-size;
+  height: $clock-wrappers-size;
+  justify-content: center;
+  align-items: center;
+
+  &__cercle {
+    width: $cercle-diametr;
+    height: $cercle-diametr;
+    border-radius: 50%;
+    background-color: aqua;
+    position: relative;
+  }
+
+  &__hour {
+    width: $hands-width;
+    height: $hour-hand-height;
+    background-color: red;
+    @include hands;
+    animation: roll 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__minute {
+    width: $hands-width;
+    height: $minute-hand-height;
+    background-color: aqua;
+    @include hands;
+    animation: roll 60s linear infinite;
+    transform-origin: bottom;
+  }
+  
+  @keyframes roll {
+    to {
+      transform: rotate(360deg)
+    }
+  }
+}

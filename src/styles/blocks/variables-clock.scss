@@ -1,0 +1,13 @@
+$hour-hand-height: 333px;
+$minute-hand-height: 410px;
+$hands-width: 22px;
+$cercle-diametr: 30px;
+$clock-wrappers-size: ($minute-hand-height * 2);
+$hands-shift: ($cercle-diametr / 2 - $hands-width / 2);
+
+@mixin hands{
+  position: absolute;
+  bottom:$cercle-diametr / 2;
+  left: $hands-shift;
+  border-radius: 11px;
+};
