@@ -59,6 +59,7 @@
     width: $s-hour-center-size;
     height: $s-hour-center-size;
     border-radius: $s-border-radius;
+    box-shadow: 0 0 20px 10px rgba(255,0,255,1);
     z-index: 1;
     background-color: $c-clock-main;
     top: 0;
@@ -78,15 +79,6 @@
     animation: time 43200s infinite linear;
 
     &::before {
-      position: absolute;
-      content: "";
-      height: $s-hour-height;
-      width: $s-hour-center-size;
-      background-color: $c-clock-main;
-      top: $s-clock-size / 2 - $s-hour-height;
-    }
-
-    &::after {
       position: absolute;
       content: "";
       @include box-shadow;
@@ -109,15 +101,6 @@
     &::before {
       position: absolute;
       content: "";
-      height: $s-minute-height;
-      width: $s-min-sec-width;
-      background-color: $c-clock-main;
-      top: $s-clock-size / 2 - $s-minute-height;
-    }
-
-    &::after {
-      position: absolute;
-      content: "";
       @include box-shadow;
       height: $s-minute-height;
       width: $s-min-sec-width;
@@ -138,21 +121,12 @@
     &::before {
       position: absolute;
       content: "";
-      height: $s-second-height;
-      width: $s-min-sec-width;
-      background-color: $c-clock-main;
-      top: $s-clock-size / 2 - $s-second-height;
-
-    }
-
-    &::after {
-      position: absolute;
-      content: "";
       @include box-shadow;
       height: $s-second-height;
       width: $s-min-sec-width;
       background-color: $c-clock-main;
       top: $s-clock-size / 2 - $s-second-height;
+
     }
   }
 }
