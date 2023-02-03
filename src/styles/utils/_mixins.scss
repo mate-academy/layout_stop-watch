@@ -1,0 +1,22 @@
+
+@mixin set-params($line-height, $line-width, $line-color) {
+  position: absolute;
+  top: $radius;
+  left: $radius - $line-width / 2;
+  width: $line-width;
+  height: $line-height;
+  border-radius: $line-width / 2;
+  transform-origin: top center;
+  transform: rotate(180deg);
+  background-color: $line-color;
+  &::after {
+    top: - $line-width * 2;
+    left: - $line-width * 1.5;
+    width: $line-width * 4;
+    height: $line-width * 4;
+    border-radius: 50%;
+    background-color: inherit;
+    position: absolute;
+    content: "";
+  }
+}
