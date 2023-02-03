@@ -1,8 +1,24 @@
 .watch {
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 600px;
+  border: 1px solid orange;
+  border-radius: 75%;
   position: relative;
   background-color: antiquewhite;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
 
   &__min {
     position: absolute;
@@ -10,30 +26,38 @@
     width: 10px;
     height: 100px;
     background-color: red;
-    left: 50%;
-    top: 50%;
-    animation-name: min;
+    left: 49%;
+    top: 33%;
+    animation-name: time;
     animation-duration: 3600s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     transform-origin: bottom;
     animation-timing-function: steps(60);
-    transform: translate(-50%, -50%);
   }
 
   &__sec {
     position: absolute;
     display: inline-block;
     width: 10px;
-    height: 220px;
+    height: 200px;
     background-color: green;
-    left: 50%;
-    top: 50%;
-    animation-name: sec;
-    animation-duration: 60s;
+    left: 49%;
+    top: 16%;
+    animation-name: time;
+    animation-duration: 6s;
     animation-iteration-count: infinite;
     transform-origin: bottom;
     animation-timing-function: steps(60);
-    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
