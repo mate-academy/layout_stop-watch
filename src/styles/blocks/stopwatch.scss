@@ -25,13 +25,7 @@
     background-color: ghostwhite;
 
     transform-origin: bottom;
-    animation: minuteArrowMove 3600s linear infinite;
-
-    @keyframes minuteArrowMove {
-      to {
-        transform: rotate(360deg);
-      }
-    }
+    animation: arrowMove 3600s linear infinite;
   }
 
   &__secondhand {
@@ -42,13 +36,13 @@
     background-color: firebrick;
 
     transform-origin: bottom;
-    animation: secondArrowMove 60s steps(60, end) infinite;
-
-    @keyframes secondArrowMove {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
+    animation: arrowMove 60s steps(60, end) infinite;
   }
+
+  @keyframes arrowMove {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
 }
