@@ -1,0 +1,24 @@
+@import "../utils/variables";
+
+.clock {
+  margin: auto;
+  border-radius: $positionAndRadius;
+  box-sizing: border-box;
+  background: #fff url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg) no-repeat center;
+  background-size: 90%;
+  position: relative;
+  width: $watchParam;
+  height: $watchParam;
+
+  &:after {
+    background: #000;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: $positionAndRadius;
+    top: $positionAndRadius;
+    transform: translate(-50%, -50%);
+    width: $pointParam;
+    height: $pointParam;
+  }
+}
