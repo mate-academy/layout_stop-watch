@@ -1,0 +1,54 @@
+.stopwatch {
+  @extend %flex-center;
+  @include circle($clock-size);
+
+  border: 1px solid black;
+  background-image: url("../images/cypher.png");
+  background-size: cover;
+
+  margin: 25vh auto;
+
+  &__centerpoint {
+    @extend %flex-center;
+    @include circle(10px);
+
+    position: relative;
+    background-color: dimgray;
+    border: 1px solid black;
+  }
+
+  &__minutehand {
+    @include arrow($minute-size);
+
+    position: absolute;
+    bottom: 50%;
+    background-color: ghostwhite;
+
+    transform-origin: bottom;
+    animation: minuteArrowMove 3600s linear infinite;
+
+    @keyframes minuteArrowMove {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__secondhand {
+    @include arrow($second-size);
+
+    position: absolute;
+    bottom: 50%;
+    background-color: firebrick;
+
+    transform-origin: bottom;
+    animation: secondArrowMove 60s steps(60, end) infinite;
+
+    @keyframes secondArrowMove {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+  }
+}
