@@ -1,0 +1,57 @@
+
+.clock {
+  position: relative;
+  margin: 0 auto;
+  width: $radius * 2;
+  height: $radius * 2;
+  border-radius: 50%;
+  border: 5px solid black;
+  box-shadow: 1px 3px 10px;
+  background-color: aquamarine;
+
+  &__minutes {
+    @include set-params($radius * 0.7, 10px, darkred);
+
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__seconds {
+    @include set-params($radius * 0.9, 8px, darkslategray);
+
+    animation: rotate 60s linear infinite;
+  }
+
+  &__point {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 10px;
+    background-color: black;
+    transform-origin: 0 200px;
+
+    &:nth-child(5n) {
+      height: 30px;
+    }
+
+    @for $i from 1 to 60 {
+      &:nth-child(#{$i}) {
+        transform: rotate(6deg * $i);
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
