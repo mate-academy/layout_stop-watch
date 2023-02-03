@@ -1,0 +1,25 @@
+.timer {
+  @include flex ($flex, $center);
+  @include decoration ($timer-width, $timer-height, $timer-color, $fifth);
+  position: $relative;
+
+  &__minit {
+    @extend %position-decoration;
+    @include decoration ($minit-width, $minit-height, $minit-color, $arrow-rad);
+    transition: $trans10s;
+    transform-origin: $trans-bottom;
+    transform: $rotate360;
+  }
+
+  &__secund {
+    @include decoration ($secund-width, $secund-height, $sec-color, $arrow-rad);
+    transition: transform $trans5s;
+    transform-origin: $trans-bottom;
+    transform: $rotate360;
+  }
+  
+  &__root {
+    @extend %position-decoration;
+    @include decoration ($root-width, $root-height, $sec-color, $fifth);
+  }
+}
