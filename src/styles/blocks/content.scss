@@ -1,0 +1,51 @@
+.content {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  background-color: rgb(136, 49, 177);
+  border-radius: 50%;
+  border: 10px solid rgb(199, 108, 4);
+
+  &__circle {
+    position: absolute;
+    width: $small-circle-size;
+    height: $small-circle-size;
+    background-color: $bg-color;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__minutes {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    width: 12px;
+    height: 150px;
+    border-radius: 5px;
+    animation: move 3600s linear infinite;
+    transform-origin: bottom;
+    bottom: 50%;
+  }
+
+  &__seconds {
+    position: absolute;
+    background-color: $bg-color;
+    width: 4px;
+    height: 225px;
+    transform-origin: bottom;
+    border-radius: 5px;
+    animation: move 60s linear infinite;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
