@@ -1,0 +1,219 @@
+// $c-minutes: #d15559;
+// $c-seconds: #4b9aaa;
+
+$c-minutes_: rgb(209, 85, 89);
+$c-seconds_: rgb(75, 154, 170);
+// r = (209 + 75) / 2 = 142
+// g = (85 + 154) / 2 = 119.5
+// as it less than (256 / 2) 128 -> rounding it to 119
+// b = (89 + 170) / 2 = 129.5
+// as it greater than (256 / 2) 128 -> rounding it to 130
+$c-hours-mixed-M-S: rgb(142, 119, 130);
+
+// $c-hours: gold;
+// $c-hours: #ffd700;
+// disposin another two like r g b (as one of them (blue channel is eventualy 00)
+// $c-minutes: #00ffd7;
+// $c-seconds: #d700ff;
+
+// $c-hours: rgb(255, 215, 0);
+// the most contrast opponent color will be
+// 0, 45, 255
+// $c-minutes: rgb(0, 45, 255);
+// middle between these two will be calculated as
+// 128, 128, 128
+// but more compatible IMHO will be green with 255 on green channel
+// $c-seconds: rgb(0, 255, 45);
+// $c-seconds: rgb(45, 255, 0);
+// $c-seconds: rgb(215, 255, 0);
+// $c-seconds: rgb(0, 255, 215);
+
+// finally exchanged colors for hour and minute hand
+// $c-minutes: rgb(255, 215, 0);
+// $c-hours: rgb(0, 45, 255);
+
+// post finally changed 3 to flavours of green
+$c-seconds: rgb(0, 255, 45);
+$c-minutes: hsl(131, 75%, 50%);
+$c-hours: hsl(131, 50%, 50%);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.watch {
+  width: 68vh;
+  height: 68vh;
+  position: relative;
+
+  border: 5px dotted #44c444;
+
+  &__seconds {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+
+    @keyframes seconding {
+      0% {
+        transform: rotate(0);
+      }
+      @for $step from 1 through 60 {
+
+        #{$step * 10/6}% {
+          transform: rotate(#{($step) * 6}deg);
+        }
+      }
+    }
+
+    &-second {
+
+      border: 1px dashed #44c444;
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      animation-name: seconding;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+      animation-delay: var(--seconds);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 48%;
+        left: 48%;
+        width: 4%;
+        height: 4%;
+        border-radius: 50%;
+        background-color: $c-seconds;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 49%;
+        width: 2%;
+        height: 50%;
+        background-color: $c-seconds;
+      }
+    }
+  }
+
+  &__minutes {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+
+    @keyframes minuting {
+      0% {
+        transform: rotate(0);
+      }
+      @for $step from 1 through 60 {
+
+        #{$step * 10/6}% {
+          transform: rotate(#{($step) * 6}deg);
+        }
+      }
+    }
+
+    &-minute {
+      border: 2px dashed #44c444;
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      animation-name: minuting;
+      animation-duration: 3600s;
+      animation-iteration-count: infinite;
+      animation-delay: var(--minutes);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 47%;
+        left: 47%;
+        width: 6%;
+        height: 6%;
+        border-radius: 50%;
+        background-color: $c-minutes;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 5%;
+        left: 48.5%;
+        width: 3%;
+        height: 45%;
+        background-color: $c-minutes;
+      }
+    }
+  }
+
+  &__hours {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+
+    @keyframes houring {
+      0% {
+        transform: rotate(0);
+      }
+      @for $step from 1 through 60 {
+
+        #{$step * 10/6}% {
+          transform: rotate(#{($step) * 6}deg);
+        }
+      }
+    }
+
+    &-hour {
+      border: 2px dashed #44c444;
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      animation-name: houring;
+      animation-duration: 216000s;
+      animation-iteration-count: infinite;
+      animation-delay: var(--hours);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 45.5%;
+        left: 45.5%;
+        width: 9%;
+        height: 9%;
+        border-radius: 50%;
+        background-color: $c-hours;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 9.5%;
+        left: 47.75%;
+        width: 4.5%;
+        height: 40.5%;
+        background-color: $c-hours;
+      }
+    }
+  }
+}
