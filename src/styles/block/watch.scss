@@ -20,10 +20,8 @@
   }
 
   &__center {
-    @include center-proportions;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center-proportions($center-size);
+    @include flex-position;
     position: relative;
 
     background-color: $main-color;
@@ -31,7 +29,7 @@
 
     &::after {
       content: "";
-      @include center-background-proportions;
+      @include center-background-proportions($center-background-size);
 
       position: absolute;
       z-index: $position-index;

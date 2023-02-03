@@ -2,13 +2,18 @@
   position: relative;
   z-index: $position-index;
 }
-
-@mixin center-proportions {
+@mixin center-proportions($center-size) {
   width: $center-size;
   height: $center-size;
 }
 
-@mixin center-background-proportions {
+@mixin center-background-proportions($center-background-size) {
   width: $center-background-size;
   height: $center-background-size;
+}
+
+@mixin flex-position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
