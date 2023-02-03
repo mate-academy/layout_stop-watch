@@ -1,0 +1,12 @@
+@mixin square ($size) {
+  height: $size;
+  width: $size;
+}
+@mixin circle ($size) {
+  @include square($size);
+  border-radius: 50%;
+}
+
+@function getLeftCenter($size1, $size2) {
+  @return (0.5 - (($size1/2)/$size2))*$size2;
+}
