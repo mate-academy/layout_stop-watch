@@ -1,0 +1,164 @@
+.clock {
+  position: absolute;
+  height: $s-clock-size;
+  width: $s-clock-size;
+  background-color: $c-background;
+  border-radius: $s-border-radius;
+  box-shadow: 0 0 200px 10px rgba(255,0,255,1);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+
+  &__top {
+    position: absolute;
+    @include top-bottom-size;
+    background-color: $c-clock-main;
+    @include box-shadow;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  &__right {
+    position: absolute;
+    @include right-left-size;
+    background-color: $c-clock-main;
+    @include box-shadow;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &__bottom {
+    position: absolute;
+    @include top-bottom-size;
+    background-color: $c-clock-main;
+    @include box-shadow;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  &__left {
+    position: absolute;
+    @include right-left-size;
+    background-color: $c-clock-main;
+    @include box-shadow;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &__center {
+    position: absolute;
+    width: $s-hour-center-size;
+    height: $s-hour-center-size;
+    border-radius: $s-border-radius;
+    z-index: 1;
+    background-color: $c-clock-main;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  &__hour {
+    position: absolute;
+    width: $s-hour-center-size;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 43200s infinite linear;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: $s-hour-height;
+      width: $s-hour-center-size;
+      background-color: $c-clock-main;
+      top: $s-clock-size / 2 - $s-hour-height;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      @include box-shadow;
+      height: $s-hour-height;
+      width: $s-hour-center-size;
+      background-color: $c-clock-main;
+      top: $s-clock-size / 2 - $s-hour-height;
+    }
+  }
+
+  &__minute {
+    position: absolute;
+    width: $s-min-sec-width;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 3600s infinite linear;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: $s-minute-height;
+      width: $s-min-sec-width;
+      background-color: $c-clock-main;
+      top: $s-clock-size / 2 - $s-minute-height;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      @include box-shadow;
+      height: $s-minute-height;
+      width: $s-min-sec-width;
+      background-color: $c-clock-main;
+      top: $s-clock-size / 2 - $s-minute-height;
+    }
+  }
+
+  &__second {
+    position: absolute;
+    width: $s-min-sec-width;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 60s steps(60, end) infinite;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: $s-second-height;
+      width: $s-min-sec-width;
+      background-color: $c-clock-main;
+      top: $s-clock-size / 2 - $s-second-height;
+
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      @include box-shadow;
+      height: $s-second-height;
+      width: $s-min-sec-width;
+      background-color: $c-clock-main;
+      top: $s-clock-size / 2 - $s-second-height;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
