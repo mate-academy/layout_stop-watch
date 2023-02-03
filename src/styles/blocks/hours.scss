@@ -1,0 +1,15 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+@import "../utils/keyframes";
+
+.hours {
+  width: $hoursArrowWidth;
+  height: $hoursArrowHeight;
+  @include arrow();
+  transform: translate(-50%, -80%);
+  
+  &--container {
+    animation: rotate 43200s infinite linear;
+    transform: rotateZ(75deg);
+  }
+}
