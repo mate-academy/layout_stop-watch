@@ -1,0 +1,19 @@
+@mixin clock($size) {
+  width: $clock-size;
+  height: $clock-size;
+}
+
+@mixin round-clock {
+  @include clock($size);
+  border-radius: 50%;
+}
+
+@mixin dot($size) {
+  width: $dot-size;
+  height: $dot-size;
+}
+
+@mixin circle($size) {
+  @include dot($size);
+  border-radius: 50%;
+}
