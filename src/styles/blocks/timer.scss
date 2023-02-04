@@ -1,0 +1,27 @@
+.timer {
+  @include flex ($flex, $center);
+  @include decoration ($timer-width, $timer-height, $timer-color, $fifth);
+  position: $relative;
+
+  &__minit {
+    position: $absolute;
+    bottom: $fifth;
+    @include decoration ($minit-width, $minit-height, $minit-color, $arrow-rad);
+
+    animation: move 3600s linear infinite;
+  }
+
+  &__secund {
+    @include decoration ($secund-width, $secund-height, $sec-color, $arrow-rad);
+
+    animation: move 60s linear infinite;
+  }
+  
+  &__root {
+    @include decoration ($root-width, $root-height, $sec-color, $fifth);
+    transform: translate(-50%, -50%);
+    position: $absolute;
+    top: $fifth;
+    left: $fifth;
+  }
+}
