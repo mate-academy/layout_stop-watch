@@ -1,0 +1,91 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 2px solid blue;
+  background: radial-gradient(328px at 2.9% 15%, rgb(191, 224, 251) 0%, rgb(232, 233, 251) 25.8%, rgb(252, 239, 250) 50.8%, rgb(234, 251, 251) 77.6%, rgb(240, 251, 244) 100.7%);;
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid blue;
+    background-color: blue;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: 5px;
+    height: 170px;
+    width: 5px;
+    background-color: black;
+    animation-duration: 60s;
+    transform-origin: bottom;
+    animation-name: movesecond;
+    animation-iteration-count: 4;
+  }
+
+  &__minutes {
+    position: absolute;
+    bottom: 5px;
+    height: 100px;
+    width: 5px;
+    background-color: red;
+    animation-duration: 240s;
+    transform-origin: bottom;
+    animation-name: moveminutes;
+  }
+
+  &__number0 {
+    position: absolute;
+    top: 10px;
+    font-size: 30px;
+  }
+
+  &__number1 {
+    position: absolute;
+    right: 10px;
+    font-size: 30px;
+  }
+
+  &__number2 {
+    position: absolute;
+    bottom: 10px;
+    font-size: 30px;
+  }
+
+  &__number3 {
+    position: absolute;
+    left: 10px;
+    font-size: 30px;
+  }
+}
+
+@keyframes movesecond {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveminutes {
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
