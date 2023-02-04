@@ -4,22 +4,36 @@
   position: $relative;
 
   &__minit {
-    @extend %position-decoration;
+    position: $absolute;
+    bottom: $fifth;
     @include decoration ($minit-width, $minit-height, $minit-color, $arrow-rad);
-    transition: $trans10s;
-    transform-origin: $trans-bottom;
-    transform: $rotate360;
+
+    animation: move 45s 15s linear infinite;
   }
 
   &__secund {
     @include decoration ($secund-width, $secund-height, $sec-color, $arrow-rad);
-    transition: transform $trans5s;
-    transform-origin: $trans-bottom;
-    transform: $rotate360;
+
+    animation: move 60s linear infinite;
   }
   
   &__root {
-    @extend %position-decoration;
     @include decoration ($root-width, $root-height, $sec-color, $fifth);
+    transform: translate(-50%, -50%);
+    position: $absolute;
+    top: $fifth;
+    left: $fifth;
+  }
+}
+
+@keyframes move {
+  from {
+    bottom: $fifth;
+    transform-origin: $trans-bottom;
+  }
+
+  to {
+    transform: $rotate360;
+    transform-origin: $trans-bottom;
   }
 }
