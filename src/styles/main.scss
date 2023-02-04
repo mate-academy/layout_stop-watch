@@ -19,9 +19,8 @@ $size-main-pt: #{$size-main}vw;
 
 body {
   margin: 0;
-  height: 100vh;
   display: flex;
-  // align-items: center;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
   @media (orientation: landscape) {
@@ -31,6 +30,7 @@ body {
       top: 0;
       left: 0;
     }
+    height: 90vh;
   }
   @media (orientation: portrait) {
     &::before {
@@ -39,6 +39,7 @@ body {
       top: 0;
       left: 0;
     }
+    height: 100vh;
   }
 }
 
@@ -46,12 +47,12 @@ body {
   @media (orientation: landscape) {
     width: $size-main-ls;
     height: $size-main-ls;
-    margin-top: #{$margin-top * 0.68}vh;
+    // margin-top: #{$margin-top * 0.68}vh;
   }
   @media (orientation: portrait) {
     width: $size-main-pt;
     height: $size-main-pt;
-    margin-top: #{$margin-top}vw;
+    // margin-top: #{$margin-top}vw;
   }
   position: relative;
 
