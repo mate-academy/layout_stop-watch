@@ -1,44 +1,17 @@
-// $c-minutes: #d15559;
-// $c-seconds: #4b9aaa;
-
-$c-minutes_: rgb(209, 85, 89);
-$c-seconds_: rgb(75, 154, 170);
-// r = (209 + 75) / 2 = 142
-// g = (85 + 154) / 2 = 119.5
-// as it less than (256 / 2) 128 -> rounding it to 119
-// b = (89 + 170) / 2 = 129.5
-// as it greater than (256 / 2) 128 -> rounding it to 130
-$c-hours-mixed-M-S: rgb(142, 119, 130);
-
-// $c-hours: gold;
-// $c-hours: #ffd700;
-// disposin another two like r g b
-// (as one of them (blue channel is eventualy 00)
-// $c-minutes: #00ffd7;
-// $c-seconds: #d700ff;
-
-// $c-hours: rgb(255, 215, 0);
-// the most contrast opponent color will be
-// 0, 45, 255
-// $c-minutes: rgb(0, 45, 255);
-// middle between these two will be calculated as
-// 128, 128, 128
-// but more compatible IMHO will be green with 255 on green channel
-// $c-seconds: rgb(0, 255, 45);
-// $c-seconds: rgb(45, 255, 0);
-// $c-seconds: rgb(215, 255, 0);
-// $c-seconds: rgb(0, 255, 215);
-
-// finally exchanged colors for hour and minute hand
-// $c-minutes: rgb(255, 215, 0);
-// $c-hours: rgb(0, 45, 255);
-
-// post finally changed 3 to flavours of green
 $c-seconds: rgb(0, 255, 45);
 $c-minutes: hsl(131, 75%, 50%);
 $c-hours: hsl(131, 50%, 45%);
 $c-lines: hsla(131, 100%, 25%, 0.68);
 $c-circles: rgba(68, 196, 68, 0.68);
+
+$size-main: 75;
+$size-circle: 9;
+$size-pad: 70;
+$size-second: 62;
+$size-minute: 63.5;
+$margin-top: 12;
+$size-main-ls: #{$size-main}vh;
+$size-main-pt: #{$size-main}vw;
 
 * {
   box-sizing: border-box;
@@ -48,37 +21,67 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
   overflow: hidden;
+  @media (orientation: landscape) {
+    &::before {
+      // content: "landscape";
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  @media (orientation: portrait) {
+    &::before {
+      // content: "portrait";
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 }
 
 .watch {
-  width: 68vh;
-  height: 68vh;
+  @media (orientation: landscape) {
+    width: $size-main-ls;
+    height: $size-main-ls;
+    margin-top: #{$margin-top}vh;
+  }
+  @media (orientation: portrait) {
+    width: $size-main-pt;
+    height: $size-main-pt;
+    margin-top: #{$margin-top}vw;
+  }
   position: relative;
 
-  border-radius: 50%;
-
-  // Math.PI = 3.141592653589793
-  // 68 * PI = 213.62830044410595
-  // 68 * Math.PI / 60 = 3.5604716740684323
-  // 68 * Math.PI / 12 = 17.802358370342162
-
-  border: 8vh dotted $c-circles;
-
-  // background-color: #fff;
-  // z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 
+  border-radius: 50%;
+
+  border-style: dotted;
+  border-color: $c-circles;
+
+  @media (orientation: landscape) {
+    border-width: #{$size-circle}vh;
+  }
+  @media (orientation: portrait) {
+    border-width: #{$size-circle}vw;
+  }
+
   &__pad {
     position: absolute;
-    top: -3.5vh;
-    left: -3.5vh;
-    width: 59vh;
-    height: 59vh;
+
+    @media (orientation: landscape) {
+      width: #{$size-pad}vh;
+      height: #{$size-pad}vh;
+    }
+    @media (orientation: portrait) {
+      width: #{$size-pad}vw;
+      height: #{$size-pad}vw;
+    }
 
     &-lines {
       stroke: $c-lines;
@@ -91,16 +94,19 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    // border: 0.9vh dashed #44c444;
-
-    // background-color: #fff;
-    // z-index: 0;
     border-radius: 50%;
   }
 
   &__seconds {
-    width: 100%;
-    height: 100%;
+
+    @media (orientation: landscape) {
+      width: #{$size-second}vh;
+      height: #{$size-second}vh;
+    }
+    @media (orientation: portrait) {
+      width: #{$size-second}vw;
+      height: #{$size-second}vw;
+    }
     position: absolute;
     z-index: 3;
 
@@ -117,8 +123,6 @@ body {
     }
 
     &-second {
-      // border: 1px dashed #44c444;
-      // background-color: #fff;
       position: absolute;
 
       width: 100%;
@@ -153,8 +157,14 @@ body {
   }
 
   &__minutes {
-    width: 100%;
-    height: 100%;
+    @media (orientation: landscape) {
+      width: #{$size-minute}vh;
+      height: #{$size-minute}vh;
+    }
+    @media (orientation: portrait) {
+      width: #{$size-minute}vw;
+      height: #{$size-minute}vw;
+    }
     position: absolute;
     z-index: 2;
 
@@ -171,8 +181,6 @@ body {
     }
 
     &-minute {
-      // border: 2px dashed #44c444;
-      // background-color: #fff;
       position: absolute;
 
       width: 100%;
@@ -225,9 +233,7 @@ body {
     }
 
     &-hour {
-      // border: 4px dashed #44c444;
       position: absolute;
-      // background-color: #fff;
 
       width: 100%;
       height: 100%;
