@@ -1,0 +1,97 @@
+.main {
+  @extend %flex-center;
+  padding-top: 100px;
+
+  &__section {
+    position: relative;
+    @extend %flex-center;
+    width: $watch-size;
+    height: $watch-size;
+    background-color: white;
+
+    border-radius: 100%;
+    border: 10px solid $watch-color;
+    transform: rotate(90deg);
+  }
+
+  &__arrow {
+    @extend %position-full-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    border-radius: 100%;
+    animation: arrowAnim 60s infinite linear;
+
+    &::before {
+      content: "";
+      position: $position-absolute;
+      width: 200px;
+      height: 6px;
+      background-color: $watch-color;
+      left: 40px;
+    }
+  }
+
+  &__small-arrow {
+    display: flex;
+    height: 100%;
+    @extend %position-full-size;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    animation: arrowAnim 3600s infinite linear;
+
+    &::before {
+      content: "";
+      position: $position-absolute;
+      left: 140px;
+
+      width: 100px;
+      height: 6px;
+      background-color: $watch-color;
+    }
+  }
+
+  &__center {
+    margin: auto;
+    width: $arrow-size;
+    height: $arrow-size;
+
+    background-color: #323232;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__borders {
+    position: $position-absolute;
+    width: 8px;
+    height: 25px;
+    background-color: $watch-color;
+
+    &--position_left {
+      left: 0;
+      transform: rotate(90deg);
+    }
+
+    &--position_right {
+      right: 0;
+      transform: rotate(90deg);
+    }
+
+    &--position_top {
+      top: 0;
+    }
+
+    &--position_bottom {
+      bottom: 0;
+    }
+  }
+}
+
+@keyframes arrowAnim {
+  from {
+    transform: rotate(-1turn);
+  }
+}
