@@ -6,7 +6,7 @@
   @include circle($circle-size);
   @extend %clock-face-centering;
 
-  border: 0.3vh solid black;
+  border: 0.5vh solid black;
   background-image: url(../img/clock-face.png);
   background-position: center;
   background-size: cover;
@@ -23,7 +23,7 @@
 }
 
 .clock-face__hand--minute {
-  animation: rotate 360s infinite;
+  animation: rotate 3600s infinite;
   background-color: $c-minutes-hand;
   border-radius: 50%;
   width: 0.5vh;
