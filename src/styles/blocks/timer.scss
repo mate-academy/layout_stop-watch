@@ -8,7 +8,7 @@
     bottom: $fifth;
     @include decoration ($minit-width, $minit-height, $minit-color, $arrow-rad);
 
-    animation: move 45s 15s linear infinite;
+    animation: move 10s 50s linear infinite;
   }
 
   &__secund {
@@ -23,17 +23,5 @@
     position: $absolute;
     top: $fifth;
     left: $fifth;
-  }
-}
-
-@keyframes move {
-  from {
-    bottom: $fifth;
-    transform-origin: $trans-bottom;
-  }
-
-  to {
-    transform: $rotate360;
-    transform-origin: $trans-bottom;
   }
 }
