@@ -5,13 +5,13 @@ window.onload = () => {
 
   const minutes = '--minutes: -' + (
     new Date().getMinutes() * 60
-    - new Date().getSeconds()
+    + new Date().getSeconds()
   ) + 's';
 
   const hours = '--hours: -' + (
     new Date().getHours() * 3600
-    - new Date().getMinutes() * 60
-    - new Date().getSeconds()
+    + new Date().getMinutes() * 60
+    + new Date().getSeconds()
   ) + 's';
 
   document.querySelector('.watch__seconds-second').style = seconds;

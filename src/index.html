@@ -10,6 +10,40 @@
   </head>
   <body>
     <div class="watch">
+      <!-- https://stackoverflow.com/questions/30767103/svg-horizontal-dashed-circle -->
+      <!-- https://bugzilla.mozilla.org/show_bug.cgi?id=1481470 -->
+      <svg
+        width="160px"
+        height="160px"
+        viewBox="0 0 160 160"
+        class="watch__pad"
+      >
+        <defs>
+          <g id="lines" class="watch__pad-lines">
+            <line x1=" 71" x2=" 79"></line>
+            <line x1="-71" x2="-79"></line>
+            <line y1=" 71" y2=" 79"></line>
+            <line y1="-71" y2="-79"></line>
+          </g>
+        </defs>
+        <g transform="translate(80 80)">
+          <use href="#lines" transform="rotate( 0)"></use>
+          <use href="#lines" transform="rotate( 6)"></use>
+          <use href="#lines" transform="rotate(12)"></use>
+          <use href="#lines" transform="rotate(18)"></use>
+          <use href="#lines" transform="rotate(24)"></use>
+          <use href="#lines" transform="rotate(30)"></use>
+          <use href="#lines" transform="rotate(36)"></use>
+          <use href="#lines" transform="rotate(42)"></use>
+          <use href="#lines" transform="rotate(48)"></use>
+          <use href="#lines" transform="rotate(54)"></use>
+          <use href="#lines" transform="rotate(60)"></use>
+          <use href="#lines" transform="rotate(66)"></use>
+          <use href="#lines" transform="rotate(72)"></use>
+          <use href="#lines" transform="rotate(78)"></use>
+          <use href="#lines" transform="rotate(84)"></use>
+        </g>
+      </svg>
       <div class="watch__hours">
         <div class="watch__hours-hour"></div>
       </div>
