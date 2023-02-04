@@ -1,0 +1,11 @@
+@mixin genstick($top, $height, $width, $bgcolor, $rtduration) {
+  position: absolute;
+  left: 50%;
+  top: $top;
+  transform-origin: bottom;
+  height: $height;
+  width: $width;
+  background-color: $bgcolor;
+  border-radius: 7px;
+  animation: rotate $rtduration linear infinite;
+}

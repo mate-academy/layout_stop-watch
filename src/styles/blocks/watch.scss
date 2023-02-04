@@ -1,0 +1,43 @@
+.watch {
+  position: absolute;
+  top: $basis;
+  left: $basis;
+  transform: translate(-$basis, -$basis);
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: $rounding-radius;
+  background-image: url(../images/watch.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-shadow: 2px 0 40px 10px #f6e16c inset;
+
+  &__center {
+    position: absolute;
+    top: $basis;
+    left: $basis;
+    transform: translate(-$basis, -$basis);
+    height: $center-size;
+    width: $center-size;
+    background-color: #d9c761;
+    border-radius: $rounding-radius;
+    z-index: 1;
+  }
+
+  &__minutes {
+    @include genstick(22%, 145px, 8px, #4d4e50, 3600s);
+  }
+
+  &__seconds {
+    @include genstick(16%, 172px, 4px, #d9c761, 60s);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translateX(-50%);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
