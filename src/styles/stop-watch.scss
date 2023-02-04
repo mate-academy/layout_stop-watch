@@ -1,52 +1,6 @@
 .stop-watch {
-  position: relative;
-
-  height: 50vh;
-
-  &__center-point {
-    position: absolute;
-    bottom: 0;
-    left: calc(50% - #{$-diametr/2});
-    z-index: 1;
-
-    @include circle($-diametr);
-
-    background-color: rgb(50, 151, 179);
-  }
-
-  &__minutes {
-    position: absolute;
-    bottom: 15px;
-    left: calc(50% - #{$-width/2});
-
-    height: 450px;
-    width: $-width;
-
-    background-color: rgb(50, 151, 179);
-    border-radius: 4px;
-
-    animation: move 3600s infinite linear;
-    transform-origin: bottom;
-  }
-
-  &__seconds {
-    position: absolute;
-    bottom: 15px;
-    left: calc(50% - #{$-width/2});
-
-    height: 350px;
-    width: $-width;
-
-    background-color: rgb(201, 46, 87);
-    border-radius: 4px;
-
-    animation: move 60s infinite linear;
-    transform-origin: bottom;
-  }
-
-  @keyframes move {
-    to {
-      transform: rotate(360deg);
-    }
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
