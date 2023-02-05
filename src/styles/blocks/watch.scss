@@ -10,29 +10,11 @@
   background-position: center;
 
   &::before {
-    position: absolute;
-    left: 50%;
-    top: calc(50% - 5px);
-    content: "";
-    width: 40%;
-    height: 10px;
-    background-color: $secondary-color;
-    border-radius: 5px;
-    animation: time 60s linear infinite;
-    transform-origin: left;
+    @include watch-hand (40%, 60s);
   }
 
   &::after {
-    position: absolute;
-    left: 50%;
-    top: calc(50% - 5px);
-    content: "";
-    width: 30%;
-    height: 10px;
-    background-color: $secondary-color;
-    border-radius: 5px;
-    animation: time 3600s linear infinite;
-    transform-origin: left;
+    @include watch-hand (30%, 3600s);
   }
 
   @keyframes time {

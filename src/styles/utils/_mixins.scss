@@ -2,3 +2,16 @@
   width: $size;
   height: $size;
 }
+
+@mixin watch-hand ($width, $time) {
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 5px);
+  content: "";
+  width: #{$width};
+  height: 10px;
+  background-color: $secondary-color;
+  border-radius: 5px;
+  animation: time $time linear infinite;
+  transform-origin: left;
+}
