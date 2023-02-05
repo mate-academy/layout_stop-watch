@@ -2,3 +2,8 @@
   width: $width;
   height: $height;
 }
+
+@mixin animation ($time) {
+  animation: rotating $time steps(60) infinite;
+  transform-origin: bottom center;
+}

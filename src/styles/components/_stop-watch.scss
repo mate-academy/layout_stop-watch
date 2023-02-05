@@ -49,8 +49,7 @@
     background-color: $bg-color-white;
     border-radius: $border-radius;
 
-    animation: rotating $minute steps(60) infinite;
-    transform-origin: bottom center;
+    @include animation($minute);
   }
 
   &__hand-min {
@@ -63,7 +62,6 @@
     background-color: $bg-color-white;
     border-radius: $border-radius;
 
-    animation: rotating $hour linear infinite;
-    transform-origin: bottom center;
+    @include animation($hour);
   }
 }
