@@ -1,0 +1,11 @@
+$vertical-margin: calc((100vh - #{$watch-size}) / 2);
+$horizontal-margin: calc((100vw - #{$watch-size}) / 2);
+
+.container {
+  position: absolute;
+  margin: $vertical-margin $horizontal-margin;
+  @include square ($watch-size);
+  border-radius: 20%;
+  background-color: #a78b71;
+  border: 3px solid #583e26;
+}

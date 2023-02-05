@@ -1,0 +1,49 @@
+.center-element {
+  position: absolute;
+  left: $watch-size / 2 - $circle-size / 2;
+  top: $watch-size / 2 - $circle-size / 2;
+  @include circle ($circle-size);
+  background-color: #583e26;
+}
+
+.center-element:hover {
+  animation-name: round;
+  animation-play-state: paused;
+}
+
+.minute-arrow {
+  position: absolute;
+  left: $watch-size / 2 - $arrow-width / 2;
+  bottom: $watch-size / 2 - $minute-arrow-heigth + $arrow-width / 2;
+  @include arrow ($arrow-width, $minute-arrow-heigth);
+  background-color: #9c4a1a;
+  transform: rotate(180deg);
+  transform-origin: $arrow-radius $arrow-radius;
+  animation-name: round;
+  animation-duration: 3600s;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+}
+
+.second-arrow {
+  position: absolute;
+  left: $watch-size / 2 - $arrow-width / 2;
+  bottom: $watch-size / 2 - $second-arrow-heigth + $arrow-width / 2;
+  @include arrow ($arrow-width, $second-arrow-heigth);
+  background-color: #ec9704;
+  transform: rotate(180deg);
+  transform-origin: $arrow-radius $arrow-radius;
+  animation-name: round;
+  animation-duration: 60s;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+}
+
+@keyframes round {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
