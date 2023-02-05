@@ -1,58 +1,62 @@
 $c-seconds: rgb(0, 255, 45);
+$c-sec-axis: rgb(0, 255, 45);
+$c-sec-glow: rgb(0, 255, 45);
+
 $c-minutes: hsl(131, 75%, 50%);
+$c-min-axis: hsl(131, 75%, 50%);
+$c-min-glow: hsl(131, 75%, 50%);
+
 $c-hours: hsl(131, 50%, 45%);
-$c-lines: hsla(131, 100%, 25%, 0.68);
-$c-circles: rgba(68, 196, 68, 0.68);
+$c-hour-glow: hsl(131, 50%, 45%);
+$c-hour-axis: hsl(131, 50%, 45%);
+
+$c-lines: hsla(130, 50%, 50%, 0.68);
+$c-circles: rgba(68, 196, 68, 0.32);
+
+$size-glow: 0.5;
+$size-glow-blur: 0.1;
 
 $size-main: 75;
 $size-circle: 9;
 $size-pad: 70;
 $size-second: 62;
 $size-minute: 63.5;
-$margin-top: 18;
+
 $size-main-ls: #{$size-main}vh;
 $size-main-pt: #{$size-main}vw;
+
+$size-br-radius: 1vh;
 
 * {
   box-sizing: border-box;
 }
 
 body {
+  background: conic-gradient(
+    rgba(255, 255, 255, 0.8),
+    rgba(0, 0, 0, 0.2),
+    rgba(255, 255, 255, 0.8)
+  );
+  height: 100vh;
   margin: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
-  @media (orientation: landscape) {
-    &::before {
-      // content: "landscape";
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    height: 88vh;
-  }
-  @media (orientation: portrait) {
-    &::before {
-      // content: "portrait";
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    height: 100vh;
-  }
 }
 
 .watch {
+
+  & > * {
+    opacity: 0.68;
+  }
+
+  margin: auto;
   @media (orientation: landscape) {
     width: $size-main-ls;
     height: $size-main-ls;
-    // margin-top: #{$margin-top * 0.68}vh;
   }
   @media (orientation: portrait) {
     width: $size-main-pt;
     height: $size-main-pt;
-    // margin-top: #{$margin-top}vw;
   }
   position: relative;
 
@@ -61,7 +65,6 @@ body {
   justify-content: center;
 
   border-radius: 50%;
-
   border-style: dotted;
   border-color: $c-circles;
 
@@ -73,6 +76,7 @@ body {
   }
 
   &__pad {
+    opacity: 0.5;
     position: absolute;
 
     @media (orientation: landscape) {
@@ -125,7 +129,6 @@ body {
 
     &-second {
       position: absolute;
-
       width: 100%;
       height: 100%;
 
@@ -135,6 +138,19 @@ body {
       animation-delay: var(--seconds);
 
       &::before {
+        border-radius: $size-br-radius;
+
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 49%;
+        width: 2%;
+        height: 50%;
+        background: $c-seconds;
+        box-shadow: 0 0 #{$size-glow}vw #{$size-glow-blur}vw $c-sec-glow;
+      }
+
+      &::after {
         content: "";
         position: absolute;
         top: 48%;
@@ -142,17 +158,8 @@ body {
         width: 4%;
         height: 4%;
         border-radius: 50%;
-        background-color: $c-seconds;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 49%;
-        width: 2%;
-        height: 50%;
-        background-color: $c-seconds;
+        background: $c-sec-axis;
+        box-shadow: 0 0 #{$size-glow}vw #{$size-glow-blur}vw $c-sec-glow;
       }
     }
   }
@@ -193,6 +200,19 @@ body {
       animation-delay: var(--minutes);
 
       &::before {
+        border-radius: $size-br-radius;
+
+        content: "";
+        position: absolute;
+        top: 5%;
+        left: 48.5%;
+        width: 3%;
+        height: 45%;
+        background: $c-minutes;
+        box-shadow: 0 0 #{$size-glow}vw #{$size-glow-blur}vw $c-min-glow;
+      }
+
+      &::after {
         content: "";
         position: absolute;
         top: 47%;
@@ -200,17 +220,8 @@ body {
         width: 6%;
         height: 6%;
         border-radius: 50%;
-        background-color: $c-minutes;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 5%;
-        left: 48.5%;
-        width: 3%;
-        height: 45%;
-        background-color: $c-minutes;
+        background: $c-min-axis;
+        box-shadow: 0 0 #{$size-glow}vw #{$size-glow-blur}vw $c-min-glow;
       }
     }
   }
@@ -245,6 +256,19 @@ body {
       animation-delay: var(--hours);
 
       &::before {
+        border-radius: $size-br-radius;
+
+        content: "";
+        position: absolute;
+        top: 9.5%;
+        left: 47.75%;
+        width: 4.5%;
+        height: 40.5%;
+        background: $c-hours;
+        box-shadow: 0 0 #{$size-glow}vw #{$size-glow-blur}vw $c-hour-glow;
+      }
+
+      &::after {
         content: "";
         position: absolute;
         top: 45.5%;
@@ -252,17 +276,8 @@ body {
         width: 9%;
         height: 9%;
         border-radius: 50%;
-        background-color: $c-hours;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 9.5%;
-        left: 47.75%;
-        width: 4.5%;
-        height: 40.5%;
-        background-color: $c-hours;
+        background: $c-hour-axis;
+        box-shadow: 0 0 #{$size-glow}vw #{$size-glow-blur}vw $c-hour-glow;
       }
     }
   }
