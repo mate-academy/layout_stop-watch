@@ -1,0 +1,33 @@
+.arrow {
+  display: flex;
+  position: relative;
+  justify-content: center;
+
+  &__minute {
+    @extend %arrows-properties;
+    height: 200px;
+    width: 10px;
+    background: aqua;
+
+    animation: arrows-animation 3600s linear infinite;
+  }
+
+  &__second {
+    @extend %arrows-properties;
+    height: 240px;
+    width: 10px;
+    background: rgb(25, 33, 33);
+
+    animation: arrows-animation 60s linear infinite;
+  }
+}
+
+@keyframes arrows-animation {
+  from {
+    transform: rotate(0 + 180deg);
+  }
+
+  to {
+    transform: rotate(180deg + 360deg);
+  }
+}

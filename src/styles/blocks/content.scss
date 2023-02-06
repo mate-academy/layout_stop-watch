@@ -1,0 +1,21 @@
+.content {
+  display: flex;
+  align-items: center;
+  transition: scale 0.5s;
+
+  @include main-size($clock-size);
+  margin: 100px auto;
+  border: 10px solid black;
+  background: gray;
+
+  &__arrow {
+    @include main-size($center-size);
+    margin: 0 auto;
+
+    background-color: black;
+  }
+
+  &:hover {
+    scale: 1.25;
+  }
+}
