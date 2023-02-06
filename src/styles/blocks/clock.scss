@@ -1,55 +1,51 @@
 .clock {
   position: absolute;
-  width: $clock-width;
-  height: $clock-height;
-  border-radius: 50%;
-  background-color: rgb(210, 205, 205);
+  @include round ($clock-size);
+  background-color: $clock-color;
 
   &__center {
-    position: relative;
+    position: absolute;
     z-index: 1;
     top: 50%;
     left: 50%;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+    @include round (50px);
     transform: translate(-50%, -50%);
 
-    background-color: rgb(55, 0, 255);
+    background-color: $color-central-circle;
   }
 
   &__big {
-    position: relative;
+    position: absolute;
     display: flex;
-    top: 0;
+    top: 50%;
     left: $left-placement-of-hands;
     width: $hands-width;
-    height: 200px;
+    height: $big-hand-height;
 
-    background-color: rgb(0, 208, 255);
+    background-color: $color-big-hand;
     animation: move 60s linear infinite;
-    transform-origin: bottom;
+    transform-origin: top;
   }
 
   &__small {
-    position: relative;
+    position: absolute;
     display: flex;
-    top: -100px;
+    top: 50%;
     left: $left-placement-of-hands;
     width: $hands-width;
-    height: 100px;
+    height: $small-hand-height;
 
-    background-color: rgb(221, 255, 0);
+    background-color: $color-small-hand;
     animation: move 3600s linear infinite;
-    transform-origin: bottom;
+    transform-origin: top;
   }
 
   @keyframes move {
     from {
-      transform: rotate(0deg);
+      transform: rotate(180deg);
     }
     to {
-      transform: rotate(360deg);
+      transform: rotate(540deg);
     }
   }
 }
