@@ -3,43 +3,40 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  @include stopwatch-size;
+  @include circle($stopwatch-size);
   border: 20px solid #fff;
-  border-radius: 50%;
   background-color: $c-stopwatch-background;
   box-shadow: 50px 50px 40px $c-stopwatch-shadow;
 
   &__hand {
     position: absolute;
     bottom: 50%;
-    background-color: $c-hand-background;
+    background-color: $c-white;
     border-radius: 10px;
     transform-origin: bottom;
 
     &--min {
-      @include min-hand-size;
+      @include rectangle($hand-min-height, $hand-min-width);
       animation: rotate 3600s infinite linear;
     }
 
     &--sec {
-      @include sec-hand-size;
+      @include rectangle($hand-sec-height, $hand-sec-width);
       animation: rotate 60s infinite linear;
     }
   }
 
   &__center {
-    @include center-size;
+    @include circle($center-size);
     z-index: 1;
     background-color: $c-center-background;
-    border-radius: 50%;
   }
 
   &__title {
     position: absolute;
     bottom: 20%;
-    text-align: center;
     text-transform: uppercase;
-    font-family: "Aboreto", Arial, sans-serif;
+    text-align: center;
     line-height: 30px;
     font-weight: 700;
     color: $c-title;
