@@ -1,0 +1,60 @@
+@import "../utitlis/variables";
+
+.watch {
+  width: $size-watch;
+  height: $size-watch;
+  border: 20px solid $border-watch;
+  border-radius: $radius;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  &__center {
+    width: $size-center-gyre;
+    height: $size-center-gyre;
+    background-color: $second-color;
+    border-radius: $radius;
+
+    z-index: 1;
+  }
+
+  &__minute {
+    width: $width-arrow;
+    height: $height-minute;
+    background-color: $minute-color;
+    border-radius: $radius-arrow;
+
+    position: absolute;
+    top: $margin-minute;    
+
+    transform-origin: bottom;
+    animation: watch 60s linear infinite;
+  }
+
+  &__second {
+    width: $width-arrow;
+    height: $height-second;
+    background-color: $second-color;
+    border-radius: $radius-arrow;
+
+    position: absolute;
+    top: $margin-second;
+    z-index: 1;
+
+    transform-origin: bottom;
+    animation: watch 1s linear infinite;
+  }
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
