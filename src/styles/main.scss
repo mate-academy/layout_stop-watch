@@ -21,26 +21,27 @@ body {
   &__hand {
     position: absolute;
     background-color: $color-hand;
-  }
 
-  &__hand--minute {
-    height: $size-hand-minute;
-    width: 4px;
-    left: ($size-clock / 2) - 2px;
-    bottom: ($size-clock / 2) - 2px;
-    transform-origin: 0 145px;
-    animation: clock-hand-rotate 3600s infinite;
-    animation-timing-function: steps(60, end);
-  }
+    &--minute {
+      height: $size-hand-minute;
+      width: 4px;
+      left: 50%;
+      bottom: 50%;
+      transform-origin: 0 $size-hand-minute;
+      animation: clock-hand-rotate 3600s infinite;
+      animation-timing-function: steps(60, end);
+    }
 
-  &__hand--second {
-    height: $size-hand-second;
-    width: 2px;
-    left: ($size-clock / 2) - 1px;
-    bottom: ($size-clock / 2) - 1px;
-    transform-origin: 0 145px;
-    animation: clock-hand-rotate 60s infinite;
-    animation-timing-function: steps(60, end);
+    &--second {
+      height: $size-hand-second;
+      width: 2px;
+      left: ($size-clock / 2) - 1px;
+      bottom: ($size-clock / 2) - 1px;
+      transform-origin: 0 $size-hand-second;
+      animation: clock-hand-rotate 60s infinite;
+      animation-timing-function: steps(60, end);
+    }
+    
   }
 
   &__center {
