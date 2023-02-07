@@ -1,0 +1,16 @@
+@mixin animation {
+  animation-name: hand;
+  transform-origin: bottom;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@mixin hand {
+  width: $hand-width;
+  border-radius: $hand-border-radius;
+}
+
+@mixin position {
+  position: absolute;
+  left: 50%;
+}
