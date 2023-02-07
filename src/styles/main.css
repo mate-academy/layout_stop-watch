@@ -3,17 +3,14 @@
   transform-origin: center bottom;
   animation-play-state: paused;
 }
-
 @keyframes rotating {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(359deg);
   }
 }
-
 .minute-arrow__top {
   box-sizing: border-box;
   width: 13px;
@@ -24,7 +21,6 @@
   border-bottom: 17px red solid;
   margin: auto;
 }
-
 .minute-arrow__body {
   width: 5px;
   height: 130px;
@@ -38,24 +34,20 @@
   margin: -217px auto;
   animation-play-state: paused;
 }
-
 @keyframes rotating {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(359deg);
   }
 }
-
 .second-arrow__body {
   width: 5px;
   height: 200px;
   background-color: green;
   margin: 0 auto;
 }
-
 .second-arrow__top {
   box-sizing: border-box;
   width: 13px;
@@ -73,15 +65,12 @@
   background-color: orange;
   cursor: pointer;
 }
-
 .stop-watch__start-button:focus ~ .second-arrow {
   animation-play-state: running;
 }
-
 .stop-watch__start-button:focus ~ .minute-arrow {
   animation-play-state: running;
 }
-
 .stop-watch__resume-button {
   width: 80px;
   height: 40px;
@@ -89,7 +78,6 @@
   background-color: violet;
   cursor: pointer;
 }
-
 .stop-watch__reset {
   margin-bottom: 20px;
 }
