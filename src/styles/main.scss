@@ -1,0 +1,32 @@
+@import "./blocks.scss/minute-arrow.scss";
+@import "./blocks.scss/second-arrow.scss";
+
+.stop-watch {
+
+  &__start-button {
+    width: 70px;
+    height: 30px;
+    background-color: orange;
+    cursor: pointer;
+
+    &:focus ~ .second-arrow {
+      animation-play-state: running;
+    }
+
+    &:focus ~ .minute-arrow {
+      animation-play-state: running;
+    }
+  }
+
+  &__resume-button {
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    background-color: violet;
+    cursor: pointer;
+  }
+
+  &__reset {
+    margin-bottom: 20px;
+  }
+}

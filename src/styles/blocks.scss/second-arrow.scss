@@ -1,0 +1,34 @@
+.second-arrow {
+  animation: rotating 60s infinite linear;
+  transform-origin: center bottom;
+  margin: -217px auto;
+  animation-play-state: paused;
+
+  @keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+  &__body {
+    width: 5px;
+    height: 200px;
+    background-color: green;
+    margin: 0 auto;
+  }
+
+  &__top {
+    box-sizing: border-box;
+    width: 13px;
+    height: 13px;
+    border-top: 10px green;
+    border-left: 6px transparent solid;
+    border-right: 6px transparent solid;
+    border-bottom: 17px green solid;
+    margin: auto;
+  }
+}

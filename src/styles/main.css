@@ -1,0 +1,97 @@
+.minute-arrow {
+  animation: rotating 3600s infinite linear;
+  transform-origin: center bottom;
+  animation-play-state: paused;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.minute-arrow__top {
+  box-sizing: border-box;
+  width: 13px;
+  height: 13px;
+  border-top: 10px green;
+  border-left: 6px transparent solid;
+  border-right: 6px transparent solid;
+  border-bottom: 17px red solid;
+  margin: auto;
+}
+
+.minute-arrow__body {
+  width: 5px;
+  height: 130px;
+  background-color: red;
+  margin: 0 auto;
+}
+
+.second-arrow {
+  animation: rotating 60s infinite linear;
+  transform-origin: center bottom;
+  margin: -217px auto;
+  animation-play-state: paused;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.second-arrow__body {
+  width: 5px;
+  height: 200px;
+  background-color: green;
+  margin: 0 auto;
+}
+
+.second-arrow__top {
+  box-sizing: border-box;
+  width: 13px;
+  height: 13px;
+  border-top: 10px green;
+  border-left: 6px transparent solid;
+  border-right: 6px transparent solid;
+  border-bottom: 17px green solid;
+  margin: auto;
+}
+
+.stop-watch__start-button {
+  width: 70px;
+  height: 30px;
+  background-color: orange;
+  cursor: pointer;
+}
+
+.stop-watch__start-button:focus ~ .second-arrow {
+  animation-play-state: running;
+}
+
+.stop-watch__start-button:focus ~ .minute-arrow {
+  animation-play-state: running;
+}
+
+.stop-watch__resume-button {
+  width: 80px;
+  height: 40px;
+  margin-top: 20px;
+  background-color: violet;
+  cursor: pointer;
+}
+
+.stop-watch__reset {
+  margin-bottom: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */
