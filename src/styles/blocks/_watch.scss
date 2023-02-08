@@ -1,41 +1,34 @@
-.wrapper {
+.watch {
+  @include circle($watch-size);
   @include flex($position-center);
-
+    
   display: flex;
-  height: 100vh;
-
-  .watch {
-    @include circle($watch-size);
-    @include flex($position-center);
+  position: relative;
+  border: solid 1px $base-color;
     
-    display: flex;
-    position: relative;
-    border: solid 1px $base-color;
-    
-    &__center {
-      @include circle($center-size);
+  &__center {
+    @include circle($center-size);
 
-      position: $position-absolute;
-      background-color: $base-color;
-    }
+    position: $position-absolute;
+    background-color: $base-color;
+  }
     
-    &__minutes {
-      position: $position-absolute;
-      bottom: $percents;
-      background: $base-color;
-      height: $minutes-size;
-      width: 1.5px;
-      animation: move 3600s linear infinite;
-    }
+  &__minutes {
+    position: $position-absolute;
+    bottom: $percents;
+    background: $base-color;
+    height: $minutes-size;
+    width: 1.5px;
+    animation: move 3600s linear infinite;
+  }
 
-    &__seconds {
-      position: $position-absolute;
-      bottom: $percents;
-      background: $base-color;
-      height: $seconds-size;
-      width: 1px;
+  &__seconds {
+    position: $position-absolute;
+    bottom: $percents;
+    background: $base-color;
+    height: $seconds-size;
+    width: 1px;
         
-      animation: move 60s linear infinite;
-    }
+    animation: move 60s linear infinite;
   }
 }
