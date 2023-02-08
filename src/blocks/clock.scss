@@ -1,0 +1,47 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+  &-arrow {
+    position: absolute;
+    width: 10px;
+    border-radius: 8px;
+  
+    &--hours {
+      height: 150px;
+      background-color: red;
+      animation-name: rotate;
+      animation-duration: 3600s;
+      animation-iteration-count: infinite;
+    }
+  
+    &--seconds {
+      height: 300px;
+      background-color: blue;
+      animation-name: rotate;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+      animation-timing-function: steps(60);
+    }
+  
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg) translateY(-50%);
+      }
+
+      100% {
+        transform: rotate(360deg) translateY(-50%);
+      }
+    }
+  }
+  
+  &-round {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+}
