@@ -1,7 +1,6 @@
 .minute-arrow {
   animation: rotating 3600s infinite linear;
   transform-origin: center bottom;
-  animation-play-state: paused;
 }
 
 @keyframes rotating {
@@ -36,7 +35,6 @@
   animation: rotating 60s infinite linear;
   transform-origin: center bottom;
   margin: -217px auto;
-  animation-play-state: paused;
 }
 
 @keyframes rotating {
@@ -67,25 +65,8 @@
   margin: auto;
 }
 
-.stop-watch__start-button {
-  width: 70px;
-  height: 40px;
-  padding-top: 20px;
-  margin-bottom: 20px;
-  border: red solid 1px;
-  text-align: center;
-}
-
-.stop-watch__start-button:hover ~ .second-arrow {
-  animation-play-state: running;
-}
-
-.stop-watch__start-button:hover ~ .minute-arrow {
-  animation-play-state: running;
-}
-
-.stop-watch__reset {
-  margin-bottom: 20px;
+.stop-watch {
+  margin-top: 200px;
 }
 
 /*# sourceMappingURL=main.css.map */
