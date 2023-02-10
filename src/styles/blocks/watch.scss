@@ -1,0 +1,46 @@
+.body {
+  @extend %all-page-style;
+}
+
+.watch {
+  border-radius: 20px;
+  width: $area-watch;
+  height: $area-watch;
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
+
+  &__second-hand {
+    @include position($border-radius, $width-hand);
+
+    z-index: 1;
+    height: $area-second-hand;
+    background-color: red;
+    transform-origin: $axis-shift ($area-second-hand - $axis-shift);
+    animation: rotate 60s linear infinite;
+  }
+  
+  &__minute-hand {
+    @include position($border-radius, $width-hand);
+
+    z-index: 2;
+    height: $area-minute-hand;
+    background-color: green;
+    transform-origin: $axis-shift ($area-minute-hand - $axis-shift);
+    animation: rotate 3600s linear infinite;
+  }
+
+  & > *:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
