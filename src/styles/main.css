@@ -1,68 +1,60 @@
-.minute-arrow {
-  animation: rotating 3600s infinite linear;
+.arrow {
+  animation: rotating infinite linear;
   transform-origin: center bottom;
 }
-
 @keyframes rotating {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(359deg);
   }
 }
 
-.minute-arrow__top {
-  box-sizing: border-box;
-  width: 13px;
-  height: 13px;
-  border-top: 10px green;
-  border-left: 6px transparent solid;
-  border-right: 6px transparent solid;
-  border-bottom: 17px red solid;
-  margin: auto;
+.arrow--second {
+  margin: -217px auto;
+  animation-duration: 60s;
 }
 
-.minute-arrow__body {
+.arrow--minute {
+  animation-duration: 3600s;
+}
+
+.arrow-top {
+  height: 13px;
+  border-top-width: 10px;
+  border-left: 6px transparent solid;
+  border-right: 6px transparent solid;
+  border-bottom: 17px solid;
+  margin: auto;
+  width: 13px;
+}
+
+.arrow-top--minute {
+  border-bottom-color: red;
+}
+
+.arrow-top--second {
+  border-bottom-color: green;
+}
+
+.arrow-body {
   width: 5px;
-  height: 130px;
-  background-color: red;
   margin: 0 auto;
 }
 
-.second-arrow {
-  animation: rotating 60s infinite linear;
-  transform-origin: center bottom;
-  margin: -217px auto;
-}
-
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(359deg);
-  }
-}
-
-.second-arrow__body {
-  width: 5px;
+.arrow-body--second {
   height: 200px;
   background-color: green;
-  margin: 0 auto;
 }
 
-.second-arrow__top {
+.arrow-body--minute {
+  height: 130px;
+  background-color: red;
+}
+
+* {
   box-sizing: border-box;
-  width: 13px;
-  height: 13px;
-  border-top: 10px green;
-  border-left: 6px transparent solid;
-  border-right: 6px transparent solid;
-  border-bottom: 17px green solid;
-  margin: auto;
 }
 
 .stop-watch {

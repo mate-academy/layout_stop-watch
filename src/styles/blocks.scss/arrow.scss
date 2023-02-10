@@ -1,0 +1,22 @@
+.arrow {
+  animation: rotating infinite linear;
+  transform-origin: center bottom;
+
+  @keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+}
+
+.arrow--second {
+  margin: -217px auto;
+  animation-duration: 60s;
+}
+
+.arrow--minute {
+  animation-duration: 3600s;
+}
