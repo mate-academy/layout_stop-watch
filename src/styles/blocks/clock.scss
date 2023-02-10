@@ -1,0 +1,92 @@
+.container__clock {
+
+  @include positioning;
+}
+
+.clock {
+  position: relative;
+
+  @include clock-size;
+
+  box-shadow: $shadow-out, $shadow-in;
+  border: 5px solid $bg-color;
+  @include b-radius;
+
+  &::after {
+    transform: rotate(90deg);
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+
+    width: 97%;
+    height: 5px;
+
+    background-color: $primary-dark-color;
+
+    content: "";
+  }
+
+  &__line {
+    position: absolute;
+    height: 2px;
+    width: 97%;
+
+    background-color: $secondary-color;
+
+    @each $number, $degree in $hours-lines {
+      &--#{$number} {
+        transform: rotate($degree);
+      }
+    }
+  }
+
+  &__hands {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+
+    z-index: 1;
+
+    width: 90%;
+    height: 90%;
+
+    background-color: $bg-color;
+    @include b-radius;
+
+    &::before {
+      @include position-absolute-half-block;
+      z-index: 2;
+
+      width: 15px;
+      height: 15px;
+
+      background-color: $primary-dark-color;
+      @include b-radius;
+
+      transform: translate(-50%, -50%);
+
+      content: "";
+    }
+  }
+
+  &__hand {
+    @include position-absolute-half-block;
+    transform: translateX(-50%);
+
+    border-radius: 2px;
+
+    transform-origin: 0;
+
+    @each $type, $width, $height, $animation, $color in $arrows-params {
+      &--#{$type} {
+        @include rectangle($width, $height);
+
+        background-color: $color;
+
+        animation: $animation;
+      }
+    }
+  }
+}
