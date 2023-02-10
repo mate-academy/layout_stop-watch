@@ -7,7 +7,7 @@
 
   &__center-circle {
     @include round($stopwatch-center-circle-size);
-    @include absolute-center;
+    @extend %absolute-center;
     background-color: $color-accent-light;
   }
 
@@ -21,23 +21,19 @@
     @extend %hands-properties;
     background: $color-accent-purple;
     clip-path: polygon(50% 25%, 10% 100%, 90% 100%);
-    animation: stopwatch-hand-rotation 3600s linear infinite;
+    @include stopwatch-animation(stopwatch-hand-rotation, 3600s);
   }
 
   &__second-hand {
     @extend %hands-properties;
     background: $color-accent-green;
     clip-path: polygon(50% 5%, 30% 100%, 70% 100%);
-    animation: stopwatch-hand-rotation 60s linear infinite;
+    @include stopwatch-animation(stopwatch-hand-rotation, 60s);
   }
 }
 
 @keyframes stopwatch-hand-rotation {
-  from {
-    transform: rotate(0);
-  }
-
   to {
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 }
