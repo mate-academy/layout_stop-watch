@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
   position: relative;
-  width: $clock-size;
-  height: $clock-size;
   background-color: rgb(136, 49, 177);
   border-radius: 50%;
   border: 10px solid rgb(199, 108, 4);
+
+  @include clock-size;
 
   &__circle {
     position: absolute;
