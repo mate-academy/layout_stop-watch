@@ -10,7 +10,6 @@
   background-image: url(../img/clock-face.png);
   background-position: center;
   background-size: cover;
-  // background-color: $c-bg-color;
 
   &__hand {
     position: absolute;
@@ -19,20 +18,17 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     transform-origin: bottom;
+
+    &--minute {
+      animation: rotate 3600s infinite;
+      background-color: $c-minutes-hand;
+      width: 0.4vh;
+    }
+
+    &--second {
+      animation: rotate 60s infinite steps(60);
+      background-color: $c-seconds-hand;
+      width: 0.3vh;
+    }
   }
-}
-
-.clock-face__hand--minute {
-  animation: rotate 3600s infinite;
-  background-color: $c-minutes-hand;
-  border-radius: 50%;
-  width: 0.5vh;
-}
-
-.clock-face__hand--second {
-  animation: rotate 60s infinite steps(60);
-  background-color: $c-seconds-hand;
-  border-radius: 50%;
-  width: 0.3vh;
-  background-size: cover;
 }
