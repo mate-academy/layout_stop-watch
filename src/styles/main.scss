@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.clockwatch {
+  width: 500px;
+  height: 500px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #3896aa;
+  border: 6px solid #151515;
+  border-radius: 50%;
+
+  &__numbers {
+    list-style: none;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+    text-align: center;
+
+    display: block;
+    color: #dbe7fd;
+    font-size: 38px;
+    text-shadow: 0 5px 18px #000250;
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        transform: rotate(30deg * $i);
+      }
+    }
+  }
+
+  &__second {
+    position: absolute;
+    top: 70px;
+    left: calc(250px - 5px);
+
+    width: 5px;
+    height: 180px;
+
+    background-color: #fff;
+    border-radius: 50%;
+
+    animation: rotation-sec 60s infinite linear;
+    transform-origin: bottom;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 100px;
+    left: calc(250px - 7px);
+
+    width: 8px;
+    height: 150px;
+
+    background-color: red;
+    border-radius: 50%;
+
+    animation: rotation-min 3600s infinite linear;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes rotation-sec {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation-min {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
