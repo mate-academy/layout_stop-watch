@@ -1,0 +1,9 @@
+@mixin round($size) {
+  width: $size;
+  height: $size;
+  border-radius: 100%;
+}
+
+@mixin stopwatch-animation($animationName, $duration) {
+  animation: #{$animationName} #{$duration} linear infinite;
+}
