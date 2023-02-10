@@ -36,7 +36,7 @@
     background-color: black;
     animation-duration: 60s;
     transform-origin: bottom;
-    animation-name: movesecond;
+    animation-name: rotateArrow;
     animation-iteration-count: 4;
   }
 
@@ -46,52 +46,37 @@
     height: 100px;
     width: 5px;
     background-color: red;
-    animation-duration: 240s;
+    animation-duration: 3600s;
     transform-origin: bottom;
-    animation-name: moveminutes;
+    animation-name: rotateArrow;
   }
 
-  &__number0 {
+  &__number12 {
     position: absolute;
     top: 10px;
     font-size: 30px;
   }
 
-  &__number1 {
+  &__number3 {
     position: absolute;
     right: 10px;
     font-size: 30px;
   }
 
-  &__number2 {
+  &__number6 {
     position: absolute;
     bottom: 10px;
     font-size: 30px;
   }
 
-  &__number3 {
+  &__number9 {
     position: absolute;
     left: 10px;
     font-size: 30px;
   }
 }
 
-@keyframes movesecond {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes moveminutes {
-  25% {
-    transform: rotate(90deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  75% {
-    transform: rotate(270deg);
-  }
+@keyframes rotateArrow {
   100% {
     transform: rotate(360deg);
   }
