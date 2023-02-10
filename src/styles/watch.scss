@@ -12,15 +12,13 @@
   &__minute {
     @include arrow($minutes-height);
 
-    transform-origin: center bottom;
-    animation: move 3600s steps(60) infinite;
+    @include animation(3600s);
   }
 
   &__second {
     @include arrow($seconds-height);
 
-    transform-origin: center bottom;
-    animation: move 60s steps(60) infinite;
+    @include animation(60s);
   }
 
   &__circle {

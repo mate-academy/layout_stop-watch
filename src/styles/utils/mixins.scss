@@ -4,8 +4,7 @@
 }
 
 @mixin circle($size) {
-  width: $size;
-  height: $size;
+  @include square($size);
   border-radius: 50%;
 }
 
@@ -17,4 +16,9 @@
   border-radius: 50%;
   position: absolute;
   bottom: 50%;
+}
+
+@mixin animation($duration) {
+  transform-origin: center bottom;
+  animation: move $duration steps(60) infinite;
 }
