@@ -1,0 +1,38 @@
+.clock-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  display: flex;
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+  background: url("https://static.vecteezy.com/system/resources/thumbnails/004/849/432/small/clock-face-free-vector.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: $width*0.9 $height*0.9;
+  margin: 0 auto;
+
+  &__minute-hand {
+    width: $width/2;
+    height: $height/28;
+    background-color: rgb(83, 114, 250);
+    align-self: center;
+    border-radius: 20%;
+    transform-origin: center right;
+    animation: minute-move 3600s linear infinite;
+  }
+
+  &__second-hand {
+    width: $width/2;
+    height: $height/45;
+    background-color: rgb(199, 42, 61);
+    align-self: center;
+    border-radius: 20%;
+    transform-origin: center left;
+    animation: second-move 60s linear infinite;
+  }
+}
