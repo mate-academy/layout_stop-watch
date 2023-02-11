@@ -1,0 +1,45 @@
+.stopwatch {
+  &__container {
+    @extend %absolute-centering;
+
+    background: rgb(2,0,30);
+    @include circle ($stopwatch-big-circle-diametr);
+    border: $color-grey 8px solid;
+    box-shadow: 0 0 5px black;
+  }
+
+  &__center-circle {
+    @extend %absolute-centering;
+    @include circle ($stopwatch-small-circle-diametr);
+
+    background-color: $color-grey;
+    box-shadow: 0 0 10px black;
+  }
+
+  &__hand {
+    position: absolute;
+    top: 10%;
+    left: 49%;
+    @include hands-size(
+      $stopwatch-hands-width,
+      $stopwatch-seconds-height
+    );
+
+    background-color: $color-grey;
+    box-shadow: 0 0 15px black;
+
+    animation: hands-rotate 60s steps(60) infinite;
+    transform-origin: $transform-origin;
+  }
+
+  &__hand--minutes {
+    left: 49%;
+    top: 30%;
+    height: $stopwatch-minutes-height;
+
+    background-color: $color-red;
+    box-shadow: 0 0 7px black;
+
+    animation: hands-rotate 3600s linear infinite;
+  }
+}
