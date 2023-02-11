@@ -1,0 +1,13 @@
+@mixin setSize ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin positioning {
+  left: 50%;
+  top: 50%;
+  transform-origin: center 0;
+  position: absolute;
+  border-radius: $clock-size / 2;
+}

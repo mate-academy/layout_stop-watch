@@ -1,0 +1,41 @@
+.clock {
+  @include setSize($clock-size);
+  background-color: $c-main;
+  margin: 0 auto;
+  position: relative;
+  transform: rotate(180deg);
+  border: 5px solid $c-mint;
+  box-shadow: inset 0 0 12px 12px #678, inset 0 0 3px 2px white;
+
+  &__hand {
+    @include positioning;
+
+    &--second {
+      width: $width-sec;
+      height: $height-sec;
+      background-color: $c-sec;
+      animation: rotate $minute infinite;
+    }
+
+    &--minute {
+      width: $width-mint;
+      height: $height-mint;
+      background-color: $c-mint;
+      animation: rotate $hour linear infinite;
+    }
+
+    &--hour {
+      width: $width-hour;
+      height: $height-hour;
+      background-color: $c-hour;
+      animation: rotate $day linear infinite;
+    }
+  }
+
+  &__dot {
+    @include setSize($dot-size);
+    @include positioning;
+    transform: translate(-10px, -10px);
+    background-color: $c-mint;
+  }
+}
