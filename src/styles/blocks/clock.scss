@@ -5,7 +5,6 @@
 
   &__center {
     position: absolute;
-    z-index: 1;
     top: 50%;
     left: 50%;
     @include round (50px);
@@ -16,36 +15,34 @@
 
   &__big {
     position: absolute;
-    display: flex;
-    top: 50%;
+    top: $big-hand-top-placement;
     left: $left-placement-of-hands;
     width: $hands-width;
     height: $big-hand-height;
 
     background-color: $color-big-hand;
-    animation: move 60s linear infinite;
-    transform-origin: top;
+    @include animation ($minute);
+    transform-origin: bottom;
   }
 
   &__small {
     position: absolute;
-    display: flex;
-    top: 50%;
+    top: $small-hand-top-placement;
     left: $left-placement-of-hands;
     width: $hands-width;
     height: $small-hand-height;
 
     background-color: $color-small-hand;
-    animation: move 3600s linear infinite;
-    transform-origin: top;
+    @include animation ($hour);
+    transform-origin: bottom;
   }
 
   @keyframes move {
     from {
-      transform: rotate(180deg);
+      transform: rotate(0deg);
     }
     to {
-      transform: rotate(540deg);
+      transform: rotate(360deg);
     }
   }
 }
