@@ -1,45 +1,22 @@
 .stopwatch {
   &__container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @extend %absolute-centering;
 
     background: rgb(2,0,30);
     @include circle ($stopwatch-big-circle-diametr);
     border: $color-grey 8px solid;
     box-shadow: 0 0 5px black;
-    border-radius: 50%;
   }
 
   &__center-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @extend %absolute-centering;
     @include circle ($stopwatch-small-circle-diametr);
 
     background-color: $color-grey;
     box-shadow: 0 0 10px black;
   }
 
-  &__minutes-hand {
-    position: absolute;
-    left: 49%;
-    top: 30%;
-    @include hands-size(
-      $stopwatch-hands-width,
-      $stopwatch-minutes-height
-    );
-
-    background-color: $color-red;
-    box-shadow: 0 0 7px black;
-
-    animation: hands-rotate 3600s linear infinite;
-    transform-origin: bottom center;
-  }
-
-  &__seconds-hand {
+  &__hand {
     position: absolute;
     top: 10%;
     left: 49%;
@@ -52,16 +29,17 @@
     box-shadow: 0 0 15px black;
 
     animation: hands-rotate 60s steps(60) infinite;
-    transform-origin: bottom center;
+    transform-origin: $transform-origin;
   }
 
-  @keyframes hands-rotate {
-    0% {
-      transform: rotate(0);
-    }
+  &__hand--minutes {
+    left: 49%;
+    top: 30%;
+    height: $stopwatch-minutes-height;
 
-    100% {
-      transform: rotate(360deg);
-    }
+    background-color: $color-red;
+    box-shadow: 0 0 7px black;
+
+    animation: hands-rotate 3600s linear infinite;
   }
 }
