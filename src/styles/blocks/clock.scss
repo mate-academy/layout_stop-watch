@@ -1,0 +1,48 @@
+.clock {
+  position: absolute;
+  @include round ($clock-size);
+  background-color: $clock-color;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include round (50px);
+    transform: translate(-50%, -50%);
+
+    background-color: $color-central-circle;
+  }
+
+  &__big {
+    position: absolute;
+    top: $big-hand-top-placement;
+    left: $left-placement-of-hands;
+    width: $hands-width;
+    height: $big-hand-height;
+
+    background-color: $color-big-hand;
+    @include animation ($minute);
+    transform-origin: bottom;
+  }
+
+  &__small {
+    position: absolute;
+    top: $small-hand-top-placement;
+    left: $left-placement-of-hands;
+    width: $hands-width;
+    height: $small-hand-height;
+
+    background-color: $color-small-hand;
+    @include animation ($hour);
+    transform-origin: bottom;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
