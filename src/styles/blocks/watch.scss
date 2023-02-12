@@ -1,0 +1,30 @@
+.watch {
+  width: $size;
+  height: $size;
+  margin-top: 50px;
+  margin-left: 100px;
+  position: relative;
+  background-image: url(/images/watch.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .watch__seconds {
+    @include watch-go (39%, 60s);
+  }
+
+  .watch__minutes {
+    @include watch-go (27%, 3600s);
+  }
+
+  &__connecting {
+    position: absolute;
+    top: calc(50% - 9px);
+    left: calc(50% - 9px);
+    width: $connecting-size;
+    height: $connecting-size;
+    background-color: $connection-color;
+    border: 3px solid black;
+    border-radius: 50%;
+  }
+}

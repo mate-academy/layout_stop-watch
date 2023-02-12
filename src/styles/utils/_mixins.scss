@@ -1,0 +1,17 @@
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin watch-go ($width, $time) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: "arrow";
+  width: #{$width};
+  height: 8px;
+  background-color: $arrow-color;
+  border-radius: 5px;
+  animation: move $time linear infinite;
+  transform-origin: left;
+}
