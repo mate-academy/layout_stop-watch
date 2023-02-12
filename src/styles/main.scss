@@ -1,0 +1,58 @@
+@import "./mixin.scss";
+@import "./variables.scss";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@keyframes rotateHand {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 3px solid $mainColor;
+  @include watch-size;
+  position: relative;
+
+  &__centr {
+    @include centr-size;
+    background-color: $mainColor;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__minutHand {
+    width: 6px;
+    height: 0.3 * $size;
+    background-color: #f00;
+    position: absolute;
+    bottom: 50%;
+
+    border-radius: 3px;
+    animation: rotateHand 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__secondHand {
+    width: 4px;
+    height: 0.4 * $size;
+    border-radius: 5px;
+    background-color: #0e0;
+    position: absolute;
+    bottom: 50%;
+    animation: rotateHand 60s steps(60, end) infinite;
+    transform-origin: bottom center;
+  }
+}
