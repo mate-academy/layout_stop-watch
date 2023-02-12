@@ -5,14 +5,14 @@
   max-height: 90vh;
   border: 6px solid $main-color;
   border-style: double;
-  border-radius:50%;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 
-  &::after{
-    content:'';
+  &::after {
+    content: "";
     position: absolute;
     width: 48vw;
     max-width: 88vh;
@@ -20,22 +20,22 @@
     max-height: 88vh;
     border: 2px solid $main-color;
     border-style: dashed;
-    border-radius:50%;
+    border-radius: 50%;
   }
 
   &__minute-arrow {
     position: relative;
 
-    &::after{
+    &::after {
       position: absolute;
-      content: '';
+      content: "";
       height: 0.15vw;
       width: 14vw;
       max-width: 25vh;
       border-radius: 3px;
       border: 2px solid $main-color;
       transform-origin: center left;
-      animation: rotation 3600s linear;
+      animation: rotation $minute-arrow-animation-duration linear;
       animation-iteration-count: infinite;
     }
   }
@@ -43,27 +43,17 @@
   &__seconds-arrow {
     position: relative;
 
-    &::after{
+    &::after {
       position: absolute;
-      content: '';
+      content: "";
       height: 0.15vw;
       width: 20vw;
       max-width: 32vh;
       border-radius: 2px;
       border: 2px solid $main-color;
       transform-origin: center left;
-      animation: rotation 60s linear;
+      animation: rotation $seconds-arrow-animation-duration linear;
       animation-iteration-count: infinite;
     }
-  }
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(-90deg);
-  }
-
-  100% {
-    transform: rotate(270deg);
   }
 }
