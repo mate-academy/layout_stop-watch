@@ -1,34 +1,11 @@
-$c-seconds: rgb(0, 255, 45);
-$c-sec-axis: rgb(0, 255, 45);
-$c-sec-glow: rgb(0, 255, 45);
+@import "./variables";
+@import "./reset";
+@import "./animation-stepOn60";
 
-$c-minutes: hsl(131, 75%, 50%);
-$c-min-axis: hsl(131, 75%, 50%);
-$c-min-glow: hsl(131, 75%, 50%);
-
-$c-hours: hsl(131, 50%, 45%);
-$c-hour-glow: hsl(131, 50%, 45%);
-$c-hour-axis: hsl(131, 50%, 45%);
-
-$c-lines: hsla(130, 50%, 50%, 0.68);
-$c-circles: rgba(68, 196, 68, 0.32);
-
-$size-glow: 0.5;
-$size-glow-blur: 0.1;
-
-$size-main: 75;
-$size-circle: 9;
-$size-pad: 70;
-$size-second: 62;
-$size-minute: 63.5;
-
-$size-main-ls: #{$size-main}vh;
-$size-main-pt: #{$size-main}vw;
-
-$size-br-radius: 1vh;
-
-* {
-  box-sizing: border-box;
+%abs100 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -50,14 +27,9 @@ body {
   }
 
   margin: auto;
-  @media (orientation: landscape) {
-    width: $size-main-ls;
-    height: $size-main-ls;
-  }
-  @media (orientation: portrait) {
-    width: $size-main-pt;
-    height: $size-main-pt;
-  }
+  width: $size-main;
+  height: $size-main;
+
   position: relative;
 
   display: flex;
@@ -68,25 +40,14 @@ body {
   border-style: dotted;
   border-color: $c-circles;
 
-  @media (orientation: landscape) {
-    border-width: #{$size-circle}vh;
-  }
-  @media (orientation: portrait) {
-    border-width: #{$size-circle}vw;
-  }
+  border-width: $size-circle;
 
   &__pad {
     opacity: 0.5;
     position: absolute;
 
-    @media (orientation: landscape) {
-      width: #{$size-pad}vh;
-      height: #{$size-pad}vh;
-    }
-    @media (orientation: portrait) {
-      width: #{$size-pad}vw;
-      height: #{$size-pad}vw;
-    }
+    width: $size-pad;
+    height: $size-pad;
 
     &-lines {
       stroke: $c-lines;
@@ -96,46 +57,27 @@ body {
 
   &::after {
     content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
+
+    @extend %abs100;
+
     border-radius: 50%;
   }
 
   &__seconds {
 
-    @media (orientation: landscape) {
-      width: #{$size-second}vh;
-      height: #{$size-second}vh;
-    }
-    @media (orientation: portrait) {
-      width: #{$size-second}vw;
-      height: #{$size-second}vw;
-    }
+    width: $size-second;
+    height: $size-second;
+
     position: absolute;
     z-index: 3;
 
-    @keyframes seconding {
-      0% {
-        transform: rotate(0);
-      }
-      @for $step from 1 through 60 {
-
-        #{$step * 10/6}% {
-          transform: rotate(#{($step) * 6}deg);
-        }
-      }
-    }
-
     &-second {
-      position: absolute;
-      width: 100%;
-      height: 100%;
 
-      animation-name: seconding;
+      @extend %abs100;
+
+      animation-name: stepOn60;
       animation-duration: 60s;
       animation-iteration-count: infinite;
-      animation-delay: var(--seconds);
 
       &::before {
         border-radius: $size-br-radius;
@@ -147,7 +89,7 @@ body {
         width: 2%;
         height: 50%;
         background: $c-seconds;
-        box-shadow: 0 0 #{$size-glow}vw #{$size-glow-blur}vw $c-sec-glow;
+        box-shadow: 0 0 $size-glow $size-glow-blur $c-sec-glow;
       }
 
       &::after {
@@ -159,45 +101,26 @@ body {
         height: 4%;
         border-radius: 50%;
         background: $c-sec-axis;
-        box-shadow: 0 0 #{$size-glow}vw #{$size-glow-blur}vw $c-sec-glow;
+        box-shadow: 0 0 $size-glow $size-glow-blur $c-sec-glow;
       }
     }
   }
 
   &__minutes {
-    @media (orientation: landscape) {
-      width: #{$size-minute}vh;
-      height: #{$size-minute}vh;
-    }
-    @media (orientation: portrait) {
-      width: #{$size-minute}vw;
-      height: #{$size-minute}vw;
-    }
+
+    width: $size-minute;
+    height: $size-minute;
+
     position: absolute;
     z-index: 2;
 
-    @keyframes minuting {
-      0% {
-        transform: rotate(0);
-      }
-      @for $step from 1 through 60 {
-
-        #{$step * 10/6}% {
-          transform: rotate(#{($step) * 6}deg);
-        }
-      }
-    }
-
     &-minute {
-      position: absolute;
 
-      width: 100%;
-      height: 100%;
+      @extend %abs100;
 
-      animation-name: minuting;
+      animation-name: stepOn60;
       animation-duration: 3600s;
       animation-iteration-count: infinite;
-      animation-delay: var(--minutes);
 
       &::before {
         border-radius: $size-br-radius;
@@ -209,7 +132,7 @@ body {
         width: 3%;
         height: 45%;
         background: $c-minutes;
-        box-shadow: 0 0 #{$size-glow}vw #{$size-glow-blur}vw $c-min-glow;
+        box-shadow: 0 0 $size-glow $size-glow-blur $c-min-glow;
       }
 
       &::after {
@@ -221,63 +144,7 @@ body {
         height: 6%;
         border-radius: 50%;
         background: $c-min-axis;
-        box-shadow: 0 0 #{$size-glow}vw #{$size-glow-blur}vw $c-min-glow;
-      }
-    }
-  }
-
-  &__hours {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-
-    @keyframes houring {
-      0% {
-        transform: rotate(0);
-      }
-      @for $step from 1 through 60 {
-
-        #{$step * 10/6}% {
-          transform: rotate(#{($step) * 6}deg);
-        }
-      }
-    }
-
-    &-hour {
-      position: absolute;
-
-      width: 100%;
-      height: 100%;
-
-      animation-name: houring;
-      animation-duration: 43200s;
-      animation-iteration-count: infinite;
-      animation-delay: var(--hours);
-
-      &::before {
-        border-radius: $size-br-radius;
-
-        content: "";
-        position: absolute;
-        top: 9.5%;
-        left: 47.75%;
-        width: 4.5%;
-        height: 40.5%;
-        background: $c-hours;
-        box-shadow: 0 0 #{$size-glow}vw #{$size-glow-blur}vw $c-hour-glow;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 45.5%;
-        left: 45.5%;
-        width: 9%;
-        height: 9%;
-        border-radius: 50%;
-        background: $c-hour-axis;
-        box-shadow: 0 0 #{$size-glow}vw #{$size-glow-blur}vw $c-hour-glow;
+        box-shadow: 0 0 $size-glow $size-glow-blur $c-min-glow;
       }
     }
   }

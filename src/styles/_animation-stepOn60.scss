@@ -1,0 +1,12 @@
+@keyframes stepOn60 {
+
+  0% {
+    transform: rotate(0);
+  }
+  @for $step from 1 through 60 {
+
+    #{$step * 10/6}% {
+      transform: rotate(#{($step) * 6}deg);
+    }
+  }
+}
