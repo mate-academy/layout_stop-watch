@@ -1,0 +1,45 @@
+.stopwatch {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  @include circle($stopwatch-size);
+  border: 20px solid $c-white;
+  background-color: $c-stopwatch-background;
+  box-shadow: 50px 50px 40px $c-stopwatch-shadow;
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    background-color: $c-white;
+    border-radius: 10px;
+    transform-origin: bottom;
+
+    &--min {
+      @include rectangle($hand-min-height, $hand-min-width);
+      @include rotateAnimation(3600s);
+    }
+
+    &--sec {
+      @include rectangle($hand-sec-height, $hand-sec-width);
+      @include rotateAnimation(60s);
+    }
+  }
+
+  &__center {
+    @include circle($center-size);
+    z-index: 1;
+    background-color: $c-center-background;
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 20%;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 700;
+    color: $c-title;
+    text-shadow: 3px 3px 5px $c-title-shadow;
+  }
+}
