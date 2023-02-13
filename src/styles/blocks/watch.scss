@@ -11,4 +11,62 @@
   background-color: rgb(248, 212, 166);
 
   @include circle($watch-size);
+
+  &__minute {
+    background-color: rgb(153, 64, 64);
+    box-shadow: 4px 3px 7px 0 rgba(0,0,0,0.75);
+    width: $minute-size;
+    height: 10px;
+
+    @extend %position;
+
+    animation-name: move;
+    animation-duration: 3600s;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+
+    @keyframes move {
+      from {
+        transform: rotate(-90deg);
+      }
+
+      to {
+        transform: rotate(270deg);
+      }
+    }
+  }
+
+  &__second {
+    background-color: rgb(78, 131, 131);
+    box-shadow: 4px 3px 7px 0 rgba(0,0,0,0.75);
+    width: $second-size;
+    height: 10px;
+
+    @extend %position;
+
+    animation-name: move;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @keyframes move {
+      from {
+        transform: rotate(-90deg);
+      }
+
+      to {
+        transform: rotate(270deg);
+      }
+    }
+  }
+
+  &__circle {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid black;
+    @include circle($dot-size);
+    border-radius: 50%;
+    position: absolute;
+    top: 49.3%;
+    left: 48.6%;
+  }
 }
