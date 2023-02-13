@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   @include circle($stopwatch-size);
-  border: 20px solid #fff;
+  border: 20px solid $c-white;
   background-color: $c-stopwatch-background;
   box-shadow: 50px 50px 40px $c-stopwatch-shadow;
 
@@ -17,12 +17,12 @@
 
     &--min {
       @include rectangle($hand-min-height, $hand-min-width);
-      animation: rotate 3600s infinite linear;
+      @include rotateAnimation(3600s);
     }
 
     &--sec {
       @include rectangle($hand-sec-height, $hand-sec-width);
-      animation: rotate 60s infinite linear;
+      @include rotateAnimation(60s);
     }
   }
 
@@ -40,6 +40,6 @@
     line-height: 30px;
     font-weight: 700;
     color: $c-title;
-    text-shadow: 3px 3px 5px #052d3a;
+    text-shadow: 3px 3px 5px $c-title-shadow;
   }
 }

@@ -1,10 +1,13 @@
-@mixin circle($diametr) {
-  width: $diametr;
-  height: $diametr;
-  border-radius: 50%;
-}
-
 @mixin rectangle($hight, $width) {
   height: $hight;
   width: $width;
+}
+
+@mixin circle($diametr) {
+  @include rectangle($diametr, $diametr);
+  border-radius: 50%;
+}
+
+@mixin rotateAnimation($time) {
+  animation: rotate $time infinite linear;
 }
