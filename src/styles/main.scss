@@ -3,6 +3,13 @@
   margin: 0;
 }
 
+@mixin clock-arrows-animation {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: rotation;
+  transform-origin: bottom;
+}
+
 .clockwatch {
   width: 500px;
   height: 500px;
@@ -47,8 +54,8 @@
     background-color: #fff;
     border-radius: 50%;
 
-    animation: rotation-sec 60s infinite linear;
-    transform-origin: bottom;
+    @include clock-arrows-animation();
+    animation-duration: 60s;
   }
 
   &__minute {
@@ -62,21 +69,12 @@
     background-color: red;
     border-radius: 50%;
 
-    animation: rotation-min 3600s infinite linear;
-    transform-origin: bottom;
+    @include clock-arrows-animation();
+    animation-duration: 3600s;
   }
 }
 
-@keyframes rotation-sec {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotation-min {
+@keyframes rotation {
   from {
     transform: rotate(0deg);
   }
