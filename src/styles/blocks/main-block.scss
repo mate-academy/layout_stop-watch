@@ -1,0 +1,59 @@
+@use "../_variables" as *;
+@use "../utils/_extends";
+
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+.watch {
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  background-color: antiquewhite;
+  @extend %center;
+
+  &__wrapper {
+    position: relative;
+    width: #{$basic-size};
+    height: #{$basic-size};
+    background-color: white;
+    border-radius: 50%;
+    @extend %center;
+  }
+
+  &__middle-part {
+    z-index: 2;
+    width: #{$middle-part-size};
+    height: #{$middle-part-size};
+    background-color: rgb(255, 75, 75);
+    border-radius: 50%;
+  }
+
+  &__hand-minutes {
+    top: calc(50% - #{$seconds-hand-height} / 2);
+    height: calc(#{$seconds-hand-height} / 2);
+    background-color: rgb(77, 123, 201);
+    @extend %hand-rules;
+    @extend %positioning;
+    animation: move 3600s linear infinite;
+  }
+
+  &__hand-seconds {
+    top: calc(50% - #{$seconds-hand-height});
+    height: #{$seconds-hand-height};
+    background-color: rgb(255, 225, 75);
+    @extend %hand-rules;
+    @extend %positioning;
+    animation: move 60s steps(60, end) infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
