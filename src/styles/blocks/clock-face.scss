@@ -1,0 +1,32 @@
+.clock-face__center {
+  @extend %clock-face__center;
+}
+
+.clock-face {
+  @include circle($circle-size);
+  @extend %clock-face-centering;
+
+  border: 0.5vh solid $c-main;
+  background-image: url(../img/clock-face.png);
+  background-position: center;
+  background-size: cover;
+
+  &__hand {
+    position: absolute;
+    top: 15vh;
+    height: 35%;
+    transform-origin: bottom;
+
+    &--minute {
+      animation: rotate 3600s infinite;
+      background-color: $c-main;
+      width: 0.4vh;
+    }
+
+    &--second {
+      animation: rotate 60s infinite steps(60);
+      background-color: $c-main;
+      width: 0.3vh;
+    }
+  }
+}
