@@ -1,3 +1,4 @@
+
 .clock {
   @extend %position;
   @include circle(500px);
@@ -22,7 +23,7 @@
     margin: auto;
 
     border-radius: 50%;
-    animation: sec 60s steps(60, end) infinite;
+    @include animSteps(60s);
 
     &::before {
       position: absolute;
@@ -42,7 +43,7 @@
     margin: auto;
 
     border-radius: 50%;
-    animation: sec 3600s steps(60, end) infinite;
+    @include animSteps(3600s);
 
     &::before {
       position: absolute;
@@ -56,7 +57,7 @@
   }
 }
 
-@keyframes sec {
+@keyframes minute {
   to {
     transform: rotate(360deg);
   }
