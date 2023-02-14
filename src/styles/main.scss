@@ -1,0 +1,40 @@
+@import "./utils/extends";
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/keyframes";
+
+.container {
+  @extend %flex-display;
+  height: 100vh;
+}
+
+.clock {
+  @extend %flex-display;
+  position: relative;
+  @include circle($size-circle);
+
+  background: $background-watch;
+  border: $border-watch;
+
+  @extend %text-watch;
+
+  &__watch {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+
+    &--sec {
+      width: ($width-arrows / 2);
+      height: $height-arrows;
+      background-color: grey;
+      animation: move 60s infinite steps(60);
+    }
+
+    &--hour {
+      width: $width-arrows;
+      height: ($height-arrows / 2);
+      background-color: rgb(29, 29, 29);
+      animation: move 3600s infinite linear;
+    }
+  }
+}
