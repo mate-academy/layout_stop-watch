@@ -1,0 +1,38 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 150px;
+
+  &__dot {
+    position: absolute;
+    bottom: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(1, 23, 26);
+    border-radius: 50%;
+    border: 1px solid rgb(251, 251, 251);
+  }
+
+  &__sec {
+    position: absolute;
+    bottom: 0;
+    width: 4px;
+    height: 140px;
+    background-color: rgb(13, 162, 181);
+    border: 1px solid white;
+    border-radius: 2px;
+    @include animation(1s);
+  }
+
+  &__min {
+    position: absolute;
+    top: 0;
+    width: 8px;
+    height: 150px;
+    background-color: rgb(221, 136, 15);
+    border-radius: 4px;
+    @include animation(60s);
+  }
+}
