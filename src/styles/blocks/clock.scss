@@ -1,4 +1,3 @@
-
 .clock {
   position: relative;
   display: flex;
@@ -11,42 +10,28 @@
   background-color: rgb(227, 219, 219);
 
   &__minute {
-    position: absolute;
     width: 8px;
-    height: $hand-height;
     background-color: $blue-color;
-    border-radius: 5px;
     animation: move 3600s linear infinite;
-    transform-origin: bottom;
+
+    @include hand();
   }
 
   &__second {
-    position: absolute;
     width: 5px;
-    height: $hand-height;
-    border-radius: 5px;
     background-color: #d25559;
     animation: move 60s linear infinite;
-    transform-origin: bottom;
+
+    @include hand();
   }
 
   &__center {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+
+    @include circle($cetner-size);
+
     background-color: $blue-color;
     top: 50%;
     transform: translateY(-50%);
-  }
-}
-
-@keyframes move {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
   }
 }
