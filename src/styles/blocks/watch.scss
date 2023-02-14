@@ -30,7 +30,7 @@
 
     z-index: 2;
 
-    animation: rotating 60s;
+    animation: rotating 60s linear 0s infinite;
   }
 
   &__seconds-arrow {
@@ -39,6 +39,8 @@
     margin: 0 auto;
 
     background-color: black;
+
+    border-radius: 5px;
   }
 
   &__minutes {
@@ -50,7 +52,7 @@
 
     z-index: 1;
 
-    animation: rotating 3600s;
+    animation: rotating 3600s linear 0s infinite;
   }
 
   &__minutes-arrow {
@@ -59,6 +61,8 @@
     margin: 0 auto;
 
     background-color: darkgray;
+
+    border-radius: 5px;
   }
 }
 
