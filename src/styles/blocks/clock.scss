@@ -1,0 +1,33 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  width: 450px;
+  margin: 100px auto;
+  border: 1px solid black;
+  border-radius: 50%;
+
+  &_middle {
+    @include dimension-middle;
+    position: absolute;
+    background-color: #{$color-primary};
+  }
+
+  &_big-hand {
+    @include dimension-big;
+    position: absolute;
+    background-color: #{$color-primary};
+    animation: move #{$time-bh} steps(#{$step}, end) infinite;
+    transform-origin: bottom;
+  }
+  
+  &_small-hand {
+    @include dimension-small;
+    position: absolute;
+    background-color: #{$color-secondary};
+    animation: move #{$time-sh} steps(#{$step}, end) infinite;
+    transform-origin: bottom;
+  }
+}
