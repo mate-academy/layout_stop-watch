@@ -6,10 +6,7 @@
   height: $watch-size;
 
   &__center {
-    position: absolute;
     z-index: 3;
-    top: 50%;
-    left: 50%;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -18,38 +15,32 @@
   }
 
   &__min-hand {
-    position: absolute;
     z-index: 1;
-    top: 50%;
-    left: 50%;
     width: 10px;
     height: $min-hand-height;
-    border-radius: 10px;
     background-color: #cd5c5c;
     animation: rotate 3600s linear infinite normal;
-    transform-origin: top center;
   }
 
   &__sec-hand {
-    position: absolute;
     z-index: 2;
-    top: 50%;
-    left: 50%;
     width: 8px;
     height: $sec-hand-height;
-    border-radius: 10px;
     background-color: #008080;
     animation: rotate 60s linear infinite normal;
-    transform-origin: top center;
   }
 
-  @keyframes rotate {
-    from {
-      transform: rotate(180deg);
-    }
+  &__center,
+  &__min-hand,
+  &__sec-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
 
-    to {
-      transform: rotate(540deg);
-    }
+  &__min-hand,
+  &__sec-hand {
+    transform-origin: top center;
+    border-radius: 10px;
   }
 }
