@@ -3,9 +3,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
-  width: 400px;
+  height: 450px;
+  width: 450px;
   margin: 100px auto;
+  border: 1px solid black;
+  border-radius: 50%;
 
   &_middle {
     @include dimension-middle;
@@ -17,7 +19,7 @@
     @include dimension-big;
     position: absolute;
     background-color: #{$color-primary};
-    animation: run #{$time-bh} steps(#{$step}, end) infinite;
+    animation: move #{$time-bh} steps(#{$step}, end) infinite;
     transform-origin: bottom;
   }
   
