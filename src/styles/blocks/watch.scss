@@ -1,0 +1,51 @@
+.watch {
+  position: relative;
+  height: 100vh;
+
+  &__circle {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include circle ($circle-radius * 2);
+    background-color: black;
+    border: 5px solid gray;
+  }
+
+  &__arrow {
+    position: relative;
+    left: $circle-radius;
+    transform-origin: center bottom;
+
+    &--small {
+      top: $circle-radius;
+      height: $circle-radius / 2;
+      width: 7px;
+      border-radius: 3px;
+
+      animation: watch $minute linear infinite;
+      background-color: gray;
+    }
+
+    &--big {
+      top: $circle-radius / 2;
+      height: $circle-radius;
+      width: 10px;
+      border-radius: 5px;
+
+      animation: watch ($minute * 60) linear infinite;
+
+      background-color: orange;
+
+    }
+  }
+}
+@keyframes watch {
+  0% {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
