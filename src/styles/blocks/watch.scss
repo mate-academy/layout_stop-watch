@@ -14,27 +14,25 @@
   }
 
   &__arrow {
+    position: relative;
+    left: $circle-radius;
+    transform-origin: center bottom;
+
     &--small {
-      position: relative;
-      left: $circle-radius;
       top: $circle-radius;
       height: $circle-radius / 2;
       width: 7px;
       border-radius: 3px;
-      transform-origin: center bottom;
 
       animation: watch $minute linear infinite;
       background-color: gray;
     }
 
     &--big {
-      position: relative;
-      left: $circle-radius;
       top: $circle-radius / 2;
       height: $circle-radius;
       width: 10px;
       border-radius: 5px;
-      transform-origin: center bottom;
 
       animation: watch ($minute * 60) linear infinite;
 
