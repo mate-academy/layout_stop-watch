@@ -13,46 +13,39 @@
     border: 5px solid gray;
   }
 
-  &__arrow-big {
-    position: relative;
-    left: $circle-radius;
-    top: $circle-radius / 2;
-    height: $circle-radius;
-    width: 10px;
-    border-radius: 5px;
-    transform-origin: center bottom;
+  &__arrow {
+    &--small {
+      position: relative;
+      left: $circle-radius;
+      top: $circle-radius;
+      height: $circle-radius / 2;
+      width: 7px;
+      border-radius: 3px;
+      transform-origin: center bottom;
 
-    animation:watch ($minute * 60) linear infinite;
+      animation: watch $minute linear infinite;
+      background-color: gray;
+    }
 
-    background-color: orange;
+    &--big {
+      position: relative;
+      left: $circle-radius;
+      top: $circle-radius / 2;
+      height: $circle-radius;
+      width: 10px;
+      border-radius: 5px;
+      transform-origin: center bottom;
 
-  }
+      animation: watch ($minute * 60) linear infinite;
 
-  &__arrow-small {
-    position: relative;
-    left: $circle-radius;
-    top: $circle-radius;
-    height: $circle-radius / 2;
-    width: 7px;
-    border-radius: 3px;
-    transform-origin: center bottom;
+      background-color: orange;
 
-    animation:watch $minute linear infinite;
-    background-color: gray;
+    }
   }
 }
 @keyframes watch {
   0% {
-   transform: translate(-50%, -100%) rotate(0deg);
-  }
-  25% {
-    transform: translate(-50%, -100%) rotate(90deg);
-  }
-  50% {
-    transform: translate(-50%, -100%) rotate(180deg);
-  }
-  75% {
-    transform:translate(-50%, -100%) rotate(270deg);
+    transform: translate(-50%, -100%) rotate(0deg);
   }
   100% {
     transform: translate(-50%, -100%) rotate(360deg);
