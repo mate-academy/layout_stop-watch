@@ -1,0 +1,55 @@
+
+.watch {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 30px auto;
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+
+  &__circle {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: gold;
+    z-index: 1;
+  }
+
+  &__min {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 2px;
+    height: 150px;
+    transform: translate(-50%, -100%);
+    border: 2px solid black;
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+  }
+
+  &__sec {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 1px;
+    height: 200px;
+    transform: translate(-50%, -100%);
+    border: 1px solid transparent;
+    background-color: red;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
