@@ -1,7 +1,6 @@
 .stopwatch {
   position: relative;
   @include square($watch-size);
-  margin: 0 auto;
   border-radius: $bd-radius;
   border: 5px solid $bg-color;
 
@@ -37,6 +36,7 @@
   }
   
   &__tik-2 {
+    @extend %tiks-1-2;
     bottom: 0%;
   }
   
