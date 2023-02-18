@@ -1,0 +1,38 @@
+@mixin sizes($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin circle($size) {
+  @include sizes($size);
+  border-radius: 50%;
+}
+
+@mixin boxShadow {
+  box-shadow: 3px 3px 7px 0 $color-shadow;
+}
+
+@mixin sizeCenter($size, $color, $index) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: $index;
+  transform: translate(-50%, -50%);
+  @include circle($size);
+  background-color: $color;
+  @include boxShadow;
+}
+
+@mixin sizeLine($line, $length, $color, $index, $time) {
+  position: absolute;
+  top: 50%;
+  left: ($size-watch - $line) / 2;
+  z-index: $index;
+  width: $line;
+  height: $length;
+  background-color: $color;
+  border-radius: $line / 2;
+  @include boxShadow;
+  transform-origin: top center;
+  animation: rotate $time linear infinite normal;
+}
