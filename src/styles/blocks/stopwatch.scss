@@ -1,0 +1,56 @@
+.stopwatch {
+  position: relative;
+  @include square($watch-size);
+  border-radius: $bd-radius;
+  border: 5px solid $bg-color;
+
+  &__minute {
+    @extend %position;
+    height: 230px;
+    width: 4px;
+    background-color: $bg-color;
+    transform-origin: top center;
+    animation: rotate 3600s steps(3600) infinite forwards;
+  }
+
+  &__second {
+    @extend %position;
+    height: 180px;
+    width: 4px;
+    background-color: $sub-bg-color;
+    transform-origin: top center;
+    animation: rotate 60s steps(60) infinite forwards;
+  }
+
+  &__circle {
+    @extend %position;
+    @include square($circle-size);
+    background-color: $sub-bg-color;
+    border-radius: $bd-radius;
+    z-index: 1;
+  }
+
+  &__tik-1 {
+    @extend %tiks-1-2;
+    top: 0%;
+  }
+  
+  &__tik-2 {
+    @extend %tiks-1-2;
+    bottom: 0%;
+  }
+  
+  &__tik-3 {
+    @extend %tiks-3-4;
+    bottom: 50%;
+    left: 0%;
+    transform: translate(0%, 50%);
+  }
+  
+  &__tik-4 {
+    @extend %tiks-3-4;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
+  }
+}
