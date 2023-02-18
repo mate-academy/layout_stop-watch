@@ -1,0 +1,30 @@
+.stopwatch {
+  position: relative;
+  @extend %flex-center;
+  flex-shrink: 0;
+  @include circle($watch-size);
+  background-color: white;
+  border: $base-color 15px solid;
+
+  &__watch-center {
+    position: absolute;
+    @include circle($center-size);
+    background-color: $base-color;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    @extend %minute-hand-size;
+    bottom: 50%;
+    background-color: $minute-color;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    @extend %second-hand-size;
+    bottom: 50%;
+    background-color: $second-color;
+    animation: rotate 60s linear infinite;
+  }
+}
