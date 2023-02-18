@@ -1,0 +1,56 @@
+
+@mixin hand {
+  animation-name: move;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  position: absolute;
+  width: 20px;
+  border-radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.watch {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__point {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #155771;
+    border-radius: 50%;
+  }
+
+  &__hand-second {
+    @include hand;
+    height: 200px;
+    background-color: #155771;
+    animation-duration: 60s;
+    animation-timing-function: steps(60);
+  }
+
+  &__hand-min {
+    @include hand;
+    height: 100px;
+    background-color: #913f7c;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    z-index: -1;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg) translateY(-50%);
+  }
+
+  to {
+    transform: rotate(360deg) translateY(-50%);
+  }
+}
