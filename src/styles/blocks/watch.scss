@@ -1,0 +1,22 @@
+.watch {
+  position: relative;
+  @include circle($size-watch);
+  background-image: url(../images/clocks.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: $color-background;
+  box-shadow: inset 0 0 40px 2px $color-shadow;
+
+  &__minutes {
+    @include sizeLine($size-line-min, $size-length-min, $color-min, 1, 3600s);
+  }
+
+  &__seconds {
+    @include sizeLine($size-line-sec, $size-length-sec, $color-sec, 2, 60s);
+  }
+
+  &__center {
+    @include sizeCenter($size-center, $color-center, 3);
+  }
+}
