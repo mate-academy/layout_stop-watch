@@ -1,0 +1,34 @@
+.stopwatch-container {
+  @extend %flex-center;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.stopwatch {
+  position: relative;
+  @extend %flex-center;
+  flex-shrink: 0;
+  @include circle($watch-size);
+  background-color: white;
+  border: $base-color 15px solid;
+
+  &__watch-center {
+    position: absolute;
+    @include circle($center-size);
+    background-color: $base-color;
+  }
+
+  &__minute-hand {
+    @extend %hands-position;
+    @extend %minute-hand-size;
+    background-color: $minute-color;
+    animation: rotate $minutes-in-an-hour linear infinite;
+  }
+
+  &__second-hand {
+    @extend %hands-position;
+    @extend %second-hand-size;
+    background-color: $second-color;
+    animation: rotate $seconds-in-a-minute linear infinite;
+  }
+}
