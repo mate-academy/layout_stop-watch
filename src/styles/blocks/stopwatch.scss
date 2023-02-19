@@ -1,3 +1,9 @@
+.stopwatch-container {
+  @extend %flex-center;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
 .stopwatch {
   position: relative;
   @extend %flex-center;
@@ -13,18 +19,16 @@
   }
 
   &__minute-hand {
-    position: absolute;
+    @extend %hands-position;
     @extend %minute-hand-size;
-    bottom: 50%;
     background-color: $minute-color;
-    animation: rotate 3600s linear infinite;
+    animation: rotate $minutes-in-an-hour linear infinite;
   }
 
   &__second-hand {
-    position: absolute;
+    @extend %hands-position;
     @extend %second-hand-size;
-    bottom: 50%;
     background-color: $second-color;
-    animation: rotate 60s linear infinite;
+    animation: rotate $seconds-in-a-minute linear infinite;
   }
 }
