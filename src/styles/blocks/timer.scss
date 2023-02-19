@@ -7,7 +7,7 @@
   border: 1px solid;
   border-radius: 50%;
 
-  &__arrow {
+  &__arrows {
     position: absolute;
     top: 0;
     left: $left-s-retreat;
@@ -17,19 +17,21 @@
     border-radius: 5px;
     transform-origin: bottom;
 
-    &:first-of-type {
+    &--first {
       top: $top-m-retreat;
       left: $left-s-retreat;
 
       height: $arrow-minute-height;
-      background-color: $second-arrow-color;
-      animation: arrow 3600s steps(3600) infinite;
+      background-color: $first-arrow-color;
+      animation: arrow $first-arrow-duration
+        steps($first-arrow-steps) infinite;
     }
 
-    &:nth-child(2) {
+    &--second {
       left: $left-m-retreat;
-      background-color: $first-arrow-color;
-      animation: arrow 60s steps(60) infinite;
+      background-color: $second-arrow-color;
+      animation: arrow $second-arrow-duration
+        steps($second-arrow-steps) infinite;
     }
   }
 
@@ -41,7 +43,7 @@
     width: $circle-size;
     height: $circle-size;
 
-    background-color: $first-arrow-color;
+    background-color: $second-arrow-color;
     border-radius: 50%;
     transform: translate(50%, 50%);
   }
