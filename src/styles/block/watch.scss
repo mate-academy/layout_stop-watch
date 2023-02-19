@@ -1,27 +1,41 @@
 .watch {
   padding: 20px;
-
-  &__hand-second {
-    width: 170px;
-    height: 5px;
-
+  &__hand {
     @include hand-position;
-    right: -15px;
 
     background-color: $main-color;
     border-radius: $hand-border-radius;
-    transform: rotate(90deg);
 
-    animation: time-stak 60s linear infinite;
-    transform-origin: right;
-    animation-timing-function: steps(60, jump-start);
-    animation-delay: 3s;
+    &--second {
+      width: 170px;
+      height: 5px;
+
+      right: -15px;
+
+      transform: rotate(90deg);
+
+      animation: time-stak 60s linear infinite;
+      transform-origin: right;
+      animation-timing-function: steps(60, jump-start);
+    }
+
+    &--minute {
+      width: 150px;
+      height: 10px;
+
+      left: -15px;
+
+      transform: rotate(-90deg);
+
+      animation: time-stak 3600s linear infinite;
+      transform-origin: left;
+    }
 
   }
 
   &__center {
     @include center-proportions($center-size);
-    @include flex-position;
+    @extend %flex-position;
     position: relative;
 
     background-color: $main-color;
@@ -39,27 +53,10 @@
 
     }
   }
-
-  &__minute-hand {
-    width: 150px;
-    height: 10px;
-
-    @include hand-position;
-    left: -15px;
-
-    background-color: $secondary-color;
-    border-radius: $hand-border-radius;
-    transform: rotate(-90deg);
-
-    animation: time-stak 3600s linear infinite;
-    transform-origin: left;
-    animation-delay: 3s;
-  }
-
 }
 
 @keyframes time-stak {
   100% {
-    rotate: 360deg;
+    rotate: 1turn;
   }
 }
