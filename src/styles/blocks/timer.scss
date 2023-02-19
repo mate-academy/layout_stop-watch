@@ -1,0 +1,50 @@
+.timer {
+  position: relative;
+
+  width: $box-size;
+  height: $box-size;
+
+  border: 1px solid;
+  border-radius: 50%;
+
+  &__arrows {
+    position: absolute;
+    top: 0;
+    left: $left-s-retreat;
+
+    width: $arrow-width;
+    height: $arrow-second-height;
+    border-radius: 5px;
+    transform-origin: bottom;
+
+    &--first {
+      top: $top-m-retreat;
+      left: $left-s-retreat;
+
+      height: $arrow-minute-height;
+      background-color: $first-arrow-color;
+      animation: arrow $first-arrow-duration
+        steps($first-arrow-steps) infinite;
+    }
+
+    &--second {
+      left: $left-m-retreat;
+      background-color: $second-arrow-color;
+      animation: arrow $second-arrow-duration
+        steps($second-arrow-steps) infinite;
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    top: $top-circle-retreat;
+    left: $left-circle-retreat;
+
+    width: $circle-size;
+    height: $circle-size;
+
+    background-color: $second-arrow-color;
+    border-radius: 50%;
+    transform: translate(50%, 50%);
+  }
+}
