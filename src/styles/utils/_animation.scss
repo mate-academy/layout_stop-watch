@@ -1,0 +1,23 @@
+#start:checked ~ * .watch__hand {
+  animation-play-state: running;
+}
+
+#stop:checked ~ * .watch__hand {
+  animation-play-state: paused;
+}
+
+#reset:checked ~ * .watch__hand {
+  animation: none;
+}
+
+@keyframes seconds {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minutes {
+  100% {
+    transform: rotate(360deg);
+  }
+}
