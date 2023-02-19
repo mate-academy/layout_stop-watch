@@ -38,8 +38,12 @@
   }
 
   &:hover {
-    animation-play-state: paused;
     background-color: lightgray;
+
+    & .stopwatch__minute-hand,
+    & .stopwatch__second-hand {
+      animation-play-state: paused;
+    }
   }
 
   @keyframes rotate {
