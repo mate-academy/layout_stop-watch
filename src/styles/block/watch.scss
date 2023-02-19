@@ -1,0 +1,62 @@
+.watch {
+  padding: 20px;
+  &__hand {
+    @include hand-position;
+
+    background-color: $main-color;
+    border-radius: $hand-border-radius;
+
+    &--second {
+      width: 170px;
+      height: 5px;
+
+      right: -15px;
+
+      transform: rotate(90deg);
+
+      animation: time-stak 60s linear infinite;
+      transform-origin: right;
+      animation-timing-function: steps(60, jump-start);
+    }
+
+    &--minute {
+      width: 150px;
+      height: 10px;
+
+      left: -15px;
+
+      transform: rotate(-90deg);
+
+      animation: time-stak 3600s linear infinite;
+      transform-origin: left;
+    }
+
+  }
+
+  &__center {
+    @include center-proportions($center-size);
+    @extend %flex-position;
+    position: relative;
+
+    background-color: $main-color;
+    border-radius: $center-border-radius;
+
+    &::after {
+      content: "";
+      @include center-background-proportions($center-background-size);
+
+      position: absolute;
+      z-index: $position-index;
+
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: $center-border-radius;
+
+    }
+  }
+}
+
+@keyframes time-stak {
+  100% {
+    rotate: 1turn;
+  }
+}
