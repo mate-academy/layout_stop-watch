@@ -1,23 +1,15 @@
 @import "./variables";
 @import "./reset";
 @import "./animation-stepOn60";
+@import "./extends";
+@import "./mixins";
 
-%abs100 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  background: conic-gradient(
-    rgba(255, 255, 255, 0.8),
-    rgba(0, 0, 0, 0.2),
-    rgba(255, 255, 255, 0.8)
-  );
+.page {
+  background: $c-bg-gradient;
   height: 100vh;
   margin: 0;
-  display: flex;
-  justify-content: center;
+
+  @extend %flex-center;
 }
 
 .watch {
@@ -32,9 +24,8 @@ body {
 
   position: relative;
 
-  display: flex;
+  @extend %flex-center;
   align-items: center;
-  justify-content: center;
 
   border-radius: 50%;
   border-style: dotted;
@@ -74,10 +65,7 @@ body {
     &-second {
 
       @extend %abs100;
-
-      animation-name: stepOn60;
-      animation-duration: 60s;
-      animation-iteration-count: infinite;
+      @include rotation(60s);
 
       &::before {
         border-radius: $size-br-radius;
@@ -118,9 +106,7 @@ body {
 
       @extend %abs100;
 
-      animation-name: stepOn60;
-      animation-duration: 3600s;
-      animation-iteration-count: infinite;
+      @include rotation(3600s);
 
       &::before {
         border-radius: $size-br-radius;
