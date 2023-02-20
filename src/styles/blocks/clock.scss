@@ -1,0 +1,54 @@
+.page__clock {
+  position: relative;
+}
+
+.clock {
+  width: $clock-size;
+  height: $clock-size;
+  box-shadow: 1px 1px 20px #1b8525;
+  border-radius: $circle;
+  background-image: url(../images/clock-1302406_1280.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &__image {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: $image-size;
+    height: $image-size;
+  }
+
+  &__min {
+    @include position;
+    @include transform;
+    rotate: 180deg;
+    width: 6px;
+    height: 180px;
+    border-radius: 10px;
+    background-color: #000;
+    animation: move 3600s steps(60) infinite forwards;
+  }
+
+  &__sec {
+    @include position;
+    @include transform;
+    rotate: 180deg;
+    width: 6px;
+    height: 140px;
+    border-radius: 10px;
+    background-color: $red-color;
+    animation: move 60s steps(60) infinite forwards;
+  }
+
+  &__point {
+    @include position;
+    transform: translate(-50%, -50%);
+    width: $point-size;
+    height: $point-size;
+    border-radius: $circle;
+    background-color: $red-color;
+  }
+}
