@@ -1,14 +1,53 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <section class="container">
+      <article class="watch">
+        <form class="watch__buttons-container">
+          <input
+            type="radio"
+            name="timer"
+            id="start"
+            class="watch__button-radio"
+          >
+
+          <label class="watch__btn watch__btn--start" for="start">Start</label>
+
+          <input
+            type="radio"
+            name="timer"
+            id="stop"
+            class="watch__button-radio"
+          >
+
+          <label class="watch__btn watch__btn--stop" for="stop">Stop</label>
+
+          <input
+            type="radio"
+            name="timer"
+            id="reset"
+            class="watch__button-radio"
+          >
+
+          <label class="watch__btn watch__btn--reset" for="reset">Reset</label>
+
+          <div class="watch__hands-container">
+            <div class="watch__axis"></div>
+
+            <span class="watch__hand watch__hand--first-hand"></span>
+
+            <span class="watch__hand watch__hand--second-hand"></span>
+          </div>
+        </form>
+      </article>
+    </section>
+  </body>
 </html>
