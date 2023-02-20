@@ -1,0 +1,39 @@
+.clock {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  &__circle-center {
+    position: relative;
+    @include square($circle-centr-size);
+    background-color: $color-hour-arrow;
+    align-self: center;
+  }
+
+  &__arrow-hour {
+    @extend %position-center;
+    height: $height-hour-arrow;
+    background-color: $color-hour-arrow;
+    @extend %animation-infinite;
+    animation-duration: 43200s;
+  }
+
+  &__arrow-small {
+    @extend %position-center;
+    height: $height-small-arrow;
+    background-color: $color-small-arrow;
+    @extend %animation-infinite;
+    animation-duration: 3600s;
+  }
+
+  &__arrow-big {
+    @extend %position-center;
+    height: $height-big-arrow;
+    background-color: $color-big-arrow;
+    @extend %animation-infinite;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+  }
+}
