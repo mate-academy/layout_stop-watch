@@ -2,9 +2,9 @@
   position: relative;
   width: 660px;
   height: 660px;
-  border: 1px solid #cdc1c2;
+  border: 1px solid $border-color;
   border-radius: 50%;
-  background-color: #e6d9da;
+  background-color: $main-color;
 
   &__hands {
     @include center;
@@ -13,14 +13,14 @@
   &__min-arrow {
     width: 15px;
     height: 250px;
-    background-color: #92a8d0;
+    background-color: $secondary-color;
     animation: move 3600s steps(60) infinite;
   }
 
   &__sec-arrow {
     width: 10px;
     height: 300px;
-    background-color: #cc95c0;
+    background-color: $additional-color;
     animation: move 60s linear infinite;
   }
 
@@ -30,7 +30,7 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: #92a8d0;
+    background-color: $secondary-color;
   }
 }
 
