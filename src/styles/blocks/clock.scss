@@ -24,33 +24,23 @@
   &__min {
     @include position;
     @include transform;
+    rotate: 180deg;
     width: 6px;
     height: 180px;
     border-radius: 10px;
     background-color: #000;
-    animation: move 180s steps(12) infinite forwards;
-    transform-origin: top left;
+    animation: move 3600s steps(60) infinite forwards;
   }
 
   &__sec {
     @include position;
     @include transform;
+    rotate: 180deg;
     width: 6px;
     height: 140px;
     border-radius: 10px;
     background-color: $red-color;
-    animation: move 15s steps(60) infinite forwards;
-    transform-origin: top left;
-  }
-
-  @keyframes move {
-    from {
-      transform: rotate(180deg);
-    }
-
-    to {
-      transform: rotate(540deg);
-    }
+    animation: move 60s steps(60) infinite forwards;
   }
 
   &__point {
