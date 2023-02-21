@@ -1,0 +1,28 @@
+.second-symbol {
+  position: absolute;
+  width: 10px;
+  height: 40px;
+  background-color: black;
+  transform-origin: $center-rotate-second-symbol-X
+    $center-rotate-second-symbol-Y;
+
+  $rotate-second-symbol:
+    "1" 0deg,
+    "2" 30deg,
+    "3" 60deg,
+    "4" 90deg,
+    "5" 120deg,
+    "6" 150deg,
+    "7" 180deg,
+    "8" 210deg,
+    "9" 240deg,
+    "10" 270deg,
+    "11" 300deg,
+    "12" 330deg;
+
+  @each $number, $angle in $rotate-second-symbol {
+    &--position_#{$number} {
+      transform: rotate($angle);
+    }
+  }
+}
