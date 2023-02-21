@@ -1,0 +1,56 @@
+.stopwatch {
+  @include round($widthStopwatch);
+
+  border: $widthMinuteHand solid $colorCorpsStopwatch;
+
+  &__center {
+    @extend %positionCenterWidth;
+    transform: translate(-50%, -50%);
+    top: 50%;
+
+    @include round($widthCenter);
+
+    background-color: $colorCorpsStopwatch;
+  }
+
+  &__minute-hand {
+    @extend %positionCenterWidth;
+    top: ($widthStopwatch - $lengthMinuteHand) / 2;
+
+    @include hand($lengthMinuteHand, $widthMinuteHand);
+    background-color: blue;
+
+    animation: rotate 60s linear infinite normal;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    @extend %positionCenterWidth;
+    top: ($widthStopwatch - $lengthSecondHand) / 2;
+  
+    @include hand($lengthSecondHand, $widthSecondHand);
+    background-color: orange;
+
+    animation: rotate 1s linear infinite normal;
+    transform-origin: bottom;
+  }
+
+  &:hover {
+    background-color: lightgray;
+
+    & .stopwatch__minute-hand,
+    & .stopwatch__second-hand {
+      animation-play-state: paused;
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+}
