@@ -1,0 +1,75 @@
+.clockface {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: $clockface-size;
+  height: $clockface-size;
+  border-radius: 50%;
+  border: $thickness-border-clockface black solid;
+  box-sizing: border-box;
+
+  &__cenral-point {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: #9ae716;
+  }
+
+  &__minutas-hand {
+    position: absolute;
+    margin-top: $height-minutas-hand * (-1);
+    width: $thickness-minutas-hand;
+    height: $height-minutas-hand;
+    background-color: #e42a2a;
+    transform-origin: $center-rotate-minutas-hand-X
+      $center-rotate-minutas-hand-Y;
+    animation: rotate-minute-hand 3600s steps(60, end) 12;
+  }
+
+  &__second-hand {
+    position: absolute;
+    margin-top: $height-second-hand * (-1);
+    width: $thickness-second-hand;
+    height: $height-second-hand;
+    background-color: #85a43d;
+    transform-origin: $center-rotate-second-symbol-X
+      $center-rotate-second-hand-Y;
+    animation: rotate-cecond-hand 60s linear 12;
+  }
+
+  &__second-symbols {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: $second-symbols-size;
+    width: $second-symbols-size;
+  }
+
+  &__second-symbol {
+    margin-top: $retreat-second-symbol;
+  }
+}
+
+@keyframes rotate-cecond-hand {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+@keyframes rotate-minute-hand {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
