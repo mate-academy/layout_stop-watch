@@ -2,7 +2,6 @@
   @include circle($radius * 2);
   position: relative;
   margin: 0 auto;
-  border: 3px solid black;
 
   &__center {
     @include circle($radius * 0.1);
@@ -10,19 +9,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: black;
-
+    background-color: lightblue;
   }
 
   &__second {
     position: absolute;
     height: $radius * 0.9;
-    width: $radius * 0.01;
+    width: $radius * 0.02;
     left: 50%;
     top: 5%;
     transform: translateX(-50%);
+    border-radius: 5px;
     animation: rotate 60s linear infinite normal;
-    background-color: red;
+    background-color: lightblue;
     transform-origin: bottom center;
   }
 
@@ -32,9 +31,10 @@
     width: $radius * 0.02;
     left: 50%;
     top: 15%;
+    border-radius: 5px;
     transform: translateX(-50%);
     z-index: -1;
-    background-color: gray;
+    background-color: coral;
     animation: rotate 3600s linear infinite normal;
     transform-origin: bottom center;
   }
