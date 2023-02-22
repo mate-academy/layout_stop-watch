@@ -1,0 +1,47 @@
+.clock {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: blue;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 50%;
+    background-color: #000;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%);
+
+    &.clock__minute {
+      animation: rotate 3600s linear infinite;
+      height: 40%;
+    }
+
+    &.clock__hour {
+      animation: rotate 36000s linear infinite;
+      background-color: pink;
+    }
+
+    &.clock__second {
+      animation: rotate 60s linear infinite;
+      height: 35%;
+      background-color: #fff;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
