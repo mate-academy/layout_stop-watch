@@ -1,0 +1,41 @@
+.watch {
+  @include circle($radius * 2);
+  position: relative;
+  margin: 0 auto;
+
+  &__center {
+    @include circle($radius * 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightblue;
+  }
+
+  &__second {
+    position: absolute;
+    height: $radius * 0.9;
+    width: $radius * 0.02;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    animation: rotate 3600s linear infinite normal;
+    background-color: lightblue;
+    transform-origin: bottom center;
+  }
+
+  &__minute {
+    position: absolute;
+    height: $radius * 0.7;
+    width: $radius * 0.02;
+    left: 50%;
+    top: 15%;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    z-index: -1;
+    background-color: coral;
+    animation: rotate 60s linear infinite normal;
+    transform-origin: bottom center;
+  }
+}
