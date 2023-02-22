@@ -1,0 +1,12 @@
+@mixin hand-animation($duration) {
+  animation: tic $duration linear;
+  animation-iteration-count: infinite;
+  transform-origin: bottom center;
+}
+
+@mixin hand-position($left-offset) {
+  position: absolute;
+  z-index: -1;
+  bottom: 50%;
+  left: $left-offset;
+}

@@ -1,0 +1,28 @@
+.watch {
+  &__center {
+    position: relative;
+
+    width: $center-radius * 2;
+    height: $center-radius * 2;
+    border-radius: $center-radius;
+    background-color: $center-color;
+  }
+
+  &__small-hand {
+    @include hand-position($small-hand-left-offset);
+    @include hand-animation(3600s);
+
+    width: $small-hand-width;
+    height: $small-hand-height;
+    background-color: $small-hand-color;
+  }
+
+  &__long-hand {
+    @include hand-position($big-hand-left-offset);
+    @include hand-animation(60s);
+
+    width: $big-hand-width;
+    height: $big-hand-height;
+    background-color: $big-hand-color;
+  }
+}
