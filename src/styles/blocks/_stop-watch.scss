@@ -1,0 +1,114 @@
+@import "utils/variables";
+@import "utils/extends";
+
+.stop-watch {
+  position: absolute;
+  @include square($watch-size);
+  @extend %center;
+  background-color: ghostwhite;
+  border: 12px solid $secondary-color;
+  border-radius: 100%;
+  &__line {
+    background-color: $main-color;
+    position: absolute;
+    margin: auto;
+    &--top {
+      width: 5px;
+      height: 8px;
+      left: 0;
+      right: 0;
+    }
+    &--bottom {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 5px;
+      height: 8px;
+    }
+    &--left {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 8px;
+      height: 5px;
+    }
+    &--right {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 8px;
+      height: 5px;
+    }
+  }
+  &__center {
+    position: absolute;
+    @extend %center;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    background-color: $secondary-color;
+    border-radius: 100%;
+  }
+  &__hour {
+    position: absolute;
+    @extend %center;
+    width: 5px;
+    height: 100%;
+    animation: time 86400s infinite linear;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 30%;
+      top: 56px;
+      background-color: $main-color;
+    }
+  }
+  &__minute {
+    position: absolute;
+    @extend %center;
+    width: 3px;
+    height: 100%;
+    animation: time 3600s infinite linear;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 94px;
+      width: 3px;
+      height: 20%;
+      background-color: red;
+    }
+  }
+  &__second {
+    position: absolute;
+    @extend %center;
+    width: 1px;
+    height: 100%;
+    animation: time 60s infinite linear;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      width: 1px;
+      height: 40%;
+      background-color: $main-color;
+    }
+  }
+  &:hover {
+    .stop-watch__hour {
+      animation: time 60s infinite linear;
+    }
+    .stop-watch__minute {
+      animation: time 30s infinite linear;
+    }
+    .stop-watch__second {
+      animation: time 15s infinite linear;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
