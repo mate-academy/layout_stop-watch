@@ -1,0 +1,40 @@
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 10px solid gray;
+  border-radius: 50%;
+
+  &__minute {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - #{$width-minute / 2});
+    height: 120px;
+    width: $width-minute;
+    background-color: gray;
+    transform-origin: center top;
+    animation: rotate 3600s steps(60) infinite;
+  }
+
+  &__second {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - #{$width-second / 2});
+    height: 180px;
+    width: $width-second;
+    background-color: red;
+    transform-origin: center top;
+    animation: rotate 60s steps(60) infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    transform: translate(-50%, -50%);
+  }
+}
