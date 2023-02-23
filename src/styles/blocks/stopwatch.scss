@@ -1,0 +1,56 @@
+@import "../utils/mixins";
+@import "./animation.scss";
+@import "../utils/placeholders";
+
+.container {
+  display: flex;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.stopwatch {
+  position: relative;
+  @include watch-size($watch-size);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  background-color: #fff;
+  border: 5px solid $secondary-color;
+  border-radius: 50%;
+
+  &__middle-part {
+    z-index: 1;
+
+    @include middle-part-size($middle-part-size);
+    margin: auto;
+
+    background-color: $secondary-color;
+    border: 4px solid $main-color;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    @extend %hand-position;
+
+    @include minute-hand-size($minute-hand-height);
+
+    @extend %hands-style;
+
+    animation: move 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    @extend %hand-position;
+
+    @include minute-hand-size($second-hand-height);
+
+    @extend %hands-style;
+
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+  }
+}
