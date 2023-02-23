@@ -1,0 +1,35 @@
+.watch {
+  @include watch-size;
+  border-radius: 50%;
+  border: thick double #789;
+
+  &__face {
+    @include circle-size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30%;
+    background-color: #87ceeb;
+    z-index: 1;
+  }
+
+  &__minutes {
+    @include minutes-size;
+    @extend %arrows-position;
+    background-color: black;
+    animation: rotate 3600s steps(60, end) infinite;
+    left: calc(50% - #{$minutes-width/ 2});
+    top: calc(50% - #{$minutes-height});
+  }
+
+  &__seconds {
+    @include seconds-size;
+    @extend %arrows-position;
+    background-color: #800000;
+    box-shadow: rgba(3, 102, 214, 0.3) 0 0 0 3px;
+    animation: rotate 60s steps(60, end) infinite;
+    left: calc(50% - #{$seconds-width/ 2});
+    top: calc(50% - #{$seconds-height});
+  }
+}
