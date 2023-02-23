@@ -1,0 +1,84 @@
+.egg-white {
+  width: 550px;
+  height: 680px;
+  margin: 15px auto;
+  background-color: $egg-white-color;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watch {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  top: 7%;
+  background-color: $egg-yolk-color;
+  border-radius: 50%;
+
+  &-center-dot {
+    position: relative;
+    top: 185px;
+    background-color: $egg-white-color;
+    height: $dot-size;
+    width: $dot-size;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &-hour {
+    background-color: $light-blue-color;
+    height: 120px;
+    width: 15px;
+    border: 1px solid $egg-yolk-color;
+    border-radius: $border-radius;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -0.75vw;
+    transform-origin: center 5%;
+    animation: infinite watch 86400s linear;
+    z-index: 1;
+  }
+
+  &-minute {
+    width: 15px;
+    height: 160px;
+    border: 1px solid $egg-yolk-color;
+    border-radius: $border-radius;
+    background-color: $light-blue-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -0.75vw;
+    transform-origin: center 5%;
+    animation: infinite watch 3600s linear;
+  }
+
+  &-second {
+    display: block;
+    width: 10px;
+    height: 180px;
+    background: $light-blue-color;
+    border: 1px solid $egg-yolk-color;
+    border-radius: $border-radius;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -0.75vw;
+    transform-origin: center 6%;
+    animation: infinite watch 60s linear;
+  }
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
