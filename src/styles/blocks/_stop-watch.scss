@@ -12,32 +12,18 @@
     background-color: $main-color;
     position: absolute;
     margin: auto;
-    &--top {
-      width: 5px;
-      height: 8px;
-      left: 0;
-      right: 0;
+    &:first-child {
+      @extend %top;
     }
-    &--bottom {
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 5px;
-      height: 8px;
+    &:nth-child(2) {
+      @extend %bottom;
     }
-    &--left {
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 8px;
-      height: 5px;
+
+    &:nth-child(3) {
+      @extend %left;
     }
-    &--right {
-      top: 0;
-      bottom: 0;
-      right: 0;
-      width: 8px;
-      height: 5px;
+    &:nth-child(4) {
+      @extend %right;
     }
   }
   &__center {
