@@ -3,8 +3,17 @@
 .container {
   position: relative;
   width: 900px;
-  height: 600px;
+  height: 700px;
   margin: 0 auto;
+}
+
+.clock {
+  margin: 0 auto;
+  position: relative;
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  border: 10px solid black;
 
   &:hover .hand {
     animation-play-state: paused;
@@ -23,18 +32,18 @@
 
 .second--hand {
   @include hand-style;
-  left: 50.3%;
+  left: 50.4%;
   z-index: 2;
   width: 10px;
   height: 300px;
   background-color: green;
-  animation: move 60s linear infinite;
+  animation: move 60s infinite steps(60);
 }
 
 .circle {
   position: absolute;
-  bottom: 290px;
-  left: 49.5%;
+  bottom: 48.4%;
+  left: 49.2%;
   z-index: 3;
   width: 25px;
   height: 25px;
@@ -50,4 +59,34 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.twelve,
+.three,
+.six,
+.nine {
+  position: absolute;
+  font-weight: bold;
+  font-size: 40px;
+  color: #090857;
+}
+
+.twelve {
+  top: 5px;
+  left: 295px;
+}
+
+.three {
+  top: 285px;
+  left: 590px;
+}
+
+.six {
+  top: 570px;
+  left: 302px;
+}
+
+.nine {
+  top: 285px;
+  left: 8px;
 }
