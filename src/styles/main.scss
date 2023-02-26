@@ -1,0 +1,66 @@
+$size: 500px;
+$box__hand1: $size / 2.5;
+$box__hand2: $size / 3.3;
+
+.watch {
+  transform: translate(0, 25%);
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  position: relative;
+  display: flex;
+  height: $size;
+  width: $size;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: rgb(213, 206, 206);
+
+  &__circle {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+    background-color: black;
+    border-radius: 50%;
+  }
+
+  &__hand1 {
+    position: absolute;
+    top: 10%;
+    left: 49%;
+    height: $box__hand1;
+    width: 2%;
+    background-color: black;
+    border-radius: 40%;
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+  }
+
+  &__hand2 {
+    position: absolute;
+    top: 20%;
+    left: 49%;
+    height: $box__hand2;
+    width: 2%;
+    background-color: red;
+    border-radius: 40%;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+      
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
