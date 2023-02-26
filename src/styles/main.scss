@@ -1,0 +1,68 @@
+$stop-watch-size: 600px;
+$rod-size: 20px;
+$watch-rod-circle: 50%;
+$hands-indent: 50%;
+
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@mixin position-transform-hands {
+  position: absolute;
+  left: $hands-indent;
+  transform-origin: bottom;
+}
+
+body {
+  margin: 0;
+}
+
+.stop-watch {
+  @include position-center;
+  width: $stop-watch-size;
+  height: $stop-watch-size;
+  background-color: #d0bce7eb;
+  border-radius: $watch-rod-circle;
+  transform: translate(-$watch-rod-circle, -$watch-rod-circle);
+
+  &__rod {
+    @include position-center;
+    height: $rod-size;
+    width: $rod-size;
+    background-color: #0120b9;
+    border-radius: $watch-rod-circle;
+    transform: translate(-$watch-rod-circle, -$watch-rod-circle);
+    z-index: 1;
+  }
+
+  &__minute {
+    @include position-transform-hands;
+    height: 300px;
+    width: 3px;
+    background-color: #3cda0c;
+    border-radius: 3px;
+    animation: rotate 3600s steps(60) infinite;
+  }
+
+  &__second {
+    @include position-transform-hands;
+    top: -8%;
+    height: 350px;
+    width: 2px;
+    background-color: #f32222;
+    border-radius: 8px;
+    animation: rotate 60s steps(60) infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translateX(-50%);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
