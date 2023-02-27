@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  margin: 50px;
+}
+
+.clock {
+  position: relative;
+  width: $size-clock;
+  height: $size-clock;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: #2f4f4f;
+  border: 15px solid #4b0042;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  &__time {
+    position: absolute;
+    inset: 5px;
+    text-align: center;
+    color: #1e90ff;
+    font-size: 40px;
+  }
+
+  &__second::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 170px;
+    border-radius: 8px;
+    left: 50%;
+    top: 150px;
+    background-color: red;
+    transform-origin: bottom;
+    animation: animClock 60s steps(60) infinite;
+  }
+  
+  &__minute::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 140px;
+    border-radius: 10px;
+    left: 50%;
+    top: 170px;
+    background-color: blue;
+    transform-origin: bottom;
+    animation: animClock 3600s infinite;
+  }
+  
+  &__hour::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 100px;
+    border-radius: 12px;
+    left: 50%;
+    top: 190px;
+    background-color: black;
+    transform-origin: bottom;
+    animation: animClock 43200s infinite;
+  }
+}
