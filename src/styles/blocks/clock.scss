@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  margin: 50px;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 15px solid $border-color;
+  border-radius: 50%;
+  box-sizing: border-box;
+  width: $size-clock;
+  height: $size-clock;
+  background-color: $fon-color;
+
+  &__time {
+    position: absolute;
+    inset: 5px;
+    font-size: 40px;
+    text-align: center;
+    color: $number-color;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: $rivet-color;
+  }
+
+  &__second::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    transform-origin: bottom;
+    animation: animClock 60s steps(60) infinite;
+    border-radius: 8px;
+    width: 8px;
+    height: 170px;
+    background-color: $second-color;
+  }
+  
+  &__minute::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 170px;
+    transform-origin: bottom;
+    animation: animClock 3600s infinite;
+    border-radius: 10px;
+    width: 10px;
+    height: 140px;
+    background-color: $minute-color;
+  }
+
+  &__hour::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 190px;
+    transform-origin: bottom;
+    animation: animClock 43200s infinite;
+    border-radius: 12px;
+    width: 12px;
+    height: 100px;
+    background-color: $hour-color;
+  }
+}
