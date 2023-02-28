@@ -1,0 +1,119 @@
+.stopwatch {
+  position: relative;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  margin: 200px auto;
+  
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  &__second {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    height: 45%;
+    width: 2px;
+    background-color: rgb(236, 77, 77);
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    transform-origin: bottom;
+    animation: second 60s linear infinite;
+  }
+  
+  &__minute {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    height: 25%;
+    width: 5px;
+    background-color: red;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    transform-origin: bottom;
+    animation: minute 3600s linear infinite;
+  }
+  
+  &__list {
+    position: relative;
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  &__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+    &:nth-child(n+1) {
+      top: 15px;
+      left: 71%;
+    }
+  
+    &:nth-child(2n) {
+      top: 60px;
+      left: 85%;
+    }
+  
+    &:nth-child(3n) {
+      top: 120px;
+      left: 90%;
+      font-size: 30px;
+    }
+  
+    &:nth-child(4n) {
+      top: 170px;
+      left: 85%;
+    }
+  
+    &:nth-child(5n) {
+      top: 220px;
+      left: 75%;
+    }
+  
+    &:nth-child(6n) {
+      top: 245px;
+      left: 49%;
+    }
+  
+    &:nth-child(7n) {
+      top: 235px;
+      left: 28%;
+    }
+  
+    &:nth-child(8n) {
+      top: 185px;
+      left: 10%;
+    }
+  
+    &:nth-child(9n) {
+      top: 120px;
+      left: 5%;
+    }
+  
+    &:nth-child(10n) {
+      top: 60px;
+      left: 10%;
+    }
+  
+    &:nth-child(11n) {
+      top: 15px;
+      left: 25%;
+    }
+  
+    &:nth-child(12n) {
+      top: 0;
+      left: 46%;
+    }
+  }
+}
