@@ -1,0 +1,9 @@
+@mixin centered-position($width, $height) {
+  top: getTopShift($height);
+  left: getLeftShift($width);
+}
+
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+}

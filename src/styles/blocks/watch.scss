@@ -1,0 +1,54 @@
+.watch {
+  @include square(100%);
+
+  &__hand {
+    position: absolute;
+    height: $handHeight;
+    border-radius: 10%;
+
+    transform-origin: right center;
+    animation: rotate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &--minutes {
+      @include centered-position($minutesHandWidth, $handHeight);
+
+      background-color: rgb(29, 138, 101);
+      width: $minutesHandWidth;
+      animation-duration: 3600s;
+    }
+
+    &--seconds {
+      @include centered-position($secondsHandWidth, $handHeight);
+
+      background-color: rgb(148, 67, 67);
+      width: $secondsHandWidth;
+      animation-duration: 60s;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotateZ(90deg);
+      }
+
+      to {
+        transform: rotateZ(450deg);
+      }
+    }
+  }
+
+  &__center-dot {
+    @include square(5px);
+
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+    background-color: rgb(29, 138, 101);
+  }
+}
