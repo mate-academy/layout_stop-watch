@@ -1,21 +1,21 @@
 .watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   &__wrapper {
     position: relative;
     width: 500px;
     height: 500px;
     background-color: aliceblue;
     border: 3px solid gray;
-    margin: 0 auto;
     border-radius: 50%;
   }
 
   &__arrow {
     &::before {
-      position: absolute;
-      bottom: 50%;
-      left: 50%;
-      content: "";
-      height: 220px;
+      @include position ();
       width: 2px;
       background-color: blue;
 
