@@ -1,0 +1,39 @@
+.container {
+  @include size(500px, 500px);
+  position: relative;
+
+  background: $clockBgColor;
+  border-radius: $borderRadiusCircle;
+  border: 2px solid $clockPrincipalColor;
+
+  &__center {
+    @include position(absolute, 50%, 50%);
+    @include size(40px, 40px);
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    border-radius: $borderRadiusCircle;
+    background-color: $clockPrincipalColor;
+  }
+
+  &__small {
+    @include position(absolute, 10%, 50%);
+    @include size(5px, 40%);
+
+    background: $smallArrowColor;
+    border-radius: $borderRadiusArrow;
+    transform-origin: bottom center;
+    animation: roll 60s linear infinite;
+  }
+
+  &__big {
+    @include position(absolute, 5%, 50%);
+    @include size(8px, 45%);
+
+    background: $clockPrincipalColor;
+    border-radius: $borderRadiusArrow;
+
+    transform-origin: bottom center;
+    animation: roll   3600s linear infinite;
+  }
+}
