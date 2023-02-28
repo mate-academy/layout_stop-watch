@@ -1,0 +1,46 @@
+.container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border: 10px solid rgb(12, 7, 86);
+  border-radius: 50%;
+  background-color: rgb(253, 243, 230);
+
+  &__second {
+    position: absolute;
+    border-radius: 6px;
+    left: 49.4%;
+    top: 50%;
+    width: $width-second;
+    height: 225px;
+    background-color: rgb(0, 255, 170);
+    animation-name: move;
+    animation-duration: 60s;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+    transform-origin: center top;
+  }
+
+  &__minute {
+    position: absolute;
+    border-radius: 5px;
+    left: 49%;
+    top: 50%;
+    width: $width-minute;
+    height: 125px;
+    background-color: rgb(12, 7, 86);
+    transform-origin: center top;
+    animation: move 3600s linear infinite;
+  }
+
+  &__dot {
+    position: absolute;
+    border-radius: 50px;
+    left: 48%;
+    top: 48%;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(12, 7, 86);
+    
+  }
+}
