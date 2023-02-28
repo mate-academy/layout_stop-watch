@@ -1,0 +1,46 @@
+.watch {
+  &__wrapper {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: aliceblue;
+    border: 3px solid gray;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  &__arrow {
+    &::before {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      content: "";
+      height: 220px;
+      width: 2px;
+      background-color: blue;
+
+      animation-name: Arrow;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      transform-origin: bottom;
+
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      content: "";
+      height: 220px;
+      width: 4px;
+      background-color: red;
+
+      animation-name: Arrow;
+      animation-duration: 3600s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      transform-origin: bottom;
+    }
+  }
+}
