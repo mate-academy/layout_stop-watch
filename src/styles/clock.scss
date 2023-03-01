@@ -1,0 +1,43 @@
+.clock {
+  position: relative;
+  @include center-block;
+
+  &__base {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 2;
+  }
+
+  &__minutes {
+    position: absolute;
+    bottom: 50%;
+    height: 400px;
+    width: 20px;
+    border-radius: 3px;
+    background-color: white;
+    animation-duration: 3600s;
+    @include rotation;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: 50%;
+    height: 250px;
+    width: 10px;
+    border-radius: 3px;
+    background-color: red;
+    z-index: 1;
+    animation-duration: 60s;
+    animation-iteration-count: 60;
+    @include rotation;
+  }
+
+  @keyframes rotation {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
