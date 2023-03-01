@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #fffbfb;
+}
+
+.watch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  @include circle ($watch-size);
+  background-color: #97cf89;
+  border: 5px solid $wine-berry-color;
+
+  &__middle {
+    @include circle (30px);
+    z-index: 1;
+    background-color: $cardinal-red-color;
+  }
+
+  &__minute-arrow {
+    margin: auto;
+    position: absolute;
+    bottom: 50%;
+
+    width: 15px;
+    height: 200px;
+
+    border-radius: 10px;
+    background-color: $wine-berry-color;
+
+    animation: rotate 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__second-arrow {
+    margin: auto;
+    position: absolute;
+    bottom: 50%;
+
+    width: 10px;
+    height: 300px;
+
+    border-radius: 10px;
+    background-color: $cardinal-red-color;
+
+    animation: rotate 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+}
