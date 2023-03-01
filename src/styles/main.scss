@@ -1,0 +1,116 @@
+$markup-width: 2px;
+$markup-height: 10px;
+$main-color: rgb(0, 0, 62);
+
+.stopwatch {
+  position: relative;
+  
+  width: 600px;
+  height: 600px;
+  margin: 50px auto;
+
+  border: 2px solid $main-color;
+  border-radius: 50%;
+
+  &__markup {
+    &-top {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+
+      width: $markup-width;
+      height: $markup-height;
+
+      background-color: $main-color;
+    }
+
+    &-right {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+
+      width: $markup-height;
+      height: $markup-width;
+
+      background-color: $main-color;
+    }
+
+    &-bottom {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+
+      width: $markup-width;
+      height: $markup-height;
+
+      background-color: $main-color;
+    }
+
+    &-left {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+
+      width: $markup-height;
+      height: $markup-width;
+
+      background-color: $main-color;
+
+    }
+  }
+
+  &__minute-arrow {
+    position: absolute;
+    top: calc(50% - 200px);
+    left: 50%;
+
+    height: 200px;
+    width: 4px;
+
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+
+    background-color: $main-color;
+
+    transform-origin: bottom center;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    top: calc(50% - 250px);
+    left: 50%;
+
+    height: 250px;
+    width: 2px;
+
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+
+    background-color: $main-color;
+
+    transform-origin: bottom center;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: calc(50% - 5px);
+    left: calc(50% - 3px);
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+    background-color: $main-color;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
