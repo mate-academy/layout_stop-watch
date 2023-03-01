@@ -1,6 +1,6 @@
 @mixin digit-init-position {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY($digit-cell-height);
 }
 
 @mixin digit-shown-position {
@@ -10,5 +10,5 @@
 
 @mixin digit-gone-position {
   opacity: 0;
-  transform: translateY(-50px);
+  transform: translateY(-$digit-cell-height);
 }
