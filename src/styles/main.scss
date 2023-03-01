@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+}
+
+.clock {
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  border: 6px solid #7e1a78;
+  border-radius: 50%;
+
+  &__second-hand {
+    position: relative;
+    left: 50%;
+    width: 8px;
+    height: 250px;
+    border: 4px solid #b14e89;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    transform-origin: bottom left;
+  }
+
+  &__minute-hand {
+    position: relative;
+    left: 50%;
+    top: -50%;
+    width: 8px;
+    height: 250px;
+    border: 4px solid #bd8cb0;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    transform-origin: bottom left;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
