@@ -1,12 +1,13 @@
-$arrey-height: 200px;
+$arrey-height: 500px;
 $arrey-width-second: $arrey-height / 50;
 $arrey-width-minute: $arrey-height / 25;
 $wrapper-size: $arrey-height * 2;
 $arrey--second-color: red;
 $arrey--minute-color: blue;
+$clock--border-size: $arrey-height / 20;
 
 @mixin arrey-position-left ($arrey-width) {
-  left: $arrey-height - $arrey-width / 2
+  left: $arrey-height - $arrey-width / 2;
 }
 
 .clock {
@@ -16,7 +17,7 @@ $arrey--minute-color: blue;
   margin: 50px auto;
   background-color: black;
   border-radius: 50%;
-  border: 10px solid grey;
+  border: $clock--border-size solid grey;
 
   &__arrey {
     position: absolute;
