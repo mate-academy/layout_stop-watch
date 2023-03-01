@@ -1,5 +1,5 @@
-$width-and-height: 250px;
-$margin-hand-point: $width-and-height / -2;
+@import "variables";
+@import "keyframes";
 
 .stopwatch {
   margin: 100px auto;
@@ -13,11 +13,9 @@ $margin-hand-point: $width-and-height / -2;
   &:before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
     width: 10px;
     height: 10px;
-    margin: -5px 0 0 -5px;
+    transform: translate($position-point, $position-point);
     border-radius: 50%;
     background: #000;
   }
@@ -45,11 +43,5 @@ $margin-hand-point: $width-and-height / -2;
     background: #e10f0f;
     transform-origin: 50% 100%;
     animation: rotate 3600s linear infinite;
-  }
-}
-
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
   }
 }
