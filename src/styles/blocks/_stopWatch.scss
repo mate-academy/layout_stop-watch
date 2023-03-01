@@ -1,0 +1,64 @@
+.container {
+  @extend %flexCenter;
+  height: 100vh;
+}
+
+.stop-watch {
+  position: relative;
+  @extend %flexCenter;
+  @include circle($mainSize);
+  border: $mainWidth solid $mainColor;
+  border-radius: 50%;
+
+  &__dot {
+    list-style: none;
+    position: absolute;
+    @include circle($smalDot);
+    background-color: $mainColor;
+    z-index: 1;
+  }
+
+  &__second-hand {
+    @extend %handPosition;
+    @extend %secHandStile;
+    animation: move 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__minute-hand {
+    @extend %handPosition;
+    @extend %minHandStile;
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__mark-top {
+    @extend %stopWatchMarkPosition;
+    @extend %stopWatchMarkStyle;
+    @include mark ($mainWidth, $markLength);
+    top: $gapMark;
+  }
+
+  &__mark-right {
+    @extend %stopWatchMarkPosition;
+    @extend %stopWatchMarkStyle;
+    @include mark ($markLength, $mainWidth);
+    right: $gapMark;
+    list-style: none;
+  }
+
+  &__mark-bottom {
+    @extend %stopWatchMarkPosition;
+    @extend %stopWatchMarkStyle;
+    @include mark ($mainWidth, $markLength);
+    bottom: $gapMark;
+    list-style: none;
+  }
+
+  &__mark-left {
+    @extend %stopWatchMarkPosition;
+    @extend %stopWatchMarkStyle;
+    @include mark ($markLength, $mainWidth);
+    left: $gapMark;
+  }
+}
