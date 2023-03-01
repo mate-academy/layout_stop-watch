@@ -1,0 +1,49 @@
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 3px solid $minute-color;
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: $minute-color;
+    border-radius: 50%;
+    top: 47%;
+    left: 47%;
+    z-index: 1;
+  }
+
+  &__minute {
+    z-index: 1;
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 100px;
+    top: 50%;
+    left: 48.5%;
+    background-color: #d15559;
+    animation: rotate-sec linear ($minute * 60) infinite;
+    border-radius: 10px;
+    transform-origin: center 0;
+    animation-delay: -1800s;
+  }
+
+  &__second {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 150px;
+    top: 50%;
+    left: 48.5%;
+    background-color: $second-color;
+    animation: rotate-min linear ($second * 60) infinite;
+    border-radius: 10px;
+    transform-origin: center 0;
+    animation-delay: -30s;
+  }
+}
