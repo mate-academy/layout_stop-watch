@@ -26,6 +26,7 @@
     transform-origin: 0;
 
     @include position;
+    @include circle;
   }
 
   &__second {
@@ -38,16 +39,6 @@
     animation: circle 60s infinite;
 
     @include position;
-  }
-
-  @keyframes circle {
-    from {
-      transform: rotate(-90deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-
+    @include circle;
   }
 }
