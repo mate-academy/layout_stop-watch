@@ -1,0 +1,81 @@
+.wrapper {
+  display: flex;
+  background-image: linear-gradient(
+    to bottom, 
+    #515908, 
+    #6c790c,
+    #96ac0e,
+    #aecb0f,
+    #c6eb12
+  );
+  height: 100vh;
+
+  &__clock {
+    margin: auto;
+  }
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $size;
+  height: $size;
+  border: 3px solid $main-color;
+  border-radius: 50%;
+
+  &__container {
+    position: relative;
+    width: $container-size;
+    height: $container-size;
+    border: 3px dashed $main-color;
+    border-radius: 50%;
+
+  }
+
+  &__axis {
+    width: 20px;
+    height: 20px;
+    background-image: linear-gradient(to bottom, #17180e, #2a2848);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute-hand {
+    width: 10px;
+    height: $minute;
+    background-image: linear-gradient(to bottom, #16054e, #199458);
+    position: absolute;
+    border-radius: 5px;
+    top: $container-size/2 - $minute;
+    left: calc(50% - 5px);
+    transform: translate(-50%, 0);
+    animation: time 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    width: 5px;
+    height: $second;
+    background-image: linear-gradient(to bottom, #e37b3e, #8c1354);
+    border-radius: 50%;
+    position: absolute;
+    top: $container-size/2 - $second;
+    left: calc(50% - 2.5px);
+    transform-origin: bottom;
+    animation: time 60s linear infinite forwards;
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
