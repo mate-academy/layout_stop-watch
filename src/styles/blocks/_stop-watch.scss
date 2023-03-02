@@ -3,18 +3,21 @@
 
 .stop-watch {
   position: absolute;
-  @include square($watch-size);
   @extend %center;
+  @include square($watch-size);
   background-color: ghostwhite;
   border: 12px solid $secondary-color;
   border-radius: 100%;
+
   &__line {
-    background-color: $main-color;
     position: absolute;
     margin: auto;
+    background-color: $main-color;
+
     &:first-child {
       @extend %top;
     }
+
     &:nth-child(2) {
       @extend %bottom;
     }
@@ -22,10 +25,12 @@
     &:nth-child(3) {
       @extend %left;
     }
+
     &:nth-child(4) {
       @extend %right;
     }
   }
+
   &__center {
     position: absolute;
     @extend %center;
@@ -35,12 +40,14 @@
     background-color: $secondary-color;
     border-radius: 100%;
   }
+
   &__hour {
     position: absolute;
     @extend %center;
     width: 5px;
     height: 100%;
     animation: time 86400s infinite linear;
+
     &::before {
       content: "";
       position: absolute;
@@ -50,12 +57,14 @@
       background-color: $main-color;
     }
   }
+
   &__minute {
     position: absolute;
     @extend %center;
     width: 3px;
     height: 100%;
     animation: time 3600s infinite linear;
+
     &::before {
       content: "";
       position: absolute;
@@ -65,12 +74,14 @@
       background-color: red;
     }
   }
+
   &__second {
     position: absolute;
     @extend %center;
     width: 1px;
     height: 100%;
     animation: time 60s infinite linear;
+
     &::before {
       content: "";
       position: absolute;
@@ -80,13 +91,16 @@
       background-color: $main-color;
     }
   }
+
   &:hover {
     .stop-watch__hour {
       animation: time 60s infinite linear;
     }
+
     .stop-watch__minute {
       animation: time 30s infinite linear;
     }
+    
     .stop-watch__second {
       animation: time 15s infinite linear;
     }
