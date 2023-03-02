@@ -1,5 +1,6 @@
 @import "utils/variables";
 @import "utils/mixins";
+@import "utils/extends";
 
 html {
   font-family: Oswald, sans-serif;
@@ -72,81 +73,46 @@ body {
 
   &__minute {
     position: absolute;
-    top: 75px;
-    left: 272px;
-    width: 10px;
-    height: 200px;
+    @include diffTopLef(75px, 272px);
+    @include diffWidthHight(10px, 200px);
     background-color: $minute-arrow-color;
-    border-radius: 5px;
     z-index: 1;
-    animation-name: minutes;
-    animation-duration: 3600s;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation-duration: 3600s;
+    transform-origin: 5px 200px;
+    @extend %arrow-styles;
   }
 
   &__second {
     position: absolute;
-    top: 24px;
-    left: 271px;
-    width: 10px;
-    height: 255px;
+    @include diffTopLef(24px, 271px);
+    @include diffWidthHight(10px, 255px);
     background-color: $second-arrow-color;
-    border-radius: 5px;
-    animation-name: seconds;
-    animation-duration: 60s;
     animation-timing-function: steps(60, start);
-    animation-iteration-count: infinite;
+    animation-duration: 60s;
+    transform-origin: 5px 255px;
+    @extend %arrow-styles;
   }
 
   &__hour {
     position: absolute;
-    top: 120px;
-    left: 272px;
-    width: 10px;
-    height: 150px;
+    @include diffTopLef(120px, 272px);
+    @include diffWidthHight(10px, 150px);
     background-color: $hour-arrow-color;
-    border-radius: 5px;
     z-index: 1;
-    animation-name: hours;
-    animation-duration: 86400s;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-}
-
-@keyframes seconds {
-  from {
-    transform: rotate(0);
-    transform-origin: 5px 255px;
-  }
-
-  to {
-    transform: rotate(360deg);
-    transform-origin: 5px 255px;
-  }
-}
-
-@keyframes minutes {
-  from {
-    transform: rotate(0);
-    transform-origin: 5px 200px;
-  }
-
-  to {
-    transform: rotate(360deg);
-    transform-origin: 5px 200px;
-  }
-}
-
-@keyframes hours {
-  from {
-    transform: rotate(0);
+    animation-duration: 86400s;
     transform-origin: 5px 150px;
+    @extend %arrow-styles;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
   }
 
   to {
     transform: rotate(360deg);
-    transform-origin: 5px 150px;
   }
 }
