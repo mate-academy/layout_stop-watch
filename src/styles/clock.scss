@@ -1,0 +1,42 @@
+.clock {
+  background-color: $clockBackground;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin-top: 57px;
+
+  &__dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-5px) translateX(-10px);
+    border-radius: 50%;
+    background-color: $colorBlack;
+
+    @include position;
+  }
+
+  &__minute {
+    position: absolute;
+    width: 70px;
+    height: 10px;
+    border-radius: 15px;
+    animation: rotate 3600s infinite;
+    background-color: $colorBlack;
+    transform-origin: 0;
+
+    @include position;
+  }
+
+  &__second {
+    position: absolute;
+    width: 110px;
+    height: 10px;
+    border-radius: 15px;
+    background-color: $colorRed;
+    transform-origin: 0;
+    animation: rotate 60s infinite;
+
+    @include position;
+  }
+}
