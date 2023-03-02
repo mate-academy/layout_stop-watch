@@ -1,0 +1,104 @@
+@import "../styles/vriables.scss";
+@import "../styles/mixins.scss";
+
+.clock {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $clock-width;
+  height: $clock-height;
+  border: 2px solid $secondary_color;
+  border-radius: 100%;
+
+  background-color: white;
+
+  &__middle {
+    position: relative;
+    z-index: 1;
+
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid $secondary_color;
+    @include middle-size;
+
+    background-color: $main-color;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: 50%;
+
+    transform-origin: bottom;
+
+    animation: move 60s steps(60) infinite;
+
+    height: 200px;
+    width: 8px;
+    border: 2px solid $secondary_color;
+    @include border-radius;
+
+    background-color: $main-color;
+  }
+
+  &__minutes {
+    position: absolute;
+    bottom: 50%;
+
+    transform-origin: bottom;
+
+    animation: min 3600s steps(60) infinite;
+
+    height: 150px;
+    width: 14px;
+
+    border: 2px solid $secondary_color;
+    @include border-radius;
+
+    background-color: $main-color;
+  }
+
+  &__schedule {
+    position: absolute;
+
+    width: 15px;
+  }
+
+  &__schedule--12 {
+    top: 10px;
+  }
+
+  &__schedule--3 {
+    right: 50px;
+  }
+
+  &__schedule--6 {
+    left: 20px;
+  }
+
+  &__schedule--9 {
+    bottom: 15px;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes min {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

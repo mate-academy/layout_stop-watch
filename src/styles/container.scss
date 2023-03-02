@@ -1,0 +1,26 @@
+@import "../styles/vriables.scss";
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    position: absolute;
+    top: 100px;
+    z-index: 5;
+
+    transition: transform 2s;
+
+    border: 1px solid $secondary_color;
+
+    font-size: 40px;
+    color: $secondary_color;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+
+}
