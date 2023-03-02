@@ -1,0 +1,21 @@
+@mixin circle($size) {
+  border-radius: $border-radius;
+  width: $size;
+  height: $size;
+}
+
+@mixin position-center() {
+  top: 50%;
+  left: 50%;
+}
+
+@mixin arow($height, $width, $top) {
+  position: absolute;
+  left: 48.8%;
+  top: $top;
+  transform-origin: 50% 100%;
+
+  height: $height;
+  width: $width;
+  border-radius: $border-radius;
+}
