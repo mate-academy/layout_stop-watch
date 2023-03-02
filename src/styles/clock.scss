@@ -7,7 +7,7 @@ body {
   @include circle($clockface-size);
 
   position: relative;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 25%);
 
   background: #dbccfc url(../images/Ios_clock.svg) no-repeat center;
   background-size: 90%;
@@ -24,13 +24,13 @@ body {
   }
 
   &__minutes {
-    @include arow (25%, 2.5%, 25%);
+    @include arow ($top-move-minutes,$width-minutes, $top-move-minutes);
     animation: rotate 3600s infinite linear;
     background: #3b0f6d;
   }
 
   &__seconds {
-    @include arow (30%, 2%, 20%);
+    @include arow ($height-seconds, $width-seconds, $top-move-seconds);
     animation: rotate 60s infinite linear;
     background: #281060;
   }
