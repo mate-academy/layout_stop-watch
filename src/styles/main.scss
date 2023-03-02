@@ -1,10 +1,11 @@
 $markup-width: 2px;
 $markup-height: 10px;
 $main-color: rgb(0, 0, 62);
+$one-hour: 3600s;
 
 .stopwatch {
   position: relative;
-  
+
   width: 600px;
   height: 600px;
   margin: 50px auto;
@@ -73,7 +74,7 @@ $main-color: rgb(0, 0, 62);
     background-color: $main-color;
 
     transform-origin: bottom center;
-    animation: rotate 3600s linear infinite;
+    animation: rotate $one-hour linear infinite;
   }
 
   &__second-arrow {
