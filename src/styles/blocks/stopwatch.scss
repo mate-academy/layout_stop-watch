@@ -1,0 +1,28 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  border: 2px solid black;
+
+  &::after {
+    content: "0";
+    position: absolute;
+    font-size: 60px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    color: gray;
+  }
+
+  &::before {
+    content: "30";
+    position: absolute;
+    bottom: 0;
+    font-size: 60px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    color: gray;
+  }
+}
