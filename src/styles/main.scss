@@ -1,0 +1,152 @@
+@import "utils/variables";
+@import "utils/mixins";
+
+html {
+  font-family: Oswald, sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+}
+
+body {
+  background-color: $main-them-color;
+}
+
+.wrapper {
+  @include positionCenter();
+  padding: 10px;
+  @include squere(595px);
+  border: 20px solid $clock-body-color;
+  border-radius: 50%;
+  box-shadow: 0 0 38px 4px rgba($color: $shadow-color, $alpha: 0.5);
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 0 48px 4px rgba($color: $shadow-color, $alpha: 1);
+  }
+}
+
+.watch {
+  @include positionCenter();
+  @include squere(553px);
+  border: 1px dotted $seconds-dot-color;
+  border-radius: 50%;
+  border-width: 15px;
+
+  &__timeline {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    @include squere(20px);
+    background-color: $num-dot-color;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 4px rgba($color: $shadow-color, $alpha: 0.7);
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: 0 0 20px 4px rgba($color: $shadow-color, $alpha: 1);
+    }
+
+    @each $hour, $dotTop, $dotLeft, $numTop, $nubLeft in $hours-position {
+      &--minut--#{$hour} {
+        top: $dotTop;
+        left: $dotLeft;
+
+        &::after {
+          content: "#{$hour}";
+          color: $num-color;
+          font-size: 50px;
+          position: absolute;
+          top: $numTop;
+          left: $nubLeft;
+        }
+      }
+    }
+  }
+
+  &__center {
+    @include positionCenter();
+    @include squere(25px);
+    background-color: $crnter-dot-color;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 75px;
+    left: 272px;
+    width: 10px;
+    height: 200px;
+    background-color: $minute-arrow-color;
+    border-radius: 5px;
+    z-index: 1;
+    animation-name: minutes;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__second {
+    position: absolute;
+    top: 24px;
+    left: 271px;
+    width: 10px;
+    height: 255px;
+    background-color: $second-arrow-color;
+    border-radius: 5px;
+    animation-name: seconds;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, start);
+    animation-iteration-count: infinite;
+  }
+
+  &__hour {
+    position: absolute;
+    top: 120px;
+    left: 272px;
+    width: 10px;
+    height: 150px;
+    background-color: $hour-arrow-color;
+    border-radius: 5px;
+    z-index: 1;
+    animation-name: hours;
+    animation-duration: 86400s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(0);
+    transform-origin: 5px 255px;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: 5px 255px;
+  }
+}
+
+@keyframes minutes {
+  from {
+    transform: rotate(0);
+    transform-origin: 5px 200px;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: 5px 200px;
+  }
+}
+
+@keyframes hours {
+  from {
+    transform: rotate(0);
+    transform-origin: 5px 150px;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: 5px 150px;
+  }
+}
