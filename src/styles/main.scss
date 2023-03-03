@@ -1,0 +1,59 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.clock {
+  position: relative;
+  width: $wrapper-size;
+  height: $wrapper-size;
+  margin: 50px auto;
+  background-color: black;
+  border-radius: 50%;
+  border: $clock--border-size solid grey;
+
+  &__arrey {
+    position: absolute;
+    transform: translate(-50%);
+    border-radius: 25%;
+    transform-origin: bottom;
+    transition: ease-in-out;
+  
+    &--second {
+      @include arrey-position-left($arrey-width-second);
+      height: $arrey-height;
+      width: $arrey-width-second;
+      background-color: $arrey--second-color;
+      animation: tik 60s infinite linear;
+    }
+  
+    &--minute {
+      @include arrey-position-left($arrey-width-minute);
+      height: $arrey-height;
+      width: $arrey-width-minute;
+      background-color: $arrey--minute-color;
+      animation: tik 3600s infinite linear;
+    }
+    
+  }
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: $wrapper-size / 50;
+    width: $wrapper-size / 50;
+    border-radius: 50%;
+    background-color: rgb(26, 159, 72);
+  }
+
+}
+
+@keyframes tik {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
