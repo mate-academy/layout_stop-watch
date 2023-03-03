@@ -1,0 +1,46 @@
+@import "./utils/variables";
+@import "./utils/mixin";
+
+.clock {
+  position: relative;
+  top: $percent-50;
+  transform: translateY(-$percent-50);
+  margin: 0 auto;
+  border: 3px dotted #000;
+  border-radius: $percent-50;
+  width: $clock-size;
+  height: $clock-size;
+
+  &__minute {
+    @include time-arrow($percent-50);
+    width: 45%;
+    background-color: $color-blue;
+    animation: time 720s infinite linear;
+  }
+
+  &__second {
+    @include time-arrow($percent-50);
+    width: 35%;
+    background-color: $color-red;
+    animation: time 60s infinite linear;
+  }
+
+  &__center {
+    @include pos-absolute-block($percent-50);
+    transform: translate(-$percent-50, -$percent-50);
+    border-radius: $percent-50;
+    width: $center-size;
+    height: $center-size;
+    background-color:$color-green;
+  }
+}
+
+@keyframes time{
+  from{
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(270deg)
+  }
+}

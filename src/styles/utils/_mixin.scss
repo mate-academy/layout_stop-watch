@@ -1,0 +1,12 @@
+@mixin pos-absolute-block($pos-percent) {
+  position: absolute;
+  top: $pos-percent;
+  left: $pos-percent;
+}
+
+@mixin time-arrow($pos-percent) {
+  @include pos-absolute-block($percent-50);
+  border-radius: 5px;
+  height: 10px;
+  transform-origin: left;
+}
