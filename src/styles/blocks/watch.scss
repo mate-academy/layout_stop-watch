@@ -1,0 +1,219 @@
+.watch {
+  @include flexCenter();
+
+  width: #{$watchSize}px;
+  height: #{$watchSize}px;
+
+  border: 0.1em solid $wColor-Second;
+  border-radius: 50%;
+
+  background-color: $wColor-First;
+
+  box-shadow: #{$shadowSize}px #{$shadowSize / 2}px;
+  filter: drop-shadow(
+    #{$shadowSize / 2}px 
+    #{$shadowSize * 2}px 8px 
+    rgba(0,0,0,0.3)
+  );
+
+  font-size: #{$fontwatchSize}px;
+  color: $wColor-Second;
+
+  &__case {
+    position: relative;
+
+    width: 94%;
+    height: 94%;
+
+    border: 0.1em solid $wColor-Second;
+    border-radius: 50%;
+
+    background: linear-gradient(#{$BGC-Deg}deg, 
+    $BGC-Lower (0% + $BGC-Power-Lower), 
+    $BGC-Upper (100% - $BGC-Power-Upper));
+  }
+
+  &__brain-logo {
+    @include absoluteCenter();
+
+    font-size: 1em;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: underline;
+
+    transform: translate(-50%, 120%);
+  }
+
+  &__second-hand {
+    @include absoluteCenter(60%);
+
+    width: 1.5%;
+    height: 47.5%;
+
+    background-color: $wColor-First;
+
+    border-radius: 100% 100% 0 0;
+    transform-origin: 50% 80%;
+
+    animation: rotateHard #{$second}s steps(60, end) infinite;
+
+    &::after {
+      content: "";
+      display: block;
+
+      width: 200%;
+      height: 14%;
+
+      transform: translate(-25%,700%);
+
+      background-color: $wColor-First;
+    }
+  }
+
+  &__minute-hand {
+    @include absoluteCenter();
+
+    width: 2%;
+    height: 40%;
+
+    background-color: $wColor-Second;
+
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom;
+
+    animation: rotateHard #{$minute}s steps(60, end) infinite;
+
+    &::after {
+      content: "";
+      display: block;
+
+      width: 100%;
+      height: 20%;
+
+      transform: translate(-25%,500%);
+
+      background-color: $wColor-Second;
+    }
+  }
+
+  &__hour-hand {
+    @include absoluteCenter();
+
+    width: 2.5%;
+    height: 30%;
+
+    background-color: $wColor-Second;
+
+    border-radius: 100% 100% 0 0;
+    transform-origin: bottom;
+
+    animation: rotateHard #{$hour}s linear infinite;
+
+    &::after {
+      content: "";
+      display: block;
+      
+      width: 100%;
+      height: 20%;
+
+      transform: translate(-25%,510%);
+
+      background-color: $wColor-Second;
+    }
+
+  }
+
+  &__point {
+    @include absoluteCenter();
+
+    transform: translate(-50%,-50%);
+
+    width: 5%;
+    height: 5%;
+
+    background-color: $wColor-First;
+    border-radius: 50%;
+  }
+
+  &__container-hour {
+    @include hardPosition();
+
+    filter: drop-shadow(
+      #{$shadowSize / 2}px 
+      #{$shadowSize / 2}px 4px 
+      rgba(0,0,0,0.6));
+  }
+
+  &__container-minute {
+    @include hardPosition();
+
+    filter: drop-shadow(#{$shadowSize}px #{$shadowSize}px 6px rgba(0,0,0,0.6));
+  }
+
+  &__container-second {
+    @include hardPosition();
+
+    filter: drop-shadow(#{$shadowSize}px #{$shadowSize}px 8px rgba(0,0,0,0.5));
+  }
+
+  &__numbers {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  &__hour {
+    @include absoluteCenter();
+
+    width: 20px;
+    height: 50%;
+
+    transform-origin: bottom;
+
+    @for $num from 1 to 13 {
+      &--#{$num} {
+        transform: translate(-50%, -100%) rotate(#{$num * 30}deg);
+        
+        &::before {
+          content: "";
+          display: block;
+          margin: 0 auto;
+          margin-top: 10%;
+
+          width: #{$watchSize * 0.02}px;
+          height: 8%;
+
+          background-color: $wColor-Second;
+        }
+
+        & .watch__hour-amount {
+          transform: rotate(#{$num * -30}deg);
+        }
+      }
+    }
+
+    &:nth-child(3n - 2) {
+      font-size: 1.5em;
+      color: $wColor-First;
+      text-shadow: 0 1px $wColor-Second,
+        0 2px $wColor-Second,
+        0 -1px $wColor-Second,
+        1px 0 $wColor-Second,
+        -1px 0 $wColor-Second;
+    }
+  }
+
+  &__hour-amount {
+    @include flexCenter();
+  }
+}
+
+@keyframes rotateHard {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
