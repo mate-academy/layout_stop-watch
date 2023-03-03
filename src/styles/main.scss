@@ -1,0 +1,41 @@
+@import "./_variables.scss";
+@import "./_reset.scss";
+@import "./_keyframes.scss";
+
+.clock {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__circle {
+    width: 30px;
+    height: 30px;
+    background: #2891a3;
+    border-radius: 999px;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    border-radius: 999px;
+    transform-origin: bottom center;
+  }
+}
+
+.__minute-hand {
+  width: 10px;
+  height: 250px;
+  background-color: rgb(90, 14, 166);
+  animation: rotate steps(60) $hour infinite;
+}
+
+.__second-hand {
+  width: 6px;
+  height: 400px;
+  background: #2891a3;
+  animation: rotate steps(60) $minute infinite;
+}
