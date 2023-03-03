@@ -1,14 +1,5 @@
-$arrey-height: 500px;
-$arrey-width-second: $arrey-height / 50;
-$arrey-width-minute: $arrey-height / 25;
-$wrapper-size: $arrey-height * 2;
-$arrey--second-color: red;
-$arrey--minute-color: blue;
-$clock--border-size: $arrey-height / 20;
-
-@mixin arrey-position-left ($arrey-width) {
-  left: $arrey-height - $arrey-width / 2;
-}
+@import "./variables.scss";
+@import "./mixins.scss";
 
 .clock {
   position: relative;
