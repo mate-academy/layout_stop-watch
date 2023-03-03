@@ -21,42 +21,18 @@
   }
 
   &__min {
-    position: absolute;
-    display: inline-block;
-    width: $time-width;
+    @include timeStyle;
     height: $min-height;
     background-color: $min-color;
-    left: posVert($time-width);
     top: posHor($min-height);
-    animation-name: time;
     animation-duration: 3600s;
-    animation-iteration-count: infinite;
-    transform-origin: bottom;
-    animation-timing-function: steps(60);
   }
 
   &__sec {
-    position: absolute;
-    display: inline-block;
-    width: $time-width;
+    @include timeStyle;
     height: $sec-height;
     background-color: $sec-color;
-    left: posVert($time-width);
     top: posHor($sec-height);
-    animation-name: time;
     animation-duration: 60s;
-    animation-iteration-count: infinite;
-    transform-origin: bottom;
-    animation-timing-function: steps(60);
-  }
-}
-
-@keyframes time {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 }
