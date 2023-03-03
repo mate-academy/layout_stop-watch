@@ -1,0 +1,38 @@
+.watch {
+  width: $time-square;
+  height: $time-square;
+  border: 1px solid $border-color;
+  border-radius: 75%;
+  position: relative;
+  background-color: antiquewhite;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: $border-color;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &__min {
+    @include timeStyle;
+    height: $min-height;
+    background-color: $min-color;
+    top: posHor($min-height);
+    animation-duration: 3600s;
+  }
+
+  &__sec {
+    @include timeStyle;
+    height: $sec-height;
+    background-color: $sec-color;
+    top: posHor($sec-height);
+    animation-duration: 60s;
+  }
+}
