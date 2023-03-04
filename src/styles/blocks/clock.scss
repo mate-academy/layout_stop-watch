@@ -1,0 +1,55 @@
+.clock {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-image: url(../images/classic-clock.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &__minute-hand {
+    position: absolute;
+    top: 106px;
+    left: 193px;
+    width: 100px;
+    height: 100px;
+    background-image: url(../images/second-hand.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: minute 86400s linear infinite;
+    transform-origin: 8px 94px;
+
+    @keyframes minute {
+      from {
+        transform: rotate(0deg);
+      }
+    
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 155px;
+    left: 190.5px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/minute-hand.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: second 60s steps(60, end) infinite;
+    transform-origin: 10px 44px;
+
+    @keyframes second {
+      from {
+        transform: rotate(0deg);
+      }
+    
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
