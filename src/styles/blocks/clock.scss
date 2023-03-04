@@ -7,7 +7,7 @@
   background-size: contain;
   background-repeat: no-repeat;
 
-  &__minute-hand {
+  &__second-hand {
     position: absolute;
     top: 106px;
     left: 193px;
@@ -16,7 +16,7 @@
     background-image: url(../images/second-hand.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    animation: minute 86400s linear infinite;
+    animation: second 60s steps(60, end) infinite;
     transform-origin: 8px 94px;
 
     @keyframes minute {
@@ -30,7 +30,7 @@
     }
   }
 
-  &__second-hand {
+  &__minute-hand {
     position: absolute;
     top: 155px;
     left: 190.5px;
@@ -39,7 +39,7 @@
     background-image: url(../images/minute-hand.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    animation: second 60s steps(60, end) infinite;
+    animation: minute 86400s linear infinite;
     transform-origin: 10px 44px;
 
     @keyframes second {
