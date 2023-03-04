@@ -1,0 +1,77 @@
+.watch {
+  position: relative;
+
+  height: $watch-size;
+  width: $watch-size;
+  border: $watch-border-width $watch-border-color solid;
+  border-radius: 50%;
+
+  &__second {
+    position: absolute;
+    left: $second-position-left;
+    top: $second-gap;
+
+    height: $second-height;
+    width: $second-width;
+
+    background-color: $second-color;
+    border-radius: 4px;
+
+    transform-origin: bottom;
+
+    animation-name: seconds;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @keyframes seconds {
+      from {
+        transform: rotate 0;
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__minute {
+    position: absolute;
+    left: $minute-position-left;
+    top: $minute-gap;
+
+    height: $minute-height;
+    width: $minute-width;
+    background-color: $minute-color;
+    border-radius: 8px;
+
+    transform-origin: bottom;
+
+    animation-name: minutes;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @keyframes minutes {
+      from {
+        transform: rotate 0;
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__center {
+    position: absolute;
+    left: $center-position;
+    bottom: $center-position;
+
+    height: $center-size;
+    width: $center-size;
+
+    border-radius: 50%;
+    background-color: $center-color;
+  }
+}
