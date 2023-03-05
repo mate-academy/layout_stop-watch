@@ -1,0 +1,21 @@
+@mixin mainClock {
+  border: 2px $main-color solid;
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin middle {
+  height: $size / 10;
+  width: $size / 10;
+  border-radius: 50%;
+}
+
+@mixin arrow {
+  width: 3vh;
+  border-radius: 10px;
+  position: absolute;
+  left: $size / 2.1;
+  bottom: $size / 2;
+}
+

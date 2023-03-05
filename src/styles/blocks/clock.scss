@@ -1,33 +1,25 @@
-@import "../variables";
+@import "../_utils/mixins";
+@import "../_utils/variables";
+@import "../_utils/functions";
 
 .clock {
+  @include mainClock;
   position: relative;
-  border: 2px gray solid;
-  height: $size;
-  width: $size;
-  border-radius: 50%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
 
   &__mid {
-    height: 5vh;
-    width: 5vh;
-    background-color: aquamarine;
-    border: solid black 1px;
-    border-radius: 50%;
+    @include middle;  
+    background-color: $main-color;
     z-index: 1;
   }
 
   &__min {
-    width: 3vh;
-    height: $size / 2;
-    background-color: black;
-    border-radius: 10px;
-    position: absolute;
-    left: $size / 2.1;
-    bottom: $size / 2;
+    @include arrow;
+    height: getHeight($size, 2);
+    background-color: $main-color;
     animation: arrow 60s steps(60, end) infinite;
     transform-origin: bottom;
 
@@ -42,13 +34,9 @@
   }
 
   &__hour {
-    width: 5vh;
-    height: $size / 3.5;
-    background-color: red;
-    border-radius: 10px;
-    position: absolute;
-    left: $size / 2.19;
-    bottom: $size / 2;
+    @include arrow;
+    height: getHeight($size, 3.5);
+    background-color: $secondary-color;
   }
 
 }
