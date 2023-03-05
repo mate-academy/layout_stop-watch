@@ -1,0 +1,21 @@
+@mixin square-size ($width) {
+  width: $width;
+  height: $width;
+}
+
+@mixin arrow-animation($time) {
+  animation-name: move;
+  animation-duration: $time * 1s;
+  animation-timing-function: steps($time, end);
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+
+%clock-hand-start-position {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: left;
+  transform: translate(0, -50%) rotate(-90deg);
+  border-radius: 10px;
+}
