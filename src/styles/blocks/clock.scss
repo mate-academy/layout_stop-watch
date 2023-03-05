@@ -1,25 +1,26 @@
+@import "../utils/variables";
+@import "../utils/placeholder";
+
 .clock {
   position: relative;
   width: 400px;
   height: 400px;
   background-image: url(../images/classic-clock.svg);
   background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  @extend %background-image-options;
 
-  &__second-hand {
+  &__hour-hand {
     position: absolute;
-    top: 106px;
-    left: 193px;
-    width: 100px;
-    height: 100px;
-    background-image: url(../images/second-hand.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    animation: second 60s steps(60, end) infinite;
-    transform-origin: 8px 93px;
+    top: 155px;
+    left: 190.5px;
+    width: $hour-hand-width;
+    height: $hour-hand-height;
+    background-image: url(../images/hour-hand.svg);
+    @extend %background-image-options;
+    animation: rotatingHand $animation-hour-time linear infinite;
+    transform-origin: 10px 44px;
 
-    @keyframes minute {
+    @keyframes rotatingHand {
       from {
         transform: rotate(0deg);
       }
@@ -32,17 +33,38 @@
 
   &__minute-hand {
     position: absolute;
-    top: 155px;
-    left: 190.5px;
-    width: 50px;
-    height: 50px;
+    top: 123px;
+    left: 192px;
+    width: $minute-hand-width;
+    height: $minute-hand-height;
     background-image: url(../images/minute-hand.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    animation: minute 86400s linear infinite;
-    transform-origin: 10px 44px;
+    @extend %background-image-options;
+    animation: rotatingHand $animation-minute-time linear infinite;
+    transform-origin: 8px 77px;
 
-    @keyframes second {
+    @keyframes rotatingHand {
+      from {
+        transform: rotate(0deg);
+      }
+    
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 90px;
+    left: 190px;
+    width: $second-hand-width;
+    height: $second-hand-height;
+    background-image: url(../images/second-hand.svg);
+    @extend %background-image-options;
+    animation: rotatingHand $animation-second-time steps(60, end) infinite;
+    transform-origin: 10.2px 110.2px;
+
+    @keyframes rotatingHand {
       from {
         transform: rotate(0deg);
       }
