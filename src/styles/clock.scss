@@ -1,0 +1,61 @@
+.clock {
+
+  &__stopwatch {
+    @include square-size(600px);
+    border-radius: 50%;
+    border: 3px solid $main-theme-color;
+    position: relative;
+  }
+
+  &__btn:hover {
+    cursor: pointer;
+  }
+
+  &__btn:checked ~ * {
+    animation-play-state: running;
+  }
+
+  &__mainHand {
+    width: 48%;
+    height: 2%;
+    background-color: $main-theme-color;
+    
+    @extend %clock-hand-start-position;
+    @include arrow-animation(3600);
+  }
+  
+  &__center {
+    @include square_size(5%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: $main-theme-color;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  &__smallHand {
+    width: 35%;
+    height: 2%;
+    background-color: rgb(209,85,89);
+    
+    @extend %clock-hand-start-position;
+    @include arrow-animation(60);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
