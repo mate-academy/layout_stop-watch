@@ -1,0 +1,63 @@
+@import "../utils/variables";
+@import "../utils/mixin";
+@import "../utils/animations";
+
+.stopwatch {
+  position: relative;
+  margin-top: $top-size;
+  @include circle($stopwatch-size);
+  border: 3px $just-black solid;
+  &__hour {
+    position: absolute;
+    width: 5px;
+    height: 40%;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(30deg);
+    background-color: $minute-color;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    cursor: pointer;
+  }
+
+  &__minute {
+    position: absolute;
+    width: 3px;
+    height: 45%;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%);
+    background-color: $minute-color;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    animation: go 3600s linear infinite;
+    cursor: pointer;
+  }
+
+  &__second {
+    position: absolute;
+    width: 1px;
+    height: 35%;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(0);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: $second-color;
+    cursor: pointer;
+    animation: go 60s linear infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    @include circle(15px);
+    background-color: $poin-color;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
