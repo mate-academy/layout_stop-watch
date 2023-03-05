@@ -1,0 +1,102 @@
+.stopwatch {
+  margin: auto;
+
+  position: relative;
+
+  @include sizeOfItems(500px, 500px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $colorBlack;
+  border-radius: 50%;
+
+  &__centerPoint {
+    z-index: 1;
+
+    @include sizeOfItems(30px, 30px);
+
+    background-color: $colorWhite;
+    border: 4px solid $colorBlack;
+    border-radius: 50%;
+  }
+
+  &__minuteHand {
+    margin: auto;
+    position: absolute;
+    bottom: 50%;
+
+    @include sizeOfItems(170px, 7px);
+
+    background-color: $colorWhite;
+
+    animation: goInCircles 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__secondHand {
+    margin: auto;
+    position: absolute;
+    bottom: 50%;
+
+    @include sizeOfItems(200px, 3px);
+
+    background-color: red;
+
+    animation: goInCircles 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__12oclock {
+    position: absolute;
+
+    top: 10px;
+
+    display: flex;
+    justify-content: center;
+
+    @include fontsSize(35px, 700);
+    
+    color: $colorWhite;
+  }
+
+  &__3oclock {
+    position: absolute;
+
+    right: 10px;
+
+    display: flex;
+    justify-content: right;
+
+    @include fontsSize(35px, 700);
+    
+    color: $colorWhite;
+  }
+
+  &__6oclock {
+    position: absolute;
+
+    bottom: 10px;
+
+    display: flex;
+    justify-content: right;
+
+    @include fontsSize(35px, 700);
+    
+    color: $colorWhite;
+  }
+
+  &__9oclock {
+    position: absolute;
+
+    left: 10px;
+
+    display: flex;
+    justify-content: right;
+
+    @include fontsSize(35px, 700);
+    
+    color: $colorWhite;
+  }
+}
