@@ -1,0 +1,55 @@
+@import "../utils/variables";
+@import "../utils/placeholder";
+
+.clock {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  background-image: url(../images/classic-clock.svg);
+  background-position: center;
+  @extend %background-image-options;
+
+  &__minute-hand {
+    position: absolute;
+    top: 123px;
+    left: 192px;
+    width: $minute-hand-size;
+    height: $minute-hand-size;
+    background-image: url(../images/minute-hand.svg);
+    @extend %background-image-options;
+    animation: rotatingHand $animation-minute-time linear infinite;
+    transform-origin: 8px 77px;
+
+    @keyframes rotatingHand {
+      from {
+        transform: rotate(0deg);
+      }
+    
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 90px;
+    left: 190px;
+    width: $second-hand-size;
+    height: $second-hand-size;
+    background-image: url(../images/second-hand.svg);
+    @extend %background-image-options;
+    animation: rotatingHand $animation-second-time steps(60, end) infinite;
+    transform-origin: 10.2px 110.2px;
+
+    @keyframes rotatingHand {
+      from {
+        transform: rotate(0deg);
+      }
+    
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
