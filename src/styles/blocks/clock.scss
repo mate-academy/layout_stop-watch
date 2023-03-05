@@ -9,28 +9,6 @@
   background-position: center;
   @extend %background-image-options;
 
-  &__hour-hand {
-    position: absolute;
-    top: 155px;
-    left: 190.5px;
-    width: $hour-hand-size;
-    height: $hour-hand-size;
-    background-image: url(../images/hour-hand.svg);
-    @extend %background-image-options;
-    animation: rotatingHand $animation-hour-time linear infinite;
-    transform-origin: 10px 44px;
-
-    @keyframes rotatingHand {
-      from {
-        transform: rotate(0deg);
-      }
-    
-      to {
-        transform: rotate(360deg);
-      }
-    }
-  }
-
   &__minute-hand {
     position: absolute;
     top: 123px;
