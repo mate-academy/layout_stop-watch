@@ -3,8 +3,8 @@
 
 .clock {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: $clock-size;
+  height: $clock-size;
   background-image: url(../images/classic-clock.svg);
   background-position: center;
   @extend %background-image-options;
@@ -13,8 +13,8 @@
     position: absolute;
     top: 155px;
     left: 190.5px;
-    width: $hour-hand-width;
-    height: $hour-hand-height;
+    width: $hour-hand-size;
+    height: $hour-hand-size;
     background-image: url(../images/hour-hand.svg);
     @extend %background-image-options;
     animation: rotatingHand $animation-hour-time linear infinite;
@@ -35,8 +35,8 @@
     position: absolute;
     top: 123px;
     left: 192px;
-    width: $minute-hand-width;
-    height: $minute-hand-height;
+    width: $minute-hand-size;
+    height: $minute-hand-size;
     background-image: url(../images/minute-hand.svg);
     @extend %background-image-options;
     animation: rotatingHand $animation-minute-time linear infinite;
@@ -57,8 +57,8 @@
     position: absolute;
     top: 90px;
     left: 190px;
-    width: $second-hand-width;
-    height: $second-hand-height;
+    width: $second-hand-size;
+    height: $second-hand-size;
     background-image: url(../images/second-hand.svg);
     @extend %background-image-options;
     animation: rotatingHand $animation-second-time steps(60, end) infinite;
