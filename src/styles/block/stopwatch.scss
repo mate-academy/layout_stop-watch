@@ -4,37 +4,60 @@
 
 .stopwatch {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: $top-size;
   @include circle($stopwatch-size);
   border: 3px $just-black solid;
-  animation: change 12s linear infinite;
+  &__hour {
+    position: absolute;
+    width: 5px;
+    height: 40%;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(30deg);
+    background-color: $minute-color;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    cursor: pointer;
+  }
 
   &__minute {
     position: absolute;
     width: 3px;
-    height: 350px;
+    height: 45%;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%);
     background-color: $minute-color;
-    border-radius: 50%;
-    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     animation: go 3600s linear infinite;
+    cursor: pointer;
   }
 
   &__second {
     position: absolute;
-    width: 2px;
-    height: 300px;
+    width: 1px;
+    height: 35%;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(0);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     background-color: $second-color;
-    border-radius: 50%;
     cursor: pointer;
     animation: go 60s linear infinite;
   }
 
-  &__center-point {
+  &::after {
+    content: "";
     position: absolute;
-    @include circle(10px);
+    @include circle(15px);
     background-color: $poin-color;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
