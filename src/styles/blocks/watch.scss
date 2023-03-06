@@ -1,0 +1,53 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-color: $darkColor;
+
+  &__dial {
+    @include circle(400px);
+
+    position: relative;
+    border: 20px solid $colorOfWatch;
+
+    background-color: rgba(23, 22, 22, 0.82);
+  }
+
+  &__center {
+    @include circle(30px);
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 4;
+
+    background-color: $colorOfWatch;
+  }
+
+  &__arrow-hour {
+    @include arrowStyles(110px, 8px);
+    animation-duration: 21600s;
+  }
+  &__arrow-minute {
+    @include arrowStyles(160px, 8px);
+    animation-duration: 3600s;
+  }
+
+  &__arrow-second {
+    @include arrowStyles(180px, 4px);
+    animation-duration: 60s;
+  }
+
+  @keyframes rotate-hour {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

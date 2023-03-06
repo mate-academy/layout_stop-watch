@@ -1,0 +1,20 @@
+@mixin circle($square) {
+  height: $square;
+  width: $square;
+  border-radius: 50%;
+}
+
+@mixin arrowStyles($height, $weight) {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  z-index: 2;
+
+  transform-origin: bottom center;
+  animation: rotate-hour linear infinite;
+
+  height: $height;
+  width: $weight;
+  border-radius: 20px;
+  background-color: rgba(252, 215, 0, 0.82);
+}
