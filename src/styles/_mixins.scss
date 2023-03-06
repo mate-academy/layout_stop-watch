@@ -1,0 +1,25 @@
+@mixin rotation($duration) {
+  animation-name: stepOn60;
+  animation-duration: #{$duration};
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@mixin hand($height, $width) {
+  content: "";
+  position: absolute;
+  height: #{$height};
+  top: #{50% - $height};
+  width: #{$width};
+  left: #{50% - $width / 2};
+}
+
+@mixin dot($width) {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  top: #{50% -$width};
+  left: #{50% -$width};
+  width: #{$width * 2};
+  height: #{$width * 2};
+}

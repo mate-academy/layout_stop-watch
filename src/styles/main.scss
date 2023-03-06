@@ -1,0 +1,106 @@
+@import "./variables";
+@import "./reset";
+@import "./animation-stepOn60";
+@import "./extends";
+@import "./mixins";
+@import "./page";
+
+.watch {
+  margin: auto;
+  width: $size-main;
+  height: $size-main;
+
+  position: relative;
+
+  @extend %flex-center;
+
+  border-radius: 50%;
+  border-style: dotted;
+  border-color: $c-circles;
+
+  border-width: $size-circle;
+
+  &__pad {
+    position: absolute;
+
+    width: $size-pad;
+    height: $size-pad;
+
+    &-lines {
+      stroke: $c-lines;
+      stroke-width: 3px;
+    }
+  }
+
+  &::after {
+    content: "";
+
+    @extend %abs100;
+
+    border-radius: 50%;
+  }
+
+  &__seconds {
+    width: $size-second;
+    height: $size-second;
+
+    position: absolute;
+    z-index: 3;
+
+    &-second {
+
+      @extend %abs100;
+      @include rotation(60s);
+
+      &::before {
+        border-radius: $size-br-radius;
+
+        @include hand(50%, $seconds-hand-width);
+
+        background: $c-seconds;
+        box-shadow: 0 0 $size-glow $size-glow-blur $c-sec-glow;
+      }
+
+      &::after {
+
+        @include dot($seconds-hand-width);
+
+        background: $c-sec-axis;
+        box-shadow: 0 0 $size-glow $size-glow-blur $c-sec-glow;
+      }
+    }
+  }
+
+  &__minutes {
+
+    width: $size-minute;
+    height: $size-minute;
+
+    position: absolute;
+    z-index: 2;
+
+    &-minute {
+
+      @extend %abs100;
+
+      @include rotation(3600s);
+
+      &::before {
+        border-radius: $size-br-radius;
+
+        @include hand(45%, $minutes-hand-width);
+
+        background: $c-minutes;
+        box-shadow: 0 0 $size-glow $size-glow-blur $c-min-glow;
+      }
+
+      &::after {
+
+        @include dot($minutes-hand-width);
+
+        background: $c-min-axis;
+        box-shadow: 0 0 $size-glow $size-glow-blur $c-min-glow;
+      }
+    }
+  }
+}
