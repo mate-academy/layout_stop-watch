@@ -3,10 +3,7 @@
   0% {
     transform: rotate(0);
   }
-  @for $step from 1 through 60 {
-
-    #{$step * 10 / 6 * 1%} {
-      transform: rotate(#{$step * 6deg});
-    }
+  to {
+    transform: rotate(1turn);
   }
 }
