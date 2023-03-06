@@ -1,0 +1,56 @@
+.container {
+  display: table-cell;
+  width: 100vw;
+  height: 100vh;
+  vertical-align: middle;
+}
+
+.clock {
+  display: flex;
+  position: relative;
+  margin: auto;
+  height: $clock-size + px;
+  width: $clock-size + px;
+  background-color: beige;
+  border-radius: 50%;
+  
+  &__dot {
+    position: absolute;
+    @include dot($diameter);
+    top: clockMiddle($clock-size, $diameter) + px;
+    left: clockMiddle($clock-size, $diameter) + px;
+  }
+
+  &__min {
+    position: absolute;
+    height: 200px;
+    width: $width-arrow-min + px;
+    border-radius: 50%;
+    background-color: #dbf5d0;
+    bottom: clockMiddle($clock-size, $width-arrow-min) + px;
+    left: clockMiddle($clock-size, $width-arrow-min) + px;
+    transform-origin: bottom;
+    animation: handRound 3600s linear infinite;
+  }
+
+  &__sec {
+    position: absolute;
+    height: 230px;
+    width: $width-arrow-sec + px;
+    border-radius: 50%;
+    background-color: #c4c6f5;
+    bottom: clockMiddle($clock-size, $width-arrow-sec) + px;
+    left: clockMiddle($clock-size, $width-arrow-sec) + px;
+    transform-origin: bottom;
+    animation: handRound 60s linear infinite;
+  }
+}
+
+@keyframes handRound {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
