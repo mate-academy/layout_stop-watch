@@ -1,0 +1,20 @@
+@mixin circle ($watch-size) {
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+@mixin point ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin arrow ($width, $height) {
+  width: $width;
+  height: $height;
+  border-top-right-radius: 90%;
+  border-top-left-radius: 90%;
+  border: 2px solid #fff;
+}
