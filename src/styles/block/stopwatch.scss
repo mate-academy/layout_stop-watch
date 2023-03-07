@@ -17,7 +17,7 @@ body {
   background-size: cover;
 
   &::before {
-    content: '';
+    content: "";
     @include point ($point-size);
     background: #fff ;
     position: relative;
@@ -31,15 +31,17 @@ body {
     @include arrow ($arrow-size, $arrow-height-short);
     @extend %animation;
     animation-duration: 3600s;
+    transform: translate(50%, 50%);
   }
 
   &__seconds {
     @extend %position-center;
     position: absolute;
-    top: 32.7%;
-    left: 49.9%;
+    top: 32.8%;
+    left: 49.85%;
     @include arrow ($arrow-size, $arrow-height-long);
     @extend %animation;
     animation-duration: 60s;
+    transform: translate(50%, 50%);
   }
 }
