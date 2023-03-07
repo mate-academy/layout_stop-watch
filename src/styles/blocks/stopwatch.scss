@@ -1,0 +1,31 @@
+.container__item {
+  position: relative;
+  margin: 100px auto;
+}
+
+.stopwatch {
+  @include circle($watch-size);
+  background-image: url(../img/Clock-Face.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  &__minute {
+    @extend %position-hand;
+    @include hand ($width-hand, $height-hand-short);
+    @extend %animation;
+    animation-duration: 3600s;
+  }
+
+  &__second {
+    @extend %position-hand;
+    @include hand ($width-hand, $height-hand-long);
+    @extend %animation;
+    animation-duration: 60s;
+  }
+
+  &__center {
+    @extend %position-center;
+    @include circle($watch-size * 0.03);
+    background-color: #000;
+  }
+}
