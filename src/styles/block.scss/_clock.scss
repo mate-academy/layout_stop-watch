@@ -1,0 +1,141 @@
+.clock {
+  position: absolute;
+  height: $size;
+  width: $size;
+  border: $frame-thickness solid $first-color;
+  border-radius: 100%;
+  left: $nule;
+  top: $nule;
+  right: $nule;
+  bottom: $nule;
+  margin: auto;
+
+  &__fon {
+    background-image: url(/styles/block.scss/aaa1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    height: $background-size;
+    width: $background-size;
+    border-radius: 100%;
+    position: absolute;
+    left: $nule;
+    top: $nule;
+    right: $nule;
+    bottom: $nule;
+    margin: auto;
+  }
+
+  &__center {
+    height: $icons-1;
+    width: $icons-1;
+    position: absolute;
+    left: $nule;
+    top: $nule;
+    right: $nule;
+    bottom: $nule;
+    margin: auto;
+    border-radius: 100%;
+    background-color: $second-color;
+  }
+
+  &__top {
+    position: absolute;
+    background-color: $second-color;
+    width: $icons-1;
+    height: $icons-2;
+    left: $nule;
+    right: $nule;
+    top: $indent-icons;
+    margin: auto;
+  }
+
+  &__right {
+    position: absolute;
+    background-color: $second-color;
+    width: $icons-2;
+    height: $icons-1;
+    top: $nule;
+    bottom: $nule;
+    right: $indent-icons;
+    margin: auto;
+  }
+
+  &__bottom {
+    position: absolute;
+    background-color: $second-color;
+    width: $icons-1;
+    height: $icons-2;
+    left: $nule;
+    right: $nule;
+    bottom: $indent-icons;
+    margin: auto;
+  }
+
+  &__left {
+    position: absolute;
+    background-color: $second-color;
+    width: $icons-2;
+    height: $icons-1;
+    top: $nule;
+    bottom: $nule;
+    left: $indent-icons;
+    margin: auto;
+  }
+
+  &__hour {
+    width: $hour-width;
+    height: $hour-size;
+    position: absolute;
+    background-color: $red-color-1;
+    left: $nule;
+    right: $nule;
+    margin: $nule auto;
+    top: $hour-indent;
+    border: 1px solid $red-color-1;
+    border-radius: 50%;
+    animation: time 3600s infinite steps(12, end);
+    transform-origin: bottom center;
+  }
+
+  &__minute {
+    width: $minute-width;
+    height: $minute-size;
+    position: absolute;
+    background-color: $red-color-2;
+    left: $nule;
+    right: $nule;
+    margin: $nule auto;
+    top: $minute-indent;
+    border: 1px solid $red-color-2;
+    border-radius: 50%;
+    animation: time 60s infinite steps(12, end);
+    transform-origin: bottom center;
+  }
+
+  &__second {
+    width: $secunde-width;
+    height: $secunde-size;
+    position: absolute;
+    background-color: $red-color-3;
+    left: $nule;
+    right: $nule;
+    margin: $nule auto;
+    top: $secunde-indent;
+    border: 1px solid $red-color-3;
+    border-radius: 100%;
+    animation: time 1s infinite steps(12, end);
+    transform-origin: bottom center;
+  }
+
+  &__shadow {
+    width: $size;
+    height: $size;
+    background: linear-gradient(rgba(20, 40, 65, 0),rgba(0, 0, 0, 0.2));
+    left: $shadow-shift;
+    top: $shadow-shift;
+    transform: rotate(135deg);
+    position: absolute;
+  }
+}
