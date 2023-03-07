@@ -30,7 +30,7 @@
     background-color: #14425a;
     transition: transform 3s;
     transform-origin: bottom;
-    animation: second 60s linear infinite;
+    animation: fullRotate 60s linear infinite;
   }
 
   &__second {
@@ -43,21 +43,11 @@
     background-color: #e37448;
     border-radius: 25px;
     transform-origin: bottom;
-    animation: minute 3600s linear 60s infinite;
+    animation: fullRotate 3600s linear 60s infinite;
   }
 }
 
-@keyframes second {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minute {
+@keyframes fullRotate {
   0% {
     transform: rotate(0);
   }
