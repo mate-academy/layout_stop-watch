@@ -84,20 +84,20 @@
     margin: auto;
   }
 
-  &__hour {
-    width: $hour-width;
-    height: $hour-size;
-    position: absolute;
-    background-color: $red-color-1;
-    left: $nule;
-    right: $nule;
-    margin: $nule auto;
-    top: $hour-indent;
-    border: 1px solid $red-color-1;
-    border-radius: 50%;
-    animation: time 3600s infinite steps(12, end);
-    transform-origin: bottom center;
-  }
+  // &__hour {
+  //   width: $hour-width;
+  //   height: $hour-size;
+  //   position: absolute;
+  //   background-color: $red-color-1;
+  //   left: $nule;
+  //   right: $nule;
+  //   margin: $nule auto;
+  //   top: $hour-indent;
+  //   border: 1px solid $red-color-1;
+  //   border-radius: 50%;
+  //   animation: time 3600s infinite steps(12, end);
+  //   transform-origin: bottom center;
+  // }
 
   &__minute {
     width: $minute-width;
@@ -110,7 +110,7 @@
     top: $minute-indent;
     border: 1px solid $red-color-2;
     border-radius: 50%;
-    animation: time 60s infinite steps(12, end);
+    animation: time 3600s infinite steps(12, end);
     transform-origin: bottom center;
   }
 
@@ -125,7 +125,7 @@
     top: $secunde-indent;
     border: 1px solid $red-color-3;
     border-radius: 100%;
-    animation: time 1s infinite steps(12, end);
+    animation: time 60s infinite steps(12, end);
     transform-origin: bottom center;
   }
 
