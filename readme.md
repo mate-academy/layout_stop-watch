@@ -1,5 +1,5 @@
 # Stopwatch task
-Replace `<your_account>` with your Github username and copy the links to Pull Request description:
+Replace `NadieinOleh` with your Github username and copy the links to Pull Request description:
 - [DEMO LINK](https://NadieinOleh.github.io/layout_stop-watch/)
 
 ___
