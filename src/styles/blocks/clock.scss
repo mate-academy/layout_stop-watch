@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('../images/clock.png') center / cover;
+  background: url("../images/clock.png") center / cover;
   border: 4px solid $arrow-color;
   border-radius: 50%;
   box-shadow: 0 -15px 15px $shadow-color,
@@ -12,7 +12,7 @@
   position: relative;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 10px;
     height: 10px;
@@ -35,7 +35,7 @@
       animation: time 3600s linear infinite;
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         width: 4px;
         height: 90px;
@@ -60,7 +60,7 @@
       animation: time 60s linear infinite;
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         width: 2px;
         height: 150px;
@@ -73,10 +73,11 @@
 
   @keyframes time {
     0% {
-      transform: rotateZ(0deg)
+      transform: rotateZ(0deg);
     }
+
     100% {
-      transform: rotateZ(360deg)
+      transform: rotateZ(360deg);
     }
   }
-};
+}
