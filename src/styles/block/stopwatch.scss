@@ -5,15 +5,14 @@
 @import "./utils/animations";
 
 body {
-  position: relative;
   background-color: $page-color;
 }
 
 .stopwatch {
   @extend %position-center;
-  margin: 250px 600px;
+  margin: 250px auto;
   @include circle ($watch-size);
-  position: absolute;
+  position: relative;
   background-image: url(clock.png);
   background-size: cover;
 
