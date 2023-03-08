@@ -1,0 +1,58 @@
+.clock {
+  @include clock-size($clock-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../images/clock.png") center / cover;
+  border: 4px solid $arrow-color;
+  border-radius: 50%;
+  box-shadow: 0 -15px 15px $shadow-color,
+    inset 0 15px 15px $shadow-color;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $arrow-color;
+    z-index: 3;
+  }
+
+  &__minute {
+    @include arrow-placeholder;
+    @include arow-box-size($minute-box-size);
+    animation: time 3600s linear infinite;
+
+    &::before {
+      width: 4px;
+      height: 90px;
+      background: $arrow-color;
+      z-index: 2;
+    }
+  }
+
+  &__second {
+    @include arrow-placeholder;
+    @include arow-box-size($second-box-size);
+    animation: time 60s linear infinite;
+
+    &::before {
+      width: 2px;
+      height: 150px;
+      background: #eb4e4e;
+      z-index: 1;
+    }
+  }
+
+  @keyframes time {
+    0% {
+      transform: rotateZ(0deg);
+    }
+
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+}
