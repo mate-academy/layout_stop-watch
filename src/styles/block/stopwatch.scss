@@ -5,14 +5,15 @@
 @import "./utils/animations";
 
 body {
-  @extend %position-center;
-  min-height: 100vh;
+  position: relative;
   background-color: $page-color;
 }
 
 .stopwatch {
   @extend %position-center;
+  margin: 250px 600px;
   @include circle ($watch-size);
+  position: absolute;
   background-image: url(clock.png);
   background-size: cover;
 
@@ -26,22 +27,21 @@ body {
   &__minutes {
     @extend %position-center;
     position: absolute;
-    top: 38.8%;
-    left: 49.85%;
+    top: 22%;
+    left: 49.5%;
     @include arrow ($arrow-size, $arrow-height-short);
     @extend %animation;
     animation-duration: 3600s;
-    transform: translate(50%, 50%);
+
   }
 
   &__seconds {
     @extend %position-center;
     position: absolute;
-    top: 32.8%;
-    left: 49.85%;
+    top: 6.8%;
+    left: 49.6%;
     @include arrow ($arrow-size, $arrow-height-long);
     @extend %animation;
     animation-duration: 60s;
-    transform: translate(50%, 50%);
   }
 }
