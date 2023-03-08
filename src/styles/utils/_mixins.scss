@@ -1,0 +1,24 @@
+@mixin clock-size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin arow-box-size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin arrow-placeholder {
+  & {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-radius: $arrow-border-radius;
+    }
+  }
+}

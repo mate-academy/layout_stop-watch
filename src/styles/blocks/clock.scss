@@ -1,6 +1,5 @@
 .clock {
-  width: 350px;
-  height: 350px;
+  @include clock-size($clock-size);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,52 +21,28 @@
   }
 
   &__minute {
-    position: absolute;
+    @include arrow-placeholder;
+    @include arow-box-size($minute-box-size);
+    animation: time 3600s linear infinite;
 
-    &-minutes {
-      width: 190px;
-      height: 190px;
-      display: flex;
-      justify-content: center;
-      position: relative;
-      border-radius: 50%;
-
-      animation: time 3600s linear infinite;
-
-      &::before {
-        content: "";
-        position: absolute;
-        width: 4px;
-        height: 90px;
-        background: $arrow-color;
-        z-index: 2;
-        border-radius: $arrow-border-radius;
-      }
+    &::before {
+      width: 4px;
+      height: 90px;
+      background: $arrow-color;
+      z-index: 2;
     }
   }
 
   &__second {
-    position: absolute;
+    @include arrow-placeholder;
+    @include arow-box-size($second-box-size);
+    animation: time 60s linear infinite;
 
-    &-seconds {
-      width: 230px;
-      height: 230px;
-      display: flex;
-      justify-content: center;
-      position: relative;
-      border-radius: 50%;
-
-      animation: time 60s linear infinite;
-
-      &::before {
-        content: "";
-        position: absolute;
-        width: 2px;
-        height: 150px;
-        background: #eb4e4e;
-        border-radius: $arrow-border-radius;
-        z-index: 1;
-      }
+    &::before {
+      width: 2px;
+      height: 150px;
+      background: #eb4e4e;
+      z-index: 1;
     }
   }
 
