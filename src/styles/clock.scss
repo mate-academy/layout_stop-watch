@@ -1,0 +1,106 @@
+.clock {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__frame {
+    height: $size-frame;
+    width: $size-frame;
+    border: 1px solid $black-color;
+    border-radius: 47%;
+    background-color: silver;
+  }
+
+  &__face {
+    height: $size-face;
+    width: $size-face;
+    position: relative;
+    top: 5%;
+    left: 5%;
+    background-color: $clock-face-color;
+    border: 2px solid $black-color;
+    border-radius: 50%;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: 25px;
+    left: $size-face / 2;
+    height: $seconds-height;
+    width: $seconds-width;
+    background-color: $black-color;
+    border-radius: 30%;
+    transform-origin: bottom;
+    animation-name: seconds;
+    animation-duration: 60s;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+
+    @keyframes seconds {
+      0% {
+        transform: rotate 0;
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 75px;
+    left: $size-face / 2;
+    height: $minutes-height;
+    width: $minutes-width;
+    background-color: $black-color;
+    border-radius: 30%;
+    transform-origin: bottom;
+    animation-name: minutes;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @keyframes minutes {
+      0% {
+        transform: rotate 0;
+      }
+
+      100% {
+        transform: rotate(350deg);
+      }
+    }
+  }
+
+  &__center {
+    position: relative;
+    height: $center-size;
+    width: $center-size;
+    top: $center-position;
+    left: $center-position;
+    border-radius: 50%;
+    background-color: $black-color;
+
+    &-3 {
+      position: relative;
+      top: -20px;
+      left: $size-face - 250px;
+      font-size: 50px;
+    }
+
+    &-6 {
+      position: relative;
+      top: $size-face - 340px;
+      left: -2px;
+      font-size: 50px;
+    }
+
+    &-9 {
+      position: relative;
+      top: -140px;
+      right: $size-face - 250px;
+      font-size: 50px;
+    }
+  }
+}
