@@ -48,52 +48,40 @@
     transform-origin: bottom;
   }
 
-  &__12oclock {
-    position: absolute;
+  &__oclock-12 {
+    @include stylePosition;
 
-    top: 10px;
-
-    display: flex;
-    justify-content: center;
+    top: $indent;
 
     @include fontsSize(35px, 700);
     
     color: $colorWhite;
   }
 
-  &__3oclock {
-    position: absolute;
+  &__oclock-3 {
+    @include stylePosition;
 
-    right: 10px;
-
-    display: flex;
-    justify-content: right;
+    right: $indent;
 
     @include fontsSize(35px, 700);
     
     color: $colorWhite;
   }
 
-  &__6oclock {
-    position: absolute;
+  &__oclock-6 {
+    @include stylePosition;
 
-    bottom: 10px;
-
-    display: flex;
-    justify-content: right;
+    bottom: $indent;
 
     @include fontsSize(35px, 700);
     
     color: $colorWhite;
   }
 
-  &__9oclock {
-    position: absolute;
+  &__oclock-9 {
+    @include stylePosition;
 
-    left: 10px;
-
-    display: flex;
-    justify-content: right;
+    left: $indent;
 
     @include fontsSize(35px, 700);
     
