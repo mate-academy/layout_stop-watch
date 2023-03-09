@@ -1,3 +1,4 @@
+@import "../utils/mixin";
 .clock {
   position: relative;
   width: $container_size;
@@ -6,31 +7,17 @@
   border: 1px solid black;
 }
 
-.clock_hour {
-  position: absolute;
-  width: $arrows_width;
-  height: $arrows_hour-height;
-  top: $center - $arrows_hour-height;
-  left: $indent;
-  background-color: yellow;
-  border: 1px solid black;
-  border-radius: $border_rad-arrows;
+.clock__hour {
+  @include properties (yellow , $arrows_hour-height);
   animation: 60s ease-in 0s infinite normal move;
 }
 
-.clock_minute {
-  position: absolute;
-  width: $arrows_width;
-  height: $arrows_minute-height;
-  top: $center - $arrows_minute-height;
-  left: $indent;
-  background-color: royalblue;
-  border: 1px solid black;
-  border-radius: $border_rad-arrows;
+.clock__minute {
+  @include properties(royalblue, $arrows_minute-height);
   animation: 1s linear 0s infinite normal move;
 }
 
-.clock_center {
+.clock__center {
   position: absolute;
   width: $center_width;
   height: $center_width;
