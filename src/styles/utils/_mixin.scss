@@ -1,0 +1,11 @@
+@mixin properties($bg_color, $arrows-height) {
+  position: absolute;
+  width: $arrows_width;
+  height: $arrows-height;
+  top: $center - $arrows-height;
+  left: $indent;
+  background-color: $bg_color;
+  border: 1px solid black;
+  border-radius: $border_rad-arrows;
+  transform-origin: bottom center;
+}

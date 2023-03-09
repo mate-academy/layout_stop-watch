@@ -1,0 +1,30 @@
+@import "../utils/mixin";
+.clock {
+  position: relative;
+  width: $container_size;
+  height: $container_size;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+.clock__hour {
+  @include properties (yellow , $arrows_hour-height);
+  animation: 60s ease-in 0s infinite normal move;
+}
+
+.clock__minute {
+  @include properties(royalblue, $arrows_minute-height);
+  animation: 1s linear 0s infinite normal move;
+}
+
+.clock__center {
+  position: absolute;
+  width: $center_width;
+  height: $center_width;
+  left: $center;
+  top: $center;
+  transform: translate(-50% , -50%);
+  border: 1px solid black;
+  border-radius: $center_width;
+  background-color: black;
+}
