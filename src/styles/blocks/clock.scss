@@ -1,0 +1,39 @@
+@import "./utils/variables";
+
+.clock {
+  background-image: url("../images/clock.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: variables.$clock-size;
+  height: variables.$clock-size;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &__hand {
+    height: 240px;
+    position: absolute;
+    transform: rotate(0deg);
+    &--small {
+      left: 49.5%;
+      top: 47px;
+      animation: rotation 60s infinite steps(60);
+      transform-origin: 5px 204px;
+
+    }
+
+    &--medium {
+      left: 48.8%;
+      top: 47px;
+      animation: rotation 3600s infinite steps(60);
+      transform-origin: 8px 202px;
+    }
+  }
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
