@@ -19,7 +19,6 @@
     position: relative;
     z-index: 1;
 
-    margin: auto;
     border-radius: 50%;
     border: 2px solid $secondary_color;
     @include middle-size;
@@ -33,7 +32,7 @@
 
     transform-origin: bottom;
 
-    animation: move 60s steps(60) infinite;
+    animation: min 60s steps(60) infinite;
 
     height: 200px;
     width: 8px;
@@ -80,16 +79,6 @@
 
   &__schedule--9 {
     bottom: 15px;
-  }
-}
-
-@keyframes move {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(1turn);
   }
 }
 
