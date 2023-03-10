@@ -1,0 +1,76 @@
+@import "./utils/variables";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $height-stop-watch;
+  width: $width-stop-watch;
+  border: 5px solid black;
+  border-radius: 50%;
+  background: url(https://snipboard.io/LnMxZm.jpg) no-repeat;
+  background-size: contain;
+
+
+
+  &__minute-hand {
+    position: absolute;
+    border-radius: 30%;
+    height: $height-stop-watch / 3;
+    background-color: blue;
+    width: 5px;
+    bottom: $height-stop-watch / 2;
+    transform-origin: 50% 100%;
+    animation: rotate-minute 3600s linear infinite;
+    animation-delay: 0s;
+  }
+
+ @keyframes rotate-minute {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    border-radius: 30%;
+    height: $height-stop-watch / 2;
+    background-color: green;
+    width: 5px;
+    top: 0;
+    transform-origin: 50% 100%;
+    animation: rotate-second 60s linear infinite;
+   }
+
+  @keyframes rotate-second {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+
+
+
+
+
+
