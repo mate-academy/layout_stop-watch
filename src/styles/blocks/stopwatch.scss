@@ -1,48 +1,48 @@
 .stopwatch {
+  @include circle($stopwatch-size);
+  position: relative;
+  top: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  position: relative;
+  transition: box-shadow 1s;
+  box-shadow: 0 0 120px $main-color;
+  border: 3px solid $stopwatch-border-color;
   background-image: url(../../images/watch.png);
   background-color: $stopwatch-background-color;
-  top: 15vh;
-  border: 3px solid $stopwatch-border-color;
-  box-shadow: 0 0 120px $main-color;
-  transition: box-shadow 1s;
-  @include circle($stopwatch-size);
-  
+
   &:hover {
     box-shadow: 0 0 120px $hover-color;
   }
 
   &__center {
-    position: absolute;
-    background-color: $main-color;
-    z-index: 1;
     @include circle($center-size);
+    position: absolute;
+    z-index: 1;
+    background-color: $main-color;
   }
 
   &__seconds {
     position: absolute;
     top: $seconds-padding;
-    width: 3px;
-    border-radius: 10px;
-    height: $seconds-height;
-    background-color: $seconds-background-color;
     transform-origin: bottom;
-    animation: rotation 60s linear infinite;
+    animation: rotation $seconds-rotation linear infinite;
+    width: 3px;
+    height: $seconds-height;
+    border-radius: 10px;
+    background-color: $seconds-background-color;
   }
 
   &__minutes {
     position: absolute;
     top: $minutes-padding;
+    transform-origin: bottom;
+    animation: rotation $minutes-rotation linear infinite;
     width: 6px;
     height: $minutes-height;
-    background-color: $main-color;
     border-radius: 35%;
-    transform-origin: bottom;
-    animation: rotation 3600s linear infinite;
+    background-color: $main-color;
   }
 }
 
