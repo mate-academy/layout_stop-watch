@@ -28,11 +28,7 @@
     }
 
     &::after {
-      position: absolute;
-      bottom: 50%;
-      left: 50%;
-      content: "";
-      height: 220px;
+      @include position ();
       width: 4px;
       background-color: red;
 
@@ -42,5 +38,17 @@
       animation-timing-function: linear;
       transform-origin: bottom;
     }
+  }
+
+  &__circle {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
   }
 }
