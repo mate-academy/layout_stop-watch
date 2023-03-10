@@ -1,3 +1,7 @@
 @function get-key-frame-value($iteration) {
   @return #{($iteration / 60 * 100%)};
 }
+
+@function getPosition($watchHeight, $elementSize) {
+  @return #{($watchHeight - $elementSize) * 0.5};
+}
