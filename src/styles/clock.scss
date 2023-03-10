@@ -26,7 +26,7 @@
 
     @extend %positioning-hands;
 
-    top: 47%;
+    top: 48%;
     left: 47%;
     z-index: $z-index-value;
 
@@ -46,9 +46,7 @@
 
     background-color: #d15559;
     border-radius: $border-radius;
-
     animation: rotate linear ($minute * 60) infinite;
-    animation-delay: -1800s;
     transform-origin: center 0;
   }
 
@@ -57,11 +55,9 @@
 
     width: $hand-width;
     height: 150px;
-
     background-color: $second-color;
     animation: rotate linear ($second * 60) infinite;
     transform-origin: center 0;
-    animation-delay: -30s;
 
     border-radius: $border-radius;
   }
@@ -69,9 +65,9 @@
 
 @keyframes rotate {
   from {
-    transform: rotate(0);
+    transform: rotate(-0.5turn);
   }
   to {
-    transform: rotate(1turn);
+    transform: rotate(0.5turn);
   }
 }
