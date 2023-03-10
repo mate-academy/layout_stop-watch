@@ -1,0 +1,25 @@
+.minute {
+  height: 100px;
+  width: 4px;
+  background: #777;
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  animation: tick 3600s infinite linear;
+  -webkit-animation: tick 3600s infinite linear;
+}
+
+.second {
+  height: 60px;
+  width: 4px;
+  background: #fc0505;
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  animation: tick 60s infinite linear;
+  -webkit-animation: tick 60s infinite linear;
+}
+
+.minute, .second {
+  transform-origin: 2px 100%;
+}
