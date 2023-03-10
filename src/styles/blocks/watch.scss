@@ -1,0 +1,86 @@
+.watch {
+  position: relative;
+
+  width: $watchDiameter;
+  height: $watchDiameter;
+
+
+  border: 2px solid $colorWatchBorder;
+  border-radius: 50%;
+  background-color: $colorWatch;
+
+  &:active &__seconds,
+  &:active &__minutes {
+    animation-play-state: paused;
+  }
+
+  &__point {
+    position: absolute;
+    top: $pointMargin;
+    left: getPosition($watchDiameter, $pointWidth);
+
+    height: $pointLength;
+    width: $pointWidth;
+
+    border-radius: 2px;
+    background-color: $colorPoints;
+    transform-origin: center $pointTransOrigGap;
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        transform: rotate(#{($i * 30)}deg);
+      }
+    }
+  }
+
+  &__minutes {
+    @extend %watchHand;
+
+    left: getPosition($watchDiameter, $minutesHandWidth);
+
+    height: $minutesHandLength;
+    width: $minutesHandWidth;
+
+    background-color: $colorMinutesHand;
+
+    animation-duration: #{$animationDurationMinutes}s;
+    animation-timing-function: steps($animationDurationMinutes);
+  }
+
+  &__seconds {
+    @extend %watchHand;
+
+    left: getPosition($watchDiameter, $secondsHandWidth);
+
+    height: $secondsHandLength;
+    width: $secondsHandWidth;
+
+    background-color: $colorSecondsHand;
+
+    animation-duration: #{$animationDurationSeconds}s;
+    animation-timing-function: steps($animationDurationSeconds);
+  }
+
+  &__center {
+    position: absolute;
+    top: getPosition($watchDiameter, $centerRoundDiameter);
+    left: getPosition($watchDiameter, $centerRoundDiameter);
+
+    height: $centerRoundDiameter;
+    width: $centerRoundDiameter;
+
+    border-radius: 50%;
+    background-color: $colorCenter;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
