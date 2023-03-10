@@ -1,0 +1,73 @@
+%positioning-hands {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 49%;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.clock {
+  position: relative;
+
+  @include clock-size(300px, 300px);
+
+  border: 3px solid $minute-color;
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+
+    @extend %positioning-hands;
+
+    top: 48%;
+    left: 47%;
+    z-index: $z-index-value;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: $minute-color;
+    border-radius: 50%;
+  }
+
+  &__minute {
+    z-index: $z-index-value;
+    @extend %positioning-hands;
+
+    width: $hand-width;
+    height: 100px;
+
+    background-color: #d15559;
+    border-radius: $border-radius;
+    animation: rotate linear ($minute * 60) infinite;
+    transform-origin: center 0;
+  }
+
+  &__second {
+    @extend %positioning-hands;
+
+    width: $hand-width;
+    height: 150px;
+    background-color: $second-color;
+    animation: rotate linear ($second * 60) infinite;
+    transform-origin: center 0;
+
+    border-radius: $border-radius;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(-0.5turn);
+  }
+  to {
+    transform: rotate(0.5turn);
+  }
+}
