@@ -1,0 +1,53 @@
+@import "../_utils/mixins";
+@import "../animation.scss";
+
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  &__center {
+    position: relative;
+    z-index: 1;
+
+    background-color: black;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+  }
+
+  &__minutes-hand {
+    @include handSize;
+
+    position: relative;
+    left: 30%;
+    bottom: 210px;
+
+    height: 200px;
+    background-color: red;
+
+    transform-origin: bottom;
+    animation: spin 3600s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__seconds-hand {
+    @include handSize;
+    position: relative;
+    left: 30%;
+    bottom: 364px;
+
+    height: 150px;
+    background-color: aqua;
+
+    transform-origin: bottom;
+    animation: spin 60s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+}
