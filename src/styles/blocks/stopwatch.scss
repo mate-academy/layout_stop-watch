@@ -1,28 +1,58 @@
 .stopwatch {
-  display: flex;
+  display: grid;
   justify-content: center;
   position: relative;
-  height: 400px;
-  width: 400px;
-  border-radius: 50%;
-  border: 2px solid black;
 
-  &::after {
-    content: "0";
+  &__minute {
+    height: 75px;
+    width: 6px;
+    background-color: #616161;
+    border-radius: 6px;
     position: absolute;
-    font-size: 60px;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
-    color: gray;
+    top: calc(50% - 75px);
+    left: calc(50% - 3px);
+
+    animation-name: rotateMinute;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
   }
 
-  &::before {
-    content: "30";
+  @keyframes rotateMinute {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  &__second {
+    width: 4px;
+    height: 100px;
+    background-color: #616161;
+    border-radius: 4px;
     position: absolute;
-    bottom: 0;
-    font-size: 60px;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
-    color: gray;
+    top: calc(50% - 100px);
+    left: calc(50% - 2px);
+
+    animation-name: rotateSecond;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+
+  @keyframes rotateSecond {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(1turn);
+    }
+
   }
 }
