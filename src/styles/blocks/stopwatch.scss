@@ -1,0 +1,57 @@
+.stopwatch {
+  @include circle($stopwatch-size);
+  position: relative;
+  top: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  transition: box-shadow 1s;
+  box-shadow: 0 0 120px $main-color;
+  border: 3px solid $stopwatch-border-color;
+  background-image: url(../../images/watch.png);
+  background-color: $stopwatch-background-color;
+
+  &:hover {
+    box-shadow: 0 0 120px $hover-color;
+  }
+
+  &__center {
+    @include circle($center-size);
+    position: absolute;
+    z-index: 1;
+    background-color: $main-color;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: $seconds-padding;
+    transform-origin: bottom;
+    animation: rotation $seconds-rotation linear infinite;
+    width: 3px;
+    height: $seconds-height;
+    border-radius: 10px;
+    background-color: $seconds-background-color;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: $minutes-padding;
+    transform-origin: bottom;
+    animation: rotation $minutes-rotation linear infinite;
+    width: 6px;
+    height: $minutes-height;
+    border-radius: 35%;
+    background-color: $main-color;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
