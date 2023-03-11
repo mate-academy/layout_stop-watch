@@ -1,0 +1,43 @@
+.stopwatch {
+  &__center-element {
+    @include position;
+
+    width: $center-element-width;
+    height: $center-element-height;
+    background-color: black;
+    border-radius: 50%;
+    transform: translate(-35%, 50%);
+  }
+
+  &__minute {
+    @include position;
+    width: $minute-width;
+    height: $minute-height;
+    border-radius: 5px;
+    background-color: $minute-color;
+    animation-name: rotate;
+    animation-duration: 3600s;
+    @include animation-setting;
+  }
+
+  &__second {
+    @include position;
+    width: $second-width;
+    height: $second-height;
+    border-radius: 5px;
+    background-color: $second-color;
+    animation-name: rotate;
+    animation-duration: 60s;
+    @include animation-setting;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
