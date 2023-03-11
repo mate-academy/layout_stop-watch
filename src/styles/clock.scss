@@ -1,3 +1,16 @@
+@mixin pseudo-element($height, $width, $background, $animation-duration) {
+  content: "";
+  position: absolute;
+  top: calc(50% - (#{$height} / 2));
+  left: 50%;
+  height: #{$height};
+  width: #{$width};
+  background: $background;
+  border-radius: 5px;
+  animation: animate #{$animation-duration}s linear infinite;
+  transform-origin: left;
+}
+
 .clock {
   width: 400px;
   height: 400px;
@@ -12,29 +25,11 @@
   }
 
   &:before {
-    content: "";
-    position: absolute;
-    top: calc(50% - 3px);
-    left: 50%;
-    height: 7px;
-    width: 180px;
-    background: red;
-    border-radius: 5px;
-    animation: animate 60s linear infinite;
-    transform-origin: left;
+    @include pseudo-element(7px, 180px, red, 60);
   }
-
+  
   &:after {
-    content: "";
-    position: absolute;
-    top: calc(50% - 3px);
-    left: 50%;
-    height: 10px;
-    width: 140px;
-    background: black;
-    border-radius: 5px;
-    animation: animate 3600s linear infinite;
-    transform-origin: left;
+    @include pseudo-element(10px, 140px, black, 3600);
   }
 
   &__center {
