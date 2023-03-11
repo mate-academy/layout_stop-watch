@@ -1,0 +1,22 @@
+@mixin clock-hands ($z-index, $height, $color, $duration) {
+  position: absolute;
+  bottom: 50%;
+  z-index: $z-index;
+  width: 10px;
+  height: $height;
+  background-color: $color;
+  border-radius: 5px;
+  transform-origin: bottom;
+  animation: clock $duration steps(60) infinite;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
