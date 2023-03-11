@@ -1,14 +1,21 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <div class="content">
+      <svg class="clock" viewBox="0 0 330 330">
+        <circle class="clock__face" cx="165" cy="165" r="160"/>
+        <line class="clock__minute-hand" x1="50%" y1="50%" x2="50%" y2="13%"/>
+        <line class="clock__second-hand" x1="50%" y1="50%" x2="50%" y2="3%"/>
+        <circle class="clock__center" cx="50%" cy="50%" r="5"/>
+      </svg>
+    </div>
+  </body>
 </html>
