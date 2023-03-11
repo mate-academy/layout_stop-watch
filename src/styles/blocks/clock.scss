@@ -1,47 +1,29 @@
 .clock {
+  @include circle($clock-size);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: $clock-height;
-  width: $clock-width;
   position: relative;
 
   border: 5px solid $clock-color;
-  border-radius: 50%;
   box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
     inset 0 -15px 15px rgba(255, 255, 255, 0.01),
     0 15px 15px rgba(0, 0, 0, 0.3),
     inset 0 15px 15px rgba(0, 0, 0, 0.3);
 
   &__center {
+    @include circle($center-size);
     position: absolute;
-    height: $center-height;
-    width: $center-width;
-    background-color: $center-color;
-    border-radius: 50%;
+    background-color: $white-color;
   }
 
   &__minute {
-    position: absolute;
-    height: $minute-hand-height;
-    width: $minute-hand-width;
-    background-color: $minute-hand-color;
-    border-radius: 6px 6px 0 0;
-    bottom: 50%;
-    transform-origin: bottom;
-    /* transform: translateY($minute-hand-height / -2); */
+    @include hands($minute-hand-height, $minute-hand-width, $minute-hand-color);
     animation: move 3600s linear infinite;
   }
 
   &__seconds {
-    position: absolute;
-    height: $seconds-hand-height;
-    width: $seconds-hand-width;
-    background-color: $seconds-hand-color;
-    border-radius: 6px 6px 0 0;
-    bottom: 50%;
-    transform-origin: bottom;
-    /* transform: translateY($seconds-hand-height / -2); */
+    @include hands($seconds-hand-height, $seconds-hand-width, $white-color);
     animation: move 60s linear infinite;
   }
 }
