@@ -1,0 +1,53 @@
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid $c-black;
+  @include square($height-stop-watch);
+  @include circle($square-radius);
+  background: url(https://snipboard.io/LnMxZm.jpg) no-repeat;
+  background-size: contain;
+
+  &__minute-hand {
+    position: absolute;
+    @include circle($arrow-radius);
+    height: $element-height;
+    background-color: $c-blue;
+    width: 5px;
+    bottom: $element-size;
+    transform-origin: 50% 100%;
+    animation: rotate-minute 3600s linear infinite;
+    animation-delay: 0s;
+  }
+
+ @keyframes rotate-minute {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    @include circle($arrow-radius);
+    height: $element-size;
+    background-color: $c-green;
+    width: 5px;
+    top: 0;
+    transform-origin: 50% 100%;
+    animation: rotate-second 60s linear infinite;
+   }
+
+  @keyframes rotate-second {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
