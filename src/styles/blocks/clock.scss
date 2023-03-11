@@ -1,7 +1,16 @@
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
 .clock {
+  position: relative;
   width: $clockSize;
   height: $clockSize;
-  margin: auto;
+  margin: 0 auto;
   background-color: #fff;
   border: 3px solid black;
   border-radius: 50%;
@@ -22,6 +31,16 @@
     height: $clockSize*0.4;
     background-color: gray;
     animation-duration: 60s;
+  }
+
+  &__center {
+    position: absolute;
+    top: 240px;
+    left: 245px;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
   }
 
   @keyframes animation_arrow {
