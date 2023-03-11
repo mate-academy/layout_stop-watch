@@ -2,6 +2,8 @@
   position: relative;
   @include flex-center;
   @include square(800px);
+  border: 2px solid black;
+  border-radius: 50%;
 
   &__dot {
     @include square(20px);
@@ -14,6 +16,6 @@
   }
 
   &__seconds {
-    @include clock-hands(-2, 400px, rgb(255, 0, 0), 60s);
+    @include clock-hands(-2, 350px, rgb(255, 0, 0), 60s);
   }
 }
