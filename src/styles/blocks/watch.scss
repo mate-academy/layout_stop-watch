@@ -11,46 +11,29 @@
   &__minute-hand {
     height: $height-minute-hand;
     width: $width-minute-hand;
-    position: absolute;
-    top: top($height-minute-hand);
-    right: right($width-minute-hand);
     border-radius: 16px;
     background: radial-gradient(#fff, #172830);
     animation: getRound 3600s  linear 1;
-    transform-origin: bottom center ;
+    transform-origin: top center ;
   }
 
   &__second-hand {
     height: $height-second-hand;
     width: $width-second-hand;
-    position: absolute;
-    top: top($height-second-hand);
-    right: right($width-second-hand);
     border-radius: 50%;
     background-color: rgb(222, 2, 2);
     animation: getRound 60s linear 60;
-    transform-origin: bottom center ;
+    transform-origin: top center ;
     z-index: 1;
   }
 
   &__round {
     @include circle($round-size);
     background-color: red;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  @keyframes getRound {
-    0% {
-      transform: rotate(0deg);
-    }
-    50% {
-      transform: rotate(180deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  & > section {
+    @extend %setCenter;
   }
 }
