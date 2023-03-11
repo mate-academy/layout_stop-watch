@@ -1,0 +1,172 @@
+.clock {
+  @include round(500px, 50%);
+  background-color: aquamarine;
+
+  &__numbers {
+    position: absolute;
+    top: calc(50% - 125px);
+    left: calc(50% - 125px);
+  }
+}
+
+.clock-minute {
+  position: absolute;
+  top: calc(50% - 180px);
+  left: calc(50% - 6px);
+
+  height: 180px;
+  width: 12px;
+  border-radius: 12px;
+
+  background-color: $color-minute;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+
+  transform-origin: center 180px;
+  animation: minute-1 1s linear 60s 1 forwards,
+    minute-2 1s linear 120s 1 forwards,
+    minute-3 1s linear 180s 1 forwards,
+    minute-4 1s linear 240s 1 forwards,
+    minute-5 1s linear 300s 1 forwards,
+    minute-6 1s linear 360s 1 forwards,
+    minute-7 1s linear 420s 1 forwards,
+    minute-8 1s linear 480s 1 forwards,
+    minute-9 1s linear 540s 1 forwards,
+    minute-10 1s linear 600s 1 forwards;
+}
+
+.clock-seconds {
+  position: absolute;
+  top: calc(50% - 225px);
+  left: calc(50% - 2px);
+  
+  height: 225px;
+  width: 4px;
+  border-radius: 4px;
+
+  background-color: $color-seconds;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+
+  transform-origin: center 225px;
+  animation: second 60s linear infinite;
+}
+
+.clock-round {
+  position: absolute;
+  top: calc(52% - 18px);
+  left: calc(50% - 9px);
+
+  @include round(18px, 50%);
+
+  background-color: $color-seconds;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+@keyframes minute-1 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(36deg);
+  }
+}
+
+@keyframes minute-2 {
+  from {
+    transform: rotate(36deg);
+  }
+
+  to {
+    transform: rotate(72deg);
+  }
+}
+
+@keyframes minute-3 {
+  from {
+    transform: rotate(72deg);
+  }
+
+  to {
+    transform: rotate(108deg);
+  }
+}
+
+@keyframes minute-4 {
+  from {
+    transform: rotate(108deg);
+  }
+
+  to {
+    transform: rotate(144deg);
+  }
+}
+
+@keyframes minute-5 {
+  from {
+    transform: rotate(144deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes minute-6 {
+  from {
+    transform: rotate(180deg);
+  }
+
+  to {
+    transform: rotate(216deg);
+  }
+}
+
+@keyframes minute-7 {
+  from {
+    transform: rotate(216deg);
+  }
+
+  to {
+    transform: rotate(252deg);
+  }
+}
+
+@keyframes minute-8 {
+  from {
+    transform: rotate(252deg);
+  }
+
+  to {
+    transform: rotate(288deg);
+  }
+}
+
+@keyframes minute-9 {
+  from {
+    transform: rotate(288deg);
+  }
+
+  to {
+    transform: rotate(324deg);
+  }
+}
+
+@keyframes minute-10 {
+  from {
+    transform: rotate(324deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+}
