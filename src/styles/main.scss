@@ -1,0 +1,38 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  width: 50%;
+
+  &__face {
+    fill: white;
+    stroke: black;
+    stroke-width: 4px;
+  }
+
+  &__second-hand {
+    stroke: red;
+    animation: rotate 60s steps(60) infinite;
+    transform-origin: center;
+    transition: transform(0.2s) cubic-bezier(.4,2.08,.55,.44);
+  }
+
+  &__minute-hand {
+    stroke: blue;
+    animation: rotate 3600s linear infinite;
+    transform-origin: center;
+  }
+}
