@@ -1,0 +1,44 @@
+.clock {
+  @include circle($clock-size);
+  background-color: $background-clock-color;
+  position: relative;
+  transform: rotate(180deg);
+
+  &__hand {
+    position: absolute;
+    top: 50%;
+    transform-origin: center 0;
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
+    &--second {
+      width: $second-hand-width;
+      height: $second-hand-height;
+      left: $clock-size / 2 - $second-hand-width / 2;
+      background-color: $second-hand-color;
+      border-radius: $second-hand-width / 2;
+      animation: rotate steps(60) $minute infinite;
+    }
+
+    &--minute {
+      width: $minute-hand-width;
+      height: $minute-hand-height;
+      left: $clock-size / 2 - $minute-hand-width / 2;
+      background-color: $minute-hand-color;
+      border-radius: $minute-hand-width / 2;
+      animation: rotate linear $hour infinite;
+      animation-delay: $timeShiftMinute * -1;
+    }
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+}
