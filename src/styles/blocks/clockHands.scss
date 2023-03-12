@@ -1,0 +1,42 @@
+.clock {
+  &__center {
+    @include position;
+    @include sizeCenter;
+    border-radius: 50%;
+    transform: translate(-35%, 50%);
+    background-color: #c06;
+  }
+
+  &__minutes {
+    @include position;
+    width: 10px;
+    height: 250px;
+    background-color: rgba($color: #c06, $alpha: 0.5);
+    border: 1px solid #00008b;
+    border-radius: 5px;
+    animation: rotate 3600s;
+    @include animationSettings;
+  }
+
+  &__seconds {
+    @include position;
+    width: 5px;
+    height: 175px;
+    background-color: rgba($color: #008b8b, $alpha: 0.5);
+    border: 1px solid #dc143c;
+    border-radius: 5px;
+    animation: rotate 60s;
+    @include animationSettings;
+  }
+
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
