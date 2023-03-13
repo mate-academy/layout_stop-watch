@@ -1,0 +1,56 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: dimgray;
+  height: 100vh;
+
+  &__circle {
+    height: 60px;
+    width: 60px;
+    background-color: red;
+    border: 2px solid yellow;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  &__bigbranch {
+    height: 250px;
+    width: 20px;
+    background-color: violet;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 50%;
+    animation: bigrotation 60s linear infinite;
+    transform-origin: center bottom;
+
+    @keyframes bigrotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__smallbranch {
+    height: 125px;
+    width: 20px;
+    background-color: blue;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 50%;
+    animation: smallrotation 3600s linear infinite;
+    transform-origin: center bottom;
+
+    @keyframes smallrotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
