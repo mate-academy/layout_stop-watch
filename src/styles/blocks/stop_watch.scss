@@ -3,30 +3,16 @@
   width: 50vw;
   height: 50vw;
   border-radius: 50%;
-  border: 3px solid #000;
+  border: 3px solid $clock-main-color;
 
   &__minute-hand {
-    position: absolute;
-    top: setHandTopPosition($minute-hand-height);
-    left: 50%;
-    height: $minute-hand-height;
-    width: 5px;
-    background-color: #000;
-    border-radius: 5px;
-    transform-origin: bottom center;
+    @include hands-styles($minute-hand-height, $minute-hand-width);
     animation: rotateHands 360s linear infinite;
   }
 
   &__second-hand {
-    position: absolute;
-    top: setHandTopPosition($second-hand-height);
-    left: 50%;
-    height: $second-hand-height;
-    width: 2px;
-    background-color: #000;
-    border-radius: 2px;
+    @include hands-styles($second-hand-height, $second-hand-width);
     animation: rotateHands 60s steps(60, end) infinite;
-    transform-origin: bottom center;
   }
 
   &__center {
@@ -35,7 +21,7 @@
     left: 50%;
     height: 8px;
     width: 8px;
-    border: 1px solid #000;
+    border: 1px solid $clock-main-color;
     background-color: #fff;
     background-image: $background;
     border-radius: 50%;
