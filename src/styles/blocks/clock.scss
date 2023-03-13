@@ -1,0 +1,21 @@
+.clock {
+  position: relative;
+  @include flex-center;
+  @include square(800px);
+  border: 2px solid black;
+  border-radius: 50%;
+
+  &__dot {
+    @include square(20px);
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+  }
+
+  &__minutes {
+    @include clock-hands(-1, 250px, rgb(229, 255, 0), 3600s);
+  }
+
+  &__seconds {
+    @include clock-hands(-2, 350px, rgb(255, 0, 0), 60s);
+  }
+}
