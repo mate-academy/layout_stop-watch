@@ -15,6 +15,7 @@
 
   &__arrow {
     &::before {
+      content: "";
       @include position ();
       width: 2px;
       background-color: blue;
@@ -28,6 +29,7 @@
     }
 
     &::after {
+      content: "";
       @include position ();
       width: 4px;
       background-color: red;
