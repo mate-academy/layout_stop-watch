@@ -1,0 +1,68 @@
+.clock {
+  
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  box-sizing: border-box;
+  border: 2px solid #2F4F4F;
+  border-radius: 50%;
+  background-color:#DCDCDC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock:hover {
+  animation-play-state: paused;
+}
+
+.clock__center {
+ 
+width: 10px;
+ height: 10px;
+ border-radius: 50%;
+ background-color: #2F4F4F;
+
+}
+
+.clock__minute {
+  position: absolute;
+    height: 140px;
+    width: 4px;
+    background-color: #2F4F4F;
+    border-top-right-radius: 90%;
+    border-top-left-radius: 90%;
+  
+    transform: translateX(50%);
+    animation-name: move;
+    animation-duration: 60s;
+    transform-origin: bottom;
+    animation-timing-function: linear;
+    animation-iteration-count:3;
+}
+
+
+.clock__seconds  {
+  position: absolute;
+  height: 190px;
+  width: 3px;
+  background-color: #2F4F4F;
+  border-top-right-radius: 90%;
+  border-top-left-radius: 90%;
+  transform: translateX(50%);
+  animation-name: move;
+  animation-duration: 1s;
+  transform-origin: bottom;
+  animation-timing-function: linear;
+  animation-iteration-count: 3;
+}
+
+@keyframes move {
+  from{
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+  
