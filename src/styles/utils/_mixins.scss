@@ -1,0 +1,7 @@
+@mixin animation ($time, $index) {
+  animation-name: move;
+  animation-duration: #{$time * $index}s;
+  animation-timing-function: steps($time, end);
+  animation-iteration-count: infinite;
+  transform-origin: center bottom;
+}

@@ -1,0 +1,55 @@
+@import "../utils/variables";
+@import "../utils/extends";
+@import "../utils/mixins";
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  margin: 0 auto;
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  @extend %radius;
+  background: url(../../images/clock-dash.svg);
+  background-size: contain;
+
+  &__second {
+    width: $arrow-width;
+    height: $arrow-height / 2;
+    position: absolute;
+    top: ($clock-size / 2) - $arrow-height / 2;
+    left: ($clock-size - $arrow-width) / 2;
+    background-color: #000;
+    @extend %radius;
+    @include animation(60, 60);
+  }
+
+  &__minute {
+    width: $arrow-width;
+    height: $arrow-height;
+    position: absolute;
+    top: ($clock-size / 2) - $arrow-height;
+    left: ($clock-size - $arrow-width) / 2;
+    z-index: 1;
+    @extend %radius;
+    @include animation(60, 1);
+  }
+
+  &__circle {
+    height: $arrow-width;
+    width: $arrow-width;
+    position: absolute;
+    top: ($clock-size - $arrow-width) / 2;
+    left: ($clock-size - $arrow-width) / 2;
+    @extend %radius;
+    z-index: 2;
+  }
+}
