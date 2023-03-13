@@ -5,3 +5,9 @@
   animation-iteration-count: infinite;
   transform-origin: center bottom;
 }
+
+@mixin arrows ($z-index, $time, $index) {
+  z-index: $z-index;
+  @extend %radius;
+  @include animation($time, $index);
+}

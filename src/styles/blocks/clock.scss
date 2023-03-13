@@ -19,8 +19,7 @@
     top: ($clock-size / 2) - $arrow-height / 2;
     left: ($clock-size - $arrow-width) / 2;
     background-color: #000;
-    @extend %radius;
-    @include animation(60, 60);
+    @include arrows(0, 60, 60);
   }
 
   &__minute {
@@ -29,9 +28,7 @@
     position: absolute;
     top: ($clock-size / 2) - $arrow-height;
     left: ($clock-size - $arrow-width) / 2;
-    z-index: 1;
-    @extend %radius;
-    @include animation(60, 1);
+    @include arrows(1, 60, 1);
   }
 
   &__circle {
