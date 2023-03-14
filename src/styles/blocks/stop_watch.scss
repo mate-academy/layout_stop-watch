@@ -1,0 +1,30 @@
+.stop-watch {
+  position: relative;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  border: 3px solid $clock-main-color;
+
+  &__minute-hand {
+    @include hands-styles($minute-hand-height, $minute-hand-width);
+    animation: rotateHands 360s linear infinite;
+  }
+
+  &__second-hand {
+    @include hands-styles($second-hand-height, $second-hand-width);
+    animation: rotateHands 60s steps(60, end) infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 8px;
+    width: 8px;
+    border: 1px solid $clock-main-color;
+    background-color: #fff;
+    background-image: $background;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

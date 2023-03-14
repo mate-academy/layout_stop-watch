@@ -1,0 +1,11 @@
+@mixin hands-styles($hand-height, $hand-width) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  height: $hand-height;
+  width: $hand-width;
+  transform-origin: bottom center;
+  border-radius: 5px;
+  background-color: $clock-main-color;
+}
