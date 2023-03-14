@@ -1,0 +1,79 @@
+.watch {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: $arrowWidth * 2;
+    height: 20px;
+    background: $minuteColor;
+    border-radius: 50%;
+    z-index: 10000;
+  }
+
+  &__seconds {
+    position: absolute;
+    &__arrow {
+      width: $arrowSizing;
+      height: $arrowSizing;
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__s-arrow:before {
+    content: "";
+    position: absolute;
+    top: $gapCenterPoint;
+    left: $gapCenterPoint;
+    width: $arrowWidth;
+    height: $arrowSizing * $multiplyDif;
+    background: $secondColor;
+    z-index: 10;
+    border-radius: 5px;
+    animation: circle $minuteTime linear infinite normal $minuteStart;
+    transform-origin: center top;
+  }
+
+  &__minutes {
+    position: absolute;
+    &__m-arrow {
+      width: $arrowSizing;
+      height: $arrowSizing;
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__m-arrow:before {
+    content: "";
+    position: absolute;
+    top: $gapCenterPoint;
+    left: $gapCenterPoint;
+    width: $arrowWidth;
+    height: $arrowSizing;
+    background: $minuteColor;
+    z-index: 10;
+    border-radius: 5px;
+    animation: circle $secondTime linear infinite normal $seconsStart;
+    transform-origin: center top;
+  }
+
+  @keyframes circle {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+}
