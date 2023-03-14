@@ -1,5 +1,5 @@
 .clock {
-  
+  position: relative;
   margin: 0 auto;
   width: 400px;
   height: 400px;
@@ -10,47 +10,39 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.clock:hover {
-  animation-play-state: paused;
-}
-
-.clock__center {
- 
-width: 10px;
+&__center {
+ width: 10px;
  height: 10px;
  border-radius: 50%;
  background-color: #2F4F4F;
-
 }
 
-.clock__minute {
+&__minute {
   position: absolute;
-    height: 140px;
-    width: 4px;
-    background-color: #2F4F4F;
-    border-top-right-radius: 90%;
-    border-top-left-radius: 90%;
-    transform: translateX(50%);
-    animation-name: move;
-    animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+  bottom: 50%;
+  left: 50%;
+  height: 140px;
+  width: 4px;
+  background-color: #2F4F4F;
+  border-top-right-radius: 90%;
+  border-top-left-radius: 90%;
+  transform-origin: bottom center;
+  animation: move 60s linear  infinite;
 }
 
-.clock__seconds  {
+&__seconds  {
   position: absolute;
+  bottom: 50%;
+  left: 50%;
   height: 190px;
   width: 3px;
   background-color: #2F4F4F;
   border-top-right-radius: 90%;
   border-top-left-radius: 90%;
-  transform: translateX(50%);
-  animation-name: move;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  transform-origin: bottom center;
+  animation: move 1s linear  infinite;
+}
 }
 
 @keyframes move {
