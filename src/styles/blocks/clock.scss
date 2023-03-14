@@ -1,6 +1,7 @@
 .clock {
   @include round(500px, 50%);
   background-color: aquamarine;
+  @extend %shadows;
 
   &__numbers {
     position: absolute;
@@ -19,7 +20,7 @@
   border-radius: 12px;
 
   background-color: $color-minute;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  @extend %shadows;
 
   transform-origin: center 180px;
   animation: move 600s steps(10, end) 1s 1 forwards;
@@ -35,7 +36,7 @@
   border-radius: 4px;
 
   background-color: $color-seconds;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  @extend %shadows;
 
   transform-origin: center 225px;
   animation: move 60s linear infinite;
@@ -49,5 +50,5 @@
   @include round(18px, 50%);
 
   background-color: $color-seconds;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  @extend %shadows;
 }
