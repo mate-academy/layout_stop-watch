@@ -1,7 +1,4 @@
 .stopwatch {
-  display: flex;
-  justify-content: center;
-
   height: 100vh;
 
   background: url(../images/stopwatch.png) center / $background-size no-repeat;
@@ -26,7 +23,7 @@
     border-radius: $seconds-hand-radius;
 
     animation: $animation-parameters $seconds-hand-rotation;
-    transform-origin: $seconds-hand-radius $seconds-center-of-rotation;
+    transform-origin: bottom;
   }
 
   &__minutes {
@@ -39,6 +36,6 @@
     border-radius: $minutes-hand-radius;
 
     animation: $animation-parameters $minutes-hand-rotation;
-    transform-origin: $minutes-hand-radius $minutes-center-of-rotation;
+    transform-origin: bottom;
   }
 }
