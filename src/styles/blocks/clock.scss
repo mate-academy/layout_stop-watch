@@ -1,0 +1,46 @@
+.clock {
+  @include round(60vh, 50%);
+  
+  background-color: aquamarine;
+  @extend %shadows;
+
+  &__minute {
+    position: absolute;
+    @include position(50%);
+
+    height: 20vh;
+    width: 1.2vh;
+  
+    background-color: $color-minute;
+    border-radius: 1.2vh;
+    @extend %shadows;
+  
+    transform-origin: bottom center;
+    animation: move 600s steps(10, end) 1 forwards;
+  }
+
+  &__seconds {
+    position: absolute;
+    @include position(50%);
+    
+    height: 28vh;
+    width: 0.6vh;
+    
+    background-color: $color-seconds;
+    border-radius: 0.6vh;
+    @extend %shadows;
+  
+    transform-origin: bottom center;
+    animation: move 60s linear infinite;
+  }
+
+  &__round {
+    position: absolute;
+    @include position(49%);
+  
+    @include round(1.8vh, 50%);
+
+    background-color: $color-seconds;
+    @extend %shadows;
+  }
+}

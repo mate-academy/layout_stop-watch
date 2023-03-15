@@ -1,0 +1,11 @@
+@mixin round($size, $radius) {
+  width: $size;
+  height: $size;
+  border-radius: $radius;
+}
+
+@mixin position($size) {
+  bottom: $size;
+  left: $size;
+  transform: (-$size, -$size);
+}
