@@ -1,8 +1,8 @@
 .stopwatch {
   margin: auto;
   position: relative;
-  width: $stopwatch-size;
-  height: $stopwatch-size;
+  width: $stopwatch-widht;
+  height: $stopwatch-heidht;
   background: darkgrey;
   border-radius: 50%;
 
@@ -11,8 +11,7 @@
     width: $widht-arrow;
     background: #0ff00f;
     position: absolute;
-    left: 50%;
-    transform: translate(-50% -50%);
+    left: ($stopwatch-heidht - $widht-arrow) / 2 ;
     border-radius: 50%;
     z-index: 1;
     animation: clock 60s infinite steps(60);
@@ -26,8 +25,7 @@
     position: absolute;
     border-radius: 50%;
     top: $heidht-arrow / 2;
-    left: 50%;
-    transform: translate(-50% -50%);
+    left: ($stopwatch-heidht - $widht-arrow) / 2 ;
     animation: clock 3600s infinite steps(60);
     transform-origin: bottom;
   }
@@ -38,8 +36,8 @@
     border-radius: 50%;
     background: #de8;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: ($stopwatch-heidht - $widht-arrow) / 2;
+    left: ($stopwatch-heidht -$widht-arrow) / 2;
     z-index: 2;
   }
 }
