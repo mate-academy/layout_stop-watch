@@ -1,15 +1,22 @@
-.stop-watch {
-  display: flex;
-  justify-content: center;
-  height: 400px;
-  width: 400px;
-  border: 1px solid black;
+$stopwatch-size: 400px;
+@mixin stopwatch($stopwatch-size) {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
   border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+}
+
+.stop-watch {
+  &__positioning {
+    @include stopwatch($stopwatch-size);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
 
   &__minute-hand {
     position: absolute;
@@ -19,6 +26,7 @@
     background-color: blue;
     border-radius: 5px;
     transition-duration: 1s;
+    transition-property: background-color;
     animation: minute-hand 3600s linear infinite forwards;
     transform-origin: bottom;
   }
@@ -30,11 +38,12 @@
     background-color: red;
     border-radius: 5px;
     transition-duration: 1s;
+    transition-property: background-color;
     animation: second-hand 60s steps(60,end) infinite forwards;
     transform-origin: bottom;
   }
 
-  &:hover {
+  &__positioning:hover {
     background-color: #ceffbc;
     cursor: pointer;
 
