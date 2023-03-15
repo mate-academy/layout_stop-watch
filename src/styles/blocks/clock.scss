@@ -1,54 +1,46 @@
 .clock {
-  @include round(500px, 50%);
+  @include round(60vh, 50%);
+  
   background-color: aquamarine;
   @extend %shadows;
 
-  &__numbers {
+  &__minute {
     position: absolute;
-    top: calc(50% - 125px);
-    left: calc(50% - 125px);
-  }
-}
+    @include position(50%);
 
-.clock-minute {
-  position: absolute;
-  top: calc(50% - 180px);
-  left: calc(50% - 6px);
-
-  height: 180px;
-  width: 12px;
-  border-radius: 12px;
-
-  background-color: $color-minute;
-  @extend %shadows;
-
-  transform-origin: center 180px;
-  animation: move 600s steps(10, end) 1s 1 forwards;
-}
-
-.clock-seconds {
-  position: absolute;
-  top: calc(50% - 225px);
-  left: calc(50% - 2px);
+    height: 20vh;
+    width: 1.2vh;
   
-  height: 225px;
-  width: 4px;
-  border-radius: 4px;
+    background-color: $color-minute;
+    border-radius: 1.2vh;
+    @extend %shadows;
+  
+    transform-origin: bottom center;
+    animation: move 600s steps(10, end) 1 forwards;
+  }
 
-  background-color: $color-seconds;
-  @extend %shadows;
+  &__seconds {
+    position: absolute;
+    @include position(50%);
+    
+    height: 28vh;
+    width: 0.6vh;
+    
+    background-color: $color-seconds;
+    border-radius: 0.6vh;
+    @extend %shadows;
+  
+    transform-origin: bottom center;
+    animation: move 60s linear infinite;
+  }
 
-  transform-origin: center 225px;
-  animation: move 60s linear infinite;
-}
+  &__round {
+    position: absolute;
+    @include position(49%);
+  
+    @include round(1.8vh, 50%);
 
-.clock-round {
-  position: absolute;
-  top: calc(52% - 18px);
-  left: calc(50% - 9px);
-
-  @include round(18px, 50%);
-
-  background-color: $color-seconds;
-  @extend %shadows;
+    background-color: $color-seconds;
+    @extend %shadows;
+  }
 }
