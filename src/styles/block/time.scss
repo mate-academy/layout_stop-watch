@@ -1,0 +1,36 @@
+.time {
+  display: flex;
+  position: absolute;
+  margin: 0 auto;
+
+  &--sec {
+    width: $clock-size;
+    height: $clock-size;
+    animation: move 60s linear infinite;
+  }
+
+  &--min {
+    top: 50px;
+    display: block;
+    width: $minutes-size;
+    height: $minutes-size;
+    transition: 2s;
+    animation: move 1200s linear infinite;
+  }
+
+  &__seconds {
+    display: block;
+    margin: 0 auto;
+    width: 5px;
+    height: $seconds-height;
+    background: #1e738e;
+  }
+
+  &__minutes {
+    display: block;
+    margin: 0 auto;
+    width: 5px;
+    height: $minutes-height;
+    background: #76ba0b;
+  }
+}
