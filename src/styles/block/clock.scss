@@ -1,0 +1,19 @@
+.clock {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin: 0 auto;
+  width: $clock-size;
+  height: $clock-size;
+
+  &__circle {
+    display: flex;
+    position: absolute;
+    top: ($clock-size / 2) - ($circle-size / 2);
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: $circle-size;
+    background: #7851a9;
+    z-index: 1;
+  }
+}
