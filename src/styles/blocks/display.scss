@@ -1,6 +1,9 @@
-.display {
+.main__display {
   position: relative;
-  @extend %DJA;
+}
+
+.display {
+  @extend %alignment;
   @include circle($displaySize);
   border: 2px solid #000;
 
@@ -12,7 +15,7 @@
 
   &__second-hand {
     @extend %postionHands;
-    @extend %handsvisib;
+    @extend %handsview;
     height: 220px;
     background-color: $colorBlue;
     transform-origin: bottom center;
@@ -21,19 +24,19 @@
 
   &__minute-hand {
     @extend %postionHands;
-    @extend %handsvisib;
+    @extend %handsview;
     height: 150px;
     background-color: #f00;
     transform-origin: bottom center;
     animation: animation 3600s linear infinite;
   }
-}
 
-@keyframes animation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  @keyframes animation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
