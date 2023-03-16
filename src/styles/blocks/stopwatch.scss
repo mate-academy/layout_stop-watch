@@ -1,0 +1,48 @@
+.stopwatch {
+  &__center {
+    position: absolute;
+    top: 300px;
+    left: $left-indent;
+    z-index: 2;
+    width: $size-center;
+    height: $size-center;
+    background-color: blue;
+    border-radius: 50%;
+    transform: translate(-25%,-50%);
+  }
+  
+  &__hour {
+    @extend %arrows;
+    top: 100px;
+    height: 200px;
+    background-color: red;
+    z-index: 1;
+    animation: stopWatch 3600s infinite linear;
+  }
+
+  &__second {
+    @extend %arrows;
+    top: 0;
+    height: 300px;
+    background-color: green;
+    animation: stopWatch 60s infinite linear;
+  }
+}
+
+@keyframes stopWatch {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+%arrows {
+  position: absolute;
+  left: $left-indent;
+  width: 15px;
+  border-radius: 50px;
+  transform-origin: bottom;
+}
