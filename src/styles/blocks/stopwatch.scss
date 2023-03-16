@@ -1,0 +1,40 @@
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: 0.5vw solid $color-puce;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: $color-light-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__dot {
+    width: 5%;
+    height: 5%;
+    background-color: $color-tyrial-purple;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  &__hand {
+    width: 1%;
+    transform: translateY(-50%);
+    transform-origin: bottom center;
+    position: absolute;
+    border-radius: 50% 50% 0 0;
+
+    &--seconds {
+      height: 45%;
+      background-color: $color-melon;
+      animation: rotate 60s linear infinite;
+    }
+
+    &--minutes {
+      height: 25%;
+      background-color: $color-lemon-chiffon;
+      animation: rotate 3600s steps(60) infinite;
+    }
+  }
+}
