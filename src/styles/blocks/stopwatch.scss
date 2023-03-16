@@ -2,7 +2,7 @@
   &__center {
     position: absolute;
     top: 300px;
-    left: 700px;
+    left: $left-indent;
     z-index: 2;
     width: $size-center;
     height: $size-center;
@@ -12,28 +12,20 @@
   }
   
   &__hour {
-    position: absolute;
+    @extend %arrows;
     top: 100px;
-    left: 700px;
-    width: 15px;
     height: 200px;
     background-color: red;
-    border-radius: 50px;
     z-index: 1;
     animation: stopWatch 3600s infinite linear;
-    transform-origin: bottom;
   }
 
   &__second {
-    position: absolute;
+    @extend %arrows;
     top: 0;
-    left: 700px;
-    width: 15px;
     height: 300px;
     background-color: green;
-    border-radius: 50px;
     animation: stopWatch 60s infinite linear;
-    transform-origin: bottom;
   }
 }
 
@@ -45,4 +37,12 @@
   to {
     transform: rotate(359deg);
   }
+}
+
+%arrows {
+  position: absolute;
+  left: $left-indent;
+  width: 15px;
+  border-radius: 50px;
+  transform-origin: bottom;
 }
