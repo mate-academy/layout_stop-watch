@@ -1,0 +1,40 @@
+.clock {
+  @include circle($clock-size);
+  background-color: $background-clock-color;
+  position: relative;
+  transform: rotate(180deg);
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform-origin: center 0;
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
+    &--second {
+      width: $second-arrow-width;
+      height: $second-arrow-height;
+      left: $clock-size / 2 - $second-arrow-width / 2;
+      background-color: $second-arrow-color;
+      border-radius: $second-arrow-width / 2;
+      animation: rotate steps(60) $minute infinite;
+    }
+
+    &--minute {
+      width: $minute-arrow-width;
+      height: $minute-arrow-height;
+      left: $clock-size / 2 - $minute-arrow-width / 2;
+      background-color: $minute-arrow-color;
+      border-radius: $minute-arrow-width / 2;
+      animation: rotate linear $hour infinite;
+      animation-delay: $timeShiftMinute * -1;
+    }
+  }
+}

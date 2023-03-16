@@ -1,0 +1,9 @@
+@mixin square($clock-size) {
+  width: $clock-size;
+  height: $clock-size;
+}
+
+@mixin circle($clock-size) {
+  @include square($clock-size);
+  border-radius: 50%;
+}
