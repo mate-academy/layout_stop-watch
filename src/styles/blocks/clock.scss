@@ -1,6 +1,6 @@
 .clock {
-  width: 500px;
-  height: 500px;
+  width: $clock-size;
+  height: $clock-size;
   background-color: white;
   border-radius: 50%;
   position: relative;
@@ -20,12 +20,11 @@
 
   &__minutes {
     @extend %position-transform;
+    @extend %radius-and-color;
     left: 49%;
     top: 10%;
     width: 10px;
-    height: 200px;
-    background-color: black;
-    border-radius: 10px;
+    height: $clock-size * 0.4;
     animation: rotate 3600s infinite steps(60);
   }
 
@@ -34,9 +33,8 @@
     top: 3%;
     left: 49.5%;
     width: 5px;
-    height: 240px;
-    background-color: darkturquoise;
-    border-radius: 10px;
+    height: $clock-size * 0.48;
+    @extend %radius-and-color;
     animation: rotate 60s infinite steps(60);
   }
 }
