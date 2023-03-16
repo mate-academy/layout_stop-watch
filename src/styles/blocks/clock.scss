@@ -1,0 +1,40 @@
+.clock {
+  width: $clock-size;
+  height: $clock-size;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: darkturquoise;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minutes {
+    @extend %position-transform;
+    @extend %radius-and-color;
+    left: 49%;
+    top: 10%;
+    width: 10px;
+    height: $clock-size * 0.4;
+    animation: rotate 3600s infinite steps(60);
+  }
+
+  &__seconds {
+    @extend %position-transform;
+    top: 3%;
+    left: 49.5%;
+    width: 5px;
+    height: $clock-size * 0.48;
+    @extend %radius-and-color;
+    animation: rotate 60s infinite steps(60);
+  }
+}
