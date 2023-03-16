@@ -7,9 +7,13 @@
   @include circle($displaySize);
   border: 2px solid #000;
 
+  &__hands-center--margin {
+    margin-left: 5px;
+  }
+
   &__hands-center {
-    position: absolute;
-    @include circle($handsSize);
+    position: relative;
+    @include circle($centerCircleSize);
     background-color: $colorBlue;
   }
 
@@ -29,14 +33,5 @@
     background-color: #f00;
     transform-origin: bottom center;
     animation: animation 3600s linear infinite;
-  }
-
-  @keyframes animation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
   }
 }
