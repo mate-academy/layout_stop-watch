@@ -17,7 +17,7 @@
 
     transform-origin: top center;
 
-    animation-name: tickingHours;
+    animation-name: ticking;
     animation-duration: 3600s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -34,7 +34,7 @@
 
     transform-origin: top center;
 
-    animation-name: tickingMinutes;
+    animation-name: ticking;
     animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -42,17 +42,7 @@
 
 }
 
-@keyframes tickingMinutes {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes tickingHours {
+@keyframes ticking {
   0% {
     transform: rotate(180deg);
   }
