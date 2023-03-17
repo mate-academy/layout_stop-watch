@@ -1,0 +1,137 @@
+.clock {
+  width: $clockSize;
+  height: $clockSize;
+  background-color: aquamarine;
+  border-radius: 50%;
+  position: relative;
+
+  &__armSeconds {
+    animation: 60s infinite linear move;
+    position: absolute;
+    width: 1px;
+    height: 250px;
+    background-color: rgb(255, 0, 0);
+    right: 250px;
+    z-index: 3;
+  }
+
+  &__armMinutes {
+    animation: 3600s infinite linear move;
+    position: absolute;
+    width: 5px; //calc($clockSize - 70%);
+    height: 250px; //calc($clockSize - 90%);
+    background-color: darkblue;
+    right: 250px;
+    z-index: 1;
+  }
+
+  &__armHours {
+    animation: 86400s infinite linear move;
+    position: absolute;
+    width: 5px; //calc($clockSize - 70%);
+    height: 150px; //calc($clockSize - 90%);
+    background-color: rgb(248, 128, 0);
+    right: 250px;
+    top: 100px;
+    z-index: 2;
+  }
+
+  &__decorativeDot {
+    position: absolute;
+    width: 10px; //calc($clockSize - 70%);
+    height: 10px; //calc($clockSize - 90%);
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    z-index: 4;
+    top: 247px;
+    right: 247px;
+  }
+
+  &__hour {
+    z-index: 10;
+    top: 20px;
+    @for $i from 1 through 12 {
+      &--#{$i}::before {
+        content: "#{$i}";
+        font-size: $fontSize;
+        position: absolute;
+      }
+    }
+    &--12 {
+      margin-left: 220px;
+    }
+    &--6 {
+      margin-left: 230px;
+      margin-top: 440px;
+    }
+    &--3 {
+      margin-left: +460px;
+      margin-top: -220px;
+    }
+    &--9 {
+      margin-top: -220px;
+    }
+
+    &--1 {
+      margin-left: 350px;
+      margin-top: -400px;
+    }
+
+    &--11 {
+      margin-left: 100px;
+      margin-top: -400px;
+    }
+
+    &--10 {
+      margin-top: 520px;
+      margin-left: 20px;
+    }
+
+    &--2 {
+      margin-top: 520px;
+      margin-left: 430px;
+    }
+    &--4 {
+      margin-top: 720px;
+      margin-left: 430px;
+    }
+    &--8 {
+      margin-top: 720px;
+      margin-left: 40px;
+    }
+   
+    &--7 {
+      margin-top: 800px;
+      margin-left: 120px;
+    }
+    &--5 {
+      margin-top: 720px;
+      margin-left: 350px;
+    }
+  }
+}
+
+@for $i from 0 through 60 {
+  @keyframes move {
+    0% {
+      transform: rotate(0);
+      transform-origin: bottom left;
+    }
+    100% {
+      transform: rotate(360);
+      transform-origin: bottom left;
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0);
+    transform-origin: bottom left;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: bottom left;
+  }
+}
