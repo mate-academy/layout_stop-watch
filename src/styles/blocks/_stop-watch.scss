@@ -1,0 +1,51 @@
+.stop-watch {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 800px;
+  height: 800px;
+
+  @keyframes hands-walking {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__hand-center {
+    position: relative;
+    top: 400px;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: #5f98a8;
+    align-self: center;
+  }
+
+  &__minute-hand {
+    position: fixed;
+    align-self: center;
+    top: 160px;
+    width: 10px;
+    height: 250px;
+    border-radius: 10px;
+    background-color: #c25d5d;
+    transform-origin: bottom;
+    animation: hands-walking 3600s linear infinite;
+  }
+
+  &__second-hand {
+    position: fixed;
+    align-self: center;
+    top: 10px;
+    width: 10px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: #5f98a8;
+    transform-origin: bottom;
+    animation: hands-walking 60s linear infinite;
+  }
+}
