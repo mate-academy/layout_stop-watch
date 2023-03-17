@@ -1,0 +1,31 @@
+.arrow-container {
+
+  &__minutes {
+    background: #000;
+    height: 40%;
+    left: 48%;
+    position: absolute;
+    top: 10%;
+    transform-origin: 50% 100%;
+    width: 4%;
+  }
+
+  &__seconds {
+    background: #000;
+    height: 49%;
+    left: 49%;
+    position: absolute;
+    top: 1%;
+    transform-origin: 50% 100%;
+    width: 2%;
+    z-index: 1;
+  }
+
+  &--minutes {
+    animation: rotate 3600s infinite linear;
+  }
+
+  &--seconds {
+    animation: rotate 60s infinite linear;
+  }
+}

@@ -1,0 +1,28 @@
+.clock {
+  border-radius: 50%;
+  background-color: $color-clock-bacground;
+  height: $clock-size;
+  position: relative;
+  width: $clock-size;
+
+  &::before {
+    content: "";
+    background-color: $color-arrows;
+    width: 6%;
+    height: 6%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &__arrow-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
