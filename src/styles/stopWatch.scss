@@ -1,0 +1,46 @@
+.stopWatch {
+  position: relative;
+  width: $watchSize;
+  height: $watchSize;
+  border: $watchSize*0.02 solid black;
+  border-radius: 50%;
+
+  &__longer {
+    margin-left: $longerWidth/8;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $longerWidth;
+    height: $longerHeight;
+    border: $longerWidth/2 solid red;
+    border-radius: $longerWidth/2;
+    transform-origin: top center;
+    transform: rotate(180deg);
+    animation: move 60s infinite steps(60);
+  }
+
+  &__shorter {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $shorterWidth;
+    height: $shorterHeight;
+    border: $shorterWidth/2 solid black;
+    border-radius: $shorterWidth/2;
+    background-color: black;
+    transform-origin: top center;
+    transform: rotate(180deg);
+    animation: move 3600s infinite steps(60);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(540deg);
+  }
+}
