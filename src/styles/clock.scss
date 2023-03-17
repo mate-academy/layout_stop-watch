@@ -1,0 +1,63 @@
+.clock {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  border-radius: 50%;
+  border: 6px solid burlywood;
+  background-color: beige;
+
+  &__hours {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    height: $hour-hand-length;
+    width: 8px;
+    border-radius: 4%;
+    background-color: saddlebrown;
+
+    transform-origin: top center;
+
+    animation-name: tickingHours;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    height: $minute-hand-length;
+    width: 8px;
+    border-radius: 4%;
+    background-color: sandybrown;
+
+    transform-origin: top center;
+
+    animation-name: tickingMinutes;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+}
+
+@keyframes tickingMinutes {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tickingHours {
+  0% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(540deg);
+  }
+}
