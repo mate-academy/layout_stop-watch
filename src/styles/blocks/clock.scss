@@ -1,0 +1,60 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $bg-color;
+  
+  &__face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $clock-diameter;
+    width: $clock-diameter;
+    border-radius: 50%;
+    background-image: url("./img/clock.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+      content: "";
+
+      background-color: $middle-point-color;
+      height: $middle-point-diameter;
+      width: $middle-point-diameter;
+      position: absolute;
+      left: setMiddlePos($middle-point-diameter);
+      z-index: $middle-point-positionZ;
+      bottom: setMiddlePos($middle-point-diameter);
+      border-radius: 50%;
+    }
+
+  }
+
+  &__second-hand {
+    background-color: $second-hand-color;
+    height: $second-hand-heigth;
+    width: $second-hand-width;
+    position: absolute;
+    left: setMiddlePos($second-hand-width);
+    z-index: $second-hand-positionZ;
+    bottom: $clock-radius;
+    border-radius: 50% 50% 0 0;
+
+    @include setHandAnimation($minute);
+  }
+
+  &__minute-hand {
+    background-color: $minute-hand-color;
+    height: $minute-hand-heigth;
+    width: $minute-hand-width;
+    position: absolute;
+    left: setMiddlePos($minute-hand-width);
+    z-index: $minute-hand-positionZ;
+    bottom: $clock-radius;
+
+    border-radius: 50% 50% 0 0;
+    @include setHandAnimation($hour);
+  }
+}
