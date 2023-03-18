@@ -1,0 +1,51 @@
+
+.clock {
+  background-image: url(../images/clock.png);
+  background-color: $clock-color;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: $clock-size;
+  width: $clock-size;
+  border-radius: 50%;
+
+  &__longer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: $longer-hand-heigth;
+    width: $longer-hand-width;
+    transform-origin: top center;
+    border: 1px solid transparent;
+    background-color: $longer-hand-color;
+    border-radius: $longer-hand-radius;
+    transform: rotate(180deg);
+    animation: move 60s infinite steps(60);
+  }
+
+  &__shorter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: $shorter-hand-heigth;
+    width: $shorter-hand-width;
+    transform-origin: top center;
+    border: 1px solid transparent;
+    background-color: $shorter-hand-color;
+    border-radius: $shorter-hand-radius;
+    transform: rotate(180deg);
+    animation: move 3600s infinite steps(60);
+  }
+
+  @keyframes move {
+    0% {
+      transform: rotate(180deg);
+    }
+
+    100% {
+      transform: rotate(540deg);
+    }
+  }
+}
+
+
