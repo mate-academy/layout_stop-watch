@@ -1,0 +1,10 @@
+.minute-hand {
+  @include hand;
+  @include position;
+  @include animation;
+  top: 25%;
+  transform: translate(-50%);
+  height: $minute-hand-height;
+  background-color: $red;
+  animation-duration: $minute-hand-animation-duration;
+}
