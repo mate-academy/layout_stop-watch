@@ -1,0 +1,120 @@
+$watch-size: 500px;
+$height-watch-hand: 4px;
+
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+  border-radius: $size / 2;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+
+  &__watch {
+    background-color: pink;
+    margin: 50px auto;
+  }
+}
+
+.watch {
+  @include circle($watch-size);
+
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid black;
+
+  & :nth-child(2n) {
+    position: absolute;
+    top: $watch-size / 2 - $height-watch-hand / 2;
+    left: $watch-size / 4 - $height-watch-hand / 2;
+  }
+
+  &__item {
+    position: absolute;
+    top: $watch-size / 2 - $height-watch-hand / 2;
+    left: -($height-watch-hand / 2);
+    height: $height-watch-hand;
+    transform: rotate(90deg);
+    transform-origin: right;
+  }
+
+  &__minute-hand {
+    width: $watch-size / 2 - $height-watch-hand / 4;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: $height-watch-hand;
+      background-color: black;
+      border-radius: 2px;
+    }
+
+    @keyframes minute {
+      0% {
+        transform: rotate(0deg);
+        transform-origin: right;
+      }
+      100% {
+        transform: rotate(360deg);
+        transform-origin: right;
+      }
+    }
+    animation: minute 3600s linear infinite;
+  }
+
+  &__second-hand {
+    width: $watch-size / 4 - $height-watch-hand / 4;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: $height-watch-hand;
+      background-color: brown;
+      border-radius: 2px;
+    }
+
+    @keyframes second {
+      0% {
+        transform: rotate(0deg);
+        transform-origin: center right;
+      }
+      100% {
+        transform: rotate(360deg);
+        transform-origin: center right ;
+      }
+    }
+    animation: second 60s linear infinite;
+  }
+
+  &__center {
+    width: 15px;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -($watch-size / 2 - $height-watch-hand - 2);
+      left: $height-watch-hand / 2 + $height-watch-hand;
+      width: 100%;
+      height: 15px;
+      background-color: green;
+      border-radius: 50%;
+    }
+  }
+}
