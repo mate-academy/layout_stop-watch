@@ -1,0 +1,27 @@
+.watch {
+  @extend %positioning;
+  @include clock($display_size);
+  border: 1px solid transparent;
+  background-image: url("https://i.pinimg.com/originals/f9/36/c5/f936c5a35c35c3f4d7c498fb8edad0f1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: $display_size;
+
+  &__minute-hand {
+    @extend %hand_style;
+    @extend %hands_position;
+    animation: animation 3600s linear infinite;
+    transform-origin: bottom center;
+    height: 200px;
+    background-color: $the_violet;
+  }
+
+  &__second-hand {
+    @extend %hand_style;
+    @extend %hands_position;
+    animation: animation 60s linear infinite;
+    transform-origin: bottom center;
+    height: 330px;
+    background-color: $the_pink;
+  }
+}
