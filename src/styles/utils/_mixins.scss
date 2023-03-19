@@ -1,0 +1,21 @@
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin hand($height, $width) {
+  height: $height;
+  width: $width;
+  border-top-right-radius: 40%;
+  border-top-left-radius: 40%;
+  left: ($clock-size / 2) - $width / 2;
+  top: ($clock-size / 2) - $height;
+  animation-name: moveHand;
+  animation-iteration-count: infinite;
+  transform-origin: center $height;
+}
+
+@mixin circle($size) {
+  @include square($size);
+  border-radius: 50%;
+}

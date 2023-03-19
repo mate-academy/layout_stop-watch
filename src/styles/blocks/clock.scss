@@ -1,0 +1,29 @@
+.clock {
+  display: flex;
+  @include circle($clock-size);
+  border: 3px solid #000;
+  background-color: lightblue;
+
+  &__middle {
+    margin: auto;
+    @include circle(15px);
+    background-color: grey;
+    z-index: 1;
+  }
+
+  &__big-hand {
+    position: absolute;
+    @include hand($big-hand-height, $big-hand-width);
+    background-color: #000000a7;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+  }
+
+  &__small-hand {
+    position: absolute;
+    @include hand($small-hand-height, $small-hand-width);
+    background-color: gray;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+  }
+}
