@@ -19,27 +19,19 @@
   }
 
   &__minute {
+    @include clock-settings;
     z-index: 1;
-    position: absolute;
-    width: 10px;
     height: 150px;
-    top: 50%;
-    border-radius: 10px;
     background-color: $clock-color;
-    animation: rotate-second linear $minute-duration infinite;
-    transform-origin: center 0;
+    animation: rotate-second linear $hour infinite;
     animation-delay: -1800s;
   }
 
   &__second {
-    position: absolute;
-    width: 10px;
+    @include clock-settings;
     height: 200px;
-    top: 50%;
-    border-radius: 10px;
-    background-color: $econd-color;
-    animation: rotate-second linear $second-duration infinite;
-    transform-origin: center 0;
+    background-color: $second-color;
+    animation: rotate-second linear $minute infinite;
     animation-delay: -30s;
   }
 }
