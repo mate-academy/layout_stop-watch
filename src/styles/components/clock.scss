@@ -1,0 +1,53 @@
+.clock-wrapper {
+  @include square ($clock-wrapper-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+
+  &__clock {
+    @include circle ($clock-size);
+    position: absolute;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &::before {
+      @extend %arrows;
+      height: $arrow-size;
+      width: 8px;
+      background-color: $color-arrow-light;
+      z-index: 1;
+      animation: spin 5s linear infinite;
+    }
+
+    &::after {
+      @extend %arrows;
+      height: ($arrow-size / 2);
+      width: 12px;
+      background-color: $color-arrow-dark;
+      animation: spin 60s linear infinite;
+    }
+  }
+
+  &__dot {
+    @include circle ($dot-size);
+    position: absolute;
+    background-color: $color-arrow-light;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
