@@ -1,0 +1,55 @@
+.stopwatch {
+  @include circle($size);
+
+  box-sizing: border-box;
+  position: relative;
+  background-color: $color-grey;
+  border: $borderWidth solid $color-dark;
+
+  &__second {
+    position: absolute;
+    top: getShiftTop($size, $borderWidth, $secondHight);
+    left: getShift($size, $borderWidth, $secondWidth);
+
+    width: $secondWidth;
+    height: $secondHight;
+    background-color: $color-red;
+    border-radius: 3px;
+
+    transform-origin: bottom;
+    animation: move $secondDuration steps(60, end) infinite;
+  }
+
+  &__minute {
+    position: absolute;
+    top: getShiftTop($size, $borderWidth, $minuteHight);
+    left: getShift($size, $borderWidth, $minuteWidth);
+
+    width: $minuteWidth;
+    height: $minuteHight;
+    background-color: $color-black;
+    border-radius: 6px;
+
+    transform-origin: bottom;
+    animation: move $minuteDuration steps(60, end) infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    @include circlePosition(getShift($size, $borderWidth, $circleSize));
+
+    @include circle($circleSize);
+
+    background-color: $color-red;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
