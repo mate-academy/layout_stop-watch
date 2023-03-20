@@ -1,0 +1,19 @@
+.stop-watch {
+  position: relative;
+  margin: 10% auto;
+
+  &__minutes {
+    @extend %main_about_arrows;
+    height: $size-minute-arrow;
+    background-color: $color-minute-arrow;
+    top: $pos-top-minute-arrow;
+    animation: stop_watch_minutes 3600s linear infinite 1s;
+  }
+
+  &__seconds {
+    @extend %main_about_arrows;
+    height: $size-second-arrow;
+    background-color: $color-second-arrow;
+    animation: stop_watch_minutes 60s linear infinite 1s;
+  }
+}
