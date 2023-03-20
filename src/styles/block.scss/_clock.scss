@@ -1,0 +1,126 @@
+.clock {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: $size;
+  width: $size;
+  border: $frame-thickness solid $first-color;
+  border-radius: 100%;
+
+  &__fon {
+    background-image: url(/styles/block.scss/aaa1.jpg);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    height: $background-size;
+    width: $background-size;
+    border-radius: 100%;
+  }
+
+  &__center {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: $icons-1;
+    width: $icons-1;
+    border-radius: 100%;
+    background-color: $second-color;
+  }
+
+  &__top {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: $indent-icons;
+    margin: auto;
+    background-color: $second-color;
+    width: $icons-1;
+    height: $icons-2;
+  }
+
+  &__right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: $indent-icons;
+    margin: auto;
+    background-color: $second-color;
+    width: $icons-2;
+    height: $icons-1;
+  }
+
+  &__bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: $indent-icons;
+    margin: auto;
+    background-color: $second-color;
+    width: $icons-1;
+    height: $icons-2;
+  }
+
+  &__left {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: $indent-icons;
+    margin: auto;
+    background-color: $second-color;
+    width: $icons-2;
+    height: $icons-1;
+  }
+
+  &__minute {
+    width: $minute-width;
+    height: $minute-size;
+    position: absolute;
+    background-color: $red-color-2;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: $minute-indent;
+    border: 1px solid $red-color-2;
+    border-radius: 50%;
+    animation: time $minutes infinite linear;
+    transform-origin: bottom center;
+  }
+
+  &__second {
+    width: $secunde-width;
+    height: $secunde-size;
+    position: absolute;
+    background-color: $red-color-3;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: $secunde-indent;
+    border: 1px solid $red-color-3;
+    border-radius: 100%;
+    animation: time $second infinite linear;
+    transform-origin: bottom center;
+  }
+
+  &__shadow {
+    width: $size;
+    height: $size;
+    background: linear-gradient(rgba(20, 40, 65, 0),rgba(0, 0, 0, 0.2));
+    left: $shadow-shift;
+    top: $shadow-shift;
+    transform: rotate(135deg);
+    position: absolute;
+  }
+}
