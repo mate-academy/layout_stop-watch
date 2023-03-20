@@ -1,17 +1,23 @@
 .clock {
   position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   height: $size;
   width: $size;
   border: $frame-thickness solid $first-color;
   border-radius: 100%;
-  left: $nule;
-  top: $nule;
-  right: $nule;
-  bottom: $nule;
-  margin: auto;
 
   &__fon {
     background-image: url(/styles/block.scss/aaa1.jpg);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -19,69 +25,63 @@
     height: $background-size;
     width: $background-size;
     border-radius: 100%;
-    position: absolute;
-    left: $nule;
-    top: $nule;
-    right: $nule;
-    bottom: $nule;
-    margin: auto;
   }
 
   &__center {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     height: $icons-1;
     width: $icons-1;
-    position: absolute;
-    left: $nule;
-    top: $nule;
-    right: $nule;
-    bottom: $nule;
-    margin: auto;
     border-radius: 100%;
     background-color: $second-color;
   }
 
   &__top {
     position: absolute;
+    left: 0;
+    right: 0;
+    top: $indent-icons;
+    margin: auto;
     background-color: $second-color;
     width: $icons-1;
     height: $icons-2;
-    left: $nule;
-    right: $nule;
-    top: $indent-icons;
-    margin: auto;
   }
 
   &__right {
     position: absolute;
+    top: 0;
+    bottom: 0;
+    right: $indent-icons;
+    margin: auto;
     background-color: $second-color;
     width: $icons-2;
     height: $icons-1;
-    top: $nule;
-    bottom: $nule;
-    right: $indent-icons;
-    margin: auto;
   }
 
   &__bottom {
     position: absolute;
+    left: 0;
+    right: 0;
+    bottom: $indent-icons;
+    margin: auto;
     background-color: $second-color;
     width: $icons-1;
     height: $icons-2;
-    left: $nule;
-    right: $nule;
-    bottom: $indent-icons;
-    margin: auto;
   }
 
   &__left {
     position: absolute;
+    top: 0;
+    bottom: 0;
+    left: $indent-icons;
+    margin: auto;
     background-color: $second-color;
     width: $icons-2;
     height: $icons-1;
-    top: $nule;
-    bottom: $nule;
-    left: $indent-icons;
-    margin: auto;
   }
 
   &__minute {
@@ -89,13 +89,13 @@
     height: $minute-size;
     position: absolute;
     background-color: $red-color-2;
-    left: $nule;
-    right: $nule;
-    margin: $nule auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     top: $minute-indent;
     border: 1px solid $red-color-2;
     border-radius: 50%;
-    animation: time 3600s infinite linear;
+    animation: time $minutes infinite linear;
     transform-origin: bottom center;
   }
 
@@ -104,13 +104,13 @@
     height: $secunde-size;
     position: absolute;
     background-color: $red-color-3;
-    left: $nule;
-    right: $nule;
-    margin: $nule auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     top: $secunde-indent;
     border: 1px solid $red-color-3;
     border-radius: 100%;
-    animation: time 60s infinite linear;
+    animation: time $second infinite linear;
     transform-origin: bottom center;
   }
 
