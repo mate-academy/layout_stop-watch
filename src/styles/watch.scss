@@ -1,8 +1,7 @@
+@import "mixins.scss";
+@import "keyframe.scss";
+
 .watch {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: $watch-size;
   height: $watch-size;
   border-radius: 50%;
@@ -14,6 +13,9 @@
     left: 50%;
     transform-origin: bottom center;
     border-radius: (50% 50% 0 0);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: handRotate;
   
     &--minute-hand {
       top: #{$watch-size / 2 - $minute-hand-height};
@@ -22,9 +24,6 @@
       width: $minute-hand-width;
       background-color: red;
       animation-duration: 3600s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-name: handRotate;
     }
   
     &--seconds-hand {
@@ -34,28 +33,19 @@
       width: $second-hand-width;
       background-color: blue;
       animation-duration: 60s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-name: handRotate;
     }
   }
+  &__hand-center {
+    position: absolute;
+    top: #{($watch-size - $hand-center-height) / 2};
+    left: #{($watch-size - $hand-center-width) / 2};
+    width: #{$hand-center-width};
+    height: #{$hand-center-height};
+    border-radius: 50%;
+    background-color: red;
+  }
 }
 
-@keyframes handRotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.watch__hand-center {
-  position: absolute;
-  top: #{($watch-size - $hand-center-height) / 2};
-  left: #{($watch-size - $hand-center-width) / 2};
-  width: #{$hand-center-width};
-  height: #{$hand-center-height};
-  border-radius: 50%;
-  background-color: red;
+body .watch {
+  @include in-center();
 }
