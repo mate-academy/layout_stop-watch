@@ -1,0 +1,51 @@
+@import "mixins.scss";
+@import "keyframe.scss";
+
+.watch {
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  background-color: rgb(195, 244, 244);
+  border: 4px solid #7ebfee;
+
+  &__hand {
+    position: absolute;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: (50% 50% 0 0);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: handRotate;
+  
+    &--minute-hand {
+      top: #{$watch-size / 2 - $minute-hand-height};
+      left: #{($watch-size - $minute-hand-width) / 2};
+      height: $minute-hand-height;
+      width: $minute-hand-width;
+      background-color: red;
+      animation-duration: 3600s;
+    }
+  
+    &--seconds-hand {
+      top: #{$watch-size / 2 - $second-hand-height};
+      left: #{($watch-size - $second-hand-width) / 2};
+      height: $second-hand-height;
+      width: $second-hand-width;
+      background-color: blue;
+      animation-duration: 60s;
+    }
+  }
+  &__hand-center {
+    position: absolute;
+    top: #{($watch-size - $hand-center-height) / 2};
+    left: #{($watch-size - $hand-center-width) / 2};
+    width: #{$hand-center-width};
+    height: #{$hand-center-height};
+    border-radius: 50%;
+    background-color: red;
+  }
+}
+
+body .watch {
+  @include in-center();
+}
