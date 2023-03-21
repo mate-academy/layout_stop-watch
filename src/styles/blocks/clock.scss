@@ -1,0 +1,60 @@
+.clock {
+  @extend %positions;
+  @include size-circles($clock-size);
+
+  box-shadow: $box-shadow-all;
+  border: 5px solid $main-color;
+  background: lightgray;
+
+  &__center {
+    @extend %positions;
+    @include size-circles($center-width);
+
+    z-index: 3;
+    box-shadow: $box-shadow-all;
+    background: $main-color;
+
+  }
+
+  &__minute {
+    @extend %positions;
+    @include animation-time($minute);
+
+    z-index: 2;
+    width: 5px;
+    height: 100%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: $clock-radius;
+
+      box-shadow: $box-shadow-all;
+      border-radius: 5px;
+      width: 5px;
+      height: 125px;
+      background: $main-color;
+    }
+  }
+
+  &__second {
+    @extend %positions;
+    @include animation-time($second);
+
+    z-index: 2;
+    width: 3px;
+    height: 100%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: $clock-radius;
+
+      box-shadow: $box-shadow-all;
+      border-radius: 5px;
+      height: 225px;
+      width: 3px;
+      background: $main-color;
+    }
+  }
+}
