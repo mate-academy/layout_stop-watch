@@ -1,0 +1,76 @@
+@keyframes rotate {
+  to {
+    transform: translateY(-50%) rotate(1turn);
+  }
+}
+
+$size: 40vw;
+$min-size: 10vw;
+$border-radius-circle: 400px;
+
+.clock {
+  margin-top: 20px;
+  display: flex;
+  position: relative;
+  min-width: $min-size;
+  width: $size;
+  min-height: $min-size;
+  height: $size;
+  border: 12px solid black;
+  border-radius: $border-radius-circle;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+
+  &__center {
+    position: absolute;
+    background-color: black;
+    border: 1px solid black;
+    width: 2vw;
+    height: 2vw;
+    border-radius: $border-radius-circle;
+  }
+
+  &__arm {
+    border-radius: 10px;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: bottom center;
+
+    &--seconds {
+      width: 2%;
+      height: 40%;
+      background-color: chocolate;
+      animation: rotate 60s linear infinite;
+    }
+
+    &--minutes {
+      width: 1%;
+      height: 20%;
+      background-color: crimson;
+      animation: rotate 3600s linear infinite;
+    }
+  }
+
+  &__number {
+    font-size: 2vw;
+    font-weight: 700;
+    position: absolute;
+
+    &--1 {
+      top: 5px;
+    }
+
+    &--2 {
+      right: 10px;
+    }
+
+    &--3 {
+      bottom: 5px;
+    }
+
+    &--4 {
+      left: 10px;
+    }
+  }
+}
