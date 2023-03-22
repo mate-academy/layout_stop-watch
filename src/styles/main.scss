@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    margin: 0;
   }
 
   &__center {
@@ -12,7 +13,8 @@
     margin-right: auto;
   }
 
-  &__seconds {
+  &__seconds,
+  &__minutes {
     position: absolute;
     top: 0;
     animation-name: clock;
@@ -22,12 +24,8 @@
   }
 
   &__minutes {
-    position: absolute;
-    top: 0;
-    animation-name: clock;
     animation-duration: 3600s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    z-index: 1;
   }
 
 }
