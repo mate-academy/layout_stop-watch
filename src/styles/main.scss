@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+.watch {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border: 15px solid #e25544;
+  background-image: url(../images/watch.png), url(../images/ma.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+
+  &__hand-hours {
+    height: 42%;
+    width: 20px;
+    background-color: #000;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 50%;
+    left: 225px;
+    transform-origin: bottom center;
+    animation: move-hand-hours 43200s linear infinite;
+  }
+
+  &__hand-minutes {
+    height: 47%;
+    width: 18px;
+    background-color: #fec131;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 50%;
+    left: 226px;
+    transform-origin: bottom center;
+    animation: move-hand-minutes 3600s linear infinite;
+  }
+
+  &__hand-seconds {
+    height: 50%;
+    width: 16px;
+    background-color: #38c876;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 50%;
+    left: 227px;
+    transform-origin: bottom center;
+    animation: move-hand-second 60s linear infinite;
+  }
+
+  &__hand-center {
+    width: 40px;
+    height: 40px;
+    background-color: #38c876;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes move-hand-second {
+  from {
+    transform: rotate(0);
+  }
+
+  from {
+    transform: rotate(-360deg);
+  }
+
+}
+
+@keyframes move-hand-minutes {
+  from {
+    transform: rotate(0);
+  }
+
+  from {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes move-hand-hours {
+  from {
+    transform: rotate(0);
+  }
+
+  from {
+    transform: rotate(-360deg);
+  }
+}
