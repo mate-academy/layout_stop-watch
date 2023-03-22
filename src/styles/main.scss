@@ -1,0 +1,43 @@
+.clock {
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+  }
+
+  &__center {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__seconds,
+  &__minutes {
+    position: absolute;
+    top: 0;
+    animation-name: clock;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minutes {
+    animation-duration: 3600s;
+    z-index: 1;
+  }
+
+}
+
+@keyframes clock {
+  0% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 180deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
