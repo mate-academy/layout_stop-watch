@@ -1,0 +1,53 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopWatch {
+  position: relative;
+
+  width: 50%;
+  height: 50%;
+
+  &__secondHand {
+    position: absolute;
+
+    height: 400px;
+    border-radius:1px;
+    border: 8px solid blue;
+
+    top: 50%;
+    left: 50%;
+
+    animation: rotation 60s infinite steps(60);
+    transform-origin: center top;
+  }
+
+  &__minuteHand {
+    position: absolute;
+
+    height: 280px;
+    border-radius:1px;
+    border: 10px solid black;
+
+    top: 50%;
+    left: 50%;
+
+    animation: rotation 3600s infinite steps(60);
+    transform-origin: center top;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(540deg);
+  }
+}
