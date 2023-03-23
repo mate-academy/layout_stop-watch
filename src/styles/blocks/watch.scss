@@ -1,5 +1,6 @@
 .watch {
-  @include watch-size;
+  height: $watch-size;
+  width: $watch-size;
   margin: 150px auto;
   display: flex;
   position: relative;
@@ -11,7 +12,8 @@
   box-shadow: rgba(0, 0, 0, 0.53) 50px 50px 40px;
 
   &__center {
-    @include center-dot-size;
+    height: $center-dot-size;
+    width: $center-dot-size;
     position: absolute;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
@@ -26,12 +28,12 @@
     border-radius: 10px;
 
     &--minute {
-      @include minute-hand-size;
+      @include hand-size($minute-hand-height);
       animation: rotate 3600s linear infinite;
     }
 
     &--second {
-      @include second-hand-size;
+      @include hand-size($second-hand-height);
       animation: rotate 60s linear infinite;
     }
   }
