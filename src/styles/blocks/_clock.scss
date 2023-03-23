@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  background-color: #eee;
+  border-radius: 50%;
+  width: 30vw;
+  height: 30vw;
+  border: #ccc 2px solid;
+  align-items: center;
+  justify-content: center;
+}
+
+.hour_arrow {
+  position: absolute;
+  height: 6vw;
+  width: 1vw;
+  background-color: rgb(108, 128, 178);
+  bottom: 50%;
+  z-index: 2;
+  border-radius: 10px;
+  transform-origin: bottom;
+  animation: hour_arrow 43200s linear;
+}
+
+.minute_arrow {
+  position: absolute;
+  height: 13vw;
+  width: 0.8vw;
+  background-color: rgb(176, 82, 102);
+  bottom: 50%;
+  z-index: 1;
+  border-radius: 10px;
+  transform-origin: bottom;
+  animation: minute_arrow 3600s linear;
+}
+
+.circle {
+  width: 2vw;
+  height: 2vw;
+  background-color: rgb(83, 83, 83);
+  border-radius: 50%;
+  z-index: 3;
+}
