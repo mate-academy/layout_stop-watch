@@ -45,7 +45,8 @@
 
     border-radius: 4px;
 
-    animation: rotate-hand 60s linear infinite;
+    transform-origin: bottom center;
+    animation: rotate-hand 3600s steps(60) infinite;
   }
 
   &__seconds-hand {
@@ -61,7 +62,8 @@
 
     border-radius: 4px;
 
-    animation: rotate-hand 1s linear infinite;
+    transform-origin: bottom center;
+    animation: rotate-hand 60s steps(60) infinite;
   }
 
   @keyframes rotate-hand {
