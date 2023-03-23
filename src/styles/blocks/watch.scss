@@ -1,0 +1,38 @@
+.watch {
+  @include clock;
+  background-color: black;
+  width: $watch-size;
+  height: $watch-size;
+  margin-top: 50px;
+  border: 4px solid $main-color;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &__center {
+    @include design;
+    @include clock;
+    height: $center-size;
+    width: $center-size;
+  }
+
+  &__seconds {
+    @include design;
+    @include position(1%, 36%, 14%);
+    transform-origin: bottom;
+    animation-name: seconds;
+    animation-duration: 60s;
+    animation-iteration-count: 60;
+  }
+
+  &__minutes {
+    @include design;
+    @include position(2%, 30%, 20%);
+    animation-name: minutes;
+    animation-duration: 3600s;
+    animation-iteration-count: 60;
+    transform-origin: bottom;
+  }
+}
