@@ -1,0 +1,30 @@
+@mixin center($position) {
+  top: $position;
+  left: $position;
+}
+
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+%position {
+  position: absolute;
+  @include center(50%);
+
+  transform-origin: left;
+}
+
+%animation {
+  animation-name: move;
+
+  @keyframes move {
+    from {
+      transform: rotate(-90deg);
+    }
+
+    to {
+      transform: rotate(270deg);
+    }
+  }
+}

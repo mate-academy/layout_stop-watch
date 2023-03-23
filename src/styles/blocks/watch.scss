@@ -1,0 +1,52 @@
+.watch {
+  position: relative;
+
+  border: 10px solid rgb(87, 69, 43);
+  box-shadow: inset 0 0 52px 1px rgba(0,0,0,0.5);
+  border-radius: 50%;
+  background-image: url(\styles\clocks.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 99%;
+  background-color: rgb(248, 212, 166);
+
+  @include square($watch-size);
+
+  &__minute {
+    background-color: rgb(153, 64, 64);
+    box-shadow: 4px 3px 7px 0 rgba(0,0,0,0.75);
+    width: $minute-size;
+    height: 10px;
+
+    @extend %position;
+
+    @extend %animation;
+    animation-duration: 3600s;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+  }
+
+  &__second {
+    background-color: rgb(78, 131, 131);
+    box-shadow: 4px 3px 7px 0 rgba(0,0,0,0.75);
+    width: $second-size;
+    height: 10px;
+
+    @extend %position;
+
+    @extend %animation;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__square {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid black;
+    @include square($dot-size);
+    border-radius: 50%;
+    position: absolute;
+    top: 49.3%;
+    left: 48.6%;
+  }
+}
