@@ -1,0 +1,41 @@
+.watch {
+  @include circle($size);
+  background-color: bisque;
+  display: flex;
+  position: relative;
+  border: 2px dashed mediumblue;
+  margin: 100px auto;
+
+  &::after {
+    @include circle(20px);
+    position: absolute;
+    display: block;
+    content: "";
+    background-color: brown;
+    top: 48%;
+    left: 48%;
+  }
+
+  &__minute,
+  &__second {
+    position: absolute;
+    display: block;
+    border-radius: 30%;
+    width: 6px;
+    height: $size/2;
+    left: 50%;
+    transform-origin: bottom;
+  }
+
+  &__minute {
+    @include transformation(3600s);
+    background-color: rgb(56, 6, 6);
+    border-radius: 70%;
+  }
+
+  &__second {
+    @include transformation(60s);
+    @include rotate(60s);
+    background-color: burlywood;
+  }
+}
