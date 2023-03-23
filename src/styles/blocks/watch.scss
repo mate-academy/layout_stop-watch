@@ -16,21 +16,19 @@ body {
   transform: $watch-transform;
 
   &::before {
-    @include watch-hands-position;
+    @include watch-hands-position(($watch-size / 2) - ($big-hand-width / 2));
 
     content: "";
     width: $big-hand-width;
     height: $big-hand-height;
-    left: ($watch-size / 2) - ($big-hand-width / 2);
-    top: ($watch-size / 100 * 19);
-
     background: #090118;
 
     animation: time 3600s infinite;
   }
 
   &:after {
-    @include watch-hands-position;
+    @include watch-hands-position(($watch-size / 2) - ($small-hand-width / 2));
+
 
     content: "";
     width: $small-hand-width;
