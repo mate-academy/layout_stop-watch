@@ -1,0 +1,13 @@
+@mixin watch-hands-position($left) {
+  position: absolute;
+  top: ($watch-size / 10 * 2);
+  left: $left;
+  transform-origin: bottom;
+  border-radius: 5px;
+}
+
+@mixin circle {
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+}
