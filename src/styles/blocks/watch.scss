@@ -3,9 +3,7 @@ body {
 }
 
 .watch {
-  width: $watch-size;
-  height: $watch-size;
-  border-radius: 50%;
+  @include circle;
 
   background: #286160;
   border: 4px solid #090118;
@@ -28,7 +26,6 @@ body {
 
   &:after {
     @include watch-hands-position(($watch-size / 2) - ($small-hand-width / 2));
-
 
     content: "";
     width: $small-hand-width;
