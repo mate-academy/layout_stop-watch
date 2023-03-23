@@ -1,0 +1,13 @@
+@mixin transformation($size) {
+  animation: rotation $size linear infinite;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin rotate($duration) {
+  animation: rotation $duration linear infinite;
+}
