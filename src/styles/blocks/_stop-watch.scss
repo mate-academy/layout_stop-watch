@@ -1,0 +1,75 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.stop-watch {
+  background: url(images/watch-face.svg) center no-repeat;
+  border: 1px solid rgba(#000, 0.25);
+  border-radius: 50%;
+  display: flex;
+  height: $watch-size;
+  justify-content: center;
+  position: relative;
+  width: $watch-size;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: brown;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    // border: 1px solid black;
+    background-color: cadetblue;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    @include drop-shadow(6px);
+  }
+
+  &__hand {
+    position: absolute;
+    border-radius: 20px;
+    height: $hand-size;
+    width: 4px;
+    transform-origin: bottom center;
+
+    &--timing_min {
+      animation: rotate-hand 3600s steps(60) infinite;
+      background-color: brown;
+      width: 8px;
+      margin-top: $hand-size - $hand-size--min;
+      height: $hand-size--min;
+
+      @include drop-shadow(2px);
+    }
+
+    &--timing_sec {
+      animation: rotate-hand 60s steps(60) infinite;
+      background-color: cadetblue;
+      margin-top: $hand-size - $hand-size--sec;
+      height: $hand-size--sec;
+
+      @include drop-shadow(6px);
+    }
+  }
+}
+
+@keyframes rotate-hand {
+  to {
+    transform: rotate(360deg);
+  }
+}
