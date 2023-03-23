@@ -1,0 +1,77 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+
+  background-color: $clr-platinum;
+  border: 3px solid $clr-jet;
+  box-shadow: inset 0 0 25px -6px rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    @extend %aspect-ratio-1-1;
+  }
+
+  &__content {
+    display: flex;
+    position: relative;
+    z-index: 0;
+    flex-grow: 1;
+
+    &::before {
+      content: "";
+      display: block;
+      z-index: 100;
+      @extend %position-center;
+      @extend %clock-center-dot-size;
+
+      border-radius: 50%;
+
+      background-color: $clr-jet;
+    }
+  }
+
+  &__minutes-hand {
+    z-index: 2;
+    @extend %position-center;
+    @include rotate-clock-hands(0deg);
+    height: 50%;
+    width: $clock-hands-width;
+
+    background-color: $clr-coral;
+    opacity: 0.8;
+    border: 2px solid darken($clr-coral, 15%);
+
+    border-radius: 4px;
+
+    animation: rotate-hand 60s linear infinite;
+  }
+
+  &__seconds-hand {
+    z-index: 1;
+    @extend %position-center;
+    @include rotate-clock-hands(0deg);
+    height: 45%;
+    width: $clock-hands-width;
+
+    background-color: $clr-african-violet;
+    opacity: 0.6;
+    border: 2px solid darken($clr-african-violet, 15%);
+
+    border-radius: 4px;
+
+    animation: rotate-hand 1s linear infinite;
+  }
+
+  @keyframes rotate-hand {
+    from {
+      @include rotate-clock-hands(0deg);
+    }
+
+    to {
+      @include rotate-clock-hands(360deg);
+    }
+
+  }
+}
