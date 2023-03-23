@@ -21,8 +21,8 @@ body {
     content: "";
     width: $big-hand-width;
     height: $big-hand-height;
-    left: ($watch-size / 2) - ($big-hand-width / 2);
-    top: ($watch-size / 100 * 19);
+    left: $watch-hand-positionX;
+    top: $watch-hand-positionY;
 
     background: #090118;
 
@@ -31,7 +31,7 @@ body {
 
   &:after {
     @include watch-hands-position;
-    
+
     content: "";
     width: $small-hand-width;
     height: $small-hand-height;
@@ -41,6 +41,8 @@ body {
   }
 
   &__center {
+    @include circle;
+
     position: absolute;
     top: $watch-size / 2;
     left: $watch-size / 2;
@@ -48,7 +50,6 @@ body {
     height: $center-size;
 
     transform: translate(-50%);
-    border-radius: 50%;
 
     background: #f03705;
     z-index: 2;
