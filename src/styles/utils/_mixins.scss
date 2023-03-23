@@ -3,7 +3,7 @@
   left: $position;
 }
 
-@mixin circle($size) {
+@mixin square($size) {
   height: $size;
   width: $size;
 }
@@ -13,4 +13,18 @@
   @include center(50%);
 
   transform-origin: left;
+}
+
+%animation {
+  animation-name: move;
+
+  @keyframes move {
+    from {
+      transform: rotate(-90deg);
+    }
+
+    to {
+      transform: rotate(270deg);
+    }
+  }
 }

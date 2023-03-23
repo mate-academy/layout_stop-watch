@@ -10,7 +10,7 @@
   background-size: 99%;
   background-color: rgb(248, 212, 166);
 
-  @include circle($watch-size);
+  @include square($watch-size);
 
   &__minute {
     background-color: rgb(153, 64, 64);
@@ -20,20 +20,10 @@
 
     @extend %position;
 
-    animation-name: move;
+    @extend %animation;
     animation-duration: 3600s;
     animation-timing-function: steps(60);
     animation-iteration-count: infinite;
-
-    @keyframes move {
-      from {
-        transform: rotate(-90deg);
-      }
-
-      to {
-        transform: rotate(270deg);
-      }
-    }
   }
 
   &__second {
@@ -44,26 +34,16 @@
 
     @extend %position;
 
-    animation-name: move;
+    @extend %animation;
     animation-duration: 60s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-
-    @keyframes move {
-      from {
-        transform: rotate(-90deg);
-      }
-
-      to {
-        transform: rotate(270deg);
-      }
-    }
   }
 
-  &__circle {
+  &__square {
     background-color: rgb(0, 0, 0);
     border: 1px solid black;
-    @include circle($dot-size);
+    @include square($dot-size);
     border-radius: 50%;
     position: absolute;
     top: 49.3%;
