@@ -1,12 +1,4 @@
 .stopwatch {
-  $stopwatch-radius: 40vh;
-  $stopwatch-border-width: 0.25vh;
-  $stopwatch-center-radius: $stopwatch-radius * 0.05;
-  $stopwatch-minute-hand-length: $stopwatch-radius * 0.7;
-  $stopwatch-minute-hand-width: $stopwatch-center-radius * 0.5;
-  $stopwatch-second-hand-length: $stopwatch-radius * 0.9;
-  $stopwatch-second-hand-width: $stopwatch-center-radius * 0.1;
-
   &__container {
     position: relative;
 
@@ -18,39 +10,34 @@
   }
 
   &__center {
+    @include positioningSettings($stopwatch-radius, $stopwatch-center-radius);
     @include circle($stopwatch-center-radius);
     background-color: $accent-black-color;
   }
 
   &__minute-hand {
-    @extend %handsPositioning;
-
-    width: $stopwatch-minute-hand-width;
-    height: $stopwatch-minute-hand-length;
+    @include positioningSettings($stopwatch-radius, $stopwatch-minute-hand-length);
+    @include rectangle($stopwatch-minute-hand-width, $stopwatch-minute-hand-length);
 
     background-color: $accent-black-color;
 
-    @extend %handsTransformSettings;
-
+    transform-origin: bottom center;
     animation: handRotation 3600s linear infinite;
   }
 
   &__second-hand {
-    @extend %handsPositioning;
-
-    width: $stopwatch-second-hand-width;
-    height: $stopwatch-second-hand-length;
+    @include positioningSettings($stopwatch-radius, $stopwatch-second-hand-length);
+    @include rectangle($stopwatch-second-hand-width, $stopwatch-second-hand-length);
 
     background-color: $accent-black-color;
 
-    @extend %handsTransformSettings;
-
+    transform-origin: bottom center;
     animation: handRotation 60s steps(60) infinite;
   }
 }
 
 @keyframes handRotation {
   to {
-    transform: translateY(-50%) rotate(360deg);
+    transform: rotate(1turn);
   }
 }

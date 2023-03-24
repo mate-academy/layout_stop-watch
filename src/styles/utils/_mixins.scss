@@ -3,3 +3,13 @@
   height: $radius * 2;
   border-radius: 50%;
 }
+
+@mixin rectangle($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin positioningSettings($radius, $height) {
+  position: absolute;
+  top: $radius - $height;
+}
