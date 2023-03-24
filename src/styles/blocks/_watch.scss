@@ -1,0 +1,52 @@
+@import "../mixins";
+
+.watch {
+  z-index: -2;
+
+  display: flex;
+  align-items: center;
+
+  width: 600px;
+  height: 600px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: #f0ede5;
+
+  &__center {
+    position: relative;
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #2d3436;
+
+    &::before {
+      @include hands-general-styles;
+      left: 2px;
+      width: 24px;
+      height: 250px;
+      background-color: lightcoral;
+
+      animation-duration: 60s;
+    }
+
+    &::after {
+      @include hands-general-styles;
+      width: 30px;
+      height: 200px;
+      background-color: #636e72;
+
+      animation-duration: 3600s;
+    }
+  }
+
+  @keyframes hands-animation {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
