@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border: 16px solid #b31e0e;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+
+  &__minutes {
+    height: 40%;
+    width: 20px;
+    background-color: #fec131;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 50%;
+    left: 240px;
+    transform-origin: bottom center;
+    animation: move-minutes 3600s linear infinite;
+  }
+  
+  &__seconds {
+    height: 50%;
+    width: 15px;
+    background-color: #124197;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 50%;
+    left: 241px;
+    transform-origin: bottom center;
+    animation: move-seconds 60s linear infinite;
+  }
+  
+  @keyframes move-minutes {
+    from {
+      transform: rotate(0);
+    }
+    
+    from {
+      transform: rotate(-360deg);
+    }
+  }
+
+  @keyframes move-seconds {
+    from {
+      transform: rotate(0);
+    }
+    
+    from {
+      transform: rotate(-360deg);
+    }
+  }
+}
