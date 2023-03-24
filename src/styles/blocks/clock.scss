@@ -1,0 +1,79 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-color: $background-color;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    @include circle($circle-size);
+
+    background: #fff;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &__hour {
+    @extend %base-style;
+    width: $hour-arrow-width;
+
+    animation: time 43200s infinite linear;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - #{$hour-arrow-height});
+      @include arrow($hour-arrow-width, $hour-arrow-height);
+
+      background-color: #000;
+    }
+  }
+
+  &__minute {
+    @extend %base-style;
+    width: $minute-arrow-width;
+
+    animation: time 3600s infinite linear;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - #{$minute-arrow-height});
+      @include arrow($minute-arrow-width, $minute-arrow-height);
+
+      background-color: #000;
+    }
+  }
+
+  &__second {
+    @extend %base-style;
+    width: $second-arrow-width;
+
+    animation: time 60s infinite linear;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - #{$second-arrow-height});
+      @include arrow($second-arrow-width, $second-arrow-height);
+
+      background-color: red;
+    }
+  }
+
+  &__dot {
+    @extend %base-style;
+    @include circle($small-circle-size);
+    margin: auto;
+
+    background-color: $background-color;
+    border: 2px solid #1b1b1b;
+
+    z-index: 1;
+  }
+
+}
