@@ -1,4 +1,4 @@
-body {
+* {
   margin: 0;
   box-sizing: border-box;
   display: flex;
@@ -25,7 +25,8 @@ body {
     bottom: 50%;
     left: 240px;
     transform-origin: bottom center;
-    animation: move-minutes 3600s linear infinite;
+    animation: move linear infinite;
+    animation-duration: 3600s;
   }
   
   &__seconds {
@@ -37,20 +38,11 @@ body {
     bottom: 50%;
     left: 241px;
     transform-origin: bottom center;
-    animation: move-seconds 60s linear infinite;
+    animation: move linear infinite;
+    animation-duration: 60s;
   }
   
-  @keyframes move-minutes {
-    from {
-      transform: rotate(0);
-    }
-    
-    from {
-      transform: rotate(-360deg);
-    }
-  }
-
-  @keyframes move-seconds {
+  @keyframes move {
     from {
       transform: rotate(0);
     }
