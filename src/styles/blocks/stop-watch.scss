@@ -1,0 +1,30 @@
+.stop-watch {
+  @extend %position;
+  @include stop-watch($stop-watch-size);
+  transform: translate(-50%, -50%);
+  border: 5px solid black;
+  border-radius: 50%;
+  background-color: #dcdbdb;
+
+  &__minute {
+    @extend %position, %arrow-properties;
+    height: $minute-height;
+    background-color: #37393f;
+    animation-duration: 60s;
+  }
+
+  &__second {
+    @extend %position, %arrow-properties;
+    height: $second-height;
+    background-color: #8e919d;
+    animation-duration: 1s;
+  }
+
+  &:hover {
+    @each $arrow in $arrows {
+      .stop-watch__#{$arrow} {
+        animation-play-state: paused;
+      }
+    }
+  }
+}
