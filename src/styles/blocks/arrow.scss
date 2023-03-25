@@ -1,33 +1,31 @@
-.arrow {
+.clock {
   display: flex;
   position: relative;
   justify-content: center;
 
-  &__min {
+  &__arrow--min {
     position: absolute;
 
     height: 200px;
     width: 10px;
     margin-top: $dot-diametr/2;
+    rotate: 180deg;
 
     background: linear-gradient(black, red);
-    border-radius: 5px;
 
-    transform-origin: top;
-    animation: move 3600s steps(60) infinite;
+    @include arrow-stroke(3600s);
   }
 
-  &__sec {
+  &__arrow--sec {
     position: absolute;
 
     height: 240px;
     width: 10px;
     margin-top: $dot-diametr/2;
+    rotate: 180deg;
 
     background: linear-gradient(black, purple);
-    border-radius: 5px;
 
-    transform-origin: top;
-    animation: move 60s steps(60) infinite;
+    @include arrow-stroke(60s);
   }
 }

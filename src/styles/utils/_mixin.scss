@@ -3,3 +3,10 @@
   width: $size;
   border-radius: 50%;
 }
+
+@mixin arrow-stroke($seconds) {
+  border-radius: 5px;
+
+  transform-origin: top;
+  animation: move $seconds steps(60) infinite;
+}
