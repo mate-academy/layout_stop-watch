@@ -1,0 +1,31 @@
+.clock {
+  display: flex;
+  position: relative;
+  justify-content: center;
+
+  &__arrow--min {
+    position: absolute;
+
+    height: 200px;
+    width: 10px;
+    margin-top: $dot-diametr/2;
+    rotate: 180deg;
+
+    background: linear-gradient(black, red);
+
+    @include arrow-stroke(3600s);
+  }
+
+  &__arrow--sec {
+    position: absolute;
+
+    height: 240px;
+    width: 10px;
+    margin-top: $dot-diametr/2;
+    rotate: 180deg;
+
+    background: linear-gradient(black, purple);
+
+    @include arrow-stroke(60s);
+  }
+}
