@@ -1,0 +1,45 @@
+$clockSize: 500px;
+
+@keyframes handMove {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.dial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px double #000;
+  border-radius: 100%;
+  height: $clockSize;
+  width: $clockSize;
+  background: salmon;
+  margin: auto;
+
+  &__minute-hand {
+    position: relative;
+    top: -$clockSize/4;
+    background: purple;
+    border-radius: 50px;
+    height: $clockSize / 2;
+    width: 5px;
+    transform-origin: bottom;
+    animation: handMove 3600s steps(60) infinite;
+  }
+
+  &__second-hand {
+    position: relative;
+    top: -$clockSize/6;
+    left: -4px;
+    background: #fa2;
+    border-radius: 50px;
+    height: $clockSize / 3;
+    width: 3px;
+    transform-origin: bottom;
+    animation: handMove 60s steps(60) infinite;
+  }
+}
