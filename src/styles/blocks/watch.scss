@@ -1,0 +1,48 @@
+.watch {
+  @include big-circle ($big-circle-size);
+  border: 4px solid #{$color-accent-blue};
+  background-color: #{$color-default};
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include small-circle ($small-circle-size);
+    background-color: #{$color-main-accent};
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &__long-hand {
+    position: absolute;
+    left: #{$shift-left};
+    top: #{$shift-top-long};
+    width: #{$width-hands};
+    height: $height-long-hand;
+    border-radius: 20%;
+    background-color: #{$color-main-accent};
+    transform-origin: bottom center;
+    animation: move 60s steps(60,jump-end) infinite;
+  }
+  
+  &__short-hand {
+    position: absolute;
+    left: #{$shift-left};
+    top: $shift-top-short;
+    width: #{$width-hands};
+    height: #{$height-short-hand};
+    border-radius: 20%;
+    background-color: #{$color-accent-red};
+    transform-origin: bottom center;
+    animation: move 3600s steps(60, jump-end) infinite;
+  }
+
+  @keyframes move {
+    from {
+      rotate: 0deg;
+    }
+    to {
+      rotate: 360deg;
+    }
+  }
+}
