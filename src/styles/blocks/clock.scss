@@ -1,0 +1,81 @@
+.clock {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border: 30px solid crimson;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  background: #9af17f;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 10px black;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 180px;
+    width: 10px;
+    background: black;
+    top: 50%;
+    left: calc(50% - 5px);
+    border-radius: 5px;
+    animation: spin 6s linear infinite;
+    transform-origin: top;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 120px;
+    width: 10px;
+    background: red;
+    top: 50%;
+    left: calc(50% - 5px);
+    border-radius: 5px;
+    animation: spin 72s linear infinite;
+    transform-origin: top;
+
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(-180deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.container {
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4d1ea5;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: black;
+    left: 50%;
+    top: calc(50% - 235px);
+    z-index: 2;
+    transform: translateX(-50%);
+    box-shadow: 230px 235px 0 0 black,
+      -230px 235px 0 0 black,
+      0 450px 0 0 black;
+  }
+}
