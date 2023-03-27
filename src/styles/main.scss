@@ -1,0 +1,67 @@
+$color-arrow: yellowgreen;
+
+.container {
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+.stop-watch {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  position: absolute;
+  background: url("../images/Clock.png") no-repeat  center;
+  background-size: 400px 400px;
+  margin: 100px auto;
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-arrow;
+    transform: translate(-50%,-50%);
+  }
+
+  &__sec {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 10px;
+    background-color: $color-arrow;
+    animation: stopWatch 60s steps(60) infinite forwards;
+    transform-origin: top left;
+    border-top-right-radius: 75%;
+    border-bottom-right-radius: 75%;
+  }
+
+  &__min {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 10px;
+    background-color: $color-arrow;
+    animation: stopWatch 3600s steps(60) infinite forwards;
+    transform-origin: top left;
+    border-top-right-radius: 75%;
+    border-bottom-right-radius: 75%;
+  }
+
+  @keyframes stopWatch {
+    from {
+      transform: rotate(-90deg);
+      transform-origin: top left;
+    }
+
+    to {
+      transform: rotate(270deg);
+      transform-origin: top left;
+    }
+  }
+
+}
