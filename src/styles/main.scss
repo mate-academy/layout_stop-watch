@@ -1,3 +1,5 @@
+$color-arrow: yellowgreen;
+
 .container {
   padding: 0;
   display: flex;
@@ -11,7 +13,7 @@
   position: absolute;
   background: url("../images/Clock.png") no-repeat  center;
   background-size: 400px 400px;
-  margin:  100px auto;
+  margin: 100px auto;
 
   &__circle {
     position: absolute;
@@ -20,7 +22,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: yellowgreen;
+    background-color: $color-arrow;
     transform: translate(-50%,-50%);
   }
 
@@ -30,7 +32,7 @@
     left: 50%;
     width: 200px;
     height: 10px;
-    background-color: yellowgreen;
+    background-color: $color-arrow;
     animation: stopWatch 60s steps(60) infinite forwards;
     transform-origin: top left;
     border-top-right-radius: 75%;
@@ -43,7 +45,7 @@
     left: 50%;
     width: 150px;
     height: 10px;
-    background-color: yellowgreen;
+    background-color: $color-arrow;
     animation: stopWatch 3600s steps(60) infinite forwards;
     transform-origin: top left;
     border-top-right-radius: 75%;
