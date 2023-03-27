@@ -13,27 +13,22 @@
     z-index: 1;
   }
 
-  &__long-hand {
+  &__hand {
     position: absolute;
     left: #{$shift-left};
     top: #{$shift-top-long};
     width: #{$width-hands};
-    height: $height-long-hand;
+    height: #{$height-long-hand};
     border-radius: 20%;
     background-color: #{$color-main-accent};
     transform-origin: bottom center;
     animation: move 60s steps(60,jump-end) infinite;
   }
-  
-  &__short-hand {
-    position: absolute;
-    left: #{$shift-left};
+
+  &__hand--length_short {
     top: $shift-top-short;
-    width: #{$width-hands};
     height: #{$height-short-hand};
-    border-radius: 20%;
     background-color: #{$color-accent-red};
-    transform-origin: bottom center;
     animation: move 3600s steps(60, jump-end) infinite;
   }
 
