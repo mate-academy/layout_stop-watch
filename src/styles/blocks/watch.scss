@@ -1,0 +1,56 @@
+@use "../utiles/variables" as *;
+
+.watch {
+  position: relative;
+  background-color: rgb(0, 157, 255);
+  border: 5px solid white;
+  border-radius: $size-watch/4;
+  width: $size-watch;
+  height: $size-watch;
+
+  &__minute {
+    height: 40%;
+    width: 20px;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 50%;
+    left: 240px;
+    transform-origin: bottom center;
+    animation: watch linear infinite;
+    animation-duration: 3600s;
+  }
+
+  &__second {
+    height: 50%;
+    width: 20px;
+    background-color: red;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 50%;
+    left: 240px;
+    transform-origin: bottom center;
+    animation: watch linear infinite;
+    animation-duration: 60s;
+  }
+
+  &__center {
+    width: 40px;
+    height: 10%;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 45%;
+    left: 230px;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
