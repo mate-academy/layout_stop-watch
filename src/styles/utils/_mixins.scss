@@ -1,18 +1,11 @@
-@mixin line-top-bottom {
+@mixin clock-line($width-line, $height-line) {
   position: absolute;
-  width: 3px;
-  height: 8px;
+  width: $width-line;
+  height: $height-line;
   background-color: #262626;
 }
 
-@mixin line-left-right {
-  position: absolute;
-  width: 8px;
-  height: 3px;
-  background-color: #262626;
-}
-
-@mixin dimensions($size) {
+@mixin square($size) {
   width: $size;
   height: $size;
 }

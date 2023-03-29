@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @include dimensions($clockSize);
+  @include square($clockSize);
   background-color: #fff;
   border: 10px solid #34626c;
   border-radius: $halfBorderRadius;
@@ -11,29 +11,29 @@
   &::before {
     content: "";
     position: absolute;
-    @include dimensions($dotSize);
+    @include square($dotSize);
     background: #34626c;
     border-radius: $halfBorderRadius;
     z-index: 3;
   }
 
   &__top {
-    @include line-top-bottom();
+    @include clock-line(3px, 8px);
     top: 0;
   }
   
   &__right {
-    @include line-left-right();
+    @include clock-line(8px, 3px);
     right: 0;
   }
   
   &__bottom {
-    @include line-top-bottom();
+    @include clock-line(3px, 8px);
     bottom: 0;
   }
   
   &__left {
-    @include line-left-right();
+    @include clock-line(8px, 3px);
     left: 0;
   }
   
