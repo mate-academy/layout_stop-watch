@@ -1,0 +1,63 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include dimensions($clockSize);
+  background-color: #fff;
+  border: 10px solid #34626c;
+  border-radius: $halfBorderRadius;
+
+  &::before {
+    content: "";
+    position: absolute;
+    @include dimensions($dotSize);
+    background: #34626c;
+    border-radius: $halfBorderRadius;
+    z-index: 3;
+  }
+
+  &__top {
+    @include line-top-bottom();
+    top: 0;
+  }
+  
+  &__right {
+    @include line-left-right();
+    right: 0;
+  }
+  
+  &__bottom {
+    @include line-top-bottom();
+    bottom: 0;
+  }
+  
+  &__left {
+    @include line-left-right();
+    left: 0;
+  }
+  
+  &__second {
+    position: absolute;
+    bottom: 50%;
+    width: 5px;
+    height: 150px;
+    background-color: #ff105e;
+    border-radius: $halfBorderRadius;
+    z-index: 1;
+    transform-origin: bottom;
+    animation: second 60s steps(60, end) infinite;
+  }
+  
+  &__minutes {
+    position: absolute;
+    width: 10px;
+    height: 100px;
+    background-color: #839b97;
+    border-radius: $halfBorderRadius;
+    bottom: 50%;
+    z-index: 2;
+    transform-origin: bottom;
+    animation: minutes 3600s linear infinite;
+  }
+}
