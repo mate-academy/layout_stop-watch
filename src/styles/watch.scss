@@ -1,0 +1,45 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  position: relative;
+  @include square($watch-size);
+  border: 1px green solid;
+  border-radius: 50px;
+
+  &__seconds {
+    position: absolute;
+    top: #{$seconds-top};
+    left: #{$hands-left};
+    height: #{$height-seconds};
+    width: #{$hands-width};
+    background-color: blueviolet;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    animation: time 1s linear 60;
+  }
+
+  &__center {
+    position: absolute;
+    top: #{$circle-shift};
+    left: #{$circle-shift};
+    @include circle($circle-size);
+    background-color: blueviolet;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: #{$minutes-top};
+    left: #{$hands-left};
+    height: #{$height-minutes};
+    width: #{$hands-width};
+    background-color: red;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    animation: time 60s linear 1;
+  }
+}
