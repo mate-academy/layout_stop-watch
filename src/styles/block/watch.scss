@@ -1,0 +1,43 @@
+.watch {
+  @include circle($size-container);
+  @extend %flex-style;
+  background-color: $main-color;
+  border: 5px solid $secondary-color;
+  perspective: 500px;
+
+  &__arrow-big {
+    @extend %arrow-position;
+    width: $width_arrow-big;
+    height: $height_arrow-big;
+    background-color: #f0ffff;
+    border-radius: 30%;
+    transform-origin: bottom;
+    animation: 60s steps(60, start) 2s infinite normal move;
+  }
+  
+  &__holder-arrow {
+    @include circle($size_holder-arrow);
+    position: absolute;
+    background-color: $secondary-color;
+  }
+  
+  &__arrow-small {
+    @extend %arrow-position;
+    width: $width_arrow-small;
+    height: $height_arrow-small;
+    background-color: $arrow-small-color;
+    border-radius: 30%;
+    transform-origin: bottom;
+    animation: 3600s steps(60, end) 2s infinite normal move;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
