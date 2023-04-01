@@ -4,10 +4,6 @@ $clock-size: 600px;
   @return (360deg/12)*$n;
 }
 
-@function circleMinPos($n) {
-  @return (360deg/60)*$n;
-}
-
 @mixin arrowWidthAndLeft($w:0) {
   left: calc(#{-$w} / 2);
   width: $w;
