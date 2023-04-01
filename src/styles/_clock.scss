@@ -1,0 +1,96 @@
+.clock {
+  position: relative;
+  border: 5px solid #000;
+  border-radius: 50%;
+  height: $clock-size;
+  margin-top: 20px;
+  overflow: hidden;
+  width: $clock-size;
+
+  &__numbers {
+    background-color: #ccc;
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__num {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 30px;
+    height: 100%;
+    position: absolute;
+    width: 0; /* needed to simplify calculation */
+    left: 50%;
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        transform: rotate(circleHourPos($i));
+
+        &:before {
+          content: "#{$i}";
+          display: inline;
+          transform: rotate(#{-1 * circleHourPos($i)});
+        }
+      }
+    }
+  }
+
+  &__center {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #000;
+    border-radius: 50%;
+    z-index: 5;
+  }
+
+  &__arrows {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+
+  &__arr {
+    $time: 60s;
+
+    animation: clockArrow;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    bottom: 5px;
+
+    position: absolute;
+    transform-origin: center 102%;
+
+    &--hour {
+      @include arrowWidthAndLeft(12px);
+
+      animation-duration: $time * 60 * 60; //1 hour
+      background-color: #000;
+      height: calc(#{$clock-size} / 3 - 20px);
+      z-index: 1;
+    }
+
+    &--min {
+      @include arrowWidthAndLeft(6px);
+
+      animation-duration: $time * 60; //1 min
+      background-color: #575151;
+      height: calc(#{$clock-size} / 2 - 20px - 30px);
+      z-index: 2;
+    }
+
+    &--sec {
+      @include arrowWidthAndLeft(2px);
+
+      animation-duration: $time; //1 sec
+      background-color: red;
+      height: calc(#{$clock-size} / 2 - 20px);
+      z-index: 3;
+    }
+  }
+}
