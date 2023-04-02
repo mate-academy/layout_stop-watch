@@ -1,0 +1,14 @@
+@mixin circle ($diametr, $color, $border-color) {
+  width: $diametr;
+  height: $diametr;
+  border: 1px solid $border-color;
+  border-radius: 50%;
+  background-color: $color;
+}
+
+@mixin hand ($length, $width, $color) {
+  height: $length;
+  width: $width;
+  border-radius: 50%;
+  background-color: $color;
+}
