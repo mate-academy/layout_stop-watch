@@ -1,0 +1,28 @@
+$clock-size: 600px;
+
+@function circleHourPos($n) {
+  @return (360deg/12)*$n;
+}
+
+@mixin arrowWidthAndLeft($w:0) {
+  left: calc(#{-$w} / 2);
+  width: $w;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
