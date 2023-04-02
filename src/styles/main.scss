@@ -1,7 +1,11 @@
-@mixin round ($size) {
-  width: $size;
-  height: $size;
-  border-radius: 50%;
+@import "./utils/mixins";
+
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .watch {
@@ -18,8 +22,7 @@
     top: 25%;
     left: 50%;
     z-index: 1;
-    animation: rotate 3600s steps(36, end);
-    animation-iteration-count: infinite;
+    @include animation(36, 3600s);
   }
 
   &__seconds {
@@ -29,8 +32,7 @@
     position: absolute;
     top: 15%;
     left: 50%;
-    animation: rotate 60s steps(360, end);
-    animation-iteration-count: infinite;
+    @include animation(360, 60s);
   }
 
   &__center {
