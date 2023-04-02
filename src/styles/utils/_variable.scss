@@ -1,0 +1,20 @@
+$d-clock: 500px;
+$d-center: 3%;
+
+$color-clock: #e5e5e5;
+$color-center: #73a;
+$color-minute-hand: #099;
+$color-second-hand: #1a2;
+
+$length-minute-hand: $d-clock/3;
+$width-minute-hand: $d-center;
+$length-second-hand: $d-clock/2.1;
+$width-second-hand: $d-center/2;
+
+$left-transform-second-hand: 50%-($width-second-hand)/2;
+$top-transform-second-hand: ($d-clock)/2-($length-second-hand);
+$left-transform-minute-hand: 50%-($width-minute-hand)/2;
+$top-transform-minute-hand: ($d-clock)/2-($length-minute-hand);
+
+$seconds-per-minute: 60s;
+$seconds-per-hour: 3600s;
