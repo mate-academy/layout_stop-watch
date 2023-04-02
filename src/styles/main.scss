@@ -1,0 +1,55 @@
+@mixin round ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+.watch {
+  @include round(200px);
+  background-color: pink;
+  border: 2px solid black;
+  position: relative;
+
+  &__minutes {
+    width: 2px;
+    height: 25%;
+    background-color: black;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    z-index: 1;
+    animation: rotate 3600s steps(36, end);
+    animation-iteration-count: infinite;
+  }
+
+  &__seconds {
+    width: 2px;
+    height: 35%;
+    background-color: black;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    animation: rotate 60s steps(360, end);
+    animation-iteration-count: infinite;
+  }
+
+  &__center {
+    @include round(4px);
+    background-color: black;
+    position: absolute;
+    top: 98px;
+    left: 99px;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom center;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom center;
+  }
+}
