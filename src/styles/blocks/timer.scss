@@ -1,0 +1,37 @@
+@import "../utils/mixins";
+@import "../utils/transform";
+@import "../utils/variables";
+
+.timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include circle($diameter-timer, $color-timer);
+
+  &__minute-hand {
+    position: absolute;
+    top: $top-transform-minute-hand;
+    left: $left-transform-minute-hand;
+    @include hand($length-minute-hand, $width-minute-hand, $color-minute-hand);
+    transform-origin: bottom center;
+    animation: move $minute-hand-cycle steps(60, end) infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: $top-transform-second-hand;
+    left: $left-transform-second-hand;
+    @include hand($length-second-hand, $width-second-hand, $color-second-hand);
+    transform-origin: bottom center;
+    animation: move $second-hand-cycle steps(60, end) infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include circle($diameter-center, $color-center);
+  }
+}
