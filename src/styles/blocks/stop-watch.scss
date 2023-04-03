@@ -1,0 +1,41 @@
+.stop-watch {
+  border-radius: 50%;
+  position: relative;
+  height: $stop-watch-height;
+  width: $stop-watch-width;
+  background-color: #055;
+
+  &__min {
+    background-color: #0ff;
+    @include clock-element($minute-row-height, $row-width);
+    @extend %position-center;
+    transform-origin: top center;
+    animation: move 3600s steps(60, end) infinite;
+  }
+
+  &__sec {
+    @extend %position-center;
+    @include clock-element($second-row-height, $row-width);
+    animation: move 60s steps(60, end) infinite;
+    transform-origin: top center;
+    background-color: $watch-main-color;
+  }
+
+  &__center {
+    @extend %position-center;
+    @include clock-element($circle-diameter, $circle-diameter);
+    transform: translate(-25%, -50%);
+    border-radius: 50%;
+    background-color: $watch-main-color;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(-180deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
