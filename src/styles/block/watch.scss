@@ -6,7 +6,7 @@
   width: $watch_size;
   background-color: $background-color;
   border-radius: 50%;
-  margin: 250px auto;
+  margin: 100px auto;
   border: 3px solid #789;
 
   &__sun {
@@ -130,95 +130,5 @@
     transform-origin: center 10%;
     animation: infinite clock 60s linear;
     border-radius: $radius-line;
-  }
-
-  @keyframes clock {
-    from {
-      transform: rotate(180deg);
-    }
-    to {
-      transform: rotate(540deg);
-    }
-  }
-
-  @keyframes mercury {
-    from {
-      transform: rotate(180deg) translateX(50px);
-    }
-    to {
-      transform: rotate(540deg) translateX(50px);
-    }
-  }
-
-  @keyframes venus {
-    from {
-      transform: rotate(180deg) translateX(80px);
-    }
-    to {
-      transform: rotate(540deg) translateX(80px);
-    }
-  }
-
-  @keyframes earth {
-    from {
-      transform: rotate(180deg) translateX(115px);
-    }
-    to {
-      transform: rotate(540deg) translateX(115px);
-    }
-  }
-
-  @keyframes mars {
-    from {
-      transform: rotate(180deg) translateX(150px);
-    }
-    to {
-      transform: rotate(540deg) translateX(150px);
-    }
-  }
-
-  @keyframes jupiter {
-    from {
-      transform: rotate(180deg) translateX(190px);
-    }
-    to {
-      transform: rotate(540deg) translateX(190px);
-    }
-  }
-
-  @keyframes saturn {
-    from {
-      transform: rotate(180deg) translateX(230px);
-    }
-    to {
-      transform: rotate(540deg) translateX(230px);
-    }
-  }
-
-  @keyframes uranus {
-    from {
-      transform: rotate(180deg) translateX(270px);
-    }
-    to {
-      transform: rotate(540deg) translateX(270px);
-    }
-  }
-
-  @keyframes neptune {
-    from {
-      transform: rotate(180deg) translateX(305px);
-    }
-    to {
-      transform: rotate(540deg) translateX(305px);
-    }
-  }
-
-  @keyframes pluto {
-    from {
-      transform: rotate(180deg) translateX(330px);
-    }
-    to {
-      transform: rotate(540deg) translateX(330px);
-    }
   }
 }
