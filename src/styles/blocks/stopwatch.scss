@@ -1,0 +1,40 @@
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border-radius: 50%;
+  background-color: $color-white;
+  @include flex (flex, center, center, row);
+  position: relative;
+
+  &__center {
+    width: $stopwatch-center-size;
+    height: $stopwatch-center-size;
+    border-radius: 50%;
+    background-color: $color-gray;
+  }
+
+  &__minutes-arrow {
+    position: absolute;
+    top: 20px;
+    display: block;
+    width: 5px;
+    height: 130px;
+    background-color: $color-firebrick;
+    border-radius: 2px;
+    z-index: 2;
+    transform-origin: center calc(100% - (1px / 2));
+    animation: movement 3600s linear infinite;
+  }
+
+  &__seconds-arrow {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 5px;
+    height: 150px;
+    background-color: $color-gray;
+    border-radius: 2px;
+    transform-origin: center calc(100% - (1px / 2));
+    animation: movement 60s linear infinite;
+  }
+}
