@@ -1,0 +1,20 @@
+@import "./utils/_variables";
+@import "./utils/_mixins";
+@import "./blocks/stopwatch.scss";
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes minute-move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

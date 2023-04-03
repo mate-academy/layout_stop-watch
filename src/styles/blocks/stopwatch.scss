@@ -1,0 +1,38 @@
+.stopwatch {
+  @include square($square-size);
+  display: flex;
+  position: relative;
+  justify-content: center;
+  border: 3px solid gold;
+  border-radius: 50%;
+
+  &__minute-hand {
+    position: absolute;
+    top: 40px;
+    height: 110px;
+    width: 7px;
+    background-color: pink;
+    transform-origin: bottom;
+    border-radius: 3px;
+    animation: minute-move 3600s linear infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 10px;
+    height: 140px;
+    width: 5px;
+    background-color: green;
+    transform-origin: bottom;
+    border-radius: 3px;
+    animation: minute-move 60s linear infinite;
+  }
+
+  &__point {
+    @include square(20px);
+    position: absolute;
+    top: 140px;
+    border-radius: 50%;
+    background-color: gold;
+  }
+}
