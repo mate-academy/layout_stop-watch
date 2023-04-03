@@ -1,0 +1,53 @@
+.clock {
+  background-image: url(clock.png);
+  width: 250px;
+  height: 250px;
+  background-color: #999aa362;
+  border-radius: 50%;
+  transform: scale(3);
+
+  &__joke {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hand {
+    position: absolute;
+    display: block;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 50%;
+    transform: translate(0,50%) rotate(-90deg);
+
+    &--minute {
+      height: 5px;
+      background-color: #000;
+      width: 60px;
+      animation: 3600s watch infinite steps(60, end);
+    }
+
+    &--second {
+      height: 2px;
+      background-color: #43fd;
+      width: 90px;
+      animation: 60s watch infinite steps(60, end);
+    }
+
+    @keyframes watch {
+      from {
+        transform: translate(0, -50%) rotate(-90deg);
+      }
+      to {
+        transform: translate(0, -50%) rotate(270deg);
+      }
+    }
+  }
+}

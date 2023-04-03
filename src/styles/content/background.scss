@@ -1,0 +1,18 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(joke.png);
+  background-position: 0 0;
+  animation: movedogi 60s linear infinite;
+}
+
+@keyframes movedogi {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
