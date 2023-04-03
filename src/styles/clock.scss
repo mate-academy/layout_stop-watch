@@ -1,3 +1,5 @@
+@import "./keyframes.scss";
+
 .hand {
   position: absolute;
   top: 50%;
@@ -32,23 +34,5 @@
     height: 80px;
     transform: rotate(0deg) translateX(-50%) translateY(-100%);
     animation: rotate-second 60s linear infinite;
-  }
-}
-
-@keyframes rotate-minute {
-  from {
-    transform: rotate(0deg) translateX(-50%) translateY(-100%);
-  }
-  to {
-    transform: rotate(360deg) translateX(-50%) translateY(-100%);
-  }
-}
-
-@keyframes rotate-second {
-  from {
-    transform: rotate(0deg) translateX(-50%) translateY(-100%);
-  }
-  to {
-    transform: rotate(360deg) translateX(-50%) translateY(-100%);
   }
 }
