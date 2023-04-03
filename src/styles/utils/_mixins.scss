@@ -1,0 +1,10 @@
+@mixin round ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin animation ($steps, $duration) {
+  animation: rotate $duration steps($steps, end);
+  animation-iteration-count: infinite;
+}
