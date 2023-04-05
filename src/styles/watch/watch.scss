@@ -1,0 +1,32 @@
+.stopwatch {
+  position: relative;
+  background-color: grey;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  border: 3px solid black;
+
+  &__arrow {
+    position: absolute;
+    background-color: red;
+    top: $min-arrow-position-top;
+    left: $min-arrow-position-left;
+    height: $min-arrow-length;
+    width: $min-arrow-width;
+    transform-origin: bottom center;
+
+    &--minute {
+      animation: minute 3600s linear infinite;
+
+    }
+
+    &--second {
+      background-color: blue;
+      left: $sec-arrow-position-left;
+      height: $sec-arrow-length;
+      width: $sec-arrow-width;
+      top: 0;
+      animation: second 60s linear infinite;
+    }
+  }
+}
