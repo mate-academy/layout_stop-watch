@@ -1,0 +1,36 @@
+.clock {
+  position: relative;
+  display: flex;
+  height: 100vh;
+
+  &__background {
+    @include circle($clock-size);
+    margin: auto auto;
+    background-image: radial-gradient(#fff, #93C1F9);
+  }
+
+  &__minute-hand {
+    width: 10px;
+    height: 150px;
+    @extend %start-position;
+    background-color: $hands-color;
+    animation: clock-hand 43200s linear infinite;
+  }
+
+  &__second-hand {
+    width: 5px;
+    height: 220px;
+    @extend %start-position;
+    background-color: $hands-color;
+    animation: clock-hand 60s linear infinite;
+  }
+
+  @keyframes clock-hand {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
