@@ -1,0 +1,43 @@
+.stopwatch {
+  @include stopwatch;
+
+  display: flex;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  background-color: $stopwatchColor;
+  border: 5px solid $stopwatchBorderColor;
+
+  &__seconds-hand {
+    @include secondsHand;
+
+    position: absolute;
+    left: $leftHandIndent;
+    bottom: $bottomHandIndent;
+    background-color: $secondsHandColor;
+
+    transform-origin: bottom center;
+    animation: clock 60s steps(60) infinite;
+  }
+
+  &__minutes-hand {
+    @include minutesHand;
+
+    position: absolute;
+    left: $leftHandIndent;
+    bottom: $bottomHandIndent;
+    background-color: $minutesHandColor;
+
+    transform-origin: bottom center;
+    animation: clock 3600s steps(60) infinite;
+  }
+
+  &__center {
+    @include stopwatchCenter;
+
+    align-self: center;
+    margin: auto;
+    background-color: $stopwatchCenterColor;
+    z-index: 1;
+  }
+}
