@@ -1,22 +1,12 @@
-@mixin properties {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.body {
-  margin: 0;
-
-  @include properties;
-
-  height: 100vh;
-}
+@import "mixin";
+@import "keyframes";
+@import "normalize";
 
 .clock {
   width: 500px;
   height: 500px;
 
-  @include properties;
+  @include box-rules;
 
   border: 1px solid black;
   border-radius: 50%;
@@ -24,11 +14,11 @@
   position: relative;
   background-image: url(image.jpg);
 
-  &__seconds-tablo {
+  &__minutes-tablo {
     width: 410px;
     height: 410px;
 
-    @include properties;
+    @include box-rules;
     position: absolute;
 
     border-style: dotted;
@@ -48,16 +38,14 @@
     height: 30%;
     width: 10px;
 
+    @include hands-rules;
+
     background-color: gold;
-    position: absolute;
-    border: 1px solid black;
-    border-radius: 100%;
-    transform-origin: bottom center;
 
     top: 20%;
     left: 49%;
 
-    animation: clock__minute-hand 3600s steps(60) infinite;
+    animation: clock__rules 3600s steps(60) infinite;
   }
 
   &__second-hand {
@@ -66,15 +54,13 @@
     width: 6px;
 
     background-color: blue;
-    position: absolute;
-    border: 1px solid black;
-    border-radius: 100%;
-    transform-origin: bottom center;
+
+    @include hands-rules;
 
     top: 10%;
     left: 49%;
 
-    animation: clock__second-hand 60s steps(60) infinite;
+    animation: clock__rules 60s steps(60) infinite;
   }
 
   &__dot {
@@ -88,16 +74,12 @@
 }
 
 .hour-12 {
-  font-size: 60px;
-
   margin-top: -6px;
   margin-left: 176px;
   position: absolute;
 }
 
 .hour-3 {
-  font-size: 60px;
-
   margin-left: 370px;
   margin-top: 172px;
 
@@ -105,44 +87,14 @@
 }
 
 .hour-6 {
-  font-size: 60px;
-
   margin-top: 350px;
   margin-left: 190px;
   position: absolute;
 }
 
 .hour-9 {
-  font-size: 60px;
-
   margin-left: 10px;
   margin-top: 172px;
 
   position: absolute;
-}
-
-@keyframes clock__second-hand {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes clock__minute-hand {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-p {
-  font-size: 40px;
-  word-spacing: 1em;
-  margin-left: 5%;
 }
