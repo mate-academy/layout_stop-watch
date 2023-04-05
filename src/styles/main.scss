@@ -1,0 +1,52 @@
+$clock-size: 600px;
+$clock-space: $clock-size / 10;
+$clock-bgc: #fff8dc;
+$clock-center-size: 16px;
+$clock-center-color: #ffd700;
+$radius-circle: 50%;
+$arrow-width: 10px;
+$arrow-height-minute: 300px;
+$arrow-height-second: 280px;
+$arrow-minute-bgc: #006400;
+$arrow-second-bgc: #8fbc8f;
+$radius-arrow: 5px;
+
+.clock {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  padding: $clock-space;
+  background-color: $clock-bgc;
+  margin: $clock-space auto;
+  border: 2px solid brown;
+  border-radius: $radius-circle;
+
+  &__arrow-second {
+    position: absolute;
+    width: $arrow-width / 2;
+    height: $arrow-height-second;
+    left: (($clock-size / 2) + $clock-space) - ($clock-center-size / 5);
+    top: $clock-space + ($arrow-height-minute - $arrow-height-second);
+    border-radius: $radius-arrow;
+    background-color: $arrow-second-bgc;
+  }
+
+  &__arrow-minute {
+    position: absolute;
+    width: $arrow-width;
+    height: $arrow-height-minute;
+    left: (($clock-size / 2) + $clock-space) - ($clock-center-size / 3);
+    border-radius: $radius-arrow;
+    background-color: $arrow-minute-bgc;
+  }
+
+  &__center {
+    position: absolute;
+    width: $clock-center-size;
+    height: $clock-center-size;
+    top: (($clock-size / 2) + $clock-space) - ($clock-center-size / 2);
+    left: (($clock-size / 2) + $clock-space) - ($clock-center-size / 2);
+    background-color: $clock-center-color;
+    border-radius: $radius-circle;
+  }
+}
