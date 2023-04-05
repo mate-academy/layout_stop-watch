@@ -1,0 +1,100 @@
+@import "mixin";
+@import "keyframes";
+@import "normalize";
+
+.clock {
+  width: 500px;
+  height: 500px;
+
+  @include box-rules;
+
+  border: 1px solid black;
+  border-radius: 50%;
+
+  position: relative;
+  background-image: url(image.jpg);
+
+  &__minutes-tablo {
+    width: 410px;
+    height: 410px;
+
+    @include box-rules;
+    position: absolute;
+
+    border-style: dotted;
+    border-radius: 50%;
+    border-width: 11px;
+  }
+
+  &__hours-box {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+  }
+
+  &__minute-hand {
+    z-index: 1;
+    height: 30%;
+    width: 10px;
+
+    @include hands-rules;
+
+    background-color: gold;
+
+    top: 20%;
+    left: 49%;
+
+    animation: clock__rules 3600s steps(60) infinite;
+  }
+
+  &__second-hand {
+    z-index: 2;
+    height: 40%;
+    width: 6px;
+
+    background-color: blue;
+
+    @include hands-rules;
+
+    top: 10%;
+    left: 49%;
+
+    animation: clock__rules 60s steps(60) infinite;
+  }
+
+  &__dot {
+    z-index: 3;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+  }
+}
+
+.hour-12 {
+  margin-top: -6px;
+  margin-left: 176px;
+  position: absolute;
+}
+
+.hour-3 {
+  margin-left: 370px;
+  margin-top: 172px;
+
+  position: absolute;
+}
+
+.hour-6 {
+  margin-top: 350px;
+  margin-left: 190px;
+  position: absolute;
+}
+
+.hour-9 {
+  margin-left: 10px;
+  margin-top: 172px;
+
+  position: absolute;
+}
