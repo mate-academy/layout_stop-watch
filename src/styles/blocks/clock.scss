@@ -1,14 +1,15 @@
-.clock {
+.container__clock {
   position: relative;
+  margin: $clock-space auto;
+}
+
+.clock {
   width: $clock-size;
   height: $clock-size;
   padding: $clock-space;
   background-color: $clock-bgc;
-  margin: $clock-space auto;
   border: 2px solid brown;
   border-radius: $radius-circle;
-  transform-origin: bottom $center-dot;
-  transition: transform 3s;
 
   &__arrow-second {
     position: absolute;
@@ -18,7 +19,7 @@
     left: (($clock-size / 2) + $clock-space) - ($clock-center-size / 6);
     top: $clock-space + ($arrow-height-minute - $arrow-height-second);
     background-color: $arrow-second-bgc;
-    animation: clock 60s linear infinite;
+    animation: clock $duration-one-minut linear infinite;
     transform-origin: bottom;
   }
 
@@ -29,7 +30,7 @@
     height: $arrow-height-minute;
     left: (($clock-size / 2) + $clock-space) - ($clock-center-size / 3);
     background-color: $arrow-minute-bgc;
-    animation: clock 3600s linear infinite;
+    animation: clock $duration-one-minut*60 linear infinite;
     transform-origin: bottom;
   }
 
