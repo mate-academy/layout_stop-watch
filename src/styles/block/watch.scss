@@ -7,7 +7,6 @@
   height: $watch-size;
   border: 1px solid burlywood;
   border-radius: 50%;
-  box-sizing: border-box;
   background-color: beige;
 
   &__center {
@@ -18,21 +17,20 @@
     border-radius: 50%;
   }
 
-  &__sec {
+  &-hands {
     position: absolute;
     height: 130px;
     width: 5px;
     background-color: orange;
+  }
+
+  &__sec {
     animation: rotate 60s linear infinite;
     transform: translateY(-50%);
     transform-origin: bottom center;
   }
 
   &__minutes {
-    position: absolute;
-    height: 80px;
-    width: 5px;
-    background-color: orange;
     animation: rotate 3600s steps(60) infinite;
     transform: translateY(-50%);
     transform-origin: bottom center;
