@@ -8,10 +8,7 @@
   background-color: rgb(232, 251, 192);
 
   &__area {
-    @extend %display-elements-flex;
-    @include square($area-size);
-
-    position: relative;
+    position: absolute;
     perspective: 400px;
     border: 2px solid grey;
     border-radius: 50%;
@@ -29,10 +26,10 @@
   }
 
   $numbers:
-  '0' top,
-  '15' right,
-  '30' bottom,
-  '45' left;
+    "0" top,
+    "15" right,
+    "30" bottom,
+    "45" left;
 
   @each $number, $position in $numbers {
     &__numbers--#{$number} {
@@ -53,7 +50,6 @@
       border-radius: 50%;
       background-color: rgb(248, 244, 129);
     }
-
 
     &--big {
       transform: translateY(-50%);
