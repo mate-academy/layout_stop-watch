@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+}
+
+.base {
+  align-items: center;
+  justify-content: center ;
+  position: absolute;
+  height: 1000px;
+  width: 1000px;
+  border: 1px solid black;
+  border-radius: 500px;
+  background-color: #eee;
+  // transform: rotate(-90deg);
+}
+
+.base__field {
+  position: absolute;
+  top: 490px;
+  left: 498px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background-color: blue;
+}
+
+.hand-short {
+  position: relative;
+  left: 505px;
+  top: -100px;
+  width: 8px;
+  height: 200px;
+  border-radius: 4px;
+  background-color: blue;
+  transform: rotate(360deg);
+  transition: transform 6s linear;
+  transform-origin: bottom center;
+  // transform-style: preserve-3D;
+}
+
+.hand-long {
+  position: relative;
+  left: 505px;
+  top: 100px;
+  width: 8px;
+  height: 400px;
+  border-radius: 4px;
+  background-color: red;
+  animation-name: example;
+  // animation-iteration-count: infinite;
+  // transform: rotate(360deg);
+  transition: transform 6s linear;
+  transform-origin: bottom center;
+  // transform-style: preserve-3D;
+}
+
+@keyframes example {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// .box1 {
+//   background: lightblue;
+//   width: 200px;
+//   height: 200px;
+//   margin: 20px auto;
+//   transform: rotate(360deg);
+//   transition: transform 10s linear;
+//   transform-origin: top right;
+//   transform-style: preserve-3D;
+// }
