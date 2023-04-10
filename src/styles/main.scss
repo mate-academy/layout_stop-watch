@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.box {
+  position: relative;
+
+  &__hour {
+    width: 10px;
+    height: 300px;
+    background-color: red;
+    position: absolute;
+    transform-origin: top;
+    transform: rotate(180deg);
+  }
+
+  &__minute {
+    width: 10px;
+    height: 200px;
+    background-color: #4b9aaa;
+    position: absolute;
+    transform-origin: top;
+    transform: rotate(0.5turn);
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-name: move;
+    animation-name: move;
+  }
+
+  &__dot {
+    position: absolute;
+    background-color: #4b9aaa;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    left: -10px;
+    top: -10px;
+  }
+}
+
+@-webkit-keyframes move {
+  25% {
+    transform: rotate(0.7turn);
+  }
+
+  50% {
+    transform: rotate(1turn);
+  }
+
+  75% {
+    transform: rotate(0.2turn);
+  }
+
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
+
+@-webkit-keyframes move {
+  25% {
+    transform: rotate(0.7turn);
+  }
+
+  50% {
+    transform: rotate(1turn);
+  }
+
+  75% {
+    transform: rotate(0.2turn);
+  }
+
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
+
+@keyframes move {
+  25% {
+    transform: rotate(0.7turn);
+  }
+
+  50% {
+    transform: rotate(1turn);
+  }
+
+  75% {
+    transform: rotate(0.2turn);
+  }
+
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
