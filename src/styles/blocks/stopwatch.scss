@@ -2,13 +2,9 @@
   @extend %display-elements-flex;
   @include square($stopwatch-size);
 
-  position: absolute;
   border: 5px solid grey;
   border-radius: 10%;
   background-color: rgb(232, 251, 192);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 
   &__area {
     @include square($area-size);
@@ -30,12 +26,6 @@
     font-size: 25px;
     font-weight: bold;
   }
-
-  $numbers:
-    "0" top,
-    "15" right,
-    "30" bottom,
-    "45" left;
 
   @each $number, $position in $numbers {
     &__numbers--#{$number} {
@@ -74,16 +64,6 @@
       background-color: red;
 
       animation: round 60s steps(60, end) infinite;
-    }
-
-    @keyframes round {
-      0% {
-        rotate: 0;
-      }
-
-      100% {
-        rotate: 360deg;
-      }
     }
 
     &:hover {

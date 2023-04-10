@@ -2,3 +2,15 @@
   height: $size;
   width: $size;
 }
+
+@mixin position-stopwatch (
+  $margin-top,
+  $margin-left,
+  $translate-x,
+  $translate-y
+) {
+  position: absolute;
+  top: $margin-top;
+  left: $margin-left;
+  transform: translate($translate-x, $translate-y);
+}

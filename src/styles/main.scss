@@ -1,9 +1,14 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 @import "./utils/extends";
+@import "./utils/keyframes";
 
 @import  "./blocks/stopwatch";
 
 * {
   box-sizing: border-box;
+}
+
+.container {
+  @include position-stopwatch(50%, 50%, -50%, -50%);
 }
