@@ -1,3 +1,5 @@
+$main-color: #4b9aaa;
+
 body {
   display: flex;
   align-items: center;
@@ -9,94 +11,53 @@ body {
   position: relative;
 
   &__hour {
-    width: 10px;
     height: 300px;
     top: -300px;
     background-color: red;
-    position: absolute;
-    transform-origin: bottom;
-    transform: rotate(0.01turn);
-    -webkit-animation-duration: 7s;
-    animation-duration: 7s;
-    -webkit-animation-name: move;
-    animation-name: move;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
   }
 
   &__minute {
-    width: 10px;
-    height: 200px;
-    top: -200px;
-    background-color: #4b9aaa;
-    position: absolute;
-    transform-origin: bottom;
-    transform: rotate(0.01turn);
-    -webkit-animation-duration: 3s;
-    animation-duration: 3s;
-    -webkit-animation-name: move;
-    animation-name: move;
+    height: 180px;
+    top: -180px;
+    background-color: $main-color;
+    -webkit-animation-duration: 90s;
+    animation-duration: 90s;
   }
 
   &__dot {
     position: absolute;
-    background-color: #4b9aaa;
+    background-color: $main-color;
     height: 30px;
     width: 30px;
     border-radius: 15px;
     left: -10px;
-    top: -10px;
+    top: -15px;
   }
 }
 
-@-webkit-keyframes move {
-  25% {
-    transform: rotate(0.03turn);
-  }
-
-  50% {
-    transform: rotate(0.16turn);
-  }
-
-  75% {
-    transform: rotate(0.58turn);
-  }
-
-  100% {
-    transform: rotate(0.86turn);
-  }
+.arrow {
+  width: 10px;
+  position: absolute;
+  transform-origin: bottom;
+  transform: rotate(0.01turn);
+  -webkit-animation-name: move;
+  animation-name: move;
+  transition-duration: infinite;
+  // transition-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes move {
-  25% {
-    transform: rotate(0.03turn);
-  }
-
-  50% {
-    transform: rotate(0.16turn);
-  }
-
-  75% {
-    transform: rotate(0.58turn);
-  }
-
   100% {
-    transform: rotate(0.86turn);
+    transform: rotate(0.99turn);
   }
 }
 
 @keyframes move {
-  25% {
-    transform: rotate(0.03turn);
-  }
-
-  50% {
-    transform: rotate(0.16turn);
-  }
-
-  75% {
-    transform: rotate(0.58turn);
-  }
-
   100% {
-    transform: rotate(0.86turn);
+    transform: rotate(0.99turn);
   }
 }
