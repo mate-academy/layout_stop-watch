@@ -1,0 +1,43 @@
+@import ".././utils/variables";
+
+.watch {
+  width: calc(8rem + 15px);
+  height: calc(8rem + 15px);
+  border: 6px solid #936ed4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before,
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 8rem;
+    width: 0.2rem;
+    background: $maincolor;
+    transform-origin: center calc(100% - 0.15rem);
+    border-radius: 15%;
+    animation: now infinite steps(1600);
+  }
+
+  &::before {
+    height: 3.8rem;
+    animation-duration: 60s;
+  }
+
+  &::after {
+    height: 3.2rem;
+    animation-duration: 3600s;
+    background: $maincolor;
+    transform-origin: center calc(100% - 0.15rem);
+    top: 8.5rem;
+  }
+}
+
+@keyframes now {
+  100% {
+    transform: rotate(360deg);
+  }
+}
