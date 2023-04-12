@@ -1,4 +1,16 @@
-@mixin dot-size($size) {
+@mixin size($size) {
   width: $size;
   height: $size;
+}
+
+@mixin animation {
+  @keyframes time {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
