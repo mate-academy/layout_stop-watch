@@ -1,0 +1,21 @@
+.seconds-hand {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 50vh solid $second-color;
+  transform-origin: bottom;
+  animation: second 1s linear infinite;
+}
+
+@keyframes second {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
