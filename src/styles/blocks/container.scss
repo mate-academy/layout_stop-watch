@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  margin: 25% auto;
+  @include square($container-size);
+  border: 5px solid;
+  transform: translate(0, -50%);
+  background-color: darkgoldenrod;
+
+  &__watch {
+    position: relative;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border: 4px solid red;
+    border-radius: 50%;
+    background-size: 10px;
+    background-color: #ddd;
+
+    &-arrows {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      height: 5px;
+      background-color: red;
+      transform-origin: left;
+      animation: seconds $minute infinite steps(360) forwards;
+      animation-delay: -$minute * 0.75;
+
+      &:nth-child(2n) {
+        position: absolute;
+        background-color: black;
+        width: 30%;
+        animation: minutes $hour infinite steps(60) forwards;
+        animation-delay: -$hour * 0.75;
+      }
+    }
+  }
+}
