@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style-type: none;
-}
 
 $width-clock: 600px;
 $rotate: "1"30deg,
@@ -28,6 +22,7 @@ $rotate: "1"30deg,
 }
 
 .clock {
+  box-sizing: border-box;
   width: $width-clock;
   height: $width-clock;
   border: 5px solid white;
@@ -61,6 +56,7 @@ $rotate: "1"30deg,
   }
 
   &__number {
+    list-style-type: none;
     position: absolute;
     text-align: center;
     inset: 5%;
@@ -70,14 +66,14 @@ $rotate: "1"30deg,
 
     @each $index,
       $num in $rotate {
-      &--number--#{$index} {
+      &--#{$index} {
         transform: rotate(#{$num});
       }
     }
     
     @each $index,
       $num in $rotate {
-      &--number--#{$index} span {
+      &--#{$index} span {
         display: block;
         transform: rotate(#{-$num});
       }
@@ -85,6 +81,7 @@ $rotate: "1"30deg,
   }
 
   &__center {
+    list-style-type: none;
     position: absolute;
     left: calc(50% - 12.5px);
     top: calc(50% - 12.5px);
@@ -96,12 +93,13 @@ $rotate: "1"30deg,
   }
 
   &__hand {
+    list-style-type: none;
     position: absolute;
-    left: 49.5%;
-    top: 49.5%;
+    left: 49.25%;
+    top: 24.5%;
     z-index: 2;
     border-radius: 5px;
-    transform-origin: top;
+    transform-origin: bottom;
    
     &--minute {
       width: 8px;
