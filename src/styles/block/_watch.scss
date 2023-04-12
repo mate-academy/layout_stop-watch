@@ -1,0 +1,45 @@
+.watch--external {
+  margin: 0 auto;
+  position: relative;
+}
+
+.watch {
+  @include size($container-cell);
+  background-color: $bg-color;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__arrow {
+    position: absolute;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    transform-origin: bottom;
+    @include animation;
+  }
+
+  &__arrow--minute {
+    top: 25%;
+    left: 50%;
+    z-index: 2;
+    border-bottom: 25vh solid $first-color;
+    animation: time  60s linear infinite;
+  }
+
+  &__dot {
+    @include size($dot-cell);
+    background-color: $first-color;
+    border-radius: $border-radius;
+    z-index: 5;
+  }
+
+  &__arrow--second {
+    top: 0;
+    left: 50%;
+    border-bottom: 50vh solid $second-color;
+    animation: time 1s linear infinite;
+    @include animation;
+  }
+}
