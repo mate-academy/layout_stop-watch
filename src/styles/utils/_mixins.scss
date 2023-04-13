@@ -1,0 +1,13 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin stopwatch-hand {
+  position: absolute;
+  border-radius: 25%;
+  background-color: $main-color;
+  box-shadow: 0 0 5px $main-color;
+  transform-origin: 50% 100%;
+}

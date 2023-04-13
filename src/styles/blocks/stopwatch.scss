@@ -1,0 +1,40 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  @include circle($circle-size);
+  border: 1px solid $main-color;
+
+  background-image: url(https://i.pinimg.com/736x/4e/58/0f/4e580f630619f023feaf8ce857feb26b.jpg);
+  height: $circle-size;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 0 20px #2f4f4f;
+  opacity: 0.75;
+
+  &__minute-hand {
+    @include stopwatch-hand;
+    top: $minute-hand-top;
+    height: $minute-hand-size;
+    width: 1%;
+
+    animation: rotate 3600s infinite linear;
+  }
+
+  &__second-hand {
+    @include stopwatch-hand;
+    top: $second-hand-top;
+    height: $second-hand-size;
+    width: 0.5%;
+
+    animation: rotate 60s infinite linear;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+}
