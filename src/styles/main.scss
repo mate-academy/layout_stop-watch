@@ -1,0 +1,42 @@
+@import "keyframes";
+
+$borderRadius: 8px;
+$handWidth: 100px;
+
+.stopwatch {
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blue;
+    transform: translate(-64%, -40%);
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 4px;
+    width: $handWidth;
+    border-radius: $borderRadius;
+    background-color: red;
+    transform-origin: bottom left;
+    animation: minuteHand 3600s linear infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 2px;
+    width: $handWidth;
+    border-radius: $borderRadius;
+    background-color: black;
+    transform-origin: bottom left;
+    animation: secondHand 60s linear infinite;
+  }
+}
