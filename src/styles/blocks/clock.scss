@@ -1,0 +1,72 @@
+@import "../utils/animations";
+@import "../utils/mixin";
+@import "../utils/variables";
+
+.clock {
+  @include square($clock-size);
+  font-family: "Domine", sans-serif;
+  position: relative;
+  margin: 100px auto;
+  background-color: $clock-color;
+  border-radius: 50%;
+  box-shadow: $clock-shadow;
+
+  &__hour-hand,
+  &__minute-hand,
+  &__second-hand {
+    position: absolute;
+    @include hands-position($hands-position);
+    transform-origin: bottom center;
+  }
+
+  &__hour-hand {
+    width: 6px;
+    height: 110px;
+    background-color: black;
+    transform: translate(-50%, -100%) rotate(30deg);
+    animation: hour-hand 43200s linear infinite;
+  }
+
+  &__minute-hand {
+    width: 4px;
+    height: 180px;
+    background-color: black;
+    transform: translate(-50%, -100%) rotate(180deg);
+    animation: minute-hand 3600s linear infinite;
+  }
+
+  &__second-hand {
+    width: 2px;
+    height: 175px;
+    background-color: $second-hand-color;
+    transform: translate(-50%, -100%) rotate(45deg);
+    animation: second-hand 60s linear infinite;
+  }
+
+  &__hour {
+    position: absolute;
+    font-size: 35px;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hour--three {
+    top: 50%;
+    left: 93%;
+  }
+
+  &__hour--six {
+    top: 93%;
+    left: 50%;
+  }
+
+  &__hour--nine {
+    top: 50%;
+    left: 7%;
+  }
+
+  &__hour--twelve {
+    top: 7%;
+    left: 50%;
+  }
+}
