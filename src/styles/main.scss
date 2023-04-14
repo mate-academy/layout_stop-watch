@@ -2,37 +2,4 @@
 @import "variables";
 @import "mixins";
 
-.stopwatch {
-  &__circle {
-    @include positioning;
-
-    z-index: 1;
-    width: $circleSize;
-    height: $circleSize;
-    border-radius: 50%;
-    background-color: blue;
-    transform: translate(-64%, -40%);
-  }
-
-  &__minute-hand {
-    @include positioning;
-
-    height: $minuteHeight;
-    width: $handWidth;
-    border-radius: $borderRadius;
-    background-color: red;
-    transform-origin: bottom left;
-    animation: minuteHand 3600s linear infinite;
-  }
-
-  &__second-hand {
-    @include positioning;
-
-    height: $secondHeight;
-    width: $handWidth;
-    border-radius: $borderRadius;
-    background-color: black;
-    transform-origin: bottom left;
-    animation: secondHand 60s linear infinite;
-  }
-}
+@import "stopwatch";
