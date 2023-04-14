@@ -1,0 +1,24 @@
+@import "variables";
+
+@mixin hand($background-color, $watch-height) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -100%);
+
+  height: $watch-height;
+  width: 10px;
+
+  background: $background-color;
+  border-radius: 5px;
+}
+
+@mixin hand-container($animation-duration) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  animation: rotate $animation-duration infinite linear;
+}
