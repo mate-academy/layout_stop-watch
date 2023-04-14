@@ -1,4 +1,4 @@
-$green-color: #4b9aaa;
+$clock-color: #4b9aaa;
 
 .body {
   width: 100vw;
@@ -7,39 +7,37 @@ $green-color: #4b9aaa;
   justify-content: center;
 }
 
+@mixin arrow {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border-radius: 5px;
+  transform-origin: bottom;
+}
+
 .centerCircle {
   position: relative;
   margin: auto 0;
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background-color: $green-color;
+  background-color: $clock-color;
 }
 
 .minuteArrow {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%);
+  @include arrow;
   height: 250px;
   width: 10px;
-  border-radius: 5px;
-  background-color: $green-color;
-  transform-origin: bottom;
+  background-color: $clock-color;
   animation: rotate 3600s linear infinite;
   z-index: -1;
 }
 
 .secondArrow {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%);
+  @include arrow;
   height: 150px;
   width: 10px;
   background-color: #d15559;
-  border-radius: 5px;
-  transform-origin: bottom;
   animation: rotate 60s linear infinite;
   z-index: -1;
 }
