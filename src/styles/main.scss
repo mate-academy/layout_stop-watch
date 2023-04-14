@@ -1,26 +1,21 @@
 @import "keyframes";
-
-$borderRadius: 8px;
-$handWidth: 100px;
+@import "variables";
+@import "mixins";
 
 .stopwatch {
   &__circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    @include positioning;
     z-index: 1;
-    width: 10px;
-    height: 10px;
+    width: $circleSize;
+    height: $circleSize;
     border-radius: 50%;
     background-color: blue;
     transform: translate(-64%, -40%);
   }
 
   &__minute-hand {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 4px;
+    @include positioning;
+    height: $minuteHeight;
     width: $handWidth;
     border-radius: $borderRadius;
     background-color: red;
@@ -29,10 +24,8 @@ $handWidth: 100px;
   }
 
   &__second-hand {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 2px;
+    @include positioning;
+    height: $secondHeight;
     width: $handWidth;
     border-radius: $borderRadius;
     background-color: black;
