@@ -1,0 +1,52 @@
+$clock-color: #4b9aaa;
+
+.body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin arrow {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border-radius: 5px;
+  transform-origin: bottom;
+}
+
+.centerCircle {
+  position: relative;
+  margin: auto 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: $clock-color;
+}
+
+.minuteArrow {
+  @include arrow;
+  height: 250px;
+  width: 10px;
+  background-color: $clock-color;
+  animation: rotate 3600s linear infinite;
+  z-index: -1;
+}
+
+.secondArrow {
+  @include arrow;
+  height: 150px;
+  width: 10px;
+  background-color: #d15559;
+  animation: rotate 60s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
