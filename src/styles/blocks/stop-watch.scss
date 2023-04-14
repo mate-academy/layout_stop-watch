@@ -1,0 +1,42 @@
+.stop-watch {
+  @include square($stop-watch-size);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: ($stop-watch-size / 20) solid white;
+  border-radius: 50%;
+  box-shadow: $outer-shadow, $inner-shadow;
+
+  &__hand {
+    @include dafault-hand;
+
+    &--minutes {
+      width: $stop-watch-size / 50;
+      height: $stop-watch-size / 2.5;
+      animation: hand-move 3600s linear infinite;
+    }
+
+    &--hours {
+      width: $stop-watch-size / 25;
+      height: $stop-watch-size / 3;
+      animation: hand-move 43200s linear infinite;
+    }
+
+    &--seconds {
+      width: $stop-watch-size / 100;
+      height: $stop-watch-size / 3.5;
+      background-color: #f00;
+      animation: hand-move 60s linear infinite;
+    }
+  }
+
+  &__dot {
+    @include square($stop-watch-size / 15);
+    z-index: 1;
+    background-color: #000;
+    box-shadow: $outer-shadow;
+    border-radius: 50%;
+  }
+}
