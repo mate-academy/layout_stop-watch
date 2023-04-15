@@ -1,0 +1,44 @@
+.clock__hour,
+.clock__minute,
+.clock__second {
+  position: absolute;
+  top: $position;
+  left: $position;
+  transform-origin: $transform-origin-hand;
+  z-index: $z-index-hand;
+  border-radius: $border-clock-hand;
+}
+
+.clock__second {
+  width: 2px;
+  height: 30%;
+  background-color: $color-clock-second;
+  transform: $transform-position-hand;
+  animation: infinite ease 60s second;
+}
+
+.clock__minute {
+  width: 5px;
+  height: 30%;
+  background-color: $color-clock-minute;
+  transform: $transform-position-hand;
+  animation: infinite ease 3600s minute;
+}
+
+.clock__hour {
+  width: 3px;
+  height: 25%;
+  background-color: $color-clock-hour;
+  transform: $transform-position-hand;
+  animation: infinite ease 43200s hour;
+}
+
+@keyframes second {
+  from {
+    transform: $transform-position-hand rotate(0deg);
+  }
+
+  to {
+    transform: $transform-position-hand rotate(360deg);
+  }
+}
