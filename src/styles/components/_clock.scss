@@ -1,0 +1,43 @@
+.clock {
+  @include square($clock-size);
+  position: relative;
+  margin: 100px auto;
+  border-radius: 50%;
+  background-color: #eee;
+  border: 1px solid $seconds-color;
+  &::before {
+    content: "";
+    display: block;
+    @include square(10px);
+    border-radius: 50%;
+    z-index: 1000;
+    background-color: $seconds-color;
+    @include absCenter;
+    transform: translate(-50%, -50%);
+  }
+  &__hour,
+  &__minute,
+  &__seconds {
+    @include clockTransform;
+    @include absCenter;
+  }
+  &__hour {
+    width: 4px;
+    height: ($clock-size * 0.3);
+    background-color: $hour-color;
+    animation: rotate 43200s infinite linear;
+  }
+  &__minute {
+    width: 2px;
+    height: $clock-size * 0.45;
+    background-color: $minute-color;
+    animation: rotate 3600s infinite steps(60);
+  }
+  &__seconds {
+    background-color: $seconds-color;
+    width: 2px;
+    height: $clock-size * 0.4;
+    z-index: 1;
+    animation: rotate 60s infinite steps(60);
+  }
+}
