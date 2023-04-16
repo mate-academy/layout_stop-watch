@@ -7,14 +7,6 @@
   border-radius: 50%;
   box-shadow: 0 0 10px 10px rgba(255,255,0,0.5);
 
-  &:hover{
-    cursor: pointer;
-    opacity: 0.6;
-    >.watch__hand{
-      animation-play-state: paused;
-    }
-  }
-
   &__mark {
     position: absolute;
     width: 18px;
@@ -76,7 +68,7 @@
     transform-origin: bottom;
     animation: move infinite linear;
 
-    &--hour{
+    &--hour {
       width: 6px;
       height: 30%;
       background: $color-main;
@@ -98,15 +90,12 @@
       animation-duration: 60s;
     }
   }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    > .watch__hand {
+      animation-play-state: paused;
+    }
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
