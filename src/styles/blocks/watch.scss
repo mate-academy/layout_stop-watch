@@ -1,0 +1,101 @@
+.watch {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border: 10px solid $color-main;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 10px rgba(255,255,0,0.5);
+
+  &__mark {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    font-weight: bold;
+    font-size: 18px;
+    color: $color-main;
+    text-align: center;
+
+    &--top {
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+
+    &--right {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    &--bottom {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: 0 auto;
+    }
+
+    &--left {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: $color-main;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    bottom: 50%;
+    left: 0;
+    border-radius: 50%;
+    transform-origin: bottom;
+    animation: move infinite linear;
+
+    &--hour {
+      width: 6px;
+      height: 30%;
+      background: $color-main;
+      animation-duration: 216000s;
+    }
+
+    &--minute {
+      width: 3px;
+      height: 35%;
+      background: $color-main;
+      animation-duration: 3600s;
+    }
+
+    &--second {
+      width: 1px;
+      height: 40%;
+      background: $color-secondary;
+      border: 1px solid $color-main;
+      animation-duration: 60s;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    > .watch__hand {
+      animation-play-state: paused;
+    }
+  }
+}
