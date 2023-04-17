@@ -1,0 +1,20 @@
+.stop-watch {
+  width: $watch-size;
+  height: $watch-size;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+
+  &__minute-hand {
+    margin-top: $watch-size/2 - $minute-hand-height;
+  }
+
+  &__second-hand {
+    margin-top: $watch-size/2 - $second-hand-height;
+  }
+
+  &__core {
+    margin-top: 240px;
+  }
+}
