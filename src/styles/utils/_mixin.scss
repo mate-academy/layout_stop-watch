@@ -1,0 +1,30 @@
+@mixin watch-stop($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin bid-arrow($size) {
+  position: absolute;
+  top: $watch-dif;
+  left: ($size / 2) - ($arrow-width/ 2);
+  width: $arrow-width;
+  height: ($size / 2) - $watch-dif;
+  @extend %same-options;
+}
+
+@mixin small-arrow($size) {
+  position: absolute;
+  top: $watch-dif + $watch-dif-big-small;
+  left: ($size / 2) - ($arrow-width/ 2);
+  width: $arrow-width;
+  height: ($size / 2) - $watch-dif - $watch-dif-big-small;
+  @extend %same-options;
+}
+
+@mixin point-arrow($size) {
+  position: absolute;
+  top: ($size / 2) - $arrow-width;
+  left: ($size / 2) - ($arrow-width);
+  width: $arrow-width * 2;
+  height: $arrow-width * 2;
+}
