@@ -1,0 +1,21 @@
+$leng-min: 300px;
+$leng-sec: 250px;
+$width-arrows-clock: 10px;
+$leng-circle: $width-arrows-clock * 2;
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin circle {
+  width: $leng-circle;
+  height: $leng-circle;
+  border-radius: 50%;
+  background-color: black;
+}
