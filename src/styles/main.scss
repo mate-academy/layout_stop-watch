@@ -1,0 +1,70 @@
+$minutes-w: 10px;
+$minutes-h: 100px;
+$seconds-w: 10px;
+$seconds-h: 150px;
+$center-d: 30px;
+
+@mixin flexCC {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stop-watch {
+  @include flexCC();
+  height: 100vh;
+  background-image: url(../images/stop-watch-2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 600px;
+
+  &__center {
+    // position: relative;
+    // right: ($minutes-w + $center-d)/2;
+    z-index: 1;
+    background-color: #00f;
+    width: $center-d;
+    height: $center-d;
+    border-radius: 50%;
+  }
+
+  &__minutes {
+    position: relative;
+    top: -$minutes-h/2;
+    left: $center-d - $minutes-w;
+    background-color: #0f0;
+    width: $minutes-w;
+    height: $minutes-h;
+    transform-origin: bottom;
+    animation: minutes 3600s infinite forwards;
+    border-radius: 50%;
+  }
+
+  &__seconds {
+    position: relative;
+    top: -$seconds-h/2;
+    right: $center-d - $seconds-w;
+    background-color: #f00;
+    width: $seconds-w;
+    height: $seconds-h;
+    transform-origin: bottom;
+    animation: seconds 60s infinite forwards;
+    border-radius: 50%;
+  }
+}
+
+@keyframes seconds {
+  @for $second from 1 through 60 {
+    #{$second * 100/60}% {
+      transform: rotate(6deg * $second);
+    }
+  }
+}
+
+@keyframes minutes {
+  @for $second from 1 through 60 {
+    #{$second * 100/60}% {
+      transform: rotate(6deg * $second);
+    }
+  }
+}
