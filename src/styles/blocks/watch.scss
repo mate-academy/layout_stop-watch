@@ -1,0 +1,65 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 420px;
+  height: 420px;
+  position: relative;
+  background-color: #fff;
+  border-radius: $hand-radius;
+  box-shadow: 5px 5px 15px 5px #ff8080,
+    -9px 5px 15px 5px #ffe488,
+    -7px -5px 15px 5px #8cff85,
+    12px -5px 15px 5px #80c7ff,
+    12px 10px 15px 7px #e488ff,
+    -10px 10px 15px 7px #ff616b,
+    -10px -7px 27px 1px #8e5cff,
+    inset 50px -21px 14px 25px #0000;
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    border-radius: 10px;
+    background-color: $hand-color;
+    box-shadow: $hand-shadow;
+    transform-origin: bottom;
+  }
+
+  &__hand--seconds {
+    width: 4px;
+    height: 182px;
+    background-color: red;
+    animation: move 60s linear infinite;
+  }
+
+  &__hand--minutes {
+    width: 8px;
+    height: 180px;
+    animation: move 3600s linear infinite;
+  }
+
+  &__hand--hours {
+    width: 14px;
+    height: 150px;
+    animation: move 86400s linear infinite;
+  }
+
+  &__center {
+    width: 27px;
+    height: 27px;
+    z-index: 1;
+    background-color: $hand-color;
+    box-shadow: $hand-shadow;
+    border-radius: $hand-radius;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
