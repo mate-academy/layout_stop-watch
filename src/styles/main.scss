@@ -1,3 +1,12 @@
+div * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  border-radius: 5px;
+  transform-origin: 0 top;
+}
+
 .container {
   position: relative;
   width: 500px;
@@ -7,43 +16,23 @@
   border: 2px solid #bdb76b;
   border-radius: 50%;
 
-  &_1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 10px;
+  &_minute-hand {
     height: 150px;
     background-color: blueviolet;
-    border-radius: 5px;
     transform: translate(-50%, -99%);
     transform-origin: 0 top;
-    animation-name: rotate_2;
-    animation-duration: 3600s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-delay: 20s;
+    animation: move-arrow 3600s linear infinite 20s;
   }
 
-  &_2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 10px;
+  &_second-hand {
     height: 200px;
     background-color: yellowgreen;
-    border-radius: 5px;
     transform: translate(-50%, -1%);
     transform-origin: 0 top;
-    animation-name: rotate_1;
-    animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation: move-arrow 60s linear infinite;
   }
 
-  &_3 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+  &_center {
     width: 20px;
     height: 20px;
     background-color: #acb78e;
@@ -51,16 +40,7 @@
     transform: translate(-50%,-50%);
   }
 
-  @keyframes rotate_1 {
-    from {
-      rotate: 0deg;
-    }
-    to {
-      rotate: 360deg;
-    }
-  }
-
-  @keyframes rotate_2 {
+  @keyframes move-arrow {
     from {
       rotate: 0deg;
     }
