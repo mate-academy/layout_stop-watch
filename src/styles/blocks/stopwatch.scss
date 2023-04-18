@@ -1,0 +1,40 @@
+.stopwatch {
+  position: relative;
+  @include stopwatchSize;
+  border: 1px solid #000;
+  background: linear-gradient(180deg, #0057b7 50%, #ffd700 50%);
+
+  &--center {
+    margin: 50px auto;
+  }
+
+  &__minutes {
+    @extend %same-hand-properties;
+    @include handCenterSize(getHandHeight($minutes-hand-height));
+    background-color:#af0000;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__seconds {
+    @extend %same-hand-properties;
+    @include handCenterSize(getHandHeight($seconds-hand-height));
+    background-color:	#000;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__dot {
+    position: absolute;
+    @include dotCenterSize;
+    background-color: #333;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

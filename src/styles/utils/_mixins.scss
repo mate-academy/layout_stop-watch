@@ -1,0 +1,21 @@
+@mixin stopwatchSize {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border-radius: 50%;
+}
+
+@mixin handCenterSize($height) {
+  top: getVerticalCenter($height);
+  left: getCenter($hand-width);
+  width: $hand-width;
+  height: $height;
+  border-radius: 5px;
+}
+
+@mixin dotCenterSize {
+  top: getCenter($dot-size);
+  left: getCenter($dot-size);
+  width: $dot-size;
+  height: $dot-size;
+  border-radius: 50%;
+}
