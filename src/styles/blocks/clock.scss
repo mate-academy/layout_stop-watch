@@ -1,0 +1,32 @@
+.clock {
+  height: 100vh;
+
+  &__min {
+    @extend %some-rules-for-arrows;
+    height: $leng-min;
+    background-color: #000;
+
+    top: calc(50% - #{$leng-min});
+
+    animation: move 3600s steps(60) infinite;
+  }
+
+  &__sec {
+    @extend %some-rules-for-arrows;
+    height: $leng-sec;
+    background-color: #888;
+  
+    top: calc(50% - #{$leng-sec});
+  
+    animation: move 60s steps(60) infinite;
+  }
+
+  &__circle {
+    @include circle($leng-circle);
+  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-17%, -58%);
+  }
+}

@@ -1,5 +1,5 @@
 $leng-min: 300px;
-$leng-sec: 250px;
+$leng-sec: $leng-min * 0.8;
 $width-arrows-clock: 10px;
 $leng-circle: $width-arrows-clock * 2;
 
@@ -13,9 +13,20 @@ $leng-circle: $width-arrows-clock * 2;
   }
 }
 
-@mixin circle {
-  width: $leng-circle;
-  height: $leng-circle;
+@mixin circle($size) {
+  width: $size;
+  height: $size;
   border-radius: 50%;
-  background-color: black;
+  background-color: #000;
+}
+
+%some-rules-for-arrows {
+  display: flex;
+  border-radius: 50px;
+  width: $width-arrows-clock;
+
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  transform-origin: bottom center;
 }
