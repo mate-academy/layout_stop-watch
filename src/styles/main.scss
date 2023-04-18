@@ -4,14 +4,14 @@ $seconds-w: 10px;
 $seconds-h: 150px;
 $center-d: 30px;
 
-@mixin flexCC {
+@mixin flexAlignCenterJustifyCenter {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .stop-watch {
-  @include flexCC();
+  @include flexAlignCenterJustifyCenter();
   height: 100vh;
   background-image: url(../images/stop-watch-2.jpg);
   background-repeat: no-repeat;
@@ -19,8 +19,6 @@ $center-d: 30px;
   background-size: 600px;
 
   &__center {
-    // position: relative;
-    // right: ($minutes-w + $center-d)/2;
     z-index: 1;
     background-color: #00f;
     width: $center-d;
@@ -36,7 +34,7 @@ $center-d: 30px;
     width: $minutes-w;
     height: $minutes-h;
     transform-origin: bottom;
-    animation: minutes 3600s infinite forwards;
+    animation: rotation 3600s infinite forwards;
     border-radius: 50%;
   }
 
@@ -48,20 +46,12 @@ $center-d: 30px;
     width: $seconds-w;
     height: $seconds-h;
     transform-origin: bottom;
-    animation: seconds 60s infinite forwards;
+    animation: rotation 60s infinite forwards;
     border-radius: 50%;
   }
 }
 
-@keyframes seconds {
-  @for $second from 1 through 60 {
-    #{$second * 100/60}% {
-      transform: rotate(6deg * $second);
-    }
-  }
-}
-
-@keyframes minutes {
+@keyframes rotation {
   @for $second from 1 through 60 {
     #{$second * 100/60}% {
       transform: rotate(6deg * $second);
