@@ -1,0 +1,45 @@
+.hand-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  border-radius: 5px;
+  transform-origin: 0 top;
+}
+
+@import "./color.scss";
+@import "./animation.scss";
+
+.container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+
+  &__minute-hand {
+    height: 150px;
+    background-color: var(--minute-color);
+    transform: translate(-50%, -99%);
+    transform-origin: 0 top;
+    animation: move-arrow 3600s linear infinite 20s;
+  }
+
+  &__second-hand {
+    height: 200px;
+    background-color: var(--second-color);
+    transform: translate(-50%, -99%);
+    transform-origin: 0 top;
+    animation: move-arrow 60s linear infinite;
+  }
+
+  &__center-hand {
+    width: 20px;
+    height: 20px;
+    background-color: var(--center-color);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
