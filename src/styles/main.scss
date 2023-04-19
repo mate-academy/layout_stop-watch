@@ -1,0 +1,145 @@
+$clock-size: 400px;
+$short-hand-length: 120px;
+$long-hand-length: 180px;
+
+
+
+@function top-distance($i, $j) {
+  @return $i / 2  - $j;
+}
+
+@mixin clock-size($size) {
+  width: $size;
+  height: $size;
+}
+
+
+body {
+  margin: 0;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes min {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  17% {
+    transform: rotateZ(60deg);
+  }
+
+  33% {
+    transform: rotateZ(120deg);
+  }
+
+  50% {
+    transform: rotateZ(180deg);
+  }
+
+  67% {
+    transform: rotateZ(240deg);
+  }
+
+  83% {
+    transform: rotateZ(300deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes sec {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  17% {
+    transform: rotateZ(60deg);
+  }
+
+  33% {
+    transform: rotateZ(120deg);
+  }
+
+  50% {
+    transform: rotateZ(180deg);
+  }
+
+  67% {
+    transform: rotateZ(240deg);
+  }
+
+  83% {
+    transform: rotateZ(300deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.clock {
+  @include clock-size($clock-size);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 2px solid gold;
+  border-radius: 50%;
+
+  &__short-hand  {
+    @include clock-size($clock-size);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    animation: 3600s linear 1s infinite min;
+
+    &--shape {
+    position: absolute;
+    width: 15px;
+    height: $short-hand-length;
+    background-color: red;
+    top: top-distance($clock-size, $short-hand-length);
+    }
+
+
+  }
+
+  &__long-hand {
+    @include clock-size($clock-size);
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    animation: 60s linear 1s infinite sec;
+
+    &--shape {
+      position: absolute;
+      width: 5px;
+      height: 180px;
+      background-color: green;
+      top: top-distance($clock-size, $long-hand-length);
+    }
+
+
+  }
+
+  &__center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+  }
+}
+
