@@ -1,14 +1,22 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body class="body">
+    <main class="main">
+      <ul class="stopwatch stopwatch--delete-hours"> <!--change '--delete-hours' to see hours -->
+        <li class="stopwatch__line stopwatch__line--hour"></li>
+        <li class="stopwatch__line stopwatch__line--minute"></li>
+        <li class="stopwatch__line stopwatch__line--second"></li>
+        <li class="stopwatch__line stopwatch__line--milisecond"></li>
+        <li class="stopwatch__center"></li>
+      </ul>
+    </main>
+  </body>
 </html>
