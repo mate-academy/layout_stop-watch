@@ -13,3 +13,13 @@
   right: 0;
   margin: 0 auto;
 }
+
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle ($size) {
+  @include square($size);
+  border-radius: 50%;
+}

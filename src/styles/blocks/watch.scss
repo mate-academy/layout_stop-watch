@@ -1,21 +1,15 @@
 .watch {
   @include positionWatch;
-  height: $watch-size;
-  width: $watch-size;
+  @include circle($watch-size);
 
   background-color: rgb(243, 245, 214);
   border: $watch-border solid #08401d;
-  border-radius: 100%;
 
   &__dot {
     @include positionWatch;
-    height: 20px;
-    width: 20px;
-    z-index: 50;
-
-    border-radius: 50%;
+    @include circle(20px);
+    z-index: 1;
     background-color: #262626;
-
   }
 
   &__second {
@@ -30,7 +24,6 @@
       height: $second-size;
       width: $second-size / 50;
       top: ($watch-size / 2) - $second-size;
-
       content: "";
       background-color: #ac1d1d;
       border-radius: 20%;
@@ -48,7 +41,6 @@
       height: $minute-size;
       width: $minute-size / 50;
       top: ($watch-size / 2) - $minute-size;
-
       content: "";
       background-color: #510606;
       border-radius: 30%;
