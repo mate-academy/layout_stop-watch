@@ -1,5 +1,5 @@
 .clock {
-  margin: 0 auto;
+  margin: 50px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,12 +7,13 @@
   height: 500px;
   border: 4px solid black;
   border-radius: 50%;
+  background-color: #fff;
 
   &__seconds {
     position: absolute;
     width: 4px;
     height: 150px;
-    bottom: 55%;
+    bottom: 50%;
     background-color: #f00;
     animation: move 60s linear infinite;
     transform-origin: bottom;
@@ -23,7 +24,7 @@
     position: absolute;
     width: 8px;
     height: 200px;
-    bottom: 55%;
+    bottom: 50%;
     background-color: #00f;
     animation: move 3600s linear infinite;
     transform-origin: bottom;
@@ -33,7 +34,7 @@
   &__center {
     z-index: 1;
     position: absolute;
-    bottom: 54%;
+    bottom: 48.5%;
     width: 20px;
     height: 20px;
     border-radius: 50%;
