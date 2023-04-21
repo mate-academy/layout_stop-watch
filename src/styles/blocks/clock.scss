@@ -1,37 +1,34 @@
 .clock {
   height: 300px;
   width: 300px;
-  border-radius: 50%;
-  border: 2px solid black;
+  border-radius: $round;
+  border: 2px solid #000;
   margin: 0 auto;
   transform: translateY(50%);
-  background-color: #ff0;
+  background-color: #888;
 
   &__seconds {
     height: 100px;
     width: 2px;
-    border-radius: 50%;
-    background-color: #f00;
-    animation: move 60s steps(60) infinite;
+    border-radius: $round;
+    background-color: #fb8;
+    animation: move $seconds steps(60) infinite;
   }
 
   &__hours {
     height: 140px;
     width: 4px;
-    border-radius: 50%;
-    background-color: #00f;
-    animation: move 3600s linear infinite;
+    border-radius: $round;
+    background-color: #8bf;
+    animation: move $hours linear infinite;
   }
 
   &__center {
     z-index: 1;
-    position: absolute;
     height: 15px;
     width: 15px;
-    border-radius: 50%;
+    border-radius: $round;
     background-color: #000;
-    right: 48%;
-    top: 48%;
   }
 
   &-position {
@@ -39,15 +36,6 @@
     right: 50%;
     top: 50%;
     transform-origin: center 0;
-  }
-}
-
-@keyframes move {
-  from {
-    transform: rotate(180deg);
-  }
-
-  to {
-    transform: rotate(540deg);
+    transform: translate(40%, -50%);
   }
 }
