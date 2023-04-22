@@ -1,0 +1,14 @@
+@mixin arrow-properties($width, $height, $bg-color, $animation-duration) {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+
+  width: $width;
+  height: $height;
+
+  background-color: $bg-color;
+  border-radius: 5px;
+
+  transform-origin: center bottom;
+  animation: rotate-arrow $animation-duration linear infinite;
+}
