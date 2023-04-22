@@ -1,0 +1,23 @@
+@function watch-size-half() {
+  @return $watch-size / 2;
+}
+
+@function hour-y-transform-origin() {
+  @return watch-size-half() - $hour-top;
+}
+
+@function second-arrow-body-height() {
+  @return watch-size-half() - $second-arrow-bottom-size / 2 - $hour-top;
+}
+
+@function second-arrow-y-transform-origin() {
+  @return second-arrow-body-height() + $second-arrow-bottom-size / 2;
+}
+
+@function big-arrow-height() {
+  @return watch-size-half() - $hour-top;
+}
+
+@function small-arrow-height() {
+  @return watch-size-half() - $hour-height - $hour-top * 2;
+}

@@ -1,0 +1,78 @@
+.watch {
+  position: relative;
+
+  width: $watch-size;
+  height: $watch-size;
+  border: 2px solid $black-color;
+  border-radius: 50%;
+
+  &__hour {
+    position: absolute;
+    top: $hour-top;
+    left: 50%;
+
+    width: $hour-width;
+    height: $hour-height;
+
+    background-color: $black-color;
+
+    transform-origin: center hour-y-transform-origin();
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        transform: translateX(-50%) rotateZ(#{$i * 30}deg);
+      }
+    }
+  }
+
+  &__second-arrow {
+    position: absolute;
+    top: $hour-top;
+    left: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transform-origin: center second-arrow-y-transform-origin();
+    animation: rotate-arrow 60s linear infinite;
+
+    &::after,
+    &::before {
+      display: block;
+      content: "";
+
+      background-color: $red-color;
+    }
+
+    &::before {
+      width: $hour-width;
+      height: second-arrow-body-height();
+    }
+
+    &::after {
+      width: $second-arrow-bottom-size;
+      height: $second-arrow-bottom-size;
+
+      border-radius: 50%;
+    }
+  }
+
+  &__big-arrow {
+    @include arrow-properties($hour-width + 2, big-arrow-height(), $black-color, 60 * 60s);
+  }
+
+  &__small-arrow {
+    @include arrow-properties($hour-width + 4, small-arrow-height(), $grey-color, 12 * 60 * 60s);
+  }
+
+  @keyframes rotate-arrow {
+    from {
+      transform: translateX(-50%) rotateZ(0);
+    }
+
+    to {
+      transform: translateX(-50%) rotateZ(360deg);
+    }
+  }
+}
