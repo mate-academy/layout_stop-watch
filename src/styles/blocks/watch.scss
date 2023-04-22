@@ -3,7 +3,7 @@
 
   width: $watch-size;
   height: $watch-size;
-  border: 2px solid black;
+  border: 2px solid $black-color;
   border-radius: 50%;
 
   &__hour {
@@ -14,7 +14,7 @@
     width: $hour-width;
     height: $hour-height;
 
-    background-color: black;
+    background-color: $black-color;
 
     transform-origin: center hour-y-transform-origin();
 
@@ -42,7 +42,7 @@
       display: block;
       content: "";
 
-      background-color: $second-arrow-color;
+      background-color: $red-color;
     }
 
     &::before {
@@ -59,11 +59,11 @@
   }
 
   &__big-arrow {
-    @include arrow-properties($hour-width + 2, big-arrow-height(), #000, 3600s);
+    @include arrow-properties($hour-width + 2, big-arrow-height(), $black-color, 60 * 60s);
   }
 
   &__small-arrow {
-    @include arrow-properties($hour-width + 4, small-arrow-height(), #555, 3600s * 60);
+    @include arrow-properties($hour-width + 4, small-arrow-height(), $grey-color, 12 * 60 * 60s);
   }
 
   @keyframes rotate-arrow {
