@@ -1,0 +1,89 @@
+.dial {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 500px;
+
+  border: 3px solid #000;
+  border-radius: 50%;
+
+  &__number {
+    position: absolute;
+
+    &--00 {
+      top: 5px;
+    }
+
+    &--15 {
+      top: 0.5;
+      right: 5px;
+    }
+
+    &--30 {
+      bottom: 5px;
+    }
+
+    &--45 {
+      top: 0.5;
+      left: 5px;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+
+    background: #fd0;
+    border-radius: 50%;
+
+    width: $hand-weight * 1.25;
+    height: $hand-weight * 1.25;
+
+    transform: translateY(25%);
+  }
+
+  &__hand {
+
+    &--minute::before {
+      content: "";
+
+      position: absolute;
+
+      width: 35%;
+      border-bottom: $hand-weight solid #000;
+      border-radius: $hand-weight;
+
+      transform-origin: left center;
+
+      animation: rotation-move 3600s linear infinite normal;
+    }
+
+    &--second::before {
+      content: "";
+
+      position: absolute;
+
+      width: 45%;
+      border-bottom: ($hand-weight / 2) solid #f00;
+      border-radius: $hand-weight;
+
+      transform-origin: left center;
+
+      animation: rotation-move 60s steps(60) infinite normal;
+    }
+  }
+
+  @keyframes rotation-move {
+    0% {
+      transform: rotate(-90deg);
+    }
+
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+}
