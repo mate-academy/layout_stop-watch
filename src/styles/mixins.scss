@@ -1,6 +1,13 @@
-@mixin circle ($diameter, $color) {
+@mixin sqare ($diameter) {
   width: $diameter;
   height: $diameter;
+}
+
+@mixin circle($width) {
+  width: $width;
+  height: $width;
+  background-color: green;
+  border-radius: 50%;
 }
 
 @mixin hand ($lenght, $width, $color) {
