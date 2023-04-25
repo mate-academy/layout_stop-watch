@@ -13,12 +13,6 @@ $degrees: 45deg, 90deg, 135deg;
 
   --animation: running;
 
-  &__stop-checkbox:checked ~ &__mechanism::before,
-  &__stop-checkbox:checked ~ &__mechanism::after {
-      background-color: $color-just-dark;
-      animation-play-state: paused;
-  }
-
   &::after {
     content: "";
     @include absolute-all-zero;
@@ -34,7 +28,7 @@ $degrees: 45deg, 90deg, 135deg;
     box-sizing: border-box;
     position: absolute;
     bottom: -50px;
-    left:0;
+    left: 0;
 
     width: 50px;
     height: 25px;
@@ -48,7 +42,7 @@ $degrees: 45deg, 90deg, 135deg;
     background-color: $color-light;
   }
 
-  &__stop-checkbox{
+  &__stop-checkbox {
     display: none;
   }
 
@@ -95,7 +89,7 @@ $degrees: 45deg, 90deg, 135deg;
       height: $stopwatch-size / 2.2;
 
       background-color: $color-main;
-      border-radius: $mechanism-size 0px;
+      border-radius: $mechanism-size 0;
 
       animation: rotation $stopwatch-duration linear infinite ;
       transform-origin: 50% 100%;
@@ -112,13 +106,19 @@ $degrees: 45deg, 90deg, 135deg;
       animation-duration: $stopwatch-duration * 60;
       transform-origin: 50% 100%;
     }
+
+    .stopwatch__stop-checkbox:checked ~ &::before,
+    .stopwatch__stop-checkbox:checked ~ &::after {
+      background-color: $color-just-dark;
+      animation-play-state: paused;
+    }
   }
 
   &__reset {
     &-button {
       position: absolute;
       bottom: -50px;
-      right:0;
+      right: 0;
 
       width: 50px;
       height: 25px;
