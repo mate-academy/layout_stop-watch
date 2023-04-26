@@ -1,0 +1,24 @@
+@mixin centeredWithRadius($radius) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  border-radius: $radius;
+}
+
+@mixin handsAnimation($duration) {
+  animation-name: hands;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@mixin stopwatchCenterSize($size) {
+  width: $size;
+  height: $size;
+}
+
+%handsTransformSetUp {
+  transform: $handsInitialPosition;
+  transform-origin: bottom;
+}
