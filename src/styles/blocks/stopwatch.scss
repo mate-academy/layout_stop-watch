@@ -1,0 +1,51 @@
+.stopwatch {
+  position: relative;
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: 23px dashed rgb(9, 118, 9);
+  border-radius: 50%;
+  background-color: bisque;
+
+  &__hand {
+    @include position;
+
+    width: $hand-width;
+    border-radius: 8px;
+    transform: translate(-50%, -100%);
+    transform-origin: bottom;
+    animation: rotate-hand linear infinite;
+
+    &--minute {
+      height: $stopwatch-size / 3;
+      background-color: yellowgreen;
+      animation-duration: 3600s;
+    }
+
+    &--second {
+      height: $stopwatch-size / 2;
+      background-color: rgb(182, 182, 84);
+      animation-duration: 60s;
+    }
+  }
+
+  &__base {
+    @include position;
+
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    height: $hand-width * 2;
+    width: $hand-width * 2;
+    background-color: rgb(227, 227, 37);
+    border-radius: 50%;
+  }
+}
+
+@keyframes rotate-hand {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
