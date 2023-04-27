@@ -1,29 +1,23 @@
-@mixin circle($size) {
+@mixin square($size) {
   height: $size;
   width: $size;
   border-radius: 50%;
 }
 
-@mixin dot-size($size) {
-  height: $size;
-  width: $size;
+@mixin clockhand-size ($height, $width) {
+  height: $height;
+  width: $width;
   border-radius: 50%;
 }
 
-@mixin seconds-clockhand-size {
-  height: $seconds-clockhand-height;
-  width: $seconds-clockhand-width;
-  border-radius: 50%;
-}
+@mixin animation {
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
 
-@mixin minutes-clockhand-size {
-  height: $minutes-clockhand-height;
-  width: $minutes-clockhand-width;
-  border-radius: 50%;
-}
-
-@mixin hours-clockhand-size {
-  height: $hours-clockhand-height;
-  width: $hours-clockhand-width;
-  border-radius: 50%;
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }

@@ -16,18 +16,18 @@ body {
     align-items: center;
     flex-shrink: 0;
 
-    @include circle($circle-size);
+    @include square($circle-size);
 
     background-color: #0d3527;
     border: $clock-border-size double #d1d1d1;
-    box-shadow: -1px 0 31px 2px rgba(0,0,0,0.75);
+    box-shadow: -1px 0 31px 2px rgba(0, 0, 0, 0.75);
   }
 
   &__dot {
     position: absolute;
     z-index: 1;
 
-    @include dot-size($dot-size);
+    @include square($dot-size);
 
     background-color: #d1d1d1;
   }
@@ -36,65 +36,41 @@ body {
     position: absolute;
     bottom: $clockhand-position;
 
-    @include hours-clockhand-size;
+    @include clockhand-size($hours-clockhand-height, $hours-clockhand-width);
 
     background-color: #7b2512;
 
     transform-origin: bottom center;
     animation: rotate 43200s linear infinite;
-  }
-
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
+    @include animation;
   }
 
   &__minutes-clockhand {
     position: absolute;
     bottom: $clockhand-position;
 
-    @include minutes-clockhand-size;
+    @include clockhand-size($minutes-clockhand-height,
+    $minutes-clockhand-width);
 
     background-color: #edd2cb;
 
     transform-origin: bottom center;
     animation: rotate 3600s linear infinite;
-  }
-
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
+    @include animation;
   }
 
   &__seconds-clockhand {
     position: absolute;
     bottom: $clockhand-position;
 
-    @include seconds-clockhand-size;
+    @include clockhand-size ($seconds-clockhand-height,
+    $seconds-clockhand-width);
 
     background-color: #d64221;
 
     transform-origin: bottom center;
     animation: rotate 60s linear infinite;
-  }
+    @include animation;
 
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
   }
 }
