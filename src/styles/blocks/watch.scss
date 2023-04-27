@@ -4,33 +4,36 @@
   width: $clock-max-size;
   height: $clock-max-size;
 
-  border: 2px solid black;
+  outline: 10px solid black;
   border-radius: 50%;
+  box-shadow: 0 20px 40 0 rgba(0,0,0,0.61);
 
   &__seconds {
     @include time-arrow (
-      $seconds-heigh, 4px, $clock-max-size, red
-    );
-    animation: 4s infinite linear rotating;
+      $seconds-heigh, 4px, $clock-max-size, red);
+    animation: 30s infinite steps(60, end) rotating;
   }
 
   &__minutes {
     @include time-arrow (
       $minutes-heigh, 5px, $clock-max-size, black);
-    animation: 24s infinite linear rotating;
+    animation: 1800s infinite steps(3600, end) rotating;
   }
 
   &::after {
     content: "";
-    display: block;
     position: absolute;
     top: $clock-max-size / 2;
     left: $clock-max-size / 2;
-    transform: translate(-50%, -50%);
+
+    display: block;
     width: 12px;
     height: 12px;
 
+    border: 1px solid black;
+    border-radius: 50%;
     background-color: black;
 
+    transform: translate(-50%, -50%);
   }
 }
