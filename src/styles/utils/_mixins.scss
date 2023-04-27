@@ -6,7 +6,6 @@
 
 @mixin clockArrow($arrowWidth, $rotateDuration, $zIndex) {
   position: absolute;
-  top: 50%;
   left: 50%;
   z-index: $zIndex;
 
@@ -18,7 +17,7 @@
   border: 1px solid $color-border;
 
   animation: $rotateDuration linear infinite rotation;
-  transform-origin: top left;
+  transform-origin: left;
 }
 
 @mixin roundBorder {
