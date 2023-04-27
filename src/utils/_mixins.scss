@@ -1,0 +1,23 @@
+@mixin square($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin clockhand-size ($height, $width) {
+  height: $height;
+  width: $width;
+  border-radius: 50%;
+}
+
+@mixin animation {
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
