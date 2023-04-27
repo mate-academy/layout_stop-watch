@@ -1,0 +1,13 @@
+@mixin time-arrow ($height, $width, $watch-size, $color) {
+  position: absolute;
+  left: $watch-size / 2;
+  bottom: $watch-size / 2;
+  transform: translate(50%, -50%);
+
+  height: $height;
+  width: $width;
+
+  background-color: $color;
+
+  transform-origin: bottom center;
+}

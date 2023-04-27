@@ -1,0 +1,36 @@
+.watch {
+  position: relative;
+
+  width: $clock-max-size;
+  height: $clock-max-size;
+
+  border: 2px solid black;
+  border-radius: 50%;
+
+  &__seconds {
+    @include time-arrow (
+      $seconds-heigh, 4px, $clock-max-size, red
+    );
+    animation: 4s infinite linear rotating;
+  }
+
+  &__minutes {
+    @include time-arrow (
+      $minutes-heigh, 5px, $clock-max-size, black);
+    animation: 24s infinite linear rotating;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: $clock-max-size / 2;
+    left: $clock-max-size / 2;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+
+    background-color: black;
+
+  }
+}
