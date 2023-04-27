@@ -1,0 +1,46 @@
+.clock {
+  display: flex;
+
+  position: relative;
+
+  align-items: center;
+  justify-content: center;
+
+  @include clock-circle;
+
+  background-color: #bb8f6a;
+
+  &__minutes {
+    width: $clock-minute;
+    height: 5px;
+
+    @include clock-hands-position;
+
+    background-color: black;
+
+    animation: move 3600s linear infinite;
+  }
+
+  &__seconds {
+    width: $clock-second;
+    height: 3px;
+
+    @include clock-hands-position;
+
+    background-color: red;
+
+    animation: move 60s linear infinite;
+  }
+
+  &::after {
+    width: $clock-size / 50;
+    height: $clock-size / 50;
+
+    content: "";
+
+    background-color: black;
+    border-radius: 50%;
+
+    z-index: 1;
+  }
+}
