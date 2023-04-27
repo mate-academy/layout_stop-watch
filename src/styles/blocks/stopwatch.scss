@@ -1,0 +1,42 @@
+.stopwatch {
+  border: 2px solid $border-color;
+  @include circle(500px);
+  position: relative;
+
+  &__center {
+    @include circle(50px);
+    background-color: $watch-color;
+    border: 2px solid $border-color;
+    @include position-hand(50%, 50%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &__minute-hand {
+    background-color: $watch-color;
+    border: 2px solid $border-color;
+    @include hand(20px,200px);
+    @include position-hand(50px, 238px);
+    animation: move-hands 3600s infinite linear;
+  }
+
+  &__second-hand {
+    background-color: $border-color;
+    border: 2px solid $watch-color;
+    @include hand(20px,250px);
+    @include position-hand(0, 238px);
+    animation: move-hands 60s infinite linear;
+  }
+}
+
+@keyframes move-hands {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: center bottom;
+  }
+}
