@@ -1,0 +1,35 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border: 2px solid #000;
+  border-radius: 50%;
+
+  &__hand-sec {
+    z-index: 2;
+
+    @include hand(5px, 95px, #f00, $seconds);
+  }
+
+  &__hand-min {
+    z-index: 1;
+
+    @include hand(8px, 180px, #000, $minutes);
+  }
+
+  &__hand-hour {
+    z-index: 0;
+
+    @include hand(10px, 120px, #000, $hours);
+  }
+
+  &__dot {
+    position: absolute;
+    z-index: 3;
+    
+    @include dot (15px, 15px, #000, 50%);
+  }
+}
