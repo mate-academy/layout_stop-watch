@@ -1,0 +1,20 @@
+@mixin hand ($w, $h, $color, $time) {
+  position: absolute;
+  bottom: 50%;
+
+  width: $w;
+  height: $h;
+
+  background: $color;
+
+  transform-origin: bottom;
+  animation: rotate-hand $time infinite linear;
+}
+
+@mixin dot ($w, $h, $color, $radius) {
+  width: $w;
+  height: $h;
+  
+  background-color: $color;
+  border-radius: $radius;
+}
