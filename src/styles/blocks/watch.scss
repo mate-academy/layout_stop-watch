@@ -4,7 +4,7 @@
   width: $clock-max-size;
   height: $clock-max-size;
 
-  outline: 10px solid black;
+  border: 10px solid black;
   border-radius: 50%;
   box-shadow: 0 21px 40px 0 rgba(0,0,0,0.61);
 
@@ -23,14 +23,13 @@
   &::after {
     content: "";
     position: absolute;
-    top: $clock-max-size / 2;
-    left: $clock-max-size / 2;
+    top: 50%;
+    left: 50%;
 
     display: block;
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
 
-    border: 1px solid black;
     border-radius: 50%;
     background-color: black;
 
