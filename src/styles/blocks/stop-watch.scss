@@ -1,0 +1,54 @@
+.stop-watch {
+  @include stop-watch-size;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #000;
+  background-color: #fcfcfc;
+
+  &__center-dot {
+    @include center-dot-size;
+
+    z-index: 1;
+    border: 1px solid #000;
+    background-color: rgb(255, 157, 237);
+  }
+
+  &__hand {
+    @include position;
+
+    width: $hand-width;
+
+    transform-origin: bottom;
+    transform: translate(-50%, -100%);
+    animation: rotation linear infinite;
+
+    &--m {
+      height: $hand-length--m;
+      border: 1px solid green;
+      background-color: greenyellow;
+      animation-duration: 3600s;
+    }
+
+    &--s {
+      height: $hand-length--s;
+      border: 1px solid red;
+      background-color: coral;
+      animation-duration: 60s;
+    }
+  }
+
+  @keyframes rotation {
+    from {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+
+    to {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+  }
+}
