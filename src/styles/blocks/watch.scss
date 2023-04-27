@@ -1,0 +1,64 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+
+  &__big-circle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 4px solid $-main-color;
+    background-color: rgb(245, 245, 168);
+  }
+
+  &__small-circle {
+    position: absolute;
+    top: $-elements-margin;
+    right:$-elements-margin;
+    width: 15px;
+    height: 15px;
+    z-index: 1;
+
+    background-color: $-main-color;
+    border-radius: 50%;
+  }
+
+  &__minutes {
+    position: absolute;
+    left: $-elements-margin + 4;
+    top: 10px;
+    width: 4px;
+    height: 130px;
+
+    background-color: $-main-color;
+    animation: roundMinutes 60s infinite;
+    transform-origin: bottom;
+
+    @keyframes roundMinutes {
+      to {
+        transform: rotate(6deg);
+      }
+    }
+  }
+
+  &__seconds {
+    position: absolute;
+    left: $-elements-margin + 4;
+    top: 0;
+    width: 3px;
+    height: 145px;
+
+    background-color: orange;
+    animation: roundSeconds 60s infinite linear;
+    transform-origin: bottom;
+
+    @keyframes roundSeconds {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
