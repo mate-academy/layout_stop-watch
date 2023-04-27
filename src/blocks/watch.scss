@@ -1,0 +1,100 @@
+body {
+  background-color: #dde2e2;
+}
+
+.watch {
+  width: $watch-width;
+
+  margin: 0 auto;
+  padding: $watch-paddings;
+
+  &__container {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    @include circle($circle-size);
+
+    background-color: #0d3527;
+    border: $clock-border-size double #d1d1d1;
+    box-shadow: -1px 0 31px 2px rgba(0,0,0,0.75);
+  }
+
+  &__dot {
+    position: absolute;
+    z-index: 1;
+
+    @include dot-size($dot-size);
+
+    background-color: #d1d1d1;
+  }
+
+  &__hours-clockhand {
+    position: absolute;
+    bottom: $clockhand-position;
+
+    @include hours-clockhand-size;
+
+    background-color: #7b2512;
+
+    transform-origin: bottom center;
+    animation: rotate 43200s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__minutes-clockhand {
+    position: absolute;
+    bottom: $clockhand-position;
+
+    @include minutes-clockhand-size;
+
+    background-color: #edd2cb;
+
+    transform-origin: bottom center;
+    animation: rotate 3600s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__seconds-clockhand {
+    position: absolute;
+    bottom: $clockhand-position;
+
+    @include seconds-clockhand-size;
+
+    background-color: #d64221;
+
+    transform-origin: bottom center;
+    animation: rotate 60s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
