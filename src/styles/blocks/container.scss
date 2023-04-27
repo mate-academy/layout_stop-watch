@@ -1,0 +1,53 @@
+.container {
+  position: relative;
+  margin: auto;
+
+  @include square($-side-of-conteiner);
+
+  &__center-point {
+    position: absolute;
+    bottom: calc(#{$-half-of-container} - #{$-diametr/2});
+    left: calc(#{$-half-of-container} - #{$-diametr/2});
+    z-index: 1;
+
+    @include circle($-diametr);
+
+    background-color: rgb(50, 151, 179);
+  }
+
+  &__minutes {
+    position: absolute;
+    bottom: $-half-of-container;
+    left: calc(#{$-half-of-container} - #{$-width-of-hands/2});
+
+    height: $-height-of-min-hand;
+    width: $-width-of-hands;
+
+    background-color: rgb(50, 151, 179);
+    border-radius: $-side-of-conteiner * 0.01;
+
+    animation: move 3600s infinite linear;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: $-half-of-container;
+    left: calc(#{$-half-of-container} - #{$-width-of-hands/2});
+
+    height: calc(#{$-height-of-sec-hand} - 10%);
+    width: $-width-of-hands;
+
+    background-color: rgb(201, 46, 87);
+    border-radius: $-side-of-conteiner * 0.01;
+
+    animation: move 60s infinite linear;
+    transform-origin: bottom;
+  }
+
+  @keyframes move {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
