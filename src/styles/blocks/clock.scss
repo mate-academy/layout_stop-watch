@@ -1,0 +1,60 @@
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+
+.clock {
+  position: relative;
+
+  @include sircle($clock-size);
+
+  border: $clock-border solid $color-main-theme;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5 15px inset;
+
+  &::before {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    content: "";
+    @include sircle(20px);
+    background-color: $color-main-theme;
+  }
+
+  &__inner {
+    &::before {
+      position: absolute;
+      left: calc(50% - 5px);
+      top: hand-start-positionY($second-hand);
+
+      content: "";
+      @include clock-hand($second-hand);
+      background-color: #50879a;
+      border-radius: 10px;
+
+      animation: move 60s steps(60) 0s infinite;
+    }
+
+    &::after {
+      position: absolute;
+      left: calc(50% - 5px);
+      top: hand-start-positionY($minute-hand);
+
+      content: "";
+      @include clock-hand($minute-hand);
+      background-color: #50879a;
+      border-radius: 10px;
+
+      animation: move 3600s steps(60) 0s infinite;
+    }
+  }
+}
