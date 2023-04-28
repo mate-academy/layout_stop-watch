@@ -11,28 +11,29 @@
   <body>
     <main class="page">
       <section class="stopwatch">
-        <label for="stop-button" class="stopwatch__stop-button">stop</label>
         <input
           class="stopwatch__stop-checkbox"
           type="checkbox"
           name="stop-button"
           id="stop-button"
         >
-        <div class="stopwatch__mark"></div>
-        <div class="stopwatch__mark stopwatch__mark--rotate-45deg"></div>
-        <div class="stopwatch__mark stopwatch__mark--rotate-90deg"></div>
-        <div class="stopwatch__mark stopwatch__mark--rotate-135deg"></div>
+
+        <label for="stop-button" class="stopwatch__stop-button"></label>
+
+        <div class="stopwatch__marks-wrapper">
+          <div class="stopwatch__mark"></div>
+          <div class="stopwatch__mark"></div>
+          <div class="stopwatch__mark"></div>
+          <div class="stopwatch__mark"></div>
+        </div>
 
         <div class="stopwatch__mechanism"></div>
 
-        <form class="stopwatch__reset">
-          <input
-            class="stopwatch__reset-button"
-            type="submit"
-            value="reset"
-          >
-        </form>
+        <button class="stopwatch__reset-button">
+          reset
+        </button>
       </section>
     </main>
+    <script src="./main.js"></script>
   </body>
 </html>

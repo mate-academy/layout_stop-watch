@@ -1,17 +1,14 @@
-$mechanism-size: $stopwatch-size / 20;
-$mark-size: $mechanism-size / 2;
-$degrees: 45deg, 90deg, 135deg;
-
 .stopwatch {
-  box-sizing: border-box;
+  $root: &;
+  $root-stop-btn: $root + __stop-button;
+  $root-stop-check: $root + __stop-checkbox;
+
   position: relative;
   @include square($stopwatch-size);
 
   background-color: $color-light;
   border: $stopwatch-size / 100 solid $color-main-dark;
   border-radius: 50%;
-
-  --animation: running;
 
   &::after {
     content: "";
@@ -25,29 +22,37 @@ $degrees: 45deg, 90deg, 135deg;
   }
 
   &__stop-button {
-    box-sizing: border-box;
     position: absolute;
     bottom: -50px;
     left: 0;
 
-    width: 50px;
+    width: 75px;
     height: 25px;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Courier New", Courier, monospace;
     font-size: 1em;
     text-align: center;
+    line-height: 25px;
+    color: $color-main-dark;
 
     border: $stopwatch-size / 100 solid $color-main-dark;
     border-radius: 1em 1em 0 0;
     background-color: $color-light;
+
+    &::before {
+      content: "stop";
+    }
   }
 
   &__stop-checkbox {
     display: none;
+
+    &:checked ~ #{$root-stop-btn}::before {
+      content: "start";
+    }
   }
 
   &__mark {
-    box-sizing: border-box;
     position: absolute;
     top: 0 - $stopwatch-size / 100;
     left: 0;
@@ -62,8 +67,8 @@ $degrees: 45deg, 90deg, 135deg;
     border-bottom: $mark-size solid $color-main-dark;
     border-left: $mark-size solid transparent;
 
-    @each $degre in $degrees {
-      &--rotate-#{$degre} {
+    @each $child, $degre in $degrees {
+      &:nth-child(#{$child}) {
         transform: rotateZ($degre);
       }
     }
@@ -76,6 +81,10 @@ $degrees: 45deg, 90deg, 135deg;
     margin: auto;
 
     border-radius: 50%;
+
+    &--none {
+      display: none;
+    }
 
     &::before,
     &::after {
@@ -107,30 +116,29 @@ $degrees: 45deg, 90deg, 135deg;
       transform-origin: 50% 100%;
     }
 
-    .stopwatch__stop-checkbox:checked ~ &::before,
-    .stopwatch__stop-checkbox:checked ~ &::after {
+    #{$root-stop-check}:checked ~ &::before,
+    #{$root-stop-check}:checked ~ &::after {
       background-color: $color-just-dark;
       animation-play-state: paused;
     }
   }
 
-  &__reset {
-    &-button {
-      position: absolute;
-      bottom: -50px;
-      right: 0;
+  &__reset-button {
+    position: absolute;
+    bottom: -50px;
+    right: 0;
 
-      width: 50px;
-      height: 25px;
+    width: 75px;
+    height: 25px;
 
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1em;
-      border: $stopwatch-size / 100 solid $color-main-dark;
-      border-radius: 1em 1em 0 0;
-      background-color: $color-light;
-    }
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    color: $color-main-dark;
+
+    border: $stopwatch-size / 100 solid $color-main-dark;
+    border-radius: 1em 1em 0 0;
+    background-color: $color-light;
   }
-
 }
 
 @keyframes rotation {
