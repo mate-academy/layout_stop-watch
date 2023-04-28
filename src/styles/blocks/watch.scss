@@ -1,0 +1,75 @@
+.watch {
+  margin: 100px auto;
+  // I know it isn`t correct, but these for good looking :)
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  background-color: salmon;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -($cirle-size/2);
+    margin-top: -($cirle-size/2);
+    width: $cirle-size;
+    height: $cirle-size;
+    border-radius: 50%;
+    background-color: aqua;
+    z-index: 1;
+  }
+
+  &__arrow {
+    margin-left: -($watch-size/2);
+    margin-top: -($watch-size/2);
+    width: $watch-size;
+    height: $watch-size;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+
+  &__arrow--big::after,
+  &__arrow--small::after {
+    margin-top: 0;
+    margin-left: -($arrow-with / 2);
+    content: "";
+    width: $arrow-with;
+    border-radius: 50px;
+    position: absolute;
+    display: block;
+  }
+  &__arrow--big {
+    animation: clock-hand-rotate 60s linear infinite;
+
+    &::after {
+      height: $big-arrow-size;
+      background-color: aqua;
+      bottom: 50%;
+      left: 50%;
+    }
+  }
+  
+  &__arrow--small {
+    animation: clock-hand-rotate 3600s linear infinite;
+
+    &::after {
+      height: $small-arrow-size;
+      background-color: magenta;
+      bottom: 50%;
+      left: 50%;
+    }
+  } 
+}
+
+@keyframes clock-hand-rotate {
+  from {
+      transform: rotate(0deg)
+  }
+  to {
+      transform: rotate(360deg)
+  }
+}
