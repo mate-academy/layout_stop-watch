@@ -9,15 +9,15 @@
   background: $color-secondary;
 
   &__hours {
-    @include clockArrow(11px, 84600s, 2,$color-primary);
+    @include clockArrow($clock-size / 3 - $clock-border-size, 11px, 84600s, 2,$color-primary);
   }
 
   &__minutes {
-    @include clockArrow(7px, 3600s, 1, $color-primary);
+    @include clockArrow($clock-size / 2 - $clock-border-size, 7px, 3600s, 0, $color-primary);
   }
 
   &__seconds {
-    @include clockArrow(4px, 60s, 0, #fff);
+    @include clockArrow($clock-size / 2 - $clock-border-size, 4px, 60s, 1, #fff);
   }
 
   &__center {

@@ -4,13 +4,13 @@
   align-items: center;
 }
 
-@mixin clockArrow($arrowWidth, $rotateDuration, $zIndex, $backgroundColor) {
+@mixin clockArrow($arrowWidth,$arrowHeight, $rotateDuration, $zIndex, $backgroundColor) {
   position: absolute;
   left: 50%;
   z-index: $zIndex;
 
-  width: $clock-size / 2 - $clock-border-size;
-  height: $arrowWidth;
+  width: $arrowWidth;
+  height: $arrowHeight;
 
   background: $backgroundColor;
   border-radius: 10px;
