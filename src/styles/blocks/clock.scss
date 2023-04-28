@@ -1,0 +1,78 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: $clock-size;
+
+  &__field {
+    @include square($clock-size);
+
+    position: relative;
+
+    background-color: #eed;
+    border: 2px solid $color-yellow;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50px;
+      height: 50px;
+
+      content: "";
+      background-color: #5a5a5a;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__sek {
+    @include border($border-radius);
+
+    position: absolute;
+    top: 5%;
+    left: 49%;
+    width: 10px;
+    height: 300px;
+
+    background-color: #00f;
+    border: 1px solid $color-black;
+
+    transform-origin: bottom;
+    transform: translate(-50%, -50%);
+    animation: sek 60s linear infinite;
+  }
+
+  &__min {
+    @include border($border-radius);
+
+    position: absolute;
+    top: 17%;
+    left: 49%;
+    width: 17px;
+    height: 220px;
+
+    background-color: $color-yellow;
+    border: 2px solid $color-black;
+
+    transform-origin: bottom;
+    transform: translate(-50%, -50%);
+    animation: min 3600s linear infinite;
+  }
+
+  &__hour {
+    @include border($border-radius);
+
+    position: absolute;
+    top: 24.5%;
+    left: 48%;
+    width: 25px;
+    height: 170px;
+    background-color: $color-black;
+
+    transform-origin: bottom;
+    transform: translate(-50%, -50%);
+    animation: min 216000s linear infinite;
+  }
+}
