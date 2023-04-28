@@ -8,19 +8,23 @@
 
   background: $color-secondary;
 
+  &__hours {
+    @include clockArrow(11px, 84600s, 2,$color-primary);
+  }
+
   &__minutes {
-    @include clockArrow(7px, 3600s, 1);
+    @include clockArrow(7px, 3600s, 1, $color-primary);
   }
 
   &__seconds {
-    @include clockArrow(4px, 60s, 0);
+    @include clockArrow(4px, 60s, 0, #fff);
   }
 
   &__center {
     @include roundBorder;
 
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 
     width: 20px;
     height: 20px;
