@@ -1,0 +1,152 @@
+.stopwatch {
+  $root: &;
+  $root-stop-btn: $root + __stop-button;
+  $root-stop-check: $root + __stop-checkbox;
+
+  position: relative;
+  @include square($stopwatch-size);
+
+  background-color: $color-light;
+  border: $stopwatch-size / 100 solid $color-main-dark;
+  border-radius: 50%;
+
+  &::after {
+    content: "";
+    @include absolute-all-zero;
+
+    @include square($mechanism-size);
+    margin: auto;
+
+    background-color: $color-main-dark;
+    border-radius: 50%;
+  }
+
+  &__stop-button {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+
+    width: 75px;
+    height: 25px;
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    text-align: center;
+    line-height: 25px;
+    color: $color-main-dark;
+
+    border: $stopwatch-size / 100 solid $color-main-dark;
+    border-radius: 1em 1em 0 0;
+    background-color: $color-light;
+
+    &::before {
+      content: "stop";
+    }
+  }
+
+  &__stop-checkbox {
+    display: none;
+
+    &:checked ~ #{$root-stop-btn}::before {
+      content: "start";
+    }
+  }
+
+  &__mark {
+    position: absolute;
+    top: 0 - $stopwatch-size / 100;
+    left: 0;
+    right: 0;
+
+    height: $stopwatch-size - 2px;
+    width: 0;
+    margin: 1px auto;
+
+    border-top: $mark-size solid $color-main-dark;
+    border-right: $mark-size solid transparent;
+    border-bottom: $mark-size solid $color-main-dark;
+    border-left: $mark-size solid transparent;
+
+    @each $child, $degre in $degrees {
+      &:nth-child(#{$child}) {
+        transform: rotateZ($degre);
+      }
+    }
+  }
+
+  &__mechanism {
+    @include absolute-all-zero;
+
+    @include square($mechanism-size);
+    margin: auto;
+
+    border-radius: 50%;
+
+    &--none {
+      display: none;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: $mechanism-size / 2;
+      left: ($mechanism-size / 2 - ($mechanism-size / 3) / 2);
+
+      display: block;
+      width: $mechanism-size / 3;
+      height: $stopwatch-size / 2.2;
+
+      background-color: $color-main;
+      border-radius: $mechanism-size 0;
+
+      animation: rotation $stopwatch-duration linear infinite ;
+      transform-origin: 50% 100%;
+    }
+
+    &::after {
+      left: ($mechanism-size / 2 - ($mechanism-size / 2) / 2);
+
+      width: $mechanism-size / 2;
+      height: $stopwatch-size / 3;
+
+      background-color: $color-just-dark;
+
+      animation-duration: $stopwatch-duration * 60;
+      transform-origin: 50% 100%;
+    }
+
+    #{$root-stop-check}:checked ~ &::before,
+    #{$root-stop-check}:checked ~ &::after {
+      background-color: $color-just-dark;
+      animation-play-state: paused;
+    }
+  }
+
+  &__reset-button {
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+
+    width: 75px;
+    height: 25px;
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    color: $color-main-dark;
+
+    border: $stopwatch-size / 100 solid $color-main-dark;
+    border-radius: 1em 1em 0 0;
+    background-color: $color-light;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+
+  }
+}
