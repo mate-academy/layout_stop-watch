@@ -1,14 +1,57 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body class="page">
+    <section class="watch">
+      <a href="./index.html" class="watch__reset-button"></a>
+      
+      <ul class="watch__face">
+        <li class="watch__numbers watch__numbers--3-in-row">
+          <p>11</p>
+          <p>12</p>
+          <p>1</p>
+        </li>
+
+        <li class="watch__numbers watch__numbers--2-in-row">
+          <p>10</p>
+          <p>2</p>
+        </li>
+
+        <li class="watch__numbers watch__numbers--2-in-row">
+          <p>9</p>
+          <p>3</p>
+        </li>
+        
+        <li class="watch__numbers watch__numbers--2-in-row">
+          <p>8</p>
+          <p>4</p>
+        </li>
+
+        <li class="watch__numbers watch__numbers--3-in-row">
+          <p>7</p>
+          <p>6</p>
+          <p>5</p>
+        </li>
+      </ul>
+
+      <input
+        type="checkbox"
+        class="watch__stop-button-input"
+        id="stop-button"
+        name="stop-button"
+      >
+      
+      <label for="stop-button" class="watch__stop-button"></label>
+
+      <article class="watch__arrows">
+      </article>
+    </section>
+  </body>
 </html>

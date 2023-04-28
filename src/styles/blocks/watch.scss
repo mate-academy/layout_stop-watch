@@ -1,0 +1,153 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include watchface-size ($watch-width);
+  padding: 20px;
+  
+  background-color: $secondary-color;
+  border: 20px solid $main-color;
+  border-radius: 100px;
+
+  &::after {
+    align-self: center;
+    content: "";
+    position: absolute;
+    bottom: 49%;
+    left: 49%;
+    
+    height: 10px;
+    width: 10px;
+
+    border: 1px solid $numbers-color;
+    border-radius: 50%;
+    background-color: $minute-color;
+  }
+
+  &__face {
+    position: absolute;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    
+    width: 90%;
+    height: 92%;
+
+    background-color: $main-color;
+    border-radius: 60px;
+  }
+
+  &__numbers {
+    display: flex;
+
+    &--3-in-row {
+      justify-content: space-evenly;
+      gap: 10px;
+    }
+
+    &--2-in-row {
+      justify-content: space-between;
+    }
+  }
+  
+  &__arrows {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+
+    &::before,
+    &::after {
+      content: "";
+      width: 4px;
+    
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      
+      border: 1px solid $numbers-color;
+      border-radius: 30%;
+      transform-origin: bottom;
+    }
+  
+    &::before {
+      height: 95px;
+      background-color: $minute-color;
+      animation: rotation $minute-duration * 60 linear infinite;
+    }
+  
+    &::after {
+      height: 120px;
+      background-color: $secondary-color;
+      animation: rotation $minute-duration steps(60) infinite;
+    }
+
+    @keyframes rotation {
+      from {
+        transform: rotateZ(0);
+      }
+      to {
+        transform: rotateZ(360deg);
+      }
+    }
+
+  }
+
+  &__stop-button {
+    position: absolute;
+    top: 80px;
+    right: -35px;
+    
+    height: 100px;
+    width: 35px;
+
+    background-color: #1224e1;
+    
+    border-radius: 0 50% 50% 0;
+
+    &:hover {
+      background-color: #0d1890;
+    }
+    
+  }
+  
+  &__reset-button {
+    position: absolute;
+    top: 200px;
+    right: -35px;
+    
+    height: 100px;
+    width: 35px;
+    
+    background-color: #9c1414;
+    
+    border-radius: 0 50% 50% 0;
+    
+    &:hover {
+      background-color: #520a0a;
+    }
+  }
+  
+  &__stop-button-input {
+    display: none;
+  }
+  
+  &__stop-button-input:checked ~ &__arrows::after,
+  &__stop-button-input:checked ~ &__arrows::before {
+    background-color: #747874;
+    animation-play-state: paused;
+  }
+
+  &__stop-button-input:checked ~ &__stop-button {
+    background-color: #097015;
+  }
+
+  &__stop-button-input:checked ~ &__stop-button:hover {
+    background-color: #05430c;
+  }
+
+}
+
