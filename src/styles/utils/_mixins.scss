@@ -1,0 +1,26 @@
+@mixin centeredFlexBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin clockArrow($arrowWidth,$arrowHeight, $rotateDuration, $zIndex, $backgroundColor) {
+  position: absolute;
+  left: 50%;
+  z-index: $zIndex;
+
+  width: $arrowWidth;
+  height: $arrowHeight;
+
+  background: $backgroundColor;
+  border-radius: 10px;
+  border: 1px solid $color-border;
+
+  animation: $rotateDuration linear infinite rotation;
+  transform-origin: left;
+}
+
+@mixin roundBorder {
+  border-radius: 50%;
+  border: $clock-border-size solid $color-border;
+}

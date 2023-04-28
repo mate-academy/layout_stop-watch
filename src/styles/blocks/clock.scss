@@ -1,0 +1,34 @@
+.clock {
+  @include centeredFlexBox;
+  @include roundBorder;
+
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+
+  background: $color-secondary;
+
+  &__hours {
+    @include clockArrow($clock-size / 3 - $clock-border-size, 11px, 84600s, 2,$color-primary);
+  }
+
+  &__minutes {
+    @include clockArrow($clock-size / 2 - $clock-border-size, 7px, 3600s, 0, $color-primary);
+  }
+
+  &__seconds {
+    @include clockArrow($clock-size / 2 - $clock-border-size, 4px, 60s, 1, #fff);
+  }
+
+  &__center {
+    @include roundBorder;
+
+    position: absolute;
+    z-index: 3;
+
+    width: 20px;
+    height: 20px;
+
+    background: $color-secondary;
+  }
+}
