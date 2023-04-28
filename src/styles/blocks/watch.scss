@@ -1,6 +1,4 @@
 .watch {
-  margin: 100px auto;
-  // I know it isn`t correct, but these for good looking :)
   width: $watch-size;
   height: $watch-size;
   border-radius: 50%;
@@ -32,8 +30,7 @@
     top: 50%;
   }
 
-  &__arrow--big::after,
-  &__arrow--small::after {
+  &__arrow::after {
     margin-top: 0;
     margin-left: -($arrow-with / 2);
     content: "";
@@ -41,6 +38,8 @@
     border-radius: 50px;
     position: absolute;
     display: block;
+    bottom: 50%;
+    left: 50%;
   }
   &__arrow--big {
     animation: clock-hand-rotate 60s linear infinite;
@@ -48,8 +47,6 @@
     &::after {
       height: $big-arrow-size;
       background-color: aqua;
-      bottom: 50%;
-      left: 50%;
     }
   }
   
@@ -58,18 +55,8 @@
 
     &::after {
       height: $small-arrow-size;
-      background-color: magenta;
-      bottom: 50%;
-      left: 50%;
+      background-color: magenta; 
     }
-  } 
-}
+  }
 
-@keyframes clock-hand-rotate {
-  from {
-      transform: rotate(0deg)
-  }
-  to {
-      transform: rotate(360deg)
-  }
 }
