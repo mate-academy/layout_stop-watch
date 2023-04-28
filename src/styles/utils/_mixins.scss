@@ -1,0 +1,18 @@
+@mixin circle($diameter) {
+  height: $diameter;
+  width: $diameter;
+  border-radius: 50%;
+}
+
+@mixin shape($second:false) {
+  @if $second {
+    height: $second-hand-height;
+    width: $second-hand-width;
+    border-radius: 40%;
+  }
+  @else {
+    height: $minute-hand-height;
+    width: $minute-hand-width;
+    border-radius: 40%;
+  }
+}

@@ -1,0 +1,49 @@
+.clock {
+  position: relative;
+  @include circle($clock-diameter);
+
+  background-color: $clock-color;
+  border: 2px solid $clock-details-color;
+  box-shadow: 0 0 7px 3px $shadow-color;
+
+  &__dot {
+    position: absolute;
+    @include circle($dot-diameter);
+
+    background-color: $clock-details-color;
+
+    transform-origin: center;
+
+    top: get-distance($dot-diameter, $top:true, $arrow:false);
+
+    left: get-distance($dot-diameter, $top:false, $arrow:false);
+
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: get-distance($second-hand-height, $top:true);
+    left: get-distance($second-hand-width, $top: false);
+
+    @include shape($second:true);
+
+    background-color: $second-color;
+
+    transform-origin: bottom;
+    animation: rotate-arrow $one-minute linear infinite;
+
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: get-distance($minute-hand-height, $top:true);
+    left: get-distance($minute-hand-width, $top:false);
+
+    @include shape($second:false);
+
+    background-color: $minute-color;
+
+    transform-origin: bottom;
+    animation: rotate-arrow $one-hour linear infinite;
+  }
+}
