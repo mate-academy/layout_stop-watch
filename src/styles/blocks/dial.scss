@@ -1,0 +1,25 @@
+.dial {
+  @include circle($dial-diameter);
+
+  position: relative;
+
+  font-family: $numbers-font;
+  text-align: center;
+
+  &__number {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    color: $numbers-color;
+
+    @for $i from 1 through 12 {
+      &--#{$i}::after {
+        content: "#{$i}";
+      }
+      &--#{$i} {
+        transform: rotate($i * 30deg);
+      }
+    }
+  }
+}

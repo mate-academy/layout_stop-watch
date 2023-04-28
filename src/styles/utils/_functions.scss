@@ -1,0 +1,22 @@
+@function get-distance($elem-measurement, $top: true, $arrow:true) {
+  @if $arrow {
+    @if $top {
+      $result: 0.5 * $clock-diameter - $elem-measurement;
+      @return $result;
+    }
+    @else {
+      $result: 0.5 * $clock-diameter - 0.5 * $elem-measurement;
+      @return $result;
+    }
+  }
+  @else {
+    @if $top {
+      $result: 0.5 * $clock-diameter - $elem-measurement * 0.5;
+      @return $result;
+    }
+    @else {
+      $result: 0.5 * $clock-diameter - 0.5 * $dot-diameter;
+      @return $result;
+    }
+  }
+}
