@@ -1,0 +1,97 @@
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+
+.clock {
+  position: relative;
+
+  @include sircle($clock-size);
+
+  border: $clock-border solid $color-main;
+
+  &::before {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    content: "";
+    @include sircle(20px);
+    background-color: $color-main;
+  }
+
+  &__mark {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    font-weight: bold;
+    font-size: 24px;
+    color: $color-main;
+    text-align: center;
+
+    &--top {
+      top: 10px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    &--right {
+      top: 0;
+      right: 10px;
+      bottom: 0;
+      margin: auto;
+    }
+
+    &--bottom {
+      right: 0;
+      bottom: 10px;
+      left: 0;
+      margin: auto;
+    }
+
+    &--left {
+      top: 0;
+      left: 10px;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+
+  &__inner {
+    &::before {
+      position: absolute;
+      left: calc(50% - 5px);
+      top: hand-start-positionY($second-hand);
+
+      content: "";
+      @include clock-hand($second-hand);
+      background-color: $hand-color ;
+      border-radius: 10px;
+
+      animation: move 60s steps(60) 0s infinite;
+    }
+
+    &::after {
+      position: absolute;
+      left: calc(50% - 5px);
+      top: hand-start-positionY($minute-hand);
+
+      content: "";
+      @include clock-hand($minute-hand);
+      background-color: $hand-color ;
+      border-radius: 10px;
+
+      animation: move 3600s steps(60) 0s infinite;
+    }
+  }
+}
