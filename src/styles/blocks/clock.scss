@@ -1,0 +1,43 @@
+.clock {
+  @include clock-shape($clock-main-size);
+
+  position: relative;
+  background-color: $clock-main-color;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  &__center-elem {
+    @include clock-shape($clock-center-elem-size);
+
+    position: absolute;
+    z-index: 2;
+    top: ($clock-main-size / 2) - ($clock-center-elem-size / 2);
+    background-color: $clock-center-color;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: ($clock-main-size / 2) - $arrow-minutes-height;
+    width: $arrow-minutes-width;
+    height: $arrow-minutes-height;
+    background-color: $arrow-minutes-color;
+    border-radius: 40%;
+
+    transform-origin: bottom center;
+    animation: arrow-movement $arrow-minutes-duration linear infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: ($clock-main-size / 2) - $arrow-seconds-height;
+    z-index: 1;
+    width: $arrow-seconds-width;
+    height: $arrow-seconds-height;
+    background-color: $arrow-seconds-color;
+    border-radius: 50%;
+
+    transform-origin: bottom center;
+    animation: arrow-movement $arrow-seconds-duration linear infinite;
+  }
+}
