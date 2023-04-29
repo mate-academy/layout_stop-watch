@@ -3,15 +3,15 @@
   justify-content: center;
   align-items: center;
   margin: 20px auto;
-  width: $clock-size;
+  width: $stopwatch-size;
 
   &__field {
-    @include square($clock-size);
+    @include square($stopwatch-size, $border-radius);
 
     position: relative;
 
     background-color: #eed;
-    border: 2px solid $color-yellow;
+    border: 2px solid $color-minuteArrow;
 
     &::after {
       position: absolute;
@@ -27,8 +27,8 @@
     }
   }
 
-  &__sek {
-    @include border($border-radius);
+  &__sec {
+    @include border-top-radius($border-radius);
 
     position: absolute;
     top: 5%;
@@ -41,11 +41,11 @@
 
     transform-origin: bottom;
     transform: translate(-50%, -50%);
-    animation: sek 60s linear infinite;
+    animation: sec $sec-duration linear infinite;
   }
 
-  &__min {
-    @include border($border-radius);
+  &__minute {
+    @include border-top-radius($border-radius);
 
     position: absolute;
     top: 17%;
@@ -53,26 +53,11 @@
     width: 17px;
     height: 220px;
 
-    background-color: $color-yellow;
+    background-color: $color-minuteArrow;
     border: 2px solid $color-black;
 
     transform-origin: bottom;
     transform: translate(-50%, -50%);
-    animation: min 3600s linear infinite;
-  }
-
-  &__hour {
-    @include border($border-radius);
-
-    position: absolute;
-    top: 24.5%;
-    left: 48%;
-    width: 25px;
-    height: 170px;
-    background-color: $color-black;
-
-    transform-origin: bottom;
-    transform: translate(-50%, -50%);
-    animation: min 216000s linear infinite;
+    animation: hour $hour-duration linear infinite;
   }
 }
