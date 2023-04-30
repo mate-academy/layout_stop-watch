@@ -1,0 +1,30 @@
+$watch-size: 300px;
+
+@mixin watch-size {
+  height: $watch-size;
+  width: $watch-size;
+}
+
+$second-size: $watch-size / 2;
+$second-width: $second-size / 35;
+
+@mixin second-size {
+  height: $second-size;
+  width: $second-width;
+}
+
+$minute-size: $watch-size / 3;
+$minute-width: $minute-size / 15;
+
+@mixin minute-size {
+  height: $minute-size;
+  width: $minute-width;
+}
+
+$hour-size: $watch-size / 4;
+$hour-width: $hour-size / 8;
+
+@mixin hour-size {
+  height: $hour-size;
+  width: $hour-width;
+}

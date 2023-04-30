@@ -1,0 +1,79 @@
+.watch {
+  position: relative;
+  @include watch-size;
+
+  &__bg {
+    position: absolute;
+    @include watch-size;
+
+    background-color: blueviolet;
+
+    border: 45px solid burlywood;
+    border-radius: 50%;
+
+  }
+
+  &__seconds {
+    position: absolute;
+    @include second-size;
+    z-index: 3;
+
+    border-radius: $second-size / 5;
+    background-color: bisque;
+    border: 1px solid blanchedalmond;
+    left: $watch-size / 2;
+    top: $watch-size / 2;
+
+    animation-name: second-rotation;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: $second-width/4 3px;
+  }
+
+  &__minutes {
+    position: absolute;
+    @include minute-size;
+    z-index: 2;
+
+    border-radius: $minute-size / 5;
+    background-color: blue;
+    border: 1px solid blue;
+    left: $watch-size / 2;
+    top: $watch-size / 2;
+
+    animation-name: second-rotation;
+    animation-duration: 60s * 60;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: $minute-width/4 3px;
+  }
+
+  &__hours {
+    position: absolute;
+    @include hour-size;
+    z-index: 1;
+
+    border-radius: $hour-size / 2;
+    background-color: black;
+    border: 1px solid black;
+    left: $watch-size / 2;
+    top: $watch-size / 2;
+
+    animation-name: second-rotation;
+    animation-duration: 60s * 60 * 60;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: $hour-width/4 3px;
+  }
+}
+
+@keyframes second-rotation {
+  from {
+    transform: rotate(0.5turn);
+  }
+
+  to {
+    transform: rotate(1.5turn);
+  }
+}
