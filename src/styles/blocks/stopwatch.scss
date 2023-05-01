@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 25px;
+}
+
+.container {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stopwatch {
+  position: relative;
+  @include watch(300px);
+
+  border: 10px solid rgb(161, 93, 161);
+  background-color: rgb(245, 180, 210);
+
+  &::after {
+    position: absolute;
+    margin: 0 auto;
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: rgb(29, 28, 28);
+    z-index: 3;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &__hand-seconds {
+    height: 135px;
+    width: 4px;
+    border-radius: 5px;
+    z-index: 2;
+
+    background-color: rgb(184, 17, 240);
+
+    @extend %central-position;
+    transform-origin: bottom center;
+    animation: move 60s linear infinite;
+  }
+
+  &__hand-minutes {
+    position: absolute;
+    height: 100px;
+    width: 6px;
+    border-radius: 5px;
+    z-index: 1;
+
+    background-color: rgb(65, 57, 60);
+    bottom: 50%;
+    left: 50%;
+
+    transform-origin: bottom center;
+    animation: move 3600s linear infinite;
+  }
+
+  &__face-12 {
+    @extend %central-position;
+
+    transform: translate(-48%, 0);
+  }
+
+  &__face-3 {
+    position: absolute;
+    left: 90%;
+    top: 43%;
+  }
+
+  &__face-6 {
+    position: absolute;
+    left: 48%;
+    bottom: 2%;
+  }
+
+  &__face-9 {
+    position: absolute;
+    left: 2%;
+    bottom: 43%;
+  }
+}
