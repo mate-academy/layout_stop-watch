@@ -1,0 +1,49 @@
+@import url("./reset.scss");
+
+.stopwatch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+
+  &__dot {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    transform-origin: top center;
+    border-radius: 5px;
+
+    &--second {
+      height: 250px;
+      background-color: rgb(233, 217, 0);
+      animation: tick 60s linear infinite;
+    }
+
+    &--minute {
+      height: 150px;
+      background-color: rgb(217, 3, 224);
+      animation: tick 3600s linear infinite;
+    }
+  }
+}
+
+@keyframes tick {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
