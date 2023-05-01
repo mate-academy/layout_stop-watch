@@ -1,0 +1,64 @@
+.watch {
+  @include page-center;
+  @include watch-size;
+  border: 5px solid gray;
+  border-radius: 50%;
+
+  &__hand {
+    @include page-center;
+    animation-name: hands-movement;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+    transform-origin: center left;
+
+    @keyframes hands-movement {
+      0% {
+        transform: translate(0, -50%) rotate(-90deg);
+      }
+
+      100% {
+        transform: translate(0, -50%) rotate(270deg);
+      }
+    }
+
+    &--minute {
+      @include minute-hand-size;
+      background-color: $main-color;
+      animation-duration: 3600s;
+    }
+
+    &--second {
+      @include second-hand-size;
+      background-color: crimson;
+      animation-duration: 60s;
+    }
+  }
+
+  &__center {
+    @include page-center;
+    @include center-point-size;
+    border-radius: 50%;
+    background-color: $main-color;
+  }
+
+  &__face {
+    @include page-center;
+    @include face-size;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  &__fivers {
+    @include page-center;
+    @include fivers-size;
+    background-color: $main-color;
+    transform-origin: center left;
+
+    @for $index from 1 through 12 {
+      &:nth-child(#{$index}) {
+        transform: translate(0, -50%)
+          rotate((getHandShift($step-watch-face, $index))+ deg);
+      }
+    }
+  }
+}
