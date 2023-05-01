@@ -25,7 +25,7 @@
     top: 50%;
     left: 38%;
     background: linear-gradient(to left, $minute-hand-color 50%, transparent 50%);
-    animation: hand-rotation 3600s linear infinite;
+    animation: hand-rotation 3600s infinite linear;
   }
 
   &__second-hand {
@@ -35,11 +35,11 @@
     width: $second-hand-width;
     height: $hand-thickness;
     background: linear-gradient(to left,$second-hand-color 50%, transparent 50%);
-    animation: hand-rotation 60s linear infinite;
+    animation: hand-rotation 60s infinite linear;
   }
 
   @keyframes hand-rotation {
-    1% {
+    0% {
       transform: rotate(0deg);
     }
     100% {
