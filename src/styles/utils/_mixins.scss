@@ -4,8 +4,8 @@
   border-radius: 50%;
 }
 
-@mixin animationTime($name, $time, $count) {
-  animation: $name $time linear $count;
+@mixin animationTime($name, $time) {
+  animation: $name $time linear infinite;
 
   @keyframes #{$name} {
     from {

@@ -24,7 +24,7 @@
     &::before {
       position: absolute;
       z-index: 2;
-      content: '';
+      content: "";
       background-color: $color-black;
       @include circle(16px);
     }
@@ -42,12 +42,12 @@
     &--type-minute {
       z-index: 1;
       background-color: $color-blue;
-      @include animationTime(animateMinute, 60s, 1);
+      @include animationTime(animateMinute, 60s);
     }
 
     &--type-second {
       background-color: $color-red;
-      @include animationTime(animateSecond, 1s, 60);
+      @include animationTime(animateSecond, 1s);
     }
   }
 }
