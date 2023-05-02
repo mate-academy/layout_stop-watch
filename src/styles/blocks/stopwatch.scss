@@ -1,0 +1,49 @@
+.stopwatch {
+  @include circle($size-clock);
+  background-color: $bgcolor-stopwatch;
+  border: 10px solid $borded-color-stopwatch;
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+
+  &__hand {
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    background-color: #333;
+    transform-origin: center 0;
+    animation: clock-hand linear infinite;
+   
+    &--second {
+      width: $second-hand-width;
+      height: $second-hand-height;
+      animation-duration: $second-duration;
+      background-color: $second-hand-color;
+    }
+    
+    &--minute {
+      width: $minute-hand-width;
+      height: $minute-hand-height;
+      background-color: $minute-hand-color;
+      animation-duration: $minute-duration;
+      z-index: 1;
+    }
+  }
+
+  &__dot {
+    @include circle($dot-size);
+    background-color: $dot-bgcolor;
+    z-index: 2;
+  }
+}
+
+@keyframes clock-hand {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
