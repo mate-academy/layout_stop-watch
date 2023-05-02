@@ -42,12 +42,12 @@
     &--type-minute {
       z-index: 1;
       background-color: $color-blue;
-      @include animationTime(animateMinute, 60s);
+      @include animationTime(animateMinute, 3600s);
     }
 
     &--type-second {
       background-color: $color-red;
-      @include animationTime(animateSecond, 1s);
+      @include animationTime(animateSecond, 60s);
     }
   }
 }
