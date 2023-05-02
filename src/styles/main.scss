@@ -16,21 +16,21 @@ body {
 
 .city {
   display: flex;
-}
 
-h1 {
-  margin: 0 auto;
-  position: relative;
-  left: 47%;
-  top: 0;
-  color: aquamarine;
-  animation: move 3s linear infinite alternate;
-}
+  &__city {
+    margin: 0 auto;
+    position: relative;
+    left: 47%;
+    top: 0;
+    color: aquamarine;
+    animation: move 3s linear infinite alternate;
+  }
 
-h1:hover {
-  color: darkred;
-  cursor: pointer;
-  animation-play-state: paused;
+  &:hover {
+    color: darkred;
+    cursor: pointer;
+    animation-play-state: paused;
+  }
 }
 
 @keyframes move {
