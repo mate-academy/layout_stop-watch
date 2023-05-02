@@ -1,0 +1,24 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../images/aktivnost-beg-devushka-doroga.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+input[name="controls"] {
+  display: none;
+}
+
+#stop:checked ~ .container .container__numbers {
+  animation-play-state: paused;
+}
+
+#start:checked ~ .container .container__numbers {
+  animation-play-state: running;
+}
+
+#reset:checked ~ .container .container__numbers {
+  animation: none;
+  position: absolute;
+}

@@ -1,0 +1,31 @@
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-43%, -50%);
+
+  &__btn {
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 4px 10px;
+    transition: 0.5s;
+    color: white;
+    font-weight: 500;
+    background-color: $stop-color;
+
+    &:first-child {
+      background-color: $start-color;
+    }
+
+    &:last-child {
+      background-color: $reset-color;
+    }
+  }
+}

@@ -1,14 +1,87 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <div class="wrapper">
+      <input
+        id="start"
+        name="controls"
+        type="radio"
+      >
+      <input
+        id="stop"
+        name="controls"
+        type="radio"
+      >
+      <input
+        id="reset"
+        name="controls"
+        type="radio"
+      >
+
+      <div class="container">
+        <div class="container__box">
+          <div class="container__numbers container__numbers--tensPlaceHours container__numbers--moveuptens">0 1 2 3 4 5 6 7 8 9</div>
+        </div>
+        <div class="container__box">
+          <div class="container__numbers container__numbers--onesPlaceHours container__numbers--moveuptens">0 1 2 3 4 5 6 7 8 9</div>
+        </div>
+        <div class="container__box">
+          <div class="container__numbers">:</div>
+        </div>
+        <div class="container__box">
+          <div class="container__numbers container__numbers--tensPlaceMinutes container__numbers--moveupsix">0 1 2 3 4 5 6 7 8 9</div>
+        </div>
+        <div class="container__box">
+          <div class="container__numbers container__numbers--onesPlaceMinutes container__numbers--moveuptens">0 1 2 3 4 5 6 7 8 9</div>
+        </div>
+        <div class="container__box">
+          <div class="container__numbers">:</div>
+        </div>
+        <div class="container__box">
+          <div class="container__numbers container__numbers--tensPlaceSeconds container__numbers--moveupsix">0 1 2 3 4 5 6 7 8 9</div>
+        </div>
+        <div class="container__box">
+          <div class="container__numbers container__numbers--onesPlaceSeconds container__numbers--moveuptens">0 1 2 3 4 5 6 7 8 9</div>
+        </div>
+        <div class="container__box">
+          <div class="container__numbers">:</div>
+        </div>
+        <div class="container__box">
+          <div class="container__numbers container__numbers--onesPlaceMiliSeconds container__numbers--moveuptens">0 1 2 3 4 5 6 7 8 9</div>
+        </div>
+        <div class="container__box">
+          <div class="container__numbers container__numbers--tensPlaceMiliSeconds container__numbers--moveuptens">0 1 2 3 4 5 6 7 8 9</div>
+        </div>
+        <div class="container__box">
+          <div class="container__numbers container__numbers--hundredsPlaceMiliSeconds container__numbers--moveuptens">0 1 2 3 4 5 6 7 8 9</div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="buttons__btn">
+          <label for="start">
+            Старт
+          </label>
+        </button>
+        <button class="buttons__btn">
+          <label for="stop">
+            Стоп
+          </label>
+        </button>
+        <button class="buttons__btn">
+          <label for="reset">
+            Сбросить
+          </label>
+        </button>
+      </div>
+    </div>
+  </body>
 </html>
