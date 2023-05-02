@@ -1,0 +1,53 @@
+.stop-watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+
+  &__circle {
+    position: relative;
+    padding: $circle-size * 0.1;
+    border: 2px solid $color-black;
+    background-color: $color-grey;
+    @include circle($circle-size);
+  }
+
+  &__hands {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include circle(100%);
+
+    &::before {
+      position: absolute;
+      z-index: 2;
+      content: "";
+      background-color: $color-black;
+      @include circle(16px);
+    }
+  }
+
+  &__hand {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 50%;
+    transform-origin: bottom;
+    margin-left: -1px;
+
+    &--type-minute {
+      z-index: 1;
+      background-color: $color-blue;
+      @include animationTime(animateMinute, 3600s);
+    }
+
+    &--type-second {
+      background-color: $color-red;
+      @include animationTime(animateSecond, 60s);
+    }
+  }
+}
