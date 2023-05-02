@@ -1,13 +1,10 @@
-@mixin square ($size){
+@mixin square ($size) {
   width: $size;
   height: $size;
 }
 
-@mixin bigcircle ($size) {
+@mixin circle ($size) {
   @include square ($size);
   border-radius: 50%;
 }
 
-@mixin smallcircle ($size) {
-  @include bigcircle ($size * 0.05);
-}
