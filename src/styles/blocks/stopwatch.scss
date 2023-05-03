@@ -1,0 +1,30 @@
+.stopwatch {
+  width: $stopwatch_circle;
+  height: $stopwatch_circle;
+  border-radius: 50%;
+  border: 5px solid $color2;
+  position: relative;
+  margin: 20px auto;
+
+  &__hand {
+    border-radius: 50%;
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
+
+    &--second {
+      width: 4px;
+      background-color: $color1;
+      height: calc((#{$stopwatch_circle} / 2) * 0.9);
+      animation: move 60s steps(60, end) infinite;
+    }
+
+    &--minute {
+      width: 5px;
+      background-color: $color2;
+      height: calc((#{$stopwatch_circle} / 2) * 0.7);
+      animation: move 3600s steps(60, end) infinite;
+    }
+  }
+}

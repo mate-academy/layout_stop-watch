@@ -1,0 +1,41 @@
+.counter {
+  height: 50px;
+  width: $stopwatch_circle;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  overflow: hidden;
+  background-color: $color1;
+  border: 3px solid $color2;
+  border-radius: 10px;
+  color: whitesmoke;
+
+  &__min {
+    animation: counter 3600s steps(60, end) infinite;
+
+    @for $index from 1 through 60 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index - 1} ";
+        display: flex;
+        line-height: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__sec {
+    animation: counter 60s steps(60, end) infinite;
+
+    @for $index from 0 through 60 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index - 1}";
+        display: flex;
+        line-height: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+      }
+    }
+  }
+}
