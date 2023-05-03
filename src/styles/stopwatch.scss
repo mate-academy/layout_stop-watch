@@ -32,7 +32,7 @@ $minute-height: 350px;
 
     transform-origin: bottom;
 
-    animation-name: minute;
+    animation-name: clock-face;
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -49,23 +49,14 @@ $minute-height: 350px;
 
     transform-origin: bottom;
 
-    animation-name: seconds;
+    animation-name: clock-face;
     animation-duration: 60s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
 }
 
-@keyframes minute {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes seconds {
+@keyframes clock-face {
   from {
     transform: rotate(0deg);
   }
