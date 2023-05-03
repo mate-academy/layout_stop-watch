@@ -14,17 +14,10 @@ $minute-height: 350px;
 
   background-color: #2a4b5f;
 
-  &_center-dot {
-    @include dot-size(#{$center-dot-size});
-    border-radius: 50%;
-    background-color: #7fffd4;
-
-  }
-
   &_minute-hand {
     position: relative;
     top: -48.5%;
-    left: 50%;
+    left: -19%;
     width: calc(#{$center-dot-size} / 2);
     height: $minute-height;
     background-color: #7fffd4;
@@ -40,8 +33,8 @@ $minute-height: 350px;
 
   &_second-hand {
     position: relative;
-    top: -25%;
-    left: 60%;
+    top: -24%;
+    left: 10%;
     width: calc(#{$center-dot-size} / 1.3);
     height: calc(#{$minute-height} / 2);
     background-color: #49e425;
@@ -53,6 +46,14 @@ $minute-height: 350px;
     animation-duration: 60s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+  }
+
+  &_center-dot {
+    position: relative;
+    left: 50%;
+    @include dot-size(#{$center-dot-size});
+    border-radius: 50%;
+    background-color: #7fffd4;
   }
 }
 
