@@ -1,0 +1,49 @@
+.clock {
+  @include circle($clock-size);
+
+  display: flex;
+  margin: 50px auto;
+  position: relative;
+  background-color: gainsboro;
+
+  &:after {
+    @include circle-dot($dot-size);
+
+    background: skyblue;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  &__second-hand {
+    position: relative;
+    left: 49%;
+    top: 0;
+    width: 12px;
+    height: 300px;
+    background-color: skyblue;
+    border-radius: 5px;
+    transform-origin: 50% 100%;
+    animation: rotate 60s infinite steps(60);
+  }
+
+  &__minute-hand {
+    position: relative;
+    left: 47%;
+    top: 25%;
+    width: 12px;
+    height: 150px;
+    background-color: red;
+    border-radius: 5px;
+    transform-origin: 50% 100%;
+    animation: rotate 3600s infinite linear;
+  }
+}
