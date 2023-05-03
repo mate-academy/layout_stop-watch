@@ -1,0 +1,88 @@
+.watch-screen {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: azure;
+  z-index: 3;
+  border-radius: 10%;
+  top: 275px;
+  right: 55px;
+  height: 160px;
+  width: 120px;
+
+  &__img {
+    height: 130px;
+    width: 130px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(-40deg);
+    border-radius: 10%;
+  }
+}
+
+.clock {
+  &__wise--small {
+    transform: rotate(-40deg);
+    z-index: 3;
+    position: absolute;
+    top: 47px;
+    left: 59px;
+    background-color: rgb(0, 128, 0);
+    width: 4px;
+    height: 30px;
+    border: 1px solid black;
+    transform-origin: bottom;
+    border-radius: $wise-border-radius;
+    animation: clockSmall 43200s linear infinite;
+  }
+
+  &__wise--big {
+    transform: rotateY(-40deg);
+    z-index: 1;
+    position: absolute;
+    top: 27px;
+    left: 59px;
+    background-color: #0000ff;
+    width: 4px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: $wise-border-radius;
+    transform-origin: bottom;
+    animation: clockBig 60s linear infinite;
+  }
+
+  &__wise--medium {
+    transform: rotateY(-40deg);
+    z-index: 2;
+    position: absolute;
+    top: 37px;
+    left: 59px;
+    background-color: red;
+    width: 4px;
+    height: 40px;
+    border: 1px solid black;
+    transform-origin: bottom;
+    border-radius: $wise-border-radius;
+    animation: clockMedium 7200s linear infinite;
+  }
+
+  &__tochka {
+    transform: rotateY(-40deg);
+    z-index: 4;
+    position: absolute;
+    top: 75px;
+    left: 58px;
+    background-color: orange;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+}
