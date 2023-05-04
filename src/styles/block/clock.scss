@@ -4,12 +4,12 @@
   display: flex;
   margin: 50px auto;
   position: relative;
-  background-color: gainsboro;
+  background-color: $background-accent;
 
   &:after {
-    @include circle-dot($dot-size);
+    @include circle($dot-size);
 
-    background: skyblue;
+    background: $accent-blue;
     content: "";
     position: absolute;
     left: 50%;
@@ -27,23 +27,23 @@
     position: relative;
     left: 49%;
     top: 0;
-    width: 12px;
-    height: 300px;
-    background-color: skyblue;
-    border-radius: 5px;
+    width: $width-arrows;
+    height: $height-second-hand;
+    background-color: $accent-blue;
+    border-radius: $radius-hand;
     transform-origin: 50% 100%;
-    animation: rotate 60s infinite steps(60);
+    animation: rotate $animation-duration-second-hand infinite steps(60);
   }
 
   &__minute-hand {
     position: relative;
     left: 47%;
     top: 25%;
-    width: 12px;
-    height: 150px;
-    background-color: red;
-    border-radius: 5px;
+    width: $width-arrows;
+    height: $height-min-hand;
+    background-color: $accent-red;
+    border-radius: $radius-hand;
     transform-origin: 50% 100%;
-    animation: rotate 3600s infinite linear;
+    animation: rotate $animation-duration-min-hand infinite linear;
   }
 }
