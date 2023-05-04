@@ -1,0 +1,114 @@
+.watch {
+  height: 700px;
+  width: 700px;
+  display: flex;
+  margin: 0;
+  position: relative;
+
+  &__secondPart {
+    position: absolute;
+    height: 700px;
+    width: 350px;
+    right: -190px;
+    top: 1px;
+    left: 150px;
+    z-index: 1;
+  }
+
+  &__firstPart {
+    position: absolute;
+    height: 700px;
+    width: 350px;
+    left: 191px;
+    top: 7px;
+  }
+
+  &__screen {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+    z-index: 3;
+    border-radius: 10%;
+    top: 275px;
+    left: 240px;
+    height: 160px;
+    width: 120px;
+
+    &_img {
+      height: 130px;
+      width: 130px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &_block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotateY(-40deg);
+      border-radius: 10%;
+    }
+  }
+}
+
+.clock {
+  &__small {
+    transform: rotate(-40deg);
+    z-index: 3;
+    position: absolute;
+    top: 47px;
+    left: 59px;
+    background-color: rgb(0, 128, 0);
+    width: 4px;
+    height: 30px;
+    border: 1px solid black;
+    transform-origin: bottom;
+    border-radius: $wise-border-radius;
+    animation: clockMediumSmall 43200s linear infinite;
+  }
+
+  &__big {
+    transform: rotateY(-40deg);
+    z-index: 1;
+    position: absolute;
+    top: 27px;
+    left: 59px;
+    background-color: #0000ff;
+    width: 4px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: $wise-border-radius;
+    transform-origin: bottom;
+    animation: clockBig 60s linear infinite;
+  }
+
+  &__medium {
+    transform: rotateY(-40deg);
+    z-index: 2;
+    position: absolute;
+    top: 37px;
+    left: 59px;
+    background-color: red;
+    width: 4px;
+    height: 40px;
+    border: 1px solid black;
+    transform-origin: bottom;
+    border-radius: $wise-border-radius;
+    animation: clockMediumSmall 3600s linear infinite;
+  }
+
+  &__dot {
+    transform: rotateY(-40deg);
+    z-index: 4;
+    position: absolute;
+    top: 75px;
+    left: 58px;
+    background-color: orange;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+}
