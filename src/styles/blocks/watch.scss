@@ -5,20 +5,20 @@
   margin: 0;
   position: relative;
 
-  &__img {
+  &__img--size {
     position: absolute;
     height: 700px;
     width: 350px;
   }
 
-  &__img--secondPart {
+  &__secondPart {
     right: -190px;
     top: 1px;
     left: 150px;
     z-index: 1;
   }
 
-  &__img--firstPart {
+  &__firstPart {
     left: 191px;
     top: 7px;
   }
@@ -55,7 +55,7 @@
 }
 
 .clock {
-  &__wise--small {
+  &__small {
     transform: rotate(-40deg);
     z-index: 3;
     position: absolute;
@@ -70,7 +70,7 @@
     animation: clockMediumSmall 43200s linear infinite;
   }
 
-  &__wise--big {
+  &__big {
     transform: rotateY(-40deg);
     z-index: 1;
     position: absolute;
@@ -85,7 +85,7 @@
     animation: clockBig 60s linear infinite;
   }
 
-  &__wise--medium {
+  &__medium {
     transform: rotateY(-40deg);
     z-index: 2;
     position: absolute;
@@ -100,7 +100,7 @@
     animation: clockMediumSmall 3600s linear infinite;
   }
 
-  &__tochka {
+  &__dot {
     transform: rotateY(-40deg);
     z-index: 4;
     position: absolute;
