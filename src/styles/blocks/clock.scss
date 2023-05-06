@@ -8,7 +8,7 @@
   margin: 50px auto;
   justify-content: center;
   background-image: url(/watch3.png);
-  background-color: #F1EFF1 ;
+  background-color: #f1eff1 ;
 
   &__minuts {
     position: absolute;
@@ -27,15 +27,4 @@
     @include clocks;
     animation: move 60s linear infinite normal;
   }
-  @keyframes move {
-    from {
-      transform: translate(-50% ,-100%) rotate(0deg);
-    }
-
-    to {
-      transform: translate(-50%, -100%) rotate(360deg);
-    }
-  }
 }
-
-
