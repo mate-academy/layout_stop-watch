@@ -1,0 +1,48 @@
+.watch {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+
+  margin-bottom: 30px;
+
+  &__seconds-hand {
+    @extend %start-position;
+    @include animation(1);
+
+    z-index: 1;
+
+    transform-origin: ($hand-height / 2) ($hand-height / 2);
+    transform: rotate(-90deg);
+
+    width: $hand-length * 1.2;
+    height: $hand-height;
+    background-color: blue;
+    border-radius: $hand-height;
+  }
+
+  &__minutes-hand {
+    @extend %start-position;
+    @include animation(60);
+
+    transform-origin: ($hand-height / 2) ($hand-height / 2);
+    transform: rotate(-90deg);
+
+    width: $hand-length;
+    height: $hand-height;
+    background-color: red;
+    border-radius: $hand-height;
+  }
+
+  &__center {
+    @extend %start-position;
+
+    z-index: 2;
+
+    transform: translate(-33%, -33%);
+
+    height: $hand-height * 3;
+    width: $hand-height * 3;
+    background-color: blue;
+    border-radius: 50%;
+  }
+}
