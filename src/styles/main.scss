@@ -1,0 +1,54 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+}
+
+$border: 1px solid brown;
+
+@mixin center {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+}
+
+.stop-watch {
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: bisque;
+  border: $border;
+
+  &__min {
+    @include center;
+    width: 10px;
+    height: 245px;
+    background-color: chocolate;
+    border: $border;
+    animation: move 3600s linear infinite;
+  }
+
+  &__sec {
+    @include center;
+    width: 5px;
+    height: 220px;
+    background-color: brown;
+    border: $border;
+    animation: move 60s linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
