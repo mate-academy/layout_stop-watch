@@ -17,7 +17,7 @@
     @include element-size ($hours-arrow-height,
     $hours-arrow-width);
     border: 2px solid $hours-arrow-color;
-    border-radius: 5px;
+    border-radius: $arrow-border-radius;
     @include position ($base-pos-value,
     $base-pos-value - $hours-arrow-height);
     @include anim-setting($hours-time);
@@ -29,7 +29,7 @@
     @include element-size ($minutes-arrow-height,
     $minutes-arrow-width);
     border: 2px solid $minutes-arrow-color;
-    border-radius: 5px;
+    border-radius: $arrow-border-radius;
     @include position ($base-pos-value,
     $base-pos-value - $minutes-arrow-height);
     @include anim-setting($minutes-time);
