@@ -29,15 +29,7 @@
   }
 
   &__hours {
-    position: absolute;
-    top: $clock-hand-position;
-    left: $clock-hand-position;
-    width: $clock-hand-size;
-    height: $clock-hand-size;
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    transform: rotate(180deg);
+    @include clock-hand;
     animation: rotateHours 43200s linear infinite;
 
     &::before {
@@ -52,16 +44,8 @@
   }
 
   &__minutes {
-    position: absolute;
-    top: $clock-hand-position;
-    left: $clock-hand-position;
-    width: $clock-hand-size;
-    height: $clock-hand-size;
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    transform: rotate(180deg);
-    animation: rotateSeconds 3600s linear infinite;
+    @include clock-hand;
+    animation: rotateMinutes 3600s linear infinite;
 
     &::before {
       content: "";
@@ -75,15 +59,7 @@
   }
 
   &__seconds {
-    position: absolute;
-    top: $clock-hand-position;
-    left: $clock-hand-position;
-    width: $clock-hand-size;
-    height: $clock-hand-size;
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    transform: rotate(180deg);
+    @include clock-hand;
     animation: rotateSeconds 60s linear infinite;
 
     &::before {
@@ -93,7 +69,7 @@
       background-color: #1bcdc4;
       z-index: 10;
       border-radius: $clock-hand-border;
-      box-shadow: $clock-hand-secunde-shadow;
+      box-shadow: $clock-hand-second-shadow;
     }
   }
 
