@@ -1,0 +1,56 @@
+.stopwatch {
+  &__clockface {
+    width: 500px;
+    height: 500px;
+    border: 5px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__center {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  &__seconds {
+    width: 249px;
+    height: 10px;
+    background-color: blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    border-radius: 5px;
+    animation: stopwatch_move 60s infinite linear;
+    transform-origin: left center;
+    z-index: -1;
+  }
+
+  &__minutes {
+    width: 150px;
+    height: 16px;
+    background-color: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    border-radius: 5px;
+    animation: stopwatch_move 3600s infinite linear;
+    transform-origin: left center;
+    z-index: -2;
+  }
+
+  @keyframes stopwatch_move {
+    from {
+      transform: rotate(-90deg);
+    }
+    to {
+      transform: rotate(270deg);
+    }
+  }
+}
