@@ -1,0 +1,30 @@
+.watch {
+  position: relative;
+  margin: 0 auto;
+  @include circle($size-watch);
+  border: 10px solid $border-and-center;
+  background-color: $color-watch;
+
+  &__sec {
+    width: 10px;
+    height: 48%;
+    background-color: $color-sec;
+    animation: moveArrow 60s infinite steps(60);
+  }
+
+  &__min {
+    width: 12px;
+    height: 40%;
+    background-color: $color-min;
+    animation: moveArrow 3600s infinite steps(60);
+  }
+
+  &__center {
+    position: absolute;
+    @include circle($size-center);
+    background-color: $border-and-center;
+    top: 48.5%;
+    left: 48.5%;
+    transform: translate(-50% -50%);
+  }
+}
