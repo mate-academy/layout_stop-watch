@@ -1,0 +1,12 @@
+%center-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+%center-position-hand {
+  @extend %center-position;
+
+  transform-origin: center left;
+  transform: rotate($hand-default-angle);
+}
