@@ -1,0 +1,41 @@
+.stopwatch {
+  width: 300px;
+  height: 300px;
+  background-image: url("/images/stopwatch.png");
+  background-size: cover;
+  position: relative;
+
+  &__center {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $colorBlack;
+    @include center-position;
+    top: 50%;
+  }
+
+  &__min-arrow {
+    width: 4px;
+    height: 100px;
+    background-color: $colorBlack;
+    @include center-position;
+    top: 50px;
+    transform-origin: center bottom;
+    animation: run-min-arrow 3600s infinite;
+  }
+
+  &__sec-arrow {
+    width: 2px;
+    height: 140px;
+    background-color: red;
+    @include center-position;
+    top: 10px;
+    transform-origin: center bottom;
+    animation: run-sec-arrow 60s linear infinite;
+  }
+
+  &:hover &__sec-arrow,
+  &:hover &__min-arrow {
+    animation-play-state: paused;
+  }
+}
