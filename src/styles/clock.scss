@@ -30,7 +30,7 @@
 
   &__hours {
     @include clock-hand;
-    animation: rotateHours 43200s linear infinite;
+    @include clock-hand-animation(43200s);
 
     &::before {
       content: "";
@@ -45,7 +45,7 @@
 
   &__minutes {
     @include clock-hand;
-    animation: rotateMinutes 3600s linear infinite;
+    @include clock-hand-animation(3600s);
 
     &::before {
       content: "";
@@ -60,7 +60,7 @@
 
   &__seconds {
     @include clock-hand;
-    animation: rotateSeconds 60s linear infinite;
+    @include clock-hand-animation(60s);
 
     &::before {
       content: "";
@@ -73,25 +73,7 @@
     }
   }
 
-  @keyframes rotateHours {
-    from {
-      transform: rotate(180deg);
-    }
-    to {
-      transform: rotate(540deg);
-    }
-  }
-
-  @keyframes rotateMinutes {
-    from {
-      transform: rotate(180deg);
-    }
-    to {
-      transform: rotate(540deg);
-    }
-  }
-
-  @keyframes rotateSeconds {
+  @keyframes rotateClockHand {
     from {
       transform: rotate(180deg);
     }
