@@ -2,9 +2,9 @@
   @include position;
 
   transform: translate(-50%, -50%);
-  width: 450px;
-  height: 450px;
-  border: 10px double black;
+  width: $clock-size;
+  height: $clock-size;
+  border: 10px double #000;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -14,9 +14,9 @@
     @include position;
 
     transform: translate(-50%, -50%);
-    width: 15px;
-    height: 15px;
-    background-color: rgb(106, 106, 24);
+    width: $clock-center-size;
+    height: $clock-center-size;
+    background-color: #8c7702;
     border-radius: 50%;
   }
 
@@ -27,9 +27,9 @@
     width: 9px;
     height: 130px;
     border-radius: 40%;
-    background-color: black;
+    background-color: #000;
     transform-origin: center bottom;
-    animation: rotate-minute 60s linear infinite;
+    animation: rotate-minute 3600s linear infinite;
   }
 
   &__second-hand {
@@ -38,10 +38,10 @@
     transform: translate(-50%, -50%) rotate(90deg);
     width: 6px;
     height: 180px;
-    background-color: red;
+    background-color: #f00;
     border-radius: 40%;
     transform-origin: center bottom;
-    animation: rotate-second 1s linear infinite;
+    animation: rotate-second 60s steps(60) infinite;
   }
 
   @keyframes rotate-minute {
