@@ -1,0 +1,73 @@
+html,
+body {
+  @include flex;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.circle {
+  @include flex;
+  width: $circle-size;
+  height: $circle-size;
+  background: $circle-color;
+  border-radius: 50%;
+
+  &__background {
+    position: relative;
+    @include flex;
+    width: $background-size;
+    height: $background-size;
+    background: $background-color;
+    border-radius: 50%;
+  }
+
+  &__background::before,
+  &__background::after {
+    position: absolute;
+    content: "";
+    top: 1rem;
+    width: 0.4rem;
+    background-image: url(https://img.freepik.com/free-vector/abstract-low-poly-ukraine-flag-design-background_1048-15531.jpg);
+    border-radius: 5px;
+    transform-origin: center 100%;
+    animation: animation infinite linear;
+    z-index: 1;
+  }
+
+  &__background::before {
+    height: 13rem;
+    animation-duration: $s-hand;
+  }
+
+  &__background::after {
+    top: 2.6rem;
+    height: 11.5rem;
+    animation-duration: $ms-hand;
+  }
+
+  &__stopwatch {
+    width: $stopwatch-size;
+    height: $stopwatch-size;
+    border-radius: 50%;
+    background-image: url(https://t4.ftcdn.net/jpg/01/97/88/03/360_F_197880340_iQ25pvZqvQDSzLHlf1Wh2XLeI42qPxNy.jpg);
+    z-index: 2;
+  }
+
+  @keyframes animation {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.circle::after {
+  position: absolute;
+  content: url(../img/00007011.png);
+  top: $theme-position;
+  z-index: 0;
+}
