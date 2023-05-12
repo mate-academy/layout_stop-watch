@@ -29,7 +29,7 @@
     border-radius: 40%;
     background-color: #000;
     transform-origin: center bottom;
-    animation: rotate-minute 3600s linear infinite;
+    animation: hand-move 3600s linear infinite;
   }
 
   &__second-hand {
@@ -41,19 +41,10 @@
     background-color: #f00;
     border-radius: 40%;
     transform-origin: center bottom;
-    animation: rotate-second 60s steps(60) infinite;
+    animation: hand-move 60s steps(60) infinite;
   }
 
-  @keyframes rotate-minute {
-    0% {
-      transform: translate(-50%, -100%) rotate(0deg);
-    }
-    100% {
-      transform: translate(-50%, -100%) rotate(360deg);
-    }
-  }
-
-  @keyframes rotate-second {
+  @keyframes hand-move {
     0% {
       transform: translate(-50%, -100%) rotate(0deg);
     }
