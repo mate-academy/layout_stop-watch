@@ -7,27 +7,27 @@
   &__pin {
     position: absolute;
     z-index: 1;
-    border: $border-circle-pin;
-    border-radius: $border-circle-hands;
+    border: $border-width-color;
+    border-radius: $border-width;
   }
 
   &__seconds {
     position: absolute;
     bottom: 0;
-    padding-top: secondsSize($vertical-circle-size);
+    padding-top: secondsSize($circle-size);
     border-left: $hands-width black;
-    border-radius: $border-circle-hands;
-    transform-origin: $transform-origin-bottom;
-    animation: move $move-time-seconds $animation-speed infinite;
+    border-radius: $border-width;
+    transform-origin: bottom;
+    animation: rotateHands $move-time-seconds linear infinite;
   }
 
   &__minutes {
     position: absolute;
     bottom: 0;
-    padding-top: minutesSize($vertical-circle-size);
+    padding-top: minutesSize($circle-size);
     border-left: $hands-width red;
-    border-radius: $border-circle-hands;
-    transform-origin: $transform-origin-bottom;
-    animation: move $move-time-minutes $animation-speed infinite;
+    border-radius: $border-width;
+    transform-origin: bottom;
+    animation: rotateHands $move-time-minutes linear infinite;
   }
 }

@@ -3,9 +3,8 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  @include circle ($vertical-circle-size, $horizontal-circle-size);
-  border: $border-circle-pin;
-  background-image: url("../images/stopwatch-background.png");
-  background-repeat: no-repeat;
+  @include circle ($circle-size);
+  border: $border-width-color;
+  background: url("../images/stopwatch-background.png") no-repeat;
   background-size: contain;
 }
