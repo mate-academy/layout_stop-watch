@@ -1,0 +1,70 @@
+.watch {
+  @extend %flex-disp;
+  @include watch-size($size-watch);
+
+  position: absolute;
+  align-items: center;
+
+  border: 2px dashed #000;
+  background-color: #b0acac;
+
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    @include point-size($size-point);
+
+    position: absolute;
+    border-radius: 50%;
+
+    background: #000;
+
+    z-index: 100;
+  }
+
+  &__minute {
+    @extend %flex-disp;
+    @include arrow-size-minute($size-arrow-minute);
+
+    position: absolute;
+
+    &::before {
+      content: "";
+      position: relative;
+
+      height: $size-arrow-minute / 2;
+      width: $width-arrow;
+
+      background-color: blue;
+      border-radius: 10px;
+
+      z-index: 10;
+
+      animation: clock 3600s infinite linear;
+      transform-origin: bottom;
+    }
+  }
+
+  &__second {
+    @extend %flex-disp;
+    @include arrow-size-second($size-arrow-second);
+
+    position: absolute;
+
+    &::before {
+      content: "";
+      position: relative;
+
+      height: $size-arrow-second / 2;
+      width: $width-arrow;
+
+      background-color: yellow;
+      border-radius: 10px;
+
+      z-index: 11;
+
+      animation: clock 60s infinite linear;
+      transform-origin: bottom;
+    }
+  }
+}
