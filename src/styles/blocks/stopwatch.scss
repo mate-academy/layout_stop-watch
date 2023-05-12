@@ -16,20 +16,16 @@
     height: 150px;
     width: 12px;
     background-color: $stopwatch-minute-hand-color;
-    border-radius: 4px;
-    position: absolute;
-    bottom: 50%;
-    animation: move 3600s linear infinite;
+
+    @include stopwatch-hand(3600s);
   }
 
   &__second-hand {
     height: 220px;
     width: 10px;
     background-color: $stopwatch-second-hand-color;
-    border-radius: 4px;
-    position: absolute;
-    bottom: 50%;
-    animation: move 60s linear infinite;
+
+    @include stopwatch-hand(60s);
   }
 
   &__center {
