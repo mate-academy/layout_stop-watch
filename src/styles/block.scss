@@ -1,0 +1,45 @@
+.watch {
+  position: relative;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+
+  &__minutes {
+    @include watch_run();
+
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    width: 2px;
+    background-color: #000;
+    border-radius: 50%;
+
+    animation-duration: 3600s;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__seconds {
+    @include watch_run();
+
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 1px;
+    background-color: #ff3a3a;
+    border-radius: 30%;
+
+    animation-duration: 60s;
+    animation-timing-function: linear;
+  }
+
+  &__point {
+    position: absolute;
+    bottom: -3px;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #ff3a3a;
+  }
+}
