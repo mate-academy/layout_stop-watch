@@ -1,0 +1,55 @@
+.clock {
+  @include position;
+
+  transform: translate(-50%, -50%);
+  width: $clock-size;
+  height: $clock-size;
+  border: 10px double #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__center {
+    @include position;
+
+    transform: translate(-50%, -50%);
+    width: $clock-center-size;
+    height: $clock-center-size;
+    background-color: #8c7702;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    @include position;
+
+    transform: translate(-50%, -50%) rotate(90deg);
+    width: 9px;
+    height: 130px;
+    border-radius: 40%;
+    background-color: #000;
+    transform-origin: center bottom;
+    animation: hand-move 3600s linear infinite;
+  }
+
+  &__second-hand {
+    @include position;
+
+    transform: translate(-50%, -50%) rotate(90deg);
+    width: 6px;
+    height: 180px;
+    background-color: #f00;
+    border-radius: 40%;
+    transform-origin: center bottom;
+    animation: hand-move 60s steps(60) infinite;
+  }
+
+  @keyframes hand-move {
+    0% {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+  }
+}
