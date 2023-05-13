@@ -1,0 +1,70 @@
+@import "utils/variables";
+
+.watch {
+  position: relative;
+  width: $watch-width;
+  height: $watch-heigh;
+  background-color: #aacbd7;
+  border: 1px black solid;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__center {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 20;
+  }
+
+  &__minutes {
+    position: absolute;
+    width: 20px;
+    height: 235px;
+    background-color: rgb(84, 8, 8);
+    top: 20px;
+    border-radius: 6px;
+    z-index: 10;
+    animation-name: minutes;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    position: absolute;
+    width: 13px;
+    height: 200px;
+    background-color: rgb(145, 51, 211);
+    border-radius: 6px;
+    bottom: 245px;
+    animation-name: seconds;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes minutes {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  
+}
+
+@keyframes seconds {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
