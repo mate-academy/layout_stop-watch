@@ -12,13 +12,11 @@ ___
 
 ## The task
 Create a working stopwatch with minute and second hands using only CSS animations.
-- There are no strict design you should follow for this task, so you can choose on your own.
-- The starting position of the hands should be at 0:00.
+- There are no strict design you should follow for this task, you may choose on your own.
+- The starting position of the hands should be at the top.
 - Display a stopwatch in the center of the page.
-
-## Requirements:
-- Use SCSS and follow BEM
-- Don't forget about files stucture
+- Demo has `80vmin` size
+- For the demo purpose rotate hands during `5s` and `60s`
 
 ---
 ![demo](stopwatch.png)
