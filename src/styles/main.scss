@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  width: 1024px;
+  height: 100%;
+  animation: pulse 5s infinite;
+}
+  
+@keyframes pulse {
+  0% {
+    background-color: #001f3f;
+  }
+  100% {
+    background-color: #ff4136;
+  }
+}
+
+.city {
+  display: flex;
+
+  &__city {
+    margin: 0 auto;
+    position: relative;
+    left: 47%;
+    top: 0;
+    color: aquamarine;
+    animation: move 3s linear infinite alternate;
+  }
+
+  &:hover {
+    color: darkred;
+    cursor: pointer;
+    animation-play-state: paused;
+  }
+}
+
+@keyframes move {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 400px;
+  }
+}
+
+.clock {
+  margin: 50px 450px;
+  width: 500px;
+  height: 500px;
+  border: 5px solid black;
+  border-radius: 50%;
+  background-image: url(../img/pngegg.png);
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hours-container,
+.minutes-container,
+.seconds-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.hours-container {
+  animation: rotate 43200s infinite linear;
+
+  &__hours {
+    background: white;
+    height: 20%;
+    left: 48.75%;
+    position: absolute;
+    top: 30%;
+    transform-origin: 50% 100%;
+    width: 2.5%;
+  }
+}
+
+.minutes-container {
+  animation: rotate 3600s infinite linear;
+
+  &__minutes {
+    background: pink;
+    height: 40%;
+    left: 49%;
+    position: absolute;
+    top: 10%;
+    transform-origin: 50% 100%;
+    width: 2%;
+  }
+}
+
+.seconds-container {
+  animation: rotate 60s infinite linear;
+
+  &__seconds {
+    background: yellowgreen;
+    height: 45%;
+    left: 49.5%;
+    position: absolute;
+    top: 14%;
+    transform-origin: 50% 80%;
+    width: 1%;
+    z-index: 8;
+  }
+}
+
+.minutes-container--min_move {
+  animation: rotate 3600s infinite steps(60);
+}
+
+.seconds-container--sec_move {
+  animation: rotate 60s infinite steps(60);
+}
