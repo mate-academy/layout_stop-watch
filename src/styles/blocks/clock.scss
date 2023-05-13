@@ -1,0 +1,92 @@
+.clock {
+  @include square($size-clock);
+  position: relative;
+  box-sizing: border-box;
+
+  background-image: url(http://surl.li/gzoyf);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: $size-clock-border solid rgb(238, 244, 248);
+  border-radius: 50%;
+
+  &__decor {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+
+    &--hand--minute {
+      @extend %hand-decor;
+      top: $size-hour-decor * 3;
+      z-index: 2;
+
+      animation: hand-rotate 3600s linear infinite;
+
+      width: $width-hand;
+      height: $height-hand-minute;
+      transform-origin: center bottom;
+      transform: translateX(-50%);
+
+      background-color: $color-clock-decor;
+      border-radius: 5px;
+    }
+
+    &--hand--second {
+      @extend %hand-decor;
+      top: ($size-hour-decor * 3) +
+        ($height-hand-minute - $height-hand-second);
+
+      animation: hand-rotate 60s linear infinite;
+
+      width: $width-hand;
+      height: $height-hand-second;
+      background-color: #acacac;
+    }
+
+    &--position--center {
+      @include square($size-clock * 0.04);
+      top: 50%;
+      left: 50%;
+      z-index: 3;
+
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: $color-clock-decor;
+    }
+
+    &--position--top,
+    &--position--right,
+    &--position--bottom,
+    &--position--left {
+      @extend %hour-decor;
+    }
+
+    &--position--top {
+      top: $position-decor-hour;
+      left: 50%;
+
+      transform: translateX(-50%);
+    }
+
+    &--position--right {
+      top: 50%;
+      left: $position-decor-hour;
+
+      transform: translateY(-50%);
+    }
+
+    &--position--bottom {
+      bottom: $position-decor-hour;
+      left: 50%;
+
+      transform: translateX(-50%);
+    }
+
+    &--position--left {
+      top: 50%;
+      right: $position-decor-hour;
+
+      transform: translateY(-50%);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+%hour-decor {
+  @include square($size-hour-decor);
+  background-color: $color-clock-decor;
+  border-radius: 50%;
+}
+
+%hand-decor {
+  left: 50%;
+  transform-origin: center bottom;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
