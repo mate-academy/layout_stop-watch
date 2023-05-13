@@ -1,7 +1,9 @@
+@import "utils/variables";
+
 .watch {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: $watch-width;
+  height: $watch-heigh;
   background-color: #aacbd7;
   border: 1px black solid;
   border-radius: 50%;
@@ -18,9 +20,8 @@
     z-index: 20;
   }
 
-  &::before {
+  &__minutes {
     position: absolute;
-    content: "";
     width: 20px;
     height: 235px;
     background-color: rgb(84, 8, 8);
@@ -28,15 +29,14 @@
     border-radius: 6px;
     z-index: 10;
     animation-name: minutes;
-    animation-duration: 4320s;
+    animation-duration: 3600s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     transform-origin: bottom;
   }
 
-  &::after {
+  &__seconds {
     position: absolute;
-    content: "";
     width: 13px;
     height: 200px;
     background-color: rgb(145, 51, 211);
