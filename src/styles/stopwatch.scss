@@ -1,0 +1,55 @@
+
+@mixin arrows {
+  position: absolute;
+  bottom: 50%;
+  width: 10px;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
+
+.stopwatch {
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 500px;
+  width: 500px;
+  background-color: #f0e8e8;
+  border-radius: 100%;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.7);
+
+  &__center {
+    width: 20px;
+    height: 20px;
+    background-color: #6e3b3b;
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &__minute {
+    height: 200px;
+    background-color: #d15559;
+    z-index: 2;
+    animation: rotate 3600s linear infinite;
+    @include arrows;
+  }
+
+  &__second {
+    height: 250px;
+    background-color: #4b9aaa;
+    z-index: 1;
+    animation: rotate 60s linear infinite;
+    @include arrows;
+  }
+
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
