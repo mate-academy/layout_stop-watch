@@ -1,0 +1,34 @@
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: $watch-width;
+  height: $watch-height;
+  border-radius: 50%;
+  border: $watch-border;
+  background-color: $watch-color;
+
+  &__min {
+    position: absolute;
+    width: $min-width;
+    height: $min-height;
+    border: $border-min-sec;
+    background-color: $min-color;
+    @include watch;
+    animation: move 3600s linear infinite normal;
+  }
+
+  &__sec {
+    position: absolute;
+    width: $sec-width;
+    height: $sec-height;
+    border: $border-min-sec;
+    background-color: $sec-color;
+    @include watch;
+    animation: move;
+    animation: move 60s linear infinite normal;
+  }
+}
+
+
