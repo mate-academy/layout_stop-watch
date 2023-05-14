@@ -1,0 +1,21 @@
+@import "./variables";
+
+@mixin element-size ($height , $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin default-set {
+  box-sizing: border-box;
+  position: absolute;
+}
+
+@mixin position ($left , $top) {
+  left: $left;
+  top: $top;
+}
+
+@mixin anim-setting ($time-in-seconds) {
+  animation: arrow $time-in-seconds linear infinite ;
+  transform-origin: bottom;
+}

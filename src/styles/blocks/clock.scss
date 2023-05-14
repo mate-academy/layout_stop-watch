@@ -1,0 +1,58 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.clock {
+  border: 2px solid black;
+  position: absolute;
+  background-color: $clock-color;
+  @include element-size ($clock-size, $clock-size);
+  border-radius: $circle;
+  @include position ($base-pos-value , $base-pos-value);
+  transform: translate(-$base-pos-value,
+  -($base-pos-value));
+
+  &__hours-arrow {
+    @include default-set;
+    background-color: $hours-arrow-color;
+    @include element-size ($hours-arrow-height,
+    $hours-arrow-width);
+    border: 2px solid $hours-arrow-color;
+    border-radius: $arrow-border-radius;
+    @include position ($base-pos-value,
+    $base-pos-value - $hours-arrow-height);
+    @include anim-setting($hours-time);
+  }
+
+  &__minutes-arrow {
+    @include default-set;
+    background-color: $minutes-arrow-color;
+    @include element-size ($minutes-arrow-height,
+    $minutes-arrow-width);
+    border: 2px solid $minutes-arrow-color;
+    border-radius: $arrow-border-radius;
+    @include position ($base-pos-value,
+    $base-pos-value - $minutes-arrow-height);
+    @include anim-setting($minutes-time);
+
+    &::after {
+      position: absolute;
+      content: " ";
+      background-color: $minutes-arrow-color;
+      @include element-size($dot-size, $dot-size);
+      border-radius: $circle;
+      @include position (2 * $base-pos-value , 2 * $base-pos-value);
+      transform: translate(-$base-pos-value,
+      -$base-pos-value);
+    }
+  }
+
+  @keyframes arrow {
+    from {
+      transform: rotate(360deg);
+    }
+
+    to {
+      transform: rotate(720deg);
+    }
+  }
+}
