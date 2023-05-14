@@ -1,0 +1,28 @@
+.time {
+  position: relative;
+  width: $size-time;
+  height: $size-time;
+
+  &__hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: $color-hand;
+    transform-origin: top center;
+    border-radius: 300px;
+
+    &--second {
+      animation: rotate-sec 60s linear infinite;
+      animation-delay: -30s;
+      width: 10px;
+      height: 230px;
+    }
+
+    &--minute {
+      animation: rotate-min 3600s linear infinite;
+      animation-delay: -1800s;
+      width: 10px;
+      height: 130px;
+    }
+  }
+}
