@@ -1,0 +1,50 @@
+@import "./utils.scss/available";
+@import "./utils.scss/plaseholder";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: auto;
+  width: 600px;
+  height: 600px;
+  border: 10px dotted rgb(128, 24, 128);
+  border-radius: $shift;
+
+  &__clock {
+    width: 40px;
+    height: 40px;
+    border: 0 solid rgb(81, 54, 125);
+    border-radius: $shift;
+    background-color: rgb(81, 54, 125);
+  }
+
+  &__minute-hand {
+    height: 280px;
+    width: 10px;
+    left: $shift;
+    top: $shift;
+    background-color: rgb(13, 239, 13);
+    transform: translate(-50%, -107%);
+    @extend %clock;
+  }
+  &__second-hand {
+    height: 160px;
+    width: 20px;
+    top: $shift;
+    left: $shift;
+    background-color: rgb(236, 72, 99);
+    transform: translate(-50%, -112%);
+    @extend %clock;
+  }
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
