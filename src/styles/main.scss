@@ -1,0 +1,71 @@
+.watch {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #365ccb;
+
+  &__minute-hand {
+    height: 200px;
+    width: 17px;
+    background-color: #13d42a;
+    animation: hand-rotate 3600s infinite steps(60);
+  }
+
+  &__second-hand {
+    height: 230px;
+    width: 17px;
+    background-color: #13d480;
+    animation: hand-rotate 60s infinite steps(60);
+  }
+
+  &__center-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: linear-gradient(229deg, #365ccb, #1694ad, #13d480, #13d42a);
+    background-size: 240% 240%;
+    animation: gradient-animation 16s ease infinite;
+  }
+
+  @keyframes hand-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+.hand {
+  position: absolute;
+  left: 48%;
+  bottom: 50%;
+  transform-origin: bottom;
+  border-radius: 20px;
+}
