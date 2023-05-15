@@ -1,0 +1,35 @@
+.watch {
+  &__container {
+    position: relative;
+    @include circle($watch-size);
+    border: 5px dotted black;
+  }
+
+  &__center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    @include circle($watch-center-size);
+    background-color: yellow;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    height: 180px;
+    width: 25px;
+    @extend %hand-position-settings;
+    background-color: aquamarine;
+    @extend %animation-settings;
+    animation-duration: 3600s;
+  }
+
+  &__sec-hand {
+    height: 250px;
+    width: 10px;
+    @extend %hand-position-settings;
+    background-color: rgba(00, 00, 255, 0.5);
+    @extend %animation-settings;
+    animation-duration: 60s;
+  }
+}
