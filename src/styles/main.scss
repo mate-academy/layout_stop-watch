@@ -28,6 +28,7 @@
     background-color: rgb(13, 239, 13);
     transform: translate(-50%, -107%);
     @extend %clock;
+    animation-duration: 60s;
   }
   &__second-hand {
     height: 160px;
@@ -37,16 +38,15 @@
     background-color: rgb(236, 72, 99);
     transform: translate(-50%, -112%);
     @extend %clock;
+    animation-duration: 5s;
   }
   @keyframes move {
     from {
-      // transform: translate(-50%, -100%);
-      transform: rotate(0deg);
+      transform: translate(-50%, -100%) rotate(0deg);
     }
 
     to {
-      // transform: translate(-50%, -100%);
-      transform: rotate(360deg);
+      transform: translate(-50%, -100%) rotate(360deg);
     }
   }
 }
