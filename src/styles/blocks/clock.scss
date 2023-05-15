@@ -1,0 +1,70 @@
+.page {
+  background-color: $bg-color;
+}
+
+.clock {
+  background-color: $clock-color;
+  background-image: url(./images/clock.png);
+  background-size: cover;
+  height: $clock-height;
+  width: $clock-width;
+  border: 10px solid $main-color;
+  border-radius: 50%;
+  box-shadow: 0 0 50px $main-color;
+
+  &--position{
+    @include position-center;
+  }
+
+  &__hour-hand {
+    width: 22%;
+    height: 1.5%;
+    background-color: $main-color;
+    animation: animate 720s linear infinite;
+
+    &--position {
+      @include position-hand;
+    }
+  }
+
+  &__minute-hand {
+    width: 34%;
+    height: 1%;
+    background-color: $main-color;
+    animation: animate 360s linear infinite;
+
+    &--position {
+      @include position-hand;
+    }
+  }
+
+  &__second-hand{
+    width: 38%;
+    height: 0.7%;
+    background-color: #8e261f;
+    animation: animate 60s steps(60) infinite;
+
+    &--position {
+      @include position-hand;
+    }
+  }
+
+  &::after {
+    @include position-center;
+
+    content: '';
+    border-radius: 50%;
+    height: 4%;
+    width: 4%;
+    background-color: $main-color;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
