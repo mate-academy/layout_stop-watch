@@ -1,0 +1,18 @@
+.taskName {
+  position: relative;
+  color: $taskName-color;
+  animation: move 15s alternate infinite linear;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes move {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
