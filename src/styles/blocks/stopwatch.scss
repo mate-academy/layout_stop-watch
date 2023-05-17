@@ -1,0 +1,36 @@
+.stopwatch {
+  @include circle($clock-size);
+  border: 5px solid #e6ddc4;
+  background-color: #f0e9d2;
+  transform: rotate(180deg);
+
+  &__hand {
+    @include position;
+    border-radius: 3px;
+    transform-origin: center 0;
+    transform: translate(-50%, -50%);
+
+    &--minute {
+      width: 6px;
+      height: $clock-size / 2 - 40px;
+      background-color: #678983;
+      animation: rotate linear $hour infinite;
+    }
+
+    &--second {
+      width: 4px;
+      height: $clock-size / 2 - 5px;
+      background-color: #181d31;
+      animation: rotate steps(60) $minute infinite;
+    }
+  }
+
+  &::before {
+    content: "";
+    @include position;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    @include circle(20px);
+    background-color: #181d31;
+  }
+}
