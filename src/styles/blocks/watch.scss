@@ -1,0 +1,63 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+
+  &__minute-arrow {
+    position: absolute;
+    bottom: 50%;
+    width: 10px;
+    height: 90px;
+    background-color: red;
+    border-radius: 10px;
+    animation-name: minute-arrow-move;
+    animation-duration: 3600s;
+
+    @include mixin-arrow-animation-properties;
+  }
+
+  @keyframes minute-arrow-move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__second-arrow {
+    position: absolute;
+    bottom: 50%;
+    width: 10px;
+    height: 130px;
+    background-color: blue;
+    border-radius: 10px;
+    animation-name: second-arrow-move;
+    animation-duration: 60s;
+
+    @include mixin-arrow-animation-properties;
+  }
+
+  @keyframes second-arrow-move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__center {
+    position: relative;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+}
