@@ -3,7 +3,8 @@
 
 .clock {
   border-radius: $circle;
-  @include element-size ($clock-size, $clock-size);
+  height: $clock-size;
+  width: $clock-size;
   border: 6px dotted black;
   position: absolute;
   top: $base-pos-value;
@@ -12,60 +13,43 @@
   (-$base-pos-value));
 
   &__center {
-    @include default-set;
-    @include element-size ($center-hight,
-    $center-width);
-    @include position ($base-pos-value - ($center-width / 2),
-    $base-pos-value - $center-hight/ 2);
+    position: absolute;
+    height: $center-hight;
+    width: $center-width;
+    left: $base-pos-value - ($center-width / 2);
+    top: $base-pos-value - ($center-hight/ 2);
     border-radius: $circle;
     z-index: 1;
-    background-color: $center-color;
-    }
+    background-color: $color-orange;
+  }
 
   &__hours-arrow {
-    @include default-set;
-    @include element-size ($hours-arrow-height,
-    $hours-arrow-width);
-    @include position ($base-pos-value - ($hours-arrow-width / 2) ,
-    $base-pos-value - $hours-arrow-height);
-    background-color: $hours-arrow-color;
-     @include anim-setting($hours-time);
-    }
+    position: absolute;
+    height: $hours-arrow-height;
+    width: $hours-arrow-width;
+    left: $base-pos-value - ($hours-arrow-width / 2);
+    top: $base-pos-value - $hours-arrow-height;
+    background-color: $color-blue;
+    @include anim-setting($hours-time);
+  }
 
   &__minutes-arrow {
-    @include default-set;
-    @include element-size ($minutes-arrow-height,
-    $minutes-arrow-width);
-    @include position ($base-pos-value - ($minutes-arrow-width / 2),
-    $base-pos-value - $minutes-arrow-height );
-    background-color: $minutes-arrow-color;
+    position: absolute;
+    height: $minutes-arrow-height;
+    width: $minutes-arrow-width;
+    left: $base-pos-value - ($minutes-arrow-width / 2);
+    top: $base-pos-value - $minutes-arrow-height;
+    background-color: $color-green;
     @include anim-setting($minutes-time);
-
-    &::after {
-      position: absolute;
-      content: " ";
-      background-color: $minutes-arrow-color;
-      @include element-size($dot-size, $dot-size);
-      border-radius: $circle;
-      @include position (2 * $base-pos-value , 2 * $base-pos-value);
-      transform: translate(-$base-pos-value,
-      -$base-pos-value);
-    }
   }
 
   @keyframes arrow {
     from {
-      transform: rotate(360deg);
+      transform: rotate(0deg);
     }
 
     to {
-      transform: rotate(720deg);
+      transform: rotate(360deg);
     }
   }
 }
-
-
-
-
-
-
