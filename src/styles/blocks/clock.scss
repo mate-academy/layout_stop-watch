@@ -1,0 +1,67 @@
+@use "../utils/_mixins";
+@use "../utils/_variables" as *;
+
+.clock {
+  position: relative;
+  @include mixins.circle($size);
+  border: 5px solid black;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__hand {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    background: transparent;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    &--minute {
+      width: 4px;
+      animation: spin 3600s linear 0s infinite;
+
+      &::after {
+        top: 15%;
+        height: 40%;
+        background-color: black;
+      }
+    }
+
+    &--second {
+      width: 2px;
+      animation: spin 60s steps(60, end) 0s infinite;
+
+      &::after {
+        height: 60%;
+        background-color: red;
+      }
+    }
+
+    &--pin {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 14px;
+      height: 14px;
+      background: black;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
