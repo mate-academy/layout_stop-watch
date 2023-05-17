@@ -3,10 +3,11 @@ body {
   }
   
   .wall {
-    display: flex;
-    justify-content: center;
-    margin-top: shift($height-body, $stop-watch-size);
-  
+   position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+
     .stop-watch {
       position: relative;
   
@@ -28,31 +29,26 @@ body {
         position: absolute;
         bottom: bottom-shift-hand($stop-watch-size);
         left: shift($stop-watch-size, $width-minute-hand);
-        height: $height-minute-hand;
-        width: $width-minute-hand;
-        border-radius: 50%;
+        @include watch-hands($height-minute-hand, $width-minute-hand);
+
+        @extend %hand-animation;
         background-color: blueviolet;
-        transform: rotate(360deg);
-        transform-origin: bottom;
-        animation-duration: 60s;
-        animation-timing-function: steps(60, end);
-  
+        animation-duration: 3600s;
+
         animation-name: stop-watch;
+
       }
   
       &__second {
           position: absolute;
           left:  shift($stop-watch-size, $width-second-hand);
           bottom: bottom-shift-hand($stop-watch-size);
-          height: $height-second-hand;
-          width: $width-second-hand;
-          transform: translateX(-50%);
-          border-radius: 50%;
+          
+          @include watch-hands($height-second-hand, $width-second-hand);
+
+          @extend %hand-animation;
           background-color: yellowgreen;
-          transform: rotate(360deg);
-          transform-origin: bottom;
-          animation-duration: 1s;
-          animation-timing-function: steps(60, end);
+          animation-duration: 60s;
           animation-iteration-count: 60;
     
           animation-name: stop-watch;

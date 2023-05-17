@@ -3,3 +3,15 @@
   width: $size;
   border-radius: 50%;
 }
+
+@mixin watch-hands($height, $width) {
+  height: $height;
+  width: $width;
+  border-radius: 50%;
+}
+
+%hand-animation {
+  transform: rotate(360deg);
+  transform-origin: bottom;
+  animation-timing-function: steps(60, end);
+}
