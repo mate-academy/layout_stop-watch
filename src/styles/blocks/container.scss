@@ -1,3 +1,5 @@
+@import "../animation/spin.scss";
+
 .container::before {
   content: "";
   position: absolute;
@@ -45,7 +47,7 @@
     bottom: 50%;
     left: calc(50% - 5px);
     border-radius: 5px;
-    animation: spin 6s linear infinite;
+    animation: spin 1s linear infinite;
     transform-origin: bottom;
   }
 
@@ -58,21 +60,12 @@
     bottom: 50%;
     left: calc(50% - 5px);
     border-radius: 5px;
-    animation: spin 72s linear infinite;
+    animation: spin 60s linear infinite;
     transform-origin: bottom;
   }
 
   &:hover::before,
   &:hover::after {
     animation-play-state: paused;
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(-360deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }

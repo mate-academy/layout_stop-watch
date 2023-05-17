@@ -1,3 +1,5 @@
+@import "../animation/move.scss";
+
 .taskName {
   position: relative;
   color: $taskName-color;
@@ -5,14 +7,5 @@
 
   &:hover {
     animation-play-state: paused;
-  }
-}
-
-@keyframes move {
-  from {
-    left: 0;
-  }
-  to {
-    left: 100%;
   }
 }
