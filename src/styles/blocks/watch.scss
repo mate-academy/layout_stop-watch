@@ -1,0 +1,54 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.watch {
+  position: relative;
+
+  height: $watch-size;
+  width: $watch-size;
+
+  border-radius: 50%;
+  border: 1px solid black;
+  background: url("../../src/img/watch.png") no-repeat center;
+  background-size: 90%;
+
+  &::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+    content: " ";
+    width: $watch-middle-size;
+    height: $watch-middle-size;
+
+    background-color: $dark-blue-color;
+  }
+
+  &__seconds- {
+    &container {
+      @include hand-container(60s);
+    }
+
+    &hand {
+      @include hand($dark-blue-color, 150px);
+    }
+  }
+
+  &__minutes- {
+    &container {
+      @include hand-container(3600s);
+    }
+
+    &hand {
+      @include hand(#d15559, 100px);
+    }
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
