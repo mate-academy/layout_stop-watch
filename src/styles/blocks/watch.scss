@@ -1,0 +1,26 @@
+.watch {
+  @include square ($watch-size);
+  border: 1px solid black;
+  background-color: #ccc;
+
+  &__second-line {
+    @include line ($second-line-width, $second-line-height);
+    background-color: orange;
+    left: ($watch-size - $second-line-width)/2;
+    bottom: ($watch-size - $second-line-width)/2;
+    animation: move 60s linear infinite;
+  }
+
+  &__minute-line {
+    @include line ($minute-line-width, $minute-line-height);
+    background-color: green;
+    left: ($watch-size - $minute-line-width)/2;
+    bottom: ($watch-size - $minute-line-width)/2;
+    animation: move 3600s linear infinite;
+  }
+
+  &__center {
+    @include square ($center-size);
+    background-color: blue;
+  }
+}
