@@ -1,0 +1,24 @@
+@mixin line {
+  position: absolute;
+  bottom: 50%;
+  width: 15px;
+  border: 2px solid $border-color;
+  border-radius: 50% 50% 0 0;
+  transform-origin: bottom;
+}
+
+@mixin clock-size {
+  width: $clock-size;
+  height: $clock-size;
+}
+
+@mixin center-size {
+  width: $clock-center-size;
+  height: $clock-center-size;
+}
+
+@mixin display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
