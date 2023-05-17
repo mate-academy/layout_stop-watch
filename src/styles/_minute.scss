@@ -1,0 +1,17 @@
+.watch__hand-minute {
+  width: 12px;
+  height: 150px;
+  background-color: rgb(24, 121, 211);
+  border-radius: 6px;
+
+  position: relative;
+
+  animation: second 3600s linear infinite;
+  transform-origin: 6px 145px;
+}
+
+@keyframes second {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
