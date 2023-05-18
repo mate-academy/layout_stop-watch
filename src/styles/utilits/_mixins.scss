@@ -1,0 +1,30 @@
+@mixin rectangle($size1, $size2) {
+  height: $size1;
+  width: $size2;
+}
+
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@mixin animation-rotation($duration) {
+  transform-origin: bottom center;
+  animation: $duration linear infinite turn-on-360;
+
+  @keyframes turn-on-360 {
+    from {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+  }
+}
