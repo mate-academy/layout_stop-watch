@@ -1,8 +1,8 @@
 .stopwatch {
   position: relative;
   @include circle($clock-size);
-  border: thick double $stopwatch-border-color;
-  background-color: $stopwatch-background-color;
+  border: thick double $dark-grey;
+  background-color: $light-blue;
   transform: rotate(180deg);
 
   &__hand {
@@ -14,14 +14,14 @@
     &--minute {
       width: 8px;
       height: calc(50% - 45px);
-      background-color: $hand-minute-color;
+      background-color: $dark-grey;
       animation: rotate linear $rotation-duration-minutes infinite;
     }
 
     &--second {
       width: 3px;
       height: calc(50% - 2px);
-      background-color: $hand-second-color;
+      background-color: $dark-grey;
       animation: rotate steps(60) $rotation-duration-seconds infinite;
     }
   }
@@ -32,6 +32,6 @@
     z-index: 1;
     transform: translate(-50%, -50%);
     @include circle(30px);
-    background-color: $circle-color;
+    background-color: $dark-grey;
   }
 }
