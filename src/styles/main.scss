@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+}
+
+.clock {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: dotted black;
+  border-radius: 50%;
+  box-shadow: 10px 10px 10px  grey;
+}
+
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 999;
+}
+
+.min,
+.sec {
+  position: absolute;
+}
+
+.min,
+.min__hand {
+  width: 190px;
+  height: 190px;
+}
+
+.sec,
+.sec__hand {
+  width: 230px;
+  height: 230px;
+}
+
+.min__hand,
+.sec__hand {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.min__hand {
+  animation: time 60s infinite linear;
+}
+
+.sec__hand {
+  animation: time 5s infinite linear;
+}
+
+.min__hand::before {
+  content: "";
+  height: 80px;
+  width: 8px;
+  position: absolute;
+  background-color: blue;
+
+}
+
+.sec__hand::before {
+  content: "";
+  height: 100px;
+  width: 6px;
+  position: absolute;
+  background-color: green;
+
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
