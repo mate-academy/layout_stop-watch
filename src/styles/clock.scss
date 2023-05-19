@@ -1,0 +1,43 @@
+body {
+  background-color: #fbf4ff;
+}
+
+.clock {
+  @include position-center;
+  @include circle($clockface-size);
+
+  position: relative;
+  transform: translate(-50%, 25%);
+
+  background: #dbccfc url(../images/Ios_clock.svg) no-repeat center;
+  background-size: 90%;
+
+  &::after {
+    @include circle($little-circle-size);
+    @include position-center;
+
+    content: "";
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    background-color: #9f7bf2;
+  }
+
+  &__minutes {
+    @include arow ($top-move-minutes,$width-minutes, $top-move-minutes);
+    animation: rotate 3600s infinite linear;
+    background: #3b0f6d;
+  }
+
+  &__seconds {
+    @include arow ($height-seconds, $width-seconds, $top-move-seconds);
+    animation: rotate 60s infinite linear;
+    background: #281060;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
