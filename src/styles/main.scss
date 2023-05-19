@@ -1,0 +1,76 @@
+@import "utils/variables";
+@import "utils/function.scss";
+
+.watch {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  border: 3px solid black;
+  border-radius: 50%;
+  background-image: url(../images/background.jpg);
+  background-position: center center;
+  background-size: cover;
+  box-shadow: inset -2px 0 27px 0 rgba(214,211,214,1);
+
+  &::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 5%;
+    height: 5%;
+    border-radius: 50%;
+    content: "";
+    background: $color-main;
+    z-index: 1;
+  }
+
+  &__hour {
+    position: absolute;
+    top: getShift($standartSize ,$hour-hand-height);
+    left: 50%;
+    width: $width-hour-hand;
+    height: $hour-hand-height;
+    border-radius: $border-hand-radius;
+    background-color: $color-main;
+    transform-origin: calc(50% - 5px) 100%;
+    animation: rotate 43200s linear infinite;
+    z-index: 1;
+  }
+
+  &__minute {
+    position: absolute;
+    top: getShift($standartSize , $minute-hand-height);
+    left: 50%;
+    width: $width-minute-hand;
+    height: $minute-hand-height;
+    border-radius: $border-hand-radius;
+    background-color: $color-main;
+    animation: rotate 3600s steps(60) infinite;
+    transform-origin: calc(50% - 4px) 100%;
+  }
+
+  &__second {
+    position: absolute;
+    top: getShift($standartSize , $second-hand-height);
+    left: 50%;
+    width: $width-second-hand;
+    height: $second-hand-height;
+    background-color: $color-addition;
+    animation: rotate 60s steps(60) infinite;
+    transform-origin: calc(50% - 2px) 100%;
+    border-radius: $border-hand-radius;
+  }
+}
+
+@keyframes rotate {
+  0% {
+
+    transform: rotateZ(0deg) translate(-50%);
+  }
+  100% {
+    transform: rotateZ(360deg) translate(-50%);
+
+  }
+}
