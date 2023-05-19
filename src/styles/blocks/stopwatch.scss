@@ -1,0 +1,73 @@
+.stopwatch {
+  @extend %display-elements-flex;
+  @include square($stopwatch-size);
+
+  border: 5px solid grey;
+  border-radius: 10%;
+  background-color: rgb(232, 251, 192);
+
+  &__area {
+    @include square($area-size);
+    position: absolute;
+    perspective: 400px;
+    border: 2px solid grey;
+    border-radius: 50%;
+    background-color: rgb(237, 255, 237);
+  }
+
+  &__numbers {
+    margin: 0;
+
+    @extend %display-elements-flex;
+    @include square($numbers-size);
+
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  @each $number, $position in $numbers {
+    &__numbers--#{$number} {
+      #{$position}: 0;
+    }
+
+    &__numbers--#{$number}::before {
+      content: $number;
+    }
+  }
+
+  &__harm {
+    position: absolute;
+
+    &--center {
+      @include square($center-size);
+      border: 2px solid black;
+      border-radius: 50%;
+      background-color: rgb(248, 244, 129);
+    }
+
+    &--big {
+      transform: translateY(-50%);
+      height: 100px;
+      width: 20px;
+      @extend %border-harms;
+      background-color: rgb(7, 186, 246);
+      animation: round 3600s steps(60, end) infinite;
+    }
+
+    &--little {
+      transform: translateY(-50%);
+      height: 120px;
+      width: 10px;
+      @extend %border-harms;
+      background-color: red;
+
+      animation: round 60s steps(60, end) infinite;
+    }
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+}
