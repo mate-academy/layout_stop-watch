@@ -1,0 +1,79 @@
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/extends";
+
+@import "./normalize.scss";
+
+.watch {
+  @include positionCenter();
+
+  &__wrapper {
+    @include positionCenter();
+    padding: 10px;
+    @include squere(595px);
+    border: 20px solid $clock-body-color;
+    border-radius: 50%;
+    box-shadow: 0 0 38px 4px rgba($color: $shadow-color, $alpha: 0.5);
+    transition: box-shadow 0.5s;
+    background: linear-gradient(178.1deg,
+    $main-them-color 8.5%,
+    $gradient-color 82.4%);
+
+    &:hover {
+      box-shadow: 0 0 48px 4px rgba($color: $shadow-color, $alpha: 0.8);
+    }
+  }
+
+  &__center {
+    @include positionCenter();
+    @include squere(24px);
+    background-color: $crnter-dot-color;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__minute {
+    position: absolute;
+    @include diffTopLef(107px, 302px);
+    @include diffWidthHight(10px, 200px);
+    background-color: $minute-arrow-color;
+    z-index: 1;
+    animation-timing-function: linear;
+    animation-duration: 3600s;
+    transform-origin: 5px 200px;
+    @extend %arrow-styles;
+  }
+
+  &__second {
+    position: absolute;
+    @include diffTopLef(52px, 302px);
+    @include diffWidthHight(10px, 255px);
+    background-color: $second-arrow-color;
+    animation-timing-function: steps(60, start);
+    animation-duration: 60s;
+    transform-origin: 5px 255px;
+    @extend %arrow-styles;
+  }
+
+  &__hour {
+    position: absolute;
+    @include diffTopLef(158px, 302px);
+    @include diffWidthHight(10px, 150px);
+    background-color: $hour-arrow-color;
+    z-index: 1;
+    animation-timing-function: linear;
+    animation-duration: 86400s;
+    transform-origin: 5px 150px;
+    @extend %arrow-styles;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

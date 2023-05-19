@@ -1,0 +1,21 @@
+@mixin positionCenter() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin squere($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin diffTopLef($top, $left) {
+  top: $top;
+  left: $left;
+}
+
+@mixin diffWidthHight($w, $h) {
+  width: $w;
+  height: $h;
+}
