@@ -1,0 +1,42 @@
+.stopwatch {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  border: 5px dotted #000;
+  border-radius: 50%;
+
+  &__second-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background-color: #070;
+    height: 240px;
+    width: 5px;
+    transform-origin: top center;
+    animation: hands-rotate 6s linear infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background-color: #00ff;
+    height: 120px;
+    width: 15px;
+    transform-origin: top center;
+    animation: hands-rotate 12s linear;
+  }
+
+  &__inner-cirlce {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffd700;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+}
