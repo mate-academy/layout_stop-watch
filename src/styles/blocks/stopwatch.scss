@@ -1,0 +1,29 @@
+.stopwatch {
+  position: relative;
+  @extend %flex-display;
+  @include circle($stopwatch-size);
+  border: $stopwatch-size * 0.02 solid #ccc;
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+    @include circle($stopwatch-size * 0.05);
+    background-color: #333;
+  }
+
+  &__minutes {
+    @extend %hand-position;
+    width: $stopwatch-size * 0.03;
+    height: $stopwatch-size * 0.35;
+    background-color: #111;
+    animation: 3600s steps(60, end) infinite movement;
+  }
+
+  &__seconds {
+    @extend %hand-position;
+    width: $stopwatch-size * 0.02;
+    height: $stopwatch-size * 0.43;
+    background-color: #888;
+    animation: 60s steps(60, end) infinite movement;
+  }
+}
