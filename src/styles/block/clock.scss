@@ -1,0 +1,56 @@
+.clock {
+  position: relative;
+  background-color: #eee;
+  border: 1px solid black;
+  border-radius: $size-clock / 2;
+  width: $size-clock;
+  height: $size-clock;
+
+  &__sec {
+    position: absolute;
+    top: 0;
+    left: $size-clock / 2 - $width-line / 2;
+
+    transform-origin: bottom center;
+    animation: move 60s linear infinite;
+
+    width: $width-line;
+    height: $size-clock / 2;
+    background-color: #1d5194;
+    border-radius: 3px;
+  }
+
+  &__min {
+    position: absolute;
+    top: $size-clock / 4;
+    left: $size-clock / 2 - $width-line / 2;
+
+    transform-origin: bottom center;
+    animation: move 3600s steps(60, end) infinite;
+
+    width: $width-line;
+    height: $size-clock / 4;
+    background-color: rgb(255, 0, 64);
+    border-radius: 3px;
+  }
+
+  &__dot {
+    position: absolute;
+    top: $size-clock / 2 - $size-dot / 2;
+    left: $size-clock / 2 - $size-dot / 2;
+
+    width: $size-dot;
+    height: $size-dot;
+    background-color: #1d5194;
+    border-radius: $size-dot / 2;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
