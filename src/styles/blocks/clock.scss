@@ -1,0 +1,30 @@
+.clock {
+  display: flex;
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 4px solid black;
+  margin: 50px auto;
+  justify-content: center;
+  background-image: url(/watch3.png);
+  background-color: #f1eff1 ;
+
+  &__minuts {
+    position: absolute;
+    width: 6px;
+    height: 265px;
+    background-color: black;
+    @include clocks;
+    animation: move 3600s linear infinite normal;
+  }
+
+  &__seconds {
+    position: absolute;
+    width: 2px;
+    height: 220px;
+    background-color: red;
+    @include clocks;
+    animation: move 60s linear infinite normal;
+  }
+}
