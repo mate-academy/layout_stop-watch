@@ -1,0 +1,77 @@
+$clock-size: 80vmin;
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 50px;
+
+  height: $clock-size;
+  width: $clock-size;
+  border: $clock-size * 0.02 dotted #000;
+  border-radius: 50%;
+}
+
+.second-arrow {
+  height: $clock-size * 0.5;
+  width: $clock-size * 0.02;
+  background-color: #060;
+
+  position: absolute;
+  top: 0;
+  animation-name: move;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-fill-mode: backwards;
+  animation-timing-function: linear;
+
+  z-index: 2;
+}
+
+.minute-arrow {
+  height: $clock-size * 0.25;
+  width: $clock-size * 0.03;
+  background-color: #009;
+
+  position: absolute;
+  top: $clock-size * 0.25;
+  animation-name: move;
+  animation-iteration-count: infinite;
+  animation-duration: 60s;
+  animation-fill-mode: backwards;
+  animation-timing-function: linear;
+  z-index: 1;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+
+}
+
+.circle {
+  height: $clock-size * 0.1;
+  width: $clock-size * 0.1;
+  background-color: #ff0;
+  border-radius: 50%;
+
+  position: absolute;
+  z-index: 3;
+}
