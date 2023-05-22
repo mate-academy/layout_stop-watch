@@ -1,0 +1,4 @@
+@function topIndentHand($watch-size, $watch-hand-length) {
+  $diff: ($watch-size - (2 * $watch-hand-length));
+  @return ( $diff/ 2) / $watch-box-size *100%;
+}
