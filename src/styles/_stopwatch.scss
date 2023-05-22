@@ -1,0 +1,43 @@
+.stopwatch {
+  position: relative;
+
+  @include shape(500px, 500px);
+
+  border: 10px dotted #000;
+  @extend %bd-radius;
+
+  &__center-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include shape(40px, 40px);
+
+    background-color: orange;
+    @extend %bd-radius;
+    z-index: 10;
+  }
+
+  &__hand-min {
+    position: absolute;
+    left: calc(50% - 6px);
+    top: 30%;
+
+    @include shape(12px, 100px);
+
+    background-color: blue;
+    @include animation(3600s);
+  }
+
+  &__hand-sec {
+    top: 7%;
+    left: calc(50% - 4px);
+    position: absolute;
+
+    @include shape(8px, 215px);
+
+    background-color: green;
+    @include animation(60s);
+  }
+}

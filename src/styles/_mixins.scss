@@ -1,0 +1,9 @@
+@mixin shape($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin animation($duration) {
+  animation: rotate-hand #{$duration} steps(60) 0s infinite;
+  transform-origin: bottom;
+}
