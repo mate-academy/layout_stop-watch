@@ -1,0 +1,37 @@
+.watch {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background-image: url(/watch.png);
+  background-color: #e7e7e7;
+
+  &__seconds-hand {
+    position: absolute;
+    background-color: rgb(255, 3, 3);
+    width: 2px;
+    height: 180px;
+    animation: hands 60s linear infinite normal;
+    @include hands;
+  }
+
+  &__minutes-hand {
+    position: absolute;
+    background-color: rgb(1, 1, 1);
+    width: 6px;
+    height: 255px;
+    animation: hands 3600s linear infinite normal;
+    @include hands;
+  }
+
+  @keyframes hands {
+    from {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+  }
+}
