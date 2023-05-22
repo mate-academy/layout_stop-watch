@@ -1,0 +1,49 @@
+.watch {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
+  border: 8px solid #469597;
+
+  @include circle($watch-size);
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    width: 4px;
+    border-radius: 10%;
+
+    transform-origin: bottom;
+
+    &--minute {
+      height: $minute-height;
+      background-color: #469597;
+      animation: move 3600s linear infinite;
+    }
+
+    &--second {
+      height: $second-height;
+      background-color: #b99095;
+      animation: move 60s linear infinite;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    background-color: #b99095;
+    @include circle($dot-size);
+    z-index: 1;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
