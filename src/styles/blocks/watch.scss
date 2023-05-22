@@ -14,7 +14,7 @@
     border-radius: $watch-hand-width;
     background-color: green;
     transform-origin: bottom;
-    animation: watch 3600s steps(60) 0s infinite;
+    animation: watch 60s infinite linear;
   }
 
   &__second-hand {
@@ -27,7 +27,7 @@
     background-color: blue;
     transform-origin: bottom;
     transition: transform linear;
-    animation: watch 60s steps(60) 0s infinite;
+    animation: watch 5s infinite linear;
   }
 
   @keyframes watch {
