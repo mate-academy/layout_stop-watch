@@ -1,0 +1,52 @@
+@import "variables.scss";
+@import "animations.scss";
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.watch {
+  background: url(../images/clock.png) center center/cover no-repeat;
+  box-sizing: border-box;
+  width: $clock-size;
+  height: $clock-size;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &__middle-cirlce {
+    position: relative;
+    width: $clock-size / 7;
+    height: $clock-size / 7;
+    border-radius: 50%;
+    background-color: gray;
+    z-index: 2;
+  }
+  &__second-arrow {
+    position: absolute;
+    top: $clock-size / 2 - $second-arrow-height;
+    width: $second-arrow-width;
+    height: $second-arrow-height;
+    background-color: green;
+    z-index: 1;
+    animation: rotate-arrow 60s linear infinite;
+    animation-fill-mode: forwards;
+    transform-origin: bottom;
+  }
+  &__minute-arrow {
+    position: absolute;
+    top: $clock-size / 2 - $minute-arrow-height;
+    width: $minute-arrow-width;
+    height: $minute-arrow-height;
+    background-color: red;
+    z-index: 1;
+    animation: rotate-arrow 3600s linear infinite;
+    animation-fill-mode: forwards;
+    transform-origin: bottom;
+  }
+}
