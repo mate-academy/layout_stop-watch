@@ -7,7 +7,7 @@ body {
 }
 
 main {
-  height: 100vh;
+  height: 80vmin;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +40,7 @@ $clock-radius: -150px;
     top: $clock-radius + $base-size/4;
     left: $base-size/4;
     transform-origin: bottom center;
-    animation: move 60s steps(64, end) infinite;
+    animation: move 5s steps(60, end) infinite;
     z-index: -1;
   }
 
@@ -52,7 +52,7 @@ $clock-radius: -150px;
     top: (($clock-radius * -0.4) - 5) * -1;
     left: $base-size/4;
     transform-origin: bottom center;
-    animation: move 300s steps(64, end) infinite;
+    animation: move 60s steps(60, end) infinite;
   }
 
   &__center {
