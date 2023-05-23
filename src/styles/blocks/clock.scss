@@ -1,0 +1,39 @@
+.clock {
+  @include circle($clock-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  border: 5px solid $clock-color;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.01),
+    0 15px 15px rgba(0, 0, 0, 0.3),
+    inset 0 15px 15px rgba(0, 0, 0, 0.3);
+
+  &__center {
+    @include circle($center-size);
+    position: absolute;
+    background-color: $white-color;
+  }
+
+  &__minute {
+    @include hands($minute-hand-height, $minute-hand-width, $minute-hand-color);
+    animation: move 3600s linear infinite;
+  }
+
+  &__seconds {
+    @include hands($seconds-hand-height, $seconds-hand-width, $white-color);
+    animation: move 60s linear infinite;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
