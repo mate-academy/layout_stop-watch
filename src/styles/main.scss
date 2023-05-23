@@ -1,11 +1,11 @@
 $diameter: 80vmin;
 $center-diameter: 30px;
 
-@mixin for-hands {
+@mixin for-hands($name) {
   position: absolute;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-name: rotateSecondHand;
+  animation-name: $name;
 }
 
 .stop-watch {
@@ -40,7 +40,7 @@ $center-diameter: 30px;
     margin-top: -5px;
     transform-origin: left;
     animation-duration: 60s;
-    @include for-hands;
+    @include for-hands(rotateMinuteHand);
   }
 
   &__second-hand {
@@ -52,7 +52,7 @@ $center-diameter: 30px;
     margin-left: -1px;
     transform-origin: top;
     animation-duration: 5s;
-    @include for-hands;
+    @include for-hands(rotateSecondHand);
   }
 
   @keyframes rotateMinuteHand {
