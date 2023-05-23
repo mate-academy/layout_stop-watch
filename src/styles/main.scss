@@ -1,5 +1,12 @@
-$diameter: 500px;
+$diameter: 80vmin;
 $center-diameter: 30px;
+
+@mixin for-hands {
+  position: absolute;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: rotateSecondHand;
+}
 
 .stop-watch {
   border: 5px white dotted;
@@ -24,11 +31,6 @@ $center-diameter: 30px;
     z-index: 1;
   }
 
-  &__minute-hand,
-  &__second-hand {
-    position: absolute;
-  }
-
   &__minute-hand {
     background-color: blue;
     width: 200px;
@@ -37,29 +39,25 @@ $center-diameter: 30px;
     left: 50%;
     margin-top: -5px;
     transform-origin: left;
-    animation-duration: 3600s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-name: rotateMinuteHand;
+    animation-duration: 60s;
+    @include for-hands;
   }
 
   &__second-hand {
     background-color: yellow;
     width: 2px;
-    height: 250px;
+    height: 300px;
     top: 50%;
     left: 50%;
     margin-left: -1px;
     transform-origin: top;
-    animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-name: rotateSecondHand;
+    animation-duration: 5s;
+    @include for-hands;
   }
 
   @keyframes rotateMinuteHand {
     0% {
-      transform: rotate(0deg);
+      transform: rotate(-93deg);
     }
     100% {
       transform: rotate(360deg);
@@ -68,10 +66,10 @@ $center-diameter: 30px;
 
   @keyframes rotateSecondHand {
     0% {
-      transform: rotate(0deg);
+      transform: rotate(180deg);
     }
     100% {
-      transform: rotate(360deg);
+      transform: rotate(540deg);
     }
   }
 }
