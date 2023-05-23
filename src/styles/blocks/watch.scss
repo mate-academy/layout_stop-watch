@@ -1,0 +1,98 @@
+.watch {
+  height: 80vw;
+  max-height: 80vh;
+  width: 80vw;
+  max-width: 80vh;
+  border: 5px dashed #000;
+  border-radius: 50%;
+  position: relative;
+
+  &__hand {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+
+    &--type {
+
+      &--minute {
+        animation: minute 5s linear;
+        transform: translate(-50%,-50%);
+      }
+
+      &--hour {
+        animation: hour 60s linear;
+        transform: translate(-50%,-50%);
+      }
+
+    }
+  }
+
+  &__hand-half {
+    border-radius: 5px;
+    // border: 1px solid #000;
+    &--type {
+
+      &--minute {
+        height: 37vw;
+        max-height: 37vh;
+        width: 3vw;
+        max-width: 3vh;
+      }
+
+      &--hour {
+        height: 27vw;
+        max-height: 27vh;
+        width: 4vw;
+        max-width: 4vh;
+      }
+
+    }
+
+    &--color {
+
+      &--red {
+        background-color: red;
+      }
+
+      &--blue {
+        background-color: blue;
+      }
+
+    }
+  }
+
+  &__center {
+    height: 6vw;
+    max-height: 6vh;
+    width: 6vw;
+    max-width: 6vh;
+    position: absolute;
+    background-color: yellowgreen;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+  }
+
+}
+
+@keyframes hour {
+  from {
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+
+@keyframes minute {
+  from {
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
