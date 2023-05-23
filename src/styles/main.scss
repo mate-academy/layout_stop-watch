@@ -21,9 +21,8 @@ $clock-radius: -150px;
   width: $base-size;
   position: relative;
 
-
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: $clock-radius;
     left: $clock-radius;
@@ -32,7 +31,6 @@ $clock-radius: -150px;
     border: red 2px dashed;
     border-radius: 50%;
   }
-
 
   &__minute {
     height: ($clock-radius * -1) + 5;
@@ -66,7 +64,6 @@ $clock-radius: -150px;
     z-index: 5;
   }
 }
-
 
 @keyframes move {
   0% {
