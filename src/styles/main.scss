@@ -1,0 +1,75 @@
+$diameter: 80vmin;
+$center-diameter: 30px;
+
+@mixin for-hands($name) {
+  position: absolute;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: $name;
+}
+
+.stop-watch {
+  border: 5px white dotted;
+  background-color: #000;
+  height: $diameter;
+  width: $diameter;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: $center-diameter;
+    width: $center-diameter;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    background-color: blue;
+    width: 200px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    transform-origin: left;
+    animation-duration: 60s;
+    @include for-hands(rotateMinuteHand);
+  }
+
+  &__second-hand {
+    background-color: yellow;
+    width: 2px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-left: -1px;
+    transform-origin: top;
+    animation-duration: 5s;
+    @include for-hands(rotateSecondHand);
+  }
+
+  @keyframes rotateMinuteHand {
+    0% {
+      transform: rotate(-93deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotateSecondHand {
+    0% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(540deg);
+    }
+  }
+}
