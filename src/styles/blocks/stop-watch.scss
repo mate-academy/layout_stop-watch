@@ -1,0 +1,53 @@
+.watch {
+  @include circle (100vh);
+  background-image: url(../images/flag.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  box-sizing: border-box;
+
+  &__minute {
+    position: absolute;
+    @include positionOfHand ($minute-hand-height);
+
+    width: $hand-width;
+    height: $minute-hand-height;
+    border-radius: 10px;
+    background-color: #ff0;
+
+    transform-origin: bottom center;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__second {
+    position: absolute;
+    @include positionOfHand($second-hand-height);
+
+    width: $hand-width;
+    height: $second-hand-height;
+    border-radius: 15px;
+    background-color: #00f;
+
+    transform-origin: bottom center;
+    animation: rotate 60s steps(60, end) infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    @include center ($dot-size);
+    border-radius: 50%;
+    background-color: #c0c0c0;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

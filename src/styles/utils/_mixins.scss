@@ -1,0 +1,15 @@
+@mixin center ($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin positionOfHand ($hand-height) {
+  top: calc(50% - #{$hand-height});
+  left: calc(50% - (#{$hand-width} / 2));
+}
+
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
