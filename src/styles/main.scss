@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$base-size: 20px;
+$clock-radius: -150px;
+
+.watch-base {
+  height: $base-size;
+  width: $base-size;
+  position: relative;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: $clock-radius;
+    left: $clock-radius;
+    right: $clock-radius;
+    bottom: $clock-radius;
+    border: red 2px dashed;
+    border-radius: 50%;
+  }
+
+
+  &__minute {
+    height: ($clock-radius * -1) + 5;
+    width: 5px;
+    background-color: green;
+    position: absolute;
+    top: $clock-radius + $base-size/4;
+    left: $base-size/4;
+    transform-origin: bottom center;
+    animation: move 60s steps(64, end) infinite;
+    z-index: -1;
+  }
+
+  &__hour {
+    height: ($clock-radius * -0.4) + 5;
+    width: 8px;
+    background-color: blue;
+    position: absolute;
+    top: (($clock-radius * -0.4) - 5) * -1;
+    left: $base-size/4;
+    transform-origin: bottom center;
+    animation: move 300s steps(64, end) infinite;
+  }
+
+  &__center {
+    height: $base-size;
+    width: $base-size;
+    border-radius: 50%;
+    background-color: orange;
+    position: absolute;
+    z-index: 5;
+  }
+}
+
+
+@keyframes move {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
