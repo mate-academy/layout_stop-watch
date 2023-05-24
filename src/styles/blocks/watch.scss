@@ -8,58 +8,18 @@
   position: relative;
 
   &__hand {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 50%;
-    left: 50%;
 
-    &--type {
-
-      &--minute {
-        animation: minute 5s linear;
-        transform: translate(-50%,-50%);
-      }
-
-      &--hour {
-        animation: hour 60s linear;
-        transform: translate(-50%,-50%);
-      }
-
+    &--minute {
+      @extend %absolute-centering;
+      animation: minute 3s linear;
     }
-  }
 
-  &__hand-half {
-    border-radius: 5px;
-    &--type {
-
-      &--minute {
-        height: 37vw;
-        max-height: 37vh;
-        width: 3vw;
-        max-width: 3vh;
-      }
-
-      &--hour {
-        height: 27vw;
-        max-height: 27vh;
-        width: 4vw;
-        max-width: 4vh;
-      }
+    &--hour {
+      @extend %absolute-centering;
+      animation: hour 4s linear;
 
     }
 
-    &--color {
-
-      &--red {
-        background-color: red;
-      }
-
-      &--blue {
-        background-color: blue;
-      }
-
-    }
   }
 
   &__center {
@@ -67,12 +27,9 @@
     max-height: 6vh;
     width: 6vw;
     max-width: 6vh;
-    position: absolute;
+    @extend %absolute-centering;
     background-color: yellowgreen;
     border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     z-index: 1;
   }
 
@@ -80,16 +37,16 @@
 
 @keyframes hour {
   from {
-    transform: translate(-50%,-50%) rotate(0deg);
+    transform: translate(-50%,-50%) rotate(15deg);
   }
   to {
-    transform: translate(-50%,-50%) rotate(360deg);
+    transform: translate(-50%,-50%) rotate(35deg);
   }
 }
 
 @keyframes minute {
   from {
-    transform: translate(-50%,-50%) rotate(0deg);
+    transform: translate(-50%,-50%) rotate(240deg);
   }
   to {
     transform: translate(-50%,-50%) rotate(360deg);
