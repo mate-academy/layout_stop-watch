@@ -1,0 +1,48 @@
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.stop-watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  &__point {
+    position: absolute;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(18, 103, 160);
+  }
+
+  &__second {
+    position: absolute;
+    border-radius: 10px;
+    height: 250px;
+    width: 10px;
+    background-color: rgb(73, 144, 192);
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__minute {
+    position: absolute;
+    border-radius: 10px;
+    height: 300px;
+    width: 10px;
+    background-color: rgb(211, 99, 99);
+    animation: move 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  @keyframes move {
+    from {
+      transform: translate(5px, -96%) rotate(0deg);
+    }
+
+    to {
+      transform: translate(5px, -96%) rotate(360deg);
+    }
+  }
+}
