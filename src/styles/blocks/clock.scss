@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 80vmin;
+  height: 80vmin;
+  border: 2px dotted blue;
+  border-radius: 100%;
+  background-color: black;
+  z-index: 1;
+}
+
+.clock {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+  border-radius: 100%;
+
+  &__hand-second {
+    @extend %setting-second;
+  }
+
+  &__hand-hour {
+    @extend %setting-hour;
+  }
+}
+
+@keyframes clock-hand-rotate-hour {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(80deg);
+  }
+}
+
+@keyframes clock-hand-rotate-second {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
