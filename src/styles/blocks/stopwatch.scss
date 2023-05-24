@@ -1,0 +1,49 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vmin;
+  height: 80vmin;
+  border: 4px dotted #000;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    transform-origin: bottom center;
+  }
+
+  &__hand--second {
+    position: absolute;
+    height: 48%;
+    width: 1%;
+    background-color: red;
+    top: 10px;
+    animation: rotate 60s;
+  }
+
+  &__hand--minute {
+    position: absolute;
+    height: 28%;
+    width: 2%;
+    top: 125px;
+    background-color: blue;
+    animation: rotate 5s;
+  }
+
+  &__center-circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: orange;
+  }
+}
