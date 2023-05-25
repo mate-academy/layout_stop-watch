@@ -1,0 +1,7 @@
+@mixin rotateMarkupBlocks() {
+  @for $i from 1 through 30 {
+    &:nth-child(#{$i}) {
+      transform: rotate(6deg * $i);
+    }
+  }
+}
