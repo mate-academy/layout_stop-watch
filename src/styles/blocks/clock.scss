@@ -1,0 +1,62 @@
+.clock {
+  @extend %radius;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 660px;
+  height: 660px;
+
+  border: 10px dotted black;
+
+  margin: auto;
+
+  &__field {
+    @extend %radius;
+    width: 50px;
+    height: 50px;
+
+    position: relative;
+
+    background-color: yellow;
+
+  }
+
+  &__minute {
+    @extend %format_time;
+    @extend %radius;
+
+    width: 15px;
+    height: 310px;
+
+    background-color: yellowgreen;
+
+    transform: translate(-50%, -107%);
+
+    animation-duration: 60s;
+  }
+
+  &__second {
+    @extend %format_time;
+    @extend %radius;
+
+    width: 20px;
+    height: 250px;
+
+    background-color: blue;
+
+    transform: translate(-50%, -100%);
+
+    animation-duration: 5s;
+  }
+
+  @keyframes move {
+    from {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+  }
+}
