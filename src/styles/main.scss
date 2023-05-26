@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vmin;
+  height: 80vmin;
+  border: 4px dotted #000;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    transform-origin: bottom center;
+  }
+
+  &__hand--sec {
+    position: absolute;
+    height: 48%;
+    width: 1%;
+    background-color: red;
+    top: 10px;
+    animation: rotate 60s infinite ease;
+  }
+
+  &__hand--min {
+    position: absolute;
+    height: 28%;
+    width: 2%;
+    top: 140px;
+    background-color: blue;
+    animation: rotate 3600s infinite ease;
+  }
+
+  &__center-point {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: orange;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
