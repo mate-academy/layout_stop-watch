@@ -1,0 +1,48 @@
+$center-size: 20px;
+
+.stopwatch {
+  position: relative;
+
+  &__center {
+    position: absolute;
+    top: 300px;
+    left: 500px;
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+    background-color: purple;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 110px;
+    left: 505px;
+    width: 10px;
+    height: 200px;
+    background-color: rgb(0, 120, 255);
+    border-radius: 10px;
+    animation: run 3600s infinite linear;
+    transform-origin: 4px 200px;
+  }
+
+  &__second {
+    position: absolute;
+    top: 140px;
+    left: 505px;
+    width: 8px;
+    height: 170px;
+    background-color: rgb(255, 0, 100);
+    border-radius: 10px;
+    animation: run 60s infinite linear;
+    transform-origin: 5px 170px;
+  }
+
+  @keyframes run {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
