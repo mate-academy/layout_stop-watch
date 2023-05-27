@@ -1,0 +1,21 @@
+.stopwatch {
+  position: relative;
+  height: 100vh;
+
+  &__minute-hand {
+    @extend %central-position;
+    transform-origin: bottom center;
+    animation: arrowMove 3600s linear infinite;
+  }
+
+  &__second-hand {
+    @extend %central-position;
+    transform-origin: bottom center;
+    animation: arrowMove 60s steps(60, end) infinite;
+  }
+
+  &__central-circle {
+    @extend %central-position;
+    transform: translate(-50%, -50%);
+  }
+}
