@@ -1,0 +1,36 @@
+.clock {
+  width: 60vh;
+  height: 60vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 10px dotted $--color-border;
+
+  &__container {
+    width: 3vh;
+    height: 3vh;
+    border-radius: 50%;
+    background-color: $--color-border;
+    position: relative;
+  }
+
+  &__minute {
+    @extend %clock-hand;
+
+    width: 1vh;
+    height: 21vh;
+    background-color: $--color-minute;
+    animation-duration: 60s;
+  }
+
+  &__second {
+    @extend %clock-hand;
+
+    width: 1vh;
+    height: 25vh;
+    background-color: $--color-second;
+    animation-duration: 5s;
+  }
+}
