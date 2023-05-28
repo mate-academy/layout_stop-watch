@@ -11,13 +11,12 @@
 
     &--minute {
       @extend %absolute-centering;
-      animation: minute 3s linear;
+      animation: minute 5s linear;
     }
 
     &--hour {
       @extend %absolute-centering;
-      animation: hour 4s linear;
-      transform: translate(-50%,-50%) rotate(35deg);
+      animation: hour 60s linear;
     }
 
   }
@@ -37,16 +36,16 @@
 
 @keyframes hour {
   from {
-    transform: translate(-50%,-50%) rotate(15deg);
+    transform: translate(-50%,-50%) rotate(0deg);
   }
   to {
-    transform: translate(-50%,-50%) rotate(35deg);
+    transform: translate(-50%,-50%) rotate(360deg);
   }
 }
 
 @keyframes minute {
   from {
-    transform: translate(-50%,-50%) rotate(240deg);
+    transform: translate(-50%,-50%) rotate(0deg);
   }
   to {
     transform: translate(-50%,-50%) rotate(360deg);
