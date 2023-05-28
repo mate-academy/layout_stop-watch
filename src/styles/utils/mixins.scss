@@ -1,0 +1,28 @@
+@mixin positionElements($clock-size,  $minutes-length) {
+  top: calc((#{$clock-size} / 2) - #{$minutes-length});
+}
+
+
+@mixin animationFunc($duration){
+  animation: move $duration infinite steps(60);
+  @keyframes move {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@mixin animationScale (){
+  animation: scale 5s infinite;
+  @keyframes scale {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.4);
+    }
+  }
+}
