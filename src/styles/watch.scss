@@ -11,7 +11,7 @@
   &__center {
     width: #{$circle-size};
     height: #{$circle-size};
-    border-radius:#{$radius-border};
+    border-radius: #{$radius-border};
     background: linear-gradient(yellow, green, yellow);
     z-index: 2;
     @include animationScale;
@@ -19,7 +19,7 @@
   &__second {
     position: absolute;
     @include positionElements(#{$clock-size}, #{$second-length});
-    height:#{$second-length};
+    height: #{$second-length};
     border: 5px solid #000;
     border-radius: 10px;
     transform-origin: bottom center;
@@ -29,7 +29,7 @@
   &__minute {
     position: absolute;
     @include positionElements(#{$clock-size}, #{$minute-length});
-    height:#{$minute-length};
+    height: #{$minute-length};
     border-radius: 10px;
     border: 8px solid #000;
     transform-origin: bottom center;
