@@ -1,0 +1,68 @@
+.clock {
+  position: relative;
+  top: 50%;
+  margin: auto;
+  height: $clock-size;
+  width: $clock-size;
+  transform: translateY(-50%);
+  border: $border solid gray;
+  border-radius: 50%;
+  background-color: rgb(246, 243, 243);
+
+  &__axis {
+    position: absolute;
+    top: ($clock-size - $axis-size) / 2 - $border;
+    left: ($clock-size - $axis-size) / 2 - $border;
+    height: $axis-size;
+    width: $axis-size;
+    z-index: 4;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  &__spot {
+    position: absolute;
+    top: $clock-size / 2 - $axis-size + 1.25px;
+    left: $clock-size / 2 - $axis-size + 1.25px;
+    height: $axis-size / 2;
+    width: $axis-size / 2;
+    z-index: 4;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  &__sec-arrow {
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    left: ($clock-size - 4) / 2 - $border;
+    height: 154px;
+    width: 4px;
+    z-index: 2;
+    border-radius: 4px;
+    background-color: red;
+    transform-origin: 2px 140px;
+    animation-name: move-sec;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__min-arrow {
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    left: ($clock-size - 19) / 2 - $border;
+    height: 150px;
+    width: 3px;
+    z-index: 1;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: black;
+    transform-origin: 2px 136px;
+    animation-name: move-sec;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
