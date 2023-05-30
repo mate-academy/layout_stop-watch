@@ -1,0 +1,82 @@
+:root {
+  --color-black: #000;
+  --color-orange: #ffb500;
+  --color-blue: #00f;
+  --color-green: #008000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 2px dotted var(--color-black);
+  border-radius: 50%;
+  position: relative;
+
+  &__circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-orange);
+  }
+
+  &__arrow-minute,
+  &__arrow-second {
+    position: absolute;
+    left: 50%;
+    transform-origin: bottom center;
+  }
+
+  &__arrow-minute {
+    width: 3%;
+    height: 25%;
+    top: 25%;
+    background-color: var(--color-blue);
+    transform: translateX(-50%) rotate(90deg);
+    animation: rotateMinuteHand 60s linear infinite;
+  }
+
+  &__arrow-second {
+    width: 2%;
+    height: 50%;
+    top: 0;
+    background-color: var(--color-green);
+    transform: translateX(-50%);
+    animation: rotateSecondHand 5s linear infinite;
+  }
+}
+
+@keyframes rotateMinuteHand {
+  0% {
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  100% {
+    transform: translateX(-50%) rotate(450deg);
+  }
+}
+
+@keyframes rotateSecondHand {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
