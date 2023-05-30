@@ -1,0 +1,26 @@
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin watch-hand($val1, $val2) {
+  height: $val1;
+  width: $val2;
+}
+
+@mixin animation($seconds) {
+  animation: turn $seconds infinite linear;
+
+  @keyframes turn {
+    from {
+      transform: rotate(0deg);
+      transform-origin: bottom;
+    }
+
+    to {
+      transform: rotate(360deg);
+      transform-origin: bottom;
+    }
+  }
+}

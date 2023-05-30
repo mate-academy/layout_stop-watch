@@ -1,0 +1,34 @@
+.watch {
+  @include circle($circleSize);
+  border: 5px dotted #000;
+  position: relative;
+
+  &__seconds {
+    @include watch-hand(40vmin, 1vmin);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background: $green;
+    transform-origin: bottom center;
+    @include animation(5s);
+  }
+
+  &__minutes {
+    @include watch-hand(20vmin, 2vmin);
+    top: 25%;
+    left: 50%;
+    position: absolute;
+    background: $blue;
+    transform-origin: bottom center;
+    @include animation(60s);
+  }
+
+  &__center {
+    @include circle(5vmin);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: $yellow;
+    transform: translate(-50%, -50%);
+  }
+}
