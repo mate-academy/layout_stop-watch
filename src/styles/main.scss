@@ -7,7 +7,7 @@ body {
   height: 100vmin;
 }
 
-.empty-circle {
+.stopwatch {
   width: 80vmin;
   height: 80vmin;
   border: 2px dotted black;
@@ -18,18 +18,18 @@ body {
   align-items: center;
 }
 
-.centre-circle {
+.stopwatch__centre {
   position: absolute;
-  background-color: orange;
+  background-color: rgb(255, 166, 0);
   height: 5vmin;
   width: 5vmin;
   border-radius: 50%;
   z-index: 2;
 }
 
-.minutes {
+.stopwatch__minute-hand {
   position: absolute;
-  background-color: blue;
+  background-color: rgb(0, 0, 255);
   width: 3vmin;
   height: 20vmin;
   top: 20vmin;
@@ -37,9 +37,9 @@ body {
   animation: rotateAnimation 60s linear infinite;
 }
 
-.seconds {
+.stopwatch__second-hand {
   position: absolute;
-  background-color: green;
+  background-color: rgb(0, 189, 0);
   width: 2vmin;
   height: 40vmin;
   top: 0;
