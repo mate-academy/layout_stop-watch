@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+}
+
+.watch {
+  position: relative;
+  margin: 100px auto;
+  @include size(550px, 550px);
+
+  background-image: url(../images/pic.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__minutes {
+    @include positioning (87px, 271px);
+    @include size(8px, 189px);
+    @include animation(60s);
+
+    background-color: green;
+  }
+
+  &__seconds {
+    @include positioning (176px, 272px);
+    @include size(6px, 100px);
+    @include animation(5s);
+
+    background-color: #ffa812;
+  }
+
+  &__center {
+    @include positioning (265px, 266px);
+    @include size(20px, 20px);
+
+    background-color: red;
+    border-radius: 50%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
