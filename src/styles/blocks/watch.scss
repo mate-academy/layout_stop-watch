@@ -1,0 +1,24 @@
+.watch {
+  height: 40px;
+  width: 40px;
+
+  &__circle {
+    width: 100%;
+    height: 100%;
+    background-color: $color-blue;
+    position: relative;
+    border-radius: 50%;
+
+    &::before {
+      @include arrow(300px);
+      background-color: $color-blue;
+      animation: rotation 3600s linear infinite;
+    }
+
+    &::after {
+      @include arrow(400px);
+      background-color: $color-red;
+      animation: rotation 60s linear infinite;
+    }
+  }
+}

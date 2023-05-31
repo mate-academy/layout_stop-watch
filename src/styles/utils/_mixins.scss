@@ -1,0 +1,14 @@
+@mixin arrow ($height) {
+  content: "";
+  position: absolute;
+  top: -$height + 20px;
+  left: 0;
+  right: 0;
+  display: block;
+  margin: 0 auto;
+  width: 20px;
+  height: $height;
+  transform-origin: bottom;
+  border-radius: 50px;
+  z-index: -1;
+}
