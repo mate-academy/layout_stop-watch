@@ -2,14 +2,14 @@
   position: relative;
   width: 80vmin;
   height: 80vmin;
-  background-color: #fff;
+  background-color: $main-contrast-color;
   border-radius: 50%;
-  border: 4px double black;
+  border: 4px double $main-color;
 
   &::before {
     content: "";
     position: absolute;
-    background-color: black;
+    background-color: $main-color;
     z-index: 2;
     width: 15px;
     height: 15px;
@@ -25,7 +25,7 @@
     left: 50%;
     width: 10px;
     height: 50%;
-    background-color: black;
+    background-color: $main-color;
     transform: translateX(-50%);
     transform-origin: bottom;
     z-index: 1;
@@ -41,14 +41,14 @@
     &--minute {
       width: 5px;
       height: 40%;
-      background-color: #252525ce;
+      background-color: $second-color;
       animation: rotate 5s linear infinite;
     }
 
     &--second {
       width: 3px;
       height: 50%;
-      background-color: red;
+      background-color: $accent-color;
       animation: rotate 60s steps(60,end) infinite;
     }
   }
