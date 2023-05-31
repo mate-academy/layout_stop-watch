@@ -1,0 +1,32 @@
+$SizeWatch: 80vmin;
+$SizeMinute: $SizeWatch / 2;
+$WidthMinute: 3px;
+$WidthHour: $WidthMinute * 2;
+$HeightHour: $SizeWatch / 4;
+
+* {
+  box-sizing: border-box;
+}
+
+.watch {
+  position: relative;
+  width: $SizeWatch;
+  height: $SizeWatch;
+  border: dotted 5px;
+  border-radius: 50%;
+
+  &__hour {
+    height: $HeightHour;
+    width: $WidthHour;
+    color: blue;
+  }
+
+  &__minute {
+    position: absolute;
+    text-align: center;
+    height: $SizeMinute;
+    width: $WidthMinute;
+    color: green;
+  }
+
+}
