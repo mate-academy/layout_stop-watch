@@ -1,0 +1,48 @@
+.clock {
+  @include circle($clock-size);
+
+  position: relative;
+  border: 7vmin double #9e4784;
+
+  &__center {
+    @include circle($center-size);
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+
+    background-color: #37306b;
+  }
+
+  &__min-hand {
+    position: absolute;
+    top: 13vmin;
+    left: 38vmin;
+    z-index: 2;
+
+    height: 27vmin;
+    width: 4vmin;
+
+    background-color: #66347f;
+    border-radius: 50% 50%/ 80% 20%;
+
+    @include clockwork(60s);
+  }
+
+  &__sec-hand {
+    position: absolute;
+    top: 1vmin;
+    left: 39vmin;
+    z-index: 1;
+
+    height: 39vmin;
+    width: 2vmin;
+
+    background-color: #d27685;
+    border-radius: 50% 50%/ 20% 80%;
+
+    @include clockwork(5s);
+  }
+}
