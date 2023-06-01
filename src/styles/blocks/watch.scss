@@ -1,0 +1,44 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: $margin-top-watch;
+
+  &__border {
+    position: relative;
+    width: $watch-size;
+    height: $watch-size;
+    border: 5px dotted black;
+    border-radius: 50%;
+  }
+
+  &__center {
+    position: absolute;
+    width: $center-size;
+    height: $center-size;
+    background-color: orange;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__minute {
+    position: absolute;
+    width: 17px;
+    height: $minute-height;
+    margin-top: -$minute-height;
+    background-color: blue;
+    border-radius: 20px;
+    @include animationRotate(60s)
+  }
+
+  &__seconds {
+    position: absolute;
+    height: $secunde-height;
+    width: 10px;
+    margin-top: -$secunde-height;
+    background-color: green;
+    border-radius: 20px;
+    z-index: 1;
+    @include animationRotate(5s);
+  }
+}
