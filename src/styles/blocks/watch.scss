@@ -1,0 +1,56 @@
+.watch-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  width: 80vmin;
+  height: 80vmin;
+  border: 5px black dotted;
+  border-radius: 50%;
+
+  &__dot {
+    display: flex;
+    z-index: 1;
+
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #ea4d4d;
+  }
+
+  &__second-hand{
+    position: absolute;
+    bottom: 340px;
+
+    height: 47%;
+    width: 2%;
+    background-color: #6ea628;
+
+    transform-origin: bottom;
+    animation: run 5s infinite normal;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    bottom: 340px;
+
+    height: 23%;
+    width: 3%;
+    background-color: #6526e4;
+
+    transform-origin: bottom;
+    animation: run 60s infinite normal;
+  }
+
+  @keyframes run {
+    1% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
