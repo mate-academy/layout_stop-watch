@@ -1,0 +1,32 @@
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+
+  &__circle {
+    position: relative;
+    @include circle($size);
+    background-color: $color-circle-second;
+    border-radius: 50%;
+    align-self: center
+  }
+
+  &__minute {
+    @include hands($width-line);
+    height: $height-minute;
+    background-color: $color-minute;
+    border-radius: $border-radius;
+    animation: round 3600s infinite;
+    animation-timing-function: linear;
+  }
+
+  &__second {
+    @include hands($width-line);
+    height: $height-second;
+    background-color: $color-circle-second;
+    border-radius: $border-radius;
+    animation: round 60s infinite;
+    animation-timing-function: steps(60, end);
+  }
+}
