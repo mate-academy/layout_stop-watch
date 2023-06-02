@@ -8,7 +8,6 @@
 
   &__center {
     @include positionCenter;
-    transform: translate(-50%, -50%);
     z-index: 3;
     @include size($center-size, $center-size);
     background-color: $main-dark-color;
@@ -16,8 +15,7 @@
   }
 
   &__hand-minute {
-    @include positionCenter;
-    transform: translate(-50%, -100%);
+    @include positionCenter(-50%, -100%);
     z-index: 1;
     @include size($minute-hand-width, $minute-hand-length);
     background-color: $main-dark-color;
@@ -26,8 +24,7 @@
   }
 
   &__hand-second {
-    @include positionCenter;
-    transform: translate(-50%, -100%);
+    @include positionCenter(-50%, -100%);
     z-index: 2;
     @include size($second-hand-width, $second-hand-length);
     background-color: $accent-color;
