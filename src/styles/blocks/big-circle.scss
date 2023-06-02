@@ -1,0 +1,16 @@
+.big-circle {
+  @include circle(500px, 50%);
+  @extend %circles;
+  background-color: rgba($color: black, $alpha: 0.4);
+  border: 2px solid black;
+
+  &__list {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    transform-origin: 0% 100%;
+  }
+}
