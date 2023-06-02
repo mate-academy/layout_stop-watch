@@ -1,17 +1,18 @@
 .clock {
   position: relative;
-  height: 500px;
-  width: 500px;
+  height: 80vmin;
+  width: 80vmin;
   box-sizing: border-box;
 
   background-color: pink;
   border: 5px dotted rgb(250, 113, 136);
   border-radius: 50%;
 
-  &__arrow-seconds {
+  &::before {
     content: "";
     @include absolutePositioning();
     top: calc(50% - #{$seconds-height});
+    left: calc(50% - 5px);
 
     height: $seconds-height;
     width: 10px;
@@ -23,10 +24,11 @@
     animation-duration: 5s;
   }
 
-  &__arrow-minutes {
+  &::after {
     content: "";
     @include absolutePositioning();
     top: calc(50% - #{$minutes-height});
+    left: calc(50% - 5px);
 
     height: $minutes-height;
     width: 10px;
@@ -41,9 +43,11 @@
   &__center {
     @include absolutePositioning();
     top: 50%;
+    left: 50%;
+    z-index: 1;
 
-    height: 50px;
-    width: 50px;
+    height: 7vmin;
+    width: 7vmin;
 
     background-color: rgb(250, 113, 136);
     border-radius: 50%;
