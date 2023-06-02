@@ -1,0 +1,87 @@
+.clock {
+  @include flex-center;
+  background-image: url("../images/background.jpg");
+  border: 5px solid $defaultColor;
+  height: $clockSize;
+  width: $clockSize;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset 0 0 12px 9px rgba(0,0,0,0.75);
+
+  // Clock Elements
+  &__long-hand,
+  &__round,
+  &__short-hand {
+    position: absolute;
+    box-shadow: $defaultShadow;
+  }
+
+  &__short-hand, &__long-hand {
+    width: $handWidth;
+    background-color: $defaultColor;
+    border-radius: 20px;
+    bottom: 50%;
+    transform-origin: $defaultTransformOrigin;
+    transform: rotate(180deg);
+  }
+
+  &__short-hand {
+    height: 30%;
+    animation: rotate 100s infinite linear;
+  }
+
+  &__long-hand {
+    height: 45%;
+    animation: rotate 10s infinite linear;
+  }
+
+  &__round {
+    border-radius: 50%;
+    background-color: $defaultColor;
+    width: $handWidth * 2.5;
+    height: $handWidth * 2.5;
+  }
+
+  &__timestamp {
+    @include flex-center;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    color: #888;
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+
+    &--12 {
+      top: 8%;
+      left: 46%;
+    }
+
+    &--3 {
+      top: 46%;
+      right: 8%;
+    }
+
+    &--6 {
+      bottom: 5%;
+      left: 46%;
+    }
+
+    &--9 {
+      top: 46%;
+      left: 8%;
+    }
+  }
+
+
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
