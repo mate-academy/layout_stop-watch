@@ -3,6 +3,7 @@
   height: 500px;
   width: 500px;
   box-sizing: border-box;
+
   background-color: pink;
   border: 5px dotted rgb(250, 113, 136);
   border-radius: 50%;
@@ -11,8 +12,10 @@
     content: "";
     @include absolutePositioning();
     top: calc(50% - #{$seconds-height});
+
     height: $seconds-height;
     width: 10px;
+
     border-radius: 5px;
     background-color: rgb(250, 113, 136);
 
@@ -24,8 +27,10 @@
     content: "";
     @include absolutePositioning();
     top: calc(50% - #{$minutes-height});
+
     height: $minutes-height;
     width: 10px;
+
     border-radius: 5px;
     background-color: rgb(253, 75, 105);
 
