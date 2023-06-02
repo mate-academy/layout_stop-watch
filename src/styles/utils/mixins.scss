@@ -1,0 +1,13 @@
+@mixin rotate ($duration) {
+  animation: rotate $duration linear infinite;
+  transform-origin: bottom;
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}

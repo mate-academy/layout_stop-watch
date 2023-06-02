@@ -1,0 +1,62 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.stopwatch {
+  box-sizing: border-box;
+  position: relative;
+  margin: (100vh - $size) / 2 auto;
+
+  border: 2px dashed black;
+  border-radius: 50%;
+
+  width: $size;
+  height: $size;
+
+  display: flex;
+  justify-content: center;
+
+  background-image: url("https://png.pngtree.com/png-clipart/20230120/original/pngtree-clock-face-no-hands-with-floral-png-image_8923740.png");
+  background-size: 105%;
+  background-position: center;
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+    width: $size / 20;
+    height: $size / 20;
+    border-radius: 50%;
+    background-color: #000;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__minute {
+    position: absolute;
+    top: 10%;
+
+    height: 40%;
+    width: $size / 90;
+
+    background-image: url("https://e7.pngegg.com/pngimages/691/968/png-clipart-clock-face-minute-clock-hand-monochrome-thumbnail.png");
+    background-size: cover;
+    background-position: center;
+
+    @include rotate(5s);
+  }
+
+  &__second {
+    position: absolute;
+    top: 25%;
+
+    height: 25%;
+    width: $size / 5;
+
+    background-image: url("https://www.heuremondiale.com/images/hourHand.png");
+    background-position-x: center;
+    background-position-y: 25%;
+    background-size: 300%;
+    background-repeat: no-repeat;
+
+    @include rotate(60s);
+  }
+}
