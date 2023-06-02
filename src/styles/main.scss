@@ -1,0 +1,53 @@
+@import "./utils/available.scss";
+@import "./utils/placeholder.scss";
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 10px dotted rgb(12, 45, 16);
+    border-radius: $shift;
+    background-color: rgb(105, 192, 115);
+
+    &__clock {
+        width: 40px;
+        height: 40px;
+        border: 0 solid rgb(62, 168, 78);
+        border-radius: $shift;
+        background-color: yellow;
+    }
+
+    &__minute-hand {
+        height: 260px;
+        width: 10px;
+        left: $shift;
+        top: $shift;
+        background-color: rgb(140, 76, 144);
+        transform: translate(-50%, -107%);
+        @extend %clock;
+        animation-duration: 60s;
+    }
+    &__second-hand {
+        height: 160px;
+        width: 20px;
+        top: $shift;
+        left: $shift;
+        background-color: rgb(43, 31, 131);
+        transform: translate(-50%, -112%);
+        @extend %clock;
+        animation-duration: 5s;
+    }
+    @keyframes move {
+        from {
+            transform: rotate(0deg) translate(-50%, -100%);
+        }
+        
+        to {
+            transform: rotate(360deg) translate(-50%, -100%);
+        }
+    }
+}
