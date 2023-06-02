@@ -1,0 +1,12 @@
+@for $index from 1 to 61 {
+  li:nth-child(#{$index}) {
+    $temp: ($index - 1)*6;
+    transform: rotate(#{$temp}deg) skewY(-60deg);
+  }
+}
+
+@for $index from 1 through 60 {
+  .big-circle__list:nth-child(#{$index}) .text--item::before {
+    content: "#{$index}";
+  }
+}
