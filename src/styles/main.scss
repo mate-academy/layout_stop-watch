@@ -8,29 +8,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.minute-hand,
-.second-hand {
-  background-color: black;
-  position: absolute;
-  left: calc(50% - 2px);
-  bottom: calc(50% + 5px);
-  transform-origin: bottom center;
-  transform: rotate(0deg);
-  transition: transform 5s linear;
-}
+  &__hand {
+    background-color: black;
+    position: absolute;
+    left: calc(50% - 2px);
+    bottom: calc(50% + 5px);
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+    transition: transform 5s linear;
+  }
 
-.second-hand {
-  width: 2px;
-  height: 35vmin;
-  animation: rotate-seconds 60s linear infinite;
-}
+  &__hand--second {
+    width: 2px;
+    height: 35vmin;
+    animation: rotate-seconds 60s linear infinite;
+  }
 
-.minute-hand {
-  width: 4px;
-  height: 30vmin;
-  animation: rotate-minutes 3600s linear infinite;
+  &__hand--minute {
+    width: 4px;
+    height: 30vmin;
+    animation: rotate-minutes 360s linear infinite;
+  }
 }
 
 @keyframes rotate-seconds {
@@ -47,6 +46,6 @@
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(3600deg);
   }
 }
