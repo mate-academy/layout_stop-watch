@@ -1,0 +1,46 @@
+.clock {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  box-sizing: border-box;
+  background-color: pink;
+  border: 5px dotted rgb(250, 113, 136);
+  border-radius: 50%;
+
+  &__arrow-seconds {
+    content: "";
+    @include absolutePositioning();
+    top: calc(50% - #{$seconds-height});
+    height: $seconds-height;
+    width: 10px;
+    border-radius: 5px;
+    background-color: rgb(250, 113, 136);
+
+    @include animationMixin();
+    animation-duration: 5s;
+  }
+
+  &__arrow-minutes {
+    content: "";
+    @include absolutePositioning();
+    top: calc(50% - #{$minutes-height});
+    height: $minutes-height;
+    width: 10px;
+    border-radius: 5px;
+    background-color: rgb(253, 75, 105);
+
+    @include animationMixin();
+    animation-duration: 60s;
+  }
+
+  &__center {
+    @include absolutePositioning();
+    top: 50%;
+
+    height: 50px;
+    width: 50px;
+
+    background-color: rgb(250, 113, 136);
+    border-radius: 50%;
+  }
+}
