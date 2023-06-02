@@ -1,0 +1,38 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
+  height: 480px;
+  background-color: #fff;
+  border-radius: $border-radius;
+  &__dot {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: $border-radius;
+    z-index: 1;
+  }
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 190px;
+    width: 5px;
+    background: #000;
+    border-radius: 8px;
+    transform-origin: center 98%;
+    animation: rotate infinite linear;
+  }
+  &::before {
+    top: 42px;
+    height: 200px;
+    animation-duration: 5s;
+  }
+  &::after {
+    top: 93px;
+    height: 150px;
+    animation-duration: 60s;
+  }
+}
