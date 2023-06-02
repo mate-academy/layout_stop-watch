@@ -22,17 +22,17 @@
   &__hand--second {
     width: 2px;
     height: 35vmin;
-    animation: rotate-seconds 60s linear infinite;
+    animation: rotate 5s linear infinite;
   }
 
   &__hand--minute {
     width: 4px;
     height: 30vmin;
-    animation: rotate-minutes 360s linear infinite;
+    animation: rotate 60s linear infinite;
   }
 }
 
-@keyframes rotate-seconds {
+@keyframes rotate {
   0% {
     transform: rotate(0deg);
   }
@@ -41,11 +41,11 @@
   }
 }
 
-@keyframes rotate-minutes {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(3600deg);
-  }
-}
+// @keyframes rotate-minutes {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(3600deg);
+//   }
+// }
