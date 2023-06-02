@@ -1,7 +1,9 @@
+@import "./blocks/variables";
+
 .watch {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: $watch-size;
+  height: $watch-size;
   border: 3px dashed black;
   border-radius: 50%;
   margin: 50px auto;
@@ -12,10 +14,10 @@
   }
 
   &__minutes {
-    top: 150px;
-    left: 242.5px;
-    width: 15px;
-    height: 100px;
+    top: $watch-size / 2 - $minutes-height;
+    left: ($watch-size - $minutes-width) / 2;
+    width: $minutes-width;
+    height: $minutes-height;
     border-radius: 5px;
     background-color: red;
   
@@ -27,10 +29,10 @@
   }
 
   &__seconds {
-    top: 50px;
-    left: 245px;
-    width: 10px;
-    height: 200px;
+    top: $watch-size / 2 - $seconds-height;
+    left: ($watch-size - $seconds-width) / 2;
+    width: $seconds-width;
+    height: $seconds-height;
     border-radius: 5px;
     background-color: blue;
   
@@ -42,10 +44,10 @@
   }
 
   &__center {
-    top: 240px;
-    left: 240px;
-    width: 20px;
-    height: 20px;
+    top: ($watch-size - $center-size) / 2;
+    left: ($watch-size - $center-size) / 2;
+    width: $center-size;
+    height: $center-size;
     background-color: yellow;
     border-radius: 50%;
   }
