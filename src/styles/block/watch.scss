@@ -1,0 +1,58 @@
+.watch {
+  position: relative;
+  width: $SizeWatch;
+  height: $SizeWatch;
+  border: dotted 5px;
+  border-radius: 50%;
+
+  &__hour {
+    position: absolute;
+    height: $HeightHour;
+    width: $WidthHour;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: blue;
+    transition: transform 60s;
+    animation-name: move;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+
+  &__minute {
+    position: absolute;
+    height: $SizeMinute;
+    width: $WidthMinute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: green;
+    animation-name: move;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+
+  &__point {
+    position: absolute;
+    height: $SizePoint;
+    width: $SizePoint;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: yellow;
+    border-radius: 50%;
+  }
+}
+
+@keyframes move {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
