@@ -1,0 +1,38 @@
+.container {
+  @include circle;
+  border: 20px dotted black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  position: relative;
+  border-radius: 50%;
+  @include center-size;
+  background-color: $center-color;
+}
+
+.second {
+  border-radius: 30px;
+  @include second-hand-size;
+  background-color: $second-hand-color;
+  position: absolute;
+  top: -215px;
+  left: 15px;
+  z-index: -1;
+  transform-origin: bottom;
+  animation: move 5s linear infinite;
+}
+
+.minute {
+  border-radius: 30px;
+  position: absolute;
+  @include minute-hand-size;
+  background-color: $minute-hand-color;
+  top: -125px;
+  left: 13px;
+  z-index: -1;
+  animation: move 30s linear infinite;
+  transform-origin: bottom;
+}
