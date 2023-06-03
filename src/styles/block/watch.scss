@@ -9,7 +9,7 @@
     position: absolute;
     height: $HeightHour;
     width: $WidthHour;
-    top: 50%;
+    bottom: 50%;
     left: 50%;
     transform: translateX(-50%);
     background-color: blue;
@@ -18,14 +18,14 @@
     animation-duration: 3600s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    transform-origin: top;
+    transform-origin: bottom;
   }
 
   &__minute {
     position: absolute;
     height: $SizeMinute;
     width: $WidthMinute;
-    top: 50%;
+    bottom: 50%;
     left: 50%;
     transform: translateX(-50%);
     background-color: green;
@@ -33,7 +33,7 @@
     animation-duration: 60s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    transform-origin: top;
+    transform-origin: bottom;
   }
 
   &__point {
