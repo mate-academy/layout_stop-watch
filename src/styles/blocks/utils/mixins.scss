@@ -1,0 +1,11 @@
+@mixin resetMargin {
+  margin: 0;
+}
+
+@mixin getAnimation($animation-duration) {
+  transform-origin: bottom;
+  animation-name: rotate;
+  animation-duration: $animation-duration;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
