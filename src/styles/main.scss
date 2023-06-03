@@ -1,7 +1,11 @@
-.container {
+@mixin position() {
+  position: absolute;
+}
+
+.watch {
   width: 80vmin;
   height: 80vmin;
-  border: 120px dotted black;
+  border: 100px dotted black;
   border-radius: 50%;
   position: relative;
   display: flex;
@@ -11,45 +15,34 @@
 }
 
 .circle {
-  height: 50px;
-  width: 50px;
+  height: 5%;
+  width: 5%;
   border-radius: 50%;
   background-color: orange;
-  position: absolute;
-  left: 335px;
+  @include position;
+  left: 50%;
+  transform: translate(-50%);
   z-index: 1;
 }
 
-.hours {
-  width: 280px;
-  height: 30px;
-  background-color: blue;
-  position: absolute;
-  left: 350px;
-  transform-origin: left;
-  animation: rotate-sec 36000s infinite steps(12);
-}
-
 .seconds {
-  width: 20px;
-  height: 380px;
+  width: 1.5%;
+  height: 40%;
   background-color: green;
-  position: absolute;
-  left: 350px;
-  bottom: 360px;
+  @include position;
+  bottom: 50%;
   transform-origin: bottom;
   animation: rotate-sec 60s infinite steps(60);
 }
 
 .minutes {
-  width: 20px;
-  height: 380px;
+  width: 2%;
+  height: 50%;
   background-color: red;
-  position: absolute;
-  left: 350px;
-  bottom: 360px;
+  @include position;
+  bottom: 50%;
   transform-origin: bottom;
-  animation: rotate-sec 3660s infinite steps(60);
+  animation: rotate-sec 5s infinite steps(60);
 }
 
 @keyframes rotate-sec {
