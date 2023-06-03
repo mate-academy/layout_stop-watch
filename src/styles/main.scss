@@ -1,0 +1,52 @@
+@mixin position() {
+  position: absolute;
+}
+
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 100px dotted black;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 80px auto;
+}
+
+.circle {
+  height: 5%;
+  width: 5%;
+  border-radius: 50%;
+  background-color: orange;
+  @include position;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
+}
+
+.seconds {
+  width: 1.5%;
+  height: 40%;
+  background-color: green;
+  @include position;
+  bottom: 50%;
+  transform-origin: bottom;
+  animation: rotate-sec 60s infinite steps(60);
+}
+
+.minutes {
+  width: 2%;
+  height: 50%;
+  background-color: red;
+  @include position;
+  bottom: 50%;
+  transform-origin: bottom;
+  animation: rotate-sec 5s infinite steps(60);
+}
+
+@keyframes rotate-sec {
+  100% {
+    transform: rotate(360deg);
+  }
+}
