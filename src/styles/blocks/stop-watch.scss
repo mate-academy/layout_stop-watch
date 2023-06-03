@@ -1,0 +1,61 @@
+.stop-watch {
+  position: relative;
+
+  width: $stop-watch-size;
+  height: $stop-watch-size;
+
+  border: $stop-watch-border-size solid $stop-watch-background-color;
+  border-radius: 50%;
+
+  &::after {
+    position: absolute;
+    top: $stop-watch-size / 2 - $content-border-size;
+    left: $stop-watch-size / 2 - $content-border-size;
+
+    content: "";
+
+    border: $content-border-size solid red;
+    border-radius: 50%;
+  }
+
+  &__hour-hand {
+    position: absolute;
+    top: $hour-hand-height - $hour-hand-border-size;
+    left: $stop-watch-size / 2 - $hour-hand-border-size;
+
+    height: $hour-hand-height;
+
+    border: $hour-hand-border-size solid $hour-hand-background-color;
+    border-radius: 50px;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    @include getAnimation(60s);
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: -$second-hand-border-size;
+    left: $stop-watch-size / 2 - $second-hand-border-size;
+
+    height: $second-hand-height;
+
+    border: $second-hand-border-size solid $second-hand-background-color;
+    border-radius: 50px;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    @include getAnimation(5s);
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
