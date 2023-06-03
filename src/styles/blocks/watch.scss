@@ -1,0 +1,71 @@
+.watch {
+  @include size ($size, $size);
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 5px 10px 2px;
+  border-radius: $border-radius;
+  padding: 5px;
+  background: linear-gradient(#b16aeb, #8b2bd9, #6609b3, #3b006b);
+
+  &__center {
+    @include size (15px, 15px);
+    position: absolute;
+    display: block;
+    align-self: center;
+    box-shadow: 0 0 25px 5px darkgray;
+    border-radius: $border-radius;
+    background: linear-gradient(#e0ffff, #d3e3f3);
+    z-index: 2;
+  }
+
+  &__hour {
+    @include size (($size/2.7), 10px);
+    position: absolute;
+    display: flex;
+    bottom: 50%;
+    box-shadow: $clockwise-shadow;
+    background: linear-gradient(#e66465, #9198e5);
+    border-radius: $border-radius;
+
+    animation: rotate 43200s steps(12) infinite;
+  }
+
+  &__minute {
+    @include size (($size/2.2), 5px);
+    position: absolute;
+    display: flex;
+    bottom: 50%;
+    box-shadow: $clockwise-shadow;
+    background: linear-gradient(#e66465, #9198e5);
+    border-radius: $border-radius;
+
+    animation: rotate 3600s steps(60) infinite;
+    transform-origin: bottom center;
+  }
+
+  &__second {
+    @include size (($size/2.1), 2px);
+    position: absolute;
+    display: flex;
+    bottom: 50%;
+    box-shadow: $clockwise-shadow;
+    background: linear-gradient(#e66465, #9198e5);
+    border-radius: $border-radius;
+
+    animation: rotate 60s steps(60) infinite;
+    transform-origin: bottom center;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
