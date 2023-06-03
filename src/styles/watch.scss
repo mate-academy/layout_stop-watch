@@ -22,38 +22,34 @@
 
     border-radius: 50%;
     background-color: pink;
-
   }
 
-  &__hand--sec {
+  &__hand {
     position: absolute;
     bottom: 50%;
-    left: $centeringSec;
-
-    width: $width-sec-hand;
-    height: $length-sec-hand;
 
     border-radius: 30% 30% 10% 10%;
-    background-color: purple;
 
-    animation-name: rotate;
-    animation-duration: 5s;
     @include animationHands;
-  }
 
-  &__hand--min {
-    position: absolute;
-    bottom: 50%;
-    left: $centeringMin;
+    &--sec {
+      left: $centeringSec;
+      width: $width-sec-hand;
+      height: $length-sec-hand;
 
-    width: $width-min-hand;
-    height: $length-min-hand;
+      background-color: purple;
 
-    border-radius: 30% 30% 10% 10%;
-    background-color: palevioletred;
+      animation-duration: 5s;
+    }
 
-    animation-name: rotate;
-    animation-duration: 60s;
-    @include animationHands;
+    &--min {
+      left: $centeringMin;
+      width: $width-min-hand;
+      height: $length-min-hand;
+
+      background-color: palevioletred;
+
+      animation-duration: 60s;
+    }
   }
 }
