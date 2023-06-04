@@ -1,0 +1,13 @@
+.stopwatch__second-hand {
+  @include position;
+  overflow: $hidden;
+  width: $minute-second-w;
+  height: $second-h;
+  border-radius: $border;
+  background-color: $second-color;
+  animation-name: $anim-hand;
+  animation-duration: 60s;
+  animation-iteration-count: $anim-iter-count;
+  animation-timing-function: $anim-timing-funct;
+  transform-origin: $transform-orig;
+}
