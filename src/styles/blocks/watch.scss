@@ -1,0 +1,49 @@
+.watch {
+  position: relative;
+  width: $watch-width-side;
+  height: $watch-width-side;
+  position: relative;
+  background-color: $bg-color;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+
+  &__center {
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    width: $center-width-side;
+    height: $center-width-side;
+    border-radius: 50%;
+    background-color: $center-color;
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    width: $minute-hand-width;
+    height: $hand-thickness;
+    top: 50%;
+    left: 38%;
+    background: linear-gradient(to left, $minute-hand-color 50%, transparent 50%);
+    animation: hand-rotation 3600s infinite linear;
+  }
+
+  &__second-hand {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    width: $second-hand-width;
+    height: $hand-thickness;
+    background: linear-gradient(to left,$second-hand-color 50%, transparent 50%);
+    animation: hand-rotation 60s infinite linear;
+  }
+
+  @keyframes hand-rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
