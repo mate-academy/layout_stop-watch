@@ -1,0 +1,87 @@
+.clock {
+  @extend %flex-set;
+
+  @include circle($clock-dimension);
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: #373737 #232323 #333 #242424;
+  box-shadow: 0 160px 50px -130px grey;
+  background-image: linear-gradient(
+    to bottom right,
+    #ccc,
+    #858585,
+    #ccc,
+    #1f1f1f,
+    #c2c2c2 90%);
+  font-size: $clock-digits-size;
+  font-family: "Aboreto", sans-serif;
+  font-weight: bold;
+
+  &__frame {
+    @extend %flex-set;
+    @include circle($frame-dimension);
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fff #ddd #ccc #eee;
+    background-image: linear-gradient(to bottom right, #444 10%, #f5f5f5 90%);
+  }
+
+  &__clock-face {
+    position: relative;
+    display: flex;
+
+    @include circle($clock-face-dimension);
+
+    border: 1px solid black;
+    background-image: radial-gradient(#fff, #bbb);
+  }
+
+  &__hour3 {
+    @include face-items(50%, 100%, -150%, -50%);
+  }
+
+  &__hour6 {
+    @include face-items(100%, 50%, -50%, -100%);
+  }
+
+  &__hour9 {
+    @include face-items(50%, 0, 50%, -50%);
+  }
+
+  &__hour12 {
+    @include face-items(0, 50%, -50%, 0);
+  }
+
+  &__seconds-hand {
+    @include hands($seconds-hand-heigth, $seconds-hand-width, red, 5px);
+
+    animation: hands-rotation 60s steps(60, end) infinite;
+  }
+
+  &__minutes-hand {
+    @include hands($minutes-hand-heigth, $minutes-hand-width, black, 10px);
+
+    animation: hands-rotation 3600s linear infinite;
+  }
+
+  @keyframes hands-rotation {
+    from {
+      transform: translate(-50%, -100%) rotate(0);
+    }
+
+    to {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+  }
+
+  &__center {
+    @include face-items(50%, 50%, -50%, -50%);
+
+    @include circle($clock-center);
+
+    border: 1px solid #888;
+    background-image: radial-gradient(#444, #ccc);
+  }
+}
