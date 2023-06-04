@@ -1,0 +1,44 @@
+.clock {
+  width: 400px;
+  height: 400px;
+  border: 15px solid #2f4f4f;
+  border-radius: 50%;
+  background: white;
+
+  transition: all 1s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 100px;
+  }
+
+  &:before {
+    @include pseudo-element(7px, 180px, red, 60);
+  }
+  
+  &:after {
+    @include pseudo-element(10px, 140px, black, 3600);
+  }
+
+  &__center {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background: #2f4f4f;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}

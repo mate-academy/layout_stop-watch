@@ -1,0 +1,12 @@
+@mixin pseudo-element($height, $width, $background, $animation-duration) {
+  content: "";
+  position: absolute;
+  top: calc(50% - (#{$height} / 2));
+  left: 50%;
+  height: #{$height};
+  width: #{$width};
+  background: $background;
+  border-radius: 5px;
+  animation: animate #{$animation-duration}s linear infinite;
+  transform-origin: left;
+}
