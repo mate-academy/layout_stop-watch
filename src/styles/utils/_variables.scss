@@ -1,0 +1,15 @@
+$center-diameter: 30px;
+$bottom-positioning: calc(50% - #{$center-diameter} / 2);
+
+$seconds-hand-width: 10px;
+$seconds-hand-height: 250px;
+$seconds-hand-radius: $seconds-hand-width / 2;
+$seconds-hand-rotation: 60s;
+
+$minutes-hand-width: 15px;
+$minutes-hand-height: $seconds-hand-height / 1.5;
+$minutes-hand-radius: $minutes-hand-width / 2;
+$minutes-hand-rotation: $seconds-hand-rotation * 60;
+
+$background-size: $seconds-hand-height * 2.5;
+$animation-parameters: hands-rotation linear infinite;
