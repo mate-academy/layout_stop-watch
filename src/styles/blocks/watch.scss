@@ -30,7 +30,7 @@
     background: linear-gradient(#e66465, #9198e5);
     border-radius: $border-radius;
 
-    animation: rotate 43200s steps(12) infinite;
+    animation: rotate $hours steps(12) infinite;
   }
 
   &__minute {
@@ -42,7 +42,7 @@
     background: linear-gradient(#e66465, #9198e5);
     border-radius: $border-radius;
 
-    animation: rotate 3600s steps(60) infinite;
+    animation: rotate $minutes steps(60) infinite;
     transform-origin: bottom center;
   }
 
@@ -55,17 +55,7 @@
     background: linear-gradient(#e66465, #9198e5);
     border-radius: $border-radius;
 
-    animation: rotate 60s steps(60) infinite;
+    animation: rotate $seconds steps(60) infinite;
     transform-origin: bottom center;
-  }
-
-  @keyframes rotate {
-    from {
-      transform: rotate(0);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
   }
 }
