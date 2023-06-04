@@ -33,28 +33,31 @@ $dial-center-size: $dial-size * 0.1;
     background-color: slategrey;
     text-align: center;
     position: absolute;
-    top: 47%;
-    left: 46.5%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  &__arrow-second {
+  &__hand-second {
     position: absolute;
     height: 0.5 * $dial-size;
     width: 0.25 * $dial-center-size;
     background-color: black;
     left: 50%;
+    transform: translate(50%, 50%);
     border-radius: 50px;
     animation: rotate360 5s linear infinite;
     transform-origin: bottom;
   }
 
-  &__arrow-minute {
+  &__hand-minute {
     position: absolute;
     height: 0.25 * $dial-center-size;
     width: 0.25 * $dial-size;
     background-color: black;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 25px;
     animation: rotate360 60s linear infinite;
     transform-origin: left;
