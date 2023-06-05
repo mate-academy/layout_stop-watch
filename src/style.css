@@ -1,9 +1,24 @@
-body {
-  align-items: center;
+body,
+.clock,
+.clock__center,
+.clock__hand {
   display: flex;
+}
+
+body,
+.clock {
+  align-items: center;
   justify-content: center;
-  height: 100vh;
   margin: 0;
+}
+
+.clock__center,
+.clock__hand {
+  position: absolute;
+}
+
+body {
+  height: 100vh;
 }
 
 .clock {
@@ -11,14 +26,9 @@ body {
   width: 80vmin;
   border: 5px dotted;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
 }
 
 .clock__center {
-  position: relative;
   height: 5vmin;
   width: 5vmin;
   border-radius: 50%;
@@ -35,13 +45,11 @@ body {
 }
 
 .clock__hand {
-  display: flex;
-  position: absolute;
+  bottom: 50vh;
   transform-origin: bottom;
 }
 
 .clock__hand--sec {
-  top: 10vmin;
   height: 40vmin;
   width: 1vmin;
   background-color: green;
@@ -50,7 +58,6 @@ body {
 }
 
 .clock__hand--hour {
-  top: 30vmin;
   height: 20vmin;
   width: 2vmin;
   background-color: blue;
