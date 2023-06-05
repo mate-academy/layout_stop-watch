@@ -1,37 +1,29 @@
 .stop-watch {
   position: relative;
-  border: 2px dotted grey;
+  border: 2px dotted $dial-border-color;
   border-radius: 50%;
-  width: 2*$dial-radius;
-  height: 2*$dial-radius;
+  width: $dial-diametr;
+  height: $dial-diametr;
 
   &__second-hand {
-    top: $dial-radius - $second-hand-length;
-    left: $dial-radius - $second-hand-width / 2;
+    top: $dial-diametr/2 - $second-hand-length;
+    left: $dial-diametr/2 - $second-hand-width / 2;
     @include hand(
-      second,
-      runSecondHand,
-      $second-hand-time,
-      $second-hand-angle,
-      $second-hand-steps
+      runSecondHand, $second-hand-time, $second-hand-angle, $second-hand-steps
     );
     height: $second-hand-length;
     width: $second-hand-width;
-    background-color: gray;
+    background-color: $second-hand-background-color;
   }
 
   &__minute-hand {
-    top: $dial-radius - $minute-hand-length;
-    left: $dial-radius - $minute-hand-width / 2;
+    top: $dial-diametr/2 - $minute-hand-length;
+    left: $dial-diametr/2 - $minute-hand-width / 2;
     @include hand(
-      minute,
-      runMinuteHand,
-      $minute-hand-time,
-      $minute-hand-angle,
-      $minute-hand-steps
+      runMinuteHand, $minute-hand-time, $minute-hand-angle, $minute-hand-steps
     );
     height: $minute-hand-length;
     width: $minute-hand-width;
-    background-color: gray;
+    background-color: $minute-hand-background-color;
   }
 }

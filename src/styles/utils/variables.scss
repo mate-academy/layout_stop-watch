@@ -1,15 +1,17 @@
-$dial-radius: 200px;
+$dial-border-color: grey;
+$second-hand-background-color: grey;
+$minute-hand-background-color: grey;
+
+$dial-diametr: 400px;
 $second-hand-width: 6px;
-$second-hand-length: $dial-radius - 2px;
+$second-hand-length: $dial-diametr/2 - 2px;
 $minute-hand-width: 12px;
-$minute-hand-length: 0.8 * $dial-radius;
+$minute-hand-length: 0.8 * $dial-diametr/2;
 
-$max-time: 65s; //sets max time for hands to work.
+$second-hand-time: 5s;
+$second-hand-angle: ($second-hand-time/1s)*6deg;
+$second-hand-steps: floor($second-hand-time/1s);
 
-$second-hand-time: $max-time;
-$second-hand-angle: ($max-time/1s)*6deg;
-$second-hand-steps: floor($max-time/1s);
-
-$minute-hand-time: floor($max-time/60)*60;
-$minute-hand-angle: floor($max-time/60s)*6deg;
-$minute-hand-steps: floor($max-time/60s);
+$minute-hand-time: 60s;
+$minute-hand-angle: floor($minute-hand-time/60s)*6deg;
+$minute-hand-steps: floor($minute-hand-time/60s);
