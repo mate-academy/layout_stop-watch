@@ -1,0 +1,15 @@
+$dial-radius: 200px;
+$second-hand-width: 6px;
+$second-hand-length: $dial-radius - 2px;
+$minute-hand-width: 12px;
+$minute-hand-length: 0.8 * $dial-radius;
+
+$max-time: 65s; //sets max time for hands to work.
+
+$second-hand-time: $max-time;
+$second-hand-angle: ($max-time/1s)*6deg;
+$second-hand-steps: floor($max-time/1s);
+
+$minute-hand-time: floor($max-time/60)*60;
+$minute-hand-angle: floor($max-time/60s)*6deg;
+$minute-hand-steps: floor($max-time/60s);

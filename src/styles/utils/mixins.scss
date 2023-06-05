@@ -1,0 +1,15 @@
+@mixin hand($var, $name, $time, $angle, $step) {
+  position: absolute;
+  transform-origin: bottom center;
+  animation: $name $time steps($step, end) forwards;
+
+  @keyframes #{$name} {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate($angle);
+    }
+  }
+}
