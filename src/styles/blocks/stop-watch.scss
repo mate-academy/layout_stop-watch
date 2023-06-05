@@ -22,21 +22,11 @@
     align-items: center;
     flex-direction: column-reverse;
     position: relative;
-    animation-name: second;
+    animation-name: hand-position;
     animation-duration: 5s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-
-    @keyframes second {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
 
     &::before {
       content: "";
@@ -55,21 +45,11 @@
     align-items: center;
     flex-direction: column-reverse;
     position: relative;
-    animation-name: minute;
+    animation-name: hand-position;
     animation-duration: 60s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-
-    @keyframes minute {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
 
     &::before {
       content: "";
