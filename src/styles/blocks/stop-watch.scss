@@ -1,0 +1,54 @@
+.stop-watch {
+  width: $diameterWatch;
+  height: $diameterWatch;
+  border: 7px dotted black;
+  border-radius: ($diameterWatch / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    width: $diameterCenter;
+    height: $diameterCenter;
+    background-color: orange;
+    border-radius: $diameterCenter;
+    position: absolute;
+    z-index: 3;
+  }
+
+  &__seconds-arrow {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    animation: arrow-position 5s linear 0s infinite normal forwards;
+
+    &::before {
+      content: "";
+      width: $weightArrow;
+      height: ($diameterWatch / 2);
+      background-color: pink;
+      border-radius: $weightArrow;
+      position: absolute;
+      z-index: 2;
+      transform-origin: bottom;
+    }
+  }
+
+  &__minutes-arrow {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    animation: arrow-position 60s linear 0s infinite normal forwards;
+
+    &::before {
+      content: "";
+      width: ($weightArrow * 3);
+      height: ($diameterWatch / 4);
+      background-color: black;
+      border-radius: ($weightArrow * 3);
+      position: absolute;
+      z-index: 1;
+    }
+  }
+}
