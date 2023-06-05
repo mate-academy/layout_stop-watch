@@ -1,0 +1,59 @@
+.wraper {
+  display: flex;
+  justify-content: center;
+ }
+
+.watch {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  margin-top: 10vmin;
+  border-radius: 50%;
+  border: 5px dotted black;
+
+  &__minArrow {
+    position: absolute;
+    top: 25%;
+    left: 48%;
+    height: 25%;
+    width: 4%;
+    background-color: blue;
+  }
+
+  &__secArrow {
+    position: absolute;
+    left: 49%;
+    height: 50%;
+    width: 2%;
+    background-color: green;
+  }
+
+  &__centrCircle {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: orange;
+  }
+}
+
+.watch--demo-duration--5:hover {
+  .watch__secArrow {
+    animation: demo5 5s linear infinite;
+    transform-origin: bottom center;
+  }
+}
+
+.watch--demo-duration--60:hover {
+  .watch__secArrow {
+    animation: demo60Sec 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  .watch__minArrow {
+    animation: demo60Min 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+}
