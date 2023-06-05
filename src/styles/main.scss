@@ -1,0 +1,88 @@
+.page {
+  &__body {
+    margin: 0;
+  }
+  &__watch {
+    margin: 20px auto;
+  }
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  height: 80vmin;
+  width: 80vmin;
+  border: dotted 3px black ;
+  border-radius: 50%;
+  &__hand--minutes {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    content: "";
+    height: 8px;
+    width: 25vmin;
+    background-color: rgb(1, 175, 175);
+    border: 1px black solid;
+    transform: rotate(-90deg);
+    transform-origin: left;
+
+    animation-name: minutes;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes minutes {
+    from {
+      transform: rotate(-90deg);
+      transform-origin: left;
+    }
+    to {
+      transform: rotate(270deg);
+      transform-origin: left;
+    }
+  }
+  &__hand--seconds {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    content: "";
+    height: 6px;
+    width: 40vmin;
+    background-color: rgb(80, 179, 0);
+    border: 1px solid black;
+    transform: rotate(-90deg);
+    transform-origin: left;
+
+    animation-name: seconds;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes seconds {
+    from {
+      transform: rotate(-90deg);
+      transform-origin: left;
+    }
+    to {
+      transform: rotate(270deg);
+      transform-origin: left;
+    }
+  }
+  &__cover {
+    display: block;
+    position: absolute;
+    left: 48%;
+    bottom: 48%;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    background-color: rgb(80, 179, 0);
+  }
+}
