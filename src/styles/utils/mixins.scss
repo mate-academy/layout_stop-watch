@@ -1,0 +1,24 @@
+@mixin circle ($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@function move($size) {
+  @return calc(50% - #{$size}/2);
+}
+
+@mixin position($size) {
+  position: absolute;
+  top: move($size);
+  left: move($size);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

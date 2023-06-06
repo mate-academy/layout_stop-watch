@@ -1,0 +1,43 @@
+.stopwatch {
+  @include circle ($stopwatch-size);
+
+  position: relative;
+  display: flex;
+  border: 2px solid $color;
+  background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+              linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+              linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+
+  &__center {
+    @include circle ($center-size);
+    @include position ($center-size);
+
+    display: flex;
+    background-color: black;
+  }
+
+
+  &__minute-hand {
+    @include position ($minute-hand-size);
+
+    width: $stopwatch-size/4;
+    height: $minute-hand-size;
+    background-color: $color;
+    border-radius: $border-radius;
+    animation: rotate 60s linear  infinite;
+    transform-origin: left center;
+  }
+
+
+  &__second-hand{
+    position: absolute;
+    left: move($second-hand-size);
+    width: $second-hand-size;
+    height: $stopwatch-size/2;
+    background-color: $color;
+    border-radius: $border-radius;
+    animation: rotate 5s linear infinite;
+    transform-origin: bottom;
+  }
+}
+
