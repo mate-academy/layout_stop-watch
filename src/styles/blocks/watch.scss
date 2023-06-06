@@ -1,3 +1,5 @@
+@import "./blocks/mixins";
+
 @import "./blocks/variables";
 
 .watch {
@@ -22,10 +24,7 @@
     background-color: red;
   
     transform-origin: 7.5px 100px;
-    animation-name: rotateMinute;
-    animation-duration: 3600s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    @include animation-settings(3600s);
   }
 
   &__seconds {
@@ -37,10 +36,7 @@
     background-color: blue;
   
     transform-origin: 5px 200px;
-    animation-name: rotateSeconds;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    @include animation-settings(60s);
   }
 
   &__center {
@@ -113,16 +109,7 @@
   }
 }
 
-@keyframes rotateMinute {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
-
-@keyframes rotateSeconds {
+@keyframes go {
   from {
     transform: rotate(0);
   }
