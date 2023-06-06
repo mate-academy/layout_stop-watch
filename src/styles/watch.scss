@@ -1,0 +1,47 @@
+.watch {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #3a2e2e;
+}
+
+.watch__center {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: linear-gradient(229deg, #fbff00, #adaa16, #c7d413);
+  background-size: 240% 240%;
+  animation: gradient-animation 16s ease infinite;
+}
+
+.watch__arrows-minute {
+  height: 200px;
+  width: 18px;
+  background-color: #464861;
+  animation: hand-rotate 3600s infinite steps(60);
+}
+
+.watch__arrows-second {
+  height: 230px;
+  width: 18px;
+  background-color: #fff;
+  animation: hand-rotate 60s infinite steps(60);
+}
+
+.hand {
+  position: absolute;
+  left: 48%;
+  bottom: 50%;
+  transform-origin: bottom;
+  border-radius: 20px;
+}
