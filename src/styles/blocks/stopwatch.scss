@@ -1,0 +1,44 @@
+.stopwatch {
+  position: relative;
+  margin-bottom: 20px;
+  border: 3px solid black;
+  @include stopwatch-size();
+
+  &__center-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 8%;
+    height: 8%;
+    border-radius: 50%;
+    border: 2px solid red;
+  }
+
+  &__minute-hand {
+    @extend %hands-border;
+    @include hands-position;
+
+    margin: auto;
+    height: 45%;
+    width: 0;
+    border-color: red;
+
+    animation: stopwatch 60s linear 1s infinite;
+    transform-origin: bottom center;
+  }
+
+  &__second-hand {
+    @extend %hands-border;
+    @include hands-position;
+
+    margin: auto;
+    height: 49%;
+    width: 0;
+    border-color: black;
+
+    animation: stopwatch 1s linear 1s infinite;
+    transform-origin: bottom center;
+  }
+}
