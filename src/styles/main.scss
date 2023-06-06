@@ -1,3 +1,5 @@
+@import "./watch.scss";
+
 .page {
   &__body {
     margin: 0;
@@ -7,89 +9,3 @@
   }
 }
 
-.watch {
-  position: relative;
-  display: flex;
-  background-position: center;
-  background-size: cover;
-  height: 80vmin;
-  width: 80vmin;
-  border: solid 5px black ;
-  border-radius: 50%;
-  &__hand--minutes {
-    display: block;
-    position: absolute;
-    left: 50%;
-    bottom: 49.3%;
-    border-top-right-radius: 90%;
-    border-top-left-radius: 90%;
-    border-bottom-right-radius: 90%;
-    border-bottom-left-radius: 90%;
-    content: "";
-    height: 9px;
-    width: 25vmin;
-    background-color: lightblue;
-    border: 1px black solid;
-    transform-origin: left;
-
-    animation-name: minutes;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-  }
-
-  @keyframes minutes {
-    from {
-      transform: rotate(-90deg);
-      transform-origin: left;
-    }
-    to {
-      transform: rotate(270deg);
-      transform-origin: left;
-    }
-  }
-  &__hand--seconds {
-    display: block;
-    position: absolute;
-    left: 50%;
-    bottom: 49.3%;
-    border-top-right-radius: 100%;
-    border-top-left-radius: 90%;
-    border-bottom-right-radius: 100%;
-    border-bottom-left-radius: 90%;
-    content: "";
-    height: 9px;
-    width: 32vmin;
-    background-color: darkgray;
-    border: 1px solid black;
-    transform-origin: left;
-
-    animation-name: seconds;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-  }
-
-  @keyframes seconds {
-    from {
-      transform: rotate(-90deg);
-    }
-    to {
-      transform: rotate(270deg);
-    }
-  }
-  &__cover {
-    display: block;
-    position: absolute;
-    left: 48.7%;
-    bottom: 49.2%;
-    content: "";
-    height: 10px;
-    width: 10px;
-    border-radius: 20px;
-    background-color: black;
-    transform: scale(2.5);
-  }
-}
