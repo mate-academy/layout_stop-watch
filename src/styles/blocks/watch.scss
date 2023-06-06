@@ -1,0 +1,119 @@
+@import "./blocks/mixins";
+
+@import "./blocks/variables";
+
+.watch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border: 3px dashed black;
+  border-radius: 50%;
+  margin: 50px auto;
+  background: radial-gradient(circle, rgb(253, 253, 65), rgb(226, 17, 17));
+
+  & :nth-child(n) {
+    position: absolute;
+  }
+
+  &__minutes {
+    top: $watch-size / 2 - $minutes-height;
+    left: ($watch-size - $minutes-width) / 2;
+    width: $minutes-width;
+    height: $minutes-height;
+    border-radius: 5px;
+    background-color: red;
+  
+    transform-origin: 7.5px 100px;
+    @include animation-settings(3600s);
+  }
+
+  &__seconds {
+    top: $watch-size / 2 - $seconds-height;
+    left: ($watch-size - $seconds-width) / 2;
+    width: $seconds-width;
+    height: $seconds-height;
+    border-radius: 5px;
+    background-color: blue;
+  
+    transform-origin: 5px 200px;
+    @include animation-settings(60s);
+  }
+
+  &__center {
+    top: ($watch-size - $center-size) / 2;
+    left: ($watch-size - $center-size) / 2;
+    width: $center-size;
+    height: $center-size;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+
+  &__number_1 {
+    top: 40px;
+    right: 130px;
+  }
+  
+  &__number_2 {
+    top: 115px;
+    right: 55px;
+  }
+  
+  &__number_3 {
+    top: 220px;
+    right: 10px;
+  }
+  
+  &__number_4 {
+    bottom: 125px;
+    right: 55px;
+  }
+  
+  &__number_5 {
+    bottom: 40px;
+    right: 130px;
+  }
+  
+  &__number_6 {
+    bottom: 10px;
+    left: 240px;
+  }
+  
+  &__number_7 {
+    bottom: 40px;
+    left: 130px;
+  }
+  
+  &__number_8 {
+    bottom: 125px;
+    left: 55px;
+  }
+  
+  &__number_9 {
+    top: 220px;
+    left: 10px;
+  }
+  
+  &__number_10 {
+    top: 115px;
+    left: 55px;
+  }
+  
+  &__number_11 {
+    top: 35px;
+    left: 130px;
+  }
+  
+  &__number_12 {
+    top: 10px;
+    left: 235px;
+  }
+}
+
+@keyframes go {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
