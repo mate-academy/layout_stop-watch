@@ -1,0 +1,96 @@
+$stopwatchSize: 500px;
+$minuteHandSize: $stopwatchSize/2;
+$minuteHandWidth: 5px;
+$secondHandSize: $stopwatchSize/3;
+$secondHandWidth: 5px;
+$nailSize: $minuteHandWidth * 3;
+
+* {
+  box-sizing: border-box;
+}
+
+.stopwatch {
+  width: $stopwatchSize;
+  height: $stopwatchSize;
+  border-radius: 50%;
+  border: 1px dotted #000;
+  margin: 70px auto;
+
+  &__minute-hand {
+    width: $minuteHandWidth;
+    height: $minuteHandSize;
+    background-color: #888;
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+    transform-origin: center bottom;
+    animation: moveMinutes 60s ease-in-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: $nailSize;
+      height: $nailSize;
+      border-radius: 50%;
+      border: 1px solid #555;
+      background-color: #555;
+      bottom: calc((0% - #{$nailSize}) / 2);
+      left: calc((50% - #{$nailSize}) / 2);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-right: $nailSize/2 solid transparent;
+      border-left: $nailSize/2 solid transparent;
+      border-bottom: $nailSize solid #888;
+      top: calc((0% + #{$nailSize} - 6px) / 2);
+      left: calc((50% - #{$nailSize} + 3px) / 2);
+    }
+  }
+
+  &__second-hand {
+    width: $secondHandWidth;
+    height: $secondHandSize;
+    background-color: #888;
+    transform: rotate(-90deg);
+    margin: 0 auto;
+    transform-origin: center top;
+    animation: moveSecond 5s ease-in-out;
+    animation-delay: 55s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-right: $nailSize/2 solid transparent;
+      border-left: $nailSize/2 solid transparent;
+      border-top: $nailSize solid #888;
+      bottom: calc((0% + #{$nailSize} - 6px) / 2);
+      left: calc((50% - #{$nailSize} + 3px) / 2);
+    }
+  }
+}
+
+@keyframes moveMinutes {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveSecond {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
