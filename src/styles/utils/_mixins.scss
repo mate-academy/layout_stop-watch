@@ -1,0 +1,14 @@
+@mixin circleCenter($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin arrowWidth($size, $value) {
+  width: $size / $value;
+}
+
+@mixin getPosition($height) {
+  position: absolute;
+  top: calc(50% - #{$height});
+}
