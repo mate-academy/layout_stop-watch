@@ -8,9 +8,7 @@
   &__second-hand {
     top: $dial-diametr/2 - $second-hand-length;
     left: $dial-diametr/2 - $second-hand-width / 2;
-    @include hand(
-      runSecondHand, $second-hand-time, $second-hand-angle, $second-hand-steps
-    );
+    @include hand(runSecondHand, $second-hand-time);
     height: $second-hand-length;
     width: $second-hand-width;
     background-color: $second-hand-background-color;
@@ -19,9 +17,7 @@
   &__minute-hand {
     top: $dial-diametr/2 - $minute-hand-length;
     left: $dial-diametr/2 - $minute-hand-width / 2;
-    @include hand(
-      runMinuteHand, $minute-hand-time, $minute-hand-angle, $minute-hand-steps
-    );
+    @include hand(runMinuteHand, $minute-hand-time);
     height: $minute-hand-length;
     width: $minute-hand-width;
     background-color: $minute-hand-background-color;

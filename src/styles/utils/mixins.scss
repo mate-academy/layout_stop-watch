@@ -1,7 +1,7 @@
-@mixin hand($name, $time, $angle, $step) {
+@mixin hand($name, $time) {
   position: absolute;
   transform-origin: bottom center;
-  animation: $name $time steps($step, end) forwards;
+  animation: $name $time linear infinite forwards;
 
   @keyframes #{$name} {
     from {
@@ -9,7 +9,7 @@
     }
 
     to {
-      transform: rotate($angle);
+      transform: rotate(360deg);
     }
   }
 }
