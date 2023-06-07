@@ -14,7 +14,8 @@ $nailSize: $minuteHandWidth * 3;
   height: $stopwatchSize;
   border-radius: 50%;
   border: 1px dotted #000;
-  margin: 70px auto;
+  margin-inline: auto;
+  margin-block: calc((100vh - #{$stopwatchSize}) / 2);
 
   &__minute-hand {
     width: $minuteHandWidth;
@@ -24,7 +25,7 @@ $nailSize: $minuteHandWidth * 3;
     margin: 0 auto;
     z-index: 1;
     transform-origin: center bottom;
-    animation: moveMinutes 60s ease-in-out;
+    animation: moveMinutes 5s ease-in-out infinite;
 
     &::after {
       content: "";
@@ -55,11 +56,11 @@ $nailSize: $minuteHandWidth * 3;
     width: $secondHandWidth;
     height: $secondHandSize;
     background-color: #888;
-    transform: rotate(-90deg);
     margin: 0 auto;
+    position: relative;
+    transform: rotate(180deg);
     transform-origin: center top;
-    animation: moveSecond 5s ease-in-out;
-    animation-delay: 55s;
+    animation: moveSecond 60s ease-in-out infinite;
 
     &::before {
       content: "";
@@ -87,10 +88,10 @@ $nailSize: $minuteHandWidth * 3;
 
 @keyframes moveSecond {
   0% {
-    transform: rotate(-90deg);
+    transform: rotate(180deg);
   }
 
   100% {
-    transform: rotate(270deg);
+    transform: rotate(540deg);
   }
 }
