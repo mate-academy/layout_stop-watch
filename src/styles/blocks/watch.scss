@@ -1,0 +1,52 @@
+.watch {
+  border: 3px solid black;
+  border-radius: 50%;
+  height: 350px;
+  width: 350px;
+
+  &__arrow {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform-origin: left center;
+
+    &--second {
+      height: 5px;
+      width: 145px;
+      border-radius: 30%;
+      background-color: blue;
+      animation: arrows-animation 60s linear infinite;
+
+      &::before {
+        content: "";
+        position: relative;
+        bottom: 5px;
+        right: 7px;
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-color: blue;
+        border-radius: 50%;
+      }
+    }
+
+    &--minute {
+      position: relative;
+      z-index: -1;
+      height: 5px;
+      width: 120px;
+      border-radius: 30%;
+      background-color: red;
+      animation: arrows-animation 3600s linear infinite;
+    }
+
+    @keyframes arrows-animation {
+      0% {
+        transform: rotate(270deg);
+      }
+      100% {
+        transform: rotate(630deg);
+      }
+    }
+  }
+}
