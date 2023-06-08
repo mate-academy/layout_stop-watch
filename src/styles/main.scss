@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+$stopwatchSize: 500px;
+$minuteHandSize: $stopwatchSize/2;
+$minuteHandWidth: 5px;
+$secondHandSize: $stopwatchSize/3;
+$secondHandWidth: 5px;
+$nailSize: $minuteHandWidth * 3;
+
+@mixin angle {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: $nailSize/2 solid transparent;
+    border-left: $nailSize/2 solid transparent;
+    border-bottom: $nailSize solid #888;
+    top: calc((0% + #{$nailSize} - 6px) / 2);
+    left: calc((100% - #{$nailSize}) / 2);
+  }
+}
+
+.stopwatch {
+  width: $stopwatchSize;
+  height: $stopwatchSize;
+  border-radius: 50%;
+  border: 1px dotted #000;
+  position: relative;
+  margin-inline: auto;
+  margin-block: calc((100vh - #{$stopwatchSize}) / 2);
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: $nailSize;
+    height: $nailSize;
+    border-radius: 50%;
+    border: 1px solid #555;
+    background-color: #555;
+    bottom: calc((100% - #{$nailSize}) / 2);
+    left: calc((100% - #{$nailSize}) / 2);
+  }
+
+  &__minute-hand,
+  &__second-hand {
+    position: relative;
+    margin: 0 auto;
+    background-color: #888;
+    transform-origin: center bottom;
+    @include angle;
+  }
+
+  &__minute-hand {
+    width: $minuteHandWidth;
+    height: $minuteHandSize;
+    animation: move 5s linear infinite;
+  }
+
+  &__second-hand {
+    width: $secondHandWidth;
+    height: $secondHandSize;
+    top: -$secondHandSize;
+    animation: move 60s linear infinite;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .stopwatch__minute-hand,
+    .stopwatch__second-hand {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
