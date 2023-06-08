@@ -1,0 +1,33 @@
+.hands {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__pin {
+    position: absolute;
+    z-index: 1;
+    border: $border-width-color;
+    border-radius: $border-width;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: 0;
+    padding-top: secondsSize($circle-size);
+    border-left: $hands-width black;
+    border-radius: $border-width;
+    transform-origin: bottom;
+    animation: rotateHands $move-time-seconds linear infinite;
+  }
+
+  &__minutes {
+    position: absolute;
+    bottom: 0;
+    padding-top: minutesSize($circle-size);
+    border-left: $hands-width red;
+    border-radius: $border-width;
+    transform-origin: bottom;
+    animation: rotateHands $move-time-minutes linear infinite;
+  }
+}
