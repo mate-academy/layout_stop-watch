@@ -1,0 +1,65 @@
+$dial-size: 80vmin;
+$dial-center-size: $dial-size * 0.1;
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.body {
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.dial {
+  position: absolute;
+  border: 4px dotted black;
+  width: $dial-size;
+  height: $dial-size;
+  border-radius: 50%;
+
+  &__center {
+    width: $dial-center-size;
+    height: $dial-center-size;
+    border-radius: 50%;
+    background-color: slategrey;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hand-second {
+    position: absolute;
+    height: 0.5 * $dial-size;
+    width: 0.25 * $dial-center-size;
+    background-color: black;
+    left: 50%;
+    transform: translate(50%, 50%);
+    border-radius: 50px;
+    animation: rotate360 5s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__hand-minute {
+    position: absolute;
+    height: 0.25 * $dial-center-size;
+    width: 0.25 * $dial-size;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    animation: rotate360 60s linear infinite;
+    transform-origin: left;
+  }
+}
