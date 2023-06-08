@@ -1,0 +1,55 @@
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  background-color: $main-contrast-color;
+  border-radius: 50%;
+  border: 4px double $main-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: $main-color;
+    z-index: 2;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 50%;
+    background-color: $main-color;
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    z-index: 1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    &--hour {
+      width: 7px;
+      height: 30%;
+      animation: rotate 10s linear infinite;
+    }
+
+    &--minute {
+      width: 5px;
+      height: 40%;
+      background-color: $second-color;
+      animation: rotate 5s linear infinite;
+    }
+
+    &--second {
+      width: 3px;
+      height: 50%;
+      background-color: $accent-color;
+      animation: rotate 60s steps(60,end) infinite;
+    }
+  }
+}
