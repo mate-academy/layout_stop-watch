@@ -1,0 +1,75 @@
+$watch-size: 600px;
+$watch-radius: $watch-size/2;
+$watch-minute-height: $watch-radius / 2;
+$watch-second-height: $watch-radius;
+$watch-minute-width: 6px;
+$watch-second-width: $watch-minute-width*2;
+$pin-size: 40px;
+$stop-watch-time: 60s;
+$background-imag: url("https://upload.wikimedia.org/wikipedia/commons/c/cf/Clock_background.png");
+
+@mixin circle ($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+body {
+  margin: 0;
+}
+
+.watch {
+  position: relative;
+  @include circle($watch-size);
+  background-color: rgb(156, 171, 184);
+  background-image: $background-imag;
+  background-size: cover;
+}
+
+.page__watch {
+  margin: 0 auto;
+}
+
+.watch__hand {
+  position: absolute;
+
+}
+
+.watch__hand--min {
+  height: $watch-minute-height;
+  width: $watch-minute-width;
+  top: $watch-radius - $watch-minute-height;
+  left: $watch-radius - ($watch-minute-width/2);
+  background-color: blue;
+  transform-origin: bottom center;
+  animation: rotate $stop-watch-time*60 linear infinite;
+}
+
+.watch__hand--sec {
+  height: $watch-radius;
+  width: $watch-second-width;
+  background-color: red;
+  top: 0;
+  left: $watch-radius - ($watch-second-width / 2);
+  transform-origin: bottom center;
+  animation: rotate $stop-watch-time linear infinite;
+
+}
+
+.watch__hand--pin {
+  @include circle($pin-size);
+  top: 50%;
+  left: 50%;
+  // transform-origin: 0 0;
+  transform: translate(-50%, -50%);
+  background-color: red;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
