@@ -1,0 +1,15 @@
+@mixin hand($name, $time) {
+  position: absolute;
+  transform-origin: bottom center;
+  animation: $name $time linear infinite forwards;
+
+  @keyframes #{$name} {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
