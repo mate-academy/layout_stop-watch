@@ -1,0 +1,121 @@
+$watch-size: 400px;
+$pin-size: $watch-size/30;
+
+@mixin watch-hand($width, $height, $color, $border-color, $spin-duration) {
+  position: absolute;
+  bottom: 50%;
+
+  box-sizing: border-box;
+  width: $width;
+  height: $height;
+  border-radius: $width/2;
+  border: 1px solid $border-color;
+
+  background-color: $color;
+
+  transform-origin: bottom;
+  animation: spin $spin-duration steps(60, end);
+  animation-play-state: paused;
+  animation-iteration-count: infinite;
+}
+
+@mixin circle ($diametr) {
+  width: $diametr;
+  height: $diametr;
+  border-radius: $diametr/2;
+}
+
+html {
+  font-family: Courier, monospace;
+  font-size: 14px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  margin: 0;
+}
+
+.stop-watch {
+  @include circle($watch-size);
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  border: 2px solid black;
+
+  &__reset {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    padding: 0;
+    border: none;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    background: none;
+    cursor: pointer;
+  }
+
+  &__checkbox-label {
+    &::before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      content: "> start";
+      cursor: pointer;
+
+      .stop-watch__start-stop:checked ~ & {
+        content: "> stop";
+      }
+    }
+  }
+
+  &__start-stop {
+    display: none;
+  }
+
+  &__seconds-hand {
+    @include watch-hand($watch-size/50, $watch-size/2, white, black, 60s);
+  }
+
+  &__minutes-hand {
+    @include watch-hand($watch-size/40, $watch-size/3, black, black, 3600s);
+  }
+
+  &__reset:active ~ &__minutes-hand,
+  &__reset:active ~ &__seconds-hand {
+    animation: none;
+  }
+
+  &__start-stop:checked ~ &__minutes-hand,
+  &__start-stop:checked ~ &__seconds-hand {
+    animation-play-state: running;
+  }
+
+  &__pin {
+    @include circle($pin-size);
+
+    position: absolute;
+    top: $watch-size/2 - $pin-size/2;
+
+    background: #000;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

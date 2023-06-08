@@ -1,14 +1,27 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <form class="stop-watch">
+      <button type="reset" class="stop-watch__reset">&gt; reset</button>
+
+      <input
+        type="checkbox"
+        id="start-stop"
+        class="stop-watch__start-stop"
+      >
+      <label for="start-stop" class="stop-watch__checkbox-label"></label>
+
+      <div class="stop-watch__minutes-hand"></div>
+      <div class="stop-watch__seconds-hand"></div>
+      <div class="stop-watch__pin"></div>
+    </form>
+  </body>
 </html>
