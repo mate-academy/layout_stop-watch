@@ -1,0 +1,9 @@
+@mixin rotate-animation($animation-name, $speed) {
+  animation: #{$animation-name} #{$speed}s linear 0s infinite;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}

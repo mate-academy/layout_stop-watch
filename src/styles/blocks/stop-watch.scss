@@ -1,0 +1,48 @@
+.stop-watch {
+  $arrow-height: 10px;
+  $arrow-width: 200px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  @include circle($arrow-height * 2);
+
+  background-color: $main-color;
+
+  &__arrow {
+    position: absolute;
+    left: 50%;
+
+    height: $arrow-height;
+
+    border-radius: 0 $arrow-height $arrow-height 0;
+
+    transform: translate(50%, 0);
+    transform-origin: left;
+
+    z-index: -1;
+
+    $times:
+      "seconds" 60 1 $main-color,
+      "minute" 3600 0.75 indianred;
+
+    @each $period, $seconds, $size-modifier, $color in $times {
+      &--#{$period} {
+        width: $arrow-width * $size-modifier;
+        @include rotate-animation(rotate, $seconds);
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(-90deg);
+  }
+  100% {
+    transform: rotateZ(270deg);
+  }
+}
