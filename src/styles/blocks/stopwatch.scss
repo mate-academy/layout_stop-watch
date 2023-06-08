@@ -1,0 +1,46 @@
+.stopwatch {
+  margin: 50px auto;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  background-color: $main-watch-color;
+  border-radius: $border-radius;
+
+  &__big-hand {
+    position: absolute;
+    width: $width-hand;
+    height: $height-hand / 2;
+    background-color: $big-hand-color;
+    z-index: 1;
+    border-radius: $border-radius;
+    border: $border-clock;
+    animation: clock 3600s infinite steps(60);
+    top: $height-hand / 2;
+    transform-origin: center $height-hand / 2;
+  }
+
+  &__small-hand {
+    position: absolute;
+    width: $width-hand / 2;
+    height: $height-hand;
+    background-color: $small-hand-color;
+    border-radius: $border-radius;
+    border: $border-clock;
+    animation: clock 60s infinite steps(12);
+    transform-origin: center $height-hand;
+  }
+
+  &__center {
+    position: absolute;
+    width: $center-size;
+    height: $center-size;
+    border-radius: $border-radius;
+    background-color: $main-watch-color;
+    border: $border-clock;
+    top: 50%;
+    margin-top: -10px;
+    z-index: 2;
+  }
+}
