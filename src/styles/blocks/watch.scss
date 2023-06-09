@@ -1,0 +1,71 @@
+.watch {
+  border-radius: 50%;
+  width: $watch-size;
+  height: $watch-size;
+  border: 5px dotted black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__center {
+    height: 5%;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: orange;
+    z-index: 2;
+  }
+
+  &__hand {
+    &-hour {
+      position: absolute;
+      height: 25%;
+      width: 3%;
+      background-color: blue;
+      top: 25%;
+
+      z-index: 1;
+
+      transform-origin: bottom;
+      animation: side-hour $watch-animation;
+    }
+
+    &-minute {
+      position: absolute;
+      height: 50%;
+      width: 1%;
+      background-color: green;
+      top: 0%;
+
+      transform-origin: bottom;
+      animation: side-minute $watch-animation;
+    }
+  }
+}
+
+@keyframes side-minute {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes side-hour {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
