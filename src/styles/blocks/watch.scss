@@ -30,7 +30,7 @@
       z-index: 1;
 
       transform-origin: bottom;
-      animation: side-hour $watch-animation;
+      animation: sides $timer-for-hours $watch-animation;
     }
 
     &-minute {
@@ -41,12 +41,12 @@
       top: 0%;
 
       transform-origin: bottom;
-      animation: side-minute $watch-animation;
+      animation: sides $timer-for-minutes $watch-animation;
     }
   }
 }
 
-@keyframes side-minute {
+@keyframes sides {
   0% {
     transform: rotate(0deg);
   }
@@ -58,14 +58,5 @@
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes side-hour {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(30deg);
   }
 }
