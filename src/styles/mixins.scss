@@ -1,0 +1,15 @@
+@mixin size ($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin animation ($sec) {
+  animation: $sec linear rotate;
+  transform-origin: center bottom;
+}
+
+@mixin positioning ($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
