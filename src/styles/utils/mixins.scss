@@ -1,0 +1,10 @@
+@mixin positionCenter($translateX: -50%, $translateY: -50%) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate($translateX, $translateY);
+}
+@mixin size ($width, $height) {
+  width: $width;
+  height: $height;
+}
