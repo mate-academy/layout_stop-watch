@@ -6,7 +6,7 @@ Replace `<your_account>` with your Github username and copy the links to Pull Re
 ___
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 
-- There are no tests for this task so don't run `npm test`.
+- There are no tests for this task so don't run `npm test`..
 ___
 
 ## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/layout_stop-watch/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
