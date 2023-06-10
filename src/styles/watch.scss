@@ -1,0 +1,117 @@
+$clock-size: 600px;
+$color-dark-blue: rgb(58, 58, 122);
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+.stop-watch {
+  @include circle($clock-size);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(15,241,223,1) 0%,
+  rgba(26,73,164,1) 100%);
+  border: $clock-size * 0.01 solid $color-dark-blue;
+
+  &__dot {
+    @include circle($clock-size * 0.1);
+    position: absolute;
+    background-color: $color-dark-blue;
+  }
+
+  &__min-hand {
+    position: absolute;
+    bottom: 50%;
+    height: $clock-size * 0.4;
+    width: $clock-size * 0.04;
+    background-color: aliceblue;
+    border-radius: 60%;
+    border: 2px solid $color-dark-blue;
+    animation: move 3600s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__sec-hand {
+    position: absolute;
+    bottom: 50%;
+    height: $clock-size * 0.43;
+    width: $clock-size * 0.02;
+    background-color: $color-dark-blue;
+    border-radius: 60%;
+    animation: move 60s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__point {
+    @include circle($clock-size * 0.03);
+    position: absolute;
+    border: 1px solid $color-dark-blue;
+    background-color: aliceblue;
+
+    &:nth-of-type(1) {
+      bottom: 2%;
+    }
+
+    &:nth-of-type(2) {
+      top: 2%;
+    }
+
+    &:nth-of-type(3) {
+      left: 2%;
+    }
+
+    &:nth-of-type(4) {
+      right: 2%;
+    }
+
+    &:nth-of-type(5) {
+      top: 8%;
+      left: 72%;
+    }
+
+    &:nth-of-type(6) {
+      top: 25%;
+      left: 88%;
+    }
+
+    &:nth-of-type(7) {
+      top: 8%;
+      right: 72%;
+    }
+
+    &:nth-of-type(8) {
+      top: 25%;
+      right: 88%;
+    }
+
+    &:nth-of-type(9) {
+      bottom: 8%;
+      left: 72%;
+    }
+
+    &:nth-of-type(10) {
+      bottom: 25%;
+      left: 88%;
+    }
+
+    &:nth-of-type(11) {
+      bottom: 8%;
+      right: 72%;
+    }
+
+    &:nth-of-type(12) {
+      bottom: 25%;
+      right: 88%;
+    }
+  }
+}
+
+@keyframes move {
+  to {
+    transform: rotate(360deg);
+  }
+}
