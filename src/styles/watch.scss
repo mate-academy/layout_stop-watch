@@ -1,0 +1,55 @@
+.watch {
+  &__case {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: $borderWidth auto;
+    width: $size;
+    height: $size;
+
+    border: $borderWidth dotted grey;
+    border-radius: 50%;
+  }
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+
+    width: $center-size;
+    height: $center-size;
+
+    border-radius: 50%;
+    background-color: pink;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+
+    border-radius: 30% 30% 10% 10%;
+
+    @include animationHands;
+
+    &--sec {
+      left: $centeringSec;
+      width: $width-sec-hand;
+      height: $length-sec-hand;
+
+      background-color: purple;
+
+      animation-duration: 5s;
+    }
+
+    &--min {
+      left: $centeringMin;
+      width: $width-min-hand;
+      height: $length-min-hand;
+
+      background-color: palevioletred;
+
+      animation-duration: 60s;
+    }
+  }
+}
