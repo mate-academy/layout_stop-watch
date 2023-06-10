@@ -1,0 +1,51 @@
+.watch {
+  @include wacthSize($size-wacth);
+
+  background-color: rgb(252, 230, 255);
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__minute {
+    position: relative;
+
+    &::after {
+      @extend %position-content;
+      left: $top-position - $minute-width;
+      width: $minute-width;
+      background-color: rgb(78, 101, 203);
+
+      animation-duration: 360s;
+      @extend %hands-location;
+      @extend %hands-animation;
+    }
+  }
+
+  &__second {
+    position: relative;
+
+    &::after {
+      @extend %position-content;
+      left: $top-position - $second-width;
+      width: $second-width;
+      background-color: rgb(215, 227, 0);
+
+      animation-duration: 60s;
+      @extend %hands-location;
+      @extend %hands-animation;
+    }
+  }
+}
+
+@keyframes timer {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
