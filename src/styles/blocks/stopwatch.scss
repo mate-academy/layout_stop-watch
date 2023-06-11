@@ -1,0 +1,65 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include circle($stopwatch-size);
+  margin: 0 auto;
+  border: $stopwatch-border solid $stopwatch-color;
+  cursor: pointer;
+
+  &:hover .animated {
+    animation-play-state: paused;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: getArrowIndent($stopwatch-size,
+    $stopwatch-border,
+    $seconds-arrow-height);
+    z-index: 1;
+    width: $arrow-width;
+    height: $seconds-arrow-height;
+
+    background-color: $stopwatch-color;
+    border-radius: $arrow-border-radius;
+
+    transform-origin: center bottom;
+    animation: reversal
+      60s
+      $arrow-timing-f
+      60
+      $arrow-direction
+      $arrow-fill-mode;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: getArrowIndent($stopwatch-size,
+    $stopwatch-border,
+    $minutes-arrow-height);
+    width: $arrow-width;
+    height: $minutes-arrow-height;
+    background-color: darkblue;
+    border-radius: $arrow-border-radius;
+
+    transform-origin: center bottom;
+    animation: reversal
+      3600s
+      $arrow-timing-f
+      1
+      $arrow-direction
+      $arrow-fill-mode;
+  }
+
+  &__dot {
+    position: absolute;
+    top: getIndent($stopwatch-size,
+    $stopwatch-border,
+    $dot-size);
+    z-index: 1;
+
+    @include circle($dot-size);
+    background-color: $stopwatch-color;
+  }
+}
