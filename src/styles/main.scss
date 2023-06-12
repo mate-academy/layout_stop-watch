@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+$size-stopwatch: 500px;
+
+@mixin animation {
+  transform-origin: bottom;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(600, end);
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stopwatch {
+  width: $size-stopwatch;
+  height: $size-stopwatch;
+  border: double 5px #eee;
+  box-shadow: 2px 2px 30px #282828;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%,
+  rgba(3,27,15,1) 0%, rgba(3,27,15,0) 3%,);
+  position: relative;
+
+  &__center {
+    width: 0;
+    height: 0;
+    background-color: #282828;
+    border-radius: 50%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &-fraction {
+      position: absolute;
+      top: -$size-stopwatch / 2;
+      left: 0;
+      width: 2px;
+      height: $size-stopwatch;
+      background: radial-gradient(circle, rgba(255, 255, 255, 00) 95%, #000);
+      transform: rotate(174deg);
+
+      $degs:
+        "1" 0deg,
+        "2" 6deg,
+        "3" 12deg,
+        "4" 18deg,
+        "5" 24deg,
+        "6" 30deg,
+        "7" 36deg,
+        "8" 42deg,
+        "9" 48deg,
+        "11" 54deg,
+        "12" 60deg,
+        "13" 66deg,
+        "14" 72deg,
+        "15" 78deg,
+        "16" 84deg,
+        "17" 90deg,
+        "18" 96deg,
+        "19" 102deg,
+        "21" 108deg,
+        "22" 114deg,
+        "23" 120deg,
+        "24" 126deg,
+        "25" 132deg,
+        "26" 138deg,
+        "28" 144deg,
+        "29" 150deg,
+        "30" 156deg,
+        "31" 162deg,
+        "32" 168deg;
+
+      @each $number, $deg in $degs {
+        &--#{$number} {
+          transform: rotate($deg);
+        }
+      }
+
+      $sizes:
+        "1" 4px radial-gradient(circle, rgba(255, 255, 255, 00) 90%, #000),
+        "6" 4px radial-gradient(circle, rgba(255, 255, 255, 00) 90%, #000),
+        "12" 4px radial-gradient(circle, rgba(255, 255, 255, 00) 90%, #000),
+        "17" 4px radial-gradient(circle, rgba(255, 255, 255, 00) 90%, #000),
+        "23" 4px radial-gradient(circle, rgba(255, 255, 255, 00) 90%, #000),
+        "29" 4px radial-gradient(circle, rgba(255, 255, 255, 00) 90%, #000);
+
+      @each $number, $width, $color in $sizes {
+        &--#{$number} {
+          width: $width;
+          background: $color;
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -$size-stopwatch / 2 + 15px;
+      left: 0;
+      width: 4px;
+      height: $size-stopwatch / 2 - 15px;
+      background: radial-gradient(circle,#999 50%, #000);
+      transform-origin: bottom;
+      animation: second 3600s;
+      @include animation;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -$size-stopwatch / 2;
+      left: 0;
+      width: 2px;
+      height: $size-stopwatch /2;
+      background: radial-gradient(circle,#999 50%, #000);
+      animation: second 60s;
+      @include animation;
+    }
+
+  }
+
+  @keyframes second {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
