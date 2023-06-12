@@ -1,0 +1,54 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  @include circle($watch-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(#c44310, #9198e5);
+  border: 1vmin dashed black;
+
+  &__minute-arrow {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 50%;
+    width: 2vmin;
+    height: 30vmin;
+    background: #00ff62;
+    border-radius: 50%;
+    border: 0.5vmin solid black;
+    transform-origin: center bottom;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 50%;
+    width: 2vmin;
+    height: 40vmin;
+    background: #ae00ff;
+    border-radius: 50%;
+    border: 0.5vmin solid black;
+    transform-origin: center bottom;
+    animation: rotate 5s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    @include circle($center-size);
+    background: black;
+  }
+}
