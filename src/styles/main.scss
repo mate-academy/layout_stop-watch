@@ -1,0 +1,60 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px dotted black;
+  border-radius: 50%;
+  background-color: #fff;
+  width: 80vmin;
+  height: 80vmin;
+  margin: auto;
+
+  &__element {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    border: 1px solid black;
+    transform-origin: bottom center;
+  }
+
+  &__element:hover {
+    animation-play-state: paused;
+  }
+
+  &__arrow--big {
+    width: 12px;
+    height: 30vmin;
+    background-color: #f3f36a;
+
+    animation: move 60s linear forwards infinite;
+  }
+
+  &__arrow--small {
+    width: 12px;
+    height: 15vmin;
+    background-color: rgb(0, 166, 255);
+    animation: move 3600s linear forwards;
+  }
+
+  @keyframes move {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__center {
+    position: absolute;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    border-radius: 50%;
+    width: 10vmin;
+    height: 10vmin;
+    background-color: rgb(60, 202, 192);
+  }
+}
