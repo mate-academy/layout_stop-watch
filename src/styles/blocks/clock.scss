@@ -19,24 +19,23 @@
   }
 
   &__sweep-hand {
-    position: absolute;
+    @include hand ();
+
     height: $clock-height / 2;
-    width: $hand-width;
-    border: $border-color;
-    border-radius: $border-radius;
+    border-radius: 40%;
     background-color: rgb(43, 0, 255);
     transform-origin: center $clock-height / 2;
     animation: move 60s linear infinite;
   }
 
   &__minute-hand {
-    position: absolute;
+    @include hand ();
+
     height: $clock-height / 4;
-    width: $hand-width;
     background-color: rgb(255, 0, 0);
     transform-origin: center $clock-height / 4;
-    border: $border-color;
-    border-radius: $border-radius;
+
+    border-radius: 40%;
     top: $clock-height / 4;
     animation: move 720s linear infinite;
   }

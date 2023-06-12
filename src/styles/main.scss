@@ -1,5 +1,6 @@
-@import "utils/keyframes";
 @import "utils/variables";
+@import "./utils/mixin.scss";
+@import "utils/keyframes";
 @import "blocks/clock.scss";
 
 * {
@@ -8,10 +9,7 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
+  height: 100vmin;
   display: flex;
-  justify-content: center;
   align-items: center;
-  align-content: center;
 }
