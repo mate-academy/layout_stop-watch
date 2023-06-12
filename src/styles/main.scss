@@ -1,0 +1,41 @@
+@mixin hand ($top, $width, $height) {
+  position: absolute;
+  top: $top;
+  left: 50px;
+  width: $width;
+  height: $height;
+  transform-origin: bottom left;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 200px;
+}
+
+.watch {
+  position: relative;
+
+  &__line-second {
+    @include hand (0, 4px, 200px);
+    background-color: aquamarine;
+    animation: sec 60s infinite;
+  }
+
+  &__line-minute {
+    @include hand (100px, 6px, 100px);
+    background-color: fuchsia;
+    animation: sec 3600s infinite;
+  }
+}
+ 
+@keyframes sec {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+  
