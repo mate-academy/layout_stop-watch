@@ -1,0 +1,56 @@
+@import "variables";
+
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  margin: 0;
+}
+
+.clock {
+  border: 5px dotted black;
+  border-radius: 50%;
+  height: $size-clock;
+  width: $size-clock;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 9px 6px rgba(0,0,0,0.4);
+  background: $background-clock;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+
+  &__second-arrow {
+    height: 48%;
+    border: 1.5px solid $color-second-arrow;
+    animation: rotate 60s infinite ease;
+    transform-origin: bottom;
+    position: absolute;
+    top: 1%;
+  }
+
+  &__time-arrow {
+    height: 40%;
+    border: 3px solid $color-time-arrow;
+    border-radius: 30%;
+    display: flex;
+    animation: rotate 3600s infinite ease;
+    transform-origin: bottom;
+    position: absolute;
+    top: 10%;
+  }
+
+  &__center {
+    border: 27px solid $color-clock-center;
+    border-radius: 50%;
+    position: absolute;
+    top: 46%;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
