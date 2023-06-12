@@ -7,6 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: chocolate;
 
   &__center {
     position: relative;
@@ -24,8 +25,8 @@
     border: $border-color;
     border-radius: $border-radius;
     background-color: rgb(43, 0, 255);
-    transform-origin: center 40vmin;
-    animation: move 60s steps(12) infinite;
+    transform-origin: center $clock-height / 2;
+    animation: move 60s linear infinite;
   }
 
   &__minute-hand {
@@ -33,10 +34,10 @@
     height: $clock-height / 4;
     width: $hand-width;
     background-color: rgb(255, 0, 0);
-    transform-origin: center 20vmin;
+    transform-origin: center $clock-height / 4;
     border: $border-color;
     border-radius: $border-radius;
-    top: 20vmin;
-    animation: move 720s steps(12) infinite;
+    top: $clock-height / 4;
+    animation: move 720s linear infinite;
   }
 }
