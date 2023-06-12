@@ -1,0 +1,38 @@
+.stop-watch {
+  position: relative;
+  @include watch-stop($watch-size);
+  border: 2px solid $watch-color;
+  border-radius: 50%;
+
+  &--center {
+    margin: 50px auto;
+  }
+
+  &__seconds {
+    @include bid-arrow($watch-size);
+    background-color: $watch-color;
+    animation: watch 60s linear infinite;
+
+  }
+
+  &__minutes {
+    @include small-arrow($watch-size);
+    background-color: #d15559;
+    animation: watch 3600s linear infinite;
+  }
+
+  &__center {
+    @include point-arrow($watch-size);
+    background-color: $watch-color;
+    border-radius: 50%;
+  }
+}
+
+@keyframes watch {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
