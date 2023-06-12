@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.clock {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 100%;
+  border: 6px dotted black;
+  margin: auto;
+  margin-top: 50px;
+
+  &__center {
+  height: 30px;
+  width: 30px;
+  background-color: #FFA500;
+  border-radius: 100%;
+  position: relative;
+  margin: auto;
+  top: 50%;
+  }
+
+  &__hand--minute {
+    position: absolute;
+    top: 25%;
+    left: 48%;
+    height: 150px;
+    width: 20px;
+    background-color: #0000FF;
+    transform-origin: bottom center;
+    animation: time 60s infinite linear;
+  }
+
+  &__hand--second {
+    position: absolute;
+    left: 50%;
+    width: 10px;
+    height: 285px;
+    background-color: #008000;
+    transform-origin: bottom center;
+    animation: time 5s infinite linear;
+  }
+}
+
+@keyframes time {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
