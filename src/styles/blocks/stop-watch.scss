@@ -1,0 +1,64 @@
+.stop-watch {
+  width: $diameterWatch;
+  height: $diameterWatch;
+  border: 7px dotted black;
+  border-radius: ($diameterWatch / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    width: $diameterCenter;
+    height: $diameterCenter;
+    background-color: orange;
+    border-radius: $diameterCenter;
+    position: absolute;
+    z-index: 50;
+  }
+
+  &__second-hand {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    position: relative;
+    animation-name: hand-position;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    &::before {
+      content: "";
+      width: $weightHand;
+      height: ($diameterWatch / 2);
+      background-color: green;
+      border-radius: 1vmin;
+      position: absolute;
+      z-index: 20;
+      transform-origin: bottom;
+    }
+  }
+
+  &__minute-hand {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    position: relative;
+    animation-name: hand-position;
+    animation-duration: 60s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    &::before {
+      content: "";
+      width: (2 * $weightHand);
+      height: ($diameterWatch / 4);
+      background-color: blue;
+      border-radius: (2 * $weightHand);
+      position: absolute;
+      z-index: 10;
+    }
+  }
+}
