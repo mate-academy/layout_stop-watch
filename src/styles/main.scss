@@ -1,0 +1,44 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+.stopwatch {
+  @include circle();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto 0;
+  border: 4px dotted gray;
+
+  &__sec-hand {
+    @include hand();
+    position: absolute;
+    height: 38%;
+    border: 5px solid $sec-hand-color;
+    animation: rotate 5s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__min-hand {
+    @include hand();
+    position: absolute;
+    height: 20%;
+    border: 8px solid $min-hand-color;
+    transform-origin: bottom center;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__point {
+    @include point();
+    position: absolute;
+    background-color: $point-color;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
