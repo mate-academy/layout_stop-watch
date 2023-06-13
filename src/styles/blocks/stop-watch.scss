@@ -88,6 +88,10 @@
   animation: rotate60 60s steps(60, jump-start);
 }
 
+.stop-watch__button--60s:hover ~ .stop-watch__min-hand {
+  animation: rotate1min 1s steps(1, jump-start) 59s forwards;
+}
+
 @keyframes rotate5 {
   from {
     transform: rotate(0deg);
@@ -114,4 +118,16 @@
 
   top: calc(#{$shift} * 4 - #{$min-hand-height});
   left: calc(#{$shift} * 4 - #{$min-hand-width} / 2);
+
+  transform-origin: calc(#{$min-hand-width} / 2) calc(#{$min-hand-height});
+}
+
+@keyframes rotate1min {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(6deg);
+  }
 }
