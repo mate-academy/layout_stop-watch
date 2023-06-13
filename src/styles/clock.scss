@@ -1,0 +1,68 @@
+.clock {
+  margin: 40px;
+  height: $clock-size;
+  width: $clock-size;
+  position: relative;
+
+  background-image: $clock-bgi;
+  border: 3px solid lime;
+  border-radius: 50%;
+
+  animation-name: border;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+
+  &__item {
+    font-size: $clock-face-text;
+    list-style: none;
+    position: absolute;
+    color: $clock-face-color;
+    text-shadow:
+      4px 4px 0px #d5d5d5,
+      7px 7px 0px rgba(0, 0, 0, 0.2);
+
+    &--XII {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--III {
+      top: 50%;
+      left: 83%;
+      transform: translateY(-50%);
+    }
+
+    &--VI {
+      bottom:3%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--IX {
+      top: 50%;
+      left: 3%;
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes border {
+    0% {
+      box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45);
+    }
+    25% {
+      box-shadow: 25px 0 20px -20px rgba(0, 0, 0, 0.45);
+    }
+    50% {
+      box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.45);
+    }
+    75% {
+      box-shadow: -25px 0 20px -20px rgba(0, 0, 0, 0.45);
+    }
+    100% {
+      box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45);
+    }
+  }
+}
