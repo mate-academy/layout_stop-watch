@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
 
-  background: radial-gradient(#020024, #d72644 27%, #05c3ff 47%, #010024 69%);
+  background: $stopwatch-background;
   border: 8px dotted #fff;
 
   &__center {
@@ -19,20 +19,20 @@
   }
 
   &__second-hand {
-    @include hand($second-hand-heigth, $second-hand-width);
+    @include hand($second-hand-height, $second-hand-width);
 
     bottom: $vertical-align;
     z-index: 2;
     background-color: $hand-color;
-    animation: 5s linear infinite hand-move;
+    animation: $animation-duration-second-hand linear infinite hand-move;
   }
 
   &__minute-hand {
-    @include hand($minute-hand-heigth, $minute-hand-width);
+    @include hand($minute-hand-height, $minute-hand-width);
 
     bottom: $vertical-align;
     z-index: 1;
     background-color: $hand-color;
-    animation: 60s linear infinite  hand-move;
+    animation: $animation-duration-hour-hand linear infinite  hand-move;
   }
 }
