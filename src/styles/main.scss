@@ -1,0 +1,17 @@
+@import "./utils/_variables";
+@import "./blocks/reset";
+@import "./blocks/points";
+@import "./blocks/stop-watch";
+
+.stopwatch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__stop-watch {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: calc(50vh - #{$stop-watch-size} / 2);
+  }
+}

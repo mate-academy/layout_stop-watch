@@ -1,0 +1,113 @@
+.stop-watch {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: $stop-watch-size;
+  height: $stop-watch-size;
+  background-color: aquamarine;
+}
+
+.stop-watch__button {
+  width: calc(#{$shift});
+  height: calc(#{$shift});
+  background-color: $min-hand-color;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  top: calc(#{$shift} / 2);
+  left: calc(#{$shift} / 2);
+}
+
+@for $i from 1 through 7 {
+   .stop-watch__sec-point--#{$i},
+   .stop-watch__sec-point--#{$i+6} {
+      position: absolute;
+      top: calc(#{$shift} * #{$i} - #{$sec-point-size} / 2);
+    }
+}
+
+@for $i from 1 through 3 {
+  .stop-watch__sec-point--#{$i} {
+    position: absolute;
+    left: calc(#{$shift} * (#{5 - $i}) - #{$sec-point-size} / 2);
+  }
+}
+
+@for $i from 4 through 10 {
+  .stop-watch__sec-point--#{$i} {
+    position: absolute;
+    left: calc(#{$shift} * (#{$i - 3}) - #{$sec-point-size} / 2);
+  }
+}
+
+@for $i from 11 through 12 {
+  .stop-watch__sec-point--#{$i} {
+    position: absolute;
+    left: calc(#{$shift} * (#{17 - $i}) - #{$sec-point-size} / 2);
+  }
+}
+
+.stop-watch__mid-point {
+  position: absolute;
+  top: calc(#{$shift} * 4 - #{$mid-point-size} / 2);
+  left: calc(#{$shift} * 4 - #{$mid-point-size} / 2);
+  z-index: 1;
+}
+
+.stop-watch__sec-hand {
+  position: absolute;
+  width: $sec-hand-width;
+  height: $sec-hand-height;
+  background-color: $sec-hand-color;
+
+  top: calc(#{$shift} * 4 - #{$sec-hand-height});
+  left: calc(#{$shift} * 4 - #{$sec-hand-width} / 2);
+
+  transform-origin: calc(#{$sec-hand-width} / 2) calc(#{$sec-hand-height});
+}
+
+.stop-watch__button:hover {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.stop-watch__button:hover ~ .stop-watch__sec-hand {
+  animation: rotate5 5s steps(60, jump-start) infinite;
+}
+
+.stop-watch__button:hover ~ .stop-watch__min-hand {
+  animation: rotate60 60s steps(60, jump-start) 1s infinite;
+}
+
+@keyframes rotate5 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate60 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stop-watch__min-hand {
+  position: absolute;
+  width: $min-hand-width;
+  height: $min-hand-height;
+  background-color: $min-hand-color;
+
+  top: calc(#{$shift} * 4 - #{$min-hand-height});
+  left: calc(#{$shift} * 4 - #{$min-hand-width} / 2);
+
+  transform-origin: calc(#{$min-hand-width} / 2) calc(#{$min-hand-height});
+}
