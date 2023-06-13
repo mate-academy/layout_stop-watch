@@ -14,18 +14,11 @@
 
   display: flex;
   justify-content: center;
-  line-height: calc(#{$shift});
+  align-items: center;
 
   position: relative;
   top: calc(#{$shift} / 2);
-}
-
-.stop-watch__button--5s {
   left: calc(#{$shift} / 2);
-}
-
-.stop-watch__button--60s {
-  right: calc(#{$shift} / 2);
 }
 
 @for $i from 1 through 7 {
@@ -78,18 +71,15 @@
 
 .stop-watch__button:hover {
   background-color: yellow;
+  font-weight: bold;
 }
 
-.stop-watch__button--5s:hover ~ .stop-watch__sec-hand {
-  animation: rotate5 5s steps(5, jump-start) forwards;
+.stop-watch__button:hover ~ .stop-watch__sec-hand {
+  animation: rotate5 5s steps(60, jump-start) infinite;
 }
 
-.stop-watch__button--60s:hover ~ .stop-watch__sec-hand {
-  animation: rotate60 60s steps(60, jump-start);
-}
-
-.stop-watch__button--60s:hover ~ .stop-watch__min-hand {
-  animation: rotate1min 1s steps(1, jump-start) 59s forwards;
+.stop-watch__button:hover ~ .stop-watch__min-hand {
+  animation: rotate60 60s steps(60, jump-start)   infinite;
 }
 
 @keyframes rotate5 {
@@ -97,7 +87,7 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(30deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -120,14 +110,4 @@
   left: calc(#{$shift} * 4 - #{$min-hand-width} / 2);
 
   transform-origin: calc(#{$min-hand-width} / 2) calc(#{$min-hand-height});
-}
-
-@keyframes rotate1min {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(6deg);
-  }
 }
