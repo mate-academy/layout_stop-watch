@@ -1,0 +1,46 @@
+.clock__long-hand{
+  @include hands();
+  height: $long-hand-height;
+  width: $long-hand-width;
+  left: calc(50% - #{$long-hand-width}/2);
+  transform-origin: bottom;
+
+  background-image: linear-gradient(to right, #00b4db, #0083b0);
+  border: 1px solid white;
+  border-radius: 35%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  animation-name: clock;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+}
+
+.clock__small-hand {
+  @include hands();
+  height: $small-hand-height;
+  width: $small-hand-width;
+  left: calc(50% - #{$small-hand-width}/2);
+  z-index: 1;
+
+  background-image: linear-gradient(to right, #00b4db, #0083b0);
+  border: 2px solid white;
+  border-radius: 35%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  animation-name: clock;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+}
+
+@keyframes clock {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}

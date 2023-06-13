@@ -1,0 +1,75 @@
+.clock__button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $button-size;
+  height: $button-size;
+  top: calc(50% - #{$button-size}/2);
+  left: calc(50% - #{$button-size}/2);
+  z-index: 2;
+
+  border-radius: 50%;
+  background-image: radial-gradient(circle, #5c0067 0%, #00d4ff 100%);
+  text-shadow: 1px 1px 2px black, 0 0 5px blue, 0 0 5px darkblue;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+  transition: 500ms;
+
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  &:hover {
+    cursor: pointer;
+    color: $button-hover-color;
+    background-image: linear-gradient(to right, #8360c3, #2ebf91);
+    box-shadow: inset 0 0 35px 5px rgba(0,0,0,0.25), inset 0 2px 1px 1px rgba(255,255,255,0.9), inset 0 -2px 1px rgba(0,0,0,0.25);
+  }
+}
+
+.clock__checkbox {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+input:checked ~ [class*=hand] {
+  animation-play-state: running;
+}
+
+input + label::before {
+  content: 'Run';
+}
+
+input:checked + label::before {
+  content: 'Pause';
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

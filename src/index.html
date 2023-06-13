@@ -1,14 +1,28 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <div class="clock">
+      <ul class="clock__face">
+        <li class="clock__item clock__item--XII">XII</li>
+        <li class="clock__item clock__item--III">III</li>
+        <li class="clock__item clock__item--VI">VI</li>
+        <li class="clock__item clock__item--IX">IX</li>
+      </ul>
+      <input
+      type="checkbox"
+      id="toggle"
+      class="clock__checkbox">
+      <label for="toggle" class="clock__button clock__button--pulse"></label>
+      <div class="clock__small-hand"></div>
+      <div class="clock__long-hand"></div>
+    </div>
+  </body>
 </html>
