@@ -1,0 +1,13 @@
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin hand($height, $width) {
+  position: absolute;
+  height: $height;
+  width: $width;
+  border-radius: 50% 50% 0 0;
+  transform-origin: bottom;
+}
