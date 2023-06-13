@@ -1,0 +1,36 @@
+.clock {
+  @include display;
+  @include clock-size;
+  position: relative;
+  border: 2px solid $border-color;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px 10px $main-color;
+  background-image: url("/image/clock.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__center {
+    @include center-size;
+    background-color: rgba(68, 41, 130, 1);
+    border: 2px solid $border-color;
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &__minute {
+    @include line;
+    height: 35%;
+    background-color: $main-color;
+    z-index: 2;
+    animation: spin 3600s linear infinite;
+  }
+
+  &__second {
+    @include line;
+    height: 45%;
+    background-color: $main-color;
+    z-index: 1;
+    animation: spin 60s steps(60, end) infinite;
+  }
+}
