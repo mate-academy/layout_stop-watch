@@ -1,0 +1,38 @@
+.clock {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  border: 6px dotted black;
+
+  &__center {
+    position: absolute;
+    height: $center-size;
+    width: $center-size;
+    background-color: #FFA500;
+    border-radius: 50%;
+    top: calc(50% - #{$center-size}/2);
+    left: calc(50% - #{$center-size}/2);
+  }
+
+  &__hand--minute {
+    position: absolute;
+    width: $hand-minute-width;
+    height: $hand-minute-height;
+    background-color: #0000FF;
+    bottom: 50%;
+    left: calc(50% - #{$hand-minute-width}/2);
+    transform-origin: bottom center;
+    animation: time 60s infinite linear;
+  }
+
+  &__hand--second {
+    position: absolute;
+    width: $hand-second-width;
+    height: $hand-second-height;
+    background-color: #008000;
+    transform-origin: bottom center;
+    left: calc(50% - #{$hand-second-width}/2);
+    animation: time 5s infinite linear;
+  }
+}
