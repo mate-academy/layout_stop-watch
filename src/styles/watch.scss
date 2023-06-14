@@ -1,0 +1,52 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-width: 80vw;
+  min-height: 80vw;
+  margin: auto;
+  border: 2vw dotted #000;
+  border-radius: 50%;
+
+  &__center {
+    width: 5vw;
+    height: 5vw;
+    margin: auto;
+    background-color: orange;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: 50%;
+    transform: rotate(0deg);
+    transform-origin: bottom center;
+
+    &--second {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2%;
+      height: 50%;
+      background-color: $second-hand-color;
+      animation: rotateSecondHand;
+      animation-duration: $second-hand-animation-duration;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    &--minute {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3%;
+      height: 25%;
+      background-color: $minute-hand-color;
+      animation-name: rotateMinuteHand;
+      animation-duration: $minute-hand-animation-duration;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+}
