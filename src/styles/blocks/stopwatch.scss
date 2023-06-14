@@ -1,0 +1,34 @@
+.stopwatch {
+  position: relative;
+  border: 20px solid $main-color;
+  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+  box-shadow: inset 0 0 15px black;
+  background-color: $center-stopwatch-color;
+
+  &:before {
+    content: "";
+    @include circle(30px, $center-color);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &__minute {
+    background-color: $minute-hand-color;
+    height: 30%;
+    width: 2%;
+    animation: rotate 60s infinite linear;
+    z-index: 1;
+  }
+
+  &__second {
+    background: $second-hand-color;
+    height: 50%;
+    width: 1%;
+    animation: rotate 5s infinite linear;
+  }
+}
