@@ -9,10 +9,7 @@
 
   &:before {
     content: "";
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: $center-color;
+    @include circle(30px, $center-color);
     position: absolute;
     left: 50%;
     top: 50%;
@@ -21,10 +18,10 @@
   }
 
   &__minute {
-    position: absolute;
     background-color: $minute-hand-color;
     height: 30%;
     width: 2%;
+    animation: rotate 60s infinite linear;
     z-index: 1;
   }
 
@@ -32,6 +29,6 @@
     background: $second-hand-color;
     height: 50%;
     width: 1%;
-    top: 50%;
+    animation: rotate 5s infinite linear;
   }
 }
