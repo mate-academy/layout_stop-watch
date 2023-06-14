@@ -1,0 +1,64 @@
+@import "../utils.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+
+  @include centering-content;
+}
+
+.watch {
+  position: relative;
+  height: $watch-height;
+  width: $watch-width;
+  border: 2px dotted #c0c0c0;
+  border-radius: 50%;
+
+  @include centering-content;
+
+  &__dial-center {
+    height: $center-size;
+    width: $center-size;
+    border-radius: 50%;
+    background-color: #555;
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    height: $minute-hand-height;
+    width: $minute-hand-width;
+    background-color: #666;
+    @include positioning-watch-hands;
+
+    @include animation;
+    animation-duration: 60s;
+  }
+
+  &__second-hand {
+    height: $second-hand-height;
+    width: $second-hand-width;
+    background-color: #c0c0c0;
+    @include positioning-watch-hands;
+
+    @include animation;
+    animation-duration: 5s;
+  }
+
+  @keyframes time {
+    0% {
+      transform: rotate(0turn);
+    }
+
+    50% {
+      transform: rotate(0.5turn);
+    }
+
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+ }
