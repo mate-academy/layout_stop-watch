@@ -1,0 +1,48 @@
+@import "./rotate-animation.scss";
+$white: #fff;
+
+.watch {
+  box-sizing: border-box;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 8px dotted $white;
+  border-radius: 100%;
+
+  &__circle {
+    width: 30px;
+    height: 30px;
+    background-color: $white;
+    border-radius: 100%;
+    z-index: 1;
+  }
+
+  &__hand {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50%;
+
+    z-index: 0;
+    transform-origin: 100%;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    &--sec {
+      height: 4px;
+      background-color: #d0ff00;
+      animation-duration: 5s;
+    }
+
+    &--min {
+      height: 10px;
+      background-color: $white;
+      animation-duration: 60s;
+    }
+  }
+}
