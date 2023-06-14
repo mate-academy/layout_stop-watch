@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   justify-content: center;
   background-color: chocolate;
+  margin: 0 auto;
 
   &__center {
     position: relative;
@@ -19,17 +20,17 @@
   }
 
   &__sweep-hand {
-    @include hand ();
+    @include clock-hand ();
 
     height: $clock-height / 2;
     border-radius: 40%;
     background-color: rgb(43, 0, 255);
     transform-origin: center $clock-height / 2;
-    animation: move 60s linear infinite;
+    animation: rotateClockHand 60s linear infinite;
   }
 
   &__minute-hand {
-    @include hand ();
+    @include clock-hand ();
 
     height: $clock-height / 4;
     background-color: rgb(255, 0, 0);
@@ -37,6 +38,6 @@
 
     border-radius: 40%;
     top: $clock-height / 4;
-    animation: move 720s linear infinite;
+    animation: rotateClockHand 720s linear infinite;
   }
 }
