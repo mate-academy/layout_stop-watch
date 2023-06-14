@@ -1,0 +1,120 @@
+.stopwatch {
+  position: relative;
+  width: 300px;
+  height: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+
+    &--black {
+      width: 20px;
+      height: 20px;
+      background: #353535;
+      z-index: 10;
+    }
+
+    &--white {
+      width: 10px;
+      height: 10px;
+      background: #f7f3d9;
+      z-index: 11;
+    }
+  }
+
+  &__small-hand {
+    position: absolute;
+    width: 6px;
+    height: 200px;
+
+    animation-name: second;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__small-hand-black {
+    height: 130px;
+    background-color: #353535;
+  }
+
+  &__small-hand-transparent {
+    height: 70px;
+  }
+
+  &__big-hand {
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    border-radius: 5px;
+    animation-name: second;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__big-hand-black {
+    box-sizing: border-box;
+    height: 105px;
+    background-color: #353535;
+  }
+
+  &__big-hand-transparent {
+    height: 55px;
+  }
+
+  &__face {
+    position: absolute;
+    background: #353535;
+    transform-origin: 50% 140px;
+    top: 10px;
+
+    @function currentDeg($shift, $num) {
+      @return #{$shift * $num};
+    }
+
+    $hours: 5,10,15,20,25,30,35,40,45,50,55,60;
+
+    @each $hour in $hours {
+      &--#{$hour} {
+        width: 4px;
+        height: 18px;
+      }
+    }
+
+    $seconds: 1,2,3,4,6,7,8,9,11,12,13,14,16,17,18,19,
+      21,22,23,24,26,27,28,29,31,32,33,34,36,37,38,39,41,
+      42,43,44,46,47,48,49,51,52,53,54,56,57,58,59;
+
+    @each $second in $seconds {
+      &--#{$second} {
+        width: 2px;
+        height: 8px;
+      }
+    }
+
+    @for $row from 1 through 59 {
+      &--#{$row} {
+        transform: rotate(currentDeg($shift, $row));
+      }
+    }
+  }
+}
+
+@keyframes second {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
