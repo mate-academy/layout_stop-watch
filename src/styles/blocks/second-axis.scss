@@ -1,0 +1,26 @@
+.second-axis {
+  height: $watch-size;
+  width: 10px;
+
+  &__hand {
+    height: $watch-size * 0.5;
+    width: 10px;
+    background-color: green;
+  }
+
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-name: move-seconds;
+}
+
+@keyframes move-seconds {
+  to {
+    transform: rotate(360deg);
+  }
+
+}

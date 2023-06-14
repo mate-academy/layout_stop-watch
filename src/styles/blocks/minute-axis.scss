@@ -1,0 +1,30 @@
+.minute-axis {
+  height: 15px;
+  width: $watch-size * 0.5;
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+  position: absolute;
+
+  &__hand {
+    height: 15px;
+    width: $watch-size * 0.25;
+    background-color: red;
+  }
+
+  animation-duration: 3600s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-name: move-minutes;
+}
+
+@keyframes move-minutes {
+  to {
+    transform: rotate(360deg);
+  }
+
+}
