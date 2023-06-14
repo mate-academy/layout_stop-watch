@@ -1,0 +1,51 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 80vmin;
+  height: 80vmin;
+  margin: auto;
+  border: 10px dotted #000;
+  border-radius: 50%;
+
+  &__center {
+    width: 5vh;
+    height: 5vh;
+    margin: auto;
+    background-color: orange;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: 50%;
+    transform: rotate(0deg);
+    transform-origin: bottom center;
+    animation-name: rotation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    &--second {
+      left: calc(50% - 8px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2%;
+      height: 50%;
+      background-color: green;
+      animation-duration: $speed-short;
+    }
+
+    &--minute {
+      left: calc(50% - 11px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3%;
+      height: 25%;
+      background-color: blue;
+      animation-duration: $speed-long;
+    }
+  }
+}
