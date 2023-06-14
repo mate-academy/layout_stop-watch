@@ -1,0 +1,46 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  border: 1px solid blueviolet;
+  border-radius: 50%;
+
+  &__center {
+    width: 30px;
+    height: 30px;
+    background-color: blueviolet;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__hand {
+    position: absolute;
+    left: 50%;
+    transform-origin: bottom;
+    animation-name: spin;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+
+    &--second {
+      border-left: $second-hand-width solid green;
+      margin-left: - $second-hand-width / 2;
+      height: $second-hand-length;
+      top: calc(50vh - #{$second-hand-length});
+      animation-duration: 60s;
+    }
+
+    &--minute {
+      border-left: $minute-hand-width solid yellow;
+      margin-left: - $minute-hand-width / 2;
+      height: $minute-hand-length;
+      top: calc(50vh - #{$minute-hand-length});
+      animation-duration: 3600s;
+    }
+
+    @keyframes spin {
+      100% {transform: rotate(360deg);}
+    }
+  }
+}
