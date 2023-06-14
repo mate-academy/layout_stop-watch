@@ -2,8 +2,8 @@
   position: relative;
   display: flex;
   justify-content: center;
-  width: 80vw;
-  height: 80vw;
+  min-width: 80vw;
+  min-height: 80vw;
   margin: auto;
   border: 2vw dotted #000;
   border-radius: 50%;
@@ -24,7 +24,6 @@
     transform-origin: bottom center;
 
     &--second {
-      left: calc(50% - 1vw);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -38,7 +37,6 @@
     }
 
     &--minute {
-      left: calc(50% - 1vw);
       display: flex;
       justify-content: center;
       align-items: center;
