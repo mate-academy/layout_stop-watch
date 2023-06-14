@@ -2,15 +2,15 @@
   position: relative;
   display: flex;
   justify-content: center;
-  width: 80vmin;
-  height: 80vmin;
+  width: 80vw;
+  height: 80vw;
   margin: auto;
-  border: 10px dotted #000;
+  border: 2vw dotted #000;
   border-radius: 50%;
 
   &__center {
-    width: 5vh;
-    height: 5vh;
+    width: 5vw;
+    height: 5vw;
     margin: auto;
     background-color: orange;
     border-radius: 50%;
@@ -22,30 +22,34 @@
     bottom: 50%;
     transform: rotate(0deg);
     transform-origin: bottom center;
-    animation-name: rotation;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+
 
     &--second {
-      left: calc(50% - 8px);
+      left: calc(50% - 1vw);
       display: flex;
       justify-content: center;
       align-items: center;
       width: 2%;
       height: 50%;
-      background-color: green;
-      animation-duration: $speed-short;
+      background-color: $second-hand-color;
+      animation: rotateSecondHand;
+      animation-duration: $second-hand-animation-duration;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
     }
 
     &--minute {
-      left: calc(50% - 11px);
+      left: calc(50% - 1vw);
       display: flex;
       justify-content: center;
       align-items: center;
       width: 3%;
       height: 25%;
-      background-color: blue;
-      animation-duration: $speed-long;
+      background-color: $minute-hand-color;
+      animation-name: rotateMinuteHand;
+      animation-duration: $minute-hand-animation-duration;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
     }
   }
 }
