@@ -1,0 +1,43 @@
+.clock {
+  position: relative;
+  height: $clock-height;
+  width: $clock-width;
+  border: 4px dotted navy;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: chocolate;
+  margin: 0 auto;
+
+  &__center {
+    position: relative;
+    border: 5px solid rgb(0, 255, 8);
+    border-radius: 50%;
+    height: 10px;
+    top: 50%;
+    z-index: 1;
+  }
+
+  &__sweep-hand {
+    @include clock-hand (absolute, $border, $hand-width);
+
+    height: $clock-height / 2;
+    border-radius: 40%;
+    background-color: rgb(43, 0, 255);
+    transform-origin: center $clock-height / 2;
+    animation: rotateClockHand 60s linear infinite;
+  }
+
+  &__minute-hand {
+    @include clock-hand (absolute, $border, $hand-width);
+
+    height: $clock-height / 4;
+    background-color: rgb(255, 0, 0);
+    transform-origin: center $clock-height / 4;
+
+    border-radius: 40%;
+    top: $clock-height / 4;
+    animation: rotateClockHand 720s linear infinite;
+  }
+}
