@@ -1,0 +1,51 @@
+.watch {
+  height: 80vmin;
+  width: 80vmin;
+
+  border: #000 dotted 3px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.centr {
+  height: 30px;
+  width: 30px;
+
+  background-color: orange;
+  border-radius: 50%;
+
+  position: absolute;
+  z-index: 2;
+}
+
+.minute-hand {
+  height: 40vmin;
+  width: 8px;
+
+  background-color: green;
+
+  position: absolute;
+  top: 0;
+  z-index: 1;
+
+  transform-origin: bottom;
+  animation: rotating-minute-hand 5s linear infinite;
+}
+
+.hour-hand {
+  height: 20vmin;
+  width: 15px;
+
+  background-color: blue;
+
+  position: absolute;
+  top: 20vmin;
+
+  transform-origin: bottom;
+  animation: rotating-minute-hand 60s linear infinite;
+}
