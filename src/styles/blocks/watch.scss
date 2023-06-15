@@ -1,0 +1,73 @@
+
+.watch {
+  &__dial {
+    position: relative;
+    width: $dial-size;
+    height: $dial-size;
+    border: 5px dotted #000;
+    border-radius: 50%;
+  }
+
+  &__core {
+    position: absolute;
+    z-index: 2;
+    width: $core-size;
+    height: $core-size;
+    border-radius: 50%;
+    background-color: #ff0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute-pointer {
+    position: absolute;
+    z-index: 1;
+    width: $minute-width;
+    height: 27%;
+    background-color: #00f;
+    left: 50% - 0.5 * $minute-width;
+    @include border-trans;
+
+    animation:
+      minute-tick-#{$demo-number-1} $demo-time-1 linear $demo-delay-1 $demo-repeat-1,
+      minute-tick-#{$demo-number-2} $demo-time-2 linear $demo-delay-2 $demo-repeat-2;
+  }
+
+  &__second-pointer {
+    position: absolute;
+    width: $second-width;
+    height: 44%;
+    background-color: #0f0;
+    left: 50% - 0.5 * $second-width;
+    @include border-trans;
+
+    animation:
+      tick-#{$demo-number-1} $demo-time-1 linear $demo-delay-1 $demo-repeat-1,
+      tick-#{$demo-number-2} $demo-time-2 linear $demo-delay-2 $demo-repeat-2;
+  }
+
+  @for $sec from 1 through 60 {
+    @keyframes tick-#{$sec} {
+      from {
+        transform: rotate(0);
+      }
+
+      to {
+        transform: rotate(#{$sec * 6deg});
+      }
+    }
+  }
+
+  @for $sec from 1 through 60 {
+    @keyframes minute-tick-#{$sec} {
+      from {
+        transform: rotate(0);
+      }
+
+      to {
+        transform: rotate(#{$sec * 0.1deg});
+      }
+    }
+  }
+}
