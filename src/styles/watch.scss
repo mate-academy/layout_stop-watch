@@ -1,0 +1,56 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  margin: auto;
+
+  height: 80vmin;
+  width: 80vmin;
+
+  border: 2px dashed black;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+
+    height: 50px;
+    width: 50px;
+
+    background-color: yellow;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__arrow{
+    position: absolute;
+
+    &--hour{
+    height: 20vmin;
+    width: 20px;
+
+    background-color: blue;
+
+    top: 20vmin;
+    position: absolute;
+    z-index: 1;
+
+    transform-origin: bottom;
+    animation: rotate-hour-arrow 60s linear infinite;
+  }
+
+    &--min {
+    height: 40vmin;
+    width: 10px;
+
+    background-color: green;
+
+    position: absolute;
+    top: 0;
+
+    transform-origin: bottom;
+    animation: rotate-min-arrow 5s linear infinite;
+    }
+  }
+}
