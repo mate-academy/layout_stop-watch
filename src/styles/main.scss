@@ -15,7 +15,7 @@ body {
   position: relative;
   height: $watch-height;
   width: $watch-width;
-  border: 2px dotted #c0c0c0;
+  border: 2px dotted $watch-border-color;
   border-radius: 50%;
 
   @include centering-content;
@@ -24,14 +24,14 @@ body {
     height: $center-size;
     width: $center-size;
     border-radius: 50%;
-    background-color: #555;
+    background-color: $dial-center-bg-color;
     z-index: 1;
   }
 
   &__minute-hand {
     height: $minute-hand-height;
     width: $minute-hand-width;
-    background-color: #666;
+    background-color: $minute-hand-color;
     @include positioning-watch-hands;
 
     @include animation;
@@ -41,7 +41,7 @@ body {
   &__second-hand {
     height: $second-hand-height;
     width: $second-hand-width;
-    background-color: #c0c0c0;
+    background-color: $second-hand-color;
     @include positioning-watch-hands;
 
     @include animation;
