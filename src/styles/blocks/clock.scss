@@ -20,7 +20,7 @@
   }
 
   &__sweep-hand {
-    @include clock-hand ();
+    @include clock-hand (absolute, $border, $hand-width);
 
     height: $clock-height / 2;
     border-radius: 40%;
@@ -30,7 +30,7 @@
   }
 
   &__minute-hand {
-    @include clock-hand ();
+    @include clock-hand (absolute, $border, $hand-width);
 
     height: $clock-height / 4;
     background-color: rgb(255, 0, 0);
