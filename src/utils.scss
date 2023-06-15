@@ -1,0 +1,33 @@
+  @mixin animation {
+    transform-origin: bottom;
+    animation: time linear infinite;
+  }
+
+  @mixin centering-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @mixin positioning-watch-hands {
+    position: absolute;
+    bottom: 50%;
+  }
+
+  $watch-height: 50vmin;
+  $watch-width: 50vmin;
+
+  $second-hand-height: $watch-height/2;
+  $second-hand-width: $watch-width/120;
+
+  $minute-hand-height: $second-hand-height/2;
+  $minute-hand-width: $second-hand-width*1.5;
+
+  $center-size: $minute-hand-width*1.5;
+
+  $watch-border-color: #c0c0c0;
+  $dial-center-bg-color: #555;
+  $minute-hand-color: #666;
+  $second-hand-color: #c0c0c0;
+
+
