@@ -1,0 +1,39 @@
+.watch {
+  @include circle($watch-size);
+  min-width: $watch-size;
+  border: 2px solid rgb(15, 38, 78);
+  display: flex;
+  margin: auto;
+  position: relative;
+  box-shadow: 40px 10px 10px rgba(30, 79, 164, 0.3);
+  background: repeating-radial-gradient(#fff, #01405c 200px);
+
+  &__minute-hand {
+    height: $height-minute-hand;
+    width: $width-minute-hand;
+    border-radius: 16px;
+    background: radial-gradient(#fff, #172830);
+    animation: getRound 3600s  linear 1;
+    transform-origin: top center ;
+  }
+
+  &__second-hand {
+    height: $height-second-hand;
+    width: $width-second-hand;
+    border-radius: 50%;
+    background-color: rgb(222, 2, 2);
+    animation: getRound 60s linear 60;
+    transform-origin: top center ;
+    z-index: 1;
+  }
+
+  &__round {
+    @include circle($round-size);
+    background-color: red;
+    transform: translate(-50%, -50%);
+  }
+
+  & > section {
+    @extend %setCenter;
+  }
+}
