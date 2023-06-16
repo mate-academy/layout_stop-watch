@@ -1,0 +1,14 @@
+@mixin rotateMarkupBlocks() {
+  @for $i from 1 through 30 {
+    &:nth-child(#{$i}) {
+      transform: rotate(6deg * $i);
+    }
+  }
+}
+
+@mixin absoluteCentered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
