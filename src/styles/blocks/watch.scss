@@ -1,0 +1,40 @@
+.watch {
+  position: absolute;
+  width: $watchRadius;
+  height: $watchRadius;
+  border: 6px dotted black;
+  border-radius: 50%;
+  overflow: hidden;
+
+  &__hand {
+  position: absolute;
+  transform: rotate(0deg);
+  transform-origin: bottom center;
+
+    &--second {
+      left: 50% - $secondWidth / 2;
+      background-color: green;
+      height: 50%;
+      width: $secondWidth;
+      animation: rotate 5s linear infinite;
+    }
+
+    &--minute {
+      left: 50% - $minuteWidth / 2;
+      background-color: blue;
+      height: 50%;
+      width: $minuteWidth;
+      animation: rotate 60s linear infinite;
+    }
+  }
+
+      &__circle {
+        position: absolute;
+        top: 50% - $circleRadius / 2;
+        left: 50% - $circleRadius / 2;
+        width: $circleRadius;
+        height: $circleRadius;
+        background-color: yellow;
+        border-radius: 50%;
+      }
+}
