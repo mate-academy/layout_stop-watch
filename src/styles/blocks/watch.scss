@@ -1,0 +1,58 @@
+@use "../utils/var.scss";
+
+.watch {
+  width: $watch-area;
+  height: $watch-area;
+  background-color: $color-watch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  border: 3px solid $color-black;
+
+  &__point {
+    height: $watch-long;
+    width: $watch-long;
+    border-radius: 50%;
+    background-color: $color-black;
+    z-index: 1;
+  }
+
+  &__minute {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-bottom: $arrow-minute;
+    width: $arrow-width-minute;
+    height: $arrow-minute;
+    background-color: $color-minute;
+    border: $border-watch solid $color-black;
+    transform: rotate(0deg);
+    animation: rotateMin 3600s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__second {
+    position: absolute;
+    margin-bottom: 200px;
+    width: $arrow-width-second;
+    height: $arrow-second;
+    background-color: $color-second;
+    border: $border-watch solid $color-black;
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+    animation: rotateMin 60s linear infinite;
+
+    @keyframes rotateMin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotateSec {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
