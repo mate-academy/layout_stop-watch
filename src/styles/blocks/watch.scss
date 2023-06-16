@@ -1,0 +1,55 @@
+.watch {
+  box-sizing: border-box;
+  background-color: pink;
+  border: 4px dotted black;
+  border-radius: 50%;
+
+  &__second {
+    @include position (absolute, 50%);
+    @include size (($size/2)*1%, 2px);
+
+    background-color: red;
+    border-radius: 20px;
+
+    @include animation ($anim-dur-second, second, normal, linear);
+    animation-iteration-count: ($anim-dur-minute/$anim-dur-second);
+    transform-origin: bottom center;
+
+    @keyframes second {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__minute {
+    @include position (absolute, 50%);
+    @include size (($size/4)*1%, 4px);
+
+    background-color: purple;
+    border-radius: 20px;
+
+    @include animation ($anim-dur-minute, minute, normal, linear);
+    transform-origin: bottom center;
+
+    @keyframes minute {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .watch__center {
+    position: absolute;
+
+    @include size (10px, 10px);
+    border-radius: 50%;
+    background-color: blue;
+  }
+}

@@ -1,0 +1,21 @@
+@mixin size ($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin position ($position, $displacement) {
+  position: $position;
+  bottom: $displacement;
+}
+
+@mixin animation (
+  $animation-duration,
+  $animation-name,
+  $animation-direction,
+  $animation-timing-function
+) {
+  animation-duration: $animation-duration;
+  animation-name: $animation-name;
+  animation-direction: $animation-direction;
+  animation-timing-function: $animation-timing-function;
+}
