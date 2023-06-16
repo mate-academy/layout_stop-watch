@@ -29,9 +29,7 @@
     left: 50% - 0.5 * $minute-width;
     @include border-trans;
 
-    animation:
-      minute-tick-#{$demo-number-1} $demo-time-1 linear $demo-delay-1 $demo-repeat-1,
-      minute-tick-#{$demo-number-2} $demo-time-2 linear $demo-delay-2 $demo-repeat-2;
+    animation: minute-point 100s linear;
   }
 
   &__second-pointer {
@@ -42,32 +40,22 @@
     left: 50% - 0.5 * $second-width;
     @include border-trans;
 
-    animation:
-      tick-#{$demo-number-1} $demo-time-1 linear $demo-delay-1 $demo-repeat-1,
-      tick-#{$demo-number-2} $demo-time-2 linear $demo-delay-2 $demo-repeat-2;
+    animation: sec-point 100s linear;
   }
 
-  @for $sec from 1 through 60 {
-    @keyframes tick-#{$sec} {
-      from {
-        transform: rotate(0);
-      }
-
-      to {
-        transform: rotate(#{$sec * 6deg});
-      }
-    }
+  @keyframes minute-point {
+    0% { transform: rotate(0); }
+    5% { transform: rotate(0.5deg); }
+    10% { transform: rotate(0); }
+    70% { transform: rotate(6deg); }
+    71% { transform: rotate(0); }
   }
 
-  @for $sec from 1 through 60 {
-    @keyframes minute-tick-#{$sec} {
-      from {
-        transform: rotate(0);
-      }
-
-      to {
-        transform: rotate(#{$sec * 0.1deg});
-      }
-    }
+  @keyframes sec-point {
+    0% { transform: rotate(0); }
+    5% { transform: rotate(30deg); }
+    10% { transform: rotate(0); }
+    70% { transform: rotate(360deg); }
+    71% { transform: rotate(0); }
   }
 }
