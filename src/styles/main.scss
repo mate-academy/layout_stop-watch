@@ -1,0 +1,38 @@
+@import "./animation.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+}
+
+.arrow {
+  width: 10px;
+  border-radius: 5px;
+  transform-origin: bottom;
+}
+
+.arrow--minutes {
+  position: absolute;
+  background-color: red;
+  height: 150px;
+  margin-top: 50px;
+  animation: time 3600s linear  infinite;
+}
+
+.arrow--second {
+  position: relative;
+  background-color: royalblue;
+  height: 200px;
+  animation: time 60s linear  infinite;
+}
+
+.circle {
+  z-index: 1;
+  position: absolute;
+  background-color: royalblue;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  top: 290px;
+}
