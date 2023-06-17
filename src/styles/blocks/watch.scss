@@ -1,0 +1,26 @@
+.watch {
+  @include circle(80vmin);
+  border: 5px dotted #000;
+  position: relative;
+
+  &__center {
+    background-color: $yellow;
+    @include circle(6vmin);
+    @include position-center;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hour-hand {
+    background-color: $blue;
+    @include rectangle(20vmin, 2vmin);
+    @include position-center;
+    @include animation-rotation(3600s);
+  }
+
+  &__minute-hand {
+    background-color: $green;
+    @include rectangle(40vmin, 1vmin);
+    @include position-center;
+    @include animation-rotation(60s);
+  }
+}
