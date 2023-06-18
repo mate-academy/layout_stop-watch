@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+}
+
+.circle {
+  position: relative;
+  margin: auto;
+  display: flex;
+  border-radius: 50%;
+  border: dashed;
+  background-color: wheat;
+  width: 500px;
+  height: 500px;
+}
+
+.twohands {
+  position: relative;
+  display: flex;
+  height: 250px;
+  top: 25%;
+  left: calc(50% - 2px);
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.minute {
+  position: absolute;
+  width: 8px;
+  height: 200px;
+  background-color: green;
+  animation: 60s round infinite linear;
+  transform-origin: bottom;
+  top: 50px;
+}
+
+.second {
+  position: absolute;
+  width: 4px;
+  height: 250px;
+  background-color: blue;
+  animation: 5s round infinite linear;
+  transform-origin: bottom;
+}
+
+.center {
+  background-color: yellowgreen;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@keyframes round {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
