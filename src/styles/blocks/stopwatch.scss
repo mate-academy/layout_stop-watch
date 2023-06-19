@@ -9,17 +9,6 @@
   height: $watch-size;
   width: $watch-size;
 
-  &__center {
-    display: block;
-    position: absolute;
-    align-self: center;
-    height: $hand-width * 3;
-    width: $hand-width * 3;
-    background-color: orange;
-    border-radius: 10px;
-    z-index: 1;
-  }
-
   &::before {
     content: "";
     background-color: blue;
@@ -29,7 +18,7 @@
     transform: translate(-50%, -50%);
     margin-top: 5vmin;
     margin-left: -10px;
-    animation: rotate 60s infinite linear 2s;
+    animation: rotate 60s infinite linear;
     transform-origin: bottom;
   }
 
@@ -41,8 +30,19 @@
     border-radius: 20px;
     order: -1;
     transform: translate(-50%, -50%);
-    animation: rotate 5s infinite linear 2s;
+    animation: rotate 5s infinite linear;
     transform-origin: bottom;
+  }
+
+  &__center {
+    display: block;
+    position: absolute;
+    align-self: center;
+    height: $hand-width * 3;
+    width: $hand-width * 3;
+    background-color: orange;
+    border-radius: 10px;
+    z-index: 1;
   }
 }
 
