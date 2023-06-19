@@ -1,0 +1,55 @@
+
+.watch {
+  &__dial {
+    position: relative;
+    width: $dial-size;
+    height: $dial-size;
+    border: 5px dotted #000;
+    border-radius: 50%;
+  }
+
+  &__core {
+    position: absolute;
+    z-index: 2;
+    width: $core-size;
+    height: $core-size;
+    border-radius: 50%;
+    background-color: #ff0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute-pointer {
+    position: absolute;
+    z-index: 1;
+    width: $minute-width;
+    height: 27%;
+    background-color: #00f;
+    left: 50% - 0.5 * $minute-width;
+    @include border-trans;
+
+    animation: sec-point 60s linear infinite;
+  }
+
+  &__second-pointer {
+    position: absolute;
+    width: $second-width;
+    height: 44%;
+    background-color: #0f0;
+    left: 50% - 0.5 * $second-width;
+    @include border-trans;
+
+    animation: sec-point 5s linear infinite;
+  }
+
+  @keyframes sec-point {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
