@@ -51,8 +51,7 @@
 
   @for $n from 1 through 60 {
     &__time-part:nth-child(#{$n}) {
-      transform:
-        rotate($watch-rotate-angle * 1deg - 90deg)
+      transform: rotate($watch-rotate-angle * 1deg - 90deg)
         translateX($watch-size / 2)
         translateX(-$watch-time-part-size);
     }
