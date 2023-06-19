@@ -1,0 +1,15 @@
+@mixin arrows-style(
+  $arrow-size-width,
+  $arrow-size-height,
+  $arrow-bg-color,
+  $arrow-start-rotate,
+  $arrow-time-value
+) {
+  transform-origin: bottom;
+  bottom: 50%;
+  width: $arrow-size-width;
+  height: $watch-size / 2 * $arrow-size-height - $watch-time-part-size;
+  background-color: $arrow-bg-color;
+  transform: rotate($arrow-start-rotate * 1deg);
+  animation: arrow-rotate-anim ($arrow-time-value * 60s /$watch-speed) linear infinite;
+}

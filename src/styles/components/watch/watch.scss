@@ -1,0 +1,62 @@
+@import "watch-variables";
+@import "watch-mixins";
+@import "watch-animations";
+
+.watch {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  margin: auto;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  border: $watch-border;
+  background: $watch-bg;
+
+  & > * {
+    position: absolute;
+  }
+
+  &__center {
+    width: $watch-center-size;
+    height: $watch-center-size;
+    border-radius: 50%;
+    background: $watch-center-block-bg;
+  }
+
+  &__time-part {
+    width: $watch-time-part-size;
+    height: $watch-time-part-size;
+    background: $watch-time-part-bg;
+    margin: auto;
+  }
+
+  &__time-part:nth-child(5n+1) {
+    width: $watch-time-part-size * 2;
+  }
+
+  @each $arrow in $watch-arrows {
+    &__#{$arrow}-arrow {
+      @include arrows-style(
+        map-get($watch-arrow-width, $arrow),
+        map-get($watch-arrow-height, $arrow),
+        map-get($watch-arrow-bg-color, $arrow),
+        map-get($watch-arrow-start, $arrow),
+        map-get($watch-arrow-val, $arrow)
+      );
+    }
+  }
+
+  @for $n from 1 through 60 {
+    &__time-part:nth-child(#{$n}) {
+      transform:
+        rotate($watch-rotate-angle * 1deg - 90deg)
+        translateX($watch-size / 2)
+        translateX(-$watch-time-part-size);
+    }
+
+    $watch-rotate-angle: $watch-rotate-angle + $watch-steps-size;
+  }
+}
