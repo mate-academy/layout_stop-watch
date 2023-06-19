@@ -6,3 +6,11 @@
   transition: transform;
   transform-origin: bottom;
 }
+
+@mixin anim-property {
+  animation-duration: 60s, 60s;
+  animation-timing-function: linear, linear;
+  animation-delay: 0s, 10s;
+  animation-iteration-count: 0.08333, 1;
+  animation-fill-mode: forwards, forwards;
+}

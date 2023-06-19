@@ -29,7 +29,8 @@
     left: 50% - 0.5 * $minute-width;
     @include border-trans;
 
-    animation: minute-point 100s linear;
+    animation-name: minute-point, minute-point;
+    @include anim-property;
   }
 
   &__second-pointer {
@@ -40,22 +41,27 @@
     left: 50% - 0.5 * $second-width;
     @include border-trans;
 
-    animation: sec-point 100s linear;
-  }
-
-  @keyframes minute-point {
-    0% { transform: rotate(0); }
-    5% { transform: rotate(0.5deg); }
-    10% { transform: rotate(0); }
-    70% { transform: rotate(6deg); }
-    71% { transform: rotate(0); }
+    animation-name: sec-point, sec-point;
+    @include anim-property;
   }
 
   @keyframes sec-point {
-    0% { transform: rotate(0); }
-    5% { transform: rotate(30deg); }
-    10% { transform: rotate(0); }
-    70% { transform: rotate(360deg); }
-    71% { transform: rotate(0); }
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes minute-point {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(6deg);
+    }
   }
 }
