@@ -29,8 +29,7 @@
     left: 50% - 0.5 * $minute-width;
     @include border-trans;
 
-    animation-name: minute-point, minute-point;
-    @include anim-property;
+    animation: sec-point 60s linear 0s infinite;
   }
 
   &__second-pointer {
@@ -41,8 +40,7 @@
     left: 50% - 0.5 * $second-width;
     @include border-trans;
 
-    animation-name: sec-point, sec-point;
-    @include anim-property;
+    animation: sec-point 5s linear 0s infinite;
   }
 
   @keyframes sec-point {
@@ -52,16 +50,6 @@
 
     to {
       transform: rotate(360deg);
-    }
-  }
-
-  @keyframes minute-point {
-    from {
-      transform: rotate(0);
-    }
-
-    to {
-      transform: rotate(6deg);
     }
   }
 }
