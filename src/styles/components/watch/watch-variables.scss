@@ -8,30 +8,35 @@ $watch-time-part-bg: black;
 $watch-rotate-angle: 0;
 $watch-center-size: 4vmin;
 $watch-speed: 1;
-$watch-arrows: hours, minutes, seconds;
+$watch-hands: hours, minutes, seconds;
 
-$watch-arrow-width: (
-  "hours": 0.4vmin,
-  "minutes": 0.3vmin,
-  "seconds": 0.2vmin
+$watch-hand-width: (
+  "hours": 0.5vmin,
+  "minutes": 0.4vmin,
+  "seconds": 0.1vmin
 );
-$watch-arrow-height: (
-  "hours": 0.6,
-  "minutes": 0.8,
-  "seconds": 1
+$watch-hand-height: (
+  "hours": 0.7,
+  "minutes": 0.85,
+  "seconds": 0.95
 );
-$watch-arrow-bg-color: (
+$watch-hand-bg-color: (
   "hours": #01f,
   "minutes": #ff0015,
   "seconds": #0ff
 );
-$watch-arrow-start: (
+$watch-hand-start: (
   "hours": 0,
   "minutes": 0,
   "seconds": 0
 );
-$watch-arrow-val: (
+$watch-hand-val: (
   "hours": 1 * 60 * 12,
   "minutes": 1 * 60,
+  "seconds": 1
+);
+$watch-hand-speed: (
+  "hours": 1,
+  "minutes": 720,
   "seconds": 1
 );

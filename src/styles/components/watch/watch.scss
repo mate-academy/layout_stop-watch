@@ -37,14 +37,15 @@
     width: $watch-time-part-size * 2;
   }
 
-  @each $arrow in $watch-arrows {
-    &__#{$arrow}-arrow {
-      @include arrows-style(
-        map-get($watch-arrow-width, $arrow),
-        map-get($watch-arrow-height, $arrow),
-        map-get($watch-arrow-bg-color, $arrow),
-        map-get($watch-arrow-start, $arrow),
-        map-get($watch-arrow-val, $arrow)
+  @each $hand in $watch-hands {
+    &__#{$hand}-hand {
+      @include hands-style(
+        map-get($watch-hand-width, $hand),
+        map-get($watch-hand-height, $hand),
+        map-get($watch-hand-bg-color, $hand),
+        map-get($watch-hand-start, $hand),
+        map-get($watch-hand-val, $hand),
+        map-get($watch-hand-speed, $hand)
       );
     }
   }
