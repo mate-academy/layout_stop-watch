@@ -20,19 +20,19 @@
 
       width: $second-width;
 
-      background-color: green;
-      animation: rotate 5s linear infinite;
+      background-color: $second-hands-colors;
+      animation: rotate $second-rotate-time linear infinite;
     }
 
-    &--minets {
+    &--minutes {
       left: 50% - $minute-width / 2;
       bottom: 50%;
 
       height: 35%;
       width: $minute-width;
 
-      background-color: blue;
-      animation: rotate 60s linear infinite;
+      background-color: $minute-hands-colors;
+      animation: rotate $minute-rotate-time linear infinite;
     }
 
     &--center {
@@ -43,7 +43,7 @@
       width: $center-height;
       
       border-radius: 50%;
-      background-color: yellow;
+      background-color: $center-hands-colors;
     }
   }
 }
