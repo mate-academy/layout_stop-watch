@@ -1,0 +1,86 @@
+.watch {
+  position: relative;
+  top: 100px;
+  max-width: $watch-width-height;
+  height: $watch-width-height;
+  border-radius: 80px;
+  margin: 0 auto;
+  background: $bg-gradient;
+  padding: 30px;
+
+  &__border {
+    background-color: #58585a;
+    width: $border-width-percent;
+    height: $border-height-percent;
+    border: 10px solid #2a2b2f ;
+    border-radius: $border-radius-percent;
+    padding: 15px;
+  }
+
+  &__border-clock {
+    position: relative;
+    width: $border-width-percent;
+    height: $border-height-percent;
+    border-radius: $border-radius-percent;
+    background: url(../photo/watch.jpg) no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+
+  &__border-hour-hand {
+    position: absolute;
+    top: 27%;
+    left: 48%;
+    width: 20px;
+    height: 120px;
+    border-radius: 20px;
+    background-color: $color-hand;
+    transform-origin: $hand-position;
+    animation: hour infinite linear;
+    animation-duration: $hour-hand;
+
+    @keyframes hour {
+      to {
+        transform: $rotate-full-circle;
+      }
+    }
+  }
+
+  &__border-minute-hand {
+    position: absolute;
+    top: 20%;
+    left: 48.5%;
+    width: 14px;
+    height: 150px;
+    border-radius: 20px;
+    background-color: $color-hand;
+    transform-origin: $hand-position;
+    animation: minute infinite linear;
+    animation-duration: $minute-hand;
+
+    @keyframes minute {
+      to {
+        transform: $rotate-full-circle;
+      }
+    }
+  }
+
+  &__border-second-hand {
+    position: absolute;
+    top: 20%;
+    left: 49%;
+    width: 8px;
+    height: 150px;
+    border-radius: 20px;
+    background-color: $color-hand;
+    transform-origin: $hand-position;
+    animation: second infinite linear;
+    animation-duration: $seconds-hand;
+
+    @keyframes second {
+      to {
+        transform: $rotate-full-circle;
+      }
+    }
+  }
+}
