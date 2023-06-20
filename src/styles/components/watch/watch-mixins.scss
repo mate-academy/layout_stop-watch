@@ -1,0 +1,20 @@
+@mixin hands-style(
+  $hand-width,
+  $hand-height,
+  $hand-bg-color,
+  $hand-start-rotate,
+  $hand-time-value,
+  $hand-speed
+) {
+  transform-origin: bottom;
+  bottom: 50%;
+  width: $hand-width;
+  height: $watch-size / 2 * $hand-height;
+  background-color: $hand-bg-color;
+  transform: rotate($hand-start-rotate * 1deg);
+  animation: hand-rotate-anim
+    ($hand-time-value * 60s / $hand-speed / $watch-speed)
+    linear
+    infinite
+  ;
+}
