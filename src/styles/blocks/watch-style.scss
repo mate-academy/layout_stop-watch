@@ -1,0 +1,37 @@
+@import "../utils/variebles";
+@import "../utils/mixin";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: auto;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  border: 9px dotted $black_dot;
+
+  &__second-hand {
+    @include rotate_hand ($green_hand, $width: 9px, $height: $green_hand_size, $rotate: $green_hand_rotate);
+  }
+
+  &__minute-hand {
+    @include rotate_hand ($blue_hand, $width: 16px, $height: $blue_hand_size, $rotate: $blue_hand_rotate);
+  }
+
+  &__round {
+    height: $orange_dot_size;
+    width: $orange_dot_size;
+    background-color: $orange_dot;
+    border-radius: 50%;
+    z-index: 3;
+  }
+}
