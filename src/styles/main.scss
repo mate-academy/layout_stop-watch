@@ -1,0 +1,47 @@
+@import "./loop";
+@import "./page";
+@import "./animation";
+
+.pos {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+
+}
+
+.stopwatch {
+  @include centered-content;
+
+  border: 7px dotted black;
+  border-radius: 50%;
+  min-height: 80vh;
+  min-width: 80vh;
+
+  &__center {
+    background-color: #f4ac10;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: 2;
+  }
+
+  &__hand-minute {
+    @include centered-content;
+
+    background-color: blue;
+    height: 20vh;
+    width: 20px;
+    z-index: 1;
+    animation: move 60s infinite linear;
+  }
+
+  &__hand-seconds {
+    @include centered-content;
+
+    background-color: green;
+    height: 40vh;
+    width: 15px;
+    animation: move 5s infinite linear;
+
+  }
+}
