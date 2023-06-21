@@ -1,0 +1,90 @@
+.stopwatch {
+  margin: auto;
+
+  position: relative;
+
+  @include sizeOfItems(500px, 500px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $colorBlack;
+  border-radius: 50%;
+
+  &__centerPoint {
+    z-index: 1;
+
+    @include sizeOfItems(30px, 30px);
+
+    background-color: $colorWhite;
+    border: 4px solid $colorBlack;
+    border-radius: 50%;
+  }
+
+  &__minuteHand {
+    margin: auto;
+    position: absolute;
+    bottom: 50%;
+
+    @include sizeOfItems(170px, 7px);
+
+    background-color: $colorWhite;
+
+    animation: goInCircles 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__secondHand {
+    margin: auto;
+    position: absolute;
+    bottom: 50%;
+
+    @include sizeOfItems(200px, 3px);
+
+    background-color: red;
+
+    animation: goInCircles 60s steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__oclock-12 {
+    @include stylePosition;
+
+    top: $indent;
+
+    @include fontsSize(35px, 700);
+    
+    color: $colorWhite;
+  }
+
+  &__oclock-3 {
+    @include stylePosition;
+
+    right: $indent;
+
+    @include fontsSize(35px, 700);
+    
+    color: $colorWhite;
+  }
+
+  &__oclock-6 {
+    @include stylePosition;
+
+    bottom: $indent;
+
+    @include fontsSize(35px, 700);
+    
+    color: $colorWhite;
+  }
+
+  &__oclock-9 {
+    @include stylePosition;
+
+    left: $indent;
+
+    @include fontsSize(35px, 700);
+    
+    color: $colorWhite;
+  }
+}
