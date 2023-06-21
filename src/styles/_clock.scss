@@ -25,7 +25,7 @@
     height: $minutesHeight;
     top: $clockRadius - $minutesHeight;
     background-color: blue;
-    animation: rotate-minute 60s linear 10;
+    animation: rotate 60s linear 10;
     transform-origin: bottom;
   }
 
@@ -35,23 +35,13 @@
     height: $secondsHeight;
     top: $clockRadius - $secondsHeight;
     background-color: green;
-    animation: rotate-second 5s linear 10;
+    animation: rotate 5s linear 10;
     transform-origin: bottom;
   }
 
 }
 
-@keyframes rotate-minute {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-second {
+@keyframes rotate {
   0% {
     transform: rotate(0deg);
   }
