@@ -1,0 +1,29 @@
+.stopwatch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vmin;
+  height: 80vmin;
+
+  border: 5px double #cd7f32;
+  border-radius: 50%;
+
+  &__second-hand {
+    @include stopwatch-hand(.8vmin, 40vmin, 5s);
+  }
+
+  &__minute-hand {
+    @include stopwatch-hand(1.6vmin, 30vmin, 60s);
+  }
+
+  &__center {
+    position: relative;
+    width: 4vmin;
+    height: 4vmin;
+
+    background-color: #000033;
+    border-radius: 50%;
+  }
+}
