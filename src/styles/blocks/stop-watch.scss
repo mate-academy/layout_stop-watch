@@ -1,0 +1,46 @@
+.stop-watch {
+  display: flex;
+  width: 80vmin;
+  height: 80vmin;
+  justify-content: center;
+  align-items: center;
+  // border: 10px dotted #aaa;
+  background-image: url(images/clock-face.svg);
+  background-size: cover;
+
+  border-radius: 50%;
+  background-color: #aaa;
+
+  & .stop-watch__center {
+    position: relative;
+    width: 4vmin;
+    height: 4vmin;
+    z-index: 1;
+    background-color: #000;
+    border-radius: 50%;
+  }
+
+  & .stop-watch__minute-hand {
+    position: absolute;
+    width: 2vmin;
+    height: 30vmin;
+    bottom: 50%;
+    background-color: #eee;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+
+    animation: spin 3600s linear 0s infinite normal forwards;
+  }
+
+  & .stop-watch__second-hand {
+    position: absolute;
+    width: 1vmin;
+    height: 38vmin;
+    bottom: 50%;
+    background-color: #eee;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+
+    animation: spin 60s linear infinite;
+  }
+}
