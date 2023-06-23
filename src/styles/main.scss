@@ -1,0 +1,83 @@
+$color-minute: #1411cf;
+$color-second: #cf11a6;
+$color-pointer:#c3e40a;
+$color-stopwatch:#f86007;
+$duration-minute: 60s;
+$duration-second: 60s;
+$minute-iteration-count: 10;
+$second-iteration-count: 10;
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: dotted 5px $color-stopwatch;
+  border-radius: 50%;
+  margin: 50px auto;
+}
+
+.minute-hands,
+.second-hands,
+.pointer {
+position: absolute;
+transform-origin: bottom center;
+top: 50%;
+left: 50%;
+}
+
+.minute-hands {
+height: 95px;
+margin-top: -95px;
+border: solid 6px $color-minute;
+border-radius: 5px;
+
+animation: $duration-minute linear 1s $minute-iteration-count rotate;
+}
+
+.second-hands {
+height: 130px;
+margin-top: -130px;
+border: solid 6px $color-second;
+border-radius: 5px;
+animation: rotate $duration-second linear $second-iteration-count;
+}
+
+.pointer{
+left: 48%;
+width: 25px;
+height: 25px;
+background-color: $color-pointer;
+border: solid 6px $color-pointer;
+border-radius: 50%;
+z-index: 1;
+}
+
+@keyframes rotate {
+  0% {
+transform: rotate(0);
+  }
+  100% {
+transform: rotate(360deg);
+  }
+}
+
+.box{
+  position: absolute;
+  left: 49%;
+  top: 1%;
+  font-weight: 900;
+  font-size: 42px;
+
+  &--3 {
+    left: 95%;
+    top: 50%;
+  }
+  &--6 {
+    left: 49%;
+    top: 90%;
+  }
+  &--9 {
+    left: 2%;
+    top: 50%;
+  }
+}
