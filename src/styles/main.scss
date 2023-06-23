@@ -2,10 +2,10 @@ $color-minute: #1411cf;
 $color-second: #cf11a6;
 $color-pointer:#c3e40a;
 $color-stopwatch:#f86007;
-$duration-minute: 60s;
+$duration-minute: 5s;
 $duration-second: 60s;
-$minute-iteration-count: 10;
-$second-iteration-count: 10;
+$minute-iteration-count: 1;
+$second-iteration-count: 1;
 
 .stopwatch {
   position: relative;
@@ -57,26 +57,5 @@ $second-iteration-count: 10;
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-.box {
-  position: absolute;
-  left: 49%;
-  top: 1%;
-  font-weight: 900;
-  font-size: 42px;
-
-  &--3 {
-    left: 95%;
-    top: 50%;
-  }
-  &--6 {
-    left: 49%;
-    top: 90%;
-  }
-  &--9 {
-    left: 2%;
-    top: 50%;
   }
 }
