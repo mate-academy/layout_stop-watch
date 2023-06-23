@@ -19,49 +19,48 @@ $second-iteration-count: 10;
 .minute-hands,
 .second-hands,
 .pointer {
-position: absolute;
-transform-origin: bottom center;
-top: 50%;
-left: 50%;
+  position: absolute;
+  transform-origin: bottom center;
+  top: 50%;
+  left: 50%;
 }
 
 .minute-hands {
-height: 95px;
-margin-top: -95px;
-border: solid 6px $color-minute;
-border-radius: 5px;
-
-animation: $duration-minute linear 1s $minute-iteration-count rotate;
+  height: 95px;
+  margin-top: -95px;
+  border: solid 6px $color-minute;
+  border-radius: 5px;
+  animation: $duration-minute linear 1s $minute-iteration-count rotate;
 }
 
 .second-hands {
-height: 130px;
-margin-top: -130px;
-border: solid 6px $color-second;
-border-radius: 5px;
-animation: rotate $duration-second linear $second-iteration-count;
+  height: 130px;
+  margin-top: -130px;
+  border: solid 6px $color-second;
+  border-radius: 5px;
+  animation: rotate $duration-second linear $second-iteration-count;
 }
 
-.pointer{
-left: 48%;
-width: 25px;
-height: 25px;
-background-color: $color-pointer;
-border: solid 6px $color-pointer;
-border-radius: 50%;
-z-index: 1;
+.pointer {
+  left: 48%;
+  width: 25px;
+  height: 25px;
+  background-color: $color-pointer;
+  border: solid 6px $color-pointer;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 @keyframes rotate {
   0% {
-transform: rotate(0);
+    transform: rotate(0);
   }
   100% {
-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
-.box{
+.box {
   position: absolute;
   left: 49%;
   top: 1%;
