@@ -1,16 +1,20 @@
 .stop-watch {
+  display: flex;
   width: 80vmin;
   height: 80vmin;
   justify-content: center;
   align-items: center;
-  border: 10px dotted #aaa;
+  // border: 10px dotted #aaa;
+  background-image: url(images/clock-face.svg);
+  background-size: cover;
+
   border-radius: 50%;
-  background-color: #000;
+  background-color: #aaa;
 
   & .stop-watch__center {
     position: relative;
-    width: 5vmin;
-    height: 5vmin;
+    width: 4vmin;
+    height: 4vmin;
     z-index: 1;
     background-color: #000;
     border-radius: 50%;
@@ -21,11 +25,11 @@
     width: 2vmin;
     height: 30vmin;
     bottom: 50%;
-    background-color: #aaa;
+    background-color: #eee;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
 
-    animation: spin 60s linear 0s calc(5 / 60) normal forwards;
+    animation: spin 3600s linear 0s infinite normal forwards;
   }
 
   & .stop-watch__second-hand {
@@ -37,14 +41,6 @@
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
 
-    animation: spin 1s linear 0s 5 normal forwards;
+    animation: spin 60s linear infinite;
   }
-}
-
-.stop-watch__select-time--60 .stop-watch__second-hand {
-  animation-iteration-count: 60;
-}
-
-.stop-watch__select-time--60 .stop-watch__minute-hand {
-  animation-iteration-count: calc(60 / 60);
 }
