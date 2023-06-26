@@ -1,0 +1,219 @@
+
+$clock-size: 400px; // can be edited
+$m-sec-size: $clock-size / 4;
+$short-hand-length: $clock-size * 0.4;
+$long-hand-length: $clock-size * 0.475;
+$m-sec-length: $m-sec-size * 0.6;
+$j: 0;
+$k: 0;
+$l: 0;
+
+@function top-distance($i, $j) {
+  @return ($i / 2)  - $j;
+}
+
+@mixin clock-size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin clock-scale-size($size) {
+  width: (0.0125 * $size);
+  height: (0.075 * $size);
+}
+
+@mixin clock-scale-size--small($size) {
+  width: (0.005 * $size);
+  height: (0.05 * $size);
+}
+
+@mixin m-sec-scale-size($size) {
+  width: 0.005*$size;
+  height: 0.025*$size;
+}
+
+@mixin center-size($size) {
+  width: 0.05*$size;
+  height: 0.05*$size;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  @include clock-size($clock-size);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: (0.0125 * $clock-size) solid gold;
+  border-radius: 50%;
+  box-shadow: 0.03*$clock-size 0.0125*$clock-size 0.03*$clock-size grey;
+
+  &__face {
+    @include clock-size($clock-size);
+    z-index: -1;
+    background-color: lightgray;
+    border-radius: 50%;
+    position: absolute;
+  }
+  &__scale {
+    @include clock-scale-size($clock-size);
+
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    background-color: goldenrod;
+    transform-origin: center $clock-size / 2;
+
+    @for $i from 1 through 12 {
+
+      &--#{$i} {
+        @include clock-scale-size($clock-size);
+
+        position: absolute;
+        top: 0;
+        background-color: goldenrod;
+        transform-origin: center $clock-size / 2;
+        transform: rotateZ(#{$j}deg);
+      }
+      $j: $j + 30;
+    }
+
+    @for $i from 1 through 60 {
+
+      &--small_#{$i} {
+        @include clock-scale-size--small($clock-size);
+
+        position: absolute;
+        top: 0;
+        background-color: goldenrod;
+        transform-origin: center $clock-size / 2;
+        transform: rotateZ(#{$k}deg);
+
+      }
+      $k: $k + 6;
+    }
+  }
+
+  &__short-hand  {
+    @include clock-size($clock-size);
+
+    position: absolute;
+    top: top-distance($clock-size, $short-hand-length);
+    width: 0.0125 * $clock-size;
+    height: $short-hand-length;
+    background-color: red;
+    border: 0.0025*$clock-size solid black;
+    transform-origin: bottom center;
+    animation: 3600s linear 1s infinite rotate;
+  }
+
+  &__long-hand {
+    @include clock-size($clock-size);
+
+    position: absolute;
+    top: top-distance($clock-size, $long-hand-length);
+    width: 0.0075 * $clock-size;
+    height: $long-hand-length;
+    background-color: green;
+    transform-origin: bottom center;
+    animation: 60s linear 1s infinite rotate;
+  }
+
+  &__center {
+    @include center-size($clock-size);
+
+    position: absolute;
+    border-radius: 50%;
+    background-color: red;
+    border: 0.0025*$clock-size solid black;
+  }
+}
+
+.m-sec {
+  position: absolute;
+  @include clock-size($m-sec-size);
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 0.008*$clock-size solid gold;
+  border-radius: 50%;
+  top: ($clock-size / 2) - $m-sec-size;
+
+  &__face {
+    @include clock-size($m-sec-size);
+    z-index: -1;
+    background-color: black;
+    border-radius: 50%;
+  }
+  &__scale {
+    @include m-sec-scale-size($clock-size);
+
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    background-color: goldenrod;
+    transform-origin: center $m-sec-size / 2;
+
+    @for $i from 1 through 10 {
+
+      &--#{$i} {
+        @include m-sec-scale-size($clock-size);
+
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        background-color: goldenrod;
+        transform-origin: center $m-sec-size / 2;
+        transform: rotateZ(#{$k}deg);
+      }
+      $k: $k + 36;
+    }
+  }
+
+  &__hand  {
+    @include clock-size($m-sec-size);
+
+    position: absolute;
+    top: - top-distance($m-sec-size, $m-sec-length) ;
+    width: 0.005*$clock-size;
+    height: $m-sec-length;
+    background-color: red;
+    border: 0.0025*$clock-size solid gold;
+    transform-origin: center $m-sec-length * 2 / 3;
+    animation: 1s linear 1s infinite rotate;
+  }
+
+  &__center {
+    @include center-size($m-sec-size);
+
+    position: absolute;
+    border-radius: 50%;
+    background-color: red;
+    border: 0.0025*$clock-size solid gold;
+  }
+
+}
