@@ -1,0 +1,43 @@
+.stopwatch {
+  padding: $stopwatch-padding;
+
+  &__clockface {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: $sec-hand-length * 2;
+    height: $sec-hand-length * 2;
+    border: 4px solid $primary-color;
+    border-radius: 50%;
+  }
+
+  &__min-hand {
+    position: relative;
+    top: $sec-hand-length - $min-hand-length;
+    @include appearance ($stopwatch-hand-width,
+    $min-hand-length,
+    5px,
+    $secondary-color);
+    transform-origin: $stopwatch-hands-transform;
+    @include rotate-animation (3600s);
+  }
+
+  &__sec-hand {
+    position: absolute;
+    @include appearance ($stopwatch-hand-width,
+    $sec-hand-length,
+    4px,
+    $primary-color);
+    transform-origin: $stopwatch-hands-transform;
+    @include rotate-animation (60s);
+  }
+
+  &__circle {
+    position: absolute;
+    align-self: center;
+    @include appearance ($circle-size,
+    $circle-size,
+    50%,
+    $primary-color);
+  }
+}
