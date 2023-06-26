@@ -1,0 +1,86 @@
+@import 'mixns.scss';
+@import 'animations.scss';
+
+body {
+  @include center;
+  height: 80vmin;
+  margin: 0;
+}
+
+.watch {
+  box-sizing: border-box;
+  width: 500px;
+  height: 500px;
+  border: 5px dotted black;
+  border-radius: 100%;
+  position: relative;
+  background-color: #fafafa;
+
+  &__circle,
+  &__minute,
+  &__second {
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: absolute;
+  }
+  &__circle {
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/gear.png);
+    border-radius: 100%;
+    left: calc(50% - 15px);
+    top: calc(50% - 15px);
+    animation-name: reverse-turn;
+  }
+
+  &__minute {
+    width: 6px;
+    height: 40%;
+    background-image: url(../images/small-hand.png);
+    top: 10%;
+    left: calc(50% - 3px);
+    animation-name: turn;
+    animation-duration: 5s;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    width: 10px;
+    height: 25%;
+    background-image: url(../images/big-hand.png);
+    top: calc(25% - 5px);
+    left: calc(50% - 5px);
+    animation-name: turn;
+    animation-duration: 60s;
+    transform-origin: bottom;
+  }
+}
+
+
+.image {
+  background-position: center;
+  background-size: cover;
+}
+
+
+.num__item {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.item-1 {
+  transform: translateX(200px);
+}
+
+.item-2 {
+  transform: translate(410px,200px);
+}
+
+.item-3 {
+  transform: translate(200px,380px);
+}
+
+.item-4 {
+  transform: translate(-10px,150px)
+}
