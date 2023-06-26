@@ -3,8 +3,8 @@
 }
 
 .clock {
-  width: 300px;
-  height: 300px;
+  width: 80vmin;
+  height: 80vmin;
   border-radius: 50%;
   background-color: grey;
   margin: 0 auto;
@@ -13,8 +13,9 @@
   &__hand-minute {
     position: absolute;
     left: calc(50% - 5px);
+    bottom: calc(50%);
     width: 10px;
-    height: 150px;
+    height: 40vmin;
     background-color: green;
     transform-origin: bottom;
     animation: rotate-minute 5s linear infinite;
@@ -25,7 +26,7 @@
     left: calc(50% - 7.5px);
     bottom: calc(50%);
     width: 15px;
-    height: 75px;
+    height: 20vmin;
     background-color: blue;
     transform-origin: bottom;
     animation: rotate-minute 60s linear infinite;
