@@ -1,0 +1,48 @@
+.clock {
+  display: flex;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 5px dotted black;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__point {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+    border-radius: 50%;
+    }
+
+  &__seconds {
+   position: absolute;
+   bottom: 40vmin;
+   height: 40vmin;
+   width: 8px;
+   background-color: blue;
+   animation: rotate 5s linear 12;
+   transform-origin: bottom;
+  }
+
+  &__minutes {
+    position: absolute;
+    bottom: 40vmin;
+    height: 20vmin;
+    width: 16px;
+    background-color: purple;
+    animation: rotate 60s linear;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
