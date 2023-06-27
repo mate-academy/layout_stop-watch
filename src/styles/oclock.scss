@@ -1,0 +1,37 @@
+.border {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $sizeOfOclock;
+  height: $sizeOfOclock;
+
+  border-radius: 50%;
+
+  border: 2vmin dotted $colorBorder;
+  background-color: $backgrColorofBorder;
+
+  &__BigArrow {
+    background-color: $colorOfbigArrow;
+
+    @include arrow(2vmin, 30vmin, 60s);
+  }
+
+  &__SmallArrow {
+    background-color: $colorOfsmallArrow ;
+
+    @include arrow(1vmin, 40vmin, 5s);
+  }
+
+  &__point {
+    position: absolute;
+
+    width: $sizeOfPoint;
+    height: $sizeOfPoint;
+    border-radius: 50%;
+
+    background-color: $bgroundColorOfPoint;
+    border: 0.3vmin solid $bgroundColorOfPointBorder;
+  }
+}
