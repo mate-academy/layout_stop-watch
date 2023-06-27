@@ -1,0 +1,16 @@
+@mixin arrow(
+  $arrowWidth,
+  $arrowHight,
+  $time
+  ) {
+  position: absolute;
+  bottom: 50%;
+
+  width: $arrowWidth;
+  height: $arrowHight;
+
+  border-radius: 10px;
+
+  animation: moveArrow $time infinite linear;
+  transform-origin: bottom center;
+}
