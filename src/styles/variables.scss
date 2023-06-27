@@ -1,0 +1,13 @@
+$stopwatch-size: 80vmin;
+$hand-width: 8px;
+$hand-height-minute: $stopwatch-size * 0.3;
+$hand-height-second: $stopwatch-size * 0.45;
+
+@mixin hand {
+  position: absolute;
+  background-color: #000;
+  left: 50%;
+  transform-origin: bottom center;
+  width: $hand-width;
+  border-radius: 90%;
+}
