@@ -1,0 +1,41 @@
+.stop-watch {
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  border: 3px dotted black;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+    left: 48%;
+    top: 48%;
+    height: 30px;
+    width: 30px;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+
+  &__second-hand {
+    height: 50%;
+    width: 10px;
+    background-color: green;
+    animation: rotate-minute 60s infinite linear;
+  }
+
+  &__minute-hand {
+    height: 30%;
+    width: 15px;
+    background-color: blue;
+    animation: rotate-hour 3600s infinite steps(60);
+  }
+}
