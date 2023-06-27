@@ -1,0 +1,66 @@
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: calc(-#{$clock-size}/ 2);
+  margin-left: calc(-#{$clock-size} / 2);
+  background-color: $clock-color;
+  width: $clock-size;
+  height: $clock-size;
+  border: 5px dotted black;
+  border-radius: 50%;
+
+  &__minutes-hand {
+    position: absolute;
+    left: calc(50% - (#{$minutes-hand-width}/ 2));
+    top: 25%;
+    height: calc(#{$clock-size} / 4);
+    width: $minutes-hand-width;
+    z-index: 3;
+    background-color: $hand-color-1;
+    border-radius: $hand-border-radius;
+    animation-name: rotate-hand;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    left: calc(50% - (#{$seconds-hand-width} / 2));
+    height: calc(#{$clock-size} / 2);
+    width: $seconds-hand-width;
+    z-index: 2;
+    background-color: $hand-color-2;
+    border-radius: $hand-border-radius;
+    animation-name: rotate-hand;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+  }
+
+  &__button {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: calc(-#{$button-size}/ 2);
+    margin-left: calc(-#{$button-size} / 2);
+    height: 5vmin;
+    width: 5vmin;
+    z-index: 4;
+    background-color: $button-color;
+    border-radius: 50px;
+  }
+}
+
+@keyframes rotate-hand {
+  from {
+    transform: rotate(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
