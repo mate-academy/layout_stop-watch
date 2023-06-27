@@ -16,14 +16,14 @@
     @include hand;
     height: $hand-height-minute;
     top: calc(50% - #{$hand-height-minute});
-    animation: rotate-minute 60s infinite linear;
+    animation: rotate-hand 60s infinite linear;
   }
 
   &__second {
     @include hand;
     height: $hand-height-second;
     top: calc(50% - #{$hand-height-second});
-    animation: rotate-second 5s infinite steps(60);
+    animation: rotate-hand 5s infinite steps(60);
   }
 
   &__center {
@@ -35,16 +35,7 @@
   }
 }
 
-@keyframes rotate-minute {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-second {
+@keyframes rotate-hand {
   0% {
     transform: rotate(0deg);
   }
