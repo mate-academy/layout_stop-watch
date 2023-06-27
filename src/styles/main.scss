@@ -2,7 +2,6 @@
   margin: 0;
 }
 
-
 .clock {
   position: relative;
   display: flex;
@@ -33,7 +32,7 @@
     background-color: blue;
     transform-origin: bottom center;
     transform: translateX(-50%);
-    animation: rotateArrow 60s;
+    animation: rotateBigArrow 60s;
   }
 
   &__small-arrow {
@@ -48,10 +47,11 @@
     animation: rotateSmallArrow 5s;
   }
 
-  @keyframes rotateArrow {
+  @keyframes rotateBigArrow {
     from { transform: rotate(0deg); }
     to { transform:  rotate(360deg); }
   }
+
   @keyframes rotateSmallArrow {
     from { transform: translate(-50%, 50%) rotate(0deg); }
     to { transform: translate(-50%, 50%) rotate(360deg); }
