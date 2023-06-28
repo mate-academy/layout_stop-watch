@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+}
+
+.stop-watch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 5px dashed black;
+  border-radius: 50%;
+  margin: auto;
+
+  &__center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 50%;
+    z-index: 1;
+    top: 48%;
+    left: 48.5%;
+  }
+
+  &__hand {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
+
+    &--second {
+      background-color: green;
+      width: 10px;
+      height: 50%;
+      animation: rotate 5s infinite linear;
+    }
+
+    &--minute {
+      width: 15px;
+      background-color: blue;
+      height: 30%;
+      animation: rotate 60s infinite linear;
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
