@@ -1,0 +1,39 @@
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: $stopwatch-side;
+  height: $stopwatch-side;
+  border: 2px dotted #000;
+  border-radius: 50%;
+  background-image: url(../images/cats.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &__hand-second {
+    width: $second-width;
+    height: $second-height;
+    background-color: green;
+
+    @include stopwatch-hand(5s);
+  }
+
+  &__hand-minute {
+    width: $minute-width;
+    height: $minute-height;
+    background-color: blue;
+
+    @include stopwatch-hand(60s);
+  }
+
+  &__center {
+    position: absolute;
+    height: $center-side;
+    width: $center-side;
+    transform-origin: center;
+    background-color: darkorange;
+    border-radius: 50%;
+  }
+}
