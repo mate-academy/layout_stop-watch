@@ -1,0 +1,51 @@
+.clock {
+  position: relative;
+  margin: 0 auto;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 5px dotted #200c77;
+
+  &__point {
+    position: absolute;
+    left: 48%;
+    top: 48%;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(255, 89, 47);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__minutes {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 30%;
+    width: 15px;
+    background-color: rgb(24, 170, 68);
+    animation: rotate 3600s infinite steps(60);
+    transform-origin: bottom ;
+  }
+
+  &__seconds {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 50%;
+    width: 10px;
+    background-color: rgb(163, 9, 112);
+    animation: rotate 60s infinite linear;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateX(-50%) translateY(-100%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-100%) rotate(360deg);
+  }
+}
