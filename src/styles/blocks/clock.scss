@@ -1,14 +1,15 @@
 .clock {
+  display: flex;
   position: relative;
-  margin: 0 auto;
+  margin: auto;
   width: 80vmin;
   height: 80vmin;
   border-radius: 50%;
-  border: 5px dotted #200c77;
+  border: 5px solid #200c77;
 
   &__point {
     position: absolute;
-    left: 48%;
+    left: 48.2%;
     top: 48%;
     height: 30px;
     width: 30px;
@@ -21,9 +22,8 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform-origin: bottom;
+    transform-origin: top center ;
 
-    
     &--minutes {
       height: 30%;
       width: 15px;
@@ -42,10 +42,10 @@
 
 @keyframes rotate {
   0% {
-    transform: translateX(-50%) translateY(-100%) rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
-    transform: translateX(-50%) translateY(-100%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
