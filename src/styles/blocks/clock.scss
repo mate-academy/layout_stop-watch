@@ -17,26 +17,26 @@
     z-index: 1;
   }
 
-  &__minutes {
+  &__hand {
     position: absolute;
     left: 50%;
     top: 50%;
-    height: 30%;
-    width: 15px;
-    background-color: rgb(24, 170, 68);
-    animation: rotate 3600s infinite steps(60);
-    transform-origin: bottom ;
-  }
-
-  &__seconds {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 50%;
-    width: 10px;
-    background-color: rgb(163, 9, 112);
-    animation: rotate 60s infinite linear;
     transform-origin: bottom;
+
+    
+    &--minutes {
+      height: 30%;
+      width: 15px;
+      background-color: rgb(24, 170, 68);
+      animation: rotate 3600s infinite steps(60);
+    }
+
+    &--seconds {
+      height: 50%;
+      width: 10px;
+      background-color: rgb(163, 9, 112);
+      animation: rotate 60s infinite linear;
+    }
   }
 }
 
