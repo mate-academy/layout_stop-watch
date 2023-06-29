@@ -1,0 +1,84 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #123141;
+}
+
+.clock {
+  width: $clock-size;
+  height: $clock-size;
+  margin: 65px auto;
+  position: relative;
+  display: flex;
+  border: 30px solid $clock-color;
+  border-radius: 50%;
+  box-shadow: $clock-shadow;
+
+  &:before {
+    content: "";
+    width: $clock-point-size;
+    height: $clock-point-size;
+    position: relative;
+    margin: auto;
+    background: $clock-color;
+    border-radius: 50%;
+    z-index: 11;
+  }
+
+  &__hours {
+    @include clock-hand;
+    @include clock-hand-animation(43200s);
+
+    &::before {
+      content: "";
+      width: 8px;
+      height: 120px;
+      background-color: #ff105e;
+      z-index: 10;
+      border-radius: $clock-hand-border;
+      box-shadow: $clock-hand-hour-shadow;
+    }
+  }
+
+  &__minutes {
+    @include clock-hand;
+    @include clock-hand-animation(3600s);
+
+    &::before {
+      content: "";
+      width: 6px;
+      height: 190px;
+      background-color: #fcf9fa;
+      z-index: 10;
+      border-radius: $clock-hand-border;
+      box-shadow: $clock-hand-minute-shadow;
+    }
+  }
+
+  &__seconds {
+    @include clock-hand;
+    @include clock-hand-animation(60s);
+
+    &::before {
+      content: "";
+      width: 4px;
+      height: 240px;
+      background-color: #1bcdc4;
+      z-index: 10;
+      border-radius: $clock-hand-border;
+      box-shadow: $clock-hand-second-shadow;
+    }
+  }
+
+  @keyframes rotateClockHand {
+    from {
+      transform: rotate(180deg);
+    }
+    to {
+      transform: rotate(540deg);
+    }
+  }
+}
