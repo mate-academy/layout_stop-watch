@@ -1,0 +1,70 @@
+@import "./utils/variables";
+@import "./utils/reset";
+
+.watch {
+  position: absolute;
+  margin: 0 auto;
+  flex-shrink: 0;
+
+  width: $watch-width;
+  height: $watch-height;
+  border: black solid 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(24,255,251,1) 0%, 
+  rgba(2,119,23,1) 72%);
+
+  &__arm {
+    margin: auto;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: 12px;
+
+    animation-name: fullTurn;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+
+    transform-origin: bottom center;
+
+    &--seconds {
+      background-color: rgb(59, 0, 254);
+      height: $watch-height / 2.2;
+      width: 12px;
+
+      animation-duration: 60s;
+    }
+
+    &--minutes {
+
+      background-color: rgb(255, 0, 0);
+      height: $watch-height / 3;
+
+      animation-duration: 5s;
+    }
+  }
+
+  @keyframes fullTurn {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__center {
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translate(20%, -50%);
+    z-index: 1;
+
+    width: $watch-width / 20;
+    height: $watch-height / 20;
+    background-color: black;
+    border-radius: 50%;
+  }
+}
