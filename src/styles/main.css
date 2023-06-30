@@ -1,0 +1,52 @@
+.circle {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  background-color: white;
+  border-radius: 50%;
+  border: 10px dashed black;
+  border-style: dotted;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  box-sizing: border-box;
+  position: absolute;
+  background-color: orange;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.minutes {
+  position: absolute;
+  height: 50%;
+  width: 10px;
+  bottom: 50%;
+  background-color: green;
+  transform-origin: bottom;
+  animation: time 5s linear infinite;
+
+}
+
+.hours {
+  position: absolute;
+  height: 25%;
+  width: 15px;
+  background-color: blue;
+  bottom: 50%;
+  transform-origin: bottom;
+  animation: time 60s linear infinite;
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
