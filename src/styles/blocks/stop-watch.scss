@@ -3,7 +3,7 @@
   display: flex;
   width: $watch-size;
   height: $watch-size;
-  border: dotted 5px ;
+  border: dotted 5px black;
   border-radius: 50%;
 
   &__center {
@@ -18,7 +18,8 @@
     position: absolute;
     left: 50%;
     bottom: 50%;
-    translate: -50%;
+    transform-origin: bottom center;
+    translate: (-50%);
   }
 
   &__hand--second {
