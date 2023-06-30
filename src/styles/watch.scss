@@ -1,0 +1,51 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  @include circle($watch-size);
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/images/cp.jpg);
+
+  &__minute-hand {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 50%;
+    width: 2vmin;
+    height: 20vmin;
+    background: #e66465;
+    border-radius: 50%;
+    border: 0.5vmin solid black;
+    transform-origin: center bottom;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__hour-hand {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 50%;
+    width: 2vmin;
+    height: 40vmin;
+    background: #9198e5;
+    border-radius: 50%;
+    border: 0.5vmin solid black;
+    transform-origin: center bottom;
+    animation: rotate 5s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    width: 6vmin;
+    height: 6vmin;
+    background: black;
+    border-radius: 50%;
+  }
+}
