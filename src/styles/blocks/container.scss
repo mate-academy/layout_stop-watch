@@ -1,0 +1,71 @@
+@import "../animation/spin.scss";
+
+.container::before {
+  content: "";
+  position: absolute;
+  height: $height-center;
+  width: $width-center;
+  border-radius: 50%;
+  background: $watch-first-color;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  height: $height-point;
+  width: $width-point;
+  border-radius: 50%;
+  left: 50%;
+  top: calc(50% - 145px);
+  z-index: 2;
+  transform: translateX(-50%);
+  background: $watch-third-color;
+  box-shadow: 140px 145px 0 0, -140px 145px 0 0, 0 280px 0 0;
+}
+
+.container__watch {
+  position: absolute;
+  height: $height-watch;
+  width: $width-watch;
+  border: 5px solid $watch-border-color;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  background-color: $watch-backrgound-color;
+  transform: translate(-50%, -50%);
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: $height-second;
+    width: $width-second;
+    background: $watch-first-color;
+    bottom: 50%;
+    left: calc(50% - 5px);
+    border-radius: 5px;
+    animation: spin 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: $height-minute;
+    width: $width-minute;
+    background: $watch-second-color;
+    bottom: 50%;
+    left: calc(50% - 5px);
+    border-radius: 5px;
+    animation: spin 3600s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    animation-play-state: paused;
+  }
+}

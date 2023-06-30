@@ -1,0 +1,11 @@
+@import "../animation/move.scss";
+
+.taskName {
+  position: relative;
+  color: $taskName-color;
+  animation: move 15s alternate infinite linear;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
