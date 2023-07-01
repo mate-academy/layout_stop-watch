@@ -1,0 +1,64 @@
+$watch-size: 80vmin;
+
+.watch {
+  width: $watch-size;
+  height: $watch-size;
+  border: 3px dotted black;
+  border-radius: 50%;
+  position: relative;
+
+  &__dot {
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 3;
+  }
+
+  &__minute {
+    width: 10px;
+    height: $watch-size / 2;
+    background-color: darkred;
+
+    display: flex;
+
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transform-origin: bottom;
+
+    animation: 60s ease 1s minute;
+    z-index: 2;
+  }
+
+  &__second {
+    width: 20px;
+    height: $watch-size / 3;
+    background-color: darkgreen;
+    display: flex;
+
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transform-origin: bottom;
+
+    z-index: 1;
+  }
+}
+
+@keyframes minute {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(160deg);
+  }
+}
