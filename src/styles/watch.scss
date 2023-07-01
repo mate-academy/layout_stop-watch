@@ -1,13 +1,13 @@
 .watch {
-  width: 200px;
-  height: 200px;
+  width: 80vmin;
+  height: 80vmin;
   border: 3px dotted black;
   border-radius: 50%;
   position: relative;
 
   &__dot {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     background-color: orange;
     border-radius: 50%;
 
@@ -18,7 +18,7 @@
 
   &__minute {
     width: 8px;
-    height: 100px;
+    height: 185px;
     background-color: darkred;
 
     display: flex;
@@ -26,19 +26,17 @@
     align-items: center;
     margin: 0 auto;
 
-    animation: 60s ease 1s minute;
+    animation: 60s ease 0s minute;
   }
 
   &__second {
     width: 5px;
-    height: 70px;
+    height: 100px;
     background-color: darkgreen;
     display: flex;
 
     transform: translate(-50%, -100%);
     z-index: 1;
-
-    animation: 5s ease 1s second;
   }
 }
 
@@ -62,25 +60,10 @@
   }
   50% {
     transform-origin: bottom;
-    transform: rotate(90deg);
+    transform: rotate(180deg);
   }
   100% {
     transform-origin: bottom;
-    transform: rotate(120deg);
-  }
-}
-
-@keyframes second {
-  0% {
-    transform-origin: top;
-    transform: rotate(-180deg);
-  }
-  50% {
-    transform-origin: top;
-    transform: rotate(90deg);
-  }
-  100% {
-    transform-origin: top;
-    transform: rotate(160deg);
+    transform: rotate(360deg);
   }
 }
