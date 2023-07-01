@@ -1,56 +1,57 @@
+$watch-size: 80vmin;
+
 .watch {
-  width: 80vmin;
-  height: 80vmin;
+  width: $watch-size;
+  height: $watch-size;
   border: 3px dotted black;
   border-radius: 50%;
   position: relative;
 
   &__dot {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background-color: orange;
     border-radius: 50%;
 
+    position: absolute;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 
     z-index: 3;
   }
 
   &__minute {
-    width: 8px;
-    height: 185px;
+    width: 10px;
+    height: $watch-size / 2;
     background-color: darkred;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
 
-    animation: 60s ease 0s minute;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transform-origin: bottom;
+
+    animation: 60s ease 1s minute;
+    z-index: 2;
   }
 
   &__second {
-    width: 5px;
-    height: 100px;
+    width: 20px;
+    height: $watch-size / 3;
     background-color: darkgreen;
     display: flex;
 
-    transform: translate(-50%, -100%);
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%, -50%);
+    transform-origin: bottom;
+
     z-index: 1;
   }
-}
-
-.dot {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-}
-
-.second {
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
 }
 
 @keyframes minute {
@@ -58,12 +59,12 @@
     transform-origin: bottom;
     transform: rotate(0deg);
   }
-  50% {
-    transform-origin: bottom;
-    transform: rotate(180deg);
-  }
+  // 50% {
+  //   transform-origin: bottom;
+  //   transform: rotate(180deg);
+  // }
   100% {
     transform-origin: bottom;
-    transform: rotate(360deg);
+    transform: rotate(350deg);
   }
 }
