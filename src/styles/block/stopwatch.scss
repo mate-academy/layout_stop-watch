@@ -1,0 +1,46 @@
+@import "./utils/reset";
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/extends";
+@import "./utils/animations";
+
+body {
+  background-color: $page-color;
+}
+
+.stopwatch {
+  @extend %position-center;
+  margin: 250px auto;
+  @include circle ($watch-size);
+  position: relative;
+  background-image: url(clock.png);
+  background-size: cover;
+
+  &::before {
+    content: "";
+    @include point ($point-size);
+    background: #fff ;
+    position: relative;
+  }
+
+  &__minutes {
+    @extend %position-center;
+    position: absolute;
+    top: 22%;
+    left: 49.5%;
+    @include arrow ($arrow-size, $arrow-height-short);
+    @extend %animation;
+    animation-duration: 3600s;
+
+  }
+
+  &__seconds {
+    @extend %position-center;
+    position: absolute;
+    top: 6.8%;
+    left: 49.6%;
+    @include arrow ($arrow-size, $arrow-height-long);
+    @extend %animation;
+    animation-duration: 60s;
+  }
+}
