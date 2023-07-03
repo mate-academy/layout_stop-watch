@@ -1,0 +1,69 @@
+.watch {
+  position: relative;
+  width: 80vh;
+  height: 80vh;
+  border: 1px solid maroon;
+  border-radius: 100%;
+  background-image: url(../images/watch-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__center {
+    width: $center-sizes;
+    height: $center-sizes;
+    background-color: #331313;
+    border-radius: 100%;
+    position: relative;
+    top: calc(50% - #{$center-sizes} / 2);
+    left: calc(50% - #{$center-sizes} / 2);
+    z-index: 3;
+  }
+
+  &__hand {
+    position: absolute;
+    border-radius: 40px;
+
+    @keyframes rotate {
+      0% {
+      transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    &--hour {
+      top: calc(50% - #{$hand-hour--height});
+      right: calc(50% - #{$hand-hour--width} / 2);
+
+      width: $hand-hour--width;
+      height: $hand-hour--height;
+      background-color: #000;
+
+      transform-origin: bottom;
+      animation-name: rotate;
+      animation-duration: 60s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    &--minute {
+      top: calc(50% - #{$hand-minute--height});
+      right: calc(50% - #{$hand-minute--width} / 2);
+
+      width: $hand-minute--width;
+      height: $hand-minute--height;
+      background-color: #000;
+
+      transform-origin: bottom;
+      animation-name: rotate;
+      animation-duration: 5s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+}
