@@ -1,3 +1,9 @@
+$size-of-clock: 600px;
+$clock-bg_colour: #ecddce;
+$borders-colour: #3d3235;
+$minute-colour: #677080;
+$hour-colour: #8b767b;
+
 @keyframes arrow {
   0% {
     transform: rotate(0deg);
@@ -8,13 +14,12 @@
 }
 
 .stopwatch {
-  height: 600px;
-  width: 600px;
-  background-color: #ecddce;
-  border: 5px solid #65565a;
+  height: $size-of-clock;
+  width: $size-of-clock;
+  background-color: $clock-bg_colour;
+  border: $size-of-clock/120 solid $borders-colour;
   border-radius: 50%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
 
   position: relative;
   display: flex;
@@ -23,20 +28,20 @@
 }
 
 .stopwatch__center {
-  background-color: black;
-  height: 40px;
-  width: 40px;
+  background-color: $borders-colour;
+  height: $size-of-clock/15;
+  width: $size-of-clock/15;
   border-radius: 50%;
   z-index: 1;
 }
 
 .stopwatch__hour {
   position: absolute;
-  height: 200px;
-  width: 20px;
-  top: 100px;
-  border-radius: 10px;
-  background-color: #8b767b;
+  height: $size-of-clock/3;
+  width: $size-of-clock/30;
+  top: $size-of-clock/6;
+  border-radius: $size-of-clock/60;
+  background-color: $hour-colour;
 
   animation: arrow 60s linear infinite;
   transform-origin: bottom center;
@@ -44,11 +49,11 @@
 
 .stopwatch__minute {
   position: absolute;
-  height: 260px;
-  width: 15px;
-  top: 40px;
-  border-radius: 5px;
-  background-color: #677080;
+  height: $size-of-clock/2.3;
+  width: $size-of-clock/40;
+  top: $size-of-clock/15;
+  border-radius: $size-of-clock/120;
+  background-color: $minute-colour;
 
   animation: arrow 5s linear infinite;
   transform-origin: bottom center;
