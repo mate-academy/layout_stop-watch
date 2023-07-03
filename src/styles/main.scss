@@ -1,0 +1,71 @@
+@import "./variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+ body {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  min-height: 100vh;
+ }
+
+ .stop-watch {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  width: $stop-watch-size;
+  height: $stop-watch-size;
+  border: 25px double $main-color;
+  border-radius: $watch-radius;
+  background-color: $watch-backround-color;
+
+  &-center {
+    background-color: $main-color;
+    height: $center-size;
+    width: $center-size;
+    border-radius: $watch-radius;
+    margin: auto;
+    z-index: 2;
+    border: 1px solid $border-color;
+  }
+
+  &__arrow-minute {
+    position: absolute;
+    transform-origin: bottom;
+    background-color: $minute-arrow-color;
+    width: 3%;
+    height: 25%;
+    top: 25%;
+    z-index: 1;
+    animation: rotate 60s infinite linear;
+    border-radius: 4px;
+    border: 1px solid $border-color;
+    }
+
+   &__arrow-second {
+    position: absolute;
+    transform-origin: bottom;
+    background-color: $second-arrow-color;
+    border: 1px solid $border-color;
+    z-index: 0;
+    width: 2%;
+    height: 50%;
+    top: 0;
+    animation: rotate 5s infinite linear;
+    border-radius: 4px;
+    }
+
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
