@@ -1,0 +1,60 @@
+$size-of-clock: 600px;
+$clock-bg_colour: #ecddce;
+$borders-colour: #3d3235;
+$minute-colour: #677080;
+$hour-colour: #8b767b;
+
+@keyframes arrow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  height: $size-of-clock;
+  width: $size-of-clock;
+  background-color: $clock-bg_colour;
+  border: $size-of-clock/120 solid $borders-colour;
+  border-radius: 50%;
+  margin: 0 auto;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch__center {
+  background-color: $borders-colour;
+  height: $size-of-clock/15;
+  width: $size-of-clock/15;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.stopwatch__hour {
+  position: absolute;
+  height: $size-of-clock/3;
+  width: $size-of-clock/30;
+  top: $size-of-clock/6;
+  border-radius: $size-of-clock/60;
+  background-color: $hour-colour;
+
+  animation: arrow 60s linear infinite;
+  transform-origin: bottom center;
+}
+
+.stopwatch__minute {
+  position: absolute;
+  height: $size-of-clock/2.3;
+  width: $size-of-clock/40;
+  top: $size-of-clock/15;
+  border-radius: $size-of-clock/120;
+  background-color: $minute-colour;
+
+  animation: arrow 5s linear infinite;
+  transform-origin: bottom center;
+}
