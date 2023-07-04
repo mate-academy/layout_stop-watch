@@ -1,13 +1,21 @@
-$cell-size: 500px;
+$cell-size: 80vmin;
 $shift: $cell-size / 2;
 
 
 body {
-  margin: 50px 200px;
+  margin: 50px;
+}
+
+.hand {
+  position: absolute;
+  transform-origin: bottom center;
 }
 
 .container {
   position: relative;
+  margin: 0 auto;
+  width: $cell-size;
+  height: $cell-size;
 
 
   &__clock {
@@ -19,30 +27,22 @@ body {
     background-color: seagreen;
     border-radius: 50%;
   }
-}
 
-.minutes {
-  position: absolute;
-  top: 8px;
-  left: $shift + 6px;
+  &__minutes {
+    width: 2px;
+    height: $shift;
+    left: $shift + 2vmin;
+    background-color: blue;
+    animation: clock-rotate 60s linear infinite;
+  }
 
-  width: 4px;
-  height: $shift;
-  background-color: blue;
-  animation: clock-rotate 3600s linear infinite;
-  transform-origin: bottom center;
-}
-
-.seconds {
-  position: absolute;
-  top: 8px;
-  left: $shift + 8px;
-
-  width: 1px;
-  height: $shift;
-  background-color: red;
-  animation: clock-rotate 60s linear infinite;
-  transform-origin: bottom center;
+  &__seconds {
+    width: 1px;
+    height: $shift;
+    left: $shift + 2vmin;
+    background-color: yellow;
+    animation: clock-rotate 5s linear infinite;
+  }
 }
 
 @keyframes clock-rotate {
