@@ -1,7 +1,7 @@
 .watch {
   position: relative;
-  height: $page-size;
-  width: $page-size;
+  height: $size;
+  width: $size;
   background-image: url(../images/watch.png);
   background-size: 100%;
 
@@ -13,14 +13,14 @@
     animation-iteration-count: infinite;
 
     &--second {
-      @include hand(28vh, 0.6vh);
+      @include hand(28vmin, 0.6vmin);
       animation-duration: 5s;
       z-index: 1;
       background-color: #872828;
     }
 
     &--minute {
-      @include hand(24vh, 0.8vh);
+      @include hand(24vmin, 0.8vmin);
       animation-duration: 60s;
       z-index: 2;
       background-color: #000;
@@ -40,10 +40,10 @@
   &__center {
     position: absolute;
     z-index: 3;
-    top: $center - 0.5vh;
-    left: $center - 0.5vh;
-    width: 1vh;
-    height: 1vh;
+    top: $center - 0.5vmin;
+    left: $center - 0.5vmin;
+    width: 1vmin;
+    height: 1vmin;
     background-color: #000;
     border-radius: 50%;
   }
