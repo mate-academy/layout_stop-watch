@@ -1,4 +1,6 @@
 .clock {
+  box-sizing: border-box;
+  position: relative;
   display: flex;
   width: 80vmin;
   height: 80vmin;
@@ -6,7 +8,6 @@
   border: 5px dotted black;
   justify-content: center;
   align-items: center;
-  position: relative;
 
   &__point {
     position: absolute;
@@ -22,7 +23,7 @@
    height: 40vmin;
    width: 8px;
    background-color: blue;
-   animation: rotate 5s linear 12;
+   animation: rotate 5s linear infinite;
    transform-origin: bottom;
   }
 
@@ -32,7 +33,7 @@
     height: 20vmin;
     width: 16px;
     background-color: purple;
-    animation: rotate 60s linear;
+    animation: rotate 60s linear infinite;
     transform-origin: bottom;
   }
 }
