@@ -1,33 +1,26 @@
-$cell-size: 500px;
-$shift: $cell-size / 2;
-
-
 body {
   margin: 50px 200px;
 }
 
 .container {
   position: relative;
-
-
-  &__clock {
-    display: flex;
-    flex-wrap: wrap;
-    width: $cell-size;
-    height: $cell-size;
-    border: 8px dotted #000;
-    background-color: seagreen;
-    border-radius: 50%;
-  }
+}
+.container__clock {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 500px;
+  border: 8px dotted #000;
+  background-color: seagreen;
+  border-radius: 50%;
 }
 
 .minutes {
   position: absolute;
   top: 8px;
-  left: $shift + 6px;
-
+  left: 256px;
   width: 4px;
-  height: $shift;
+  height: 250px;
   background-color: blue;
   animation: clock-rotate 3600s linear infinite;
   transform-origin: bottom center;
@@ -36,10 +29,9 @@ body {
 .seconds {
   position: absolute;
   top: 8px;
-  left: $shift + 8px;
-
+  left: 258px;
   width: 1px;
-  height: $shift;
+  height: 250px;
   background-color: red;
   animation: clock-rotate 60s linear infinite;
   transform-origin: bottom center;
@@ -47,10 +39,11 @@ body {
 
 @keyframes clock-rotate {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
-
   to {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
+
+/*# sourceMappingURL=main.css.map */
