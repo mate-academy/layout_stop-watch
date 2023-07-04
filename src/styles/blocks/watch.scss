@@ -1,0 +1,48 @@
+.watch {
+  width: $page-size;
+  background-image: url(../images/watch.png);
+  background-size: 100%;
+
+  &__hand {
+    position: absolute;
+    transform-origin: bottom;
+    animation-name: rotate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &--second {
+      @include hand(28vh, 0.6vh);
+      animation-duration: 5s;
+      z-index: 1;
+      background-color: #872828;
+    }
+
+    &--minute {
+      @include hand(24vh, 0.8vh);
+      animation-duration: 60s;
+      z-index: 2;
+      background-color: #000;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__center {
+    position: absolute;
+    z-index: 3;
+    top: $center - 0.5vh;
+    left: $center - 0.5vh;
+    width: 1vh;
+    height: 1vh;
+    background-color: #000;
+    border-radius: 50%;
+  }
+}
