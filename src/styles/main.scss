@@ -1,0 +1,56 @@
+$cell-size: 80vmin;
+$shift: $cell-size / 2;
+
+
+body {
+  margin: 50px;
+}
+
+.hand {
+  position: absolute;
+  transform-origin: bottom center;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: $cell-size;
+  height: $cell-size;
+
+
+  &__clock {
+    display: flex;
+    flex-wrap: wrap;
+    width: $cell-size;
+    height: $cell-size;
+    border: 8px dotted #000;
+    background-color: seagreen;
+    border-radius: 50%;
+  }
+
+  &__minutes {
+    width: 2px;
+    height: $shift;
+    left: $shift + 2vmin;
+    background-color: blue;
+    animation: clock-rotate 60s linear infinite;
+  }
+
+  &__seconds {
+    width: 1px;
+    height: $shift;
+    left: $shift + 2vmin;
+    background-color: yellow;
+    animation: clock-rotate 5s linear infinite;
+  }
+}
+
+@keyframes clock-rotate {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
