@@ -1,0 +1,50 @@
+.stop-watch {
+  position: relative;
+  height: $watchSize;
+  width: $watchSize;
+  border: $watchBorderWidth dashed rgb(22, 3, 34);
+  border-radius: 50%;
+  background-color: rgb(100, 100, 159);
+
+  &__hand-minute {
+    @extend %handStyle;
+
+    top: $handTopPosition;
+    left: basePosition($watchSize, $minuteHandWidth, $watchBorderWidth);
+    width: $minuteHandWidth;
+    background-color: #f5f3f1;
+    animation: 3600s linear infinite roll;
+    transform-origin: bottom center;
+  }
+
+  &__hand-second {
+    @extend %handStyle;
+
+    top: $handTopPosition;
+    left: basePosition($watchSize, $secondHandWidth, $watchBorderWidth);
+    width: $secondHandWidth;
+    background-color: #1a0d36;
+    animation: 60s steps(60, end) infinite roll;
+    transform-origin: bottom center;
+  }
+
+  &__circle {
+    position: absolute;
+    width: $centerCircleSize;
+    height: $centerCircleSize;
+    border-radius: 50%;
+    background-color: rgb(240, 214, 21);
+    left: basePosition($watchSize, $centerCircleSize, $watchBorderWidth);
+    top: basePosition($watchSize, $centerCircleSize, $watchBorderWidth);
+  }
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
