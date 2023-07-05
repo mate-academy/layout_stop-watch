@@ -1,7 +1,8 @@
 .watch {
   position: relative;
-  height: $size;
   width: $size;
+  height: $size;
+  margin: 0 auto;
   background-image: url(../images/watch.png);
   background-size: 100%;
 
@@ -14,15 +15,15 @@
 
     &--second {
       @include hand(28vmin, 0.6vmin);
-      animation-duration: 5s;
       z-index: 1;
+      animation-duration: 5s;
       background-color: #872828;
     }
 
     &--minute {
       @include hand(24vmin, 0.8vmin);
-      animation-duration: 60s;
       z-index: 2;
+      animation-duration: 60s;
       background-color: #000;
     }
 
@@ -44,7 +45,7 @@
     left: $center - 0.5vmin;
     width: 1vmin;
     height: 1vmin;
-    background-color: #000;
     border-radius: 50%;
+    background-color: #000;
   }
 }
