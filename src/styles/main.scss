@@ -27,7 +27,7 @@ body {
 .clock__seconds {
   width: 100%;
   height: 100%;
-  animation: seconds 5s linear infinite;
+  animation: rotation 5s linear infinite;
   position: relative;
   left: 25%;
 }
@@ -42,20 +42,10 @@ body {
   top: calc(50% - 450px);
 }
 
-@keyframes seconds {
-  0% {
-    rotate: 0deg;
-  }
-
-  100% {
-    rotate: 360deg;
-  }
-}
-
 .clock__minutes {
   width: 100%;
   height: 100%;
-  animation: minutes 60s linear infinite;
+  animation: rotation 60s linear infinite;
   transform: rotate(90deg);
   position: relative;
   left: -25%;
@@ -71,7 +61,7 @@ body {
   top: calc(50% - 350px);
 }
 
-@keyframes minutes {
+@keyframes rotation {
   0% {
     rotate: 0deg;
   }
