@@ -1,0 +1,44 @@
+.watch {
+  width: $size-watch;
+  height: $size-watch;
+  border: $width solid #000;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #666;
+  background-image: url(../images/clock-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__center,
+  &__sec,
+  &__min {
+    position: absolute;
+    width: $width;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transform-origin: center bottom;
+    background-color: #333;
+  }
+
+  &__center {
+    height: $width;
+    background-color: #000;
+    z-index: 10;
+  }
+
+  &__sec {
+    height: $size-sec;
+    bottom: $size-sec*1.25;
+    animation: animation 60s steps(60) infinite;
+  }
+
+  &__min {
+    height: $size-min;
+    top: $size-min;
+    z-index: 8;
+    animation: animation 3600s linear infinite;
+  }
+}
