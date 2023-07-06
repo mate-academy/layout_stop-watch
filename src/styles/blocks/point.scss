@@ -1,0 +1,18 @@
+
+.point {
+
+  &__item {
+    position: absolute;
+    width: $width-point;
+    height: $height-point;
+    border-radius: 50%;
+    background-color:$color-point;
+
+    @for $ch from 1 through 60 {
+      &:nth-child(#{$ch}) {
+        transform: rotate(#{$ch*6}deg);
+          transform-origin: 255px ;
+      }
+    }
+  }
+}
