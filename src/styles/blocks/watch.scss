@@ -1,0 +1,40 @@
+@import "./variables";
+
+.stopwatch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border: 2px dotted #000;
+  border-radius: 50%;
+  margin: 0 auto;
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: center bottom;
+    background-color: #000;
+
+    &--minute {
+      height: 35%;
+      width: 7px;
+      background-color: purple;
+      animation: rotate-minute 30s linear infinite;
+    }
+
+    &--second {
+      height: 45%;
+      width: 2px;
+      animation: rotate-second 6s linear infinite;
+    }
+
+    &--point {
+      width: 30px;
+      height: 30px;
+      transform: translate(-15px, 15px);
+      background-color: yellowgreen;
+      border-radius: 50%;
+    }
+
+  }
+}
