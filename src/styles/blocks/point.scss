@@ -1,5 +1,8 @@
 
 .point {
+  justify-self: center;
+  align-self: flex-start;
+  position: absolute;
 
   &__item {
     position: absolute;
@@ -11,7 +14,7 @@
     @for $ch from 1 through 60 {
       &:nth-child(#{$ch}) {
         transform: rotate(#{$ch*6}deg);
-          transform-origin: 255px ;
+          transform-origin:40vmin;
       }
     }
   }

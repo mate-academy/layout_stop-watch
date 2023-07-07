@@ -1,0 +1,56 @@
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+
+  &__sec {
+    position: absolute;
+    height: 37vmin;
+    background-color: $color-arrow-sec;
+    border-radius: 5px;
+    padding-inline: 5px;
+
+    animation-name: move;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(12,end);
+  }
+
+  &__minute {
+    height: 20vmin;
+    background-color: $color-arrow-min;
+    border-radius: 5px;
+    padding-inline: 5px;
+
+    animation-name: move;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60,end);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top:90%;
+      right:-30%;
+      z-index: 1;
+      width: 20px;
+      height: 20px;
+      background-color:$color-point;
+      border-radius: 50%;
+    }
+
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom center ;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom center;
+  }
+}

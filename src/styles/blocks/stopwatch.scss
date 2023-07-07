@@ -1,5 +1,4 @@
 .stopwatch {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,61 +6,7 @@
   height: $height-stopwatch;
   border-radius: 50%;
 
-
-  &__arrow-sec {
-    position: absolute;
-    top: $width-stopwatch/2 - $length-arrow-sec;
-    right:$width-stopwatch/2 - $width-arrow ;
-
-    width: $width-arrow;
-    height: $length-arrow-sec;
-    background-color: $color-arrow-sec;
-    border-radius: 5px;
-
-    animation-name: move;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-
-  &__arrow-minute {
-    position: absolute;
-    top: $width-stopwatch/2 - $length-arrow-min;
-    right:$width-stopwatch/2 - $width-arrow ;
-
-    width: $width-arrow;
-    height: $length-arrow-min;
-    background-color: $color-arrow-min;
-    border-radius: 5px;
-
-    animation-name: move;
-    animation-duration: 3600s;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(60,end);
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: $length-arrow-min - 10px;
-      left: -$width-arrow/2;
-      z-index: 1;
-      width: 20px;
-      height: 20px;
-      background-color:$color-point;
-      border-radius: 50%;
-    }
-
-  }
-}
-
-@keyframes move {
-  from {
-    transform: rotate(0deg);
-    transform-origin: bottom center ;
-  }
-
-  to {
-    transform: rotate(360deg);
-    transform-origin: bottom center;
+  &__arrow {
+    margin-bottom: 20vmin;
   }
 }
