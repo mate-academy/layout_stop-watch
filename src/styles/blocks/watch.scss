@@ -1,0 +1,82 @@
+.watch {
+  width: $watchSize;
+  height: $watchSize;
+  box-shadow: 0px 0px 47px 7px grey;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(251,250,212);
+  background: radial-gradient(circle, rgba(251,250,212,1) 0%, rgba(252,190,70,1) 100%);
+
+  &__middle {
+    width: 0.03*$watchSize;
+    height: 0.03*$watchSize;
+    background-color: $mainColor;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__big-hand {
+    height: 0.35*$watchSize;
+    width: $handWidth;
+    background-color: $mainColor;
+    border-radius: 40%;
+    position: absolute;
+    left: calc(50% - #{$handWidth} / 2);
+    bottom: 50%;
+    animation: rotate-around 5s linear infinite;
+    transform-origin: center bottom;
+  }
+
+  &__small-hand {
+    height: 0.16*$watchSize;
+    width: $handWidth;
+    background-color: $mainColor;
+    border-radius: 40%;
+    position: absolute;
+    bottom: 50%;
+    left: calc(50% - #{$handWidth} / 2);
+    animation: rotate-around 60s linear infinite;
+    transform-origin: center bottom;
+  }
+
+  &__12 {
+    top: 0;
+    left: calc(50% - #{$fontSize} / 2);
+  }
+
+  &__3 {
+    top: calc(50% - #{$fontSize} / 2);
+    right: 0;
+  }
+
+  &__6 {
+    bottom: 0;
+    left: calc(50% - 0.67*#{$fontSize} / 2);
+  }
+
+  &__9 {
+    top: calc(50% - #{$fontSize} / 2);
+  }
+}
+
+.number {
+  font-size: $fontSize;
+  font-family: 'Courier New', Courier, monospace;
+  position: absolute;
+}
+
+@keyframes rotate-around {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
