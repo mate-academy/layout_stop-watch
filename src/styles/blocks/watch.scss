@@ -1,0 +1,44 @@
+.watch {
+  height: 80vw;
+  max-height: 80vh;
+  width: 80vw;
+  max-width: 80vh;
+  border: 5px dashed #000;
+  border-radius: 50%;
+  position: relative;
+
+  &__hand {
+
+    &--minute {
+      @extend %absolute-centering;
+      animation: anima 5s linear infinite;
+    }
+
+    &--hour {
+      @extend %absolute-centering;
+      animation: anima 60s linear infinite;
+    }
+
+  }
+
+  &__center {
+    height: 6vw;
+    max-height: 6vh;
+    width: 6vw;
+    max-width: 6vh;
+    @extend %absolute-centering;
+    background-color: yellowgreen;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+}
+
+@keyframes anima {
+  from {
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
