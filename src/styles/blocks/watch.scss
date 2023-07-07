@@ -1,0 +1,50 @@
+@import "../utils/variables";
+
+.watch {
+  border: 2px solid lightcoral;
+  height: $watch-size;
+  width: $watch-size;
+  border-radius: 50%;
+
+  position: relative;
+  margin: 0 auto;
+
+  &__minute {
+    height: $watch-size * 0.3;
+    width: 10px;
+    background-color: black;
+    position: absolute;
+    border-radius: 20%;
+    bottom: 50%;
+    left: 50%;
+
+    transform-origin: center bottom;
+    animation: rotate-minute 60s linear infinite;
+  }
+
+  &__second {
+    height: $watch-size * 0.4;
+    width: 5px;
+    background-color: red;
+    position: absolute;
+    border-radius: 20%;
+    bottom: 50%;
+    left: 50%;
+
+    transform-origin: center bottom;
+    animation: rotate-second 5s linear infinite;
+  }
+
+  &__nail {
+    position: absolute;
+    height: 30px;
+    background-color: pink;
+    border-radius: 50%;
+    bottom: 50%;
+    left: 50%;
+    width: 30px;
+
+    transform: translate(-15px,15px);
+    transform-origin: center bottom;
+  }
+}
