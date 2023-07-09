@@ -14,16 +14,21 @@ body {
     height: 300px;
     top: -300px;
     background-color: red;
-    -webkit-animation-duration: 86400s;
-    animation-duration: 86400s;
+    animation: move 86400s linear infinite forwards;
   }
 
   &__minute {
     height: 180px;
     top: -180px;
     background-color: $main-color;
-    -webkit-animation-duration: 3600s;
-    animation-duration: 3600;
+    animation: move 3600s linear infinite forwards;
+  }
+
+  &__second {
+    height: 180px;
+    top: -180px;
+    background-color: #dcdcdc;
+    animation: move 60s linear infinite forwards;
   }
 
   &__dot {
@@ -45,19 +50,16 @@ body {
   -webkit-animation-name: move;
   animation-name: move;
   transition-duration: infinite;
-  // transition-timing-function: linear;
+  transition-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
 
-@-webkit-keyframes move {
-  100% {
-    transform: rotate(0.99turn);
-  }
-}
-
 @keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
   100% {
-    transform: rotate(0.99turn);
+    transform: rotate(360deg);
   }
 }
