@@ -1,0 +1,15 @@
+@mixin objectPosition-center($size){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: - $size / 2;
+}
+
+@mixin handSet($thickness, $length, $turn) {
+  width: $thickness;
+  height: $length;
+  top: $stopwatch-size / 2 - $length;
+  margin-inline: - $thickness / 2;
+
+  animation: rotate $turn steps($hand-step-count);
+}

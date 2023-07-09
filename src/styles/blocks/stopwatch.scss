@@ -1,0 +1,45 @@
+.stopwatch {
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  @include objectPosition-center($stopwatch-size);
+
+  border-radius: 50%;
+  border: $border-thickness dotted black;
+
+  &::before {
+    content: "";
+    width: $center-dot-size;
+    height: $center-dot-size;
+    z-index: 1;
+    @include objectPosition-center($center-dot-size);
+
+    border-radius: 50%;
+    background-color: orange;
+  }
+
+  &__hand {
+    position: absolute;
+    left: 50%;
+
+    border-radius: 5px;
+    transform-origin: bottom;
+
+    &--sec {
+      @include handSet($sec-hand-thickness,
+        $sec-hand-length,
+        $sec-hand-full-turn
+      );
+
+      background-color: green;
+    }
+
+    &--min {
+      @include handSet($min-hand-thickness,
+        $min-hand-length,
+        $min-hand-full-turn
+      );
+
+      background-color: blue;
+    }
+  }
+}
