@@ -1,5 +1,5 @@
-@mixin rotate($rotationTime) {
-  animation: $rotationTime linear infinite rotate;
+@mixin rotate($duration, $timing) {
+  animation: $duration $timing infinite rotate;
   transform-origin: bottom center;
 
   @keyframes rotate {

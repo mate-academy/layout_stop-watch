@@ -1,90 +1,66 @@
 .watch {
-  background-color: #efefef;
-  border: $watchSize / 80 solid $mainColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: $watchSize;
+  min-height: $watchSize;
+
+  background-image: url(../images/clock_face.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 97%;
+
+  border: ($watchSize / 80) solid $frameColor;
   border-radius: 50%;
-  box-shadow: inset 0 0 $watchSize / 80 $watchSize / 200 rgba(0, 0, 0, 0.7);
 
-  &__wrapper {
-    position: relative;
-    width: $watchSize;
-    height: $watchSize;
-  }
+  box-shadow: inset 0 0 ($watchSize / 80) ($watchSize / 200) rgba(0, 0, 0, 0.7);
 
-  &__3,
-  &__6,
-  &__9,
-  &__12 {
+  &__hands {
     position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: $watchSize / 15;
-    font-weight: 700;
-    left: 50%;
-    top: 50%;
-    text-shadow: 0 0 $watchSize / 67 rgba(0, 0, 0, 0.3);
-    transform: translate(-50%, -50%);
-  }
 
-  &__3 {
-    margin-left: $watchSize / 2.3;
-  }
+    border-radius: ($watchSize / 100);
 
-  &__6 {
-    margin-top: $watchSize / 2.3;
-  }
+    box-shadow: 0 0 ($watchSize / 40) 0 rgba(0, 0, 0, 0.6);
 
-  &__9 {
-    margin-left: -$watchSize / 2.3;
-  }
+    &--holder {
+      width: ($watchSize / 30);
+      height: ($watchSize / 30);
 
-  &__12 {
-    margin-top: -$watchSize / 2.3;
-  }
+      background-color: $handsHolderColor;
+    }
 
-  &__hour,
-  &__minute,
-  &__second,
-  &__dot {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border-radius: $watchSize / 100;
-    box-shadow: 0 0 $watchSize / 40 0 rgba(0, 0, 0, 0.6);
-    transform-origin: bottom center;
-  }
+    &--seconds {
+      margin-top: -($watchSize / 2.8);
 
-  &__hour {
-    background-color: $mainColor;
-    height: $watchSize / 4.8;
-    width: $watchSize / 67;
-    top: -$watchSize / 4.8;
+      height: ($watchSize / 2.8);
+      width: ($watchSize / 133);
 
-    @include rotate(360s);
-  }
+      background-color: $secondsHandColor;
 
-  &__minute {
-    background-color: $mainColor;
-    height: $watchSize / 2.8;
-    width: $watchSize / 100;
-    top: -$watchSize / 2.8;
+      @include rotate($secondsRotateTime, linear);
+    }
 
-    @include rotate(60s);
-  }
+    &--minutes {
+      margin-top: -($watchSize / 2.8);
 
-  &__second {
-    background-color: #f42e20;
-    height: $watchSize / 2.8;
-    width: $watchSize / 133;
-    top: -$watchSize / 2.8;
+      height: ($watchSize / 2.8);
+      width: ($watchSize / 100);
 
-    @include rotate(5s);
-  }
+      background-color: $minutesHandColor;
 
-  &__dot {
-    background-color: $mainColor;
-    width: $watchSize / 30;
-    height: $watchSize / 30;
-    top: 0;
+      @include rotate($minutesRotateTime, steps(60));
+    }
+
+    &--hours {
+      margin-top: -($watchSize / 4.8);
+
+      height: ($watchSize / 4.8);
+      width: ($watchSize / 67);
+
+      background-color: $hoursHandColor;
+
+      @include rotate($hoursRotateTime, steps(12));
+    }
   }
 }

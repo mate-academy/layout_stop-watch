@@ -1,10 +1,18 @@
+@import "./utils/mixins";
+@import "./utils/variables";
+
+@import "./blocks/watch.scss";
+
 * {
+  box-sizing: border-box;
   margin: 0;
 }
 
 body {
   display: flex;
-  height: 100vh;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  min-width: $watchSize;
 }
