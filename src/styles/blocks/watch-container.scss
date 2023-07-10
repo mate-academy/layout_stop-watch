@@ -1,0 +1,35 @@
+.watch-container {
+  width: 80vmin;
+  height: 80vmin;
+  border: 4px dotted $main-color-black;
+  border-radius: 50%;
+  position: relative;
+
+  &__hour {
+    background-color: #800080;
+    width: 15px;
+    height: 20vmin;
+    left: 49%;
+    top: 25%;
+    transform: rotate(90deg);
+    animation: hour 60s linear infinite;
+  }
+
+  &__min {
+    width: 10px;
+    height: 40vmin;
+    animation: rotate 5s linear infinite;
+
+  }
+
+  &__center {
+    background-color: #ffa500;
+    position: absolute;
+    top: 47%;
+    left: 47%;
+    width: 8%;
+    height: 8%;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
