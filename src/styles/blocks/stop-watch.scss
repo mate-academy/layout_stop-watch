@@ -1,0 +1,170 @@
+// Transform calculators
+@function x-center($element_width) {
+  @return $width/2 - $element_width/2;
+}
+
+@function y-center($element_height) {
+  @return $height/2 - $element_height/2;
+}
+
+.stopwatch,
+.stopwatch:before,
+.stopwatch:after,
+.stopwatch *,
+.stopwatch *:before,
+.stopwatch *:after {
+  display: inline-block;
+  background: $color;
+  content: "";
+  position: absolute;
+}
+
+.stopwatch {
+  width: $width;
+  height: $height;
+  background: $background;
+  border-radius: 50%;
+  border: $width/10 solid $color;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+
+  .top {
+    width: $top_bar_width;
+    height: $height/15;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -$height/4);
+    -moz-border-radius: $height/30;
+    -webkit-border-radius: $height/30;
+    border-radius: $height/30;
+    -webkit-border-top-left-radius: $height/20;
+    -webkit-border-top-right-radius: $height/20;
+    -moz-border-radius-topleft: $height/20;
+    -moz-border-radius-topright: $height/20;
+    border-top-left-radius: $height/20;
+    border-top-right-radius: $height/20;
+    transition: transform $animation_time $animation_timing;
+
+    &:before,
+    &:after { // lines connection the button
+      width: $top_line_width;
+      height: $top_line_height;
+      background: $color;
+      left: 50%;
+      top: 1px;
+      transition: height $animation_time $animation_timing;
+    }
+
+    &:before {
+      transform: translate(-200%, 0);
+    }
+
+    &:after {
+      transform: translate(100%, 0);
+    }
+  }
+
+  .hand {
+    width: $hand_width;
+    height: $height;
+    background: transparent;
+    transform: translate(x-center($hand_width), y-center($height));
+    animation: rotating 6s linear infinite;
+    animation-delay: $animation_time;
+    animation-play-state: paused;
+
+    &:after {
+      width: $hand_width;
+      height: $height*0.5;
+      background: $color;
+      -moz-border-radius: $hand_width/2;
+      -webkit-border-radius: $hand_width/2;
+      border-radius: $hand_width/2;
+      transform: translateY($height*0.05);
+    }
+  }
+
+  .hand-2 {
+    width: $hand_width;
+    height: $height;
+    background: transparent;
+    transform: translate(x-center($hand_width), y-center($height));
+    animation: rotating 12s linear infinite;
+    animation-delay: $animation_time;
+    animation-play-state: paused;
+
+    &:after {
+      width: $hand_width;
+      height: $height*0.3;
+      background: $color;
+      -moz-border-radius: $hand_width/2;
+      -webkit-border-radius: $hand_width/2;
+      border-radius: $hand_width/2;
+      transform: translateY($height*0.25);
+    }
+  }
+
+  &:after { // reset button
+    width: $top_line_width;
+    height: $height/8;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform: translate($width - ($width/10), -$height/20) rotate(45deg);
+  }
+}
+
+#toggle {
+  display: none;
+}
+
+#toggle:checked + .stopwatch {
+  .top {
+    transform: translate(-50%, -$height/6);
+
+    &:before,
+    &:after {
+      height: $top_line_height*0.5;
+    }
+  }
+
+  .hand,
+  .hand-2 {
+    animation-play-state: running;
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: translate(
+      x-center($hand_width),
+      y-center($height))
+      rotate(0deg);
+  }
+
+  to {
+    transform: translate(
+      x-center($hand_width),
+      y-center($height))
+      rotate(360deg);
+  }
+}
+
+label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-250px, -50%);
+  display: inline-block;
+  border: 2px solid $color;
+  font-family: sans-serif;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: $color;
+  background: rgba(255,255,255,0.1);
+
+  &:active {
+    padding: 12px 15px 8px;
+    background: rgba(255,255,255,0.2);
+  }
+}
