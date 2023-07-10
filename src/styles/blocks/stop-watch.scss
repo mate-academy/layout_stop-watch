@@ -85,6 +85,26 @@
     }
   }
 
+  .hand-2 {
+    width: $hand_width;
+    height: $height;
+    background: transparent;
+    transform: translate(x-center($hand_width), y-center($height));
+    animation: rotating 12s linear infinite;
+    animation-delay: $animation_time;
+    animation-play-state: paused;
+
+    &:after {
+      width: $hand_width;
+      height: $height*0.3;
+      background: $color;
+      -moz-border-radius: $hand_width/2;
+      -webkit-border-radius: $hand_width/2;
+      border-radius: $hand_width/2;
+      transform: translateY($height*0.25);
+    }
+  }
+
   &:after { // reset button
     width: $top_line_width;
     height: $height/8;
@@ -108,7 +128,8 @@
     }
   }
 
-  .hand {
+  .hand,
+  .hand-2 {
     animation-play-state: running;
   }
 }
