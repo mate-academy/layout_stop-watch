@@ -1,0 +1,65 @@
+$main-color: #4b9aaa;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.box {
+  position: relative;
+
+  &__hour {
+    height: 160px;
+    top: -160px;
+    background-color: red;
+    animation: move 86400s linear infinite forwards;
+  }
+
+  &__minute {
+    height: 200px;
+    top: -200px;
+    background-color: $main-color;
+    animation: move 3600s linear infinite forwards;
+  }
+
+  &__second {
+    height: 300px;
+    top: -300px;
+    background-color: #dcdcdc;
+    animation: move 60s linear infinite forwards;
+  }
+
+  &__dot {
+    position: absolute;
+    background-color: $main-color;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    left: -10px;
+    top: -15px;
+  }
+}
+
+.arrow {
+  width: 10px;
+  position: absolute;
+  transform-origin: bottom;
+  transform: rotate(0.01turn);
+  -webkit-animation-name: move;
+  animation-name: move;
+  transition-duration: infinite;
+  transition-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
