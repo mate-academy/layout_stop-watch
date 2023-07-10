@@ -1,6 +1,8 @@
 .block {
-  width: 500px;
-  height: 500px;
+  width: 80vmin;
+  height: 80vmin;
+  top: 50%;
+  left: 30%;
   border: 2px dotted black;
   border-radius: 50%;
   position: relative;
@@ -15,7 +17,7 @@
   width: 50px;
   height: 50px;
   background: yellow;
-  z-index: 1;
+  z-index: 2;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -29,7 +31,7 @@
   left: 50%;
   transform: translateY(-100%);
   transform: rotate(25deg);
-  animation: roll 60s infinite;
+  animation: roll 5s infinite;
   transform-origin: center 0;
 }
 
@@ -42,8 +44,8 @@
   left: 50%;
   transform: translateY(-100%);
   transform: rotate(25deg);
-  animation: roll 5s infinite;
-  transform-origin: center bottom;
+  animation: roll 60s infinite;
+  transform-origin: 0;
 }
 
 @keyframes roll {
@@ -51,6 +53,6 @@
     transform: rotate(0);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 }
