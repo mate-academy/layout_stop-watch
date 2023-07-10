@@ -1,0 +1,49 @@
+.time {
+
+  &__container {
+    position: relative;
+    width: 510px;
+    height: 510px;
+    border-radius: 50%;
+    border: 5px dashed green;
+    margin: 70px auto 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      background-color: red;
+      border-radius: 50%;
+    }
+  }
+
+  &__hour {
+    position: absolute;
+    width: 10px;
+    height: 250px;
+    top: 0;
+    right: 50%;
+    border-radius: 100%;
+    background-color: orange;
+    transform-origin: bottom;
+    animation: moveClock 15s infinite;
+    animation-timing-function: linear;
+  }
+
+  &__second {
+    position: absolute;
+    width: 10px;
+    height: 150px;
+    bottom: 50%;
+    border-radius: 100%;
+    right: 50%;
+    background-color: yellow;
+    animation: moveClock 60s infinite;
+    transform-origin: bottom;
+    animation-timing-function: linear;
+  }
+}
