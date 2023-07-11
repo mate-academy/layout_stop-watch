@@ -22,30 +22,33 @@
   transform: translate(-50%, -50%);
 }
 
-.line_green {
-  height: 250px;
-  width: 10px;
-  background-color: green;
+.line_blue {
+  height: 150px;
+  width: 20px;
+  background-color: blue;
   position: absolute;
-  top: 50%;
+  bottom: 50%;
   left: 50%;
   transform: translateY(-100%);
   transform: rotate(25deg);
   animation: roll 5s infinite;
   transform-origin: center 0;
-}
+  transform: translateX(-50%);
+  }
 
-.line_blue {
-  height: 20px;
-  width: 150px;
-  background-color: blue;
+.line_green {
+  height: 250px;
+  width: 10px;
+  background-color: green;
   position: absolute;
-  top: 50%;
+  bottom: 50%;
   left: 50%;
   transform: translateY(-100%);
   transform: rotate(25deg);
-  animation: roll 60s infinite;
-  transform-origin: 0;
+  animation: roll 5s infinite;
+  transform-origin: center 0;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 @keyframes roll {
