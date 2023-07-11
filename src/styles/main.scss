@@ -1,0 +1,53 @@
+.watch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  margin: 10vmin auto;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 5px dotted black;
+  align-items: center;
+
+  &__hour {
+    width: 12px;
+    height: 19vmin;
+    background-color: blue;
+    position: absolute;
+    left: calc(50% - 6px);
+    top: 20vmin;
+    animation: hand 60s linear infinite;
+    transform-origin: bottom;
+    border-radius: 50% 50% 0 0;
+
+  }
+
+  &__minute {
+    position: absolute;
+    width: 6px;
+    left: calc(50% - 3px);
+    height: 40vmin;
+    background-color: green;
+    animation: hand 5s linear infinite;
+    transform-origin: bottom;
+    border-radius: 50% 50% 0 0;
+  }
+
+  &__center-ball {
+    width: 3vmin;
+    height: 3vmin;
+    background-color: orange;
+    position: absolute;
+    left: calc(50% - 1.5vmin);
+    top: calc(50% - 1.5vmin);
+    border-radius: 50%;
+  }
+
+  @keyframes hand {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
