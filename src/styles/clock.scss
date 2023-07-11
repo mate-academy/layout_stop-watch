@@ -1,0 +1,66 @@
+.clock {
+  margin: auto;
+  display: flex;
+  width: $clock-size;
+  height: $clock-size;
+  border: 5px dotted red;
+  border-radius: 90%;
+  position: relative;
+
+  &__hands {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    animation-name: clock;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+
+  .second {
+    width: $second-size;
+    height: $clock-size / 2;
+    background-color: black;
+
+    animation-duration: 5s;
+  }
+
+  .minute {
+    width: $minute-size;
+    height: $clock-size / 4;
+    background-color: yellow;
+    top: $clock-size / 4;
+
+    animation-duration: 60s;
+  }
+
+  &__point {
+    display: block;
+    width: $point-size;
+    height: $point-size;
+    background-color: blueviolet;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    border-radius: 90px;
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
