@@ -10,7 +10,7 @@ body {
 .clock {
   position: relative;
 
-  border: 5px dotted black;
+  border: 5px dotted #000;
   border-radius: 50%;
   @include clockSizes;
 
@@ -21,7 +21,7 @@ body {
     transform: translate(-50%, -50%);
     z-index: 1;
 
-    background-color: orange;
+    background-color: #ffa500;
     width: 10%;
     height: 10%;
     border-radius: 50%;
@@ -37,7 +37,7 @@ body {
     animation: spin 5s linear infinite;
     transform-origin: bottom center;
 
-    background-color: green;
+    background-color: #00ff00;
   }
 
   &__hour-arrow {
@@ -50,6 +50,6 @@ body {
     animation: spin 60s linear infinite;
     transform-origin: bottom center;
 
-    background-color: blue;
+    background-color: #0000ff;
   }
 }
