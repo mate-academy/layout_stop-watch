@@ -1,0 +1,31 @@
+.stopwatch {
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border-radius: 50%;
+  border: 20px dashed $stopwatch-color;
+
+  &__dot {
+    position: absolute;
+    height: $dot-size;
+    width: $dot-size;
+    background-color: $stopwatch-color;
+    border-radius: 50%;
+    border: dotted;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-15px,15px);
+  }
+
+  &__big-hand {
+    @include stopwatch-defaults;
+    height: 35vmin;
+    animation: rotation 5s linear infinite;
+  }
+
+  &__small-hand {
+    @include stopwatch-defaults;
+    height: 25vmin;
+    animation: rotation 60s linear infinite;
+  }
+}
