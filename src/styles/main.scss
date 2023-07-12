@@ -1,0 +1,51 @@
+.watch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 5px dashed black;
+  border-radius: 50%;
+  margin: auto;
+
+  &__minute {
+    position: absolute;
+    width: 1%;
+    height: 50%;
+    top: auto;
+    left: 50%;
+    background: green;
+    border-radius: 3px;
+    animation: arrow 5s linear infinite;
+    transform-origin: 50% 100%;
+  }
+
+  &__hour {
+    position: absolute;
+    width: 2%;
+    height: 25%;
+    top: 25%;
+    left: 50%;
+    background: blue;
+    border-radius: 7px;
+    animation: arrow 60s linear infinite;
+    transform-origin: 50% 100%;
+  }
+
+  &__start {
+    position: absolute;
+    width: 6%;
+    height: 6%;
+    background: orange;
+    top: 49%;
+    left: 48%;
+    border-radius: 50%;
+  }
+}
+
+@keyframes arrow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
