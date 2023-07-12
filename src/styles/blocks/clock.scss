@@ -1,0 +1,44 @@
+.clock {
+  position: relative;
+  @include square($clockSize);
+  border: 3px dotted black;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    border-radius: 50%;
+  }
+
+  &__minute {
+    position: absolute;
+    margin: 0 auto;
+    top: 25%;
+    left: 48%;
+    height: 25%;
+    width: 4%;
+    background-color: blue;
+    animation: spin 60s linear;
+    transform-origin: bottom center;
+  }
+
+  &__second {
+    position: absolute;
+    margin: 0 auto;
+    height: 50%;
+    top: 0%;
+    left: 49%;
+    width: 2%;
+    background-color: green;
+    animation: spin 5s linear;
+    transform-origin: bottom center;
+  }
+}
