@@ -1,0 +1,59 @@
+.block {
+  width: 80vmin;
+  height: 80vmin;
+  top: 50%;
+  left: 30%;
+  border: 2px dotted black;
+  border-radius: 50%;
+  position: relative;
+}
+
+.ball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: yellow;
+  z-index: 2;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.line_blue {
+  height: 150px;
+  width: 20px;
+  background-color: blue;
+  position: absolute;
+  bottom: 50%;
+  left: 49.26%;
+  animation: roll 60s infinite;
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+  animation-timing-function: steps(60);
+}
+
+.line_green {
+  height: 250px;
+  width: 10px;
+  background-color: green;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  animation: roll 5s infinite;
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+  z-index: 1;
+  animation-timing-function: steps(5);
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
