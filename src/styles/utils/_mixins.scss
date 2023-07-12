@@ -1,0 +1,14 @@
+@mixin rotate($duration, $timing) {
+  animation: $duration $timing infinite rotate;
+  transform-origin: bottom center;
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

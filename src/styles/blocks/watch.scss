@@ -1,0 +1,53 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: $watch-size;
+  min-height: $watch-size;
+  background-image: url(../images/clock_face.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 97%;
+  border: ($watch-size / 80) solid $color-main-accent;
+  border-radius: 50%;
+  box-shadow: inset 0 0 ($watch-size / 80) ($watch-size / 200) #000000b3;
+
+  &__hands {
+    position: absolute;
+    border-radius: ($watch-size / 100);
+    box-shadow: 0 0 ($watch-size / 40) 0 rgba(0, 0, 0, 0.6);
+
+    &--holder {
+      width: ($watch-size / 30);
+      height: ($watch-size / 30);
+      background-color: $color-main-accent;
+    }
+
+    &--seconds {
+      height: ($watch-size / 2.8);
+      width: ($watch-size / 133);
+      margin-top: -($watch-size / 2.8);
+      background-color: $color-secondary;
+
+      @include rotate($seconds-rotation-time, linear);
+    }
+
+    &--minutes {
+      height: ($watch-size / 2.8);
+      width: ($watch-size / 100);
+      margin-top: -($watch-size / 2.8);
+      background-color: $color-main-accent;
+
+      @include rotate($minutes-rotation-time, steps(60));
+    }
+
+    &--hours {
+      height: ($watch-size / 4.8);
+      width: ($watch-size / 67);
+      margin-top: -($watch-size / 4.8);
+      background-color: $color-main-accent;
+
+      @include rotate($hours-rotation-time, steps(12));
+    }
+  }
+}
