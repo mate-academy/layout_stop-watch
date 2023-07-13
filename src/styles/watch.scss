@@ -1,10 +1,9 @@
 .watch {
-  --size: 80vmin;
   position: relative;
 
   @include circle(var(--size));
 
-  border: calc(var(--size) / 60) dotted black;
+  border: calc(var(--size) / 60) dotted #000;
 
   &::before,
   &::after {
@@ -23,7 +22,7 @@
     height: 5px;
     width: calc(var(--size) / 2);
 
-    background-color: blue;
+    background-color: #00f;
 
     animation: move 5s linear infinite;
   }
@@ -32,7 +31,7 @@
     height: 10px;
     width: calc(var(--size) / 4);
 
-    background-color: green;
+    background-color: #008000;
 
     animation: move 60s linear infinite;
   }
@@ -46,7 +45,7 @@
 
     @include circle(20px);
 
-    background-color: orange;
+    background-color: #ffa500;
     z-index: 1;
   }
 }
