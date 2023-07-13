@@ -1,0 +1,47 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include watch($size);
+  background-color: $c-background;
+
+  &__minute-hand {
+    @include hand(220px, $c-black);
+    animation: hand 3600s steps(60, end) infinite;
+    transform-origin: bottom;
+
+    @keyframes hand {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__second-hand {
+    @include hand(160px, $c-black);
+    animation: hands 60s steps(60, end) infinite;
+    transform-origin: bottom;
+
+    @keyframes hands {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__circle {
+    position: absolute;
+
+    @include watch($circle-size);
+    background-color: $c-black;
+  }
+}
