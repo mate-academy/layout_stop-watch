@@ -1,0 +1,63 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: $stopwatch-size;
+
+  &__field {
+    @include square($stopwatch-size, $border-radius);
+
+    position: relative;
+
+    background-color: #eed;
+    border: 2px solid $color-minuteArrow;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50px;
+      height: 50px;
+
+      content: "";
+      background-color: #5a5a5a;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__sec {
+    @include border-top-radius($border-radius);
+
+    position: absolute;
+    top: 5%;
+    left: 49%;
+    width: 10px;
+    height: 300px;
+
+    background-color: #00f;
+    border: 1px solid $color-black;
+
+    transform-origin: bottom;
+    transform: translate(-50%, -50%);
+    animation: sec $sec-duration linear infinite;
+  }
+
+  &__minute {
+    @include border-top-radius($border-radius);
+
+    position: absolute;
+    top: 17%;
+    left: 49%;
+    width: 17px;
+    height: 220px;
+
+    background-color: $color-minuteArrow;
+    border: 2px solid $color-black;
+
+    transform-origin: bottom;
+    transform: translate(-50%, -50%);
+    animation: hour $hour-duration linear infinite;
+  }
+}
