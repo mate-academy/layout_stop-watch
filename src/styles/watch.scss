@@ -1,0 +1,51 @@
+.watch {
+  position: relative;
+
+  @include circle(var(--size));
+
+  border: calc(var(--size) / 60) dotted #000;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) rotate(-90deg);
+
+    display: block;
+    transform-origin: left;
+  }
+
+  &::before {
+    height: 5px;
+    width: calc(var(--size) / 2);
+
+    background-color: #00f;
+
+    animation: move 5s linear infinite;
+  }
+
+  &::after {
+    height: 10px;
+    width: calc(var(--size) / 4);
+
+    background-color: #008000;
+
+    animation: move 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    @include circle(20px);
+
+    background-color: #ffa500;
+    z-index: 1;
+  }
+}
