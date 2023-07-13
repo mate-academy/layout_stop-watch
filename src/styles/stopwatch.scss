@@ -1,9 +1,3 @@
-@mixin handsAnimation($property, $value) {
-  transform-origin: bottom;
-  animation-name: move;
-  #{$property}: $value;
-}
-
 .stopwatch {
   margin: auto;
   width: $stopwatch-size;
@@ -14,7 +8,7 @@
 
   position: relative;
 
-  border: 2px dashed #000;
+  border: 1vmin dotted #000;
   border-radius: 50%;
 
   z-index: 0;
@@ -24,8 +18,8 @@
     height: $center-size;
 
     position: absolute;
-    left: $stopwatch-position;
-    top: $stopwatch-position;
+    left: $center-position;
+    top: $center-position;
 
     background-color: green;
     border-radius: 50%;
@@ -46,7 +40,7 @@
 
     z-index: 3;
 
-    @include handsAnimation(animation-duration, 5s);
+    @include handsAnimation($minutes-hand-demo-time);
   }
 
   &__seconds-hand {
@@ -62,6 +56,6 @@
 
     z-index: 1;
 
-    @include handsAnimation(animation-duration, 60s);
+    @include handsAnimation($seconds-hand-demo-time);
   }
 }
