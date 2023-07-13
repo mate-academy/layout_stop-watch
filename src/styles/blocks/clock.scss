@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  position: relative;
+  border: 3px solid black;
+  @include square($clockSize);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: $clock50;
+    left: $clock50;
+    transform: translate(-$clock50, -$clock50);
+    width: 30px;
+    height: 30px;
+    background-color: grey;
+    border-radius: $clock50;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 25%;
+    left: $left48;
+    height: 25%;
+    width: 4%;
+    background-color: rgb(250, 124, 145);
+    animation: spin 60s linear;
+    transform-origin: bottom center;
+  }
+
+  &__second {
+    position: absolute;
+    top: 0%;
+    left: $left48;
+    height: $clock50;
+    width: 2%;
+    background-color: rgb(139, 209, 201);
+    animation: spin 5s linear;
+    transform-origin: bottom center;
+  }
+}
