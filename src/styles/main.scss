@@ -1,10 +1,10 @@
 $clockwise-color: linear-gradient(90deg,#000000,#2a2a2a);
-$background-hover-size:400px 300px;
+$background-hover-size:600px 500px;
 $hour-width:9px;
 $minute-width:7px;
 $second-width:2px;
 
-$clock-size: 300px;
+$clock-size: 500px;
 $clock-margin-bottom-right:$clock-size - 10px;
 $clock-border-width: 2px;
 $clock-center-size: 20px;
@@ -28,7 +28,7 @@ body {
   background-image: linear-gradient(90deg,#ffffff,#e0e0e0,#dcdcdc,#bababa);
   border-radius: 100%;
   border: $clock-border-width solid black;
-  margin:20px auto;
+  margin:60px auto;
 }
 
 .clock:hover {
@@ -51,7 +51,7 @@ body {
 
 
 .clock__hour {
-  animation: rotate 360s linear infinite;
+  animation: rotate 60s linear infinite;
   height: 25%;
   border: 1px solid #000000;
   border-radius: 35%;
@@ -64,7 +64,7 @@ body {
 }
 
 .clock__minute {
-  animation: rotate 120s linear infinite;
+  animation: rotate 20s linear infinite;
   height: 40%;
   border: 1px solid #000000;
   border-radius: 35%;
@@ -77,7 +77,7 @@ body {
 }
 
 .clock__second {
-  animation: rotate 10s linear infinite;
+  animation: rotate 5s linear infinite;
   height: 45%;
   border: 1px solid #000000;
   border-radius: 35%;
