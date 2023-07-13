@@ -1,8 +1,14 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .clock {
   position: relative;
-  @include square($clockSize);
   border: 3px solid black;
-  margin: 0 auto;
+  @include square($clockSize);
 
   &::after {
     content: "";
@@ -18,9 +24,8 @@
 
   &__minute {
     position: absolute;
-    margin: $clockMargin;
     top: 25%;
-    left: 48%;
+    left: $left48;
     height: 25%;
     width: 4%;
     background-color: rgb(250, 124, 145);
@@ -30,10 +35,9 @@
 
   &__second {
     position: absolute;
-    margin: $clockMargin;
-    height: $clock50;
     top: 0%;
-    left: 48%;
+    left: $left48;
+    height: $clock50;
     width: 2%;
     background-color: rgb(139, 209, 201);
     animation: spin 5s linear;
