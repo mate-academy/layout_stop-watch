@@ -1,0 +1,129 @@
+$clockwise-color: linear-gradient(90deg,#000000,#2a2a2a);
+$background-hover-size:600px 500px;
+$hour-width:9px;
+$minute-width:7px;
+$second-width:2px;
+
+$clock-size: 500px;
+$clock-margin-bottom-right:$clock-size - 10px;
+$clock-border-width: 2px;
+$clock-center-size: 20px;
+$clock-hand-margin: 0;
+
+
+$clock-left-margin: $clock-size / 2 - $clock-center-size / 2 - $clock-hand-margin;
+$clock-right-margin: $clock-left-margin;
+$clock-bottom-margin: $clock-left-margin;
+$clock-top-margin: $clock-left-margin;
+
+
+body {
+  margin: 0;
+}
+
+.clock {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+  background-image: linear-gradient(90deg,#ffffff,#e0e0e0,#dcdcdc,#bababa);
+  border-radius: 100%;
+  border: $clock-border-width solid black;
+  margin:60px auto;
+}
+
+.clock:hover {
+  background-image: url(../image/st.jpg);
+  background-size:$background-hover-size ;
+}
+
+.clock__center {
+  position: absolute;
+  height: $clock-center-size;
+  width: $clock-center-size;
+  background-image: linear-gradient(90deg,#727272,#000000);
+  border-radius: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+.clock__hour {
+  animation: rotate 60s linear infinite;
+  height: 25%;
+  border: 1px solid #000000;
+  border-radius: 35%;
+  position: absolute;
+  bottom: 50%;
+  width: $hour-width;
+  left: calc(50% - (#{$hour-width}/2));
+  transform-origin:bottom;
+  background-image: $clockwise-color;
+}
+
+.clock__minute {
+  animation: rotate 20s linear infinite;
+  height: 40%;
+  border: 1px solid #000000;
+  border-radius: 35%;
+  position: absolute;
+  bottom: 50%;
+  width: $minute-width;
+  left: calc(50% - (#{$minute-width}/2));
+  transform-origin:bottom;
+  background-image: $clockwise-color;
+}
+
+.clock__second {
+  animation: rotate 5s linear infinite;
+  height: 45%;
+  border: 1px solid #000000;
+  border-radius: 35%;
+  position: absolute;
+  bottom: 50%;
+  width: $second-width;
+  left: calc(50% - (#{$second-width}/2));
+  transform-origin:bottom;
+  background-image: linear-gradient(90deg,#db0000,#7c0000);
+}
+
+.clock__top {
+  position: absolute;
+  height: 10px;
+  width: 4px;
+  background-color: black;
+  margin: 0 $clock-top-margin ;
+}
+
+.clock__bottom {
+  position: absolute;
+  height: 10px;
+  width: 4px;
+  background-color: black;
+  margin: $clock-margin-bottom-right $clock-bottom-margin;
+}
+.clock__right {
+  position: absolute;
+  height: 4px;
+  width: 10px;
+  background-color: black;
+  margin:$clock-right-margin $clock-margin-bottom-right;
+}
+.clock__left {
+  position: absolute;
+  height: 4px;
+  width: 10px;
+  background-color: black;
+  margin: $clock-left-margin 0 ;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
