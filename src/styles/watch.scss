@@ -1,7 +1,7 @@
 .watch {
   height: 80vmin;
   width: 80vmin;
-  border: 7px dotted #000;
+  border: 7px dotted $main-color;
   border-radius: 50%;
   box-sizing: border-box;
   position: relative;
@@ -11,10 +11,10 @@
 
   &__center {
     position: absolute;
-    background-color: #ffff00;
+    background-color: $center-color;
     width: 10%;
     height: 10%;
-    border: 1px solid #ffff00;
+    border: 1px solid $center-color;
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -22,7 +22,7 @@
   }
   &__minute-hand {
     position: absolute;
-    background-color:	#008000;
+    background-color: $minute-hand-color;
     height: 50%;
     width: 10px;
     border-radius: 30%;
@@ -37,13 +37,9 @@
     animation-timing-function: linear;
   }
 
-  &__minute-hand:hover {
-    animation-play-state: paused;
-  }
-
   &__second-hand {
     position: absolute;
-    background-color: #0000ff;
+    background-color: $second-hand-color;
     height: 15px;
     width: 25%;
     border-radius: 30%;
@@ -57,9 +53,5 @@
     transform-origin: center left;
     animation-timing-function: linear;
     @include rotate;
-  }
-
-  &__second-hand:hover {
-    animation-play-state: paused;
   }
 }
