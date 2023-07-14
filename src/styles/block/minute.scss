@@ -1,0 +1,11 @@
+@import "../utils/veriables.scss";
+
+.minute {
+  position: absolute;
+  width: $handWidth;
+  height: 25vmin;
+  background-color: rgb(227, 202, 202);
+  animation: rotation 60s linear infinite;
+
+  @include handAnimation;
+}
