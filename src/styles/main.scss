@@ -1,0 +1,69 @@
+$clock-height: 80vmin;
+$hand-hour-height-coef: 0.25;
+$hand-hour-width-coef: 0.05;
+$hand-hour-shiftY: (
+  $clock-height * 0.5) - ($clock-height * $hand-hour-height-coef
+);
+$hand-minute-height-coef: 0.45;
+$hand-minute-width-coef: 0.03;
+$hand-minute-shiftY: (
+  $clock-height * 0.5) - ($clock-height * $hand-minute-height-coef
+);
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $clock-height;
+    width: $clock-height;
+    border: 3px solid green;
+    border-radius: 50%;
+  }
+
+  &__hand-hour {
+    position: absolute;
+    top: $hand-hour-shiftY;
+    width: $clock-height * $hand-hour-width-coef;
+    height: $clock-height * $hand-hour-height-coef;
+    background-color: blue;
+    transform-origin: 50% 100%;
+    animation: clockHand 60s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+      border: 1px solid black;
+    }
+  }
+
+  &__hand-minute {
+    position: absolute;
+    top: $hand-minute-shiftY;
+    width: $clock-height * $hand-minute-width-coef;
+    height: $clock-height * $hand-minute-height-coef;
+    background-color: yellow;
+    transform-origin: 50% 100%;
+    animation: clockHand 5s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+      border: 1px solid black;
+    }
+  }
+}
+
+@keyframes clockHand {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
