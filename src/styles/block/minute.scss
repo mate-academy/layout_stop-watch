@@ -6,17 +6,6 @@
   height: 25vmin;
   background-color: rgb(227, 202, 202);
   animation: rotation 60s linear infinite;
-  border-radius: 50%;
-  bottom: 50%;
-  transform-origin: center bottom;
 
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(1turn);
-    }
-  }
+  @include handAnimation;
 }

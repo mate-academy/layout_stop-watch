@@ -1,2 +1,20 @@
 
 $handWidth: 20px;
+$dotSize: 4vmin;
+$clockSize: 80vmin;
+
+@mixin handAnimation {
+  border-radius: 50%;
+    bottom: 50%;
+    transform-origin: center bottom;
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(1turn);
+      }
+    }
+}
