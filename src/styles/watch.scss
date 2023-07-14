@@ -1,0 +1,57 @@
+.watch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 7px dotted $main-color;
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%);
+
+  &__center {
+    position: absolute;
+    background-color: $center-color;
+    width: 10%;
+    height: 10%;
+    border: 1px solid $center-color;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__minute-hand {
+    position: absolute;
+    background-color: $minute-hand-color;
+    height: 50%;
+    width: 10px;
+    border-radius: 30%;
+
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    @include rotate();
+    transform-origin: center bottom;
+    animation-timing-function: linear;
+  }
+
+  &__second-hand {
+    position: absolute;
+    background-color: $second-hand-color;
+    height: 15px;
+    width: 25%;
+    border-radius: 30%;
+
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translateY(-50%);
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    transform-origin: center left;
+    animation-timing-function: linear;
+    @include rotate;
+  }
+}
