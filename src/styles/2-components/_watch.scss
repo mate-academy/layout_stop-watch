@@ -1,0 +1,36 @@
+.watch {
+  border: 4vmin dotted black;
+  border-radius: 50%;
+  min-width: 80vmin;
+  min-height: 80vmin;
+
+  position: relative;
+}
+
+.watch__second {
+  width: 4vmin;
+  height: 40vmin;
+  @include arrowSettings (green, second, 5s);
+}
+
+.watch__minute {
+  width: 8vmin;
+  height: 20vmin;
+  @include arrowSettings (blue, minute, 60s);
+}
+
+.watch__center {
+  background-color: yellow;
+  width: 13vmin;
+  height: 13vmin;
+  border-radius: 50%;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%,-50%);
+}
+
+@include timeAnimation(second);
+@include timeAnimation(minute);
