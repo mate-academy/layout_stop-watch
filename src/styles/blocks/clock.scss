@@ -1,0 +1,22 @@
+.clock {
+  margin: auto;
+  border: 5px dotted black;
+  border-radius: 50%;
+  background: #fff;
+  background-size: 100%;
+  height: 80vmin;
+  position: relative;
+  width: 80vmin;
+
+  &::after {
+    background-color: yellow;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 5%;
+    height: 5%;
+  }
+}
