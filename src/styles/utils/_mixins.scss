@@ -1,0 +1,16 @@
+@mixin sguare($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  @include sguare($size);
+  border-radius: 50%;
+  border: 5px double #000;
+}
+
+@mixin smallCircle($size) {
+  @include sguare($size);
+  border-radius: 50%;
+  border: 3px solid $color-clockwise-second;
+}
