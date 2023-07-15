@@ -1,0 +1,59 @@
+.clock {
+  width: 80vmin;
+  height: 80vmin;
+  border: 3vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  &__center {
+    width: 8vmin;
+    height: 8vmin;
+    background-color: orange;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+
+    &--green {
+      height: 40vmin;
+      width: 2vmin;
+      background-color: green;
+      transform: translateX(-50%);
+      z-index: 1;
+      animation: rotate 5s infinite linear;
+    }
+
+    &--blue {
+      height: 25vmin;
+      width: 4vmin;
+      background-color: blue;
+      animation: rotate 60s infinite linear;
+      z-index: -1;
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg)
+    }
+  }
+}
+
+
+
+
+
+
