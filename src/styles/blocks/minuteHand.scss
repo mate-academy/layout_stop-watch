@@ -1,0 +1,22 @@
+.clock__minuteHand {
+  position: absolute;
+  width: 10px;
+  height: 25vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: $bottom;
+  transform-origin: center bottom;
+  background-color: rgb(28, 118, 134);
+  border-radius: $borderRadius;
+  animation: rotation 5s linear infinite;
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
