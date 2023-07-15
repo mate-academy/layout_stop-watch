@@ -1,0 +1,42 @@
+.watch {
+  display: flex;
+  justify-content: center;
+
+  min-width: $main-watch-size;
+  min-height: $main-watch-size;
+  border: $watch-border-size $watch-border-color dotted;
+  border-radius: 50%;
+
+  &__hours-hand {
+    position: absolute;
+    bottom: 50%;
+
+    width: $hours-hand-wigth;
+    height: $hours-hand-height;
+    background-color: $hours-hand-color;
+    transform-origin: bottom center;
+
+    animation: move-hands 60s linear infinite;
+  }
+
+  &__seconds-hand {
+
+    position: absolute;
+    width: $seconds-hand-wigth;
+    height: $seconds-hand-height;
+    background-color: $hours-seconds-color;
+    transform-origin: bottom center;
+
+    animation: move-hands 5s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $center-size;
+    height: $center-size;
+    background-color: $hours-center-color;
+    border-radius: 50%;
+  }
+}
