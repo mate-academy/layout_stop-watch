@@ -39,10 +39,22 @@
     &--blue {
       height: 25vmin;
       width: 2.5vmin;
-      background-color: $secondHandColor;
       animation: rotate $durationMinute infinite linear;
       z-index: 1;
       border-radius: 10px;
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -2vmin;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 30vmin 3.20vmin 0 1.25vmin;
+        border-color: rgb(60, 255, 0) transparent transparent transparent;
+        transform-origin: top;
+      }
     }
   }
 
