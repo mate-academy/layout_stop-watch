@@ -1,0 +1,59 @@
+@import "variable";
+@import "mixins";
+
+.wrapper {
+  @include getCenterElement;
+
+  &__stop-watch {
+    position: relative;
+  }
+}
+
+.stop-watch {
+  @include getCenterElement;
+  background: url(../images/clock1.svg) center no-repeat;
+
+  box-sizing: border-box;
+  height: $sizeWatch;
+  width: $sizeWatch;
+  border-radius: 50%;
+
+  &__circle {
+    background-color: #ffa500;
+    border-radius: 50%;
+    width: $sizeCircle;
+    height: $sizeCircle;
+    z-index: 2;
+  }
+
+  &__arrow {
+    border-radius: 10px;
+    position: absolute;
+    transform-origin: bottom;
+    bottom: 50%;
+  }
+
+  &__arrow--long {
+    height: $sizeHLong;
+    width: $sizeWLong;
+    background: green;
+    animation: rotate 5s linear infinite;
+  }
+
+  &__arrow--small {
+    height: $sizeHSmall;
+    width: $sizeWSmall;
+    background-color: blue;
+    animation: rotate 60s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
