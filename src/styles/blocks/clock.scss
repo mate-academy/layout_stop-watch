@@ -5,6 +5,7 @@
   border-radius: 50%;
   position: relative;
   box-shadow: inset 0 0 14px rgb(122, 122, 122);
+  background-color: #000;
 
   &__center {
     width: 8vmin;
@@ -30,15 +31,18 @@
       background-color: $minuteHandColor;
       transform: translateX(-50%);
       z-index: 1;
+      border-radius: 10px;
+      background: linear-gradient(to bottom, rgba(196, 5, 5, 0) 0%, rgb(173, 16, 16) 100%);
       animation: rotate $durationSecond infinite linear;
     }
 
     &--blue {
       height: 25vmin;
-      width: 4vmin;
+      width: 2.5vmin;
       background-color: $secondHandColor;
       animation: rotate $durationMinute infinite linear;
-      z-index: -1;
+      z-index: 1;
+      border-radius: 10px;
     }
   }
 
