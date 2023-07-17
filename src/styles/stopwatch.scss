@@ -1,0 +1,46 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: 4px solid rgb(42, 0, 119);
+  border-radius: 50%;
+
+  &__center {
+    position: relative;
+
+    display: block;
+    height: $center-size;
+    width: $center-size;
+    background-color: black;
+    border-radius: 50%;
+  }
+
+  &__min {
+    @include arrowPositioning;
+
+    display: block;
+    width: 14px;
+    height: 200px;
+    background-color: yellowgreen;
+    border: 1px solid $arrow-bordercolor;
+
+    transform-origin: bottom center;
+    animation: spin steps(60) 60s infinite;
+  }
+
+  &__sec {
+    @include arrowPositioning;
+
+    display: block;
+    width: 5px;
+    height: 350px;
+    background-color: rgb(162, 226, 255);
+    border: 3px solid $arrow-bordercolor;
+
+    transform-origin: bottom center;
+    animation: spin linear 5s infinite;
+  }
+}
