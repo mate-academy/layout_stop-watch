@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 100%;
+
+  position: relative;
 
   &__sec {
     position: absolute;
@@ -12,34 +13,32 @@
     padding-inline: 5px;
 
     animation-name: move;
-    animation-duration: 60s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
-    animation-timing-function: steps(12,end);
+    animation-timing-function: linear;
   }
 
   &__minute {
+    position: absolute;
     height: 20vmin;
     background-color: $color-arrow-min;
     border-radius: 5px;
     padding-inline: 5px;
 
     animation-name: move;
-    animation-duration: 3600s;
+    animation-duration: 60s;
     animation-iteration-count: infinite;
-    animation-timing-function: steps(60,end);
+    animation-timing-function: linear;
+  }
 
-    &::before {
-      content: '';
-      position: absolute;
-      top:90%;
-      right:-50%;
-      z-index: 1;
-      width: 20px;
-      height: 20px;
-      background-color:$color-point;
-      border-radius: 50%;
-    }
-
+  &__point {
+    position: absolute;
+    top:-1vmin;
+    z-index: 1;
+    background-color: $color-point;
+    border-radius: 50%;
+    width: 2vmin;
+    height: 2vmin;
   }
 }
 
