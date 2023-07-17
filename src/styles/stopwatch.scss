@@ -19,32 +19,26 @@
   }
 
   &__min {
-    position: absolute;
-    bottom: 50%;
-    left: 7px;
-    z-index: -1;
+    @include arrowPositioning;
 
     display: block;
     width: 14px;
     height: 200px;
     background-color: yellowgreen;
-    border: 1px solid rgb(17, 0, 26);
+    border: 1px solid $arrow-bordercolor;
 
     transform-origin: bottom center;
     animation: spin steps(60) 60s infinite;
   }
 
   &__sec {
-    position: absolute;
-    bottom: 50%;
-    left: 7px;
-    z-index: -1;
+    @include arrowPositioning;
 
     display: block;
     width: 5px;
     height: 350px;
     background-color: rgb(162, 226, 255);
-    border: 3px solid rgb(17, 0, 26);
+    border: 3px solid $arrow-bordercolor;
 
     transform-origin: bottom center;
     animation: spin linear 5s infinite;
