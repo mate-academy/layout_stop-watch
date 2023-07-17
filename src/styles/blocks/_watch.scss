@@ -1,0 +1,51 @@
+@import "../variables";
+@import "../mixins/mixin";
+
+.clock {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 1vmin solid $main-color;
+
+  &__seconds {
+    @include position-hand;
+    width: 4vmin;
+    height: 35vmin;
+    z-index: 2;
+    background-color: red;
+    border-radius: 5px;
+    animation: clock-rotate 60s infinite steps(60);
+
+  }
+
+  &__milliseconds {
+    @include position-hand;
+    width: 2vmin;
+    height: 40vmin;
+    background-color: $main-color;
+    z-index: 1;
+    border-radius: 5px;
+    animation: clock-rotate 5s infinite steps(60);
+  }
+
+  &__center {
+    @include position-hand;
+    z-index: 3;
+    transform: translate(50%, -50%);
+    width: 8vmin;
+    height: 8vmin;
+    background-color: $main-color;
+    border-radius: 50%;
+  }
+}
+
+@keyframes clock-rotate {
+  from {
+    transform: translate(50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(50%, -100%) rotate(360deg);
+  }
+}
