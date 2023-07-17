@@ -1,5 +1,8 @@
+@import "../styles/veriables.scss";
+@include handAnimation;
+
 .clock__secondHand {
-  position: fixed;
+  position: absolute;
   width: 5px;
   height: 35vmin;
   display: flex;
@@ -8,14 +11,5 @@
   transform-origin: center bottom;
   background-color: yellow;
   border-radius: $borderRadius;
-  animation: rotation 60s linear infinite;
-
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+  animation: rotation 5s linear infinite;
 }

@@ -2,3 +2,14 @@ $clockSize: 80vmin;
 $centreSize: 3vmin;
 $borderRadius: 50%;
 $bottom: 50%;
+
+@mixin handAnimation {
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
