@@ -1,0 +1,36 @@
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: $border-width dotted $border-dial-bg_color;
+  border-radius: 50%;
+
+  &__dotted {
+    @include centering-content;
+    width: $dotted-size;
+    height: $dotted-size;
+    background-color: $dotted-hands-bg_color;
+    border-radius: 50%;
+  }
+
+  &__hand-minutes {
+    position: absolute;
+    left: ($stopwatch-size / 2) - $border-width - ($hand-minutes-width / 2);
+    bottom: 50%;
+    width: $hand-minutes-width;
+    height: $hand-minutes-height;
+    background-color: $hand-minutes-bg_color;
+    animation: 60s linear infinite move-stopwatch;
+    transform-origin: bottom;
+  }
+
+  &__hand-seconds {
+    position: absolute;
+    left: ($stopwatch-size / 2) - $border-width - ($hand-seconds-width / 2);
+    bottom: 50%;
+    width: $hand-seconds-width;
+    height: $hand-seconds-height;
+    background-color: $hand-seconds-bg_color;
+    animation: 5s linear 0s infinite move-stopwatch;
+    transform-origin: bottom;
+  }
+}
