@@ -1,0 +1,16 @@
+@mixin arrow($color, $animation) {
+  position: absolute;
+  background-color: $color;
+  animation: $animation;
+  transform-origin: bottom;
+}
+
+@mixin centerItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin elementSizes($height, $width) {
+  height: $height;
+  width: $width;
+}
