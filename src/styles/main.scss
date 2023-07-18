@@ -1,1 +1,73 @@
-// put code here
+$watchSize: 80vmin;
+$centerSize: 6vmin;
+$borderColor: black;
+$centerColor: #ffe100;
+$secondColor: green;
+$minuteColor: blue;
+
+@mixin forArrows {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 1vmin;
+  border-radius: 6px;
+  transform: translateX(-50%);
+  animation-delay: 1s;
+  transform-origin: bottom left;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.watch {
+  position: relative;
+  height: $watchSize;
+  width: $watchSize;
+  border: 10px dotted $borderColor;
+  border-radius: 50%;
+  padding: 5px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    width: $centerSize;
+    height: $centerSize;
+    background-color: $centerColor;
+    border-radius: 50%;
+  }
+
+  &__second {
+    @include forArrows;
+    height: 40vmin;
+    background-color: $secondColor;
+    z-index: -2;
+    animation: rotateArrow 5s linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute {
+    @include forArrows;
+    height: 25vmin;
+    background-color: $minuteColor;
+    z-index: -2;
+    animation: rotateArrow 60s steps(60, jump-end);
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes rotateArrow {
+    0% {
+      rotate: 0deg;
+    }
+    100% {
+      rotate: 360deg;
+    }
+  }
+}
