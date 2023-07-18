@@ -39,7 +39,9 @@ body {
   height: 40vmin;
   background-color: green;
   z-index: -2;
-  animation: rotateArrow 5s linear;
+  animation-name: rotateArrow;
+  animation-duration: 5s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
@@ -55,7 +57,8 @@ body {
   height: 25vmin;
   background-color: blue;
   z-index: -2;
-  animation: rotateArrow 60s steps(60, jump-end);
+  animation-name: rotateArrow;
+  animation-duration: 60s steps(60, jump-end);
   animation-iteration-count: infinite;
 }
 
