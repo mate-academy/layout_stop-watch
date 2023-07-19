@@ -1,0 +1,57 @@
+.dial {
+  @include center;
+
+  height: $dial-size;
+  width: $dial-size;
+  border: 5px dotted black;
+  border-radius: 50%;
+
+  background-color: #ebebeb;
+  @include shadow;
+
+  &__center {
+    position: absolute;
+
+    height: 50px;
+    width: 50px;
+
+    background-color: green;
+    @include border;
+    border-radius: 50%;
+    @include shadow;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+
+    height: $hand-length;
+    width: $hand-width-big;
+
+    background-color: red;
+    @include border;
+    @include shadow;
+
+    @include rotateDuration(5s);
+
+    &--small {
+      height: $hand-length/2;
+      width: $hand-width-small;
+
+      background-color: goldenrod;
+      @include border;
+
+      @include rotateDuration(60s);
+    }
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
