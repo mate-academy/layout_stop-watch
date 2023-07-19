@@ -1,0 +1,25 @@
+.hands {
+  display: flex;
+  justify-content: center;
+
+  &__hand {
+    position: absolute;
+    bottom: 0.5 * $watch-size;
+    height: $sec-clockwise-size;
+    width: $sec-clockwise-width;
+    border: 1px solid $color-main;
+    border-radius: 50%;
+    background-color: $color-min-clockwise;
+    animation: move 60s steps(60, end) infinite;
+    transform-origin: (0.5 * $sec-clockwise-width) $sec-clockwise-size;
+
+    &--min {
+      height: $min-clockwise-size;
+      width: $min-clockwise-width;
+      background-color: $color-sec-clockwise;
+      animation-duration: 3600s;
+      animation-timing-function: linear;
+      transform-origin: (0.5 * $min-clockwise-width) $min-clockwise-size;
+    }
+  }
+}
