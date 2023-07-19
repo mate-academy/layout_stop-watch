@@ -1,0 +1,19 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin border {
+  border: 3px solid gray;
+  border-radius: 10px;
+}
+
+@mixin shadow {
+  box-shadow: 5px 3px 10px #585858;
+}
+
+@mixin rotateDuration ($time) {
+  animation: rotation $time linear infinite;
+  transform-origin: bottom;
+}
