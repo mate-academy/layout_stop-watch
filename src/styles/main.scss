@@ -1,1 +1,61 @@
 // put code here
+@import "./utils/mixins.scss";
+
+$size-watch: 80vmin;
+$percent-value: 50%;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  text-align: center;
+  width: $size-watch;
+  height: $size-watch;
+  border-radius: $percent-value;
+  border: 1px dotted black;
+  position: relative;
+
+  &__minute-arrow {
+    position: absolute;
+    left: $percent-value;
+    width: $size-watch / 54;
+    height: $size-watch / 2;
+    background-color: #4cbb17;
+    transform: translateX($percent-value);
+    transform-origin: bottom;
+    animation: round 5s ease-in infinite;
+  }
+
+  &__hour-arrow {
+    position: absolute;
+    transform: translateY($percent-value);
+    width: $size-watch / 4;
+    height: $size-watch / 34;
+    background-color: #1338be;
+    transform-origin: left;
+    animation: round 60s ease-in infinite;
+    @include position($percent-value);
+  }
+
+  &__circle {
+    position: absolute;
+    width: $size-watch / 15;
+    height: $size-watch / 15;
+    transform: translate(-$percent-value, -$percent-value);
+    border-radius: $percent-value;
+    background-color: #d0629c;
+    @include position($percent-value);
+  }
+}
+
+@keyframes round {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
