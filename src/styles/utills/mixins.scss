@@ -1,0 +1,24 @@
+@mixin arrow ($animDuratin) {
+  background-color: black;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translate(-50%, -100%);
+
+  animation-duration: $animDuratin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@mixin antimatioTime ($arrow) {
+  @keyframes #{$arrow} {
+    0% {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+
+    100% {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+  }
+}
