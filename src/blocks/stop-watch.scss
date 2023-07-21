@@ -1,0 +1,52 @@
+.container {
+  @include Center;
+  position: relative;
+}
+
+.stop-watch {
+  @include Center;
+  background: url(../images/clock.gif) center;
+  background-size: $sizeWatch;
+
+  height: $sizeWatch;
+  width: $sizeWatch;
+
+  &__circle {
+    background-color: #000;
+    border-radius: 50%;
+    width: $sizeCircle;
+    height: $sizeCircle;
+    z-index: 2;
+  }
+
+  &__arrow {
+    border-radius: 5px;
+    position: absolute;
+    transform-origin: bottom;
+    bottom: 50%;
+  }
+
+  &__arrow--long {
+    height: $sizeHLongArrow;
+    width: $sizeWLongArrow;
+    background: #888;
+    animation: rotate 5s linear infinite;
+  }
+
+  &__arrow--small {
+    height: $sizeHSmallArrow;
+    width: $sizeWSmallArrow;
+    background-color: red;
+    animation: rotate 60s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
