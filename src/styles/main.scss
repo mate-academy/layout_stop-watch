@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.clock {
+  // width: 800px;
+  // height: 800px;
+  // margin: 0 auto;
+  // border-radius: 50%;
+  // border: 30px solid #424348;
+  // background-image: url(../images/clock_face_ms.svg);
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: 96%;
+  // box-shadow: inset 0 0 15px #424348;
+  // position: relative;
+
+  width: 80vmin;
+  height: 80vmin;
+  margin: 10vmin auto;
+  border-radius: 50%;
+  border: 4vmin solid #424348;
+  background-image: url(../images/clock_face_m.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 96%;
+  box-shadow: inset 0 0 2vmin #424348;
+  position: relative;
+
+  &__arm-minutes {
+    // position: absolute;
+    // left: 50%;
+    // bottom: 50%;
+    // height: 260px;
+    // width: 10px;
+    // margin-left: -5px;
+    // border-radius: 10px;
+    // background-color: #424348;
+
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    height: 24vmin;
+    width: 1vmin;
+    margin-left: calc(1vmin / -2);
+    border-radius: 1vmin;
+    background-color: #424348;
+
+    transform-origin: bottom center;
+  }
+}
