@@ -1,1 +1,66 @@
-// put code here
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  border: 10px double black;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 100%;
+  position: relative;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    width: 25px;
+    height: 25px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: black;
+  }
+}
+
+.minute {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  border-radius: 20px;
+  height: 25%;
+  width: 15px;
+  background-color: yellow;
+
+  animation-name: move;
+  animation-duration: 5s;
+  transform-origin: bottom;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.second {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  border-radius: 20px;
+  height: 50%;
+  width: 10px;
+  background-color: green;
+
+  animation-name: move;
+  animation-duration: 60s;
+  transform-origin: bottom;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
