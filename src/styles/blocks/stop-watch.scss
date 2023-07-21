@@ -1,0 +1,37 @@
+.stop-watch {
+  position: relative;
+  border: 5px dashed black;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+
+  &__center-dot {
+    background-color: grey;
+    position: absolute;
+
+    height: 10vmin;
+    width: 10vmin;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+  }
+
+  &__min {
+    height: 25vmin;
+    width: 4vmin;
+    @include arrow(60s);
+    animation-name: minute;
+  }
+
+  &__sec {
+    height: 40vmin;
+    width: 2vmin;
+    @include arrow(5s);
+    animation-name: seconds;
+  }
+}
+
+@include antimatioTime(minute);
+@include antimatioTime(seconds);
