@@ -1,3 +1,16 @@
+$color-main: #424348;
+$color-accent: #ee2a44;
+
+@mixin clock-hand($_length, $_width, $_time, $_color: $color-main) {
+  $handWidth: $_width / -2;
+  height: $_length;
+  width: $_width;
+  margin-left: $handWidth;
+  border-radius: $_width;
+  background-color: $_color;
+  animation-duration: $_time;
+}
+
 *,
 *::after,
 *::before {
@@ -6,49 +19,59 @@
 }
 
 .clock {
-  // width: 800px;
-  // height: 800px;
-  // margin: 0 auto;
-  // border-radius: 50%;
-  // border: 30px solid #424348;
-  // background-image: url(../images/clock_face_ms.svg);
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-size: 96%;
-  // box-shadow: inset 0 0 15px #424348;
-  // position: relative;
-
   width: 80vmin;
   height: 80vmin;
-  margin: 10vmin auto;
   border-radius: 50%;
-  border: 4vmin solid #424348;
-  background-image: url(../images/clock_face_m.svg);
+  border: 4vmin solid $color-main;
+  background-image: url(../images/clock_face.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 96%;
-  box-shadow: inset 0 0 2vmin #424348;
+  box-shadow: inset 0 0 2vmin $color-main;
   position: relative;
+  margin: 10vmin auto;
 
-  &__arm-minutes {
-    // position: absolute;
-    // left: 50%;
-    // bottom: 50%;
-    // height: 260px;
-    // width: 10px;
-    // margin-left: -5px;
-    // border-radius: 10px;
-    // background-color: #424348;
-
+  &__center {
     position: absolute;
     left: 50%;
     bottom: 50%;
-    height: 24vmin;
-    width: 1vmin;
-    margin-left: calc(1vmin / -2);
-    border-radius: 1vmin;
-    background-color: #424348;
+    height: 3vmin;
+    width: 3vmin;
+    margin-left: calc(3vmin / -2);
+    margin-bottom: calc(3vmin / -2);
+    border-radius: 50%;
+    background-color: $color-main;
+  }
 
+  &__hand {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
     transform-origin: bottom center;
+    animation-name: rotateClockwise;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: normal;
+
+    &--seconds {
+      @include clock-hand(26vmin, 0.5vmin, 10s, $color-accent);
+    }
+
+    &--minutes {
+      @include clock-hand(24vmin, 1vmin, 60s);
+    }
+
+    &--hours {
+      @include clock-hand(17vmin, 1.2vmin, 180s);
+    }
+  }
+}
+
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
