@@ -1,1 +1,81 @@
-// put code here
+@mixin centring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin hand {
+  position: absolute;
+  transform-origin: bottom;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+}
+
+@mixin size {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+}
+
+body {
+  @include centring;
+  margin: 0;
+  height: 100vh;
+  font-weight: 700;
+  font-family: 'Tektur', cursive;
+  font-size: 32px;
+}
+
+.watch {
+  @include centring;
+  @include size;
+  border: 2px solid black;
+  background-color: #aaa;
+
+  &__center-dot {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    background-color: #321605;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    top: 20%;
+    height: 30%;
+    width: 2%;
+    background-color: #f93535;
+    @include hand;
+    animation: rotate 60s infinite 3s linear;
+  }
+
+  &__second-hand {
+    height: 50%;
+    top: 0;
+    width: 1%;
+    background-color: greenyellow;
+    @include hand;
+    animation: rotate 5s infinite 3s linear;
+  }
+  
+  @for $i from 1 through 12{
+    &__number-#{$i} {
+      transform:  rotate(30deg * $i);
+      position: absolute;
+      bottom: 50%;
+      left: 47%;
+      transform-origin: bottom;
+      padding-bottom: 30vmin;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
