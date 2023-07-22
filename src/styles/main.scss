@@ -1,1 +1,61 @@
-// put code here
+@import "./variables.scss";
+
+body {
+  margin: 0;
+}
+
+.watch {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: $watch-size;
+  height: $watch-size;
+  box-sizing: border-box;
+  border: 5px dotted $main-color;
+  border-radius: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+
+  &__center {
+    position: relative;
+    width: $watch-center-size;
+    height: $watch-center-size;
+    border: 1px solid rgb(234, 37, 224);
+    background-color: $main-color;
+    border-radius: 100%;
+    margin: auto;
+    z-index: 2;
+  }
+
+  &__second {
+    position: absolute;
+    height: 240px;
+    background-color: rgb(243, 183, 228);
+    width: 3px;
+    margin: auto;
+    margin-top: 5px;
+    animation: time 60s infinite linear;
+    transform-origin: bottom center;
+    border-radius: 5px;
+  }
+
+  &__minute {
+    position: absolute;
+    width: 4px;
+    height: 100px;
+    background-color: $main-color;
+    margin-top: 146px;
+    animation: time 3600s infinite linear;
+    transform-origin: bottom center;
+    border-radius: 5px;
+  }
+
+  @keyframes time {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
