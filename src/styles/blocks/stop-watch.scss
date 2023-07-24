@@ -1,0 +1,49 @@
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &--border {
+    border: 3px dotted #000;
+    border-radius: 50%;
+    width: 80vmin;
+    height: 80vmin;
+  }
+
+  &-circle {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: orange;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &-minute-line {
+    position: absolute;
+    height: 50%;
+    width: 7px;
+    bottom: 0;
+    right: 173px;
+    background-color: green;
+    animation-duration: 25s;
+    transform-origin: top;
+    animation-name: move;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &-hour-line {
+    position: absolute;
+    height: 10px;
+    width: 25%;
+    right: 87px;
+    top: 172px;
+    background-color: blue;
+    animation-duration: 60s;
+    transform-origin: left;
+    animation-name: move;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
