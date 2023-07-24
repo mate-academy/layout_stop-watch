@@ -1,0 +1,48 @@
+.clock {
+  margin: 0 auto;
+  width: $size-of-clock;
+  height: $size-of-clock;
+  border: 10px double #f00;
+  border-radius: $clock-radius;
+  position: relative;
+
+  &__circle {
+    position: absolute;
+    width: $size-of-circle;
+    height: $size-of-circle;
+    background-color: #c06363;
+    border-radius: $clock-radius;
+    top: $circle-position;
+    left: $circle-position;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &__minute-arrow,
+  &__second-arrow {
+    @include generalProperties;
+  }
+
+  &__minute-arrow {
+    background-color: #cf60ff;
+    width: 7px;
+    height: 30%;
+    animation: rotate 5s linear infinite;
+  }
+
+  &__second-arrow {
+    background-color: #8b32ff;
+    width: 5px;
+    height: 45%;
+    animation: rotate 60s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
