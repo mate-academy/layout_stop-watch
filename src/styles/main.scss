@@ -1,1 +1,53 @@
 // put code here
+@import "./utils/variables";
+@import "./utils/mixins";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  width: $size-watch;
+  height: $size-watch;
+  border-radius: $position-value;
+  border: 1px dotted black;
+  position: relative;
+
+  &__minute-arrow {
+    width: $size-watch / 54;
+    height: $size-watch / 2;
+    background-color: #4cbb17;
+
+    animation: tick 60s linear infinite;
+    @include position($position-value);
+  }
+
+  &__hour-arrow {
+    height: $size-watch / 4;
+    width: $size-watch / 34;
+    background-color: #1338be;
+
+    animation: tick 5s linear infinite;
+    @include position($position-value);
+  }
+
+  &__circle {
+    width: $size-watch / 10;
+    height: $size-watch / 10;
+    border-radius: 50%;
+    background-color: #d0629c;
+    transform: translate(-$position-value, -$position-value);
+    @include position($position-value);
+  }
+}
+
+@keyframes tick {
+  0% {
+    transform: translate(-$position-value, -100%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-$position-value, -100%) rotate(360deg);
+  }
+}
