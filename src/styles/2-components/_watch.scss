@@ -5,32 +5,32 @@
   min-height: 80vmin;
 
   position: relative;
+
+  &__second {
+    width: 4vmin;
+    height: 40vmin;
+    @include arrowSettings ($sec-arrow-color, second, 5s);
+  }
+
+  &__minute {
+    width: 8vmin;
+    height: 20vmin;
+    @include arrowSettings ($min-arrow-color, minute, 60s);
+  }
+
+  &__center {
+    background-color: $center-arrow-color;
+    width: 13vmin;
+    height: 13vmin;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%,-50%);
+  }
+
+  @include timeAnimation(second);
+  @include timeAnimation(minute);
 }
-
-.watch__second {
-  width: 4vmin;
-  height: 40vmin;
-  @include arrowSettings ($sec-arrow-color, second, 5s);
-}
-
-.watch__minute {
-  width: 8vmin;
-  height: 20vmin;
-  @include arrowSettings ($min-arrow-color, minute, 60s);
-}
-
-.watch__center {
-  background-color: $center-arrow-color;
-  width: 13vmin;
-  height: 13vmin;
-  border-radius: 50%;
-
-  position: absolute;
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%,-50%);
-}
-
-@include timeAnimation(second);
-@include timeAnimation(minute);
