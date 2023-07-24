@@ -6,26 +6,27 @@
   border: 6px dotted #000;
 
   &__minute-arrow {
-    @include arrow(green, arrowAnimation 60s linear infinite);
     top: calc(50% - 150px);
     left: calc(50% - 10px);
     @include elementSizes(150px, 20px);
+    @include arrow(green, arrowAnimation 60s linear infinite);
   }
 
   &__second-arrow {
-    @include arrow(blue, arrowAnimation 5s linear infinite);
     top: calc(50% - 300px);
     left: calc(50% - 5px);
     @include elementSizes(300px, 10px);
+    @include arrow(blue, arrowAnimation 5s linear infinite);
   }
 
   &__center {
-    background-color: rgb(202, 202, 6);
     @include elementSizes(50px, 50px);
     border-radius: 50%;
+    background-color: rgb(202, 202, 6);
     z-index: 2;
   }
 }
+
 @keyframes arrowAnimation {
   100% {
     transform: rotate(360deg);
