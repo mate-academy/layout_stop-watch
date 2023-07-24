@@ -1,1 +1,70 @@
 // put code here
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes arrow-spin {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+.stop-watch {
+  border: 4vmin dotted black;
+  border-radius: 50%;
+  min-height: 80vmin;
+  min-width: 80vmin;
+
+  position: relative;
+
+  &__big-arrow {
+    background: green;
+    width: 50px;
+    height: 200px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%) rotate(0deg);
+    transform-origin: bottom;
+    animation-name: arrow-spin;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__small-arrow {
+    width: 25px;
+    height: 100px;
+    background: blue;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%) rotate(0deg);
+    transform-origin: bottom;
+
+    animation-name: arrow-spin;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__center {
+    background: yellow;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
