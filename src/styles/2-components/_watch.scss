@@ -1,5 +1,5 @@
 .watch {
-  border: 4vmin dotted black;
+  border: 4vmin dotted $point-color;
   border-radius: 50%;
   min-width: 80vmin;
   min-height: 80vmin;
@@ -10,7 +10,7 @@
 .watch__second {
   width: 4vmin;
   height: 40vmin;
-  @include arrowSettings (green, second, 5s);
+  @include arrowSettings ($sec-arrow-color, second, 5s);
 }
 
 .watch__minute {
@@ -20,7 +20,7 @@
 }
 
 .watch__center {
-  background-color: yellow;
+  background-color: $min-arrow-color;
   width: 13vmin;
   height: 13vmin;
   border-radius: 50%;
