@@ -1,1 +1,83 @@
-// put code here
+@import "./utils/variables";
+@import "./utils/mixins";
+
+.body {
+  @include flex-center;
+  height: 98vh;
+  background-image: $background-gradient;
+}
+
+.stopwatch {
+  z-index: -1;
+
+  @include flex-center;
+  @include square($stopwatch-size);
+
+  background-image: linear-gradient(to top, #33faf0 0%, #faf61b 100%);
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    @include square($dotted-ring-size);
+    border: 18px dotted $dots-color;
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    @include square($stopwatch-inner-size);
+    border-radius: 50%;
+    background-image: $background-gradient;
+  }
+
+  &__center {
+    position: relative;
+    @include square($stopwatch-center-size);
+    border-radius: 50%;
+    background: url(../images/trident-s.png) $stopwatch-center-bckg-color center no-repeat;
+    background-size: contain;
+  }
+
+  &__hand {
+    position: absolute;
+    z-index: -1;
+    transform-origin: top;
+
+    &--minute {
+      top: $stopwatch-center-radius;
+      left: $minute-hand-left-indent;
+
+      width: $minute-hand-width;
+      height: $minute-hand-height;
+      border-radius: $minute-hand-width;
+
+      background-color: #000;
+      animation: watch-hand-rotate 3600s linear infinite;
+    }
+
+    &--second {
+      top: $stopwatch-center-radius;
+      left: $second-hand-left-indent;
+
+      width: $second-hand-width;
+      height: $second-hand-height;
+      border-radius: $second-hand-width;
+
+      background-color: rgb(247, 9, 9);
+      animation: watch-hand-rotate 60s steps(60) infinite;
+    }
+  }
+}
+
+@keyframes watch-hand-rotate {
+  from {
+    transform: rotate(180deg);
+  }
+
+  to {
+    transform: rotate(540deg);
+  }
+}
