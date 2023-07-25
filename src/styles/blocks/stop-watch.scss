@@ -1,0 +1,44 @@
+.stop-watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--border {
+    width: $clock-size;
+    height: $clock-size;
+    border: 3px dotted black;
+    border-radius: 50%;
+  }
+
+  &-circle {
+    z-index: 1;
+    width: $circle-size;
+    height: $circle-size;
+    background-color: mediumpurple;
+    border-radius: 50%;
+  }
+
+  &-minute-line {
+    position: absolute;
+    bottom: 0;
+    right: calc(50% - 5px);
+    height: 50%;
+    width: 9px;
+    border-radius: $border-radius-line;
+    background-color: pink;
+    transform-origin: top;
+    animation: move 25s linear infinite;
+  }
+
+  &-hour-line {
+    position: absolute;
+    right: 50%;
+    height: 10px;
+    width: 120px;
+    background-color: rgb(152, 152, 255);
+    border-radius: $border-radius-line;
+    transform-origin: right;
+    animation: move 60s linear infinite;
+  }
+}
