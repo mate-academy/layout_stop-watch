@@ -1,1 +1,55 @@
-// put code here
+body {
+  margin: 0;
+}
+
+.watch {
+  display: flex;
+  height: 80vmin;
+  width: 80vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 10px black dotted;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+
+  &__big-arrow {
+    background-color: green;
+    height: 40vmin;
+    width: 10px;
+    position: absolute;
+    top: 0;
+    transform-origin: bottom;
+    animation: rotate 5s infinite linear;
+  }
+
+  &__small-arrow {
+    background-color: blue;
+    width: 150px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    transform-origin: left;
+    animation: rotate 60s infinite linear;
+  }
+
+  &__center {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 360px;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
