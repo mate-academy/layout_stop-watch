@@ -1,1 +1,100 @@
-// put code here
+.body {
+  margin: 20px 0 0;
+}
+
+.main {
+  $heightWidth: 400px;
+  $mainColor: #282828;
+  $redAccents: #cc00;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .watch {
+    position: relative;
+
+    width: $heightWidth;
+    height: $heightWidth;
+    border-radius: 50%;
+    border: 2px solid $mainColor;
+    box-shadow: 10px 5px 15px rgba(44, 44, 44, 0.42);
+
+    &__body {
+      box-sizing: border-box;
+      width: $heightWidth;
+      height: $heightWidth;
+      border-radius: 50%;
+      border: 30px solid rgb(238, 238, 238);
+      box-shadow: inset 10px 5px 10px rgba(44, 44, 44, 0.27);
+
+      background-image: url(../clock.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &__center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+
+      box-sizing: border-box;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 6px solid $mainColor;
+      box-shadow: 5px 5px 7px rgba(44, 44, 44, 0.48);
+      background-color: $redAccents;
+    }
+
+    &__hands {
+      .hand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        transform-origin: bottom left;
+
+        border-radius: 20%;
+        background-color: $mainColor;
+      }
+
+      &--hours {
+        top: 130px;
+
+        height: 70px;
+        width: 15px;
+
+        animation: move 43200s steps(12) infinite;
+      }
+
+      &--minutes {
+        top: 100px;
+
+        height: 100px;
+        width: 10px;
+
+        animation: move 3600s steps(60) infinite;
+      }
+
+      &--seconds {
+        top: 50px;
+
+        height: 150px;
+        width: 5px;
+
+        animation: move 60s steps(60) infinite;
+      }
+
+      @keyframes move {
+        0% {
+          transform: rotate(0) translateX(-50%);
+        }
+        to {
+          transform: rotate(1turn) translateX(-50%);
+        }
+      }
+    }
+  }
+}
