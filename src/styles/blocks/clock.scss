@@ -1,15 +1,15 @@
 .clock {
   margin: 0 auto;
-  width: $size-of-clock;
-  height: $size-of-clock;
+  width: $clock-size;
+  height: $clock-size;
   border: 10px double #f00;
   border-radius: $clock-radius;
   position: relative;
 
   &__circle {
     position: absolute;
-    width: $size-of-circle;
-    height: $size-of-circle;
+    width: $circle-size;
+    height: $circle-size;
     background-color: #c06363;
     border-radius: $clock-radius;
     top: $circle-position;
@@ -40,9 +40,9 @@
 
 @keyframes rotate {
   0% {
-    transform: rotate(0);
+    transform: translate(-50%, -100%) rotate(0);
   }
   100% {
-    transform: rotate(360deg);
+    transform: translate(-50%, -100%) rotate(360deg);
   }
 }
