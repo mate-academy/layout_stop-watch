@@ -1,0 +1,76 @@
+@import "./utils/variables.scss";
+@import "./utils/mixin.scss";
+@import "./utils/animations.scss";
+
+.clock {
+  position: relative;
+
+  width: 80vmin;
+  height: 80vmin;
+  margin: 0 auto;
+
+  border-radius: 50%;
+  border: 1vmin solid $main-color;
+  background-color: $background-color;
+
+  &__min {
+    @include position;
+    z-index: 2;
+
+    width: 4vmin;
+    height: 35vmin;
+
+    background-color: $minutes-color;
+    border-radius: 5px;
+
+    animation: rotation 3600s infinite steps(60);
+  }
+
+  &__sec {
+    @include position;
+
+    z-index: 1;
+
+    width: 2vmin;
+    height: 40vmin;
+
+    background-color: $seconds-color;
+    border-radius: 5px;
+
+    animation: rotation 60s infinite steps(60);
+  }
+
+  &__milisec {
+    @include position;
+
+    z-index: 1;
+
+    width: 2vmin;
+    height: 40vmin;
+
+    background-color: $miliseconds-color;
+    border-radius: 5px;
+
+    animation: rotation 5s infinite steps(60);
+  }
+
+  &__center {
+    @include position;
+    transform: translate(50%, -50%);
+    z-index: 3;
+
+    width: 8vmin;
+    height: 8vmin;
+
+    background-color: $main-color;
+    border-radius: 50%;
+
+    &-paragraph {
+      margin: 0;
+      padding: 8px;
+
+      font-size: 36px;
+      text-align: center;
+    }
+  }
+}
