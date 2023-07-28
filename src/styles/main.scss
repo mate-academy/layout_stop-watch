@@ -1,1 +1,65 @@
-// put code here
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80vmin;
+  height: 80vmin;
+  background-image: url("../styles/stopwatch.jfif");
+  background-size: cover;
+  margin: auto;
+
+  &--position {
+    position: relative;
+  }
+
+  &__big-hand {
+    width: 1.8vmin;
+    height: 27vmin;
+    border-radius: 20px;
+    background-color: black;
+    position: absolute;
+    top: 17%;
+    right: 49%;
+    z-index: 2;
+    animation-name: minute;
+    animation-duration: calc(60s * 60);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes minute {
+    from {
+      transform: rotate(0deg);
+      transform-origin: bottom;
+    }
+    to {
+      transform: rotate(360deg);
+      transform-origin: bottom;
+    }
+  }
+
+  &__small-hand {
+    width: 1.5vmin;
+    height: 31vmin;
+    border-radius: 15px;
+    background-color: rgb(243, 47, 8);
+    position: absolute;
+    top: 12%;
+    right: 49%;
+    animation-name: seconds;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes seconds {
+    from {
+      transform: rotate(0deg);
+      transform-origin: bottom;
+    }
+    to {
+      transform: rotate(360deg);
+      transform-origin: bottom;
+    }
+  }
+}
