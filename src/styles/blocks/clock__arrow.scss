@@ -1,0 +1,38 @@
+.clock__small-arrow {
+  @include arrow();
+  height: $small-arrow-height;
+  width: $small-arrow-width;
+  left: calc(50% - #{$small-arrow-width} / 2);
+  background-color: #f40404;
+  transform-origin: bottom;
+  border-radius: 44%;
+  z-index: 1;
+
+  animation-name: run;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.clock__big-arrow {
+  @include arrow();
+  height: $big-arrow-height;
+  width: $big-arrow-width;
+  left: calc(50% - #{$big-arrow-width} / 2);
+  background-color: #fce807;
+  border-radius: 44%;
+
+  animation-name: run;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes run {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
