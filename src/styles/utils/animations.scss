@@ -1,0 +1,15 @@
+@keyframes arrow-spin {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+%mainAnimation {
+  transform-origin: bottom;
+  animation-name: arrow-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
