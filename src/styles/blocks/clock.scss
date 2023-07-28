@@ -1,0 +1,40 @@
+.clock {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+  border: 1px solid $clock-color;
+  border-radius: 50%;
+  background-image: $clock-ground;
+
+  &__numbers {
+    position: absolute;
+    font-size: $clock-fonts-text;
+    list-style: none;
+    color: $clock-color;
+
+    &--12 {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--3 {
+      top: 50%;
+      right: 3%;
+      transform: translateY(-50%);
+    }
+
+    &--6 {
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+
+    }
+
+    &--9 {
+      top: 50%;
+      left: 3%;
+      transform: translateY(-50%);
+    }
+  }
+}
