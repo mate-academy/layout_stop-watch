@@ -1,0 +1,18 @@
+$watch-size: 500px;
+$watch-center-size: $watch-size * 0.05;
+$watch-minute-hand-size: $watch-size * 0.03;
+$watch-second-hand-size: $watch-minute-hand-size * 0.3;
+$main-color: rgb(84, 95, 94);
+$secondary-color: rgb(227, 220, 22);
+
+@keyframes move {
+  from {
+    transform-origin: bottom;
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform-origin: bottom;
+    transform: rotate(360deg);
+  }
+}
