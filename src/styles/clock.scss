@@ -1,11 +1,11 @@
 .clock {
   position: relative;
   display: flex;
-  width: 80vmin;
-  height: 80vmin;
-  border: 3px solid #000;
+  width: $main-size;
+  height: $main-size;
+  border: $border-size solid $main-color;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: bg-color;
 
   &__poket-ball {
     object-fit: cover;
@@ -27,7 +27,7 @@
     position: absolute;
     height: 20vmin;
     width: 1vmin;
-    background-color: #080808;
+    background-color: $main-color;
     left: 50%;
     bottom: 50%;
 
@@ -39,7 +39,7 @@
     position: absolute;
     height: 6vmin;
     width: 6vmin;
-    background-color: #fff;
+    background-color: bg-color;
     left: 46%;
     bottom: 46%;
     border-radius: 50%;
