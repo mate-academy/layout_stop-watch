@@ -1,0 +1,51 @@
+.watch {
+  position: relative;
+  display: flex;
+  height: $watch-size;
+  width: $watch-size;
+  background-color: lighten($color: $main-color, $amount: 20);
+  border: 8px solid $main-color;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    z-index: 2;
+    left: ($watch-size - $watch-center-size) / 2;
+    top: ($watch-size - $watch-center-size) / 2;
+    height: $watch-center-size;
+    width: $watch-center-size;
+    background-color: darken($color: $main-color, $amount: 15);
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    z-index: 1;
+    top: ($watch-size - $watch-minute-hand-size) / 4;
+    left: ($watch-size - $watch-minute-hand-size) / 2;
+    height: $watch-size * 0.25;
+    width: $watch-minute-hand-size;
+    background-color: darken($color: $secondary-color, $amount: 10);
+    border-radius: 5px;
+
+    animation: move;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+
+  }
+  &__second-hand {
+    position: absolute;
+    left: ($watch-size - $watch-second-hand-size) / 2;
+    top: 0;
+    height: $watch-size * 0.5;
+    width: $watch-second-hand-size;
+    background-color: lighten($color: $secondary-color, $amount: 15);
+    border-radius: 5px;
+
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: steps(60);
+    animation-iteration-count: 12;
+
+  }
+}
