@@ -1,0 +1,72 @@
+.watch {
+  border-radius: 50%;
+  border: 3px solid $mainColor;
+  width: $sizeWatch;
+  height: $sizeWatch;
+  position: relative;
+  background-color: rgb(111, 249, 247);
+  box-shadow: inset 2px 3px 5px rgba(114, 114, 114, 0.5);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.97);
+    border-radius: 50%;
+    border: 3px solid $mainColor;
+    width: 80vmin;
+    height: 80vmin;
+    z-index: 1;
+    background-color: #fff;
+  }
+
+  &__decor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: $mainColor;
+    box-shadow: inset 2px 3px 5px rgba(227, 226, 226, 0.5);
+    width: 20px;
+    height: 20px;
+    z-index: 4;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translate(-50%, -100%) rotate(0deg);
+    border-radius: 40%;
+    z-index: 3;
+
+    &--minute {
+      background-color: rgb(178, 178, 178);
+      border: 2px solid grey;
+      width: 8px;
+      height: 45%;
+      animation: moveArrow 60s linear infinite;
+      box-sizing: border-box;
+    }
+
+    &--second {
+      background-color: red;
+      width: 6px;
+      height: 48%;
+      animation: moveArrow 5s linear infinite;
+    }
+  }
+
+  @keyframes moveArrow {
+    0% {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+
+    100% {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+  }
+}
