@@ -18,7 +18,9 @@
     width: 80vmin;
     height: 80vmin;
     z-index: 1;
-    background-color: #fff;
+    background: url(../image/forrest.jpeg);
+    background-size: cover;
+    filter: brightness(0.5);
   }
 
   &__decor {
@@ -48,7 +50,7 @@
       border: 2px solid grey;
       width: 8px;
       height: 45%;
-      animation: moveArrow 60s linear infinite;
+      animation: moveArrow 60s steps(60) infinite;
       box-sizing: border-box;
     }
 
