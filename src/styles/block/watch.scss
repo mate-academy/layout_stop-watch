@@ -1,0 +1,47 @@
+.watch {
+  position: relative;
+  height: 500px;
+  width: 500px;
+
+  border-radius: 50%;
+  border: 10px dashed #000;
+
+  &__minute,
+  &__center,
+  &__second {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  &__minute {
+    width: 20px;
+    height: 125px;
+
+    background-color: blue;
+    @include animation(time, 60s);
+  }
+
+  &__second {
+    width: 10px;
+    height: 249px;
+
+    background-color: green;
+    @include animation(time, 5s);
+  }
+
+  &__center {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+    background-color: orange;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes time {
+  100% {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
