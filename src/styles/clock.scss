@@ -1,0 +1,56 @@
+.clock {
+  position: relative;
+  display: flex;
+  width: $main-size;
+  height: $main-size;
+  border: $border-size solid $main-color;
+  border-radius: 50%;
+  background-color: bg-color;
+
+  &__poket-ball {
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__second {
+    position: absolute;
+    height: 40vmin;
+    width: 1vmin;
+    background-color: #f70000;
+    left: 50%;
+
+    transform-origin: bottom;
+    animation: time 5s linear infinite;
+  }
+
+  &__minute {
+    position: absolute;
+    height: 20vmin;
+    width: 1vmin;
+    background-color: $main-color;
+    left: 50%;
+    bottom: 50%;
+
+    transform-origin: bottom;
+    animation: time 60s linear infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    height: 6vmin;
+    width: 6vmin;
+    background-color: $bg-color;
+    left: 46%;
+    bottom: 46%;
+    border-radius: 50%;
+  }
+}
+
+@keyframes time {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
