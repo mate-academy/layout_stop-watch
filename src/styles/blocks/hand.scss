@@ -1,0 +1,22 @@
+.hand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: center 0;
+}
+
+.hand--second {
+  width: 10px;
+  height: 140px;
+  background-color: blue;
+  border-radius: 25px;
+  animation: rotate steps(60) $minute infinite;
+}
+
+.hand--minute {
+  width: 10px;
+  height: 90px;
+  background-color: darkblue;
+  border-radius: 50px;
+  animation: rotate linear $hour infinite;
+}
