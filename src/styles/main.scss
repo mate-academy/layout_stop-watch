@@ -1,1 +1,65 @@
-// put code here
+$clock-size: 80vmin;
+$middle-size: 8vmin;
+$arrow-size: 2vmin;
+
+.container {
+  width: fit-content;
+  margin: auto;
+}
+
+.clock {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+  border: 20px double rebeccapurple;
+  background-color: white;
+  border-radius: 50%;
+
+  &__arrow {
+    position: absolute;
+    left: $clock-size / 2 - $arrow-size / 2;
+    width: $arrow-size;
+    border-radius: 25%;
+
+    &--big {
+      height: $clock-size / 2;
+      background-color: purple;
+      animation-name: spin;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: steps(60);
+      transform-origin: bottom center;
+    }
+
+    &--small {
+      top: $clock-size / 4;
+      height: $clock-size / 4;
+      background-color: goldenrod;
+      animation-name: spin;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+      animation-timing-function: steps(60);
+      transform-origin: bottom center;
+    }
+  }
+
+  &__middle {
+    position: absolute;
+    left: $clock-size / 2 - $middle-size / 2;
+    top: $clock-size / 2 - $middle-size / 2;
+
+    width: $middle-size;
+    height: $middle-size;
+    background-color: violet;
+    border-radius: 50%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
