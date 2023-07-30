@@ -1,0 +1,57 @@
+.watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 80vmin;
+  height: 80vmin;
+
+  border-radius: 50%;
+  background-color: transparent;
+  border: 8px dotted  #000;
+  position: relative;
+
+  &__circle {
+    background-color: #ffa500;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 9;
+  }
+
+  &__big-hand {
+    position: absolute;
+    top: $watch-radius - $big-handHeight;
+
+    height: $big-handHeight;
+    width: 9px;
+
+    background-color: #76b947;
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: rotate 5s linear 10 ;
+  }
+
+  &__small-hand {
+    position: absolute;
+    top: $watch-radius - $small-handHeight;
+
+    height: $small-handHeight;
+    width: 15px;
+
+    background-color: #00ff;
+    border-radius: 7px;
+    transform-origin: bottom;
+    animation: rotate 60s linear 10 ;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
