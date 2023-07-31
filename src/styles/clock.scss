@@ -1,0 +1,48 @@
+.clock {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid;
+  background-color: rgb(225, 225, 225);
+  margin: 0 auto;
+  position: relative;
+
+  &__second {
+    position: absolute;
+    border-radius: 6px;
+    background: darkblue;
+    height: 35%;
+    width: 2%;
+    left: 49%;
+    top: 15%;
+    transform-origin: center bottom;
+    z-index: 1;
+    transform: rotate(0deg);
+    animation: sec 60s infinite;
+  }
+
+  &__minute {
+    position: absolute;
+    border-radius: 6px;
+    background: yellow;
+    height: 35%;
+    width: 2%;
+    left: 49%;
+    top: 15%;
+    transform-origin: center bottom;
+    z-index: 2;
+    transform: rotate(0deg);
+    animation: sec 3600s infinite;
+  }
+
+  &__dot {
+    border: 0;
+    border-radius: 50%;
+    background: darkblue;
+    height: 4%;
+    width: 4%;
+    position: absolute;
+    left: 48%;
+    top: 48%;
+  }
+}
