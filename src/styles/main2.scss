@@ -18,12 +18,6 @@ body {
   border: 10px solid #000;
 }
 
-@keyframes rotateHands {
-  to {
-    transform: translateX(-50%) translateY(-100%) rotate(360deg);
-  }
-}
-
 .minute-hand {
   position: absolute;
   width: 3px;
@@ -33,7 +27,7 @@ body {
   background-color: #000;
   transform-origin: 50% 100%;
   transform: translateX(-50%) translateY(-100%) rotate(0);
-  animation: rotateHands 60s infinite linear;
+  animation: rotateMinutes 60s infinite linear;
 }
 
 .second-hand {
@@ -45,5 +39,17 @@ body {
   background-color: #000;
   transform-origin: 50% 100%;
   transform: translateX(-50%) translateY(-100%) rotate(0);
-  animation: rotateHands 5s infinite linear;
+  animation: rotateSeconds 5s infinite linear;
+}
+
+@keyframes rotateMinutes {
+  to {
+    transform: translateX(-50%) translateY(-100%) rotate(360deg);
+  }
+}
+
+@keyframes rotateSeconds {
+  to {
+    transform: translateX(-50%) translateY(-100%) rotate(360deg);
+  }
 }
