@@ -1,37 +1,40 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .clock {
-  width: 300px;
-  height: 300px;
+  height: 80vmin;
+  width: 80vmin;
   border-radius: 50%;
   border: 1px solid;
   background-color: rgb(225, 225, 225);
   position: relative;
 
-  &__millisecond {
+  .hand {
     position: absolute;
     border-radius: 6px;
+    left: 49%;
+    top: 15%;
+    transform-origin: center bottom;
+    transform: rotate(0deg);
+  }
+  &__millisecond {
     background: darkblue;
     height: 35%;
     width: 2%;
-    left: 49%;
-    top: 15%;
-    transform-origin: center bottom;
     z-index: 1;
-    transform: rotate(0deg);
-    animation: sec 1s infinite;
+    animation: sec 5s infinite;
   }
 
   &__second {
-    position: absolute;
-    border-radius: 6px;
     background: yellow;
     height: 35%;
     width: 2%;
-    left: 49%;
-    top: 15%;
-    transform-origin: center bottom;
     z-index: 2;
-    transform: rotate(0deg);
     animation: sec 60s infinite;
+
   }
 
   &__dot {
