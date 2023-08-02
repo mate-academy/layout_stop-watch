@@ -1,0 +1,56 @@
+.stop-watch {
+  height: $stop-watch-width-and-hight;
+  width: $stop-watch-width-and-hight;
+  border: 4px dotted black;
+  border-radius: 50%;
+  position: relative;
+
+  @keyframes hands-rotation {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__element {
+    position: absolute;
+
+    animation-name: hands-rotation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom center;
+
+    &--center-point {
+      height: $center-point-width-and-hight;
+      width: $center-point-width-and-hight;
+      border-radius: 50%;
+      background-color: orange;
+      animation: none;
+
+      top: calc(50% - (#{$center-point-width-and-hight} / 2));
+      right: calc(50% - (#{$center-point-width-and-hight} / 2));
+      z-index: 3;
+    }
+
+    &--small-hand {
+      height: 25%;
+      width: $small-hand-width;
+      background-color: blue;
+      animation-duration: 60s;
+
+      bottom: 50%;
+      right: 50% - $small-hand-width / 2;
+      z-index: 2;
+    }
+
+    &--big-hand {
+      height: 49%;
+      width: $big-hand-width;
+      background-color: green;
+      animation-duration: 5s;
+
+      bottom: 50%;
+      right: 50% - $big-hand-width / 2;
+      z-index: 1;
+    }
+  }
+}
