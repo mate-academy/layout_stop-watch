@@ -1,0 +1,45 @@
+.watch {
+  border: 5px solid $border-color;
+  height: $stop-watch-height;
+  width: $stop-watch-width;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  background: $background-gradient;
+
+  &__center {
+    height: 30px;
+    width: 30px;
+    background-color: #845ec2;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    border: 1px solid $border-color;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    z-index: 1;
+    border-radius: 10px;
+    transform-origin: bottom;
+    animation: move infinite linear;
+    border: 1px solid $border-color;
+
+    &--min {
+      height: $height-min;
+      background-color: #008e9b;
+      width: 10px;
+      animation-duration: 60s;
+    }
+
+    &--sec {
+      height: $height-sec;
+      background-color: #008f7a;
+      width: 5px;
+      animation-duration: 5s;
+    }
+  }
+}
