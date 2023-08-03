@@ -1,0 +1,56 @@
+$clock-size: 80vmin;
+$watch-center-size: 40px;
+
+.watch {
+  border-radius: 50%;
+  border: 7px dotted black;
+
+  &__wrap {
+    position: relative;
+    @include centering();
+    width: $clock-size;
+    height: $clock-size;
+  }
+
+  &__center {
+    position: absolute;
+    width: $watch-center-size;
+    height: $watch-center-size;
+    border-radius: 50%;
+    background-color: orange;
+  }
+
+  &__hour-hand {
+    position: absolute;
+    bottom: 50%;
+    width: $watch-center-size / 2;
+    height: 25%;
+    border-radius: 25px;
+
+    background-color: blue;
+    transform-origin: bottom;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    bottom: 50%;
+    height: 50%;
+    width: $watch-center-size / 4;
+    border-radius: 25px;
+
+    background-color: green;
+    animation: rotate 5s linear infinite;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
