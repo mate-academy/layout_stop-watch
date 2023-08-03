@@ -23,7 +23,7 @@
 
     transform: translate(-50%);
     transform-origin: center bottom;
-    animation: rotate-second 5s linear infinite;
+    animation: rotate 5s linear infinite;
   }
 
   &__minute {
@@ -36,7 +36,7 @@
 
     transform: translate(-50%);
     transform-origin: center bottom;
-    animation: rotate-minute 60s linear infinite;
+    animation: rotate 60s linear infinite;
   }
 
   &__circle {
@@ -52,16 +52,7 @@
   }
 }
 
-@keyframes rotate-second {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-minute {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
