@@ -1,0 +1,13 @@
+@import "../styles/utils/mixins.scss";
+@import "../styles/utils/variables.scss";
+
+.watch {
+  @include watch-size;
+  background-color: $watch-color;
+  border: 15px dotted black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 10px 20px 10px rgba(0, 0, 0, 0.77);
+}
