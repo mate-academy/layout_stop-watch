@@ -1,1 +1,67 @@
-// put code here
+body {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.stopwatch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vmin;
+  height: 80vmin;
+  border: 10px dotted #000;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+}
+
+.hand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 0 0;
+
+  &-min {
+    height: 50%;
+    width: 10px;
+    background-color: red;
+    animation: min 60s linear infinite;
+  }
+
+  &-sec {
+    height: 25%;
+    width: 7px;
+    background-color: grey;
+    animation: sec 5s linear infinite;
+  }
+}
+
+@keyframes min {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sec {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
