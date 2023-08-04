@@ -1,34 +1,32 @@
-.watch {
-  &__hand {
-    &_second {
-      height: 250px;
-      width: 5px;
-      background-color: red;
-      position: absolute;
-      top: -7px;
-      transform-origin: bottom center;
-      animation: movement 60s steps(60) infinite;
-      z-index: 3;
-    }
+.watch__hand {
+  &-second {
+    height: 250px;
+    width: 5px;
+    background-color: red;
+    position: absolute;
+    top: 23px;
+    transform-origin: bottom center;
+    animation: movement 60s steps(60) infinite;
+    z-index: 3;
+  }
 
-    &_minute {
-      height: 200px;
-      width: 10px;
-      background-color: green;
-      position: absolute;
-      top: 43px;
-      transform-origin: center bottom;
-      animation: movement 3600s linear infinite;
-      z-index: 2;
-    }
-    &_hour {
-      height: 150px;
-      width: 15px;
-      background-color: blue;
-      position: absolute;
-      top: 94px;
-      transform-origin: center bottom;
-      animation: movement 43200s linear infinite;
-    }
+  &-minute {
+    height: 200px;
+    width: 10px;
+    background-color: green;
+    position: absolute;
+    top: 73px;
+    transform-origin: center bottom;
+    animation: movement 3600s linear infinite;
+    z-index: 2;
+  }
+  &-hour {
+    height: 150px;
+    width: 15px;
+    background-color: blue;
+    position: absolute;
+    top: 125px;
+    transform-origin: center bottom;
+    animation: movement 43200s linear infinite;
   }
 }
