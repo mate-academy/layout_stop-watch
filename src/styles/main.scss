@@ -1,1 +1,63 @@
-// put code here
+@import "./variables.scss";
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vmin;
+  margin: 0;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: $radius;
+  width: $cell-size-stopwatch;
+  height: $cell-size-stopwatch;
+  border: 5px dotted black ;
+
+  &-center {
+    position: absolute;
+    height: $cell-size-center;
+    width: $cell-size-center;
+    background-color: yellow;
+    border-radius: $radius;
+    z-index: 1;
+  }
+
+  &-big {
+    z-index: -1;
+    position: absolute;
+    background-color: green;
+    width: 1vmin;
+    height: 40vmin;
+    top: 0;
+    animation: rotate 5s linear infinite;
+  }
+
+  &-small {
+    z-index: 0;
+    position: absolute;
+    width: 5vmin;
+    height: 20vmin;
+    background-color: blue;
+    top: 20vmin;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__all {
+    transform-origin: bottom;
+  }
+
+}
