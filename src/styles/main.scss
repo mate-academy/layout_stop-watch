@@ -1,1 +1,49 @@
-// put code here
+.stop {
+  display: flex;
+  justify-content: center;
+  border: 2px dotted #000;
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  margin: auto;
+  align-items: center;
+  animation-duration: 80vmin;
+
+  &__sec {
+    margin-bottom: 110px;
+    position: absolute;
+    background-color: #008000;
+    width: 5px;
+    height: 120px;
+    animation: move 5s linear;
+    transform-origin: center bottom;
+  }
+
+  &__min {
+    margin-bottom: 55px;
+    position: absolute;
+    background-color: #00f;
+    width: 10px;
+    height: 70px;
+    animation: move 60s linear;
+    transform-origin: center bottom;
+  }
+
+  &__time {
+    position: absolute;
+    background-color: #ffa500;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
