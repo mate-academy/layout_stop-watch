@@ -1,13 +1,4 @@
-@keyframes rotateSeconds {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotateMinutes {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
@@ -53,7 +44,7 @@ body {
       width: 1vmin;
       height: 40vmin;
       background-color: #008001;
-      animation: rotateSeconds 5s infinite linear;
+      animation: rotate 5s infinite linear;
     }
 
     &--minute {
@@ -61,7 +52,7 @@ body {
       width: 2vmin;
       height: 17vmin;
       background-color: #00f;
-      animation: rotateMinutes 60s infinite linear;
+      animation: rotate 60s infinite linear;
     }
   }
 }
