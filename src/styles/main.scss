@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .body {
   display: flex;
   justify-content: center;
@@ -20,17 +22,17 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  border-radius: 50%;
-  width: 80vmin;
-  height: 80vmin;
+  border-radius: $radius;
+  width: $cell-size-stopwatch;
+  height: $cell-size-stopwatch;
   border: 5px dotted black ;
 
   &-center {
     position: absolute;
-    height: 10vmin;
-    width: 10vmin;
+    height: $cell-size-center;
+    width: $cell-size-center;
     background-color: yellow;
-    border-radius: 50%;
+    border-radius: $radius;
     z-index: 1;
   }
 
@@ -41,10 +43,7 @@
     width: 1vmin;
     height: 40vmin;
     top: 0;
-    animation-duration: 5s;
-    animation-name: rotate;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: rotate 5s linear infinite;
   }
 
   &-small {
@@ -54,10 +53,7 @@
     height: 20vmin;
     background-color: blue;
     top: 20vmin;
-    animation-duration: 60s;
-    animation-name: rotate;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: rotate 60s linear infinite;
   }
 
   &__all {
