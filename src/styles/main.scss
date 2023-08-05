@@ -1,1 +1,58 @@
-// put code here
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 8px dotted black;
+  transform: rotate(-90deg);
+
+  &__center-circle {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: #ffa500;
+    z-index: 1;
+  }
+
+  &__hand {
+    position: absolute;
+    z-index: 0;
+    transform-origin: 50% 100%;
+
+    &--second {
+      top: 0;
+      width: 1vmin;
+      height: 40vmin;
+      background-color: #008001;
+      animation: rotate 5s infinite linear;
+    }
+
+    &--minute {
+      top: 23vmin;
+      width: 2vmin;
+      height: 17vmin;
+      background-color: #00f;
+      animation: rotate 60s infinite linear;
+    }
+  }
+}
