@@ -1,22 +1,24 @@
 .hand {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform-origin: 0 0;
+  left: 49.1%;
+  bottom: 50%;
+  transform: scaleX(15);
 
   &-min {
-    height: 50%;
     width: 10px;
-    transform-origin: 50% 0;
+    height: 50%;
+    transform-origin: center bottom;
     background-color: red;
-    animation: min 60s linear infinite;
+    transform: rotate(0deg);
+    animation: min 5s linear infinite;
   }
 
   &-sec {
+    width: 10px;
     height: 25%;
-    width: 7px;
-    transform-origin: 50% 0;
+    transform-origin: center bottom;
     background-color: grey;
-    animation: sec 5s linear infinite;
+    transform: rotate(0deg);
+    animation: sec 60s linear infinite;
   }
 }
