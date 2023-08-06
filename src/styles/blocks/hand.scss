@@ -1,0 +1,24 @@
+.hand {
+  position: absolute;
+  left: 49.1%;
+  bottom: 50%;
+  transform: scaleX(15);
+
+  &-min {
+    width: 10px;
+    height: 50%;
+    transform-origin: center bottom;
+    background-color: red;
+    transform: rotate(0deg);
+    animation: spin 5s linear infinite;
+  }
+
+  &-sec {
+    width: 10px;
+    height: 25%;
+    transform-origin: center bottom;
+    background-color: grey;
+    transform: rotate(0deg);
+    animation: spin 60s linear infinite;
+  }
+}
