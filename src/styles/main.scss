@@ -1,57 +1,8 @@
 // put code here
+@import "blocks/mixins";
+@import "blocks/stopwatch";
+
 .body {
   margin: 0;
   padding: 0;
-}
-
-.container {
-  width: 80vmin;
-  border: 10px dotted black;
-  border-radius: 50%;
-  position: relative;
-}
-
-.stopwatch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vmin;
-  box-sizing: border-box;
-
-  &__circle {
-    height: 50px;
-    width: 50px;
-    background-color: #bbb;
-    border-radius: 50%;
-    position: absolute;
-  }
-
-  &__minute {
-    height: 40vmin;
-    width: 25px;
-    background-color: blue;
-    position: absolute;
-    animation: spin 5s linear infinite;
-    padding-bottom: 50%;
-    background-clip: content-box;
-  }
-  &__hour {
-    height: 20vmin;
-    width: 30px;
-    background-color: yellow;
-    position: absolute;
-    animation: spin 60s linear infinite;
-    padding-bottom: 25%;
-    background-clip: content-box;
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
