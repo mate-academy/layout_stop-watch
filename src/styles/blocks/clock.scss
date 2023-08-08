@@ -1,0 +1,52 @@
+.clock {
+  position: relative;
+  height: $clockDiameter;
+  width: $clockDiameter;
+  border: 1vmin solid rgb(65, 65, 66);
+  border-radius: 50%;
+  background-color: rgb(245, 240, 240);
+  box-shadow: rgba(17, 12, 46, 0.15) 0 48px 100px 0;
+
+  &--container {
+    margin: auto;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  &__hour {
+    height: $halfClockRadius;
+    width: $hourWidth;
+    background-color: rgb(250, 75, 11);
+
+    left: shift($clockRadius, $hourWidth);
+    top: $halfClockRadius;
+    @include animation;
+    animation-duration: 60s;
+  }
+
+  &__minute {
+    height: $clockRadius;
+    width: $minuteWidth;
+    background-color: rgb(61, 58, 54);
+
+    left: shift($clockRadius, $minuteWidth);
+    @include animation;
+    animation-duration: 5s;
+  }
+
+  &__center-circle {
+    height: $centerCircleWidth;
+    width: $centerCircleWidth;
+    border-radius: 50%;
+    background-color: rgb(65, 65, 66);
+    opacity: 0.6;
+
+    position: absolute;
+    left: shift($clockRadius, $centerCircleWidth);
+    top: shift($clockRadius, $centerCircleWidth);
+  }
+}
