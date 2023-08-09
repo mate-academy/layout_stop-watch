@@ -1,1 +1,60 @@
-// put code here
+// put code her
+$clock-size: 50vh;
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
+
+.stop-watch {
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 5px dotted #fa8072;
+  height: $clock-size;
+  width: $clock-size;
+  background-color: #87cefa;
+  background-image: url(../images/sticker.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: initial;
+  justify-content: center;
+  position: relative;
+}
+
+.stop-watch__hand-big {
+  box-sizing: border-box;
+  height: calc(#{$clock-size} / 2);
+  width: 5px;
+  background-color: #f00;
+  opacity: 80%;
+  margin-top: 50%;
+  border-radius: 50%;
+  transform-origin: top center;
+  animation: rotation 5s infinite linear;
+}
+
+.stop-watch__hand-small {
+  box-sizing: border-box;
+  height: calc(#{$clock-size} / 3);
+  width: 5px;
+  opacity: 80%;
+  border-radius: 50%;
+  transform-origin: top center;
+  background-color: #ffd700;
+  animation: rotation 60s infinite linear;
+  margin-top: 50%;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
