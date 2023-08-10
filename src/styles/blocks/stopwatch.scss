@@ -1,0 +1,48 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+
+  border: 3px dotted black;
+  border-radius: 100%;
+
+  width: 30vmin;
+  height: 30vmin;
+  margin: auto;
+
+  &__center {
+    align-self: center;
+
+    width: 5%;
+    height: 5%;
+
+    background-color: green;
+    border-radius: 100%;
+  }
+
+  &__second-hand {
+    position: absolute;
+    z-index: -1;
+
+    width: 1%;
+    height: 50%;
+
+    background-color: black;
+
+    @include rotate-second-hand(5);
+  }
+
+  &__minute-hand {
+    position: absolute;
+    z-index: -1;
+    margin-top: 10%;
+
+    width: 3%;
+    height: 40%;
+
+    background-color: blue;
+
+    @include rotate-minute-hand(60);
+  }
+}
