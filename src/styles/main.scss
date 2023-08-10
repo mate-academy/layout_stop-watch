@@ -1,1 +1,53 @@
-// put code here
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.stopwatch {
+  display: flex;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 4px dashed black;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &__min {
+    position: absolute;
+    height: 140px;
+    width: 5px;
+    background: black;
+    top: 50%;
+    left: calc(50% - 5px);
+    animation: spin 3600s linear infinite;
+    transform-origin: top;
+    animation-iteration-count: calc(1 / 60);
+    animation-fill-mode: forwards;
+  }
+
+  &__sec {
+    position: absolute;
+    align-self: flex-end;
+    height: 145px;
+    width: 3px;
+    background: red;
+    top: 50%;
+    left: calc(50% - 5px);
+    animation: spin 60s linear infinite;
+    transform-origin: top;
+    animation-iteration-count: calc(5 / 60);
+    animation-fill-mode: forwards;
+
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(-180deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+}
