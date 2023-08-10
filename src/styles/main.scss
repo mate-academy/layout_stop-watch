@@ -1,1 +1,76 @@
-// put code here
+$size-Timer: 80vmin;
+$height-min: $size-Timer / 4;
+$height-sec: $size-Timer / 2;
+$width-min: 12px;
+$width-sec: $width-min / 2;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}
+
+.timer {
+  position: relative;
+  display: flex;
+  height: $size-Timer;
+  width: $size-Timer;
+  border: 10px dotted black;
+  border-radius: 50%;
+
+  &__point {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: orange;
+    border-radius: 50%;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute {
+    position: absolute;
+    height: $height-min;
+    width: $width-min;
+    background-color: blue;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    animation-name: move;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__second {
+    position: absolute;
+    height: $height-sec;
+    width: $width-sec;
+    background-color: green;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes move {
+    0% {
+      rotate: 0deg;
+    }
+    100% {
+      rotate: 360deg;
+    }
+  }
+}
