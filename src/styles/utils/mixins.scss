@@ -1,0 +1,18 @@
+@mixin rotate-hand($degrees) {
+  transform: rotate(#{$degrees}deg);
+  transform-origin: bottom center;
+}
+
+@mixin full-rotate-hand($seconds) {
+  animation: rotation #{$seconds}s linear infinite;
+
+  @keyframes rotation {
+    from {
+      @include rotate-hand(0);
+    }
+
+    to {
+      @include rotate-hand(360);
+    }
+  }
+}
