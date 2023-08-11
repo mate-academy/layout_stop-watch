@@ -1,0 +1,48 @@
+.stop-watch {
+  display: flex;
+  border-radius: $round-border;
+  border: 5px dotted #ffd700;
+  height: $clock-size;
+  width: $clock-size;
+  position: relative;
+
+  background-color: #8fbc8f;
+  background-image: url(../images/sticker.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  justify-content: center;
+
+  &__hand-big {
+    position: absolute;
+    height: $big-hand-size;
+    width: 5px;
+    background-color: #f00;
+    opacity: 70%;
+    margin: 0 auto;
+    border-radius: $round-border;
+    transform-origin: bottom center;
+    animation: rotation 5s infinite linear;
+  }
+
+  &__hand-small {
+    position: absolute;
+    height: $small-hand-height;
+    width: 5px;
+    opacity: 70%;
+    border-radius: $round-border;
+    margin: $clock-size / 6 auto;
+    transform-origin: bottom center;
+    background-color: #ffd700;
+    animation: rotation 60s infinite linear;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
