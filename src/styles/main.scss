@@ -1,1 +1,44 @@
-// put code here
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.stopwatch {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  width: 80vmin;
+  height: 80vmin;
+  border-style: dotted;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &__min {
+    position: absolute;
+    height: 50%;
+    width: 2%;
+    background: black;
+    animation: spin 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__sec {
+    position: absolute;
+    height: 50%;
+    width: 1%;
+    background: red;
+    animation: spin 5s linear infinite;
+    transform-origin: bottom;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
