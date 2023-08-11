@@ -1,0 +1,60 @@
+.clock {
+  height: #{$main-height};
+  width: #{$main-width};
+  background-color: #eee;
+  border-radius: 50%;
+  border: 10px dotted black;
+
+  position: relative;
+
+  &::after {
+    background: #000;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 5%;
+    height: 5%;
+    z-index: 5;
+  }
+
+  &_hours,
+  &_seconds {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &_hours-container {
+    background: #1809e9;
+    height: 20%;
+    position: absolute;
+    left: 48.75%;
+    top: 30%;
+    transform-origin: 50% 100%;
+    width: 2.5%;
+  }
+
+  &_seconds-container {
+    background: green;
+    height: 45%;
+    position: absolute;
+    left: 49.5%;
+    top: 5%;
+    transform-origin: 50% 100%;
+    width: 1%;
+  }
+
+  &_hours {
+    animation: rotateH 5s linear;
+    animation-delay: 55s;
+  }
+
+  &_seconds {
+    animation: rotateS 60s linear;
+  }
+}
