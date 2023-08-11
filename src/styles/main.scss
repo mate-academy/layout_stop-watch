@@ -1,1 +1,63 @@
-// put code here
+.stop-watch {
+  margin: 0;
+
+  &__body {
+    box-sizing: border-box;
+    width: 80vmin;
+    height: 80vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #75C2F6;
+    border: 7px dotted #1D5D9B;
+    margin: 80px auto;
+    border-radius: 100%;
+    position: relative;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__center {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: #FD8D14;
+    z-index: 3;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    width: 15px;
+    height: 23vmin;
+    background-color: #35155D;
+    border-radius: 8px;
+    z-index: 1;
+    bottom: 39vmin;
+    animation: move-hand 60s infinite linear;
+  }
+
+  &__second-hand {
+    position: absolute;
+    height: 37vmin;
+    width: 10px;
+    background-color: #0B666A;
+    border-radius: 8px;
+    z-index: 1;
+    bottom: 39vmin;
+    animation: move-hand 5s infinite linear;
+  }
+
+}
+
+@keyframes move-hand {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
