@@ -20,35 +20,48 @@
   }
 
   &__center {
-    position: absolute;
+    // position: absolute;
     height: 40px;
     width: 40px;
     border-radius: 100%;
     background-color: #FD8D14;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     z-index: 2;
   }
 
   &__minute-hand {
     position: absolute;
-    width: 200px;
-    height: 15px;
+    width: 15px;
+    height: 200px;
     background-color: #35155D;
+    border-radius: 8px;
     z-index: 1;
-    right: 100px;
+    bottom: 39vmin;
+    animation: move-hand 10s linear;
   }
 
   &__second-hand {
     position: absolute;
-    height:40vmin;
+    height:37vmin;
     width: 10px;
     background-color: #0B666A;
+    border-radius: 8px;
     z-index: 1;
-    bottom: 300px;
+    bottom: 39vmin;
+    animation: move-hand 50s linear;
   }
 
 }
 
-
+@keyframes move-hand {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
