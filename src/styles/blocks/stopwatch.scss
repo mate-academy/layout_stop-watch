@@ -7,8 +7,8 @@
   border: 3px dotted black;
   border-radius: 100%;
 
-  width: 30vmin;
-  height: 30vmin;
+  width: 80vmin;
+  height: 80vmin;
   margin: auto;
 
   &__center {
@@ -30,7 +30,7 @@
 
     background-color: black;
 
-    @include rotate-second-hand(5);
+    @include full-rotate-hand(5);
   }
 
   &__minute-hand {
@@ -43,6 +43,6 @@
 
     background-color: blue;
 
-    @include rotate-minute-hand(60);
+    @include full-rotate-hand(60);
   }
 }

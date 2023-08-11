@@ -3,30 +3,16 @@
   transform-origin: bottom center;
 }
 
-@mixin rotate-minute-hand($seconds) {
-  animation: rotate-minute-hand #{$seconds}s linear;
+@mixin full-rotate-hand($seconds) {
+  animation: rotation #{$seconds}s linear infinite;
 
-  @keyframes rotate-minute-hand {
+  @keyframes rotation {
     from {
       @include rotate-hand(0);
     }
 
     to {
-      @include rotate-hand($seconds*0.1);
-    }
-  }
-}
-
-@mixin rotate-second-hand($seconds) {
-  animation: rotate-second-hand #{$seconds}s linear;
-
-  @keyframes rotate-second-hand {
-    from {
-      @include rotate-hand(0);
-    }
-
-    to {
-      @include rotate-hand($seconds*6);
+      @include rotate-hand(360);
     }
   }
 }
