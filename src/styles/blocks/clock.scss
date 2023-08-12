@@ -1,11 +1,15 @@
 .clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: #{$main-height};
   width: #{$main-width};
   background-color: #eee;
   border-radius: 50%;
   border: 10px dotted black;
-
-  position: relative;
+  position: absolute;
+  top: 10vh;
+  left: 60vh;
 
   &::after {
     background: #000;
@@ -50,11 +54,10 @@
   }
 
   &_hours {
-    animation: rotateH 5s linear;
-    animation-delay: 55s;
+    animation: rotate 60s infinite linear;
   }
 
   &_seconds {
-    animation: rotateS 60s linear;
+    animation: rotate 5s infinite linear;
   }
 }
