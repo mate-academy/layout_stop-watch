@@ -1,0 +1,58 @@
+.watch {
+  position: relative;
+
+  @include topIndent;
+
+  height: 80vmin;
+  width: 80vmin;
+
+  box-sizing: border-box;
+
+  border-radius: 50%;
+  border: 5px dotted black;
+
+  &__dot {
+    position: absolute;
+    @include selfCenter;
+
+    height: 2vmin;
+    width: 2vmin;
+
+    background-color: aqua;
+    border-radius: 50%;
+  }
+
+  &__minute {
+    position: absolute;
+    @include selfCenter;
+    bottom: 20vmin;
+
+    height: 20vmin;
+    width: 9px;
+
+    background-color: yellowgreen;
+
+    animation: rotate 3600s steps(60) infinite;
+    transform-origin: 50% bottom ;
+  }
+
+  &__second {
+    position: absolute;
+    @include selfCenter;
+    bottom: 35vmin;
+
+    height: 35vmin;
+    width: 5px;
+
+    background-color: blueviolet;
+
+    animation: rotate 60s steps(60) infinite;
+    transform-origin: 50% bottom ;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
