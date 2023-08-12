@@ -2,38 +2,43 @@ $width_hand: 20px;
 
 .stop_watch {
   position: relative;
-
-}
-
-.stop_watch__center {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  // transform: translate(-50%, -50%);
-  width: $width_hand *2;
-  height: $width_hand *2;
-  border-radius: 50%;
-  background-color: aqua;
-}
-
-.stop_watch__minute {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  // transform: translate(-50%, -50%);
-  width: $width_hand;
-  height: $width_hand * 5;
-  border-radius: 10px;
-  background-color: palevioletred;
+  height: 300px;
+  background-color: beige;
+  z-index: 0;
 }
 
 .stop_watch__second {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
-  // transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: $width_hand;
   height: $width_hand * 10;
   border-radius: 10px;
   background-color: aqua;
+  z-index: 1;
+}
+
+.stop_watch__minute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $width_hand;
+  height: $width_hand * 5;
+  border-radius: 10px;
+  background-color: palevioletred;
+  z-index: 2;
+}
+
+.stop_watch__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $width_hand *2;
+  height: $width_hand *2;
+  border-radius: 50%;
+  background-color: rgb(87, 0, 19);
+  z-index: 3;
 }
