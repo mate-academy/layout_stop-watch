@@ -1,1 +1,63 @@
-// put code here
+$watchSize: 80vmin;
+$borderSize: 1vmin;
+$greenWidth: 2vmin;
+$blueWidth: 3vmin;
+$centerSize: 6vmin;
+
+.watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: $watchSize;
+  width: $watchSize;
+
+  border: $borderSize dotted;
+  border-radius: 100%;
+
+  &__green-hand {
+    position: absolute;
+    background-color: green;
+    height: $watchSize / 2;
+    width: $greenWidth;
+    left: $watchSize / 2 - $greenWidth / 2;
+
+    transform-origin: bottom;
+    animation: moveHand 5s infinite linear;
+  }
+
+  &__blue-hand {
+    position: absolute;
+    background-color: blue;
+    height: calc(40vmin / 2);
+    width: $blueWidth;
+    top: $watchSize / 4;
+    left: $watchSize / 2 - $blueWidth / 2;
+
+    transform-origin: bottom;
+    animation: moveHand 60s infinite linear;
+  }
+
+  &__yellow-center {
+    position: absolute;
+    background-color: yellow;
+    height: $centerSize;
+    width: $centerSize;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+  }
+}
+
+@keyframes moveHand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
