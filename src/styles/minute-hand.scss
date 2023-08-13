@@ -1,0 +1,16 @@
+.clock__minute-hand {
+  top: 0;
+  position: absolute;
+  width: 10px;
+  height: 250px;
+  background-color: green;
+
+  transform-origin: bottom center;
+  animation: clockHand 5s linear infinite;
+}
+
+.clock__minute-hand:hover {
+  transition: transform 60s;
+  transform: rotate(360deg);
+  transform-origin: bottom center;
+}
