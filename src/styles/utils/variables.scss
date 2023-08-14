@@ -1,15 +1,12 @@
-$clock-height: 80vmin;
-$clock-width: 80vmin;
+$clock-size: 80vmin;
 
-$clock__centre-height: 5vmin;
-$clock__centre-width: 5vmin;
+$clock__centre-size: 5vmin;
 
 $clock__minute-hand-height: 30vmin;
 $clock__minute-hand-width: 3vmin;
 
-$clock__second-hand-height: $clock-height / 2;
+$clock__second-hand-height: $clock-size / 2;
 $clock__second-hand-width: 1vmin;
-
 
 @function currentShift($clockWidth, $elementWidth) {
   @return ($clockWidth / 2) - ($elementWidth / 2);
