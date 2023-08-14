@@ -21,10 +21,10 @@ body {
   top: 50%;
   transform: translate(50%, -50%);
   right: 50%;
-
   border-radius: 50%;
   border: 1px solid yellowgreen;
   background-color: yellow;
+  opacity: 50%;
 }
 
 .sec-hand {
@@ -36,7 +36,6 @@ body {
   right: 50%;
   transform: translateX(50%) rotate(0deg);
   transform-origin: bottom center;
-
   background-color: #000;
   animation: move-1 60s linear infinite;
 }
@@ -48,11 +47,9 @@ body {
   top: 2%;
   right: 50%;
   transform: translateX(50%) rotate(0deg);
-
   z-index: -2;
   background-color: green;
   transform-origin: bottom center;
-
   animation: move-2 3600s linear forwards;
 }
 
@@ -65,9 +62,7 @@ body {
   transform: translate(-50%, 30%) rotate(0deg);
   left: 50%;
   transform-origin: bottom center;
-
   background-color: blue;
-
   animation: move-3 3600s linear forwards;
 }
 
@@ -75,28 +70,25 @@ body {
   from {
     transform: translateX(50%) rotate(0deg);
   }
-
   to {
     transform: translateX(50%) rotate(360deg);
   }
 }
-
 @keyframes move-2 {
   from {
     transform: translateX(50%) rotate(0deg);
   }
-
   to {
     transform: translateX(50%) rotate(360deg);
   }
 }
-
 @keyframes move-3 {
   from {
     transform: translate(-50%, 25%) rotate(0deg);
   }
-
   to {
     transform: translate(-50%, 25%) rotate(30deg);
   }
 }
+
+/*# sourceMappingURL=style.css.map */
