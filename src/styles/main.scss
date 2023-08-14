@@ -1,1 +1,71 @@
-// put code here
+body {
+  margin: 0;
+}
+
+.watch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  margin: 0 auto;
+  border: 8px dotted #000;
+  border-radius: 50%;
+  box-sizing: border-box;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffa500;
+  }
+
+  &__second {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 6px);
+    z-index: 2;
+    width: 12px;
+    height: 50%;
+    background: #008001;
+    animation: second 5s linear 8;
+  }
+
+  &__minute {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 50%;
+    z-index: 1;
+    width: 30%;
+    height: 20px;
+    background: #00f;
+    animation: minute 60s linear;
+  }
+}
+
+@keyframes second {
+  0% {
+    transform: rotate(0);
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes minute {
+  0% {
+    transform: rotate(0);
+    transform-origin: left;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: left;
+  }
+}
