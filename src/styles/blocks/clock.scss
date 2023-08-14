@@ -1,0 +1,51 @@
+.clock {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+  margin: 50px auto;
+
+  border: 6px dotted #000;
+  border-radius: 50%;
+
+  &__minute-hand {
+    position: absolute;
+    left: currentShift($clock-size, $clock__minute-hand-width);
+    top: 10vmin;
+
+    height: $clock__minute-hand-height;
+    width: $clock__minute-hand-width;
+
+    background-color: #4c4c4c;
+    border-radius: 50%;
+
+    animation: rotateHand 60s linear infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 0;
+    left: currentShift($clock-size, $clock__second-hand-width);
+    z-index: 1;
+
+    height: $clock__second-hand-height;
+    width: $clock__second-hand-width;
+
+    background-color: #363636;
+    border-radius: 50%;
+
+    animation: rotateHand 5s linear infinite;
+  }
+
+  &__centre {
+    position: absolute;
+    top: currentShift($clock-size, $clock__centre-size);
+    left: currentShift($clock-size, $clock__centre-size);
+    z-index: 2;
+
+    height: $clock__centre-size;
+    width: $clock__centre-size;
+
+    background-color: #000;
+    border-radius: 50%;
+  }
+}
