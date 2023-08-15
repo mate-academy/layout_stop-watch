@@ -15,22 +15,19 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
 
-  &__min {
+  &__hand {
     position: absolute;
     height: 50%;
+    transform-origin: bottom;
     width: 2%;
-    background: black;
+    background-color: black;
     animation: spin 60s linear infinite;
-    transform-origin: bottom;
-  }
 
-  &__sec {
-    position: absolute;
-    height: 50%;
-    width: 1%;
-    background: red;
-    animation: spin 5s linear infinite;
-    transform-origin: bottom;
+    &--sec {
+      width: 1%;
+      background-color: red;
+      animation: spin 5s linear infinite;
+    }
   }
 
   @keyframes spin {
