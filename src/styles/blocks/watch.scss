@@ -15,25 +15,25 @@
     top: $watchSize / 2 - $watchCenterSize / 2;
   }
 
-  &__hand {
+  &__hand-second {
+    height: $watchSize / 2;
+    width: $secondHandWidth;
+    background-color: green;
+    left: $watchSize / 2 - $secondHandWidth / 2;
+    @include doAnimation(5s);
     transform-origin: bottom center;
     position: absolute;
+  }
 
-    &-second {
-      height: $watchSize / 2;
-      width: $secondHandWidth;
-      background-color: green;
-      left: $watchSize / 2 - $secondHandWidth / 2;
-      @include doAnimation(5s)
-    }
-
-    &-minute {
-      height: $watchSize / 2.3;
-      width: $minuteHandWidth;
-      background-color: blue;
-      left: $watchSize / 2 - $minuteHandWidth / 2;
-      top: $watchSize / 2 - $watchSize / 2.3;
-      @include doAnimation(60s)
-    }
+  &__hand-minute {
+    height: $watchSize / 2.3;
+    width: $minuteHandWidth;
+    background-color: blue;
+    left: $watchSize / 2 - $minuteHandWidth / 2;
+    top: $watchSize / 2 - $watchSize / 2.3;
+    @include doAnimation(60s);
+    transform-origin: bottom center;
+    position: absolute;
   }
 }
+
