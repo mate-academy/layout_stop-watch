@@ -1,1 +1,53 @@
 // put code here
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 8px dotted #333;
+  border-radius: 50%;
+  position: relative;
+  background-color: #eea0a0;
+}
+
+.hand {
+  position: absolute;
+  width: 50%;
+  height: 4px;
+  background-color: #333;
+  top: 50%;
+  left: 50%;
+  transform-origin: 100% 50%;
+  transform: translateX(-100%) translateY(-50%) rotate(0deg);
+  animation: Second;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  &--minute {
+    background-color: blue;
+    width: 40%;
+    height: 3px;
+    animation: Minute;
+    animation-duration: 60s;
+  }
+}
+
+@keyframes Second {
+  100% {
+    transform: translateX(-100%) translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes Minute {
+  100% {
+    transform: translateX(-100%) translateY(-50%) rotate(360deg);
+  }
+}
