@@ -8,32 +8,29 @@
   border-radius: 50%;
   position: relative;
 
-  &__seconds-arrow {
-    height: $second-arrow-height;
+  &__seconds-arrow,
+  &__minure-arrow {
     width: 0;
     position: absolute;
+    animation-name: move-arrow;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__seconds-arrow {
+    height: $second-arrow-height;
     left: calc(#{$center-clock-position} - 2px);
     top: $center-clock-position - $second-arrow-height;
     border: 2px solid #fff;
-
-    animation-name: move-arrow;
     animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
   }
 
   &__minure-arrow {
     height: $minute-arrow-height;
-    width: 0;
-    position: absolute;
     left: calc(#{$center-clock-position} - 4px);
     top: $center-clock-position - $minute-arrow-height;
     border: 4px solid #b2b75a;
-
-    animation-name: move-arrow;
     animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
   }
 
   &__center-dot {
