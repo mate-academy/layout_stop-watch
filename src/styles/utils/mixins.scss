@@ -1,0 +1,15 @@
+@mixin contentFlexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin placeOfHands {
+  position: absolute;
+  bottom: 50%;
+}
+
+@mixin rotateSettings($rotate-time) {
+  animation: roll $rotate-time linear infinite;
+  transform-origin: bottom center;
+}
