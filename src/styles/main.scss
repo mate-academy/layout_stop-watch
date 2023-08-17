@@ -1,74 +1,58 @@
 body {
   margin: 0;
-  display: border-box;
+  box-sizing: border-box;
 }
 
 .watch {
-  display: flex;
-  position: relative;
-  margin: 20px auto;
-  height: 300px;
-  width: 300px;
-  border: 8px dotted black;
+  position: relative absolute;
+  height: 290px;
+  width: 290px;
+  border: 6px dotted black;
   border-radius: 50%;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+
+  &__hand {
+    position: absolute;
+    transform-origin: bottom center;
+
+    &--big {
+      height: 48%;
+      width: 2%;
+      top: 2%;
+      right: 50%;
+      z-index: -1;
+      background-color: green;
+      transform-origin: bottom center;
+      transform: translateX(50%) rotate(0deg);
+      animation: move-1 60s linear forwards;
+    }
+
+    &--small {
+      z-index: -2;
+      height: 37%;
+      width: 4%;
+      top: 13%;
+      transform: translateX(50%) rotate(0deg);
+      right: 50%;
+      transform-origin: bottom center;
+      background-color: blue;
+      animation: move-1 5s linear forwards;
+    }
+  }
 }
 
 .center {
-  display: flex;
   position: absolute;
   height: 15px;
   width: 15px;
   top: 50%;
   transform: translate(50%, -50%);
   right: 50%;
-
   border-radius: 50%;
   border: 1px solid yellowgreen;
   background-color: yellow;
-}
-
-.sec-hand {
-  position: absolute;
-  z-index: -1;
-  height: 50%;
-  width: 1%;
-  top: 0%;
-  right: 50%;
-  transform: translateX(50%) rotate(0deg);
-  transform-origin: bottom center;
-
-  background-color: #000;
-  animation: move-1 60s linear infinite;
-}
-
-.big-hand {
-  position: absolute;
-  height: 48%;
-  width: 3%;
-  top: 2%;
-  right: 50%;
-  transform: translateX(50%) rotate(0deg);
-
-  z-index: -2;
-  background-color: green;
-  transform-origin: bottom center;
-
-  animation: move-2 3600s linear forwards;
-}
-
-.small-hand {
-  position: absolute;
-  z-index: -3;
-  height: 37%;
-  width: 4%;
-  top: 3%;
-  transform: translate(-50%, 30%) rotate(0deg);
-  left: 50%;
-  transform-origin: bottom center;
-
-  background-color: blue;
-
-  animation: move-3 3600s linear forwards;
 }
 
 @keyframes move-1 {
@@ -78,25 +62,5 @@ body {
 
   to {
     transform: translateX(50%) rotate(360deg);
-  }
-}
-
-@keyframes move-2 {
-  from {
-    transform: translateX(50%) rotate(0deg);
-  }
-
-  to {
-    transform: translateX(50%) rotate(360deg);
-  }
-}
-
-@keyframes move-3 {
-  from {
-    transform: translate(-50%, 25%) rotate(0deg);
-  }
-
-  to {
-    transform: translate(-50%, 25%) rotate(30deg);
   }
 }
