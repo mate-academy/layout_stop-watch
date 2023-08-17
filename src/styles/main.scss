@@ -1,1 +1,68 @@
-// put code here
+@import "./variables.scss";
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  height: $full-height;
+  align-items: center;
+  justify-content: center;
+
+  &__clock {
+    height: $vmin;
+    width: $vmin;
+  }
+}
+
+.clock {
+  border: 20px dotted $custom-bg-circle;
+  border-radius: $custom-border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__circle {
+    height: $circle-size;
+    width: $circle-size;
+    border-radius: $custom-border-radius;
+    background-color: $custom-bg-circle;
+    position: relative;
+  }
+}
+
+.arrow__block {
+  position: absolute;
+  bottom: $circle-size / 2;
+  right: 0;
+  left: 0;
+  margin: auto;
+  transform-origin: bottom center;
+  z-index: -1;
+
+  &--minute {
+    height: $vmin / 4;
+    width: $custom-width-arrow;
+    background-color: $custom-bg-arrow-minute;
+    animation: rotateClockArrows 60s infinite linear;
+  }
+
+  &--second {
+    height: $vmin / 2;
+    width: $custom-width-arrow / 2;
+    background-color: $custom-bg-arrow-second;
+    animation: rotateClockArrows 5s infinite linear;
+  }
+}
+
+@keyframes rotateClockArrows {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
