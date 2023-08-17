@@ -19,24 +19,18 @@ body {
   border-radius: 50%;
 
   &__second-hand {
-    position: absolute;
-    bottom: 50%;
     height: 50%;
     width: 5px;
     background-color: black;
 
-    transform-origin: bottom;
     animation: rotate 10s linear;
   }
 
   &__hour-hand {
-    position: absolute;
-    bottom: 50%;
     height: 40%;
     width: 10px;
     background-color: red;
-    
-    transform-origin: bottom;
+
     animation: rotate 60s linear;
   }
 
@@ -47,4 +41,10 @@ body {
     background-color: green;
     border-radius: 50%;
   }
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
 }
