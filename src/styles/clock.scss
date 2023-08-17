@@ -1,0 +1,49 @@
+.clock {
+  display: block;
+  min-width: $clock-size;
+  min-height: $clock-size;
+  @include centralize;
+  border: 8px solid #fff;
+  background-color: #213672;
+  border-radius: 50%;
+  position: relative;
+
+  &__seconds-arrow {
+    height: $second-arrow-height;
+    width: 0;
+    position: absolute;
+    left: calc(#{$center-clock-position} - 2px);
+    top: $center-clock-position - $second-arrow-height;
+    border: 2px solid #fff;
+
+    animation-name: move-arrow;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &__minure-arrow {
+    height: $minute-arrow-height;
+    width: 0;
+    position: absolute;
+    left: calc(#{$center-clock-position} - 4px);
+    top: $center-clock-position - $minute-arrow-height;
+    border: 4px solid #b2b75a;
+
+    animation-name: move-arrow;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &__center-dot {
+    width: $dot-size;
+    height: $dot-size;
+    position: absolute;
+    left: calc(#{$center-clock-position} - (#{$dot-size} / 2));
+    top: calc(#{$center-clock-position} - (#{$dot-size} / 2));
+    background-color: #fff;
+    @include centralize;
+    border-radius: 50%;
+  }
+}
