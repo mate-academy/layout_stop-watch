@@ -1,0 +1,54 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 70px auto;
+  height: $size-stopwatch;
+  width: $size-stopwatch;
+
+  border: 10px dotted black;
+  border-radius: 50%;
+  background-color: $color-stopwatch-bg;
+
+  &__center {
+    height: 2vmin;
+    width: 2vmin;
+    background-color: $color-stopwatch-center;
+    border-radius: 50%;
+
+    z-index: 1;
+  }
+
+  &__hand-short {
+    position: absolute;
+    top: calc(50% - #{$height-hand-short});
+    height: $height-hand-short;
+    width: $width-hand-short;
+    background-color: $color-hand-short;
+
+    transform-origin: $width-hand-short/2 $height-hand-short;
+    animation: move $time-rotation-hand-short steps(60, end) infinite;
+  }
+
+  &__hand-long {
+    position: absolute;
+    top: calc(50% - #{$height-hand-long});;
+    height: $height-hand-long;
+    width: $width-hand-long;
+    background-color: $color-hand-long;
+
+    transform-origin: $width-hand-long/2 $height-hand-long;
+    animation: move $time-rotation-hand-long steps(60, end) infinite;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
