@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.watch {
+  position: absolute;
+  height: 290px;
+  width: 290px;
+  border: 6px dotted black;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.watch__hand {
+  position: absolute;
+  transform-origin: bottom center;
+}
+
+.watch__hand--big {
+  height: 48%;
+  width: 2%;
+  top: 2%;
+  right: 50%;
+  z-index: -1;
+  background-color: green;
+  transform-origin: bottom center;
+  transform: translateX(50%) rotate(0deg);
+  animation: move-1 60s linear infinite;
+}
+
+.watch__hand--small {
+  z-index: -2;
+  height: 37%;
+  width: 4%;
+  top: 13%;
+  transform: translateX(50%) rotate(0deg);
+  right: 50%;
+  transform-origin: bottom center;
+  background-color: blue;
+  animation: move-1 5s linear infinite;
+}
+
+.center {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  top: 50%;
+  transform: translate(50%, -50%);
+  right: 50%;
+  border-radius: 50%;
+  border: 1px solid yellowgreen;
+  background-color: yellow;
+}
+
+@keyframes move-1 {
+  from {
+    transform: translateX(50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(50%) rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
