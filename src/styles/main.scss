@@ -1,10 +1,6 @@
-@import "variables";
-@import "animation";
-@import "normalize";
+@import "imported";
 
 .watch {
-  margin: auto;
-  position: relative;
   border: solid 3px black;
   border-radius: 50%;
   width: $watchSize;
@@ -12,30 +8,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.watch__main-hand {
-  border: solid 10px red;
-  height: 40%;
+  &__main-hand {
+    border: solid 10px red;
+    height: 40%;
 
-  animation: rotate 5s linear;
-}
+    animation: rotate 5s linear infinite;
+  }
 
-.watch__secondary-hand {
-  border: solid 20px blue;
-  height: 25%;
+  &__secondary-hand {
+    border: solid 20px blue;
+    height: 25%;
 
-  animation: rotate 60s linear;
-}
+    animation: rotate 60s linear infinite;
+  }
 
-.watch__circle {
-  position: absolute;
-  border: solid 25px green;
-  border-radius: 50%;
-}
-
-.hand {
-  position: absolute;
-  bottom: 50%;
-  transform-origin: bottom;
+  &__circle {
+    position: absolute;
+    border: solid 25px green;
+    border-radius: 50%;
+  }
 }
