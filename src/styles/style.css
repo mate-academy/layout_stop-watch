@@ -13,12 +13,10 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
 .watch__hand {
   position: absolute;
   transform-origin: bottom center;
 }
-
 .watch__hand--big {
   height: 48%;
   width: 2%;
@@ -28,9 +26,8 @@ body {
   background-color: green;
   transform-origin: bottom center;
   transform: translateX(50%) rotate(0deg);
-  animation: move-1 60s linear forwards;
+  animation: move-1 60s linear infinite;
 }
-
 .watch__hand--small {
   z-index: -2;
   height: 37%;
@@ -40,7 +37,7 @@ body {
   right: 50%;
   transform-origin: bottom center;
   background-color: blue;
-  animation: move-1 5s linear forwards;
+  animation: move-1 5s linear infinite;
 }
 
 .center {
