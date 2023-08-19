@@ -1,0 +1,64 @@
+.stop-watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  border: $clock-border;
+  box-shadow: inset 0 0 0.5rem black;
+  border-radius: 50%;
+  background-color: $color-clock-face;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: $seconds-hand-height;
+    width: $seconds-hand-width;
+    border-radius: $seconds-hand-radius;
+    top: 50%;
+    left: $seconds-hand-position-left;
+    background-color: $color-seconds-hand;
+    transform-origin: top;
+    animation: spin 5s linear infinite;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: $minutes-hand-height;
+    width: $minutes-hand-width;
+    border-radius: $minutes-hand-radius;
+    top: 50%;
+    left: $minutes-hand-position-left;
+    background-color: $color-minutes-hand;
+    transform-origin: top;
+    animation: spin 60s linear infinite;
+  }
+
+  &__center {
+    width: $clock-center-size;
+    height: $clock-center-size;
+    background-color: $color-clock-border;
+    border: 0.25rem solid black;
+    box-shadow: 0 0 0.5rem black;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: $clock-index-size;
+      height: $clock-index-size;
+      width: $clock-index-size;
+      background-color: $color-index;
+      border-radius: 50%;
+      box-shadow: $index-position-three-x $index-position-three-y $color-index,
+        $index-position-nine-x $index-position-nine-y $color-index,
+        0 $index-position-six $color-index;
+    }
+  }
+}
