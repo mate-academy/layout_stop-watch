@@ -1,5 +1,12 @@
 $stopwatch-size: 80vmin;
 
+@mixin hand() {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: 50% 100%;
+  border-radius: 50%;
+}
+
 .stopwatch {
   box-sizing: border-box;
   position: relative;
@@ -20,25 +27,19 @@ $stopwatch-size: 80vmin;
   }
 
   &__hand-second {
+    @include hand();
     height: 50%;
     width: 2%;
     background-color: yellow;
-    position: absolute;
-    bottom: 50%;
     animation: rotate 5s infinite linear;
-    transform-origin: 50% 100%;
-    border-radius: 50%;
   }
 
   &__hand-minute {
+    @include hand();
     height: 35%;
     width: 1%;
     background-color: darkblue;
-    position: absolute;
-    bottom: 50%;
     animation: rotate 60s infinite linear;
-    transform-origin: 50% 100%;
-    border-radius: 50%;
   }
 
   @keyframes rotate {
