@@ -38,8 +38,9 @@ body {
       height: 50%;
       top: auto;
       background-color: green;
-      animation-name: moveMinute;
-      animation-duration: 5s;
+      animation-name: moveHand;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
     }
 
     &--second {
@@ -48,22 +49,14 @@ body {
       left: 49%;
       transform: rotate(90deg);
       background-color: blue;
-      animation-name: moveSecond;
-      animation-duration: 60s;
+      animation-name: moveHand;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
     }
   }
 }
 
-@keyframes moveMinute {
-  from {
-    transform: translateX(-50%) rotate(0deg);
-  }
-  to {
-    transform: translateX(-50%) rotate(360deg);
-  }
-}
-
-@keyframes moveSecond {
+@keyframes moveHand {
   from {
     transform: translateX(-50%) rotate(0deg);
   }
