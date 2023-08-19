@@ -1,31 +1,5 @@
-@import "imported";
-
-.watch {
-  border: solid 3px black;
-  border-radius: 50%;
-  width: $watchSize;
-  height: $watchSize;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &__main-hand {
-    border: solid 10px red;
-    height: 40%;
-
-    animation: rotate 5s linear infinite;
-  }
-
-  &__secondary-hand {
-    border: solid 20px blue;
-    height: 25%;
-
-    animation: rotate 60s linear infinite;
-  }
-
-  &__circle {
-    position: absolute;
-    border: solid 25px green;
-    border-radius: 50%;
-  }
-}
+@import "variables";
+@import "animation";
+@import "normalize";
+@import "mix";
+@import "watch";
