@@ -1,0 +1,53 @@
+$stopwatch-size: 80vmin;
+
+@mixin hand() {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: 50% 100%;
+  border-radius: 50%;
+}
+
+.stopwatch {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: 0.02 * $stopwatch-size dotted darkblue;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    height: 0.08 * $stopwatch-size;
+    width: 0.08 * $stopwatch-size;
+    border-radius: 50%;
+    background-color: #000;
+  }
+
+  &__hand-second {
+    @include hand();
+    height: 50%;
+    width: 2%;
+    background-color: yellow;
+    animation: rotate 5s infinite linear;
+  }
+
+  &__hand-minute {
+    @include hand();
+    height: 35%;
+    width: 1%;
+    background-color: darkblue;
+    animation: rotate 60s infinite linear;
+  }
+
+  @keyframes rotate {
+    0% {
+      rotate: 0deg;
+    }
+    100% {
+      rotate: 360deg;
+    }
+  }
+}
