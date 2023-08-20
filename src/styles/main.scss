@@ -1,1 +1,62 @@
-// put code here
+@import "variables";
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stopwatch {
+  width: $stopwatch-width;
+  height: $stopwatch-height;
+  border: 5px dotted black;
+  border-radius: 50%;
+  position: relative;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 5vmin;
+    height: 5vmin;
+    background-color: orange;
+    border-radius: 50%;
+  }
+
+  &__hour-hand {
+    width: 2vmin;
+    height: $height-hour-hand;
+    background-color: blue;
+    position: absolute;
+    left: $stopwatch-width / 2 - 1vmin;
+    top: $stopwatch-height / 2 - $stopwatch-height / 4;
+
+    animation: handMove 60s linear infinite;
+  }
+
+  &__second-hand {
+    width: 1vmin;
+    height: $height-second-hand;
+    background-color: green;
+    position: absolute;
+    left: $stopwatch-width / 2 - 0.5vmin;
+    top: $stopwatch-height / 2 - $stopwatch-height / 2;
+
+    animation: handMove 5s linear infinite;
+  }
+}
+
+@keyframes handMove {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
