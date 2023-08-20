@@ -4,23 +4,23 @@
   width: $circle-diametr;
   border-radius: 50%;
   background-color: #fff;
-  border: 1vmin dotted black;
+  border: $circle-diametr/80 dotted black;
 
   &__dot {
     position: absolute;
-    top: $circle-diametr/2-$dot-diametr/2;
-    left:  $circle-diametr/2-$dot-diametr/2;
-    height: $dot-diametr;
-    width: $dot-diametr;
+    top: $circle-diametr/2-($circle-diametr/30)/2;
+    left: $circle-diametr/2-($circle-diametr/30)/2;
+    height: $circle-diametr/30;
+    width: $circle-diametr/30;
     border-radius: 50%;
     background-color: red;
   }
 
   &__minute-hand {
     position: absolute;
-    left: $circle-diametr/2 - $minute-hand-width/2;
-    width: $minute-hand-width;
-    height: $minute-hand-height;
+    left: $circle-diametr/2 - ($circle-diametr/80)/2;
+    width: $circle-diametr/80;
+    height: $circle-diametr/2;
     background-color: green;
 
     transform-origin: bottom;
@@ -29,17 +29,16 @@
 
   &__hour-hand {
     position: absolute;
-    left: $circle-diametr/2 - $hour-hand-width/2;
-    top: $circle-diametr/2 - $hour-hand-height;
-    width: $hour-hand-width;
-    height: $hour-hand-height;
+    left: $circle-diametr/2 - ($circle-diametr/40)/2;
+    top: $circle-diametr/2 - $circle-diametr/4;
+    width: $circle-diametr/40;
+    height: $circle-diametr/4;
     background-color: blue;
 
     transform-origin: bottom;
     animation: rotateHand 60s linear infinite;
   }
 }
-
 
 @keyframes rotateHand {
   from {
