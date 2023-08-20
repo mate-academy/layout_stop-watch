@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bodyBackground-color;
+}
+
+.watch {
+  display: flex;
+  width: $size_watch;
+  height: $size_watch;
+  box-shadow: 5px 7px 10px -1px rgba(166, 166, 166, 0.25) inset,
+    -6px -1px 10px 2px rgba(255, 255, 255, 0.5) inset,
+    -6px -7px 20px 0 rgba(255, 255, 255, 0.5),
+    8px 8px 20px 0 rgba(170, 170, 170, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: $radius_watch;
+  justify-content: center;
+  align-items: center;
+
+  &__center {
+    z-index: 1;
+    width: $center_size;
+    height: $center_size;
+    background-color: #ffe045;
+    border-radius: $radius_watch;
+  }
+
+  &__second-hand {
+    position: absolute;
+    height: 320px;
+    width: 5px;
+    bottom: 50%;
+    background-color: $secondBackground-color;
+    transform-origin: bottom;
+    animation: roll 5s linear infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    height: 10px;
+    width: 160px;
+    left: 50%;
+    background-color: $minutedBackground-color;
+    transform-origin: left;
+    animation: roll 60s linear infinite;
+  }
+
+  @keyframes roll {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
