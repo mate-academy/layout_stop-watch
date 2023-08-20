@@ -1,0 +1,76 @@
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+  background-color: aquamarine;
+
+  &__face {
+    display: flex;
+    justify-content: center;
+    // size: 80vmin;
+    border: 3px dotted black;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+  }
+
+  &__big-hand {
+    position: absolute;
+    z-index: 1;
+    height: 200px;
+    width: 5px;
+    background-color: blue;
+  }
+
+  &__small-hand {
+    position: absolute;
+    height: 100px;
+    width: 9px;
+    margin: 100px;
+    background-color: red;
+  }
+
+  &__center {
+    position: absolute;
+    align-self: center;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    background-color: chocolate;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    .stopwatch__big-hand {
+      animation: sec 60s steps(12) infinite;
+      transform-origin: bottom;
+    }
+
+    .stopwatch__small-hand {
+      animation: mins 720s steps(12) infinite;
+      transform-origin: bottom;
+    }
+  }
+}
+
+@keyframes sec {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mins {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
