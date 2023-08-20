@@ -1,1 +1,66 @@
 // put code here
+@import "./values.scss";
+
+body {
+  margin: 0;
+  background-color: bisque;
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.watch {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  background-color: aqua;
+  border-radius: 50%;
+  border: 4px dotted black;
+  justify-content: center;
+  align-items: center;
+
+  &__center {
+    background-color: yellow;
+    position: relative;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &__hours {
+    margin-bottom: $margin-bottom;
+    height: 120px;
+    width: 12px;
+    background: red;
+    border-radius: $border-radius;
+    animation: rotate 60s linear infinite;
+    transform-origin: 5px 115px;
+  }
+
+  &__min {
+    margin-bottom: $margin-bottom;
+    position: absolute;
+    height: 150px;
+    width: 9px;
+    background-color: darkgreen;
+    border-radius: $border-radius;
+    animation: rotate 5s linear infinite;
+    transform-origin: 5px 145px;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
