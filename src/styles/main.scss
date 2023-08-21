@@ -1,71 +1,11 @@
-// put code here
+@import "mixins.scss";
+@import "variables.scss";
+@import "keyframes.scss";
+@import "stopwatch.scss";
+
 body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.stopwatch {
-  width: 80vmin;
-  height: 80vmin;
-  border-radius: 50%;
-  border: 8px dashed #333;
-  position: relative;
-}
-
-.stopwatch::after {
-  content: "";
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #821b1b;
-  z-index: 100;
-
-}
-
-.hand-second {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: bottom center;
-  transform: translate(-50%, -100%);
-
-  width: 30px;
-  height: 40%;
-  border-radius: 10px;
-  background-color: #544e4e;
-  animation: rotate-seconds 60s linear infinite;
-}
-
-.hand-minute {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: bottom center;
-  transform: translate(-50%, -100%);
-
-  width: 15px;
-  height: 45%;
-  border-radius: 10px;
-  background-color: #c94343;
-  animation: rotate-minutes 5s linear infinite;
-}
-
-@keyframes rotate-seconds {
-  0% {
-    transform: translate(-50%, -100%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -100%) rotate(360deg);
-  }
-}
-
-@keyframes rotate-minutes {
-  0% {
-    transform: translate(-50%, -100%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -100%) rotate(360deg);
-  }
 }

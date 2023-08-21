@@ -1,0 +1,27 @@
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border-radius: 50%;
+  border: 8px dashed #333;
+  position: relative;
+
+  &__hand-second {
+    @include positionOfTheHands;
+
+    width: 30px;
+    height: 40%;
+    border-radius: $border-radius;
+    background-color: #544e4e;
+    @include rotateAnimation(animationRotate, 60s);
+  }
+
+  &__hand-minute {
+    @include positionOfTheHands;
+
+    width: 15px;
+    height: 45%;
+    border-radius: $border-radius;
+    background-color: #c94343;
+    @include rotateAnimation(animationRotate, 5s);
+  }
+}
