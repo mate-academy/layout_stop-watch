@@ -4,14 +4,13 @@
   justify-content: center;
   position: relative;
   margin: 0 auto;
-  width: 500px;
-  height: 500px;
+  width: 80vmin;
+  height: 80vmin;
   background-color: aquamarine;
 
   &__face {
     display: flex;
     justify-content: center;
-    // size: 80vmin;
     border: 3px dotted black;
     width: 400px;
     height: 400px;
@@ -46,27 +45,18 @@
 
   &:hover {
     .stopwatch__big-hand {
-      animation: sec 60s steps(12) infinite;
+      animation: rotate 60s linear infinite;
       transform-origin: bottom;
     }
 
     .stopwatch__small-hand {
-      animation: mins 720s steps(12) infinite;
+      animation: rotate 720s linear infinite;
       transform-origin: bottom;
     }
   }
 }
 
-@keyframes sec {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes mins {
+@keyframes rotate {
   0% {
     transform: rotate(0);
   }
