@@ -1,1 +1,59 @@
-// put code here
+$displaySize: 240px;
+$minuteHeight: $displaySize / 2;
+$minuteWidth: 7px;
+$hourHeight: $minuteHeight / 2;
+$hourWidth: 12px;
+$centerSize: 15px;
+
+* {
+  box-sizing: border-box;
+}
+
+.display {
+  position: relative;
+  height: $displaySize;
+  width: $displaySize;
+  margin: auto;
+  border: 5px dotted #000;
+  border-radius: 50%;
+
+  &__minute {
+    position: absolute;
+    bottom: 48%;
+    left: 49.9%;
+    height: $minuteHeight;
+    width: $minuteWidth;
+    background-color: #f09;
+    transition: transform 5s;
+
+    &:hover {
+      transform: rotate(360deg);
+      transform-origin: bottom;
+    }
+  }
+
+  &__hour {
+    position: absolute;
+    bottom: 50%;
+    left: 48.5%;
+    height: $hourHeight;
+    width: $hourWidth;
+    background-color: #0f7;
+    transition: transform 60s;
+
+    &:hover {
+      transform: rotate(360deg);
+      transform-origin: bottom;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    bottom: 46%;
+    left: 48%;
+    height: $centerSize;
+    width: $centerSize;
+    border-radius: 50%;
+    background-color: #f75;
+  }
+}
