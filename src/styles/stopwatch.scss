@@ -43,27 +43,18 @@
       width: 3px;
       height: 160px;
       background-color: $primary-color;
-      animation: rotateMinute 60s linear infinite;
+      animation: rotateHands 60s linear infinite;
     }
 
     .red-hand {
       width: 2px;
       height: 200px;
       background-color: $secondary-color;
-      animation: rotateSecond 5s linear infinite;
+      animation: rotateHands 5s linear infinite;
     }
   }
 
-  @keyframes rotateMinute {
-    0% {
-      transform: translateY(-100%) rotate(0deg);
-    }
-    100% {
-      transform: translateY(-100%) rotate(360deg);
-    }
-  }
-
-  @keyframes rotateSecond {
+  @keyframes rotateHands {
     0% {
       transform: translateY(-100%) rotate(0deg);
     }
