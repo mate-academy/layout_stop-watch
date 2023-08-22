@@ -1,0 +1,14 @@
+@mixin onFlexDisplay() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin createHands() {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 50%;
+  z-index: -1;
+  transform-origin: bottom;
+}
