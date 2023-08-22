@@ -4,33 +4,35 @@
   justify-content: center;
   position: relative;
   margin: 0 auto;
-  width: 80vmin;
-  height: 80vmin;
   background-color: aquamarine;
 
   &__face {
     display: flex;
     justify-content: center;
     border: 3px dotted black;
-    width: 400px;
-    height: 400px;
+    width: 80vmin;
+    height: 80vmin;
     border-radius: 50%;
   }
 
   &__big-hand {
     position: absolute;
     z-index: 1;
-    height: 200px;
+    height: 50%;
     width: 5px;
     background-color: blue;
+    animation: rotate 5s linear infinite;
+    transform-origin: bottom;
   }
 
   &__small-hand {
     position: absolute;
-    height: 100px;
+    top: 25%;
+    height: 25%;
     width: 9px;
-    margin: 100px;
     background-color: red;
+    animation: rotate 60s linear infinite;
+    transform-origin: bottom;
   }
 
   &__center {
@@ -41,18 +43,6 @@
     height: 20px;
     background-color: chocolate;
     border-radius: 50%;
-  }
-
-  &:hover {
-    .stopwatch__big-hand {
-      animation: rotate 60s linear infinite;
-      transform-origin: bottom;
-    }
-
-    .stopwatch__small-hand {
-      animation: rotate 720s linear infinite;
-      transform-origin: bottom;
-    }
   }
 }
 
