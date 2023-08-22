@@ -1,0 +1,34 @@
+.watch {
+  @include onFlexDisplay();
+  width: 80vmin;
+  height: 80vmin;
+  border: 10px dotted black;
+  border-radius: 50%;
+
+  &__center {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    border-radius: 50%;
+
+    &::before {
+      @include createHands();
+      left: 17.5px;
+      height: 37vmin;
+      width: 15px;
+      background-color: green;
+      transform-origin: bottom;
+      animation: rotate 5s infinite linear;
+    }
+
+    &::after {
+      @include createHands();
+      left: 12.5px;
+      height: 25vmin;
+      width: 25px;
+      background-color: blue;
+      animation: rotate 60s infinite linear;
+    }
+  }
+}
