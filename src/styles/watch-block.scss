@@ -28,11 +28,7 @@
     width: 2.5vmin;
     background-color: $second-color;
 
-    animation-name: move;
-    animation-duration: 5s;
-    animation-iteration-count: 12;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    animation: 5s linear infinite forwards move;
   }
 
   &__minutes-hand {
@@ -44,10 +40,6 @@
     width: 3.5vmin;
     background-color: $minute-color;
 
-    animation-name: move;
-    animation-duration: 60s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    animation: 60s linear infinite forwards move;
   }
 }
