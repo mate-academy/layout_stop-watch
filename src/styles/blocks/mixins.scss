@@ -1,0 +1,14 @@
+@mixin set-element($w, $h, $col) {
+  position: absolute;
+  width: $w;
+  height: $h;
+  background-color: $col;
+  left: 50%;
+}
+
+@mixin set-hands($width, $height, $color) {
+  @include set-element($width, $height, $color);
+  top: calc(50% - #{$height});
+  transform: translateX(-50%);
+  border-radius: 20px;
+}
