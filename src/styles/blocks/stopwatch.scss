@@ -1,0 +1,27 @@
+.stopwatch {
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  margin: 50px auto;
+  border: 8px dotted black;
+  border-radius: 50%;
+
+  &__center {
+    @include set-element($center-size, $center-size, yellow);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__seconds-hand {
+    @include set-hands($seconds-width, $seconds-height, green);
+    z-index: 1;
+    animation: rotate-bl 5s linear infinite;
+  }
+
+  &__minutes-hand {
+    @include set-hands($minutes-width, $minutes-height, lightblue);
+    animation: rotate-bl 20s linear infinite;
+  }
+}
