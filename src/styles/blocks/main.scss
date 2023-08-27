@@ -1,0 +1,57 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  position: relative;
+}
+
+.dial {
+  display: flex;
+  width: $dial-size;
+  height: $dial-size;
+  justify-content: center;
+  align-items: center;
+
+  outline: 5px black solid;
+  border-radius: 50%;
+}
+
+.head {
+  position: absolute;
+  animation: rotate linear infinite;
+  transform-origin: bottom;
+  bottom: 50%;
+
+  &__minute {
+    height: $head-minute-height;
+    width: $head-minute-width;
+    background-color: $head-minute-color;
+    animation-duration: 5s;
+  }
+
+  &__hour {
+    height: $head-hour-height;
+    width: $head-hour-width;
+    background-color: $head-hour-color;
+    animation-duration: 60s;
+  }
+}
+
+.center {
+  position: absolute;
+  width: $center-size;
+  height: $center-size;
+  background-color: $center-color;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
