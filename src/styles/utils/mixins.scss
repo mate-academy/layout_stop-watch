@@ -1,0 +1,9 @@
+@mixin stopwatch-hand($duration, $hand-color, $hand-width, $hand-height) {
+  position: absolute;
+  animation: rotate linear infinite $duration;
+  transform-origin: bottom;
+  bottom: 50%;
+  height: $hand-height;
+  width: $hand-width;
+  background-color: $hand-color;
+}
