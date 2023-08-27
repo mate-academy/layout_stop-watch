@@ -1,1 +1,76 @@
-// put code here
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px dashed #000;
+  border-radius: 50%;
+  margin: 0 auto;
+  width: 80vh;
+  height: 80vh;
+
+  &__center-item {
+    position: absolute;
+    z-index: 10;
+    border-radius: 50%;
+    background: rgb(235, 219, 8);
+    width: 40px;
+    height: 40px;
+  }
+
+  &__hour-hand {
+    position: absolute;
+    z-index: 1;
+    bottom: 50%;
+    height: 20vh;
+    width: 20px;
+    background-color: rgb(0, 46, 253);
+    transform-origin: bottom;
+    animation-name: watch-hour;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 60s;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    z-index: 5;
+    bottom: 50%;
+    width: 10px;
+    height: 40vh;
+    background-color: rgb(63, 241, 8);
+    transform-origin: bottom;
+    animation-name: watch-hour;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+  }
+}
+
+@keyframes watch-hour {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes seconds-hour {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
