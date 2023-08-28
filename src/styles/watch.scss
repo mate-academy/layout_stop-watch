@@ -1,0 +1,71 @@
+.watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: #{$size};
+  width: #{$size};
+  box-sizing: border-box;
+  border: #{$sixty-intervals} dotted black;
+  border-radius: 50%;
+
+  animation-play-state: paused;
+
+  &:hover {
+    background-color: lightseagreen;
+    animation-play-state: running;
+  }
+
+  &:active {
+    background-color: lightcoral;
+    animation-play-state: paused;
+  }
+
+  &__center {
+    position: absolute;
+    height: #{$size-center};
+    width: #{$size-center};
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: orange;
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    height: $size-minute;
+    width: $width-arm;
+
+    background-color: blue;
+
+    bottom: $size-minute * 1.5 - ($sixty-intervals * 2);
+
+    transition: transform 300ms;
+
+    animation: rotate-minute-hand;
+    animation-duration: #{$minute-animation-duration}s;
+    transform-origin: bottom center;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    animation-play-state: inherit;
+  }
+
+  &__hour-hand {
+    position: absolute;
+    height: $size-hour;
+    width: $width-arm;
+
+    background-color: green;
+
+    bottom: ($size-hour / 0.5) + ($sixty-intervals);
+
+    animation: rotate-hour-hand;
+    animation-duration: #{$hour-animation-duration}s;
+    transform-origin: bottom center;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    animation-play-state: inherit;
+  }
+}
