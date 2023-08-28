@@ -5,19 +5,13 @@
 
   height: #{$size};
   width: #{$size};
-  box-sizing: border-box;
   border: #{$sixty-intervals} dotted black;
   border-radius: 50%;
 
-  animation-play-state: paused;
+  animation-play-state: active;
 
   &:hover {
-    background-color: lightseagreen;
-    animation-play-state: running;
-  }
-
-  &:active {
-    background-color: lightcoral;
+    background-color: lightcyan;
     animation-play-state: paused;
   }
 
@@ -25,7 +19,6 @@
     position: absolute;
     height: #{$size-center};
     width: #{$size-center};
-    box-sizing: border-box;
     border-radius: 50%;
     background-color: orange;
     z-index: 1;
@@ -42,7 +35,7 @@
 
     transition: transform 300ms;
 
-    animation: rotate-minute-hand;
+    animation: rotate-hand;
     animation-duration: #{$minute-animation-duration}s;
     transform-origin: bottom center;
     animation-timing-function: linear;
@@ -60,7 +53,7 @@
 
     bottom: ($size-hour / 0.5) + ($sixty-intervals);
 
-    animation: rotate-hour-hand;
+    animation: rotate-hand;
     animation-duration: #{$hour-animation-duration}s;
     transform-origin: bottom center;
     animation-timing-function: linear;
