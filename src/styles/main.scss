@@ -14,7 +14,7 @@ body {
   position: relative;
 }
 
-.center-circle {
+.stopwatch__center-circle {
   width: 30px;
   height: 30px;
   background-color: #ff0;
@@ -26,7 +26,7 @@ body {
   z-index: 2;
 }
 
-.hand {
+.stopwatch__hand {
   position: absolute;
   transform-origin: 50% 100%;
   top: 50%;
@@ -34,33 +34,27 @@ body {
   transform: translate(-50%, -100%);
 }
 
-.second-hand {
+.stopwatch__hand--second {
   width: 8px;
   height: 50%;
   background-color: #008000;
   border-radius: 2px;
+  animation: rotate 60s linear infinite;
 }
 
-.minute-hand {
+.stopwatch__hand--minute {
   width: 8px;
   height: 25%;
   background-color: #00f;
   border-radius: 1px;
+  animation: rotate 3600s linear infinite;
 }
 
 @keyframes rotate {
   from {
-      transform: translate(-50%, -100%) rotate(0deg);
+    transform: translate(-50%, -100%) rotate(0deg);
   }
   to {
-      transform: translate(-50%, -100%) rotate(360deg);
+    transform: translate(-50%, -100%) rotate(360deg);
   }
-}
-
-.second-hand {
-  animation: rotate 60s linear infinite;
-}
-
-.minute-hand {
-  animation: rotate 3600s linear infinite;
 }
