@@ -1,1 +1,43 @@
-// put code here
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/animations";
+
+.clock {
+  width: $clock-size;
+  height: $clock-size;
+  border: 5px dotted black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.minute {
+  width: 20px;
+  height: $clock-size / 4;
+  background-color: blue;
+  animation-duration: 60s;
+  @include hands-position();
+  @include animate();
+}
+
+.second {
+  width: 10px;
+  height: $clock-size / 2;
+  background-color: green;
+  animation-duration: 5s;
+  @include hands-position();
+  @include animate();
+}
+
+.center {
+  width: $dot-size;
+  height: $dot-size;
+  border-radius: 50%;
+  background-color: orange;
+  position: absolute;
+}
