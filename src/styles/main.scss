@@ -1,1 +1,58 @@
-// put code here
+@import "./variables";
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopWatch {
+  position: relative;
+  width: $stopWatchRadius;
+  height: $stopWatchRadius;
+  background-color: $stopWatchColor;
+  border: 4mm;
+  @include stopWatchBorder;
+
+  &:hover {
+    animation-name: move;
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+
+  &__circle {
+    position: absolute;
+    top: $circleWidthLeft;
+    left: $circleWidthLeft;
+    width: $circleWidth;
+    height: $circleWidth;
+    border: 5px;
+    @include stopWatchBorder;
+    box-sizing: border-box;
+  }
+
+  &__minuteHand {
+    position: absolute;
+    left: $minuteHandLeft;
+    top: $minuteHandTop;
+    height: $minuteHandHight;
+    width: $minuteHandWidth;
+    @include handsStyle;
+
+    animation: 60s linear infinite moveHands;
+    animation-play-state: inherit;
+  }
+
+  &__secondHand {
+    position: absolute;
+    left: $secondHandLeft;
+    height: $secondHandHight;
+    width: $secondHandWidth;
+    @include handsStyle;
+
+    animation: 10s linear infinite moveHands;
+    animation-play-state: inherit;
+  }
+}
