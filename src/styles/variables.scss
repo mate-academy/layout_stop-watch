@@ -1,0 +1,38 @@
+$stopWatchRadius: 80vmin;
+$handsColor: #111;
+$stopWatchColor: #7cfc00;
+$stopWatchBorderColor: #111;
+
+$minuteHandWidth: 30px;
+$minuteHandHight: calc(#{$stopWatchRadius / 3});
+$minuteHandLeft: calc(50% - (#{$minuteHandWidth / 2}));
+$minuteHandTop: calc((100% / 3) - (#{$minuteHandHight / 2}));
+
+$secondHandWidth: 15px;
+$secondHandHight: calc(#{$stopWatchRadius / 2});
+$secondHandLeft: calc(50% - (#{$secondHandWidth / 2}));
+
+$circleWidth: 70px;
+$circleWidthLeft: calc(50% - (#{$circleWidth / 2}));
+
+@keyframes moveHands {
+  from {
+    transform: rotate(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+
+@mixin handsStyle {
+  background-color: $handsColor;
+  border-radius: 50%;
+}
+
+@mixin stopWatchBorder {
+  border-color: $stopWatchBorderColor;
+  border-style: groove dashed;
+  border-radius: 50%;
+}
