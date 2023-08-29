@@ -1,0 +1,20 @@
+$size: 80vh;
+
+// Calculate the circumference of the circle (2 * π * radius)
+// further divided by 2 due to the border radius taking up 50% the area
+$circumference: (2 * 3.14) * ($size / 2) / 2;
+
+$sixty-intervals: $circumference / 60;
+
+$size-center: $size * 0.05;
+
+$size-minute: $size * 0.45;
+$size-hour: $size * 0.3;
+$width-arm: $size-center * 0.5;
+
+$buttons-size: 100vh - $size;
+
+$minute-animation-duration: 5;
+$hour-animation-duration: 60;
+
+$transform-time: 300ms;

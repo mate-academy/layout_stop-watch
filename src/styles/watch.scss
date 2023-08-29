@@ -1,0 +1,36 @@
+.watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: #{$size};
+  width: #{$size};
+  border: #{$sixty-intervals} dotted black;
+  border-radius: 50%;
+
+  animation-play-state: active;
+
+  &:hover {
+    background-color: lightcyan;
+    animation-play-state: paused;
+  }
+
+  &__center {
+    position: absolute;
+    height: #{$size-center};
+    width: #{$size-center};
+    border-radius: 50%;
+    background-color: orange;
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    @include clockArm($size-minute, blue, $minute-animation-duration);
+    bottom: $size-minute * 1.5 - ($sixty-intervals * 2);
+  }
+
+  &__hour-hand {
+    @include clockArm($size-hour, green, $hour-animation-duration);
+    bottom: ($size-hour / 0.5) + ($sixty-intervals);
+  }
+}

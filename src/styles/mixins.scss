@@ -1,0 +1,17 @@
+@mixin clockArm($arm-size, $color-of-hand, $type-animation-duration) {
+  position: absolute;
+  height: $arm-size;
+  width: $width-arm;
+
+  background-color: $color-of-hand;
+
+  transition: transform $transform-time;
+
+  animation: rotate-hand;
+  animation-duration: #{$type-animation-duration}s;
+  transform-origin: bottom center;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  animation-play-state: inherit;
+}
