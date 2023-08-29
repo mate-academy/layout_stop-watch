@@ -25,40 +25,12 @@
   }
 
   &__minute-hand {
-    position: absolute;
-    height: $size-minute;
-    width: $width-arm;
-
-    background-color: blue;
-
+    @include clockArm($size-minute, blue, $minute-animation-duration);
     bottom: $size-minute * 1.5 - ($sixty-intervals * 2);
-
-    transition: transform 300ms;
-
-    animation: rotate-hand;
-    animation-duration: #{$minute-animation-duration}s;
-    transform-origin: bottom center;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-
-    animation-play-state: inherit;
   }
 
   &__hour-hand {
-    position: absolute;
-    height: $size-hour;
-    width: $width-arm;
-
-    background-color: green;
-
+    @include clockArm($size-hour, green, $hour-animation-duration);
     bottom: ($size-hour / 0.5) + ($sixty-intervals);
-
-    animation: rotate-hand;
-    animation-duration: #{$hour-animation-duration}s;
-    transform-origin: bottom center;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-
-    animation-play-state: inherit;
   }
 }
