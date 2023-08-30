@@ -1,0 +1,44 @@
+body {
+  min-height: 100vh;
+  @include flexCenter;
+}
+
+.stopwatch {
+  position: relative;
+  @include flexCenter;
+
+  height: $sizeClock;
+  width: $sizeClock;
+
+  border: $borderWatch dotted cyan;
+  border-radius: 50%;
+
+  &__hand {
+
+    &-second {
+      @include sizeBackgroundColorBorderRadius(
+        $lengtSecondHand,
+        $widthSecondHand,
+        green
+      );
+      @include stopwatchHandSetting;
+      @include animationTriger(animationHands, 5s, linear, 0.5s, infinite);
+    }
+
+    &-minute {
+      @include sizeBackgroundColorBorderRadius(
+        $lengthMinuteHand,
+        $widthMinuteHand,
+        blue
+      );
+      @include stopwatchHandSetting;
+      @include animationTriger(animationHands, 10s, linear, 0.5s, infinite);
+    }
+
+    &-dot {
+      @include sizeBackgroundColorBorderRadius(
+        $sizeDot, $sizeDot, orange, 50%
+      );
+    }
+  }
+}
