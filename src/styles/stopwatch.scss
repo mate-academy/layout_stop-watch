@@ -12,7 +12,6 @@ body {
 
   border: $borderWatch dotted cyan;
   border-radius: 50%;
-  padding: 0;
 
   &__hand {
 
@@ -24,7 +23,7 @@ body {
         green
       );
       @include stopwatchHandSetting;
-      @include animationTriger(animationHands, 5s, linear, 0.5s, 1);
+      @include animationTriger(animationHands, 5s, linear, 0.5s, infinite);
     }
 
     &-minute {
@@ -35,7 +34,7 @@ body {
         blue
       );
       @include stopwatchHandSetting;
-      @include animationTriger(animationHands, 10s, linear, 0.5s, 1);
+      @include animationTriger(animationHands, 10s, linear, 0.5s, infinite);
     }
 
     &-dot {
