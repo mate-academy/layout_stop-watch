@@ -1,0 +1,50 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin poistionListStyle {
+  position: absolute;
+  list-style: none;
+}
+
+@mixin sizeBackgroundColorBorderRadius(
+  $height: 0,
+  $width: 0,
+  $backgroundColor: black,
+  $borderRadius: 0%
+) {
+  height: $height;
+  width: $width;
+  background-color: $backgroundColor;
+  border-radius: $borderRadius;
+}
+
+@mixin stopwatchHandSetting {
+  transform-origin: bottom;
+  bottom: 50%;
+}
+
+@mixin animationTriger(
+  $name: "xyz",
+  $duration: 1s,
+  $timingFunction: linear,
+  $delay: 1s,
+  $iterationCount: 1
+) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $timingFunction;
+  animation-delay: $delay;
+  animation-iteration-count: $iterationCount;
+
+  @keyframes #{$name} {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
