@@ -1,1 +1,76 @@
-// put code here
+@import "../styles/variables";
+@import "../styles/mixins";
+
+@keyframes handMove {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 50px;
+}
+
+.watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 7px dotted #000;
+  border-radius: 50%;
+  height: $watch-size;
+  width: $watch-size;
+  position: relative;
+
+  &--position {
+    margin: auto;
+  }
+
+  &__center {
+    border-radius: 50%;
+    margin: auto;
+    background-color: #fc0;
+    height: $center-size;
+    width: $center-size;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__seconds-hand {
+    background-color: green;
+    height: 10px;
+    width: $watch-size / 2;
+    @include position;
+    right: 0;
+    transform: rotate(-90deg);
+  }
+
+  &__minutes-hand {
+    background-color: blue;
+    height: 15px;
+    width: $watch-size / 4;
+    @include position;
+    left: 50%;
+    transform: rotate(0deg);
+  }
+
+  &:hover &__seconds-hand {
+    animation: 60s linear 1s 2 handMove;
+  }
+
+  &:hover &__minutes-hand {
+    animation: 3600s linear 1s 2 handMove;
+  }
+
+  &:active &__seconds-hand {
+    animation-play-state: paused;
+  }
+
+  &:active &__minutes-hand {
+    animation-play-state: paused;
+  }
+}  // put code here
