@@ -46,7 +46,7 @@ body {
     width: $watch-size / 2;
     @include position;
     right: 0;
-    transform: rotate(-90deg);
+    animation: 5s linear infinite handMove;
   }
 
   &__minutes-hand {
@@ -55,22 +55,6 @@ body {
     width: $watch-size / 4;
     @include position;
     left: 50%;
-    transform: rotate(0deg);
-  }
-
-  &:hover &__seconds-hand {
-    animation: 60s linear 1s 2 handMove;
-  }
-
-  &:hover &__minutes-hand {
-    animation: 3600s linear 1s 2 handMove;
-  }
-
-  &:active &__seconds-hand {
-    animation-play-state: paused;
-  }
-
-  &:active &__minutes-hand {
-    animation-play-state: paused;
+    animation: 60s linear infinite handMove;
   }
 }  // put code here
