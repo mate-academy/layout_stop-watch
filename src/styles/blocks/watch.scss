@@ -1,0 +1,42 @@
+.watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 7px dotted #000;
+  border-radius: 50%;
+  height: $watch-size;
+  width: $watch-size;
+  position: relative;
+
+  &--position {
+    margin: auto;
+  }
+
+  &__center {
+    border-radius: 50%;
+    margin: auto;
+    background-color: #fc0;
+    height: $center-size;
+    width: $center-size;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__seconds-hand {
+    background-color: green;
+    height: 10px;
+    width: $watch-size / 2;
+    @include position;
+    right: 0;
+    animation: 3600s linear infinite handMove;
+  }
+
+  &__minutes-hand {
+    background-color: blue;
+    height: 15px;
+    width: $watch-size / 4;
+    @include position;
+    left: 50%;
+    animation: 43200s linear infinite handMove;
+  }
+}
