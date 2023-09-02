@@ -1,0 +1,83 @@
+@import "vars";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 100vh;
+  background: $base-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watch {
+  height: $base-size;
+  width: $base-size;
+  border: $border-width solid transparent;
+  border-radius: $border-radius-circle;
+  box-shadow: $common-shadow;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: $center-offset-y;
+    left: $center-offset;
+    transform: translate(-$center-offset, -$center-offset-y);
+    background: $base-color;
+    height: $before-height-width;
+    width: $before-height-width;
+    border-radius: $border-radius-circle;
+    z-index: 1;
+    box-shadow: $common-shadow;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: $watch-padding;
+    left: $center-offset;
+    transform: $base-animation;
+    height: 115 * $base-size-multiplier;
+    width: 5 * $base-size-multiplier;
+    background: $primary-color;
+    border-radius: $border-radius-circle $border-radius-circle 5px 5px;
+    animation: second $animation-duration steps($animation-steps) infinite;
+    transform-origin: $center-offset-pct $center-offset-pct;
+  }
+
+  @keyframes second {
+    0% {
+      transform: $base-animation rotateZ($rotate-0);
+    }
+    100% {
+      transform: $base-animation rotateZ($rotate-360);
+    }
+  }
+
+  &__minutes {
+    position: absolute;
+    top: $watch-padding;
+    left: $center-offset;
+    transform: $base-animation;
+    height: 90 * $base-size-multiplier;
+    width: 5 * $base-size-multiplier;
+    background: $secondary-color;
+    border-radius: $border-radius-minute;
+    animation: minute $minute-animation-duration
+      steps($minute-animation-steps) infinite;
+    transform-origin: bottom;
+  }
+
+  @keyframes minute {
+    0% {
+      transform: $base-animation rotateZ($rotate-0);
+    }
+    100% {
+      transform: $base-animation rotateZ($rotate-360);
+    }
+  }
+}
