@@ -45,17 +45,8 @@
     width: 5 * $base-size-multiplier;
     background: $primary-color;
     border-radius: $border-radius-circle $border-radius-circle 5px 5px;
-    animation: second $animation-duration steps($animation-steps) infinite;
+    animation: rotate360 $animation-duration steps($animation-steps) infinite;
     transform-origin: $center-offset-pct $center-offset-pct;
-  }
-
-  @keyframes second {
-    0% {
-      transform: $base-animation rotateZ($rotate-0);
-    }
-    100% {
-      transform: $base-animation rotateZ($rotate-360);
-    }
   }
 
   &__minutes {
@@ -67,12 +58,12 @@
     width: 5 * $base-size-multiplier;
     background: $secondary-color;
     border-radius: $border-radius-minute;
-    animation: minute $minute-animation-duration
+    animation: rotate360 $minute-animation-duration
       steps($minute-animation-steps) infinite;
     transform-origin: bottom;
   }
 
-  @keyframes minute {
+  @keyframes rotate360 {
     0% {
       transform: $base-animation rotateZ($rotate-0);
     }
