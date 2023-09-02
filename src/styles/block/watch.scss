@@ -1,0 +1,56 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  width: $size;
+  height: $size;
+  border: 10px dotted ;
+  border-radius: 100%;
+
+  &__center {
+    width: 40px;
+    height: 40px;
+    background: $center-color;
+    z-index: 1;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+  }
+
+  &__long-arrow {
+    background: $arrow-color;
+    width: 16px;
+    height: 376px;
+    transform-origin: bottom;
+    animation: arrow 5s linear infinite;
+    top: 0;
+    left: calc(50% - 8px);
+  }
+
+  &__short-arrow {
+    background: $arrow-color;
+    width: 20px;
+    height: 200px;
+    transform-origin: bottom;
+    animation: arrow 60s linear infinite;
+    top: 24%;
+    left: calc(50% - 10px);
+  }
+
+  @keyframes arrow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__center,
+  &__long-arrow,
+  &__short-arrow {
+    position: absolute;
+    border-radius: 50%;
+  }
+}
