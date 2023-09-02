@@ -1,1 +1,63 @@
-// put code here
+@import "./variables.scss";
+@import "./mixins.scss";
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.stopwatch {
+  border: 5px dotted black;
+  border-radius: $circleBorderRadius;
+  width: $watchSize;
+  height: $watchSize;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &__center {
+    background-color: $watchCenterColor;
+    width: $watchSize / 12;
+    height: $watchSize / 12;
+    border-radius: $circleBorderRadius;
+
+    align-self: center;
+    position: absolute;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(-180deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__bigHand {
+    background-color: $watchBigHandColor;
+    width: $watchBigHandWidth;
+    height: $watchSize / 2;
+
+    position: absolute;
+    left: calc(50% - #{$watchBigHandWidth} / 2);
+
+    @include animation-spin(5s);
+  }
+
+  &__smallHand {
+    background-color: $watchSmallHandColor;
+    width: $watchSmallHandWidth;
+    height: $watchSize / 4;
+
+    position: absolute;
+    top: 25%;
+    left: calc(50% - #{$watchSmallHandWidth} / 2);
+
+    @include animation-spin(60s);
+  }
+}
