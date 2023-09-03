@@ -1,96 +1,12 @@
-
 $clockSize: 80vmin;
 $clockDialSize: 50px;
+
+@import "./mixin.scss";
+@import "./watch.scss";
+@import "./arrows.scss";
 
 body {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.watch {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: $clockSize;
-  width: $clockSize;
-  margin-top: $clockSize/10;
-  border-radius: 100%;
-  border: 10px dotted black;
-
-  &__dialsec {
-    position: relative;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 100%;
-    background-color: red;
-    height: $clockDialSize;
-    width: $clockDialSize;
-    animation: sec 5s linear infinite;
-
-    @keyframes sec {
-      from {
-        transform: none;
-      }
-
-      to {
-        transform: rotate(360deg);
-        transform-origin: center;
-
-      }
-    }
-
-  }
-
-  &__dialmin {
-    position: absolute;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    flex-direction: column;
-    background-color: red;
-    height: 50px;
-    width: 50px;
-    animation: sec 60s linear infinite;
-
-    border-radius: 100%;
-
-    @keyframes min {
-      from {
-        transform: none;
-      }
-
-      to {
-        transform: rotate(360deg);
-        transform-origin: center;
-
-      }
-    }
-  }
-
-}
-
-.secArrow {
-  bottom: 50px;
-  position: absolute;
-  width: 10px;
-  height: $clockSize/2.2;
-  background-color: orange;
-  border-top-right-radius: 100%;
-  border-top-left-radius: 100%;
-}
-
-.minArrow {
-  bottom: 50px;
-  position: absolute;
-  width: 10px;
-  height: 180px;
-  background-color: green;
-  border-top-right-radius: 100%;
-  border-top-left-radius: 100%;
-
 }
