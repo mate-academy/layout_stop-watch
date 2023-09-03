@@ -1,0 +1,32 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $clockSize;
+  width: $clockSize;
+  margin-top: $clockSize/10;
+  border-radius: 100%;
+  border: 10px dotted black;
+
+  &__dialsec {
+    @include dialSizing();
+    @include arrowAnimation(5s);
+  }
+
+  &__dialmin {
+    position: absolute;
+    @include dialSizing();
+    @include arrowAnimation(60s);
+  }
+
+  @keyframes motion {
+    from {
+      transform: none;
+    }
+    to {
+      transform: rotate(360deg);
+      transform-origin: center;
+    }
+  }
+}
