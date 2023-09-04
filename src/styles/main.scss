@@ -1,1 +1,67 @@
-// put code here
+$dialSize: 80vmin;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.dial {
+  display: flex;
+  justify-content: center;
+  width: $dialSize;
+  height: $dialSize;
+  border: 3px dotted black;
+  border-radius: 50%;
+  position: relative;
+
+  &__secondHand {
+    position: absolute;
+    width: 5px;
+    height: 40vmin;
+    bottom: 50%;
+
+    background-color: green;
+
+    transform-origin: bottom center;
+    animation: hand 5s infinite linear;
+  }
+
+  &__minuteHand {
+    position: absolute;
+    width: 10px;
+    height: 20vmin;
+    bottom: 50%;
+
+    background-color: blue;
+
+    transform-origin: bottom center;
+    animation: hand 60s infinite linear;
+  }
+
+  &__rod {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: darkorange;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  @keyframes hand {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
