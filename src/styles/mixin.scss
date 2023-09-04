@@ -1,0 +1,22 @@
+@mixin dialSizing () {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 100%;
+  background-color: red;
+  height: $clockDialSize;
+  width: $clockDialSize;
+}
+
+@mixin arrowPosition () {
+  bottom: 50px;
+  position: absolute;
+  width: 10px;
+  border-top-right-radius: 100%;
+  border-top-left-radius: 100%;
+}
+
+@mixin arrowAnimation ($sec) {
+  animation: motion #{$sec} linear infinite;
+}
