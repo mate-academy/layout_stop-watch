@@ -1,0 +1,68 @@
+.watch {
+  @include flex-center;
+  border-radius: $radius;
+  border: $watch-border-width dotted $border-color;
+  height: $size-container-watch;
+  width: $size-container-watch;
+
+  &__content {
+    position: relative;
+    width: $size-watch-content;
+    height: $size-watch-content;
+  }
+
+  &__animation {
+    position: absolute;
+
+    &--seconds {
+      animation: seconds 5s linear infinite 1s;
+    }
+
+    &--hours {
+      animation: hours 60s linear infinite 1s;
+    }
+  }
+
+  &__circle {
+    width: $size-watch-content;
+    height: $size-watch-content;
+    background-color: $circle-bg-color;
+    border-radius: $radius;
+  }
+
+  &__seconds-arrow {
+    @include absolutPosition;
+    height: $height-seconds-arrow;
+    width: $width-seconds-arrow;
+    background-color: $seconds-bg-color;
+    transform: translate($align-seconds-arrow);
+  }
+
+  &__hours-arrow {
+    @include absolutPosition;
+    height: $height-hours-arrow;
+    width: $width-hours-arrow;
+    background-color: $hours-bg-color;
+    transform: translate($align-hours-arrow);
+  }
+}
+
+@keyframes seconds {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hours {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
