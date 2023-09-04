@@ -1,0 +1,64 @@
+body {
+  margin: initial;
+}
+
+.stopwatch {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  background: linear-gradient( blue 41%, yellow 57%);
+
+  &__elements {
+    position: relative;
+    box-sizing: border-box;
+
+    min-width: $stopwatch-size;
+    min-height: $stopwatch-size;
+
+    box-shadow: 0 0 100px;
+    border-radius: $radius-main;
+
+    background: linear-gradient(transparent,#626b33 75%, transparent);
+    border: 2rem dotted rgba($color: #000, $alpha: 0.5);
+
+    &::before {
+      content: "";
+      top: 25%;
+      width: $minute-arrow-size;
+      height: 25%;
+
+      @include arrow-animation;
+      animation-duration: 60s;
+    }
+
+    &::after {
+      content: "";
+      width: $second-arrow-size;
+      height: 50%;
+
+      @include arrow-animation;
+      animation-duration: 5s;
+    }
+
+  }
+  &__center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    z-index: 1;
+
+    height: $center-size;
+    width: $center-size;
+
+    background: radial-gradient( $elements-color 35%, transparent);
+    border-radius: $radius-main;
+  }
+}

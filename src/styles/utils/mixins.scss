@@ -1,0 +1,21 @@
+@mixin arrow-animation {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  background: $elements-background;
+  border-radius: $radius-hands;
+
+  animation: time;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  transform-origin: bottom;
+
+  @keyframes time {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
