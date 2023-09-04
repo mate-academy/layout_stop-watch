@@ -1,1 +1,83 @@
-// put code here
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  --green-hand-height: 39.75vmin;
+  --green-hand-width: 1vmin;
+  --green-hand-left: calc(50% - var(--green-hand-width) / 2);
+  --green-hand-top: calc(50% - var(--green-hand-height));
+
+  --blue-hand-height: 29.75vmin;
+  --blue-hand-width: 2vmin;
+  --blue-hand-left: calc(50% - var(--green-hand-width) / 2);
+  --blue-hand-top: calc(50% - var(--blue-hand-height));
+
+  --diameter-cicle: 5vmin;
+  --position-cicle: calc(50% - var(--diameter-cicle) / 2);
+}
+
+.clock {
+  height: 100%;
+}
+
+.clock__circle {
+  border: 4px dotted #000;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  position: absolute;
+
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.clock__hand-green {
+  position: absolute;
+  left: var(--green-hand-left);
+  top: var(--green-hand-top);
+  height: var(--green-hand-height);
+  width: var(--green-hand-width);
+  background-color: green;
+  animation: rot 5s infinite linear;
+  transform-origin: bottom;
+  transform: rotate(0);
+}
+
+.clock__hand-blue {
+  position: absolute;
+  left: var(--blue-hand-left);
+  top: var(--blue-hand-top);
+  height: var(--blue-hand-height);
+  width: var(--blue-hand-width);
+  background-color: blue;
+  animation: rot 60s infinite linear;
+  transform-origin: bottom;
+  transform: rotate(0);
+}
+
+.clock__point {
+  position: absolute;
+  height: var(--diameter-cicle);
+  width: var(--diameter-cicle);
+  background-color: yellow;
+  border-radius: 50%;
+  left: var(--position-cicle);
+  top: var(--position-cicle);
+  z-index: 100;
+}
+
+@keyframes rot {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
