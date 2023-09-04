@@ -8,7 +8,6 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  // align-items: center;
 }
 
 .dial {
@@ -29,10 +28,7 @@ body {
     background-color: green;
 
     transform-origin: bottom center;
-    animation-name: hand;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: hand 5s infinite linear;
   }
 
   &__minuteHand {
@@ -44,10 +40,7 @@ body {
     background-color: blue;
 
     transform-origin: bottom center;
-    animation-name: hand;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: hand 60s infinite linear;
   }
 
   &__rod {
