@@ -1,0 +1,52 @@
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border-radius: 50%;
+  border: 5px dotted #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__center-dot {
+    width: $center-dot-size;
+    height: $center-dot-size;
+    background-color: rgb(255, 179, 0);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__hand {
+    position: absolute;
+    transform-origin: bottom;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-name: rotation;
+
+    &--seconds {
+      height: $stopwatch-size / 2;
+      width: $center-dot-size / 4;
+      background-color: rgb(0, 164, 57);
+      top: 0;
+      animation-duration: 5s;
+    }
+
+    &--minutes {
+      height: $stopwatch-size / 4;
+      width: $center-dot-size / 2;
+      background-color: rgb(0, 3, 164);
+      top: $stopwatch-size / 4;
+      z-index: 1;
+      animation-duration: 60s;
+    }
+  }
+}
