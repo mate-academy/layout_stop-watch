@@ -1,0 +1,49 @@
+
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: $content-width;
+  height: $content-width;
+  border: 5px dotted black;
+  border-radius: $border-radius;
+
+  &__elem {
+    display: flex;
+    margin: auto;
+
+    &--circle {
+      position: absolute;
+      z-index: 1;
+      background-color: orange;
+      border-radius: $border-radius;
+      margin-top: 280px;
+      width: 40px;
+      height: 40px;
+    }
+
+    &--big {
+      background-color: green;
+      height: 50%;
+      left: 48.75%;
+      position: absolute;
+      top: 0%;
+      width: 2.5%;
+      transition: transform 60s;
+      transform: rotate(360deg);
+      transform-origin: bottom;
+    }
+
+    &--little {
+      background-color: blue;
+      height: 4%;
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      width: 25%;
+      transition: transform 60s;
+      transform-origin: left;
+      transform: rotate(360deg);
+    }
+  }
+}
