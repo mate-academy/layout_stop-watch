@@ -1,0 +1,53 @@
+.stopwatch {
+  @include content-center;
+
+  @function duration($time) {
+    @return $time/60;
+  }
+
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border-radius: 50%;
+  border: 2px dotted black;
+
+  &__center {
+    background-color: black;
+    height: $stopwatch-center-dot;
+    width: $stopwatch-center-dot;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__seconds {
+    height: $seconds-hand-size;
+    box-sizing: border-box;
+    border: $seconds-hand-width solid red;
+    top: 50% - $seconds-hand-size;
+    left: 50%;
+    position: absolute;
+    transform-origin: bottom;
+    animation: handMotion 60s duration(5) steps(60) forwards;
+  }
+
+  &__minutes {
+    height: $minutes-hand-size;
+    box-sizing: border-box;
+    border: $minutes-hand-width solid rgb(60, 255, 0);
+    top: 50% - $minutes-hand-size;
+    left: 50%;
+    position: absolute;
+    transform-origin: bottom;
+    animation: handMotion 60s duration(60) linear forwards;
+  }
+}
+
+@keyframes handMotion {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
