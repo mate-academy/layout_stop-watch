@@ -20,24 +20,18 @@
   }
 
   &__seconds {
+    @include hand-position;
     height: $seconds-hand-size;
-    box-sizing: border-box;
     border: $seconds-hand-width solid red;
     top: 50% - $seconds-hand-size;
-    left: 50%;
-    position: absolute;
-    transform-origin: bottom;
     animation: handMotion 60s duration(5) steps(60) forwards;
   }
 
   &__minutes {
-    height: $minutes-hand-size;
-    box-sizing: border-box;
-    border: $minutes-hand-width solid rgb(60, 255, 0);
+    @include hand-position;
     top: 50% - $minutes-hand-size;
-    left: 50%;
-    position: absolute;
-    transform-origin: bottom;
+    height: $minutes-hand-size;
+    border: $minutes-hand-width solid rgb(60, 255, 0);
     animation: handMotion 60s duration(60) linear forwards;
   }
 }
