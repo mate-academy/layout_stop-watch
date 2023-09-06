@@ -5,21 +5,15 @@
   height: $size-container-watch;
   width: $size-container-watch;
 
-  &__content {
-    position: relative;
-    width: $size-watch-content;
-    height: $size-watch-content;
-  }
-
   &__animation {
     position: absolute;
 
     &--seconds {
-      animation: seconds 5s linear infinite 1s;
+      @include animation(5s)
     }
 
     &--hours {
-      animation: hours 60s linear infinite 1s;
+      @include animation(60s)
     }
   }
 
@@ -47,17 +41,7 @@
   }
 }
 
-@keyframes seconds {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes hours {
+@keyframes animate-arrow {
   0% {
     transform: rotate(0);
   }
