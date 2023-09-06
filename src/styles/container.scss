@@ -1,6 +1,15 @@
 $content-width: 600px;
 $border-radius: 50%;
 
+@keyframes run {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -31,9 +40,11 @@ $border-radius: 50%;
       position: absolute;
       top: 0%;
       width: 2.5%;
-      transition: transform 60s;
-      transform: rotate(360deg);
+      animation-name: run;
       transform-origin: bottom;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
     }
 
     &--little {
@@ -43,9 +54,11 @@ $border-radius: 50%;
       left: 50%;
       top: 48%;
       width: 25%;
-      transition: transform 60s;
+      animation-name: run;
       transform-origin: left;
-      transform: rotate(360deg);
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
     }
   }
 }
