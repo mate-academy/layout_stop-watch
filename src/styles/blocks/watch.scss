@@ -5,23 +5,12 @@
   height: $size-container-watch;
   width: $size-container-watch;
 
-  &__animation {
-    position: absolute;
-
-    &--seconds {
-      @include animation(5s)
-    }
-
-    &--hours {
-      @include animation(60s)
-    }
-  }
-
   &__circle {
     width: $size-watch-content;
     height: $size-watch-content;
     background-color: $circle-bg-color;
     border-radius: $radius;
+    opacity: 0.3;
   }
 
   &__seconds-arrow {
@@ -30,6 +19,9 @@
     width: $width-seconds-arrow;
     background-color: $seconds-bg-color;
     transform: translate($align-seconds-arrow);
+    transform-origin: bottom center;
+
+    @include animation(5s);
   }
 
   &__hours-arrow {
@@ -38,15 +30,9 @@
     width: $width-hours-arrow;
     background-color: $hours-bg-color;
     transform: translate($align-hours-arrow);
+    transform-origin: bottom center;
+
+    @include animation(60s);
   }
 }
 
-@keyframes animate-arrow {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
