@@ -7,7 +7,7 @@ body {
   padding: 0;
 }
 
-.stopwatch {
+.watch {
   position: relative;
   width: 80vmin;
   height: 80vmin;
@@ -21,24 +21,24 @@ body {
   left: 50%;
   transform-origin: bottom center;
   transform: translateX(-50%) translateY(-100%);
-}
 
-.hand-second {
-  width: 2px;
-  height: 50%;
-  background-color: red;
-  animation: rotate360 5s linear 1;
-}
+  &--second {
+    width: 2px;
+    height: 50%;
+    background-color: #f00;
+    animation: rotate360 5s linear 1;
+  }
 
-.hand-minute {
-  width: 4px;
-  height: 50%;
-  background-color: blue;
-  animation: rotate360 60s linear 5;
+  &--minute {
+    width: 4px;
+    height: 50%;
+    background-color: #000;
+    animation: rotate360 60s linear 5;
+  }
 }
 
 @keyframes rotate360 {
   100% {
-      transform: translateX(-50%) translateY(-100%) rotate(360deg);
+    transform: translateX(-50%) translateY(-100%) rotate(360deg);
   }
 }
