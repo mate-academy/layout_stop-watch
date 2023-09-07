@@ -10,19 +10,20 @@
   border: 10px dotted black;
   background-color: darkgrey;
 
-  &__center {
+  &::after {
+    content: "";
+    position: absolute;
     width: 8%;
     height: 8%;
     background-color: darkslategray;
     border-radius: $border-radius;
-    align-items: center;
-    z-index: 2;
+
+    z-index: 3;
   }
 
-  &::after {
-    content: "";
+  &__seconds {
     position: absolute;
-    top: 0;
+    align-self: flex-start;
 
     height: 50%;
     width: 2%;
@@ -33,10 +34,9 @@
     @include rotate-animation(5s);
   }
 
-  &::before {
-    content: "";
+  &__minutes {
     position: absolute;
-    top: 0;
+    align-self: flex-start;
 
     height: 50%;
     width: 4%;
