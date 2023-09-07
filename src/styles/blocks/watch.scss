@@ -10,7 +10,6 @@
     height: $size-watch-content;
     background-color: $circle-bg-color;
     border-radius: $radius;
-    opacity: 0.3;
   }
 
   &__seconds-arrow {
@@ -18,8 +17,7 @@
     height: $height-seconds-arrow;
     width: $width-seconds-arrow;
     background-color: $seconds-bg-color;
-    transform: translate($align-seconds-arrow);
-    transform-origin: bottom center;
+    transform-origin: bottom;
 
     @include animation(5s);
   }
@@ -29,10 +27,8 @@
     height: $height-hours-arrow;
     width: $width-hours-arrow;
     background-color: $hours-bg-color;
-    transform: translate($align-hours-arrow);
-    transform-origin: bottom center;
+    transform-origin: bottom;
 
     @include animation(60s);
   }
 }
-
