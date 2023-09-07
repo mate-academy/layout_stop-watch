@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: $content-width;
+  height: $content-width;
+  border: 5px dotted black;
+  border-radius: $border-radius;
+
+  &__elem {
+    display: flex;
+    margin: auto;
+
+    &--circle {
+      position: absolute;
+      z-index: 1;
+      background-color: #ffa500;
+      border-radius: $border-radius;
+      margin-top: 280px;
+      width: 40px;
+      height: 40px;
+    }
+
+    &--big {
+      background-color: #008000;
+      height: 50%;
+      left: 48.75%;
+      position: absolute;
+      top: 0%;
+      width: 2.5%;
+      @extend %animation__elem;
+      @include referral (bottom);
+      @include duration (5s);
+    }
+
+    &--little {
+      background-color: #00f;
+      height: 4%;
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      width: 25%;
+      @extend %animation__elem;
+      @include referral (left);
+      @include duration (60s);
+    }
+  }
+}
