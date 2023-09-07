@@ -1,0 +1,25 @@
+$content-width: 600px;
+$border-radius: 50%;
+
+@mixin referral ($ref) {
+  transform-origin: ($ref);
+}
+
+@mixin duration ($duration) {
+  animation-duration: ($duration);
+}
+
+@keyframes run {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+%animation__elem {
+  animation-name: run;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
