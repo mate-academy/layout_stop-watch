@@ -1,0 +1,34 @@
+.watch {
+  @include flex-center;
+  border-radius: $radius;
+  border: $watch-border-width dotted $border-color;
+  height: $size-container-watch;
+  width: $size-container-watch;
+
+  &__circle {
+    width: $size-watch-content;
+    height: $size-watch-content;
+    background-color: $circle-bg-color;
+    border-radius: $radius;
+  }
+
+  &__seconds-arrow {
+    @include absolutPosition;
+    height: $height-seconds-arrow;
+    width: $width-seconds-arrow;
+    background-color: $seconds-bg-color;
+    transform-origin: bottom;
+
+    @include animation(5s);
+  }
+
+  &__hours-arrow {
+    @include absolutPosition;
+    height: $height-hours-arrow;
+    width: $width-hours-arrow;
+    background-color: $hours-bg-color;
+    transform-origin: bottom;
+
+    @include animation(60s);
+  }
+}

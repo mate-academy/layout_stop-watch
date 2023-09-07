@@ -1,0 +1,15 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin absolutPosition {
+  position: absolute;
+  z-index: -1;
+  bottom: 50%;
+}
+
+@mixin animation($duration) {
+  animation: animate-arrow $duration linear infinite 1s;
+}
