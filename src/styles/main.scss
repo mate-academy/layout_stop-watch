@@ -1,1 +1,44 @@
-// put code here
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 5px dotted #000;
+  border-radius: 50%;
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translateX(-50%) translateY(-100%);
+}
+
+.hand-second {
+  width: 2px;
+  height: 50%;
+  background-color: red;
+  animation: rotate360 5s linear 1;
+}
+
+.hand-minute {
+  width: 4px;
+  height: 50%;
+  background-color: blue;
+  animation: rotate360 60s linear 5;
+}
+
+@keyframes rotate360 {
+  100% {
+      transform: translateX(-50%) translateY(-100%) rotate(360deg);
+  }
+}
