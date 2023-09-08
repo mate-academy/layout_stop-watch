@@ -1,0 +1,48 @@
+.watch {
+  position: relative;
+  display: flex;
+  margin: auto;
+  box-sizing: border-box;
+  height: 70vmin;
+  width: 70vmin;
+  border: 5px dotted #000;
+  border-radius: 50%;
+
+  &__centre {
+    height: 10vmin;
+    width: 10vmin;
+    position: absolute;
+    left: 70vmin / 2 - 5vmin;
+    top: 70vmin / 2 - 5vmin;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: orange;
+  }
+
+  &__hand {
+    display: flex;
+    position: absolute;
+    bottom: 50%;
+    animation-name: move;
+    transform-origin: bottom center;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    &--seconds {
+      left: 70vmin / 2 - 0.6vmin;
+      height: 34vmin;
+      width: 1.2vmin;
+      background-color: green;
+      animation-duration: 5s;
+    }
+
+    &--minutes {
+      height: 22vmin;
+      width: 3vmin;
+      left: 70vmin / 2 - 1.5vmin;
+      background-color: blue;
+      animation-duration: 60s;
+    }
+  }
+
+}
