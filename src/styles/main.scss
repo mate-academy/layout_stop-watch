@@ -1,3 +1,12 @@
+@mixin rotate($count, $time) {
+  animation: rotateHand#{$count} #{$time} linear infinite;
+  @keyframes rotateHand#{$count} {
+    100% {
+      transform: translateX(-50%) translateY(-100%) rotate(360deg);
+    }
+  }
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -7,10 +16,12 @@ body {
   padding: 0;
 }
 
+$watchSize: 80vmin;
+
 .watch {
   position: relative;
-  width: 80vmin;
-  height: 80vmin;
+  width: $watchSize;
+  height: $watchSize;
   border: 5px dotted #000;
   border-radius: 50%;
 }
@@ -26,19 +37,13 @@ body {
     width: 2px;
     height: 50%;
     background-color: #f00;
-    animation: rotate360 5s linear 1;
+    @include rotate(1, 5s);
   }
 
   &--minute {
     width: 4px;
     height: 50%;
     background-color: #000;
-    animation: rotate360 60s linear 5;
-  }
-}
-
-@keyframes rotate360 {
-  100% {
-    transform: translateX(-50%) translateY(-100%) rotate(360deg);
+    @include rotate(5, 60s);
   }
 }
