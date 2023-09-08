@@ -1,0 +1,54 @@
+.watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px dashed $color-black;
+  border-radius: $watch-radius;
+  margin: 0 auto;
+  width: $wach-size;
+  height: $wach-size;
+
+  &__center {
+    position: absolute;
+    z-index: 10;
+    border-radius: $watch-radius;
+    background: $color-yellow;
+    width: 40px;
+    height: 40px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: $hand-position;
+    height: 20vh;
+    width: 20px;
+    border-radius: $hand-radius;
+    background-color: $color-blue;
+    transform-origin: bottom;
+    animation: watch-move infinite linear 60s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    bottom: $hand-position;
+    width: 10px;
+    height: 35vh;
+    border-radius: $hand-radius;
+    background-color: $color-green;
+    transform-origin: bottom;
+    animation: watch-move infinite linear 5s;
+  }
+}
+
+@keyframes watch-move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
