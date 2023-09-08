@@ -1,1 +1,71 @@
-// put code here
+$watch-size: 80vmin;
+
+body {
+  margin: 0;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $watch-size;
+  width: $watch-size;
+  margin: auto;
+  border: 4px dotted black;
+  border-radius: 100%;
+
+  &__minute-hand {
+    position: absolute;
+    top: 5vmin;
+
+    width: 1vmin;
+    height: 35vmin;
+    background-color: green;
+
+    animation-name: move;
+    transform: rotate;
+    transition-timing-function: ease-in-out;
+    animation-duration: 6s;
+    transform-origin: bottom;
+    animation-iteration-count: infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 20vmin;
+
+    height: 20vmin;
+    width: 2vmin;
+    background-color: blue;
+
+    animation-name: move;
+    transform: rotate;
+    transition-timing-function: ease-in-out;
+    animation-duration: 60s;
+    transform-origin: bottom;
+    animation-iteration-count: infinite;
+  }
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 5vmin;
+    height: 5vmin;
+    background-color: orange;
+    border-radius: 100%;
+
+    z-index: 1;
+  }
+}
+@keyframes move {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
