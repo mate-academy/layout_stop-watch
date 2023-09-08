@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+}
+
+html {
+  font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
+}
+
+.watch {
+  position: relative;
+  box-sizing: border-box;
+  width: 80vmin;
+  height: 80vmin;
+  margin-inline: auto;
+  margin-top: calc((100vh / 2) - (80vmin / 2));
+  border: 5px solid $color-black;
+  border-radius: 50%;
+  background-color: $bg-color;
+  box-shadow: inset 0 0 48px $inner-shadow-color;
+
+  &__circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+
+    &--upper {
+      width: 7%;
+      height: 7%;
+      background-color: $color-black;
+      box-shadow: 0 0 10px $color-orange;
+    }
+
+    &--bottom {
+      width: 80%;
+      height: 80%;
+      background-color: $bg-color-bottom;
+      box-shadow: 0 0 20px $color-orange;
+      text-align: center;
+
+      &::after {
+        content: "x10";
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5vmin;
+        color: $color-orange;
+      }
+    }
+  }
+
+  &__marks {
+    position: absolute;
+    width: 1%;
+    height: 100%;
+    left: 50%;
+    background: $marks-color;
+    z-index: 0;
+
+    @each $num, $deg in $degs {
+      &--#{$num} {
+        transform: rotate(#{$deg}deg);
+      }
+    }
+  }
+
+  &__wrapper {
+    position: absolute;
+
+    &--marks {
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      transform: translateX(-0.5%);
+    }
+
+    &--hands {
+      width: 100%;
+      height: 100%;
+
+      &--sec {
+        transform: translateX(-0.5%);
+      }
+
+      &--min {
+        transform: translateX(-1%);
+      }
+
+      &--hours {
+        transform: translateX(-2%);
+      }
+    }
+  }
+
+  &__hand {
+    position: absolute;
+    left: 50%;
+    transform-origin: 50% bottom;
+    animation-iteration-count: infinite;
+    animation-name: rotate;
+    animation-timing-function: steps(60);
+    height: 50%;
+
+    &--sec {
+      width: 1%;
+      background-color: $color-sec;
+      animation-duration: 6s;
+      clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%);
+    }
+
+    &--min {
+      width: 2%;
+      background-color: $color-min;
+      animation-duration: 360s;
+      clip-path: polygon(50% 20%, 50% 20%, 100% 100%, 0 100%);
+    }
+
+    &--hours {
+      width: 4%;
+      background-color: $color-hours;
+      animation-duration: 4320s;
+      clip-path: polygon(50% 50%, 50% 50%, 100% 100%, 0 100%);
+    }
+  }
+}

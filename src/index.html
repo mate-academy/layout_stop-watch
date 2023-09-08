@@ -1,14 +1,41 @@
+<!-- #region head-->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Stop watch</title>
-    <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="stylesheet" href="./styles/index.scss">
   </head>
+  <!-- #endregion -->
   <body>
-    <h1>Stop watch</h1>
+    <div class="watch">
+      <div class="watch__wrapper watch__wrapper--marks">
+        <div class="watch__marks watch__marks--1"></div>
+        <div class="watch__marks watch__marks--2"></div>
+        <div class="watch__marks watch__marks--3"></div>
+        <div class="watch__marks watch__marks--4"></div>
+        <div class="watch__marks watch__marks--5"></div>
+        <div class="watch__marks watch__marks--6"></div>
+      </div>
+
+      <div class="watch__circle watch__circle--bottom"></div>
+
+      <div class="watch__wrapper watch__wrapper--hands watch__wrapper--hands--sec">
+        <div class="watch__hand watch__hand--sec"></div>
+      </div>
+
+      <div class="watch__wrapper watch__wrapper--hands watch__wrapper--hands--min">
+        <div class="watch__hand watch__hand--min"></div>
+      </div>
+
+      <div class="watch__wrapper watch__wrapper--hands watch__wrapper--hands--hours">
+        <div class="watch__hand watch__hand--hours"></div>
+      </div>
+
+      <div class="watch__circle watch__circle--upper"></div>
+    </div>
   </body>
 </html>
