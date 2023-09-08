@@ -1,0 +1,69 @@
+.watch {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 20px dotted #a97b50;
+  border-radius: 100%;
+  box-sizing: border-box;
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: -40px;
+    right: -40px;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    padding: 40px;
+    z-index: -1;
+    background: #eee;
+  }
+
+  &__sec-movement {
+    position: absolute;
+    @include move-sizing();
+    @include animate(60s);
+  }
+
+  &__min-movement {
+    position: absolute;
+    @include move-sizing();
+    @include animate(5s);
+
+    &:after {
+      content: "";
+      position: absolute;
+      @include move-sizing();
+      box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &__sec-hand {
+    @include hand-pos();
+    height: $clock-size/5;
+    background-color: #e9c19e;
+    box-shadow: 7px 8px 13px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  &__min-hand {
+    @include hand-pos();
+    height: $clock-size/2.2;
+    background-color: #ffeccf;
+    box-shadow: 7px 8px 13px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  @keyframes move {
+    0% {
+      transform: none;
+    }
+    100% {
+      transform: rotate(360deg);
+      transform-origin: center;
+    }
+  }
+}
