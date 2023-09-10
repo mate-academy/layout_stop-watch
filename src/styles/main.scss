@@ -42,7 +42,7 @@ $one-sec: 6deg;
     bottom: $hands-position;
     z-index: 0;
 
-    animation: hands-anim 3600s steps(60) infinite 7s;
+    animation: hands-anim 3600s steps(60) infinite;
   }
 
   &__hand--sec {
@@ -52,11 +52,7 @@ $one-sec: 6deg;
     position: absolute;
     bottom: $hands-position;
     z-index: 1;
-    animation-name: hands-anim, fivesec-anim;
-    animation-duration: 60s, 5s;
-    animation-delay: 7s, 0s;
-    animation-timing-function: steps(60), steps(5);
-    animation-iteration-count: infinite, 1;
+    animation: hands-anim 60s steps(60) infinite;
   }
 
   @keyframes hands-anim {
@@ -67,18 +63,6 @@ $one-sec: 6deg;
 
     to {
       transform: rotate(60*$one-sec);
-      transform-origin: bottom;
-    }
-  }
-
-  @keyframes fivesec-anim {
-    from {
-      transform: rotate(0deg);
-      transform-origin: bottom;
-    }
-
-    to {
-      transform: rotate(5*$one-sec);
       transform-origin: bottom;
     }
   }
