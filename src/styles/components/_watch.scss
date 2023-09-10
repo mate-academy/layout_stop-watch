@@ -1,0 +1,52 @@
+.watch {
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  border: dotted 10px $color-dots;
+  position:relative;
+  background-color: $color-base;
+
+  &__hour-arrow {
+    position:absolute;
+    top: 22vmin;
+    left: 38vmin;
+    width: 4vmin;
+    height: 20vmin;
+    border-radius: 2vmin;
+    background-color: $color-hour;
+    transform-origin: 2vmin 18vmin;
+    animation: clock 60s linear infinite;
+  }
+
+  &__min-arrow {
+    position:absolute;
+    top: 1vmin;
+    left: 39vmin;
+    width: 2vmin;
+    height: 40vmin;
+    background-color: $color-minute;
+    border-radius: 1vmin;
+    transform-origin: 1vmin 39vmin;
+    animation: clock 5s linear infinite;
+  }
+
+  &__center {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 4.5vmin;
+    height: 4.5vmin;
+    background-color: $color-dots;
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
