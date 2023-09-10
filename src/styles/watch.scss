@@ -1,11 +1,3 @@
-body {
-  margin: 0;
-}
-
-html {
-  font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
-}
-
 .watch {
   position: relative;
   box-sizing: border-box;
@@ -40,7 +32,7 @@ html {
       text-align: center;
 
       &::after {
-        content: "x10";
+        content: "x25";
         position: absolute;
         top: 75%;
         left: 50%;
@@ -106,21 +98,21 @@ html {
     &--sec {
       width: 1%;
       background-color: $color-sec;
-      animation-duration: 6s;
+      animation-duration: #{60 / $speed-multiplier}s;
       clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%);
     }
 
     &--min {
       width: 2%;
       background-color: $color-min;
-      animation-duration: 360s;
+      animation-duration: #{60 * 60 / $speed-multiplier}s;
       clip-path: polygon(50% 20%, 50% 20%, 100% 100%, 0 100%);
     }
 
     &--hours {
       width: 4%;
       background-color: $color-hours;
-      animation-duration: 4320s;
+      animation-duration: #{60 * 60 * 12 / $speed-multiplier}s;
       clip-path: polygon(50% 50%, 50% 50%, 100% 100%, 0 100%);
     }
   }
