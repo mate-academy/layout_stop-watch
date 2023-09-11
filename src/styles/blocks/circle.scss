@@ -1,0 +1,51 @@
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: auto;
+  margin-top: 10vh;
+  width: $circleSize;
+  height: $circleSize;
+  border: 5px dotted #000;
+  border-radius: 50%;
+
+  &__firstHand {
+    position: $handsPosition;
+    display: flex;
+    align-self: flex-start;
+    height: $circleSize / 2;
+    width: $circleSize / 70;
+    background-color: green;
+    animation: round 5s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__secondHand {
+    position: $handsPosition;
+    height: $circleSize / 4;
+    width: $circleSize / 30;
+    background-color: blue;
+    margin-bottom: $circleSize / 4;
+    animation: round 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__centre {
+    width: $circleSize / 15;
+    height: $circleSize / 15;
+    border-radius: 50%;
+    background-color: orange;
+    z-index: 0;
+  }
+}
+
+@keyframes round {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
