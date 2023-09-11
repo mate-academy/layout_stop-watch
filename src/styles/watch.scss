@@ -108,7 +108,7 @@
 
       background-color: $color-sec;
 
-      animation-duration: #{60 / $speed-multiplier}s;
+      animation-duration: #{$time-sec / $speed-multiplier}s;
     }
 
     &--min {
@@ -117,7 +117,7 @@
 
       background-color: $color-min;
 
-      animation-duration: #{60 * 60 / $speed-multiplier}s;
+      animation-duration: #{$time-sec * $time-min / $speed-multiplier}s;
     }
 
     &--hours {
@@ -126,7 +126,9 @@
 
       background-color: $color-hours;
 
-      animation-duration: #{60 * 60 * 12 / $speed-multiplier}s;
+      animation-duration: #{
+        $time-sec * $time-min * $time-hrs
+        / $speed-multiplier}s;
     }
   }
 }
