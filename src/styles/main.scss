@@ -1,11 +1,5 @@
-@mixin rotate($count, $time) {
-  animation: rotateHand#{$count} #{$time} linear infinite;
-  @keyframes rotateHand#{$count} {
-    100% {
-      transform: translateX(-50%) translateY(-100%) rotate(360deg);
-    }
-  }
-}
+@import '_vars';
+@import '_mixins';
 
 body {
   display: flex;
@@ -16,34 +10,34 @@ body {
   padding: 0;
 }
 
-$watchSize: 80vmin;
-
 .watch {
   position: relative;
   width: $watchSize;
   height: $watchSize;
   border: 5px dotted #000;
   border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%) translateY(-100%);
+
+    &--second {
+      width: 2px;
+      height: 50%;
+      background-color: #f00;
+      @include rotate(1, 5s);
+    }
+
+    &--minute {
+      width: 4px;
+      height: 50%;
+      background-color: #000;
+      @include rotate(5, 60s);
+    }
+  }
 }
 
-.hand {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: bottom center;
-  transform: translateX(-50%) translateY(-100%);
 
-  &--second {
-    width: 2px;
-    height: 50%;
-    background-color: #f00;
-    @include rotate(1, 5s);
-  }
-
-  &--minute {
-    width: 4px;
-    height: 50%;
-    background-color: #000;
-    @include rotate(5, 60s);
-  }
-}
