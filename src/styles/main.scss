@@ -1,1 +1,58 @@
-// put code here
+.watch {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 8px dotted black;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+
+  &__point {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: orange;
+    z-index: 2;
+  }
+
+  &__minute-hand,
+  &__second-hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: top center;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  &__minute-hand {
+    height: 100px;
+    width: 15px;
+    background-color: blue;
+    animation-name: move;
+    animation-duration: 60s;
+  }
+
+  &__second-hand {
+    width: 7px;
+    height: 250px;
+    background-color: green;
+    animation-name: move;
+    animation-duration: 5s;
+  }
+
+  @keyframes move {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
