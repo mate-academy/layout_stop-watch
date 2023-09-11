@@ -1,1 +1,66 @@
-// put code here
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+
+  &__arrows {
+    background-color: #fff;
+    width: 300px;
+    height: 300px;
+    border: 5px #000 dotted;
+    border-radius: 100%;
+    list-style: none;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  &__arrow {
+    position: absolute;
+    height: 4px;
+    width: 40%;
+    right: 50%;
+    top: calc(50% - 4px);
+    border-radius: 40px;
+
+    transform-origin: right center;
+  }
+
+  &__arrows--minute {
+    width: 40%;
+    background-color: #000;
+
+    animation: rotateAr 10s infinite linear;
+    animation-duration: 5s;
+  }
+
+  &__arrows--second {
+    width: 25%;
+    background-color: #008000;
+    animation: rotateAr 60s infinite linear;
+    animation-duration: 60s;
+  }
+
+  &__arrows::before {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ffff00;
+    left: calc(50% - 4px);
+    top: calc(50% - 4px);
+    z-index: 1;
+  }
+
+  @keyframes rotateAr {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
