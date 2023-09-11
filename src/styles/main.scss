@@ -2,8 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  margin-top: 50px;
+  width: 80vmin;
+  height: 80vmin;
+  margin: 0 auto;
 
   &__arrows {
     background-color: #fff;
@@ -31,15 +32,14 @@
     width: 40%;
     background-color: #000;
 
-    animation: rotateAr 10s infinite linear;
+    animation: rotateAr 3600s infinite steps(60);
     animation-duration: 5s;
   }
 
   &__arrows--second {
     width: 25%;
     background-color: #008000;
-    animation: rotateAr 60s infinite linear;
-    animation-duration: 60s;
+    animation: rotateAr 60s infinite steps(60);
   }
 
   &__arrows::before {
