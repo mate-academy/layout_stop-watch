@@ -1,30 +1,29 @@
 .clock {
   position: relative;
-  box-sizing: border-box;
   height: $clockSize;
   width: $clockSize;
   margin: 50px auto;
 
   border-radius: 50%;
-  background-color: ghostwhite;
+  background-color: #f8f8ff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
-  &__circle {
+  &::after {
+    content: "";
     position: relative;
-    top: 50%;
-    left: 50%;
-    width: $circleSize;
-    height: $circleSize;
+    top: calc(50% - var(--circleSize) / 2);
+    left: calc(50% - var(--circleSize) / 2);
+
+    display: inline-block;
+    width: var(--circleSize);
+    height: var(--circleSize);
 
     border-radius: 50%;
-    background-color: saddlebrown;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+    background-color: #8b4513;
   }
 
   &__arrows {
     position: absolute;
-    left: 50%;
 
     transform-origin: bottom;
     animation-name: rotate;
@@ -33,19 +32,21 @@
 
     &--seconds {
       top: 4%;
-      width: $secondsWidth;
+      left: calc(50% - var(--secondsWidth) /  2);
+      width: 5px;
       height: 46%;
 
-      background-color: darkgray;
+      background-color: #a9a9a9;
       animation-duration: 5s;
     }
 
     &--minutes {
       top: 25%;
-      width: $minutesWidth;
+      left: calc(50% - var(--minutesWidth) / 2);
+      width: var(--minutesWidth);
       height: 25%;
 
-      background-color: lightslategrey;
+      background-color: #778899;
       animation-duration: 60s;
     }
   }
