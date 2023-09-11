@@ -1,0 +1,8 @@
+@mixin rotate($count, $time) {
+  animation: rotateHand#{$count} #{$time} linear infinite;
+  @keyframes rotateHand#{$count} {
+    100% {
+      transform: translateX(-50%) translateY(-100%) rotate(360deg);
+    }
+  }
+}
