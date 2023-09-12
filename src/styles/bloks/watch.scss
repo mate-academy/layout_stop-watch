@@ -1,0 +1,52 @@
+.stop_watch {
+  width: 80vh;
+  height: 80vh;
+  background-color: rgb(245, 218, 218);
+  border-radius: 50%;
+  position: relative;
+  border: 10px dotted #7c4d4d;
+
+  &-center {
+    width: 5vh;
+    height: 5vh;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-minuts {
+    width: 2%;
+    height: 40%;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    @include rotate-animation(60s);
+    position: absolute;
+    transform-origin: 50% 100%;
+    background-color: #333;
+  }
+
+  &-seconds {
+    position: absolute;
+    transform-origin: 50% 100%;
+    width: 1%;
+    height: 45%;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    @include rotate-animation(5s);
+    background-color: #333;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

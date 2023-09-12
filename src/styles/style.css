@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.stop_watch {
+  width: 80vh;
+  height: 80vh;
+  background-color: rgb(245, 218, 218);
+  border-radius: 50%;
+  position: relative;
+  border: 10px dotted #7c4d4d;
+}
+
+.stop_watch-center {
+  width: 5vh;
+  height: 5vh;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stop_watch-minuts {
+  width: 2%;
+  height: 40%;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: rotate 60s infinite linear;
+  position: absolute;
+  transform-origin: 50% 100%;
+  background-color: #333;
+}
+
+.stop_watch-seconds {
+  position: absolute;
+  transform-origin: 50% 100%;
+  width: 1%;
+  height: 45%;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: rotate 5s infinite linear;
+  background-color: #333;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
