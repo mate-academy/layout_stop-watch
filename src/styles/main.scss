@@ -1,1 +1,59 @@
-// put code here
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.clock {
+  display: flex;
+  height: 80vmin;
+  width: 80vmin;
+  border: 6px dotted #000;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__center {
+    z-index: 1;
+    height: 5vmin;
+    width: 5vmin;
+    border: 1px solid orange;
+    background-color: orange;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+    transition-timing-function: linear;
+    animation-name: move;
+    animation-iteration-count: infinite;
+
+    &--minutes {
+      height: 20vmin;
+      width: 18px;
+      background-color: blue;
+      position: absolute;
+      animation-duration: 60s;
+    }
+
+    &--seconds {
+      height: 40vmin;
+      width: 9px;
+      background-color: green;
+      animation-duration: 5s;
+    }
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
