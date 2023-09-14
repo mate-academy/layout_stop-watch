@@ -1,1 +1,77 @@
-// put code here
+@import "reset.scss";
+
+$clock-size: 80vmin;
+$holder-size: 48px;
+
+$min-width: 16px;
+$min-height: calc(#{$clock-size} / 2 - #{$min-width} / 2);
+$min-time: 5s;
+
+$hour-width: 32px;
+$hour-height: calc((#{$clock-size} / 2 - #{$hour-width} / 2) / 2);
+$hout-time: 60s;
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  position: relative;
+  height: $clock-size;
+  width: $clock-size;
+
+  border: 5px dotted black;
+  border-radius: 50%;
+
+  &__pointer {
+    position: absolute;
+    transform-origin: bottom;
+
+    &--min {
+      right: calc(50% - #{$min-width} / 2);
+
+      height: $min-height;
+      width: $min-width;
+
+      background-color: aqua;
+
+      animation: $min-time linear infinite spin;
+    }
+
+    &--hour {
+      right: calc(50% - #{$hour-width} / 2);
+      top: calc(50% - #{$hour-height});
+
+      height: $hour-height;
+      width: $hour-width;
+      background-color: blanchedalmond;
+
+      animation: $hout-time linear infinite spin;
+    }
+  }
+
+  &__pointer-holder {
+    position: absolute;
+    top: calc(50% - #{$holder-size} / 2);
+    right: calc(50% - #{$holder-size} / 2);
+    z-index: 1;
+
+    height: $holder-size;
+    width: $holder-size;
+
+    background-color: yellow;
+    border-radius: 50%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
