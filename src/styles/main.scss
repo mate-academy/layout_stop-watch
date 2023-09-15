@@ -1,1 +1,55 @@
-// put code here
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whatch {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border: 6px dotted #000;
+  border-radius: 50%;
+
+  &__hand--big {
+    height: 125px;
+    width: 16px;
+    border-radius: 5px 5px 0 0;
+    background-color: rgb(50, 68, 226);
+    position: absolute;
+    top: 125px;
+    left: 236px;
+    z-index: 2;
+    animation-name: rotate;
+    animation-duration: 60s;
+  }
+
+  &__hand--small {
+    height: 245px;
+    width: 8px;
+    background-color: rgb(237, 103, 35);
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    top: 5px;
+    left: 240px;
+    animation-name: rotate;
+    animation-duration: 5s;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+      transform-origin: bottom center;
+    }
+
+    to {
+      transform: rotate(360deg);
+      transform-origin: bottom center;
+    }
+  }
+}
