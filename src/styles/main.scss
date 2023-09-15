@@ -1,1 +1,80 @@
-// put code here
+$distance: 80vmin;
+$diameter: 0.04 * $distance;
+$height: 0.48 * $distance;
+$width: 0.01 * $distance;
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 4px dotted #000;
+  height: $distance;
+  width: $distance;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    background-color: yellow;
+    border: $diameter solid yellow;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    display: flex;
+    justify-content: center;
+
+    &-big {
+      position: absolute;
+      height: $height;
+      width: $width;
+      background-color: green;
+      transform-origin: top;
+      transform: translateY(-100%);
+      animation-name: moveSmallHand;
+      animation-duration: 5s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 12;
+      animation-timing-function: linear;
+    }
+
+    &-small {
+      position: absolute;
+      height: $height / 1.5;
+      width: $width * 2;
+      background-color: blue;
+      transform-origin: top;
+      transform: translateY(-100%) rotate(-150deg);
+      animation-name: moveBigHand;
+      animation-duration: 60s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+  }
+}
+
+@keyframes moveSmallHand {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes moveBigHand {
+  0% {
+    transform: rotate(-150deg);
+  }
+
+  100% {
+    transform: rotate(210deg);
+  }
+}
