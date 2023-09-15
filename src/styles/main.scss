@@ -1,1 +1,117 @@
-// put code here
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.clock {
+  position: absolute;
+  height: 80vmin;
+  width: 80vmin;
+  background: #fff8dc;
+  border: 20px solid brown;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.clock::before {
+  position: absolute;
+  content: "";
+  height: 280px;
+  width: 15px;
+  background-color: black;
+  top: 50%;
+  left: calc(50% - 5px);
+  border-radius: 7px;
+  animation: spin 5s linear infinite;
+  transform-origin: top;
+}
+
+.clock::after {
+  position: absolute;
+  content: "";
+  height: 140px;
+  width: 15px;
+  background-color: black;
+  top: 50%;
+  left: calc(50% - 5px);
+  border-radius: 7px;
+  animation: spin 60s linear infinite;
+  transform-origin: top;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+body::before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;
+  background-color: #b22222;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.top {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #708090;
+  left: 50%;
+  top: calc(50% - 275px);
+  z-index: 2;
+  transform: translate(-50%);
+}
+
+.bottom {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #708090;
+  left: 50%;
+  top: calc(50% + 260px);
+  z-index: 2;
+  transform: translate(-50%);
+}
+
+.left {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #708090;
+  left: calc(50% - 280px);
+  top: 50%;
+  z-index: 2;
+  transform: translate(10%);
+}
+
+.right {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #708090;
+  left: calc(50% + 275px);
+  top: 50%;
+  z-index: 2;
+  transform: translate(-90%);
+}
