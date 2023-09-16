@@ -13,7 +13,7 @@ body {
   position: relative;
   height: 80vmin;
   width: 80vmin;
-  border: 6px dotted #000;
+  border: 10px dotted #61615e;
   border-radius: 50%;
 
   &__bighand {
@@ -25,8 +25,7 @@ body {
     top: 25%;
     left: 48%;
     z-index: 2;
-    animation-name: rotate;
-    animation-duration: 60s;
+    animation: 60s linear infinite rotate;
   }
 
   &__smallhand {
@@ -37,8 +36,18 @@ body {
     position: absolute;
     top: 0;
     left: 49%;
-    animation-name: rotate;
-    animation-duration: 5s;
+    animation: 5s linear infinite rotate;
+  }
+
+  &__axis {
+    position: absolute;
+    top: 47.5%;
+    left: 47.5%;
+    z-index: 3;
+    height: 5%;
+    width: 5%;
+    background-color: #c1e50a;
+    border-radius: 50%;
   }
 
   @keyframes rotate {
