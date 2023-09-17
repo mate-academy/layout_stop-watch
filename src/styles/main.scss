@@ -1,1 +1,88 @@
-// put code here
+@import "variables";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  margin: auto;
+  width: $width-watch;
+  height: 100vh;
+  align-items: center;
+}
+
+.watch {
+  width: $width-watch;
+  height: $height-watch;
+  border: 7px dotted black;
+  border-radius: 50%;
+  position: relative;
+
+  &__circle {
+    width: 0.06 * $width-watch;
+    height: 0.06 * $width-watch;
+    background: orange;
+    border-radius: 50%;
+    position: relative;
+    top: 0.46 * $width-watch;
+    left: 0.46 * $width-watch;
+    z-index: 1;
+  }
+
+  &__second {
+    width: 0.01 * $width-watch;
+    height: 0.48 * $width-watch;
+    background: green;
+    position: absolute;
+    top: 0.01 * $width-watch;
+    left: 0.48 * $width-watch;
+    animation: move 5s infinite steps(12);
+    transform-origin: bottom center;
+  }
+
+  &__minute {
+    width: 0.03 * $width-watch;
+    height: 0.25 * $width-watch;
+    background: blue;
+    position: absolute;
+    top: 0.24 * $width-watch;
+    left: 0.47 * $width-watch;
+    animation: move 60s infinite steps(60);
+    transform-origin: bottom center;
+  }
+
+  &__digit {
+    position: absolute;
+    font-weight: bold;
+    font-size: 0.2 * $width-watch;
+    color: blue;
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.digit--12 {
+  top: 0.01 * $width-watch;
+  left: 0.39 * $width-watch;
+}
+
+.digit--3 {
+  top: 0.37 * $width-watch;
+  left: 0.82 * $width-watch;
+}
+
+.digit--6 {
+  top: 0.75 * $width-watch;
+  left: 0.45 * $width-watch;
+}
+
+.digit--9 {
+  top: 0.38 * $width-watch;
+  left: 0.04 * $width-watch;
+}
