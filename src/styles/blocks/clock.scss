@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container-clock {
+  height: 100vh;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  display: flex;
+  width: $width-clock;
+  height: $height-clock;
+  z-index: 2;
+  background-color: $background-color-clock;
+
+  border: $border-clock-values;
+  border-radius: 50%;
+
+  &__circle--2 {
+    width: $size-circle--2;
+    height: $size-circle--2;
+    border-radius: 50%;
+    position: absolute;
+
+    border: 25px dotted black;
+    right: $height-clock * 0.17;
+    top: $height-clock * 0.24;
+    z-index: -1;
+  }
+
+  &__circle {
+    position: relative;
+    width: $size-circle;
+    height: $size-circle;
+    box-sizing: border-box;
+    background-color: transparent;
+    z-index: 1;
+
+    top: $position-circle;
+    left: $position-circle;
+    border: $border-clock-values;
+    border-radius: 50%;
+  }
+
+  &__minutes {
+    position: absolute;
+    width: $width-arrow;
+    height: $height-clock * 0.44;
+    border-radius: $border-radius-arrow;
+    background-color: black;
+
+    animation: move infinite 60s steps(12);
+    transform-origin: bottom;
+
+    border: $border-values-arrow;
+    top: $width-clock * 0.26;
+    left: $left-arrow;
+  }
+
+  &__seconds {
+    position: absolute;
+    width: $width-arrow;
+    height: $height-clock * 0.3;
+    border-radius: $border-radius-arrow;
+    background-color: black;
+
+    animation: move infinite 5s steps(60);
+    transform-origin: bottom center;
+
+    border: $border-values-arrow;
+    top: $width-clock * 0.4;
+    left: $left-arrow;
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: rotate(360deg);
+  }
+}
