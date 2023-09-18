@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
@@ -26,19 +30,20 @@ body {
     height: 7px;
     width: 25%;
     background-color: $M-color;
-    top: $top;
+    top: 50%;
     left: 25%;
-    animation: rotateMinuteHand 60s linear infinite;
+    margin: 0 auto;
+    animation: rotateHand 60s linear infinite;
   }
 
   &--second {
     height: 4px;
-    width: 130px;
+    width: 45%;
     background-color: $S-color;
-    top: $top;
-    left: 20px;
-    transform: rotateX("angle");
-    animation: rotateSecondHand 5s linear infinite;
+    top: 50%;
+    left: 5%;
+    margin: 0 auto;
+    animation: rotateHand 5s linear infinite;
   }
 
   &--point {
@@ -46,22 +51,13 @@ body {
     width: 20px;
     border-radius: 50%;
     background-color: $P-color;
-    top: $top;
+    top: 50%;
     left: 50%;
     transform: rotateX("angle");
   }
 }
 
-@keyframes rotateMinuteHand {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotateSecondHand {
+@keyframes rotateHand {
   from {
     transform: rotate(0deg);
   }
