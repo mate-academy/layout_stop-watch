@@ -1,0 +1,29 @@
+@mixin hands_common_options {
+  position: absolute;
+  bottom: 50%;
+
+  animation-name: hands--move;
+  animation-timing-function: steps(60);
+  transform-origin: bottom;
+}
+
+@mixin hands_individual_options($width, $height, $back-col) {
+  width: $width;
+  height: $height;
+  background-color: $back-col;
+}
+
+@mixin hands_animation_options($cycle_time) {
+  animation-duration: $cycle_time;
+}
+
+@keyframes hands--move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+    animation-iteration-count: infinite;
+  }
+}
