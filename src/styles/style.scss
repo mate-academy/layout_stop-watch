@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.stopwatch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 1px dotted $border-color;
+  border-radius: 50%;
+  position: relative;
+}
+
+.hand {
+  position: absolute;
+  transform-origin: right;
+  transform: translate(-50%, -50%);
+
+  &--minute {
+    height: 7px;
+    width: 25%;
+    background-color: $M-color;
+    top: 50%;
+    left: 25%;
+    margin: 0 auto;
+    animation: rotateHand 60s linear infinite;
+  }
+
+  &--second {
+    height: 4px;
+    width: 45%;
+    background-color: $S-color;
+    top: 50%;
+    left: 5%;
+    margin: 0 auto;
+    animation: rotateHand 5s linear infinite;
+  }
+
+  &--point {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: $P-color;
+    top: 50%;
+    left: 50%;
+    transform: rotateX("angle");
+  }
+}
+
+@keyframes rotateHand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
