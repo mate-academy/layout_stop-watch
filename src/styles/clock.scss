@@ -7,8 +7,8 @@ body {
 
 .clock {
   display: flex;
-  height: 500px;
-  width: 500px;
+  height: 80vmin;
+  width: 80vmin;
   background-color: grey;
   border: 5px dotted black;
   border-radius: 100%;
@@ -29,11 +29,11 @@ body {
 .sec-hand {
   @include hands_individual_options(6px, 50%, green);
   @include hands_common_options;
-  @include hands_animation_options(60s);
+  @include hands_animation_options(5s, linear);
 }
 
 .min-hand {
   @include hands_individual_options(8px, 25%, blue);
   @include hands_common_options;
-  @include hands_animation_options(3600s)
+  @include hands_animation_options(60s, steps(60));
 }
