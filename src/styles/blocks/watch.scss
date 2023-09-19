@@ -1,0 +1,53 @@
+.watch {
+  position: relative;
+  margin: auto;
+  top: 10vmin ;
+
+  height: 80vmin;
+  width: 80vmin;
+
+  border: 1.7vmin dotted black;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    left: (100% - $centerDiameter)/2;
+    top: (100% - $centerDiameter)/2;
+
+    width: $centerDiameter;
+    height: $centerDiameter;
+
+    background: orange;
+    border-radius: 50%;
+
+    z-index: 10;
+  }
+
+  &__hours {
+    position: absolute;
+    left: (100% - $hoursWidth)/2;
+    top: (50% - $hoursHeight);
+
+    width: $hoursWidth;
+    height: $hoursHeight;
+
+    background: blue;
+
+    transform-origin: center bottom;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    left: (100% - $secondsWidth)/2;
+    top: (50% - $secondsHeight);
+
+    width: $secondsWidth;
+    height: $secondsHeight;
+
+    background: green;
+
+    transform-origin: center bottom;
+    animation: rotate 5s linear infinite;
+  }
+}
