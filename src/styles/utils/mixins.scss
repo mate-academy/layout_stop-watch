@@ -1,0 +1,13 @@
+@mixin rotateHands ($period, $position) {
+  animation: rotate #{$period} infinite linear;
+  transform-origin: #{$position};
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.watch {
+  width: $watch_size;
+  height: $watch_size;
+  border-radius: 50%;
+  border: 2px dashed black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__center {
+    position: relative;
+    z-index: 1;
+    width: $watch_size / 20;
+    height: $watch_size / 20;
+    border-radius: 50%;
+    background-color: yellow;
+  }
+
+  &__min {
+    position: absolute;
+    right: 50%;
+    width: $watch_size / 3;
+    height: 5px;
+    background-color: blue;
+
+    @include rotateHands(60s, "right");
+
+  }
+
+  &__sec {
+    position: absolute;
+    left: 50%;
+    width: $watch_size / 2.1;
+    height: 3px;
+    background-color: green;
+
+    @include rotateHands(5s, "left");
+  }
+
+}
