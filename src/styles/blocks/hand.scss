@@ -1,0 +1,45 @@
+.hand {
+  box-sizing: border-box;
+  transform-origin: bottom;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &--minute {
+    width: 16px;
+    height: 30%;
+    border: thick double blue;
+    top: 20%;
+    left: 49%;
+    animation: rotateHand 60s linear infinite;
+  }
+
+  &--second {
+    width: 8px;
+    height: 45%;
+    border: rgb(255, 0, 0) 3px solid;
+    top: 5%;
+    left: 49%;
+    animation: rotateHand 5s linear infinite;
+  }
+
+  &--point {
+    background: yellow;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes rotateHand {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
