@@ -16,30 +16,30 @@ body {
   margin: 50px 350px;
 
   &__minute {
-    width: 15px;
-    height: 100px;
+    width: 10px;
+    height: 20%;
     background-color: blue;
     position: absolute;
     top: 30%;
-    left: 49%;
-    animation: minute linear 300s infinite;
+    left: 50%;
+    animation: move linear 60s infinite;
   }
 
   &__second {
-    width: 10px;
-    height: 150px;
+    width: 5px;
+    height: 49%;
     background-color: rgb(36, 109, 36);
     position: absolute;
-    top: 25%;
+    top: 1%;
     left: 50%;
-    animation: minute  linear 60s infinite;
+    animation: move  linear 5s infinite;
   }
 
   &__dot {
     border: 1px solid yellow;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     background-color: yellow;
     position: absolute;
     top: 50%;
@@ -48,11 +48,11 @@ body {
   }
 }
 
-@keyframes minute {
+@keyframes move {
   from {
-    transform: rotate(0deg);
+    transform: translateX(-50%) rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(-50%) rotate(360deg);
   }
 }
