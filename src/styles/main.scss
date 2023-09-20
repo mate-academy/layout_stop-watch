@@ -1,1 +1,58 @@
-// put code here
+body {
+  margin: 0;
+}
+
+.line {
+  transform-origin: center bottom;
+  transform: rotate(0deg);
+}
+
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 3px dotted black;
+  border-radius: 50%;
+  position: relative;
+  margin: 50px 350px;
+
+  &__minute {
+    width: 10px;
+    height: 20%;
+    background-color: blue;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    animation: move linear 60s infinite;
+  }
+
+  &__second {
+    width: 5px;
+    height: 49%;
+    background-color: rgb(36, 109, 36);
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    animation: move  linear 5s infinite;
+  }
+
+  &__dot {
+    border: 1px solid yellow;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
