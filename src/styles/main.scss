@@ -1,1 +1,66 @@
-// put code here
+body {
+  margin: 0;
+}
+
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 3px dotted black;
+  border-radius: 50%;
+  position: relative;
+
+    &__length__minute {
+      width: 20px;
+      height: 85px;
+      background-color: blue;
+      position: absolute;
+      top: 26vmin;
+      left: 38vmin;
+      animation: minute linear 300s infinite;
+      transform-origin: center bottom;
+      transform: rotate(0deg);
+    }
+
+    &__length__second {
+      width: 10px;
+      height: 150px;
+      background-color: green;
+      position: absolute;
+      top: 16vmin;
+      left: 37.5vmin;
+      animation: seconds  linear 60s infinite;
+      transform-origin: center bottom;
+      transform: rotate(0deg);
+    }
+
+
+  &__dot {
+    border: 1px solid yellow;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    position: absolute;
+    top: 35vmin;
+    left: 35vmin;
+  }
+
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minute {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
