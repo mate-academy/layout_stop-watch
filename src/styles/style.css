@@ -5,21 +5,23 @@
   height: 100vh;
   margin: 0;
   background-color: #f0f0f0;
+  box-sizing: border-box;
 }
 
 .stop_watch {
-  width: 80vh;
-  height: 80vh;
+  width: 80vmin;
+  height: 80vmin;
   background-color: rgb(245, 218, 218);
   border-radius: 50%;
   position: relative;
-  border: 10px dotted #7c4d4d;
+  border: 10px dotted rgb(167, 45, 45);
 }
 
 .stop_watch-center {
+  z-index: 1;
   width: 5vh;
   height: 5vh;
-  background-color: #333;
+  background-color: rgb(154, 99, 99);
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -29,29 +31,31 @@
 
 .stop_watch-minuts {
   width: 2%;
-  height: 40%;
-  top: 10%;
+  height: 20%;
+  top: 30%;
   left: 50%;
-  transform: translateX(-50%);
-  animation: rotate 60s infinite linear;
   position: absolute;
+  background-color: rgb(51, 36, 36);
+  border-radius: 40%;
   transform-origin: 50% 100%;
-  background-color: #333;
+  transform: translateX(-50%);
+  animation: rotate-an 60s linear infinite;
 }
 
 .stop_watch-seconds {
-  position: absolute;
-  transform-origin: 50% 100%;
   width: 1%;
-  height: 45%;
-  top: 5%;
+  height: 40%;
+  top: 10%;
   left: 50%;
+  position: absolute;
+  background-color: rgb(51, 36, 36);
+  border-radius: 40%;
+  transform-origin: 50% 100%;
   transform: translateX(-50%);
-  animation: rotate 5s infinite linear;
-  background-color: #333;
+  animation: rotate-an 5s linear infinite;
 }
 
-@keyframes rotate {
+@keyframes rotate-an {
   from {
     transform: rotate(0deg);
   }
