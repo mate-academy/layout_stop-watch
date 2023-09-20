@@ -8,31 +8,31 @@ body {
   border: 3px dotted black;
   border-radius: 50%;
   position: relative;
+  margin: 50px;
 
-    &__length__minute {
-      width: 20px;
-      height: 85px;
-      background-color: blue;
-      position: absolute;
-      top: 26vmin;
-      left: 38vmin;
-      animation: minute linear 300s infinite;
-      transform-origin: center bottom;
-      transform: rotate(0deg);
-    }
+  &__minute {
+    width: 15px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    top: 24.4vmin;
+    left: 38vmin;
+    animation: minute linear 300s infinite;
+    transform-origin: center bottom;
+    transform: rotate(0deg);
+  }
 
-    &__length__second {
-      width: 10px;
-      height: 150px;
-      background-color: green;
-      position: absolute;
-      top: 16vmin;
-      left: 37.5vmin;
-      animation: seconds  linear 60s infinite;
-      transform-origin: center bottom;
-      transform: rotate(0deg);
-    }
-
+  &__second {
+    width: 10px;
+    height: 150px;
+    background-color: rgb(36, 109, 36);
+    position: absolute;
+    top: 16vmin;
+    left: 37.5vmin;
+    animation: seconds  linear 60s infinite;
+    transform-origin: center bottom;
+    transform: rotate(0deg);
+  }
 
   &__dot {
     border: 1px solid yellow;
@@ -44,7 +44,6 @@ body {
     top: 35vmin;
     left: 35vmin;
   }
-
 }
 
 @keyframes seconds {
