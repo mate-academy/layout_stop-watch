@@ -2,24 +2,27 @@ body {
   margin: 0;
 }
 
+.line {
+  transform-origin: center bottom;
+  transform: rotate(0deg);
+}
+
 .watch {
   width: 80vmin;
   height: 80vmin;
   border: 3px dotted black;
   border-radius: 50%;
   position: relative;
-  margin: 50px;
+  margin: 50px 350px;
 
   &__minute {
     width: 15px;
     height: 100px;
     background-color: blue;
     position: absolute;
-    top: 24.4vmin;
-    left: 38vmin;
+    top: 30%;
+    left: 49%;
     animation: minute linear 300s infinite;
-    transform-origin: center bottom;
-    transform: rotate(0deg);
   }
 
   &__second {
@@ -27,11 +30,9 @@ body {
     height: 150px;
     background-color: rgb(36, 109, 36);
     position: absolute;
-    top: 16vmin;
-    left: 37.5vmin;
-    animation: seconds  linear 60s infinite;
-    transform-origin: center bottom;
-    transform: rotate(0deg);
+    top: 25%;
+    left: 50%;
+    animation: minute  linear 60s infinite;
   }
 
   &__dot {
@@ -41,17 +42,9 @@ body {
     height: 50px;
     background-color: yellow;
     position: absolute;
-    top: 35vmin;
-    left: 35vmin;
-  }
-}
-
-@keyframes seconds {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
