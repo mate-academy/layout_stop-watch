@@ -1,0 +1,56 @@
+.hand {
+  position: absolute;
+  left: 50%;
+
+  box-sizing: border-box;
+
+  transform-origin: bottom;
+  transform: translateX(-50%);
+
+  &--minute {
+    top: 50% - $minuteHeight;
+    left: (100% - $minuteWidth) /2;
+
+    width: $minuteWidth;
+    height: $minuteHeight;
+
+    border: 3px solid #89cfef;
+
+    animation: rotate 60s linear infinite;
+  }
+
+  &--second {
+    top: 50% - $secondHeight;
+    left: (100% - $secondWidth) /2;
+
+    width: $secondWidth;
+    height: $secondHeight;
+
+    border: 3px solid #98fb98;
+
+    animation: rotate 5s linear infinite;
+  }
+
+  &--point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: $pointWidth;
+    height: $pointWidth;
+
+    background-color: #e6e600;
+    border-radius: 50%;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
