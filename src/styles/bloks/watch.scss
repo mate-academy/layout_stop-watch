@@ -1,0 +1,45 @@
+.stop_watch {
+  width: 80vmin;
+  height: 80vmin;
+  background-color: rgb(245, 218, 218);
+  border-radius: 50%;
+  position: relative;
+  border: 10px dotted rgb(167, 45, 45);
+
+  &-center {
+    z-index: 1;
+    width: 5vh;
+    height: 5vh;
+    background-color: rgb(154, 99, 99);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-minuts {
+    width: 2%;
+    height: 20%;
+    top: 30%;
+    @include watch_hands;
+    animation: rotate-an 60s linear infinite;
+  }
+
+  &-seconds {
+    width: 1%;
+    height: 40%;
+    top: 10%;
+    @include watch_hands;
+    animation: rotate-an 5s linear infinite;
+  }
+
+  @keyframes rotate-an {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
