@@ -16,7 +16,8 @@ body {
   list-style: none;
 }
 
-.hand {
+.second-hand,
+.minute-hand {
   position: absolute;
   top: 10%;
   left: 50%;
@@ -49,23 +50,22 @@ body {
   position: relative;
   top: 48.5%;
   left: 45%;
-  border-radius: 50%;
 }
 
 @keyframes rotate-seconds {
   0% {
-      transform: translateX(-50%) rotate(0deg);
+    transform: translateX(-50%) rotate(0deg);
   }
   100% {
-      transform: translateX(-50%) rotate(360deg);
+    transform: translateX(-50%) rotate(360deg);
   }
 }
 
 @keyframes rotate-minutes {
   0% {
-      transform: translateX(-50%) rotate(0deg);
+    transform: translateX(-50%) rotate(0deg);
   }
   100% {
-      transform: translateX(-50%) rotate(360deg);
+    transform: translateX(-50%) rotate(360deg);
   }
 }
