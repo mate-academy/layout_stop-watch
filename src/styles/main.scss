@@ -13,42 +13,42 @@ body {
   border: 5px dotted #333;
   border-radius: 50%;
   position: relative;
-}
 
-.second-hand,
-.minute-hand {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform-origin: 50% 100%;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
+  &__second,
+  &__minute {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
 
-.second-hand {
-  animation: rotate-seconds 5s linear infinite;
-  width: 5px;
-  height: 50%;
-  top: 1px;
-  background-color: green;
-}
+  &__second {
+    animation: rotate-seconds 5s linear infinite;
+    width: 5px;
+    height: 50%;
+    top: 1px;
+    background-color: green;
+  }
 
-.minute-hand {
-  animation: rotate-minutes 60s linear infinite;
-  width: 12px;
-  height: 20%;
-  top: 30%;
-  background-color: blue;
-}
+  &__minute {
+    animation: rotate-minutes 60s linear infinite;
+    width: 12px;
+    height: 20%;
+    top: 30%;
+    background-color: blue;
+  }
 
-.center-point {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: orange;
-  position: relative;
-  top: 48%;
-  left: 48.5%;
+  &__center {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: orange;
+    position: relative;
+    top: 48%;
+    left: 48.5%;
+  }
 }
 
 @keyframes rotate-seconds {
