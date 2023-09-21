@@ -22,10 +22,20 @@ body {
     transform-origin: 50% 100%;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+
+    @keyframes rotate {
+      0% {
+        transform: translateX(-50%) rotate(0deg);
+      }
+      100% {
+        transform: translateX(-50%) rotate(360deg);
+      }
+    }
+
   }
 
   &__second {
-    animation: rotate-seconds 5s linear infinite;
+    animation: rotate 5s linear infinite;
     width: 5px;
     height: 50%;
     top: 1px;
@@ -33,7 +43,7 @@ body {
   }
 
   &__minute {
-    animation: rotate-minutes 60s linear infinite;
+    animation: rotate 60s linear infinite;
     width: 12px;
     height: 20%;
     top: 30%;
@@ -48,23 +58,5 @@ body {
     position: relative;
     top: 48%;
     left: 48.5%;
-  }
-}
-
-@keyframes rotate-seconds {
-  0% {
-    transform: translateX(-50%) rotate(0deg);
-  }
-  100% {
-    transform: translateX(-50%) rotate(360deg);
-  }
-}
-
-@keyframes rotate-minutes {
-  0% {
-    transform: translateX(-50%) rotate(0deg);
-  }
-  100% {
-    transform: translateX(-50%) rotate(360deg);
   }
 }
