@@ -1,0 +1,77 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vmin;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 20px solid white;
+  box-shadow: 1px 3px 4px 4px #ccc;
+  position: relative;
+
+  @include circle(80vmin);
+
+  &__face {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    box-shadow: inset 0 0 10px #ccc;
+
+    @include circle(70vmin);
+  }
+
+  &-absolute {
+    position: absolute;
+    transform-origin: center bottom;
+  }
+
+  &__hands {
+    height: 50%;
+    width: auto;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+  }
+
+  &__hand-hour{
+    height: 24%;
+    width: 6%;
+    animation: move 30s steps(60) infinite;
+
+    @include hand;
+  }
+
+  &__hand-minute{
+    height: 38%;
+    width: 4%;
+    animation: move 5s steps(60) infinite;
+
+    @include hand;
+  }
+
+  &__pin {
+    @include circle(12%);
+    background-color: purple;
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+}
