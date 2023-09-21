@@ -17,33 +17,32 @@
     transform: translate(-50%, -50%);
   }
 
-  &__seconds {
+  &__arrows {
     position: absolute;
+    left: 50%;
+
+    transform-origin: 50% 100%;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+  }
+
+  &-seconds {
     background-color: green;
     width: 10px;
     height: $size-watch / 2 - 2vmin;
     top: 25%;
-    left: 50%;
 
-    transform-origin: 50% 100%;
-    animation-name: rotate;
     animation-duration: 60s;
     animation-timing-function: $seconds-timing-function;
-    animation-iteration-count: infinite;
   }
 
-  &__minuts {
-    position: absolute;
+  &-minuts {
     background-color: blue;
     width: 15px;
     height: $size-watch / 4;
     top: 37%;
-    left: 50%;
 
-    transform-origin: 50% 100%;
-    animation-name: rotate;
     animation-duration: 3600s;
     animation-timing-function: $minutes-timing-function;
-    animation-iteration-count: infinite;
   }
 }
