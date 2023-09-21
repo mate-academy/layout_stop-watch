@@ -1,1 +1,69 @@
-// put code here
+@import "utils/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.stop-watch {
+  width: $watch-size;
+  height: $watch-size;
+  border: 5px dotted black;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 8px;
+    transform-origin: center bottom;
+    animation: anim infinite linear;
+  }
+
+  &::before {
+    height: 40vmin;
+    width: 1vmin;
+    bottom: 50%;
+    background-color: chartreuse;
+    animation-duration: 5s;
+  }
+
+  &::after {
+    height: 20vmin;
+    width: 2vmin;
+    bottom: 25%;
+    background-color: blueviolet;
+    animation-duration: 60s;
+  }
+}
+
+span {
+  width: 5vmin;
+  height: 5vmin;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@keyframes anim {
+  to {
+    transform: rotate(360deg);
+  }
+}
