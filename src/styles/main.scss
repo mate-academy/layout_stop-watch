@@ -14,15 +14,50 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   height: 80vmin;
   width: 80vmin;
-  border: 10px solid blue;
+  border: 10px solid #444;
+  background-color: #777;
   border-radius: 50%;
 }
 
 .watch__dot {
+  z-index: 1;
+  position: absolute;
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  background-color: yellow;
+  background-color: #444;
+}
+
+.watch__minute-hand {
+  position: absolute;
+  left: calc(40vmin - 10px);
+  bottom: 40vmin;
+  height: 25vmin;
+  width: 20px;
+  background-color: #f00;
+  transform-origin: center bottom;
+  animation: rotateHand 60s linear infinite;
+}
+
+.watch__second-hand {
+  position: absolute;
+  left: calc(40vmin - 5px);
+  bottom: 40vmin;
+  height: 35vmin;
+  width: 10px;
+  background-color: #ff0;
+  transform-origin: center bottom;
+  animation: rotateHand 5s linear infinite;
+}
+
+@keyframes rotateHand {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
