@@ -1,1 +1,59 @@
-// put code here
+body {
+  margin: 0;
+}
+
+.watch {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $watch-size;
+  height: $watch-size;
+  margin: $watch-position 0 0 $watch-position;
+  border: 10px solid #000;
+  border-radius: 15%;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  background-color: #2b6e5f;
+
+  &__center {
+    position: absolute;
+    height: $center-size;
+    width: $center-size;
+    background-color: #000;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__minute_hand {
+    position: absolute;
+    left: calc(40vmin - 10px);
+    height: 15px;
+    width: 20vmin;
+    background-color: #fff;
+    border-radius: 40%;
+    transform-origin: left;
+    animation: hand 60s linear infinite;
+  }
+
+  &__second_hand {
+    position: absolute;
+    background-color: #fe0000;
+    height: 33vmin;
+    width: 5px;
+    border-radius: 40%;
+    bottom: calc(40vmin - 10px);
+    transform-origin: bottom;
+    animation: hand 5s linear infinite;
+  }
+
+  @keyframes hand {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
