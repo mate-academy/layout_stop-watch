@@ -1,125 +1,10 @@
 @keyframes minuteAnimated {
-  0% {
+  from {
     transform: rotate(0deg);
     transform-origin: bottom center;
   }
 
-  4% {
-    transform: rotate(15deg);
-    transform-origin: bottom center;
-  }
-
-  8% {
-    transform: rotate(30deg);
-    transform-origin: bottom center;
-  }
-
-  12% {
-    transform: rotate(45deg);
-    transform-origin: bottom center;
-  }
-
-  16% {
-    transform: rotate(60deg);
-    transform-origin: bottom center;
-  }
-
-  20% {
-    transform: rotate(75deg);
-    transform-origin: bottom center;
-  }
-
-  24% {
-    transform: rotate(90deg);
-    transform-origin: bottom center;
-  }
-
-  28% {
-    transform: rotate(105deg);
-    transform-origin: bottom center;
-  }
-
-  32% {
-    transform: rotate(120deg);
-    transform-origin: bottom center;
-  }
-
-  36% {
-    transform: rotate(135deg);
-    transform-origin: bottom center;
-  }
-
-  40% {
-    transform: rotate(150deg);
-    transform-origin: bottom center;
-  }
-
-  44% {
-    transform: rotate(165deg);
-    transform-origin: bottom center;
-  }
-
-  48% {
-    transform: rotate(180deg);
-    transform-origin: bottom center;
-  }
-
-  52% {
-    transform: rotate(195deg);
-    transform-origin: bottom center;
-  }
-
-  56% {
-    transform: rotate(210deg);
-    transform-origin: bottom center;
-  }
-
-  60% {
-    transform: rotate(225deg);
-    transform-origin: bottom center;
-  }
-
-  64% {
-    transform: rotate(240deg);
-    transform-origin: bottom center;
-  }
-
-  69% {
-    transform: rotate(255deg);
-    transform-origin: bottom center;
-  }
-
-  73% {
-    transform: rotate(270deg);
-    transform-origin: bottom center;
-  }
-
-  77% {
-    transform: rotate(285deg);
-    transform-origin: bottom center;
-  }
-
-  82% {
-    transform: rotate(300deg);
-    transform-origin: bottom center;
-  }
-
-  86% {
-    transform: rotate(315deg);
-    transform-origin: bottom center;
-  }
-
-  90% {
-    transform: rotate(330deg);
-    transform-origin: bottom center;
-  }
-
-  95% {
-    transform: rotate(345deg);
-    transform-origin: bottom center;
-  }
-
-  100% {
+  to {
     transform: rotate(360deg);
     transform-origin: bottom center;
   }
@@ -138,40 +23,41 @@ body {
   height: 80vmin;
   border-radius: 50%;
   border: 10px dotted #000;
-}
 
-.watch__center {
+  &__center {
 
-  position: absolute;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  background-color: #ff0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-25%, -50%);
-}
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #ff0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -50%);
+  }
 
-.watch__minute {
-  position: absolute;
-  height: 20vmin;
-  width: 20px;
-  background-color: #00f;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%, 0%);
+  &__minute {
+    position: absolute;
+    height: 20vmin;
+    width: 20px;
+    background-color: #00f;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
 
-  animation: 60s infinite linear minuteAnimated;
-}
+    animation: 60s infinite linear minuteAnimated;
+  }
 
-.watch__second {
-  position: absolute;
-  height: 40vmin;
-  width: 10px;
-  background-color: #0f0;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%, 0%);
+  &__second {
+    position: absolute;
+    height: 40vmin;
+    width: 10px;
+    background-color: #0f0;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
 
-  animation: 5s infinite linear minuteAnimated;
+    animation: 5s infinite linear minuteAnimated;
+  }
+
 }
