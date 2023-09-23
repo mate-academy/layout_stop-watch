@@ -1,1 +1,63 @@
-// put code here
+@keyframes minuteAnimated {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom center;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom center;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 10px dotted #000;
+
+  &__center {
+
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #ff0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -50%);
+  }
+
+  &__minute {
+    position: absolute;
+    height: 20vmin;
+    width: 20px;
+    background-color: #00f;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    animation: 60s infinite linear minuteAnimated;
+  }
+
+  &__second {
+    position: absolute;
+    height: 40vmin;
+    width: 10px;
+    background-color: #0f0;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    animation: 5s infinite linear minuteAnimated;
+  }
+
+}
