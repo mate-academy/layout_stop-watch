@@ -3,25 +3,25 @@ body {
 }
 
 .watch {
-  display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
+  display: flex;
   width: $watch-size;
   height: $watch-size;
-  margin: $watch-position 0 0 $watch-position;
-  border: 10px solid #000;
-  border-radius: 15%;
-  box-sizing: border-box;
+  margin: $watch-position $watch-position;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   background-color: #2b6e5f;
+  border: 10px solid $bleck-elements;
+  border-radius: 15%;
 
   &__center {
     position: absolute;
     height: $center-size;
     width: $center-size;
-    background-color: #000;
+    background-color: $bleck-elements;
     border-radius: 50%;
     z-index: 1;
   }
@@ -39,11 +39,11 @@ body {
 
   &__second_hand {
     position: absolute;
-    background-color: #fe0000;
+    bottom: calc(40vmin - 10px);
     height: 33vmin;
     width: 5px;
+    background-color: #fe0000;
     border-radius: 40%;
-    bottom: calc(40vmin - 10px);
     transform-origin: bottom;
     animation: hand 5s linear infinite;
   }
