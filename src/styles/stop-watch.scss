@@ -37,33 +37,23 @@
     height: 40vmin;
     background-color: aquamarine;
     transform: translate(-50%, -50%);
+    animation: rotate 60s linear infinite;
 
     &--minutes {
-    width: 3vmin;
-    height: 23vmin;
-    background-color: rgb(60, 0, 255);
-    animation: rotateMinutes 60s linear infinite;
-    transform-origin: center bottom;
+      width: 3vmin;
+      height: 23vmin;
+      background-color: rgb(60, 0, 255);
+      transform-origin: center bottom;
     }
 
     &--seconds {
-      animation: rotateSeconds 5s linear infinite;
+      animation-duration: 5s;
       transform-origin: center bottom;
     }
   }
 }
 
-@keyframes rotateSeconds {
-  from {
-    transform: translate(-50%, -100%) rotate(0deg);
-  }
-
-  to {
-    transform: translate(-50%, -100%) rotate(360deg);
-  }
-}
-
-@keyframes rotateMinutes {
+@keyframes rotate {
   from {
     transform: translate(-50%, -100%) rotate(0deg);
   }
