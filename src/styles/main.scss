@@ -1,1 +1,75 @@
-// put code here
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+$w-size: 600px;
+$d-size: 30px;
+$bgc-dot: rgb(255, 187, 0);
+$s-size: 5px;
+$b-size: 5px;
+
+.stop-watch {
+  position: relative;
+  max-width: $w-size;
+  height: $w-size;
+  border: $b-size dotted #000;
+  border-radius: 50%;
+  margin: 0 auto;
+
+  &--y {
+    position: absolute;
+    height: $w-size;
+    left: $w-size/2;
+    border: 1px solid red;
+    z-index: 0;
+  }
+
+  &--x {
+    position: absolute;
+    width: $w-size;
+    margin-top: $w-size/2;
+    border: 1px solid red;
+    z-index: 0;
+  }
+
+  &--dot {
+    position: absolute;
+    width: $d-size;
+    height: $d-size;
+    background-color: $bgc-dot;
+    border-radius: 50px;
+    top: $w-size / 2 - $d-size / 2;
+    right: $w-size / 2 - $d-size / 2;
+    z-index: 1;
+  }
+
+  &--second {
+    position: absolute;
+    box-sizing: border-box;
+    height: $w-size / 2;
+    border: $s-size solid green;
+    left: $w-size/2 - 4px;
+    animation: roll 5s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &--minute {
+    position: absolute;
+    width: $w-size / 4 - $b-size;
+    border: $s-size solid blue;
+    top: $w-size / 2 - 4;
+    left: $w-size / 2 ;
+    animation: roll 60s linear infinite;
+    transform-origin: left;
+  }
+
+  @keyframes roll {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
