@@ -1,0 +1,55 @@
+.stopwatch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  background: #e0e0e0;
+  border-radius: 50%;
+  border: 1px solid #cacaca;
+
+  &__hand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 6px;
+    background-color: rgb(78, 78, 222);
+    border-radius: 10px;
+    transform-origin: bottom;
+  }
+
+  .hand-long {
+    top: 10%;
+    height: 40%;
+    background-color: rgb(78, 78, 222);
+    animation: hands 10s linear infinite;
+  }
+
+  .hand-short {
+    top: 20%;
+    height: 30%;
+    background-color: red;
+    animation: hands 60s linear infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    background: linear-gradient(145deg, #2972e8, #2260c3);
+    width: $plug-size;
+    height: $plug-size;
+    border-radius: 50%;
+  }
+}
+
+@keyframes hands {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
