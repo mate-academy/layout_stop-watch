@@ -1,1 +1,65 @@
-// put code here
+@import "../utils/variables.scss";
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #004225;
+}
+
+.watch {
+  position: relative;
+  height: $watch-size;
+  width: $watch-size;
+  border-radius: 50%;
+  border: 15px dotted $watch-main-color;
+  cursor: pointer;
+
+  &__circle {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -50%);
+    background-color: $watch-main-color;
+  }
+
+  &__hand {
+    position: absolute;
+    background-color: $watch-main-color;
+    border-radius: 5px;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transform-origin: bottom center;
+
+    &--second {
+      height: $height-second;
+      width: $width-second;
+      animation: rotation 5s linear infinite 2s;
+    }
+
+    &--minute {
+      height: $height-minute;
+      width: $width-minute;
+      animation: rotation 60s linear infinite 2s;
+    }
+  }
+
+  &:hover .watch__hand {
+    animation-play-state: paused;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
