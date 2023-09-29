@@ -6,30 +6,32 @@
   border: 4px dotted #000;
   border-radius: 50%;
 
-  &__seconds-hand {
+  &__hand {
     position: absolute;
-    top: $seconds-hand-top;
-    left: $seconds-hand-left;
-    width: $seconds-hand-thickness;
-    height: 49%;
-    background-color: #05e505;
     border-radius: 5px;
 
-    transform-origin: bottom;
-    animation: rotate linear 5s infinite;
-  }
+    &--second {
+      position: absolute;
+      top: $seconds-hand-top;
+      left: $seconds-hand-left;
+      width: $seconds-hand-thickness;
+      height: 49%;
+      background-color: #05e505;
 
-  &__minutes-hand {
-    position: absolute;
-    top: $minutes-hand-top;
-    left: $minutes-hand-left;
-    height: $minutes-hand-thickness;
-    width: 25%;
-    background-color: #0505c6;
-    border-radius: 5px;
+      transform-origin: bottom;
+      animation: rotate linear 5s infinite;
+    }
 
-    transform-origin: left;
-    animation: rotate linear 60s infinite;
+    &--minute {
+      top: $minutes-hand-top;
+      left: $minutes-hand-left;
+      height: $minutes-hand-thickness;
+      width: 25%;
+      background-color: #0505c6;
+
+      transform-origin: left;
+      animation: rotate linear 60s infinite;
+    }
   }
 
   &__circle {
