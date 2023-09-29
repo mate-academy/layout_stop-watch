@@ -1,0 +1,69 @@
+.stopwatch {
+  position: relative;
+  box-sizing: border-box;
+
+  width: 80vmin;
+  height: 80vmin;
+
+  border: 5px dotted;
+  border-radius: $watchBorderRadius;
+
+  @include with-centered-content;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
+    width: 30px;
+    height: 30px;
+
+    background-color: #ffa500;
+    border-radius: $watchBorderRadius;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute-hand {
+    position: absolute;
+    bottom: 50%;
+
+    width: 16px;
+    height: 25%;
+
+    background-color: #00f;
+  }
+
+  &__second-hand {
+    position: absolute;
+    bottom: 50%;
+
+    width: 8px;
+    height: 50%;
+
+    background-color: #008000;
+  }
+
+  &:hover {
+    .stopwatch__minute-hand {
+      animation: roll 60s linear infinite;
+    }
+
+    .stopwatch__second-hand {
+      animation: roll 5s linear infinite;
+    }
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+    transform-origin: $watchTransformOrigin;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: $watchTransformOrigin;
+  }
+}
