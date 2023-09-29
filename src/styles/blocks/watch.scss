@@ -1,0 +1,51 @@
+.watch {
+  position: relative;
+
+  min-width: $watch-size;
+  height: $watch-size;
+  border: 15px dotted white;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &__hand {
+    position: absolute;
+
+    background-color: white;
+    border-radius: 10px;
+
+    transform-origin: bottom center;
+    animation-play-state: paused;
+
+    &:nth-child(1) {
+      left: calc(#{$watch-size} / 2 - #{$hand-width-big} / 2);
+      top: calc(#{$watch-size} / 2 - #{$hand-height-big});
+      height: $hand-height-big;
+      width: $hand-width-big;
+      z-index: 1;
+      animation: rotation 5s linear infinite 2s;
+    }
+
+    &:nth-child(2) {
+      background-color: white;
+      left: calc(#{$watch-size} / 2 - #{$hand-width-small} / 2);
+      top: calc(#{$watch-size} / 2 - #{$hand-height-small});
+      height: $hand-height-small;
+      width: $hand-width-small;
+      animation: rotation 60s linear infinite 2s;
+    }
+  }
+
+  &:hover .watch__hand {
+    animation-play-state: paused;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
