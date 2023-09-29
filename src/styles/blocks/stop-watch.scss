@@ -1,0 +1,57 @@
+.stop-watch {
+  position: relative;
+  width: $stop-watch-size;
+  height: $stop-watch-size;
+
+  border: 4px dotted #000;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    border-radius: 5px;
+
+    &--second {
+      position: absolute;
+      top: $seconds-hand-top;
+      left: $seconds-hand-left;
+      width: $seconds-hand-thickness;
+      height: 49%;
+      background-color: #05e505;
+
+      transform-origin: bottom;
+      animation: rotate linear 5s infinite;
+    }
+
+    &--minute {
+      top: $minutes-hand-top;
+      left: $minutes-hand-left;
+      height: $minutes-hand-thickness;
+      width: 25%;
+      background-color: #0505c6;
+
+      transform-origin: left;
+      animation: rotate linear 60s infinite;
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 7%;
+    height: 7%;
+    border-radius: 50%;
+    background-color: #ff9000;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
