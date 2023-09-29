@@ -26,33 +26,27 @@
   }
 
   &__minute-hand {
-    position: absolute;
-    bottom: 50%;
+    @include watchHandsPositioning;
 
     width: 16px;
     height: 25%;
 
     background-color: #00f;
+
+    animation: $watchAnimation;
+    animation-duration: 60s;
   }
 
   &__second-hand {
-    position: absolute;
-    bottom: 50%;
+    @include watchHandsPositioning;
 
     width: 8px;
     height: 50%;
 
     background-color: #008000;
-  }
 
-  &:hover {
-    .stopwatch__minute-hand {
-      animation: roll 60s linear infinite;
-    }
-
-    .stopwatch__second-hand {
-      animation: roll 5s linear infinite;
-    }
+    animation: $watchAnimation;
+    animation-duration: 5s;
   }
 }
 
