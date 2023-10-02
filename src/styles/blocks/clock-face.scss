@@ -1,0 +1,51 @@
+@function centralize($thickness) {
+  @return $radius - ($thickness * 0.5);
+}
+
+.clock-face {
+  &__table {
+    position: relative;
+    width: 2 * $radius;
+    height: 2 * $radius;
+    border: $border-thickness solid $dark-color;
+    border-radius: 50%;
+
+    & * {
+      position: absolute;
+    }
+  }
+
+  &__minute {
+    left: centralize($minute-thickness);
+    width: $minute-thickness;
+    height: $radius;
+
+    background-color: #4a4a4a;
+    border-radius: 0.2 * $minute-thickness;
+
+    animation: clock 5s linear 0s infinite;
+    transform-origin: bottom;
+  }
+
+  &__hour {
+    left: centralize($hour-thickness);
+    bottom: $radius;
+    width: $hour-thickness;
+    height: 0.5 * $radius;
+
+    background-color: #6d6d6d;
+    border-radius: 0.2 * $hour-thickness;
+
+    animation: clock 60s linear 0s infinite;
+    transform-origin: bottom;
+  }
+
+  &__dot {
+    left: centralize($dot-thickness);
+    top: centralize($dot-thickness);
+    width: $dot-thickness;
+    height: $dot-thickness;
+    border-radius: 50%;
+    background-color: $dark-color;
+  }
+}
