@@ -1,1 +1,76 @@
-// put code here
+.body {
+  height: 80vmin;
+  margin: 0;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &__round {
+    box-sizing: border-box;
+    position: relative;
+    width: calc(40rem + 20px);
+    height: calc(40rem + 20px);
+
+    border-radius: 50%;
+    border: #111 3px dashed;
+  }
+
+  &__center--point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.5rem;
+    height: 2.5rem;
+
+    background-color: orange;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__seconds--hand {
+    position: absolute;
+    top: 5%;
+    left: 322px;
+
+    height: 45%;
+    width: 10px;
+
+    border-radius: 10px;
+    background-color: beige;
+
+    animation: animate 5s linear infinite;
+    transform-origin: bottom;
+  }
+
+    &__minute--hand {
+      position: absolute;
+      top: 20%;
+      left: 322px;
+
+      height: 30%;
+      width: 10px;
+
+      border-radius: 10px;
+      background-color: rgb(151, 151, 130);
+
+      animation: animate 60s linear infinite;
+      transform-origin: bottom;
+    }
+}
+
+
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
