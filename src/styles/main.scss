@@ -1,1 +1,65 @@
-// put code here
+body {
+  margin: 0;
+  width: 80vmin;
+}
+
+.stopwatch {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+
+  &__background {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background-color: #eee;
+  }
+
+  &__hands {
+    position: relative;
+    left: 50%;
+    transform-origin: bottom center;
+
+    animation-name: rotate;
+    animation-timing-function: linear;
+  }
+}
+
+.hand-minute {
+  height: 125px;
+  width: 8px;
+
+  background-color: orange;
+  top: -30%;
+
+  animation-duration: 60s;
+}
+
+.hand-second {
+  height: 250px;
+  width: 4px;
+
+  background-color: red;
+  top: -62%;
+
+  animation-duration: 5s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
