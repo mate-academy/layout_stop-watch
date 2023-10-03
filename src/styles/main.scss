@@ -1,1 +1,86 @@
 // put code here
+$clock-center-size: 40px;
+$clock-size: 80vmin;
+$arrow-second-size: $clock-center-size / 3;
+$arrow-minut-size: $clock-center-size / 2;
+$posistion-center:
+  calc($clock-size + $clock-center-size) / 2;
+
+body {
+  margin: 0;
+}
+
+.clock {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  &__content {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: $clock-size;
+    width: $clock-size;
+    box-sizing: border-box;
+
+    border: 8px dotted #000;
+    border-radius: 50%;
+  }
+
+  &__arrow-second {
+    position: absolute;
+    bottom: 50%;
+    left: $posistion-center;
+
+    width: $arrow-second-size;
+    height: 50%;
+
+    background-color: green;
+
+    transform-origin: 50% 100%;
+    animation: rotateSeconds 5s linear infinite;
+  }
+
+  &__center {
+    z-index: 100;
+
+    display: block;
+    height: $clock-center-size;
+    width: $clock-center-size;
+
+    background-color: #ffa500;
+    border-radius: 50%;
+  }
+
+  &__arrow-minut {
+    position: absolute;
+    bottom: 50%;
+    left: $posistion-center;
+
+    width: $arrow-minut-size;
+    height: 25%;
+
+    background-color: blue;
+
+    animation: rotateMinut 60s linear infinite;
+    transform-origin: 50% 100%;
+  }
+
+  @keyframes rotateSeconds {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  @keyframes rotateMinut {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+}
