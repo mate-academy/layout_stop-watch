@@ -1,1 +1,65 @@
-// put code here
+$size-clock: 500px;
+$size-dot: 10px;
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.clock {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $size-clock;
+  width: $size-clock;
+
+  border: $size-dot dotted  black;
+  border-radius: 50%;
+
+  &__center {
+    width: $size-clock / 10;
+    height: $size-clock / 10;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 1;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: $size-clock / 2 - $size-dot;
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom;
+  }
+
+  &__arrow--second {
+    width: 5px;
+    height: $size-clock / 2 - ($size-dot * 2) ;
+    background-color: green;
+
+    animation: arrow-rotate infinite 60s steps(60);
+  }
+
+  &__arrow--minute {
+    width: 7px;
+    height: $size-clock / 3 ;
+    background-color: blue;
+
+    animation: arrow-rotate infinite 3600s steps(720);
+  }
+}
+
+@keyframes arrow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+
+  }
+}
