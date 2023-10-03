@@ -1,1 +1,78 @@
-// put code here
+$backgroundHand: linear-gradient(
+  0deg,
+  rgba(179,0,175,1) 0%,
+  rgba(9,38,121,1) 49%,
+  rgba(0,212,255,1) 100%);
+$backgroundWatch: linear-gradient(
+  238deg,
+  rgba(179,0,175,1) 0%,
+  rgba(9,38,121,1) 49%,
+  rgba(0,212,255,1) 100%);
+$borderRadius: 50%;
+
+body {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 80vmin;
+  background: #1d1c1c;
+  margin: 0;
+}
+
+.watch {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: calc(36rem + 20px);
+  height: calc(36rem + 20px);
+  border-radius: 50%;
+  background: $backgroundWatch;
+
+  &__dial {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 36rem;
+    height: 36rem;
+    border-radius: $borderRadius;
+    background: #010e34;
+  }
+
+  &__minute-hand,
+  &__hour-hand {
+    position: absolute;
+    width: 1rem;
+    border-radius: 8px;
+    background: $backgroundHand;
+    animation: anim infinite linear;
+    transform-origin: center 100%;
+  }
+
+  &__minute-hand {
+    top: 1rem;
+    height: 17rem;
+    animation-duration: 5s;
+  }
+
+  &__hour-hand {
+    top: 10rem;
+    height: 8rem;
+    animation-duration: 60s;
+  }
+
+  &__bracing-dot {
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: $borderRadius;
+    background: $backgroundWatch;
+    z-index: 1;
+  }
+
+  @keyframes anim {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
