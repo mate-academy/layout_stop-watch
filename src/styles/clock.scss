@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  display: flex;
+  height: 80vmin;
+  width: 80vmin;
+  background-color: grey;
+  border: 5px dotted black;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &_center {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    background-color: yellow;
+    border-radius: 100%;
+    z-index: 1;
+  }
+}
+
+.sec-hand {
+  @include hands_individual_options(6px, 50%, green);
+  @include hands_common_options;
+  @include hands_animation_options(5s, linear);
+}
+
+.min-hand {
+  @include hands_individual_options(8px, 25%, blue);
+  @include hands_common_options;
+  @include hands_animation_options(60s, steps(60));
+}
