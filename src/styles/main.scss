@@ -1,1 +1,70 @@
-// put code here
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.watch {
+  @import "vars.scss";
+
+  position: relative;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $watch-size;
+  width: $watch-size;
+
+  border: 19px dotted #a35561;
+  outline: 3px groove #b86b77;
+  background-color: #f6cfca;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+
+    width: $watch__center-size;
+    height: $watch__center-size;
+
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: $watch-size / 2 - 20px;
+
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom;
+  }
+
+  &__arrow--s {
+    width: 5px;
+    height: 138px;
+
+    background-color: hotpink;
+
+    animation: arrow-rotate infinite 60s steps(60);
+  }
+
+  &__arrow--m {
+    width: 7px;
+    height: 120px;
+
+    background-color: rgb(255, 105, 115);
+
+    animation: arrow-rotate infinite 3600s steps(720);
+  }
+
+  @keyframes arrow-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
