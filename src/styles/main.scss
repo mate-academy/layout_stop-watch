@@ -1,8 +1,6 @@
 $clock-center-size: 40px;
-$clock-size: 80vh;
 $arrow-second-size: $clock-center-size / 3;
 $arrow-minut-size: $clock-center-size / 2;
-$posistion-center: calc($clock-size + $clock-center-size) / 2;
 
 body {
   margin: 0;
@@ -23,8 +21,8 @@ body {
     align-items: center;
     justify-content: center;
 
-    height: $clock-size;
-    width: $clock-size;
+    height: 80vh;
+    width: 80vh;
     box-sizing: border-box;
 
     border: 8px dotted #000;
@@ -34,7 +32,7 @@ body {
   &__arrow-second {
     position: absolute;
     bottom: 50%;
-    left: $posistion-center;
+    left: 48%;
 
     width: $arrow-second-size;
     height: 50%;
@@ -59,7 +57,7 @@ body {
   &__arrow-minut {
     position: absolute;
     bottom: 50%;
-    left: $posistion-center;
+    left: 48%;
 
     width: $arrow-minut-size;
     height: 25%;
