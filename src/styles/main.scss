@@ -16,28 +16,29 @@ body {
   background-color: green;
 }
 
-.hand--seconds {
+.hand {
   position: absolute;
+  transform-origin: bottom;
+  animation: animate linear infinite;
+  background-color: black;
+}
+
+.hand--seconds {
   top: 5%;
   left: calc(50% - 5px);
   width: 10px;
   height: 45%;
-  background-color: black;
   border-radius: 5px;
-  animation: animate 5s linear infinite;
-  transform-origin: bottom;
+  animation-duration: 5s;
 }
 
 .hand--minutes {
-  position: absolute;
   top: 15%;
   left: calc(50% - 7px);
   width: 14px;
   height: 35%;
-  background-color: black;
   border-radius: 7px;
-  animation: animate 60s linear infinite;
-  transform-origin: bottom;
+  animation-duration: 60s;
 }
 
 @keyframes animate {
