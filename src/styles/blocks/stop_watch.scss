@@ -1,0 +1,53 @@
+@keyframes clock-go {
+  @for $i from 1 through $tick {
+    #{(100% / $tick) * $i} {
+      transform: rotate((360deg / $tick) * $i);
+    }
+  }
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    height: $circl;
+    width: $circl;
+    border: 5px dotted black;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+
+    animation-iteration-count: infinite;
+    transform-origin: bottom center;
+
+    &--second {
+      height: $circl / 2;
+      width: $circl / 100;
+      background: green;
+      z-index: 1;
+
+      animation-name: clock-go;
+      animation-duration: $minute;
+      animation-delay: 5s;
+    }
+
+    &--minute {
+      height: $circl / 3;
+      width: $circl / 75;
+      background: red;
+      bottom: $circl / 3;
+      z-index: 2;
+
+      $tick: $tick * 5;
+      animation-name: clock-go;
+      animation-duration: $minute * 60;
+      animation-delay: $minute;
+    }
+  }
+}
