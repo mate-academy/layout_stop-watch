@@ -6,26 +6,23 @@
   background-color: $clock-color;
 
   &__hand {
-    top: 10%;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    position: absolute;
+    bottom: 50%;
+    left: calc(50% - 1px);
     background-color: $hand-color;
-    animation-timing-function: steps(60, end);
+    transform-origin: bottom center;
+    border-radius: 2px;
 
     &--second {
-      position: relative;
-      height: 40%;
       width: 2px;
-      transform-origin: bottom;
-      animation: rotation 5s infinite linear;
+      height: 35%;
+      animation: rotation 5s linear infinite;
     }
 
     &--minute {
-      position: relative;
-      height: 35%;
       width: 4px;
-      transform-origin: top;
-      animation: rotation 60s infinite linear;
+      height: 30%;
+      animation: rotation 60s linear infinite;
       animation-timing-function: steps(60, end);
     }
   }
