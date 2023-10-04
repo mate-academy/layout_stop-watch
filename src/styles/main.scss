@@ -1,1 +1,48 @@
-// put code here
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.watch {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  border: 10px solid white;
+  border-radius: 50%;
+  background-image: url(../img/watch.png);
+  background-position: center;
+  background-size: cover;
+
+  &__hand {
+    position: absolute;
+    width: 2px;
+    bottom: 50%;
+    left: calc(50% - 1px);
+    background-color: rgb(7, 7, 7);
+    transform-origin: bottom center;
+    border-radius: 2px;
+
+    &--hour {
+      height: 30%;
+      animation: watch 60s linear infinite;
+    }
+
+    &--min {
+      height: 45%;
+      animation: watch 5s linear infinite;
+    }
+  }
+
+  @keyframes watch {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
