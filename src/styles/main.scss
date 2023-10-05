@@ -1,6 +1,8 @@
-$clock-center-size: 40px;
-$arrow-second-size: $clock-center-size / 3;
-$arrow-minut-size: $clock-center-size / 2;
+@import "./utils/variables";
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -9,7 +11,7 @@ body {
 .clock {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
+  align-items: center;
   justify-content: center;
 
   height: 100vh;
@@ -23,9 +25,8 @@ body {
 
     height: 80vh;
     width: 80vh;
-    box-sizing: border-box;
 
-    border: 8px dotted #000;
+    border: 8px dotted $c-black;
     border-radius: 50%;
   }
 
@@ -37,7 +38,7 @@ body {
     width: $arrow-second-size;
     height: 50%;
 
-    background-color: green;
+    background-color: $c-green;
 
     transform-origin: 50% 100%;
     animation: rotateSeconds 5s linear infinite;
@@ -50,7 +51,7 @@ body {
     height: $clock-center-size;
     width: $clock-center-size;
 
-    background-color: #ffa500;
+    background-color: $c-orang;
     border-radius: 50%;
   }
 
@@ -62,9 +63,9 @@ body {
     width: $arrow-minut-size;
     height: 25%;
 
-    background-color: blue;
+    background-color: $c-blue;
 
-    animation: rotateMinut 60s linear infinite;
+    animation: rotateMinute 60s linear infinite;
     transform-origin: 50% 100%;
   }
 
@@ -74,7 +75,7 @@ body {
     }
   }
 
-  @keyframes rotateMinut {
+  @keyframes rotateMinute {
     100% {
       transform: rotateZ(360deg);
     }
