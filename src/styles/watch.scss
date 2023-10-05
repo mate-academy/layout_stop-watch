@@ -1,0 +1,59 @@
+body {
+  background-color: aquamarine;
+}
+
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  background-color: aquamarine;
+
+  &__face {
+    display: flex;
+    justify-content: center;
+    border: 3px dotted black;
+    width: 80vmin;
+    height: 80vmin;
+    border-radius: 50%;
+  }
+
+  &__big-hand {
+    position: absolute;
+    z-index: 1;
+    height: 50%;
+    width: 5px;
+    background-color: blue;
+    animation: rotate 5s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__small-hand {
+    position: absolute;
+    top: 25%;
+    height: 25%;
+    width: 9px;
+    background-color: red;
+    animation: rotate 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__center {
+    align-self: center;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    background-color: chocolate;
+    border-radius: 50%;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
