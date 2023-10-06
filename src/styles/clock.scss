@@ -40,7 +40,7 @@
       width: 10px;
       top: 1.5vh;
       background-color: $stopwatch-minute-color;
-      animation: rotateminute 5s linear;
+      animation: rotate 5s linear infinite;
     }
 
     &--seconds {
@@ -48,12 +48,12 @@
       width: 2px;
       top: 1.5vh;
       background-color: $stopwatch-second-color;
-      animation: rotatesecond 60s linear;
+      animation: rotate 60s linear infinite;
     }
   }
 }
 
-@keyframes rotatesecond {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
@@ -62,11 +62,3 @@
   }
 }
 
-@keyframes rotateminute {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(6deg);
-  }
-}
