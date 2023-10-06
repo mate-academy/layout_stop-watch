@@ -1,0 +1,72 @@
+.clock {
+  background-color: $stopwatch-bg-color;
+  backdrop-filter: blur(10px);
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  border: 15px solid $stopwatch-border-color;
+  box-shadow: 15px 15px 35px $stopwatch-shadow-color,
+    inset 0 0 30px $stopwatch-inset-color;
+
+  &__center {
+    background-color: $stopwatch-center-color;
+    backdrop-filter: blur(10px);
+    height: 4vh;
+    width: 4vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    border: 1px solid $stopwatch-border-color;
+    box-shadow: 2px 2px 5px $stopwatch-shadow-color,
+      inset 0 0 3px $stopwatch-inset-color;
+  }
+
+  &__hand {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    transform-origin: center bottom;
+
+    &--minute {
+      height: 37vh;
+      width: 10px;
+      top: 1.5vh;
+      background-color: $stopwatch-minute-color;
+      animation: rotateminute 5s linear;
+    }
+
+    &--seconds {
+      height: 37vh;
+      width: 2px;
+      top: 1.5vh;
+      background-color: $stopwatch-second-color;
+      animation: rotatesecond 60s linear;
+    }
+  }
+}
+
+@keyframes rotatesecond {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateminute {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(6deg);
+  }
+}
