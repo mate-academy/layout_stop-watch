@@ -20,27 +20,18 @@
     bottom: 50%;
     background: green;
     height: 40%;
-    animation: rotateSecondHand 5s linear infinite;
+    animation: rotateHand 5s linear infinite;
   }
 
   &__minute-hand {
     top: 35%;
     background: blue;
     height: 30%;
-    animation: rotateMinuteHand 60s linear infinite;
+    animation: rotateHand 60s linear infinite;
   }
 }
 
-@keyframes rotateSecondHand {
-  0% {
-    transform: translateY(-50%) rotate(0deg);
-  }
-  100% {
-    transform: translateY(-50%) rotate(360deg);
-  }
-}
-
-@keyframes rotateMinuteHand {
+@keyframes rotateHand {
   0% {
     transform: translateY(-50%) rotate(0deg);
   }
