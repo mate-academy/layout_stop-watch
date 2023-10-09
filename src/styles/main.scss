@@ -1,1 +1,50 @@
-// put code here
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 2px dotted #333;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+
+  &__second-hand,
+  &__minute-hand {
+    position: absolute;
+    width: 2px;
+    right: 50%;
+    top: 30%;
+    transform-origin: center bottom;
+    transform: translateY(-50%);
+  }
+
+  &__second-hand {
+    bottom: 50%;
+    background: green;
+    height: 40%;
+    animation: rotateSecondHand 5s linear infinite;
+  }
+
+  &__minute-hand {
+    top: 35%;
+    background: blue;
+    height: 30%;
+    animation: rotateMinuteHand 60s linear infinite;
+  }
+}
+
+@keyframes rotateSecondHand {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes rotateMinuteHand {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
