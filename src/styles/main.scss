@@ -1,5 +1,15 @@
 // put code here
-#title {
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.title {
   text-align: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
@@ -21,16 +31,7 @@
     top: 20vmin;
     left: 39vmin;
     transform-origin: 1vmin 20vmin;
-    animation: rotate30 5s linear forwards;
-
-    @keyframes rotate30 {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(30deg);
-      }
-    }
+    animation: 60s linear infinite rotate360;
   }
 
   &__minutes {
@@ -41,16 +42,7 @@
     top: 1vmin;
     left: 39.5vmin;
     transform-origin: 0.5vmin 39vmin;
-    animation: rotate360 5s linear;
-
-    @keyframes rotate360 {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
+    animation: 60s linear infinite rotate360;
   }
 
   &__dot {
