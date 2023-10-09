@@ -1,1 +1,69 @@
-// put code here
+@import "./../utils/mixins.scs";
+
+$main-bg-color: #1d2d44;
+$stop-watch-bg-color: #3e5c76;
+$second-hand-bg-color: #f0ebd8;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $main-bg-color;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 10px dashed $main-bg-color;
+  border-radius: 50%;
+  background-color: $stop-watch-bg-color;
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $main-bg-color;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hand {
+    position: absolute;
+    left: 49.5%;
+    border-radius: 2px;
+    transform-origin: center bottom;
+
+    &--second {
+      top: 5%;
+      height: 45%;
+      width: 6px;
+      background-color: $second-hand-bg-color;
+      animation: rotate-second-hand 5s linear infinite;
+
+      @include hand-rotation(rotate-second-hand);
+    }
+
+    &--minute {
+      top: 15%;
+      height: 35%;
+      width: 9px;
+      background-color: $main-bg-color;
+      animation: rotate-minute-hand 60s linear infinite;
+
+      @include hand-rotation(rotate-minute-hand);
+    }
+  }
+}

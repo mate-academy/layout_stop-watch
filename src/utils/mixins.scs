@@ -1,0 +1,10 @@
+@mixin hand-rotation($animation-name) {
+  @keyframes #{$animation-name} {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
