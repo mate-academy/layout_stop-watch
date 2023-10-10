@@ -1,1 +1,50 @@
-// put code here
+@import "utils/variables";
+@import "utils/animations";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $clock-size;
+  width: $clock-size;
+  border: 5px dotted black;
+  border-radius: 50%;
+
+  &__second-hand {
+    height: 50%;
+    width: 5px;
+    background-color: black;
+
+    animation: rotate 10s linear;
+  }
+
+  &__hour-hand {
+    height: 40%;
+    width: 10px;
+    background-color: red;
+
+    animation: rotate 60s linear;
+  }
+
+  &__center {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: green;
+    border-radius: 50%;
+  }
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+}
