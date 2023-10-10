@@ -1,0 +1,47 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  position: relative;
+  width: $dial-size;
+  height: $dial-size;
+  outline: 5px black solid;
+  border-radius: 50%;
+
+  &__hand-minute {
+    @include stopwatch-hand(
+      5s,
+      $hand-minute-color,
+      $hand-minute-width,
+      $hand-minute-height
+    );
+  }
+
+  &__hand-hour {
+    @include stopwatch-hand(
+      60s,
+      $hand-hour-color,
+      $hand-hour-width,
+      $hand-hour-height
+    );
+  }
+
+  &__center {
+    position: absolute;
+    width: $center-size;
+    height: $center-size;
+    background-color: $center-color;
+    border-radius: 50%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
