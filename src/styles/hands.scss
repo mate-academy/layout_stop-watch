@@ -1,0 +1,37 @@
+.stopwatch__hand {
+  position: absolute;
+  width: 2px;
+  height: 40%;
+  top: 10%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  background-color: #333;
+}
+
+.second-hand {
+  animation: rotateSecondHand 60s linear infinite;
+  background-color: red;
+}
+
+.minute-hand {
+  animation: rotateMinuteHand 3600s linear infinite;
+  background-color: white;
+}
+
+@keyframes rotateMinuteHand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateSecondHand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
