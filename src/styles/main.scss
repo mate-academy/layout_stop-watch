@@ -1,1 +1,61 @@
-// put code here
+@import "variables";
+@import "keyframes";
+@import "mixins";
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.watch {
+  height: $size;
+  width: $size;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: $sector dotted black;
+  border-radius: 50%;
+  animation-play-state: active;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+
+  &__center {
+    position: absolute;
+    height: $center;
+    width: $center;
+    background-color: yellow;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    height: $minute-height;
+    width: $minute-width;
+    background-color: green;
+    bottom: ($minute-height * 1.6) + $sector ;
+
+    animation-name: rotating;
+    animation-duration: 60s;
+    @include animation;
+  }
+
+  &__second-hand {
+    position: absolute;
+    height: $second-height;
+    width: $second-width;
+    background-color: blue;
+    bottom: $second-height + $sector * 2;
+
+    animation-name: rotating;
+    animation-duration: 5s;
+    @include animation;
+  }
+}
