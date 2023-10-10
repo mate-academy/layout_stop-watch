@@ -1,1 +1,157 @@
-// put code here
+$clock-size: 80vmin;
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.clock {
+  height: $clock-size;
+  width: $clock-size;
+  background-color: #eee;
+  border-radius: 50%;
+  border: $clock-size * 0.03 solid #7a7a7a;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight,
+.nine,
+.ten,
+.eleven,
+.twelve {
+  background-color: #333;
+  position: absolute;
+  height: $clock-size * 0.03;
+  width: $clock-size * 0.01;
+}
+
+.one {
+  transform: rotate(30deg);
+  left: 75%;
+  top: 7%;
+}
+
+.two {
+  transform: rotate(60deg);
+  right: 7%;
+  top: 25.5%;
+}
+
+.three {
+  right: 1.1%;
+  top: 50%;
+  transform: rotate(90deg);
+}
+
+.four {
+  transform: rotate(-60deg);
+  right: 7%;
+  bottom: 25.5%;
+}
+
+.five {
+  transform: rotate(-30deg);
+  left: 75%;
+  bottom: 7%;
+}
+
+.six {
+  left: 50%;
+  bottom: 0;
+}
+
+.seven {
+  transform: rotate(30deg);
+  right: 75%;
+  bottom: 7%;
+}
+
+.eight {
+  transform: rotate(60deg);
+  left: 7%;
+  bottom: 25.5%;
+}
+
+.nine {
+  top: 50%;
+  left: 1.1%;
+  transform: rotate(90deg);
+}
+
+.ten {
+  transform: rotate(-60deg);
+  left: 7%;
+  top: 25.5%;
+}
+
+.eleven {
+  transform: rotate(-30deg);
+  right: 75%;
+  top: 7%;
+}
+
+.twelve {
+  left: 50%;
+  top: 0;
+}
+
+.hour {
+  height: $clock-size * 0.35;
+  width: $clock-size * 0.01;
+  background-color: #333;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  animation: tick 43200s infinite linear;
+  -webkit-animation: tick 43200s infinite linear;
+}
+
+.minute {
+  height: $clock-size * 0.28;
+  width: $clock-size * 0.01;
+  position: absolute;
+  background-color: #777;
+  left: 50%;
+  bottom: 50%;
+  animation: tick 60s infinite linear;
+  -webkit-animation: tick 60s infinite linear;
+}
+
+.second {
+  height: $clock-size * 0.2;
+  width: $clock-size * 0.01;
+  position: absolute;
+  background-color: #fc0505;
+  left: 50%;
+  bottom: 50%;
+  animation: tick 5s infinite linear;
+  -webkit-animation: tick 5s infinite linear;
+}
+
+.hour,
+.minute,
+.second {
+  transform-origin: 2px 100%;
+  -webkit-transform-origin: 2px 100%;
+}
+
+@keyframes tick {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes tick {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
