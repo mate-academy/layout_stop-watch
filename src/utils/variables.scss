@@ -1,0 +1,27 @@
+$color-clock-border: #000;
+$color-clock-face: #fbfaf8;
+$color-clock-center: #f6f63f;
+$color-seconds-hand: #000;
+$color-minutes-hand: #000;
+$color-index: #e4e1e1;
+
+$clock-size: 80vmin;
+$clock-border: 5vmin dotted $color-clock-border;
+$clock-center-size: $clock-size / 15;
+$clock-index-size: $clock-center-size / 2;
+
+$seconds-hand-height: $clock-size / 2.35;
+$seconds-hand-width: $clock-size / 40;
+$seconds-hand-radius: $seconds-hand-width / 2;
+$seconds-hand-position-left: $clock-size / 2 - $seconds-hand-radius;
+
+$minutes-hand-height: $clock-size / 3.5;
+$minutes-hand-width: $clock-size / 30;
+$minutes-hand-radius: $minutes-hand-width / 2;
+$minutes-hand-position-left: $clock-size / 2 - $minutes-hand-radius;
+
+$index-position-three-x: $clock-size / 2 - $clock-index-size * 1.5;
+$index-position-three-y: $index-position-three-x;
+$index-position-nine-x: $index-position-three-x * -1;
+$index-position-nine-y: $index-position-three-x;
+$index-position-six: $clock-size - $clock-index-size * 3;
