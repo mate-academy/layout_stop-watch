@@ -1,1 +1,64 @@
-// put code here
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stop-whatch {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  border: 10px dotted #61615e;
+  border-radius: 50%;
+
+  &__bighand {
+    height: 25%;
+    width: 4%;
+    border-radius: 5px 5px 0 0;
+    background-color: rgb(50, 68, 226);
+    position: absolute;
+    top: 25%;
+    left: 48%;
+    z-index: 2;
+    animation: 60s linear infinite rotate;
+  }
+
+  &__smallhand {
+    height: 50%;
+    width: 2%;
+    background-color: rgb(237, 103, 35);
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    top: 0;
+    left: 49%;
+    animation: 5s linear infinite rotate;
+  }
+
+  &__axis {
+    position: absolute;
+    top: 47.5%;
+    left: 47.5%;
+    z-index: 3;
+    height: 5%;
+    width: 5%;
+    background-color: #c1e50a;
+    border-radius: 50%;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+      transform-origin: bottom center;
+    }
+
+    to {
+      transform: rotate(360deg);
+      transform-origin: bottom center;
+    }
+  }
+}
