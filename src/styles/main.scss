@@ -1,1 +1,60 @@
-// put code here
+
+.container {
+  min-width: 100vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 5px dotted black;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__dot {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ecf01a;
+  }
+
+  &__big-hand {
+    position: absolute;
+    width: 7px;
+    height: 40%;
+    top: 10%;
+    background-color: green;
+
+    animation: spin 5s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__small-hand {
+    position: absolute;
+    width: 25%;
+    height: 10px;
+    left: 50%;
+    background-color: red;
+
+    animation: spin 60s linear infinite;
+    transform-origin: left center;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotateZ(0deg);
+    }
+
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+}
