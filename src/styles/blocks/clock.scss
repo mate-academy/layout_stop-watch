@@ -1,0 +1,44 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  background-color: coral;
+  border-radius: 50%;
+  border: 5px dotted red;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 100;
+  }
+
+  &__hand {
+    transform-origin: bottom;
+    position: absolute;
+    bottom: 50%;
+  }
+
+  &__hand--second {
+    height: 50%;
+    width: 5px;
+    background-color: teal;
+    border-radius: 5px;
+    animation: rotate 5s linear infinite;
+  }
+
+  &__hand--minute {
+    height: 30%;
+    width: 10px;
+    background-color: black;
+    border-radius: 10px;
+    animation: rotate 60s linear infinite;
+  }
+}
