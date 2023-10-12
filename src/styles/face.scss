@@ -1,0 +1,23 @@
+.face {
+  box-sizing: content-box;
+  position: relative;
+  border: 5px double rgba(255, 255, 255, 0.721);
+  border-radius: 50%;
+  height: $bigSize;
+  width: $bigSize;
+  background-color: rgb(142, 83, 28);
+  box-shadow: inset 0px 0px 10px black;
+  transform: rotate(180deg);
+
+  &__inner {
+    position: absolute;
+    border: 0.5px solid #fff;
+    box-shadow: inset 0px 0px 10px black;
+    top: 75px;
+    left: 75px;
+    border-radius: 50%;
+    height: $smallSize;
+    width: $smallSize;
+    background-color: white;
+  }
+}

@@ -1,0 +1,77 @@
+.face {
+  box-sizing: content-box;
+  position: relative;
+  border: 5px double rgba(255, 255, 255, 0.721);
+  border-radius: 50%;
+  height: 600px;
+  width: 600px;
+  background-color: rgb(142, 83, 28);
+  box-shadow: inset 0px 0px 10px black;
+  transform: rotate(180deg);
+}
+
+.face__inner {
+  position: absolute;
+  border: 0.5px solid #fff;
+  box-shadow: inset 0px 0px 10px black;
+  top: 75px;
+  left: 75px;
+  border-radius: 50%;
+  height: 450px;
+  width: 450px;
+  background-color: white;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.hand {
+  position: absolute;
+}
+
+.hand__second {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 10px);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 290px solid #16b2d5;
+  border-radius: 5px;
+  animation: rotate steps(60) 60s infinite;
+  transform-origin: top;
+}
+
+.hand__minute {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 10px);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 250px solid #72d0e6;
+  border-radius: 5px;
+  animation: rotate linear 3600s infinite;
+  transform-origin: top;
+}
+
+.hand__centre {
+  position: absolute;
+  top: calc(50% - 12.5px);
+  left: calc(50% - 12.5px);
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 10px black;
+}
+
+/*# sourceMappingURL=main.css.map */
