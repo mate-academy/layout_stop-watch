@@ -1,3 +1,5 @@
+$colorRed: red;
+
 body {
   display: flex;
   justify-content: center;
@@ -14,7 +16,7 @@ body {
   height: 700px;
   background-color: rgb(241, 233, 234);
   border-radius: 50%;
-  border: 3px dotted red;
+  border: 3px dotted $colorRed;
 
   &:before {
     content: "";
@@ -22,7 +24,7 @@ body {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: red;
+    background-color: $colorRed;
     z-index: 100;
   }
 
@@ -42,7 +44,7 @@ body {
     &--minute {
       height: 25%;
       width: 10px;
-      background-color: red;
+      background-color: $colorRed;
       border-radius: 50%;
       animation: rotate 60s linear infinite;
     }
