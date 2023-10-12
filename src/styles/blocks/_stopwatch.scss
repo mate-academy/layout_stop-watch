@@ -1,0 +1,41 @@
+.stopwatch {
+  @include circle ($stopwatch-size);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border: ($stopwatch-size / 36) inset magenta;
+  position: relative;
+
+  &__hand {
+    animation: linear infinite rotate;
+
+    &--minutes {
+      position: absolute;
+      height: $stopwatch-size / 4;
+      width: $stopwatch-size / 28;
+      margin-top: $stopwatch-size / 4;
+      background-color: cyan;
+      transform-origin: bottom center;
+
+      animation-duration: 60s;
+    }
+
+    &--seconds {
+      position: absolute;
+      height: $stopwatch-size / 2;
+      width: $stopwatch-size / 40;
+      background-color: yellow;
+      transform-origin: bottom center;
+
+      animation-duration: 5s;
+    }
+  }
+
+  &__center {
+    @include circle($stopwatch-size / 20);
+    position: absolute;
+    background-color: black;
+    align-self: center;
+  }
+
+}
