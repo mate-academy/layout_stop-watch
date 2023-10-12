@@ -1,1 +1,83 @@
-// put code here
+@import "./utils/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.clock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  &__content {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 80vh;
+    width: 80vh;
+
+    border: 8px dotted $c-black;
+    border-radius: 50%;
+  }
+
+  &__arrow-second {
+    position: absolute;
+    bottom: 50%;
+    left: 48%;
+
+    width: $arrow-second-size;
+    height: 50%;
+
+    background-color: $c-green;
+
+    transform-origin: 50% 100%;
+    animation: rotateSeconds 5s linear infinite;
+  }
+
+  &__center {
+    z-index: 100;
+
+    display: block;
+    height: $clock-center-size;
+    width: $clock-center-size;
+
+    background-color: $c-orang;
+    border-radius: 50%;
+  }
+
+  &__arrow-minut {
+    position: absolute;
+    bottom: 50%;
+    left: 48%;
+
+    width: $arrow-minut-size;
+    height: 25%;
+
+    background-color: $c-blue;
+
+    animation: rotateMinute 60s linear infinite;
+    transform-origin: 50% 100%;
+  }
+
+  @keyframes rotateSeconds {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  @keyframes rotateMinute {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+}
