@@ -1,0 +1,41 @@
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $clock-size;
+  width: $clock-size;
+  border: 4px double blueviolet;
+  border-radius: 50%;
+
+  &__hand--second {
+    height: 50%;
+    width: 2px;
+    background-color: yellowgreen;
+
+    animation: rotate 5s linear infinite;
+  }
+
+  &__hand--hour {
+    height: 40%;
+    width: 4px;
+    background-color: turquoise;
+
+    animation: rotate 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: 2px double blueviolet;
+    border-radius: 50%;
+  }
+
+  &__hand {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+  }
+}
