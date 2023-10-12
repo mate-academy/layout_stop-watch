@@ -1,0 +1,58 @@
+// stopwatch
+.stopwatch {
+  position: relative;
+  width: $dim-watch-size;
+  height: $dim-watch-size;
+  border-radius: 50%;
+  border: 2rem ridge orange;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+
+  &__top,
+  &__bottom {
+    flex-grow: 1;
+    @extend %flex-center;
+  }
+
+  &__top {
+    align-items: flex-end;
+  }
+
+  &__bottom {
+    align-items: flex-start;
+  }
+
+  &__minutes {
+    height: 60%;
+    width: 1rem;
+    border-radius: 1rem;
+    background-color: $color-black;
+    animation: clock-move 3600s linear infinite;
+    animation-timing-function: steps(60);
+    transform-origin: bottom center;
+  }
+
+  &__seconds {
+    position: relative;
+    top: -80%;
+    height: 80%;
+    width: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: $color-black;
+    animation: clock-move 60s linear infinite;
+    animation-timing-function: steps(60);
+    transform-origin: bottom center;
+  }
+
+  &__middle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: red;
+  }
+}
