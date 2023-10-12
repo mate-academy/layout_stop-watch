@@ -1,1 +1,61 @@
-// put code here
+$colorRed: red;
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 700px;
+  height: 700px;
+  background-color: rgb(241, 233, 234);
+  border-radius: 50%;
+  border: 3px dotted $colorRed;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $colorRed;
+    z-index: 100;
+  }
+
+  &__hand {
+    position: absolute;
+    transform-origin: bottom;
+    bottom: 50%;
+
+    &--second {
+      height: 50%;
+      width: 5px;
+      background-color: rgb(21, 143, 39);
+      border-radius: 50%;
+      animation: rotate 5s linear infinite;
+    }
+
+    &--minute {
+      height: 25%;
+      width: 10px;
+      background-color: $colorRed;
+      border-radius: 50%;
+      animation: rotate 60s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(1turn);
+      }
+    }
+  }
+}
