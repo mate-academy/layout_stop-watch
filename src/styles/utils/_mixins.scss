@@ -1,0 +1,10 @@
+@mixin ticker ($period) {
+  transform-origin: bottom center;
+  animation: ticker #{$period} steps(60) 0.5s infinite;
+
+  @keyframes ticker {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

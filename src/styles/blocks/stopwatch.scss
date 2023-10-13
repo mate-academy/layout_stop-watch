@@ -4,12 +4,6 @@
   background-color: #00f;
   border-radius: 50%;
 
-  @keyframes ticker {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
   &__second-hand {
     position: absolute;
     top: calc(50% - #{$length-second-hand});
@@ -18,8 +12,7 @@
     height: $length-second-hand;
     background-color: #f00;
     border-radius: 50%;
-    transform-origin: bottom center;
-    animation: ticker 60s steps(60) 0.5s infinite;
+    @include ticker (60s);
   }
 
   &__minute-hand {
@@ -30,8 +23,7 @@
     height: $length-minute-hand;
     background-color: #0f0;
     border-radius: 50%;
-    transform-origin: bottom center;
-    animation: ticker 3600s steps(60) 0.5s infinite;
+    @include ticker (3600s);
   }
 
   &__center-patch {
