@@ -1,1 +1,59 @@
-// put code here
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 80vmin;
+  height: 80vmin;
+
+  border: 5px dotted black;
+  border-radius: 50%;
+
+  animation: linear infinite rotate;
+
+  &__minutes-arrow {
+    width: 4%;
+    height: 30%;
+    background-color: blue;
+    position: absolute;
+    bottom: 50%;
+
+    transform-origin: bottom center;
+    animation: rotate 60s  linear infinite;
+  }
+
+  &__second-arrow {
+    width: 2%;
+    height: 50%;
+    background-color: green;
+    position: absolute;
+    bottom: 50%;
+
+    transform-origin: bottom center;
+    animation: rotate 5s linear infinite;
+  }
+
+  &__disk {
+    position: relative;
+    height: 5vh;
+    width: 5vh;
+    border-radius: 50%;
+    background-color: gold;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
