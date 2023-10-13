@@ -1,8 +1,10 @@
 // stopwatch
 .stopwatch {
   position: relative;
-  width: $dim-watch-size;
-  height: $dim-watch-size;
+  width: $dim-app-size;
+  height: $dim-app-size;
+  min-width: $dim-app-minsize;
+  min-height: $dim-app-minsize;
   border-radius: 50%;
   border: 2rem ridge orange;
   background-color: $color-white;
@@ -24,35 +26,33 @@
   }
 
   &__minutes {
-    height: 60%;
-    width: 1rem;
-    border-radius: 1rem;
+    height: $dim-mninhand-length;
+    width: $dim-minhand-width;
+    border-radius: $dim-minhand-width;
     background-color: $color-black;
-    animation: clock-move 3600s linear infinite;
-    animation-timing-function: steps(60);
+    animation: clock-move 60s steps(60) infinite paused;
     transform-origin: bottom center;
   }
 
   &__seconds {
     position: relative;
-    top: -80%;
-    height: 80%;
-    width: 0.5rem;
-    border-radius: 0.5rem;
+    width: $dmin-sechand-width;
+    height: $dim-sechand-length;
+    top: -$dim-sechand-length;
+    border-radius: $dmin-sechand-width;
     background-color: $color-black;
-    animation: clock-move 60s linear infinite;
-    animation-timing-function: steps(60);
+    animation: clock-move 5s steps(60) infinite paused;
     transform-origin: bottom center;
   }
 
   &__middle {
     position: absolute;
-    top: 50%;
+    width: $dim-watchcenter-size;
+    height: $dim-watchcenter-size;
+    top: $dim-watchcenter-position;
+    left: $dim-watchcenter-position;
     transform: translateY(-50%) translateX(-50%);
-    left: 50%;
-    width: 2rem;
-    height: 2rem;
     border-radius: 50%;
-    background-color: red;
+    background-color: $color-red;
   }
 }

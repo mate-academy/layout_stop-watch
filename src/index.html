@@ -10,17 +10,42 @@
   </head>
   <body class="page-content">
     
-    <div class="stopwatch">
-      <div class="stopwatch__top">
-        <div class="stopwatch__minutes"></div>
-      </div>
-      <div class="stopwatch__bottom">
-        <div class="stopwatch__seconds"></div>
-      </div>
-
-      <div class="stopwatch__middle"></div>
+    <section class="app">
+      <!-- controls -->
+      <div class="controls">
+        <!-- pause checkbox -->
+        <input
+          class="controls__checkbox controls__checkbox--pause"
+          type="checkbox"
+          id="pause"
+        >
+        <!-- pause 'button' -->
+        <label
+          class="controls__button controls__button--pause" for="pause"
+        >
+          <!-- pause 'label' -->
+          <span class="controls__span controls__span--pause">
+            GO
+          </span>
+        </label>
       
-    </div>
+      </div>
+      <!-- watch -->
+      <div class="stopwatch">
+        <!-- watch upper half -->
+        <div class="stopwatch__top">
+          <!-- minutes hand -->
+          <div class="stopwatch__minutes watch-hand"></div>
+        </div>
+        <!-- watch bottm half -->
+        <div class="stopwatch__bottom">
+          <!-- seconds hand -->
+          <div class="stopwatch__seconds watch-hand"></div>
+        </div>
+        <!-- center of the watch -->
+        <div class="stopwatch__middle"></div>
+      </div>
+    </section>
 
   </body>
 </html>
