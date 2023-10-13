@@ -1,1 +1,97 @@
 // put code here
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vmin;
+  height: 80vmin;
+  border: 5px dotted black;
+  border-radius: 50%;
+  position: relative;
+
+  &__arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__center {
+    background-color: yellow;
+    border-radius: 50%;
+    width: 15%;
+    height: 15%;
+    position: absolute;
+  }
+
+  &__minutes {
+    width: 5%;
+    height: 25%;
+    background-color: blue;
+    position: absolute;
+    bottom: 50%;
+  }
+
+  &__second {
+    width: 3%;
+    height: 50%;
+    background-color: green;
+    position: absolute;
+    bottom: 50%;
+
+    &:hover {
+      animation: 5s linear fivesecond forwards;
+    }
+  }
+
+  &__arrows:active &__second {
+    animation: 60s linear sixsecund forwards;
+  }
+
+  &__arrows:active &__minutes {
+    animation: 60s linear oneminutes forwards;
+  }
+
+  @keyframes fivesecond {
+    from {
+      transform: rotate(0deg);
+      transform-origin: bottom;
+    }
+
+    to {
+      transform: rotate(30deg);
+      transform-origin: bottom;
+    }
+  }
+
+  @keyframes oneminutes {
+    from {
+      transform: rotate(0deg);
+      transform-origin: bottom;
+    }
+
+    to {
+      transform: rotate(6deg);
+      transform-origin: bottom;
+    }
+  }
+
+  @keyframes sixsecund {
+    from {
+      transform: rotate(0deg);
+      transform-origin: bottom;
+    }
+
+    to {
+      transform: rotate(360deg);
+      transform-origin: bottom;
+    }
+  }
+}
