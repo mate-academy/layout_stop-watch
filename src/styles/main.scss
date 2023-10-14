@@ -1,4 +1,18 @@
 // // put code here
+
+@mixin hand {
+  position: absolute;
+  border: 5px solid #212020;
+  border-radius: 25%;
+  background-color: #ccc;
+  z-index: 0;
+  margin-bottom: 32%;
+  width: 10px;
+
+  animation: rotate 5s linear 2s infinite;
+  transform-origin: bottom;
+}
+
 body {
   height: 100vh;
   display: flex;
@@ -28,27 +42,16 @@ body {
     }
 
     &_hand-big {
-      border: 5px solid #212020;
-      border-radius: 25%;
-      background-color: #ccc;
-      z-index: 0;
-      margin-bottom: 50%;
+      @include hand;
       height: 220px;
-      width: 10px;
-      animation: rotate 5s linear 2s infinite;
-      transform-origin: bottom;
+      animation-duration: 5s;
+      animation-delay: 2s;
     }
 
     &_hand-small {
-      border: 5px solid #212020;
-      border-radius: 25%;
-      background-color: #5b5a5a4a;
+      @include hand;
       height: 150px;
-      width: 20px;
-      margin-bottom: 50%;
-      z-index: 0;
-      animation: rotate 60s linear 7s infinite;
-      transform-origin: bottom;
+      animation-duration: 60s;
     }
   }
 }
