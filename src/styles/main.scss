@@ -1,1 +1,63 @@
-// put code here
+// // put code here
+
+@mixin hand {
+  position: absolute;
+  border: 5px solid #212020;
+  border-radius: 25%;
+  background-color: #ccc;
+  z-index: 0;
+  margin-bottom: 32%;
+  width: 10px;
+
+  animation: rotate 5s linear 2s infinite;
+  transform-origin: bottom;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stop-watch {
+  &_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border: 5px solid black;
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;
+
+    &_center {
+      position: absolute;
+      top: 47%;
+      border: 5px solid #212020;
+      border-radius: 50%;
+      background-color: #ccc;
+      z-index: 1;
+      height: 100px;
+      width: 100px;
+    }
+
+    &_hand-big {
+      @include hand;
+      height: 220px;
+      animation-duration: 5s;
+      animation-delay: 2s;
+    }
+
+    &_hand-small {
+      @include hand;
+      height: 150px;
+      animation-duration: 60s;
+    }
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
