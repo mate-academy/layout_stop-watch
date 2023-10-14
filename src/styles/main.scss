@@ -1,1 +1,60 @@
-// put code here
+// // put code here
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stop-watch {
+  &_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border: 5px solid black;
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;
+
+    &_center {
+      position: absolute;
+      top: 47%;
+      border: 5px solid #212020;
+      border-radius: 50%;
+      background-color: #ccc;
+      z-index: 1;
+      height: 100px;
+      width: 100px;
+    }
+
+    &_hand-big {
+      border: 5px solid #212020;
+      border-radius: 25%;
+      background-color: #ccc;
+      z-index: 0;
+      margin-bottom: 50%;
+      height: 220px;
+      width: 10px;
+      animation: rotate 5s linear 2s infinite;
+      transform-origin: bottom;
+    }
+
+    &_hand-small {
+      border: 5px solid #212020;
+      border-radius: 25%;
+      background-color: #5b5a5a4a;
+      height: 150px;
+      width: 20px;
+      margin-bottom: 50%;
+      z-index: 0;
+      animation: rotate 60s linear 7s infinite;
+      transform-origin: bottom;
+    }
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
