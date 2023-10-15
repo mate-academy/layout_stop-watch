@@ -1,0 +1,25 @@
+$clock-size: 80vmin;
+$dots-color: #b1aeaa;
+$center-dot-color: #e2af22;
+$second-hand-color: #2ec21b;
+$minute-hand-color: #2023cc;
+
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%position {
+  position: absolute;
+  transform-origin: bottom center;
+}
+
+@function hand-height($offset) {
+  @return #{$clock-size / 2 - $offset};
+}
+
+@mixin hand($offset) {
+  height: hand-height($offset);
+  top: #{$offset - 2};
+}
