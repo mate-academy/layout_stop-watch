@@ -1,0 +1,58 @@
+.clock {
+  width: 80vmin;
+  height: 80vmin;
+
+  border-radius: 50%;
+  border: 5px dotted black;
+
+  position: relative;
+
+  &__hand {
+    @include elemPosing;
+
+    border-radius: 20%;
+
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: center 0;
+
+    &--seconds {
+      height: 40%;
+      width: 1%;
+
+      background-color: darkgreen;
+      animation: rotate 5s linear infinite;
+    }
+
+    &--minutes {
+      height: 30%;
+      width: 2%;
+
+      background-color: blue;
+      animation: rotate steps(60) 60s infinite;
+    }
+
+  }
+
+  &::before {
+    content: "";
+    @include elemPosing;
+    z-index: 1;
+
+    width: 8%;
+    height: 8%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+    background-color: gold;
+  }
+
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
