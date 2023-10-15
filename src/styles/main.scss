@@ -1,1 +1,70 @@
-// put code here
+* {
+  box-sizing: border-box;
+}
+
+.big-ben {
+  display: flex;
+  background-image: url(../images/london-1100389.jpg);
+  background-size: cover;
+  width: 600px;
+  height: 800px;
+  border: 5px solid black;
+}
+
+.watches__seconds {
+  background-image: url(../images/london-1100389.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 50%;
+}
+
+.arrow0 {
+  background-image: url(../images/london-11003891.png);
+  background-position: 0 7.6px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 4px;
+  margin: 0 auto;
+  transition: transform 3s;
+}
+
+.arrow1 {
+  position: absolute;
+  left: 0;
+  top: 26.9px;
+  background-image: url(../images/london-11003892.png);
+  background-position: 24px 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 4px;
+  width: 100%;
+  transition: transform 3s;
+}
+
+.watches {
+  display: flex;
+  background-color: #fff;
+  margin: 333.5px 0 0 269px;
+  height: 57px;
+  width: 57px;
+  border-radius: 50%;
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale(3);
+  }
+
+  &:active {
+    .arrow0 {
+      transform: rotate(360deg);
+    }
+
+    .arrow1 {
+      transform: rotate(30deg);
+    }
+  }
+}
