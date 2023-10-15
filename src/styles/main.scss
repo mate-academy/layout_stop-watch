@@ -1,1 +1,52 @@
-// put code here
+body {
+  margin: 0;
+  padding: 0;
+  background: gray;
+}
+
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vmin;
+  height: 80vmin;
+  border: 5px solid goldenrod;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.hand {
+  position: absolute;
+  transform-origin: bottom;
+  animation: animate linear infinite;
+  background-color: black;
+}
+
+.hand--seconds {
+  top: 5%;
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 45%;
+  border-radius: 5px;
+  animation-duration: 5s;
+}
+
+.hand--minutes {
+  top: 15%;
+  left: calc(50% - 7px);
+  width: 14px;
+  height: 35%;
+  border-radius: 7px;
+  animation-duration: 60s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
