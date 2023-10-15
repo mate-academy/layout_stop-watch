@@ -1,0 +1,56 @@
+@import "./variables.scss";
+
+.clock {
+  width: $clock-size;
+  height: $clock-size;
+  border: 5px dotted black;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    z-index: 2;
+    top: 10%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    &--minutes {
+      position: relative;
+      height: 40%;
+      width: 10px;
+      background-color: #008001;
+      transform-origin: bottom;
+      animation: handMotion 10s infinite linear;
+    }
+
+    &--hour {
+      position: relative;
+      height: 30%;
+      width: 20px;
+      background-color: #00f;
+      transform-origin: top;
+      animation: handMotion 60s infinite linear;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    height: $dot-size;
+    width: $dot-size;
+    background-color: #ffa500;
+    border-radius: 50%;
+  }
+}
+
+@keyframes handMotion {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
