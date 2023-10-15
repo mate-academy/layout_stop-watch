@@ -1,0 +1,53 @@
+.clock {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  background: linear-gradient( 90deg, $color-2 50%, $color-1 50%);
+  border-radius: 50%;
+
+  &::after {
+    content: "12";
+    position: absolute;
+    left: calc(50% - #{$font-size} / 2);
+    top: 0;
+
+    -webkit-text-stroke: 2px $color-1;
+    color: $color-2;
+  }
+
+  &::before {
+    content: "6";
+    position: absolute;
+    left: calc(50% - #{$font-size} / 4);
+    bottom: 0;
+
+    -webkit-text-stroke: 2px $color-2;
+    color: $color-1;
+  }
+
+  &__min-hand {
+    position: absolute;
+    background-color: $color-1;
+    border: 2px solid $color-2;
+    border-radius: 50%;
+    width: $min-hand-width;
+    height: $clock-size / 3;
+    left: calc(50% - #{$min-hand-width} / 2);
+    bottom: $clock-size / 2;
+    animation: 60s linear 1s infinite hand-move;
+    transform-origin: bottom;
+  }
+
+  &__sec-hand {
+    position: absolute;
+    background-color: $color-2;
+    border: 2px solid $color-1;
+    border-radius: 50%;
+    width: $sec-hand-width;
+    height: $clock-size / 2.3;
+    left: calc(50% - #{$sec-hand-width} / 2);
+    bottom: $clock-size / 2;
+    animation: 5s linear 1s infinite hand-move;
+    transform-origin: bottom;
+  }
+}
