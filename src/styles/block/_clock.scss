@@ -1,0 +1,46 @@
+@use "../utils/animations";
+@use "../utils/placeholders";
+@use "../utils/variables" as *;
+
+.clock {
+  border-radius: $clock-radius;
+  width: $clock-size;
+  height: $clock-size;
+  border: 8px #000 dotted;
+  min-height: 80vmin;
+  min-width: 80vmin;
+  @extend %center;
+
+  &__tips {
+    display: flex;
+    justify-content: center;
+
+    &-seconds {
+      position: absolute;
+      width: 10px;
+      height: 380px;
+      background-color: #008000;
+      animation: rotate $clock-animation-time linear infinite;
+      transform-origin: top;
+    }
+
+    &-minutes {
+      position: absolute;
+      width: 18px;
+      height: 200px;
+      background-color: #00f;
+      animation: rotate $clock-animation-time * 5 linear infinite;
+      transform-origin: top;
+    }
+  }
+
+  &__circle {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: $clock-radius;
+    background-color: #ffa500;
+  }
+}
