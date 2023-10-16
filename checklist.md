@@ -1,6 +1,0 @@
-- [ ] Code style follows rules, described in the [Code Style Rules](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
-- [ ] All the requirements described in the [Readme](readme.md) are implemented in the code
-- [ ] All the Tips & Hints described in the [Readme](readme.md) are taken into account
-- [ ] All BEM typical mistakes are checked (from BEM lesson)
-- [ ] Keyframes implemented using from/to + transform with rotate property
-- [ ] Stopwatch is centered and has correct arrows size
