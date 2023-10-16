@@ -1,0 +1,88 @@
+
+.stopwatch {
+  @extend %center;
+  border: 10px solid $color-stopwatch-border;
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  background-color: $color-stopwatch;
+  position: relative;
+
+  &__center {
+    position: absolute;
+    background-color: $color-center;
+    height: 20px;
+    width: 20px;
+    border: 2px solid  $color-border-center;
+    border-radius: 50%;
+    z-index: 2;
+
+  }
+  &__long-pointer {
+    position: absolute;
+    bottom: 50%;
+    display: block;
+    background-color: $color-long-pointer;
+    height: 200px;
+    width: 7px;
+    border-radius: 10px;
+    transform-origin: bottom center;
+    animation: turn 5s linear infinite;
+  }
+
+  &__short-pointer {
+    position: absolute;
+    bottom: 50%;
+    display: block;
+    background-color: $color-short-pointer;
+    height: 110px;
+    width: 12px;
+    border-radius: 10px;
+    transform-origin: bottom center;
+    animation: turn 60s steps(60) infinite;
+
+  }
+
+  &__indicator-top::before {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 5px;
+    background-color: $color-indicator;
+    border-radius: 4px;
+    top: 0;
+    left: 50%;
+  }
+
+  &__indicator-right::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 15px;
+    background-color: $color-indicator;
+    border-radius: 4px;
+    top: 50%;
+    right: 0;
+  }
+
+  &__indicator-bottom::before {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 5px;
+    background-color: $color-indicator;
+    border-radius: 4px;
+    bottom: 0;
+    left: 50%;
+  }
+  &__indicator-left::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 15px;
+    background-color: $color-indicator;
+    border-radius: 4px;
+    top: 50%;
+    left: 0;
+  }
+}
