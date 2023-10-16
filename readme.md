@@ -23,5 +23,3 @@ Create a working stopwatch with minute and second hands using only CSS animation
 - [ ] Stopwatch is centered and has correct arrows size
 - [ ] All `Typical Mistakes` from `BEM` lesson theory are checked.
 - [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
-
---> [CHECKLIST](https://github.com/mate-academy/layout_stop-watch/blob/master/checklist.md)
