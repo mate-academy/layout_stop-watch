@@ -1,0 +1,35 @@
+.app__checkbox {
+  display: none;
+}
+
+.app__button {
+  width: 8rem;
+  height: 3rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 2rem;
+  @extend %flex-center;
+  border-radius: 0.5rem;
+  background-color: $color-green;
+  color: $color-white;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 3rem;
+}
+
+.app__checkbox--pause:checked + .app__button {
+  background-color: $color-red;
+}
+
+.app__checkbox--pause:checked + .app__button .app__span {
+  display: none;
+}
+
+.app__checkbox--pause:checked + .app__button::before {
+  content: "PAUSE";
+  @extend %flex-center;
+  color: $color-white;
+}
+
+.app__checkbox--pause:checked ~ .stopwatch .watch-hand {
+  animation-play-state: running;
+}

@@ -8,7 +8,41 @@
     <title>Stop watch</title>
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
-  <body>
-    <h1>Stop watch</h1>
+  <body class="page-content">
+    
+    <section class="app">
+      <!-- pause checkbox -->
+      <input
+        class="app__checkbox app__checkbox--pause"
+        type="checkbox"
+        id="pause"
+      >
+      <!-- pause 'button' -->
+      <label
+        class="app__button app__button--pause" for="pause"
+      >
+        <!-- pause 'label' -->
+        <span class="app__span app__span--pause">
+          GO
+        </span>
+      </label>
+      
+      <!-- watch -->
+      <div class="stopwatch">
+        <!-- watch upper half -->
+        <div class="stopwatch__top">
+          <!-- minutes hand -->
+          <div class="stopwatch__minutes watch-hand"></div>
+        </div>
+        <!-- watch bottm half -->
+        <div class="stopwatch__bottom">
+          <!-- seconds hand -->
+          <div class="stopwatch__seconds watch-hand"></div>
+        </div>
+        <!-- center of the watch -->
+        <div class="stopwatch__middle"></div>
+      </div>
+    </section>
+
   </body>
 </html>

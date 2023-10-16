@@ -1,0 +1,58 @@
+// stopwatch
+.stopwatch {
+  position: relative;
+  width: $dim-app-size;
+  height: $dim-app-size;
+  min-width: $dim-app-minsize;
+  min-height: $dim-app-minsize;
+  border-radius: 50%;
+  border: 2rem ridge orange;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+
+  &__top,
+  &__bottom {
+    flex-grow: 1;
+    @extend %flex-center;
+  }
+
+  &__top {
+    align-items: flex-end;
+  }
+
+  &__bottom {
+    align-items: flex-start;
+  }
+
+  &__minutes {
+    height: $dim-mninhand-length;
+    width: $dim-minhand-width;
+    border-radius: $dim-minhand-width;
+    background-color: $color-black;
+    animation: clock-move 60s steps(60) infinite paused;
+    transform-origin: bottom center;
+  }
+
+  &__seconds {
+    position: relative;
+    width: $dmin-sechand-width;
+    height: $dim-sechand-length;
+    top: -$dim-sechand-length;
+    border-radius: $dmin-sechand-width;
+    background-color: $color-black;
+    animation: clock-move 5s steps(60) infinite paused;
+    transform-origin: bottom center;
+  }
+
+  &__middle {
+    position: absolute;
+    width: $dim-watchcenter-size;
+    height: $dim-watchcenter-size;
+    top: $dim-watchcenter-position;
+    left: $dim-watchcenter-position;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 50%;
+    background-color: $color-red;
+  }
+}
