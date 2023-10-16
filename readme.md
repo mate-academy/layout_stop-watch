@@ -7,10 +7,10 @@ Create a working stopwatch with minute and second hands using only CSS animation
 - Display a stopwatch in the center of the page.
 - Demo has `80vmin` size
 - For the demo purpose rotate hands during `5s` and `60s`
-  
+
 > Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
 
-![demo](stopwatch.png)
+![reference image](reference.png)
 
 ## Checklist
 
