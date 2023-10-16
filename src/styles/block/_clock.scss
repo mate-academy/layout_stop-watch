@@ -11,23 +11,17 @@
   min-width: 80vmin;
   @extend %center;
 
-  &__center {
+  &__tips {
     display: flex;
     justify-content: center;
-
-    &--minutes-animation {
-      animation: rotate $clock-animation-time linear infinite;
-    }
-
-    &--seconds-animation {
-      animation: rotate $clock-animation-time * 5 linear infinite;
-    }
 
     &-seconds {
       position: absolute;
       width: 10px;
       height: 380px;
       background-color: #008000;
+      animation: rotate $clock-animation-time linear infinite;
+      transform-origin: top;
     }
 
     &-minutes {
@@ -35,6 +29,8 @@
       width: 18px;
       height: 200px;
       background-color: #00f;
+      animation: rotate $clock-animation-time * 5 linear infinite;
+      transform-origin: top;
     }
   }
 

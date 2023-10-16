@@ -6,9 +6,7 @@
     transform: rotate(180deg);
   }
 }
-
-body,
-.clock {
+body, .clock {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,34 +20,26 @@ body,
   min-height: 80vmin;
   min-width: 80vmin;
 }
-
-.clock__center {
+.clock__tips {
   display: flex;
   justify-content: center;
 }
-
-.clock__center--minutes-animation {
-  animation: rotate 60s linear infinite;
-}
-
-.clock__center--seconds-animation {
-  animation: rotate 300s linear infinite;
-}
-
-.clock__center-seconds {
+.clock__tips-seconds {
   position: absolute;
   width: 10px;
   height: 380px;
   background-color: #008000;
+  animation: rotate 60s linear infinite;
+  transform-origin: top;
 }
-
-.clock__center-minutes {
+.clock__tips-minutes {
   position: absolute;
   width: 18px;
   height: 200px;
   background-color: #00f;
+  animation: rotate 300s linear infinite;
+  transform-origin: top;
 }
-
 .clock__circle {
   display: flex;
   position: absolute;
