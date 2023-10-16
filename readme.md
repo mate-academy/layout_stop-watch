@@ -1,8 +1,5 @@
 # Stopwatch task
 
-> Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
-
-## task
 Create a working stopwatch with minute and second hands using only CSS animations.
 - There are no tests for this task so don't run `npm test`
 - There are no strict design you should follow for this task, you may choose on your own.
@@ -10,6 +7,10 @@ Create a working stopwatch with minute and second hands using only CSS animation
 - Display a stopwatch in the center of the page.
 - Demo has `80vmin` size
 - For the demo purpose rotate hands during `5s` and `60s`
+
+> Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
+
+![reference image](reference.png)
 
 ## Checklist
 
@@ -22,7 +23,5 @@ Create a working stopwatch with minute and second hands using only CSS animation
 - [ ] Stopwatch is centered and has correct arrows size
 - [ ] All `Typical Mistakes` from `BEM` lesson theory are checked.
 - [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
-
-![demo](stopwatch.png)
 
 --> [CHECKLIST](https://github.com/mate-academy/layout_stop-watch/blob/master/checklist.md)
