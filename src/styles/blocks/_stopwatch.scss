@@ -11,8 +11,6 @@
   border-style: dotted;
   position: relative;
 
-
-
   &__short-hand {
     position: absolute;
     height: 3%;
@@ -21,7 +19,7 @@
     top: 48.5%;
     background-color: blue;
     transform-origin: left;
-    animation: circlingaround 60s infinite linear;
+    animation: circlingAround 60s infinite linear;
   }
 
   &__long-hand {
@@ -32,7 +30,7 @@
     bottom: $half;
     background-color: green;
     transform-origin: bottom;
-    animation: circlingaround 5s infinite linear;
+    animation: circlingAround 5s infinite linear;
   }
 
   &__dot {
@@ -47,7 +45,7 @@
   }
 }
 
-@keyframes circlingaround {
+@keyframes circlingAround {
   0% {
     transform: rotate(0deg);
   }
