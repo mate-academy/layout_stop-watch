@@ -1,12 +1,14 @@
 // // put code here
-
 @mixin hand {
+
   position: absolute;
+  bottom: 50%;
+  left: 50%;
   border: 5px solid #212020;
   border-radius: 25%;
   background-color: #ccc;
   z-index: 0;
-  margin-bottom: 32%;
+
   width: 10px;
 
   animation: rotate 5s linear 2s infinite;
@@ -22,9 +24,8 @@ body {
 
 .stop-watch {
   &_container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    position: relative;
+
     border: 5px solid black;
     border-radius: 50%;
     height: 500px;
@@ -32,25 +33,26 @@ body {
 
     &_center {
       position: absolute;
-      top: 47%;
+      top: 45%;
+      left: 45%;
       border: 5px solid #212020;
       border-radius: 50%;
       background-color: #ccc;
       z-index: 1;
-      height: 100px;
-      width: 100px;
+      height: 10%;
+      width: 10%;
     }
 
     &_hand-big {
       @include hand;
-      height: 220px;
+      height: 40%;
       animation-duration: 5s;
       animation-delay: 2s;
     }
 
     &_hand-small {
       @include hand;
-      height: 150px;
+      height: 20%;
       animation-duration: 60s;
     }
   }
