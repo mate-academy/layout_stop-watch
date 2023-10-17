@@ -1,0 +1,55 @@
+@import "../utils/variables";
+
+.stopwatch {
+  margin: 0 auto;
+  width: 80vmin;
+  height: 80vmin;
+  top: 10vmin;
+  background-color: aqua;
+  border-radius: $half;
+  border: 5px solid black;
+  border-style: dotted;
+  position: relative;
+
+  &__short-hand {
+    position: absolute;
+    height: 3%;
+    width: 25%;
+    left: $half;
+    top: 48.5%;
+    background-color: blue;
+    transform-origin: left;
+    animation: circlingAround 60s infinite linear;
+  }
+
+  &__long-hand {
+    position: absolute;
+    height: $half;
+    width: 2%;
+    left: 49%;
+    bottom: $half;
+    background-color: green;
+    transform-origin: bottom;
+    animation: circlingAround 5s infinite linear;
+  }
+
+  &__dot {
+    width: 5%;
+    height: 5%;
+    border-radius: $half;
+    background-color: yellow;
+    position: absolute;
+    top: $half;
+    left: $half;
+    transform: translate(-$half, -$half);
+  }
+}
+
+@keyframes circlingAround {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
