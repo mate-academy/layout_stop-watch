@@ -1,0 +1,64 @@
+.stopwatch {
+  margin: 20px;
+
+  display: block;
+  position: relative;
+
+  width: 80vmin;
+  height: 80vmin;
+
+  border: 1px dashed black;
+  border-radius: 100%;
+
+  &__center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: block;
+    position: absolute;
+
+    width: 5vmin;
+    height: 5vmin;
+
+    background-color: rgb(218, 127, 41);
+    border-radius: 100%;
+  }
+
+  &__minute-arrow {
+    left: 50%;
+    transform: translate(-50%);
+
+    display: block;
+    position: absolute;
+
+    width: 2vmin;
+    height: 40vmin;
+
+    background-color: rgb(41, 218, 159);
+
+    transform-origin: bottom;
+    animation: minuteMoving 2s linear infinite;
+  }
+
+  &__hour-arrow {
+    top: 50%;
+    right: 0;
+    transform: translate(-100%, -50%);
+
+    display: block;
+    position: absolute;
+
+    width: 20vmin;
+    height: 2vmin;
+
+    background-color: rgb(177, 41, 218);
+
+    transform-origin: left;
+    animation: hourMoving 60s linear infinite;
+  }
+}
+
+@include arrowMoving(translate(-100%, -50%), hourMoving);
+
+@include arrowMoving(translate(-50%), minuteMoving);
