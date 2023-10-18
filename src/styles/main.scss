@@ -1,1 +1,83 @@
 // put code here
+$size: 80vmin;
+
+.body {
+  margin: 0;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+  border: 5px black dotted;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__center {
+    position: absolute;
+    height: $size*0.05;
+    width: $size*0.05;
+    border-radius: 50%;
+    background-color: orange;
+  }
+
+  &__hand-second {
+    background-color: blue;
+
+    position: relative;
+    z-index: -1;
+    top: -$size/4;
+    left: $size/8;
+    height: $size/2;
+    width: $size/80;
+
+    animation-name: move;
+    animation-duration: 60s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+  
+    @keyframes move {
+      from {
+        transform: rotate(0deg);
+        transform-origin: bottom center;
+      }
+      to {
+        transform: rotate(360deg);
+        transform-origin: bottom center;
+      }
+    }
+  }
+
+  &__hand-minute {
+    background-color: green;
+    position: relative;
+    z-index: -1;
+    left: $size/8.4;
+    height: $size/40;
+    width: $size/4;
+
+    animation-name: move2;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+  
+    @keyframes move2 {
+      from {
+        transform: rotate(0deg);
+        transform-origin: left;
+      }
+      to {
+        transform: rotate(360deg);
+        transform-origin: left;
+      }
+    }
+  }
+}
