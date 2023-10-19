@@ -1,0 +1,50 @@
+.stop-watch {
+  width: $main-stopWatch-size;
+  height: $main-stopWatch-size;
+
+  border: $main-stopWatch-borderRadius dotted rgb(3, 55, 80);
+  border-radius: 50%;
+
+  @include positionAbsoluteCenter;
+
+  &__secends {
+    height: $main-secends-size;
+    width: 6px;
+
+    background-color: rgb(9, 129, 29);
+    border-radius: $main-stopWatch-borderRadius;
+
+    position: absolute;
+    top: calc(50% - 320px);
+    left: calc(50% - 4px);
+    transform-origin: 4px $main-secends-size;
+
+    animation: fullCycle 5s steps(60, end) infinite;
+  }
+
+  &__hours {
+    height: $main-hours-size;
+    width: 12px;
+
+    background-color: rgb(212, 11, 179);
+    border-radius: $main-stopWatch-borderRadius;
+
+    position: absolute;
+    top: calc(50% - 160px);
+    left: calc(50% - 4px);
+    transform-origin: 4px $main-hours-size;
+
+    animation: fullCycle 60s steps(60, end) -15s infinite;
+  }
+
+  &__botton {
+    height: $main-stopWatch--size;
+    width: $main-stopWatch--size;
+
+    background-color: rgb(202, 76, 18);
+    border-radius: 50%;
+
+    @include positionAbsoluteCenter;
+    z-index: 1;
+  }
+}
