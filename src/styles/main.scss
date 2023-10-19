@@ -1,1 +1,42 @@
-// put code here
+@import "util/mixinіs";
+
+.stopwatch {
+  position: relative;
+  @include size(80vmin, 80vmin);
+  margin: 0 auto;
+  border: 7px dotted #000;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    @include size(5vmin, 5vmin);
+    background: #f7a535;
+    border-radius: 50%;
+    z-index: 999;
+  }
+
+  &__clock-hand {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    &--second {
+      @include hand(#43810b, 1vmin, 40vmin);
+      @include transform(second, 0, 360deg);
+      @include animation(second, 60s, 0);
+    }
+
+    &--minute {
+      top: 25%;
+      @include hand(#3a6bfb, 2vmin, 20vmin);
+      @include transform(minute, 90deg, 100deg);
+      @include animation(minute, 5s, 55s);
+    }
+  }
+}
