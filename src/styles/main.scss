@@ -1,1 +1,73 @@
-// put code here
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.watch {
+  position: relative;
+  margin: 50px auto;
+  width: 500px;
+  height: 500px;
+  background-color: #a3ffcb;
+  border: 3px solid #157234;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    background-color: #00ff55;
+    border-radius: 50%;
+  }
+
+  &__second-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 0;
+    width: 2px;
+    height: 250px;
+    background-color: #157234;
+    animation: second linear 10s infinite;
+
+    transform-origin: center bottom;
+
+    @keyframes second {
+      0% {
+          transform: translateY(-100%) rotate(0deg);
+      }
+      100% {
+          transform: translateY(-100%) rotate(360deg);
+      }
+  }
+}
+
+  &__minute-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 1;
+    width: 5px;
+    height: 175px;
+    background-color: #0d4f23;
+
+    animation: minute linear 60s infinite;
+    transform-origin: center bottom;
+
+    @keyframes minute {
+      0% {
+          transform: translateY(-100%) rotate(0deg);
+      }
+      100% {
+          transform: translateY(-100%) rotate(360deg);
+      }
+    }
+  }
+}
