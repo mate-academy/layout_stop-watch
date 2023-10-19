@@ -37,7 +37,7 @@ body {
     background-color: blue;
     position: absolute;
     bottom: 50%;
-    animation: 3600s linear 5s infinite sixsecond;
+    animation: 60s linear infinite turn;
   }
 
   &__second {
@@ -46,49 +46,10 @@ body {
     background-color: green;
     position: absolute;
     bottom: 50%;
-    animation: 60s linear 0s infinite sixsecond,
-      60s linear 5s infinite sixsecond;
-
-    // &:hover {
-    //   animation: 5s linear fivesecond forwards;
-    // }
+    animation: 5s linear infinite turn;
   }
 
-  // #region var
-  // &__arrows:active &__second {
-  //   animation: 60s linear sixsecond forwards;
-  // }
-
-  // &__arrows:active &__minutes {
-  //   animation: 60s linear oneminutes forwards;
-  // }
-
-  // @keyframes fivesecond {
-  //   from {
-  //     transform: rotate(0deg);
-  //     transform-origin: bottom;
-  //   }
-
-  //   to {
-  //     transform: rotate(30deg);
-  //     transform-origin: bottom;
-  //   }
-  // }
-
-  // @keyframes oneminutes {
-  //   from {
-  //     transform: rotate(0deg);
-  //     transform-origin: bottom;
-  //   }
-
-  //   to {
-  //     transform: rotate(6deg);
-  //     transform-origin: bottom;
-  //   }
-  // }
-  // #endregion
-  // оставил прошлое решение
-  @keyframes sixsecond {
+  @keyframes turn {
     from {
       transform: rotate(0deg);
       transform-origin: bottom;
