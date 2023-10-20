@@ -1,0 +1,58 @@
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.stopwatch {
+  position: relative;
+
+  width: $watchSize;
+  height: $watchSize;
+  border-radius: 50%;
+  box-shadow: $shadows;
+
+  display: flex;
+  justify-content: center;
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+
+    align-self: center;
+    width: $centerSize;
+    height: $centerSize;
+    background-color: $watchColor;
+    border-radius: 50%;
+    box-shadow: $shadows;
+
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: 25%;
+
+    height: 25%;
+    width: 3%;
+    background-color: $watchColor;
+    border-radius: 50%;
+    box-shadow: $shadows;
+
+    animation: rotate infinite linear 60s;
+    transform-origin: bottom center;
+  }
+
+  &__second-hand {
+    position: absolute;
+
+    height: 50%;
+    width: 2%;
+    background-color: $watchColor;
+    border-radius: 50%;
+    box-shadow: $shadows;
+
+    animation: rotate infinite linear 5s;
+    transform-origin: bottom center;
+
+  }
+}
