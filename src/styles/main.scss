@@ -1,6 +1,15 @@
 // put code here
 $size: 80vmin;
 
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .body {
   margin: 0;
   height: 100vh;
@@ -43,17 +52,7 @@ $size: 80vmin;
     animation-timing-function: steps(60, end);
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
-  
-    @keyframes move {
-      from {
-        transform: rotate(0deg);
-        transform-origin: bottom center;
-      }
-      to {
-        transform: rotate(360deg);
-        transform-origin: bottom center;
-      }
-    }
+    transform-origin: bottom center;
   }
 
   &__hand-minute {
@@ -64,20 +63,10 @@ $size: 80vmin;
     height: $size/40;
     width: $size/4;
 
-    animation-name: move2;
+    animation-name: move;
     animation-duration: 3600s;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
-  
-    @keyframes move2 {
-      from {
-        transform: rotate(0deg);
-        transform-origin: left;
-      }
-      to {
-        transform: rotate(360deg);
-        transform-origin: left;
-      }
-    }
+    transform-origin: left;
   }
 }
