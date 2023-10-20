@@ -10,6 +10,9 @@ body {
 }
 
 .stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: $width-height;
   height: $width-height;
   border: 10px dotted black;
@@ -22,8 +25,6 @@ body {
     background-color: orange;
     border-radius: 50%;
     position: absolute;
-    top: 46%;
-    left: 49%;
     z-index: 1;
   }
 
@@ -47,7 +48,7 @@ body {
     height: $width-height / 4;
     animation: rotate 360s linear infinite;
 
-    top: 24%;
+    top: 25%;
   }
 }
 
