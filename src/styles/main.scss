@@ -9,59 +9,49 @@ body {
   height: 100vh;
 }
 
-.stop-watch {
+.stopwatch {
+  width: $width-height;
+  height: $width-height;
+  border: 10px dotted black;
+  border-radius: 50%;
   position: relative;
-
-  &__minute-mark {
-    border: 10px dotted black;
-    border-radius: 50%;
-    width: $width-height;
-    height: $width-height;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    transform: rotate(90deg);
-  }
 
   &__central-part {
     width: 40px;
     height: 40px;
     background-color: orange;
     border-radius: 50%;
-    position: fixed;
+    position: absolute;
+    top: 46%;
+    left: 49%;
     z-index: 1;
   }
 
-  &__minute-hand {
-    width: $width-height / 2;
-    height: $hand-height;
-    background-color: blue;
-    animation: minute-hand 360s linear infinite;
-
+  &__hand {
     position: absolute;
+    top: 0%;
+    left: 50%;
+    transform-origin: 50% 100%;
   }
 
-  &__second-hand {
-    width: $width-height;
-    height: $hand-height;
+  &__hand--second-hand {
     background-color: green;
-    animation: second-hand 60s linear infinite;
+    width: 10px;
+    height: $width-height / 2;
+    animation: rotate 60s linear infinite;
   }
 
+  &__hand--minute-hand {
+    background-color: blue;
+    width: 20px;
+    height: $width-height / 4;
+    animation: rotate 360s linear infinite;
+
+    top: 24%;
+  }
 }
 
-@keyframes minute-hand {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes second-hand {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
