@@ -1,1 +1,56 @@
-// put code here
+@import "utils/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  @extend %flex;
+}
+
+.clock {
+  position: relative;
+  @extend %flex;
+  height: $clock-size;
+  width: $clock-size;
+  border-radius: 100%;
+  border: 2.1vmin dotted $dots-color;
+
+  &__center {
+    width: 4vmin;
+    height: 4vmin;
+    border-radius: 100%;
+    background-color: $center-dot-color;
+    z-index: 3;
+  }
+
+  &__minute {
+    @extend %position;
+    width: 1.5vmin;
+    @include hand(15vmin);
+    background-color: $minute-hand-color;
+    animation: rotate 60s linear;
+    z-index: 1;
+  }
+
+  &__second {
+    @extend %position;
+    width: 1vmin;
+    @include hand(4vmin);
+    background-color: $second-hand-color;
+    animation: rotate 5s linear;
+    z-index: 2;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
