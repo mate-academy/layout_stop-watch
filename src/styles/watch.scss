@@ -1,0 +1,47 @@
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  left: 20%;
+  top: 20px;
+  position: relative;
+
+  &__face {
+    display: block;
+    height: 80vmin;
+    width: 80vmin;
+    background-color: #ddd;
+    border-radius: 50%;
+    border: 3px dotted black;
+  }
+
+  &__minute-arrow {
+    @include arrow(green, 5s, 50%);
+  }
+
+  &__sec-arrow {
+    @include arrow(red, 60s, 25%);
+  }
+
+  &__holder {
+    background-color: blue;
+    height: 3%;
+    width: 3%;
+    position: absolute;
+    border-radius: 50%;
+    bottom: 48.5%;
+    left: 49%;
+    z-index: 1;
+  }
+
+  @keyframes arrow-run {
+    from {
+      rotate: 0deg;
+    }
+    to {
+      rotate: 360deg;
+    }
+  }
+}
