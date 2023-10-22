@@ -37,36 +37,37 @@ $size: 80vmin;
     background-color: orange;
   }
 
-  &__hand-second {
-    background-color: blue;
-
+  &__hand {
     position: relative;
     z-index: -1;
-    top: -$size/4;
-    left: $size/8;
-    height: $size/2;
-    width: $size/80;
 
     animation-name: move;
-    animation-duration: 60s;
+    animation-delay: -5s;
     animation-timing-function: steps(60, end);
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    transform-origin: bottom center;
-  }
 
-  &__hand-minute {
-    background-color: green;
-    position: relative;
-    z-index: -1;
-    left: $size/8.4;
-    height: $size/40;
-    width: $size/4;
+    &--second {
+      background-color: blue;
 
-    animation-name: move;
-    animation-duration: 3600s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
-    transform-origin: left;
+      top: -$size/4;
+      left: $size/8;
+      height: $size/2;
+      width: $size/80;
+  
+      animation-duration: 60s;
+      transform-origin: bottom center;
+    }
+
+    &--minute {
+      background-color: green;
+      left: $size/8.4;
+      height: $size/40;
+      width: $size/4;
+  
+      animation-duration: 3600s;
+      animation-iteration-count: 0.02;
+      transform-origin: left;
+    }
   }
 }
