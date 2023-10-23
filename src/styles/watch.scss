@@ -1,11 +1,14 @@
+.page {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 .watch {
   width: 80vmin;
   height: 80vmin;
   display: flex;
-  justify-content: center;
-  text-align: center;
-  left: 20%;
-  top: 20px;
+  padding: 0 auto;
   position: relative;
 
   &__face {
@@ -31,8 +34,10 @@
     width: 3%;
     position: absolute;
     border-radius: 50%;
-    bottom: 48.5%;
-    left: 49%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
   }
 
