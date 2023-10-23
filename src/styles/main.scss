@@ -1,0 +1,125 @@
+body {
+  background-color: peachpuff;
+}
+
+.stopwatch {
+  position: absolute;
+  height: 80vmin;
+  width: 80vmin;
+
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 100%;
+  background-color: #fff;
+  border: 8px solid sandybrown;
+}
+
+.top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  background-color: black;
+  height: 6px;
+  width: 9px;
+}
+
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  background-color: black;
+  height: 9px;
+  width: 6px;
+}
+
+.bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  background-color: black;
+  height: 6px;
+  width: 9px;
+  bottom: 0;
+}
+
+.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+
+  background-color: black;
+  height: 9px;
+  width: 6px;
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+
+  background-color: brown;
+  height: 17px;
+  width: 17px;
+  border-radius: 100%;
+}
+
+.long-arrow {
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  animation: time 60s infinite linear;
+}
+
+.long-arrow:before {
+  content: "";
+  position: absolute;
+  height: 36vmin;
+  width: 7px;
+  background-color: black;
+  top: 8px;
+  border-radius: 30%;
+}
+
+.short-arrow {
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  animation: time 5s infinite linear;
+}
+
+.short-arrow:before {
+  content: "";
+  position: absolute;
+  height: 24vmin;
+  width: 6px;
+  background-color: chocolate;
+  top: 13vmin;
+  border-radius: 25%;
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
