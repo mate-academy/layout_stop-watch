@@ -5,6 +5,7 @@ $size: 80vmin;
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -42,9 +43,8 @@ $size: 80vmin;
     z-index: -1;
 
     animation-name: move;
-    animation-delay: -5s;
     animation-timing-function: steps(60, end);
-    animation-iteration-count: 1;
+    animation-iteration-count: infinite;
     animation-fill-mode: forwards;
 
     &--second {
@@ -60,13 +60,13 @@ $size: 80vmin;
     }
 
     &--minute {
+      z-index: -2;
       background-color: green;
       left: $size/8.4;
       height: $size/40;
       width: $size/4;
   
       animation-duration: 3600s;
-      animation-iteration-count: 0.02;
       transform-origin: left;
     }
   }
