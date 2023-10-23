@@ -1,5 +1,5 @@
-@import './variables.scss';
-@import './keyframes.scss';
+@import "./variables.scss";
+@import "./keyframes.scss";
 
 body {
   display: flex;
@@ -21,27 +21,26 @@ body {
     top: 50%;
     left: 50%;
 
+    &--minutes {
+      width: 5px;
+      height: 50%;
+      background-color: $arrow--minutes-color;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transform-origin: 50% 100%;
+      animation: rotate5s 5s linear infinite;
+    }
 
-  &--minutes {
-    width: 5px;
-    height: 50%;
-    background-color: $arrow--minutes-color;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    transform-origin: 50% 100%;
-    animation: rotate5s 5s linear infinite;
+    &--hours {
+      width: 30%;
+      height: 10px;
+      background-color: $arrow--hours-color;
+      transform: translateY(-50%);
+      animation: rotate60s 60s linear infinite;
+      transform-origin: 0% 50%;
+    }
   }
-
-  &--hours {
-    width: 30%;
-    height: 10px;
-    background-color: $arrow--hours-color;
-    transform: translateY(-50%);
-    animation: rotate60s 60s linear infinite;
-    transform-origin: 0% 50%;
-  }
-}
 
   &__dot {
     position: absolute;
