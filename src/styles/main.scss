@@ -1,1 +1,113 @@
-// put code here
+
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+
+  border-radius: 50%;
+
+  &__second-hand {
+    height: 50%;
+    width: 8px;
+    border-radius: 5px;
+    position: absolute;
+
+    transform: translateY(-50vmin);
+
+    background-color: rgb(253, 200, 20);
+    z-index: 6;
+
+    animation: rotateHand 5s linear infinite;
+  }
+
+  &__minute-hand {
+    height: 20vmin;
+    width: 15px;
+    position: absolute;
+    background-color: rgb(191, 209, 130);
+    z-index: 5;
+    
+    animation: rotateHand 60s linear infinite;
+  }
+
+  &__big-dot {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    background-color: rgb(126, 135, 217);
+    z-index: 4;
+
+    &--1 {
+      transform: translateY(calc(80vmin / 2));
+    }
+    
+    &--2 {
+      transform: translateY(calc(80vmin / -2));
+    }
+
+    &--3 {
+      transform: translateX(calc(80vmin / 2));
+    }
+
+    &--4 {
+      transform: translateX(calc(80vmin / -2));
+    }
+  }
+
+  &__middle-dot {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    background-color: rgb(195, 79, 206);
+    z-index: 4;
+
+    &--1 {
+      transform: translate(232px, 232px);
+    }
+
+    &--2 {
+      transform: translate(-232px, 232px);
+    }
+
+    &--3 {
+      transform: translate(232px, -232px);
+    }
+
+    &--4 {
+      transform: translate(-232px, -232px);
+    }
+
+  }
+}
+
+.center {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(245, 146, 110);
+  border-radius: 50%;
+  z-index: 7;
+}
+
+@keyframes rotateHand {
+  0% {
+    transform: rotate(0deg) translateY(-50%);
+  }
+  100% {
+    transform: rotate(360deg) translateY(-50%);
+  }
+}
