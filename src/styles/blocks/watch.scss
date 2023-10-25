@@ -1,0 +1,47 @@
+.watch {
+  width: 500px;
+  height: 500px;
+  border: 10px solid $blackColor;
+  border-radius: 50%;
+  background-color: lightblue;
+
+  &__centre {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $blackColor;
+    top: 240px;
+    left: 240px;
+    z-index: 1;
+  }
+
+  &__hour-hand {
+    position: relative;
+    height: 230px;
+    width: 10px;
+    left: 245px;
+    border-radius: 10px;
+    background-color: $blackColor;
+    transform-origin: 50% 100%;
+    animation: rotate 5s infinite linear;
+  }
+
+  &__minutes-hand {
+    position: relative;
+    height: 115px;
+    width: 10px;
+    left: 245px;
+    top: -115px;
+    border-radius: 10px;
+    background-color: $blackColor;
+    transform-origin: 50% 100%;
+    animation: rotate 60s infinite linear;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+}
