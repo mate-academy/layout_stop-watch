@@ -1,1 +1,60 @@
-// put code here
+@import "./utils/variables.scss";
+@import "./utils/mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $background-size;
+  height: $background-size;
+  background-image: url("../images/clock.png");
+  background-size: contain;
+
+  &__second-hand {
+    @include hands-animation;
+
+    background-color: $hand-red;
+    width: 3px;
+    height: 30vmin;
+    animation-duration: 5s;
+  }
+
+  &__hour-hand {
+    @include hands-animation;
+
+    background-color: $hand-grey;
+    width: 10px;
+    height: 25vmin;
+    animation-duration: 60s;
+  }
+
+  &::after {
+    content: "";
+    width: $round-size;
+    height: $round-size;
+    border-radius: 50%;
+    background-color: $hand-red;
+    z-index: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
