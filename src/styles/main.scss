@@ -13,45 +13,43 @@
     border: 4px dotted;
     border-radius: 100%;
 
-      &-center {
-        display: block;
-        position: absolute;
-        background: red;
-        z-index: 1;
-        top: 39vh;
-        width: 5vh;
-        height: 5vh;
-        border-radius: 100%;
-      }
+    &-center {
+      display: block;
+      position: absolute;
+      background: red;
+      z-index: 1;
+      top: 39vh;
+      width: 5vh;
+      height: 5vh;
+      border-radius: 100%;
+    }
 
-      &-seconds {
-        display: block;
-        position: absolute;
-        top: 1.5vh;
-        width: 2vh;
-        height: 40vh;
-        background: green;
+    &-seconds {
+      display: block;
+      position: absolute;
+      top: 1.5vh;
+      width: 2vh;
+      height: 40vh;
+      background: green;
+      animation: rotate;
+      animation-duration: 60s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      transform-origin: bottom center;
+    }
 
-        animation: rotate;
-        animation-duration: 60s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        transform-origin: bottom center;
-      }
-
-      &-minute {
-        display: block;
-        position: absolute;
-        top: 21.5vh;
-        width: 2vh;
-        height: 20vh;
-        background: yellow;
-
-        animation: rotate;
-        animation-duration: 3600s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        transform-origin: bottom center;
-      }
+    &-minute {
+      display: block;
+      position: absolute;
+      top: 21.5vh;
+      width: 2vh;
+      height: 20vh;
+      background: yellow;
+      animation: rotate;
+      animation-duration: 3600s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      transform-origin: bottom center;
+    }
   }
 }
