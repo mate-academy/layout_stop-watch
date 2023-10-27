@@ -1,20 +1,34 @@
-@import "util/mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 .stopwatch {
-  position: relative;
-  @include size(80vmin, 80vmin);
-  margin: 0 auto;
-  border: 7px dotted #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60vmin;
+  width: 60vmin;
+  border: 6px dotted black;
   border-radius: 50%;
+  position: relative;
 
   &__center {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    height: 50px;
+    width: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin: auto;
-    @include size(5vmin, 5vmin);
     background: #f7a535;
     border-radius: 50%;
     z-index: 999;
@@ -27,16 +41,33 @@
     margin: auto;
 
     &--second {
-      @include hand(#0c27f2, 1vmin, 40vmin);
-      @include transform(second, 0, 360deg);
-      @include animation(second, 60s, 0);
+      background-color: rgb(24, 101, 1);
+      width: 15px;
+      position: absolute;
+      bottom: 50%;
+      top: 25%;
+      left: 50%;
+      margin-left: -4px;
+      animation: rotation 60s linear infinite;
+      transform-origin: 50% 100%;
+      transform: rotate(0deg);
     }
 
     &--minute {
-      top: 25%;
-      @include hand(#556f53, 2vmin, 20vmin);
-      @include transform(minute, 90deg, 100deg);
-      @include animation(minute, 5s, 55s);
+    background-color: rgb(47, 0, 255);
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    width: 8px;
+    animation: rotation 5s linear infinite;
+    transform-origin: 50% 100%;
+    transform: rotate(0deg);
     }
   }
+
+  @keyframes rotation {
+    to {
+      transform: rotate(360deg);
+    }
+}
 }
