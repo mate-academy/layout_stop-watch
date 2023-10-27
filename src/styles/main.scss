@@ -1,1 +1,73 @@
-// put code here
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60vmin;
+  width: 60vmin;
+  border: 6px dotted black;
+  border-radius: 50%;
+  position: relative;
+
+  &__center {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    background: #f7a535;
+    border-radius: 50%;
+    z-index: 999;
+  }
+
+  &__clock-hand {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    &--second {
+      background-color: rgb(24, 101, 1);
+      width: 15px;
+      position: absolute;
+      bottom: 50%;
+      top: 25%;
+      left: 50%;
+      margin-left: -4px;
+      animation: rotation 60s linear infinite;
+      transform-origin: 50% 100%;
+      transform: rotate(0deg);
+    }
+
+    &--minute {
+    background-color: rgb(47, 0, 255);
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    width: 8px;
+    animation: rotation 5s linear infinite;
+    transform-origin: 50% 100%;
+    transform: rotate(0deg);
+    }
+  }
+
+  @keyframes rotation {
+    to {
+      transform: rotate(360deg);
+    }
+}
+}
