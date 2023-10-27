@@ -30,24 +30,24 @@ $watch-border: $watch-border-width dotted #000;
   }
 
   &__second {
-    width: $watch-radius;
-    height: $watch-radius/20;
+    width: $watch-radius/20;
+    height: $watch-radius;
     background-color: #0f0;
     position: relative;
-    top: $watch-radius - $watch-border-width*1;
-    left: $watch-radius - $watch-border-width*1;
-    transform-origin: top left;
+    top: -$watch-radius/20;
+    left: $watch-radius - $watch-border-width;
+    transform-origin: bottom left;
     animation: spin 5s infinite steps(30);
   }
 
   &__minute {
-    width: $watch-radius/1.5;
-    height: $watch-radius/20;
+    width: $watch-radius/20;
+    height: $watch-radius/1.5;
     background-color: #070;
     position: absolute;
-    top: $watch-radius - $watch-border-width;
-    left: $watch-radius - $watch-border-width;
-    transform-origin: top left;
+    top: $watch-radius/3.5;
+    left: $watch-radius - $watch-border-width*1.5;
+    transform-origin: bottom left;
     animation: spin 60s infinite steps(30);
   }
 
