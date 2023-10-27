@@ -1,32 +1,37 @@
-$watch-radius: 200px;
+$watch-radius: 40vmin;
 $watch-witdh: $watch-radius*2;
 $watch-height: $watch-radius*2;
 $watch-border-width: $watch-radius/20;
 $watch-border: $watch-border-width dotted #000;
 
+* {
+  border-radius: 50%;
+  box-sizing: border-box;
+
+}
+
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
-  padding: 0;
+  height: 100vh;
 }
 
 .stopwatch {
-  top: 20px;
-  left: 20px;
+  position: relative;
   height: $watch-height;
   width: $watch-witdh;
   border: $watch-border;
-  border-radius: 50%;
-  position: absolute;
-  box-sizing: border-box;
 
   &__centre {
     width: $watch-radius/5;
     height: $watch-radius/5;
-    background-color: #000;
-    position: absolute;
-    top: $watch-radius - $watch-border-width*3;
-    left: $watch-radius - $watch-border-width*3;
-    border-radius: 50%;
+    background-color: #d6cccc;
+    position: relative;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
   }
 
   &__second {
@@ -35,28 +40,28 @@ $watch-border: $watch-border-width dotted #000;
     background-color: #0f0;
     position: relative;
     top: -$watch-radius/20;
-    left: $watch-radius - $watch-border-width;
-    transform-origin: bottom left;
-    animation: spin 5s infinite steps(30);
+    left: $watch-radius - $watch-border-width*1.5;
+    transform-origin: bottom;
+    animation: spin 5s infinite steps(1000);
   }
 
   &__minute {
     width: $watch-radius/20;
     height: $watch-radius/1.5;
     background-color: #070;
-    position: absolute;
-    top: $watch-radius/3.5;
-    left: $watch-radius - $watch-border-width*1.5;
-    transform-origin: bottom left;
-    animation: spin 60s infinite steps(30);
+    position: relative;
+    top: -$watch-radius/1.3;
+    left: $watch-radius - $watch-border-width;
+    transform-origin: bottom;
+    animation: spin 60s infinite steps(60);
   }
 
   @keyframes spin {
-    50% {
-      transform: rotate(180deg);
+    from {
+      transform: rotate(0deg);
     }
 
-    100% {
+    to {
       transform: rotate(360deg);
     }
   }
