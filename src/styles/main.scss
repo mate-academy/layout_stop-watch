@@ -7,8 +7,8 @@ body {
 }
 
 .stopwatch {
-  width: 80vh;
-  height: 80vh;
+  width: 80vmin;
+  height: 80vmin;
   background-color: #fff;
   border: 10px dotted #333;
   border-radius: 50%;
@@ -26,7 +26,7 @@ body {
     position: absolute;
     transform-origin: 50% 100%;
     transform: translateX(-1px) rotate(0deg);
-    animation: rotateSecondHand 60s linear infinite;
+    animation: rotateHand 5s linear infinite;
   }
 
   &__hand-minute {
@@ -38,7 +38,7 @@ body {
     position: absolute;
     transform-origin: 50% 100%;
     transform: translateX(-2px) rotate(0deg);
-    animation: rotateMinuteHand 3600s linear infinite;
+    animation: rotateHand 60s linear infinite;
   }
 
   &__hand-center-circle {
@@ -53,20 +53,11 @@ body {
   }
 }
 
-@keyframes rotateSecondHand {
+@keyframes rotateHand {
   0% {
     transform: translateX(-1px) rotate(0deg);
   }
   100% {
     transform: translateX(-1px) rotate(360deg);
-  }
-}
-
-@keyframes rotateMinuteHand {
-  0% {
-    transform: translateX(-2px) rotate(0deg);
-  }
-  100% {
-    transform: translateX(-2px) rotate(360deg);
   }
 }
