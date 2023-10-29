@@ -1,1 +1,58 @@
-// put code here
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 10px dotted black;
+  border-radius: 100%;
+  position: relative;
+  background-color: #da86fb;
+  box-shadow: 10px 15px 20px slategrey;
+
+  &__center::after {
+    content: "";
+    border: 20px solid orange;
+    border-radius: 100%;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    z-index: 1;
+  }
+
+  &__minutes {
+    border: 10px solid blue;
+    width: calc(50% / 2);
+    border-radius: 5px;
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 50%;
+    animation: rotate 60s linear infinite;
+    transform-origin: left center;
+  }
+
+  &__seconds {
+    border: 10px solid green;
+    height: calc(50% - 20px);
+    border-radius: 5px;
+    position: absolute;
+    left: calc(50% - 10px);
+    animation: rotate 2s linear infinite;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
