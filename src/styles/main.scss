@@ -1,1 +1,63 @@
-// put code here
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  background-color: #fff;
+  border: 10px dotted #333;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__hand-second {
+    background-color: red;
+    width: 5px;
+    height: 50%;
+    top: 0;
+    left: 50%;
+    position: absolute;
+    transform-origin: 50% 100%;
+    transform: translateX(-1px) rotate(0deg);
+    animation: rotateHand 5s linear infinite;
+  }
+
+  &__hand-minute {
+    background-color: #333;
+    width: 5px;
+    height: 35%;
+    top: 15%;
+    left: 50%;
+    position: absolute;
+    transform-origin: 50% 100%;
+    transform: translateX(-2px) rotate(0deg);
+    animation: rotateHand 60s linear infinite;
+  }
+
+  &__hand-center-circle {
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rotateHand {
+  0% {
+    transform: translateX(-1px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-1px) rotate(360deg);
+  }
+}
