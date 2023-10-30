@@ -5,6 +5,11 @@
   justify-content: center;
   align-items: center;
 
+  &-arrows {
+    position: absolute;
+    border-radius: 5px;
+  }
+
   &__watch {
     height: 80vh;
     width: 80vh;
@@ -25,8 +30,6 @@
     &-minutes {
       border: 10px solid blue;
       width: calc(50% / 2);
-      border-radius: 5px;
-      position: absolute;
       top: calc(50% - 10px);
       left: 50%;
       animation: rotate 60s linear infinite;
@@ -36,8 +39,6 @@
     &-seconds {
       border: 10px solid green;
       height: calc(50% - 20px);
-      border-radius: 5px;
-      position: absolute;
       left: calc(50% - 10px);
       animation: rotate 5s linear infinite;
       transform-origin: bottom;
