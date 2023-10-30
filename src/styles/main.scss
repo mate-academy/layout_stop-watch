@@ -13,43 +13,42 @@
     border: 4px dotted;
     border-radius: 100%;
 
-    &-center {
+    &-static {
       display: block;
       position: absolute;
-      background: red;
-      z-index: 1;
-      top: 39vh;
-      width: 5vh;
-      height: 5vh;
-      border-radius: 100%;
     }
 
-    &-seconds {
+    &-variable {
       display: block;
       position: absolute;
-      top: 1.5vh;
       width: 2vh;
-      height: 40vh;
-      background: green;
       animation: rotate;
-      animation-duration: 60s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      transform-origin: bottom center;
-    }
-
-    &-minute {
-      display: block;
-      position: absolute;
-      top: 21.5vh;
-      width: 2vh;
-      height: 20vh;
-      background: yellow;
-      animation: rotate;
-      animation-duration: 3600s;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       transform-origin: bottom center;
     }
   }
+}
+
+.center {
+  top: 39vh;
+  width: 5vh;
+  height: 5vh;
+  z-index: 1;
+  background: red;
+  border-radius: 100%;
+}
+
+.second {
+  top: 1.5vh;
+  height: 40vh;
+  background: green;
+  animation-duration: 60s;
+}
+
+.minute {
+  top: 21.5vh;
+  height: 20vh;
+  background: yellow;
+  animation-duration: 3600s;
 }
