@@ -1,1 +1,54 @@
-// put code here
+@import "animation.scss";
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+
+  &__field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vmin;
+    height: 80vmin;
+    border: 4px dotted;
+    border-radius: 100%;
+
+    &-static {
+      display: block;
+      position: absolute;
+    }
+
+    &-variable {
+      display: block;
+      position: absolute;
+      width: 2vh;
+      animation: rotate;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      transform-origin: bottom center;
+    }
+  }
+}
+
+.center {
+  top: 39vh;
+  width: 5vh;
+  height: 5vh;
+  z-index: 1;
+  background: red;
+  border-radius: 100%;
+}
+
+.second {
+  top: 1.5vh;
+  height: 40vh;
+  background: green;
+  animation-duration: 60s;
+}
+
+.minute {
+  top: 21.5vh;
+  height: 20vh;
+  background: yellow;
+  animation-duration: 5s;
+}
