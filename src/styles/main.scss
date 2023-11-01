@@ -1,1 +1,57 @@
-// put code here
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.circle {
+  position: relative;
+  margin: 9vmin auto;
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__center {
+    z-index: 2;
+    position: absolute;
+    margin: 37.5vmin;
+    height: 5vmin;
+    width: 5vmin;
+    background-color: orange;
+    border-radius: 50%;
+  }
+
+  &__big-hand {
+    z-index: 1;
+    position: absolute;
+    margin: 0 39vmin;
+    height: 40vmin;
+    width: 2vmin;
+    background-color: green;
+
+    transform-origin: bottom;
+    animation: move 5s linear infinite;
+  }
+
+  &__small-hand {
+    position: absolute;
+    margin: 20vmin 38.5vmin;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: blue;
+
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
