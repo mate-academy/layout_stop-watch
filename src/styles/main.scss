@@ -31,24 +31,18 @@ body {
     background-color: green;
 
     transform-origin: bottom;
-    animation-name: move;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-duration: 5s;
+    animation: move 5s linear infinite;
   }
 
   &__small-hand {
     position: absolute;
-    margin: 38.5vmin 40vmin;
-    height: 3vmin;
-    width: 20vmin;
+    margin: 20vmin 38.5vmin;
+    height: 20vmin;
+    width: 3vmin;
     background-color: blue;
 
-    transform-origin: left;
-    animation-name: move;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-duration: 60s;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
   }
 }
 
