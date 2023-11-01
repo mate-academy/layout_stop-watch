@@ -1,1 +1,97 @@
-// put code here
+$watchSize: 80vmin;
+
+$centerSize: $watchSize / 16;
+
+.watch {
+  position: relative;
+  margin: auto;
+  height: $watchSize;
+  width: $watchSize;
+  border: 5px dotted black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__center {
+    height: $centerSize;
+    width: $centerSize;
+    background-color: #1e3fc2;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__second-hand {
+    position: absolute;
+    bottom: 40vmin;
+    height: 40vmin;
+    width: 1vmin;
+    background-color: #9f0808;
+    z-index: 0;
+
+    &--sixty-second {
+      animation-name: moveSecondHand;
+      animation-duration: 60s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+
+    &--five-second {
+      animation-name: moveFiveSecond;
+      animation-duration: 5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: 20vmin;
+    height: 20vmin;
+    width: 1.5vmin;
+    background-color: #1f0303;
+    z-index: 0;
+
+    animation-name: moveMinuteHand;
+    animation-duration: 1s;
+    animation-delay: 60s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes moveSecondHand {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes moveMinuteHand {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(6deg);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes moveFiveSecond {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(30deg);
+    transform-origin: bottom;
+  }
+}
