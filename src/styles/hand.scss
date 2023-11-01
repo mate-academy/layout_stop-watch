@@ -11,7 +11,7 @@
     width: 2 * $hand-size;
     height: $hand-height;
     background-color: $hand-minute-color;
-    animation: rotateMinuteHand 60s infinite linear;
+    animation: rotateHand 60s infinite linear;
     border-radius: 10px;
   }
 
@@ -19,12 +19,12 @@
     width: $hand-size;
     height: $hand-height + 20%;
     background-color: $hand-second-color;
-    animation: rotateSecondHand 5s infinite linear;
+    animation: rotateHand 5s infinite linear;
     border-radius: 5px;
   }
 }
 
-@keyframes rotateMinuteHand {
+@keyframes rotateHand {
   from {
     transform: rotate(0deg);
   }
@@ -33,11 +33,3 @@
   }
 }
 
-@keyframes rotateSecondHand {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
