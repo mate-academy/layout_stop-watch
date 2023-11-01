@@ -1,1 +1,63 @@
-// put code here
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.circle {
+  position: relative;
+  margin: 9vmin auto;
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__center {
+    z-index: 2;
+    position: absolute;
+    margin: 37.5vmin;
+    height: 5vmin;
+    width: 5vmin;
+    background-color: orange;
+    border-radius: 50%;
+  }
+
+  &__big-hand {
+    z-index: 1;
+    position: absolute;
+    margin: 0 39vmin;
+    height: 40vmin;
+    width: 2vmin;
+    background-color: green;
+
+    transform-origin: bottom;
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+  }
+
+  &__small-hand {
+    position: absolute;
+    margin: 38.5vmin 40vmin;
+    height: 3vmin;
+    width: 20vmin;
+    background-color: blue;
+
+    transform-origin: left;
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 60s;
+  }
+}
+
+@keyframes move {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
