@@ -9,12 +9,16 @@ body {
 }
 
 .watch {
-  position: relative;
+  display: flex;
+  position: absolute;
   width: $size;
   height: $size;
   border: 6px dotted black;
   border-radius: 50%;
-  margin: auto;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 
   &::before {
     content: " ";
@@ -24,7 +28,7 @@ body {
     background-color: blue;
     width: 2vmin;
     height: 25%;
-    animation: move  60s infinite linear;
+    animation: move 60s infinite linear;
     transform-origin: bottom;
   }
 
@@ -35,20 +39,20 @@ body {
     background-color: green;
     width: 1.5vmin;
     height: 50%;
-    animation: move  5s infinite linear;
+    animation: move 5s infinite linear;
     transform-origin: bottom;
   }
-}
 
-.center {
-  position: absolute;
-  top: $size/2 - 2vmin;
-  left: $size/2 - 2vmin;
-  background-color: orange;
-  height: $size-centre;
-  width: $size-centre;
-  border-radius: 50%;
-  z-index: 1;
+  &__center {
+    position: absolute;
+    top: $size/2 - 2vmin;
+    left: $size/2 - 2vmin;
+    background-color: orange;
+    height: $size-centre;
+    width: $size-centre;
+    border-radius: 50%;
+    z-index: 1;
+  }
 }
 
 @keyframes move {
