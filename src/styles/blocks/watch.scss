@@ -1,0 +1,40 @@
+.watch {
+  position: relative;
+  margin: auto;
+  height: $size-watch;
+  width: $size-watch;
+  border: 5px dotted #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__center {
+    width: $size-watch / 16;
+    height: $size-watch / 16;
+    border-radius: 50%;
+    background-color: #ffa500;
+    z-index: 1;
+  }
+
+  &__hands {
+    position: absolute;
+    background-color: #000;
+    bottom: $size-watch / 2;
+    transform-origin: bottom;
+  }
+
+  &__hands--second {
+    width: 1vmin;
+    height: $size-watch / 2;
+    background-color: #080;
+    animation: move 5s linear 0s infinite normal none;
+  }
+
+  &__hands--minute {
+    width: 1.5vmin;
+    height: $size-watch / 4;
+    animation: move 60s linear 0s infinite normal none;
+  }
+
+}
