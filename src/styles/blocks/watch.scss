@@ -21,19 +21,20 @@
     position: absolute;
     background-color: #000;
     bottom: $size-watch / 2;
+    transform-origin: bottom;
   }
 
   &__hands--second {
     width: 1vmin;
     height: $size-watch / 2;
     background-color: #080;
-    animation: move 60s linear 0s infinite normal none;
+    animation: move 5s linear 0s infinite normal none;
   }
 
   &__hands--minute {
     width: 1.5vmin;
     height: $size-watch / 4;
-    animation: move 3600s linear 0s infinite normal none;
+    animation: move 60s linear 0s infinite normal none;
   }
 
 }
