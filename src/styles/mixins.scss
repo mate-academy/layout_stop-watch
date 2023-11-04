@@ -1,0 +1,14 @@
+@mixin arrow-position {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin turn-arrows($time) {
+  transform-origin: top;
+  animation-name: move;
+  animation-duration: #{$time}s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
