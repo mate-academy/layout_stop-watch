@@ -1,0 +1,10 @@
+@keyframes move {
+  from {
+    transform: rotate(0) ;
+  }
+  to {
+    @for $sec from 0 through 360 {
+      transform: rotate(360deg);
+    }
+  }
+}
