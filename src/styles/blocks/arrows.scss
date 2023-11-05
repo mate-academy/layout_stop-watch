@@ -10,7 +10,7 @@
     width: 10px;
     background-color: rebeccapurple;
     border-radius: $border-radius;
-    animation: long-arrow-move 5s linear infinite;
+    animation: move 5s linear infinite;
   }
 
   &--short {
@@ -19,20 +19,11 @@
     width: 10px;
     background-color: mediumpurple;
     border-radius: $border-radius;
-    animation: short-arrow-move 60s linear infinite;
+    animation: move 60s linear infinite;
   }
 }
 
-@keyframes long-arrow-move {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes short-arrow-move {
+@keyframes move {
   0% {
     transform: rotate(0deg);
   }
