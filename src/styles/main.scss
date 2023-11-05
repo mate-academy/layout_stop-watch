@@ -1,1 +1,69 @@
-// put code here
+/* #region main-root */
+
+html,
+body,
+section,
+div,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+}
+
+/* #endregion */
+
+@import "./variables";
+@import "./animations";
+
+.watch {
+  margin: 50px auto;
+  width: $main-width;
+  height: $main-width;
+  border: 5px dotted black;
+  border-radius: 50%;
+  position: relative;
+
+  &__dot {
+    margin: $dot-margins;
+    width: $dot-width;
+    height: $dot-width;
+    background-color: rgb(255, 166, 0);
+    border-radius: 50%;
+    position: absolute;
+
+    &--sec {
+      animation-name: move;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    &--min {
+      animation-name: move;
+      animation-duration: 60s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    &-arrow {
+      position: relative;
+      border-radius: 50%;
+
+      &--sec {
+        bottom: $arrow-sec-bottom;
+        left: $arrow-sec-left;
+        height: $arrow-sec-height;
+        width: $arrow-sec-width;
+        background-color: rgb(224, 0, 0);
+      }
+
+      &--min {
+        height: $arrow-min-height;
+        width: $arrow-min-width;
+        top: $arrow-min-top;
+        left: $arrow-min-left;
+        background-color: rgb(12, 27, 27);
+      }
+    }
+  }
+}
