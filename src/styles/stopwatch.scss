@@ -11,25 +11,19 @@
   }
 
   &__minute-hand {
-    position: absolute;
     margin-left: $heightHand - $widthHand;
     margin-top: $heightHand / 2;
     width: 2 * $widthHand;
     height: $heightHand / 2;
     background-color: #e1aa74;
-    border-radius: 8px;
-    transform-origin: bottom;
     animation: rotateAnimation 60s linear infinite;
   }
 
   &__second-hand {
-    position: absolute;
     margin-left: $heightHand - ($widthHand / 2);
     width: $widthHand ;
     height: $heightHand;
     background-color: #f3f0ca;
-    border-radius: 8px;
-    transform-origin: bottom;
     animation: rotateAnimation 5s linear infinite;
   }
 
@@ -41,4 +35,10 @@
     background-color: #192655;
     border-radius: 50%;
   }
+}
+
+.transformed-element {
+  position: absolute;
+  border-radius: 8px;
+  transform-origin: bottom;
 }
