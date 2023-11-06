@@ -1,0 +1,44 @@
+.stopwatch {
+  box-sizing: border-box;
+  width: $stopWatchSize;
+  height: $stopWatchSize;
+  background: radial-gradient(circle, #3876bf, #192655);
+  border-radius: 50%;
+  border: $borderSize solid #e1aa74;
+
+  &__dial {
+    position: relative;
+  }
+
+  &__minute-hand {
+    margin-left: $heightHand - $widthHand;
+    margin-top: $heightHand / 2;
+    width: 2 * $widthHand;
+    height: $heightHand / 2;
+    background-color: #e1aa74;
+    animation: rotateAnimation 60s linear infinite;
+  }
+
+  &__second-hand {
+    margin-left: $heightHand - ($widthHand / 2);
+    width: $widthHand ;
+    height: $heightHand;
+    background-color: #f3f0ca;
+    animation: rotateAnimation 5s linear infinite;
+  }
+
+  &__point {
+    position: absolute;
+    margin: $heightHand - (2 * $widthHand);
+    width: 4 * $widthHand;
+    height: 4 * $widthHand;
+    background-color: #192655;
+    border-radius: 50%;
+  }
+}
+
+.transformed-element {
+  position: absolute;
+  border-radius: 8px;
+  transform-origin: bottom;
+}
