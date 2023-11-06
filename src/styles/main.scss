@@ -1,5 +1,5 @@
 .stopwatch {
-  border: 10px solid #000000;
+  border: 10px solid #000;
   box-shadow: 20px 10px 20px rgb(150, 141, 141),
     inset -8em -6em 8em rgba(200, 113, 0, 0.3);
   height: 80vmin;
@@ -28,40 +28,26 @@
   }
 }
 
-.minute__point {
+.stopwatch__minute-point {
   position: absolute;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #000000;
+  background-color: #000;
 }
 
-.minute__hand {
+.stopwatch__minute-hand {
   width: 12px;
   height: 40%;
-  border-radius:  50% 50% 0 0;
+  border-radius: 50% 50% 0 0;
   background-color: #000;
   position: absolute;
   top: 10%;
-  animation-iteration-count: 5s;
   animation: 3600s linear 0s;
-  animation-name: move;
-
-  @keyframes move {
-    from {
-      transform: rotate(0deg);
-      transform-origin: bottom;
-    }
+  animation-name: rotate;
 }
 
-
-  to {
-    transform: rotate(360deg);
-    transform-origin: bottom;
-  }
-}
-
-.second__point {
+.stopwatch__second-point {
   position: absolute;
   width: 10px;
   height: 10px;
@@ -69,26 +55,25 @@
   background-color: #941515;
 }
 
-.second__hand {
+.stopwatch__second-hand {
   width: 4px;
   height: 45%;
   border-radius: 50% 50% 0 0;
   background-color: #941515;
   position: absolute;
   top: 5%;
-  animation-iteration-count: 5s;
   animation: 60s linear 0s;
   animation-name: rotate;
+}
 
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-      transform-origin: bottom;
-    }
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
 
-    to {
-      transform: rotate(360deg);
-      transform-origin: bottom;
-    }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
   }
 }
