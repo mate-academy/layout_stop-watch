@@ -1,1 +1,79 @@
-// put code here
+.stopwatch {
+  border: 10px solid #000;
+  box-shadow: 20px 10px 20px rgb(150, 141, 141),
+    inset -8em -6em 8em rgba(200, 113, 0, 0.3);
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #b1a08a;
+}
+
+.stopwatch__scale {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  inset: 4px;
+}
+
+@for $scale from 1 through 60 {
+  .stopwatch__scale:nth-child(#{$scale}) {
+    transform: rotate(calc(6deg * #{$scale}));
+  }
+}
+
+.stopwatch__minute-point {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.stopwatch__minute-hand {
+  width: 12px;
+  height: 40%;
+  border-radius: 50% 50% 0 0;
+  background-color: #000;
+  position: absolute;
+  top: 10%;
+  animation: 3600s linear 0s;
+  animation-name: rotate;
+}
+
+.stopwatch__second-point {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #941515;
+}
+
+.stopwatch__second-hand {
+  width: 4px;
+  height: 45%;
+  border-radius: 50% 50% 0 0;
+  background-color: #941515;
+  position: absolute;
+  top: 5%;
+  animation: 60s linear 0s;
+  animation-name: rotate;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
