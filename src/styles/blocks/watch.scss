@@ -1,0 +1,55 @@
+.watch {
+  @include clock($clock-size);
+  border: calc(#{$clock-size} / 40) dotted #{$clock-color-minutes};
+  border-radius: 100%;
+  position: relative;
+  background-color: #ff5adb;
+
+  &__center::after {
+    content: "";
+    border: #{$clock-size-center} solid #{$clock-color-center};
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px #000;
+    z-index: 3;
+  }
+
+  &__minutes {
+    border: calc(#{$clock-size} / 60) solid #{$clock-color-minutes};
+    height: #{$clock-size-minutes};
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    animation: rotate 60s linear infinite;
+    transform-origin: bottom;
+    z-index: 2;
+  }
+
+  &__seconds {
+    border: calc(#{$clock-size} / 60) solid #{$clock-color-seconds};
+    height: #{$clock-size-seconds};
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    animation: rotate 5s linear infinite;
+    transform-origin: bottom;
+    z-index: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translateX(-50%) rotateZ(0deg);
+  }
+
+  to {
+    transform: translateX(-50%) rotateZ(360deg);
+  }
+}
