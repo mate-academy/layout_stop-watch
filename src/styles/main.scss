@@ -1,1 +1,61 @@
-// put code here
+$watch-size: 80vmin;
+$watch-round-form: 50%;
+$watch-center-size: ($watch-size / 10);
+$watch-center-pozition: ($watch-size / 2) - ($watch-center-size / 2);
+$divider-2: 2;
+$divider-4: 4;
+
+@mixin stopwatch-elements($color, $divider-height, $divider-width) {
+  background-color: $color;
+  height: ($watch-size / $divider-height);
+  width: ($watch-center-size / $divider-width);
+}
+
+.stopwatch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border: ($watch-size / 110) dotted black;
+  border-radius: $watch-round-form;
+  margin: 0 auto;
+
+  &__center {
+    position: absolute;
+    z-index: 2;
+    top: $watch-center-pozition;
+    left: $watch-center-pozition;
+    width: $watch-center-size;
+    height: $watch-center-size;
+    background-color: rgb(242, 197, 17);
+    border-radius: $watch-round-form;
+  }
+
+  &__second-hand {
+    position: absolute;
+    left: 48.6%;
+    transform: translateX(-50%);
+    @include stopwatch-elements(green, $divider-2, $divider-4);
+    animation: turn 5s ease-in-out infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: 25%;
+    left: 47.5%;
+    transform: translateX(-50%);
+    @include stopwatch-elements(rgb(69, 69, 226), $divider-4, $divider-2);
+    animation: turn 60s ease-in-out infinite;
+  }
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
