@@ -1,1 +1,55 @@
-// put code here
+@import "./variables";
+
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  border: 8px dotted #000;
+  border-radius: 50%;
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+
+  &__hand {
+    position: absolute;
+    transform-origin: bottom;
+    bottom: $hand-size;
+    border-radius: 30px;
+
+    &--min {
+      height: $hand-size;
+      width: 10px;
+      background-color: $min-hand-color;
+      animation: rotate 60s infinite;
+    }
+
+    &--sec {
+      height: $sec-hand-size;
+      width: 14px;
+      background-color: $sec-hand-color;
+      animation: rotate 5s ease-in-out infinite;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    height: $center-size;
+    width: $center-size;
+    border-radius: 50%;
+    background-color: $center-color;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
