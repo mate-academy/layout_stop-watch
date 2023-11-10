@@ -1,0 +1,144 @@
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin: auto;
+  height: $clockSize;
+  width: $clockSize;
+  border: 10px dotted $clockColor;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+
+  &__numbers {
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+
+    &:nth-of-type(even) {
+      font-size: 50px;
+    }
+
+    @for $num from 0 to 12 {
+      &:nth-child(#{$num + 1})::before {
+        content: "#{$num + 1}";
+      }
+    }
+
+    &--1 {
+      @include TransformNumbers(10vmin, 20vmin, -30deg);
+    }
+
+    &--2 {
+      @include TransformNumbers(12vmin, 72vmin, 40deg);
+    }
+
+    &--3 {
+      @include TransformNumbers(7vmin, 66vmin, 40deg);
+    }
+
+    &--4 {
+      @include TransformNumbers(8vmin, 70vmin, -30deg);
+    }
+
+    &--5 {
+      @include TransformNumbers(5vmin, 74vmin, 20deg);
+    }
+
+    &--6 {
+      @include TransformNumbers(0, 73vmin, -10deg);
+    }
+
+    &--7 {
+      @include TransformNumbers(-4vmin, 74vmin, 40deg);
+    }
+
+    &--8 {
+      @include TransformNumbers(-8vmin, 72vmin, -20deg);
+    }
+
+    &--9 {
+      @include TransformNumbers(-35vmin, 38vmin, 180deg);
+    }
+
+    &--10 {
+      @include TransformNumbers(-3vmin, 69vmin, 30deg);
+    }
+
+    &--11 {
+      @include TransformNumbers(4vmin, 70vmin, -20deg);
+    }
+
+    &--12 {
+      @include TransformNumbers(0, 0, 40deg);
+      animation: sway12 1s linear infinite alternate;
+      transform-origin: center;
+    }
+  }
+
+  &__minute-hand,
+  &__second-hand {
+    position: absolute;
+    border-radius: 40%;
+
+    animation: rotateMinute linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__minute-hand {
+    height: $minuteHandHight;
+    width: $minuteHandWidth;
+    background: linear-gradient($clockColor, $clockCenterColor);
+
+    animation-duration: 60s;
+  }
+
+  &__second-hand {
+    margin-top: $secondHandTop;
+    height: $secondHandHight;
+    width: $secondHandWidth;
+    background-color: $clockColor;
+
+    animation-duration: 5s;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    height: 20px;
+    width: 20px;
+
+    background-color: $clockCenterColor;
+    border-radius: 50%;
+
+    top: $clockCenter;
+    transform: translateY(-10px);
+  }
+
+  @keyframes sway12 {
+    from {
+      transform: rotate(40deg);
+    }
+
+    to {
+      transform: rotate(60deg);
+    }
+  }
+
+  @keyframes rotateMinute {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
