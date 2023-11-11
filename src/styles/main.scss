@@ -1,1 +1,56 @@
-// put code here
+.watch {
+  margin: auto;
+  border: 4px dashed black;
+  border-radius: 50%;
+  width: 80vmin;
+  height: 80vmin;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 6vmin;
+    height: 6vmin;
+    border-radius: 50%;
+    background-color: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+}
+
+.minutes,
+.seconds {
+  top: 50%;
+  position: absolute;
+  // transform: translate(-100%, -100%);
+  transform-origin: top center;
+
+}
+
+.minutes {
+  background-color: blue;
+  width: 3vmin;
+  height: 25%;
+  animation: rotate 60s linear infinite;
+  left: calc(50% - 9px);
+}
+
+.seconds {
+  left: calc(50% - 5px);
+  background-color: green;
+  width: 1vmin;
+  height: 50%;
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
