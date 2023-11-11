@@ -1,6 +1,6 @@
 .stopwatch {
-  width: 400px;
-  height: 400px;
+  width: 80vmin;
+  height: 80vmin;
   border: 15px solid $main-color;
   border-radius: 100%;
   background-color: $background-color;
@@ -9,7 +9,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 40px auto;
 
   &__center {
     width: 30px;
@@ -21,41 +20,25 @@
 
   &__sec {
     width: 10px;
-    height: 200px;
+    height: 40vmin;
     background-color: $sec-hand-color;
-    top: 0;
-    position: absolute;
     z-index: 1;
-    animation-name: rotation-sec;
+
     animation-duration: 5s;
-    animation-timing-function: linear;
+    @include animation;
   }
 
   &__min {
     width: 15px;
     height: 100px;
     background-color: $min-hand-color;
-    top: 0;
-    position: absolute;
     z-index: 2;
-    transform: translateY(100px);
-    animation-name: rotation-min;
+
     animation-duration: 60s;
-    animation-timing-function: linear;
+    @include animation;
   }
 
-  @keyframes rotation-min {
-    from {
-      transform: translateY(100px) rotate(0deg);
-      transform-origin: bottom;
-    }
-    to {
-      transform: translateY(100px) rotate(360deg);
-      transform-origin: bottom;
-    }
-  }
-
-  @keyframes rotation-sec {
+  @keyframes rotation {
     from {
       transform: rotate(0deg);
       transform-origin: bottom;
