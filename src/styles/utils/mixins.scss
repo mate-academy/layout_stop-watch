@@ -1,0 +1,17 @@
+@mixin flex-centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin transform-hand {
+  top: 50%;
+  transform-origin: 100% 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin animation-setting {
+  animation-name: move-hand;
+  animation-iteration-count: infinite;
+  animation-timing-function: step-end;
+}
