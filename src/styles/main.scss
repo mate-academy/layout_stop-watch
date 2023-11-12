@@ -18,39 +18,37 @@
     transform: translate(-50%, -50%);
     z-index: 1;
   }
-}
 
-.minutes,
-.seconds {
-  top: 50%;
-  position: absolute;
-  // transform: translate(-100%, -100%);
-  transform-origin: top center;
+  .watch-hand {
+    top: 50%;
+    position: absolute;
+    transform-origin: top center;
 
-}
-
-.minutes {
-  background-color: blue;
-  width: 3vmin;
-  height: 25%;
-  animation: rotate 60s linear infinite;
-  left: calc(50% - 9px);
-}
-
-.seconds {
-  left: calc(50% - 5px);
-  background-color: green;
-  width: 1vmin;
-  height: 50%;
-  animation: rotate 5s linear infinite;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(-180deg);
   }
 
-  100% {
-    transform: rotate(180deg);
+  &__minutes {
+    background-color: blue;
+    width: 3vmin;
+    height: 25%;
+    animation: rotate 60s linear infinite;
+    left: calc(50% - 9px);
+  }
+
+  &__seconds {
+    left: calc(50% - 5px);
+    background-color: green;
+    width: 1vmin;
+    height: 50%;
+    animation: rotate 5s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(-180deg);
+    }
+
+    100% {
+      transform: rotate(180deg);
+    }
   }
 }
