@@ -33,20 +33,7 @@
     background-color: red;
     transform: rotate(360deg);
     transform-origin: bottom;
-    // animation-name: bighand;
-    // animation-duration: 5s;
-    // animation-timing-function: linear;
-    // animation-iteration-count: 3;
-    animation: bighand 5s linear 12;
-  }
-
-  @keyframes bighand {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+    animation: spin 5s linear 12;
   }
 
   &__smallHand {
@@ -57,15 +44,11 @@
     background-color: green;
     transform: rotate(360deg);
     transform-origin: bottom;
-    // animation-name: bighand;
-    // animation-duration: 5s;
-    // animation-timing-function: linear;
-    // animation-iteration-count: 3;
-    animation: bighand 60s linear 1;
+    animation: spin 60s linear 1;
 
   }
 
-  @keyframes bighand {
+  @keyframes spin {
     from {
       transform: rotate(0deg);
     }
