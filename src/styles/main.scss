@@ -1,1 +1,71 @@
-// put code here
+$minute-hand-width: 4%;
+$hour-hand-width: 6%;
+$center-circle-width: 8%;
+$hand-height: 48%;
+
+@function setCentering($width) {
+  @return (50% - $width / 2);
+}
+
+.clock {
+  width: 80vh;
+  height: 80vh;
+  border: 3px dotted #000;
+  border-radius: 50%;
+  background-color: #fff;
+  box-sizing: border-box;
+  position: relative;
+  margin: 20px auto;
+
+  &__center {
+    width: $center-circle-width;
+    height: $center-circle-width;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(239, 239, 4);
+    position: absolute;
+    left: setCentering($center-circle-width);
+    top: setCentering($center-circle-width);
+    z-index: 1;
+  }
+
+  &__hand {
+    height: $hand-height;
+    position: relative;
+
+    &--minute {
+      width: $minute-hand-width;
+      position: absolute;
+      background-color: rgb(2, 135, 2);
+      bottom: 50%;
+      left: setCentering($minute-hand-width);
+      border-radius: 6px;
+      transform: rotate(0deg);
+      transform-origin: bottom center;
+      animation: rotate 5s linear infinite;
+    }
+
+    &--hour {
+      height: $hand-height / 3 * 2;
+      width: $hour-hand-width;
+      background-color: rgb(69, 11, 243);
+      position: absolute;
+      bottom: 50%;
+      left: setCentering($hour-hand-width);
+      border-radius: 8px;
+      transform: rotate(0deg);
+      transform-origin: bottom center;
+      animation: rotate 60s linear infinite;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
