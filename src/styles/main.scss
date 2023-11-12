@@ -1,1 +1,67 @@
-// put code here
+@mixin  hands {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+
+  @keyframes move {
+
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@mixin flexPosition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$watch-size: 80vmin;
+$hand-size: calc(#{$watch-size} / 2);
+$border-radius: 50%;
+
+body {
+  @include flexPosition;
+  height: 100vh;
+  margin: 0;
+}
+
+.stop-watch {
+  @include  flexPosition;
+  position: relative;
+  height: $watch-size;
+  width: $watch-size;
+  border: 3px dotted black;
+  border-radius: $border-radius;
+}
+
+.dot {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: $border-radius;
+  background-color: orange;
+  z-index: 1;
+}
+
+.hand-second {
+  @include hands;
+  height: $hand-size;
+  width: 2%;
+  background-color: green;
+  animation: move 5s linear 12;
+}
+
+.hand-minute {
+  @include hands;
+  height: calc(#{$hand-size} / 2);
+  width: 4%;
+  transform: rotate(90deg);
+  background-color: blue;
+  animation: move 60s steps(60) 1;
+}
