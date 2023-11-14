@@ -1,0 +1,46 @@
+.arrow {
+  position: relative;
+
+  &__minute-mn {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    animation: rotate 3600s linear 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 180px;
+      border-radius: 6px;
+      background: saddlebrown;
+      z-index: 10;
+    }
+  }
+
+  &__second-sc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    animation: rotate 60s linear 10;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 250px;
+      border-radius: 6px;
+      background: #d3d3d3;
+      z-index: 11;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
