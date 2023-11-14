@@ -1,0 +1,44 @@
+.stopwatch {
+  &__clock {
+    width: $stop-watch-width;
+    height: $stop-watch-height;
+
+    position: relative;
+
+    border: 10px dashed black;
+    border-radius: 50%;
+  }
+
+  &__min {
+    @include stop-watch-part-position(
+      $stop-watch-min-width, $stop-watch-min-height);
+
+    background-color: blue;
+    border-radius: 50%;
+
+    transform: rotate(-90deg) translateY($stop-watch-min-translateY);
+    transform-origin: top left;
+    animation: min-dial-keyframe $stop-watch-min-time infinite linear;
+  }
+
+  &__sec {
+    @include stop-watch-part-position(
+      $stop-watch-sec-width, $stop-watch-sec-height);
+
+    background-color: green;
+
+    transform: rotate(-90deg) translateY($stop-watch-sec-translateY);
+    transform-origin: top left;
+    animation: sec-dial-keyframe $stop-watch-sec-time infinite linear;
+  }
+
+  &__center {
+    @include stop-watch-part-position(
+      $stop-watch-center-width, $stop-watch-center-height);
+
+    background-color: orange;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+}
