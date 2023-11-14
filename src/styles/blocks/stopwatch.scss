@@ -5,6 +5,8 @@
 
     position: relative;
 
+    background-color: rgb(202, 255, 253);
+    box-shadow: 0 0 100px;
     border: 10px dashed black;
     border-radius: 50%;
   }
@@ -13,7 +15,7 @@
     @include stop-watch-part-position(
       $stop-watch-min-width, $stop-watch-min-height);
 
-    background-color: blue;
+    background-color: rgb(80, 80, 237);
     border-radius: 50%;
 
     transform: rotate(-90deg) translateY($stop-watch-min-translateY);
@@ -25,7 +27,7 @@
     @include stop-watch-part-position(
       $stop-watch-sec-width, $stop-watch-sec-height);
 
-    background-color: green;
+    background-color: rgb(63, 167, 122);
 
     transform: rotate(-90deg) translateY($stop-watch-sec-translateY);
     transform-origin: top left;
@@ -36,7 +38,7 @@
     @include stop-watch-part-position(
       $stop-watch-center-width, $stop-watch-center-height);
 
-    background-color: orange;
+    background-color: rgb(214, 226, 42);
     border-radius: 50%;
 
     transform: translate(-50%, -50%);
