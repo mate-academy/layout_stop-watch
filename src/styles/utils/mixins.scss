@@ -1,0 +1,18 @@
+@mixin flexFamily {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin positioningStyles ($width, $height, $position: absolute) {
+  position: $position;
+  width: $width;
+  height: $height;
+
+  border-radius: 50%;
+}
+
+@mixin handsAnimationProperties ($time) {
+  transform-origin: bottom;
+  animation: spin $time infinite linear;
+}

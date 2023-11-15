@@ -1,0 +1,36 @@
+.stopwatch {
+  @include positioningStyles($stopwatch-size, $stopwatch-size, relative);
+  @include flexFamily;
+
+  background-image: url(../images/clock-face.png);
+  background-size: cover;
+
+  background-color: #f7f3d9;
+  box-shadow: 0 0 2vmin;
+  border: 5px solid #353535;
+  border-radius: 50%;
+
+  &__min {
+    @include positioningStyles($min-hand-width, $min-hand-height);
+
+    bottom: 50%;
+    background-color: #353535;
+    @include handsAnimationProperties(60s);
+  }
+
+  &__sec {
+    @include positioningStyles($sec-hand-width, $sec-hand-height);
+
+    bottom: 50%;
+    background-color: #b45a4d;
+    @include handsAnimationProperties(5s);
+  }
+
+  &__base {
+    @include positioningStyles($base-width, $base-height);
+
+    border: 10px solid #353535;
+    background-color: #f7f3d9;
+    box-sizing: border-box;
+  }
+}
