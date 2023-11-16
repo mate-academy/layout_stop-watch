@@ -5,16 +5,16 @@
   background-image: url(../images/clock-face.png);
   background-size: cover;
 
-  background-color: #f7f3d9;
+  background-color: $stopwatch-bg-color;
   box-shadow: 0 0 2vmin;
-  border: 5px solid #353535;
+  border: 5px solid $main-color;
   border-radius: 50%;
 
   &__min {
     @include positioningStyles($min-hand-width, $min-hand-height);
 
     bottom: 50%;
-    background-color: #353535;
+    background-color: $main-color;
     @include handsAnimationProperties(60s);
   }
 
@@ -22,15 +22,15 @@
     @include positioningStyles($sec-hand-width, $sec-hand-height);
 
     bottom: 50%;
-    background-color: #b45a4d;
+    background-color: $sec-hand-bg-color;
     @include handsAnimationProperties(5s);
   }
 
   &__base {
     @include positioningStyles($base-width, $base-height);
 
-    border: 10px solid #353535;
-    background-color: #f7f3d9;
+    border: 10px solid $main-color;
+    background-color: $stopwatch-bg-color;
     box-sizing: border-box;
   }
 }
