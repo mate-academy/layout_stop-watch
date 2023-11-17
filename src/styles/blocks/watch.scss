@@ -1,0 +1,58 @@
+.watch {
+  position: relative;
+  margin-inline: auto;
+  margin-top: (100vmin - $watch-size) * 0.5;
+  height: $watch-size;
+  width: $watch-size;
+  border-radius: 100%;
+  border: 3px dotted black;
+}
+
+.watch__center {
+  height: $watch-size * 0.1;
+  width: $watch-size * 0.1;
+  background-color: blue;
+  left: $watch-size * 0.5 - $watch-size * 0.05;
+  top: $watch-size * 0.5 - $watch-size * 0.05;
+  position: absolute;
+  z-index: 3;
+  border-radius: 100%;
+}
+
+.watch__min-line {
+  position: absolute;
+  z-index: 2;
+  height: $watch-size * 0.5;
+  width: $watch-size * 0.01;
+  background-color: rgb(14, 185, 66);
+  left: $watch-size * 0.5 -$watch-size * 0.01 * 0.5;
+  animation-iteration-count: infinite;
+  animation-name: move;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  transform-origin: bottom;
+}
+
+.watch__hour-line {
+  position: absolute;
+  z-index: 1;
+  height: $watch-size * 0.02 ;
+  width: $watch-size * 0.3;
+  background-color: rgb(245, 41, 14);
+  left: $watch-size * 0.5;
+  top: $watch-size * 0.5 - $watch-size * 0.01;
+  animation-iteration-count: infinite;
+  animation-name: move;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  transform-origin: left;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
