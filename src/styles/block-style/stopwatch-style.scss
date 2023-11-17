@@ -19,7 +19,7 @@
       width: $width-hand;
       border: solid green;
       border-radius: 5px;
-      animation: rotate-minute 3600s steps(3600) infinite;
+      animation: rotate 60s steps(3600) infinite;
       animation-delay: calc(60s / 360);
       animation-timing-function: linear;
     }
@@ -29,22 +29,13 @@
       width: $width-hand;
       border: solid red;
       border-radius: 5px;
-      animation: rotate-second 60s steps(60) infinite;
+      animation: rotate 5s steps(60) infinite;
       animation-timing-function: linear;
 
     }
   }
 
-  @keyframes rotate-second {
-    0% {
-      transform: translateX(-50%) rotate(0deg);
-    }
-    100% {
-      transform: translateX(-50%) rotate(360deg);
-    }
-  }
-
-  @keyframes rotate-minute {
+  @keyframes rotate {
     0% {
       transform: translateX(-50%) rotate(0deg);
     }
