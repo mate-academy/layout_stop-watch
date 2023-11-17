@@ -27,7 +27,7 @@
   background-color: rgb(14, 185, 66);
   left: $watch-size * 0.5 -$watch-size * 0.01 * 0.5;
   animation-iteration-count: infinite;
-  animation-name: move-min;
+  animation-name: move;
   animation-duration: 5s;
   animation-timing-function: linear;
   transform-origin: bottom;
@@ -42,13 +42,13 @@
   left: $watch-size * 0.5;
   top: $watch-size * 0.5 - $watch-size * 0.01;
   animation-iteration-count: infinite;
-  animation-name: move-hour;
+  animation-name: move;
   animation-duration: 60s;
   animation-timing-function: linear;
   transform-origin: left;
 }
 
-@keyframes move-min {
+@keyframes move {
   from {
     transform: rotate(0deg);
   }
@@ -57,11 +57,4 @@
   }
 }
 
-@keyframes move-hour {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
