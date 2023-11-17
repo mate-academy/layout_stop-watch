@@ -1,0 +1,62 @@
+.stop-watch {
+  height: $stop-watch-size;
+  width: $stop-watch-size;
+
+  position: relative;
+  border: 1px dotted black;
+  border-radius: 50%;
+
+  &__long-hand {
+    width: 1.5%;
+    height: 50%;
+    left: 50%;
+
+    background-color: green;
+    position: absolute;
+
+    animation-name: move;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &__short-hand {
+    width: 3%;
+    height: 25%;
+    top: 25%;
+    left: 50%;
+    transform: translateY(1500%);
+
+    background-color: blue;
+    position: absolute;
+
+    animation-name: move;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0);
+      transform-origin: bottom;
+    }
+
+    to {
+      transform: rotate(360deg);
+      transform-origin: bottom;
+    }
+  }
+
+  &__center {
+    height: 6%;
+    width: 6%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: orange;
+    position: absolute;
+    border-radius: 50%;
+  }
+}
