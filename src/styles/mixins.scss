@@ -1,0 +1,19 @@
+@mixin animation-arrows ($keyframes, $time, $steps-count) {
+  animation: $keyframes $time 1 steps($steps-count) forwards;
+  transform-origin: center bottom;
+}
+
+@mixin absoluteCenter() {
+  position: absolute;
+  margin: auto;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+@mixin sizes($width, $height) {
+  width: $width;
+  height: $height;
+}
