@@ -1,1 +1,67 @@
-// put code here
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 80vmin;
+  width: 80vmin;
+  background-color: $watch-bg-color;
+
+  border-radius: 50%;
+  border: 8px dotted $watch-hands-color;
+
+  position: relative;
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__seconds {
+    width: 1%;
+    height: 48%;
+    background-color: $watch-hands-color;
+
+    position: absolute;
+    bottom: 50%;
+
+    transform-origin: bottom center;
+    animation: rotate 5s infinite linear;
+  }
+
+  &__hours {
+    width: 2%;
+    height: 40%;
+    background-color: $watch-hands-color;
+
+    position: absolute;
+    bottom: 50%;
+
+    transform-origin: bottom center;
+    animation: rotate 60s infinite linear;
+  }
+
+  &__arbor {
+    width: 3%;
+    height: 3%;
+    background-color: $watch-hands-color;
+    border-radius: 50%;
+  }
+}
