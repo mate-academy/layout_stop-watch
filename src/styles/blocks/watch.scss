@@ -1,0 +1,57 @@
+.watch {
+  box-sizing: border-box;
+  border: 2px dotted #000;
+  width: $watchWidth;
+  height: $watchHeight;
+  border-radius: $borderRadius;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__center {
+    position: absolute;
+    background-color: #ffa500;
+    width: 20px;
+    height: 20px;
+    border-radius: $borderRadius;
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    background-color: #00f;
+    width: 8px;
+    height: 25%;
+    position: absolute;
+    top: 20vmin;
+    animation: spinHands 60s 1s linear normal infinite;
+    transform-origin: $transformOrigin;
+  }
+
+  &__second-hand {
+    background-color: #008000;
+    width: 4px;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    animation: spinHands 5s 1s linear normal infinite;
+    transform-origin: $transformOrigin;
+  }
+
+  &:hover {
+    & .watch__minute-hand,
+    & .watch__second-hand {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes spinHands {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
