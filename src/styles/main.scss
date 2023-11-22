@@ -1,1 +1,70 @@
-// put code here
+$clock-size: 80vmin;
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin hands-position {
+  transform-origin: 50% 100%;
+  transform: rotate(0deg);
+}
+
+body {
+  margin: 0;
+}
+
+.clock {
+  @include center;
+
+  width: $clock-size;
+  height: $clock-size;
+  box-sizing: border-box;
+  border: black dotted 85px;
+  border-radius: 50%;
+
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+  }
+
+  &__hours {
+    @include center;
+    @include hands-position;
+
+    width: 25px;
+    height: 25%;
+    background-color: black;
+    border-radius: 20px;
+
+    animation: rotate 60s linear infinite; // 3600s
+  }
+
+  &__minutes {
+    @include center;
+    @include hands-position;
+
+    width: 15px;
+    height: 45%;
+    background-color: gray;
+    border-radius: 10px;
+
+    animation: rotate 5s steps(60) infinite; // 60s
+  }
+
+  &__centre {
+    @include center;
+
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border: red solid 15px;
+    border-radius: 50%;
+  }
+}
