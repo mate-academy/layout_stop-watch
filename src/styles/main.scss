@@ -1,1 +1,78 @@
-// put code here
+@import "utils/variables";
+@import "utils/mixins";
+
+body {
+  margin: 0;
+}
+
+.clock {
+  @include center;
+
+  width: $clock-size;
+  height: $clock-size;
+  box-sizing: border-box;
+  border: black solid 5px;
+  border-radius: 50%;
+
+  &__dot {
+    position: absolute;
+    width: 1%;
+    height: 5%;
+    border-radius: 5px;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        $angle: 30deg * ($i - 1);
+
+        transform: translateX(-50%) translateY(-100%) rotate($angle) translate($clock-size / 2 - 5) rotate(90deg);
+      }
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+  }
+
+  &__hours {
+    @include center;
+    @include hands-position;
+
+    width: 25px;
+    height: 25%;
+    background-color: black;
+    border-radius: 20px;
+
+    animation: rotate 60s linear infinite; // 3600s
+  }
+
+  &__minutes {
+    @include center;
+    @include hands-position;
+
+    width: 15px;
+    height: 45%;
+    background-color: gray;
+    border-radius: 10px;
+
+    animation: rotate 5s steps(60) infinite; // 60s
+  }
+
+  &__centre {
+    @include center;
+
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border: red solid 15px;
+    border-radius: 50%;
+  }
+}
