@@ -1,0 +1,62 @@
+.watch {
+  position: relative;
+  box-sizing: border-box;
+
+  display: flex;
+  width: 80vmin;
+  height: 80vmin;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 0 4vmin rgba(0, 0, 0, 0.5);
+  border: 5px solid #301f01;
+  border-radius: $border-radius;
+  background-color: bisque;
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: $border-radius;
+    background-color: #301f01;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    width: 8px;
+    height: 25%;
+    top: 20vmin;
+
+    background-color: rgb(128, 80, 18);
+    border-radius: $border-radius;
+
+    animation: spin 60s 1s linear normal infinite;
+    transform-origin: $transform-origin;
+  }
+
+  &__second-hand {
+    position: absolute;
+    width: 4px;
+    height: 50%;
+    top: 0;
+
+    background-color: #ce5151;
+    border-radius: $border-radius / 2;
+
+    animation: spin 5s 1s linear normal infinite;
+    transform-origin: $transform-origin;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
