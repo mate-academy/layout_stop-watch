@@ -1,16 +1,5 @@
-$clock-size: 80vmin;
-
-@mixin center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-@mixin hands-position {
-  transform-origin: 50% 100%;
-  transform: rotate(0deg);
-}
+@import "utils/variables";
+@import "utils/mixins";
 
 body {
   margin: 0;
@@ -22,8 +11,27 @@ body {
   width: $clock-size;
   height: $clock-size;
   box-sizing: border-box;
-  border: black dotted 85px;
+  border: black solid 5px;
   border-radius: 50%;
+
+  &__dot {
+    position: absolute;
+    width: 1%;
+    height: 5%;
+    border-radius: 5px;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        $angle: 30deg * ($i - 1);
+
+        transform: translateX(-50%) translateY(-100%) rotate($angle) translate($clock-size / 2 - 5) rotate(90deg);
+      }
+    }
+  }
 
   @keyframes rotate {
     from {
