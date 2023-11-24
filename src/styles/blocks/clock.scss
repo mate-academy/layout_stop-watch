@@ -1,0 +1,50 @@
+.clock {
+  width: $clock-size;
+  height: $clock-size;
+  border: 5px dotted $main-color;
+  border-radius: 50%;
+  position: relative;
+
+  &__center {
+    position: absolute;
+    background-color: $main-color;
+    height: $center-size;
+    width: $center-size;
+    border-radius: 50%;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hand {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    transform-origin: bottom center;
+
+    &--min {
+      background-color: red;
+      width: 5px;
+      height: 50%;
+      animation: move 5s linear infinite;
+    }
+
+    &--sec {
+      background-color: $main-color;
+      width: 6px;
+      height: 25%;
+      top: 25%;
+      animation: move 60s linear infinite;
+    }
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translate(-50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%) rotate(360deg);
+  }
+}
