@@ -1,0 +1,37 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $watch-size;
+  height: $watch-size;
+  border: 5px dotted $main-color;
+  border-radius: 50%;
+  position: relative;
+
+  &__sec {
+    width: 1%;
+    height: 50%;
+    background-color: $watch-hands-color;
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom center;
+    animation: rotate 5s infinite linear;
+  }
+
+  &__min {
+    width: 1.5%;
+    height: 25%;
+    background-color: $watch-hands-color;
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom center;
+    animation: rotate 60s infinite linear;
+  }
+
+  &__center {
+    width: 3%;
+    height: 3%;
+    background-color: $watch-hands-color;
+    border-radius: 50%;
+  }
+}
