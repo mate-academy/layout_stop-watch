@@ -1,1 +1,63 @@
-// put code here
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+@import "./variables";
+@import "./animation";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  width: $main-width;
+  height: $main-width;
+  border: 8px dashed black;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    margin: $hand-margins;
+    width: $hand-width;
+    height: $hand-width;
+    background-color: rgb(200, 100, 0);
+    border-radius: 50%;
+
+    &--sec {
+      animation: rotate5 linear infinite;
+      animation-duration: 5s;
+    }
+
+    &--min {
+      animation: rotate60 linear infinite;
+      animation-duration: 60s;
+    }
+
+    &-arrow {
+      position: relative;
+      border-radius: 50%;
+
+      &--sec {
+        bottom: $arrow-sec-bottom;
+        left: $arrow-sec-left;
+        height: $arrow-sec-height;
+        width: $arrow-sec-width;
+        background-color: rgb(200, 0, 0);
+      }
+
+      &--min {
+        height: $arrow-min-height;
+        width: $arrow-min-width;
+        top: $arrow-min-top;
+        left: $arrow-min-left;
+        background-color: rgb(15, 40, 30);
+      }
+    }
+  }
+}
