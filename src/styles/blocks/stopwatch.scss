@@ -1,0 +1,38 @@
+.stopwatch {
+  position: relative;
+  @include flex-centering;
+  width: 80vmin;
+  height: 80vmin;
+  border: 10px dotted black;
+  border-radius: 50%;
+  transform: rotate(90deg);
+
+  &__point {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    z-index: -1;
+    position: absolute;
+    width: 37vmin;
+    height: 2vmin;
+    background-color: darkblue;
+    @include transform-hand;
+    @include animation-setting;
+    animation-duration: 5s;
+  }
+
+  &__second-hand {
+    z-index: -2;
+    position: absolute;
+    width: 27vmin;
+    height: 2vmin;
+    background-color: green;
+    @include transform-hand;
+    @include animation-setting;
+    animation-duration: 60s;
+  }
+}
