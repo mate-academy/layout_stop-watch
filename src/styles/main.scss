@@ -11,6 +11,7 @@ body {
   border: dotted black;
   border-radius: 50%;
   position: relative;
+  box-sizing: border-box;
 
   &::before {
     content: "";
@@ -29,23 +30,21 @@ body {
   &__element {
     position: absolute;
     width: 10px;
-    transform: translateX(-50%);
-  }
+    left: calc(50% - 5px);
 
-  &__minute {
-    left: 50%;
-    top: 0;
-    height: 50%;
-    background-color: red;
-    animation: circle 5s linear infinite;
-  }
+    &--minute {
+      top: 0;
+      height: 50%;
+      background-color: red;
+      animation: circle 5s linear infinite;
+    }
 
-  &__second {
-    top: 30%;
-    left: 50%;
-    height: 20%;
-    background-color: black;
-    animation: circle 60s linear infinite;
+    &--second {
+      top: 30%;
+      height: 20%;
+      background-color: black;
+      animation: circle 60s linear infinite;
+    }
   }
 }
 
