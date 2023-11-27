@@ -1,1 +1,64 @@
-// put code here
+.page {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.watch {
+  box-sizing: border-box;
+  height: 80vmin;
+  width: 80vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 6px dotted black;
+  border-radius: 50%;
+
+  &__center {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(243, 163, 25);
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 15px;
+      display: flex;
+      height: 240px;
+      width: 10px;
+      background-color: green;
+      z-index: -2;
+      transform-origin: bottom;
+      animation: 5s linear infinite move;
+    }
+
+    @keyframes move {
+      0% {
+        transform: rotate(1deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 15px;
+      height: 15px;
+      width: 120px;
+      display: flex;
+      z-index: -1;
+      background-color: blue;
+      transform-origin: left;
+      animation: 60s linear infinite move;
+    }
+  }
+}
