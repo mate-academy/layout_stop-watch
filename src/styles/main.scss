@@ -1,1 +1,69 @@
-// put code here
+$base-size: 500px;
+
+@mixin arrow-position {
+  transform-origin: bottom;
+  position: absolute;
+  bottom: 50%;
+}
+
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+  padding: 10px;
+  width: $base-size;
+  height: $base-size;
+  border: dotted black 3px;
+  border-radius: 50%;
+
+  &__stop-watch {
+    position: absolute;
+    width: $base-size / 10;
+    height: $base-size / 10;
+    background-color: yellow;
+    border-radius: 50%;
+    z-index: 3;
+
+    &:hover ~ .arrow {
+      animation-play-state: paused;
+    }
+  }
+
+  &__big-arrow {
+    @include arrow-position;
+    width: $base-size / 50;
+    height: $base-size / 2;
+    background-color: green;
+    z-index: 1;
+    animation: 5s linear 1s infinite move;
+  }
+
+  &__small-arrow {
+    @include arrow-position;
+    width: $base-size / 25;
+    height: $base-size / 4;
+    background-color: blue;
+    z-index: 2;
+    animation: 60s linear 1s infinite move;
+  }
+}
