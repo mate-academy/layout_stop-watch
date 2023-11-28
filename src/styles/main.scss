@@ -1,1 +1,85 @@
-// put code here
+@import 'var';
+
+@keyframes rotate-hands {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  border: 5px dotted #000;
+  border-radius: 50%;
+  height: $clock-size;
+  width: $clock-size;
+
+  &__center {
+    position: absolute;
+    top: $center-position;
+    left: $center-position;
+    height: $center-size;
+    width: $center-size;
+    border-radius: 50%;
+    background-color: #00f;
+    z-index: 1;
+  }
+
+  &__minute {
+    position: absolute;
+    height: $minute-length;
+    width: $minute-thin;
+    background-color: #f55;
+    left: $hands-position - ($minute-thin / 2);
+
+    animation-name: rotate-hands;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: ($minute-thin / 2) bottom;
+  }
+
+  &__hour {
+    position: absolute;
+    height: $hour-length;
+    width: $hour-thin;
+    background-color: #f00;
+    left: $hands-position - ($hour-thin / 2);
+    top: $hour-length;
+    z-index: -1;
+
+    animation-name: rotate-hands;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: ($hour-thin / 2) bottom;
+  }
+}
+
+.container {
+  margin-inline: auto;
+  text-align: center;
+  width: $clock-size;
+  border: 2px solid #aaa;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 10px 10px 20px 1px #aaa;
+
+  &:hover {
+    border-color: #f00;
+    .clock__minute,
+    .clock__hour {
+      animation-play-state: paused;
+    }
+  }
+}
