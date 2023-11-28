@@ -1,1 +1,69 @@
-// put code here
+@import './utils/variabls';
+@import './utils/mixin';
+
+.stop-wahch {
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    border: 4px dotted black;
+    border-radius: 50%;
+    width: $stop-watch-diameter;
+    height: $stop-watch-diameter;
+    position: relative;
+  }
+
+  &__minut {
+    width: 10px;
+    height: $stop-watch-radius / 2;
+    background-color: blue;
+    transform-origin: bottom;
+
+    @include animation($hour);
+
+    &--pos {
+      @include position;
+
+      top: 25%;
+    }
+  }
+
+  &__second {
+    width: 5px;
+    height: $stop-watch-radius;
+    background-color: yellow;
+    transform-origin: bottom;
+
+    @include animation($minut);
+
+    &--pos {
+      @include position;
+    }
+  }
+
+  &__centr {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border-radius: 50%;
+
+    &--pos {
+      @include position;
+
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@keyframes sixty {
+  from {
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  to {
+    left: 50%;
+    transform: translate(-50%) rotate(360deg);
+  }
+}

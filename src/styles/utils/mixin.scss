@@ -1,0 +1,12 @@
+@mixin animation($time) {
+  animation-name: sixty;
+  animation-duration: $time;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60, end);
+}
+
+@mixin position {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
