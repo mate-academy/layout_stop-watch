@@ -1,1 +1,89 @@
-// put code here
+$clock-size: 200px;
+$center-size: $clock-size / 10;
+$center-position: ($clock-size / 2) - ($center-size / 2);
+$minute-length: $clock-size / 2;
+$minute-thin: $clock-size / 40;
+$hour-length: $clock-size / 4;
+$hour-thin: $clock-size / 20;
+$hands-position: $clock-size / 2;
+
+@keyframes rotate-hands {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  margin-inline: auto;
+  text-align: center;
+  width: $clock-size;
+  border: 2px solid #aaa;
+  border-radius: 20px;
+  padding: 20px;
+
+  &:hover {
+    .clock__minute,
+    .clock__hour {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.clock {
+  position: relative;
+  border: 5px dotted #000;
+  border-radius: 50%;
+  height: $clock-size;
+  width: $clock-size;
+
+  &__center {
+    position: absolute;
+    top: $center-position;
+    left: $center-position;
+    height: $center-size;
+    width: $center-size;
+    border-radius: 50%;
+    background-color: #ff0;
+    z-index: 1;
+  }
+
+  &__minute {
+    position: absolute;
+    height: $minute-length;
+    width: $minute-thin;
+    background-color: #f00;
+    left: $hands-position - ($minute-thin / 2);
+
+    animation-name: rotate-hands;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: ($minute-thin / 2) bottom;
+  }
+
+  &__hour {
+    position: absolute;
+    height: $hour-length;
+    width: $hour-thin;
+    background-color: #00f;
+    left: $hands-position - ($hour-thin / 2);
+    top: $hour-length;
+    z-index: -1;
+
+    animation-name: rotate-hands;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: ($hour-thin / 2) bottom;
+  }
+}
+
+
