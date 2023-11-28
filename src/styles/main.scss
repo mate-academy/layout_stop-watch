@@ -1,4 +1,15 @@
-$base-siez: 500px;
+$base-size: 500px;
+
+@mixin arrow-position {
+  transform-origin: bottom;
+  position: absolute;
+  bottom: 50%;
+}
+
+* {
+  position: relative;
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -6,12 +17,10 @@ body {
 
 @keyframes move {
   0% {
-    transform-origin: bottom;
     transform: rotate(0deg);
   }
 
   100% {
-    transform-origin: bottom;
     transform: rotate(360deg);
   }
 }
@@ -20,19 +29,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   margin: 50px;
   padding: 10px;
-  box-sizing: border-box;
-  width: $base-siez;
-  height: $base-siez;
+  width: $base-size;
+  height: $base-size;
   border: dotted black 3px;
   border-radius: 50%;
 
   &__stop-watch {
     position: absolute;
-    width: $base-siez / 10;
-    height: $base-siez / 10;
+    width: $base-size / 10;
+    height: $base-size / 10;
     background-color: yellow;
     border-radius: 50%;
     z-index: 3;
@@ -43,25 +50,20 @@ body {
   }
 
   &__big-arrow {
-    position: absolute;
-    width: $base-siez / 50;
-    height: $base-siez / 2;
+    @include arrow-position;
+    width: $base-size / 50;
+    height: $base-size / 2;
     background-color: green;
-    bottom: 50%;
     z-index: 1;
     animation: 5s linear 1s infinite move;
   }
 
   &__small-arrow {
-    position: absolute;
-    width: $base-siez / 25;
-    height: $base-siez / 4;
+    @include arrow-position;
+    width: $base-size / 25;
+    height: $base-size / 4;
     background-color: blue;
-    bottom: 50%;
     z-index: 2;
     animation: 60s linear 1s infinite move;
   }
 }
-
-
-
