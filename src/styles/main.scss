@@ -1,11 +1,4 @@
-$clock-size: 200px;
-$center-size: $clock-size / 10;
-$center-position: ($clock-size / 2) - ($center-size / 2);
-$minute-length: $clock-size / 2;
-$minute-thin: $clock-size / 40;
-$hour-length: $clock-size / 4;
-$hour-thin: $clock-size / 20;
-$hands-position: $clock-size / 2;
+@import 'var';
 
 @keyframes rotate-hands {
   from {
@@ -19,22 +12,6 @@ $hands-position: $clock-size / 2;
 
 body {
   margin: 0;
-}
-
-.container {
-  margin-inline: auto;
-  text-align: center;
-  width: $clock-size;
-  border: 2px solid #aaa;
-  border-radius: 20px;
-  padding: 20px;
-
-  &:hover {
-    .clock__minute,
-    .clock__hour {
-      animation-play-state: paused;
-    }
-  }
 }
 
 .clock {
@@ -51,7 +28,7 @@ body {
     height: $center-size;
     width: $center-size;
     border-radius: 50%;
-    background-color: #ff0;
+    background-color: #00f;
     z-index: 1;
   }
 
@@ -59,7 +36,7 @@ body {
     position: absolute;
     height: $minute-length;
     width: $minute-thin;
-    background-color: #f00;
+    background-color: #f55;
     left: $hands-position - ($minute-thin / 2);
 
     animation-name: rotate-hands;
@@ -73,7 +50,7 @@ body {
     position: absolute;
     height: $hour-length;
     width: $hour-thin;
-    background-color: #00f;
+    background-color: #f00;
     left: $hands-position - ($hour-thin / 2);
     top: $hour-length;
     z-index: -1;
@@ -86,4 +63,20 @@ body {
   }
 }
 
+.container {
+  margin-inline: auto;
+  text-align: center;
+  width: $clock-size;
+  border: 2px solid #aaa;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 10px 10px 20px 1px #aaa;
 
+  &:hover {
+    border-color: #f00;
+    .clock__minute,
+    .clock__hour {
+      animation-play-state: paused;
+    }
+  }
+}
