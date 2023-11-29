@@ -1,0 +1,58 @@
+@import "mixin";
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  border: 5px dotted black;
+  border-radius: 50%;
+
+  &__minute-hand {
+    @include hand;
+
+    animation: rotate 60s linear normal none infinite ;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 250px;
+      border-radius: 5px;
+      background: blue;
+    }
+  }
+
+  &__hour-hand {
+    @include hand;
+
+    animation: rotate 3600s linear normal none infinite;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 130px;
+      border-radius: 5px;
+      background: green;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(180deg);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
