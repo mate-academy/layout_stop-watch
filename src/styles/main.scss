@@ -1,1 +1,60 @@
-// put code here
+.page__body{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.watch {
+  border-radius: 50%;
+  width: 80vh;
+  height: 80vh;
+  border: 4px dotted black;
+
+  &__middle {
+    height: 5vh;
+    width: 5vh;
+    background-color: yellow;
+    border-radius: 50%;
+    position: relative;
+    top: 47%;
+    left: 47%;
+    z-index: 1;
+  }
+
+  &__hand-sec {
+    height: 36vh;
+    width: 2.5vh;
+    background-color: rgb(5, 63, 5);
+    position: relative;
+    left: 48.5%;
+    top: -2%;
+    z-index: 0;
+    animation-name: spin;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+
+  &__hand-min {
+    height: 25vh;
+    width: 2.5vh;
+    background-color: rgb(13, 15, 170);
+    position: relative;
+    left: 48.5%;
+    top: -33%;
+    z-index: -1;
+    animation-name: spin;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
