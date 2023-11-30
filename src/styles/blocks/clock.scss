@@ -1,52 +1,3 @@
-.clock {
-  position: relative;
-
-  border: 5px dotted black;
-  border-radius: 50%;
-  background-color: grey;
-  height: $clock-diameter;
-  width: $clock-diameter;
-
-  &__center {
-    position: absolute;
-    top: ($clock-diameter / 2) - ($clock-center-diameter / 2);
-    left: ($clock-diameter / 2) - ($clock-center-diameter / 2);
-    z-index: 1;
-
-    border-radius: 50%;
-    background-color: red;
-    height: $clock-center-diameter;
-    width: $clock-center-diameter;
-  }
-
-  &__hand-big {
-    position: absolute;
-    top: 0;
-    left: ($clock-diameter / 2) - ($clock-hand-width-default / 2);
-
-    height: $clock-diameter / 2;
-    width: $clock-hand-width-default;
-    background-color: blue;
-
-    animation: time-mover 5s linear;
-    transform-origin: bottom;
-  }
-
-  &__hand-small {
-    position: absolute;
-    top: 20vmin;
-    left: ($clock-diameter / 2) - ($clock-hand-width-small / 2);
-
-    height: $clock-diameter / 4;
-    width: $clock-hand-width-small;
-    background-color: yellow;
-
-    animation: time-mover 60s linear;
-    transform-origin: bottom;
-  }
-}
-
-
 @keyframes time-mover {
   from {
     transform: rotate(0);
@@ -54,5 +5,58 @@
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+.clock {
+  position: relative;
+
+  height: $clock-diameter;
+  width: $clock-diameter;
+
+  border: 5px dotted black;
+  border-radius: 50%;
+  background-color: grey;
+
+  &__center {
+    position: absolute;
+
+    top: $clock-position-center;
+    left: $clock-position-center;
+    z-index: 1;
+
+    height: $clock-center-diameter;
+    width: $clock-center-diameter;
+
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  &__hand-big {
+    position: absolute;
+
+    top: 0;
+    left: ($clock-diameter / 2) - ($clock-hand-width-default / 2);
+
+    height: $clock-diameter / 2;
+    width: $clock-hand-width-default;
+    background-color: blue;
+
+    animation: time-mover 5s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__hand-small {
+    position: absolute;
+
+    top: 20vmin;
+    left: ($clock-diameter / 2) - ($clock-hand-width-small / 2);
+
+    height: $clock-diameter / 4;
+    width: $clock-hand-width-small;
+    background-color: yellow;
+
+    animation: time-mover 60s linear infinite;
+    transform-origin: bottom;
   }
 }
