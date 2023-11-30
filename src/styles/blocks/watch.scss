@@ -1,0 +1,67 @@
+@keyframes hands-radius {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  position: relative;
+
+  width: $size-watch;
+  height: $size-watch;
+  background-color: beige;
+
+  border-radius: 50%;
+  border: 5px dotted black;
+
+  &__center {
+    z-index: 1;
+    position: absolute;
+    left: $position-center;
+    top: $position-center;
+
+    width: $size-watch-center;
+    height: $size-watch-center;
+
+    background-color: aquamarine;
+    border-radius: 50%;
+  }
+
+  &__hand-minute {
+    position: absolute;
+    left: $position-hand-minute;
+    top: 0;
+
+    width: $width-watch-hand-minute;
+    height: $size-watch / 2;
+
+    background-color: blueviolet;
+    border: 2px solid inherit;
+    border-radius: 10px;
+
+    @include rules-hands;
+
+    animation-duration: 5s;
+  }
+
+  &__hand-second {
+    position: absolute;
+    left: $position-hand-second;
+    top: $position-top-second;
+
+    width: $width-watch-hand-second;
+    height: $position-top-second;
+
+    background-color: tomato;
+    border: 2px solid inherit;
+    border-radius: 20px;
+
+    @include rules-hands;
+    
+    animation-duration: 60s;
+  }
+}
