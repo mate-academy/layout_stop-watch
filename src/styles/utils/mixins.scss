@@ -1,0 +1,28 @@
+@mixin hand-rotate-animation($duration, $hand) {
+  animation-duration: #{$duration}s;
+  animation-iteration-count: 2;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-fill-mode: backwards;
+  animation-name: rotate-#{$hand};
+
+  @keyframes rotate-minute {
+    from {
+      transform: rotate($hands-start-degree);
+    }
+
+    to {
+      transform: rotate($hands-start-degree + 0.1 * $duration);
+    }
+  }
+
+  @keyframes rotate-second {
+    from {
+      transform: rotate($hands-start-degree);
+    }
+
+    to {
+      transform: rotate($hands-start-degree + 6 * $duration);
+    }
+  }
+}
