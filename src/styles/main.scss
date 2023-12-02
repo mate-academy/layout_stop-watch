@@ -1,1 +1,72 @@
-// put code here
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  margin: 100px 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 600px;
+  border-radius: 100%;
+  border-color: black;
+  border: dotted 4px;
+
+  &__centr {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border: 1px;
+    border-radius: 100%;
+    background-color: yellow;
+  }
+
+  &__hours {
+    margin-left: 190px;
+    position: absolute;
+    background-color: blue;
+    width: 210px;
+    height: 30px;
+
+    transform-origin: left center;
+    animation: rotate-hours 60s linear infinite;
+    animation-duration: 60s;
+  }
+
+  &__min {
+    margin-left: 270px;
+    position: absolute;
+    background-color: green;
+    height: 15px;
+    width: 280px;
+
+    transform-origin: left center;
+    animation: rotate-minutes 30s linear infinite;
+    animation-duration: 60ms;
+  }
+
+}
+
+@keyframes rotate-minutes {
+  from {
+    transform: rotate(100deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+
+@keyframes rotate-hours {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
