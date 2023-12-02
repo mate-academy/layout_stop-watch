@@ -1,1 +1,58 @@
-// put code here
+@import './utils/variables';
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.clock {
+  height: $clock-sizi;
+  width: $clock-sizi;
+  border: 5px dotted;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  margin: $margin-centr;
+
+  &__point {
+    z-index: 1;
+    width: $point-size;
+    height: $point-size;
+    background-color: orange;
+    border-radius: 50%;
+  }
+
+  &__hours {
+    z-index: 0;
+    position: absolute;
+    top: $clock-sizi / 4;
+
+    width: 20px;
+    height: $clock-sizi / 4;
+    background: blue;
+
+    animation: clock 60s linear infinite;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 0;
+
+    width: 10px;
+    height: $clock-sizi / 2;
+    background: green;
+
+    animation: clock 5s linear infinite;
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0); transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg); transform-origin: bottom;
+  }
+}
