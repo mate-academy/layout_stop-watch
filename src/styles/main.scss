@@ -3,7 +3,6 @@
 }
 
 body {
-  padding-top: 102px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,8 +12,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 600px;
-  height: 600px;
+  width: 80vmin;
+  height: 80vmin;
   border-radius: 100%;
   border-color: black;
   border: dotted 4px;
@@ -36,7 +35,7 @@ body {
     height: 30px;
 
     transform-origin: left center;
-    animation: rotate-hours 60s linear infinite;
+    animation: rotate-hands 60s linear infinite;
   }
 
   &__hand--minute {
@@ -47,21 +46,12 @@ body {
     width: 15px;
 
     transform-origin: bottom center;
-    animation: rotate-minutes 5s linear infinite;
+    animation: rotate-hands 5s linear infinite;
   }
 
 }
 
-@keyframes rotate-minutes {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(600deg);
-  }
-}
-
-@keyframes rotate-hours {
+@keyframes rotate-hands {
   from {
     transform: rotate(0);
   }
