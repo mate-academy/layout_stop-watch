@@ -2,13 +2,14 @@
   box-sizing: border-box;
 }
 
-.body {
+body {
+  padding-top: 100px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .clock {
-  margin: 100px 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +28,7 @@
     background-color: yellow;
   }
 
-  &__hours {
+  &__hand--hours {
     margin-left: 190px;
     position: absolute;
     background-color: blue;
@@ -36,10 +37,9 @@
 
     transform-origin: left center;
     animation: rotate-hours 60s linear infinite;
-    animation-duration: 60s;
   }
 
-  &__min {
+  &__hand--minute {
     margin-left: 270px;
     position: absolute;
     background-color: green;
@@ -47,15 +47,14 @@
     width: 280px;
 
     transform-origin: left center;
-    animation: rotate-minutes 30s linear infinite;
-    animation-duration: 5s;
+    animation: rotate-minutes 5s linear infinite;
   }
 
 }
 
 @keyframes rotate-minutes {
   from {
-    transform: rotate(100deg);
+    transform: rotate(0);
   }
   to {
     transform: rotate(600deg);
