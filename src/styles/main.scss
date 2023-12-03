@@ -1,1 +1,47 @@
-// put code here
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: white;
+}
+
+.watch {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background-color: bisque;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translateX(-50%) translateY(-100%) rotate(0deg);
+  animation-timing-function: steps(60);
+}
+
+.arrow--minute {
+  width: 3px;
+  height: 80px;
+  background-color: black;
+  animation: rotate 3600s linear infinite;
+}
+
+.arrow--second {
+  width: 1px;
+  height: 100px;
+  background-color: black;
+  animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: translateX(-50%) translateY(-100%) rotate(360deg);
+  }
+}
