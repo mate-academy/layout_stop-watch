@@ -24,20 +24,20 @@ body {
   transform-origin: 50% 100%;
   transform: translateX(-50%) translateY(-100%) rotate(0deg);
   animation-timing-function: steps(60);
-}
 
-.arrow--minute {
-  width: 3px;
-  height: 80px;
-  background-color: black;
-  animation: rotate 3600s linear infinite;
-}
+  &--minute {
+    width: 3px;
+    height: 80px;
+    background-color: black;
+    animation: rotate 3600s linear infinite;
+  }
 
-.arrow--second {
-  width: 1px;
-  height: 100px;
-  background-color: black;
-  animation: rotate 60s linear infinite;
+  &--second {
+    width: 1px;
+    height: 100px;
+    background-color: black;
+    animation: rotate 60s linear infinite;
+  }
 }
 
 @keyframes rotate {
