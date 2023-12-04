@@ -1,1 +1,54 @@
-// put code here
+$bg-page: white;
+$bg-watch: bisque;
+$bg-arrow: black;
+$minute-time: 3600s;
+$second-time: 60s;
+$watch-size: 200px;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: $bg-page;
+}
+
+.watch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background-color: $bg-watch;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translateX(-50%) translateY(-100%) rotate(0deg);
+  animation-timing-function: steps(60);
+
+  &--minute {
+    width: 3px;
+    height: 80px;
+    background-color: $bg-arrow;
+    animation: rotate $minute-time linear infinite;
+  }
+
+  &--second {
+    width: 1px;
+    height: 100px;
+    background-color: $bg-arrow;
+    animation: rotate $second-time linear infinite;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: translateX(-50%) translateY(-100%) rotate(360deg);
+  }
+}
