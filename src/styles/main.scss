@@ -1,19 +1,26 @@
+$bg--page: white;
+$bg--watch: bisque;
+$bg--arrow: black;
+$minute--time: 3600s;
+$second--time: 60s;
+$watch--size: 200px;
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: white;
+  background-color: $bg--page;
 }
 
 .watch {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: $watch--size;
+  height: $watch--size;
   border: 2px solid #333;
   border-radius: 50%;
-  background-color: bisque;
+  background-color: $bg--watch;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -28,15 +35,15 @@ body {
   &--minute {
     width: 3px;
     height: 80px;
-    background-color: black;
-    animation: rotate 3600s linear infinite;
+    background-color: $bg--arrow;
+    animation: rotate $minute--time linear infinite;
   }
 
   &--second {
     width: 1px;
     height: 100px;
-    background-color: black;
-    animation: rotate 60s linear infinite;
+    background-color: $bg--arrow;
+    animation: rotate $second--time linear infinite;
   }
 }
 
