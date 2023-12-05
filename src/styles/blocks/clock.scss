@@ -1,0 +1,73 @@
+.clock {
+  @include center-of-parrent;
+
+  width: $clock-diametr;
+  height: $clock-diametr;
+  box-sizing: border-box;
+
+  border: $clock-diametr / 100 dotted $clock-color;
+  border-radius: 50%;
+
+  &__center {
+    @include center-of-parrent;
+
+    width: $clock-diametr / 20;
+    height: $clock-diametr / 20;
+
+    border-radius: 50%;
+    background-color: $clock-center-color;
+
+  }
+
+  &__arrow-wrapper {
+    position: absolute;
+    left: 50%;
+
+    height: 100%;
+    width: $arrow-hour-width;
+    margin-left: - $arrow-hour-width / 2;
+
+    &--hour {
+      animation: arrow 60s linear infinite;
+    }
+
+    &--minute {
+      animation: arrow 5s linear infinite;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -100%);
+
+    &--hour {
+      height: 30%;
+      width: $arrow-hour-width;
+
+      border-radius: $arrow-hour-width / 2;
+      background-color: $clock-hour-color;
+    }
+
+    &--min {
+      height: 50%;
+      width: $arrow-min-width;
+
+      border-radius: $arrow-min-width / 2;
+      background-color: $clock-minute-color;
+    }
+  }
+
+  @keyframes arrow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
