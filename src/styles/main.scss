@@ -1,1 +1,70 @@
-// put code here
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watch{
+  height: 80vmin;
+  width: 80vmin;
+  border: 3px dotted;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__axis {
+    position: absolute;
+
+    &::after {
+      content: '';
+      width: 5vmin;
+      height: 5vmin;
+      border-radius: 50%;
+      display: block;
+      background-color: yellow;
+    }
+  }
+
+  &__second{
+    position: absolute;
+    top: 0;
+    background-color: green;
+    transform-origin: bottom;
+    animation: arrows 5s linear infinite;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 2vmin;
+      height: 40vmin;
+    }
+  }
+
+  &__minut {
+    position: absolute;
+    top: 20vmin;
+    background-color: blue;
+    transform-origin: bottom;
+    animation: arrows 60s infinite;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 4vmin;
+      height: 20vmin;
+    }
+  }
+}
+
+@keyframes arrows {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
