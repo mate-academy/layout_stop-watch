@@ -1,39 +1,36 @@
 .main-circle {
   position: relative;
+  margin: auto;
   width: 80vmin;
   height: 80vmin;
   border: dotted 10px grey;
-  margin: auto;
   border-radius: 100%;
 
   &__little-circle {
     position: absolute;
-    z-index: 9999;
     width: 6vmin;
     min-height: 6vmin;
-    background-color: greenyellow;
     top: 37vmin;
     right: 37vmin;
+    background-color: greenyellow;
     border-radius: 50%;
   }
 
   &__big-array {
     position: absolute;
-    z-index: 1;
     top: -37vmin;
     left: 2vmin;
     height: 40vmin;
     width: 2vmin;
     background-color: red;
     transform-origin: bottom;
-
     animation: move 5s linear infinite backwards;
   }
 
   &__little-array {
+    position: absolute;
     top: -20vmin;
     left: 2vmin;
-    position: absolute;
     height: 23vmin;
     width: 2vmin;
     background-color: green;
