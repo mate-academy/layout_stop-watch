@@ -1,1 +1,53 @@
-// put code here
+.main-circle {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: dotted 10px grey;
+  margin: auto;
+  border-radius: 100%;
+
+  &__little-circle {
+    position: absolute;
+    z-index: 9999;
+    width: 6vmin;
+    min-height: 6vmin;
+    background-color: greenyellow;
+    top: 37vmin;
+    right: 37vmin;
+    border-radius: 50%;
+  }
+
+  &__big-array {
+    position: absolute;
+    z-index: 1;
+    top: -37vmin;
+    left: 2vmin;
+    height: 40vmin;
+    width: 2vmin;
+    background-color: red;
+    transform-origin: bottom;
+
+    animation: move 5s linear infinite backwards;
+  }
+
+  &__little-array {
+    top: -20vmin;
+    left: 2vmin;
+    position: absolute;
+    height: 23vmin;
+    width: 2vmin;
+    background-color: green;
+    transform-origin: bottom;
+    animation: move 60s linear infinite backwards;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
