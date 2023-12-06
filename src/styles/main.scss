@@ -1,1 +1,93 @@
-// put code here
+$stopwatch-size: 80vmin;
+$stopwatch-bg-color: white;
+$stopwatch-borger-color: black;
+$stopwatch-center-color: orange;
+$arrow-seconds-height: $stopwatch-size / 2;
+$arrow-minutes-height: $stopwatch-size / 4;
+$arrow-seconds-width: $stopwatch-size / 25;
+$arrow-minutes-width: $stopwatch-size / 15;
+$arrow-width: $stopwatch-size / 25;
+$arrow-height: $stopwatch-size / 2;
+
+body {
+  margin: 0 auto;
+  background-color: bisque;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stopwatch-area {
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+
+  border: 5px dotted $stopwatch-borger-color;
+  border-radius: 50%;
+  background-color: $stopwatch-bg-color;
+
+  &__axis-center {
+    width: $stopwatch-size / 100;
+    height: $stopwatch-size / 100;
+    background-color: $stopwatch-center-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  &__arrow {
+    position: absolute;
+    width: $arrow-width;
+    height: $arrow-height / 2;
+
+    bottom: ($stopwatch-size / 2) - ($stopwatch-size / 15);
+    left: ($stopwatch-size / 2) - ($arrow-width / 2);
+
+    transform-origin:  50%   (($stopwatch-size / 4) - ($stopwatch-size / 15));
+
+    border-radius: 50%;
+
+    animation: arrow-animation;
+    animation-timing-function: linear;
+
+    &--minutes {
+      animation: arrow-min-animation;
+      animation-duration: 30s;
+      background-color: darkgreen;
+      transform: scale(1.5);
+    }
+
+    &--seconds {
+      animation: arrow-sec-animation;
+      animation-duration: 10s;
+      background-color: cornflowerblue;
+    }
+
+    @keyframes arrow-sec-animation {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes arrow-min-animation {
+      from {
+        transform: scale(1.5)  rotate(0deg);
+      }
+
+      to {
+        transform: scale(1.5)  rotate(360deg);
+      }
+    }
+  }
+}
