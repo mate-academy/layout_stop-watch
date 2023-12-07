@@ -1,1 +1,70 @@
-// put code here
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 50px auto;
+  width: 500px;
+  height: 500px;
+  border: 5px dotted black;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    width: 6%;
+    height: 6%;
+    background-color: #ff8c00;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__sec-hand {
+    position: absolute;
+    top: 0;
+    height: 50%;
+    width: 2%;
+    background-color: green;
+
+    animation: move-sec-hand 60s linear forwards;
+  }
+
+  @keyframes move-sec-hand {
+    from {
+      transform: rotate(0deg);
+      transform-origin: 50% 100%;
+    }
+
+    to {
+      transform: rotate(360deg);
+      transform-origin: 50% 100%;
+    }
+  }
+
+  &__min-hand {
+    position: absolute;
+    top: 25%;
+    height: 25%;
+    width: 3%;
+    background-color: blue;
+
+    animation: move-min-hand 60s linear forwards;
+  }
+
+  @keyframes move-min-hand {
+    from {
+      transform: rotate(0deg);
+      transform-origin: 50% 100%;
+    }
+
+    to {
+      transform: rotate(6deg);
+      transform-origin: 50% 100%;
+    }
+  }
+}
