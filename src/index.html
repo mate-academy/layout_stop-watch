@@ -1,14 +1,38 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stop watch</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <h1>Stop watch</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabs</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+    <script
+      type="text/javascript"
+      src="./main.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <div class="tab">
+      <div class="tab__links">
+        <button class="tab__link tab__link--1">London</button>
+        <button class="tab__link tab__link--2">Paris</button>
+        <button class="tab__link tab__link--3">Tokyo</button>
+      </div>
+
+      <div id="London" class="tab__content">
+        London<br>
+        London is the capital city of England.
+      </div>
+      <div id="Paris" class="tab__content">
+        Paris<br>
+        Paris is the capital of France.
+      </div>
+      <div id="Tokyo" class="tab__content">
+        Tokyo<br>
+        Tokyo is the capital of Japan.
+      </div>
+    </div>
+  </body>
 </html>
