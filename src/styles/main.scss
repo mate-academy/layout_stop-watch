@@ -1,1 +1,72 @@
-// put code here
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --border-color: #000;
+  --center-color: #ffa500;
+  --big-stick-color: #008000;
+  --small-stick-color: #00f;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 3px dotted var(--border-color);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+
+  &_center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--center-color);
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &_bigStick {
+  bottom: 150px;
+  position: absolute;
+  width: 5px;
+  height: 130px;
+  background: var(--big-stick-color);
+  transform-origin: bottom;
+  z-index: 2;
+
+  animation-name: clock;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  }
+
+  @keyframes clock {
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  &_smallStick {
+  bottom: 150px;
+  position: absolute;
+  width: 7px;
+  height: 70px;
+  background: var(--small-stick-color);
+  transform-origin: bottom;
+  z-index: 2;
+
+  animation-name: clock;
+  animation-duration: 60s;
+  animation-timing-function: ease-in-out;
+  animation-play-state: running;
+  }
+
+  @keyframes clock {
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+}
