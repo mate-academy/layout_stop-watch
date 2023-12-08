@@ -1,10 +1,20 @@
 .tab {
   overflow: hidden;
+  width: 500px;
+
+  &__link:hover {
+    background-color: yellow;
+  }
   &__content {
     display: none;
   }
 }
 
-.active {
+.tab__links .active {
   background-color: greenyellow;
+}
+
+.tab__main .active {
+  display: block;
+  background-color: rgb(83, 226, 43);
 }
