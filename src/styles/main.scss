@@ -47,5 +47,44 @@ $minute-turn: 0;
       rotate($minute-turn * 6deg)
       translateY(-50%);
     z-index: 2;
+    animation: sec5 5s;
+  }
+}
+
+@keyframes sec5 {
+  0% {
+    transform:
+      rotate(0deg)
+      translateY(-50%);
+  }
+
+  20% {
+    transform:
+      rotate(6deg)
+      translateY(-50%);
+  }
+
+  40% {
+    transform:
+      rotate(12deg)
+      translateY(-50%);
+  }
+
+  60% {
+    transform:
+      rotate(18deg)
+      translateY(-50%);
+  }
+
+  80% {
+    transform:
+      rotate(24deg)
+      translateY(-50%);
+  }
+
+  100% {
+    transform:
+      rotate(30deg)
+      translateY(-50%);
   }
 }
