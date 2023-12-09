@@ -1,1 +1,77 @@
-// put code here
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.watch {
+  height: $watch-size;
+  width: $watch-size;
+  border: 5px dotted black;
+  border-radius: $border-circle;
+  position: relative;
+
+  &__center {
+    position: absolute;
+    top: $watch-center-position;
+    left: $watch-center-position;
+
+    height: $watch-center-size;
+    width: $watch-center-size;
+
+    border-radius: $border-circle;
+
+    background-color: rgb(223, 178, 0);
+    z-index: 3;
+  }
+
+  &__hour {
+    position: absolute;
+    bottom: 50%;
+    left: $watch-position-hour;
+
+    height: $hour-height;
+    width: $hour-width;
+    background-color: #0027d3;
+    z-index: 2;
+
+    animation: rotate 60s linear 0s infinite normal forwards;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    bottom: 50%;
+    left: $watch-position-second;
+
+    width: $second-width;
+    height: $second-height;
+    background-color: #00b103;
+    z-index: 1;
+
+    animation: rotate 5s linear 0s infinite normal forwards;
+    transform-origin: bottom;
+  }
+
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
