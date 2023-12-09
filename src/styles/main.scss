@@ -4,8 +4,12 @@ $hour-rotate-time: 60;
 $min-rotate-degrees: 360 / (60 / $min-rotate-time);
 $hour-rotate-degrees: 360 / 12 / 60;
 
-
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
   &__stop-watch {
     width: $clock-size;
     height: $clock-size;
@@ -26,7 +30,7 @@ $hour-rotate-degrees: 360 / 12 / 60;
     top: 0;
     transform-origin: bottom;
 
-    animation: min-hand #{$min-rotate-time}s linear 1;
+    animation: min-hand #{$min-rotate-time}s linear infinite;
   }
 
   .hour-hand {
@@ -37,7 +41,7 @@ $hour-rotate-degrees: 360 / 12 / 60;
     top: $clock-size / 4;
     transform-origin: bottom;
 
-    animation: hour-hand #{$hour-rotate-time}s linear 1;
+    animation: hour-hand #{$hour-rotate-time}s linear infinite;
   }
 
   .stop-watch-center {
@@ -49,7 +53,6 @@ $hour-rotate-degrees: 360 / 12 / 60;
   }
 }
 
-
 @keyframes min-hand {
   0% {
     transform: rotate(0deg);
@@ -58,7 +61,6 @@ $hour-rotate-degrees: 360 / 12 / 60;
     transform: rotate(#{$min-rotate-degrees}deg);
   }
 }
-
 
 @keyframes hour-hand {
   0% {
