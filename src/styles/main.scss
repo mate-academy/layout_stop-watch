@@ -1,1 +1,67 @@
-// put code here
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px dotted black;
+  border-radius: 50%;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    width: 1vmin;
+    height: 39vmin;
+    background-color: green;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transform-origin: bottom center;
+    animation: move 5s linear infinite;
+  }
+
+  &::after {
+   content: '';
+    width: 19vmin;
+    height: 2.5vmin;
+    background-color: blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0, -50%);
+    transform-origin: left center;
+    animation: move 60s linear infinite;
+  }
+
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6vmin;
+    height: 6vmin;
+    background-color: rgb(248, 231, 49);
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  @keyframes move {
+
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+
+  }
+}
