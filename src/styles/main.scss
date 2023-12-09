@@ -1,1 +1,67 @@
-// put code here
+$size-watch: 80vmin;
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  height: $size-watch;
+  width: $size-watch;
+  border-radius: 50%;
+  border: 5px dotted black;
+
+  &__sec {
+    position: absolute;
+    width: 3%;
+    height: 25%;
+    background-color: blue;
+    z-index: 1;
+    top: 25%;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    transform: rotate(0, 180deg);
+    transform-origin: bottom;
+    animation: rotate 60s linear;
+  }
+
+  &__5-sec {
+    position: absolute;
+    width: 1%;
+    height: 50%;
+    background-color: green;
+    z-index: 2;
+    bottom: 50%;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    transform-origin: bottom;
+    animation: rotate 5s linear 12;
+  }
+
+  &__center {
+    position: absolute;
+    width: 7%;
+    height: 7%;
+    border-radius: 50%;
+    background-color: orange;
+    z-index: 3;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
