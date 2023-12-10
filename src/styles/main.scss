@@ -40,9 +40,7 @@ body {
     width: 20px;
     height: $clock-size / 4;
     background-color: #1b7ad4;
-    transform:
-      rotate($hour-turn * 30deg)
-      translateY(-50%);
+    transform: rotate($hour-turn * 30deg);
     animation: rotate-arrow $time-animation * 12 linear infinite;
     z-index: 1;
   }
@@ -52,9 +50,7 @@ body {
     width: 10px;
     height: $clock-size / 2;
     background-color: #3dd41b;
-    transform:
-      rotate($minute-turn * 6deg)
-      translateY(-50%);
+    transform: rotate($minute-turn * 6deg);
     animation: rotate-arrow $time-animation linear infinite;
     z-index: 2;
   }
