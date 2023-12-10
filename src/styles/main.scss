@@ -30,7 +30,7 @@ $hour-rotate-degrees: 360 / 12 / 60;
     top: 0;
     transform-origin: bottom;
 
-    animation: min-hand #{$min-rotate-time}s linear infinite;
+    animation: rotate #{$min-rotate-time}s linear infinite;
   }
 
   .hour-hand {
@@ -41,7 +41,7 @@ $hour-rotate-degrees: 360 / 12 / 60;
     top: $clock-size / 4;
     transform-origin: bottom;
 
-    animation: hour-hand #{$hour-rotate-time}s linear infinite;
+    animation: rotate #{$hour-rotate-time}s linear infinite;
   }
 
   .stop-watch-center {
@@ -53,20 +53,11 @@ $hour-rotate-degrees: 360 / 12 / 60;
   }
 }
 
-@keyframes min-hand {
+@keyframes rotate {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(#{$min-rotate-degrees}deg);
-  }
-}
-
-@keyframes hour-hand {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(#{$hour-rotate-degrees}deg);
+    transform: rotate(360deg);
   }
 }
