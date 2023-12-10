@@ -2,11 +2,19 @@ $clock-size: 80vh;
 $clock-center-size: 50px;
 $hour-turn: 3;
 $minute-turn: 0;
+$time-animation: 4s;
+
+body {
+  margin: 0;
+  padding: 0;
+}
 
 .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-color: #b4eeaf;
 }
 
 .clock {
@@ -35,6 +43,7 @@ $minute-turn: 0;
     transform:
       rotate($hour-turn * 30deg)
       translateY(-50%);
+    animation: rotate-arrow $time-animation * 12 linear infinite;
     z-index: 1;
   }
 
@@ -46,45 +55,21 @@ $minute-turn: 0;
     transform:
       rotate($minute-turn * 6deg)
       translateY(-50%);
+    animation: rotate-arrow $time-animation linear infinite;
     z-index: 2;
-    animation: sec5 5s;
   }
 }
 
-@keyframes sec5 {
+@keyframes rotate-arrow {
   0% {
     transform:
       rotate(0deg)
       translateY(-50%);
   }
 
-  20% {
-    transform:
-      rotate(6deg)
-      translateY(-50%);
-  }
-
-  40% {
-    transform:
-      rotate(12deg)
-      translateY(-50%);
-  }
-
-  60% {
-    transform:
-      rotate(18deg)
-      translateY(-50%);
-  }
-
-  80% {
-    transform:
-      rotate(24deg)
-      translateY(-50%);
-  }
-
   100% {
     transform:
-      rotate(30deg)
+      rotate(360deg)
       translateY(-50%);
   }
 }
