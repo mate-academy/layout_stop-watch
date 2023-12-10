@@ -1,1 +1,63 @@
-// put code here
+$clock-size: 80vmin;
+$min-rotate-time: 5;
+$hour-rotate-time: 60;
+$min-rotate-degrees: 360 / (60 / $min-rotate-time);
+$hour-rotate-degrees: 360 / 12 / 60;
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__stop-watch {
+    width: $clock-size;
+    height: $clock-size;
+    border-radius: 100%;
+    border: 5px dotted black;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .minute-hand {
+    position: absolute;
+    width: 5px;
+    height: $clock-size / 2;
+    background-color: yellow;
+    top: 0;
+    transform-origin: bottom;
+
+    animation: rotate #{$min-rotate-time}s linear infinite;
+  }
+
+  .hour-hand {
+    position: absolute;
+    width: 10px;
+    height: $clock-size / 4;
+    background-color: red;
+    top: $clock-size / 4;
+    transform-origin: bottom;
+
+    animation: rotate #{$hour-rotate-time}s linear infinite;
+  }
+
+  .stop-watch-center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: orange;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
