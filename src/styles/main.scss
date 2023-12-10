@@ -1,1 +1,107 @@
 // put code here
+@use 'sass:math';
+
+body {
+  margin: 15px;
+}
+
+.watch {
+  margin-top: 15px auto;
+  position: relative;
+
+  height: 600px;
+  width: 600px;
+
+  // border: 1px solid tomato;
+  border-radius: 50%;
+
+  &__seconds {
+    height: 300px;
+    width: 4px;
+    border-radius: 2px;
+    position: absolute;
+    top: 22px;
+    left: 298px;
+    background-color: blueviolet;
+
+    animation: sec-rotate 60s steps(60) infinite;
+
+    &:target {
+      animation-name: sec-rotate;
+      animation-play-state: paused;
+    }
+  }
+
+  &__minutes {
+    height: 220px;
+    width: 6px;
+    border-radius: 3px;
+    position: absolute;
+    top: 102px;
+    left: 298px;
+    background-color: greenyellow;
+
+
+    animation: 3600s steps(60) infinite min-rotate;
+
+    &:target {
+      animation-play-state: paused;
+    }
+  }
+
+  &__stop {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    position: absolute;
+    z-index: 1;
+    left: 285px;
+    top: 285px;
+    background-color: tomato;
+
+    &:hover {
+      cursor: pointer;
+      animation-name: sec-rotate;
+      animation-play-state: paused;
+    }
+  }
+
+  @for $roundLebel from 0 to 60 {
+    & > &__round-lebel:nth-child(#{$roundLebel + 1}) {
+      display: block;
+      position: absolute;
+      top: -3px;
+      left: 299px;
+      width: 2px;
+      height: 16px;
+      border-radius: 1px;
+      background-color: #000;
+
+      transform: rotate($roundLebel * 1turn / 60);
+      transform-origin: 0 303px;
+    }
+  }
+}
+
+
+@keyframes sec-rotate {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 2px 278px;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: 2px 278px;
+  }
+}
+
+@keyframes min-rotate {
+  from {
+    transform: rotate(0deg);
+    transform-origin: 2px 198px;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: 2px 198px;
+  }
+}
