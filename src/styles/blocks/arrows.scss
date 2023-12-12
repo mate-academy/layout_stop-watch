@@ -1,0 +1,33 @@
+.arrow {
+  position: absolute;
+  top: 0;
+
+  transform-origin: center bottom;
+  transform: translate(-50%, -50%);
+
+  &--long {
+    height: 50%;
+    width: 10px;
+    background-color: rebeccapurple;
+    border-radius: $border-radius;
+    animation: move 5s linear infinite;
+  }
+
+  &--short {
+    top: 20%;
+    height: 30%;
+    width: 10px;
+    background-color: mediumpurple;
+    border-radius: $border-radius;
+    animation: move 60s linear infinite;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
