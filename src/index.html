@@ -1,14 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+   >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Stop watch</title>
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
   <body>
-    <h1>Stop watch</h1>
+    <div class="container">
+      <div class="stopwatch">
+        <div class="stopwatch__hand stopwatch__hand--seconds">
+          <img
+            class="stopwatch__img stopwatch__img--seconds"
+            src="./images/seconds.jpg"
+            alt="seconds hand"
+          >
+        </div>
+
+        <div class="stopwatch__hand stopwatch__hand--minutes">
+          <img
+            class="stopwatch__img stopwatch__img--minutes"
+            src="./images/minute.png"
+            alt="minutes hand"
+          >
+        </div>
+
+        <div class="stopwatch__middle"></div>
+      </div>
+    </div>
   </body>
 </html>
