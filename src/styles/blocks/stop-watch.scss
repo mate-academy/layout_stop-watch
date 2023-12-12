@@ -1,0 +1,43 @@
+.stop-watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $stop-watch-size;
+  width: $stop-watch-size;
+
+  border: 3px $main-color solid;
+  border-radius: $round-border;
+
+  &__middle-dot {
+    height: $middle-dot-size;
+    width: $middle-dot-size;
+
+    background-color: $main-color;
+    border-radius: $round-border;
+  }
+
+  &__arrow-minutes {
+    position: absolute;
+    top: 0;
+    height: $minutes-arrow-height;
+    width: $arrow-width;
+
+    background-color: rgb(9, 6, 46);
+    border-radius: $round-border $round-border 0 0;
+
+    animation: minutes 5s linear infinite;
+  }
+
+  &__arrow-hours {
+    position: absolute;
+    width: $hours-arrow-height;
+    height: $arrow-width;
+    right: $minutes-arrow-height - $hours-arrow-height;
+
+    background-color: rgb(13, 9, 137);
+    border-radius: 0 $round-border $round-border 0;
+
+    animation: hours 60s linear infinite;
+  }
+}
