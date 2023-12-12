@@ -1,1 +1,58 @@
-// put code here
+$color-os: yellowgreen;
+$color-sec: rebeccapurple;
+$color-hour: rgb(195, 30, 213);
+$size-clock: 80vmin;
+$size-os: 20px;
+
+.clock {
+  width: $size-clock;
+  height: $size-clock;
+  border: 5px dotted black;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.os {
+  position: absolute;
+  width: $size-os;
+  height: $size-os;
+  background-color: $color-os;
+  border: 1px $color-os;
+  border-radius: 50%;
+}
+
+.clock__sec {
+  position: absolute;
+  height: 50%;
+  width: 5px;
+  background-color: $color-sec;
+  bottom: 50%;
+  animation: rotate-hand 5s infinite;
+  animation-timing-function: linear;
+  transform-origin: 50% 100%;
+}
+
+.clock__hour {
+  position: absolute;
+  height: 30%;
+  width: 8px;
+  background-color: $color-hour;
+  bottom: 50%;
+  animation: rotate-hand 60s infinite;
+  animation-timing-function: linear;
+  transform-origin: 50% 100%;
+}
+
+@keyframes rotate-hand {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
