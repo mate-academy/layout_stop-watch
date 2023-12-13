@@ -1,1 +1,63 @@
+@import "./mixins.scss";
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.centered {
+  height: 100%;
+  width: 100%;
+}
+
 // put code here
+.stop-watch {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vmin;
+  width: 80vmin;
+  border: 1px dotted black;
+  border-radius: 50%;
+
+  &__long-hand {
+    @include AnimationForHand;
+    width: 40vmin;
+    height: 6px;
+    background-color: green;
+    animation: Hand 5s linear 12 forwards;
+  }
+
+  &__short-hand {
+    @include AnimationForHand;
+    width: 20vmin;
+    height: 10px;
+    background-color: blue;
+    animation: Hand 60s linear 1 forwards;
+  }
+
+  &__circle-center {
+    @include AnimationForHand;
+    background-color: yellow;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes Hand {
+  from {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+
+  to {
+    transform: translateY(-50%) rotate(270deg);
+  }
+}
