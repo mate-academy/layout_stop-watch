@@ -1,1 +1,69 @@
 // put code here
+
+body{
+ margin: 0;
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+@import "./variables";
+@import "./mixin";
+
+.watch{
+  @include flex-centered;
+
+  position: relative;
+  height: $watch-size;
+  width: $watch-size;
+  border: 5px solid #000;
+  border: 5px dotted #000;
+  border-radius: 50%;
+}
+
+.watch__center{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: $hour-color;
+  z-index: 1;
+}
+
+.watch__minutes{
+  @include position-absolute;
+
+  bottom: 50%;
+  background-color: $minute-color;
+  width: 15px;
+  height: 30%;
+  animation: rotate 60s linear infinite;
+  border-radius: 10px;
+}
+
+.watch__seconds{
+  @include position-absolute;
+
+  bottom: 50%;
+  background-color: $second-color;
+  height: 50%;
+  width: 10px;
+  animation: rotate 5s linear infinite;
+  border-radius: 10px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+    transform-origin: center bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: center bottom;
+  }
+}
