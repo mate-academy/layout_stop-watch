@@ -1,1 +1,60 @@
 // put code here
+@import 'block/variables';
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.clock {
+  border: 6px dotted $color-border;
+  background-color: $clock-color;
+  width: $dimensions;
+  height: $dimensions;
+  border-radius: $value;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__seconds {
+    background-color: $seconds-color;
+    width: 10px;
+    height: $value;
+    position: absolute;
+    top: 0;
+    animation: move 5s infinite;
+    animation-timing-function: linear;
+    transform-origin: 50% 100%;
+  }
+
+  &__minutes {
+    position: absolute;
+    background-color: $minutes-color;
+    left: $value;
+    width: 25%;
+    height: 20px;
+    animation: move 60s infinite;
+    animation-timing-function: linear;
+    transform-origin: 0;
+  }
+
+  &__center {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: $center-color;
+    border-radius: $value;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
