@@ -3,24 +3,25 @@
 body{
  margin: 0;
  height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 *{
   box-sizing: border-box;
 }
 
-@import "./variables.scss";
-@import "./mixin.scss";
+@import "./variables";
+@import "./mixin";
 
 .watch{
-  position: relative;
   @include flex-centered;
 
+  position: relative;
   height: $watch-size;
   width: $watch-size;
-
   border: 5px solid #000;
-
   border: 5px dotted #000;
   border-radius: 50%;
 }
@@ -35,6 +36,7 @@ body{
 
 .watch__minutes{
   @include position-absolute;
+
   bottom: 50%;
   background-color: $minute-color;
   width: 15px;
@@ -45,6 +47,7 @@ body{
 
 .watch__seconds{
   @include position-absolute;
+
   bottom: 50%;
   background-color: $second-color;
   height: 50%;
