@@ -19,16 +19,24 @@ $centerSize: 15px;
 
   &__minute {
     position: absolute;
-    bottom: 48%;
+    bottom: 50%;
     left: 49.9%;
     height: $minuteHeight;
     width: $minuteWidth;
     background-color: #f09;
-    transition: transform 5s;
+    animation-name: move;
+    animation-duration: 13s;
 
-    &:hover {
-      transform: rotate(360deg);
-      transform-origin: bottom;
+    @keyframes move {
+      from {
+        transform: rotate(0deg);
+        transform-origin: bottom;
+      }
+
+      to {
+        transform: rotate(360deg);
+        transform-origin: bottom;
+      }
     }
   }
 
@@ -39,12 +47,21 @@ $centerSize: 15px;
     height: $hourHeight;
     width: $hourWidth;
     background-color: #0f7;
-    transition: transform 60s;
+    animation-name: move;
+    animation-duration: 5s;
 
-    &:hover {
-      transform: rotate(360deg);
-      transform-origin: bottom;
+    @keyframes move {
+      from {
+        transform: rotate(0deg);
+        transform-origin: bottom;
+      }
+
+      to {
+        transform: rotate(360deg);
+        transform-origin: bottom;
+      }
     }
+
   }
 
   &__center {
