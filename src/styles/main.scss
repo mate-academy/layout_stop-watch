@@ -1,1 +1,59 @@
-// put code here
+$whatch-size: 80vmin;
+$circle: 50%;
+$hands-width: 10px;
+$big-hand-height: 40vmin;
+$small-hand-height: 20vmin;
+
+.whatch {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $whatch-size;
+  height: $whatch-size;
+  border: 8px dotted #000;
+  border-radius: $circle;
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: yellow;
+    border-radius: $circle;
+    z-index: 1;
+  }
+
+  &__hand--big {
+    position: absolute;
+    top: ($whatch-size / 2) - $big-hand-height;
+    width: $hands-width;
+    height: $big-hand-height;
+    background-color: green;
+
+    animation: move 5s infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+
+  &__hand--small {
+    position: absolute;
+    top: ($whatch-size / 2) - $small-hand-height;
+    width: $hands-width;
+    height: $small-hand-height;
+    background-color: blue;
+
+    animation: move 60s infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
