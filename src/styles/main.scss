@@ -12,53 +12,36 @@
   border: 5px dotted #000;
   border-radius: 50%;
 
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+      transform-origin: bottom;
+    }
+
+    to {
+      transform: rotate(360deg);
+      transform-origin: bottom;
+    }
+  }
+
   &__minute {
     position: absolute;
     bottom: 50%;
-    left: 49.9%;
+    left: 50%;
     height: $minuteHeight;
     width: $minuteWidth;
     background-color: #f09;
-    animation-name: move;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-
-    @keyframes move {
-      from {
-        transform: rotate(0deg);
-        transform-origin: bottom;
-      }
-
-      to {
-        transform: rotate(360deg);
-        transform-origin: bottom;
-      }
-    }
+    animation: move 5s infinite;
   }
 
   &__hour {
     position: absolute;
     bottom: 50%;
-    left: 48.5%;
+    left: 50%;
     height: $hourHeight;
     width: $hourWidth;
     background-color: #0f7;
-    animation-name: move;
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
-
-    @keyframes move {
-      from {
-        transform: rotate(0deg);
-        transform-origin: bottom;
-      }
-
-      to {
-        transform: rotate(360deg);
-        transform-origin: bottom;
-      }
-    }
-
+    animation: move 60s infinite;
   }
 
   &__center {
