@@ -1,9 +1,4 @@
-$displaySize: 240px;
-$minuteHeight: $displaySize / 2;
-$minuteWidth: 7px;
-$hourHeight: $minuteHeight / 2;
-$hourWidth: 12px;
-$centerSize: 15px;
+@import "var.scss";
 
 * {
   box-sizing: border-box;
@@ -25,7 +20,8 @@ $centerSize: 15px;
     width: $minuteWidth;
     background-color: #f09;
     animation-name: move;
-    animation-duration: 13s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 
     @keyframes move {
       from {
@@ -48,7 +44,8 @@ $centerSize: 15px;
     width: $hourWidth;
     background-color: #0f7;
     animation-name: move;
-    animation-duration: 5s;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
 
     @keyframes move {
       from {
@@ -66,7 +63,7 @@ $centerSize: 15px;
 
   &__center {
     position: absolute;
-    bottom: 46%;
+    bottom: 48%;
     left: 48%;
     height: $centerSize;
     width: $centerSize;
