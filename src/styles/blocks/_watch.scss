@@ -1,0 +1,43 @@
+@import '../utils/variables';
+
+.watch {
+  height: $watch-size;
+  width: $watch-size;
+  border: 4px dotted $border-color;
+  border-radius: 50%;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+
+  &__minutes {
+    background-color: $minute-color;
+    height: 25%;
+    width: 3%;
+    position: absolute;
+    border-radius: 50% 50% 25% 25%;
+    transform-origin: bottom;
+    top: 25%;
+    animation: move 60s linear infinite;
+  }
+
+  &__seconds {
+    background-color: $seconds-color;
+    height: 50%;
+    width: 1%;
+    border-radius: 50% 50% 25% 25%;
+    transform-origin: bottom;
+    position: absolute;
+    animation: move 5s linear infinite;
+  }
+
+  &__center {
+    background-color: $watch-center-color;
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 48%;
+  }
+}
