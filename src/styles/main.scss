@@ -1,1 +1,75 @@
-// put code here
+$second: 1s;
+$minute: calc(#{$second} * 60);
+$hour: calc(#{$minute} * 60);
+
+html {
+  background-color: #282828;
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vmin;
+}
+
+.hands {
+  margin: 0 auto;
+  border: 7px solid #282828;
+  border-radius: 50%;
+  box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
+    inset 4px 4px 10px rgba(0,0,0,0.5),
+    inset -4px -4px 10px rgba(67,67,67,0.5),
+    4px 4px 10px rgba(0,0,0,0.3);
+  width: 300px;
+  height: 300px;
+  position: relative;
+  transform: rotate(180deg);
+
+  &__seconds,
+  &__minutes,
+  &__hours {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform-origin: center 0;
+    border-radius: 20px;
+  }
+
+  &__seconds {
+    width: 3px;
+    height: 150px;
+    background-color: #fff;
+    animation: rotate 5s linear infinite;
+  }
+
+  &__minutes {
+    width: 5px;
+    height: 120px;
+    background-color: #8be0e2;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__hours {
+    width: 7px;
+    height: 100px;
+    background-color: #d97844;
+    animation: rotate 60s linear infinite;
+  }
+}
+
+.stopwatch {
+  font-size: 2em;
+  color: #fff;
+  margin-top: 20px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
