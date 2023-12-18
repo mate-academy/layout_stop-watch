@@ -16,7 +16,7 @@
     background-color: blue;
     top: $watch-height * 0.5;
     left: $watch-height * 0.5;
-    animation: linear rotate-watch-arrow $transform-hour-time $transform-delay;
+    animation: linear rotate-watch-arrow $transform-hour-time $transform-delay infinite;
     transform-origin: left;
 
   }
@@ -25,7 +25,7 @@
     position: absolute;
     height: $watch-center-height;
     width: $watch-center-width;
-    background-color: black;
+    background-color: orange;
     border-radius: 50%;
     top: $watch-height * 0.49;
     z-index: 1;
@@ -37,7 +37,7 @@
     width: $watch-hour-width;
     background-color: green;
     top: 0;
-    animation: linear rotate-watch-arrow $transform-minute-time $transform-delay;
+    animation: linear rotate-watch-arrow $transform-minute-time $transform-delay infinite;
     transform-origin: bottom;
   }
 }
