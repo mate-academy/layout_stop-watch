@@ -1,0 +1,39 @@
+.clock {
+  position: relative;
+  display: flex;
+  margin: 150px;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  background-color: #000;
+  border: 5px solid #610000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.clock::after {
+  content: '';
+  position: absolute;
+  background-color: #c4c9d0;
+  left: 50%;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock__clock-hand::after {
+  @include clock-handle;
+  height: 175px;
+  width: 5px;
+  animation: spin 60s linear infinite;
+}
+
+.clock__clock-hand::before {
+  @include clock-handle;
+  height: 250px;
+  width: 3px;
+  background: #c4c9d0;
+  animation: spin 5s linear infinite;
+  transform-origin: top left;
+}
