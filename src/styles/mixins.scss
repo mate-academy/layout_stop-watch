@@ -1,16 +1,13 @@
-@mixin animation-arrows ($keyframes, $time) {
+@mixin animation-arrows($keyframes, $time) {
   animation: $keyframes $time linear infinite;
   transform-origin: center bottom;
 }
 
-@mixin absoluteCenter() {
+@mixin absolute-center {
   position: absolute;
   margin: auto;
 
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  inset: 0;
 }
 
 @mixin sizes($width, $height) {
