@@ -44,7 +44,7 @@ body {
     background-color: green;
     transform-origin: top center;
     transform: rotate(180deg);
-    animation: watch-sec-hand 60s linear;
+    animation: watch-move-hand 60s linear;
   }
 
   &__minute {
@@ -56,21 +56,12 @@ body {
     background-color: blue;
     transform-origin: top center;
     transform: rotate(-90deg);
-    animation: watch-minute-hand 5s linear;
+    animation: watch-move-hand 5s linear;
   }
 }
 
-@keyframes watch-sec-hand {
+@keyframes watch-move-hand {
   from  {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes watch-minute-hand {
-  from {
     transform: rotate(0deg);
   }
   to {
