@@ -11,8 +11,8 @@
     height: variables.$clock-center-size;
     width: variables.$clock-center-size;
     background-color: variables.$clock-center-color;
-    top: (variables.$clock-size / 2) - (variables.$clock-center-size / 2);
-    left: (variables.$clock-size / 2) - (variables.$clock-center-size / 2);
+    top: calc(variables.$clock-size / 2) - (variables.$clock-center-size / 2);
+    left: calc(variables.$clock-size / 2) - (variables.$clock-center-size / 2);
     border-radius: variables.$clock-radius;
     position: absolute;
   }
@@ -22,8 +22,8 @@
     width: variables.$minutes-width;
     position: absolute;
     background-color: variables.$minutes-color;
-    left: (variables.$clock-size / 2) - (variables.$minutes-width / 2);
-    top: (variables.$clock-size / 2) - variables.$minutes-length;
+    left: calc(variables.$clock-size / 2) - (variables.$minutes-width / 2);
+    top: calc(variables.$clock-size / 2) - variables.$minutes-length;
     border-radius: variables.$clock-arms-radius;
     transform-origin: 50% 100%;
     animation: minutes 3600s linear infinite;
@@ -34,8 +34,8 @@
     width: variables.$seconds-width;
     position: absolute;
     background-color: variables.$seconds-color;
-    left: (variables.$clock-size / 2) - (variables.$seconds-width / 2);
-    top: (variables.$clock-size / 2) - variables.$seconds-length;
+    left: calc(variables.$clock-size / 2) - (variables.$seconds-width / 2);
+    top: calc(variables.$clock-size / 2) - variables.$seconds-length;
     border-radius: variables.$clock-arms-radius;
     transform-origin: 50% 100%;
     animation: seconds 60s linear infinite;
