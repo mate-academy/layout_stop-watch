@@ -13,7 +13,7 @@
   border-radius: 100%;
 
   &__hours {
-    @include animation-arrows(rotate-hours-5s, 5s, 5);
+    @include animation-arrows(rotate-arrows, 60s);
     @include absoluteCenter;
     @include sizes(2vmin, 25%);
 
@@ -24,7 +24,7 @@
   }
 
   &__minutes {
-    @include animation-arrows(rotate-minutes-60s, 60s, 60);
+    @include animation-arrows(rotate-arrows, 5s);
     @include absoluteCenter;
     @include sizes(1vmin, 50%);
 
@@ -43,16 +43,7 @@
   }
 }
 
-@keyframes rotate-hours-5s {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(90deg);
-  }
-}
-
-@keyframes rotate-minutes-60s {
+@keyframes rotate-arrows {
   0% {
     transform: rotate(0deg);
   }

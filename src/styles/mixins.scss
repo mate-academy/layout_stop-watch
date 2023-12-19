@@ -1,5 +1,5 @@
-@mixin animation-arrows ($keyframes, $time, $steps-count) {
-  animation: $keyframes $time 1 steps($steps-count) forwards;
+@mixin animation-arrows ($keyframes, $time) {
+  animation: $keyframes $time linear infinite;
   transform-origin: center bottom;
 }
 
