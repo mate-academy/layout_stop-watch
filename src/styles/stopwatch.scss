@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.stopwatch {
+  @include sizes(80vmin, 80vmin);
+
+  position: relative;
+
+  box-sizing: border-box;
+  border: 1px dotted black;
+  border-radius: 100%;
+
+  &__hours {
+    @include animation-arrows(rotate-arrows, 60s);
+    @include absolute-center;
+    @include sizes(2vmin, 25%);
+
+    z-index: 1;
+    margin: 25% auto;
+
+    background-color: blue;
+  }
+
+  &__minutes {
+    @include animation-arrows(rotate-arrows, 5s);
+    @include absolute-center;
+    @include sizes(1vmin, 50%);
+
+    margin: 0 auto;
+
+    background-color: green;
+  }
+
+  &__center {
+    @include absolute-center;
+    @include sizes(10%, 10%);
+
+    z-index: 2;
+    border-radius: 100%;
+    background-color: #fa0;
+  }
+}
+
+@keyframes rotate-arrows {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
