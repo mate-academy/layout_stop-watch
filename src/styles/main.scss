@@ -1,1 +1,79 @@
-// put code here
+@import "/styles/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.clock {
+  position: relative;
+  display: block;
+  width: 80vmin;
+  height: 80vmin;
+  border: 6px dotted #000;
+  border-radius: 50%;
+
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    background-color: yellow;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+  }
+
+  &__sec {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: ($height-clock / 2) - 0.5;
+    width: 8px;
+    background-color: green;
+    transform-origin: top center;
+    transform: rotate(180deg);
+    animation: watch-sec-hand 60s linear;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: $height-clock / 4;
+    width: 15px;
+    background-color: blue;
+    transform-origin: top center;
+    transform: rotate(-90deg);
+    animation: watch-minute-hand 5s linear;
+  }
+}
+
+@keyframes watch-sec-hand {
+  from  {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes watch-minute-hand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
