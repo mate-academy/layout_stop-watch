@@ -1,1 +1,56 @@
-// put code here
+@import './utils/variable';
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+.clock {
+  border: 5px dotted black;
+  border-radius: 50%;
+  width: $clock-size;
+  height: $clock-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__hours {
+    background-color: green;
+    height: $hours-size;
+    width: 2vmin;
+    top: ($clock-size / 2) - $hours-size;
+    position: absolute;
+    animation: movement linear 5s infinite;
+    transform-origin: bottom;
+  }
+
+  &__minute {
+    background-color: blue;
+    height: $minute-size;
+    width: 2vmin;
+    top: ($clock-size / 2) - $minute-size;
+    position: absolute;
+    animation: movement linear 60s infinite;
+    transform-origin: bottom;
+  }
+
+  &__center {
+    position: relative;
+    background-color: yellow;
+    border-radius: 50%;
+    height: 4vmin;
+    width: 4vmin;
+  }
+
+  @keyframes movement {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
