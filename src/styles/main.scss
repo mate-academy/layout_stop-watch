@@ -10,30 +10,30 @@
   margin-block: 10vmin;
   position: relative;
 
-  &__second-hand {
+  &__hand {
     display: flex;
-    width: 10px;
-    height: 50%;
-    background-color: green;
     position: absolute;
-    transform: translateX(-50%);
-    top: 0;
-    left: 50%;
     transform-origin: center bottom;
-    animation: second-hand 60s forwards 1 linear;
-  }
 
-  &__minute-hand {
-    display: flex;
-    width: 20px;
-    height: 25%;
-    background-color: blue;
-    position: absolute;
-    transform: translateX(-50%);
-    top: 25%;
-    left: 50%;
-    transform-origin: center bottom;
-    animation: minute-hand 5s forwards 1 linear;
+    &--second {
+      width: 10px;
+      height: 50%;
+      background-color: green;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: move 5s forwards 1 linear;
+    }
+
+    &--minute {
+      width: 20px;
+      height: 25%;
+      background-color: blue;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: move 60s forwards 1 linear;
+    }
   }
 
   &__center {
@@ -47,17 +47,11 @@
   }
 }
 
-@keyframes second-hand {
+@keyframes move {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes minute-hand {
-  to {
-    transform: rotate(30deg);
   }
 }
