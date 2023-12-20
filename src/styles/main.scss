@@ -1,10 +1,13 @@
+@import './utils/variables';
+
 .clock {
   display: flex;
-  height: 80vmin;
-  width: 80vmin;
+  height: $clock-size;
+  width: $clock-size;
   border: 6px dotted black;
   border-radius: 50%;
-  margin: auto;
+  margin-inline: auto;
+  margin-block: 10vmin;
   position: relative;
 
   &__second-hand {
@@ -49,14 +52,11 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes minute-hand {
-  from {
-    transform: rotate(0deg);
-   }
   to {
     transform: rotate(30deg);
   }
