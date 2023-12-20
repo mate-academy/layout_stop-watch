@@ -1,1 +1,63 @@
-// put code here
+.clock {
+  display: flex;
+  height: 80vmin;
+  width: 80vmin;
+  border: 6px dotted black;
+  border-radius: 50%;
+  margin: auto;
+  position: relative;
+
+  &__second-hand {
+    display: flex;
+    width: 10px;
+    height: 50%;
+    background-color: green;
+    position: absolute;
+    transform: translateX(-50%);
+    top: 0;
+    left: 50%;
+    transform-origin: center bottom;
+    animation: second-hand 30s forwards 1 linear;
+  }
+
+  &__minute-hand {
+    display: flex;
+    width: 20px;
+    height: 25%;
+    background-color: blue;
+    position: absolute;
+    transform: translateX(-50%);
+    top: 25%;
+    left: 50%;
+    transform-origin: center bottom;
+    animation: minute-hand 0.5s forwards 5s 1 linear;
+  }
+
+  &__center {
+    display: flex;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: yellow;
+    margin: auto;
+    z-index: 1;
+  }
+}
+
+@keyframes second-hand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes minute-hand {
+  from {
+    transform: rotate(0deg);
+   }
+  to {
+    transform: rotate(30deg);
+  }
+}
