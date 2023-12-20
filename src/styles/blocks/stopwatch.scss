@@ -25,8 +25,11 @@
     left: calc(variables.$clock-size / 2) - (variables.$minutes-width / 2);
     top: calc(variables.$clock-size / 2) - variables.$minutes-length;
     border-radius: variables.$clock-arms-radius;
-    transform-origin: 50% 100%;
-    animation: minutes 60s linear infinite;
+    transform-origin: bottom;
+    animation-duration: 60s;
+    animation-name: minutes;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
 
   &__seconds {
@@ -38,24 +41,29 @@
     top: calc(variables.$clock-size / 2) - variables.$seconds-length;
     border-radius: variables.$clock-arms-radius;
     transform-origin: 50% 100%;
-    animation: seconds 5s linear infinite;
+    animation-duration: 5s;
+    animation-name: seconds;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
 }
 
+
+
 @keyframes seconds {
   from {
-    transform: translate(-50%, 0) rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: translate(-50%, 0) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes minutes {
   from {
-    transform: translate(-50%, 0) rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: translate(-50%, 0) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
