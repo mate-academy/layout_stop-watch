@@ -1,0 +1,58 @@
+@use "../utlis/variables" as *;
+
+.stopwatch {
+  height: $clock-size;
+  width: $clock-size;
+  background-color: $clock-face-color;
+  border-radius: $clock-radius;
+  position: relative;
+
+  &__center {
+    height: $clock-center-size;
+    width: $clock-center-size;
+    background-color: $clock-center-color;
+    top: calc($clock-size / 2) - ($clock-center-size / 2);
+    left: calc($clock-size / 2) - ($clock-center-size / 2);
+    border-radius: $clock-radius;
+    position: absolute;
+  }
+
+  &__minutes {
+    height: $minutes-length;
+    width: $minutes-width;
+    position: absolute;
+    background-color: $minutes-color;
+    left: calc($clock-size / 2) - ($minutes-width / 2);
+    top: calc($clock-size / 2) - $minutes-length;
+    border-radius: $clock-arms-radius;
+    transform-origin: bottom;
+    animation-duration: 60s;
+    animation-name: rotation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &__seconds {
+    height: $seconds-length;
+    width: $seconds-width;
+    position: absolute;
+    background-color: $seconds-color;
+    left: calc($clock-size / 2) - ($seconds-width / 2);
+    top: calc($clock-size / 2) - $seconds-length;
+    border-radius: $clock-arms-radius;
+    transform-origin: 50% 100%;
+    animation-duration: 5s;
+    animation-name: rotation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
