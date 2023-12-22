@@ -8,31 +8,31 @@
     width: 80vmin;
     height: 80vmin;
     position: relative;
-    border: 10px dashed #000;
+    border: 10px solid #830505;
+    background-color: rgba(0, 0, 255, 0.68);
     border-radius: 50%;
-    z-index: 1;
   }
 
   &__hands {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 50%;
+    border-radius: 10px;
     background-color: yellow;
     z-index: 20;
   }
 
   &__minute {
-    background-color: #00f;
-    width: 20px;
+    background-color: rgb(183, 255, 0);
+    width: 5px;
     height: 125px;
-    animation: minute-hand 60s linear infinite;
+    animation: hands 60s linear infinite;
     position: absolute;
-    top: 50%;
     left: 50%;
+    top: 50%;
     transform-origin: 0% 0%;
     transform: translate(-50%, -50%);
     rotate: 180deg;
@@ -41,29 +41,17 @@
 
   &__second {
     background-color: #f00;
-    width: 20px;
-    height: 250px;
-    animation: second-hand 60s steps(60) infinite;
+    width: 5px;
+    height: 225px;
+    animation: hands 5s linear infinite;
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform-origin: 0% 0%;
-    transform: translate(-50%, -50%);
+    transform-origin: 0% 100%;
     rotate: 180deg;
   }
 }
 
-@keyframes minute-hand {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes second-hand {
+@keyframes hands {
   from {
     transform: rotate(0deg);
   }
