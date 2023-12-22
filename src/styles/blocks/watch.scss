@@ -21,33 +21,35 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    z-index: 10;
     background-color: yellow;
+    z-index: 20;
+  }
 
-    &::before,
-    &::after {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform-origin: 0% 0%;
-      z-index: 11;
-    }
+  &__minute {
+    background-color: #00f;
+    width: 20px;
+    height: 125px;
+    animation: minute-hand 60s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+    transform: translate(-50%, -50%);
+    rotate: 180deg;
+    z-index: 10;
+  }
 
-    &::after {
-      content: "";
-      background-color: #00f;
-      width: 20px;
-      height: 125px;
-      animation: minute-hand 60s linear infinite;
-    }
-
-    &::before {
-      content: "";
-      background-color: #f00;
-      width: 20px;
-      height: 250px;
-      animation: second-hand 60s steps(60) infinite;
-    }
+  &__second {
+    background-color: #f00;
+    width: 20px;
+    height: 250px;
+    animation: second-hand 60s steps(60) infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+    transform: translate(-50%, -50%);
+    rotate: 180deg;
   }
 }
 
