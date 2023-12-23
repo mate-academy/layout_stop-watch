@@ -7,16 +7,16 @@
   box-sizing: border-box;
   width: $clock-dim;
   height: $clock-dim;
-  border: 5px dotted #000;
+  border: 5px dotted $clock-border-color;
   border-radius: 50%;
 
   &__center {
     position: absolute;
     width: $clock-center;
     height: $clock-center;
-    border: 1px solid #808080;
+    border: 1px solid $center-border-color;
     border-radius: 50%;
-    background-color: #008b8b;
+    background-color: $center-bg-color;
   }
 
   &__hours {
@@ -25,8 +25,8 @@
     transform-origin: 50% 100%;
     width: 2vmin;
     height: 20vmin;
-    border: 1px solid dar;
-    background-color: #2f4f4f;
+    border: 1px solid $hours-border-color;
+    background-color: $hours-bg-color;
     animation: rotate 60s infinite linear;
   }
 
@@ -36,8 +36,8 @@
     transform-origin: 50% 100%;
     width: 1vmin;
     height: 38vmin;
-    border: 1px solid #808000;
-    background-color: #556b2f;
+    border: 1px solid $minutes-border-color;
+    background-color: $minutes-bg-color;
     animation: rotate 5s infinite linear;
   }
 }
