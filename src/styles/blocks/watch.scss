@@ -37,6 +37,14 @@
     transform: translate(-50%, -50%);
     rotate: 180deg;
     z-index: 10;
+
+    @media (max-width:600px) {
+      height: 100px;
+    }
+
+    @media (max-width:440px) {
+      height: 70px;
+    }
   }
 
   &__second {
@@ -46,8 +54,18 @@
     animation: hands 5s linear infinite;
     position: absolute;
     left: 50%;
-    transform-origin: 0% 100%;
+    top: 50%;
+    transform-origin: 0% 0%;
+    transform: translate(-50%, -50%);
     rotate: 180deg;
+
+    @media (max-width:600px) {
+      height: 170px;
+    }
+
+    @media (max-width:440px) {
+      height: 110px;
+    }
   }
 }
 
