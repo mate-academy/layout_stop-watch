@@ -30,42 +30,36 @@ body {
     @include lines-position;
     @include lines-transform;
     @include lines-border;
-    @include animation(watch-minutes, $seconds);
+    @include animation(watch, $seconds);
     @include lines-size($width-line-seconds, $height-line-seconds);
 
     top: 0;
     background-color: white;
     z-index: 2;
-
-
-
   }
 
   &__minute-line {
     @include lines-position;
     @include lines-transform;
     @include lines-border;
-    @include animation(watch-minutes, $minutes);
+    @include animation(watch, $minutes);
     @include lines-size($width-line-minutes, $height-line-minutes);
 
     top: 0;
     background-color: grey;
     z-index: 2;
-
   }
 
   &__hour-line {
     @include lines-position;
     @include lines-transform;
     @include lines-border;
-    @include animation(watch-houres, $hours);
+    @include animation(watch, $hours);
     @include lines-size($width-line-houres, $height-line-houres);
 
     bottom: 50%;
     background-color: #dea418;
     z-index: 1;
-
-
   }
 
 }
