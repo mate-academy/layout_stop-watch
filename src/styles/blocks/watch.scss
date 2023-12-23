@@ -1,0 +1,80 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $height-full;
+
+  &__stopwatch {
+    width: 80vmin;
+    height: 80vmin;
+    position: relative;
+    border: 10px solid #830505;
+    background-color: rgba(0, 0, 255, 0.68);
+    border-radius: 50%;
+  }
+
+  &__hands {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: yellow;
+    z-index: 20;
+  }
+
+  &__minute {
+    background-color: rgb(183, 255, 0);
+    width: 5px;
+    height: 125px;
+    animation: hands 60s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 0% 0%;
+    transform: translate(-50%, -50%);
+    rotate: 180deg;
+    z-index: 10;
+
+    @media (max-width:600px) {
+      height: 100px;
+    }
+
+    @media (max-width:440px) {
+      height: 70px;
+    }
+  }
+
+  &__second {
+    background-color: #f00;
+    width: 5px;
+    height: 225px;
+    animation: hands 5s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 0% 0%;
+    transform: translate(-50%, -50%);
+    rotate: 180deg;
+
+    @media (max-width:600px) {
+      height: 170px;
+    }
+
+    @media (max-width:440px) {
+      height: 110px;
+    }
+  }
+}
+
+@keyframes hands {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
