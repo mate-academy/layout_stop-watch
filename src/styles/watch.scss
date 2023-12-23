@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  display: flex;
+  width: $width-round;
+  height: $height-round;
+  background-color: #19e1bf;
+  border: 4px dashed darkred;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    height: $width-center;
+    width: $height-center;
+    background-color: #d034db;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &__second-line {
+    @include lines-position;
+    @include lines-transform;
+    @include lines-border;
+    @include animation(watch, $seconds);
+    @include lines-size($width-line-seconds, $height-line-seconds);
+
+    top: 0;
+    background-color: white;
+    z-index: 2;
+  }
+
+  &__minute-line {
+    @include lines-position;
+    @include lines-transform;
+    @include lines-border;
+    @include animation(watch, $minutes);
+    @include lines-size($width-line-minutes, $height-line-minutes);
+
+    top: 0;
+    background-color: grey;
+    z-index: 2;
+  }
+
+  &__hour-line {
+    @include lines-position;
+    @include lines-transform;
+    @include lines-border;
+    @include animation(watch, $hours);
+    @include lines-size($width-line-houres, $height-line-houres);
+
+    bottom: 50%;
+    background-color: #dea418;
+    z-index: 1;
+  }
+
+}

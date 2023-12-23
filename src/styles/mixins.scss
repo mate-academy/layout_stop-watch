@@ -1,0 +1,25 @@
+@mixin lines-position {
+  position: absolute;
+  left: 50%;
+}
+
+@mixin lines-transform {
+  transform: translateX(-50%) rotate(0deg);
+  transform-origin: 100% 100%;
+}
+
+@mixin lines-border {
+  border-top: 10px solid red;
+  border-radius: 50%;
+}
+
+@mixin animation($watch, $line){
+animation: $watch $line infinite linear;
+}
+
+@mixin lines-size($width, $height){
+  width: $width;
+  height: $height;
+}
+
+
