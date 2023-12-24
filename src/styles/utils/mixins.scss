@@ -1,0 +1,25 @@
+@mixin animation-time($time, $animation) {
+  animation: $animation $time infinite linear;
+
+  @keyframes rotate-mini {
+    0% {
+      transform: rotate(0);
+      transform-origin: 50% 100%;
+    }
+    100% {
+      transform: rotate(360deg);
+      transform-origin: 50% 100%;
+    }
+  }
+
+  @keyframes rotate-second {
+    0% {
+      transform: rotate(0);
+      transform-origin: 50% 85%;
+    }
+    100% {
+      transform: rotate(360deg);
+      transform-origin: 50% 85%;
+    }
+  }
+}
