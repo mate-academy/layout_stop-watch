@@ -1,1 +1,65 @@
-// put code here
+@import "../utils/variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: 3px dotted black;
+  border-radius: $border-radius;
+  position: relative;
+
+  &__center {
+    background-color: orange;
+    height: $center-size;
+    width: $center-size;
+    border-radius: $border-radius;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute {
+    background-color: blue;
+    width: 8px;
+    position: absolute;
+    bottom: 50%;
+    top: 25%;
+    left: 50%;
+    margin-left: -4px;
+    animation: rotation 60s linear infinite;
+    transform-origin: $transform-origin;
+    transform: rotate(0deg);
+  }
+
+  &__second {
+    background-color: green;
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    width: 4px;
+    animation: rotation 5s linear infinite;
+    transform-origin: $transform-origin;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
