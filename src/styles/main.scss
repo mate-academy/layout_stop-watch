@@ -1,5 +1,10 @@
 @import "color";
 @import "mixin";
+@import "animation";
+@import "watch";
+@import "watch_second";
+@import "watch_minute";
+@import "watch_center";
 
 body {
   margin: 0;
@@ -7,63 +12,4 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.watch {
-  width: 80vmin;
-  height: 80vmin;
-  border: dotted 5px;
-  border-radius: 50%;
-  position: relative;
-
-  &__center {
-    width: 50px;
-    height: 50px;
-    background-color: $arrow-center;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-
-  &__second {
-    width: 10px;
-    height: 40vmin;
-    background-color: $arrow-secnd;
-
-    @include arow;
-
-    animation-name: move;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-
-  &__minute {
-    width: 15px;
-    height: 20vmin;
-    background-color: $arrow-minute;
-
-    @include arow;
-
-    bottom: 50%;
-    animation-name: move;
-    animation-duration: 3600s;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(60);
-    animation-delay: 60s;
-  }
-}
-
-@keyframes move {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }
