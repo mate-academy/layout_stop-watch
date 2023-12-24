@@ -42,14 +42,15 @@
   display: flex;
 
   &__mini {
-    height: 10vmin;
-    width: 10vmin;
+    position: absolute;
+    height: 8vmin;
+    width: 8vmin;
     background-image: url(./images/cif.png);
     background-size: cover;
     background-position: center;
     z-index: 3;
 
-    transform: translate(35.3vmin, 26.1vmin);
+    transform: translate(36vmin, 28vmin);
   }
 
   &__hand {
@@ -63,18 +64,19 @@
       border-radius: 20%;
       background-color: rgb(49, 53, 49);
 
-      @include animation-time(60s);
+      @include animation-time(60s, 'rotate-second');
     }
 
     &--minute {
       width: 0.4vmin;
       height: 0.07 * $half-shift;
-      top: $half-shift - (0.3 * $half-shift);
+      top: $half-shift - (0.27 * $half-shift);
       left: $half-shift;
       border-radius: 20%;
       background-color: rgb(49, 53, 49);
+      z-index: 2;
 
-      @include animation-time(3600s);
+      @include animation-time(3600s, 'rotate-mini');
     }
 
     &--hour {
@@ -85,7 +87,7 @@
       border-radius: 20%;
       background-color: rgb(158, 64, 64);
 
-      @include animation-time(216000s);
+      @include animation-time(126000s, 'rotate-mini');
     }
   }
 }
