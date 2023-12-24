@@ -1,1 +1,68 @@
-// put code here
+$demo-size-default: 80vmin;
+$border-radius: 50%;
+
+@mixin handsStyles {
+  background-color: blue;
+  transform-origin: bottom center;
+  @content;
+
+}
+
+.body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: black;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $demo-size-default;
+  height: $demo-size-default;
+  border: 15px dotted darkred;
+  border-radius: $border-radius;
+
+  &__center-button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: $border-radius;
+    background-color: yellow;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: 0;
+    height: 50%;
+    width: 10px;
+
+    @include handsStyles {
+      animation: rotate 5s infinite steps(60);
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+    bottom: 50%;
+    height: 30%;
+    width: 20px;
+
+    @include handsStyles {
+      animation: rotate 60s infinite steps(60);
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
