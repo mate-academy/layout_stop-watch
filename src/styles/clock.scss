@@ -1,0 +1,47 @@
+.clock {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  border: 4px dotted #48d1cc;
+  border-radius: 50%;
+
+  &__min-hand {
+    position: absolute;
+    z-index: 1;
+    background-color: $color-min;
+    border: 2px solid #000;
+    width: $min-hand-width;
+    height: $clock-size / 4;
+    left: calc(50% - #{$min-hand-width} / 2);
+    bottom: $clock-size / 2;
+    animation: 60s linear 1s infinite hand-move;
+    transform-origin: bottom;
+
+  }
+
+  &__sec-hand {
+    position: absolute;
+    z-index: 2;
+    background-color: $color-sec;
+    border: 2px solid #000;
+    width: $sec-hand-width;
+    height: $clock-size / 2.2;
+    left: calc(50% - #{$sec-hand-width} / 2);
+    bottom: $clock-size / 2;
+    animation: 5s linear 1s infinite hand-move;
+    transform-origin: bottom;
+  }
+
+  &__circle {
+    position: absolute;
+    z-index: 3;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #ffe600;
+    border: 2px solid #000;
+    left: calc(50% - 16px);
+    bottom: calc(50% - 16px);
+  }
+
+}
