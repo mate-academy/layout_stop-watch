@@ -1,1 +1,59 @@
-// put code here
+@import "utils/variables";
+@import "utils/animations";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: 5px dotted black;
+  border-radius: 50%;
+
+  &__hang {
+    position: absolute;
+    left: 50%;
+    transform-origin: center bottom;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &--seconds {
+      background-color: $color-seconds;
+      width: $width-seconds;
+      height: $height-seconds;
+      left: calc(50% - $width-seconds / 2);
+      animation-name: rotate;
+      animation-duration: 60s;
+    }
+
+    &--minutes {
+      background-color: $color-minutes;
+      width: $width-minutes;
+      height: $height-minutes;
+      top: 25%;
+      left: calc(50% - $width-minutes / 2);
+      animation-name: rotate;
+      animation-duration: 3600s;
+    }
+  }
+
+  &__center {
+    width: $width-center;
+    height: $height-center;
+    background-color: $color-center;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - $height-center / 2);
+    left: calc(50% - $width-center / 2);
+  }
+}
