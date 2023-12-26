@@ -1,1 +1,57 @@
-// put code here
+$clock-size: 80vmin;
+
+.clock {
+  display: flex;
+  height: $clock-size;
+  width: $clock-size;
+  border: 6px dotted black;
+  border-radius: 50%;
+  margin-inline: auto;
+  margin-block: 10vmin;
+  position: relative;
+
+  &__hand {
+    display: flex;
+    position: absolute;
+    transform-origin: center bottom;
+
+    &--second {
+      width: 10px;
+      height: 50%;
+      background-color: green;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: move 5s forwards 1 linear;
+    }
+
+    &--minute {
+      width: 20px;
+      height: 25%;
+      background-color: blue;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: move 60s forwards 1 linear;
+    }
+  }
+
+  &__center {
+    display: flex;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: yellow;
+    margin: auto;
+    z-index: 1;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
