@@ -1,0 +1,43 @@
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  border: dotted 5px;
+  border-radius: 50%;
+  position: relative;
+
+  &__center {
+    height: 8vmin;
+    width: 8vmin;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    background-color: $color-center;
+    transform: translate(-50%, -50%);
+    margin-right: -50%;
+
+  }
+
+  &__minute {
+    width: 1.5vmin;
+    height: 35vmin;
+    background-color: $color-minute;
+    animation: move 60s linear infinite;
+    
+    @include arrow;
+
+  }
+
+  &__hour {
+    width: 1.5vmin;
+    height: 20vmin;
+    background-color: $color-hour;
+    z-index: 3;
+    animation: move 3600s steps(60) 60s infinite;
+    
+
+    @include arrow;
+    
+  }
+}
