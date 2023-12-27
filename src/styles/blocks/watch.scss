@@ -1,0 +1,52 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+@import '../utils/keyframes';
+
+.watch {
+  @include central-position;
+
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  background-image: $gradient;
+  box-shadow: $large-shadow;
+
+    &__second {
+    width: 2vmin;
+    height: 40vmin;
+    border-radius: 50%;
+    background-color: $second-color;
+    box-shadow: $small-shadow;
+    z-index: 1;
+    left: 49%;
+
+    @include movement-definition;
+
+    animation: move 60s linear infinite;
+    }
+
+    &__minute {
+    width: 4vmin;
+    height: 20vmin;
+    border-radius: 50%;
+    background-color: $minute-color;
+    box-shadow: $small-shadow;
+    z-index: 1;
+    left: 48%;
+
+    @include movement-definition;
+
+    animation: move 3660s steps(60) infinite;
+    }
+
+    &__circle {
+    @include central-position;
+
+    width: 10vmin;
+    height: 10vmin;
+    border-radius: 50%;
+    background-image: $gradient;
+    box-shadow: $small-shadow;
+    z-index: 3;
+    }
+  }
