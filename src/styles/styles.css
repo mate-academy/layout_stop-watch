@@ -1,0 +1,67 @@
+.body {
+  background-image: linear-gradient(to bottom right, grey, black);
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom right, grey, black);
+  box-shadow: 0 0 15px black;
+}
+
+.watch__second {
+  width: 2vmin;
+  height: 40vmin;
+  border-radius: 50%;
+  background-color: red;
+  box-shadow: 0 0 5px black;
+  z-index: 1;
+  left: 49%;
+  position: absolute;
+  transform-origin: bottom center;
+  bottom: 50%;
+  animation: move 60s linear infinite;
+}
+
+.watch__minute {
+  width: 4vmin;
+  height: 20vmin;
+  border-radius: 50%;
+  background-color: yellow;
+  box-shadow: 0 0 5px black;
+  z-index: 1;
+  left: 48%;
+  position: absolute;
+  transform-origin: bottom center;
+  bottom: 50%;
+  animation: move 3660s steps(60) infinite;
+}
+
+.watch__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10vmin;
+  height: 10vmin;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom right, grey, black);
+  box-shadow: 0 0 5px black;
+  z-index: 3;
+}
+
+/*# sourceMappingURL=styles.css.map */
