@@ -3,7 +3,15 @@
   padding: 0;
 }
 
+body{
+  min-height:100vh;
+  display:flex;
+}
+
 .clock {
+  display: block;
+  margin: auto;
+  vertical-align: middle;
   position: relative;
   width: 80vmin;
   height: 80vmin;
@@ -38,6 +46,7 @@
   background: blue;
   transform-origin: center bottom;
   animation: sweep 60s linear;
+  animation-iteration-count: infinite;
 }
 
 .minutes {
@@ -49,8 +58,8 @@
   background: green;
   transform-origin: center bottom;
   animation: sweep 5s linear;
+  animation-iteration-count: infinite;
 }
-
 
 @keyframes sweep {
   0% {
@@ -60,5 +69,3 @@
     transform: rotate(0deg);
   }
 }
-
-
