@@ -1,0 +1,48 @@
+.clock {
+  width: $width-clock;
+  height: $height-clock;
+  border: 5px dotted black;
+  border-radius: $radius;
+  position: relative;
+
+
+  &__point {
+    width: $width-clock / 14;
+    height: $height-clock / 14;
+    border-radius: $radius;
+    background-color: yellow;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute{
+    width: $width-clock / 32;
+    height: 40%;
+    background-color: green;
+
+    animation: 5s linear infinite rotate;
+    position: absolute;
+    transform-origin: bottom;
+    top: 10%;
+    left: 48.3%;
+    z-index: -1;
+  }
+
+  &__hour{
+    width: $width-clock / 28;
+    height: 25%;
+    background-color: blue;
+
+    animation: 60s linear infinite rotate;
+    transform-origin: bottom;
+
+    position: absolute;
+    top: 25%;
+    left: 48.3%;
+    z-index: -2;
+  }
+
+
+}
