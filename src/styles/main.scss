@@ -1,1 +1,64 @@
-// put code here
+@import 'variables';
+@import 'mixins';
+
+body {
+  margin: 0;
+}
+
+.stop-watch {
+  @include absolut-center-position;
+
+  width: $watch-size;
+  height: $watch-size;
+
+  border-radius: 50%;
+  border: 5px dotted #000;
+
+  &__center {
+    @include absolut-center-position;
+
+    width: $watch-size / 16;
+    height: $watch-size / 16;
+
+    background-color: #f90	;
+    border-radius: 50%;
+  }
+
+  &__min {
+    @include absolut-middle-position;
+
+    z-index: -1;
+
+    width: 2vmin;
+    height: $watch-size / 4;
+
+    background-color: #00f;
+
+    transform-origin: bottom;
+    animation: 60s linear infinite move;
+  }
+
+  &__second {
+    @include absolut-middle-position;
+
+    z-index: -2;
+
+    width: 1vmin;
+    height: $watch-size / 2;
+
+    background-color: #008000;
+
+    transform-origin: bottom;
+    animation: 5s linear infinite move;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
