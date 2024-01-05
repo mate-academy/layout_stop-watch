@@ -34,7 +34,8 @@ body {
 
     background-color: #00f;
 
-    animation: 60s ease 0s 1 move;
+    transform-origin: bottom;
+    animation: 60s linear infinite move;
   }
 
   &__second {
@@ -47,19 +48,17 @@ body {
 
     background-color: #008000;
 
-    animation: 5s ease 0s 12 move;
+    transform-origin: bottom;
+    animation: 5s linear infinite move;
   }
 }
 
 @keyframes move {
   0% {
     transform: rotate(0deg);
-    transform-origin: bottom;
   }
 
   100% {
     transform: rotate(360deg);
-    transform-origin: bottom;
   }
-
 }
