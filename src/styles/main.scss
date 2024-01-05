@@ -1,1 +1,72 @@
 // put code here
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+}
+
+.clock{
+  display: block;
+  margin: auto;
+  position: relative;
+  background-color: #fff;
+  width: 80vmin;
+  height: 80vmin;
+  border: dotted 8px black;
+  border-radius: 5%;
+}
+
+.dot{
+  height: 6%;
+  width: 6%;
+  border-radius: 5vmin;
+  background: orange;
+  position: absolute;
+  top: 47%;
+  left: 47%;
+}
+
+.hand_hours,
+.hand_minutes{
+  position: absolute;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
+
+.hand_hours {
+  width: 3%;
+  height: 30%;
+  top: 21%;
+  left: 48.3%;
+  opacity: 0.8;
+  background: blue;
+  transform-origin: center bottom;
+  animation: sweep 60s linear;
+  animation-iteration-count: infinite;
+}
+
+.hand_minutes {
+  width: 2.2%;
+  top: 6%;
+  height: 45%;
+  left: 48.6%;
+  opacity: 0.8;
+  background: green;
+  transform-origin: center bottom;
+  animation: sweep 5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes sweep {
+  0% {
+    transform: rotate(-360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
