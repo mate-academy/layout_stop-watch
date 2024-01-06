@@ -1,1 +1,65 @@
-// put code here
+@import "./utlis/variables";
+
+.page__body{
+    background-color: $background-color;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.clock {
+  background-color: $clock-color;
+  box-shadow: 1px 5px 25px 15px $shadow-color;
+  -webkit-box-shadow: 1px 5px 25px 15px $shadow-color;
+  -moz-box-shadow: 1px 5px 25px 15px $shadow-color;
+  width: $dimensions;
+  height: $dimensions;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__hand--seconds {
+    background-color: $seconds-color;
+    width: 10px;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    animation: move 5s infinite;
+    animation-timing-function: linear;
+    transform-origin: 50% 100%;
+  }
+
+  &__hand--minutes {
+    position: absolute;
+    background-color: $minutes-color;
+    left: 50%;
+    width: 25%;
+    height: 20px;
+    animation: move 60s infinite;
+    animation-timing-function: linear;
+    transform-origin: 0;
+  }
+
+  &__center {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: $center-color;
+    border-radius: 50%;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
