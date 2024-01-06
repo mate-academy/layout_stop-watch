@@ -1,1 +1,65 @@
-// put code here
+$size-circle: 80vmin;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.circle {
+  box-sizing: border-box;
+  height: $size-circle;
+  width: $size-circle;
+  border: 5px dotted #000 ;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.arrow-big {
+  width: 10px;
+  background-color: cadetblue;
+  height: calc($size-circle / 2.04);
+  position: absolute;
+  animation: bigrotate 60s linear infinite;
+  transform-origin: center bottom;
+}
+
+.arrow-small {
+  width: 15px;
+  background-color: brown;
+  height: calc($size-circle / 4.15);
+  position: absolute;
+  margin-top: calc($size-circle / 4);
+  animation: smallrotate 5s linear infinite;
+  transform-origin: center bottom;
+}
+
+.point {
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: calc($size-circle / 15);
+  width: calc($size-circle / 15);
+  background-color: #c56666;
+  position: absolute;
+  align-self: center;
+}
+
+@keyframes bigrotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes smallrotate {
+  0%{
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(450deg);
+  }
+}
