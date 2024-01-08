@@ -1,0 +1,48 @@
+@import '/src/styles/utils/variables';
+@import '/src/styles/animation';
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  border: $clock-border solid black;
+  border-radius: 50%;
+  background-image: url(/src/img/clock-face.png);
+  background-size: 100vmin;
+  background-position: center;
+
+  &__center {
+    width: $clock-center-size;
+    height: $clock-center-size;
+    border-radius: 50%;
+    background-color: goldenrod;
+    border: 1px solid yellow;
+    align-self: center;
+    z-index: 2;
+  }
+
+  &__min-arrow {
+    width: $min-width;
+    height: $min-height;
+    background-color: rgb(58, 112, 3);
+    top: 0;
+    animation: 5s linear 1s infinite clock-rotation;
+  }
+
+  &__h-arrow {
+    width: $h-arrow-width;
+    height: $h-arrow-height;
+    background-color: rgb(119, 69, 3);
+    top: 0.25 * $clock-size;
+    z-index: 1;
+    animation: 60s linear 1s infinite clock-rotation;
+  }
+}
+
+.clock-part {
+  position: absolute;
+  border-radius: 50%;
+}
