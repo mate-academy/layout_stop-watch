@@ -23,10 +23,7 @@ body {
     background-color: orange;
     position: absolute;
     border-radius: 50%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     margin: auto;
   }
 
@@ -38,18 +35,18 @@ body {
     left: 0;
     right: 0;
     margin: auto;
-    animation: rotateHourHand 55s linear infinite;
+    animation: rotate-hour-hand 55s linear infinite;
   }
 
-  &__hour-hand:before {
+  &__hour-hand::before {
     position: absolute;
-    content: ""; /* Added content property */
+    content: "";
     background: blue;
     height: 21vmin;
     width: 9px;
   }
 
-  @keyframes rotateHourHand {
+  @keyframes rotate-hour-hand {
     to {
       transform: rotate(360deg);
     }
@@ -63,18 +60,18 @@ body {
     left: 0;
     right: 0;
     margin: auto;
-    animation: rotateMinuteHand 5s linear infinite;
+    animation: rotate-minute-hand 5s linear infinite;
   }
 
-  &__minute-hand:before {
-    content: ''; /* Added content property */
+  &__minute-hand::before {
+    content: '';
     position: absolute;
     width: 3px;
     height: 41vmin;
     background-color: green;
   }
 
-  @keyframes rotateMinuteHand {
+  @keyframes rotate-minute-hand {
     to {
       transform: rotate(360deg);
     }
