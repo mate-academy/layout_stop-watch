@@ -1,1 +1,82 @@
-// put code here
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.watch {
+  box-sizing: border-box;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 3px dashed black;
+  position: relative;
+
+  &__center {
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &__hour-hand {
+    width: 9px;
+    height: 100%;
+    background-color: blue;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation: rotateHourHand 55s linear infinite;
+  }
+
+  &__hour-hand:before {
+    position: absolute;
+    content: ""; /* Added content property */
+    background: blue;
+    height: 21vmin;
+    width: 9px;
+  }
+
+  @keyframes rotateHourHand {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__minute-hand {
+    width: 3px;
+    height: 100%;
+    background-color: green;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation: rotateMinuteHand 5s linear infinite;
+  }
+
+  &__minute-hand:before {
+    content: ''; /* Added content property */
+    position: absolute;
+    width: 3px;
+    height: 41vmin;
+    background-color: green;
+  }
+
+  @keyframes rotateMinuteHand {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
