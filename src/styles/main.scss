@@ -1,1 +1,72 @@
-// put code here
+@import '../styles/utils/variables.scss';
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+}
+
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $watch-height;
+  width: $watch-width;
+
+  border: 30px double #808080;
+  border-radius: 100%;
+
+  &__center {
+    position: absolute;
+
+    height: $center-height;
+    width: $center-width;
+
+    background-color: #808080;
+    border-radius: 100%;
+  }
+
+  &__hour-hand {
+    position: absolute;
+
+    height: $hour-height;
+    width: $hour-width;
+
+    background-color: #3b2b2a;
+    margin-bottom: $hour-height;
+
+    border-radius: 50%;
+
+    transform-origin: center bottom;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+
+    height: $minute-height;
+    width: $minute-width;
+
+    background-color: #000;
+    margin-bottom: $minute-height;
+
+    border-radius: 30%;
+
+    transform-origin: center bottom;
+    animation: rotate 5s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
