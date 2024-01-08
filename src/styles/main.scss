@@ -1,7 +1,5 @@
 // put code here
 
-$time: 45;
-
 .page {
   display: flex;
   justify-content: center;
@@ -44,10 +42,10 @@ $time: 45;
   background-color: green;
   z-index: -1;
 
-  animation-name: big-arrow-move;
-  animation-duration: #{$time}s;
-  animation-timing-function: steps($time, end);
-  animation-fill-mode: forwards;
+  animation-name: arrow-move;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60, end);
 }
 
 .stopwatch__arrow--small {
@@ -56,28 +54,18 @@ $time: 45;
   background-color: blue;
   z-index: -2;
 
-  animation-name: small-arrow-move;
-  animation-duration: #{$time}s;
+  animation-name: arrow-move;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-fill-mode: forwards;
 }
 
-@keyframes big-arrow-move {
+@keyframes arrow-move {
   from {
     transform: rotate(0);
   }
 
   to {
-    transform: rotate(#{$time / 60 * 360}deg);
-  }
-}
-
-@keyframes small-arrow-move {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(#{$time / 3600 * 360}deg);
+    transform: rotate(360deg);
   }
 }
