@@ -1,0 +1,49 @@
+.watch {
+  margin: 25% auto;
+  width: $size-watch;
+  height: $size-watch;
+  border: 3px dotted $color-watch;
+  border-radius: 50%;
+  position: relative;
+
+  &__center {
+    width: 8%;
+    height: 8%;
+    background-color: $color-center;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute {
+    width: 25%;
+    height: 5%;
+    background-color: $color-min;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -50%) rotate(90deg);
+    transform-origin: 100% 50%;
+
+    animation: rotate-arrow 60s linear infinite;
+  }
+
+  &__second {
+    width: 50%;
+    height: 2.5%;
+    background-color: $color-sec;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -50%) rotate(90deg);
+    transform-origin: 100% 50%;
+    z-index: -1;
+
+    animation: rotate-arrow 5s linear infinite;
+  }
+}
