@@ -1,1 +1,93 @@
-// put code here
+@mixin hand-position {
+  position: absolute;
+  top: 39.8vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@mixin hand-content {
+  content: "";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 3px dashed black;
+  position: relative;
+
+  &__center {
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    margin: auto;
+    z-index: 3;
+  }
+
+  &__hour-hand {
+    width: 9px;
+    background-color: blue;
+
+    @include hand-position;
+
+    animation: rotate-hand 60s linear infinite;
+    z-index: 2;
+  }
+
+  &__hour-hand::before {
+    position: absolute;
+
+    @include hand-content;
+
+    background: blue;
+    height: 21vmin;
+    width: 9px;
+    z-index: 2;
+  }
+
+  &__minute-hand {
+    width: 3px;
+    background-color: green;
+
+    @include hand-position;
+
+    animation: rotate-hand 5s linear infinite;
+    z-index: 1;
+  }
+
+  &__minute-hand::before {
+    @include hand-content;
+
+    position: absolute;
+
+    width: 3px;
+    height: 39.6vmin;
+    background-color: green;
+    z-index: 1;
+  }
+
+  @keyframes rotate-hand {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
