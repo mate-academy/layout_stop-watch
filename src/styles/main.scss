@@ -1,1 +1,71 @@
-// put code here
+$circle-size: 80vmin;
+
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  &__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    box-sizing: border-box;
+    height: $circle-size;
+    width: $circle-size;
+    border: 8px dotted black;
+    border-radius: 50%;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: 0;
+
+    height: 50%;
+    width: 10px;
+    background-color: green;
+    border-radius: 15px;
+
+    transform-origin: bottom;
+    animation: rotate-hands 5s linear infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    top: 25%;
+
+    height: 25%;
+    width: 10px;
+    background-color: blue;
+    border-radius: 15px;
+
+    transform-origin: bottom;
+    animation: rotate-hands 60s linear infinite;
+  }
+
+  &__inner-circle {
+    position: absolute;
+
+    height: 4%;
+    width: 4%;
+    background-color: orange;
+    border-radius: 50%;
+  }
+}
+
+
+@keyframes rotate-hands {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
