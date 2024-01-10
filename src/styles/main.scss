@@ -1,1 +1,42 @@
-// put code here
+@keyframes rotate-watch-hands {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 2px dotted black;
+  border-radius: 50%;
+  position: relative;
+  margin: 10vmin auto;
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+
+    &--hour {
+      width: 2%;
+      height: 30%;
+      background-color: green;
+      animation: rotate-watch-hands 60s linear infinite;
+    }
+
+    &--minute {
+      width: 2%;
+      height: 45%;
+      background-color: blue;
+      animation: rotate-watch-hands 5s linear infinite;
+    }
+
+    &--center {
+      width: 30px;
+      height: 30px;
+      border-radius: 33px;
+      background-color: yellow;
+      margin: -11px;
+    }
+  }
+}
