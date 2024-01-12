@@ -1,0 +1,55 @@
+.watch {
+  margin: 0 auto;
+
+  &__circle {
+    position: relative;
+    border: 3vmin dotted black;
+    border-radius: 50%;
+    width: $size-watch;
+    height: $size-watch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+    background-color: $bg-color-center-watch;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__second {
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    width: $second-size;
+
+    background-color: $bg-color-second;
+
+    transform-origin: bottom center;
+    animation: move 5s steps(60) 60;
+  }
+
+  &__minute {
+    position: absolute;
+    background-color: $bg-color-minute;
+
+    width: $minute-size;
+    top: 25%;
+    bottom: 50%;
+
+    transform-origin: bottom center;
+    animation: move 60s steps(60) 1;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
