@@ -1,1 +1,76 @@
-// put code here
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+.clock {
+  border-radius: 50%;
+  border: 1px dotted black;
+  background: #fff url(/src/image/ios_clock.svg) no-repeat center;
+  background-size: 88%;
+  height: 80vmin;
+  position: relative;
+  width: 80vmin;
+
+  &::after {
+    background: yellow;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 5%;
+    height: 5%;
+  }
+
+  &__minutes {
+    background: blue;
+    height: 20%;
+    left: 49%;
+    position: absolute;
+    top: 30%;
+    transform-origin: 50% 100%;
+    width: 2%;
+
+    &-container {
+      animation: move 3600s infinite linear;
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  &__seconds {
+    background: green;
+    height: 35%;
+    left: 49.5%;
+    position: absolute;
+    top: 14%;
+    transform-origin: 50% 80%;
+    width: 1%;
+
+    &-container {
+      animation: move  60s infinite linear;
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  @keyframes move {
+    from {
+      transform: rotateZ(0deg);
+    }
+
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+}
+
