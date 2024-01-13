@@ -4,14 +4,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 700px;
-  height: 700px;
+  width: 80vmin;
+  height: 80vmin;
   border: 5px dotted #000;
   border-radius: 50%;
 
   &__fixings-arrows {
-    height: 50px;
-    width: 50px;
+    height: 7vmin;
+    width: 7vmin;
     border: 1px solid #ffa500;
     background-color: #ffa500;
     border-radius: 100%;
@@ -20,58 +20,54 @@
 
   &__arrow-large {
     position: absolute;
-    height: 340px;
-    width: 10px;
-    bottom: 350px;
+    height: 38vmin;
+    width: 1vmin;
+    bottom: 40vmin;
     border-radius: 30px;
-    border: 1px solid #008000;
+    border: solid #008000;
     background-color: #008000;
     z-index: 1;
     animation-name: move-large;
     animation-duration: 60s;
     animation-timing-function: linear;
+    transform-origin: bottom;
 
     @keyframes move-large{
       0% {
         transform: rotate(0deg);
-        transform-origin: bottom;
       }
 
       50% {
         transform: rotate(180deg);
-        transform-origin: bottom;
       }
 
       100% {
         transform: rotate(360deg);
-        transform-origin: bottom;
       }
     }
   }
 
   &__arrow-small {
     position: absolute;
-    height: 200px;
-    width: 20px;
-    bottom: 350px;
+    height: 25vmin;
+    width: 2vmin;
+    bottom: 40vmin;
     border-radius: 30px;
-    border: 1px solid #00ff;
+    border: solid #00ff;
     background-color: #00ff;
     animation-name: move-small;
     animation-duration: 5s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
-
+    transform-origin: bottom;
 
     @keyframes move-small {
       from {
         transform: rotate(0deg);
-        transform-origin: bottom;
       }
 
       to {
         transform: rotate(90deg);
-        transform-origin: bottom;
       }
     }
 
