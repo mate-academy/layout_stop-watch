@@ -1,0 +1,17 @@
+@mixin clock-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@mixin clock-origin {
+  transform: translate(-50%, -100%, );
+  transform-origin: bottom center;
+}
+
+@mixin clock-duration($duration) {
+  animation-name: clock;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60, end)
+}
