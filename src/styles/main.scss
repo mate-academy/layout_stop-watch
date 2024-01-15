@@ -1,1 +1,60 @@
-// put code here
+@keyframes hand-rotate {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+
+.stop-watch {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted black;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    transform-origin: bottom;
+    animation: linear infinite hand-rotate;
+
+    &--secund {
+      bottom: 40vmin;
+      width: 1vmin;
+      height: 40vmin;
+      background-color: green;
+      animation-duration: 5s;
+    }
+
+    &--minute {
+      bottom: 40vmin;
+      width: 2vmin;
+      height: 20vmin;
+      background-color: blue;
+      animation-duration: 60s;
+    }
+  }
+
+  &__mid-dot {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: #ffbf00;
+    z-index: 1;
+  }
+
+}
