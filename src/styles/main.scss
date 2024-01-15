@@ -1,3 +1,5 @@
+@import './animation/stop-watch';
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,9 +40,10 @@ body {
     background-color: green;
 
     left: 50%;
-    transform: translate(-50%, -100%);
+    top: 25%;
+    transform: translate(-50%);
     transform-origin: bottom center;
-    animation: rotate360-minutes 60s linear infinite;
+    animation: rotate360 60s linear infinite;
   }
 
   &__second {
@@ -50,27 +53,8 @@ body {
     background-color: red;
 
     left: 50%;
-    transform: translate(-50%) rotate(0deg);
+    transform: translate(-50%);
     transform-origin: bottom center;
-    animation: rotate360-seconds 5s linear infinite;
-  }
-
-  @keyframes rotate360-seconds {
-    from {
-      transform: translate(-50%) rotate(0deg);
-    }
-    to {
-      transform: translate(-50%) rotate(360deg);
-    }
-  }
-
-  @keyframes rotate360-minutes {
-    from {
-      transform: translate(-50%, 100%) rotate(0deg);
-    }
-    to {
-      transform: translate(-50%, 100%) rotate(360deg);
-    }
+    animation: rotate360 5s linear infinite;
   }
 }
-
