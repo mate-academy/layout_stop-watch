@@ -1,0 +1,47 @@
+.watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: $watch-width-and-height;
+  width: $watch-width-and-height;
+  border: $watch-border-width solid $watch-border-color;
+  border-radius: 50%;
+  background-color: $watch-bg;
+
+  &__min-arrow {
+    position: absolute;
+    left: calc(50% - $minute-width / 2);
+    bottom: 50%;
+    height: calc($watch-width-and-height / 2 - $watch-border-width);
+    width: 4px;
+    border-radius: 5px;
+    background-color: $min-arrow-bg;
+    transform-origin: bottom;
+    animation: move 5s linear infinite;
+  }
+
+  &__hour-arrow {
+    position: absolute;
+    left: calc(50% - $hour-width / 2);
+    bottom: 50%;
+    height: calc($watch-width-and-height / 4 - $watch-border-width);
+    width: 6px;
+    border-radius: 5px;
+    background-color: $hour-arrow-bg;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+
+  &__dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: $dot-bg;
+    border-radius: 50%;
+  }
+}
