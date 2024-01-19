@@ -1,1 +1,68 @@
-// put code here
+@import 'variable';
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.stopwatch__circle {
+  position: relative;
+  height: 700px;
+  width: 700px;
+  border: 2px dashed black;
+  border-radius: $circle-radius;
+
+}
+
+.stopwatch__dot {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: orange;
+  border-radius: $circle-radius;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stopwatch__green {
+  position: absolute;
+  height: 300px;
+  width: 9px;
+  background-color: green;
+  top: 7%;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.stopwatch__blue {
+  position: absolute;
+  height: 150px;
+  width: 18px;
+  background-color: blue;
+  top: 29%;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+@keyframes rotateGreen {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+.stopwatch__green {
+  transform-origin: bottom center;
+  animation: rotateGreen 5s linear infinite;
+}
+
+.stopwatch__blue {
+  transform-origin: bottom center;
+  animation: rotateGreen 60s linear infinite;
+}
