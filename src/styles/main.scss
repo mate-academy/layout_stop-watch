@@ -1,1 +1,86 @@
 // put code here
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  display: flex;
+  margin: 0 auto;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  border: 5px dotted black;
+  position: relative;
+
+
+  &__center {
+    margin: 0 auto;
+    display: flex;
+    align-self: center;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    background-color: orange;
+    z-index: 3;
+  }
+
+  &__hour,
+  &__minute {
+    border-radius: 50%;
+    position: absolute;
+    top: 265px;
+    left: 262px;
+  }
+
+  &__hour {
+    transform: rotate(-90deg);
+    animation-name: hour;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute {
+    transform: rotate(180deg);
+    animation-name: minute;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__hour::before {
+    content: '';
+    position: absolute;
+    height: 25vmin;
+    width: 15px;
+    background-color: blue;
+  }
+  &__minute::before {
+    content: '';
+    position: absolute;
+    height: 40vmin;
+    width: 10px;
+    background-color: green;
+  }
+}
+
+@keyframes hour {
+  0% {transform: rotate(-90deg)};
+  25% {transform: rotate(0deg)};
+  50% {transform: rotate(90deg)};
+  75% {transform: rotate(180deg)};
+  100% {transform: rotate(270deg)};
+}
+
+@keyframes minute {
+  0% {transform: rotate(180deg)};
+  25% {transform: rotate(270deg)};
+  50% {transform: rotate(360deg)};
+  75% {transform: rotate(450deg)};
+  100% {transform: rotate(540deg)};
+}
