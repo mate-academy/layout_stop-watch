@@ -33,13 +33,13 @@ body {
   &__minute {
     border-radius: 50%;
     position: absolute;
-    top: 265px;
-    left: 262px;
+    top: 300px;
+    left: 300px;
   }
 
   &__hour {
     transform: rotate(-90deg);
-    animation-name: hour;
+    animation-name: time;
     animation-duration: 60s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -47,7 +47,7 @@ body {
 
   &__minute {
     transform: rotate(180deg);
-    animation-name: minute;
+    animation-name: time;
     animation-duration: 5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -69,18 +69,8 @@ body {
   }
 }
 
-@keyframes hour {
-  0% {transform: rotate(-90deg)};
-  25% {transform: rotate(0deg)};
-  50% {transform: rotate(90deg)};
-  75% {transform: rotate(180deg)};
-  100% {transform: rotate(270deg)};
+@keyframes time {
+  from {transform: rotate(180deg);}
+  to {transform: rotate(540deg);}
 }
 
-@keyframes minute {
-  0% {transform: rotate(180deg)};
-  25% {transform: rotate(270deg)};
-  50% {transform: rotate(360deg)};
-  75% {transform: rotate(450deg)};
-  100% {transform: rotate(540deg)};
-}
