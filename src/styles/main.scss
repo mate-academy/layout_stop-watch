@@ -8,14 +8,13 @@ body {
   height: 100vh;
 }
 
-.stopwatch__circle {
+.stopwatch {
   position: relative;
   height: 700px;
   width: 700px;
   border: 2px dashed black;
   border-radius: $circle-radius;
 
-}
 
 .stopwatch__dot {
   position: absolute;
@@ -36,6 +35,8 @@ body {
   top: 7%;
   left: 50%;
   transform: translateX(-50%) rotate(180deg);
+  transform-origin: bottom center;
+  animation: rotate-green 5s linear infinite;
 }
 
 .stopwatch__blue {
@@ -46,9 +47,11 @@ body {
   top: 29%;
   left: 50%;
   transform: translateX(-50%) rotate(90deg);
+  transform-origin: bottom center;
+  animation: rotate-green 60s linear infinite;
 }
 
-@keyframes rotateGreen {
+@keyframes rotate-green {
   0% {
     transform: translateX(-50%) rotate(0deg);
   }
@@ -56,13 +59,4 @@ body {
     transform: translateX(-50%) rotate(360deg);
   }
 }
-
-.stopwatch__green {
-  transform-origin: bottom center;
-  animation: rotateGreen 5s linear infinite;
-}
-
-.stopwatch__blue {
-  transform-origin: bottom center;
-  animation: rotateGreen 60s linear infinite;
 }
