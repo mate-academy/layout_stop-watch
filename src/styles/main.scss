@@ -1,20 +1,11 @@
 @import "variable";
 
-@keyframes rotate-minute {
+@keyframes rotate {
   0% {
     transform: translateX(-50%) rotate(0deg);
   }
   100% {
     transform: translateX(-50%) rotate(360deg);
-  }
-}
-
-@keyframes rotate-hour {
-  0% {
-    transform: translateX(-50%) rotate(-90deg);
-  }
-  100% {
-    transform: translateX(-50%) rotate(270deg);
   }
 }
 
@@ -49,8 +40,7 @@ body {
     background-color: green;
     width: 9px;
     height: 50%;
-    animation: 5s linear infinite rotate-minute;
-
+    animation: 5s linear infinite rotate;
     position: absolute;
     top: 0;
     left: 50%;
@@ -66,6 +56,6 @@ body {
     left: 50%;
     transform: translateX(-50%) rotate(270deg);
     transform-origin: top;
-    animation: 60s linear infinite rotate-hour;
+    animation: 60s linear infinite rotate;
   }
 }
