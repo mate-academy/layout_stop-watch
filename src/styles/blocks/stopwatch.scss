@@ -21,7 +21,7 @@
     width: 12px;
     border-radius: 7px;
     background: linear-gradient(to bottom, green $percent, $oparcity);
-    animation: move-seconds-hand 5s linear infinite;
+    animation: move-hand 5s linear infinite;
   }
 
   &__minute-hand {
@@ -31,7 +31,7 @@
     width: 20px;
     border-radius: 15px;
     background: linear-gradient(to bottom, blue $percent, $oparcity);
-    animation: move-minute-hand 60s linear infinite;
+    animation: move-hand 60s linear infinite;
   }
 
   &__point-center {
@@ -44,17 +44,7 @@
   }
 }
 
-@keyframes move-seconds-hand {
-  from {
-    rotate: $rotate-deg-min;
-  }
-
-  to {
-    rotate: $rotate-deg-max;
-  }
-}
-
-@keyframes move-minute-hand {
+@keyframes move-hand {
   from {
     rotate: $rotate-deg-min;
   }
