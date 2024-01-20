@@ -1,1 +1,56 @@
-// put code here
+@import './variables';
+
+.watch {
+  position: relative;
+  margin: 50px auto;
+  width: $watch-width;
+  height: $watch-height;
+  border-radius: 50%;
+  border: 10px dotted #000;
+
+  &__dot {
+    width: $dot-width;
+    height: $dot-height;
+    background-color: $dot-bg;
+    border-radius: 50%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &__min-arrow {
+    width: 8px;
+    height: 40vmin;
+    background-color: $min-arrow-bg;
+    margin: 0 auto;
+    transform-origin: bottom;
+    animation-name: hand;
+    animation-duration: $min-animation-duration;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &__hour-arrow {
+    width: 10px;
+    height: 30vmin;
+    background-color: rgb(32, 118, 231);
+    margin: 0 auto;
+    transform-origin: top;
+    animation-name: hand;
+    animation-duration: $hour-animation-duration;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes hand {
+    from {
+      rotate: 0deg;
+    }
+
+    to {
+      rotate: 360deg
+    }
+  }
+}
