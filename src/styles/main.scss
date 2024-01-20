@@ -1,4 +1,22 @@
-@import 'variable';
+@import "variable";
+
+@keyframes rotate-minute {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-hour {
+  0% {
+    transform: translateX(-50%) rotate(-90deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(270deg);
+  }
+}
 
 body {
   margin: 0;
@@ -15,48 +33,39 @@ body {
   border: 2px dashed black;
   border-radius: $circle-radius;
 
-
-.stopwatch__dot {
-  position: absolute;
-  height: 50px;
-  width: 50px;
-  background-color: orange;
-  border-radius: $circle-radius;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.stopwatch__green {
-  position: absolute;
-  height: 300px;
-  width: 9px;
-  background-color: green;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%) rotate(180deg);
-  transform-origin: bottom center;
-  animation: rotate-green 5s linear infinite;
-}
-
-.stopwatch__blue {
-  position: absolute;
-  height: 150px;
-  width: 18px;
-  background-color: blue;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%) rotate(90deg);
-  transform-origin: bottom center;
-  animation: rotate-green 60s linear infinite;
-}
-
-@keyframes rotate-green {
-  0% {
-    transform: translateX(-50%) rotate(0deg);
+  &__dot {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: orange;
+    border-radius: $circle-radius;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-  100% {
-    transform: translateX(-50%) rotate(360deg);
+
+  &__green {
+    transform-origin: bottom;
+    background-color: green;
+    width: 9px;
+    height: 50%;
+    animation: 5s linear infinite rotate-minute;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(0);
   }
-}
+
+  &__blue {
+    position: absolute;
+    height: 25%;
+    width: 18px;
+    background-color: blue;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(270deg);
+    transform-origin: top;
+    animation: 60s linear infinite rotate-hour;
+  }
 }
