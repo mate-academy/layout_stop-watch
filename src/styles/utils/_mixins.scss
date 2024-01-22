@@ -1,0 +1,38 @@
+@use './functions' as *;
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin center($height, $width) {
+  left: center($width);
+  top: center($height);
+}
+
+@mixin position-hand($height, $width) {
+  @include center(add-fake-height($height), $width);
+
+  height: add-fake-height($height);
+  width: $width;
+}
+
+@mixin hand($color) {
+  background-color: $color;
+  height: 50%;
+  width: 100%;
+}
+
+@mixin rotate-animation($duration) {
+  animation-name: rotate;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
