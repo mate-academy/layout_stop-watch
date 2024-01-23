@@ -1,35 +1,34 @@
-$avocado: #568203;
-$cerulean: #2a52be;
-$cadmium-orange: #f28c28;
+@import 'src/styles/variables';
 
 .watch {
   display: flex;
   justify-content: center;
   align-items: center;
 
+  width: $clock-size;
+  height: $clock-size;
+
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30vw;
-  height: 30vw;
 
   border: 10px black dashed;
   border-radius: 50%;
 
   &__dot {
-    z-index: 1;
     position: absolute;
-    width: 3vw;
     height: 3vw;
-    background: $cadmium-orange;
+    width: 3vw;
+    z-index: 1;
     border-radius: 50%;
+    background: $cadmium-orange;
   }
 
   &__quick-hand {
     position: absolute;
-    height: 15vw;
-    margin-bottom: 15vw;
+    height: 21vw;
+    margin-bottom: 21vw;
     width: 1vw;
     background: $avocado;
     animation: clock 5s infinite linear;
@@ -38,11 +37,10 @@ $cadmium-orange: #f28c28;
 
   &__slow-hand {
     position: absolute;
-    margin-bottom: 10vw;
     height: 10vw;
+    margin-bottom: 10vw;
     width: 1.5vw;
     background: $cerulean;
-
     animation: clock 60s infinite linear;
     transform-origin: bottom;
   }
