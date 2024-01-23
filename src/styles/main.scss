@@ -1,1 +1,58 @@
-// put code here
+$avocado: #568203;
+$cerulean: #2a52be;
+$cadmium-orange: #f28c28;
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 50vw;
+
+  border: 10px black dashed;
+  border-radius: 50%;
+
+  &__dot {
+    z-index: 1;
+    position: absolute;
+    width: 4vw;
+    height: 4vw;
+    background: $cadmium-orange;
+    border-radius: 50%;
+  }
+
+  &__quick-hand {
+    position: absolute;
+    align-self: start;
+    height: 25vw;
+    width: 1vw;
+    background: $avocado;
+    animation: clock 5s infinite linear;
+    transform-origin: bottom;
+  }
+
+  &__slow-hand {
+    position: absolute;
+    margin-bottom: 12vw;
+    height: 12vw;
+    width: 2vw;
+    background: $cerulean;
+
+    animation: clock 60s infinite linear;
+    transform-origin: bottom;
+  }
+
+  @keyframes clock {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
