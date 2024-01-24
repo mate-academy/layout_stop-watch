@@ -1,1 +1,50 @@
-// put code here
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 10px dotted black;
+  border-radius: 100%;
+  margin: 80px auto;
+  align-items: center;
+}
+
+@keyframes movehand {
+  from {
+      transform: rotate(0deg);
+  }
+
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.hand,
+.minute-hand {
+  background-color: black;
+  height: 350px;
+  width: 10px;
+  position: absolute;
+  top: 13%;
+  left: 49.8%;
+  transform-origin: center bottom;
+  animation: movehand 60s 1;
+}
+
+.minute-hand {
+  height: 150px;
+  top: 34%;
+  animation: movehand 5s 10;
+}
+
+.dot {
+  background-color: cornflowerblue;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  position: absolute;
+  left: 49.5%;
+  top: 49%;
+}
