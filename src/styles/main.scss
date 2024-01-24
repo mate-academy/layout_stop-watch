@@ -4,7 +4,6 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-  }
 
     .stopwatch {
       background-color: #333;
@@ -14,53 +13,44 @@
       border: 4px dashed gold;
       border-radius: 50%;
       overflow: hidden;
-    }
 
-    .stopwatch__hand {
-      position: absolute;
-      width: 2px;
-      height: 45vmin;
-      background-color: #333;
-      transform-origin: 50% 100%;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-    }
+      &__hand {
+        position: absolute;
+        width: 2px;
+        height: 45vmin;
+        background-color: #333;
+        transform-origin: 50% 100%;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
 
-    .stopwatch__hand--minute {
-      background-color: gold;
-      left: 50%;
-      top: 50%;
+        &--minute {
+          background-color: gold;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%) translateY(-100%) rotate(-90deg);
+          animation-name: rotate-hand;
+          animation-duration: 5s;
+        }
+
+        &--second {
+          background-color: greenyellow;
+          width: 6px;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%) translateY(-100%) rotate(-90deg);
+          animation-name: rotate-hand;
+          animation-duration: 60s;
+        }
+      }
+    }
+  }
+
+  @keyframes rotate-hand {
+    0% {
       transform: translateX(-50%) translateY(-100%) rotate(-90deg);
-      animation-name: rotate-minute-hand;
-      animation-duration: 5s;
     }
 
-    .stopwatch__hand--second {
-      background-color: greenyellow;
-      width: 6px;
-      left: 50%;
-      top: 50%;
-      transform: translateX(-50%) translateY(-100%) rotate(-90deg);
-      animation-name: rotate-second-hand;
-      animation-duration: 60s;
+    100% {
+      transform: translateX(-50%) translateY(-100%) rotate(270deg);
     }
-
-    @keyframes rotate-minute-hand {
-      0% {
-        transform: translateX(-50%) translateY(-100%) rotate(-90deg);
-      }
-
-      100% {
-        transform: translateX(-50%) translateY(-100%) rotate(270deg);
-      }
-    }
-
-    @keyframes rotate-second-hand {
-      0% {
-        transform: translateX(-50%) translateY(-100%) rotate(-90deg);
-      }
-
-      100% {
-        transform: translateX(-50%) translateY(-100%) rotate(270deg);
-      }
-    }
+  }
