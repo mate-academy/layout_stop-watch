@@ -1,1 +1,73 @@
-// put code here
+$black-color: #191919;
+
+.watch-body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vmin;
+  height: 80vmin;
+  border: 10px dotted $black-color;
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    background-color: $black-color;
+    width: 8vmin;
+    height: 8vmin;
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &--hands-position {
+    position: relative;
+  }
+
+  &__first-hand {
+    width: 4vmin;
+    height: 45%;
+    background-color: $black-color;
+    z-index: 1;
+
+    animation-duration: 60s;
+  }
+
+  &__second-hand {
+    width: 4vmin;
+    height: 38%;
+    background-color: $black-color;
+    z-index: 2;
+
+    animation-duration: 5s;
+  }
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  transform-origin: 50% 100%;
+  border-radius: 20px;
+
+  animation-name: rotating;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
