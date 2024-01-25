@@ -3,10 +3,19 @@ body {
   padding: 0;
 }
 
+.centred {
+  display: flex;
+  height: 100vmin;
+  width: 100vmin;
+  align-items: center;
+  justify-content: center;
+}
+
 .stop-watch {
-  height: $clock-size;
-  width: $clock-size;
-  border: $border-size dotted #000;
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  border: 7px dotted #000;
   border-radius: 50%;
   box-sizing: border-box;
 
@@ -15,24 +24,23 @@ body {
   }
 
   &__hand--type--min {
-    height: calc(#{($clock-size - ($border-size * 2)) / 2}) ;
-    width: $hand-min-width;
+    height: 50%;
+    width: 1%;
     background-color: rgb(12, 63, 113);
-    left: calc(#{$clock-size / 2 - $hand-min-width / 2});
-    top: $border-size;
+    left: 49.5%;
     animation: hands 5s infinite linear;
     animation-play-state: paused;
     z-index: 0;
   }
 
   &__hand--type--hour {
-    height: calc(#{($clock-size - ($border-size * 2)) / 2} / 2);
-    width: $hand-hour-width;
+    height: 25%;
+    width: 2%;
     background-color: rgb(124, 10, 10);
-    left: calc(#{$clock-size / 2 - $hand-hour-width / 2});
-    top: calc(#{($clock-size - ($border-size * 2)) / 2 / 2 + $border-size});
+    left: 49%;
+    top: 25%;
     animation: hands 60s infinite linear;
-    z-index: 1;
+    z-index: 0;
     animation-play-state: paused;
   }
 
@@ -46,13 +54,13 @@ body {
 
   &__circle {
     position: absolute;
-    width: $circle-size;
-    height: $circle-size;
+    width: 7%;
+    height: 7%;
     background-color: black;
     border-radius: 50%;
-    left: calc(#{$clock-size / 2 - ($circle-size / 2)});
-    top: calc(#{$clock-size / 2 - ($circle-size / 2)});
-    z-index: 2;
+    left: 46.5%;
+    top: 46.5%;
+    z-index: 1;
   }
 }
 
