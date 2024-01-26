@@ -11,7 +11,7 @@ const basic = {
   removeSelectors: [
     'h1',
   ],
-  misMatchThreshold: 0.5,
+  misMatchThreshold: 0.4,
   referenceUrl: basicScenario.referenceUrl + '/stopwatch/',
 };
 
@@ -40,7 +40,7 @@ const config = {
     {
       ...basic,
       label: 'Stopwatch after one circle',
-      postDOMChangeWait: 15000,
+      postDOMChangeWait: 12000,
     }
   ],
 };
