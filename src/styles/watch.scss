@@ -1,0 +1,56 @@
+@import './mixin';
+@import './var';
+
+.watch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__circle {
+    display: flex;
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background-color: $circle-color;
+    position: absolute;
+    z-index: 3;
+  }
+
+  &__seconds{
+    @include arrows;
+
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: $seconds-arrow-color;
+    z-index: 2;
+    top: 2vmin;
+    transform-origin: bottom;
+    animation: rotation 60s linear normal none infinite;
+  }
+
+  &__minute {
+    @include arrows;
+
+    height: 20vmin;
+    width: 3vmin;
+    background-color: $minute-arrow-color;
+    transform-origin: bottom;
+    top: 20vmin;
+    animation: rotation 3600s steps(60) normal none infinite;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
