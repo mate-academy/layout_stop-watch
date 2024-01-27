@@ -1,0 +1,43 @@
+@use '../utils/mixins' as *;
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+
+.stopwatch {
+  position: relative;
+  box-sizing: border-box;
+
+  @include circle(80vmin);
+
+  border: 1px dotted black;
+
+  &__minute {
+    position: absolute;
+
+    @include position-hand(25%, 3%);
+    @include rotate-animation(60s);
+
+    &-hand {
+      @include hand(blue);
+    }
+  }
+
+  &__second {
+    position: absolute;
+
+    @include position-hand(50%, 1%);
+    @include rotate-animation(5s);
+
+    &-hand {
+      @include hand(green);
+    }
+  }
+
+  &__center {
+    position: absolute;
+
+    @include circle($center-circle-size);
+    @include center($center-circle-size, $center-circle-size);
+
+    background-color: orange;
+  }
+}
