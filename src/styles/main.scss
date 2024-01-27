@@ -1,18 +1,20 @@
-.clock {
+.body {
+  height: 100vh;
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+.clock {
   width: 80vmin;
   height: 80vmin;
-  border: 8px dotted black;
+  border: 4px dotted black;
   border-radius: 80vmin;
   margin: auto;
   position: relative;
 }
 
 .clock-center {
-  width: 5vmin;
-  height: 5vmin;
+  width: 5%;
+  height: 5%;
   background-color: yellow;
   border-radius: 5vmin;
   position: absolute;
@@ -23,7 +25,7 @@
 
 .clock-min-hand {
   height: 30%;
-  width: 3vmin;
+  width: 2vmin;
   background-color: blue;
   position: absolute;
   top: 50%;
@@ -39,7 +41,7 @@
 
 .clock-sec-hand {
   height: 50%;
-  width: 2vmin;
+  width: 1vmin;
   background-color: green;
   position: absolute;
   top: 50%;
