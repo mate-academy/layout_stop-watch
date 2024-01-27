@@ -1,0 +1,64 @@
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vmin;
+  height: 80vmin;
+  border: 8px dotted black;
+  border-radius: 80vmin;
+  margin: auto;
+  position: relative;
+}
+
+.clock-center {
+  width: 5vmin;
+  height: 5vmin;
+  background-color: yellow;
+  border-radius: 5vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock-min-hand {
+  height: 30%;
+  width: 3vmin;
+  background-color: blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  transform-origin: top;
+
+  animation-name: move;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.clock-sec-hand {
+  height: 50%;
+  width: 2vmin;
+  background-color: green;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  transform-origin: top;
+
+  animation-name: move;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
