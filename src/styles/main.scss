@@ -1,1 +1,65 @@
-// put code here
+.body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+}
+
+.clock {
+  width: 80vmin;
+  height: 80vmin;
+  border: 4px dotted black;
+  border-radius: 80vmin;
+  margin: auto;
+  position: relative;
+
+  &__center {
+    width: 5%;
+    height: 5%;
+    background-color: yellow;
+    border-radius: 5vmin;
+    position: absolute;
+    top: 47.5%;
+    left: 47.5%;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 48.5%;
+  }
+}
+
+
+.hand-min {
+  height: 30%;
+  width: 2vmin;
+  background-color: blue;
+  transform-origin: bottom;
+
+  animation-name: move;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.hand-sec {
+  height: 50%;
+  width: 1vmin;
+  background-color: green;
+  transform-origin: bottom;
+
+  animation-name: move;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
