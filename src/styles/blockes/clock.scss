@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.centred {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.stop-watch {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  border: 7px dotted #000;
+  border-radius: 50%;
+  box-sizing: border-box;
+
+  &__hand {
+    position: absolute;
+  }
+
+  &__hand--type--min {
+    height: 50%;
+    width: 1%;
+    background-color: rgb(12, 63, 113);
+    left: 49.5%;
+    animation: hands 5s infinite linear;
+    z-index: 0;
+  }
+
+  &__hand--type--hour {
+    height: 25%;
+    width: 2%;
+    background-color: rgb(124, 10, 10);
+    left: 49%;
+    top: 25%;
+    animation: hands 60s infinite linear;
+    z-index: 0;
+  }
+
+  &__circle {
+    position: absolute;
+    width: 7%;
+    height: 7%;
+    background-color: black;
+    border-radius: 50%;
+    left: 46.5%;
+    top: 46.5%;
+    z-index: 1;
+  }
+}
+
+@keyframes hands {
+
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+
+
+
