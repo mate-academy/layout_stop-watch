@@ -11,28 +11,30 @@
   border-radius: 80vmin;
   margin: auto;
   position: relative;
+
+  &__center {
+    width: 5%;
+    height: 5%;
+    background-color: yellow;
+    border-radius: 5vmin;
+    position: absolute;
+    top: 47.5%;
+    left: 47.5%;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 48.5%;
+  }
 }
 
-.clock-center {
-  width: 5%;
-  height: 5%;
-  background-color: yellow;
-  border-radius: 5vmin;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
-.clock-min-hand {
+.hand-min {
   height: 30%;
   width: 2vmin;
   background-color: blue;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -100%);
-  transform-origin: top;
+  transform-origin: bottom;
 
   animation-name: move;
   animation-duration: 60s;
@@ -40,15 +42,11 @@
   animation-iteration-count: infinite;
 }
 
-.clock-sec-hand {
+.hand-sec {
   height: 50%;
   width: 1vmin;
   background-color: green;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -100%);
-  transform-origin: top;
+  transform-origin: bottom;
 
   animation-name: move;
   animation-duration: 5s;
