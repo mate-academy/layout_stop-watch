@@ -1,1 +1,85 @@
-// put code here
+
+@import './utils/variables';
+
+body{
+	margin: 0;
+}
+
+.face {
+	display: flex;
+	position: absolute;
+  margin: auto;
+	box-sizing: border-box;
+	inset: 0;
+	width: $face-size;
+	height: $face-size;
+	border: $dott-size dotted #000;
+	border-radius: 50%;
+
+
+  &__sec-arm {
+    position: relative;
+    box-sizing: border-box;
+    left: $half-face-size - $sec-arm-border-size - $dott-size;
+    margin-top: $dott-size * 2;
+    width: 0;
+    height: $sec-tranform-y-size;
+    border: $sec-arm-border-size solid #2c8000;
+
+    transform-origin: $sec-arm-border-size $sec-tranform-y-size;
+
+    animation-name: time;
+    animation-duration: 60s;
+    animation-fill-mode: forwards;
+    animation-timing-function: steps(60,end);
+    animation-iteration-count: infinite;
+    z-index: 2;
+  }
+
+  &__minutes-arm {
+    position: absolute;
+    box-sizing: border-box;
+    right: $half-face-size - $minutes-arm-border-size - $dott-size;
+    margin-top: $quarter-face-size - $dott-size;
+    width: 0;
+    height: $quarter-face-size;
+    border: $minutes-arm-border-size solid #0700ff;
+
+    transform-origin: $minutes-arm-border-size $quarter-face-size;
+
+    animation-name: time;
+    animation-duration: 3600s;
+    animation-fill-mode: forwards;
+    animation-timing-function: steps(60,end);
+    animation-iteration-count: infinite;
+    z-index: 1;
+  }
+
+  &__axis {
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    height: $axis-size;
+    width: $axis-size;
+    background-color: #f6a603;
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &--speed-up :nth-child(1) {
+    animation-duration: 10s;
+  }
+
+  &--speed-up :nth-child(2) {
+    animation-duration: 600s;
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0deg) ;
+  }
+  to {
+    transform: rotate(360deg) ;
+  }
+}
