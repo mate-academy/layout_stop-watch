@@ -1,0 +1,28 @@
+@mixin center() {
+  left: 50%;
+  top: 50%;
+}
+
+@mixin round() {
+  border-radius: 50%;
+}
+
+@mixin clock-hand($hand-height, $lap-time) {
+  position: absolute;
+  content: '';
+  width: 3px;
+  height: $hand-height;
+
+  @include center;
+
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  z-index: 0;
+
+  transform-origin: top;
+
+  animation-name: time;
+  animation-duration: $lap-time;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60);
+}
