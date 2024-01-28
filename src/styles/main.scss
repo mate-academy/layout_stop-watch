@@ -1,1 +1,61 @@
-// put code here
+@import "variable";
+
+@keyframes rotate {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  border: 2px dashed black;
+  border-radius: $circle-radius;
+
+  &__dot {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: orange;
+    border-radius: $circle-radius;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__green {
+    transform-origin: bottom;
+    background-color: green;
+    width: 9px;
+    height: 50%;
+    animation: 5s linear infinite rotate;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(0);
+  }
+
+  &__blue {
+    position: absolute;
+    height: 25%;
+    width: 18px;
+    background-color: blue;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(270deg);
+    transform-origin: top;
+    animation: 60s linear infinite rotate;
+  }
+}
