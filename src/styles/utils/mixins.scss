@@ -1,25 +1,26 @@
-@mixin center() {
+@mixin center($shift, $shift2, $top: 50%) {
+  transform: translate($shift, $shift2);
   left: 50%;
-  top: 50%;
+  top: $top;
 }
 
 @mixin round() {
   border-radius: 50%;
 }
 
-@mixin clock-hand($hand-height, $lap-time) {
+@mixin clock-hand($hand-height, $lap-time, $top-shift) {
   position: absolute;
   content: '';
   width: 3px;
   height: $hand-height;
 
-  @include center;
+  @include center(150%, 150%, $top-shift);
 
   background-color: $background-color;
   border: 1px solid $border-color;
   z-index: 0;
 
-  transform-origin: top;
+  transform-origin: bottom;
 
   animation-name: time;
   animation-duration: $lap-time;

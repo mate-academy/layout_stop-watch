@@ -4,12 +4,10 @@
 .clock {
   position: absolute;
 
-  @include center;
+  @include center(-50%, -50%);
 
   width: $main-size;
   height: $main-size;
-
-  transform: rotate(180deg) translate(50%, 50%);
 
   border: 3px double $main-color;
 
@@ -18,11 +16,11 @@
   background-color: #fcfcfc;
 
   &::before {
-    @include clock-hand(35%, 60s);
+    @include clock-hand(35%, 60s, 15%);
   }
 
   &::after {
-    @include clock-hand(45%, 5s);
+    @include clock-hand(45%, 5s, 5%);
   }
 
   @keyframes time {
@@ -38,7 +36,7 @@
 
     z-index: 1;
 
-    @include center;
+    @include center(-40%, -50%);
 
     height: 5%;
     width: 5%;
@@ -48,7 +46,6 @@
 
     @include round;
 
-    transform: rotate(180deg) translate(50%, 50%);
     transition: all 0.2s;
     cursor: pointer;
 
@@ -58,7 +55,7 @@
     font-size: 10px;
 
     &:hover {
-      transform: rotate(180deg) translate(50%, 50%) scale(1.2);
+      box-shadow: 1px 1px 12px 1px $main-color;
     }
   }
 }
