@@ -1,1 +1,68 @@
-// put code here
+/* stylelint-disable rule-empty-line-before */
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  background-color: #FDE767;
+  border: double #F3B95F 5px;
+  position: relative;
+
+  &__center {
+    margin: auto;
+    width: 5%;
+    height: 5%;
+    border-radius: 50%;
+    border: double 2px #D04848;
+    background-color: #F3B95F;
+    z-index: 3;
+    position: absolute;
+    inset: 0;
+  }
+
+  &__hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    animation-name: rotating;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &--big-hand {
+      width: 3%;
+      height: 45%;
+      background-color: #6895D2;
+      border-radius: 10px;
+      z-index: 1;
+      animation-duration: 60s;
+    }
+
+    &--small-hand {
+      width: 3%;
+      height: 35%;
+      background-color: #D04848;
+      border-radius: 10px;
+      z-index: 2;
+      animation-duration: 5s;
+    }
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
