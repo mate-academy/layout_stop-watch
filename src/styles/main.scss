@@ -27,10 +27,7 @@ body {
     transform-origin: bottom;
     left: 38.5vmin;
 
-    animation-name: move;
-    animation-duration: 3600s;
-    animation-timing-function: steps(60, end);
-    animation-iteration-count: infinite;
+    animation: move 3600s steps(60, end) infinite;
   }
 
   &__second-hand {
@@ -42,11 +39,7 @@ body {
     transform-origin: bottom;
     left: 39.25vmin;
 
-
-    animation-name: move;
-    animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation: move 60s linear infinite;
   }
 
   &__center {
