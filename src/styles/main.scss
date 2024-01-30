@@ -17,43 +17,43 @@
   align-items: center;
 
   &__center {
-    box-sizing: border-box;
     position: relative;
     height: 5vmin;
     width: 5vmin;
     border-radius: 100%;
     background-color: #f6a603;
+
   }
 
-  &__seconds-hand {
+  &__hand {
     position: absolute;
-    height: 38vmin;
-    width: 1.5vmin;
-    background-color: #2c8000;
     bottom: 50%;
     left: 50%;
     animation: rotate 60s linear infinite running;
     transform-origin: bottom center;
     z-index: -1;
+
+    &--sec {
+      height: 38vmin;
+      width: 1.5vmin;
+      background-color: #2c8000;
+      animation: rotate 60s linear infinite running;
+    }
+
+    &--min {
+      height: 20vmin;
+      width: 3vmin;
+      background-color: #0700ff;
+      animation: rotate 3600s steps(60) infinite running;
+    }
   }
 
-  &__minutes-hand {
-    position: absolute;
-    height: 20vmin;
-    width: 3vmin;
-    background-color: #0700ff;
-    bottom: 50%;
-    left: 50%;
-    animation: rotate 3600s steps(60) infinite running;
-    transform-origin: bottom center;
-    z-index: -2;
-  }
 
-  &--speed-up .stopwatch__seconds-hand {
+  &--speed-up .stopwatch__hand--sec {
     animation: rotate 10s linear infinite running;
   }
 
-  &--speed-up .stopwatch__minutes-hand {
+  &--speed-up .stopwatch__hand--min {
     animation: rotate 600s steps(60) infinite running;
   }
 }
@@ -67,18 +67,7 @@
     transform: translate(-50%) rotate(90deg);
   }
 
-  50% {
-    transform: translate(-50%) rotate(180deg);
-  }
-
-  75% {
-    transform: translate(-50%) rotate(270deg);
-  }
-
   100% {
     transform: translate(-50%) rotate(360deg);
   }
 }
-
-
-
