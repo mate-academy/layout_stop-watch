@@ -1,1 +1,77 @@
-// put code here
+.body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__center {
+    position: relative;
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 100%;
+    background-color: #f6a603;
+
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    z-index: -1;
+
+    &--sec {
+      height: 38vmin;
+      width: 1.5vmin;
+      background-color: #2c8000;
+      animation: rotate 60s linear infinite running;
+    }
+
+    &--min {
+      height: 20vmin;
+      width: 3vmin;
+      background-color: #0700ff;
+      animation: rotate 3600s steps(60) infinite running;
+    }
+  }
+
+
+  &--speed-up .stopwatch__hand--sec {
+    animation: rotate 10s linear infinite running;
+  }
+
+  &--speed-up .stopwatch__hand--min {
+    animation: rotate 600s steps(60, end) infinite running;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(-50%) rotate(90deg);
+  }
+
+  50% {
+    transform: translate(-50%) rotate(180deg);
+
+  }
+
+  100% {
+    transform: translate(-50%) rotate(360deg);
+  }
+}
