@@ -1,0 +1,44 @@
+@import 'keyframes';
+@import 'variables';
+
+.stop-watch {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: $lines-size;
+  height: $lines-size;
+  border-radius: 50%;
+  border: 8px dotted #000;
+
+  &__point {
+    height: 50px;
+    width: 50px;
+    background-color: orange;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__second-line {
+    position: absolute;
+    height: 50%;
+    width: 10px;
+    bottom: 50%;
+    border-radius: 40px;
+    background-color: green;
+    animation: rotateSecondLine 60s linear infinite;
+    transform-origin: 50% 100%;
+  }
+
+  &__minute-line {
+    position: absolute;
+    height: 25%;
+    width: 15px;
+    bottom: 50%;
+    border-radius: 40px;
+    background-color: blue;
+    animation: rotateMinuteLine 3600s linear infinite;
+    transform-origin: 50% 100%;
+  }
+}
