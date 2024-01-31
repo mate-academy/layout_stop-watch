@@ -1,1 +1,61 @@
-// put code here
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  $watch-diameter: 80vmin;
+  $center-diameter: 5vmin;
+  $minute: 60s;
+  $hour: 3600s;
+
+  position: relative;
+  width: $watch-diameter;
+  height: $watch-diameter;
+  border-radius: 50%;
+  border: dotted 1vmin #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__minutes,
+  &__seconds,
+  &__center {
+    position: absolute;
+  }
+
+  &__minutes {
+    width: 20vmin;
+    height: 3vmin;
+    background-color: #0700ff;
+    animation: $hour steps(60, end) infinite arrow-move;
+  }
+
+  &__seconds {
+    width: 38vmin;
+    height: 1.5vmin;
+    background-color: #2c8000;
+    animation: $minute linear infinite arrow-move;
+  }
+
+  &__center {
+    width: $center-diameter;
+    height: $center-diameter;
+    background-color: #f6a603;
+    border-radius: 50%;
+  }
+}
+
+@keyframes arrow-move {
+  from {
+    transform: rotate(90deg) translateX(-50%);
+  }
+
+  to {
+    transform: rotate(450deg) translateX(-50%);
+  }
+}
