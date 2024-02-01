@@ -1,6 +1,5 @@
 // put code here
-@import './utils.scss';
-
+@import "./utils";
 
 body {
   margin: 0;
@@ -24,9 +23,8 @@ $stopwatch-circle-size: 5vmin;
   height: $stopwatch-size;
   margin: 0 auto;
   border: 1vmin dotted $stopwatch-border-color;
+
   @include round-element;
-
-
 
   &__circle {
     z-index: 1;
@@ -37,9 +35,9 @@ $stopwatch-circle-size: 5vmin;
     width: $stopwatch-circle-size;
     height: $stopwatch-circle-size;
     background: $orange-color;
+
     @include round-element;
   }
-
 
   &__minutes {
     position: absolute;
@@ -68,7 +66,6 @@ $stopwatch-circle-size: 5vmin;
     }
   }
 
-
   &__seconds {
     position: absolute;
     left: 50%;
@@ -84,10 +81,8 @@ $stopwatch-circle-size: 5vmin;
       animation: move 10s steps(60, end) infinite;
     }
 
-
     @keyframes move {
       from {
-
         transform: translate(-50%, -6%) rotate(0deg);
       }
 
