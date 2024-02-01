@@ -15,16 +15,12 @@ body {
 }
 
 .stopwatch {
+  position: relative;
   width: $stopwatch-size;
   height: $stopwatch-size;
   border: 1vmin dotted $stopwatch-border-color;
 
   @include round-element;
-
-
-  &__content {
-    position: relative;
-  }
 
   @keyframes move {
     from {
