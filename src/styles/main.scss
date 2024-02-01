@@ -1,1 +1,81 @@
 // put code here
+@import "./utils/mixin";
+@import "./utils/variables";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stopwatch {
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: 1vmin dotted $stopwatch-border-color;
+
+  @include round-element;
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__circle {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: $stopwatch-circle-size;
+    height: $stopwatch-circle-size;
+    background: $orange-color;
+
+    @include round-element;
+  }
+
+  &__minutes {
+    position: absolute;
+    left: 48%;
+    top: 26%;
+    transform: translate(-48%, -26%);
+    transform-origin: bottom;
+    width: $stopwatch-minutes-size;
+    height: $stopwatch-minutes-length;
+    background: $blue-color;
+    transition: transform 1s;
+    animation: move 3670s steps(60, end) infinite;
+
+    &--speed-up {
+      animation: move 610s steps(60, end) infinite;
+    }
+  }
+
+  &__seconds {
+    position: absolute;
+    left: 49%;
+    top: 2%;
+    transform: translate(-49%, -2%);
+    transform-origin: bottom;
+    width: $stopwatch-seconds-size;
+    height: $stopwatch-seconds-length;
+    background: $green-color;
+    animation: move 60s steps(60, end) infinite;
+
+    &--speed-up {
+      animation: move 10s steps(60, end) infinite;
+      animation-timing-function: linear;
+    }
+  }
+}
