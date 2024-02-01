@@ -1,1 +1,70 @@
-// put code here
+$center-point-size: 5vmin;
+
+.display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  width: 80vmin;
+  height: 80vmin;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  &__center {
+    z-index: 2;
+
+    position: absolute;
+    width: $center-point-size;
+    height: $center-point-size;
+
+    border-radius: 50%;
+    background-color: #f6a603;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: 1.5vmin;
+    z-index: 1;
+
+    width: 1.5vmin;
+    height: 38vmin;
+
+    background-color: #2c8000;
+
+    transform-origin: bottom;
+    animation: move-timer 60s linear infinite;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 19vmin;
+
+    width: 3vmin;
+    height: 20vmin;
+
+    background-color: #0700ff;
+
+    transform-origin: bottom;
+    animation: move-timer 3600s steps(60, end) 500ms infinite;
+  }
+
+
+}
+
+@keyframes move-timer {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
