@@ -1,1 +1,60 @@
 // put code here
+@import "./variables";
+
+.display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  width: $box-size;
+  height: $box-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: $border-size dotted;
+  border-radius: 50%;
+}
+
+.display_center {
+  width: $center-point-size;
+  height: $center-point-size;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 1;
+}
+
+.display_seconds-hand {
+  position: absolute;
+  top: 2vmin;
+  height: 35vmin;
+  width: 1vmin;
+  border-radius: 4px;
+  background-color: black;
+  transform-origin: bottom;
+  animation: 60s linear rotation infinite;
+}
+
+.display_minutes-hand {
+  position: absolute;
+  top: 12vmin;
+  height: 25vmin;
+  width: 2vmin;
+  border-radius: 8px;
+  background-color: black;
+  transform-origin: bottom;
+  animation: 3600s linear rotation infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
