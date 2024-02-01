@@ -1,1 +1,50 @@
-// put code here
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  width: 80vmin;
+  height: 80vmin;
+  border: 2px dotted black;
+  border-radius: 50%;
+}
+
+.center {
+  width: 8px;
+  height: 8px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+.hand {
+  position: absolute;
+  width: 2px;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translate(-50%, -100%);
+  animation-timing-function: linear;
+}
+
+.second-hand {
+  animation: rotateHand 5s linear infinite;
+  background-color: green;
+  height: 40vmin;
+}
+
+.minute-hand {
+  animation: rotateHand 60s linear infinite;
+  background-color: blue;
+  height: 20vmin;
+  padding: 1px;
+}
+
+@keyframes rotateHand {
+  to {
+      transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
