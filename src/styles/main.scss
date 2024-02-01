@@ -1,30 +1,37 @@
 // put code here
-@import "./utils";
+@import "./utils/mixin";
+@import "./utils/variables";
 
 body {
   margin: 0;
   padding: 0;
 }
 
-$stopwatch-size: 80vmin;
-$stopwatch-border-color: #000;
-$green-color: #2c8000;
-$orange-color: #f6a603;
-$blue-color: #0700ff;
-$stopwatch-minutes-size: 3vmin;
-$stopwatch-minutes-length: 20vmin;
-$stopwatch-seconds-size: 1.5vmin;
-$stopwatch-seconds-length: 38vmin;
-$stopwatch-circle-size: 5vmin;
+.stopwatch__wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .stopwatch {
   position: relative;
   width: $stopwatch-size;
   height: $stopwatch-size;
-  margin: 0 auto;
   border: 1vmin dotted $stopwatch-border-color;
 
   @include round-element;
+
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
   &__circle {
     z-index: 1;
@@ -41,36 +48,26 @@ $stopwatch-circle-size: 5vmin;
 
   &__minutes {
     position: absolute;
-    left: 50%;
+    left: 48%;
     top: 26%;
-    transform: translate(-50%, -26%);
+    transform: translate(-48%, -26%);
     transform-origin: bottom;
     width: $stopwatch-minutes-size;
     height: $stopwatch-minutes-length;
     background: $blue-color;
     transition: transform 1s;
-    animation: move 3600s steps(60, end) infinite;
+    animation: move 3670s steps(60, end) infinite;
 
     &--speed-up {
       animation: move 610s steps(60, end) infinite;
-    }
-
-    @keyframes movo {
-      to {
-        transform: translate(-50%, -26%) rotate(0deg);
-      }
-
-      from {
-        transform: translate(-50%, -26%) rotate(360deg);
-      }
     }
   }
 
   &__seconds {
     position: absolute;
-    left: 50%;
-    top: 6%;
-    transform: translate(-50%, -6%);
+    left: 49%;
+    top: 2%;
+    transform: translate(-49%, -2%);
     transform-origin: bottom;
     width: $stopwatch-seconds-size;
     height: $stopwatch-seconds-length;
@@ -80,16 +77,6 @@ $stopwatch-circle-size: 5vmin;
     &--speed-up {
       animation: move 10s steps(60, end) infinite;
       animation-timing-function: linear;
-    }
-
-    @keyframes move {
-      from {
-        transform: translate(-50%, -6%) rotate(0deg);
-      }
-
-      to {
-        transform: translate(-50%, -6%) rotate(360deg);
-      }
     }
   }
 }
