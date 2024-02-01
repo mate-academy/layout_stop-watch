@@ -1,5 +1,9 @@
-body {
+.body {
   margin: 0;
+  height: 100vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .stopwatch {
@@ -9,6 +13,7 @@ body {
   border-radius: 100%;
   margin: 80px auto;
   align-items: center;
+  position: relative;
 }
 
 @keyframes movehand {
@@ -24,19 +29,23 @@ body {
 .hand,
 .minute-hand {
   background-color: black;
-  height: 350px;
   width: 10px;
   position: absolute;
-  top: 13%;
-  left: 49.8%;
+  left: 50.3%;
   transform-origin: center bottom;
-  animation: movehand 60s 1;
 }
+
+.hand {
+  height: 250px;
+  top: 13%;
+  animation: movehand 10s linear 5;
+}
+
 
 .minute-hand {
   height: 150px;
-  top: 34%;
-  animation: movehand 5s 10;
+  top: 26%;
+  animation: movehand 600s steps(60, end) 5;
 }
 
 .dot {
@@ -46,5 +55,5 @@ body {
   border-radius: 100%;
   position: absolute;
   left: 49.5%;
-  top: 49%;
+  top: 45%;
 }
