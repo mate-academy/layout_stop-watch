@@ -1,1 +1,72 @@
-// put code here
+$schale-size: 80vmin;
+
+@keyframes rotate-stopwatch {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+
+  box-sizing: border-box;
+  height: $schale-size;
+  width: $schale-size;
+
+  border: ($schale-size / 50) dotted blue;
+  border-radius: 50%;
+
+  &__center {
+    height: $schale-size / 10;
+    width: $schale-size / 10;
+    background-color: blueviolet;
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    z-index: 3;
+  }
+
+  &__seconds {
+    height: $schale-size / 2.1;
+    width: $schale-size / 50;
+    background-color: purple;
+
+    position: absolute;
+    bottom: 50%;
+    left: $schale-size / 2 - $schale-size / 35;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    animation: rotate-stopwatch 5s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__minutes {
+    height: $schale-size / 3;
+    width: $schale-size / 30;
+    background-color: pink;
+
+    position: absolute;
+    bottom: 50%;
+    left: $schale-size / 2 - $schale-size / 30;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    animation: rotate-stopwatch 60s linear infinite;
+    transform-origin: bottom center;
+  }
+}
