@@ -1,1 +1,59 @@
 // put code here
+@import './variables';
+
+.watch {
+  position: relative;
+  margin: 20px auto;
+  height: $watch-size;
+  width: $watch-size;
+  border: 1vmin dotted black;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: $center-position;
+    right: $center-position;
+    height: $center-size;
+    width: $center-size;
+    border-radius: 50%;
+    background-color: orange;
+  }
+
+  &__first-arrow {
+    position: absolute;
+    bottom: $default-arrows-second-position;
+    left: $first-arrow-first-position;
+    width: $first-arrow-width;
+    height: $first-arrow-height;
+    background-color: blue;
+    animation-name: move;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite ;
+    transform-origin: 50% 100%;
+
+  }
+
+  &__second-arrow {
+    position: absolute;
+    bottom: $default-arrows-second-position;
+    height: $second-arrow-height;
+
+    left: $second-arrow-first-position;
+    width: $second-arrow-width;
+    background-color: green;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite ;
+    transform-origin: 50% 100%;
+  }
+
+  @keyframes move {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+}
+
+
