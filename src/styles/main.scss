@@ -7,7 +7,7 @@ body {
   padding: 0;
 }
 
-.stopwatch__wrapper {
+.wrapper {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -15,13 +15,16 @@ body {
 }
 
 .stopwatch {
-  position: relative;
   width: $stopwatch-size;
   height: $stopwatch-size;
   border: 1vmin dotted $stopwatch-border-color;
 
   @include round-element;
 
+
+  &__content {
+    position: relative;
+  }
 
   @keyframes move {
     from {
