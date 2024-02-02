@@ -1,0 +1,55 @@
+@use '../utils/variables' as *;
+
+.stop-watch {
+  top: $percent;
+  left: $percent;
+  transform: translate(-$percent, -$percent);
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: $size;
+  width: $size;
+  border-radius: $percent;
+  border: 7px dotted black;
+
+  &__seconds-hand {
+    rotate: $rotate-deg-min;
+    height: 99%;
+    width: 12px;
+    border-radius: 7px;
+    background: linear-gradient(to bottom, green $percent, $oparcity);
+    animation: move-hand 5s linear infinite;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    rotate: $rotate-deg-min;
+    height: $percent;
+    width: 20px;
+    border-radius: 15px;
+    background: linear-gradient(to bottom, blue $percent, $oparcity);
+    animation: move-hand 60s linear infinite;
+  }
+
+  &__point-center {
+    position: absolute;
+    height: $point-center-size;
+    width: $point-center-size;
+    border-radius: $percent;
+    background-color: goldenrod;
+    z-index: 1;
+  }
+}
+
+@keyframes move-hand {
+  from {
+    rotate: $rotate-deg-min;
+  }
+
+  to {
+    rotate: $rotate-deg-max;
+  }
+}
