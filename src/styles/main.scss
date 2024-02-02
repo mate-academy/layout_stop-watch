@@ -1,1 +1,66 @@
-// put code here
+@import "./utils/mixins";
+@import "./utils/vars";
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include gen-comp($watch-width, $watch-height, none, 50%);
+
+  border: 1vmin dotted #000;
+
+  &__min-hand {
+    position: absolute;
+    top: $watch-height / 2 - $min-hand-heigh;
+
+    @include gen-comp(3vmin, $min-hand-heigh, #0700ff);
+
+    transform-origin: 50% 100%;
+    animation: rotate infinite 3600s steps(60, end);
+  }
+
+  &__sec-hand {
+    position: absolute;
+    top: $watch-height / 2 - $sec-hand-heigh;
+
+    @include gen-comp(1.5vmin, 38vmin, #2c8000);
+
+    transform-origin: 50% 100%;
+    animation: rotate 60s infinite linear;
+  }
+
+  &__center {
+    position: absolute;
+    z-index: 1;
+
+    @include gen-comp(5vmin, 5vmin, #f6a603, 50%);
+  }
+
+  &--speed-up {
+    .stopwatch__min-hand {
+      animation: rotate infinite 600s steps(60, end);
+    }
+    .stopwatch__sec-hand {
+      animation: rotate 10s infinite linear;
+    }
+  }
+}
