@@ -1,1 +1,68 @@
-// put code here
+$watch-size: 80vmin;
+$circle-size: 0.04 * $watch-size;
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d2d7d2;
+}
+
+.watch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  box-sizing: border-box;
+  border: 0.4 * $circle-size dotted #045a04;
+  border-radius: 50%;
+
+  &__circle {
+    position: absolute;
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: 50%;
+    background-color: #364236;
+    z-index: 1;
+    top: 0.5 * $watch-size - $circle-size / 2;
+    left: 0.5 * $watch-size - $circle-size / 2;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    width: 0.5 * $circle-size;
+    height: 0.3 * $watch-size;
+    background-color: #364236;
+    top: 0.2 * $watch-size;
+    left: 0.5 * $watch-size - 0.25 * $circle-size;
+    border-radius: 0.5 * $circle-size;
+    animation: spin 5s 2s linear normal infinite;
+    transform-origin: bottom;
+  }
+
+  &__second-hand {
+    position: absolute;
+    width: 0.25 * $circle-size;
+    height: 0.45 * $watch-size;
+    background-color: #0f140f;
+    top: 0.05 * $watch-size;
+    left: 0.5 * $watch-size - 0.13 * $circle-size;
+    border-radius: 0.25 * $circle-size;
+    animation: spin 60s 2s linear normal infinite;
+    transform-origin: bottom;
+  }
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
