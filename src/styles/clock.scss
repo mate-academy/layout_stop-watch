@@ -1,0 +1,53 @@
+.stopwatch {
+  position: relative;
+  height: $radius-clock;
+  width: $radius-clock;
+
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  @include content-item-center;
+
+  &__item-center {
+    height: $radius-center;
+    width: $radius-center;
+    background-color: $color-center;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  @keyframes rotate-max {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: ($radius-clock / 2);
+    animation-name: rotate-max;
+
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+
+    &--minutes {
+      animation-duration: 600s;
+      height: 20vmin;
+      width: 3vmin;
+      background-color: $color-minutes-hend;
+    }
+
+    &--seconds {
+      animation-duration: 10s;
+      animation-delay: -280ms;
+      height: 38vmin;
+      width: 1.5vmin;
+      background-color: $color-seconds-hend;
+    }
+  }
+}
