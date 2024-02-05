@@ -1,36 +1,23 @@
 .stopwatch {
+  @include circle($clock-size, white);
+
   position: relative;
-  height: $clock-size;
-  width: $clock-size;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1vmin dotted black;
-  border-radius: 50%;
 
   &__minute-hand {
-    position: absolute;
-    height: 20vmin;
-    width: 3vmin;
-    background-color: $minute-hand-color;
-    transform-origin: 50% 100%;
-    animation: rotate 600s linear infinite;
+    @include hand(3vmin, 20vmin, $minute-hand-color, 600s);
   }
 
   &__second-hand {
-    position: absolute;
-    height: 38vmin;
-    width: 1.5vmin;
-    background-color: $second-hand-color;
-    animation: rotate 10s linear infinite;
-    transform-origin: 50% 100%;
+    @include hand(1.5vmin, 38vmin, $second-hand-color, 10s);
   }
 
   &__axis {
-    border-radius: 50%;
-    width: 5vmin;
-    height: 5vmin;
-    background-color: $axis-color;
+    @include circle(5vmin, $axis-color);
+
     z-index: 1;
   }
 }

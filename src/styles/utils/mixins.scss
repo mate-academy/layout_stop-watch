@@ -1,0 +1,15 @@
+@mixin circle($width, $color) {
+  width: $width;
+  height: $width;
+  background: $color;
+  border-radius: $width / 2;
+}
+
+@mixin hand($width, $height, $color, $time) {
+  position: absolute;
+  height: $height;
+  width: $width;
+  background-color: $color;
+  transform-origin: 50% 100%;
+  animation: rotate $time linear infinite;
+}
