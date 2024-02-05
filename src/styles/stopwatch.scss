@@ -1,8 +1,8 @@
 .stopwatch {
   position: relative;
-  display: flex;
   align-items: center;
   justify-content: center;
+  display: flex;
   width: $size;
   height: $size;
   border: 1vmin dotted #000;
@@ -13,8 +13,8 @@
     z-index: 5;
     width: $circle-size;
     height: $circle-size;
-    background-color: $circle-color;
     border-radius: 50%;
+    background-color: $circle-color;
   }
 
   &__seconds {
@@ -23,10 +23,10 @@
     left: 50%;
     transform: translateX(-50%);
     transform-origin: bottom;
+    animation: rotate 60s linear infinite;
     width: $seconds-width;
     height: $seconds-height;
     background-color: $seconds-color;
-    animation: rotate 60s linear infinite;
   }
 
   &__minutes {
@@ -35,10 +35,10 @@
     left: 50%;
     transform: translateX(-50%);
     transform-origin: bottom;
+    animation: rotate 3600s linear infinite;
     width: $minutes-width;
     height: $minutes-height;
     background-color: $minutes-color;
-    animation: rotate 3600s linear infinite;
   }
 
   &--speed-up .stopwatch__seconds {
