@@ -1,0 +1,65 @@
+@use '../utils/variables' as *;
+
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  position: relative;
+
+  $minute: 60s;
+  $hour: 60 * $minute;
+
+
+  &--speed-up {
+    $minute: 10s;
+    $hour: 60 * $minute;
+  }
+
+  &__minutes {
+    width: 3vmin;
+    height: 20vmin;
+    background-color: $blue;
+
+    position: absolute;
+    bottom: $stopwatch-radius;
+    z-index: 1;
+
+    transform-origin: center bottom;
+    animation: rotate steps(60) $hour infinite;
+  }
+
+  &__seconds {
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: $green;
+
+    position: absolute;
+    bottom: $stopwatch-radius;
+    z-index: 2;
+
+    transform-origin: center bottom;
+    animation: rotate linear $minute infinite;
+  }
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: $orange;
+    border-radius: 50%;
+
+    align-self: center;
+    z-index: 3;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
