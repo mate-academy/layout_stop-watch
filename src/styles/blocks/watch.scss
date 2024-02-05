@@ -1,0 +1,42 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $watch-diametr;
+    height: $watch-diametr;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+  &__center {
+    width: $watch-diametr / 20;
+    height: $watch-diametr / 20;
+    background-color: #817f7f;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__big-hand {
+    position: absolute;
+    height: $watch-diametr / 3;
+    width: $watch-diametr / 30;
+    background-color: #524343;
+    animation: rotate 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__small-hand {
+    position: absolute;
+    height: $watch-diametr / 2.1;
+    width: $watch-diametr / 50;
+    background-color: #771010;
+    animation: rotate 5s linear infinite;
+    transform-origin: bottom center;
+  }
+}
