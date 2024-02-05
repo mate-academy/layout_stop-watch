@@ -1,1 +1,67 @@
-// put code here
+@import "./utils/mixins";
+@import "./utils/variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include flex-centered;
+
+  height: 100vh;
+  margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+
+  @include flex-centered;
+
+  height: $watch-size;
+  width: $watch-size;
+  background-color: $bg-color;
+  border: 5px solid #000;
+  border-radius: 50%;
+}
+
+.stopwatch__center {
+  height: 75px;
+  width: 75px;
+  background: url(../images/ma-logo.webp) no-repeat center / cover;
+  z-index: 1;
+}
+
+.stopwatch__hour {
+  @include position-absolute;
+
+  height: 25%;
+  width: 15px;
+  background-color: $hour-color;
+  border-radius: 10px;
+
+  animation: rotate 60s linear infinite;
+}
+
+.stopwatch__second {
+  @include position-absolute;
+  
+  height: 50%;
+  width: 10px;
+  background-color: $second-color;
+  border-radius: 10px;
+
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+    transform-origin: bottom center;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom center;
+  }
+}
+
