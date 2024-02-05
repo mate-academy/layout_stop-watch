@@ -1,0 +1,49 @@
+@use "../variables/variables" as *;
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1vmin dotted $stopwatch-color;
+  border-radius: $stopwatch-size;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+
+  &__center {
+    z-index: 1;
+    border-radius: $center-width;
+    background-color: $center-color;
+    width: $center-width;
+    height: $center-width;
+  }
+
+  &__second-hand {
+    position: absolute;
+    transform-origin: center left;
+    animation: rotate-hand 60s infinite linear;
+    margin-left: $second-hand-length;
+    background-color: $second-hand-color;
+    width: $second-hand-length;
+    height: $second-hand-thickness;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    transform-origin: center left;
+    animation: rotate-hand 60 * 60s infinite steps(59);
+    margin-left: $minute-hand-length;
+    background-color: $minute-hand-color;
+    width: $minute-hand-length;
+    height: $minute-hand-thickness;
+  }
+}
+
+.stopwatch--speed-up {
+  .stopwatch__second-hand {
+    animation: rotate-hand 10s infinite linear;
+  }
+
+  .stopwatch__minute-hand {
+    animation: rotate-hand 10 * 60s infinite steps(59);
+  }
+}
