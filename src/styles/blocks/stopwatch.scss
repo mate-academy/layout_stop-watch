@@ -31,7 +31,7 @@
     bottom: ($stopwatch-size / 2);
     z-index: 1;
     transform-origin: bottom;
-    animation: handsRotation 3600s steps(60, end) infinite;
+    animation: hands-rotation 3600s steps(60) infinite;
   }
 
   &__seconds {
@@ -42,7 +42,7 @@
     bottom: ($stopwatch-size / 2);
     z-index: 0;
     transform-origin: bottom;
-    animation: handsRotation 60s steps(60, end) infinite;
+    animation: hands-rotation 60s steps(60) linear infinite;
   }
 
   &__center {
@@ -56,10 +56,10 @@
   }
 
   &--speed-up &__minutes {
-    animation: handsRotation 600s steps(60, end) infinite;
+    animation: hands-rotation 600s steps(60) infinite;
   }
-  
+
   &--speed-up &__seconds {
-    animation: handsRotation 10s steps(60, end) infinite;
+    animation: hands-rotation 10s linear infinite;
   }
 }
