@@ -1,0 +1,37 @@
+.stopwatch {
+  @include circle($clock-size, white);
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1vmin dotted black;
+
+  &__minute-hand {
+    @include hand(3vmin, 20vmin, $minute-hand-color);
+
+    animation: rotate 3600s steps(60) infinite;
+  }
+
+  &__second-hand {
+    @include hand(1.5vmin, 38vmin, $second-hand-color);
+
+    animation: rotate 60s linear infinite;
+  }
+
+  &__axis {
+    @include circle(5vmin, $axis-color);
+
+    z-index: 1;
+  }
+
+  &--speed-up {
+    .stopwatch__second-hand {
+      animation-duration: 10s;
+    }
+
+    .stopwatch__minute-hand {
+      animation-duration: 600s;
+    }
+  }
+}
