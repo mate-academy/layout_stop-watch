@@ -11,7 +11,7 @@
 
 
 
-  &__hour {
+  &__minute {
     transform-origin: bottom center;
     width: 20px;
     height: 35%;
@@ -22,7 +22,7 @@
     animation: 60s linear infinite move;
   }
 
-  &__minute {
+  &__second {
     transform-origin: bottom center;
     width: 10px;
     height: 50%;
@@ -33,6 +33,15 @@
     border-radius: $size-center;
   }
 
+  &--speed-up {
+    &__minute {
+      animation-duration: 10s;
+    }
+
+    &__second {
+      animation-duration: 600s;
+    }
+  }
 
 
   &__center {
