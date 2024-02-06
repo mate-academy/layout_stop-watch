@@ -36,14 +36,14 @@
     width: $minute-hand-length;
     height: $minute-hand-thickness;
   }
-}
 
-.stopwatch--speed-up {
-  .stopwatch__second-hand {
-    animation: rotate-hand 10s infinite linear;
-  }
+  &--speed-up {
+    .stopwatch__second-hand {
+      animation: rotate-hand 10s infinite linear;
+    }
 
-  .stopwatch__minute-hand {
-    animation: rotate-hand 10 * 60s infinite steps(59);
+    .stopwatch__minute-hand {
+      animation: rotate-hand 10 * 60s infinite steps(59);
+    }
   }
 }
