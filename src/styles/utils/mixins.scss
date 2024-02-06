@@ -5,11 +5,11 @@
   border-radius: $width / 2;
 }
 
-@mixin hand($width, $height, $color, $time) {
+@mixin hand($width, $height, $color) {
+  top: $clock-size / 2 - $height;
   position: absolute;
   height: $height;
   width: $width;
   background-color: $color;
   transform-origin: 50% 100%;
-  animation: rotate $time linear infinite;
 }
