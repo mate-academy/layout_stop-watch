@@ -1,0 +1,54 @@
+@import './values';
+
+.clock {
+  margin: auto;
+  border: $border-dot-size dotted black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  &__dot {
+    position: absolute;
+    z-index: 1;
+    height: $dot-size;
+    width: $dot-size;
+    background-color: #eeee12;
+    box-sizing: border-box;
+    border: 1px solid #eeee12;
+    border-radius: 50%;
+  }
+
+  &__big-hand {
+    position: absolute;
+    background-color: rgb(26, 57, 233);
+    height: $big-hand-length;
+    width: $big-hand-width;
+    margin-bottom: $big-hand-length;
+
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__small-hand {
+    position: absolute;
+    background-color: rgb(37, 170, 88);
+    height: $small-hand-length;
+    width: $small-hand-width;
+    margin-bottom: $small-hand-length;
+
+    animation: move 5s linear infinite;
+    transform-origin: bottom;
+    }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
