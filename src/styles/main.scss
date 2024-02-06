@@ -1,1 +1,57 @@
-// put code here
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.stop-watch {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  height: 80vmin;
+  width: 80vmin;
+  border: 5px dotted black;
+  border-radius: 50%;
+}
+
+.circle {
+  position: absolute;
+  background-color: rgb(188, 133, 23);
+  width: 6vmin;
+  height: 6vmin;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.long {
+  position: absolute;
+  height: 40vmin;
+  width: 1vmin;
+  background-color: green;
+  top: 50%;
+  z-index: 0;
+
+  transform-origin: 0% 0%;
+  animation: clock 5s infinite steps(60);
+}
+
+.short {
+  position: absolute;
+  height: 20vmin;
+  width: 2vmin;
+  background-color: blue;
+  top: 50%;
+  z-index: 1;
+
+  transform-origin: 0% 0%;
+  animation: clock 60s infinite steps(60);
+}
+
+@keyframes clock {
+  from { transform: rotate(0deg);
+  }
+  to { transform: rotate(360deg);
+  }
+}
