@@ -1,1 +1,47 @@
-// put code here
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 6px dotted #0cc3a8af;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 5px 5px 10px rgba(33, 220, 170, 0.5), -5px -5px 10px rgba(255, 255, 255, 0.5) inset;
+}
+
+.second-hand,
+.minute-hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top center;
+}
+
+.second-hand {
+  width: 2px;
+  height: 35%;
+  background-color: rgb(80, 188, 61);
+  animation: rotate-hands 60s linear infinite;
+}
+
+.minute-hand {
+  width: 4px;
+  height: 40%;
+  background-color: #31ad69;
+  animation: rotate-hands 5s linear infinite;
+}
+
+@keyframes rotate-hands {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
