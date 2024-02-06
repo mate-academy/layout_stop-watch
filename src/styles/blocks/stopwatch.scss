@@ -1,0 +1,97 @@
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $color-stopwatch-dial-bg;
+
+  &__dial {
+    @include size($stopwatch-dial-width, $stopwatch-dial-height);
+
+    box-sizing: border-box;
+    border: 10px solid $color-stopwatch-dial-bg;
+    border-radius: 50%;
+    background-color: $color-stopwatch-dial-bg;
+    position: relative;
+    box-shadow:
+      -7px -7px 20px rgba(46, 46, 46, 0.9),
+      -4px -4px 15px rgba(46, 46, 46, 0.9),
+      7px 7px 20px #0003,
+      4px 4px 15px #0003,
+      inset -15px -15px 15px rgba(46, 46, 46, 0.9),
+      inset 15px 15px 15px #0003,
+      inset -4px -4px 10px rgba(46, 46, 46, 0.9),
+      inset 4px 4px 10px #0003;
+  }
+
+  &__second-hand,
+  &__minute-hand {
+    @include position-absolute(50%, 50%);
+
+    transform: translate(-50%, -100%) rotate(0deg);
+    animation-name: rotate360;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: center bottom;
+  }
+
+  &__second-hand {
+    @include size($stopwatch-second-hand-width, $stopwatch-second-hand-height);
+
+    border-radius: 3px;
+    background-color: $color-stopwatch-second-hand;
+    animation-duration: 5s;
+  }
+
+  &__minute-hand {
+    @include size($stopwatch-minutes-hand-width, $stopwatch-minutes-hand-height);
+
+    border-radius: 6px;
+    background-color: $color-stopwatch-minutes-hand;
+    animation-duration: 60s;
+  }
+
+  &__center {
+    @include size ($stopwatch-center-width, $stopwatch-center-height);
+    @include position-absolute(50%, 50%);
+
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-stopwatch-center;
+  }
+
+  &__hour-mark {
+    @include size($stopwatch-hour-mark-width, 50%);
+    @include position-absolute(50%, 50%);
+
+    transform: translate(-50%, -100%) rotate(0deg);
+    transform-origin: center bottom;
+
+    @for $hour from 1 through 12 {
+      &--#{$hour} {
+        transform: translate(-50%, -100%) rotate(30deg * $hour);
+      };
+    }
+
+      &::after {
+        content: '';
+        display: block;
+        height: $stopwatch-hour-mark-height;
+        margin-top: 10px;
+        background-color: $color-stopwatch-hour-mark-main;
+      }
+
+      &:nth-child(3n)::after {
+        background-color: $color-stopwatch-hour-mark-accent;
+      }
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
