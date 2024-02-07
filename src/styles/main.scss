@@ -1,1 +1,64 @@
-// put code here
+@keyframes rotate-for-seconds {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stop-watch {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  * {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: bottom center;
+  }
+
+  &__minutes-hand {
+    top: 25%;
+    left: 48.1%;
+    transform: translate(-50%, -100%);
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+
+    animation: rotate-for-seconds 3600s linear infinite;
+  }
+
+  &__seconds-hand {
+    top: 3%;
+    left: 49%;
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+
+    animation: rotate-for-seconds 60s linear infinite;
+  }
+
+  &__center-circle {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    border-radius: 50%;
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #f6a603;
+  }
+
+  &--speed-up {
+    &:first-child {
+      animation: rotate-for-seconds 600s linear infinite;
+    }
+
+    &:nth-child(2) {
+      animation: rotate-for-seconds 10s linear infinite;
+    }
+  }
+}
