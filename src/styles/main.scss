@@ -1,1 +1,64 @@
 // put code here
+.page {
+  &__body {
+    display: flex;
+    place-items: center;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.clock {
+  margin: 0 auto;
+  &__circle {
+    position: relative;
+    border: 3px dotted black;
+    border-radius: 50%;
+    width: 80vmin;
+    height: 80vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  &__dot {
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    border-radius: 50%;
+    z-index: 3;
+  }
+  &__second-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    width: 10px;
+
+    z-index: 2;
+    background-color: green;
+
+    transform-origin: bottom center;
+    animation: hands 5s steps(60) 60;
+  }
+  &__minute-arrow {
+    position: absolute;
+    background-color: blue;
+
+    width: 20px;
+    top: 25%;
+    bottom: 50%;
+
+    transform-origin: bottom center;
+    animation: hands 60s steps(60) 1;
+  }
+}
+
+@keyframes hands {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
