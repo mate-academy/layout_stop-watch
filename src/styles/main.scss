@@ -1,1 +1,92 @@
-// put code here
+@import './utils/variables';
+@import './utils/mixins';
+
+.page {
+  &__body {
+    height: 100vh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__hand {
+    position: absolute;
+    height: 180vmin;
+    width: 180vmin;
+
+    background-image: url(./images/IMG_5170.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translate(5.5vmin, 38.5vmin);
+    z-index: 2;
+  }
+}
+
+.stopWatch {
+  background-image: url(./images/ciferblat1.png);
+  background-size: 42.3vmin;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+
+  position: relative;
+  box-sizing: border-box;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: $half-shift;
+
+  display: flex;
+
+  &__mini {
+    position: absolute;
+    height: 8vmin;
+    width: 8vmin;
+    background-image: url(./images/cif.png);
+    background-size: cover;
+    background-position: center;
+    z-index: 3;
+
+    transform: translate(36vmin, 28vmin);
+  }
+
+  &__hand {
+    position: absolute;
+
+    &--second {
+      height: 0.5 * $half-shift;
+      top: 0.57 * $half-shift;
+      left: 49.9%;
+      width: 0.3vmin;
+      border-radius: 20%;
+      background-color: rgb(49, 53, 49);
+
+      @include animation-time(60s, 'rotate-second');
+    }
+
+    &--minute {
+      width: 0.4vmin;
+      height: 0.07 * $half-shift;
+      top: $half-shift - (0.27 * $half-shift);
+      left: $half-shift;
+      border-radius: 20%;
+      background-color: rgb(49, 53, 49);
+      z-index: 2;
+
+      @include animation-time(3600s, 'rotate-mini');
+    }
+
+    &--hour {
+      width: 0.5vmin;
+      height: 0.05 * $half-shift;
+      top: $half-shift - (0.25 * $half-shift);
+      left: $half-shift;
+      border-radius: 20%;
+      background-color: rgb(158, 64, 64);
+
+      @include animation-time(126000s, 'rotate-mini');
+    }
+  }
+}
