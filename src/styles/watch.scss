@@ -1,0 +1,52 @@
+.page {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  display: flex;
+  padding: 0 auto;
+  position: relative;
+
+  &__face {
+    display: block;
+    height: 80vmin;
+    width: 80vmin;
+    background-color: #ddd;
+    border-radius: 50%;
+    border: 3px dotted black;
+  }
+
+  &__minute-arrow {
+    @include arrow(green, 5s, 50%);
+  }
+
+  &__sec-arrow {
+    @include arrow(red, 60s, 25%);
+  }
+
+  &__holder {
+    background-color: blue;
+    height: 3%;
+    width: 3%;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  @keyframes arrow-run {
+    from {
+      rotate: 0deg;
+    }
+    to {
+      rotate: 360deg;
+    }
+  }
+}
