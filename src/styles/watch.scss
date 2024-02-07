@@ -1,0 +1,61 @@
+.watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 80vmin;
+  width: 80vmin;
+  margin-top: 5%;
+  border-radius: 50%;
+  border: 10px dotted black;
+  justify-content: center;
+
+&__center {
+  height: 50px;
+  width: 50px;
+  background-color: #FFA500;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+&__arrow-small {
+  position: absolute;
+  bottom: 40vmin;
+  height: 20vmin;
+  width: 3vmin;
+  background-color: blue;
+  animation: move infinite linear 60s;
+  transform-origin: bottom;
+  z-index: 1;
+}
+
+@keyframes move {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+&__arrow-big {
+  position: absolute;
+  width: 1vmin;
+  height: 40vmin;
+  bottom: 40vmin;
+  z-index: 1;
+  background-color: green;
+  animation: move-seconds infinite linear 5s;
+  transform-origin: bottom;
+}
+
+@keyframes move-seconds {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+}
