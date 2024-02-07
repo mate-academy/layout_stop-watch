@@ -1,0 +1,11 @@
+@mixin arrowMoving($tranform, $name) {
+  @keyframes #{$name} {
+    from {
+      transform: #{$tranform} rotate(0);
+    }
+
+    to {
+      transform: #{$tranform} rotate(360deg);
+    }
+  }
+}
