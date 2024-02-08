@@ -1,14 +1,4 @@
-@keyframes rotate-for-seconds {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-for-minutes {
+@keyframes rotate-animation {
   0% {
     transform: rotate(0deg);
   }
@@ -41,7 +31,7 @@
     height: 20vmin;
     background-color: #0700ff;
 
-    animation: rotate-for-minutes 3600s steps(60, end) infinite;
+    animation: rotate-animation 3600s steps(60, end) infinite;
   }
 
   &__seconds-hand {
@@ -51,7 +41,7 @@
     height: 38vmin;
     background-color: #2c8000;
 
-    animation: rotate-for-seconds 60s linear infinite;
+    animation: rotate-animation 60s linear infinite;
   }
 
   &__center-circle {
@@ -65,11 +55,11 @@
 
   &--speed-up {
     & :first-child {
-      animation: rotate-for-minutes 100s steps(10, end) infinite;
+      animation: rotate-animation 600s steps(60, end) infinite;
     }
 
     & :nth-child(2) {
-      animation: rotate-for-seconds 10s linear infinite;
+      animation: rotate-animation 10s linear infinite;
     }
   }
 }
