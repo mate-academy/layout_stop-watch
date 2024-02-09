@@ -1,1 +1,67 @@
-// put code here
+$color-minute-hand: #0700ff;
+$color-second-hand: #2c8000;
+$color-center: #f6a603;
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted black;
+  border-radius: 50%;
+
+  &__minute-hand {
+    position: absolute;
+    top: 20vmin;
+    width: 3vmin;
+    height: 20vmin ;
+    background-color: $color-minute-hand;
+    animation-timing-function: steps(60);
+    animation-duration: 600s;
+  }
+
+  &__second-hand {
+    position: absolute;
+    bottom: 40vmin;
+    width:1.5vmin;
+    height:38vmin ;
+    background-color: $color-second-hand;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+  }
+
+  &__minute-hand,
+  &__second-hand {
+  animation-iteration-count: infinite;
+  animation-name: rotate;
+  transform-origin: bottom;
+  }
+
+  &__center {
+    position: absolute;
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background-color: $color-center;
+  }
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
