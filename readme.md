@@ -30,7 +30,7 @@ Create a working stopwatch with minute and second hands using **only CSS animati
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
-- [ ] Keyframes implemented using from/to + transform with rotate property
-- [ ] Stopwatch is centered and has correct arrows size
-- [ ] All `Typical Mistakes` from `BEM` lesson theory are checked.
-- [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
+- [x] Keyframes implemented using from/to + transform with rotate property
+- [x] Stopwatch is centered and has correct arrows size
+- [x] All `Typical Mistakes` from `BEM` lesson theory are checked.
+- [x] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
