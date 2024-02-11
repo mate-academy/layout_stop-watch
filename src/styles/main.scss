@@ -1,1 +1,62 @@
-// put code here
+@import './keyframes';
+
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &_minute {
+    position: absolute;
+    inset: 0 0 20vmin;
+    margin: auto;
+    height: 20vmin;
+    width: 3vmin;
+
+    background-color: #0700ff;
+    transform-origin: bottom center;
+    animation: arrow 3600s steps(60) infinite;
+  }
+
+  &_seconds {
+    position: absolute;
+    inset: 0 0 40vmin;
+    margin: auto;
+    height: 40vmin;
+    width: 1.5vmin;
+
+    background-color: #2c8000;
+    transform-origin: bottom center;
+    animation: arrow 60s linear infinite;
+  }
+
+  &_center {
+    position: absolute;
+    inset: 0;
+
+    margin: auto;
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+  }
+}
+
+.stopwatch--speed-up {
+  .stopwatch_minute {
+    animation: arrow 600s steps(60) infinite;
+  }
+
+  .stopwatch_seconds {
+    animation: arrow 10s linear infinite;
+  }
+}
