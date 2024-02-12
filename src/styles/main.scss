@@ -1,1 +1,92 @@
-// put code here
+$watch-size: 80vmin;
+
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  height: $watch-size;
+  width: $watch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+  &__min-hand {
+    position: relative;
+    top: calc(50% - 50vmin);
+    left: auto;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+
+    animation-name: move;
+    animation-duration: 3600s;
+    animation-timing-function: linear;
+    animation-iteration-count: 60;
+
+    transform-origin: bottom center;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__seconds-hand {
+    height: 38vmin;
+    width: 1.5vmin;
+    background: #2c8000;
+
+    position: absolute;
+    top: 12%;
+    left: calc(50% - 0.75vmin);
+
+    animation-name: move;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: 60;
+
+    transform-origin: bottom center;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    top: auto;
+    left: auto;
+
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background: #f6a603;
+  }
+
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch--speed-up :first-child {
+  animation-duration: 600s;
+}
+
+.stopwatch--speed-up :nth-child(even) {
+  animation-duration: 10s;
+}
