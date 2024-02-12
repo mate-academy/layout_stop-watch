@@ -1,1 +1,69 @@
 // put code here
+@import 'src/styles/rotate';
+
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+}
+
+ .minute {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -10vmin;
+
+  width: 3vmin;
+  height: 20vmin;
+  background-color: #0700ff;
+
+  transform-origin: bottom center;
+  animation: min 3600s steps(60) infinite;
+}
+
+.seconds {
+  position: relative;
+  top: -18vmin;
+
+  width: 1.5vmin;
+  height: 38vmin;
+  background-color: #2c8000;
+
+  transform-origin: bottom center;
+  animation: min 60s linear infinite;
+}
+
+.center {
+  position: absolute;
+
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 50%;
+  background-color: #f6a603;
+}
+
+.stopwatch--speed-up {
+  .minute {
+    animation: min 600s steps(60) infinite;
+  }
+
+  .seconds {
+    animation: min 10s linear infinite;
+  }
+}
