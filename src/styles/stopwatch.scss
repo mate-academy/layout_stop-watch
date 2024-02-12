@@ -1,0 +1,40 @@
+@use './variables' as *;
+
+.stopwatch {
+  width: calc($size * 80);
+  height: calc($size * 80);
+  border: $size $border-type $border-color;
+  border-radius: 50%;
+  position: relative;
+
+  &-center {
+    width: calc($size * 5);
+    height: calc($size * 5);
+    background-color: $center-color;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - ($size * 2.5));
+    left: calc(50% - ($size * 2.5));
+    display: flex;
+    justify-content: center;
+  }
+
+  &__stopwatch-center--minute::before {
+    content: '';
+    width: calc($size * 3);
+    height: calc($size * 20);
+    background-color: $minute-color;
+    position: absolute;
+    top: 50%;
+    transform: rotate(0);
+  }
+
+  &__stopwatch-center--second::before {
+    content: '';
+    width: calc($size * 1.5);
+    height: calc($size * 38);
+    background-color: $second-color;
+    position: absolute;
+    top: 50%;
+  }
+}

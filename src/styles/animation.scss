@@ -1,0 +1,23 @@
+@use './variables' as *;
+
+@each $seconds in 10, 60 {
+  .stopwatch--speed-up--#{$seconds} {
+    .stopwatch__stopwatch-center--minute {
+      animation: $animation-name #{$seconds * $animation-steps}s steps($animation-steps) $animation-repeat;
+    }
+
+    .stopwatch__stopwatch-center--second {
+      animation: $animation-name #{$seconds}s $animation-type $animation-repeat;
+    }
+  }
+}
+
+@keyframes #{$animation-name} {
+  0% {
+    transform: rotate($start-rotate);
+  }
+
+  100% {
+    transform: rotate($end-rotate);
+  }
+}
