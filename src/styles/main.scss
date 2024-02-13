@@ -1,1 +1,64 @@
-// put code here
+@keyframes watch-anim {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__circle {
+    width: 5vmin;
+    height: 5vmin;
+
+    background-color: orange;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: 25%;
+    left: 48%;
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    animation: watch-anim 600s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    width: 1.5vmin;
+    height: 38vmin;
+
+    background-color: #2c8000;
+
+    position: absolute;
+    left: 50%;
+    top: 2%;
+
+    transform-origin: bottom;
+    animation: watch-anim 10s infinite linear;
+  }
+}
