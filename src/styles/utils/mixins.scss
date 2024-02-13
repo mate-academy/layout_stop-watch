@@ -1,0 +1,16 @@
+@mixin stop-watch-element-position($elemSize, $z-index) {
+  position: absolute;
+  bottom: calc($center-diameter / 2);
+  right: calc(($center-diameter / 2) - ($elemSize / 2));
+  z-index: $z-index;
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
