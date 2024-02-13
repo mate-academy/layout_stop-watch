@@ -1,0 +1,42 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $stop-watch-size;
+  width: $stop-watch-size;
+  border: $stop-watch-border-width dotted #000;
+  border-radius: 50%;
+
+
+
+  &__centre {
+    position: relative;
+    width: $center-diameter;
+    height: $center-diameter;
+    border-radius: inherit;
+    background-color: #f6a603;
+  }
+
+  &__seconds {
+    width: $seconds-width;
+    height: $seconds-length;
+    background-color: #2c8000;
+
+    @include stop-watch-element-position($seconds-width, -1);
+
+    animation: seconds 10s linear infinite ;
+    transform-origin: 50% 100%;
+  }
+
+  &__minutes {
+    width: $minutes-width;
+    height: $minutes-length;
+    background-color: #0700ff;
+
+    @include stop-watch-element-position($minutes-width, -2);
+
+    animation: seconds 600s steps(60, end) infinite;
+    transform-origin: 50% 100%;
+  }
+}
