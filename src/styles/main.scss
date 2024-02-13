@@ -1,1 +1,58 @@
-// put code here
+@mixin scale($height, $width, $color) {
+  height: $height;
+  width: $width;
+  background-color: $color;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 100%;
+  border: 1vmin dotted #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__minutes {
+    @include scale(20vmin, 3vmin, #0700ff);
+
+    position: absolute;
+    top: 20vmin;
+    transform-origin: bottom;
+    animation: rotate 3600s steps(60) infinite;
+  }
+
+  &__center {
+    @include scale(5vmin, 5vmin, #f6a603);
+
+    border-radius: 100%;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__seconds {
+    @include scale(38vmin, 1.5vmin, #2c8000);
+
+    position: absolute;
+    bottom: 38vmin;
+    transform-origin: bottom;
+    animation: rotate 60s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
