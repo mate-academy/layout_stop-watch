@@ -4,6 +4,10 @@
   background-color: $color;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -25,9 +29,9 @@ body {
     @include scale(20vmin, 3vmin, #0700ff);
 
     position: absolute;
-    top: 20vmin;
+    top: 19vmin;
     transform-origin: bottom;
-    animation: rotate 3600s steps(60) infinite;
+    animation: rotate 360пше0s steps(60) infinite;
   }
 
   &__center {
@@ -42,7 +46,7 @@ body {
     @include scale(38vmin, 1.5vmin, #2c8000);
 
     position: absolute;
-    bottom: 38vmin;
+    bottom: 39vmin;
     transform-origin: bottom;
     animation: rotate 60s linear infinite;
   }
