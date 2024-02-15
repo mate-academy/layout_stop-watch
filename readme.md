@@ -13,10 +13,12 @@ Create a working stopwatch with minute and second hands using **only CSS animati
 - For seconds hand use animation with even speed, without acceleration and deceleration. It should take `60s` for the seconds hand to make a full circle.
 - For minutes hand use steps animation with 60 steps. It should take `60min` for the minutes hand to make a full circle.
 
-## Tests
-❗️ Add a BEM modifier called `speed-up` for your stopwatch block. It will be used only in tests. With this modifier:
-  - it will take only `10s` for the seconds hand to make a full circle (change animation duration)
-  - it will take only `10min` for the minutes hand to make a full circle (change animation duration)
+In addition to the basic functionality create a BEM modifier called `speed-up` for your stopwatch block:
+- it will take only `10s` for the seconds hand to make a full circle (change animation duration)
+- it will take only `10min` for the minutes hand to make a full circle (change animation duration)
+
+❗️ Add the modifier to the initial markup for Tests.
+❗️ Mentors will remove it via Dev Tools and check is Basic functionality works as expected.
 
 > Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
 
