@@ -1,1 +1,61 @@
-// put code here
+@import './utils/variables';
+@import './utils/mixins';
+
+.clock {
+  position: absolute;
+
+  @include center(-50%, -50%);
+
+  width: $main-size;
+  height: $main-size;
+
+  border: 3px double $main-color;
+
+  @include round;
+
+  background-color: #fcfcfc;
+
+  &::before {
+    @include clock-hand(35%, 60s, 15%);
+  }
+
+  &::after {
+    @include clock-hand(45%, 5s, 5%);
+  }
+
+  @keyframes time {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+  }
+
+  &__reset {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+
+    @include center(-40%, -50%);
+
+    height: 5%;
+    width: 5%;
+
+    background-color: $background-color;
+    border: 1px solid $border-color;
+
+    @include round;
+
+    transition: all 0.2s;
+    cursor: pointer;
+
+    color: $main-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10px;
+
+    &:hover {
+      box-shadow: 1px 1px 12px 1px $main-color;
+    }
+  }
+}
