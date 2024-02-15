@@ -1,1 +1,76 @@
-// put code here
+@import './variables';
+
+@mixin animation() {
+  transform-origin: bottom;
+  animation-iteration-count: infinite;
+  animation-name: move;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minutes {
+    position: absolute;
+    height: $stopwatch-minutes-length;
+    width: $stopwatch-minutes-width;
+    background-color: $stopwatch-minutes-color;
+    bottom: 50%;
+    z-index: 1;
+
+    @include animation;
+
+    animation-duration: 600s;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__seconds {
+    position: absolute;
+    height: $stopwatch-seconds-length;
+    width: $stopwatch-seconds-width;
+    bottom: 50%;
+    background-color: $stopwatch-seconds-color;
+    z-index: 2;
+
+    @include animation;
+
+    animation-duration: 10s;
+    animation-timing-function: linear;
+  }
+
+  &__center {
+    position: absolute;
+    height: $stopwatch-center-size;
+    width: $stopwatch-center-size;
+    background-color: $stopwatch-center-color;
+    border-radius: 50%;
+    z-index: 100;
+  }
+
+  @keyframes move {
+    from {
+      transform-origin: bottom;
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform-origin: bottom;
+      transform: rotate(360deg);
+    }
+  }
+}
+
