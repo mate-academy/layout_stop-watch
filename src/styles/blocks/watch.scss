@@ -1,0 +1,43 @@
+.watch {
+  height: $watch-height;
+  width: $watch-width;
+  border: 5px dotted black;
+  border-radius: 50%;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__hour {
+    position: absolute;
+    height: $watch-minute-height;
+    width: $watch-minute-width;
+    background-color: blue;
+    top: $watch-height * 0.5;
+    left: $watch-height * 0.5;
+    animation: linear rotate-watch-arrow $transform-hour-time infinite $transform-delay;
+    transform-origin: left;
+
+  }
+
+  &__center {
+    position: absolute;
+    height: $watch-center-height;
+    width: $watch-center-width;
+    background-color: orange;
+    border-radius: 50%;
+    top: $watch-height * 0.49;
+    z-index: 1;
+  }
+
+  &__minute {
+    position: absolute;
+    height: $watch-hour-height;
+    width: $watch-hour-width;
+    background-color: green;
+    top: 0;
+    animation: linear rotate-watch-arrow $transform-minute-time infinite $transform-delay;
+    transform-origin: bottom;
+  }
+}
