@@ -1,5 +1,6 @@
 .body {
   margin: 0;
+  height: 100vmin;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +13,6 @@
   border-radius: 100%;
   margin: 80px auto;
   align-items: center;
-  position: relative;
 }
 
 @keyframes movehand {
@@ -30,20 +30,20 @@
   background-color: black;
   width: 10px;
   position: absolute;
-  left: 50.3%;
+  left: 50%;
   transform-origin: center bottom;
 }
 
 .hand {
   height: 250px;
-  top: 6%;
+  top: 23%;
   animation: movehand 10s linear infinite;
 }
 
 
 .minute-hand {
   height: 150px;
-  top: 22%;
+  top: 34%;
   animation: movehand 600s steps(60, end) infinite;
 }
 
@@ -53,6 +53,6 @@
   height: 25px;
   border-radius: 100%;
   position: absolute;
-  left: 49.5%;
-  top: 45%;
+  left: 49.6%;
+  top: 49%;
 }
