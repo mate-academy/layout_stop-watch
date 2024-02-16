@@ -1,1 +1,68 @@
-// put code here
+@import './utils/mixins';
+
+.container {
+  @include flex-centring;
+
+  margin: 0;
+  height: 100vh;
+}
+
+.watch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  @include flex-centring;
+
+  &__center-circle {
+    height: 5vmin;
+    width: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  &::before {
+    content: '';
+    height: 38vmin;
+    width: 1.5vmin;
+    position: relative;
+    background-color: #2c8000;
+    top: -19vmin;
+    animation: watch-seconds 60s linear infinite forwards;
+  }
+
+  &::after {
+    content: '';
+    width: 3vmin;
+    height: 20vmin;
+    position:absolute;
+    background-color: #0700ff;
+    top: 20vmin;
+    z-index: -1;
+    animation: watch-minutes 3600s cubic-bezier(0,1, 0,1) infinite;
+  }
+}
+
+@keyframes watch-seconds {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes watch-minutes {
+  @for $one-min from 0 through 59 {
+    #{$one-min * (100 / 60)}% {
+      transform: rotate($one-min * 6deg);
+      transform-origin: bottom;
+    }
+  }
+}
