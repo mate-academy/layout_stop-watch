@@ -1,0 +1,10 @@
+@mixin stopwatch-hand($seconds: 60s, $minutes: 1) {
+  position: absolute;
+  transform-origin:bottom;
+
+  animation-name: hand-animate;
+  animation-duration: $seconds * $minutes;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
