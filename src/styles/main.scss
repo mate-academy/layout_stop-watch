@@ -1,1 +1,69 @@
-// put code here
+@import 'variables';
+
+@keyframes rotate-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+  height: $height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $height;
+
+  &_round {
+    height: $d-circle;
+    width: $d-circle;
+    border-radius: $border-r;
+    border: 1vmin dotted #000;
+
+  }
+
+  &_centr {
+    position: absolute;
+    height: $d-circle-small;
+    width: $d-circle-small;
+    border-radius: $border-r;
+    background-color: #F6A603;
+  }
+
+  &_sec {
+    position: absolute;
+    height: $height-sec;
+    width: $width-sec;
+    background-color: #2C8000;
+    margin-bottom: $height-sec;
+    animation: rotate-animation 60s linear infinite;
+    transform-origin: center bottom;
+  }
+
+  &_min {
+    position: absolute;
+    height: $height-min;
+    width: $width-min;
+    background-color: #0700FF;
+    margin-bottom: $height-min;
+    animation: rotate-animation 3600s steps(60) infinite;
+    transform-origin: center bottom;
+  }
+}
+
+.stopwatch--speed-up .stopwatch_sec {
+    animation-duration: 10s;
+  }
+
+.stopwatch--speed-up .stopwatch_min {
+    animation: rotate-animation 600s steps(60) infinite;
+  }
