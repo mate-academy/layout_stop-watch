@@ -23,37 +23,36 @@ body {
   align-items: center;
   height: $height;
 
-  &_round {
+  &__round {
     height: $d-circle;
     width: $d-circle;
     border-radius: $border-r;
-    border: 1vmin dotted #000;
-
+    border: 1vmin dotted $border-color;
   }
 
-  &_centr {
+  &__centr {
     position: absolute;
     height: $d-circle-small;
     width: $d-circle-small;
     border-radius: $border-r;
-    background-color: #F6A603;
+    background-color: $color-circle-small;
   }
 
-  &_sec {
+  &__sec {
     position: absolute;
     height: $height-sec;
     width: $width-sec;
-    background-color: #2C8000;
+    background-color: $color-sec;
     margin-bottom: $height-sec;
     animation: rotate-animation 60s linear infinite;
     transform-origin: center bottom;
   }
 
-  &_min {
+  &__min {
     position: absolute;
     height: $height-min;
     width: $width-min;
-    background-color: #0700FF;
+    background-color: $color-min;
     margin-bottom: $height-min;
     animation: rotate-animation 3600s steps(60) infinite;
     transform-origin: center bottom;
