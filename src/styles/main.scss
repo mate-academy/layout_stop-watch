@@ -1,1 +1,76 @@
 // put code here
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  display: flex;
+  margin: 0 auto;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  border: 5px dotted black;
+  position: relative;
+
+
+  &__center {
+    margin: 0 auto;
+    display: flex;
+    align-self: center;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    background-color: orange;
+    z-index: 3;
+  }
+
+  &__hour,
+  &__minute {
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  &__hour {
+    transform: rotate(-90deg);
+    animation-name: time;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute {
+    transform: rotate(180deg);
+    animation-name: time;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__hour::before {
+    content: '';
+    position: absolute;
+    height: 25vmin;
+    width: 15px;
+    background-color: blue;
+  }
+  &__minute::before {
+    content: '';
+    position: absolute;
+    height: 40vmin;
+    width: 10px;
+    background-color: green;
+  }
+}
+
+@keyframes time {
+  from {transform: rotate(180deg);}
+  to {transform: rotate(540deg);}
+}
+
