@@ -1,1 +1,64 @@
 // put code here
+body {
+  margin: 0;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background: #f6a603;
+  }
+
+  &__seconds-hand {
+    animation: rotate 60s linear infinite;
+    position: absolute;
+    height: 38vmin;
+    width: 1.5vmin;
+    background: #2c8000;
+  }
+
+  &__minutes-hand {
+    animation: rotate 3600s steps(60, end) infinite;
+    position: absolute;
+    height: 20vmin;
+    width: 3vmin;
+    background: #0700ff;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes-hand {
+      animation-duration: 600s;
+    }
+
+    .stopwatch__seconds-hand {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translateY(-50%);
+  }
+  to {
+    transform: rotate(360deg) translateY(-50%);
+  }
+}
