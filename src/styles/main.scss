@@ -1,1 +1,71 @@
 // put code here
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border: 5px dotted black;
+}
+
+.stopwatch__center {
+  width: 30px;
+  height: 30px;
+  background-color: orange;
+}
+
+.stopwatch,
+.stopwatch__center {
+  border-radius: 50%;
+}
+
+.stopwatch__arrow {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+}
+
+.stopwatch__arrow--big {
+  height: 250px;
+  width: 8px;
+  background-color: green;
+  z-index: -1;
+
+  animation-name: arrow-move;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60, end);
+}
+
+.stopwatch__arrow--small {
+  height: 125px;
+  width: 12px;
+  background-color: blue;
+  z-index: -2;
+
+  animation-name: arrow-move;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes arrow-move {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
