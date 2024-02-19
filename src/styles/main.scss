@@ -1,1 +1,56 @@
-// put code here
+@import 'src/styles/variables';
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $clock-size;
+  height: $clock-size;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 10px black dashed;
+  border-radius: 50%;
+
+  &__dot {
+    position: absolute;
+    height: 3vw;
+    width: 3vw;
+    z-index: 1;
+    border-radius: 50%;
+    background: $cadmium-orange;
+  }
+
+  &__quick-hand {
+    position: absolute;
+    height: 21vw;
+    margin-bottom: 21vw;
+    width: 1vw;
+    background: $avocado;
+    animation: clock 5s infinite linear;
+    transform-origin: bottom;
+  }
+
+  &__slow-hand {
+    position: absolute;
+    height: 10vw;
+    margin-bottom: 10vw;
+    width: 1.5vw;
+    background: $cerulean;
+    animation: clock 60s infinite linear;
+    transform-origin: bottom;
+  }
+
+  @keyframes clock {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
