@@ -12,61 +12,62 @@ $minute-pointer-width: 40vmin;
   border: 5px dotted;
   border-radius: 50%;
   align-items: center;
-}
 
-.yellow-dot {
-  position: absolute;
-  z-index: 1;
-  background-color: rgb(255, 174, 0);
-  width: $yellow-dot-size;
-  height: $yellow-dot-size;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-}
+  &__yellow-dot {
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(255, 174, 0);
+    width: $yellow-dot-size;
+    height: $yellow-dot-size;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
 
-.minute-pointer{
-  position: absolute;
-  box-sizing: border-box;
-  height: $minute-pointer-height;
-  width: $minute-pointer-width;
-  background-color: green;
+  &__minute-pointer{
+    position: absolute;
+    box-sizing: border-box;
+    height: $minute-pointer-height;
+    width: $minute-pointer-width;
+    background-color: green;
 
-  animation: minute-pointer 5s infinite linear;
-  transform-origin: right center;
-}
+    animation: minute-pointer 5s infinite linear;
+    transform-origin: right center;
+  }
 
-.hour-pointer {
-  position: absolute;
-  box-sizing: border-box;
-  height: $minute-pointer-height * 2;
-  width: $minute-pointer-width / 2;
-  background-color: blue;
-  left: 25%;
+  &__hour-pointer {
+    position: absolute;
+    box-sizing: border-box;
+    height: $minute-pointer-height * 2;
+    width: $minute-pointer-width / 2;
+    background-color: blue;
+    left: 25%;
 
-  animation: hour-pointer 60s infinite linear;
-  transform-origin: right center;
+    animation: hour-pointer 60s infinite linear;
+    transform-origin: right center;
+  }
+
 }
 
 @keyframes minute-pointer{
   from {
-    transform: rotate(90deg) translate(-0.1%, -0.1%);
+    transform: rotate(90deg);
   }
 
   to {
-    transform: rotate(450deg) translate(-0.1%, -0.1%);
+    transform: rotate(450deg);
 
   }
 }
 
 @keyframes hour-pointer{
   from {
-    transform: rotate(180deg) translate(-0.1%, -0.1%);
+    transform: rotate(180deg);
   }
 
   to {
-    transform: rotate(540deg) translate(-0.1%, -0.1%);
+    transform: rotate(540deg);
 
   }
 }
