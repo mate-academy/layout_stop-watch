@@ -1,1 +1,75 @@
-// put code here
+@import './utilits/mixin';
+@import './veriables/veriables';
+
+body {
+  margin: 0;
+  position: relative;
+}
+
+.stopwatch{
+  @include positioning;
+
+  width: $watch-width;
+  height: $watch-hight;
+  border: $border-style;
+  border-radius: 50%;
+  position: relative;
+  margin-top: 50vmin;
+  transform: translate(-50%, -50%);
+
+  &__minute {
+    @include positioning;
+
+    width: $hand-min-width;
+    height: $hand-min-height;
+    background-color: $color-min-hand;
+    top: 25%;
+    margin-left: -1.5vmin;
+    transform-origin: bottom center;
+    animation: clock-hand-rotate $minute-duration $steps infinite;
+  }
+
+  &__second {
+    @include positioning;
+
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: $color-sec-hand;
+    margin-left: -0.75vmin;
+    margin-top: 2.1vmin;
+    animation: clock-hand-rotate $second-duration linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__circle {
+    @include positioning;
+
+    width: 5vmin;
+    height: 5vmin;
+    background-color: $color-middle;
+    border-radius: 50%;
+    top: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.stopwatch__minute--speed-up {
+  animation: clock-hand-rotate $speed-up-min-duration $steps infinite;
+}
+
+.stopwatch__second--speed-up {
+  animation: clock-hand-rotate $speed-up-sec-duration linear infinite;
+}
+
+@keyframes clock-hand-rotate {
+  from {
+      transform: rotate(0deg)
+  }
+  to {
+      transform: rotate(360deg)
+  }
+}
+
+
+
