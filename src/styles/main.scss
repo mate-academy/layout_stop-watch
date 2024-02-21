@@ -1,1 +1,75 @@
-// put code here
+@import 'reset';
+
+@mixin align-center {
+  position: absolute;
+  margin: auto;
+  inset: 0;
+}
+
+$minutes-length: 20vmin;
+$minutes-width: 3vmin;
+$seconds-length: 38vmin;
+$seconds-width: 1.5vmin;
+$center-diameter: 5vmin;
+
+body {
+  display: flex;
+  height: 100vh;
+}
+
+.stopwatch {
+  box-sizing: content-box;
+  margin: auto;
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+
+  &__minutes {
+    @include align-center;
+
+    top: -$minutes-length;
+    height: $minutes-length;
+    width: $minutes-width;
+    background-color: #0700ff;
+    animation: clock 3600s steps(60, end) infinite;
+    transform-origin: center $minutes-length;
+  }
+
+  &__seconds {
+    @include align-center;
+
+    top: -$seconds-length;
+    height: $seconds-length;
+    width: $seconds-width;
+    background-color: #2c8000;
+    animation: clock 60s infinite linear;
+    transform-origin: center $seconds-length;
+  }
+
+  &__center {
+    @include align-center;
+
+    height: $center-diameter;
+    width: $center-diameter;
+    background-color: #f6a603;
+    border-radius
+    : 50%;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes {
+      animation-duration: 600s;
+    }
+
+    .stopwatch__seconds {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes clock {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
