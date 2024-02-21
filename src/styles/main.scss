@@ -1,1 +1,72 @@
 // put code here
+@import './variable';
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minut {
+    height: 20vmin;
+    width: 3vmin;
+    background: #0700ff;
+    z-index: -2;
+    position: absolute;
+    left: $watch-center-position-min;
+    bottom: 40vmin;
+
+    animation: roll 3600s steps(60, end) infinite;
+    transform-origin: bottom center;
+  }
+
+  &__seconds {
+    width: 1.5vmin;
+    height: 38vmin;
+    background: #2c8000;
+    z-index: -1;
+    position: absolute;
+    left: $watch-center-position-sec;
+    bottom: 40vmin;
+
+    animation: roll 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    background: #f6a603;
+    border-radius: 50%;
+    position: absolute;
+    left: $watch-center-position;
+    top: $watch-center-position;
+  }
+
+  &--speed-up {
+    .stopwatch__minut {
+      animation-duration: 600s;
+    }
+    .stopwatch__seconds {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
