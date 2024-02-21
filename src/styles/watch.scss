@@ -1,0 +1,75 @@
+.watch {
+  height: $size * 2;
+  width: $size * 2;
+  margin: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 50%;
+  border: 30px groove black;
+  animation: 10s linear infinite none bgcolors;
+  background-color: #aaa;
+
+  &__middle {
+    width: $size * .2;
+    height: $size * .2;
+    position: absolute;
+    top: $size - ($size * .2) / 2;
+    border-radius: 50%;
+    background-color: darkslateblue;
+    z-index: 3;
+    opacity: 0.6;
+  }
+
+  &__big-pointer {
+    width: 1px;
+    height: $size;
+    position: absolute;
+    background-color: red;
+    transform-origin: left bottom;
+    animation: 5s linear infinite none rotation;
+  }
+
+  &__small-pointer {
+    width: 1px;
+    height: $size / 2;
+    top: $size / 2;
+    position: absolute;
+    background-color: darkblue;
+    transform-origin: left bottom;
+    animation: 60s linear infinite none rotation;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+  transform: rotate(360deg);
+  }
+}
+
+@keyframes bgcolors {
+  0% {
+    background-color: #eee;
+  }
+
+  25% {
+    background-color: #aaa;
+  }
+
+  50% {
+    background-color: #000;
+  }
+
+  75% {
+    background-color: #aaa;
+  }
+
+  100% {
+    background-color: #eee;
+  }
+}
