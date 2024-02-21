@@ -1,1 +1,64 @@
-// put code here
+@import "./utils/variables";
+@import "./frames";
+
+body {
+  margin: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  height: $watch-size;
+  width: $watch-size;
+  border-radius: 50%;
+  border: 1vmin dotted $watch-color;
+
+  &__minutes {
+    margin: auto;
+    height: 20vmin;
+    width: 3vmin;
+    position: absolute;
+    inset: 0 0 20vmin;
+
+    background-color: $minutes-color;
+    transform-origin: bottom center;
+    animation: rotate 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    margin: auto;
+    height: 38vmin;
+    width: 1.5vmin;
+    position: absolute;
+    inset: 0 0 38vmin;
+
+    background-color: $seconds-color;
+    animation: rotate 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    margin: auto;
+    height: $center-diameter;
+    width: $center-diameter;
+    position: absolute;
+    inset: 0;
+
+    background-color: $center-color;
+    border-radius: 50%;
+  }
+}
+
+.stopwatch--speed-up {
+  .stopwatch__minutes {
+    animation: rotate 600s steps(60) infinite;
+  }
+
+  .stopwatch__seconds {
+    animation: rotate 10s linear infinite;
+  }
+}
