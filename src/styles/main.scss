@@ -1,1 +1,58 @@
-// put code here
+.body {
+  margin: 0;
+  height: 100vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 10px dotted black;
+  border-radius: 100%;
+  margin: 80px auto;
+  align-items: center;
+}
+
+@keyframes movehand {
+  from {
+      transform: rotate(0deg);
+  }
+
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.hand,
+.minute-hand {
+  background-color: black;
+  width: 10px;
+  position: absolute;
+  left: 50%;
+  transform-origin: center bottom;
+}
+
+.hand {
+  height: 250px;
+  top: 19%;
+  animation: movehand 10s linear infinite;
+}
+
+
+.minute-hand {
+  height: 150px;
+  top: 32%;
+  animation: movehand 600s steps(60, end) infinite;
+}
+
+.dot {
+  background-color: cornflowerblue;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  position: absolute;
+  left: 49.6%;
+  top: 49%;
+}
