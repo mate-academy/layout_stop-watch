@@ -1,5 +1,4 @@
-$big-circle: 80vmin;
-$mini-circle: 5vmin;
+@import 'variables';
 
 body {
   margin: 0;
@@ -11,66 +10,58 @@ body {
 }
 
 .stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: $big-circle;
   height: $big-circle;
   border: 1vmin dotted #000;
   border-radius: 50%;
-}
 
-.mini-circle {
-  position: relative;
-  width: $mini-circle;
-  height: $mini-circle;
-  background-color: #f6a603;
-  border-radius: 50%;
-  z-index: 1;
-  transform: translateX(-($big-circle / 2) - $mini-circle / 2);
-}
+  &__mini-circle {
+    position: relative;
+    width: $mini-circle;
+    height: $mini-circle;
+    background-color: #f6a603;
+    border-radius: 50%;
+    z-index: 1;
+  }
 
-.minutes-hand {
-  position: absolute;
-  width: 20vmin;
-  height: 3vmin;
-  background-color: #0700ff;
-  transform-origin: left;
-  animation: minutes-clock 3600s linear infinite;
+  &__minutes-hand {
+    position: absolute;
+    width: 20vmin;
+    height: 3vmin;
+    background-color: #0700ff;
+    transform-origin: left;
+    animation: clock 3600s linear infinite;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    width: 38vmin;
+    height: 1.5vmin;
+    background-color: #2c8000;
+    transform-origin: left;
+    animation: clock 60s linear infinite;
+  }
 
   &--speed-up {
-    animation-duration:600s;
+    .stopwatch__minutes-hand {
+      animation-duration: 600s;
+    }
+
+    .stopwatch__seconds-hand {
+      animation-duration: 10s;
+    }
   }
 }
 
-.seconds-hand {
-  position: absolute;
-  width: 38vmin;
-  height: 1.5vmin;
-  background-color: #2c8000;
-  transform-origin: left;
-  transform: translate(46%);
-  animation: seconds-clock 60s linear infinite;
-
-  &--speed-up {
-    animation-duration: 10s;
-  }
-}
-
-
-@keyframes seconds-clock {
+@keyframes clock {
   from {
-    transform: translate(46%) rotate(-90deg);
+    transform: translate(50%) rotate(-90deg);
   }
 
   to {
-    transform: translate(46%) rotate(270deg);
-  }
-}
-
-@keyframes minutes-clock {
-  from {
-    transform: translate(43%) rotate(-90deg);
-  }
-
-  to {
-    transform: translate(43%) rotate(270deg);
+    transform: translate(50%) rotate(270deg);
   }
 }
