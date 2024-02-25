@@ -7,6 +7,7 @@
 }
 
 .stopwatch {
+  position: relative;
   height: 80vmin;
   width: 80vmin;
   border: 10px dotted black;
@@ -17,33 +18,32 @@
 
 @keyframes movehand {
   from {
-      transform: rotate(0deg);
+      transform: translateX(50%) rotate(0deg);
   }
 
   to {
-      transform: rotate(360deg);
+      transform: translateX(50%) rotate(360deg);
   }
 }
 
 .hand,
 .minute-hand {
+  position: absolute;
   background-color: black;
   width: 10px;
-  position: absolute;
-  left: 50%;
+  right: 50%;
+  bottom: 50%;
   transform-origin: center bottom;
 }
 
 .hand {
-  height: 250px;
-  top: 20%;
+  height: 25vh;
   animation: movehand 10s linear infinite;
 }
 
 
 .minute-hand {
-  height: 150px;
-  top: 32%;
+  height: 15vh;
   animation: movehand 600s steps(60, end) infinite;
 }
 
@@ -53,6 +53,7 @@
   height: 25px;
   border-radius: 100%;
   position: absolute;
-  left: 49.6%;
-  top: 49%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
