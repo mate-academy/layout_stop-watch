@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  display: flex;
+  border: 1vmin dotted #000;
+  width: $watch-size;
+  height: $watch-size;
+  border-radius: 50%;
+  position: relative;
+
+  &__center {
+    width: $watch-center;
+    height: $watch-center;
+    border-radius: 50%;
+    background-color: $color-circle;
+    position: absolute;
+    left: $watch-center-position;
+    top: $watch-center-position;
+  }
+
+  &__minutes {
+    height: $length-min-hand;
+    width: $width-min-hand;
+    background-color: $color-min-hand;
+    position: absolute;
+    left: $watch-center-position-min;
+    bottom: $watch-size / 2;
+    z-index: -2;
+
+    animation: roll 3600s steps(60, end) infinite;
+    transform-origin: bottom center;
+  }
+
+  &__seconds {
+    height: $length-sec-hand;
+    width: $width-sec-hand;
+    background-color: $color-sec-hand;
+    position: absolute;
+    left: $watch-center-position-sec;
+    bottom: $watch-size / 2;
+    z-index: -1;
+
+    animation: roll 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes {
+      animation-duration: 600s;
+    }
+    .stopwatch__seconds {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
