@@ -33,8 +33,8 @@ body {
     bottom: $watch-size / 2;
     z-index: -2;
 
-    animation: roll 3600s steps(60, end) infinite;
     transform-origin: bottom center;
+    animation: rotate 3600s steps(60) infinite;
   }
 
   &__seconds {
@@ -46,21 +46,21 @@ body {
     bottom: $watch-size / 2;
     z-index: -1;
 
-    animation: roll 60s linear infinite;
+    animation: rotate 60s linear infinite;
     transform-origin: bottom center;
   }
 
   &--speed-up {
     .stopwatch__minutes {
-      animation-duration: 600s;
+      animation: rotate 600s steps(60) infinite;
     }
     .stopwatch__seconds {
-      animation-duration: 10s;
+      animation: rotate 10s linear infinite;
     }
   }
 }
 
-@keyframes roll {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
