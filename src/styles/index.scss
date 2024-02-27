@@ -16,14 +16,14 @@ html {
   position: relative;
 
   &__minutes-hand {
+    position: absolute;
+    top: 25%;
+    left: 48%;
     width: 3vmin;
     height: 20vmin;
     background-color: #0700ff;
-    position: absolute;
-    top: 20vmin;
-    left: calc(50% - 1.5vmin);
-    transform-origin: 50% 100%;
-    animation: rotate 600s steps(60) infinite;
+    animation: watch-anim 600s steps(60) infinite;
+    transform-origin: bottom;
   }
 
   &__seconds-hand {
