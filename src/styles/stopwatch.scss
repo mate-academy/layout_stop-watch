@@ -1,0 +1,73 @@
+.stopwatch {
+  height: $general-size * 2;
+  width: $general-size * 2;
+  margin: 0;
+  position: relative;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+  background-color: red;
+
+  &__middle {
+    width: $general-size  / 8;
+    height: $general-size  / 8;
+    position: absolute;
+    top: $general-size - $general-size / 16;
+    left: $general-size - $general-size / 16;
+    border-radius: 50%;
+    background-color: #f6a603;
+    z-index: 2;
+    opacity: 0.6;
+  }
+
+  &__big-pointer {
+    width: $hand-width / 2;
+    height: $general-size * .95;
+    position: absolute;
+    bottom: $general-size;
+    left: $general-size - $hand-width / 4;
+    background-color: #0700ff;
+    transform-origin: bottom center;
+    z-index: 1;
+    animation: 60s linear infinite none sec-rotation;
+  }
+
+  &__small-pointer {
+    width: $hand-width;
+    height: $general-size / 2;
+    position: absolute;
+    bottom: $general-size;
+    left: $general-size - $hand-width / 2;
+    background-color: #2c8000;
+    transform-origin: center bottom;
+    animation: 3600 step-end infinite none min-rotation;
+  }
+
+  &--speed-up {
+    & :nth-child(2) {
+      animation: 600s step-end infinite none min-rotation;
+    }
+
+    & :nth-child(3) {
+      animation: 10s linear infinite none sec-rotation;
+    }
+  }
+}
+
+@keyframes sec-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes min-rotation {
+
+  @for $i from 0 through 60 {
+    #{($i / 60) * 100}% {
+      transform: rotate(#{$i * 6}deg)
+    }
+  }
+}
+
