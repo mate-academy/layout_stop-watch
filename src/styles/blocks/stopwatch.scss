@@ -15,8 +15,10 @@
 
   &__minutes-hand {
     position: absolute;
-    left: 40vmin;
-    bottom: 40vmin;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+
     height: 20vmin;
     width: 3vmin;
     background-color: #0700ff;
@@ -31,8 +33,9 @@
 
   &__seconds-hand {
     position: absolute;
-    left: 40vmin;
-    bottom: 40vmin;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     height: 38vmin;
     width: 1.5vmin;
@@ -48,8 +51,9 @@
 
   &__circle {
     position: absolute;
-    left: 38.5vmin;
-    bottom: 38.5vmin;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
 
     width: 5vmin;
