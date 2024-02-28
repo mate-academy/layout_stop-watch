@@ -5,7 +5,6 @@
   position: relative;
   border-radius: 50%;
   border: 1vmin dotted #000;
-  background-color: red;
 
   &__middle {
     width: $general-size  / 8;
@@ -16,7 +15,6 @@
     border-radius: 50%;
     background-color: #f6a603;
     z-index: 2;
-    opacity: 0.6;
   }
 
   &__big-pointer {
@@ -25,9 +23,8 @@
     position: absolute;
     bottom: $general-size;
     left: $general-size - $hand-width / 4;
-    background-color: #0700ff;
+    background-color: #2c8000;
     transform-origin: bottom center;
-    z-index: 1;
     animation: 60s linear infinite none sec-rotation;
   }
 
@@ -37,9 +34,9 @@
     position: absolute;
     bottom: $general-size;
     left: $general-size - $hand-width / 2;
-    background-color: #2c8000;
+    background-color: #0700ff;
     transform-origin: center bottom;
-    animation: 3600 step-end infinite none min-rotation;
+    animation: 3600s step-end infinite none min-rotation;
   }
 
   &--speed-up {
