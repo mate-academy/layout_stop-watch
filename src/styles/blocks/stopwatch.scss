@@ -12,6 +12,16 @@
 
     border: 1vmin dotted #000;
     border-radius: 50%;
+
+    &--speed-up {
+      .stopwatch__minutes-hand {
+        animation: rotation 600s steps(60) infinite forwards;
+      }
+
+      .stopwatch__seconds-hand {
+          animation: rotation 10s linear infinite forwards;
+      }
+    }
   }
 
   &__minutes-hand {
@@ -24,10 +34,6 @@
 
     transform-origin: bottom;
     animation: rotation 3600s steps(60) infinite forwards;
-
-    &--speed-up {
-      animation: rotation 600s steps(60) infinite forwards;
-    }
   }
 
   &__seconds-hand {
@@ -41,10 +47,6 @@
 
     transform-origin: bottom;
     animation: rotation 60s linear infinite forwards;
-
-    &--speed-up {
-      animation: rotation 10s linear infinite forwards;
-    }
   }
 
   &__circle {
