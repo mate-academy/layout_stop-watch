@@ -1,3 +1,93 @@
-body {
+* {
   margin: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.stopwatch {
+ position: relative;
+ width: 80vmin;
+ height: 80vmin;
+ border: 1vmin dashed #000;
+ border-radius: 50%;
+
+ &__hand {
+  &--minutes {
+    position: absolute;
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    left: 49%;
+    top: 21%;
+    transform-origin: center 100%;
+    animation: move 3600s linear 60;
+    animation-timing-function: steps(60, end);
+    z-index: 2;
+  }
+
+  &--seconds {
+    position: absolute;
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    left: 49%;
+    top: 0;
+    transform-origin: center 100%;
+    animation: move 60s linear 60;
+    z-index: 1;
+   }
+ }
+
+ &__middle-circle {
+  position: absolute;
+  top: 45%;
+  left: 47.5%;
+  width: 5vmin;
+  height: 5vmin;
+  background-color: #f6a603;
+  border-radius: 50%;
+  z-index: 3;
+ }
+
+ &--speed-up {
+  .stopwatch__hand--minutes {
+  position: absolute;
+  width: 3vmin;
+  height: 20vmin;
+  background-color: #0700ff;
+  left: 49%;
+  top: 22%;
+  transform-origin: center 100%;
+  animation: move 600s linear 60;
+  animation-timing-function: steps(60, end);
+  z-index: 2;
+  }
+
+  .stopwatch__hand--seconds {
+    position: absolute;
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    left: 49%;
+    top: 0;
+    transform-origin: center 100%;
+    animation: move 10s linear 60;
+    z-index: 1;
+  }
+ }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
