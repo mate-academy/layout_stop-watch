@@ -1,7 +1,9 @@
 $stopwatch-size: 80vmin;
 $yellow-dot-size: 5vmin;
-$minute-pointer-height: 1.5vmin;
-$minute-pointer-width: 38vmin;
+$seconds-pointer-height: 1.5vmin;
+$seconds-pointer-width: 38vmin;
+$minutes-pointer-height: 3vmin;
+$minutes-pointer-width: 20vmin;
 
 body {
   display: flex;
@@ -33,32 +35,32 @@ body {
     border-radius: 50%;
   }
 
-  &__minute-pointer {
+  &__seconds-pointer {
     position: absolute;
     z-index: 1;
     box-sizing: border-box;
-    height: $minute-pointer-height;
-    width: $minute-pointer-width;
+    height: $seconds-pointer-height;
+    width: $seconds-pointer-width;
     background-color: #2c8000;
     margin-inline: $stopwatch-size / 40;
-    animation: minute-pointer 10s infinite linear;
+    animation: rotate-anim 60s infinite linear;
     transform-origin: 100%;
   }
 
-  &__hour-pointer {
+  &__minutes-pointer {
     position: absolute;
     z-index: 0;
     box-sizing: border-box;
-    height: $stopwatch-size / 27;
-    width: $stopwatch-size / 4;
+    height: $minutes-pointer-height;
+    width: $minutes-pointer-width;
     background-color: #0700ff;
     margin-inline: $stopwatch-size / 4;
-    animation: hour-pointer 2000s infinite linear;
+    animation: rotate-anim 3600s steps(60) infinite;
     transform-origin: 100%;
   }
 }
 
-@keyframes minute-pointer {
+@keyframes rotate-anim {
   from {
     transform: rotate(90deg);
   }
@@ -68,12 +70,12 @@ body {
   }
 }
 
-@keyframes hour-pointer {
-  from {
-    transform: rotate(90deg);
+.stopwatch--speed-up {
+  .stopwatch__minutes-pointer {
+    animation: rotate-anim 600s steps(60) infinite;
   }
 
-  to {
-    transform: rotate(450deg);
+  .stopwatch__seconds-pointer {
+    animation: rotate-anim 10s linear infinite;
   }
 }
