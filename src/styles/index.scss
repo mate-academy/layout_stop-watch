@@ -1,3 +1,74 @@
 body {
+  position: relative;
   margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 10vmin;
+  width: 80vmin;
+  height: 80vmin;
+  background-color: white;
+  border: dotted 1vmin black;
+  box-sizing: border-box;
+  border-radius: 50%;
+
+  &__center {
+    box-sizing: border-box;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 37.5vmin;
+    justify-content: center;
+    height: 5vmin;
+    width: 5vmin;
+    border: solid 1vmin #f6a603;
+    border-radius: 50%;
+    background-color: #f6a603;
+    z-index: 1;
+  }
+
+  &__minute-hand {
+    display: flex;
+    position: absolute;
+    bottom: 38vmin;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+    transform-origin: center 100%;
+    animation: anim infinite steps(60);
+    animation-duration: 3600s;
+  }
+
+  &--speed-up .stop-watch__minute-hand {
+    animation: anim infinite steps(10);
+    animation-duration: 600s;
+  }
+
+  &__seconds-hand {
+    display: flex;
+    position: absolute;
+    bottom: 39vmin;
+    height: 37vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+    transform-origin: center 100%;
+    animation: anim infinite linear;
+    animation-duration: 60s;
+  }
+
+  &--speed-up .stop-watch__seconds-hand {
+    animation: anim infinite linear;
+    animation-duration: 10s;
+  }
+
+  @keyframes anim {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
