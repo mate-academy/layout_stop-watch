@@ -1,3 +1,74 @@
-body {
+$width: 80vmin;
+$height: 80vmin;
+$borderWidth: 1vmin;
+$borderColor: #000;
+$minutesHandHeight: 20vmin;
+$minutesHandWidth: 3vmin;
+$minutesBackGroundColor: #0700ff;
+$secondsHandHeight: 38vmin;
+$secondsHandWidth: 1.5vmin;
+$secondsBackGroundColor: #2c8000;
+$watchCenterDiametr: 5vmin;
+$watchCenterColor: #f6a603;
+$startingRotation: 180deg;
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.body {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .watch {
+    position: relative;
+    width: $width;
+    height: $height;
+    border: $borderWidth dotted $borderColor;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__center {
+      position: absolute;
+      width: $watchCenterDiametr;
+      height: $watchCenterDiametr;
+      background-color: $watchCenterColor;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    &__minute {
+      position: absolute;
+      width: $minutesHandWidth;
+      height: $minutesHandHeight;
+      background-color: $minutesBackGroundColor;
+      transform: rotate($startingRotation);
+      top: 20vmin;
+      animation: rotation 3600s steps(60) infinite;
+      transform-origin: 50% 100%;
+    }
+
+    &__seconds {
+      position: absolute;
+      width: $secondsHandWidth;
+      height: $secondsHandHeight;
+      background-color: $secondsBackGroundColor;
+      transform: rotate($startingRotation);
+      top: 2vmin;
+      animation: rotation 60s linear infinite;
+      transform-origin: 50% 100%;
+    }
+  }
 }
