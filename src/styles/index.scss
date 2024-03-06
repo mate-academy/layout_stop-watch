@@ -20,6 +20,7 @@ $startingRotation: 180deg;
   height: 100vh;
 
   .watch {
+    position: relative;
     width: $width;
     height: $height;
     border: $borderWidth dotted $borderColor;
@@ -30,6 +31,7 @@ $startingRotation: 180deg;
     align-items: center;
 
     &__center {
+      position: absolute;
       width: $watchCenterDiametr;
       height: $watchCenterDiametr;
       background-color: $watchCenterColor;
@@ -38,6 +40,7 @@ $startingRotation: 180deg;
     }
 
     &__minute {
+      position: absolute;
       width: $minutesHandWidth;
       height: $minutesHandHeight;
       background-color: $minutesBackGroundColor;
@@ -45,6 +48,7 @@ $startingRotation: 180deg;
     }
 
     &__seconds {
+      position: absolute;
       width: $secondsHandWidth;
       height: $secondsHandHeight;
       background-color: $secondsBackGroundColor;
