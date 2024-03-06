@@ -12,6 +12,26 @@ $watchCenterDiametr: 5vmin;
 $watchCenterColor: #f6a603;
 $startingRotation: 180deg;
 
+@keyframes rotate-seconds {
+  0% {
+    transform: rotate($startingRotation);
+  }
+
+  100% {
+    transform: rotate(calc(6 * 1turn + $startingRotation));
+  }
+}
+
+@keyframes rotate-minutes {
+  0% {
+    transform: rotate($startingRotation);
+  }
+
+  100% {
+    transform: rotate(calc(60 * 1turn + $startingRotation));
+  }
+}
+
 .body {
   margin: 0;
   display: flex;
@@ -45,6 +65,9 @@ $startingRotation: 180deg;
       height: $minutesHandHeight;
       background-color: $minutesBackGroundColor;
       transform: rotate($startingRotation);
+      top: 20vmin;
+      animation: rotate-minutes 60s steps(60) infinite;
+      transform-origin: 50% 50%;
     }
 
     &__seconds {
@@ -53,6 +76,9 @@ $startingRotation: 180deg;
       height: $secondsHandHeight;
       background-color: $secondsBackGroundColor;
       transform: rotate($startingRotation);
+      top: 2vmin;
+      animation: rotate-seconds 60s linear infinite;
+      transform-origin: 50% 100%;
     }
   }
 }
