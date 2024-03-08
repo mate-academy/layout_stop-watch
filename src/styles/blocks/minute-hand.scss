@@ -1,0 +1,23 @@
+.minute-hand {
+  position: absolute;
+  bottom: 50%;
+  left: 48%;
+  height: 20vmin;
+  width: 3vmin;
+  background-color: #0700ff;
+  transform-origin: bottom;
+  animation: minute 3600s steps(60) infinite;
+}
+
+.minute-hand--speed-up {
+  animation: minute 600s steps(60) infinite;
+}
+
+@keyframes minute {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
