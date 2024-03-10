@@ -1,3 +1,79 @@
+@import './variables';
+@import './animations';
+
 body {
   margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  width: $watch-size;
+  height: $watch-size;
+  align-items: center;
+  justify-content: center;
+
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minutes-hand {
+    position: absolute;
+    height: 20vmin;
+    width: 3vmin;
+    bottom: 50%;
+    background-color: $minutes-color;
+
+    transform-origin: bottom;
+    animation: rotate-hands 3600s steps(60) infinite;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    z-index: 1;
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: $seconds-color;
+    bottom: 50%;
+
+    transform-origin: bottom;
+    animation: rotate-hands 60s linear infinite;
+  }
+
+  // &--speed-up {
+  //   .stopwatch__seconds-hand {
+  //     animation-duration: 10s;
+  //   }
+
+  //   .stopwatch__minutes-hand {
+  //     animation-duration: 600s;
+  //   }
+  // }
+
+  &::after {
+    content: '';
+    width: 5vmin;
+    height: 5vmin;
+    background-color: $center-color;
+    border-radius: 50%;
+    z-index: 2;
+  }
+}
+
+@for $speed from 0 through 60 {
+  .stopwatch--speed-up-#{$speed} {
+    .stopwatch__seconds-hand {
+      animation-duration: #{$speed}s;
+    }
+
+    .stopwatch__minutes-hand {
+      animation-duration: #{$speed * 60}s;
+    }
+  }
 }
