@@ -20,5 +20,5 @@ module.exports = async (page, scenario, vp) => {
   });
 
   await page.waitForSelector('.stopwatch--speed-up');
-  await page.waitForTimeout(postDOMChangeWait);
+  await new Promise(resolve => setTimeout(resolve, postDOMChangeWait));
 };
