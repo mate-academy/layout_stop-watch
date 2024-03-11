@@ -1,26 +1,5 @@
-$stopwatch-size: 80vmin;
-$stopwatch-centre-size: 5vmin;
-$centre-color: #f6a603;
-$minutes-hand-color: #0700ff;
-$second-hand-color: #2c8000;
-
-@mixin position-absolute-centre {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-@mixin position-hands-start {
-  transform: translate(-50%, -100%);
-
-  @include position-absolute-centre;
-}
-
-@mixin position-flex-centre {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@import './variables';
+@import './mixins';
 
 body {
   margin: 0;
