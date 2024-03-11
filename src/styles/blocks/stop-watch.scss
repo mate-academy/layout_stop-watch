@@ -21,3 +21,20 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
+
+.stopwatch--speed-up .stopwatch__minute-hand {
+  animation: hand-animation 600s steps(60) infinite;
+}
+
+.stopwatch--speed-up .stopwatch__second-hand {
+  animation: hand-animation 10s linear infinite;
+}
+
+@keyframes hand-animation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
