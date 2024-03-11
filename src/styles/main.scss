@@ -1,0 +1,62 @@
+@import 'mixins';
+@import 'variables';
+
+body {
+  @include content-centering;
+
+  margin: 0;
+  height: 100vh;
+}
+
+.stopwatch {
+  @include content-centering;
+
+  position: relative;
+  height: $watchSize;
+  width: $watchSize;
+  border: 1vmin dotted #000;
+  border-radius: $border-radius;
+
+  &__minutes-hand {
+    position: absolute;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+    bottom: $positionHands;
+    transform-origin: bottom;
+    animation: move-minutes 3600s steps(60) infinite;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+    bottom: $positionHands;
+    z-index: 1;
+    transform-origin: bottom;
+    animation: move-seconds 60s linear infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    height: $circleSize;
+    width: $circleSize;
+    background-color: #f6a603;
+    border-radius: $border-radius;
+    z-index: 2;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes-hand {
+      animation: move-minutes 600s steps(60) infinite;
+    }
+
+    .stopwatch__seconds-hand {
+      animation: move-seconds 10s linear infinite;
+    }
+  }
+}
+
+@include keyframes-animation(move-seconds);
+@include keyframes-animation(move-minutes);

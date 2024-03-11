@@ -1,0 +1,17 @@
+@mixin keyframes-animation($name-animation) {
+  @keyframes #{$name-animation} {
+    0% {
+      transform: rotateX(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@mixin content-centering() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
