@@ -1,5 +1,22 @@
 @import './variables';
-@import './mixins';
+
+@mixin position-absolute-centre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@mixin position-hands-start {
+  transform: translate(-50%, -100%);
+
+  @include position-absolute-centre;
+}
+
+@mixin position-flex-centre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 body {
   margin: 0;
