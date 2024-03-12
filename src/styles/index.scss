@@ -23,7 +23,7 @@ html {
     top: calc((100% - 3vmin) / 2);
     left: calc((100% - 3vmin) / 2);
     animation: minute-hand-animation steps(60) infinite;
-    transform-origin: 6px 6px;
+    transform-origin: 1.5vmin center;
   }
 
   &__second-hand {
@@ -34,7 +34,7 @@ html {
     top: calc((100% - 1.5vmin) / 2);
     left: calc((100% - 1.5vmin) / 2);
     animation: second-hand-animation linear infinite;
-    transform-origin: 5px;
+    transform-origin: 0.75vmin center;
   }
 
   &__center-circle {
@@ -51,7 +51,7 @@ html {
 
 @keyframes second-hand-animation {
   from {
-    transform: rotate(-52deg);
+    transform: rotate(-90deg);
   }
   to {
     transform: rotate(270deg);
