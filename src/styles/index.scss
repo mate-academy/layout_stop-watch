@@ -1,3 +1,76 @@
-body {
+body,
+html {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  &__minute-hand {
+    width: 20vmin;
+    height: 3vmin;
+    background-color: #0700ff;
+    position: absolute;
+    top: calc((100% - 3vmin) / 2);
+    left: calc((100% - 3vmin) / 2);
+    animation: minute-hand-animation steps(60) infinite;
+    transform-origin: 6px 6px;
+  }
+
+  &__second-hand {
+    width: 38vmin;
+    height: 1.5vmin;
+    background-color: #2c8000;
+    position: absolute;
+    top: calc((100% - 1.5vmin) / 2);
+    left: calc((100% - 1.5vmin) / 2);
+    animation: second-hand-animation linear infinite;
+    transform-origin: 5px;
+  }
+
+  &__center-circle {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    top: calc((100% - 5vmin) / 2);
+    left: calc((100% - 5vmin) / 2);
+  }
+}
+
+@keyframes second-hand-animation {
+  from {
+    transform: rotate(-52deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes minute-hand-animation {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+.stopwatch--speed-up.stopwatch .stopwatch__second-hand {
+  animation-duration: 10s;
+}
+
+.stopwatch--speed-up.stopwatch .stopwatch__minute-hand {
+  animation-duration: 600s;
 }
