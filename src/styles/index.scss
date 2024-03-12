@@ -14,27 +14,28 @@ html {
   border: 1vmin dotted #000;
   border-radius: 50%;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__minute-hand {
-    width: 20vmin;
-    height: 3vmin;
+    width: 3vmin;
+    height: 20vmin;
     background-color: #0700ff;
     position: absolute;
-    top: calc((100% - 3vmin) / 2);
-    left: calc((100% - 3vmin) / 2);
+    bottom: 50%;
     animation: minute-hand-animation steps(60) infinite;
-    transform-origin: 1.5vmin center;
+    transform-origin: 0 bottom;
   }
 
   &__second-hand {
-    width: 38vmin;
-    height: 1.5vmin;
+    width: 1.5vmin;
+    height: 38vmin;
     background-color: #2c8000;
     position: absolute;
-    top: calc((100% - 1.5vmin) / 2);
-    left: calc((100% - 1.5vmin) / 2);
+    bottom: 50%;
     animation: second-hand-animation linear infinite;
-    transform-origin: 0.75vmin center;
+    transform-origin: 0 bottom;
   }
 
   &__center-circle {
@@ -51,19 +52,19 @@ html {
 
 @keyframes second-hand-animation {
   from {
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(270deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes minute-hand-animation {
   from {
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(270deg);
+    transform: rotate(360deg);
   }
 }
 
