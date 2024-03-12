@@ -1,0 +1,82 @@
+.page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+
+  border: $border-size $border-color dotted;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+
+    position: absolute;
+
+    background-color: $center-color;
+
+    border-radius: 50%;
+
+    z-index: 1;
+  }
+
+  &__hand {
+    position: absolute;
+
+    animation-name: turn;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+    bottom: 50%;
+
+    &--second {
+      width: $second-hand-width;
+      height: $second-hand-length;
+
+      background-color: $second-hand-color;
+
+      animation-duration: $second-hand-duration;
+    }
+
+    &--minute {
+      width: $minute-hand-width;
+      height: $minute-hand-length;
+
+      background-color: $minute-hand-color;
+
+      animation-duration: $minute-hand-duration;
+    }
+  }
+
+  &--speed-up {
+    .stopwatch__hand--second {
+      animation-duration: $second-hand-duration-fast;
+    }
+
+    .stopwatch__hand--minute {
+      animation-duration: $minute-hand-duration-fast;
+    }
+  }
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
