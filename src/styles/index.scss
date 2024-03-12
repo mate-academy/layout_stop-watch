@@ -1,3 +1,86 @@
+$watch-size: 80vmin;
+$minute-hand-length: 20vmin;
+$minute-hand-width: 3vmin;
+$second-hand-length: 38vmin;
+$second-hand-width: 1.5vmin;
+$center-circle-diameter: 5vmin;
+
+@mixin animation {
+  transform-origin: bottom;
+  animation-name: move-hand;
+  animation-iteration-count: infinite;
+}
+
+@mixin hand-position {
+  position: absolute;
+  bottom: 50%;
+}
+
+@keyframes move-hand {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
+}
+
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: $watch-size;
+  height: $watch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minute-hand {
+    height: $minute-hand-length;
+    width: $minute-hand-width;
+    background-color: #0700ff;
+    animation-duration: 3600s;
+    animation-timing-function: steps(60, end);
+
+    @include hand-position;
+    @include animation;
+  }
+
+  &__second-hand {
+    height: $second-hand-length;
+    width: $second-hand-width;
+    background-color: #2c8000;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+
+    @include hand-position;
+    @include animation;
+  }
+
+  &__center-circle {
+    height: $center-circle-diameter;
+    width: $center-circle-diameter;
+    border-radius: 50%;
+    background-color: #f6a603;
+    position: fixed;
+  }
+
+  &--speed-up {
+    .stopwatch__second-hand {
+      animation-duration: 10s;
+    }
+
+    .stopwatch__minute-hand {
+      animation-duration: 600s;
+    }
+  }
 }
