@@ -4,7 +4,7 @@
   border: 1vmin dotted #000;
   border-radius: 50%;
   position: relative;
-  
+
   @include block-centering;
 
   &__minute-hand {
@@ -13,7 +13,7 @@
     background-color: $minute-hand-color;
     position: absolute;
     bottom: 50%;
-    animation: minute-hand-animation steps(60) infinite;
+    animation: hand-animation steps(60) infinite;
     transform-origin: bottom;
   }
 
@@ -23,7 +23,7 @@
     background-color: $second-hand-color;
     position: absolute;
     bottom: 50%;
-    animation: second-hand-animation linear infinite;
+    animation: hand-animation linear infinite;
     transform-origin: bottom;
   }
 
@@ -39,16 +39,7 @@
   }
 }
 
-@keyframes second-hand-animation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minute-hand-animation {
+@keyframes hand-animation {
   from {
     transform: rotate(0deg);
   }
