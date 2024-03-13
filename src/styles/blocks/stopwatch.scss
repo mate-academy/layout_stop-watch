@@ -1,0 +1,63 @@
+.stopwatch {
+  @include center-content;
+  @include set-dimensions(80vmin, 80vmin);
+
+  border: 1vmin dotted $stopwatch-border-color;
+  border-radius: 50%;
+
+  @keyframes circular-motion {
+    from {
+      transform: rotate(-90deg);
+    }
+
+    to {
+      transform: rotate(270deg);
+    }
+  }
+
+  &__minute-hand {
+    @include customize-watch-parts(20vmin, 3vmin, $minute-hand-color);
+    @include set-animation(
+      circular-motion,
+      $seconds-in-hour,
+      steps(60, end),
+      infinite
+    );
+  }
+
+  &__second-hand {
+    @include customize-watch-parts(38vmin, 1.5vmin, $second-hand-color);
+    @include set-animation(
+      circular-motion,
+      $seconds-in-minute,
+      linear,
+      infinite
+    );
+  }
+
+  &__connecting-circle {
+    @include customize-watch-parts(5vmin, 5vmin, $connecting-circle-color);
+
+    border-radius: 50%;
+  }
+
+  &__minute-hand,
+  &__second-hand,
+  &__connecting-circle {
+    position: absolute;
+  }
+
+  &__minute-hand,
+  &__second-hand {
+    left: 50%;
+    transform-origin: left;
+  }
+
+  &--speed-up &__minute-hand {
+    animation-duration: get-minutes(10);
+  }
+
+  &--speed-up &__second-hand {
+    animation-duration: 10s;
+  }
+}
