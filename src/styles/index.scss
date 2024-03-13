@@ -1,3 +1,75 @@
-body {
+@import 'variables';
+
+@mixin keyframes-rotate($name) {
+  @keyframes #{$name} {
+    from {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    to {
+      transform: translateX(-50%) rotate(360deg);
+    }
+  }
+}
+
+body,
+html {
+  height: 100%;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  width: $size-stopwatch;
+  height: $size-stopwatch;
+  border: 1vmin dotted $color-border;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    transform: translateX(-50%) rotate(0deg);
+
+    &--minute {
+      height: $length-minute-hand;
+      width: $width-minute-hand;
+      background-color: $color-minute-hand;
+      animation: minuteHand $duration-minute-hand steps(60, end) infinite;
+
+      @include keyframes-rotate(minuteHand);
+    }
+
+    &--second {
+      height: $length-second-hand;
+      width: $width-second-hand;
+      background-color: $color-second-hand;
+      animation: secondHand $duration-normal linear infinite;
+
+      @include keyframes-rotate(secondHand);
+    }
+  }
+
+  &__center {
+    position: absolute;
+    width: $size-center;
+    height: $size-center;
+    background-color: $color-center;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--speed-up {
+    .stopwatch__hand--second {
+      animation-duration: $duration-speed-up;
+    }
+    .stopwatch__hand--minute {
+      animation-duration: $duration-minute-hand-speed-up;
+    }
+  }
 }
