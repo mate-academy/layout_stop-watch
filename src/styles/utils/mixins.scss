@@ -1,0 +1,23 @@
+@mixin center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin set-dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin customize-watch-parts($width, $height, $color) {
+  @include set-dimensions($width, $height);
+
+  background-color: $color;
+}
+
+@mixin set-animation($name, $duration, $time-func, $iterations) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $time-func;
+  animation-iteration-count: $iterations;
+}
