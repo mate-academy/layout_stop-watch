@@ -1,0 +1,18 @@
+@mixin spin($length, $duration) {
+  width: $length;
+  transform-origin: left;
+  transform: translateX(#{$length / 2}) rotate(-90deg);
+  animation-name: spin-#{$length}-#{$duration};
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+
+  @keyframes spin-#{$length}-#{$duration} {
+    0% {
+      transform: translateX(#{$length / 2}) rotate(-90deg);
+    }
+
+    100% {
+      transform: translateX(#{$length / 2}) rotate(270deg);
+    }
+  }
+}
