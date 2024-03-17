@@ -34,7 +34,7 @@ body {
   transform: translate(-50%, -100%) rotate(360deg);
   transform-origin: 50% 100%;
   z-index: -2;
-  animation: rotate-minute-hand 3600s steps(60) infinite;
+  animation: rotate-second-hand 3600s steps(60) infinite;
 }
 
 .seconds-hand {
@@ -59,16 +59,6 @@ body {
 }
 
 @keyframes rotate-second-hand {
-  from {
-    transform: translate(-50%, -100%) rotate(0deg);
-  }
-
-  to {
-    transform: translate(-50%, -100%) rotate(360deg);
-  }
-}
-
-@keyframes rotate-minute-hand {
   from {
     transform: translate(-50%, -100%) rotate(0deg);
   }
