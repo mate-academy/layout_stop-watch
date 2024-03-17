@@ -1,4 +1,4 @@
-# Stopwatch task
+getchard# Stopwatch task
 
 Create a working stopwatch with minute and second hands using **only CSS animations**.
 - Use reference image below to create a stopwatch:
@@ -28,7 +28,7 @@ In addition to the basic functionality create a BEM modifier called `speed-up` f
 ## Checklist
 
 ❗️ Replace `<your_account>` with your Github username and copy the links to `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_stop-watch/)
+- [DEMO LINK](https://getchard.github.io/layout_stop-watch/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
