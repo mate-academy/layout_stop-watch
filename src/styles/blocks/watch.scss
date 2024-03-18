@@ -5,32 +5,35 @@
   border-radius: 50%;
 
   position: relative;
+
   &__min-arrow {
     height: 20vmin;
-    width: $min-arrow__width;
+    width: $min-arrow--width;
     background-color: #0700ff;
 
     position: absolute;
-    top: calc(50% - $min-arrow__height);
-    left: calc(50% - ($min-arrow__width / 2));
+    top: calc(50% - $min-arrow--height);
+    left: calc(50% - ($min-arrow--width / 2));
 
     transform-origin: bottom center;
 
     @include rotate(600s, steps(60), infinite);
   }
+
   &__sec-arrow {
     height: 38vmin;
-    width: $sec-arrow__width;
+    width: $sec-arrow--width;
     background-color: #2c8000;
 
     position: absolute;
-    top: calc(50% - $sec-arrow__height);
-    left: calc(50% - ($sec-arrow__width / 2));
+    top: calc(50% - $sec-arrow--height);
+    left: calc(50% - ($sec-arrow--width / 2));
 
     transform-origin: bottom center;
 
     @include rotate(10s, linear, infinite);
   }
+
   &__center {
     height: 5vmin;
     width: 5vmin;
