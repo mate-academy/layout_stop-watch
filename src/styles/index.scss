@@ -4,6 +4,9 @@ $second-height: 38vmin;
 body {
   height: 100vh;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .stopwatch {
@@ -11,7 +14,6 @@ body {
   width: 80vmin;
   border: 1vmin dotted #000;
   border-radius: 100%;
-  box-sizing: border-box;
   position: relative;
 
   &__face {
@@ -25,21 +27,22 @@ body {
 
   &__hand {
     position: absolute;
+    transform-origin: bottom center;
 
     &--minute {
       height: $minute-height;
       width: 3vmin;
       background-color: #0700ff;
-      transform-origin: bottom center;
-      animation: rotate-keyframe 3600s steps(60) infinite;
+      animation: rotate-minute-keyframe 3600s steps(60) infinite;
+      top: calc(50% - #{$minute-height});
     }
 
     &--second {
       height: $second-height;
       width: 1.5vmin;
       background-color: #2c8000;
-      transform-origin: bottom center;
-      animation: rotate-keyframe 60s linear infinite;
+      animation: rotate-second-keyframe 60s linear infinite;
+      top: calc(50% - #{$second-height});
     }
   }
 
@@ -49,10 +52,29 @@ body {
     border-radius: 100%;
     background-color: #f6a603;
     position: absolute;
+    top: calc(50% - 2.5vmin);
+    left: calc(50% - 2.5vmin);
   }
 }
 
-@keyframes rotate-keyframe {
+.stopwatch--speed-up .stopwatch__hand--minute {
+  animation-duration: 600s;
+}
+
+.stopwatch--speed-up .stopwatch__hand--second {
+  animation-duration: 10s;
+}
+
+@keyframes rotate-minute-keyframe {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-second-keyframe {
   from {
     transform: rotate(0deg);
   }
