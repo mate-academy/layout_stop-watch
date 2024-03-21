@@ -1,0 +1,67 @@
+@use '../utils/variables.scss' as *;
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $width-stopwatch;
+  height: $height-stopwatch;
+  border: dotted 1vmin $border-color-stopwatch;
+  border-radius: 50%;
+
+  &__minutes-hand {
+    content: '';
+    display: block;
+    position: absolute;
+
+    border-top: solid 20vmin $minutes-hand-color;
+    width: 3vmin;
+    top: 20vmin;
+
+    transform-origin: bottom;
+    animation: move 3600s steps(60) 0s infinite normal none;
+
+    &--speed-up {
+      animation-duration: 600s;
+    }
+  }
+
+  &__seconds-hand {
+    content: '';
+    display: block;
+    position: absolute;
+
+    border-top: solid 38vmin $seconds-hand-color;
+    width: 1.5vmin;
+    top: 2vmin;
+
+    transform-origin: bottom;
+    animation: move 60s linear 0s infinite normal none;
+
+    &--speed-up {
+      animation-duration: 10s;
+    }
+  }
+
+  &__center {
+    content: '';
+    display: block;
+    position: absolute;
+
+    border-top: solid 5vmin $center-color;
+    border-radius: 50%;
+    width: 5vmin;
+  }
+}
