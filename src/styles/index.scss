@@ -6,8 +6,7 @@ body {
   justify-content: center;
 }
 
-
-.time {
+.stopwatch {
   position: relative;
   display: flex;
   align-items: center;
@@ -16,7 +15,7 @@ body {
   width: 80vmin;
   height: 80vmin;
 
-  border: 1vmin dashed #000;
+  border: 1vmin dotted #000;
   border-radius: 100%;
 
   &__minutes {
@@ -24,24 +23,11 @@ body {
     height: 20vmin;
     width: 3vmin;
 
-    animation: move-seconds 3600s steps(60) infinite;
+    animation: move 3600s steps(60) infinite;
     transform-origin: bottom;
 
     background-color: #0700ff;
     z-index: 0;
-
-
-    &--speed-up {
-      position: absolute;
-      height: 20vmin;
-      width: 3vmin;
-
-      animation: move-seconds 600s steps(60) infinite;
-      transform-origin: bottom;
-
-      background-color: #0700ff;
-      z-index: 0;
-    }
   }
 
   &__seconds {
@@ -49,23 +35,11 @@ body {
     height: 38vmin;
     width: 1.5vmin;
 
-    animation: move-seconds 60s infinite linear;
+    animation: move 60s infinite linear;
     transform-origin: bottom;
 
     background-color: #2c8000;
     z-index: 0;
-
-    &--speed-up {
-      position: absolute;
-      height: 38vmin;
-      width: 1.5vmin;
-
-      animation: move-seconds 10s infinite linear;
-      transform-origin: bottom;
-
-      background-color: #2c8000;
-      z-index: 0;
-    }
   }
 
   &__circle {
@@ -79,14 +53,12 @@ body {
   }
 }
 
-@keyframes move-seconds {
-  from {
-    transform: translate(0, -50%) rotate(0deg);
-  }
+.stopwatch--speed-up .stopwatch__seconds {
+  animation-duration: 10s;
+}
 
-  to {
-    transform: translate(0, -50%) rotate(360deg);
-  }
+.stopwatch--speed-up .stopwatch__minutes {
+  animation-duration: 600s;
 }
 
 @keyframes move {
