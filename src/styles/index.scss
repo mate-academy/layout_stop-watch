@@ -1,12 +1,11 @@
-body,
-html {
+@import './reset';
+
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  margin: 0;
-  padding: 0;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .stopwatch {
@@ -17,21 +16,6 @@ html {
 
   border: 1vmin dotted #000;
   border-radius: 50%;
-
-  &__center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    width: 5vmin;
-    height: 5vmin;
-
-    border-radius: 50%;
-    background-color: #f6a603;
-
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
 
   &__hand {
     position: absolute;
@@ -49,6 +33,23 @@ html {
       background-color: #0700ff;
 
       animation: minutes 3600s infinite steps(60);
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+
+        width: 5vmin;
+        height: 5vmin;
+
+        border-radius: 50%;
+        background-color: #f6a603;
+
+        transform: translate(-50%, -50%);
+        z-index: 4;
+      }
     }
 
     &--second {
@@ -58,6 +59,8 @@ html {
       background-color: #2c8000;
 
       animation: seconds 60s infinite linear;
+
+      z-index: -1;
     }
   }
 }
