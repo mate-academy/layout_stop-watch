@@ -1,0 +1,23 @@
+@mixin minute-animation {
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60, end);
+}
+
+@mixin fast-minute-animation {
+  animation-duration: 600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60, end);
+}
+
+@mixin second-animation {
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@mixin fast-second-animation {
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
