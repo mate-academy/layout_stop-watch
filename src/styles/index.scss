@@ -27,7 +27,7 @@ body {
   width: 3vmin;
   height: 20vmin;
   background-color: #0700ff;
-  animation: rotateMinuteHand 60m infinite steps(60);
+  animation: rotateMinuteHand 3600s infinite steps(60);
 }
 
 .second-hand {
@@ -49,16 +49,7 @@ body {
   z-index: 1;
 }
 
-@keyframes rotateMinuteHand {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotateSecondHand {
+@keyframes rotate-hand {
   from {
     transform: rotate(0deg);
   }
@@ -68,9 +59,9 @@ body {
 }
 
 .stopwatch.speed-up .second-hand {
-  animation: rotateSecondHand 10s infinite linear;
+  animation: rotate-hand 10s infinite linear;
 }
 
 .stopwatch.speed-up .minute-hand {
-  animation: rotateMinuteHand 10m infinite steps(60);
+  animation: rotate-hand 600s infinite steps(60);
 }
