@@ -1,3 +1,60 @@
+@import './utils/variables';
+
 body {
   margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes watch-animation {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.stopwatch {
+  position: relative;
+  width: $clock-size;
+  height: $clock-size;
+  border: $clock-dot-size dotted #000;
+  border-radius: 50%;
+
+  &__circle {
+    position: absolute;
+    height: $stopwatch-circle;
+    width: $stopwatch-circle;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #f6a603;
+    z-index: 3;
+  }
+
+  &__min {
+    position: absolute;
+    width: $min-hand-width;
+    height: $min-hand-length;
+    background-color: #0700ff;
+    top: 25%;
+    left: 48%;
+
+    animation: watch-animation 600s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    position: absolute;
+    width: $seconds-hand-width;
+    height: $seconds-hand-length;
+    background-color: #2c8000;
+    left: 49%;
+    top: 2.1%;
+
+    transform-origin: bottom;
+    animation: watch-animation 10s infinite linear;
+  }
 }
