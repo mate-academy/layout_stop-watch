@@ -1,3 +1,87 @@
-body {
+$border-color: #000;
+$minute-hand-color: #0700ff;
+$second-hand-color: #2c8000;
+$circle-color: #f6a603;
+
+$radius-value: 50%;
+$stopwatch-size: 80vmin;
+$circle-size: 5vmin;
+$seconds : 60s;
+
+.page {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
+
+.stopwatch {
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: dotted $border-color 1vmin;
+  border-radius: $radius-value;
+
+
+  &__hand {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: $radius-value;
+
+    background-color: $circle-color;
+  }
+
+  &--speed-up .minute--hand {
+    $seconds: 10s;
+    animation-duration: $seconds * 60;
+  }
+
+  &--speed-up .second--hand {
+    $seconds: 10s;
+    animation-duration: $seconds;
+  }
+}
+
+.minute--hand {
+  width: 3vmin;
+  height: 20vmin;
+  background-color: $minute-hand-color;
+
+  animation: handRotate ($seconds * 60) steps(60) infinite;
+}
+
+.second--hand {
+  width: 1.5vmin;
+  height: 38vmin;
+  background-color: $second-hand-color;
+
+  animation: handRotate $seconds linear infinite;
+}
+
+@keyframes handRotate {
+  to {
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: bottom;
+  } from {
+    transform: translateX(-50%) rotate(-360deg);
+    transform-origin: bottom;
+  }
+}
+
+//10s
+//600s
