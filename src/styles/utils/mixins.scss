@@ -1,0 +1,24 @@
+@mixin animation {
+  animation-name: move;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+  transform-origin: bottom;
+  bottom: 50%;
+}
+
+@mixin position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
