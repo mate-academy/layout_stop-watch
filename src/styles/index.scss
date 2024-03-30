@@ -31,7 +31,7 @@ body {
       width: 3vmin;
       background-color: #0700ff;
       transform-origin: 50% 100%;
-      animation: rotate-minute 3600s steps(60, end) infinite;
+      animation: rotate 3600s steps(60, end) infinite;
 
       position: absolute;
       top: 20vmin;
@@ -42,7 +42,7 @@ body {
       width: 1.5vmin;
       background-color: #2c8000;
       transform-origin: 50% 100%;
-      animation: rotate-second 60s linear 1s infinite;
+      animation: rotate 60s linear 1s infinite;
 
       position: absolute;
       top: 2vmin;
@@ -60,7 +60,7 @@ body {
   }
 }
 
-@keyframes rotate-second {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
@@ -69,19 +69,12 @@ body {
   }
 }
 
-@keyframes rotate-minute {
-  from {
-    transform: rotate(0deg);
+.stopwatch--speed-up {
+  .stopwatch-hands-seconds {
+    animation-duration: 10s;
   }
-  to {
-    transform: rotate(360deg);
+
+  .stopwatch-hands-minutes {
+    animation-duration: 600s;
   }
-}
-
-.speed-up-sec {
-  animation-duration: 10s;
-}
-
-.speed-up-min {
-  animation-duration: 600s;
 }
