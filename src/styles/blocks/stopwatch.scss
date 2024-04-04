@@ -1,0 +1,56 @@
+@import '../utils/keyframes';
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1vmin dotted $border-color;
+  border-radius: $radius;
+  height: $stopwatch-size-height;
+  width: $stopwatch-size-width;
+
+  &__minute-hand {
+    position: absolute;
+    margin: auto;
+    background-color: $min-hand-color;
+    bottom: 40vmin;
+    width: $min-hand-width;
+    height: $min-hand-length;
+
+    transform-origin: bottom center;
+    animation: arrow 3600s steps(60) infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    margin: auto;
+    background-color: $sec-hand-color;
+    bottom: 40vmin;
+    width: $sec-hand-width;
+    height: $sec-hand-length;
+
+    transform-origin: bottom center;
+    animation: arrow 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    margin: auto;
+    background-color: $center-color;
+    border-radius: $radius;
+    width: 5vmin;
+    height: 5vmin;
+    z-index: 2;
+  }
+
+  &--speed-up {
+    .stopwatch__minute-hand {
+      animation: arrow 600s steps(60) infinite;
+    }
+
+    .stopwatch__second-hand {
+      animation: arrow 10s linear infinite;
+    }
+  }
+}
