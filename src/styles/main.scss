@@ -1,1 +1,63 @@
-// put code here
+@import './utils/variables';
+@import './utils/keyframes';
+@import './utils/mixin';
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: $watch-size;
+  width: $watch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__center {
+    height: $center-size;
+    width: $center-size;
+    border-radius: 50%;
+    background-color: #f6a603;
+    align-self: center;
+    z-index: 1;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+
+    &--minutes {
+      height: 20vmin;
+      width: 3vmin;
+      background-color: #0700ff;
+
+      @include animation-circle(3600, steps(60));
+    }
+
+    &--seconds {
+      height: 38vmin;
+      width: 1.5vmin;
+      background-color: #2c8000;
+
+      @include animation-circle(60, linear);
+    }
+  }
+
+  &--speed-up .stopwatch__hand--minutes {
+    @include animation-circle(600, steps(60));
+  }
+
+  &--speed-up .stopwatch__hand--seconds {
+    @include animation-circle(10, linear);
+  }
+}
