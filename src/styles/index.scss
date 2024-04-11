@@ -24,9 +24,11 @@
   &__minute-hand,
   &__second-hand {
     position: absolute;
-    top: 50%;
+    bottom: 50%;
     left: 50%;
+    transform-origin: 100% 100%;
     animation-iteration-count: infinite;
+    transform: translate(-50%, -100%);
   }
 
   &__minute-hand {
@@ -34,7 +36,7 @@
     height: 20vmin;
     background-color: #0700ff;
     transform: translateX(-50%);
-    animation: rotateMinutes 3600s linear infinite;
+    animation: rotate-stopwatch 3600s linear infinite;
   }
 
   &__second-hand {
@@ -42,7 +44,7 @@
     height: 38vmin;
     background-color: #2c8000;
     transform: translateX(-50%);
-    animation: rotateSeconds 60s linear infinite;
+    animation: rotate-stopwatch 60s linear infinite;
   }
 
   &.speed-up {
@@ -51,6 +53,15 @@
     }
     &__second-hand {
       animation-duration: 10s;
+    }
+  }
+
+  @keyframes rotate-stopwatch {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 }
