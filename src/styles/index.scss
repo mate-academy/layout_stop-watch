@@ -28,40 +28,37 @@
     left: 50%;
     transform-origin: 100% 100%;
     animation-iteration-count: infinite;
-    transform: translate(-50%, -100%);
   }
 
   &__minute-hand {
     width: 3vmin;
     height: 20vmin;
     background-color: #0700ff;
-    transform: translateX(-50%);
-    animation: rotate-stopwatch 3600s linear infinite;
+    animation: rotate-minutes 3600s linear infinite;
   }
 
   &__second-hand {
     width: 1.5vmin;
     height: 38vmin;
     background-color: #2c8000;
-    transform: translateX(-50%);
-    animation: rotate-stopwatch 60s linear infinite;
+    animation: rotate-seconds 60s linear infinite;
   }
 
-  &.speed-up {
-    &__minute-hand {
-      animation-duration: 600s;
+  &--speed-up {
+    .stopwatch__minute-hand {
+      animation: rotate-stopwatch 600s steps(60) infinite;
     }
-    &__second-hand {
-      animation-duration: 10s;
+    .stopwatch__second-hand {
+      animation: rotate-stopwatch 10s linear infinite;
     }
   }
 
-  @keyframes rotate-stopwatch {
+  @keyframes rotate-minutes {
     0% {
-      transform: rotate(0deg);
+      transform: translateX(-50%) rotate(0deg);
     }
     100% {
-      transform: rotate(360deg);
+      transform: translateX(-50%) rotate(360deg);
     }
   }
 }
