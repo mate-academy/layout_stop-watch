@@ -46,7 +46,7 @@ body {
       width: 3vmin;
       height: $minuteHeight;
       background-color: #0700ff;
-      animation: rotate-minute 3600s infinite steps(60);
+      animation: rotate-hand 3600s infinite steps(60);
     }
 
     &--second {
@@ -54,7 +54,7 @@ body {
       height: $secondHeight;
       background-color: #2c8000;
       z-index: 2;
-      animation: rotate-sec 60s linear infinite;
+      animation: rotate-hand 60s linear infinite;
     }
   }
 
@@ -66,13 +66,7 @@ body {
     animation-duration: 10s;
   }
 
-  @keyframes rotate-sec {
-    to {
-      transform: translate(-50%, -100%) rotate(360deg);
-    }
-  }
-
-  @keyframes rotate-minute {
+  @keyframes rotate-hand {
     to {
       transform: translate(-50%, -100%) rotate(360deg);
     }
