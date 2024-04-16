@@ -1,3 +1,63 @@
+@import './variables';
+@import './animations';
+
 body {
   margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $width;
+  height: $height;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  &__minute {
+    position: absolute;
+    width: $width-for-minute;
+    height: $height-for-minute;
+    background: $bg-for-minute;
+    transform: rotate(90deg);
+    transform-origin: right;
+    right: 50%;
+    animation: circle 3600s steps(60, end) infinite;
+  }
+
+  &__second {
+    position: absolute;
+    width: $width-for-second;
+    height: $height-for-second;
+    background: $bg-for-second;
+    transform: rotate(90deg);
+    transform-origin: right;
+    right: 50%;
+    animation: circle 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    width: $width-for-center;
+    height: $height-for-center;
+    background: $bg-for-center;
+    border-radius: 50%;
+  }
+
+  &--speed-up {
+    .stopwatch__minute {
+      animation-duration: 600s;
+    }
+    .stopwatch__second {
+      animation-duration: 10s;
+    }
+  }
 }
