@@ -1,3 +1,67 @@
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 100%;
+
+  & :nth-child(n) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+}
+
+.minutes {
+  height: 20vmin;
+  width: 3vmin;
+  background-color: #0700ff;
+  animation-name: minut;
+  animation-duration: 3600s;
+  transform-origin: top center;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60, start);
+
+  @keyframes minut {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.seconds {
+  height: 38vmin;
+  width: 1.5vmin;
+  background-color: #2c8000;
+  transform-origin: top center;
+  animation: second 60s linear infinite;
+
+  @keyframes second {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.center {
+  height: 5vmin;
+  width: 5vmin;
+  background-color: #f6a603;
+  border-radius: 100%;
+  transform: translateX(-50%) translateY(-50%);
 }
