@@ -1,4 +1,5 @@
 @import './utilities/variables';
+@import './blocks/rotates';
 
 body {
   margin: 0;
@@ -36,7 +37,7 @@ body {
     margin-bottom: 50%;
     margin-left: 50%;
     transform-origin: bottom;
-    animation: seconds 60s linear infinite;
+    animation: rotates 60s linear infinite;
   }
 
   &__minutes-hand {
@@ -49,32 +50,22 @@ body {
     height: 20vmin;
     background-color: #0700ff;
     transform-origin: bottom;
-    animation: minutes 3600s steps(60, end) infinite;
+    animation: rotates 3600s steps(60, end) infinite;
     z-index: 0;
   }
 
   &--speed-up-10 {
     .stopwatch__seconds-hand {
-      animation: seconds 10s linear infinite;
+      animation: rotates 10s linear infinite;
     }
 
     .stopwatch__minutes-hand {
-      animation: minutes 600s steps(60, end) infinite;
+      animation: rotates 600s steps(60, end) infinite;
     }
   }
 }
 
-@keyframes seconds {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minutes {
+@keyframes rotates {
   from {
     transform: rotate(0);
   }
