@@ -76,7 +76,7 @@ body {
 
       transform-origin: bottom;
 
-      animation-name: minutes-hand;
+      animation-name: watch-hands;
       animation-duration: 600s;
       animation-timing-function: steps(60);
       animation-iteration-count: infinite;
@@ -92,7 +92,7 @@ body {
 
       transform-origin: bottom;
 
-      animation-name: seconds-hand;
+      animation-name: watch-hands;
       animation-duration: 10s;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
@@ -100,16 +100,7 @@ body {
   }
 }
 
-@keyframes seconds-hand {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minutes-hand {
+@keyframes watch-hands {
   from {
     transform: rotate(0);
   }
