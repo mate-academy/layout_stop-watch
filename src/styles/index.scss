@@ -1,8 +1,11 @@
 * {
   display: flex;
-  box-sizing: border-box;
   justify-content: center;
   align-items: center;
+}
+
+title {
+  display: none;
 }
 
 body {
@@ -13,48 +16,46 @@ body {
 .stopwatch {
   height: 80vmin;
   width: 80vmin;
-  background-color: #d4e2e6;
   border: 1vmin #000 dotted;
   border-radius: 50%;
   position: relative;
+  justify-content: center;
+  align-items: center;
 
-  &-minute,
-  &-second {
+  &__hand {
     position: absolute;
     transform-origin: bottom;
     bottom: 50%;
+
+    &--minute {
+      height: 20vmin;
+      width: 3vmin;
+      background-color: #0700ff;
+      animation: move 600s steps(60) infinite;
+
+      &--speed-up {
+        animation-duration: 600s;
+      }
+    }
+
+    &--second {
+      height: 38vmin;
+      width: 1.5vmin;
+      background-color: #2c8000;
+      animation: move 10s linear infinite;
+
+      &--speed-up {
+        animation-duration: 10s;
+      }
+    }
   }
 
-  &-minute {
-    height: 20vmin;
-    width: 3vmin;
-    background-color: #0700ff;
-    animation: move 600s steps(60) infinite;
-  }
-
-  &-second {
-    height: 38vmin;
-    width: 1.5vmin;
-    background-color: #2c8000;
-    animation: move 10s linear infinite;
-  }
-
-  &-center {
+  &__center {
     position: absolute;
     height: 5vmin;
     width: 5vmin;
     border-radius: 50%;
     background-color: #f6a603;
-  }
-
-  &--speed-up {
-    &-second {
-      animation-duration: 10s;
-    }
-
-    &-minute {
-      animation-duration: 600s;
-    }
   }
 }
 
