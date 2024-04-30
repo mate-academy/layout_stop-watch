@@ -1,3 +1,72 @@
+@import './utils/mixins';
+
 body {
   margin: 0;
+  height: 100vh;
+}
+
+body,
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  width: $clockSize;
+  height: $clockSize;
+  border: $minValue dotted $borderColor;
+  border-radius: 50%;
+
+  &__Center {
+    margin: 0;
+    height: $circleRange;
+    width: $circleRange;
+    background-color: $circleColor;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__minArr,
+  &__secArr {
+    position: absolute;
+  }
+
+  &__minArr {
+    margin-top: -$minuteArrHeight;
+    width: $minuteArrWidth;
+    height: $minuteArrHeight;
+    background-color: $minuteColor;
+
+    transform-origin: bottom;
+    animation: runtime $minTime steps(60) infinite;
+  }
+
+  &__secArr {
+    margin-top: -$secArrHeight;
+    width: $secArrWidth;
+    height: $secArrHeight;
+    background-color: $secArrColor;
+
+    transform-origin: bottom;
+
+    animation: runtime $secTime linear infinite;
+  }
+  &--speed-up &__secArr {
+    animation: runtime 10s linear infinite;
+  }
+  &--speed-up &__minArr {
+    animation: runtime 600s steps(60) infinite;
+  }
+}
+
+@keyframes runtime {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
