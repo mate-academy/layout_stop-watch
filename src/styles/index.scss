@@ -1,4 +1,4 @@
-@mixin styles($color, $height, $width) {
+@mixin hand-styles($color, $height, $width) {
   background-color: $color;
   height: $height;
   width: $width;
@@ -33,20 +33,20 @@ body {
   &__dot {
     transform: translate(-50%, -50%);
 
-    @include styles(#f6a603, 5vmin, 5vmin);
+    @include hand-styles(#f6a603, 5vmin, 5vmin);
 
     border-radius: 50%;
   }
 
   &__minute {
-    @include styles(#0700ff, 20vmin, 3vmin);
+    @include hand-styles(#0700ff, 20vmin, 3vmin);
 
     transform: translate(-50%, -100%);
     animation: hand-move 3600s steps(60) infinite;
   }
 
   &__second {
-    @include styles(#2c8000, 38vmin, 1.5vmin);
+    @include hand-styles(#2c8000, 38vmin, 1.5vmin);
 
     transform: translate(-50%, -100%);
     animation: hand-move 60s linear infinite;
@@ -55,14 +55,14 @@ body {
   &--speed-up {
     @include stopwatch-styles;
     .stopwatch__minute {
-      @include styles(#0700ff, 20vmin, 3vmin);
+      @include hand-styles(#0700ff, 20vmin, 3vmin);
 
       transform: translate(-50%, -100%);
       animation: hand-move 600s steps(60) infinite;
     }
 
     .stopwatch__second {
-      @include styles(#2c8000, 38vmin, 1.5vmin);
+      @include hand-styles(#2c8000, 38vmin, 1.5vmin);
 
       transform: translate(-50%, -100%);
       animation: hand-move 10s linear infinite;
