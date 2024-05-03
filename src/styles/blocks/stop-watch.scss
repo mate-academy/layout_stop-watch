@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  position: relative;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $sw-size;
+  width: $sw-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+}
+
+.stopwatch--speed-up {
+  .stopwatch__minute-hand {
+    animation-duration: 600s;
+  }
+
+  .stopwatch__second-hand {
+    animation-duration: 10s;
+  }
+}
