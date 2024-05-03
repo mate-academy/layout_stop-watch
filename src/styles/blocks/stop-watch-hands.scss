@@ -1,0 +1,29 @@
+.stopwatch__minute-hand {
+  width: $min-hand-w;
+  height: $min-hand-h;
+  position: absolute;
+  bottom: 50%;
+  background-color: $blue-col;
+
+  animation: min-hand-move 3600s steps(60, jump-none) infinite;
+  transform-origin: bottom;
+}
+
+.stopwatch__second-hand {
+  width: $sec-hand-w;
+  height: $sec-hand-h;
+  position: absolute;
+  bottom: 50%;
+  background-color: $green-col;
+
+  animation: sec-hand-move 60s linear infinite;
+  transform-origin: bottom;
+}
+
+.stopwatch__center {
+  height: $center-h;
+  width: $center-w;
+  position: absolute;
+  border-radius: 50%;
+  background-color: $orange-col;
+}
