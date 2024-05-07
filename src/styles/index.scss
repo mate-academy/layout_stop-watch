@@ -27,11 +27,7 @@ body {
   height: 80vmin;
   width: 80vmin;
 
-  &__hand {
-    position: absolute;
-  }
-
-  &__hand--minute {
+  &__minute {
     animation: rotate 3600s steps(60) infinite;
     background-color: #0700ff;
     height: 20vmin;
@@ -39,9 +35,10 @@ body {
     top: 25%;
     left: 48%;
     z-index: -2;
+    position: absolute;
   }
 
-  &__hand-center {
+  &__center {
     background-color: #f6a603;
     border-radius: 49%;
     height: 5vmin;
@@ -51,7 +48,7 @@ body {
     position: absolute;
   }
 
-  &__hand--second {
+  &__second {
     animation: rotate 60s linear infinite;
 
     background-color: #2c8000;
@@ -60,12 +57,16 @@ body {
     bottom: 50%;
     left: 49%;
     z-index: -1;
-  }
-  &__hand--minute-speed-up {
-    animation: rotate 600s steps(60)  infinite;
+    position: absolute;
   }
 
-  &__hand--second-speed-up {
-    animation: rotate 10s linear infinite;
+  &--speed-up {
+    .stopwatch__second {
+      animation: rotate 10s linear infinite;
+    }
+
+    .stopwatch__minute {
+      animation: rotate 600s steps(60) infinite;
+    }
   }
 }
