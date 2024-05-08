@@ -1,26 +1,21 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  display: flexbox;
-}
-
-body {
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 .stopwatch {
   position: absolute;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-
-  width: 80vmin;
-  height: 80vmin;
+  align-items: center;
   border: dotted 1vmin #000;
   border-radius: 50%;
+  width: 80vmin;
+  height: 80vmin;
 }
 
 .stopwatch::before {
@@ -32,8 +27,8 @@ body {
   width: 3vmin;
   height: 20vmin;
   background-color: #0700ff;
-  animation: speed-up 600s steps(10) alternate;
-  transform-origin: bottom left;
+  animation: speed-up 600s steps(10);
+  transform-origin: bottom;
 }
 
 .stopwatch::after {
@@ -47,14 +42,14 @@ body {
   height: 38vmin;
   background-color: #2c8000;
   animation: speed-up 10s linear infinite;
-  transform-origin: bottom left;
+  transform-origin: bottom;
 }
 
-span {
+.stopwatch__center {
   z-index: 3;
   position: absolute;
   top: 46.8%;
-  left: 46.9%;
+  left: 47.9%;
   height: 5vmin;
   width: 5vmin;
   background-color: #f6a603;
