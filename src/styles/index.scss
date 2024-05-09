@@ -7,7 +7,7 @@ body {
   min-height: 100vh;
 }
 
-.stopwatch {
+.stopwatch--speed-up {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -18,7 +18,7 @@ body {
   height: 80vmin;
 }
 
-.stopwatch::before {
+.stopwatch--speed-up::before {
   z-index: 1;
   content: '';
   position: absolute;
@@ -31,7 +31,7 @@ body {
   transform-origin: bottom;
 }
 
-.stopwatch::after {
+.stopwatch--speed-up::after {
   z-index: 2;
   content: '';
   position: absolute;
