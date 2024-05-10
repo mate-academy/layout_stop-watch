@@ -1,3 +1,98 @@
+@mixin display-center($dFlex, $juCoCenter, $alItCenter) {
+  display: $dFlex;
+  justify-content: $juCoCenter;
+  align-items: $alItCenter;
+}
+
+@mixin position-of-clock-hand($posAbcol, $bot40min) {
+  position: $posAbcol;
+  bottom: $bot40min;
+}
+
+@keyframes curcle-watch-anime {
+  from {
+    transform: rotateZ(0deg);
+    transform-origin: bottom center;
+  }
+  to {
+    transform: rotateZ(360deg);
+    transform-origin: bottom center;
+  }
+}
+
+$animationDurationSecond: 60s;
+$secondsInMinute: 60;
+$animationDurationMinutes: calc($animationDurationSecond * $secondsInMinute);
+
 body {
   margin: 0;
+  height: 100vh;
+  width: 100vw;
+
+  @include display-center(flex, center, center);
+}
+
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+
+  border: 1vmin dotted #000;
+  border-radius: 100%;
+
+  @include display-center(flex, center, center);
+
+  position: relative;
+
+  $modifier: 'speed-up';
+
+  @each $name in $modifier {
+    &--#{$modifier} {
+      .stopwatch__seconds {
+        animation-duration: 10s;
+      }
+
+      .stopwatch__minutes {
+        animation-duration: 600s;
+      }
+    }
+  }
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+
+    background-color: #f6a603;
+
+    position: absolute;
+    z-index: 2;
+  }
+
+  &__seconds {
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+
+    @include position-of-clock-hand(absolute, 40vmin);
+
+    z-index: 1;
+
+    animation-name: curcle-watch-anime;
+    animation-duration: $animationDurationSecond;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minutes {
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+
+    @include position-of-clock-hand(absolute, 40vmin);
+
+    animation-name: curcle-watch-anime;
+    animation-duration: $animationDurationMinutes;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+  }
 }
