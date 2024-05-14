@@ -1,1 +1,71 @@
-// put code here
+@import './utils/variables';
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $clock-size;
+  height: $clock-size;
+  border-radius: 50%;
+  border: 15px solid $clock-color;
+  position: relative;
+  box-shadow: 5px 5px 300px 5px $clock-color;
+
+  &__center {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: $clock-color;
+    position: absolute;
+    z-index: 3;
+  }
+
+  &__hand-small {
+    height: 140px;
+    width: 30px;
+    background-color: red;
+    margin-bottom: 140px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+
+  &__hand-big {
+    height: 280px;
+    width: 30px;
+    background-color: blue;
+    margin-bottom: 280px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    transform-origin: bottom;
+    animation: move 5s linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
