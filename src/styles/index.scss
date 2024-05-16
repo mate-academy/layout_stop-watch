@@ -1,3 +1,77 @@
+@import 'variables';
+
 body {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.stopwatch {
+  width: $stopwatch--size;
+  height: $stopwatch--size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-circle--radius;
+  background-color: transparent;
+  border: 1vmin dotted $border-watch--color;
+
+  position: relative;
+
+  &__minute-hand {
+    animation-name: animation-watch-move;
+    animation-duration: 3600s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+    background-color: $minutes-hand--color;
+    bottom: $stopwatch--size / 2;
+    width: 3vmin;
+    height: 20vmin;
+    position: absolute;
+  }
+
+  &__second-hand {
+    z-index: 1;
+    background-color: $seconds-hand--color;
+    width: 1.5vmin;
+    height: 38vmin;
+    animation-name: animation-watch-move;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: absolute;
+    bottom: $stopwatch--size / 2;
+  }
+
+  &__center {
+    z-index: 2;
+    background-color: $center-watch--color;
+    width: $center-circle--size;
+    height: $center-circle--size;
+    border-radius: $border-circle--radius;
+    position: absolute;
+  }
+
+  &--speed-up &__second-hand {
+    animation-duration: 10s;
+  }
+
+  &--speed-up &__minute-hand {
+    animation-duration: 600s;
+  }
+}
+
+@keyframes animation-watch-move {
+  from {
+    transform-origin: bottom;
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform-origin: bottom;
+    transform: rotateZ(360deg);
+  }
 }
