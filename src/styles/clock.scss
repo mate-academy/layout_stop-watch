@@ -1,0 +1,65 @@
+$minutes-height: 20vmin;
+$minutes-width: 3vmin;
+$seconds-height: 38vmin;
+$seconds-width: 1.5vmin;
+$seconds: 60s;
+$minutes: 60;
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted $black;
+  border-radius: 50%;
+  position: relative;
+
+  &__minutes {
+    height: $minutes-height;
+    width: $minutes-width;
+    background-color: $blue;
+    animation: rotator steps($minutes) ($minutes * $seconds) infinite;
+    position: absolute;
+    top: calc(50% - $minutes-height);
+    left: calc(50% - $minutes-width / 2);
+    transform-origin: center 100%;
+  }
+
+  &__seconds {
+    height: $seconds-height;
+    width: $seconds-width;
+    background-color: $green;
+    animation: rotator $seconds linear infinite;
+    position: absolute;
+    top: calc(50% - $seconds-height);
+    left: calc(50% - $seconds-width / 2);
+    transform-origin: center 100%;
+  }
+
+  &__center {
+    height: 5vmin;
+    width: 5vmin;
+    background-color: $orange;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--speed-up {
+    .stopwatch__seconds {
+      animation-duration: $seconds / 6;
+    }
+    .stopwatch__minutes {
+      animation-duration: $seconds * $minutes / 6;
+    }
+  }
+}
+
+@keyframes rotator {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
