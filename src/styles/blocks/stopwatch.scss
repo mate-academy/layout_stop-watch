@@ -1,5 +1,9 @@
 $stopwatch-size: 80vmin;
 $circle-size: 5vmin;
+$second-hand-height: 38vmin;
+$second-hand-width: 1.5vmin;
+$minute-hand-height: 20vmin;
+$minute-hand-width: 3vmin;
 
 .stopwatch {
   position: relative;
@@ -22,23 +26,26 @@ $circle-size: 5vmin;
 
   &__hand {
     position: absolute;
-    top: 50%;
-    left: 48%;
-    transform-origin: top;
+    top: calc(50% - #{$second-hand-height});
+    left: calc(50% - #{$second-hand-width / 2});
+    transform-origin: center 100%;
     transform: rotate(0deg);
   }
 
   &__hand--second {
-    width: 1.5vmin;
-    height: 38vmin;
+    width: $second-hand-width;
+    height: $second-hand-height;
     background-color: #2c8000;
     animation: rotate-second 60s linear infinite;
   }
 
   &__hand--minute {
-    width: 3vmin;
-    height: 20vmin;
+    width: $minute-hand-width;
+    height: $minute-hand-height;
+    top: calc(50% - #{$minute-hand-height});
+    left: calc(50% - #{$minute-hand-width / 2});
     background-color: #0700ff;
     animation: rotate-minute 3600s steps(60) infinite;
   }
 }
+
