@@ -15,15 +15,15 @@ body {
   margin: 0 auto;
 }
 
-.stop-watch {
-  width: 80vmin;
-  height: 80vmin;
+.stopwatch {
+  width: 82vmin;
+  height: 82vmin;
   border: 1vmin dotted #000;
   border-radius: 50%;
   position: relative;
   z-index: 1;
 
-  &__hand--speed-up__minet {
+  &__minute-hand {
     width: 3vmin;
     height: 20vmin;
     background-color: #0700ff;
@@ -45,7 +45,7 @@ body {
     }
   }
 
-  &__hand--speed-up__second {
+  &__second-hand {
     width: 1.5vmin;
     height: 38vmin;
     background-color: #2c8000;
@@ -77,5 +77,15 @@ body {
     left: 46.73%;
     top: 46.73%;
     z-index: 1;
+  }
+}
+
+.stopwatch--speed-up {
+  &__second-hand {
+    animation: move 10s linear infinite;
+  }
+
+  &__minute-hand {
+    animation: move 360s linear infinite;
   }
 }
