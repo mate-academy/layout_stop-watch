@@ -1,3 +1,17 @@
+$duration: 60s;
+
+@mixin keyfarmosemove() {
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -34,15 +48,7 @@ body {
     transform-origin: bottom;
     animation: move 3600s linear infinite;
 
-    @keyframes move {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
+    @include keyfarmosemove;
   }
 
   &__second-hand {
@@ -53,19 +59,10 @@ body {
     left: 49%;
     top: 1%;
     z-index: 0;
-
     transform-origin: bottom;
-    animation: move 60s linear infinite;
+    animation: move $duration linear infinite;
 
-    @keyframes move {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
+    @include keyfarmosemove;
   }
 
   &__circle {
@@ -82,7 +79,7 @@ body {
 
 .stopwatch--speed-up {
   &__second-hand {
-    animation: move 10s linear infinite;
+    $duration: 10s;
   }
 
   &__minute-hand {
