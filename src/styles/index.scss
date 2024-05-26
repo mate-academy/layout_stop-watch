@@ -1,3 +1,86 @@
-body {
+@import '../utils/variables.scss';
+
+body, html {
+  height: 100%;
   margin: 0;
+  padding: 0;
+  @include flex($justify: center, $align:center)
 }
+
+
+.stopwatch{
+  @include flex($justify: center, $align:center);
+  height: 100%;
+  width: 100%;
+  &__container{
+    border-style:dotted;
+    border-color: #000;
+    border-width: 1vmin;
+    border-radius: 50%;
+    width: 80vmin;
+    height: 80vmin;
+    position: relative;
+
+    @include flex($justify: center, $align:center);
+    &_circle{
+      position: relative;
+      width: 5vmin;
+      height: 5vmin;
+      background-color: #f6a603;
+      border-radius: 50%;
+      @include zIndex($value: 2);
+    }
+    &_minutesHands{
+      position: absolute;
+      width: 3vmin;
+      height: 20vmin;
+      background-color: #0700ff;
+      @include zIndex($value: 1);
+      @include bottom($bottom: 50%);
+      @include transformOrigin($tranformOrigin: bottom);
+      transform: rotate(0deg);
+      animation: rotate-minutes 3600s steps(60) infinite;
+    }
+
+    &_secondsHands{
+      position: absolute;
+      width: 1.5vmin;
+      height: 38vmin;
+      background-color:#2c8000;
+      @include zIndex($value: 1);
+      @include bottom($bottom: 50%);
+      @include transformOrigin($tranformOrigin: bottom);
+      transform: rotate(0deg);
+      animation: rotate-seconds 60s linear infinite;
+    }
+  }
+}
+
+@keyframes rotate-seconds {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-minutes {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.stopwatch--speed-up .stopwatch__container_secondsHands {
+  animation-duration: 10s;
+}
+
+.stopwatch-speed-up .stopwatch__container_minutesHands {
+  animation-duration: 600s;
+}
+
+
+
