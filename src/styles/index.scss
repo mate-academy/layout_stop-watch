@@ -1,10 +1,12 @@
 @import './vars';
 
 .body {
-  height: 100vh;
-  margin: 0;
+  width: 100vmin;
+  height: 100vmin;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 @keyframes move {
@@ -17,19 +19,14 @@
   }
 }
 
-.block-box {
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-}
-
 .stopwatch {
   height: 80vmin;
   width: 80vmin;
   border: 1vmin dotted #000;
   border-radius: 50%;
   position: relative;
-  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 
   &__circle {
     height: 5vmin;
@@ -68,7 +65,7 @@
     top: calc(50% - 38vmin);
     z-index: 1;
     transform-origin: bottom;
-    animation: move $duration linear infinite;
+    animation: move 60s linear infinite;
     box-sizing: border-box;
 
     &--speed-up {
