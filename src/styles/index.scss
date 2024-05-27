@@ -1,3 +1,78 @@
-body {
+@import './vars';
+
+.body {
+  height: 100vh;
   margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.block-box {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+  box-sizing: border-box;
+
+  &__circle {
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background-color: $circle-color;
+    position: absolute;
+    left: calc(50% - 2.5vmin);
+    top: calc(50% - 2.5vmin);
+    z-index: 2;
+  }
+
+  &__minutes-hand {
+    height: 20vmin;
+    width: 3vmin;
+    background-color: $minutes-hand-color;
+    position: absolute;
+    left: calc(50% - 1.5vmin);
+    top: calc(50% - 20vmin);
+    z-index: 0;
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+    box-sizing: border-box;
+
+    &--speed-up {
+      animation-duration: 600s;
+    }
+  }
+
+  &__seconds-hand {
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: $seconds-hand-color;
+    position: absolute;
+    left: calc(50% - 0.75vmin);
+    top: calc(50% - 38vmin);
+    z-index: 1;
+    transform-origin: bottom;
+    animation: move $duration linear infinite;
+    box-sizing: border-box;
+
+    &--speed-up {
+      animation-duration: 10s;
+    }
+  }
 }
