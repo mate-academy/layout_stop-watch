@@ -1,0 +1,18 @@
+$stopwatch-bg: #000;
+$stopwatch-size: 80vmin;
+$center-size: 5vmin;
+$center-bg: #f6a603;
+$seconds-hand-bg: #2c8000;
+$seconds-hand-size-w: 1.5vmin;
+$seconds-hand-size-h: 38vmin;
+$minutes-hand-bg: #0700ff;
+$minutes-hand-size-w: 3vmin;
+$minutes-hand-size-h: 20vmin;
+
+:root {
+  --seconds-animation-time: 60s;
+  --minutes-animation-step: 60;
+  --minutes-animation-time: calc(
+    var(--seconds-animation-time) * var(--minutes-animation-step)
+  );
+}
