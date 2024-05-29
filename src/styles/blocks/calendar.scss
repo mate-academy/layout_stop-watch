@@ -1,0 +1,58 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.stopwatch {
+  aspect-ratio: 1;
+  width: $stopwatch_size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100dvw;
+  border: 1vmin dotted $stopwatch_bg;
+
+  &--speed-up {
+    --seconds-animation-time: 10s;
+    --minutes-animation-step: 60;
+    --minutes-animation-time: calc(
+      var(--seconds-animation-time) * var(--minutes-animation-step)
+    );
+  }
+
+  &__center {
+    aspect-ratio: 1;
+    width: $center_size;
+    background-color: $center_bg;
+    border-radius: 100dvw;
+    z-index: 5;
+  }
+
+  &__minutes {
+    @include time-hand(
+      $minutes-hand-bg,
+      $minutes-hand-size-h,
+      $minutes-hand-size-w
+    );
+
+    animation: hand-move var(--minutes-animation-time)
+      steps(var(--minutes-animation-step)) infinite;
+  }
+
+  &__seconds {
+    @include time-hand(
+      $seconds-hand-bg,
+      $seconds-hand-size-h,
+      $seconds-hand-size-w
+    );
+
+    animation: hand-move var(--seconds-animation-time) linear infinite;
+  }
+}
+
+@keyframes hand-move {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
