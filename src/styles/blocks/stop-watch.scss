@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: $dot-watch-radius;
+}
+
+.arrow-min {
+  @include flex;
+  @include position;
+
+  height: 20vmin;
+  width: 3vmin;
+  background-color: $arrow-min-color;
+  animation: $animation-min;
+}
+
+.arrow-sec {
+  @include flex;
+  @include position;
+
+  z-index: 1;
+  height: 38vmin;
+  width: 1.5vmin;
+  background-color: $arrow-sec-color;
+  animation: $animation-sec;
+}
+
+.arrow-min--speed-up {
+  animation: arrows 600s linear infinite;
+}
+
+.arrow-sec--speed-up {
+  animation: arrows 10s linear infinite;
+}
+
+.dot {
+  @include flex;
+
+  z-index: 1;
+  height: 5vmin;
+  width: 5vmin;
+  content: '';
+  border-radius: $dot-watch-radius;
+  background-color: $dot-color;
+}
