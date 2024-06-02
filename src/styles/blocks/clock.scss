@@ -1,0 +1,76 @@
+
+body {
+  margin: 0;
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+}
+
+.stopwatch {
+  position: relative;
+  border-radius: 50%;
+  border: 1vmin;
+  border-style: dotted;
+  height: 80vmin;
+  width: 80vmin;
+  
+  &__minutes {
+    position: absolute;
+    z-index: 2;
+    width: 3vmin;
+    height: 20vmin;
+    background-color: $minutes-arrow-color;
+    animation: clock-move 3600s steps(60, end) infinite;
+
+    @include get-displace-distance($minute-arrow-height, $minute-arrow-width);
+  }
+
+  &__seconds {
+    position: absolute;
+    z-index: 3;
+    width: $seconds-arrow-width;
+    height: $seconds-arrow-height;
+    background-color: #2c8000;
+
+    @include get-displace-distance($seconds-arrow-height, $seconds-arrow-width);
+
+    animation: clock-move 60s linear infinite;
+  }
+
+  &__axial {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background-color: $axial-background;
+    width: $axis-height;
+    height: $axis-width;
+    border-radius: 50%;
+  }
+
+  &--speed-up>&__minutes {
+    animation-duration: 600s;
+  }
+  
+  &--speed-up>&__seconds {
+    animation-duration: 10s;
+  }
+}
+
+@keyframes clock-move {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
