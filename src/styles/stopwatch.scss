@@ -1,0 +1,67 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted $blackColor;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__minutes {
+    width: 3vmin;
+    height: 20vmin;
+    background-color: $blueColor;
+    position: absolute;
+    top: 25%;
+
+    animation: time-go 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: $greenColor;
+    position: absolute;
+    top: 3%;
+
+    animation: time-go 60s linear infinite;
+  }
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: $orangeColor;
+    z-index: 1;
+    border-radius: 50%;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes {
+      animation: time-go 600s steps(60) infinite;
+    }
+    .stopwatch__seconds {
+      animation: time-go 10s linear infinite;
+    }
+  }
+}
+
+@keyframes time-go {
+  from {
+    transform: rotate(0deg);
+    transform-origin: bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: bottom;
+  }
+}
