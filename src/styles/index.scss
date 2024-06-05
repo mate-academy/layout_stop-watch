@@ -2,17 +2,20 @@
 
 body {
   margin: 0;
+
   .block {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+
     .stopwatch {
       width: $stopwatchDiam;
       height: $stopwatchDiam;
       border: 1vmin dotted $borderColor;
       border-radius: 100%;
       position: relative;
+
       &__min-hand {
         height: 20vmin;
         width: 3vmin;
@@ -21,11 +24,12 @@ body {
         left: 50%;
         transform: translate(-50%, 100%);
         transform-origin: 50% 100%;
-        animation-name: minute-hand;
+        animation-name: rotation-minute;
         animation-duration: 3600s;
         animation-timing-function: steps(60);
         animation-iteration-count: infinite;
       }
+
       &__sec-hand {
         height: 38vmin;
         width: 1.5vmin;
@@ -34,11 +38,12 @@ body {
         transform: translate(-50%, 10px);
         transform-origin: 50% 100%;
         left: 50%;
-        animation-name: second-hand;
+        animation-name: rotation-second;
         animation-duration: 60s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
       }
+
       &__circle {
         width: $circleDiam;
         height: $circleDiam;
@@ -50,6 +55,7 @@ body {
         top: 50%;
       }
     }
+
     .stopwatch--speed-up .stopwatch__sec-hand {
       animation-duration: 10s;
     }
@@ -60,7 +66,7 @@ body {
   }
 }
 
-@keyframes second-hand {
+@keyframes rotation-second {
   from {
     transform: translate(-50%, 10px) rotate(0deg);
   }
@@ -70,7 +76,7 @@ body {
   }
 }
 
-@keyframes minute-hand {
+@keyframes rotation-minute {
   from {
     transform: translate(-50%, 100%) rotate(0deg);
   }
