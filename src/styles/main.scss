@@ -1,0 +1,67 @@
+@import '../utils/variables';
+
+body {
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: $cell-cize;
+  width: $cell-cize;
+  border: $border-size dotted $border-color;
+  border-radius: 50%;
+
+  &__circle {
+    position: fixed;
+    border-radius: 50%;
+    height: 5vmin;
+    width: 5vmin;
+    background-color: #f6a603;
+    z-index: 3;
+  }
+
+  &__minutes {
+    position: absolute;
+    background-color: $minutes-hand-color;
+    height: 20vmin;
+    width: 3vmin;
+    margin-bottom: 20vmin;
+    animation-name: rotate 3600s steps(60, end) infinite;
+    transform-origin: bottom;
+
+    &--speed-up {
+      animation-duration: 600s;
+    }
+  }
+
+  &__seconds {
+    position: absolute;
+    background-color: $seconds-hand-color;
+    height: 38vmin;
+    width: 1.5vmin;
+    margin-bottom: 38vmin;
+    animation: rotate 60s linear 0s infinite;
+    transform-origin: bottom;
+
+    &--speed-up {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
