@@ -1,3 +1,79 @@
+@import 'variables';
+
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
+  height: 100vh;
+}
+
+.stop-watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  width: $stop-watch-dimensions;
+  height: $stop-watch-dimensions;
+  border: 1vmin dotted #000;
+  border-radius: $details_position_and_radius;
+
+  &__details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+
+  &__second-hand {
+    position: absolute;
+    bottom: $details_position_and_radius;
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    z-index: 2;
+    animation: hand-move 60s infinite linear;
+    transform-origin: $transform_position;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    bottom: $details_position_and_radius;
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    z-index: 1;
+    transform-origin: $transform_position;
+    animation: hand-move 3600s steps(60, end) infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    width: $circle-diameter;
+    height: $circle-diameter;
+    background-color: #f6a603;
+    border-radius: $details_position_and_radius;
+    z-index: 3;
+  }
+
+  &--speed-up {
+    .stop-watch__second-hand {
+      animation: hand-move 10s infinite linear;
+    }
+
+    .stop-watch__minute-hand {
+      animation: hand-move 600s steps(60, end) infinite;
+    }
+  }
+}
+
+@keyframes hand-move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
