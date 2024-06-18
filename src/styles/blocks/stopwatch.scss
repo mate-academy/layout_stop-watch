@@ -1,50 +1,74 @@
-.calendar {
+.stopwatch {
+  width: $watch-width;
+  height: $watch-height;
+  border: $border-depth dotted $border-color;
+
+  border-radius: 50%;
   display: flex;
-  flex-wrap: wrap;
-  gap: $day-gap;
-  width: $day-size * 7 + $day-gap * 6 + $day-padding * 2;
-  padding: $day-padding;
-  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 
-  &__day {
-    font-family: Arial, serif;
-    font-size: 30px;
-    width: $day-size;
-    height: $day-size;
-    background-color: #eee;
-    box-sizing: border-box;
-    border: 1px solid #000;
+  &__center {
+    position: absolute;
+    width: $center-diameter;
+    height: $center-diameter;
+    top: $watch-height / 2 - $center-diameter / 2;
+    left: $watch-width / 2 - $center-diameter / 2;
+    background-color: $center-color;
+    border-radius: 50%;
+    z-index: 2;
+  }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &__watch-hand {
+    position: absolute;
+    transform-origin: bottom center;
 
-    @for $i from 1 through 31 {
-      &:nth-child(n + #{$i})::before {
-        content: '#{$i}';
+    &--minutes-hand {
+      @include watch-hand(
+        $minutes-hand-height,
+        $minutes-hand-length,
+        $watch-height / 2 - $minutes-hand-length,
+        $watch-width / 2 - $minutes-hand-height / 2,
+        $minutes-color,
+        0
+      );
+
+      animation: rotate 3600s steps(60, end) infinite;
+    }
+
+    &--seconds-hand {
+      @include watch-hand(
+        $seconds-hand-height,
+        $seconds-hand-length,
+        $watch-height / 2 - $seconds-hand-length,
+        $watch-width / 2 - $seconds-hand-height / 2,
+        $seconds-color,
+        1
+      );
+      
+      animation: rotate 60s linear infinite;
+    }
+  }
+
+  &--speed-up {
+    .stopwatch__watch-hand {
+      &--minutes {
+        animation: rotate 600s steps(60, end) infinite;
+      }
+
+      &--seconds {
+        animation: rotate 10s linear infinite;
       }
     }
-
-    transition:
-      transform 0.5s,
-      background-color 0.5s;
-
-    &:hover {
-      cursor: pointer;
-      background-color: #ffbfcb;
-      transform: translateY(-20px);
-    }
   }
+}
 
-  @for $i from 28 through 31 {
-    &--month-length-#{$i} &__day:nth-child(n + #{$i + 1}) {
-      display: none;
-    }
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
   }
-
-  @each $day-of-week, $day in $week {
-    &--start-day-#{$day-of-week} &__day:first-child {
-      margin-left: ($day-size * $day) + ($day-gap * $day);
-    }
+  to {
+    transform: rotate(360deg);
   }
 }
