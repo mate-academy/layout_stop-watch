@@ -1,0 +1,44 @@
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  height: 80vh;
+  width: 80vh;
+
+  border: 1vmin dotted #000;
+  border-radius: 100%;
+
+  &__center {
+    position: absolute;
+    z-index: 3;
+    height: 5vmin;
+    width: 5vmin;
+    background-color: $center-color;
+    border-radius: 100%;
+  }
+
+  &__minutes-hand {
+    @include hands(3vmin, 20vmin, $minutes-color);
+
+    animation: rotate-minutes 3600s steps(60) infinite;
+  }
+
+  &__seconds-hand {
+    @include hands(1.5vmin, 38vmin, $seconds-color);
+
+    animation: rotate-seconds 60s linear infinite;
+  }
+}
+
+.stopwatch--speed-up {
+  .stopwatch__minutes-hand {
+    animation: rotate-minutes 600s steps(60) infinite;
+  }
+
+  .stopwatch__seconds-hand {
+    animation: rotate-seconds 10s linear infinite;
+  }
+}
