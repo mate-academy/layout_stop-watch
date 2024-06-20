@@ -1,3 +1,94 @@
+$steps: 60;
+$duration: 3600s;
+
 body {
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  &__wrapper {
+    position: relative;
+
+    width: 80vmin;
+    height: 80vmin;
+
+    border: 1vmin dotted #000;
+    border-radius: 50%;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__center {
+    z-index: 2;
+
+    width: 5vmin;
+    height: 5vmin;
+
+    background: #f6a603;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    z-index: 1;
+
+    &--seconds {
+      left: calc(50% - 0.75vmin);
+
+      height: 38vmin;
+      width: 1.5vmin;
+
+      background: #2c8000;
+
+      transform-origin: bottom center;
+
+      animation: seconds-move 60s infinite linear normal;
+
+      @keyframes seconds-move {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(1turn);
+        }
+      }
+    }
+
+    &--minutes {
+      left: calc(50% - 1.5vmin);
+
+      width: 3vmin;
+      height: 20vmin;
+
+      background-color: #0700ff;
+
+      transform-origin: bottom center;
+
+      animation: minutes-move $duration steps($steps) infinite;
+
+      @keyframes minutes-move {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+
+  &--speed-up {
+    .stopwatch__hand--seconds {
+      animation: seconds-move 10s infinite linear normal;
+    }
+    .stopwatch__hand--minutes {
+      animation: minutes-move 600s steps($steps) infinite;
+    }
+  }
 }
