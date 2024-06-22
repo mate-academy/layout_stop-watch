@@ -1,0 +1,46 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $watch-size;
+  width: $watch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__center {
+    z-index: 1;
+    height: $center-size;
+    width: $center-size;
+    border-radius: 50%;
+    background-color: #f6a603;
+  }
+
+  --seconds-circle-time: 60s;
+  --minutes-circle-time: 3600s;
+
+  &--speed-up {
+    --seconds-circle-time: 10s;
+    --minutes-circle-time: 600s;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    height: $seconds-hand-length;
+    width: 1.5vmin;
+    top: $watch-size / 2 - $seconds-hand-length;
+    background-color: #2c8000;
+
+    @include hand-animation(var(--seconds-circle-time), linear);
+  }
+
+  &__minutes-hand {
+    position: absolute;
+    height: $minutes-hand-length;
+    width: 3vmin;
+    top: $watch-size / 2 - $minutes-hand-length;
+    background-color: #0700ff;
+
+    @include hand-animation(var(--minutes-circle-time), steps(60, end));
+  }
+}
