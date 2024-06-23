@@ -1,0 +1,13 @@
+@mixin hand-animation($circle-time, $time-function) {
+  animation: rotate-minutes $circle-time infinite $time-function;
+  transform-origin: bottom;
+
+  @keyframes rotate-minutes {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
