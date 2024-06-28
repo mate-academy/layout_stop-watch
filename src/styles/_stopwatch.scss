@@ -1,0 +1,71 @@
+main {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50vmin;
+  position: relative;
+
+  &__minutes {
+    height: $minute-arrow-height;
+    width: $minute-arrow-width;
+    background-color: $minute-arrow-color;
+
+    @include position-absolute-center;
+
+    z-index: 1;
+
+    transform-origin: bottom;
+    animation: watch-start steps(60) infinite;
+  }
+
+  &__seconds {
+    height: $seconds-arrow-height;
+    width: $seconds-arrow-width;
+    background-color: $seconds-arrow-color;
+
+    @include position-absolute-center;
+
+    z-index: 2;
+
+    transform-origin: bottom;
+    animation: watch-start 10s linear infinite;
+  }
+
+  &__pivot {
+    height: $pivot-height;
+    width: $pivot-width;
+    background-color: $pivot-color;
+    border-radius: 50vmin;
+
+    @include position-absolute-center;
+
+    z-index: 3;
+    transform: translate(-50%, -50%);
+  }
+
+  &--speed-up > &__seconds {
+    animation-duration: 10s;
+  }
+
+  &--speed-up > &__minutes {
+    animation-duration: 600s;
+  }
+}
+
+@keyframes watch-start {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
