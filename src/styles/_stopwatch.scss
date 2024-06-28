@@ -36,7 +36,7 @@ main {
     z-index: 2;
 
     transform-origin: bottom;
-    animation: watch-start 10s linear infinite;
+    animation: watch-start 60s linear infinite;
   }
 
   &__pivot {
@@ -51,11 +51,11 @@ main {
     transform: translate(-50%, -50%);
   }
 
-  &--speed-up > &__seconds {
+  &--speed-up .stopwatch__seconds {
     animation-duration: 10s;
   }
 
-  &--speed-up > &__minutes {
+  &--speed-up > .stopwatch__minutes {
     animation-duration: 600s;
   }
 }
