@@ -1,3 +1,61 @@
+@import './variables';
+@import './mixins';
+@import './animations';
+
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted $border-color;
+  border-radius: 50%;
+
+  &__minutes-hand,
+  &__seconds-hand {
+    transform-origin: left;
+  }
+
+  &__minutes-hand {
+    width: 20vmin;
+    height: 3vmin;
+    background-color: $minutes-hand-color;
+    animation-timing-function: steps(60, end);
+
+    @include animation(3600ms);
+    @include location(0, -50%, 0);
+
+    &--speed-up {
+      @include animation(600s);
+    }
+  }
+
+  &__seconds-hand {
+    width: 38vmin;
+    height: 1.5vmin;
+    background-color: $seconds-hand-color;
+    animation-timing-function: linear;
+
+    @include animation(60s);
+    @include location(0, -50%, 0);
+
+    &--speed-up {
+      @include animation(10s);
+    }
+  }
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: $center;
+    border-radius: 50%;
+
+    @include location(-50%, -50%, 0);
+  }
 }
