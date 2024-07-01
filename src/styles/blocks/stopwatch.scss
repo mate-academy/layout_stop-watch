@@ -1,0 +1,90 @@
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+
+  border: $stopwatch-border-size dotted $stopwatch-border-color;
+  border-radius: 50%;
+
+  &__minutes {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+
+    .speed-up {
+      animation: arrow-rotate 600s steps(60) infinite;
+      transform-origin: bottom;
+    }
+
+    &-arrow {
+      width: $minutes-width;
+      height: $minutes-height;
+      background-color: $minutes-color;
+
+      animation: arrow-rotate 3600s steps(60) infinite;
+      transform-origin: bottom;
+    }
+  }
+
+  &__seconds {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+
+    .speed-up {
+      animation: arrow-rotate 10s linear infinite;
+      transform-origin: bottom;
+    }
+
+    &-arrow {
+      width: $seconds-width;
+      height: $seconds-height;
+      background-color: $seconds-color;
+
+      animation: arrow-rotate 60s linear infinite;
+      transform-origin: bottom;
+    }
+  }
+
+  &__circle {
+    position: absolute;
+
+    width: $circle-size;
+    height: $circle-size;
+    background-color: $circle-color;
+
+    border-radius: 50%;
+
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+@keyframes arrow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
