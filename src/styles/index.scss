@@ -1,3 +1,50 @@
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stop-watch {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  margin: 0;
+  position: relative;
+
+  &__dot {
+    // position: absolute;
+    transform: translate(-50%, -50%);
+    height: 5vmin;
+    width: 5vmin;
+    background-color: #f6a603;
+    border-radius: 0%;
+  }
+
+  &__main-hand {
+    position: relative;
+    height: 5vmin;
+    width: 5vmin;
+    
+    animation: spin 4s linear infinite;
+    &::after {
+      content: '';
+      position: absolute;
+      height: -20vmin;
+      width: -3vmin;
+      background-color: #0700ff;
+    }
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
