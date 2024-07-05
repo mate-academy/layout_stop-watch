@@ -1,3 +1,78 @@
-body {
+$stopwatch-size: 80vmin;
+$minutes-color: #0700ff;
+$minutes-height: 20vmin;
+$minutes-width: 3vmin;
+$seconds-color: #2c8000;
+$seconds-height: 38vmin;
+$seconds-width: 1.5vmin;
+$center-color: #f6a603;
+$center-size: 5vmin;
+
+.body {
   margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__center {
+    height: $center-size;
+    width: $center-size;
+    background-color: $center-color;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+  }
+
+  &__minutes {
+    height: $minutes-height;
+    width: $minutes-width;
+    background-color: $minutes-color;
+    position: absolute;
+    top: $stopwatch-size / 2 - $minutes-height;
+    transform-origin: bottom;
+    animation: move 3600s steps(60, end) infinite;
+  }
+
+  &__seconds {
+    height: $seconds-height;
+    width: $seconds-width;
+    background-color: $seconds-color;
+    position: absolute;
+    top: $stopwatch-size / 2 - $seconds-height;
+    transform-origin: bottom;
+    animation: move 60s infinite linear;
+  }
+
+  &--speed {
+    .stopwatch__minutes {
+      animation: move 600s steps(60, end) infinite;
+    }
+
+    .stopwatch__seconds {
+      animation: move 10s infinite linear;
+    }
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
