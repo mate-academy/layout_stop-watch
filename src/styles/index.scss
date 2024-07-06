@@ -1,3 +1,86 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@mixin detail-params($width, $height, $bg-color) {
+  width: $width;
+  height: $height;
+  background-color: $bg-color;
+}
+
+.watch {
+  position: relative;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  width: 80vmin;
+  height: 80vmin;
+
+  &__circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  &__center {
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include detail-params(5vmin, 5vmin, #f6a603);
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%);
+
+    &--minute {
+      transform: rotate(0deg);
+      animation: rotate 3600s steps(60) infinite;
+
+      @include detail-params(3vmin, 20vmin, #0700ff);
+    }
+
+    &--second {
+      transform: rotate(0deg);
+      animation: rotate 60s linear infinite;
+
+      @include detail-params(1.5vmin, 38vmin, #2c8000);
+    }
+  }
+
+  &--speed-up {
+    .watch__hand--minute {
+      animation-duration: 600s;
+    }
+
+    .watch__hand--second {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
 }
