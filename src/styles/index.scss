@@ -13,7 +13,7 @@ body {
   border-radius: 50%;
 }
 
-.center-point {
+.point-center {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -24,7 +24,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.minutes-hand {
+.hand-minutes {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -34,10 +34,10 @@ body {
   transform: translate(-50%, -100%) rotate(360deg);
   transform-origin: 50% 100%;
   z-index: -2;
-  animation: rotate-minute-hand 3600s steps(60) infinite;
+  animation: rotate-hand 3600s steps(60) infinite;
 }
 
-.seconds-hand {
+.hand-seconds {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -47,27 +47,18 @@ body {
   transform: translate(-50%, -100%) rotate(360deg);
   transform-origin: 50% 100%;
   z-index: -1;
-  animation: rotate-second-hand 60s linear infinite;
+  animation: rotate-hand 60s linear infinite;
 }
 
-.stopwatch--speed-up .seconds-hand {
+.stopwatch--speed-up .hand-seconds {
   animation-duration: 10s;
 }
 
-.stopwatch--speed-up .minutes-hand {
+.stopwatch--speed-up .hand-minutes {
   animation-duration: 600s;
 }
 
-@keyframes rotate-second-hand {
-  from {
-    transform: translate(-50%, -100%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -100%) rotate(360deg);
-  }
-}
-
-@keyframes rotate-minute-hand {
+@keyframes rotate-hand {
   from {
     transform: translate(-50%, -100%) rotate(0deg);
   }
