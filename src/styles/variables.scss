@@ -1,0 +1,17 @@
+$stopwatch-size: 80vmin;
+$stopwatch-center-size: 5vmin;
+
+@mixin centralize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
