@@ -22,7 +22,7 @@
     height: $seconds-hand-height;
     background-color: $color-green;
 
-    animation: seconds 60s infinite;
+    animation: rotate 60s infinite;
     animation-timing-function: linear;
     transform-origin: bottom;
   }
@@ -33,35 +33,25 @@
     height: $minutes-hand-height;
     background-color: $color-blue;
 
-    animation: minutes 3600s infinite;
+    animation: rotate 3600s infinite;
     animation-timing-function: linear;
     transform-origin: bottom;
   }
 
   &--speed-up {
     .stopwatch__seconds-hand {
-      animation: seconds 10s infinite;
+      animation: rotate 10s infinite;
       animation-timing-function: linear;
     }
 
     .stopwatch__minutes-hand {
-      animation: minutes 600s infinite;
+      animation: rotate 600s infinite;
       animation-timing-function: linear;
     }
   }
 }
 
-@keyframes seconds {
-  from {
-    transform: translateY(-50%) rotate(0);
-  }
-
-  to {
-    transform: translateY(-50%) rotate(360deg);
-  }
-}
-
-@keyframes minutes {
+@keyframes rotate {
   from {
     transform: translateY(-50%) rotate(0);
   }
