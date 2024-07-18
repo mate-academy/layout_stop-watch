@@ -1,3 +1,80 @@
+@keyframes seconds {
+  from {
+    transform: translateY(-19vmin) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(-19vmin) rotate(360deg);
+  }
+}
+
+@keyframes minutes {
+  from {
+    transform: translateY(-10vmin) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(-10vmin) rotate(360deg);
+  }
+}
+
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__circle {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__minutes {
+    position: absolute;
+    transform: translateY(-10vmin) rotate(0deg);
+    transform-origin: bottom;
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    animation-name: minutes;
+    animation-duration: 3600s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+
+    &--speed-up {
+      animation-duration: 600s;
+    }
+  }
+
+  &__seconds {
+    position: absolute;
+    transform: translateY(-19vmin) rotate(0deg);
+    transform-origin: bottom;
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    z-index: 1;
+    animation-name: seconds;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &--speed-up {
+      animation-duration: 10s;
+    }
+  }
 }
