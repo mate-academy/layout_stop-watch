@@ -7,8 +7,6 @@ body {
 .watch {
   margin: auto;
   position: relative;
-
-
   width: 80vmin;
   height: 80vmin;
   border: 1vmin dotted #000;
@@ -16,30 +14,35 @@ body {
 }
 
 .watch__min {
-  height: 20vmin;
-  width: 3vmin;
-  background-color: #0700ff;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transform-origin: top;
+  bottom: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%);
+  left: 48%;
+  width: 3vmin;
+  height: 20vmin;
+  background-color: #0700ff;
   animation: move 3600s steps(60) infinite;
+
+  &--speed-up {
+    animation: move 3600s steps(60) 10;
+  }
 }
 
 .watch__sec {
-  height: 38vmin;
-  width: 1.5vmin;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transform-origin: top;
-
+  bottom: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%);
+  left: 49%;
+  width: 1.5vmin;
+  height: 38vmin;
   background-color: #2c8000;
-  animation: move 60s steps(60) infinite;
+  animation: move 60s linear infinite;
 
-
+  &--speed-up {
+    animation: move 10s linear infinite;
+  }
 }
 
 .watch__cicle {
@@ -47,7 +50,6 @@ body {
   width: 5vmin;
   border-radius: 50%;
   background-color: #f6a603;
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -56,10 +58,9 @@ body {
 
 @keyframes move {
   from {
-    transform: rotate(0deg) translate(-50%, -50%);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg) translate(-50%, -50%);
+    transform: rotate(360deg);
   }
 }
-
