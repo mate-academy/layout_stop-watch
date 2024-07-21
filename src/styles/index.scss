@@ -1,3 +1,5 @@
+@import 'animation';
+
 body {
   margin: 0;
   display: flex;
@@ -11,56 +13,53 @@ body {
   height: 80vmin;
   border: 1vmin dotted #000;
   border-radius: 50%;
-}
 
-.watch__min {
-  position: absolute;
-  bottom: 50%;
-  transform-origin: bottom;
-  transform: translateX(-50%);
-  left: 48%;
-  width: 3vmin;
-  height: 20vmin;
-  background-color: #0700ff;
-  animation: move 3600s steps(60) infinite;
+  &__min {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%);
+    left: 48%;
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    animation: move 3600s steps(60) infinite;
 
-  &--speed-up {
-    animation: move 3600s steps(60) 10;
+    &--speed-up {
+      animation: move 3600s steps(60) 10;
+    }
+  }
+
+  &__sec {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%);
+    left: 49%;
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    animation: move 60s linear infinite;
+
+    &--speed-up {
+      animation: move 10s linear infinite;
+    }
+  }
+
+  &__cicle {
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
-.watch__sec {
-  position: absolute;
-  bottom: 50%;
-  transform-origin: bottom;
-  transform: translateX(-50%);
-  left: 49%;
-  width: 1.5vmin;
-  height: 38vmin;
-  background-color: #2c8000;
-  animation: move 60s linear infinite;
 
-  &--speed-up {
-    animation: move 10s linear infinite;
-  }
-}
 
-.watch__cicle {
-  height: 5vmin;
-  width: 5vmin;
-  border-radius: 50%;
-  background-color: #f6a603;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
-@keyframes move {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
