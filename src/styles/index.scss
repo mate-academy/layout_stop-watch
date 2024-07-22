@@ -1,3 +1,88 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+.stopwatch {
+  width: 81vmin;
+  height: 81vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch__outer-ring {
+  width: 100%;
+  height: 100%;
+  border: 1vmin dotted #000;
+  border-radius: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.stopwatch__inner-ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch__hand {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+  transition: transform 0.5s ease-in-out;
+}
+
+.stopwatch__hand--minute {
+  width: 3vmin;
+  height: 20vmin;
+  background: #0700ff;
+  border-radius: 2px;
+  animation: rotate 3600s steps(60) infinite;
+}
+
+.stopwatch__hand--second {
+  width: 2vmin;
+  height: 38vmin;
+  background: #2c8000;
+  border-radius: 2px;
+  animation: rotate 60s linear infinite;
+}
+
+.stopwatch__center-circle {
+  width: 5vmin;
+  height: 5vmin;
+  background: #f6a603;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+}
+
+.stopwatch--speed-up .stopwatch__hand--minute {
+  animation-duration: 600s;
+}
+
+.stopwatch--speed-up .stopwatch__hand--second {
+  animation-duration: 10s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
