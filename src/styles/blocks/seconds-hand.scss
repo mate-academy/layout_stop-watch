@@ -1,0 +1,30 @@
+@use '../utils/mixins' as *;
+@use '../utils/variables' as *;
+
+.seconds-hand {
+  @include position-absolute-centering;
+
+  width: $seconds-width;
+  height: calc($seconds-height * 2);
+
+  animation-duration: $seconds-anim-duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: seconds-hand-animation;
+
+  &::before {
+    @include position-absolute-centering;
+
+    content: '';
+    top: -$seconds-height;
+    height: $seconds-height;
+    width: $seconds-width;
+    background-color: $seconds-background-color;
+  }
+}
+
+@keyframes seconds-hand-animation {
+  100% {
+    transform: rotate(360deg);
+  }
+}

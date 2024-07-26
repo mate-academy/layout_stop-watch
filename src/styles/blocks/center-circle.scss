@@ -1,0 +1,11 @@
+@use '../utils/mixins' as *;
+@use '../utils/variables' as *;
+
+.center-circle {
+  @include position-absolute-centering;
+
+  width: $center-circle-size;
+  height: $center-circle-size;
+  border-radius: 50%;
+  background-color: $center-circle-background-color;
+}
