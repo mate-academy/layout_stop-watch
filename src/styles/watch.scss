@@ -25,7 +25,7 @@
     background-color: #0700ff;
 
     transform-origin: bottom;
-    animation: rotate-minute 3600s steps(60);
+    animation: rotate 3600s steps(60);
   }
 
   &__second {
@@ -36,7 +36,7 @@
     bottom: 50%;
 
     transform-origin: bottom;
-    animation: rotate-second 60s linear infinite;
+    animation: rotate 60s linear infinite;
   }
 
   &--speed-up .stopwatch__minute {
@@ -48,18 +48,7 @@
   }
 }
 
-@keyframes rotate-minute {
-  from {
-    transform-origin: bottom;
-    transform: rotate(0deg);
-  }
-  to {
-    transform-origin: bottom;
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-second {
+@keyframes rotate {
   from {
     transform-origin: bottom;
     transform: rotate(0deg);
