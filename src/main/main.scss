@@ -39,14 +39,14 @@ html {
       width: 1.5vmin;
       height: 38vmin;
       background-color: $backgroundColorSeconds;
-      animation: rotate-seconds 60s linear infinite;
+      animation: rotate 60s linear infinite;
     }
 
     &--minutes {
       width: 3vmin;
       height: 20vmin;
       background-color: $backgroundColorMinutes;
-      animation: rotate-minutes 3600s steps(60) infinite;
+      animation: rotate 3600s steps(60) infinite;
     }
   }
 
@@ -61,16 +61,7 @@ html {
   }
 }
 
-@keyframes rotate-seconds {
-  from {
-    transform: translateX(-50%) translateY(-100%) rotate(0deg);
-  }
-  to {
-    transform: translateX(-50%) translateY(-100%) rotate(360deg);
-  }
-}
-
-@keyframes rotate-minutes {
+@keyframes rotate {
   from {
     transform: translateX(-50%) translateY(-100%) rotate(0deg);
   }
