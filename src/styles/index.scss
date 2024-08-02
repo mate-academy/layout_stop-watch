@@ -40,35 +40,26 @@ html {
     width: 3vmin;
     height: 20vmin;
     background-color: #0700ff;
-    animation: minutes 3600s steps(60) infinite;
+    animation: rotate 3600s steps(60) infinite;
   }
 
   &__hand--seconds {
     width: 1.5vmin;
     height: 38vmin;
     background-color: #2c8000;
-    animation: seconds 60s linear infinite;
+    animation: rotate 60s linear infinite;
   }
 }
 
 .stopwatch--speed-up .stopwatch__hand--minutes {
-  animation: minutes 600s steps(60) infinite;
+  animation: rotate 600s steps(60) infinite;
 }
 
 .stopwatch--speed-up .stopwatch__hand--seconds {
-  animation: seconds 10s linear infinite;
+  animation: rotate 10s linear infinite;
 }
 
-@keyframes minutes {
-  from {
-    transform: translateX(-50%) translateY(-100%) rotate(0deg);
-  }
-  to {
-    transform: translateX(-50%) translateY(-100%) rotate(360deg);
-  }
-}
-
-@keyframes seconds {
+@keyframes rotate {
   from {
     transform: translateX(-50%) translateY(-100%) rotate(0deg);
   }
