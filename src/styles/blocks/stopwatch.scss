@@ -23,7 +23,7 @@
     width: $minuts-arrow-width;
     background-color: #0700ff;
 
-    @include do-animation($one-hour);
+    @include do-animation($one-hour, steps(60));
   }
 
   &__seconds-arrow {
@@ -33,14 +33,14 @@
     width: $second-arrow-width;
     background-color: #2c8000;
 
-    @include do-animation($one-minute);
+    @include do-animation($one-minute, linear);
   }
 
   &--speed-up .stopwatch__minuts-arrow {
-    @include do-animation(600s);
+    @include do-animation(600s, steps(60));
   }
 
   &--speed-up .stopwatch__seconds-arrow {
-    @include do-animation(10s);
+    @include do-animation(10s, linear);
   }
 }

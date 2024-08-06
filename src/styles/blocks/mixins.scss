@@ -1,4 +1,4 @@
-@mixin do-animation($duration) {
+@mixin do-animation($duration, $timing) {
   transform-origin: bottom;
-  animation: rotate $duration linear infinite;
+  animation: rotate $duration $timing infinite;
 }
