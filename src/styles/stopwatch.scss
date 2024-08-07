@@ -45,14 +45,12 @@
     transform: translate(-50%, -50%);
   }
 
-  &--speed-up {
-    .seconds-hand {
-      animation-duration: 10s;
-    }
+  &--speed-up &__seconds-hand {
+    animation-duration: 10s;
+  }
 
-    .minutes-hand {
-      animation-duration: 600s;
-    }
+  &__seconds-hand &__minutes-hand {
+    animation-duration: 600s;
   }
 }
 
