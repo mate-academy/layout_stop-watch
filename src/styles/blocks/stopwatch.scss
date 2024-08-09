@@ -1,0 +1,48 @@
+.stopwatch {
+  position: relative;
+  width: $watchSize;
+  height: $watchSize;
+  border: 1vmin dotted $borderColor;
+  border-radius: $circle;
+
+  &__centr {
+    @include position-blocks;
+
+    height: $centerSize;
+    width: $centerSize;
+    background-color: $centrColor;
+    border-radius: $circle;
+    transform: translate(-50%, -50%);
+  }
+
+  &__second {
+    @include position-blocks;
+    @include properties-hands;
+
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: $secondColor;
+    animation-timing-function: linear;
+    animation-duration: 60s;
+  }
+
+  &__minute {
+    @include position-blocks;
+    @include properties-hands;
+
+    width: 3vmin;
+    height: 20vmin;
+    background-color: $minuteColor;
+    animation-timing-function: steps(60);
+    animation-duration: 3600;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+  }
+}
