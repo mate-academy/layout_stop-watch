@@ -8,14 +8,6 @@
   border: 1vmin dotted #000;
   border-radius: 50%;
 
-  &--speed-up &__hand--minutes {
-    animation-duration: 600s;
-  }
-
-  &--speed-up &__hand--seconds {
-    animation-duration: 10s;
-  }
-
   &__hand {
     &--minutes {
       @include position;
@@ -37,6 +29,14 @@
       transform-origin: 50% 0%;
       animation: rotate 60s linear infinite;
     }
+  }
+
+  &--speed-up &__hand--minutes {
+    animation-duration: 600s;
+  }
+
+  &--speed-up &__hand--seconds {
+    animation-duration: 10s;
   }
 
   &__center {
