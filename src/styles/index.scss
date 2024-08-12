@@ -1,3 +1,75 @@
+// Mixin for common properties
+@mixin hand-properties($bg-color, $width, $height, $bottom, $left) {
+  width: $width;
+  height: $height;
+
+  background-color: $bg-color;
+
+  transform: rotate(0);
+  transform-origin: bottom;
+
+  position: absolute;
+  bottom: $bottom;
+  left: $left;
+}
+
 body {
   margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+
+  --minute-duration: 60s;
+
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  position: relative;
+
+  &--speed-up {
+    --minute-duration: 10s;
+  }
+
+  &__minutes-hand {
+    @include hand-properties(#0700ff, 3vmin, 20vmin, 40vmin, 38.5vmin);
+
+    animation: hand-rotate calc(var(--minute-duration) * 60) steps(60) infinite;
+  }
+
+  &__seconds-hand {
+    @include hand-properties(#2c8000, 1.5vmin, 38vmin, 40vmin, 39.25vmin);
+
+    animation: hand-rotate var(--minute-duration) linear infinite;
+  }
+
+  &__central-circle {
+    width: 5vmin;
+    height: 5vmin;
+
+    background-color: #f6a603;
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: 37.5vmin;
+    left: 37.5vmin;
+  }
+}
+
+@keyframes hand-rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
