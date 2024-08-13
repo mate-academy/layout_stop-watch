@@ -1,0 +1,69 @@
+@import '../utils/variables';
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border-radius: 50%;
+  border: $border-width dotted $border-color;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $center-size;
+    height: $center-size;
+    background-color: $center-color;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &__minute-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: $minute-hand-height;
+    width: $minute-hand-width;
+    background-color: $minute-hand-color;
+    transform-origin: bottom center;
+    transform: translateX(-50%) translateY(-100%);
+    animation: rotate $minute-duration steps(60) infinite;
+  }
+
+  &__second-hand {
+    height: $second-hand-height;
+    width: $second-hand-width;
+    background-color: $second-hand-color;
+    animation: rotate $second-duration linear infinite;
+  }
+
+  &__second-hand,
+  &__minute-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%) translateY(-100%);
+    z-index: 1;
+  }
+}
+
+.stopwatch--speed-up .stopwatch__minute-hand {
+  animation-duration: $speed-up-minute-duration;
+}
+
+.stopwatch--speed-up .stopwatch__second-hand {
+  animation-duration: $speed-up-second-duration;
+}
