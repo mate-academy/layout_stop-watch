@@ -1,3 +1,79 @@
+$defaultSecond: 60s;
+$defaultMinute: 3600s;
+$speedUpSecond: 10s;
+$speedUpMinute: 600s;
+
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  height: 80vmin;
+  width: 80vmin;
+
+  &__minut {
+    position: absolute;
+    top: 20vmin;
+
+    background-color: #0700ff;
+
+    height: 20vmin;
+    width: 3vmin;
+
+    animation: time $defaultMinute steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__second {
+    position: absolute;
+    bottom: 40vmin;
+
+    background-color: #2c8000;
+
+    height: 38vmin;
+    width: 1.5vmin;
+
+    animation: time $defaultSecond linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__circle {
+    position: absolute;
+
+    border-radius: 50%;
+    background-color: #f6a603;
+
+    height: 5vmin;
+    width: 5vmin;
+  }
+
+  &--speed--up {
+    .stopwatch__minut {
+      animation: time $speedUpMinute steps(60) infinite;
+    }
+    .stopwatch__second {
+      animation: time $speedUpSecond linear infinite;
+    }
+  }
+}
+
+@keyframes time {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
