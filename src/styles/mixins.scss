@@ -1,0 +1,13 @@
+@mixin rotate-animation($duration, $timing-function) {
+  animation: hand-move $duration $timing-function infinite;
+  transform-origin: bottom center;
+
+  @keyframes hand-move {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
