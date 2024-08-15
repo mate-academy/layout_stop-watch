@@ -1,0 +1,70 @@
+.stopwatch {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: $watch-size;
+  height: $watch-size;
+
+  border: 1vmin dotted $border-color;
+  border-radius: 50%;
+
+  &__time {
+    position: absolute;
+    bottom: 50%;
+
+    animation-name: watch;
+    animation-iteration-count: infinite;
+
+    transform-origin: bottom;
+
+    &--minutes {
+      width: $minutes-width;
+      height: $minutes-length;
+      background-color: $minutes-color;
+
+      animation-duration: 3600s;
+      animation-timing-function: steps(60, end);
+    }
+
+    &--seconds {
+      width: $seconds-width;
+      height: $seconds-length;
+      background-color: $seconds-color;
+
+      animation-duration: 60s;
+      animation-timing-function: linear;
+    }
+  }
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+
+    z-index: 1;
+
+    background-color: $center-color;
+
+    border-radius: 50%;
+  }
+
+  &--speed-up &__time--seconds {
+    animation-duration: 10s;
+  }
+
+  &--speed-up &__time--minutes {
+    animation-duration: 600s;
+  }
+}
+
+@keyframes watch {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
