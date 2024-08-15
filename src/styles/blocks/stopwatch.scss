@@ -1,0 +1,39 @@
+.stopwatch {
+  position: relative;
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+  border: $stopwatch-border-size dotted $stopwatch-border-color;
+
+  &--speed-up {
+    & :first-child {
+      @include hand-position($MH-height, $MH-width, $MH-color);
+
+      animation: 600s steps(60) infinite rotate-minute;
+    }
+
+    & :nth-child(2) {
+      @include hand-position($SH-height, $SH-width, $SH-color, -47.5%);
+
+      animation: 10s linear infinite rotate-second;
+    }
+  }
+
+  &__minute {
+    @include hand-position($MH-height, $MH-width, $MH-color);
+
+    animation: 3600s steps(60) infinite rotate-minute;
+  }
+
+  &__second {
+    @include hand-position($SH-height, $SH-width, $SH-color, -47.5%);
+
+    animation: 60s linear infinite rotate-second;
+  }
+
+  &__dot {
+    @include hand-position($dot-size, $dot-size, $dot-color, -50%, center, 50%);
+
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,17 @@
+@mixin hand-position(
+  $height,
+  $width,
+  $color,
+  $moveUp: 0,
+  $transform: bottom,
+  $top: 25%
+) {
+  position: absolute;
+  top: $top;
+  left: 50%;
+  transform: translate(-50%, $moveUp) rotate(0);
+  transform-origin: $transform;
+  height: $height;
+  width: $width;
+  background-color: $color;
+}
