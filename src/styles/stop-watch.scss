@@ -19,10 +19,6 @@
     background-color: $minute-hand-color;
     animation: rotate $minute-duration steps(60, end) 0s infinite;
     transform-origin: bottom;
-
-    &--speed-up {
-      animation-duration: 600s;
-    }
   }
 
   &__second-hand {
@@ -48,6 +44,16 @@
     width: 5vmin;
     background-color: $center-circle-color;
     border-radius: 50%;
+  }
+}
+
+.stopwatch--speed-up {
+  .stopwatch__second-hand {
+    animation: rotate 10s linear infinite;
+  }
+
+  .stopwatch__minute-hand {
+    animation: rotate 600s linear infinite;
   }
 }
 
