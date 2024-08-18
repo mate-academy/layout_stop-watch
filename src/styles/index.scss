@@ -4,10 +4,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
 }
 
-.border {
+.stopwatch {
   width: 80vmin;
   height: 80vmin;
   border: 1vmin dotted #000;
@@ -15,27 +14,29 @@ body {
   position: relative;
 }
 
-.minutes_hand,
-.seconds_hand {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform-origin: bottom center;
-  transform: translateX(-50%);
-}
-
 .minutes_hand {
   width: 3vmin;
   height: 20vmin;
   background-color: #0700ff;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom left;
+  transform: translateX(-50%);
+  z-index: 1;
 
-  animation: rotates 3600s linear infinite;
+  animation: rotates 3600s steps(60) infinite;
 }
 
 .seconds_hand {
   width: 1.5vmin;
   height: 38vmin;
   background-color: #2c8000;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom left;
+  transform: translateX(-50%);
 
   animation: rotates 60s linear infinite;
 }
@@ -61,10 +62,10 @@ body {
   }
 }
 
-.border--speed-up .minutes_hand {
-  animation: rotates 600s linear infinite;
+.stopwatch--speed-up .minutes_hand {
+  animation: rotates 600s steps(60) infinite;
 }
 
-.border--speed-up .seconds_hand {
+.stopwatch--speed-up .seconds_hand {
   animation: rotates 10s linear infinite;
 }
