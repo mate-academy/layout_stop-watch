@@ -5,8 +5,10 @@
   border: 1vmin dotted #000;
   position: relative;
 
-  &--time {
-    --time: 10s;
+  --time-duration: 60s;
+
+  &--speed-up {
+    --time-duration: 10s;
   }
 
   &__hand-minutes {
@@ -18,7 +20,7 @@
     left: 38.5vmin;
     transform-origin: bottom;
     transform: translateX(50%);
-    animation: roll calc(var(--time) * 60) steps(60) infinite;
+    animation: roll calc(var(--time-duration) * 60) steps(60) infinite;
   }
 
   &__hand-seconds {
@@ -31,7 +33,7 @@
     bottom: 40vmin;
     left: 39.25vmin;
     transform-origin: bottom;
-    animation: roll var(--time) infinite linear;
+    animation: roll var(--time-duration) infinite linear;
     transform: rotate(0);
   }
 

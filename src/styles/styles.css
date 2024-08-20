@@ -15,9 +15,11 @@ body {
   border-radius: 50%;
   border: 1vmin dotted #000;
   position: relative;
+
+  --time-duration: 60s;
 }
-.stopwatch--time {
-  --time: 10s;
+.stopwatch--speed-up {
+  --time-duration: 10s;
 }
 .stopwatch__hand-minutes {
   height: 20vmin;
@@ -28,7 +30,7 @@ body {
   left: 38.5vmin;
   transform-origin: bottom;
   transform: translateX(50%);
-  animation: roll calc(var(--time) * 60) steps(60) infinite;
+  animation: roll calc(var(--time-duration) * 60) steps(60) infinite;
 }
 .stopwatch__hand-seconds {
   display: flex;
@@ -40,7 +42,7 @@ body {
   bottom: 40vmin;
   left: 39.25vmin;
   transform-origin: bottom;
-  animation: roll var(--time) infinite linear;
+  animation: roll var(--time-duration) infinite linear;
   transform: rotate(0);
 }
 .stopwatch__dot {
