@@ -1,3 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  padding: 0;
   margin: 0;
+}
+
+.stop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.stop__watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+}
+
+.stop__min {
+  position: absolute;
+  height: 20vmin;
+  width: 3vmin;
+  background: #0700ff;
+  margin-bottom: 20vmin;
+
+  transform-origin: bottom;
+  animation-name: minutos;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+
+.stop__sec {
+  position: absolute;
+  height: 38vmin;
+  width: 1.5vmin;
+  background: #2c8000;
+  margin-bottom: 40vmin;
+
+  transform-origin: bottom;
+  animation-name: segundos;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.stop__center {
+  position: absolute;
+  height: 5vmin;
+  width: 5vmin;
+  border-radius: 50%;
+  background: #f6a603;
+}
+
+@keyframes minutos {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  6% {
+    transform: rotate(6deg);
+  }
+
+  12% {
+    transform: rotate(12deg);
+  }
+
+  18% {
+    transform: rotate(18deg);
+  }
+
+  24% {
+    transform: rotate(24deg);
+  }
+}
+
+@keyframes segundos {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
