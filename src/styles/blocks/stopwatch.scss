@@ -25,7 +25,6 @@
     position: absolute;
     top: 25%;
     left: 50%;
-    transform-origin: $center-size 50%;
     background-color: $minutes-color;
 
     @include rotate-config(3600s, steps(60, end));
@@ -37,7 +36,6 @@
     position: absolute;
     top: 0%;
     left: 50%;
-    transform-origin: -100% 50%;
     background-color: $seconds-color;
 
     @include rotate-config(60s, linear);
