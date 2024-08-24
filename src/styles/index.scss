@@ -41,7 +41,7 @@ body {
     top: calc($stopwatch-height / 2 - $minutes-height);
 
     animation-name: rotate;
-    animation-duration: calc($seconds * $minutes);
+    animation-duration: #{$seconds * $minutes}s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     transform-origin: bottom;
@@ -55,7 +55,7 @@ body {
     top: calc($stopwatch-height / 2 - $second-height);
 
     animation-name: rotate;
-    animation-duration: $seconds;
+    animation-duration: #{$seconds}s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     transform-origin: bottom;
