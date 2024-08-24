@@ -5,3 +5,15 @@
   transform-origin: bottom center;
 }
 
+@mixin spin-hands($animation-duration, $timing-func) {
+  animation-name: spin-hands;
+  animation-duration: $animation-duration;
+  animation-timing-function: $timing-func;
+  animation-iteration-count: infinite;
+
+  @keyframes spin-hands {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

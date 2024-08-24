@@ -11,6 +11,7 @@
     background-color: #0700ff;
 
     @include center-sw-hands($sw-m-hand-width);
+    @include spin-hands($hour-duration, steps(60));
   }
 
   &__seconds-hand {
@@ -19,6 +20,15 @@
     background-color: #2c8000;
 
     @include center-sw-hands($sw-s-hand-width);
+    @include spin-hands($minute-duration, linear);
+  }
+
+  &--speed-up &__minutes-hand {
+    animation-duration: $hour-duration / 6;
+  }
+
+  &--speed-up &__seconds-hand {
+    animation-duration: $minute-duration / 6;
   }
 
   &__center {
