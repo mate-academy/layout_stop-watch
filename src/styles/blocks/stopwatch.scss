@@ -1,0 +1,53 @@
+.stopwatch {
+  position: relative;
+
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+
+  border: $border-size $border-type $border-color;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: $center-size;
+    height: $center-size;
+    background-color: $center-color;
+    border-radius: 50%;
+  }
+
+  &__minutes {
+    height: $minutes-length;
+    width: $minutes-width;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform-origin: $center-size 50%;
+    background-color: $minutes-color;
+
+    @include rotate-config(3600s, steps(60, end));
+  }
+
+  &__seconds {
+    height: $seconds-length;
+    width: $seconds-width;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform-origin: -100% 50%;
+    background-color: $seconds-color;
+
+    @include rotate-config(60s, linear);
+  }
+
+  &--speed-up &__seconds {
+    animation-duration: 10s;
+  }
+
+  &--speed-up &__minutes {
+    animation-duration: 600s;
+  }
+}
