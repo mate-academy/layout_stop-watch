@@ -23,8 +23,8 @@
     height: $minutes-length;
     width: $minutes-width;
     position: absolute;
-    top: 25%;
-    left: 50%;
+    top: 50%;
+    left: ($stopwatch-size / 2) - ($minutes-width / 2);
     background-color: $minutes-color;
 
     @include rotate-config(3600s, steps(60, end));
@@ -34,8 +34,8 @@
     height: $seconds-length;
     width: $seconds-width;
     position: absolute;
-    top: 0%;
-    left: 50%;
+    top: 50%;
+    left: ($stopwatch-size / 2) - ($seconds-width / 2);
     background-color: $seconds-color;
 
     @include rotate-config(60s, linear);
