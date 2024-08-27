@@ -1,0 +1,14 @@
+@mixin hands-transform {
+  transform: translateY(-50%);
+  transform-origin: bottom;
+}
+
+@mixin rotatio-speed($seconds, $minutes) {
+  .stopwatch__minutes {
+    animation: rotate $minutes steps(60) infinite;
+  }
+
+  .stopwatch__seconds {
+    animation: rotate $seconds linear 0s infinite;
+  }
+}
