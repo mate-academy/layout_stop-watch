@@ -1,3 +1,86 @@
+$whatch-size: 80vmin;
+$dot-size: 5vmin;
+$roundet-radius: 50%;
+$main-arrow-width: 3vmin;
+
+@mixin centralize-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   margin: 0;
+  height: 100vh;
+
+  @include centralize-flex;
+}
+
+.stopwatch {
+  position: relative;
+  width: $whatch-size;
+  height: $whatch-size;
+
+  @include centralize-flex;
+
+  border: 1vmin dotted #000;
+  border-radius: $roundet-radius;
+
+  &__center {
+    position: relative;
+    width: $main-arrow-width;
+    height: 0;
+  }
+
+  &__arrow {
+    position: absolute;
+    height: 20vmin;
+    width: $main-arrow-width;
+    background-color: #0700ff;
+    animation-name: rotating;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+    transform-origin: top center;
+
+    &:nth-child(2) {
+      height: 38vmin;
+      width: $main-arrow-width / 2;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #2c8000;
+      animation-duration: 60s;
+      animation-timing-function: linear;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    height: $dot-size;
+    width: $dot-size;
+    border-radius: $roundet-radius;
+    background-color: #f6a603;
+  }
+
+  &--speed-up {
+    & .stopwatch__arrow {
+      animation-duration: 600s;
+
+      &:nth-child(2) {
+        animation-duration: 10s;
+      }
+    }
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(180deg);
+  }
+
+  to {
+    transform: rotate(540deg);
+  }
 }
