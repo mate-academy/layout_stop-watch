@@ -1,0 +1,63 @@
+.page {
+  &__body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.stopwatch {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  border: 1vmin dotted #000;
+
+  @include circle(#{$watch-size});
+
+  &__center {
+    z-index: 1;
+    background-color: #f6a603;
+
+    @include circle(#{$watch-center-size});
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+    animation-name: clock;
+    animation-iteration-count: infinite;
+
+    @keyframes clock {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    &--minute {
+      width: $minutes-width;
+      height: $minutes-length;
+      background-color: #0700ff;
+
+      animation-timing-function: steps(60);
+      animation-duration: 3600s;
+    }
+
+    &--second {
+      width: $seconds-width;
+      height: $seconds-length;
+      background-color: #2c8000;
+
+      animation-timing-function: linear;
+      animation-duration: 60s;
+    }
+  }
+}
