@@ -35,4 +35,4 @@ In addition to the basic functionality create a BEM modifier called `speed-up` f
 - [ ] Keyframes implemented using from/to + transform with rotate property
 - [ ] Stopwatch is centered and has correct arrows size
 - [ ] All `Typical Mistakes` from `BEM` lesson theory are checked.
-- [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
+  - [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
