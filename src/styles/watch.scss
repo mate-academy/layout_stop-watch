@@ -17,7 +17,6 @@
   justify-content: center;
   align-items: center;
 
-  box-sizing: border-box;
   border: 1vmin dotted #000;
 
   @include circle(#{$watch-size});
@@ -29,35 +28,49 @@
     @include circle(#{$watch-center-size});
   }
 
-  &__arrow {
+  &__arrows {
     position: absolute;
     bottom: 50%;
-    transform-origin: bottom;
+
     animation-name: clock;
     animation-iteration-count: infinite;
 
-    @keyframes clock {
-      to {
-        transform: rotate(360deg);
-      }
-    }
+    transform-origin: bottom;
 
-    &--minute {
+    &--minutes {
       width: $minutes-width;
       height: $minutes-length;
       background-color: #0700ff;
 
-      animation-timing-function: steps(60);
       animation-duration: 3600s;
+      animation-timing-function: steps(60, end);
     }
 
-    &--second {
+    &--seconds {
       width: $seconds-width;
       height: $seconds-length;
       background-color: #2c8000;
 
-      animation-timing-function: linear;
       animation-duration: 60s;
+      animation-timing-function: linear;
     }
+  }
+
+  &--speed-up &__arrows--seconds {
+    animation-duration: 10s;
+  }
+
+  &--speed-up &__arrows--minutes {
+    animation-duration: 600s;
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
   }
 }
