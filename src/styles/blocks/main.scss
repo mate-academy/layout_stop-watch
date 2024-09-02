@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $watchSize;
+  width: $watchSize;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__details {
+    position: absolute;
+
+    &--minutes {
+      height: $minutesLength;
+      width: $minutesWidth;
+      background-color: $minutesColor;
+      transform-origin: 50% 100%;
+      animation: spin 3600s steps(60) infinite;
+    }
+
+    &--seconds {
+      height: $secondsLength;
+      width: $secondsWidth;
+      background-color: $secondsColor;
+      transform-origin: 50% 100%;
+      animation: spin 60s linear infinite;
+    }
+
+    &--center {
+      height: $centerDiameter;
+      width: $centerDiameter;
+      background-color: $centerColor;
+      border-radius: 50%;
+    }
+  }
+}
+
+.watch--speed-up {
+  .watch__details--minutes {
+    animation: spin 600s steps(60) infinite;
+  }
+
+  .watch__details--seconds {
+    animation: spin 10s linear infinite;
+  }
+}
