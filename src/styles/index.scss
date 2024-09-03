@@ -1,3 +1,77 @@
-body {
-  margin: 0;
+.stopwatch {
+  top: 50%;
+  left: 50%;
+
+  max-width: 80vmin;
+  height: 80vmin;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.speed {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+}
+
+.center {
+  top: 50%;
+  left: 50%;
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 5vmin;
+
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: #f6a603;
+}
+
+.minute {
+  width: 3vmin;
+  height: 20vmin;
+  top: 25%;
+  left: 50%;
+  position: absolute;
+
+  background-color: #0700ff;
+
+  animation: time 3600s steps(60, end) infinite;
+
+  transform-origin: bottom left;
+
+  transform: rotate(0deg) translateX(-50%);
+}
+
+.speed--speed-up .minute {
+  animation: time 600s steps(60, end) infinite;
+}
+
+.second {
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 1.5vmin;
+  height: 38vmin;
+  background-color: #2c8000;
+  animation: time 60s infinite linear;
+
+  transform-origin: bottom left;
+  transform: rotate(0deg) translateX(-50%);
+}
+
+.speed--speed-up .second {
+  animation: time 10s infinite linear;
+}
+
+@keyframes time {
+  0% {
+    transform: rotate(0deg) translateX(-50%);
+  }
+  100% {
+    transform: rotate(360deg) translateX(-50%);
+  }
 }
