@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  height: $--watch-size;
+  width: $--watch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &--speed-up {
+    .stopwatch__minutes-hand--speed-up {
+      animation-duration: 600s;
+    }
+    .stopwatch__seconds-hand--speed-up {
+      animation-duration: 10s;
+    }
+  }
+
+  &__minutes-hand {
+    height: 20vmin;
+    width: 3vmin;
+    background-color: $--color-minutes-hand;
+    position: absolute;
+    top: 20vmin;
+    transform-origin: bottom;
+
+    animation: move 3600s steps(60, end) infinite normal backwards;
+  }
+
+  &__seconds-hand {
+    height: 38vmin;
+    width: 1.5vmin;
+    top: 2vmin;
+
+    background-color: $--color-seconds-hand;
+    position: absolute;
+    z-index: 1;
+    transform-origin: bottom;
+
+    animation: move 60s linear infinite normal backwards;
+  }
+
+  &__center {
+    height: $--center-size;
+    width: $--center-size;
+    border-radius: 50%;
+    background-color: #f6a603;
+    position: absolute;
+    z-index: 2;
+  }
+}
