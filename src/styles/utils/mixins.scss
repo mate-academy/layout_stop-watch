@@ -1,0 +1,13 @@
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@include keyframes(watch-minutes) {
+  @for $step from 0 to 60 {
+    #{$step * 100 / 60}% {
+      transform: translateY(-50%) rotateZ(#{$step * 360 / 60}deg);
+    }
+  }
+}
