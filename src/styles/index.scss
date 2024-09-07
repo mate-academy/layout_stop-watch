@@ -7,14 +7,14 @@ body {
   margin: 0;
 }
 
-.stop {
+.stopwatch {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
 
-.stop__watch {
+.stopwatch__block {
   position: relative;
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@ body {
   border: 1vmin dotted #000;
 }
 
-.stop__min {
+.stopwatch__min {
   position: absolute;
   height: 20vmin;
   width: 3vmin;
@@ -39,7 +39,7 @@ body {
   animation: minutos 3600s steps(60) infinite;
 }
 
-.stop__sec {
+.stopwatch__sec {
   position: absolute;
   height: 38vmin;
   width: 1.5vmin;
@@ -54,7 +54,7 @@ body {
   animation-timing-function: linear;
 }
 
-.stop__center {
+.stopwatch__center {
   display: flex;
   align-items: center;
   justify-content: center;
