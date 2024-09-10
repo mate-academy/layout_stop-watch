@@ -1,3 +1,69 @@
-body {
+@import './utils/variables';
+
+@keyframes moving {
+  from {
+    transform: translateX(-50%) translateY(-100%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) translateY(-100%) rotate(360deg);
+  }
+}
+
+.page__body {
   margin: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  height: $watch-size;
+  width: $watch-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1vmin dotted $border-color;
+  border-radius: 50%;
+
+  &__foundation {
+    position: absolute;
+    height: $foundation-size;
+    width: $foundation-size;
+    background-color: $bg-color-foundation;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__hand {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom;
+
+    &--minutes {
+      height: 20vmin;
+      width: 3vmin;
+      background-color: $bg-color-minutes;
+      animation: moving 3600s steps(60) infinite;
+    }
+
+    &--seconds {
+      height: 38vmin;
+      width: 1.5vmin;
+      background-color: $bg-color-seconds;
+      animation: moving 60s linear infinite;
+    }
+  }
+
+  &--speed-up &__hand--minutes {
+    animation-duration: 600s;
+  }
+
+  &--speed-up &__hand--seconds {
+    animation-duration: 10s;
+  }
 }
