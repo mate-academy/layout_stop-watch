@@ -31,28 +31,19 @@
       width: 1.5vmin;
       height: 38vmin;
       background-color: $color-second;
-      animation: rotate-seconds 60s linear infinite;
+      animation: rotates 60s linear infinite;
     }
 
     &--minutes {
       width: 3vmin;
       height: 20vmin;
       background-color: $color-minute;
-      animation: rotate-minutes 3600s steps(60) infinite;
+      animation: rotates 3600s steps(60) infinite;
     }
   }
 }
 
-@keyframes rotate-seconds {
-  from {
-    transform: rotate(0deg) translateX(-50%);
-  }
-  to {
-    transform: rotate(360deg) translateX(-50%);
-  }
-}
-
-@keyframes rotate-minutes {
+@keyframes rotates {
   from {
     transform: rotate(0deg) translateX(-50%);
   }
