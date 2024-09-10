@@ -5,13 +5,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: $borderWatch;
+  border: $border-stopwatch;
   border-radius: 50%;
 
   &__center {
     width: 5vmin;
     height: 5vmin;
-    background-color: $colorCenter;
+    background-color: $color-center;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -30,14 +30,14 @@
     &--seconds {
       width: 1.5vmin;
       height: 38vmin;
-      background-color: $colorSecond;
+      background-color: $color-second;
       animation: rotate-seconds 60s linear infinite;
     }
 
     &--minutes {
       width: 3vmin;
       height: 20vmin;
-      background-color: $colorMinute;
+      background-color: $color-minute;
       animation: rotate-minutes 3600s steps(60) infinite;
     }
   }
