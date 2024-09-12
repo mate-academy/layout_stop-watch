@@ -1,0 +1,57 @@
+.stopwatch {
+  width: $stopWatch-size;
+  height: $stopWatch-size;
+  border: 1vmin dotted #000;
+  border-radius: $circleRadius;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__hand {
+    position: absolute;
+    transform-origin: center bottom;
+    bottom: 50%;
+    animation-name: move;
+
+    &--minute {
+      height: 20vmin;
+      width: 3vmin;
+      background-color: #0700ff;
+      animation: move 3600s steps(60s) infinite;
+    }
+
+    &--second {
+      height: 38vmin;
+      width: 1.5vmin;
+      background-color: #2c8000;
+      animation: move 60s linear infinite;
+    }
+
+    &--speed-up-minute {
+      animation: move 600s steps(60s) infinite;
+    }
+
+    &--speed-up-second {
+      animation: move 10s linear infinite;
+    }
+  }
+
+  &__center {
+    width: $stopWatch-center-size;
+    height: $stopWatch-center-size;
+    border-radius: $circleRadius;
+    background-color: #f6a603;
+    position: absolute;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
