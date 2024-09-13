@@ -1,3 +1,81 @@
+@import './utils/mixin';
+
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted black;
+  border-radius: 50%;
+
+  &__circle {
+    position: absolute;
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background: #f6a603;
+  }
+
+  &__seconds {
+    transform-origin: bottom;
+    width: 1.5vmin;
+    height: 38vmin;
+    background: #2c8000;
+
+    transform: rotate(0);
+
+    animation-name: handmove;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: $seconds-duration;
+
+    &--position {
+      position: absolute;
+      bottom: 40vmin;
+    }
+  }
+
+  &__minutes {
+    transform-origin: bottom;
+    width: 3vmin;
+    height: 20vmin;
+    background: #0700ff;
+
+    transform: rotate(0);
+
+    animation-name: handmove;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+    animation-duration: $minutes-duration;
+
+    &--position {
+      position: absolute;
+      bottom: 40vmin;
+    }
+  }
+
+  &--speed-up {
+    @include speed-up;
+  }
+
+  @keyframes handmove {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
