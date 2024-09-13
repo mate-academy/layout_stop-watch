@@ -38,10 +38,10 @@ body {
 
       background-color: $color-minute-hand;
 
-      animation-name: rotate-minutes;
+      animation-name: rotate;
       animation-duration: 3600s;
       animation-iteration-count: infinite;
-      animation-timing-function: steps(60);
+      animation-timing-function: linear;
       transform-origin: bottom center;
     }
 
@@ -51,35 +51,24 @@ body {
       background-color: $color-second-hand;
       top: 2vmin;
 
-      animation-name: rotate-seconds;
+      animation-name: rotate;
       animation-duration: 60s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
       transform-origin: bottom center;
-    }
   }
 
-  &--speed-up {
-    &__hand--minutes {
+  &--speed-up &__hand--minutes {
       animation-duration: 600s;
     }
 
-    &__hand--seconds {
-      animation-duration: 10s;
+  &--speed-up  &__hand--seconds {
+    animation-duration: 10s;
     }
   }
 }
 
-@keyframes rotate-minutes {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-seconds {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
