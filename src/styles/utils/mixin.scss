@@ -1,0 +1,11 @@
+@import './variable';
+
+@mixin speed-up() {
+  .stopwatch__minutes {
+    animation-duration: $minutes-duration-speed-up;
+  }
+
+  .stopwatch__seconds {
+    animation-duration: $seconds-duration-speed-up;
+  }
+}

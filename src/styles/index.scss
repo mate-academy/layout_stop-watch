@@ -1,3 +1,5 @@
+@import './utils/mixin';
+
 body {
   margin: 0;
   height: 100vh;
@@ -7,9 +9,6 @@ body {
 }
 
 .stopwatch {
-  $minutes-diraction: 3600;
-  $seconds-diraction: 60s;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,11 +18,6 @@ body {
   height: 80vmin;
   border: 1vmin dotted black;
   border-radius: 50%;
-
-  &--speed-up {
-    $minutes-diraction: 600s;
-    $seconds-diraction: 10s;
-  }
 
   &__circle {
     position: absolute;
@@ -42,9 +36,9 @@ body {
     transform: rotate(0);
 
     animation-name: handmove;
-    animation-duration: $seconds-diraction;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    animation-duration: $seconds-duration;
 
     &--position {
       position: absolute;
@@ -61,14 +55,18 @@ body {
     transform: rotate(0);
 
     animation-name: handmove;
-    animation-duration: $minutes-diraction;
-    animation-timing-function: steps(60);
     animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+    animation-duration: $minutes-duration;
 
     &--position {
       position: absolute;
       bottom: 40vmin;
     }
+  }
+
+  &--speed-up {
+    @include speed-up;
   }
 
   @keyframes handmove {
