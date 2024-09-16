@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: $watch-size;
+  height: $watch-size;
+  position: relative;
+  border: 1vmin dotted #000;
+  border-radius: $watch-center;
+
+  &__hand-minute {
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    margin-left: -1.5vmin;
+    animation: rotate-hand 3600s steps(60, end) infinite;
+  }
+
+  &__hand-second {
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    margin-left: -0.75vmin;
+    animation: rotate-hand 61s linear infinite;
+  }
+
+  &__hand-minute,
+  &__hand-second {
+    position: absolute;
+    bottom: $watch-center;
+    left: $watch-center;
+    transform-origin: $watch-center $watch-center * 2;
+  }
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: $watch-center;
+    background-color: #f6a603;
+    position: absolute;
+    top: $watch-center;
+    left: $watch-center;
+    transform: translate(-$watch-center, -$watch-center);
+  }
+}
