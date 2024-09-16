@@ -1,3 +1,73 @@
-body {
-  margin: 0;
+@import 'variables';
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
 }
+
+body {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.stop-watch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__center {
+    width: $stop-watch__center--diameter;
+    height: $stop-watch__center--diameter;
+    border-radius: 50%;
+    background-color: #f6a603;
+    position: relative;
+  }
+
+  &__hand-minutes {
+    width: $hand-minutes-width;
+    height: $hand-minutes-height;
+    background-color: #0700ff;
+    position: absolute;
+    top: -$hand-minutes-height + ($stop-watch__center--diameter / 2);
+    left: ($stop-watch__center--diameter - $hand-minutes-width) / 2;
+    z-index: -3;
+    transform-origin: bottom;
+    animation: rotate 3600s linear infinite;
+  }
+
+  &__hand-seconds {
+    width: $hand-seconds-width;
+    height: $hand-seconds-height;
+    background-color: #2c8000;
+    position: absolute;
+    top: -$hand-seconds-height + ($stop-watch__center--diameter / 2);
+    left: ($stop-watch__center--diameter - $hand-seconds-width) / 2;
+    z-index: -1;
+    transform-origin: bottom;
+    animation: rotate 60s linear infinite;
+  }
+
+  &--speed-up {
+    .stop-watch__hand-minutes {
+      animation: rotate 600s linear infinite;
+    }
+
+    .stop-watch__hand-seconds {
+      animation: rotate 10s linear infinite;
+    }
+  }
+}
+
