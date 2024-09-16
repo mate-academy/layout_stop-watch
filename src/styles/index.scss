@@ -1,3 +1,75 @@
+@import './variables';
+@import './utils/mixins';
+
+@keyframes seconds-move {
+  @include rotate;
+}
+
+@keyframes rotate {
+  @include rotate;
+}
+
 body {
+  box-sizing: border-box;
   margin: 0;
+  height: $height-screen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  margin: 0;
+  width: $width;
+  height: $height;
+  border: 1vmin dotted #000;
+  position: relative;
+  border-radius: 50%;
+
+  @for $mod-time from 1 through 60 {
+    &--speed-up-#{$mod-time} {
+      .stopwatch__minutes {
+        animation: rotate #{$mod-time * 60}s steps(60) infinite;
+      }
+
+      .stopwatch__seconds {
+        animation: seconds-move #{$mod-time}s linear infinite;
+      }
+    }
+  }
+
+  &__center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 5vmin;
+    background-color: #f6a603;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &__minutes {
+    @include position;
+
+    margin-left: -1.5vmin;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+    animation: rotate 3600s steps(60) 0s infinite;
+    z-index: 0;
+  }
+
+  &__seconds {
+    @include position;
+
+    z-index: 0;
+    transform: translate(-50%);
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+    animation: rotate 60s linear infinite;
+  }
 }
