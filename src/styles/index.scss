@@ -1,3 +1,43 @@
-body {
-  margin: 0;
+@import './variables';
+@import './mixins';
+@import './base';
+
+.stopwatch {
+  @include center-content;
+  @include make-circle(80vmin);
+
+  border: 1vmin dotted $black;
+
+  &::after {
+    content: '';
+
+    @include make-circle(5vmin, $middle-circle-bg);
+
+    position: absolute;
+    z-index: 10;
+  }
+
+  &__minutes-hand {
+    @include make-clock-handle(3vmin, 20vmin, $minutes-handle-bg);
+
+    $duration: $minute * 60;
+
+    animation: move-clock-handles $duration steps(60) infinite; // 3600s
+  }
+
+  &__seconds-hand {
+    @include make-clock-handle(1.5vmin, 38vmin, $seconds-handle-bg);
+
+    animation: move-clock-handles $minute linear infinite; // 60s
+  }
+
+  &--speed-up {
+    & :nth-child(1) {
+      animation-duration: $minute * 10; // 600s
+    }
+
+    & :nth-child(2) {
+      animation-duration: $minute / 6; // 10s
+    }
+  }
 }

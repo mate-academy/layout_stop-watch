@@ -1,0 +1,30 @@
+@mixin center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin make-circle($size, $color: #fff) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: $color;
+}
+
+@mixin make-clock-handle($width, $height, $color) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+@keyframes move-clock-handles {
+  from {
+    transform: rotate(0) translateY(-50%);
+  }
+
+  to {
+    transform: rotate(360deg) translateY(-50%);
+  }
+}
