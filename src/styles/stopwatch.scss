@@ -1,7 +1,7 @@
 .stopwatch {
   position: relative;
-  width: 80vmin;
-  height: 80vmin;
+  width: $stopwatch-width;
+  height: $stopwatch-height;
   border: $border-width dotted $border-color;
   border-radius: 50%;
 
@@ -11,9 +11,13 @@
     width: $hand-width-minutes;
     background-color: $minutes-hand-color;
     bottom: 50%;
-    left: calc(50% - (#{$hand-width-minutes} / 2));
+    left: 50%;
+    transform: translateX(-50%);
     transform-origin: bottom center;
-    animation: rotate 3600s steps(60) infinite;
+    animation-name: rotate;
+    animation-duration: 3600s;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
   }
 
   &__seconds-hand {
@@ -22,9 +26,13 @@
     width: $hand-width-seconds;
     background-color: $seconds-hand-color;
     bottom: 50%;
-    left: calc(50% - (#{$hand-width-seconds} / 2));
+    left: 50%;
+    transform: translateX(-50%);
     transform-origin: bottom center;
-    animation: rotate 60s linear infinite;
+    animation-name: rotate;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
   &__center {
