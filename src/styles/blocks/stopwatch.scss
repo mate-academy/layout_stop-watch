@@ -11,8 +11,7 @@
     width: $hand-width-minutes;
     background-color: $minutes-hand-color;
     bottom: 50%;
-    left: calc(50% - #{$hand-width-minutes} / 2);
-    transform: translateX(-50%);
+    left: calc(50% - (#{$hand-width-minutes} / 2));
     transform-origin: bottom center;
     animation: spin-minute 3600s steps(60) infinite;
   }
@@ -23,8 +22,7 @@
     width: $hand-width-seconds;
     background-color: $seconds-hand-color;
     bottom: 50%;
-    left: calc(50% - #{$hand-width-seconds} / 2);
-    transform: translateX(-50%);
+    left: calc(50% - (#{$hand-width-seconds} / 2));
     transform-origin: bottom center;
     animation: spin-second 60s linear infinite;
   }
