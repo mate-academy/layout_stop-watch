@@ -1,0 +1,67 @@
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+
+  &__minutes {
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+    position: absolute;
+    top: 20vmin;
+    left: 38.5vmin;
+    transform-origin: 50% 100%;
+    animation: animation-minutes 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+    position: absolute;
+    top: 2vmin;
+    left: 39.25vmin;
+    transform-origin: 50% 100%;
+    animation: animation-seconds 60s linear infinite;
+  }
+
+  @keyframes animation-seconds {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes animation-minutes {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__center {
+    height: 5vmin;
+    width: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    position: absolute;
+    top: 37.5vmin;
+    left: 37.5vmin;
+  }
+
+  &--speed-up &__seconds {
+    animation-duration: 10s;
+  }
+
+  &--speed-up &__minutes {
+    animation-duration: 600s;
+  }
+}
