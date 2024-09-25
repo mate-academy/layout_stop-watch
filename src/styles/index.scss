@@ -1,6 +1,74 @@
-@import './utils/variables';
-@import './utils/functions';
-@import './utils/keyframes';
-@import 'reset';
-@import './blocks/body';
-@import './blocks/stopwatch';
+@import './variables';
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: $watch-size;
+  width: $watch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__sec-hand {
+    position: absolute;
+    top: 2vmin;
+    height: $sec-size;
+    width: 1.5vmin;
+    border-radius: 50% 50% 0 0;
+    background: url(../images/pngwing.com.png);
+    background-size: 100% 100%;
+    animation: round $basic-time linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__min-hand {
+    position: absolute;
+    top: 20vmin;
+    height: $min-size;
+    width: 3vmin;
+    background: url(../images/pngwing.com.png);
+    background-size: 100% 100%;
+    border-radius: 50% 50% 0 0;
+
+    animation: round ($basic-time * $seconds-coefficient) steps(60) infinite;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    position: absolute;
+    height: $center-radius;
+    width: $center-radius;
+    border-radius: 50%;
+    background-color: #000;
+  }
+
+  @keyframes round {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &--speed-up {
+    .stopwatch__sec-hand {
+      animation-duration: $speed-up-time;
+    }
+
+    .stopwatch__min-hand {
+      animation-duration: $speed-up-time * $seconds-coefficient;
+    }
+  }
+}
