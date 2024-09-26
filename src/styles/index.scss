@@ -1,3 +1,79 @@
-body {
+@keyframes revolution-second-hand {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes revolution-minute-hand {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__object {
+    position: relative;
+    height: 80vmin;
+    width: 80vmin;
+    border: 1vmin dotted #000;
+    border-radius: 50%;
+  }
+
+  &__elements {
+    position: absolute;
+
+    &--minute-hand {
+      background-color: #0700ff;
+      height: 20vmin;
+      width: 3vmin;
+      bottom: 50%;
+      left: 48%;
+      transform-origin: bottom;
+      animation: revolution-minute-hand 3600s steps(60, end) infinite normal;
+      z-index: 1;
+    }
+
+    &--second-hand {
+      background-color: #2c8000;
+      height: 38vmin;
+      width: 1.5vmin;
+      bottom: 50%;
+      left: 48%;
+      transform-origin: bottom;
+      animation: revolution-second-hand 60s linear infinite normal;
+      z-index: 2;
+    }
+
+    &--point {
+      background-color: orange;
+      height: 5vmin;
+      width: 5vmin;
+      border-radius: 50%;
+      top: 46.9%;
+      left: 46.9%;
+      z-index: 3;
+    }
+
+    &--second-hand--speed-up {
+      animation: revolution-second-hand 10s linear infinite normal;
+    }
+
+    &--minute-hand--speed-up {
+      animation: revolution-minute-hand 600s steps(60, end) infinite normal;
+    }
+  }
 }
