@@ -33,7 +33,7 @@ body {
   width: 3vmin;
   height: 20vmin;
   background-color: #0700ff;
-  transform-origin: top center;
+  transform-origin: top;
 
   animation: seconds 3600s steps(60) infinite;
 }
@@ -52,10 +52,10 @@ body {
 
 @keyframes seconds {
   0% {
-    transform: translateX(50%) rotate(0deg);
+    transform: translate(-50%) rotate(180deg);
   }
   100% {
-    transform: translateX(-50%) rotate(360deg);
+    transform: translate(-50%) rotate(540deg);
   }
 }
 
