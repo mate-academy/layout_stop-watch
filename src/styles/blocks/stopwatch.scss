@@ -1,0 +1,62 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@function min-in-sec($min) {
+  @return $min * 60s;
+}
+
+.stopwatch {
+  width: $size-stop-watch;
+  height: $size-stop-watch;
+  border: 1vmin dotted #000;
+  border-radius: $circle-border-radius;
+
+  display: flex;
+  justify-content: center;
+
+  &__minutes {
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+
+    @include position-hand;
+
+    animation: rotation min-in-sec(60) steps(60, end) infinite;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+
+    @include position-hand;
+
+    animation: rotation 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__circle {
+    height: $size-little-circle;
+    width: $size-little-circle;
+    background-color: #f6a603;
+    border-radius: $circle-border-radius;
+
+    align-self: center;
+  }
+
+  &--speed-up &__seconds {
+    animation-duration: 10s;
+  }
+
+  &--speed-up &__minutes {
+    animation-duration: min-in-sec(10);
+  }
+}
