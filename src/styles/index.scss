@@ -35,7 +35,7 @@ body {
   background-color: #0700ff;
   transform-origin: 50% 100%;
 
-  animation: minutes 3600s steps(60) infinite;
+  animation: seconds 3600s steps(60) infinite;
 }
 
 .stopwatch__seconds-hand {
@@ -48,15 +48,6 @@ body {
   transform-origin: 50% 100%;
 
   animation: seconds 60s linear infinite;
-}
-
-@keyframes minutes {
-  0% {
-    transform: translateX(-50%) rotate(0deg);
-  }
-  100% {
-    transform: translateX(-50%) rotate(360deg);
-  }
 }
 
 @keyframes seconds {
