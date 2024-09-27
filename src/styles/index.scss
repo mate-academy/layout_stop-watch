@@ -1,3 +1,83 @@
-body {
+$watch-size: 80vmin;
+$watch-center-size: 5vmin;
+
+@mixin circle($size) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+}
+
+@mixin position-at-center() {
+  position: absolute;
+  bottom: 50%;
+  z-index: -1;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
   margin: 0;
+}
+
+body {
+  @include flex-center;
+
+  height: 100vh;
+}
+
+.stopwatch {
+  @include flex-center;
+  @include circle($watch-size);
+
+  border: 1vmin dotted #000;
+  position: relative;
+
+  &__center {
+    @include circle($watch-center-size);
+
+    background: #f6a603;
+  }
+
+  &__minute {
+    @include position-at-center;
+
+    height: 20vmin;
+    width: 3vmin;
+    background: #0700ff;
+    animation: rotate-hands 3600s steps(60) infinite;
+  }
+
+  &__second {
+    @include position-at-center;
+
+    height: 38vmin;
+    width: 1.5vmin;
+    background: #2c8000;
+    animation: rotate-hands 60s infinite linear;
+  }
+
+  &--speed-up {
+    .stopwatch__minute {
+      animation-duration: 600s;
+    }
+    .stopwatch__second {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes rotate-hands {
+  0% {
+    transform-origin: bottom;
+    rotate: 0deg;
+  }
+
+  100% {
+    transform-origin: bottom;
+    rotate: 360deg;
+  }
 }
