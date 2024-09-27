@@ -1,0 +1,60 @@
+@keyframes roll {
+  0% {
+    transform-origin: bottom;
+    transform: rotate(0);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: $watchHeight;
+  width: $watchWidth;
+  border-radius: 50%;
+  border: 1vmin #000 dotted;
+
+  &__minutes {
+    position: absolute;
+    margin-top: $minuteHeight;
+    height: $minuteHeight;
+    width: $minuteWidth;
+    background-color: $minuteColor;
+    animation: roll linear 3600s infinite;
+    &--speed-up {
+      animation-duration: 600s;
+    }
+  }
+  &__seconds {
+    position: absolute;
+    height: $secondHeight;
+    width: $secondWidth;
+    margin-top: $circleHeightHalf;
+    background-color: $secondColor;
+    animation: roll 60s linear infinite;
+    &--speed-up {
+      animation-duration: 10s;
+    }
+  }
+  &__circle {
+    position: absolute;
+    margin-top: $secondHeight;
+    height: $circleHeight;
+    width: $circleWidth;
+    border-radius: 50%;
+    background-color: $circleColor;
+  }
+}
