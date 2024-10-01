@@ -1,5 +1,5 @@
 $time-seconds: 60s;
-$time-min: 3600s;
+$time-min: $time-seconds * 60;
 
 body {
   margin: 0;
@@ -40,11 +40,9 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -100%);
-  transform-origin: top center;
-  animation: rotate-sec $time-seconds linear infinite;
+  transform-origin: bottom center;
+  animation: rotate-sec 60s linear infinite;
   z-index: 2;
-
-  // border-radius: 90%;
 }
 
 .stopwatch__minutes-hand {
@@ -55,32 +53,33 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -100%);
-  transform-origin: top center;
-  animation: rotate-min $time-min steps(60) infinite;
+  transform-origin: bottom center;
+  animation: rotate-min 3600s steps(60) infinite;
   z-index: 1;
-
-  // border-radius: 50%;
 }
 
-.stopwatch--speed-up {
-  $time-seconds: 10s;
-  $time-min: 600s;
+.stopwatch--speed-up .stopwatch__seconds-hand {
+  animation: rotate-sec 10s linear infinite;
+}
+
+.stopwatch--speed-up .stopwatch__minutes-hand {
+  animation: rotate-min 600s steps(60) infinite;
 }
 
 @keyframes rotate-sec {
   from {
-    transform: translateX(-50%) rotate(-180deg);
+    transform: translate(-50%, -100%) rotate(0deg);
   }
   to {
-    transform: translateX(-50%) rotate(180deg);
+    transform: translate(-50%, -100%) rotate(360deg);
   }
 }
 
 @keyframes rotate-min {
   from {
-    transform: translateX(-50%) rotate(-180deg);
+    transform: translate(-50%, -100%) rotate(0deg);
   }
   to {
-    transform: translateX(-50%) rotate(180deg);
+    transform: translate(-50%, -100%) rotate(360deg);
   }
 }
