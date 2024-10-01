@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes rotate-hand {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch__pin {
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 50%;
+  background-color: #f6a603;
+  position: relative;
+}
+
+.stopwatch__pin::before {
+  content: '';
+  position: absolute;
+  width: 3vmin;
+  height: 20vmin;
+  background-color: #0700ff;
+  border-radius: 0;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%);
+  animation: rotate-hand 3600s steps(60) infinite;
+  z-index: -1;
+}
+
+.stopwatch__pin::after {
+  content: '';
+  position: absolute;
+  width: 1.5vmin;
+  height: 38vmin;
+  background-color: #2c8000;
+  border-radius: 0;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%);
+  animation: rotate-hand 60s linear infinite;
+  z-index: -1;
+}
+
+.stopwatch--speed-up .stopwatch__pin::before {
+  animation-duration: 600s;
+}
+
+.stopwatch--speed-up .stopwatch__pin::after {
+  animation-duration: 10s;
+}
+
+/*# sourceMappingURL=index.css.map */
