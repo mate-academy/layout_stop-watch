@@ -19,18 +19,18 @@
 }
 
 .stopwatch {
-  width: $stopwatch_size;
-  height: $stopwatch_size;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
   border: 1vmin dotted #000;
   border-radius: 50%;
 
   @include center_the_element;
 }
 
-.stopwatch_center {
+.stopwatch__center {
   z-index: 1;
-  width: $center_size;
-  height: $center_size;
+  width: $center-size;
+  height: $center-size;
   background-color: #f6a603;
   border-radius: 50%;
 }
@@ -38,7 +38,7 @@
 .hand {
   position: absolute;
 
-  &_minutes {
+  &__minutes {
     position: absolute;
     transform-origin: bottom;
     height: 20vmin;
@@ -50,7 +50,7 @@
     animation: move 3600s steps(60) infinite;
   }
 
-  &_seconds {
+  &__seconds {
     position: absolute;
     transform-origin: bottom;
     height: 38vmin;
@@ -63,10 +63,10 @@
   }
 }
 
-.stopwatch--speed-up .hand_seconds {
+.stopwatch--speed-up .hand__seconds {
   animation-duration: 10s;
 }
 
-.stopwatch--speed-up .hand_minutes {
+.stopwatch--speed-up .hand__minutes {
   animation-duration: 600s;
 }
