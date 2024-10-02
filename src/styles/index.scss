@@ -1,3 +1,72 @@
-body {
+@import 'variables';
+@import 'mixin';
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.page {
   margin: 0;
+  height: 100%;
+
+  @include center_the_element;
+}
+
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  @include center_the_element;
+}
+
+.stopwatch__center {
+  z-index: 1;
+  width: $center-size;
+  height: $center-size;
+  background-color: #f6a603;
+  border-radius: 50%;
+}
+
+.hand {
+  position: absolute;
+
+  &__minutes {
+    position: absolute;
+    transform-origin: bottom;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+    top: -20vmin;
+    left: -1.5vmin;
+
+    animation: move 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    transform-origin: bottom;
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+
+    top: -38vmin;
+    left: -0.75vmin;
+    animation: move 60s linear infinite;
+  }
+}
+
+.stopwatch--speed-up .hand__seconds {
+  animation-duration: 10s;
+}
+
+.stopwatch--speed-up .hand__minutes {
+  animation-duration: 600s;
 }
