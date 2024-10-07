@@ -1,0 +1,61 @@
+.stopwatch {
+  --minutes-arrow-speed: 3600s;
+  --seconds-arrow-speed: 60s;
+
+  height: $size-stopwatch;
+  width: $size-stopwatch;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  &--speed-up {
+    --minutes-arrow-speed: 600s;
+    --seconds-arrow-speed: 10s;
+  }
+
+  &__minutes {
+    height: $height-minutes-arrow;
+    width: $width-minutes-arrow;
+    background-color: $color-minutes-arrow;
+
+    position: absolute;
+    top: detail-place($top-minutes-shift);
+    left: detail-place($left-minutes-shift);
+
+    animation: arrow-rotate var(--minutes-arrow-speed) steps(60) infinite;
+    transform-origin: bottom center;
+  }
+
+  &__seconds {
+    height: $height-seconds-arrow;
+    width: $width-seconds-arrow;
+    background-color: $color-seconds-arrow;
+
+    position: absolute;
+    top: detail-place($top-seconds-shift);
+    left: detail-place($left-seconds-shift);
+
+    animation: arrow-rotate var(--seconds-arrow-speed) linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    height: $size-stopwatch-center;
+    width: $size-stopwatch-center;
+    background-color: $color-stopwatch-center;
+    border-radius: 50%;
+
+    position: absolute;
+    top: detail-place($center-shift);
+    left: detail-place($center-shift);
+  }
+}
+
+@keyframes arrow-rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
