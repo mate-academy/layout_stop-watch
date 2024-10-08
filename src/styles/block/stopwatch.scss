@@ -1,0 +1,57 @@
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+  position: relative;
+
+  &__minute-hand {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 50%;
+    left: 48%;
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+
+    animation: rotate 3600s steps(60) infinite; /* Минутная стрелка за час */
+  }
+
+  &__second-hand {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+
+    animation: rotate 60s linear infinite; /* Секундная стрелка за минуту */
+  }
+
+  &__center-point {
+    box-sizing: border-box;
+    position: absolute;
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.stopwatch.stopwatch--speed-up {
+  .stopwatch__second-hand {
+    animation: rotate 9950ms linear infinite;
+  }
+
+  .stopwatch__minute-hand {
+    animation: rotate 600s steps(60) infinite;
+  }
+}
