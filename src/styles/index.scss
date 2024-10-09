@@ -1,3 +1,81 @@
 body {
   margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.stopwatch__container {
+  width: 80vmin;
+  height: 80vmin;
+  border: dotted 1vmin #000;
+  border-radius: 50%;
+  position: relative; /* позиціонування дочірніх елементів */
+}
+
+.stopwatch__minute,
+.stopwatch__seconds,
+.stopwatch__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Переміщаємо елементи до центру */
+  transform-origin: bottom center; /* Встановлюємо точку обертання для стрілок */
+}
+
+.stopwatch__minute {
+  height: 20vmin;
+  width: 3vmin;
+  background-color: #0700ff;
+  animation: rotateMinute 3600s infinite linear;
+
+}
+
+.stopwatch__seconds{
+  height: 38vmin;
+  width: 1.5vmin;
+  background-color: #2c8000;
+  animation: rotateSecond 60s infinite linear;
+}
+
+.stopwatch__center {
+  width: 5vmin;
+  height: 5vmin;
+  background-color: #f6a603;
+  border-radius: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%); /* В центр для круглого елемента */
+}
+
+@keyframes rotateMinute {
+  from{
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to{
+    transform: translate(-50%,-100%) rotate(360deg);
+  }
+}
+
+@keyframes rotateSecond{
+  from{
+    transform: translate(-50%,-100%) rotate(0deg);
+  }
+  to{
+    transform: translate(-50%,-100%) rotate(360deg);
+  }
+}
+
+.stopwatch--speed-up {
+  .stopwatch {
+    &__seconds {
+      animation-duration: 10s;
+    }
+    &__minute {
+      animation-duration: 600s;
+  }
+}
+}
+
+
+
