@@ -20,6 +20,8 @@ In addition to the basic functionality create a BEM modifier called `speed-up` f
 ❗️ Add the modifier to the initial markup for Tests.
 ❗️ Mentors will remove it via Dev Tools and check is Basic functionality works as expected.
 
+
+
 > Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
 
 ![reference image](reference.png)
@@ -28,7 +30,7 @@ In addition to the basic functionality create a BEM modifier called `speed-up` f
 ## Checklist
 
 ❗️ Replace `<your_account>` with your Github username and copy the links to `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_stop-watch/)
+- [DEMO LINK](https://futdevelop.github.io/layout_stop-watch/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
