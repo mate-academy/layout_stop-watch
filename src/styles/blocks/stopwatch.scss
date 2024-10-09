@@ -1,3 +1,12 @@
+@keyframes rotate-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .stopwatch {
   position: relative;
   width: $watch-size;
@@ -44,14 +53,5 @@
     .stopwatch__seconds-hand {
       animation-duration: $speedup-seconds-duration;
     }
-  }
-}
-
-@keyframes rotate-animation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
