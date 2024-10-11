@@ -1,3 +1,68 @@
+@import './vars';
+@import './extends';
+@import './mixins';
+@import './keyframes';
+
 body {
   margin: 0;
+  height: 100vh;
+
+  @extend %stopwatch-flex-property;
+}
+
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  color: #000;
+
+  @extend %stopwatch-flex-property;
+  @include stopwatch-border-style(1vmin, dotted, 50%);
+
+  &__min {
+    @include stopwatch-elements-styles(
+      $stopwatch-min-width,
+      $stopwatch-min-height,
+      $stopwatch-colors-min
+    );
+
+    animation: hand-rotate 3600s infinite steps(60);
+    bottom: 50%;
+    transform-origin: bottom;
+    position: absolute;
+
+    @extend %stopwatch-flex-property;
+  }
+
+  &__second {
+    @include stopwatch-elements-styles(
+      $stopwatch-second-width,
+      $stopwatch-second-height,
+      $stopwatch-colors-second
+    );
+
+    animation: hand-rotate 60s infinite linear;
+    bottom: 50%;
+    transform-origin: bottom;
+    position: absolute;
+
+    @extend %stopwatch-flex-property;
+  }
+
+  &__circle {
+    @include stopwatch-elements-styles(
+      $stopwatch-circle-size,
+      $stopwatch-circle-size,
+      $stopwatch-colors-circle
+    );
+    @extend %stopwatch-flex-property;
+
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  @each $hand, $second in $speed-up {
+    &__#{$hand}--speed-up {
+      animation-duration: $second;
+    }
+  }
 }
