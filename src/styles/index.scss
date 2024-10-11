@@ -1,3 +1,82 @@
 body {
   margin: 0;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  border: dotted #000 1vmin;
+  border-radius: 50%;
+  width: 80vmin;
+  height: 80vmin;
+
+  &__minute-arrow,
+  &__second-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%);
+  }
+
+  &__minute-arrow {
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    animation: rotate-minutes 3600s steps(60) infinite; // 60 хвилин на оберт
+  }
+
+  &__second-arrow {
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    animation: rotate-seconds 60s linear infinite; // 60 секунд на оберт
+  }
+
+  &__round {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  // Модифікатор для стрілки хвилин
+  &__minute-arrow--fast {
+    animation-duration: 600s; // 10 хвилин на оберт
+  }
+
+  // Модифікатор для стрілки секунд
+  &__second-arrow--fast {
+    animation-duration: 10s; // 10 секунд на оберт
+  }
+}
+
+// Анімація для секундної стрілки
+@keyframes rotate-seconds {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+// Анімація для хвилинної стрілки
+@keyframes rotate-minutes {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
