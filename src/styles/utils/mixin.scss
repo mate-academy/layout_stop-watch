@@ -1,0 +1,20 @@
+@mixin circle($radius) {
+  width: $radius;
+  height: $radius;
+  border-radius: 50%;
+}
+
+@mixin after-before($width, $height, $color, $zi) {
+  content: '';
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background-color: $color;
+  left: 50%;
+  bottom: 50%;
+  position: absolute;
+  z-index: $zi;
+  transform: translateX(-50%) rotate(0deg);
+  transform-origin: bottom;
+  animation: clockwork infinite;
+}
