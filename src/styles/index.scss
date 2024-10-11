@@ -47,14 +47,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-}
 
-.stopwatch--speed-up {
-  .stopwatch__minute-arrow {
+  // Модифікатор для стрілки хвилин
+  &__minute-arrow--speed-up {
     animation-duration: 600s; // 10 хвилин на оберт
   }
 
-  .stopwatch__second-arrow {
+  // Модифікатор для стрілки секунд
+  &__second-arrow--speed-up {
     animation-duration: 10s; // 10 секунд на оберт
   }
 }
