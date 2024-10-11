@@ -1,3 +1,88 @@
+$duration: 60s;
+
+@mixin keyfarmosemove() {
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+.blok-box {
+  width: 100vmin;
+  height: 100vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.stopwatch {
+  width: 82vmin;
+  height: 82vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+
+  &__minute-hand {
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    position: absolute;
+    left: 48.08%;
+    top: 24%;
+    z-index: 0;
+    transform-origin: bottom;
+    animation: move 3600s linear infinite;
+
+    @include keyfarmosemove;
+  }
+
+  &__second-hand {
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    position: absolute;
+    left: 49%;
+    top: 1%;
+    z-index: 0;
+    transform-origin: bottom;
+    animation: move $duration linear infinite;
+
+    @include keyfarmosemove;
+  }
+
+  &__circle {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+    position: absolute;
+    left: 46.73%;
+    top: 46.73%;
+    z-index: 1;
+  }
+}
+
+.stopwatch--speed-up {
+  &__second-hand {
+    $duration: 10s;
+  }
+
+  &__minute-hand {
+    animation: move 360s linear infinite;
+  }
 }
