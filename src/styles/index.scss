@@ -12,10 +12,10 @@ body {
 .stopwatch {
   width: $stopwatch-size;
   height: $stopwatch-size;
-  color: #000;
+  position: relative;
 
   @include stopwatch-flex-property;
-  @include stopwatch-border-style(1vmin, dotted, 50%);
+  @include stopwatch-border-style(1vmin, dotted, 50%, #000);
 
   &__hand {
     bottom: 50%;
@@ -46,9 +46,9 @@ body {
 
     /* Правила для прискорення годинника */
 
-    @each $hand, $second in $speed-up {
+    @each $hand, $duration in $speed-up {
       &--#{$hand}--speed-up {
-        animation-duration: $second;
+        animation-duration: $duration;
       }
     }
   }
