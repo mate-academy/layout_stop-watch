@@ -1,0 +1,24 @@
+/* Стилізація рамки годинника */
+
+@mixin stopwatch-border-style($border, $border-style, $border-radius, $color) {
+  border: $border;
+  border-style: $border-style;
+  border-radius: $border-radius;
+  color: $color;
+}
+
+/* Додавання ширини, висоти та кольору елементам годинника */
+
+@mixin stopwatch-elements-styles($width, $height, $background-color) {
+  width: $width;
+  height: $height;
+  background-color: $background-color;
+}
+
+/* Правила для flex-box та центрування контенту */
+
+@mixin stopwatch-flex-property() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

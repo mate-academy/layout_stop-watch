@@ -1,0 +1,73 @@
+@keyframes watch-animation-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1vmin;
+  border-style: dotted;
+  border-radius: 50%;
+  color: #000;
+}
+
+.stopwatch__hand {
+  bottom: 50%;
+  transform-origin: bottom;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch__hand--min {
+  width: 3vmin;
+  height: 20vmin;
+  background-color: #0700ff;
+  animation: watch-animation-rotate 3600s infinite steps(60);
+}
+
+.stopwatch__hand--second {
+  width: 1.5vmin;
+  height: 38vmin;
+  background-color: #2c8000;
+  animation: watch-animation-rotate 60s infinite linear;
+}
+
+.stopwatch__hand--min--speed-up {
+  animation-duration: 600s;
+}
+
+.stopwatch__hand--second--speed-up {
+  animation-duration: 10s;
+}
+
+.stopwatch__circle {
+  width: 5vmin;
+  height: 5vmin;
+  background-color: #f6a603;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=index.css.map */

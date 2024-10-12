@@ -1,3 +1,67 @@
+@import './vars';
+@import './mixins';
+@import './keyframes';
+
 body {
   margin: 0;
+  height: 100vh;
+
+  @include stopwatch-flex-property;
+}
+
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  position: relative;
+
+  @include stopwatch-flex-property;
+  @include stopwatch-border-style(1vmin, dotted, 50%, #000);
+
+  &__hand {
+    bottom: 50%;
+    transform-origin: bottom;
+    position: absolute;
+
+    @include stopwatch-flex-property;
+
+    &--min {
+      @include stopwatch-elements-styles(
+        $stopwatch-min-width,
+        $stopwatch-min-height,
+        $stopwatch-colors-min
+      );
+
+      animation: watch-animation-rotate 3600s infinite steps(60);
+    }
+
+    &--second {
+      @include stopwatch-elements-styles(
+        $stopwatch-second-width,
+        $stopwatch-second-height,
+        $stopwatch-colors-second
+      );
+
+      animation: watch-animation-rotate 60s infinite linear;
+    }
+
+    /* Правила для прискорення годинника */
+
+    @each $hand, $duration in $speed-up {
+      &--#{$hand}--speed-up {
+        animation-duration: $duration;
+      }
+    }
+  }
+
+  &__circle {
+    @include stopwatch-elements-styles(
+      $stopwatch-circle-size,
+      $stopwatch-circle-size,
+      $stopwatch-colors-circle
+    );
+    @include stopwatch-flex-property;
+
+    position: absolute;
+    border-radius: 50%;
+  }
 }
