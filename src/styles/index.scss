@@ -1,5 +1,4 @@
 @import './vars';
-@import './extends';
 @import './mixins';
 @import './keyframes';
 
@@ -7,7 +6,7 @@ body {
   margin: 0;
   height: 100vh;
 
-  @extend %stopwatch-flex-property;
+  @include stopwatch-flex-property;
 }
 
 .stopwatch {
@@ -15,37 +14,43 @@ body {
   height: $stopwatch-size;
   color: #000;
 
-  @extend %stopwatch-flex-property;
+  @include stopwatch-flex-property;
   @include stopwatch-border-style(1vmin, dotted, 50%);
 
-  &__min {
-    @include stopwatch-elements-styles(
-      $stopwatch-min-width,
-      $stopwatch-min-height,
-      $stopwatch-colors-min
-    );
-
-    animation: hand-rotate 3600s infinite steps(60);
+  &__hand {
     bottom: 50%;
     transform-origin: bottom;
     position: absolute;
 
-    @extend %stopwatch-flex-property;
-  }
+    @include stopwatch-flex-property;
 
-  &__second {
-    @include stopwatch-elements-styles(
-      $stopwatch-second-width,
-      $stopwatch-second-height,
-      $stopwatch-colors-second
-    );
+    &--min {
+      @include stopwatch-elements-styles(
+        $stopwatch-min-width,
+        $stopwatch-min-height,
+        $stopwatch-colors-min
+      );
 
-    animation: hand-rotate 60s infinite linear;
-    bottom: 50%;
-    transform-origin: bottom;
-    position: absolute;
+      animation: watch-animation-rotate 3600s infinite steps(60);
+    }
 
-    @extend %stopwatch-flex-property;
+    &--second {
+      @include stopwatch-elements-styles(
+        $stopwatch-second-width,
+        $stopwatch-second-height,
+        $stopwatch-colors-second
+      );
+
+      animation: watch-animation-rotate 60s infinite linear;
+    }
+
+    /* Правила для прискорення годинника */
+
+    @each $hand, $second in $speed-up {
+      &--#{$hand}--speed-up {
+        animation-duration: $second;
+      }
+    }
   }
 
   &__circle {
@@ -54,15 +59,9 @@ body {
       $stopwatch-circle-size,
       $stopwatch-colors-circle
     );
-    @extend %stopwatch-flex-property;
+    @include stopwatch-flex-property;
 
     position: absolute;
     border-radius: 50%;
-  }
-
-  @each $hand, $second in $speed-up {
-    &__#{$hand}--speed-up {
-      animation-duration: $second;
-    }
   }
 }
