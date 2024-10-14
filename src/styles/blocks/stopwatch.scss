@@ -1,0 +1,44 @@
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  &__minutes {
+    background-color: #0700ff;
+    height: 20vmin;
+    width: 3vmin;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 1;
+  }
+
+  &__seconds {
+    background-color: #2c8000;
+    height: 38vmin;
+    width: 1.5vmin;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 2;
+  }
+
+  &__center {
+    background-color: #f6a603;
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+}
