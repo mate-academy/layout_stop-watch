@@ -1,3 +1,73 @@
+$hand-transform-origin: center bottom;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin starting-position {
+  position: absolute;
+  bottom: 50%;
+}
+
 body {
   margin: 0;
+  @include center;
+  height: 100vh;
+}
+
+@keyframes infinite-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  @include center;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  &__minutes {
+    @include starting-position;
+    height: 20vmin;
+    width: 3vmin;
+    animation: infinite-spin 3600s steps(60) infinite;
+    transform-origin: $hand-transform-origin;
+    background-color: #0700ff;
+    z-index: 1;
+  }
+
+  &__seconds {
+    @include starting-position;
+    animation: infinite-spin 60s linear infinite;
+    transform-origin: $hand-transform-origin;
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+    z-index: 2;
+  }
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+    z-index: 3;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes {
+      animation-duration: 600s;
+    }
+    .stopwatch__seconds {
+      animation-duration: 10s;
+    }
+  }
 }
