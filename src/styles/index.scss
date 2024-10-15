@@ -12,8 +12,9 @@ $hand-transform-origin: center bottom;
 }
 
 body {
-  margin: 0;
   @include center;
+
+  margin: 0;
   height: 100vh;
 }
 
@@ -28,6 +29,7 @@ body {
 
 .stopwatch {
   @include center;
+
   width: 80vmin;
   height: 80vmin;
   border: 1vmin dotted #000;
@@ -36,6 +38,7 @@ body {
 
   &__minutes {
     @include starting-position;
+
     height: 20vmin;
     width: 3vmin;
     animation: infinite-spin 3600s steps(60) infinite;
@@ -46,6 +49,7 @@ body {
 
   &__seconds {
     @include starting-position;
+
     animation: infinite-spin 60s linear infinite;
     transform-origin: $hand-transform-origin;
     height: 38vmin;
