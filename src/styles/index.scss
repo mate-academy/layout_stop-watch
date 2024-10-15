@@ -6,7 +6,7 @@ $hand-transform-origin: center bottom;
   align-items: center;
 }
 
-@mixin starting-position {
+@mixin starting-hand-position {
   position: absolute;
   bottom: 50%;
 }
@@ -20,7 +20,7 @@ body {
 
 @keyframes infinite-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
   to {
     transform: rotate(360deg);
@@ -37,7 +37,7 @@ body {
   position: relative;
 
   &__minutes {
-    @include starting-position;
+    @include starting-hand-position;
 
     height: 20vmin;
     width: 3vmin;
@@ -48,7 +48,7 @@ body {
   }
 
   &__seconds {
-    @include starting-position;
+    @include starting-hand-position;
 
     animation: infinite-spin 60s linear infinite;
     transform-origin: $hand-transform-origin;
