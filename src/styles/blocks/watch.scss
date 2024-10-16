@@ -1,0 +1,70 @@
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted $border-color;
+  border-radius: 50%;
+
+  &__center {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $watch-center-color;
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+  }
+
+  &__minutes {
+    position: absolute;
+    transform: translateY(-50%) rotateZ(0deg);
+    transform-origin: bottom;
+    width: 3vmin;
+    height: 20vmin;
+    background-color: $minute-color;
+    z-index: -2;
+
+    animation-name: watch-minutes;
+    animation-duration: $minutes-duration;
+    animation-timing-function: step-start;
+    animation-iteration-count: infinite;
+    animation-delay: 60s;
+  }
+
+  &__seconds {
+    position: absolute;
+    transform: translateY(-50%) rotateZ(0deg);
+    transform-origin: bottom;
+    background-color: $seconds-color;
+    width: 1.5vmin;
+    height: 38vmin;
+    z-index: -1;
+
+    animation-name: watch-seconds;
+    animation-duration: $seconds-duration;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &--speed-up &__minutes {
+    animation-duration: 600s;
+    animation-delay: 10s;
+  }
+
+  &--speed-up &__seconds {
+    animation-duration: 10s;
+  }
+}
+
+@keyframes watch-seconds {
+  0% {
+    transform: translateY(-50%) rotateZ(0deg);
+  }
+
+  100% {
+    transform: translateY(-50%) rotateZ(360deg);
+  }
+}
