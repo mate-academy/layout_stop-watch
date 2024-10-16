@@ -28,7 +28,8 @@ In addition to the basic functionality create a BEM modifier called `speed-up` f
 ## Checklist
 
 ❗️ Replace `<your_account>` with your Github username and copy the links to `Pull Request` description:
-- [VolodymyrV7](https://<your_account>.github.io/layout_stop-watch/)
+- [DEMO LINK](https://VolodymyrV7.github.io/layout_stop-watch/)
+- [VolodymyrV7](https://VolodymyrV7.github.io/layout_stop-watch/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
