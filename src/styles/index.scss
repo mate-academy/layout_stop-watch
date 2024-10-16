@@ -1,15 +1,5 @@
-$hand-transform-origin: center bottom;
-
-@mixin center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin starting-hand-position {
-  position: absolute;
-  bottom: 50%;
-}
+@import './utils/variables.scss';
+@import './utils/mixins.scss';
 
 body {
   @include center;
