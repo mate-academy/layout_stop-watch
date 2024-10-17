@@ -1,9 +1,5 @@
-<!-- #region head -->
 <!doctype html>
-<html
-  lang="en"
-  class="page"
->
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -17,17 +13,14 @@
     <title>Stop watch</title>
     <link
       rel="stylesheet"
-      href="./styles/main.css"
+      href="./styles/index.scss"
     />
   </head>
-  <!-- #endregion -->
-  <body class="page__body">
-    <div class="stopwatch stopwatch--speed-up">
-      <div class="stopwatch__center" aria-label="Stopwatch center"></div>
-
-      <div class="stopwatch__hand stopwatch__hand--seconds" aria-label="Second hand"></div>
-
-      <div class="stopwatch__hand stopwatch__hand--minutes" aria-label="Minute hand"></div>
+  <body>
+    <div class="stopwatch">
+      <div class="stopwatch__minutes stopwatch__minutes--speed-up"></div>
+      <div class="stopwatch__seconds stopwatch__seconds--speed-up"></div>
+      <div class="stopwatch__center"></div>
     </div>
   </body>
 </html>
