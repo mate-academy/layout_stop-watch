@@ -1,3 +1,99 @@
+$watch-size: 80vmin;
+$watch-radius: $watch-size / 2;
+$watch-border: 1vmin dotted #000;
+$blue: #0700ff;
+$green: #2c8000;
+$orange: #f6a603;
+$minutes-length: 20vmin;
+$minutes-height: 3vmin;
+$sec-length: 38vmin;
+$sec-height: 1.5vmin;
+$center-size: 5vmin;
+
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $watch-size;
+  height: $watch-size;
+  border: $watch-border;
+  border-radius: 50%;
+  position: relative;
+
+  &__minutes {
+    position: absolute;
+    top: calc(50% - #{$minutes-length});
+    left: calc(50% - #{$minutes-height / 2});
+    height: $minutes-length;
+    width: $minutes-height;
+    background-color: $blue;
+    animation: rotate-arrows 3600s steps(60) infinite; // базова анімація
+    transform-origin: 50% 100%;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__seconds {
+    position: absolute;
+    top: calc(50% - #{$sec-length});
+    left: calc(50% - #{$sec-height / 2});
+    height: $sec-length;
+    width: $sec-height;
+    background-color: $green;
+    animation: rotate-arrows 60s linear infinite; // базова анімація
+    transform-origin: 50% 100%;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__center {
+    background-color: $orange;
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - #{$center-size / 2});
+    left: calc(50% - #{$center-size / 2});
+    z-index: 3;
+  }
+}
+
+// Модифікатор для прискорення анімації
+.stopwatch--speed-up {
+  .stopwatch__minutes {
+    animation: rotate-arrows 600s steps(60) infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  .stopwatch__seconds {
+    animation: rotate-arrows 10s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes rotate-arrows {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
