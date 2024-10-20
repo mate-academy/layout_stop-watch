@@ -1,0 +1,48 @@
+.watch {
+  @include circle($widthClock);
+
+  border: 1vmin dotted $colorBorder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    @include after-before($widthSecond, $heightSecond, $colorSecond, 2);
+
+    animation-duration: $stepSecond;
+    animation-timing-function: linear;
+  }
+
+  &::after {
+    @include after-before($widthMinute, $heightMinute, $colorMinute, 1);
+
+    animation-duration: $stepSecond * 60;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__center {
+    @include circle($centerClock);
+
+    background-color: $colorCenter;
+    position: relative;
+    z-index: 3;
+  }
+
+  &--speed-up {
+    &::before {
+      animation-duration: $speedUp;
+    }
+    &::after {
+      animation-duration: $speedUp * 60;
+    }
+  }
+}
+
+@keyframes clockwork {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}

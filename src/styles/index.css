@@ -1,0 +1,83 @@
+.page {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.page__clock {
+  position: relative;
+}
+
+.watch {
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch::before {
+  content: '';
+  display: inline-block;
+  width: 1.5vmin;
+  height: 38vmin;
+  background-color: #2c8000;
+  left: 50%;
+  bottom: 50%;
+  position: absolute;
+  z-index: 2;
+  transform: translateX(-50%) rotate(0deg);
+  transform-origin: bottom;
+  animation: clockwork infinite;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+}
+
+.watch::after {
+  content: '';
+  display: inline-block;
+  width: 3vmin;
+  height: 20vmin;
+  background-color: #0700ff;
+  left: 50%;
+  bottom: 50%;
+  position: absolute;
+  z-index: 1;
+  transform: translateX(-50%) rotate(0deg);
+  transform-origin: bottom;
+  animation: clockwork infinite;
+  animation-duration: 3600s;
+  animation-timing-function: steps(60, end);
+}
+
+.watch__center {
+  width: calc(80vmin / 16);
+  height: calc(80vmin / 16);
+  border-radius: 50%;
+  background-color: #f6a603;
+  position: relative;
+  z-index: 3;
+}
+
+.watch--speed-up::before {
+  animation-duration: 10s;
+}
+
+.watch--speed-up::after {
+  animation-duration: 600s;
+}
+
+@keyframes clockwork {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
