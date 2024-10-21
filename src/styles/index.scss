@@ -1,3 +1,77 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin watch-hand($width, $height, $color) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+  transform-origin: bottom;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1vmin dotted #000;
+
+  @include circle(80vmin);
+
+  &__center {
+    position: absolute;
+    background-color: #f6a603;
+
+    @include circle(5vmin);
+  }
+
+  &__hand {
+    position: absolute;
+    &--minutes {
+      animation: clock 3600s linear infinite;
+      top: 20vmin;
+
+      @include watch-hand(3vmin, 20vmin, #0700ff);
+    }
+
+    &--seconds {
+      animation: clock 60s linear infinite;
+      top: 2vmin;
+
+      @include watch-hand(1.5vmin, 38vmin, #2c8000);
+    }
+  }
+
+  &--speed-up {
+    .stopwatch__hand--minutes {
+      animation-duration: 600s;
+    }
+
+    .stopwatch__hand--seconds {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
