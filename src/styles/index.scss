@@ -1,3 +1,107 @@
+$stopwatch-diametr: 80vmin;
+$center-diametr: 5vmin;
+$minutes-height: 20vmin;
+$seconds-height: 38vmin;
+$minutes-width: 3vmin;
+$seconds-width: 1.5vmin;
+
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $stopwatch-diametr;
+  width: $stopwatch-diametr;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+  position: relative;
+
+  &__center {
+    height: $center-diametr;
+    width: $center-diametr;
+    border-radius: 50%;
+    background-color: #f6a603;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minutes-wrapper {
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -100%);
+    transform-origin: center;
+
+    animation: rotate-minutes 3600s steps(60) infinite;
+  }
+
+  &__minutes {
+    height: $minutes-height;
+    width: $minutes-width;
+    background-color: #0700ff;
+
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
+  &__seconds-wrapper {
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -100%);
+    transform-origin: center;
+
+    animation: rotate-seconds 60s linear infinite;
+  }
+
+  &__seconds {
+    height: $seconds-height;
+    width: $seconds-width;
+    background-color: #2c8000;
+
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
+  &--speed-up {
+    &__minutes-wrapper {
+      animation: rotate-minutes 600s steps(60) infinite;
+    }
+
+    &__seconds-wrapper {
+      animation: rotate-seconds 10s linear infinite;
+    }
+  }
+}
+
+@keyframes rotate-seconds {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-minutes {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
