@@ -1,0 +1,31 @@
+@mixin animation-minute-hand() {
+  @keyframes rotates {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  animation-name: rotates;
+  transform-origin: 1.5vmin 20vmin;
+  animation-timing-function: steps(60);
+  animation-iteration-count: infinite;
+}
+
+@mixin animation-second-hand() {
+  @keyframes rotates {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  animation-name: rotates;
+  transform-origin: 0.75vmin 40vmin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
