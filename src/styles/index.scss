@@ -1,3 +1,84 @@
-body {
+.page {
   margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  --border-color: #000;
+  --minute-hand: #0700ff;
+  --second-hand: #2c8000;
+  --center-color: #f6a603;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted var(--border-color);
+  border-radius: 50%;
+  margin: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__center {
+    display: block;
+    width: 5vmin;
+    height: 5vmin;
+    background-color: var(--center-color);
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  &__minute-hand {
+    display: block;
+    width: 3vmin;
+    height: 20vmin;
+    background-color: var(--minute-hand);
+    position: absolute;
+    bottom: 50%;
+
+    transform-origin: bottom;
+    animation: move;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-timing-function: steps(60, end);
+    animation-duration: 3600s;
+  }
+
+  &__second-hand {
+    display: block;
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: var(--second-hand);
+    position: absolute;
+    bottom: 50%;
+
+    transform-origin: bottom;
+    animation: move;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-duration: 60s;
+  }
+}
+
+.stopwatch--speed-up {
+  .stopwatch__minute-hand {
+    animation-duration: 600s;
+  }
+  .stopwatch__second-hand {
+    animation-duration: 10s;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
