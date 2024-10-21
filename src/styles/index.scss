@@ -1,3 +1,79 @@
-body {
+$seconds-per-minute: 60s;
+
+@mixin time-laps($seconds-per-minute) {
+  animation: move-hands $seconds-per-minute steps(60) infinite;
+}
+
+.page {
   margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vmin;
+  height: 80vmin;
+
+  border: dotted 1vmin #000;
+  border-radius: 50%;
+}
+
+.minutes-hand {
+  bottom: 50%;
+  position: absolute;
+  height: 20vmin;
+  width: 3vmin;
+  background-color: #0700ff;
+
+  transform-origin: bottom;
+
+  @include time-laps(calc(60 * #{$seconds-per-minute}));
+}
+
+.seconds-hand {
+  bottom: 50%;
+  position: absolute;
+  height: 38vmin;
+  width: 1.5vmin;
+  background-color: #2c8000;
+
+  transform-origin: bottom;
+
+  @include time-laps($seconds-per-minute);
+}
+
+@keyframes move-hands {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.center {
+  position: absolute;
+  height: 5vmin;
+  width: 5vmin;
+  background-color: #f6a603;
+
+  border-radius: 50%;
+}
+
+.stopwatch--speed-up {
+  .seconds-hand {
+    @include time-laps(calc(#{$seconds-per-minute} / 6));
+  }
+
+  .minutes-hand {
+    @include time-laps(calc(10 * #{$seconds-per-minute}));
+  }
 }
