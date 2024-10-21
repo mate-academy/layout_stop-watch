@@ -1,3 +1,88 @@
+$stopwatcDmtr: 80vmin;
+$centerDmtr: 5vmin;
+$secondsW: 1.5vmin;
+$secondsH: 38vmin;
+$minutesW: 3vmin;
+$minutesH: 20vmin;
+
+@mixin animation($duration, $timing) {
+  animation-name: rotate;
+  animation-duration: $duration;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+  animation-timing-function: $timing;
+}
+
 body {
   margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  width: $stopwatcDmtr;
+  height: $stopwatcDmtr;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minutes-hand {
+    position: absolute;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+    top: $stopwatcDmtr / 2 - $minutesH;
+    left: $stopwatcDmtr / 2 - $minutesW / 2;
+
+    transform-origin: $minutesW / 2 $minutesH;
+
+    @include animation(3600s, steps(60, end));
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+    top: $stopwatcDmtr / 2 - $secondsH;
+    left: $stopwatcDmtr / 2 - $secondsW / 2;
+
+    transform-origin: $secondsW / 2 $secondsH;
+
+    @include animation(60s, linear);
+  }
+
+  &__center {
+    position: absolute;
+    height: $centerDmtr;
+    width: $centerDmtr;
+    background-color: #f6a603;
+    border-radius: 50%;
+    top: $stopwatcDmtr / 2 - $centerDmtr / 2;
+    left: $stopwatcDmtr / 2 - $centerDmtr / 2;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes-hand {
+      @include animation(600s, steps(60, end));
+    }
+    .stopwatch__seconds-hand {
+      @include animation(10s, linear);
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
