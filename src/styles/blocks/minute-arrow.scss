@@ -1,0 +1,19 @@
+.stopwatch__item::before {
+  content: '';
+  position: absolute;
+  width: 3vmin;
+  height: 20vmin;
+  top: 50%;
+  left: 50%;
+  background-color: $blue-color;
+  z-index: -2;
+
+  animation-name: arrows;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60);
+}
+
+.stopwatch--speed-up .stopwatch__item::before {
+  animation-duration: 600s;
+}
