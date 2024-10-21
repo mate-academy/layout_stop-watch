@@ -1,0 +1,19 @@
+.stopwatch__item::after {
+  content: '';
+  position: absolute;
+  width: 1.5vmin;
+  height: 38vmin;
+  top: 50%;
+  left: 50%;
+  background-color: $green-color;
+  z-index: -1;
+
+  animation-name: arrows;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.stopwatch--speed-up .stopwatch__item::after {
+  animation-duration: 10s;
+}
