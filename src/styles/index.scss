@@ -1,3 +1,77 @@
 body {
   margin: 0;
 }
+
+.container {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stop-watch {
+  box-sizing: border-box;
+
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__contain-hands {
+    position: absolute;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+  }
+
+  &__minutes-hand {
+    position: absolute;
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+
+    animation-name: round;
+    animation-duration: 600s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, end);
+    transform-origin: 1.5vmin 20vmin;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+
+    animation-name: round;
+    animation-duration: 10s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: 0.75vmin 38vmin;
+  }
+
+  &__center-dot {
+    position: absolute;
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 100%;
+    background-color: #f6a603;
+  }
+}
+
+@keyframes round {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
