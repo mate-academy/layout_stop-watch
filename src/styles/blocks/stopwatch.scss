@@ -9,10 +9,6 @@
   border: 1vmin dotted #000;
   border-radius: 50%;
 
-  &__centre {
-    margin: 0 auto;
-  }
-
   &__minutes-hand {
     display: block;
     position: absolute;
@@ -54,11 +50,11 @@
 
 .stopwatch--speed-up {
   .stopwatch__minute-hand {
-    animation: rotate 600s linear infinite;
+    animation-duration: 600s;
   }
 
   .stopwatch__seconds-hand {
-    animation: rotate 10s linear infinite;
+    animation-duration: 10s;
   }
 }
 
