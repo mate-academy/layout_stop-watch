@@ -1,0 +1,16 @@
+@mixin watch-animation($mix-duration, $tr-origin, $t-func) {
+
+  & {
+    transform-origin: $tr-origin;
+    animation: move $mix-duration $t-func infinite;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

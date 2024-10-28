@@ -1,3 +1,75 @@
+@import './utils/variables';
+@import './utils/mixins';
+
 body {
   margin: 0;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  $duration: 60s;
+
+  width: $watch-size;
+  height: $watch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  &__minute {
+    width: $minute-w;
+    height: $minute-h;
+    background-color: #0700ff;
+    position: absolute;
+    top: #{$watch-size / 2 - $minute-h};
+    left: #{($watch-size - $minute-w) / 2};
+
+    @include watch-animation(
+      $duration * 60,
+      (0.5 * $minute-w) $minute-h,
+      steps(60, end)
+    );
+
+    .stopwatch--speed-up & {
+      @include watch-animation(
+        $speed-up-duration * 60,
+        (0.5 * $minute-w) $minute-h,
+        steps(60, end)
+      );
+    }
+  }
+
+  &__second {
+    width: $sec-w;
+    height: $sec-h;
+    background-color: #2c8000;
+    position: absolute;
+    top: #{0.5 * $watch-size - $sec-h};
+    left: #{0.5 * ($watch-size - $sec-w)};
+
+    @include watch-animation($default-duration, (0.5 * $sec-w) $sec-h, linear);
+
+    .stopwatch--speed-up & {
+      @include watch-animation(
+        $speed-up-duration,
+        (0.5 * $sec-w) $sec-h,
+        linear
+      );
+    }
+  }
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+    background-color: #f6a603;
+    border-radius: 50%;
+    position: absolute;
+    top: #{0.5 * ($watch-size - $center-size)};
+    left: #{0.5 * ($watch-size - $center-size)};
+  }
 }
