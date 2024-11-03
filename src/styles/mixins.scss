@@ -1,4 +1,16 @@
 @mixin animation($duration, $timing-function) {
+  @keyframes move {
+    from {
+      transform: rotate(0);
+      transform-origin: $default-transform-origin;
+    }
+
+    to {
+      transform: rotate(360deg);
+      transform-origin: $default-transform-origin;
+    }
+  }
+
   animation-name: move;
   animation-duration: $duration;
   animation-iteration-count: infinite;
