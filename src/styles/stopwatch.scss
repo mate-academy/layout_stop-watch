@@ -1,0 +1,47 @@
+.stopwatch {
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: $border-size dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  &__minutes-hand {
+    height: $minutes-hand-height;
+    width: $minutes-hand-width;
+    background-color: #0700ff;
+    position: absolute;
+    left: center-position(($minutes-hand-width / 2));
+    top: center-position($minutes-hand-height);
+
+    @include animation($default-minutes-hand-duration, steps(60));
+  }
+
+  &__seconds-hand {
+    height: $seconds-hand-height;
+    width: $seconds-hand-width;
+    background-color: #2c8000;
+    position: absolute;
+    left: center-position(($seconds-hand-width / 2));
+    top: center-position($seconds-hand-height);
+
+    @include animation($default-seconds-hand-duration, linear);
+  }
+
+  &--speed-up &__minutes-hand {
+    @include animation(600s, steps(60));
+  }
+
+  &--speed-up &__seconds-hand {
+    @include animation(10s, linear);
+  }
+
+  &__center {
+    position: absolute;
+    height: $center-size;
+    width: $center-size;
+    background-color: #f6a603;
+    border-radius: 50%;
+    left: center-position(($center-size / 2));
+    top: center-position(($center-size / 2));
+  }
+}
