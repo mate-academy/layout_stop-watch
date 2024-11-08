@@ -1,0 +1,21 @@
+@import 'variables';
+
+.stopwatch__second-hand {
+  position: absolute;
+  width: $second-hand-width;
+  height: $second-hand-length;
+  background-color: $second-hand-color;
+  top: calc(50% - #{$second-hand-length});
+  left: 49%;
+  transform-origin: center bottom;
+  animation: rotateSecond 60s linear infinite;
+}
+
+@keyframes rotate-second {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
