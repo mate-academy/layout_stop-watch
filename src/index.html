@@ -1,3 +1,4 @@
+<!-- #region head -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,7 +17,19 @@
       href="./styles/index.scss"
     />
   </head>
+  <!-- #endregion -->
+
   <body>
-    <h1>Stop watch</h1>
+    <div class="stopwatch">
+      <div class="stopwatch__hand">
+        <div
+          class="stopwatch__hand stopwatch__hand--min stopwatch__hand--min--speed-up"
+        ></div>
+        <div
+          class="stopwatch__hand stopwatch__hand--second stopwatch__hand--second--speed-up"
+        ></div>
+      </div>
+      <div class="stopwatch__circle"></div>
+    </div>
   </body>
 </html>

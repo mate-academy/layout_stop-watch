@@ -1,3 +1,66 @@
+@import './utils/variable';
+@import './utils/mixin';
+
 body {
   margin: 0;
+  height: 100vh;
+
+  @include centered-content;
+}
+
+.stopwatch {
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: 1vmin dotted $stopwatch-border-color;
+  border-radius: $border-radius;
+  position: relative;
+
+  @include centered-content;
+
+  &__hand {
+    position: absolute;
+    transform-origin: bottom;
+    bottom: 50%;
+
+    @include centered-content;
+
+    &--min {
+      height: $minutes-hand-height;
+      width: $minutes-hand-width;
+      background-color: $bg-color-min-hand;
+      animation: hand-move 3600s infinite steps(60);
+    }
+
+    &--second {
+      height: $seconds-hand-height;
+      width: $seconds-hand-width;
+      background-color: $bg-color-sec-hand;
+      animation: hand-move 60s infinite linear;
+    }
+
+    @each $hand, $duration in $speed-up {
+      &--#{$hand}--speed-up {
+        animation-duration: $duration;
+      }
+    }
+  }
+
+  &__circle {
+    @include centered-content;
+
+    position: absolute;
+    height: $stopwatch-circle-size;
+    width: $stopwatch-circle-size;
+    border-radius: $border-radius;
+    background-color: $bg-color-circle;
+  }
+}
+
+@keyframes hand-move {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
