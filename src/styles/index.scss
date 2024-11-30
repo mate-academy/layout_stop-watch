@@ -1,3 +1,69 @@
-body {
-  margin: 0;
+@import './reset';
+@import './utils/mixins';
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minute-hand {
+    @include hand(20vmin, 3vmin, #0700ff);
+
+    transform: translate(-50%, -10vmin) rotate(-90deg);
+    animation-name: hand-move;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+  }
+
+  &__seconds-hand {
+    @include hand(38vmin, 1.5vmin, #2c8000);
+
+    transform: translate(-50%, -19vmin) rotate(-90deg);
+    animation-name: hand-move;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &::after {
+    content: '';
+
+    @include hand(5vmin, 5vmin, #f6a603);
+
+    transform: translate(-50%, -1.5vmin);
+    border-radius: 50%;
+  }
+
+  &--speed-up {
+    .stopwatch__minute-hand {
+      animation-duration: 600s;
+    }
+
+    .stopwatch__seconds-hand {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes hand-move {
+  from {
+    transform: translate(0, 0) rotate(-90deg);
+    transform-origin: center left;
+  }
+
+  to {
+    transform: translate(0, 0) rotate(270deg);
+    transform-origin: center left;
+  }
 }
