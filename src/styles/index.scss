@@ -10,13 +10,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 .stopwatch {
-  margin-top: 50px;
   width: 80vmin;
   height: 80vmin;
-  border: dotted 7 #000;
+  border: dotted 1vmin #000;
   border-radius: 50%;
 
   display: flex;
@@ -82,9 +82,19 @@ body {
 
 @keyframes clock-sec {
   from {
-    transform: rotate($start-circle - 160);
+    transform: rotate($start-circle - 200);
   }
   to {
     transform: rotate($full-circle);
   }
+}
+
+.speed-up-min {
+  animation-name: clock;
+  animation-duration: $speed-up-min;
+}
+
+.speed-up-sec {
+  animation-name: clock-sec;
+  animation-duration: $speed-up-sec;
 }
