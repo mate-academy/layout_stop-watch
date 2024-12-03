@@ -3,7 +3,6 @@ $max-min: $max-sec * 60;
 $full-circle: 360deg;
 $speed-up-sec: 10s;
 $speed-up-min: $speed-up-sec * 60;
-$start-circle: $full-circle / 60;
 
 body {
   margin: 0;
@@ -82,7 +81,7 @@ body {
 
 @keyframes clock-sec {
   from {
-    transform: rotate($start-circle - 200);
+    transform: rotate(0);
   }
   to {
     transform: rotate($full-circle);
