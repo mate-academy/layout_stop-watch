@@ -17,7 +17,8 @@ In addition to the basic functionality create a BEM modifier called `speed-up` f
 - it will take only `10s` for the seconds hand to make a full circle (change animation duration)
 - it will take only `10min` for the minutes hand to make a full circle (change animation duration)
 
-❗️ Add the modifier to the initial markup for Tests.
+❗️ Create an HTML element with the class stopwatch (this element is required for the tests).
+❗️ Add the modifier to the stopwatch for tests.
 ❗️ Mentors will remove it via Dev Tools and check if Basic functionality works as expected.
 
 > Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
@@ -31,7 +32,7 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 ## Checklist
 
 ❗️ Replace `<your_account>` with your GitHub username and copy the links to the `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_stop-watch/)
+- [DEMO LINK](https://olga-wukelan.github.io/layout_stop-watch/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
