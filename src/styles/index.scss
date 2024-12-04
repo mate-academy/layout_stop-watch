@@ -14,11 +14,13 @@ body {
 
 .container {
   @include mix.flex-box;
+
   height: 100%;
 }
 
 .stop-watch {
   @include mix.flex-box;
+
   position: relative;
   border-radius: 50%;
   height: 80vmin;
@@ -26,8 +28,9 @@ body {
   border: 1vmin dotted var.$border__color;
 
   &__minutes-hand {
-    position: absolute;
     @include mix.position-center;
+
+    position: absolute;
     height: 20vmin;
     width: 3vmin;
     transform-origin: 50% 100%;
@@ -35,18 +38,20 @@ body {
     background-color: var;
   }
   &__seconds-hand {
-    position: absolute;
     @include mix.position-center;
+
+    position: absolute;
     height: 38vmin;
     width: 1.5vmin;
     transform-origin: 50% 100%;
-    background-color: #2c8000;
+    background-color: var.$seconds__hand;
     animation: rotate-seconds 60s linear infinite;
   }
   &__stop-circle {
-    position: absolute;
     @include mix.position-center;
-    background-color: #f6a603;
+
+    position: absolute;
+    background-color: var.$stop__circle;
     border-radius: 50%;
     height: 5vmin;
     width: 5vmin;
