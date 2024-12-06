@@ -19,8 +19,6 @@ body {
 }
 
 .stop-watch {
-  @include mix.flex-box;
-
   position: relative;
   border-radius: 50%;
   height: 80vmin;
@@ -28,14 +26,12 @@ body {
   border: 1vmin dotted var.$border__color;
 
   &__minutes-hand {
-    @include mix.position-center;
-
     position: absolute;
     height: 20vmin;
     width: 3vmin;
-    transform-origin: 50% 100%;
+    transform-origin: bottom;
     animation: rotate-minutes 3600s steps(60) infinite;
-    background-color: var;
+    background-color: var.$minutes__hand;
   }
   &__seconds-hand {
     @include mix.position-center;
@@ -43,7 +39,7 @@ body {
     position: absolute;
     height: 38vmin;
     width: 1.5vmin;
-    transform-origin: 50% 100%;
+    transform-origin: bottom;
     background-color: var.$seconds__hand;
     animation: rotate-seconds 60s linear infinite;
   }
@@ -61,18 +57,18 @@ body {
 
 @keyframes rotate-minutes {
   from {
-    transform: translate(-50%, 0) rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: translate(-50%, 0) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes rotate-seconds {
   from {
-    transform: translate(-50%, 0) rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: translate(-50%, 0) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
