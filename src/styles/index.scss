@@ -1,3 +1,76 @@
+@use '_mixins' as mix;
+@use '_variables' as var;
+
 body {
   margin: 0;
+  height: 100vh;
+}
+
+.container {
+  @include mix.flex-box;
+
+  height: 100%;
+}
+
+.stopwatch {
+  @include mix.flex-box;
+
+  position: relative;
+  border-radius: 50%;
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted var.$border__color;
+
+  &__minutes-hand {
+    position: absolute;
+    top: calc(40vmin - 20vmin);
+    transform-origin: 50% 100%;
+    height: 20vmin;
+    width: 3vmin;
+    animation: rotate-minutes 3600s steps(60) infinite;
+    background-color: var.$minutes__hand;
+  }
+  &__seconds-hand {
+    position: absolute;
+    top: calc(40vmin - 38vmin);
+    transform-origin: 50% 100%;
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: var.$seconds__hand;
+    animation: rotate-seconds 60s linear infinite;
+  }
+  &__stop-circle {
+    position: absolute;
+    background-color: var.$stop__circle;
+    border-radius: 50%;
+    height: 5vmin;
+    width: 5vmin;
+    z-index: 10;
+  }
+  &--speed-up {
+    .stopwatch__minutes-hand {
+      animation-duration: 600s;
+    }
+    .stopwatch__seconds-hand {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes rotate-minutes {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-seconds {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
