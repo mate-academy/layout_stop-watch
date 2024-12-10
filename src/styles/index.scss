@@ -1,3 +1,117 @@
-body {
-  margin: 0;
+$watch-size: 80vmin;
+$border-size: 1vmin;
+$border-color: #000;
+$minutes-len: 20vmin;
+$minutes-width: 3vmin;
+$minutes-color: #0700ff;
+$seconds-len: 38vmin;
+$seconds-width: 1.5vmin;
+$seconds-color: #2c8000;
+$center-diam: 5vmin;
+$center-color: #f6a603;
+
+
+
+@keyframes rotate-hands {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+
+  &__circle {
+    display: flex;
+    position: relative;
+    border: $border-size dotted $border-color;
+    border-radius: 50%;
+    height: $watch-size;
+    width: $watch-size;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: $center-diam;
+      height: $center-diam;
+      border-radius: 50%;
+      background-color: $center-color;
+      z-index: 3;
+    }
+  }
+
+  &__min {
+    position: absolute;
+
+    &--minutes {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      height: $minutes-len * 2;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: $minutes-width;
+        height: $minutes-len;
+        background-color: $minutes-color;
+        transform-origin: center bottom;
+        animation: rotate-hands 3600s steps(60) infinite;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__sec {
+    position: absolute;
+
+    &--seconds {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      height: $seconds-len * 2;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: $seconds-width;
+        height: $seconds-len;
+        background-color: $seconds-color;
+        transform-origin: center bottom;
+        animation: rotate-hands 60s linear infinite;
+        z-index: 2;
+      }
+    }
+  }
+
+  &--speed-up {
+    .stopwatch__sec--seconds {
+      &:before {
+        animation-duration: 10s;
+      }
+    }
+
+    .stopwatch__min--minutes {
+      &:before {
+        animation-duration: 600s;
+      }
+    }
+  }
+}
+
+
