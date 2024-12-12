@@ -1,3 +1,12 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
 .stopwatch {
   width: 80vmin;
   height: 80vmin;
@@ -6,8 +15,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
-  &____minutes-hand {
+  &__minutes-hand {
     height: 20vmin;
     width: 3vmin;
     background-color: #0700ff;
@@ -27,7 +37,7 @@
     bottom: 50%;
 
     transform-origin: bottom;
-    animation: move 3600s steps(60) infinite;
+    animation: move 60s linear infinite;
   }
 
   &__center {
@@ -35,23 +45,23 @@
     width: 5vmin;
     height: 5vmin;
     border-radius: 50%;
-    position: absolutes;
+    position: absolute;
+  }
+
+  &--speed-up .stopwatch__minutes-hand {
+    animation: move 600s steps(60) infinite;
+  }
+
+  &--speed-up .stopwatch__seconds-hand {
+    animation: move 10s linear infinite;
   }
 
   @keyframes move {
     from {
-      transform: rotate(0);
+      transform: rotate(0deg);
     }
     to {
       transform: rotate(360deg);
     }
-  }
-
-  &--speed-up :nth-child(1) {
-    animation: move 600s steps(60) infinite;
-  }
-
-  &--speed-up :nth-child(2) {
-    animation: move 10 linear infinite;
   }
 }
