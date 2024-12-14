@@ -9,17 +9,12 @@
 }
 
 @keyframes stopwatch {
-  0% {
+  from {
     transform: rotate(0deg);
     transform-origin: bottom center;
   }
 
-  50% {
-    transform: rotate(180deg);
-    transform-origin: bottom center;
-  }
-
-  100% {
+  to {
     transform: rotate(360deg);
     transform-origin: bottom center;
   }
@@ -34,8 +29,8 @@
   background-color: #0700ff;
   animation: stopwatch;
   animation-duration: 3600s;
+  animation-timing-function: steps(60, end);
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 
 .seconds-hand {
