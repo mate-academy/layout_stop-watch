@@ -1,5 +1,6 @@
 $size: 80vmin;
 $item-margin: auto;
+$duration: 10s;
 
 body {
   margin: 0;
@@ -22,14 +23,10 @@ body {
     margin: auto;
 
     animation: rotate;
-    animation-duration: 3600s;
+    animation-duration: $duration * 360;
     animation-timing-function: steps(60);
     animation-iteration-count: infinite;
     transform-origin: center bottom;
-
-    &--speed-up {
-      animation-duration: 600s;
-    }
   }
 
   &__seconds {
@@ -42,14 +39,10 @@ body {
     margin: auto;
 
     animation: rotate;
-    animation-duration: 60s;
+    animation-duration: $duration * 6;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     transform-origin: center bottom;
-
-    &--speed-up {
-      animation-duration: 10s;
-    }
   }
 
   &__center {
@@ -62,27 +55,19 @@ body {
     inset: 0;
     margin: auto;
   }
+
+  &--speed-up {
+    animation-duration: $duration;
+  }
 }
 
 
 @keyframes rotate {
-  0% {
+  from {
     transform: rotate(0deg);
   }
 
-  25% {
-    transform: rotate(90deg);
-  }
-
-  50% {
-    transform: rotate(180deg);
-  }
-
-  75% {
-    transform: rotate(240deg);
-  }
-
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
