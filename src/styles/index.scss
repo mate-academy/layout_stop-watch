@@ -23,7 +23,7 @@ body {
 
     transform-origin: bottom;
     background-color: $blue-color;
-    animation: move ($minute-duration * 60) steps(60) infinite;
+    animation: move 3600s steps(60) infinite;
   }
 
   &__seconds-arrow {
@@ -32,7 +32,7 @@ body {
 
     background-color: $green-color;
     transform-origin: bottom;
-    animation: move $minute-duration linear infinite;
+    animation: move 60s linear infinite;
   }
 
   &__center-dot {
@@ -47,8 +47,12 @@ body {
     transform: translate(-50%, -50%);
   }
 
-  &--speed-up {
-    animation-duration: $minute-duration;
+  &--speed-up .stopwatch__minute-arrow {
+    animation: move 600s steps(60) infinite;
+  }
+
+  &--speed-up .stopwatch__seconds-arrow {
+    animation: move $duration linear infinite;
   }
 }
 
