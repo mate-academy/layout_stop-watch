@@ -1,3 +1,66 @@
+@import './utils/variables';
+@import './utils/mixins';
+
 body {
+  @include flex(row, center, center);
+
   margin: 0;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.stopwatch {
+  @include flex(row, center, center);
+  @include set-size($watch-width, $watch-height);
+
+  position: relative;
+  border: 1vmin dotted $black-color;
+  border-radius: 50%;
+
+  &__minute-arrow {
+    @include set-size(3vmin, 20vmin);
+    @include abs-center-vertically;
+
+    transform-origin: bottom;
+    background-color: $blue-color;
+    animation: move 3600s steps(60) infinite;
+  }
+
+  &__seconds-arrow {
+    @include set-size(1.5vmin, 38vmin);
+    @include abs-center-vertically;
+
+    background-color: $green-color;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+
+  &__center-dot {
+    @include set-size(5vmin, 5vmin);
+
+    border-radius: 50%;
+    background-color: $orange-color;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--speed-up .stopwatch__minute-arrow {
+    animation: move 600s steps(60) infinite;
+  }
+
+  &--speed-up .stopwatch__seconds-arrow {
+    animation: move $duration linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
