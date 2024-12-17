@@ -1,0 +1,16 @@
+@mixin flex($direction: row, $content: flex-start, $items: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $items;
+}
+
+@mixin set-size($width: auto, $height: auto) {
+  height: $height;
+  width: $width;
+}
+
+@mixin abs-center-vertically {
+  position: absolute;
+  bottom: 50%;
+}
