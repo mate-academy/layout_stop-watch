@@ -53,6 +53,15 @@ html {
     animation: rotate 60s linear infinite;
   }
 
+  &--speed-up {
+    .stopwatch__second-hand {
+      animation-duration: 10s;
+    }
+    .stopwatch__minute-hand {
+      animation-duration: 600s;
+    }
+  }
+
   @keyframes rotate {
     from {
       transform: rotate(0deg);
@@ -60,14 +69,5 @@ html {
     to {
       transform: rotate(360deg);
     }
-  }
-}
-
-.stopwatch--speed-up {
-  .stopwatch__seconds-hand {
-    animation-duration: 10s;
-  }
-  .stopwatch__min-hand {
-    animation-duration: 600s;
   }
 }
