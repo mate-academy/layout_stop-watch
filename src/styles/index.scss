@@ -1,3 +1,82 @@
-body {
+body,
+html {
+  height: 100%;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    background: #f6a603;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &__hand {
+    position: absolute;
+    transform-origin: bottom center;
+    bottom: 50%;
+
+    &--seconds {
+      width: 1.5vmin;
+      height: 38vmin;
+      background: #2c8000;
+      left: 50%;
+      bottom: 50%;
+      transform: translateX(-49%) translateY(-50%);
+      animation: rotate-seconds 60s linear infinite;
+      z-index: 1;
+    }
+
+    &--minutes {
+      width: 3vmin;
+      height: 20vmin;
+      background: #0700ff;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: rotate-minutes 3600s steps(60) infinite;
+    }
+  }
+
+  &--speed-up {
+    .stopwatch__hand--seconds {
+      animation-duration: 10s;
+    }
+
+    .stopwatch__hand--minutes {
+      animation-duration: 600s; // 10 хвилин
+    }
+  }
+}
+
+@keyframes rotate-seconds {
+  from {
+    transform: rotate(0deg) translateX(-50%);
+  }
+  to {
+    transform: rotate(360deg) translateX(-50%);
+  }
+}
+
+@keyframes rotate-minutes {
+  from {
+    transform: rotate(0deg) translateX(-50%);
+  }
+  to {
+    transform: rotate(360deg) translateX(-50%);
+  }
 }
