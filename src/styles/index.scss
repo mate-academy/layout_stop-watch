@@ -1,3 +1,103 @@
+/* #region page */
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
+
+/* #endregion */
+
+/* #region frame */
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  // box-sizing: border-box;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+}
+
+/* #endregion */
+
+/* #region minute-hand */
+.stopwatch__minute-hand {
+  width: 3vmin;
+  height: 20vmin;
+  background-color: #0700ff;
+  position: absolute;
+  bottom: 50%;
+  animation: time-minute 3600s steps(60) infinite;
+  animation-iteration-count: infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes time-minute {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* #endregion */
+
+/* #region second-hand */
+.stopwatch__second-hand {
+  width: 1.5vmin;
+  height: 38vmin;
+  background-color: #2c8000;
+  position: absolute;
+  bottom: 50%;
+  animation-name: time-second;
+  animation-timing-function: linear;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes time-second {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* #endregion */
+
+/* #region center */
+.stopwatch__center {
+  box-sizing: border-box;
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 50%;
+  background-color: #f6a603;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* #endregion */
+
+/* #region speed-up */
+.stopwatch--speed-up {
+  .stopwatch__minute-hand {
+    animation-duration: 600s;
+  }
+  .stopwatch__second-hand {
+    animation-duration: 10s;
+  }
+}
+
+/* #endregion */
