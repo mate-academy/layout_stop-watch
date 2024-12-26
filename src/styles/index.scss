@@ -1,3 +1,83 @@
+@import 'utils/variable';
+@import 'utils/mixin';
+
+@keyframes rotate-orbit {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-orbit-min {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
 body {
   margin: 0;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  &__stopwatch {
+    background-color: $bgWatch;
+  }
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted $borderWatch;
+  border-radius: 50%;
+
+  &__item1 {
+    height: 20vmin;
+    width: 3vmin;
+    background-color: $bgItem1;
+
+    @include position-center(-50%, -100%, 5);
+
+    animation: rotate-orbit-min 3600s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__item2 {
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: $bgItem2;
+
+    @include position-center(-50%, -100%, 0);
+
+    transform-origin: bottom;
+    animation: rotate-orbit 60s linear infinite;
+  }
+
+  &--speed-up {
+    .stopwatch__item1 {
+      animation: rotate-orbit-min 600s steps(60) infinite;
+    }
+    .stopwatch__item2 {
+      animation: rotate-orbit 10s linear infinite;
+    }
+  }
+
+  &__item3 {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: $bgItem3;
+
+    @include position-center(-50%, -50%, 10);
+  }
 }
