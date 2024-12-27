@@ -1,3 +1,68 @@
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  display: none;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  &__min {
+    position: absolute;
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    right: calc(50% - 1.5vmin);
+    top: 25%;
+    z-index: 0;
+    transform-origin: bottom;
+    animation: move 3600s steps(60) infinite;
+  }
+  &__sec {
+    position: absolute;
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+    right: calc(50% - 1.5vmin);
+    top: 2%;
+    z-index: 0;
+    transform-origin: bottom;
+    animation: move 60s linear infinite;
+  }
+  &__circle {
+    position: absolute;
+    background-color: #f6a603;
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    right: calc(50% - 2.5vmin);
+    top: calc(50% - 2.5vmin);
+    z-index: 1;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch--speed-up :nth-child(1) {
+  animation: move 600s steps(60) infinite;
+}
+
+.stopwatch--speed-up :nth-child(2) {
+  animation: move 10s linear infinite;
 }
