@@ -1,0 +1,22 @@
+@mixin reset {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin styles($backgroundColor) {
+  background-color: $backgroundColor;
+}
+
+@mixin position-element($widthElement) {
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - ($widthElement / 2));
+  transform-origin: bottom;
+  transform: translateX(-50%);
+}
+
+@mixin element-size($width, $height) {
+  width: $width;
+  height: $height;
+}
