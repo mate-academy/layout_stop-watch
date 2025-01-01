@@ -1,0 +1,54 @@
+@import './mixins';
+
+@keyframes hand-go {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  @include element-size(80vmin, 80vmin);
+
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  &__center {
+    @include element-size(5vmin, 5vmin);
+    @include styles(#f6a603);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 5;
+  }
+
+  &__minutes-hand {
+    @include position-element(3vmin);
+    @include element-size(3vmin, 20vmin);
+    @include styles(#0700ff);
+
+    animation: hand-go 60s steps(60) infinite;
+
+    &--speed-up {
+      animation: hand-go 600s steps(60) infinite;
+    }
+  }
+
+  &__seconds-hand {
+    @include position-element(1.5vmin);
+    @include element-size(1.5vmin, 38vmin);
+    @include styles(#2c8000);
+
+    animation: hand-go 60s linear infinite;
+
+    &--speed-up {
+      animation: hand-go 10s linear infinite;
+    }
+  }
+}
