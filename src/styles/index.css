@@ -12,6 +12,7 @@ body {
   border-radius: 50%;
   margin: auto;
 }
+
 .stopwatch__minute-hand {
   position: absolute;
   top: 48%;
@@ -23,6 +24,7 @@ body {
   background-color: #0700ff;
   animation: minute-rotate 3600s steps(60) infinite;
 }
+
 .stopwatch__second-hand {
   position: absolute;
   top: 49%;
@@ -34,6 +36,7 @@ body {
   background-color: #2c8000;
   animation: second-rotate 60s linear infinite;
 }
+
 .stopwatch__circle {
   position: absolute;
   top: calc(50% - 2.5vmin);
@@ -44,12 +47,15 @@ body {
   background-color: #f6a603;
   z-index: 0;
 }
+
 .stopwatch--speed-up .stopwatch__second-hand {
   animation-duration: 10s;
 }
+
 .stopwatch--speed-up .stopwatch__minute-hand {
   animation-duration: 600s;
 }
+
 @keyframes second-rotate {
   from {
     transform: rotate(-90deg);
@@ -58,6 +64,7 @@ body {
     transform: rotate(270deg);
   }
 }
+
 @keyframes minute-rotate {
   from {
     transform: rotate(-90deg);
