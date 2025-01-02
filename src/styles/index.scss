@@ -15,25 +15,25 @@ body {
   &__minute-hand {
     position: absolute;
     top: 48%;
-    left: 63%;
+    left: 50%;
     transform-origin: 0 50%;
     transform: rotate(-90deg);
     width: 20vmin;
     height: 3vmin;
     background-color: #0700ff;
-    animation: minute-rotate 600s steps(60) infinite;
+    animation: minute-rotate 3600s steps(60) infinite;
   }
 
   &__second-hand {
     position: absolute;
     top: 49%;
-    left: 74%;
+    left: 50%;
     transform-origin: 0 50%;
     transform: rotate(-90deg);
     width: 38vmin;
     height: 1.5vmin;
     background-color: #2c8000;
-    animation: second-rotate 10s linear infinite;
+    animation: second-rotate 60s linear infinite;
   }
 
   &__circle {
@@ -47,21 +47,41 @@ body {
     z-index: 0;
   }
 
+  //&--speed-up {
+  //  & .stopwatch__second-hand {
+  //    animation-duration: 10s;
+  //  }
+  //}
+
+  &--speed-up .stopwatch__second-hand {
+    animation-duration: 10s;
+  }
+
+  //&--speed-up {
+  //  & .stopwatch__minute-hand {
+  //    animation-duration: 600s;
+  //  }
+  //}
+
+  &--speed-up .stopwatch__minute-hand {
+    animation-duration: 600s;
+  }
+
   @keyframes second-rotate {
     from {
-      transform: translateX(-50%) rotate(-90deg);
+      transform: rotate(-90deg);
     }
     to {
-      transform: translateX(-50%) rotate(270deg);
+      transform: rotate(270deg);
     }
   }
 
   @keyframes minute-rotate {
     from {
-      transform: translateX(-50%) rotate(-90deg);
+      transform: rotate(-90deg);
     }
     to {
-      transform: translateX(-50%) rotate(270deg);
+      transform: rotate(270deg);
     }
   }
 }
