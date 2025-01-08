@@ -14,17 +14,6 @@ body {
   border-radius: 50%;
   position: relative;
 
-  &__center {
-    height: 5vmin;
-    width: 5vmin;
-    border-radius: 50%;
-    background-color: #f6a603;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
   &__minutes {
     height: 20vmin;
     width: 3vmin;
@@ -32,7 +21,7 @@ body {
     position: absolute;
     left: 50%;
     bottom: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50% -50%);
     transform-origin: bottom center;
 
     animation-name: rotate;
@@ -48,13 +37,24 @@ body {
     position: absolute;
     left: 50%;
     bottom: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50% -50%);
     transform-origin: bottom center;
 
     animation-name: rotate;
     animation-duration: 60s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+  }
+
+  &__center {
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &--speed-up {
