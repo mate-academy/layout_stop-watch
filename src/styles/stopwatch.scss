@@ -1,0 +1,61 @@
+@import '../styles/inits/variables';
+
+.stopwatch {
+  margin: 0 auto;
+  position: relative;
+  height: $watch-property;
+  width: $watch-property;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @keyframes move {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__minute-hand {
+    position: absolute;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+    bottom: 50%;
+
+    @include animation(3600s, steps(60));
+  }
+
+  &__second-hand {
+    position: absolute;
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+    bottom: 50%;
+
+    @include animation(60s, linear);
+  }
+
+  &__center-point {
+    position: absolute;
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+  }
+
+  &--speed-up {
+    &__second-hand {
+      @include animation(10s, linear);
+    }
+
+    &__minute-hand {
+      @include animation(600s, steps(60));
+    }
+  }
+}
