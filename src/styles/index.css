@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch__center {
+  width: 5vmin;
+  height: 5vmin;
+  background-color: #f6a603;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+}
+
+.stopwatch__hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: 50% 100%;
+
+  animation-fill-mode: forwards;
+}
+
+.stopwatch__hand--minute {
+  width: 3vmin;
+  height: 20vmin;
+  background-color: #0700ff;
+  transform: rotate(0deg);
+
+  animation: rotate-minute 3600s steps(60) infinite;
+}
+
+.stopwatch__hand--second {
+  width: 1.5vmin;
+  height: 38vmin;
+  background-color: #2c8000;
+  transform: rotate(0deg);
+
+  animation: rotate-second 60s linear infinite;
+}
+
+@keyframes rotate-second {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-minute {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Модифікатор для прискореної анімації */
+.stopwatch--speed-up .stopwatch__hand--minute {
+  animation: rotate-minute 600s steps(60) infinite;
+}
+
+.stopwatch--speed-up .stopwatch__hand--second {
+  animation: rotate-second 10s linear infinite;
+}
