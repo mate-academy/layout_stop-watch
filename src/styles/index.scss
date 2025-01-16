@@ -22,6 +22,7 @@ body {
   top: 50%;
   left: 50%;
   animation: seconds 3600s steps(60) infinite;
+  transform-origin: bottom;
 }
 
 .seconds-hand {
@@ -32,6 +33,7 @@ body {
   top: 50%;
   left: 50%;
   animation: seconds 60s linear infinite;
+  transform-origin: bottom;
 }
 
 .center-point {
@@ -42,6 +44,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes seconds {
@@ -54,9 +57,9 @@ body {
 }
 
 .stopwatch--speed-up .seconds-hand {
-  animation: seconds 10s;
+  animation-duration: 10s;
 }
 
 .stopwatch--speed-up .minutes-hand {
-  animation: seconds 600s;
+  animation-duration: 600s;
 }
