@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: absolute;
+}
+
+.stopwatch--speed-up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffff;
+  border: 1vmin dotted #000;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  position: relative;
+}
+
+.stopwatch__point {
+  background-color: #f6a603;
+  height: 5vmin;
+  width: 5vmin;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.stopwatch--speed-up::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 3vmin;
+  height: 20vmin;
+  background: #0700ff;
+  transform-origin: left;
+  animation: relógio 10s linear infinite;
+}
+
+.stopwatch--speed-up::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 1.5vmin;
+  height: 38vmin;
+  background: #2c8000;
+  transform-origin: left;
+  animation: relógio 10ms linear infinite;
+}
