@@ -1,0 +1,13 @@
+@mixin initial-position($transY: -50%) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translate(-50%, $transY);
+}
+
+@mixin rotate-animation {
+  animation-name: rotate-clockwise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
