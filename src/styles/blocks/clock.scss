@@ -1,0 +1,49 @@
+.stopwatch {
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: $stopwatch-border-size dotted $stopwatch-border-color;
+  border-radius: 50%;
+
+  position: relative;
+
+  &__pin {
+    background-color: $pin-color;
+    width: $pin-size;
+    height: $pin-size;
+    border-radius: 50%;
+
+    @include initial-position;
+  }
+
+  &__min-hand {
+    @include initial-position(-100%);
+
+    background-color: $min-hand-color;
+    width: $min-hand-width;
+    height: $min-hand-length;
+
+    @include rotate-animation;
+
+    animation-duration: 60s * 60;
+    animation-timing-function: steps(60);
+  }
+
+  &__sec-hand {
+    @include initial-position(-100%);
+
+    background-color: $sec-hand-color;
+    width: $sec-hand-width;
+    height: $sec-hand-length;
+
+    @include rotate-animation;
+
+    animation-duration: 60s;
+  }
+
+  &--speed-up &__sec-hand {
+    animation-duration: 10s;
+  }
+  &--speed-up &__min-hand {
+    animation-duration: 60s * 10;
+  }
+}
