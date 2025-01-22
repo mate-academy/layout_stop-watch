@@ -24,29 +24,30 @@ body {
     background-color: $minute-hand-color;
 
     @include sizing($mh-width, $mh-heigth, 2, 1);
-    @include animation(60min);
+    @include animation(60min steps(60));
 
     &--speed-up {
-      @include animation(10min);
+      @include animation(10min steps(60));
     }
   }
+
   &__seconds-hand {
     background-color: $seconds-hand-color;
 
     @include sizing($sh-width, $sh-heigth, 2, 1);
-    @include animation(60s);
+    @include animation(60s linear);
 
     &--speed-up {
-      @include animation(10s);
+      @include animation(10s linear);
     }
   }
 }
 
 @keyframes rotation {
-  0% {
+  from {
     transform: rotate(0);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
