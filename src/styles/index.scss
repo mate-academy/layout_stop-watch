@@ -1,6 +1,10 @@
 @import '../styles/variables';
 @import '../utils/mixins';
 
+body {
+  margin: 0;
+}
+
 .stopwatch {
   @include circle;
 
@@ -8,8 +12,9 @@
   width: $stopwatch-size;
   height: $stopwatch-size;
   border: 1vmin dotted #000;
+  padding: 0;
 
-  top: calc(50vh - #{$stopwatch-size} / 2);
+  top: calc(((100vh - #{$stopwatch-size}) / 2) - 1vmin);
 
   &::after {
     background-color: $stopwatch-color;
