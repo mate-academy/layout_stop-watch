@@ -1,10 +1,6 @@
 @import '../styles/variables';
 @import '../utils/mixins';
 
-body {
-  margin: 0;
-}
-
 .stopwatch {
   @include circle;
 
@@ -12,6 +8,8 @@ body {
   width: $stopwatch-size;
   height: $stopwatch-size;
   border: 1vmin dotted #000;
+
+  top: calc(50vh - #{$stopwatch-size} / 2);
 
   &::after {
     background-color: $stopwatch-color;
@@ -24,10 +22,17 @@ body {
     background-color: $minute-hand-color;
 
     @include sizing($mh-width, $mh-height, 2, 1);
-    @include animation(3600s steps(60));
+
+    transform-origin: center bottom;
+
+    @include animation(3600s);
+
+    animation-timing-function: steps(60s);
 
     &--speed-up {
-      @include animation(10min steps(60));
+      @include animation(600s);
+
+      animation-timing-function: steps(60);
     }
   }
 
@@ -35,17 +40,24 @@ body {
     background-color: $seconds-hand-color;
 
     @include sizing($sh-width, $sh-height, 2, 1);
-    @include animation(60s linear);
+
+    transform-origin: center bottom;
+
+    @include animation(60s);
+
+    animation-timing-function: linear;
 
     &--speed-up {
-      @include animation(10s linear);
+      @include animation(10s);
+
+      animation-timing-function: linear;
     }
   }
 }
 
 @keyframes rotation {
   from {
-    transform: rotate(0);
+    transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
