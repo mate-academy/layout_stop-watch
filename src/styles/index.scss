@@ -24,7 +24,7 @@ body {
     background-color: $minute-hand-color;
 
     @include sizing($mh-width, $mh-height, 2, 1);
-    @include animation(60min steps(60));
+    @include animation(3600s steps(60));
 
     &--speed-up {
       @include animation(10min steps(60));
