@@ -1,3 +1,52 @@
+@import '../styles/variables';
+@import '../utils/mixins';
+
 body {
   margin: 0;
+}
+
+.stopwatch {
+  @include circle;
+
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: 1vmin dotted #000;
+
+  &::after {
+    background-color: $stopwatch-color;
+
+    @include sizing($center-size, $center-size, 2, 2);
+    @include circle;
+  }
+
+  &__minute-hand {
+    background-color: $minute-hand-color;
+
+    @include sizing($mh-width, $mh-heigth, 2, 1);
+    @include animation(3600s);
+
+    &--speed-up {
+      @include animation(600s);
+    }
+  }
+  &__seconds-hand {
+    background-color: $seconds-hand-color;
+
+    @include sizing($sh-width, $sh-heigth, 2, 1);
+    @include animation(60s);
+
+    &--speed-up {
+      @include animation(10s);
+    }
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
