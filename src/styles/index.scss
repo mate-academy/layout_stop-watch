@@ -24,10 +24,10 @@ body {
     background-color: $minute-hand-color;
 
     @include sizing($mh-width, $mh-heigth, 2, 1);
-    @include animation(3600s);
+    @include animation(60min);
 
     &--speed-up {
-      @include animation(600s);
+      @include animation(10min);
     }
   }
   &__seconds-hand {
