@@ -1,5 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class="stopwatch stopwatch--speed-up"
+>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -16,7 +19,13 @@
       href="./styles/index.scss"
     />
   </head>
-  <body>
-    <h1>Stop watch</h1>
+  <body class="stopwatch__body">
+    <div class="stopwatch__watch">
+      <div class="stopwatch__minute"></div>
+
+      <div class="stopwatch__second"></div>
+
+      <div class="stopwatch__center"></div>
+    </div>
   </body>
 </html>
