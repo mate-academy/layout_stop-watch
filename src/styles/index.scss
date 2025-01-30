@@ -1,3 +1,63 @@
-body {
+@import '../styles/utils/variables';
+@import '../styles/utils/mixin';
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0;
+
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: 1vmin dotted #000;
+  border-radius: 500%;
+
+  &__circle {
+    position: absolute;
+    height: $circle-size;
+    width: $circle-size;
+    background-color: #f6a603;
+    border-radius: 100%;
+    z-index: 2;
+  }
+
+  &__minutes {
+    @include hand-properties(20vmin, 3vmin, #0700ff);
+
+    animation: rotate 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    @include hand-properties(38vmin, 1.5vmin, #2c8000);
+
+    animation: rotate 60s linear infinite;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes {
+      animation-duration: 600s;
+    }
+
+    .stopwatch__seconds {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
 }
