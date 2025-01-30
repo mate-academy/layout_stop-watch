@@ -44,6 +44,11 @@ body {
         transform: rotate(270deg);
       }
     }
+
+    &--speed-up {
+      animation-duration: 60s;
+      animation-timing-function: steps(10);
+    }
   }
 
   &__hand-second {
@@ -65,16 +70,8 @@ body {
         transform: rotate(270deg);
       }
     }
-  }
-
-  &--speed-up {
-    &__hand-second {
+    &--speed-up {
       animation-duration: 10s;
-    }
-
-    &__hand-minute {
-      animation-duration: 60s;
-      animation-timing-function: steps(10);
     }
   }
 }
