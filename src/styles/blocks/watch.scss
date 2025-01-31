@@ -1,0 +1,51 @@
+.stopwatch {
+  height: $watch-size;
+  width: $watch-size;
+  border: dotted 1vmin #000;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include animation-hand-clock;
+
+  &__minute {
+    @include position-top-clock-hand(50%, $heightMinuteHand);
+
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+
+    transform-origin: bottom;
+    animation: rotate-hand-clock 3600s steps(60, end) infinite;
+  }
+
+  &__second {
+    @include position-top-clock-hand(50%, $heightSecondHand);
+
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+
+    transform-origin: bottom;
+    animation: rotate-hand-clock 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    height: 5vmin;
+    width: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+  }
+
+  @for $second from 1 through 60 {
+    &--speed-up-#{$second} > :nth-child(2) {
+      animation-duration: #{($second) + 's'};
+    }
+    &--speed-up-#{$second} > :nth-child(1) {
+      animation-duration: #{($second * 60) + 's'};
+    }
+  }
+}

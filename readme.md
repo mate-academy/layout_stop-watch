@@ -32,11 +32,11 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 ## Checklist
 
 ❗️ Replace `<your_account>` with your GitHub username and copy the links to the `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_stop-watch/)
+- [DEMO LINK](https://saywin.github.io/layout_stop-watch/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
-- [ ] Keyframes implemented using from/to + transform with rotate property
-- [ ] Stopwatch is centered and has the correct arrows size
-- [ ] All `Typical Mistakes` from the `BEM` lesson theory are checked.
-- [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
+- [x] Keyframes implemented using from/to + transform with rotate property
+- [x] Stopwatch is centered and has the correct arrows size
+- [x] All `Typical Mistakes` from the `BEM` lesson theory are checked.
+- [x] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
