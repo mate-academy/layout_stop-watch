@@ -1,3 +1,75 @@
+@import './utils/variables';
+
 body {
   margin: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes rotate-arrows {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+.stopwatch {
+  width: $watch-size;
+  height: $watch-size;
+  border: 1vmin dotted $black-color;
+  border-radius: 100%;
+  position: relative;
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+    border-radius: 100%;
+    background-color: $orange-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: bottom;
+    animation: rotate-arrows infinite;
+
+    &--minutes {
+      width: $minutes-width;
+      height: $minutes-length;
+      background-color: $blue-color;
+      animation-duration: 3600s;
+      animation-timing-function: steps(60, end);
+      animation-delay: -0.1s;
+    }
+
+    &--seconds {
+      width: $seconds-width;
+      height: $seconds-length;
+      background-color: $green-color;
+      animation-duration: 60s;
+      animation-timing-function: linear;
+      animation-delay: -0.1s;
+    }
+  }
+
+  &--speed-up {
+    .stopwatch__arrow--seconds {
+      animation-duration: 10s;
+    }
+    .stopwatch__arrow--minutes {
+      animation-duration: 600s;
+    }
+  }
 }
