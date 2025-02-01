@@ -18,31 +18,27 @@
   }
 
   &__seconds {
-    position: absolute;
     height: $seconds-height;
     width: 1.5vmin;
     background-color: #2c8000;
-    translate: 0 -50%;
-    transform-origin: bottom;
+    @include rotating-hand(60s);
   }
 
   &__minutes {
-    position: absolute;
     height: $minutes-height;
     width: 3vmin;
     background-color: #0700ff;
-    translate: 0 -50%;
-    transform-origin: bottom;
+    @include rotating-hand(3600s);
   }
 
   @for $i from 1 through 60 {
     &--speed-up-#{$i} {
       .stopwatch__seconds {
-        animation: rotate #{$i}s steps($steps) infinite;
+        animation-duration: #{$i}s;
       }
 
       .stopwatch__minutes {
-        animation: rotate #{$i * 60}s steps($steps) infinite;
+        animation-duration: rotate #{$i * 60}s;
       }
     }
   }
