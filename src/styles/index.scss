@@ -1,3 +1,90 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
+  background-color: #fff;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  position: relative;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__face {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  &__minute-hand,
+  &__second-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    background-color: #0700ff;
+  }
+
+  &__minute-hand {
+    width: 3vmin;
+    height: 20vmin;
+    margin-left: -1.5vmin;
+    margin-top: -20vmin;
+    animation: minute-pattern 3600s steps(60) infinite;
+  }
+
+  &__second-hand {
+    width: 1.5vmin;
+    height: 38vmin;
+    margin-left: -0.75vmin;
+    margin-top: -38vmin;
+    background-color: #2c8000;
+    animation: second-pattern 60s linear infinite;
+  }
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--speed-up {
+    .stopwatch__minute-hand {
+      animation-duration: 600s;
+    }
+
+    .stopwatch__second-hand {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes minute-pattern {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes second-pattern {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
