@@ -1,3 +1,91 @@
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minut-hand {
+    animation: rotateminute 3600s steps(60) infinite;
+    position: absolute;
+    top: 120px;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+    transform-origin: bottom;
+
+    &-speed-up {
+      animation: rotateminutefast 600s steps(60) infinite;
+    }
+  }
+
+  &__second-hand {
+    position: absolute;
+
+    animation: rotatesecond 60s linear infinite;
+    transform-origin: bottom;
+    top: 30px;
+
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+
+    &-speed-up {
+      animation: rotatesecondfast 10s linear infinite;
+    }
+  }
+
+  &__center-circle {
+    position: relative;
+
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+  }
+}
+
+@keyframes rotatesecond {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotatesecondfast {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateminute {
+  from {
+    transform: translate(-0.6rem, -7rem) rotate(0deg);
+  }
+  to {
+    transform: translate(-0.6rem, -7rem) rotate(360deg);
+  }
+}
+
+@keyframes rotateminutefast {
+  from {
+    transform: translate(-0.6rem, -7rem) rotate(0deg);
+  }
+  to {
+    transform: translate(-0.6rem, -7rem) rotate(360deg);
+  }
 }
