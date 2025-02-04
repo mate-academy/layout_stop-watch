@@ -1,0 +1,66 @@
+.stopwatch {
+  width: $sizeStopWatch;
+  height: $sizeStopWatch;
+  border-radius: 50%;
+  border: $heightBorder dotted #000;
+  position: relative;
+
+  &__minutes-hand {
+    width: 20vmin;
+    height: $widthMinute;
+    background-color: #0700ff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    z-index: 1;
+    rotate: -90deg;
+    transform-origin: 0% 50%;
+    animation: time-anim 3600s steps(60) 0s infinite;
+  }
+
+  &__seconds-hand {
+    width: 38vmin;
+    height: $widthSecond;
+    background-color: #2c8000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translateY(-50%) rotate(0deg);
+    rotate: -90deg;
+    transform-origin: 0% 50%;
+    animation: time-anim 60s linear 0s infinite;
+  }
+
+  &__center-circle {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes-hand {
+      animation: time-anim 600s steps(60) 0s infinite;
+    }
+
+    .stopwatch__seconds-hand {
+      animation: time-anim 10s linear 0s infinite;
+    }
+  }
+
+  @keyframes time-anim {
+    from {
+      transform: translateY(-50%) rotate(-90deg);
+    }
+    to {
+      transform: translateY(-50%) rotate(270deg);
+    }
+  }
+}
