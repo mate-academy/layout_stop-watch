@@ -1,0 +1,7 @@
+@keyframes round {
+  @for $sec from 0 through 60 {
+    #{($sec * 100 / 60)}% {
+      transform: rotate(#{$sec * 6}deg);
+    }
+  }
+}
