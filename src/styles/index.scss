@@ -1,9 +1,9 @@
-$speed-variabl: 60s;
-$step-variable: 60;
-
 @keyframes rotation-of-arrows {
-  100% {
-    rotate: 450deg;
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
   }
 }
 
@@ -23,8 +23,11 @@ body {
 
   position: relative;
 
+  $speed-variable: 60s;
+  $step-variable: 60;
+
   &--speed-up {
-    $speed-variabl: 10s !global;
+    $speed-variable: 10s;
   }
 
   &__hand-second {
@@ -37,13 +40,13 @@ body {
     right: 40vmin;
     z-index: 1;
 
-    rotate: 90deg;
+    transform: rotate(90deg);
     transform-origin: center right;
 
     animation-name: rotation-of-arrows;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    animation-duration: $speed-variabl;
+    animation-duration: $speed-variable;
   }
 
   &__hand-minute {
@@ -55,13 +58,13 @@ body {
     top: 38.5vmin;
     right: 39.95vmin;
 
-    rotate: 90deg;
+    transform: rotate(90deg);
     transform-origin: center right;
 
     animation-name: rotation-of-arrows;
     animation-iteration-count: infinite;
     animation-timing-function: steps($step-variable);
-    animation-duration: $speed-variabl * $step-variable;
+    animation-duration: $speed-variable * $step-variable;
   }
 
   &__center {
