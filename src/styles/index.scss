@@ -1,3 +1,81 @@
+@keyframes rotation-of-arrows {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+
 body {
   margin: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  position: relative;
+
+  $speed-variable: 60s;
+  $step-variable: 60;
+
+  &--speed-up {
+    $speed-variable: 10s;
+  }
+
+  &__hand-second {
+    width: 38vmin;
+    height: 1.5vmin;
+    background-color: #2c8000;
+
+    position: absolute;
+    top: 39.25vmin;
+    right: 40vmin;
+    z-index: 1;
+
+    transform: rotate(90deg);
+    transform-origin: center right;
+
+    animation-name: rotation-of-arrows;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: $speed-variable;
+  }
+
+  &__hand-minute {
+    width: 20vmin;
+    height: 3vmin;
+    background-color: #0700ff;
+
+    position: absolute;
+    top: 38.5vmin;
+    right: 39.95vmin;
+
+    transform: rotate(90deg);
+    transform-origin: center right;
+
+    animation-name: rotation-of-arrows;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps($step-variable);
+    animation-duration: $speed-variable * $step-variable;
+  }
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+
+    position: absolute;
+    top: 37.5vmin;
+    right: 37.65vmin;
+    z-index: 2;
+  }
 }
