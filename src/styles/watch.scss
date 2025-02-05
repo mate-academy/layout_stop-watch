@@ -18,7 +18,7 @@
 
     transform-origin: 50% 100%;
 
-    @include animation-hands(3600s);
+    animation: round 3600s steps(60) infinite;
   }
 
   &__seconds-wrap {
@@ -32,7 +32,7 @@
 
     transform-origin: 50% 100%;
 
-    @include animation-hands(60s);
+    animation: round 60s infinite linear;
   }
 
   &__center-dot {
@@ -43,12 +43,14 @@
 
     z-index: 1;
   }
+}
 
-  &--speed-up &__seconds-hand {
-    @include animation-hands(10s);
-  }
+.stopwatch--speed-up .stopwatch__seconds-hand {
+  animation: round 10s infinite linear;
+  transform-origin: 50% 100%;
+}
 
-  &--speed-up &__minutes-hand {
-    @include animation-hands(600s);
-  }
+.stopwatch--speed-up .stopwatch__minutes-hand {
+  animation: round 600s infinite linear;
+  transform-origin: 50% 100%;
 }
