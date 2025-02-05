@@ -17,33 +17,33 @@ body {
 
   &__minute-hand {
     position: absolute;
-    animation: rotateminute 3600s steps(60) infinite;
+    animation: around 3600s steps(60) infinite;
     transform-origin: bottom;
-
-    top: 12rem;
+    transform: translate(0, -50%);
+    top: 14.4rem;
 
     height: 20vmin;
     width: 3vmin;
     background-color: #0700ff;
 
     &--speed-up {
-      animation: rotateinutefast 600s;
+      animation-duration: 600s;
     }
   }
 
   &__second-hand {
     position: absolute;
-
-    animation: rotatesecond 60s linear infinite;
+    transform: translate(0, -50%);
+    animation: around 60s linear infinite;
     transform-origin: bottom;
-    top: 4.5rem;
+    top: 12.5%;
 
     height: 38vmin;
     width: 1.5vmin;
     background-color: #2c8000;
 
     &--speed-up {
-      animation: rotatesecondfast linear infinite;
+      animation-duration: 10s;
     }
   }
 
@@ -57,34 +57,7 @@ body {
   }
 }
 
-@keyframes rotatesecond {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotatesecondfast{
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotateminute {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotateminutefast {
+@keyframes around {
   from {
     transform: rotate(0deg);
   }
