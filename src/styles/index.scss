@@ -1,3 +1,77 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+}
+
+.minute-hand {
+  position: absolute;
+  height: 20vmin;
+  width: 3vmin;
+  background: #0700ff;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translate(-50%, -100%) rotate(0deg);
+  border-radius: 10px;
+  animation: rotate-minutes 3600s steps(60) infinite;
+}
+
+.seconds-hand {
+  position: absolute;
+  height: 38vmin;
+  width: 1.5vmin;
+  background: #2c8000;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translate(-50%, -100%) rotate(0deg);
+  animation: rotate-seconds 60s linear infinite;
+}
+
+.center {
+  position: absolute;
+  width: 5vmin;
+  height: 5vmin;
+  background: #f6a603;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotate-seconds {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-minutes {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+.stopwatch--speed-up .seconds-hand {
+  animation-duration: 10s;
+}
+
+.stopwatch--speed-up .minute-hand {
+  animation-duration: 600s;
 }
