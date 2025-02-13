@@ -1,0 +1,67 @@
+.container {
+  @include flex-center;
+
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+}
+
+// .hand {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   border-radius: 50%;
+//   border: 1px solid yellow;
+//   background-color: orange;
+//   width: 100px;
+//   height: 100px;
+
+.hand__seconds {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5vmin;
+  height: 38vmin;
+  background-color: #2c8000;
+  transform: translate(-50%, -100%);
+  transform-origin: bottom center;
+  animation: hand 60s linear infinite;
+}
+
+.hand__minutes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3vmin;
+  height: 20vmin;
+  background-color: #0700ff;
+  transform: translate(-50%, -100%);
+  transform-origin: bottom center;
+  animation: hand 3600s steps(60) infinite;
+}
+
+@keyframes hand {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 5vmin;
+  width: 5vmin;
+  background-color: #f6a603;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
