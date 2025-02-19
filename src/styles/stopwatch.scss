@@ -6,6 +6,8 @@
   border: 1vmin dotted #000;
   border-radius: 50%;
 
+  --minute-duration: 60s;
+
   &--speed-up {
     --minute-duration: 10s;
   }
@@ -55,11 +57,11 @@
 }
 
 @keyframes hand-rotate {
-  0% {
+  from {
     transform: rotate(0);
   }
 
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
