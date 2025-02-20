@@ -47,26 +47,35 @@ body {
   transform-origin: bottom;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -100%) rotate(0deg); /* Начальная позиция */
+  transform: translate(-50%, -100%) rotate(0deg);
   animation: second-rotation 60s linear infinite;
   z-index: 1;
 }
 
-@keyframes rotation {
-  0% {
+@keyframes second-rotation {
+  from {
     transform: translate(-50%, -100%) rotate(0deg);
   }
-  100% {
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+@keyframes minute-rotation {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
     transform: translate(-50%, -100%) rotate(360deg);
   }
 }
 
 .stopwatch--speed-up {
   .stopwatch__minute-hand {
-    animation-duration: 600s;
+    animation: minute-rotation 600s steps(60) infinite;
   }
 
   .stopwatch__second-hand {
-    animation-duration: 10s;
+    animation: second-rotation 10s linear infinite;
   }
 }
