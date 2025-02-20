@@ -21,7 +21,7 @@ body {
     height: 20vmin;
     width: 3vmin;
     background-color: #0700ff;
-    animation: rotate-minute 3600s steps(60) infinite;
+    animation: rotate 3600s steps(60) infinite;
     transform: translate(-50%, -50%);
   }
 
@@ -29,11 +29,12 @@ body {
     position: absolute;
     transform-origin: bottom;
     bottom: 50%;
-    left: 48.2%;
+    left: 49%;
     height: 38vmin;
     width: 1.5vmin;
+    z-index: 0.5;
     background-color: #2c8000;
-    animation: rotate-second 10s linear infinite;
+    animation: rotate 60s linear infinite;
     transform: translate(-50%, -50%);
   }
 
@@ -50,17 +51,7 @@ body {
   }
 }
 
-@keyframes rotate-second {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-minute {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
