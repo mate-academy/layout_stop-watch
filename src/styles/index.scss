@@ -1,3 +1,70 @@
 body {
+  height: 100vh;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--speed-up {
+    --minute-duration: 10s;
+  }
+
+  &__minutes-hand {
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+    position: absolute;
+    box-sizing: border-box;
+    transform-origin: bottom;
+    bottom: 50%;
+
+    animation-name: around;
+    animation-timing-function: steps(60, end);
+    animation-duration: calc(var(--minute-duration) * 60);
+    animation-iteration-count: infinite;
+  }
+
+  &__seconds-hand {
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+    position: absolute;
+    box-sizing: border-box;
+    transform-origin: bottom;
+    bottom: 50%;
+
+    animation-name: around;
+    animation-duration: var(--minute-duration);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &__center {
+    height: 5vmin;
+    width: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    position: absolute;
+    box-sizing: border-box;
+  }
+}
+
+@keyframes around {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
