@@ -1,56 +1,43 @@
-
 .stopwatch {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: $watch-size;
   height: $watch-size;
   border-radius: 50%;
   border: $border-size dotted $color-black;
 
   &__dot {
-    @include align-center;
-
+    position: absolute;
     width: $dot-size;
     height: $dot-size;
     border-radius: 50%;
     background: $color-orange;
-    transform: translateY(-50%);
-    z-index: 3;
+    z-index: 1;
   }
 
   &__minutes {
-    @include align-center;
     @include watch-animation(3600s);
 
+    background: $color-blue;
     width: $minutes-width;
-    z-index: 1;
-
-    &::before {
-      background: $color-blue;
-      content: '';
-      display: block;
-      width: $minutes-width;
-      height: $minutes-height;
-      position: absolute;
-      top: -$minutes-height;
-    }
+    height: $minutes-height;
   }
 
   &__seconds {
-    @include align-center;
     @include watch-animation(60s);
 
     width: $seconds-width;
-    z-index: 2;
+    height: $seconds-height;
+    background: $color-green;
+  }
 
-    &::before {
-      background: $color-green;
-      content: '';
-      display: block;
-      width: $seconds-width;
-      height: $seconds-height;
-      position: absolute;
-      top: -$seconds-height;
-    }
+  &__minutes,
+  &__seconds {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom center;
   }
 
   &--speed-up {
