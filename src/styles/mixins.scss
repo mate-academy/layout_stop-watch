@@ -1,0 +1,21 @@
+@mixin aligin-center {
+  position: absolute;
+  top: 50%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+@keyframes watch {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin watch-animation($speed) {
+  animation: watch $speed steps(360, end) infinite;
+}
