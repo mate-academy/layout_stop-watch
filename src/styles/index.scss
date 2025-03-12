@@ -11,6 +11,10 @@ html {
 
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .stopwatch {
@@ -49,25 +53,15 @@ body {
   }
 }
 
-.center {
-  width: 5vmin;
-  height: 5vmin;
-  border-radius: 50%;
-  background-color: #f6a603;
-  position: absolute;
-  top: 47%;
-  left: 47%;
-}
-
 @keyframes rotate-sec {
   0% {
-    transform: translateX(-50%) rotate(40deg);
+    transform: translateX(-50%) rotate(20deg);
   }
   50% {
-    transform: translateX(-50%) rotate(630deg);
+    transform: translateX(-100%) rotate(990deg);
   }
   100% {
-    transform: translateX(-50%) rotate(800deg);
+    transform: translateX(-100%) rotate(1100deg);
   }
 }
 
@@ -78,6 +72,16 @@ body {
   to {
     transform: translateX(-50%) rotate(410deg);
   }
+}
+
+.center {
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 50%;
+  background-color: #f6a603;
+  position: absolute;
+  top: 47%;
+  left: 47%;
 }
 
 .stopwatch--speed-up .second {
