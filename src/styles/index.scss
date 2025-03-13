@@ -6,6 +6,15 @@ body {
   margin: 0;
 }
 
+.hand-position {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+
+  transform-origin: 0 bottom;
+  transform: translate(-50%);
+}
+
 .stopwatch {
   position: relative;
   height: 80vmin;
@@ -15,11 +24,6 @@ body {
   border-radius: 50%;
 
   &__minute {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform-origin: 0 bottom;
-
     height: 20vmin;
     width: 3vmin;
 
@@ -30,15 +34,13 @@ body {
     animation-timing-function: steps(60, start);
     animation-delay: 60s;
 
-    transform: translate(-50%);
+    &--speed-up-600 {
+      animation-duration: 600s;
+      animation-delay: 10s;
+    }
   }
 
   &__second {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform-origin: 0 bottom;
-
     height: 38vmin;
     width: 1.5vmin;
 
@@ -49,7 +51,9 @@ body {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 
-    transform: translate(-50%);
+    &--speed-up-10 {
+      animation-duration: 10s;
+    }
 
     @keyframes move {
       from {
@@ -74,4 +78,13 @@ body {
 
     transform: translate(-50%, -50%);
   }
+
+  // &--speed-up-600 {
+  //   animation-duration: 600s;
+  //   animation-delay: 10s;
+  // }
+
+  // &--speed-up-10 {
+  //   animation-duration: 10s;
+  // }
 }
