@@ -1,3 +1,61 @@
+$stopwatch-width: 80vmin;
+$stopwatch-height: 80vmin;
+$minutes-hand-width: 3vmin;
+$minutes-hand-height: 20vmin;
+$seconds-hand-width: 1.5vmin;
+$seconds-hand-height: 38vmin;
+
 body {
+  height: 100vh;
   margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.main {
+  position: relative;
+  height: $stopwatch-height;
+  width: $stopwatch-width;
+  border: 3px dotted #000;
+  border-radius: 50%;
+}
+
+.main::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 35vmin;
+  right: 35vmin;
+  width: 10vmin;
+  height: 10vmin;
+  background-color: #f6a603;
+  border-radius: 50%;
+}
+
+.seconds {
+  position: absolute;
+  top: $stopwatch-height / 2 - $seconds-hand-height;
+  right: $stopwatch-height / 2 - ($seconds-hand-width / 2);
+
+  height: $seconds-hand-height;
+  width: $seconds-hand-width;
+  background-color: #2c8000;
+}
+
+.minutes {
+  content: '';
+  display: block;
+  position: absolute;
+  top: $stopwatch-height / 2 - $minutes-hand-height;
+  right: $stopwatch-width / 2 - ($minutes-hand-width / 2);
+  height: $minutes-hand-height;
+  width: $minutes-hand-width;
+  background-color: #0700ff;
+}
+
+
+
+
+
