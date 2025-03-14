@@ -1,9 +1,4 @@
-$stopwatch-width: 80vmin;
-$stopwatch-height: 80vmin;
-$minutes-hand-width: 3vmin;
-$minutes-hand-height: 20vmin;
-$seconds-hand-width: 1.5vmin;
-$seconds-hand-height: 38vmin;
+@import './utils/variables';
 
 body {
   height: 100vh;
@@ -14,7 +9,7 @@ body {
   align-items: center;
 }
 
-.main {
+.stopwatch {
   position: relative;
   height: $stopwatch-height;
   width: $stopwatch-width;
@@ -22,7 +17,7 @@ body {
   border-radius: 50%;
 }
 
-.main::after {
+.stopwatch::after {
   content: '';
   display: block;
   position: absolute;
@@ -34,7 +29,7 @@ body {
   border-radius: 50%;
 }
 
-.seconds {
+.stopwatch__seconds {
   position: absolute;
   top: $stopwatch-height / 2 - $seconds-hand-height;
   right: $stopwatch-height / 2 - ($seconds-hand-width / 2);
@@ -44,9 +39,7 @@ body {
   background-color: #2c8000;
 }
 
-.minutes {
-  content: '';
-  display: block;
+.stopwatch__minutes {
   position: absolute;
   top: $stopwatch-height / 2 - $minutes-hand-height;
   right: $stopwatch-width / 2 - ($minutes-hand-width / 2);
