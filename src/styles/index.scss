@@ -1,4 +1,5 @@
 @import './utils/variables';
+@import './utils/keyframes';
 
 body {
   height: 100vh;
@@ -7,6 +8,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-color: #8977ed;
 }
 
 .stopwatch {
@@ -43,17 +46,6 @@ body {
   animation-timing-function: linear;
 }
 
-@keyframes seconds {
-  from {
-    transform: rotate(0deg);
-    transform-origin: bottom center;
-  }
-  to {
-    transform: rotate(360deg);
-    transform-origin: bottom center;
-  }
-}
-
 .stopwatch__minutes {
   position: absolute;
   top: $stopwatch-height / 2 - $minutes-hand-height;
@@ -66,15 +58,16 @@ body {
   animation-duration: 3600s;
   animation-timing-function: steps(60);
   animation-iteration-count: infinite;
+
+
 }
 
-@keyframes minutes {
-  from {
-    transform: rotate(0deg);
-    transform-origin: bottom center;
-  }
-  to {
-    transform: rotate(360deg);
-    transform-origin: bottom center;
-  }
+.stopwatch--speed-up :first-child {
+  animation-name: speed-min;
+  animation-duration: 600s;
+}
+
+.stopwatch--speed-up :last-child {
+  animation-name: speed-sec;
+  animation-duration: 10s;
 }
