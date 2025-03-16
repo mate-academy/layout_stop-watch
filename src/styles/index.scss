@@ -1,3 +1,116 @@
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
 }
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: auto;
+
+}
+
+.stopwatch__minutes-hand {
+  height: 20vmin;
+  width: 3vmin;
+  background-color: #0700ff;
+  position: absolute;
+  transform-origin: bottom;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  bottom: 50%;
+  animation: stopwatch__minutes-hand 3600s steps(60) infinite;
+}
+
+    @keyframes stopwatch__minutes-hand {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+.stopwatch__seconds-hand {
+  height: 38vmin;
+  width: 1.5vmin;
+  background-color: #2c8000;
+  position: absolute;
+  transform-origin: bottom;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  animation: stopwatch__seconds-hand 60s linear infinite;
+}
+
+@keyframes stopwatch__seconds-hand {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch__center {
+  border-radius: 50%;
+  height: 5vmin;
+  width: 5vmin;
+  background-color: #f6a603;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.speed-up--min {
+  height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+    position: absolute;
+    transform-origin: bottom;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    bottom: 50%;
+    animation: stopwatch__minutes-hand 600s steps(60) infinite;
+  }
+
+  @keyframes stopwatch__minutes-hand {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.speed-up--sec {
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+    position: absolute;
+    transform-origin: bottom;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    animation: stopwatch__seconds-hand 10s linear infinite;
+  }
+
+  @keyframes stopwatch__seconds-hand {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
