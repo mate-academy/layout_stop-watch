@@ -1,0 +1,57 @@
+.stopwatch {
+  position: relative;
+  height: $stopwatch-height;
+  width: $stopwatch-width;
+  border: 1vmin dotted #000;
+  border-radius: $stopwatch-border-radius;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: $stopwatch-height / 2 - ($stopwatch-center-radius / 2);
+    right: $stopwatch-height / 2 - ($stopwatch-center-radius / 2);
+    width: $stopwatch-center-radius;
+    height: $stopwatch-center-radius;
+    background-color: #f6a603;
+    border-radius: 50%;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: $stopwatch-height / 2 - $seconds-hand-height;
+    right: $stopwatch-height / 2 - ($seconds-hand-width / 2);
+    height: $seconds-hand-height;
+    width: $seconds-hand-width;
+    background-color: #2c8000;
+
+    animation-name: seconds;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &__minutes {
+    position: absolute;
+    top: $stopwatch-height / 2 - $minutes-hand-height;
+    right: $stopwatch-width / 2 - ($minutes-hand-width / 2);
+    height: $minutes-hand-height;
+    width: $minutes-hand-width;
+    background-color: #0700ff;
+
+    animation-name: minutes;
+    animation-duration: 3600s;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+  }
+
+  &--speed-up &__minutes {
+    animation-name: speed-min;
+    animation-duration: 600s;
+  }
+
+  &--speed-up &__seconds {
+    animation-name: speed-sec;
+    animation-duration: 10s;
+  }
+}
