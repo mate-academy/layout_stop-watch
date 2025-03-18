@@ -1,74 +1,88 @@
 body {
-  margin: 0;
   display: flex;
-  align-items: center;
+  margin: 0;
   justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
 .stopwatch {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 80vmin;
   width: 80vmin;
   border: 1vmin dotted #000;
   border-radius: 50%;
+}
 
-  &--speed-up {
-    --minute-duration: 10s;
+.stopwatch__minutes {
+  position: absolute;
+  height: 20vmin;
+  width: 3vmin;
+  background-color: #0700ff;
+
+  animation-name: minutes;
+  animation-duration: 3600s;
+  animation-timing-function: steps(60);
+  animation-iteration-count: infinite;
+
+  transform: translate(0, -50%);
+}
+
+.stopwatch__seconds {
+  position: absolute;
+  height: 38vmin;
+  width: 1.5vmin;
+  background-color: #2c8000;
+
+  animation-name: second;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  transform: translate(0, -50%);
+}
+
+.stopwatch__circle {
+  position: absolute;
+  height: 5vmin;
+  width: 5vmin;
+  border-radius: 50%;
+  background-color: #f6a603;
+}
+
+@keyframes seconds {
+  from {
+    rotate: 0deg;
   }
 
-  @keyframes handrotate {
-    from {
-      rotate: 0deg;
-    }
+  to {
+    rotate: 360deg;
+  }
+}
 
-    to {
-      rotate: 360deg;
-    }
+@keyframes minutes {
+  from {
+    rotate: 0deg;
   }
 
-  &__hand-second {
-    display: flex;
-    box-sizing: border-box;
-    transform-origin: bottom;
-    position: absolute;
-    height: 38vmin;
-    width: 1.5vmin;
-    background-color: #2c8000;
-    bottom: 50%;
-
-    animation-name: handrotate;
-    animation-duration: var(--minute-duration);
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+  to {
+    rotate: 360deg;
   }
+}
 
-  &__hand-minute {
-    display: flex;
-    box-sizing: border-box;
-    transform-origin: bottom;
-    position: absolute;
-    height: 20vmin;
-    width: 3vmin;
-    background-color: #0700ff;
-    bottom: 50%;
+.stopwatch__seconds--speed-up {
+  animation-name: seconds;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
 
-    animation-name: handrotate;
-    animation-duration: calc(var(--minute-duration) * 60);
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(60, end);
-  }
-
-  &__hand-center {
-    display: flex;
-    height: 5vmin;
-    width: 5vmin;
-    border-radius: 50%;
-    background-color: #f6a603;
-    position: absolute;
-    box-sizing: border-box;
-  }
+.stopwatch__minutes--speed-up {
+  animation-name: minutes;
+  animation-duration: 600s;
+  animation-timing-function: steps(60);
+  animation-iteration-count: infinite;
 }
