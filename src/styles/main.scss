@@ -1,2 +1,32 @@
 @import 'reset.scss';
+@import 'mixins.scss';
 
+body {
+  @include center;
+
+  height: 100vh;
+}
+
+.stopwatch {
+  @include stopwatch-dial;
+  @include center;
+
+  &__circle {
+    @include circle;
+
+    position: absolute;
+    z-index: 100;
+  }
+  &__minute-hand {
+    @include minute-hand;
+
+    z-index: 2;
+    top: 25%;
+  }
+  &__second-hand {
+    @include second-hand;
+
+    z-index: 2;
+    top: 2%;
+  }
+}
