@@ -1,0 +1,16 @@
+@mixin rotate-arrow($time, $timing) {
+  animation-name: rotate;
+  animation-duration: $time;
+  animation-timing-function: $timing;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
