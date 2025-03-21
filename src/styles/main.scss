@@ -1,4 +1,5 @@
 @import 'reset';
+@import 'variables';
 @import 'mixins';
 
 body {
@@ -17,6 +18,7 @@ body {
     position: absolute;
     z-index: 100;
   }
+
   &__minute-hand {
     @include minute-hand;
 
@@ -25,17 +27,29 @@ body {
 
     @include rotate-hand;
 
-    animation: rotate 3600s steps(60, end) infinite;
+    animation: rotate 60 * $time steps(60, end) infinite;
   }
 
   &__second-hand {
     @include second-hand;
 
     z-index: 2;
-    top: 2%;
+    top: 22px;
 
     @include rotate-hand;
 
-    animation: rotate 60s steps(60, end) infinite;
+    animation: rotate $time steps(60, end) infinite;
+  }
+
+  &--speed-up {
+    $time: 10s;
+
+    .stopwatch__minute-hand {
+      animation: rotate 60 * $time steps(60, end) infinite;
+    }
+
+    .stopwatch__second-hand {
+      animation: rotate $time steps(60, end) infinite;
+    }
   }
 }
