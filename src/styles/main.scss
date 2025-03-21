@@ -1,5 +1,5 @@
-@import 'reset.scss';
-@import 'mixins.scss';
+@import 'reset';
+@import 'mixins';
 
 body {
   @include center;
@@ -22,11 +22,20 @@ body {
 
     z-index: 2;
     top: 25%;
+
+    @include rotate-hand;
+
+    animation: rotate 3600s steps(60, end) infinite;
   }
+
   &__second-hand {
     @include second-hand;
 
     z-index: 2;
     top: 2%;
+
+    @include rotate-hand;
+
+    animation: rotate 60s steps(60, end) infinite;
   }
 }
