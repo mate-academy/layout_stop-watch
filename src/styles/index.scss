@@ -27,7 +27,9 @@ body {
     left: 38.5vmin;
     transform-origin: 1.5vmin 20vmin;
 
-    animation: tik-tak 3600s infinite linear;
+
+    animation: tik-tak 3600s infinite;
+    animation-timing-function: steps(60, end);
 
     &--speed-up {
       animation-duration: 600s;
