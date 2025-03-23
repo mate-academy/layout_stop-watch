@@ -1,0 +1,62 @@
+@import './variables';
+@import './mixins';
+@import './animations';
+
+.stopwatch {
+  @include center;
+
+  width: $size;
+  height: $size;
+  border: $border-size dotted $border-color;
+  border-radius: 50%;
+  position: relative;
+  box-sizing: content-box;
+
+  &__face {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  &__hand--minutes {
+    @include hand(
+      $minutes-hand-width,
+      $minutes-hand-length,
+      $minutes-hand-color,
+      50%
+    );
+
+    animation: rotate-clock $minutes-animation-time steps(60) linear infinite;
+  }
+
+  &__hand--seconds {
+    @include hand(
+      $seconds-hand-width,
+      $seconds-hand-length,
+      $seconds-hand-color,
+      49%
+    );
+
+    animation: rotate-clock $seconds-animation-time linear infinite;
+  }
+
+  &__center {
+    width: $dot-size;
+    height: $dot-size;
+    background-color: $center-color;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--speed-up {
+    .stopwatch__hand-seconds {
+      animation-duration: $seconds-speed-up-time;
+    }
+    .stopwatch__hand-minutes {
+      animation-duration: $minutes-speed-up-time;
+    }
+  }
+}
