@@ -11,6 +11,7 @@ body {
 
 .stopwatch {
   --minute-duration: 60s;
+
   border: 1vmin dotted #000;
   border-radius: 50%;
   width: $clock-radius;
@@ -57,11 +58,10 @@ body {
 }
 
 @keyframes hand-rotate {
-  0% {
+  from {
     transform: rotate(0);
   }
-
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
