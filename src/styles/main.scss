@@ -27,7 +27,7 @@ body {
     @include rotate-hand;
 
     transform-origin: center bottom;
-    animation: rotate 60 * $time steps(60, end) infinite;
+    animation: rotate 60 * $time infinite linear;
   }
 
   &__second-hand {
@@ -40,18 +40,18 @@ body {
 
     transform-origin: center bottom;
 
-    animation: rotate $time steps(60, end) infinite;
+    animation: rotate $time infinite linear;
   }
 
   &--speed-up {
     $time: 10s;
 
     .stopwatch__minute-hand {
-      animation: rotate 60 * $time steps(60, end) infinite;
+      animation: rotate 60 * $time infinite linear;
     }
 
     .stopwatch__second-hand {
-      animation: rotate $time steps(60, end) infinite;
+      animation: rotate $time infinite linear;
     }
   }
 }
