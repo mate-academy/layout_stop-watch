@@ -1,3 +1,67 @@
+$clock-radius: 80vmin;
+
 body {
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
+  display: flex;
+}
+
+.stopwatch {
+  --minute-duration: 60s;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  width: $clock-radius;
+  height: $clock-radius;
+  position: relative;
+
+  &--speed-up {
+    --minute-duration: 10s;
+  }
+
+  &__minutes-pointer {
+    transform-origin: bottom;
+    animation: hand-rotate calc(var(--minute-duration) * 60) steps(60) infinite;
+    background-color: #0700ff;
+    width: 3vmin;
+    height: 20vmin;
+    position: absolute;
+    bottom: 40vmin;
+    left: 38.5vmin;
+    transform: rotate(0);
+  }
+
+  &__seconds-pointer {
+    transform-origin: bottom;
+    animation: hand-rotate var(--minute-duration) linear infinite;
+    background-color: #2c8000;
+    width: 1.5vmin;
+    height: 38vmin;
+    position: absolute;
+    bottom: 40vmin;
+    left: 39.25vmin;
+    transform: rotate(0);
+  }
+
+  &__central-dot {
+    border-radius: 50%;
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #f6a603;
+    position: absolute;
+    bottom: 37.5vmin;
+    left: 37.5vmin;
+  }
+}
+
+@keyframes hand-rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
