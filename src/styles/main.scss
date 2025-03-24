@@ -15,7 +15,6 @@ body {
   &__circle {
     @include circle;
 
-    position: absolute;
     z-index: 100;
   }
 
@@ -27,6 +26,7 @@ body {
 
     @include rotate-hand;
 
+    transform-origin: center bottom;
     animation: rotate 60 * $time steps(60, end) infinite;
   }
 
@@ -34,9 +34,11 @@ body {
     @include second-hand;
 
     z-index: 2;
-    top: 22px;
+    bottom: 50%;
 
     @include rotate-hand;
+
+    transform-origin: center bottom;
 
     animation: rotate $time steps(60, end) infinite;
   }
