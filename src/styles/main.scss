@@ -1,5 +1,4 @@
 @import 'reset';
-@import 'variables';
 @import 'mixins';
 
 body {
@@ -27,7 +26,7 @@ body {
     @include rotate-hand;
 
     transform-origin: center bottom;
-    animation: rotate 60 * $time steps(60, end) infinite;
+    animation: rotate 3600s steps(60, end) infinite;
   }
 
   &__second-hand {
@@ -40,18 +39,16 @@ body {
 
     transform-origin: center bottom;
 
-    animation: rotate $time 0.04s infinite linear;
+    animation: rotate 60s infinite linear;
   }
 
   &--speed-up {
-    $time: 10s;
-
     .stopwatch__minute-hand {
-      animation: rotate 60 * $time steps(60, end) infinite;
+      animation: rotate 600s steps(60, end) infinite;
     }
 
     .stopwatch__second-hand {
-      animation: rotate $time 0.04s infinite linear;
+      animation: rotate 10s infinite linear;
     }
   }
 }

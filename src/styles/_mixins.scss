@@ -36,10 +36,11 @@
 
 @mixin rotate-hand {
   @keyframes rotate {
-    0% {
-      transform: rotateZ(0);
+    from {
+      transform: rotateZ(0deg);
     }
-    100% {
+
+    to {
       transform: rotateZ(360deg);
     }
   }
