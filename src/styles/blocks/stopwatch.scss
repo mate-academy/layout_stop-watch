@@ -1,21 +1,24 @@
 body {
-  margin: 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 100vw;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
 }
 
 .stopwatch {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 80vmin;
   height: 80vmin;
-  border-radius: 50%;
   border: 1vmin dotted #000;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  border-radius: 50%;
 
   &__center {
     width: 5vmin;
@@ -25,12 +28,14 @@ body {
   }
 
   &__minutes {
-    width: 40vmin;
-    height: 3vmin;
     position: absolute;
     z-index: -2;
-    transform: rotate(90deg);
     transform-origin: center;
+    transform: rotate(90deg);
+
+    width: 40vmin;
+    height: 3vmin;
+
     animation-name: minutes;
     animation-duration: 3600s;
     animation-timing-function: steps(60);
@@ -44,12 +49,14 @@ body {
   }
 
   &__seconds {
-    width: 76vmin;
-    height: 1.5vmin;
     position: absolute;
     z-index: -1;
-    transform: rotate(90deg);
     transform-origin: center;
+    transform: rotate(90deg);
+
+    width: 76vmin;
+    height: 1.5vmin;
+
     animation-name: seconds;
     animation-duration: 60s;
     animation-timing-function: linear;
