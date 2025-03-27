@@ -1,3 +1,15 @@
-body {
+.page {
   margin: 0;
+
+  &__body {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
 }
+
+@import './animations/animation-stopwatch';
+@import './blocks/stopwatch';
