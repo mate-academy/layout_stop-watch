@@ -12,8 +12,17 @@ body {
   }
 }
 
+@keyframes minutes-motion{
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .container {
-  border: 1px solid;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +34,7 @@ body {
     height: 80vmin;
     width: 80vmin;
     border-radius: 50%;
-    border: 1vmin dashed;
+    border: 1vmin dotted #000;
     align-items: center;
     position: relative;
 
@@ -37,7 +46,9 @@ body {
       left: 50%;
       bottom: 50%;
       transform-origin: bottom;
-      animation: seconds-motion 360s infinite linear;
+      animation: minutes-motion 3600s infinite linear;
+      animation-timing-function: steps(60);
+
     }
 
     .seconds {
@@ -48,18 +59,18 @@ body {
       left: 50%;
       bottom: 50%;
       transform-origin: bottom;
-      animation: seconds-motion 10s infinite linear;
+      animation: seconds-motion 60s infinite linear;
     }
 
     .center-circle {
       height: 5vmin;
       width: 5vmin;
       border-radius: 50%;
-
       background-color: #f6a603;
       position: absolute;
-      left: 49%;
-      margin-top: 38vmin;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50,-50);
     }
   }
 }
