@@ -72,5 +72,54 @@ body {
       top: 50%;
       transform: translate(-50,-50);
     }
+
+
+
   }
+
+  .stopwatch--speed-up{
+    height: 80vmin;
+    width: 80vmin;
+    border-radius: 50%;
+    border: 1vmin dotted #000;
+    align-items: center;
+    position: relative;
+    .minutes {
+      height: 20vmin;
+      width: 3vmin;
+      background-color: #0700ff;
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      transform-origin: bottom;
+      animation: minutes-motion 600s infinite linear;
+      animation-timing-function: steps(60);
+
+    }
+
+    .seconds {
+      height: 38vmin;
+      width: 1.5vmin;
+      background-color: #2c8000;
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      transform-origin: bottom;
+      animation: seconds-motion 10s infinite linear;
+    }
+
+    .center-circle {
+      height: 5vmin;
+      width: 5vmin;
+      border-radius: 50%;
+      background-color: #f6a603;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50,-50);
+    }
+
+
+  }
+
 }
