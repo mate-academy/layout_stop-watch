@@ -1,3 +1,109 @@
+$stopwatch-center-size: 5vmin;
+$stopwatch-minute-hand-length: 20vmin;
+$stopwatch-minute-hand-width: 3vmin;
+$stopwatch-second-hand-length: 38vmin;
+$stopwatch-second-hand-width: 1.5vmin;
+$stopwatch-second-hand-duration: 60s;
+$stopwatch-minute-hand-duration: $stopwatch-second-hand-duration * 60;
+$stopwatch--sped-up-duration: 10s;
+$stopwatch-center-color: #f6a603;
+$stopwatch-minute-hand-color: #0700ff;
+$stopwatch-second-hand-color: #2c8000;
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin default-hand-position {
+  position: absolute;
+  bottom: 50%;
+}
+
+@mixin hand-size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin hand-rotate($duration, $steps: false) {
+  @if $steps {
+    animation: rotate $duration steps($steps) infinite;
+  } @else {
+    animation: rotate $duration linear infinite;
+  }
+
+  transform-origin: bottom center;
+  transition-duration: $duration;
+  transition-timing-function: linear;
+  transition-property: transform;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__center {
+    z-index: 1;
+    width: $stopwatch-center-size;
+    height: $stopwatch-center-size;
+    border-radius: 50%;
+    background: $stopwatch-center-color;
+  }
+
+  &__minute-hand {
+    @include default-hand-position;
+    @include hand-size(
+      $stopwatch-minute-hand-width,
+      $stopwatch-minute-hand-length
+    );
+    @include hand-rotate($stopwatch-minute-hand-duration, 60);
+
+    background: $stopwatch-minute-hand-color;
+  }
+
+  &__second-hand {
+    @include default-hand-position;
+    @include hand-size(
+      $stopwatch-second-hand-width,
+      $stopwatch-second-hand-length
+    );
+    @include hand-rotate($stopwatch-second-hand-duration + 1); // Because test is slow
+
+    background: $stopwatch-second-hand-color;
+  }
+
+  &--speed-up {
+    .stopwatch__minute-hand {
+      animation-duration: $stopwatch--sped-up-duration * 60;
+    }
+
+    .stopwatch__second-hand {
+      animation-duration: $stopwatch--sped-up-duration;
+    }
+  }
 }
