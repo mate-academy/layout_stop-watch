@@ -20,6 +20,8 @@ $stopwatch-second-hand-color: #2c8000;
 @mixin default-hand-position {
   position: absolute;
   bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @mixin hand-size($width, $height) {
@@ -29,9 +31,9 @@ $stopwatch-second-hand-color: #2c8000;
 
 @mixin hand-rotate($duration, $steps: false) {
   @if $steps {
-    animation: rotate $duration steps($steps) infinite;
+    animation: hand-rotate $duration steps($steps) infinite;
   } @else {
-    animation: rotate $duration linear infinite;
+    animation: hand-rotate $duration linear infinite;
   }
 
   transform-origin: bottom center;
@@ -40,12 +42,12 @@ $stopwatch-second-hand-color: #2c8000;
   transition-property: transform;
 }
 
-@keyframes rotate {
+@keyframes hand-rotate {
   from {
-    transform: rotate(0deg);
+    transform: translateX(-50%) rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(-50%) rotate(360deg);
   }
 }
 
@@ -58,9 +60,6 @@ body {
 }
 
 .stopwatch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   width: 80vmin;
   height: 80vmin;
@@ -68,41 +67,40 @@ body {
   border-radius: 50%;
 
   &__center {
-    z-index: 1;
+    @include center;
+
     width: $stopwatch-center-size;
     height: $stopwatch-center-size;
     border-radius: 50%;
     background: $stopwatch-center-color;
   }
 
-  &__minute-hand {
+  &__hand {
     @include default-hand-position;
-    @include hand-size(
-      $stopwatch-minute-hand-width,
-      $stopwatch-minute-hand-length
-    );
-    @include hand-rotate($stopwatch-minute-hand-duration, 60);
 
-    background: $stopwatch-minute-hand-color;
-  }
+    &--minute {
+      @include hand-rotate($stopwatch-minute-hand-duration, 60);
 
-  &__second-hand {
-    @include default-hand-position;
-    @include hand-size(
-      $stopwatch-second-hand-width,
-      $stopwatch-second-hand-length
-    );
-    @include hand-rotate($stopwatch-second-hand-duration + 1); // Because test is slow
+      width: $stopwatch-minute-hand-width;
+      height: $stopwatch-minute-hand-length;
+      background: $stopwatch-minute-hand-color;
+    }
 
-    background: $stopwatch-second-hand-color;
+    &--second {
+      @include hand-rotate($stopwatch-second-hand-duration);
+
+      width: $stopwatch-second-hand-width;
+      height: $stopwatch-second-hand-length;
+      background: $stopwatch-second-hand-color;
+    }
   }
 
   &--speed-up {
-    .stopwatch__minute-hand {
+    .stopwatch__hand--minute {
       animation-duration: $stopwatch--sped-up-duration * 60;
     }
 
-    .stopwatch__second-hand {
+    .stopwatch__hand--second {
       animation-duration: $stopwatch--sped-up-duration;
     }
   }
