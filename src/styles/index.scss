@@ -27,7 +27,7 @@ body {
 
   &__minutes-hand {
     position: absolute;
-    left: 50%;
+    left: calc(50% - $minutes-hand-width / 2);
     bottom: 50%;
     width: $minutes-hand-width;
     height: $minutes-hand-length;
@@ -42,7 +42,7 @@ body {
 
   &__seconds-hand {
     position: absolute;
-    left: 50%;
+    left: calc(50% - $seconds-hand-width / 2);
     bottom: 50%;
     width: $seconds-hand-width;
     height: $seconds-hand-length;
@@ -77,10 +77,10 @@ body {
 
 @keyframes move {
   from {
-    transform: translateX(-50%) rotate(0);
+    transform: rotate(0);
   }
 
   to {
-    transform: translateX(-50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
