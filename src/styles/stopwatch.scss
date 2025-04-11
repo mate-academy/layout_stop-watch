@@ -1,14 +1,3 @@
-body {
-  margin: 0;
-
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .stopwatch {
   width: 80vmin;
   height: 80vmin;
@@ -40,8 +29,7 @@ body {
     width: 3vmin;
     background-color: #0700ff;
 
-    animation: rotate-hand 3600s infinite;
-    animation-timing-function: steps(60, end);
+    animation: rotate-hand 3600s steps(60, end) infinite;
   }
 
   &__center {
@@ -61,15 +49,5 @@ body {
     .stopwatch__hand--minute {
       animation-duration: 600s;
     }
-  }
-}
-
-@keyframes rotate-hand {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 }
