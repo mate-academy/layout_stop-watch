@@ -31,6 +31,7 @@ body {
     bottom: 50%;
     left: calc(50% - 1.5vmin);
     transform-origin: bottom center;
+    transform: rotate(0deg);
     animation: rotate-minutes 3600s steps(60) infinite;
   }
 
@@ -41,7 +42,8 @@ body {
     bottom: 50%;
     left: calc(50% - 0.75vmin);
     transform-origin: bottom center;
-    animation: rotate-seconds 60s steps(60) infinite;
+    transform: rotate(0deg);
+    animation: rotate-seconds 60s linear infinite;
   }
 
   &__center {
@@ -58,11 +60,11 @@ body {
 
   &--speed-up {
     .stopwatch__hand--minutes {
-      animation-duration: 600s; // 10 хвилин
+      animation-duration: 600s;
     }
 
     .stopwatch__hand--seconds {
-      animation-duration: 10s; // 10 секунд
+      animation-duration: 10s;
     }
   }
 }
@@ -71,6 +73,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -80,6 +83,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
