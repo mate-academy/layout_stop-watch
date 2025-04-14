@@ -21,7 +21,7 @@ body {
     left: 50%;
     bottom: 50%;
     transform-origin: bottom center;
-    transform: translateX(-50%) rotate(0deg); /* Start at the top */
+    transform: rotate(0deg);
   }
 
   &__hand--minutes {
@@ -31,7 +31,6 @@ body {
     bottom: 50%;
     left: calc(50% - 1.5vmin);
     transform-origin: bottom center;
-    transform: translateX(0%) rotate(0deg); /* Start at the top */
     animation: rotate-minutes 3600s steps(60) infinite;
   }
 
@@ -42,8 +41,7 @@ body {
     bottom: 50%;
     left: calc(50% - 0.75vmin);
     transform-origin: bottom center;
-    transform: translateX(0%) rotate(0deg); /* Start at the top */
-    animation: rotate-seconds 60s linear infinite;
+    animation: rotate-seconds 60s steps(60) infinite;
   }
 
   &__center {
@@ -60,11 +58,11 @@ body {
 
   &--speed-up {
     .stopwatch__hand--minutes {
-      animation-duration: 600s; // 10min
+      animation-duration: 600s; // 10 хвилин
     }
 
     .stopwatch__hand--seconds {
-      animation-duration: 10s; // 10s
+      animation-duration: 10s; // 10 секунд
     }
   }
 }
