@@ -1,3 +1,92 @@
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Minutes hand animation.
+@keyframes minutes-rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Seconds hand animation.
+@keyframes seconds-rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch__face {
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stopwatch__center {
+  height: 5vmin;
+  width: 5vmin;
+  background-color: #f6a603;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 3;
+}
+
+.stopwatch__minutes-hand {
+  height: 20vmin;
+  width: 3vmin;
+  background-color: #0700ff;
+  position: absolute;
+  top: 20vmin;
+  animation-name: minutes-rotation;
+  animation-timing-function: linear;
+  animation-duration: 3600s;
+  transform-origin: 50% bottom;
+  animation-iteration-count: infinite;
+}
+
+.stopwatch__seconds-hand {
+  height: 38vmin;
+  width: 1.5vmin;
+  background-color: #2c8000;
+  position: absolute;
+  top: 2vmin;
+  animation-name: seconds-rotation;
+  animation-timing-function: linear;
+  animation-duration: 60s;
+  transform-origin: 50% bottom;
+  animation-iteration-count: infinite;
+}
+
+// Accelerated clock
+.stopwatch--speed-up {
+  .stopwatch__minutes-hand {
+    animation-name: minutes-rotation;
+    animation-timing-function: linear;
+    animation-duration: 600s;
+    transform-origin: 50% bottom;
+    animation-iteration-count: infinite;
+  }
+
+  .stopwatch__seconds-hand {
+    animation-name: seconds-rotation;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    transform-origin: 50% bottom;
+    animation-iteration-count: infinite;
+  }
 }
