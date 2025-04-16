@@ -53,7 +53,7 @@ body {
   position: absolute;
   top: 20vmin;
   animation-name: minutes-rotation;
-  animation-timing-function: linear;
+  animation-timing-function: steps(60);
   animation-duration: 3600s;
   transform-origin: 50% bottom;
   animation-iteration-count: infinite;
@@ -66,7 +66,7 @@ body {
   position: absolute;
   top: 2vmin;
   animation-name: seconds-rotation;
-  animation-timing-function: linear;
+  animation-timing-function: steps(60);
   animation-duration: 60s;
   transform-origin: 50% bottom;
   animation-iteration-count: infinite;
@@ -76,7 +76,7 @@ body {
 .stopwatch--speed-up {
   .stopwatch__minutes-hand {
     animation-name: minutes-rotation;
-    animation-timing-function: linear;
+    animation-timing-function: steps(60);
     animation-duration: 600s;
     transform-origin: 50% bottom;
     animation-iteration-count: infinite;
@@ -84,7 +84,7 @@ body {
 
   .stopwatch__seconds-hand {
     animation-name: seconds-rotation;
-    animation-timing-function: linear;
+    animation-timing-function: steps(60);
     animation-duration: 10s;
     transform-origin: 50% bottom;
     animation-iteration-count: infinite;
