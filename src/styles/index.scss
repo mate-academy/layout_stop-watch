@@ -48,12 +48,12 @@ body {
   }
 
   &--speed-up {
-    &__minutes {
-      animation: rotate-circle #{$fast-minutes-time}s
-        steps($fast-seconds-time, end) infinite;
+    .stopwatch__minutes {
+      animation: rotate-circle #{$fast-minutes-time}s steps($seconds-time, end)
+        infinite;
     }
 
-    &__seconds {
+    .stopwatch__seconds {
       animation: rotate-circle #{$fast-seconds-time}s linear infinite;
     }
   }
