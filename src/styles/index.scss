@@ -24,7 +24,8 @@ body {
     background-color: #0700ff;
     position: absolute;
     bottom: 50%;
-    animation: rotate-circle #{$minutes-time}s steps($seconds-time, end) infinite;
+    animation: rotate-circle #{$minutes-time}s steps($seconds-time, end)
+      infinite;
     transform-origin: bottom;
   }
 
@@ -46,6 +47,16 @@ body {
     position: absolute;
   }
 
+  &--speed-up {
+    &__minutes {
+      animation: rotate-circle #{$fast-minutes-time}s
+        steps($fast-seconds-time, end) infinite;
+    }
+
+    &__seconds {
+      animation: rotate-circle #{$fast-seconds-time}s linear infinite;
+    }
+  }
 }
 
 @keyframes rotate-circle {
