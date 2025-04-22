@@ -1,3 +1,101 @@
+$stopwatch-size: 80vmin;
+$border-width: 1vmin;
+$border-color: #000;
+$minute-hand-length: 20vmin;
+$minute-hand-width: 3vmin;
+$minute-hand-color: #0700ff;
+$second-hand-length: 38vmin;
+$second-hand-width: 1.5vmin;
+$second-hand-color: #2c8000;
+$center-diameter: 5vmin;
+$center-color: #f6a603;
+$animation-duration-second: 60s;
+$animation-duration-minute: 3600s;
+$animation-duration-second-speedup: 10s;
+$animation-duration-minute-speedup: 600s;
+
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: $border-width dotted $border-color;
+  border-radius: 50%;
+  position: relative;
+
+  &__face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $center-diameter;
+    height: $center-diameter;
+    background-color: $center-color;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure it's on top of the hands */
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%; /* Start from the center */
+    left: 50%; /* Start from the center */
+    transform-origin: bottom center; /* Rotate around the bottom center */
+    z-index: 2;
+
+    &--minute {
+      width: $minute-hand-width;
+      height: $minute-hand-length;
+      background-color: $minute-hand-color;
+      transform: translateX(-50%) rotate(0deg); /* Initial position at the top */
+      animation: rotate-minutes $animation-duration-minute steps(60) infinite;
+    }
+
+    &--second {
+      width: $second-hand-width;
+      height: $second-hand-length;
+      background-color: $second-hand-color;
+      transform: translateX(-50%) rotate(0deg); /* Initial position at the top */
+      animation: rotate-seconds $animation-duration-second linear infinite;
+    }
+  }
+
+  /* BEM Modifier: speed-up */
+  &--speed-up {
+    .stopwatch__hand--second {
+      animation-duration: $animation-duration-second-speedup;
+    }
+
+    .stopwatch__hand--minute {
+      animation-duration: $animation-duration-minute-speedup;
+    }
+  }
+}
+
+/* Animations */
+@keyframes rotate-seconds {
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-minutes {
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
 }
