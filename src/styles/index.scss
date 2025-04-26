@@ -1,3 +1,71 @@
-body {
+.body {
   margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &__minute-hand {
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%);
+    animation: rotate-hand 3600s steps(60) infinite;
+
+    &--speed-up {
+      animation: rotate-hand 600s steps(60) infinite;
+    }
+  }
+
+  &__second-hand {
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%);
+    animation: rotate-hand 60s linear infinite;
+
+    &--speed-up {
+      animation: rotate-hand 10s linear infinite;
+    }
+  }
+
+  &__center-dot {
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+}
+
+@keyframes rotate-hand {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
 }
