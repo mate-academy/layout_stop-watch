@@ -1,3 +1,87 @@
+$seconds-time: 60;
+$minutes-time: $seconds-time * 60;
+$speedup-seconds-time: 10;
+$speedup-minutes-time: $speedup-seconds-time * 60;
+
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__seconds {
+    position: absolute;
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    bottom: 50%;
+    transform: rotate(0);
+    transform-origin: bottom;
+
+    animation-name: circle-move;
+    animation-duration: #{$seconds-time}s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minutes {
+    position: absolute;
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    bottom: 50%;
+    transform: rotate(0);
+    transform-origin: bottom;
+
+    animation-name: circle-move;
+    animation-duration: #{$minutes-time}s;
+    animation-timing-function: step($seconds-time, end);
+    animation-iteration-count: infinite;
+  }
+
+  &__center {
+    position: absolute;
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+  }
+
+  &--speed-up {
+    .stopwatch__seconds {
+      animation-name: circle-move;
+      animation-duration: #{$speedup-seconds-time}s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .stopwatch__minutes {
+      animation-name: circle-move;
+      animation-duration: #{$speedup-minutes-time}s;
+      animation-timing-function: step($seconds-time, end);
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+@keyframes circle-move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
