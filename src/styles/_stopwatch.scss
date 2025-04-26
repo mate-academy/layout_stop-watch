@@ -11,7 +11,7 @@
   border-radius: 50%;
 
   &__minutes {
-    animation: rotate-hand calc(60s * 60) linear infinite;
+    animation: rotate-hand $time_m linear infinite;
     transform-origin: bottom center;
 
     @include clock-theme(
@@ -22,7 +22,7 @@
     @include center-position(-1, -50%);
 
     &--speed-up {
-      animation: rotate-hand math.div(calc(60s * 60), 6) linear infinite;
+      animation: rotate-hand math.div($time_m, 6) linear infinite;
     }
   }
 
