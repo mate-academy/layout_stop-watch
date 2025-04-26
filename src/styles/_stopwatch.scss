@@ -1,0 +1,51 @@
+@use 'sass:math';
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted $border-clock-color;
+  border-radius: 50%;
+
+  &__minutes {
+    animation: rotate-hand $time_m linear infinite;
+    transform-origin: bottom center;
+
+    @include clock-theme(
+      $minutes-hand-color,
+      $size-w-minutes-hand,
+      $size-h-minutes-hand
+    );
+    @include center-position(-1, -50%);
+
+    &--speed-up {
+      animation: rotate-hand math.div($time_m, 6) linear infinite;
+    }
+  }
+
+  &__seconds {
+    animation: rotate-hand 60s linear infinite;
+    transform-origin: bottom center;
+
+    @include clock-theme(
+      $seconds-hand-color,
+      $size-w-seconds-hand,
+      $size-h-seconds-hand
+    );
+    @include center-position(-1, -50%);
+
+    &--speed-up {
+      animation: rotate-hand math.div(60s, 6) linear infinite;
+    }
+  }
+
+  &__circle-center {
+    border-radius: 50%;
+
+    @include clock-theme($circle-center-color, $size-circle-center);
+    @include center-position(1, 0);
+  }
+}

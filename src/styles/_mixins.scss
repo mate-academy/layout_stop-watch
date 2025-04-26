@@ -1,0 +1,13 @@
+@mixin center-position($z, $position-y) {
+  z-index: $z;
+
+  left: 50%;
+  transform: translate(-50%, $position-y);
+}
+
+@mixin clock-theme($bg-color, $w, $h: $w) {
+  position: absolute;
+  background-color: $bg-color;
+  width: $w;
+  height: $h;
+}
