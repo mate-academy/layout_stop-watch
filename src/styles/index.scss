@@ -1,4 +1,4 @@
-$circle-cize: 5vmin;
+$circle-size: 5vmin;
 $minute-hand-height: 20vmin;
 $minute-hand-width: 3vmin;
 $second-hand-height: 38vmin;
@@ -42,8 +42,8 @@ body {
   @include flex(flex-start);
 
   &__circle {
-    width: $circle-cize;
-    height: $circle-cize;
+    width: $circle-size;
+    height: $circle-size;
     background-color: #f6a603;
     border-radius: 50%;
 
@@ -60,7 +60,7 @@ body {
 
     @include set-to-center;
 
-    margin-top: ($circle-cize / 2) + ($second-hand-height - $minute-hand-height);
+    margin-top: ($circle-size / 2) + ($second-hand-height - $minute-hand-height);
     animation: hand-move 3600s steps(60, jump-end) infinite;
   }
 
@@ -71,7 +71,7 @@ body {
 
     @include set-to-center;
 
-    margin-top: $circle-cize / 2;
+    margin-top: $circle-size / 2;
     animation: hand-move 60s linear infinite;
   }
 
