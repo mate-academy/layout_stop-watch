@@ -48,7 +48,7 @@ body {
     margin-top: -38vmin;
     margin-left: calc(-1.5vmin / 2);
     transform-origin: center bottom;
-    animation: 60s linear 0s infinite watch-go;
+    animation: watch-go 60s steps(60) infinite;
   }
   &__center {
     position: absolute;
@@ -62,11 +62,11 @@ body {
   }
 }
 
-.stopwatch.speed-up {
-  &__seconds {
-    animation-duration: 10s;
+.stopwatch__speed-up {
+  .stopwatch__seconds {
+    animation-duration:10s;
   }
-  &__minutes {
+  .stopwatch__minutes {
     animation-duration: 600s;
   }
 }
