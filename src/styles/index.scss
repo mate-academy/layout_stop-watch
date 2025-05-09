@@ -1,3 +1,99 @@
+@mixin center {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin position-arrow {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: bottom center;
+}
+
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+
+  @include center;
+}
+
+.watch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: center center;
+  }
+
+  &__circle--seconds {
+    animation: rotate-seconds 60s linear infinite;
+  }
+
+  &__circle--minutes {
+    animation: rotate-minutes 3600s steps(60, end) infinite;
+  }
+
+  &__seconds-arrow {
+    width: 1.5vmin;
+    height: 38vmin;
+    background: #2c8000;
+
+    @include position-arrow;
+  }
+  &__minutes-arrow {
+    width: 3vmin;
+    height: 20vmin;
+    background: #0700ff;
+
+    @include position-arrow;
+  }
+
+  &__center {
+    position: absolute;
+    width: 5vmin;
+    height: 5vmin;
+    background: #f6a603;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &--speed-up {
+    .watch__circle--seconds {
+      animation-duration: 10s;
+    }
+    .watch__circle--minutes {
+      animation-duration: 600s;
+    }
+  }
+}
+
+@keyframes rotate-seconds {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-minutes {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
