@@ -1,3 +1,74 @@
+$border--color: #000;
+$minute--hand--color: #0700ff;
+$second--hand--color: #2c8000;
+$center--color: #f6a603;
+
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted $border--color;
+  border-radius: 100%;
+  position: relative;
+
+  &__minute {
+    height: 20vmin;
+    width: 3vmin;
+    background-color: $minute--hand--color;
+    position: absolute;
+    top: 20vmin;
+    left: calc(50% - 1.5vmin);
+    z-index: 1;
+    transform-origin: bottom;
+    animation: spin 3600s steps(60, end) infinite;
+  }
+
+  &__second {
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: $second--hand--color;
+    position: absolute;
+    top: 2vmin;
+    left: calc(50% - 0.75vmin);
+    z-index: 2;
+    transform-origin: bottom;
+    animation: spin 60s linear infinite;
+  }
+
+  &__center {
+    height: 5vmin;
+    width: 5vmin;
+    background-color: $center--color;
+    border-radius: 100%;
+    position: absolute;
+    top: calc(50% - 2.5vmin);
+    left: calc(50% - 2.5vmin);
+    z-index: 3;
+  }
+
+  &--speed-up {
+    .stopwatch__minute {
+      animation: spin 600s steps(60, end) infinite;
+    }
+
+    .stopwatch__second {
+      animation: spin 10s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
