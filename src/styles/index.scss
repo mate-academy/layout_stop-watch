@@ -1,32 +1,37 @@
 @keyframes move-second {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 
 @keyframes move-minute {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.clock {
+.stopwatch {
   border: 1vmin dotted #000;
   border-radius: 50%;
   height: 80vmin;
   width: 80vmin;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,12 +40,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: end;
-    
+
     border-radius: 50%;
     height: 5vmin;
     width: 5vmin;
     background-color: #f6a603;
-    
   }
 
   &__minute-arrow {
@@ -74,14 +78,12 @@ body {
   }
 
   &--speed-up {
-    .clock__minute-arrow {
+    .stopwatch__minute-arrow {
       animation-duration: 600s;
-
     }
 
-    .clock__second-arrow {
+    .stopwatch__second-arrow {
       animation-duration: 10s;
     }
   }
 }
-
