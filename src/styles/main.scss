@@ -8,7 +8,7 @@
   border-radius: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+
 }
 
 .clock {
@@ -16,12 +16,25 @@
 
 }
 
+.clock__base{
+  display: flex;
+  border: dashed rgb(38, 0, 255) 1px;
+  align-items: end;
+}
+
+.clock__center {
+  border: dashed rgb(0, 255, 34) 1px;
+  display: flex;
+  height: 50%;
+}
+
 .clock__minutes {
   height: 20vmin;
   width: 3vmin;
   background-color: $Clock-hand-minutes;
   border-radius: 0;
-
+  transform-origin: bottom center;
+  //align-self: center;
 }
 
 .clock__seconds {
@@ -32,10 +45,12 @@
 
 }
 
-.clock__center {
+.clock__center-circle {
   width: 5vmin;
   height: 5vmin;
   background-color: $Clock-center;
   border-radius: 50%;
   position: absolute;
+
+
 }
