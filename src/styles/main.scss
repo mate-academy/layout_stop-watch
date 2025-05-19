@@ -1,0 +1,63 @@
+@import './var.scss';
+
+.clock,
+.clock-hand__minutes,
+.clock-hand__seconds {
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock{
+  border: dashed $Border 1vmin;
+
+}
+
+// .clock::after{
+//   content: ' ';
+//   height: 20vmin;
+//   width: 3vmin;
+//   background-color: $Clock-hand-minutes;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%);
+// }
+
+
+.clock-hand__minutes {
+  height: 20vmin;
+  width: 3vmin;
+  background-color: $Clock-hand-minutes;
+  border-radius: 0;
+
+}
+
+.clock-hand__seconds {
+  height: 38vmin;
+  width: 1.5vmin;
+  background-color: $Clock-hand-seconds;
+  border-radius: 0;
+
+}
+
+.clock__center {
+  width: 5vmin;
+  height: 5vmin;
+  background-color: $Clock-center;
+  border-radius: 50%;
+  position: absolute;
+}
+
+// .clock-hand__minutes::after{
+//   content: ' ';
+//   height: 38vmin;
+//   width: 1.5vmin;
+//   background-color: $Clock-hand-seconds;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
