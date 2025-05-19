@@ -6,6 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
 }
 
 .stopwatch {
@@ -21,20 +22,26 @@ body {
   &__minute-hand {
     width: $minute-width;
     height: $minute-length;
-    bottom: 50%;
     background-color: $minute-color;
     position: absolute;
-    transform-origin: bottom center;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: bottom;
+    align-items: center;
     animation: rotate-minute 3600s steps(60) infinite;
   }
 
   &__second-hand {
     width: $second-width;
     height: $second-length;
-    bottom: 50%;
     position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: bottom;
+    align-items: center;
     background-color: $second-color;
-    transform-origin: bottom center;
     animation: rotate-second 60s linear infinite;
   }
 
@@ -56,19 +63,19 @@ body {
 }
 
 @keyframes rotate-minute {
-  0% {
-    transform: rotate(0deg);
+  from {
+    transform: translateX(-50%) rotate(0deg);
   }
-  100% {
-    transform: rotate(360deg);
+  to {
+    transform: translateX(-50%) rotate(360deg);
   }
 }
 
 @keyframes rotate-second {
-  0% {
-    transform: rotate(0deg);
+  from {
+    transform: translateX(-50%) rotate(0deg);
   }
-  100% {
-    transform: rotate(360deg);
+  to {
+    transform: translateX(-50%) rotate(360deg);
   }
 }
