@@ -1,48 +1,60 @@
 @import './var';
 
-.clock,
-.clock__minutes,
-.clock__seconds {
+.clock__base {
   width: 80vmin;
   height: 80vmin;
-  border-radius: 50%;
+  border: dashed 1px $Border;
   display: flex;
   justify-content: center;
+  position: relative;
+  border-radius: 50%;
 
-}
-
-.clock {
-  border: dashed $Border 1vmin;
-
-}
-
-.clock__base{
-  display: flex;
-  border: dashed rgb(38, 0, 255) 1px;
-  align-items: end;
-}
-
-.clock__center {
-  border: dashed rgb(0, 255, 34) 1px;
-  display: flex;
-  height: 50%;
 }
 
 .clock__minutes {
-  height: 20vmin;
   width: 3vmin;
+  height: 20vmin;
   background-color: $Clock-hand-minutes;
-  border-radius: 0;
-  transform-origin: bottom center;
+  position: absolute;
+  bottom: 50%;
+  animation: rotate-minutes 3600s steps(60) infinite;
+  transform-origin: bottom;
+}
+
+@keyframes rotate-minutes {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
 }
 
 .clock__seconds {
-  height: 38vmin;
   width: 1.5vmin;
+  height: 38vmin;
+  margin-top: 14px;
   background-color: $Clock-hand-seconds;
-  border-radius: 0;
-
+  position: absolute;
+  animation: rotate-seconds 60s linear infinite;
+  transform-origin: bottom;
 }
+
+@keyframes rotate-seconds {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+
+
+
+
 
 .clock__center-circle {
   width: 5vmin;
@@ -50,6 +62,5 @@
   background-color: $Clock-center;
   border-radius: 50%;
   position: absolute;
-
-
+  bottom: 48%;
 }
