@@ -1,3 +1,96 @@
+@import './variables';
+
+html,
 body {
+  height: 100%;
   margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-stack;
+}
+
+/* Stopwatch block */
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: $stopwatch-border-width dotted $stopwatch-border-color;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer; /* highlight as interactive */
+}
+
+.stopwatch:hover {
+  border-color: #333;
+}
+
+/* Common styles for both hands */
+.stopwatch__hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center; /* pivot at hand base:contentReference[oaicite:5]{index=5} */
+}
+
+/* Seconds hand: long and thin, green */
+.stopwatch__hand--seconds {
+  width: $stopwatch-sec-hand-width;
+  height: $stopwatch-sec-hand-length;
+  background: $stopwatch-sec-hand-color;
+  margin-left: -($stopwatch-sec-hand-width / 2);
+  animation: rotate-seconds $stopwatch-anim-sec linear infinite;
+}
+
+/* Minutes hand: shorter and thicker, blue */
+.stopwatch__hand--minutes {
+  width: $stopwatch-min-hand-width;
+  height: $stopwatch-min-hand-length;
+  background: $stopwatch-min-hand-color;
+  margin-left: -($stopwatch-min-hand-width / 2);
+  animation: rotate-minutes $stopwatch-anim-min steps(60) infinite;
+}
+
+/* Center pivot circle: orange */
+.stopwatch__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $stopwatch-center-diameter;
+  height: $stopwatch-center-diameter;
+  background: $stopwatch-center-color;
+  border-radius: 50%;
+  margin-top: -($stopwatch-center-diameter / 2);
+  margin-left: -($stopwatch-center-diameter / 2);
+}
+
+/* Animations: full 0→360° rotation */
+@keyframes rotate-seconds {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-minutes {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Modifier for faster speed */
+.stopwatch--speed-up .stopwatch__hand--seconds {
+  animation-duration: $stopwatch-anim-sec-fast;
+}
+
+.stopwatch--speed-up .stopwatch__hand--minutes {
+  animation-duration: $stopwatch-anim-min-fast;
 }
