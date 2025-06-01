@@ -1,20 +1,19 @@
 @import './var';
 
-.clock {
+.stopwatch {
   width: 80vmin;
   height: 80vmin;
-  border: dashed 1px $Border;
+  border: dotted 1vmin $Border;
   display: flex;
   justify-content: center;
   position: relative;
   border-radius: 50%;
-
 }
 
-.clock__minutes {
+.stopwatch__minutes {
   width: 3vmin;
   height: 20vmin;
-  background-color: $Clock-hand-minutes;
+  background-color: $Stopwatch-hand-minutes;
   position: absolute;
   bottom: 50%;
   animation: rotate-minutes 3600s steps(60) infinite;
@@ -23,44 +22,39 @@
 
 @keyframes rotate-minutes {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 
-.clock__seconds {
+.stopwatch__seconds {
   width: 1.5vmin;
   height: 38vmin;
   margin-top: 14px;
-  background-color: $Clock-hand-seconds;
+  background-color: $Stopwatch-hand-seconds;
   position: absolute;
-  animation: rotate-seconds 60s linear infinite;
+  animation: rotate-seconds 2s linear infinite;
   transform-origin: bottom;
 }
 
 @keyframes rotate-seconds {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 
-
-
-
-
-
-.clock__center-circle {
+.stopwatch__center-circle {
   width: 5vmin;
   height: 5vmin;
-  background-color: $Clock-center;
+  background-color: $Stopwatch-center;
   border-radius: 50%;
   position: absolute;
-  bottom: 48%;
+  bottom: 47%;
 }
