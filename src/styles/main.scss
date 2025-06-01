@@ -36,13 +36,13 @@
   margin-top: 14px;
   background-color: $Stopwatch-hand-seconds;
   position: absolute;
-  animation: rotate-seconds 2s linear infinite;
+  animation: rotate-seconds 60s linear infinite;
   transform-origin: bottom;
 }
 
 @keyframes rotate-seconds {
   from {
-    transform: rotate(0deg);
+    transform: rotate(83deg);
   }
 
   to {
@@ -57,4 +57,14 @@
   border-radius: 50%;
   position: absolute;
   bottom: 47%;
+}
+
+.stopwatch--speedup {
+  .stopwatch__seconds {
+    animation-duration: 10s;
+  }
+
+  .stopwatch__minutes {
+    animation-duration: 600s;
+  }
 }
