@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .stopwatch {
   position: relative;
   width: 80vmin;
@@ -12,7 +19,7 @@
 .stopwatch__hand {
   position: absolute;
   bottom: 50%;
-  transform-origin: bottom;
+  transform-origin: bottom center;
 }
 
 .stopwatch__hand--second {
@@ -35,7 +42,7 @@
   height: 5vmin;
   background-color: #f6a603;
   border-radius: 50%;
-  z-index: 10;
+  z-index: 1;
 }
 
 @keyframes rotate {
