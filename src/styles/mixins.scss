@@ -1,0 +1,13 @@
+@mixin animation-rotation($duration) {
+  animation: hands-rotation #{$duration} linear infinite;
+}
+
+@keyframes hands-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
