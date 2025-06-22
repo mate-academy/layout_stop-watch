@@ -23,7 +23,10 @@ body {
     background-color:#0700ff;
     position:absolute;
     left: calc(50% - 1.5vmin);
-    top: calc(50% - 20vmin)
+    top: calc(50% - 20vmin);
+    animation: orbit 3600s infinite;
+    transform-origin: bottom center;
+    animation-timing-function: steps(61);
   }
   &__sec {
     height: 38vmin;
@@ -32,6 +35,9 @@ body {
     position: absolute;
     left: calc(50% - .72vmin);
     top: calc(50% - 38vmin);
+    animation: orbit 60s infinite;
+    transform-origin: bottom center;
+    animation-timing-function: linear;
   }
   &__center {
     width: 5vmin;
@@ -41,5 +47,13 @@ body {
     position:absolute;
     left: calc(50% - 2.5vmin);
     top: calc(50% - 2.5vmin);
+  }
+}
+@keyframes orbit {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
   }
 }
