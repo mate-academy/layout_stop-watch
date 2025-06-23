@@ -28,6 +28,7 @@ body {
       width: $minutesHandWidth;
       height: $minutesHandHeight;
       background-color: $blueColor;
+      margin-left: -$minutesHandWidth / 2;
 
       animation: move-hand $minutesAnimationDuration steps(60) infinite;
     }
@@ -36,6 +37,7 @@ body {
       width: $secondsHandWidth;
       height: $secondsHandHeight;
       background-color: $greenColor;
+      margin-left: -$secondsHandWidth / 2;
 
       animation: move-hand $secondsAnimationDuration linear infinite;
     }
@@ -67,10 +69,10 @@ body {
 
 @keyframes move-hand {
   from {
-    transform: rotate(0deg) translateX(-50%);
+    transform: rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg) translateX(-50%);
+    transform: rotate(360deg);
   }
 }
