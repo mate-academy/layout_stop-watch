@@ -1,3 +1,86 @@
+$color-black: #000;
+$color-green: #2c8000;
+$color-blue: #0700ff;
+$color-orange: #f6a603;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  height: 100vh;
+
+  @include flex-center;
+}
+
+.clock {
+  &__border {
+    width: 80vmin;
+    height: 80vmin;
+    border: 1vmin dotted $color-black;
+    border-radius: 50%;
+
+    @include flex-center;
+  }
+
+  &__big-arrow {
+    z-index: 2;
+    position: absolute;
+    bottom: 50%;
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: $color-green;
+
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__small-arrow {
+    z-index: 1;
+    position: absolute;
+    bottom: 50%;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: $color-blue;
+
+    animation: move 3600s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &--speed-up {
+    & .clock__big-arrow {
+      animation-duration: 10s;
+    }
+
+    & .clock__small-arrow {
+      animation-duration: 600s;
+    }
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__centr {
+    z-index: 3;
+    height: 5vmin;
+    width: 5vmin;
+    background-color: $color-orange;
+    border-radius: 50%;
+  }
 }
