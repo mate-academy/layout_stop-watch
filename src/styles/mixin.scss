@@ -1,0 +1,42 @@
+@mixin stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+}
+
+@mixin round {
+  width: 5vmin;
+  height: 5vmin;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+@mixin arrow {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+}
+
+@mixin arrow-minute {
+  height: 20vmin;
+  width: 3vmin;
+  bottom: 50%;
+  left: 50%;
+  margin: -1.5vmin;
+}
+
+@mixin arrow-seconds {
+  height: 38vmin;
+  width: 1.5vmin;
+  bottom: 50%;
+  left: 50%;
+  margin: -0.75vmin;
+}
