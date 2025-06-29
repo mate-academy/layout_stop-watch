@@ -13,16 +13,16 @@ body {
 .stopwatch {
   display: flex;
   position: relative;
-  height: $watch_size;
-  width: $watch_size;
+  height: $watch-size;
+  width: $watch-size;
   border: $border-size dotted $border-color;
   border-radius: 50%;
 
-  &__minuts {
+  &__minutes {
     position: absolute;
     height: 20vmin;
     width: 3vmin;
-    background-color: $minuts-color;
+    background-color: $minutes-color;
     top: calc(50% - 20vmin);
     left: calc(50% - 3vmin / 2);
     animation: move 3600s steps(60) infinite;
@@ -51,7 +51,7 @@ body {
     z-index: 1;
   }
 
-  &--speed-up .stopwatch__minuts {
+  &--speed-up .stopwatch__minutes {
     animation: move 600s steps(60) infinite;
   }
 
