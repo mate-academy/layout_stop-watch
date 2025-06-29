@@ -1,3 +1,70 @@
+@import 'vars';
+
 body {
   margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  display: flex;
+  position: relative;
+  height: $watch_size;
+  width: $watch_size;
+  border: $border-size dotted $border-color;
+  border-radius: 50%;
+
+  &__minuts {
+    position: absolute;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: $minuts-color;
+    top: calc(50% - 20vmin);
+    left: calc(50% - 3vmin / 2);
+    animation: move 3600s steps(60) infinite;
+    transform-origin: bottom;
+  }
+
+  &__seconds {
+    position: absolute;
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: $seconds-color;
+    top: calc(50% - 38vmin);
+    left: calc(50% - 1.5vmin / 2);
+    animation: move 60s linear infinite;
+    transform-origin: bottom;
+  }
+
+  &__center-dot {
+    position: absolute;
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background-color: $center-color;
+    top: calc(50% - 2.5vmin);
+    left: calc(50% - 5vmin / 2);
+    z-index: 1;
+  }
+
+  &--speed-up .stopwatch__minuts {
+    animation: move 600s steps(60) infinite;
+  }
+
+  &--speed-up .stopwatch__seconds {
+    animation: move 10s linear infinite;
+  }
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
