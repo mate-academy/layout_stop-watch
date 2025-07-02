@@ -1,0 +1,8 @@
+@mixin positioning($height, $z-ind) {
+  position: absolute;
+  left: 50%;
+  top: calc(#{$size} / 2 - #{$height});
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(0);
+  z-index: $z-ind;
+}
