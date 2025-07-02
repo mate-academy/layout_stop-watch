@@ -44,11 +44,12 @@
 }
 
 @keyframes full-circle {
-  0% {
-    rotate: 0deg;
+  from {
+    transform: translateX(-50%) rotate(0);
+
   }
 
-  100% {
-    rotate: 360deg;
+  to {
+    transform: translateX(-50%) rotate(360deg);
   }
 }
