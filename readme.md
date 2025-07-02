@@ -36,6 +36,9 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 ❗️ Replace `<your_account>` with your GitHub username and copy the links to the `Pull Request` description:
 
 - [DEMO LINK](https://d1nexl.github.io/layout_stop-watch/)
+- [TEST REPORT LINK](https://d1nexl.github.io/layout_stop-watch/report/html_report/)
+
+Check this Please
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
