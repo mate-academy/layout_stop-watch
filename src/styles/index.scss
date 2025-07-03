@@ -44,6 +44,7 @@ $center-color: #f6a603;
   &__hand--seconds {
     width: 1.5vmin;
     height: 38vmin;
+    margin-left: -7px;
     background-color: $seconds-color;
     animation: rotate-seconds 60s linear infinite;
     z-index: 1;
@@ -52,6 +53,7 @@ $center-color: #f6a603;
   &__hand--minutes {
     width: 3vmin;
     height: 20vmin;
+    margin-left: -10px;
     background-color: $minutes-color;
     animation: rotate-minutes 3600s steps(60) infinite;
     z-index: 0;
@@ -71,13 +73,19 @@ $center-color: #f6a603;
 
 // Animations
 @keyframes rotate-seconds {
-  100% {
-    transform: translateX(-50%) rotate(360deg);
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
 @keyframes rotate-minutes {
-  100% {
-    transform: translateX(-50%) rotate(360deg);
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
