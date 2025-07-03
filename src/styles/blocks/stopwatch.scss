@@ -6,7 +6,7 @@
   border: 1vmin dotted #000;
   border-radius: 50%;
 
-  &__minutes {
+  &__hand--minutes {
     width: 3vmin;
     height: 20vmin;
 
@@ -16,10 +16,10 @@
 
     animation: rotating 3600s steps(60) infinite;
 
-    @include stopwatchContentPosition;
+    @include stopwatch-content-position;
   }
 
-  &__seconds {
+  &__hand--seconds {
     width: 1.5vmin;
     height: 38vmin;
 
@@ -31,7 +31,7 @@
 
     animation: rotating 60s linear infinite;
 
-    @include stopwatchContentPosition;
+    @include stopwatch-content-position;
   }
 
   &__center {
@@ -45,7 +45,7 @@
 
     z-index: 3;
 
-    @include stopwatchContentPosition;
+    @include stopwatch-content-position;
   }
 
   &--speed-up {
