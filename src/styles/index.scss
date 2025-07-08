@@ -1,5 +1,4 @@
 body {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,9 +8,7 @@ body {
 
 .stopwatch {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
 
   height: 100vh;
   height: 80vmin;
@@ -19,13 +16,13 @@ body {
   border-radius: 50%;
   border: 1vmin dotted #000;
 
-    &__center {
-    // align-self: center;
+  &__center {
     // visibility: hidden;
     position: absolute;
     z-index: 3;
-    left:49%;
-    bottom: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 
     height: 5vmin;
     width: 5vmin;
@@ -33,70 +30,67 @@ body {
     background-color: #f6a603;
   }
 
-    &__seconds-hand {
-    // visibility: hidden;
+  &__seconds-hand {
     position: absolute;
     z-index: 2;
-    transform-origin: center bottom;
-    transform: rotate(0deg) translateX(50%);
+    top: 50%;
+    left: 50%;
+
+    transform-origin: bottom center;
 
     height: 38vmin;
     width: 1.5vmin;
     background-color: #2c8000;
-    left:50%;
-    bottom: 50%;
+    animation-name: seconds-hand;
+    animation-iteration-count: infinite;
 
+    animation-duration: 60s;
+    animation-timing-function: linear;
   }
 
-
   &__minutes-hand {
-    // visibility: hidden;
     position: absolute;
     z-index: 1;
-    transform-origin: center bottom;
-    transform: rotate(180deg) translateX(50%);
+    top: 50%;
+    left: 50%;
 
-    left:50%;
-    bottom: 50%;
+    transform-origin: bottom center;
 
     height: 20vmin;
     width: 3vmin;
     background-color: #0700ff;
+
+    animation-timing-function: steps(60);
+
+    animation-name: minutes-hand;
+    animation-iteration-count: infinite;
+
+    animation-duration: 3600s;
   }
 
+  &__seconds-hand--speed-up {
+    animation-duration: 10s;
+  }
 
-
+  &__minutes-hand--speed-up {
+    animation-duration: 600s;
+  }
 }
 
-.stopwatch::before,
-.stopwatch::after {
-  content: '';
-  position: absolute;
-  background: red;
+@keyframes seconds-hand {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
 }
 
-.stopwatch::before {
-  width: 100%;
-  height: 1px;
-  top: 50%;
-  left: 0;
-}
-
-.stopwatch::after {
-  width: 1px;
-  height: 100%;
-  left: 50%;
-  top: 0;
-}
-
-
-.dot {
-  width: 4px;
-  height: 4px;
-  background: black;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+@keyframes minutes-hand {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
 }
