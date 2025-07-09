@@ -9,7 +9,7 @@ body {
 
 $stopwatchSize: 80vmin;
 
-@keyframes rotateCircle {
+@keyframes rotate-circle {
   to {
     transform: rotate(360deg);
   }
@@ -34,7 +34,7 @@ $stopwatchSize: 80vmin;
     width: 3vmin;
     height: 20vmin;
     background-color: blue;
-    animation: rotateCircle 3600s steps(60) infinite;
+    animation: rotate-circle 3600s steps(60) infinite;
     bottom: 50%;
     left: 50%;
     transform-origin: bottom center;
@@ -46,7 +46,7 @@ $stopwatchSize: 80vmin;
     margin-top: 38vmin;
     width: 1.5vmin;
     background-color: #2c8000;
-    animation: rotateCircle 60s linear infinite;
+    animation: rotate-circle 60s linear infinite;
     transform-origin: bottom center;
     bottom: 50%;
     left: 50%;
@@ -63,11 +63,11 @@ $stopwatchSize: 80vmin;
 
   &--speed-up {
     & .stopwatch__seconds {
-      animation: rotateCircle 10s linear infinite;
+      animation: rotate-circle 10s linear infinite;
     }
 
     & .stopwatch__minutes {
-      animation: rotateCircle 600s steps(60) infinite;
+      animation: rotate-circle 600s steps(60) infinite;
     }
   }
 
