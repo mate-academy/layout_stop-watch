@@ -9,16 +9,6 @@
   align-items: center;
   position: absolute;
 
-  @for $speed from 0 through 10 {
-    &--speed-up .stopwatch__pointer-seconds {
-      animation-duration: 10s;
-    }
-
-    &--speed-up .stopwatch__pointer-minutes {
-      animation-duration: 600s;
-    }
-  }
-
   &__pin-center {
     position: fixed;
     height: 5vmin;
@@ -56,6 +46,14 @@
     animation-duration: 60s;
     animation-iteration-count: infinite;
     transform-origin: bottom;
+  }
+
+  &--speed-up .stopwatch__pointer-seconds {
+    animation-duration: 10s;
+  }
+
+  &--speed-up .stopwatch__pointer-minutes {
+    animation-duration: 600s;
   }
 }
 
