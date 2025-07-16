@@ -1,0 +1,70 @@
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+
+  &__pin-center {
+    position: fixed;
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+    z-index: 10;
+  }
+
+  &__pointer-minutes {
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+
+    position: absolute;
+    z-index: 1;
+
+    bottom: 40vmin;
+    animation-name: spin;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-timing-function: steps(60, end);
+  }
+
+  &__pointer-seconds {
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+
+    position: absolute;
+    z-index: 2;
+
+    bottom: 40vmin;
+    animation-name: spin;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-timing-function: linear;
+  }
+
+  &--speed-up .stopwatch__pointer-seconds {
+    animation-duration: 10s;
+  }
+
+  &--speed-up .stopwatch__pointer-minutes {
+    animation-duration: 600s;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
