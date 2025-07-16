@@ -27,10 +27,11 @@
     z-index: 1;
 
     bottom: 40vmin;
-    animation-name: minutes;
+    animation-name: spin;
     animation-duration: 3600s;
     animation-iteration-count: infinite;
     transform-origin: bottom;
+    animation-timing-function: steps(60, end);
   }
 
   &__pointer-seconds {
@@ -42,10 +43,11 @@
     z-index: 2;
 
     bottom: 40vmin;
-    animation-name: seconds;
+    animation-name: spin;
     animation-duration: 60s;
     animation-iteration-count: infinite;
     transform-origin: bottom;
+    animation-timing-function: linear;
   }
 
   &--speed-up .stopwatch__pointer-seconds {
@@ -57,17 +59,7 @@
   }
 }
 
-@keyframes seconds {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minutes {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
