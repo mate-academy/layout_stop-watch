@@ -1,0 +1,41 @@
+@use './variables' as *;
+
+@mixin circle(
+  $size: $watch-radius,
+  $border-width: $watch-border-width,
+  $dotted: $watch-border-style,
+  $color: $watch-border-color
+) {
+  height: $size;
+  width: $size;
+  border: $border-width $dotted;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@mixin hand(
+  $hand-width: $seconds-hand-width,
+  $hand-length: $seconds-hand-length,
+  $full-rotate-seconds: $watch-full-rotate-seconds,
+  $tick-seconds: $watch-tick-seconds,
+  $hand-color: $seconds-hand-color
+) {
+  top: 0;
+  left: 50%;
+  width: $hand-width;
+  height: $hand-length;
+
+  background: $hand-color;
+
+  transform-origin: 50% 100%;
+
+  animation: rotate $full-rotate-seconds steps($watch-full-rotate-ticks, end) infinite;
+}

@@ -1,0 +1,51 @@
+@use '../utils/mixins' as mixins;
+@use '../utils/variables' as *;
+
+.clock {
+  @include mixins.circle(
+    $watch-radius,
+    $watch-border-width,
+    $watch-border-style,
+    $watch-border-color
+  );
+
+  position: relative;
+}
+
+.clock__hand {
+  position: absolute;
+}
+
+.clock__hand--minute {
+  @include mixins.hand(
+    $minutes-hand-width,
+    $minutes-hand-length,
+    3600s,
+    60s,
+    $minutes-hand-color
+  );
+
+  top: 25%;
+}
+
+.clock__hand--second {
+  @include mixins.hand(
+    $seconds-hand-width,
+    $seconds-hand-length,
+    60s,
+    1s,
+    $seconds-hand-color
+  );
+}
+
+.clock__center {
+  position: absolute;
+  background: $watch-center-circle-color;
+
+  top: calc(50% - #{$watch-center-circle-radius} / 2);
+  left: calc(50% - #{$watch-center-circle-radius} / 2);
+  height: 5vmin;
+  width: 5vmin;
+
+  clip-path: circle($watch-center-circle-radius);
+}
