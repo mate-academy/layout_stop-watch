@@ -1,3 +1,77 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
+  background: white;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5vmin;
+    height: 5vmin;
+    background: #f6a603;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+
+    &--minutes {
+      width: 3vmin;
+      height: 20vmin;
+      background: #0700ff;
+      animation: rotate-minutes 3600s steps(60) infinite;
+    }
+
+    &--seconds {
+      width: 1.5vmin;
+      height: 38vmin;
+      background: #2c8000;
+      animation: rotate-seconds 60s linear infinite;
+    }
+  }
+
+  &--speed-up {
+    .stopwatch__hand--minutes {
+      animation-duration: 600s; 
+    }
+
+    .stopwatch__hand--seconds {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes rotate-seconds {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-minutes {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
