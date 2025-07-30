@@ -49,7 +49,7 @@ body {
 
   &--speed-up {
     .stopwatch__hand--minutes {
-      animation-duration: 600s; 
+      animation-duration: 600s;
     }
 
     .stopwatch__hand--seconds {
@@ -58,20 +58,37 @@ body {
   }
 }
 
+// @keyframes rotate-seconds {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+
+// @keyframes rotate-minutes {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
 @keyframes rotate-seconds {
   0% {
-    transform: rotate(0deg);
+    transform: translateX(-50%) rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: translateX(-50%) rotate(360deg);
   }
 }
 
 @keyframes rotate-minutes {
   0% {
-    transform: rotate(0deg);
+    transform: translateX(-50%) rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: translateX(-50%) rotate(360deg);
   }
 }
