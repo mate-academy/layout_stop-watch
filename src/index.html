@@ -1,5 +1,9 @@
+<!-- #region head -->
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class="page"
+>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -16,7 +20,16 @@
       href="./styles/index.scss"
     />
   </head>
-  <body>
-    <h1>Stop watch</h1>
+  <!-- #endregion -->
+  <body class="page__body">
+    <div class="stopwatch">
+      <div
+        class="stopwatch__minutes-hand stopwatch__minutes-hand--speed-up"
+      ></div>
+      <div
+        class="stopwatch__seconds-hand stopwatch__seconds-hand--speed-up"
+      ></div>
+      <div class="stopwatch__circle"></div>
+    </div>
   </body>
 </html>
