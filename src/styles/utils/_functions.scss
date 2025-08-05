@@ -1,0 +1,6 @@
+@use 'sass:math';
+@use 'variables' as var;
+
+@function speed-up-duration($duration) {
+  @return math.div($duration, var.$speed-up-factor);
+}
