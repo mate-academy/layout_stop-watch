@@ -1,19 +1,13 @@
 @use '../utils/mixins' as mix;
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
 
 .stopwatch {
-  $second-animation-duration: 60s;
-  $minute-animation-duration: 3600s;
-
   border: 1vmin dotted #000;
   position: relative;
 
   @include mix.flex-center;
   @include mix.stopwatch-styles(80vmin, 80vmin, transparent);
-
-  &--speed-up {
-    $second-animation-duration: 10s;
-    $minute-animation-duration: 600s;
-  }
 
   &::after {
     content: '';
@@ -31,13 +25,21 @@
   &__minute-hand {
     @include mix.stopwatch-styles(3vmin, 20vmin, #0700ff);
     @include mix.animate-stopwatch-hand(
-      $minute-animation-duration,
+      var.$minute-animation-duration,
       steps(60, end)
     );
+
+    .stopwatch--speed-up & {
+      animation-duration: fn.speed-up-duration(var.$minute-animation-duration);
+    }
   }
 
   &__second-hand {
     @include mix.stopwatch-styles(1.5vmin, 38vmin, #2c8000);
-    @include mix.animate-stopwatch-hand($second-animation-duration, linear);
+    @include mix.animate-stopwatch-hand(var.$second-animation-duration, linear);
+
+    .stopwatch--speed-up & {
+      animation-duration: fn.speed-up-duration(var.$second-animation-duration);
+    }
   }
 }
