@@ -18,14 +18,10 @@ body {
   width: 100vw;
 
   &__body {
-    position: relative;
     height: 80vmin;
     width: 80vmin;
     border-radius: 50%;
-    border: 1px dotted #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border: 1vmin dotted #000;
   }
 
   &__minutes {
@@ -38,7 +34,7 @@ body {
     z-index: -1;
     transform-origin: 50% 100%;
     transform: translate(-50%, -100%) rotate(0deg);
-    animation: rotacao var(--minutes-speed) linear infinite;
+    animation: minutes var(--minutes-speed) steps(60, end) infinite;
   }
 
   &__center {
@@ -62,7 +58,7 @@ body {
     z-index: -2;
     transform-origin: 50% 100%;
     transform: translate(-50%, -100%) rotate(0deg);
-    animation: rotacao var(--seconds-speed) linear infinite;
+    animation: seconds var(--seconds-speed) linear infinite;
   }
 
   &--speed-up {
@@ -71,7 +67,19 @@ body {
   }
 }
 
-@keyframes rotacao {
+@keyframes seconds {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+@keyframes minutes {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
   to {
     transform: translate(-50%, -100%) rotate(360deg);
   }
