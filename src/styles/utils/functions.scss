@@ -1,0 +1,5 @@
+@use './variables.scss' as var;
+
+@function speed-up($duration) {
+  @return $duration / var.$speed-up-factor;
+}
