@@ -1,0 +1,69 @@
+.stopwatch {
+  width: $watch__size;
+  height: $watch__size;
+  border-radius: 50%;
+  background-color: $watch__bg-color;
+  border: 1vmin dotted $watch__border-color;
+
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__minutes {
+    position: absolute;
+    width: $watch__min-w;
+    height: $watch__min-h;
+    left: calc(50% - $watch__min-w / 2);
+    top: 50%;
+    background-color: $watch__min-color;
+    transform: rotate(-180deg);
+    transform-origin: top;
+    @include anim-roration(60 * 60s, steps(60, end));
+    // animation: 60 * 60s steps(60, end) 0s infinite forwards rotation;
+  }
+
+  &__seconds {
+    position: absolute;
+    width: $watch__sec-w;
+    height: $watch__sec-h;
+    left: calc(50% - $watch__sec-w / 2);
+    top: 50%;
+    background-color: $watch__sec-color;
+    transform: rotate(-180deg);
+    transform-origin: top;
+    @include anim-roration(60s, linear);
+
+    // animation: 60s linear 0s infinite forwards rotation;
+  }
+
+  &__center {
+    position: absolute;
+    width: $watch__center-size;
+    height: $watch__center-size;
+    left: calc(50% - $watch__center-size/2);
+    top: calc(50% - $watch__center-size/2);
+    background-color: $watch__center-color;
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes {
+      animation-duration: 600s;
+    }
+    .stopwatch__seconds {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
