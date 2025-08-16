@@ -36,7 +36,7 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
-- [ ] Keyframes implemented using from/to + transform with rotate property
-- [ ] Stopwatch is centered and has the correct arrows size
-- [ ] All `Typical Mistakes` from the `BEM` lesson theory are checked.
-- [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
+- [X] Keyframes implemented using from/to + transform with rotate property
+- [X] Stopwatch is centered and has the correct arrows size
+- [X] All `Typical Mistakes` from the `BEM` lesson theory are checked.
+- [X] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
