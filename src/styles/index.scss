@@ -20,6 +20,16 @@ body {
   border: $border-size dotted #000;
   border-radius: 50%;
 
+  &--speed-up {
+    &__minutes {
+      animation: rotate-minutes 600s steps(60) infinite;
+    }
+
+    &__seconds {
+      animation: rotate-seconds 10s linear infinite;
+    }
+  }
+
   &__minutes {
     @include hand(
       3vmin,
@@ -28,10 +38,6 @@ body {
       48%,
       rotate-minutes 3600s steps(60) infinite
     );
-
-    &--speed-up {
-      animation: rotate-minutes 100s steps(10) infinite;
-    }
   }
 
   &__seconds {
@@ -42,10 +48,6 @@ body {
       49%,
       rotate-seconds 60s linear infinite
     );
-
-    &--speed-up {
-      animation: rotate-seconds 10s linear infinite;
-    }
   }
 
   &__circle {
