@@ -17,10 +17,11 @@
     background-color: $blue-color;
 
     transform-origin: 50% 100%;
+    transform: translate(-50%, -100%) rotate(0deg);
 
     animation-name: movehand;
     animation-duration: 3600s;
-    animation-timing-function: steps(60, end);
+    animation-timing-function: steps(60);
     animation-iteration-count: infinite;
   }
 
@@ -34,6 +35,7 @@
     background-color: $green-color;
 
     transform-origin: 50% 100%;
+    transform: translate(-50%, -100%) rotate(0deg);
 
     animation-name: movehand;
     animation-duration: 60s;
@@ -51,24 +53,26 @@
 
     background-color: $yellow-color;
     border-radius: 50%;
-    cursor: pointer;
 
     transform: translate(-50%, -50%);
   }
 
   &--speed-up {
     .stopwatch__minutes-hand {
-      animation-name: movehand;
       animation-duration: 600s;
-      animation-timing-function: steps(60, end);
-      animation-iteration-count: infinite;
     }
 
     .stopwatch__seconds-hand {
-      animation-name: movehand;
       animation-duration: 10s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
     }
+  }
+}
+
+@keyframes movehand {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
   }
 }
