@@ -1,0 +1,74 @@
+.stopwatch {
+  position: relative;
+
+  height: 80vmin;
+  width: 80vmin;
+
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minutes-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    height: 20vmin;
+    width: 3vmin;
+    background-color: $blue-color;
+
+    transform-origin: 50% 100%;
+
+    animation-name: movehand;
+    animation-duration: 3600s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: $green-color;
+
+    transform-origin: 50% 100%;
+
+    animation-name: movehand;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    height: 5vmin;
+    width: 5vmin;
+
+    background-color: $yellow-color;
+    border-radius: 50%;
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &--speed-up {
+    .stopwatch__minutes-hand {
+      animation-name: movehand;
+      animation-duration: 600s;
+      animation-timing-function: steps(60, end);
+      animation-iteration-count: infinite;
+    }
+
+    .stopwatch__seconds-hand {
+      animation-name: movehand;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+}
