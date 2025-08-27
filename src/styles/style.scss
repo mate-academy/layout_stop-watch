@@ -7,6 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 $color-border: #000;
@@ -14,7 +15,16 @@ $color-minutes: #0700ff;
 $color-seconds: #2c8000;
 $color-center: #f6a603;
 
-@keyframes rotate {
+@keyframes rotate-scekonds {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-minutes {
   from {
     transform: translate(-50%, -100%) rotate(0deg);
   }
@@ -25,11 +35,13 @@ $color-center: #f6a603;
 
 .stopwatch {
   border: 1vmin dotted $color-border;
-  background-size: 3vmin 3vmin;
+  background-size: 3vmin;
   border-radius: 50%;
   width: 80vmin;
   height: 80vmin;
   position: relative;
+
+  // outline: 1px solid red;
 
   &__center {
     width: 5vmin;
@@ -46,7 +58,9 @@ $color-center: #f6a603;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform-origin: (50% 100%);
+
+    // transform-origin: (50% 100%);
+
     transform: translate(-50%, -100%);
   }
 
@@ -55,7 +69,7 @@ $color-center: #f6a603;
     width: 3vmin;
     background-color: $color-minutes;
 
-    animation: rotate 3600s steps(60) infinite;
+    animation: rotate-minutes 3600s steps(60) infinite;
     transform-origin: bottom center;
   }
 
@@ -68,20 +82,21 @@ $color-center: #f6a603;
     left: 50%;
 
     // transform-origin: (50% 100%);
+
     transform: translate(-50%, -100%);
 
-    animation: rotate 60s linear infinite;
+    animation: rotate-scekonds 60s linear infinite;
     transform-origin: bottom center;
   }
 
-  &--speed-up {
-    &__hand--seconds {
-      animation-duration: 10s;
-    }
-    &__hand--minutes {
-      animation-duration: 600s; // 10 хвилин = 600 секунд
-    }
-  }
+  // &--speed-up {
+  //   &__hand--seconds {
+  //     animation-duration: 10s;
+  //   }
+  //   &__hand--minutes {
+  //     animation-duration: 600s; // 10 хвилин = 600 секунд
+  //   }
+  // }
 }
 
 // .stopwatch--speed-up {
@@ -92,3 +107,11 @@ $color-center: #f6a603;
 //     animation-duration: 600s; // 10 хвилин = 600 секунд
 //   }
 // }
+
+.stopwatch--speed-up .stopwatch__hand--seconds {
+  animation-duration: 10s;
+}
+
+.stopwatch--speed-up .stopwatch__hand--minutes {
+  animation-duration: 600s;
+}
