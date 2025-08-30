@@ -1,0 +1,61 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as m;
+
+.stopwatch {
+  position: relative;
+  width: $watch-width;
+  height: $watch-height;
+  border: $border-size dotted $color-border;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50% 100%;
+    transform: translate(-50%, -100%) rotate(0deg);
+    animation-name: rotate360;
+    animation-iteration-count: infinite;
+  }
+
+  &__hand--seconds {
+    width: $seconds-hand-width;
+    height: $seconds-hand-length;
+    background: $color-seconds;
+    z-index: 2;
+    animation-duration: $seconds-period;
+    animation-timing-function: $seconds-timing;
+  }
+
+  &__hand--minutes {
+    width: $minutes-hand-width;
+    height: $minutes-hand-length;
+    background: $color-minutes;
+    z-index: 1;
+    animation-name: rotate-steps;
+    animation-duration: $minutes-period;
+    animation-timing-function: steps($minutes-steps, end);
+  }
+
+  &__center {
+    @include m.circle($center-size, $color-center);
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  &--speed-up {
+    .stopwatch__hand--seconds {
+      animation-duration: $seconds-period-speed;
+      animation-timing-function: $seconds-timing;
+    }
+
+    .stopwatch__hand--minutes {
+      animation-duration: $minutes-period-speed;
+      animation-timing-function: steps($minutes-steps);
+    }
+  }
+}
