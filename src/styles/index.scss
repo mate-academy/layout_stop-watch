@@ -1,3 +1,88 @@
+html,
 body {
+  height: 100%;
   margin: 0;
+}
+
+body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+/* Variable */
+$border-color: #000;
+$seconds-color: #2c8000;
+$minutes-color: #0700ff;
+$pivot-color: #f6a603;
+$border-size: 1vmin;
+$size: 80vmin;
+$minutes-width: 3vmin;
+$minutes-length: 20vmin;
+$seconds-width: 1.5vmin;
+$seconds-length: 38vmin;
+$pivot-diameter: 5vmin;
+
+// Base duration (default: 60s for seconds, 60min for minutes
+:root {
+  --seconds-duration: 60s;
+  --minutes-duration: 3600s;
+}
+
+// Stopwatch block
+.stopwatch {
+  width: $size;
+  height: $size;
+  border: $border-size dotted $border-color;
+  border-radius: 50%;
+  position: relative;
+
+  // BEM modifier: speed-up
+  &--speed-up {
+    --seconds-duration: 10s;
+    --minutes-duration: 600s;
+  }
+
+  &__hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50% 100%;
+    transform: translate(-50%, -100%) rotate(0deg);
+
+    &--minutes {
+      width: $minutes-width;
+      height: $minutes-length;
+      background: $minutes-color;
+      animation: rotate360 var(--minutes-duration) steps(60) infinite;
+      z-index: 2;
+    }
+
+    &--seconds {
+      width: $seconds-width;
+      height: $seconds-length;
+      background: $seconds-color;
+      animation: rotate360 var(--seconds-duration) linear infinite;
+      z-index: 3;
+    }
+  }
+
+  &__pivot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: $pivot-diameter;
+    height: $pivot-diameter;
+    transform: translate(-50%, -50%);
+    background: $pivot-color;
+    border-radius: 50%;
+    z-index: 4;
+  }
+}
+
+@keyframes rotate360 {
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
 }
