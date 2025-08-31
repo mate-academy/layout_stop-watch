@@ -16,6 +16,9 @@ body {
   border: 1vmin dotted #000;
   position: relative;
 
+  --second-cycle: 60s;
+
+
   &__minutes {
     position: absolute;
     width: 3vmin;
@@ -23,7 +26,7 @@ body {
     background-color: #0700ff;
     top: 50%;
     transform-origin: center top;
-    animation: clock-rotate calc(var(--minute-duration) * 60) steps(60) infinite;
+    animation: clock-rotate calc(var(--second-cycle) * 60) steps(60) infinite;
     rotate: 180deg;
   }
 
@@ -35,7 +38,7 @@ body {
     top: 50%;
     transform-origin: center top;
     rotate: 180deg;
-    animation: clock-rotate var(--minute-duration) linear infinite;
+    animation: clock-rotate var(--second-cycle) linear infinite;
   }
 
   &__center {
@@ -51,7 +54,7 @@ body {
   }
 
   &--speed-up {
-    --minute-duration: 10s;
+    --second-cycle: 10s;
   }
 }
 
