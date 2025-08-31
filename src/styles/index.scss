@@ -1,3 +1,5 @@
+$time: 10s;
+
 body {
   display: flex;
   justify-content: center;
@@ -30,16 +32,9 @@ body {
     height: 20vmin;
     width: 3vmin;
     background-color: #0700ff;
-    animation-name: minute;
-    animation-duration: 3600000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: arrow-rotate #{$time * 60} steps(60) infinite;
     bottom: 50%;
     transform-origin: bottom;
-
-    &--speed-up {
-      animation-duration: 600000ms;
-    }
   }
 
   &__arrow-sec {
@@ -47,30 +42,13 @@ body {
     height: 38vmin;
     width: 1.5vmin;
     background-color: #2c8000;
-    animation-name: second;
-    animation-duration: 60000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: arrow-rotate $time linear infinite;
     bottom: 50%;
     transform-origin: bottom;
-
-    &--speed-up {
-      animation-duration: 10000ms;
-    }
   }
 }
 
-@keyframes second {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes minute {
+@keyframes arrow-rotate {
   from {
     transform: rotate(0deg);
   }
