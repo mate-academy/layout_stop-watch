@@ -18,17 +18,7 @@
   border-radius: 50%;
   border: 1vmin dotted #000;
 
-  &::after {
-    content: '';
-    display: block;
-    width: 5vmin;
-    height: 5vmin;
-    border-radius: 50%;
-    background-color: #f6a603;
-    position: absolute;
-  }
-
-  &__second-hand {
+  &__seconds {
     height: 38vmin;
     width: 1.5vmin;
     background-color: #2c8000;
@@ -42,7 +32,7 @@
     animation: rotate-animation 60s linear infinite;
   }
 
-  &__minute-hand {
+  &__minutes {
     height: 20vmin;
     width: 3vmin;
     background-color: #0700ff;
@@ -55,6 +45,15 @@
 
     animation: rotate-animation 360s steps(60, end) infinite;
   }
+
+    &__center {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+    position: absolute;
+  }
+
   &--speed-up {
     .stopwatch__second-hand {
       animation-duration: 10s;
