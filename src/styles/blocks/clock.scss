@@ -2,23 +2,18 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden; /* remove qualquer rolagem */
-}
-
-.stopwatch {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  position: relative;
+}
 
-  &__clock {
-    border: 1vmin dotted $border-color;
-    width: $clock-size;
-    height: $clock-size;
-    border-radius: 50%;
-    display: flex;
-    position: relative;
-  }
+.stopwatch {
+  position: relative;
+  border: 1vmin dotted $border-color;
+  width: $clock-size;
+  height: $clock-size;
+  border-radius: 50%;
 
   &__circle {
     height: 5vmin;
