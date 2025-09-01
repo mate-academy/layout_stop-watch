@@ -1,9 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* remove qualquer rolagem */
+}
+
 .stopwatch {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow: hidden;
   position: relative;
 
   &__clock {
@@ -15,14 +20,16 @@
     position: relative;
   }
 
-  &__cicle {
+  &__circle {
     height: 5vmin;
     width: 5vmin;
     border-radius: 50%;
-    z-index: 1;
     position: absolute;
     background-color: $color-circle;
-    transform-origin: center center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
   }
 
   &__pointer-minute {
@@ -30,33 +37,52 @@
     width: 3vmin;
     background-color: $color-minute-pointer;
     position: absolute;
-    animation-name: steps;
-    animation-duration: 3600s;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(60);
-    transform-origin: top;
-    z-index: 0;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%);
   }
 
   &__pointer-seconds {
     height: 38vmin;
     width: 1.5vmin;
-    position: absolute;
     background-color: $color-second-pointer;
+    position: absolute;
+    bottom: 50%; // conecta ao centro da órbita
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%); // centraliza horizontalmente
+  }
+
+  &__orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+  }
+
+  &__orbit--seconds {
     animation-name: roll;
     animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    transform-origin: top;
+    z-index: 0;
+  }
+
+  &__orbit--minute {
+    animation-name: steps;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
     z-index: 0;
   }
 }
 
-.stopwatch--speed-up .stopwatch__pointer-seconds {
+.stopwatch--speed-up .stopwatch__orbit--seconds {
   animation-duration: 10s;
 }
 
-.stopwatch--speed-up .stopwatch__pointer-minute {
+.stopwatch--speed-up .stopwatch__orbit--minute {
   animation-duration: 600s;
 }
 
@@ -75,5 +101,14 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes counter-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }
