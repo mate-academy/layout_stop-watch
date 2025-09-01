@@ -13,8 +13,8 @@
   --time: 60s;
 
   &__minutes-hand {
-    width: $minutes-hand-length;
-    height: $minutes-hand-width;
+    width: $minutes-hand-width;
+    height: $minutes-hand-length;
     background-color: $minutes-hand-bg;
     position: absolute;
     top: 50%;
@@ -24,8 +24,8 @@
   }
 
   &__seconds-hand {
-    width: $seconds-hand-length;
-    height: $seconds-hand-width;
+    width: $seconds-hand-width;
+    height: $seconds-hand-length;
     background-color: $seconds-hand-bg;
     position: absolute;
     top: 50%;
@@ -34,13 +34,13 @@
     animation: hand-rotate var(--time) linear infinite;
   }
   &__center-dot {
-    width: $stopwatch-center-dot-diametr;
-    height: $stopwatch-center-dot-diametr;
+    width: $stopwatch-center-dot-diameter;
+    height: $stopwatch-center-dot-diameter;
     background-color: $stopwatch-center-dot-bg;
     border-radius: 50%;
     position: absolute;
-    top: calc(50% - (#{$stopwatch-center-dot-diametr} / 2));
-    left: calc(50% - (#{$stopwatch-center-dot-diametr} / 2));
+    top: calc(50% - (#{$stopwatch-center-dot-diameter} / 2));
+    left: calc(50% - (#{$stopwatch-center-dot-diameter} / 2));
   }
 }
 
