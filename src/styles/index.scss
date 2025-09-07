@@ -8,6 +8,7 @@ body {
   align-items: center;
 }
 
+
 $with-height: 80vmin;
 $border-radius: 50%;
 $border: 1vmin dotted black;
@@ -19,31 +20,38 @@ $border: 1vmin dotted black;
   border-radius: $border-radius;
   border: $border;
   position: relative;
-
 }
+
 
 $width: 3vmin;
 $height: 20vmin;
+
 
 .stopwatch__minutes {
   width: $width;
   height: $height;
   background-color: blue;
   position: absolute;
-  bottom: 50%;
+  top: 50%;
   left: 50%;
-  transform: rotate(50deg) translate(-50%, 0);
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%) rotate(0deg);
+  animation: minutes 60s infinite;
 }
+
 
 .stopwatch__seconds {
   width: 1.5vmin;
   height: 38vmin;
   background-color: green;
   position: absolute;
-  bottom: 50%;
+  top: 50%;
   left: 50%;
-
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%) rotate(0deg);
+  animation: minutes 20s infinite;
 }
+
 
 .stopwatch__center {
   border-radius: $border-radius;
@@ -56,8 +64,27 @@ $height: 20vmin;
   transform: translate(-50%, -50%);
 }
 
+
 .stopwatch__minutes,
 .stopwatch__seconds {
   transform-origin: bottom center;
   transform: rotate(0deg);
+}
+
+@keyframes seconds {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes minutes {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
 }
