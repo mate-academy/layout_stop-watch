@@ -34,9 +34,7 @@ $height: 20vmin;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-origin: bottom center;
-  transform: translate(-50%, -100%) rotate(0deg);
-  animation: minutes 60s infinite;
+  animation: minutes 10s infinite;
 }
 
 
@@ -47,9 +45,7 @@ $height: 20vmin;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-origin: bottom center;
-  transform: translate(-50%, -100%) rotate(0deg);
-  animation: minutes 20s infinite;
+  animation: minutes 10s linear infinite;
 }
 
 
@@ -73,10 +69,10 @@ $height: 20vmin;
 
 @keyframes seconds {
   from {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -100%) rotate(0deg);
   }
   to {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -100%) rotate(360deg);
   }
 }
 
