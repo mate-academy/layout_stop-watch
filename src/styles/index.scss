@@ -22,7 +22,7 @@ $border: 1vmin dotted black;
   justify-content: center;
 }
 
-.stopwatch__seconds {
+&__seconds {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -31,20 +31,20 @@ $border: 1vmin dotted black;
   background-color: #2c8000;
   transform-origin: top center;
   transform: translate(-50%, -100%) rotate(0deg);
-  animation-name: seconds;
+  animation-name: rotate;
   animation-duration: 60s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
-.stopwatch--speed-up .stopwatch__seconds {
+.stopwatch--speed-up &__seconds {
   animation-duration: 10s;
 }
 
 $width: 3vmin;
 $height: 20vmin;
 
-.stopwatch__minutes {
+&__minutes {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -53,17 +53,17 @@ $height: 20vmin;
   background-color: #0700ff;
   transform-origin: bottom center;
   transform: translate(-50%, -100%) rotate(0deg);
-  animation-name: minutes;
+  animation-name: rotate;
   animation-duration: 3600s;
   animation-timing-function: steps(60, end);
   animation-iteration-count: infinite;
 }
 
-.stopwatch--speed-up .stopwatch__minutes {
+.stopwatch--speed-up &__minutes {
   animation-duration: 600s;
 }
 
-.stopwatch__center {
+&__center {
   height: 5vmin;
   width: 5vmin;
   background-color: #f6a603;
@@ -71,7 +71,7 @@ $height: 20vmin;
   z-index: 1;
 }
 
-@keyframes seconds {
+@keyframes rotate {
   from {
     transform: translate(-50%) rotate(0deg);
   }
@@ -80,11 +80,3 @@ $height: 20vmin;
   }
 }
 
-@keyframes minutes {
-  from {
-    transform: translate(-50%, -100%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -100%) rotate(360deg);
-  }
-}
