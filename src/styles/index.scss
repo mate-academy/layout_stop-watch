@@ -20,7 +20,7 @@ $border: 1vmin dotted black;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+
 
 &__seconds {
   position: absolute;
@@ -37,13 +37,6 @@ $border: 1vmin dotted black;
   animation-iteration-count: infinite;
 }
 
-.stopwatch--speed-up &__seconds {
-  animation-duration: 10s;
-}
-
-$width: 3vmin;
-$height: 20vmin;
-
 &__minutes {
   position: absolute;
   top: 50%;
@@ -59,16 +52,22 @@ $height: 20vmin;
   animation-iteration-count: infinite;
 }
 
-.stopwatch--speed-up &__minutes {
-  animation-duration: 600s;
-}
-
 &__center {
   height: 5vmin;
   width: 5vmin;
   background-color: #f6a603;
   border-radius: 50%;
   z-index: 1;
+}
+
+}
+
+.stopwatch--speed-up &__seconds {
+  animation-duration: 10s;
+}
+
+.stopwatch--speed-up &__minutes {
+  animation-duration: 600s;
 }
 
 @keyframes rotate {
