@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +33,7 @@ $height: 20vmin;
   position: absolute;
   top: 50%;
   left: 50%;
-  animation: minutes 10s infinite;
+  animation: minutes 3600s steps(60, end) infinite;
 }
 
 
@@ -69,18 +68,19 @@ $height: 20vmin;
 
 @keyframes seconds {
   from {
-    transform: translate(-50%, -100%) rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: translate(-50%, -100%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes minutes {
   from {
-    transform: translate(-50%, -100%) rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: translate(-50%, -100%) rotate(360deg);
+    transform:rotate(360deg);
   }
 }
+
