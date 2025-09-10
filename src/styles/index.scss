@@ -4,6 +4,7 @@ body {
 
 .stopwatch-container {
   display: flex;
+  flex-direction: column; // заголовок + секундомір в колонку
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -28,6 +29,7 @@ body {
   &__hand {
     position: absolute;
     transform-origin: 50% 100%;
+    transform: rotate(0deg); // ✅ початкове положення на 12 годині
 
     &--minutes {
       width: 3vmin;
@@ -44,7 +46,7 @@ body {
       height: 38vmin;
       background-color: #2c8000;
       top: calc(50% - 38vmin);
-      left: calc(50% - 1.5vmin / 2);
+      left: calc(50% - (1.5vmin / 2)); // 👈 краще з дужками
 
       animation: rotate-hand 60s linear infinite;
     }
