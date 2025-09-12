@@ -1,15 +1,4 @@
-# Stopwatch task
 
-Create a working stopwatch with minute and second hands using **only CSS animations**.
-- Use the reference image below to create a stopwatch:
-  - place it in the center of the page (vertically and horizontally)
-  - stopwatch must have a size of `80vmin` x `80vmin`
-  - it should have a `1vmin` dotted round border with `#000` color
-  - minutes hand should have a length of `20vmin` and `3vmin` width with blue (`#0700ff`) color
-  - seconds hand should have a length of `38vmin` and `1.5vmin` width with green (`#2c8000`) color
-  - the center of the stopwatch should be a circle with a diameter of `5vmin` and orange (`#f6a603`) color
-- The starting position of the hands should be at the top.
-- The stopwatch should be animated infinitely.
 - For seconds hand use animation with even speed, without acceleration and deceleration. It should take the `60s` for the seconds hand to make a full circle.
 - For minutes hand use steps animation with 60 steps. It should take the `60min` for the minutes hand to make a full circle.
 
