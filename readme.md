@@ -21,7 +21,7 @@ In addition to the basic functionality create a BEM modifier called `speed-up` f
 ❗️ Add the modifier to the stopwatch for tests.
 ❗️ Mentors will remove it via Dev Tools and check if Basic functionality works as expected.
 
-> Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
+[Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
 
 *Important note*: In this task, you are allowed to link `*.scss` files directly in HTML `<link>` tags using `href` attribute.
 This is possible because [we use the Parcel library](https://en.parceljs.org/scss.html) to bundle your solution's source code.
