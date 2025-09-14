@@ -8,6 +8,11 @@
   justify-content: center;
   align-items: center;
 
+  &__hand-inner {
+    transform-origin: 50% 100%;
+    display: block;
+  }
+
   &__hand {
     position: absolute;
     bottom: 50%;
@@ -35,10 +40,6 @@
         background-color: #2c8000;
         animation: rotate 60s linear infinite;
       }
-    }
-    &__hand-inner {
-      transform-origin: 50% 100%;
-      display: block;
     }
   }
 
