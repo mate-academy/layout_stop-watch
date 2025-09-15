@@ -6,7 +6,7 @@
   position: relative;
 
   &__circle {
-    @extend %posotion-abs-center;
+    @extend %position-abs-center;
 
     transform: translate(-50%, 50%);
 
@@ -17,9 +17,9 @@
   }
 
   &__hand {
-    @extend %posotion-abs-center;
+    @extend %position-abs-center;
 
-    transform: translate(-50%);
+    transform: translate(-50%, 0);
 
     &--minutes {
       @include animation(3600s, steps(60, end));
