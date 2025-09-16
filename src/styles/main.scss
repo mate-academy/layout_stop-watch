@@ -6,10 +6,10 @@
   position: relative;
 
   &__circle {
-    @extend %position-abs-center;
-
-    transform: translate(-50%, 50%);
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     height: 5vmin;
     width: 5vmin;
     border-radius: 50%;
@@ -17,34 +17,35 @@
   }
 
   &__hand {
-    @extend %position-abs-center;
-
-    transform: translate(-50%, 0);
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    margin: auto;
+    position: absolute;
 
     &--minutes {
-      @include animation(3600s, steps(60, end));
-
       height: 20vmin;
       width: 3vmin;
       background-color: $minutes-hand-color;
+
+      @include animation(3600s, steps(60, end));
     }
 
     &--seconds {
-      @include animation(60s, linear);
-
       height: 38vmin;
       width: 1.5vmin;
       background-color: $seconds-hand-color;
+
+      @include animation(60s, linear);
     }
   }
 
   &--speed-up {
     .stopwatch__hand--minutes {
-      animation-duration: $speed-minutes;
+      animation-duration: #{$speed-minutes};
     }
-
     .stopwatch__hand--seconds {
-      animation-duration: $speed-second;
+      animation-duration: #{$speed-seconds};
     }
   }
 }
