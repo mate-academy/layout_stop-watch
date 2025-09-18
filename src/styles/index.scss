@@ -1,3 +1,87 @@
+@mixin position($left, $bottom) {
+  position: absolute;
+  left: $left;
+  bottom: $bottom;
+}
+
+$pivot-point: bottom;
+$rounding: 50%;
+
 body {
   margin: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  --time: 60;
+
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: $rounding;
+  border: 1vmin dotted #000;
+  transform-origin: $pivot-point;
+
+  &--speed-up {
+    --time: 10;
+  }
+
+  &__minutes-hand {
+    @include position(38.5vmin, 40vmin);
+
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    z-index: 1;
+    transform-origin: $pivot-point;
+    animation: minutes calc(var(--time) * 60s) steps(60) infinite;
+    transform: rotate(0);
+  }
+
+  @keyframes minutes {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__seconds-hand {
+    @include position(39.25vmin, 40vmin);
+
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    transform-origin: $pivot-point;
+    z-index: 2;
+    animation: seconds calc(var(--time) * 1s) linear infinite;
+    transform: rotate(0);
+  }
+
+  @keyframes seconds {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__center {
+    @include position(40vmin, 40vmin);
+
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: $rounding;
+    background-color: #f6a603;
+    transform: translate(-50%, 50%);
+    z-index: 3;
+  }
 }
