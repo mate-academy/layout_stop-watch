@@ -34,7 +34,7 @@ body {
     width: 3vmin;
     height: 20vmin;
     animation-name: minute;
-    animation-duration: 600s;
+    animation-duration: 3600s;
     animation-timing-function: steps(60, end);
     animation-iteration-count: infinite;
     transform-origin: center bottom;
@@ -44,29 +44,36 @@ body {
     width: 1.5vmin;
     height: 38vmin;
     animation-name: second;
-    animation-duration: 10s;
+    animation-duration: 60s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     transform-origin: center bottom;
   }
 }
 
-@keyframes second {
-  0% {
-    transform: rotate(0);
+.stopwatch--speed-up {
+  .stopwatch__minute {
+    animation-duration: 600s;
   }
+  .stopwatch__second {
+    animation-duration: 10s;
+  }
+}
 
-  100% {
+@keyframes second {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
     transform: rotate(360deg);
   }
 }
 
 @keyframes minute {
-  0% {
-    transform: rotate(0);
+  from {
+    transform: rotate(0deg);
   }
-
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
