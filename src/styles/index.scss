@@ -24,14 +24,12 @@ body {
     background-color: #f6a603;
     top: calc(50% - 2.5vmin);
     position: absolute;
-    transform: translate(-50%, -50%);
     z-index: 3;
     left: 50%;
     transform: translate(-50%, 0);
   }
 
   &__minutes {
-    background-color: #0700ff;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -43,7 +41,7 @@ body {
       display: block;
       width: 3vmin;
       height: 20vmin;
-      background-color: inherit;
+      background-color: #0700ff;
       transform-origin: bottom;
       animation: rotate-hand 3600s steps(60, end) infinite;
     }
@@ -69,7 +67,7 @@ body {
 
   &--speed-up {
     & .stopwatch__minutes {
-      animation-duration: 10min;
+      animation-duration: 600s;
     }
     & .stopwatch__seconds {
       animation-duration: 10s;
