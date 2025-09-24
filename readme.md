@@ -39,4 +39,4 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 - [ ] Keyframes implemented using from/to + transform with rotate property
 - [ ] Stopwatch is centered and has the correct arrows size
 - [ ] All `Typical Mistakes` from the `BEM` lesson theory are checked.
-- [ ] Code follows all the [Code Style Rules ❗️](https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
+- [ ] Code follows all the (https://mate-academy.github.io/layout_task-guideline/html-css-code-style-rules)
