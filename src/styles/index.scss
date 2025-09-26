@@ -9,8 +9,12 @@ body {
 }
 
 @keyframes rotate {
-  from {transform: translate(-50%, -100%)rotate(0deg);}
-  to {transform: translate(-50%, -100%)rotate(360deg);}
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
 }
 
 .stopwatch {
@@ -44,16 +48,14 @@ body {
     animation: rotate 60s linear infinite;
   }
 
-  &__center{
+  &__center {
     height: 5vmin;
     width: 5vmin;
-    border: 5vmin solid #f6a603;
+    background-color: #f6a603;
     border-radius: 50%;
-    box-sizing: border-box;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50% );
+    transform: translate(-50%, -50%);
   }
 }
-
