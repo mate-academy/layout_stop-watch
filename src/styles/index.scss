@@ -2,7 +2,8 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
+  padding: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +33,6 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -100%);
     transform-origin: bottom center;
   }
 
@@ -51,14 +51,14 @@ body {
     z-index: 1;
     animation: hand-move $hand-minute-time steps(60, end) infinite;
   }
-}
 
-.stopwatch--speed-up {
-  .stopwatch__hand-second {
-    animation-duration: 10s;
-  }
-  .stopwatch__hand-minute {
-    animation-duration: 600s;
+  &--speed-up {
+    .stopwatch__hand-second {
+      animation-duration: 10s;
+    }
+    .stopwatch__hand-minute {
+      animation-duration: 600s;
+    }
   }
 }
 
