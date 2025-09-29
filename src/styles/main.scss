@@ -3,7 +3,6 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
-  height: 100vh;
 }
 
 .stopwatch {
@@ -22,22 +21,22 @@ body {
   height: 20vmin;
   width: 3vmin;
   background-color: #0700ff;
-  transform: translate(0, -50%);
+  transform: translateX(-50%);
+  left: 50%;
   bottom: 50%;
-  transform-origin: bottom;
+  transform-origin: 50% 100%;
   animation-name: minutes;
   animation-iteration-count: infinite;
   animation-duration: 3600s;
-  animation-timing-function: steps(60, end);
+  animation-timing-function: steps(60);
   animation-direction: normal;
 }
 
 @keyframes minutes {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
@@ -58,11 +57,10 @@ body {
 }
 
 @keyframes second {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
@@ -73,15 +71,15 @@ body {
   width: 5vmin;
   border-radius: 50%;
   background-color: #f6a603;
-  transform: translate(-100%, -50%);
+  transform: translate(-50%, -50%);
   top: 50%;
-  left: 53%;
+  left: 50%;
 }
 
-.seconds-speed-up {
+.stopwatch.stopwatch--speed-up .stopwatch__seconds {
   animation-duration: 10s;
 }
 
-.minutes-speed-up {
+.stopwatch.stopwatch--speed-up .stopwatch__minutes {
   animation-duration: 600s;
 }
