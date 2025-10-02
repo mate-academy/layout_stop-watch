@@ -1,8 +1,8 @@
 body {
+  display: flex;
   margin: 0;
   height: 100vh;
   box-sizing: border-box;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -29,10 +29,7 @@ body {
     left: 50%;
     z-index: 1;
     animation: rotate360 3600s steps(60) infinite;
-    translate: (-50%, 0);
-    &--speed-up {
-      animation-duration: 3600s steps(60);
-    }
+    translate: (-50%, -100%);
   }
 
   &__seconds {
@@ -45,10 +42,8 @@ body {
     left: 50%;
     z-index: 2;
     animation: rotate360 60s linear infinite;
-    translate: (-50%, 0);
-    &--speed-up {
-      animation-duration: 10s;
-    }
+    translate: (-50%, -100%);
+
   }
   &__center {
     height: 5vmin;
@@ -60,6 +55,10 @@ body {
     left: 50%;
     transform: translate(-50%, 50%);
     z-index: 3;
+  }
+
+  &--speed-up {
+    animation-duration: 10s;
   }
 }
 
