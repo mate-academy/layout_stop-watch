@@ -27,9 +27,10 @@ body {
     transform-origin: 50% 100%;
     bottom: 50%;
     left: 50%;
+    align-self: center;
     z-index: 1;
     animation: rotate360 3600s steps(60) infinite;
-    translate: (-50%, -100%);
+    translate: (-50%, 0);
   }
 
   &__seconds {
@@ -42,7 +43,7 @@ body {
     left: 50%;
     z-index: 2;
     animation: rotate360 60s linear infinite;
-    translate: (-50%, -100%);
+    translate: (-50%, 0);
 
   }
   &__center {
@@ -53,13 +54,20 @@ body {
     position: absolute;
     bottom: 50%;
     left: 50%;
-    transform: translate(-50%, 50%);
+    align-self: center;
     z-index: 3;
+    transform: translate(-50%, 50%);
   }
 
   &--speed-up {
-    animation-duration: 10s;
+    .stopwatch__hand--minutes {
+      animation-duration: #{10min};
+    }
+    .stopwatch__hand--seconds {
+      animation-duration: #{10s};
+    }
   }
+
 }
 
 @keyframes rotate360 {
