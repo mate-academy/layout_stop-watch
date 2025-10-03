@@ -30,7 +30,7 @@ body {
     align-self: center;
     z-index: 1;
     animation: rotate360 3600s steps(60) infinite;
-    translate: (-50%, 0);
+    translate:(-50%, 0) rotate(0deg);
   }
 
   &__seconds {
@@ -43,7 +43,7 @@ body {
     left: 50%;
     z-index: 2;
     animation: rotate360 60s linear infinite;
-    translate: (-50%, 0);
+    translate:(-50%, 0) rotate(0deg);
 
   }
   &__center {
@@ -56,7 +56,6 @@ body {
     left: 50%;
     align-self: center;
     z-index: 3;
-    transform: translate(-50%, 50%);
   }
 
   &--speed-up {
@@ -73,9 +72,9 @@ body {
 
 @keyframes rotate360 {
   from {
-    rotate: (0deg);
+    transform: translate(-50%, 0) rotate(0deg);
   }
   to {
-    rotate: (360deg);
+    transform: translate(-50%, 0) rotate(360deg);
   }
 }
