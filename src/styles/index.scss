@@ -1,77 +1,82 @@
-/*  #region page */
-
-.page {
-  height: 100%;
+body {
   margin: 0;
+  padding: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
 }
 
-/*  #endregion */
- @keyframes spin {
-    from {
-      transform: translate(-50%, -100%) rotate(0deg);
-    }
-    to   {
-      transform: translate(-50%, -100%) rotate(360deg);
-    }
- }
-
-/* #region watch  */
+$with-height: 80vmin;
+$border-radius: 50%;
+$border: 1vmin dotted black;
 
 .stopwatch {
+  width: $with-height;
+  height: $with-height;
+  border-radius: $border-radius;
+  border: $border;
   position: relative;
-  width: 80vmin;
-  height: 80vmin;
-  border: 1vmin dotted #000 ;
+}
+
+$width: 3vmin;
+$height: 20vmin;
+
+.stopwatch__minutes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 20vmin;
+  width: 3vmin;
+  background-color: blue;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%) rotate(0deg);
+  animation-name: minutes;
+  animation-duration: 360s;
+  animation-timing-function: steps(60, end);
+  animation-iteration-count: infinite;
+}
+
+.stopwatch__seconds {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 38vmin;
+  width: 1.5vmin;
+  background-color: green;
+  transform-origin: top center;
+  transform: translate(-50%, -100%) rotate(0deg);
+  animation-name: seconds;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.stopwatch__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 5vmin;
+  width: 5vmin;
+  background-color: orange;
   border-radius: 50%;
-  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+}
 
-
-
-    &__center {
-      position: relative;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 5vmin;
-      height: 5vmin;
-      border-radius: 50%;
-      background-color: #f6a603;
-    }
-
-  &__hand {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-
-
-    &--seconds {
-      z-index: -1;
-      left: 75%;
-      transform-origin: left;
-      width: 38vmin;
-      height: 1.5vmin;
-      background-color: #2c8000;
-      animation: spin infinite 10s linear ;
-
-    }
-
-    &--minutes {
-      z-index: -1;
-      transform-origin: left;
-      width: 3vmin;
-      height: 20vmin;
-      background-color: #0700ff;
-      // animation: spin infinite 6s linear;
-
-    }
+@keyframes seconds {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
-
-
-
+@keyframes minutes {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
