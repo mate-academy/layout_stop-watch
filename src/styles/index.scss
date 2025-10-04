@@ -1,3 +1,73 @@
-body {
+/*  #region page */
+
+.page {
+  height: 100%;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
+
+/*  #endregion */
+ @keyframes spin {
+    from {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+    to   {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
+ }
+/* #region watch  */
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000 ;
+  border-radius: 50%;
+  box-sizing: border-box;
+
+
+
+    &__center {
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 5vmin;
+      height: 5vmin;
+      border-radius: 50%;
+      background-color: #f6a603;
+    }
+
+  &__hand {
+    
+      justify-content: center;
+      align-items: center;
+      transform-origin: 50% 100%;
+
+
+    &--seconds {
+      width: 38vmin;
+      height: 1.5vmin;
+      background-color: #2c8000;
+      animation: spin infinite 10s linear ;
+
+    }
+
+    &--minutes {
+      width: 3vmin;
+      height: 20vmin;
+      background-color: #0700ff;
+      animation: spin infinite 10min linear;
+
+    }
+  }
+
+
+}
+
+
+
+
