@@ -1,0 +1,29 @@
+@mixin hands-position($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform-origin: bottom center;
+}
+
+@mixin hands($width, $height, $background-color) {
+  width: $width;
+  height: $height;
+  background-color: $background-color;
+}
+
+@mixin hand-animation-linear($animation-name, $time) {
+  animation: $animation-name $time linear infinite 0s both;
+}
+
+@mixin hand-animation-step($animation-name, $time, $step) {
+  animation: $animation-name $time steps($step) infinite 0s both;
+}
+
+@mixin circle($size, $border-radius, $background) {
+  position: absolute;
+
+  width: $size;
+  height: $size;
+  border-radius: $border-radius;
+  background-color: $background;
+}
