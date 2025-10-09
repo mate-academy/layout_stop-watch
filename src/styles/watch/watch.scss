@@ -10,21 +10,8 @@
   align-items: center;
   justify-content: center;
 
-  &--speed-up {
-    .stopwatch__hand--second {
-      @include hand-animation-linear($animation-second, 10s);
-    }
-
-    .stopwatch__hand--minute {
-      @include hand-animation-step($animation-minute, 600s, 60);
-    }
-  }
-
   &__hand {
     @include hands-position($hand-position, $hand-position);
-
-    transform-origin: 50% 100%;
-    transform: rotate(0deg);
 
     &--second {
       @include hands(
@@ -33,10 +20,8 @@
         $hand-second-background-color
       );
 
-      @include hand-animation-linear($animation-second, $hand-second-time);
-
       z-index: 11;
-      transform: translate(-50%, -100%) rotate(-1deg);
+      animation: rotate $hand-second-time linear infinite;
     }
 
     &--minute {
@@ -46,14 +31,8 @@
         $hand-minute-background-color
       );
 
-      @include hand-animation-step(
-        $animation-minute,
-        $hand-minute-time,
-        $hand-minute-step
-      );
-
+      animation: rotate $hand-minute-time steps($hand-minute-step) infinite;
       z-index: 10;
-      transform: translate(-50%, -100%);
     }
   }
 
@@ -61,5 +40,15 @@
     @include circle($circle-size, $circle-border-radius, $circle-color);
 
     z-index: 12;
+  }
+
+  &--speed-up {
+    .stopwatch__hand--second {
+      animation: rotate 10s linear infinite;
+    }
+
+    .stopwatch__hand--minute {
+      animation: rotate 600s steps(60) infinite;
+    }
   }
 }

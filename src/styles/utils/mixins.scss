@@ -2,7 +2,7 @@
   position: absolute;
   top: $top;
   left: $left;
-  transform-origin: bottom center;
+  transform-origin: 50% 100%;
 }
 
 @mixin hands($width, $height, $background-color) {
@@ -12,18 +12,22 @@
 }
 
 @mixin hand-animation-linear($animation-name, $time) {
-  animation: $animation-name $time linear infinite 0s both;
+  animation: $animation-name $time linear infinite;
 }
 
 @mixin hand-animation-step($animation-name, $time, $step) {
-  animation: $animation-name $time steps($step) infinite 0s both;
+  animation: $animation-name $time steps($step) infinite;
 }
 
 @mixin circle($size, $border-radius, $background) {
   position: absolute;
+  top: 50%;
+  left: 50%;
 
   width: $size;
   height: $size;
   border-radius: $border-radius;
   background-color: $background;
+
+  transform: translate(-50%, -50%);
 }
