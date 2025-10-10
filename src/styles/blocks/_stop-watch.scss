@@ -1,0 +1,56 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+@use '../utils/animations';
+
+.stopwatch {
+  @include flex-center;
+
+  height: 100vh;
+
+  &__frame {
+    position: relative;
+    width: 80vmin;
+    height: 80vmin;
+    border: 1vmin dotted #000;
+    border-radius: $circle-radius;
+
+    // box-sizing: border-box;
+  }
+
+  &__minutes-hand {
+    @include absolute(top, 50%, left, 50%, -50%, -100%);
+
+    width: 3vmin;
+    height: 20vmin;
+    background-color: $blue;
+    transform-origin: 0% 0%;
+    animation: round 3600s steps(60, jump-end) infinite;
+  }
+
+  &__seconds-hand {
+    @include absolute(top, 50%, left, 50%, -50%, -100%);
+
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: $green;
+    transform-origin: 0% 0%;
+    animation: round 60s linear infinite;
+  }
+
+  &__center {
+    @include absolute(top, 50%, left, 50%, -50%, -50%);
+
+    width: 5vmin;
+    height: 5vmin;
+    background-color: $orange;
+    border-radius: $circle-radius;
+  }
+}
+
+.stopwatch--speed-up .stopwatch__seconds-hand {
+  animation: round 10s linear infinite;
+}
+
+.stopwatch--speed-up .stopwatch__minutes-hand {
+  animation: round 600s steps(60, jump-end) infinite;
+}
