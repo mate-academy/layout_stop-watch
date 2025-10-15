@@ -16,6 +16,15 @@ body {
   position: relative;
   width: 80vmin;
 
+  &--speed-up {
+    :nth-child(1) {
+      animation-duration: 600s;
+    }
+    :nth-child(2) {
+      animation-duration: 10s;
+    }
+  }
+
   &__minutes {
     animation: rotation-hands 3600s steps(60) infinite;
     background-color: #0700ff;
@@ -24,10 +33,6 @@ body {
     bottom: 50%;
     transform-origin: bottom center;
     width: 3vmin;
-
-    &--speed-up {
-      animation-duration: 600s;
-    }
   }
 
   &__seconds {
@@ -38,10 +43,6 @@ body {
     bottom: 50%;
     transform-origin: bottom center;
     width: 1.5vmin;
-
-    &--speed-up {
-      animation-duration: 10s;
-    }
   }
 
   &__center {
