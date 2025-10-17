@@ -51,7 +51,7 @@ body {
     width: 3vmin;
     background-color: #0700ff;
     bottom: 50%;
-    animation: rotates 3600s steps(60, end) infinite;
+    animation: rotates 3600s steps(60) infinite;
     transform-origin: bottom center;
   }
 
@@ -62,6 +62,10 @@ body {
     width: $point-size;
     border-radius: $border-radius;
     background-color: #f6a603;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
   }
 
   &--speed-up &__seconds-hand {
@@ -69,6 +73,6 @@ body {
   }
 
   &--speed-up &__minutes-hand {
-    animation: rotates 600s steps(60, end) infinite;
+    animation: rotates 600s steps(60) infinite;
   }
 }
