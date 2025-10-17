@@ -1,3 +1,80 @@
+$stopwatch-size: 80vmin;
+$center-point: 5vmin;
+$border-radius: 50%;
+$rotate-start-deg: rotate(0deg);
+$rotate-end-deg: rotate(360deg);
+$black: #000;
+$blue: #0700ff;
+$green: #2c8000;
+$orange: #f6a603;
+
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
+}
+
+@keyframes rotate {
+  from {
+    transform: $rotate-start-deg;
+  }
+  to {
+    transform: $rotate-end-deg;
+  }
+}
+
+.stopwatch {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: 1vmin dotted $black;
+  border-radius: $border-radius;
+
+  &__minutes {
+    position: absolute;
+    display: block;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: $blue;
+    bottom: 50%;
+
+    animation: rotate 3600s steps(60) infinite;
+    transform-origin: bottom center;
+  }
+
+  &__seconds {
+    position: absolute;
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: $green;
+    bottom: 50%;
+
+    animation: rotate 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__center-point {
+    position: absolute;
+    height: $center-point;
+    width: $center-point;
+    background-color: $orange;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &--speed-up &__minutes {
+    animation: rotate 600s steps(60) infinite;
+  }
+
+  &--speed-up &__seconds {
+    animation: rotate 10s linear infinite;
+  }
 }
