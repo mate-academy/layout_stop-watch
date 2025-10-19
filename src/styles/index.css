@@ -23,13 +23,12 @@ body {
 
 @keyframes rotate-second {
   from {
-    transform: translateX(-50%) rotate(-90deg);
+    transform: rotate(-90deg);
   }
   to {
-    transform: translateX(-50%) rotate(270deg);
+    transform: rotate(360deg);
   }
 }
-
 .stopwatch__hand--minute {
   height: 20vmin;
   width: 3vmin;
@@ -39,19 +38,19 @@ body {
 
 @keyframes rotate-min {
   from {
-    transform: translateX(-50%) rotate(-90deg);
+    transform: rotate(-90deg);
   }
   to {
-    transform: translateX(-50%) rotate(270deg);
+    transform: rotate(360deg);
   }
 }
-
 .stopwatch__hand {
   position: absolute;
   bottom: 50%;
   left: 50%;
   transform-origin: bottom center;
   z-index: 1;
+  transform: translateX(-50%);
 }
 
 .stopwatch__face {
@@ -73,3 +72,5 @@ body {
 .stopwatch--speed-up .stopwatch__hand--minute {
   animation-duration: 600s;
 }
+
+/*# sourceMappingURL=index.css.map */
