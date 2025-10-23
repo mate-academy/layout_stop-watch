@@ -18,7 +18,7 @@ body {
 
   &__seconds {
     position: absolute;
-    top: calc(5vmin / 2);
+    top: calc(50% - 38vmin);
     left: calc(50% - 1.5vmin / 2);
     height: 38vmin;
     width: 1.5vmin;
@@ -33,7 +33,7 @@ body {
 
   &__minutes {
     position: absolute;
-    top: calc(25%);
+    top: calc(50% - 20vmin);
     left: calc(50% - 3vmin / 2);
     height: 20vmin;
     width: 3vmin;
@@ -43,7 +43,7 @@ body {
 
     // transform: rotate(300deg);
     transform-origin: bottom;
-    animation: 3600s linear 0s infinite time;
+    animation: 3600s steps(60) 0s infinite time;
   }
 
   &__dot {
@@ -62,7 +62,7 @@ body {
     animation: 10s linear 0s infinite time;
   }
   &--speed-up &__minutes {
-    animation: 600s linear 0s infinite time;
+    animation: 600s steps(60) 0s infinite time;
   }
 }
 
