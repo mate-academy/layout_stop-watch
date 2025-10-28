@@ -9,7 +9,7 @@ body {
   height: 100vh;
 }
 
-.stopwatch_border {
+.stopwatch__border {
   position: absolute;
   width: 80vmin;
   height: 80vmin;
@@ -18,7 +18,7 @@ body {
   border-radius: 50%;
 }
 
-.stopwatch_center {
+.stopwatch__center {
   position: relative;
   width: 5vmin;
   height: 5vmin;
@@ -27,20 +27,20 @@ body {
   z-index: 3;
 }
 
-.stopwatch_hand {
+.stopwatch__hand {
   position: absolute;
   transform-origin: bottom center;
   bottom: 50%;
 }
 
-.stopwatch_hand--minute {
+.stopwatch__hand--minute {
   width: 3vmin;
   height: 20vmin;
   background-color: #0700ff;
-  animation: rotacao 3600s steps(60) infinite;
+  animation: rotacao 3600s steps(60, end) infinite;
 }
 
-.stopwatch_hand--second {
+.stopwatch__hand--second {
   width: 1.5vmin;
   height: 38vmin;
   background-color: #2c8000;
@@ -57,10 +57,10 @@ body {
   }
 }
 
-.stopwatch--speedup .stopwatch_hand--minute {
+.stopwatch--speedup .stopwatch__hand--minute {
   animation-duration: 600s;
 }
 
-.stopwatch--speedup .stopwatch_hand--second {
+.stopwatch--speedup .stopwatch__hand--second {
   animation-duration: 10s;
 }
