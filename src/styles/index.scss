@@ -61,12 +61,12 @@ body {
   }
 }
 
-.stopwatch__minutes--speed-up {
+.stopwatch--speed-up .stopwatch__minutes {
   animation: move 600s steps(60) infinite;
 }
 
-.stopwatch__seconds--speed-up {
-  animation: move 10s steps(60) infinite;
+.stopwatch--speed-up .stopwatch__seconds {
+  animation: move 10s linear infinite;
 }
 
 @keyframes move {
