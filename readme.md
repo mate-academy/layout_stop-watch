@@ -36,8 +36,7 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 ❗️ Replace `KAPKAN4IK` with your GitHub username and copy the links to the `Pull Request` description:
 
 - [DEMO LINK](https://KAPKAN4IK.github.io/layout_stop-watch/)
-
-❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
+  ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
 - [x] Keyframes implemented using from/to + transform with rotate property
 - [x] Stopwatch is centered and has the correct arrows size
