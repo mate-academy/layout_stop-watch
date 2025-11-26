@@ -26,7 +26,7 @@ $seconds-hand-color: #2c8000;
 $seconds-hand-anim-dur: 60s;
 $minutes-hand-anim-dur: $seconds-hand-anim-dur * 60;
 $seconds-hand-anim-dur-speed-up: 10s;
-$minutes-hand-anim-dur-speed-up: $seconds-hand-anim-dur * 60;
+$minutes-hand-anim-dur-speed-up: $seconds-hand-anim-dur-speed-up * 60;
 
 .stopwatch {
   width: $stopwatch-size;
@@ -75,14 +75,14 @@ $minutes-hand-anim-dur-speed-up: $seconds-hand-anim-dur * 60;
     top: 50%;
     transform: translate(-50%, -50%);
   }
-}
 
-.speed-up {
-  .stopwatch__seconds-hand {
-    animation-duration: $seconds-hand-anim-dur-speed-up;
-  }
+  &--speed-up {
+    .stopwatch__seconds-hand {
+      animation-duration: $seconds-hand-anim-dur-speed-up;
+    }
 
-  .stopwatch__minutes-hand {
-    animation-duration: $minutes-hand-anim-dur-speed-up;
+    .stopwatch__minutes-hand {
+      animation-duration: $minutes-hand-anim-dur-speed-up;
+    }
   }
 }
