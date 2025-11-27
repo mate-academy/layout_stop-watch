@@ -25,7 +25,7 @@ body {
     transform: translate(-50%, -100%);
     transform-origin: center bottom;
 
-    animation-name: move-sec;
+    animation-name: rotate-hand;
     animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -53,7 +53,7 @@ body {
     width: 3vmin;
     background-color: #0700ff;
 
-    animation-name: move-min;
+    animation-name: rotate-hand;
     animation-duration: 3600s;
     animation-iteration-count: infinite;
     animation-timing-function: steps(60);
@@ -70,17 +70,7 @@ body {
   }
 }
 
-@keyframes move-min {
-  from {
-    transform: translate(-50%, -100%) rotate(0deg);
-  }
-
-  to {
-    transform: translate(-50%, -100%) rotate(360deg);
-  }
-}
-
-@keyframes move-sec {
+@keyframes rotate-hand {
   from {
     transform: translate(-50%, -100%) rotate(0deg);
   }
