@@ -1,3 +1,76 @@
-body {
+@keyframes move-sec {
+  from {
+    transform: translateX(-0.75vmin) rotate(0deg);
+  }
+  to {
+    transform: translateX(-0.75vmin) rotate(360deg);
+  }
+}
+
+@keyframes move-min {
+  from {
+    transform: translateX(-1.5vmin) rotate(0deg);
+  }
+  to {
+    transform: translateX(-1.5vmin) rotate(360deg);
+  }
+}
+
+.page__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
+  min-height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minutes-hand {
+    position: absolute;
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-1.5vmin);
+    transform-origin: center bottom;
+    animation: move-min 3600s steps(60) infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-0.75vmin);
+    transform-origin: center bottom;
+    animation: move-sec 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    height: 5vmin;
+    width: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--speed-up &__minutes-hand {
+    animation: move-min 600s linear infinite;
+  }
+
+  &--speed-up &__second-hand {
+    animation: move-sec 10s linear infinite;
+  }
 }
