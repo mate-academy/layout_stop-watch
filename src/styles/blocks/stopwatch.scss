@@ -21,7 +21,6 @@
 
   &__minutes {
     position: absolute;
-    background-color: #0700ff;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%) rotate(0deg);
@@ -32,7 +31,7 @@
   &__minutes::before {
     content: '';
     position: absolute;
-    width: 2vmin;
+    width: 3vmin;
     height: 30vmin;
     background-color: #0700ff;
     left: 50%;
@@ -42,7 +41,6 @@
 
   &__seconds {
     position: absolute;
-    background-color: #2c8000;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%) rotate(0deg);
@@ -59,5 +57,14 @@
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
+  }
+
+  &--speed-up {
+    &--seconds {
+      animation-duration: 10s;
+    }
+    &__minutes {
+      animation-duration: 600s;
+    }
   }
 }
