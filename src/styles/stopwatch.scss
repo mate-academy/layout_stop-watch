@@ -1,0 +1,54 @@
+@use 'variable' as *;
+
+:root {
+  --minute-duration: #{$minute-duration};
+}
+
+.stopwatch--speed-up {
+  --minute-duration: #{$speed-up-duration};
+}
+
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border-radius: 50%;
+  position: relative;
+  border: $stopwatch-border;
+
+  &__minutes-hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50% 100%;
+
+    width: $minutes-hand-width;
+    height: $minutes-hand-height;
+    background-color: $minutes-hand-color;
+
+    animation: hand-rotate calc(var(--minute-duration) * 60) steps(60) infinite;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50% 100%;
+
+    width: $seconds-hand-width;
+    height: $seconds-hand-height;
+    background-color: $seconds-hand-color;
+    animation: hand-rotate var(--minute-duration) linear infinite;
+  }
+
+  &__center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: $center-circle-size;
+    height: $center-circle-size;
+    border-radius: 50%;
+    background-color: $center-circle-color;
+  }
+}
