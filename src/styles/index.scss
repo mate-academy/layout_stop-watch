@@ -43,7 +43,7 @@
     left: 50%;
     bottom: 50%;
     transform: translateX(-50%) rotate(0deg);
-    animation: rotation var(--main-duration) steps(60) infinite;
+    animation: rotation var(--min-duration) steps(60) infinite;
   }
 
   &__circle {
@@ -59,10 +59,10 @@
 
   @keyframes rotation {
     from {
-      transform: translateX(-50%) rotate(0deg);
+      transform: translateX(-50%, 0) rotate(0deg);
     }
     to {
-      transform: translateX(-50%) rotate(360deg);
+      transform: translateX(-50%, 0) rotate(360deg);
     }
   }
 }
