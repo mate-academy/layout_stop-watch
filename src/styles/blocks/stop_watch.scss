@@ -1,0 +1,55 @@
+@use '../utils/variables' as *;
+@use '../utils/mixin' as *;
+@use '../utils/keyframes' as *;
+
+.stopwatch {
+  @include circle($watch-size);
+
+  border: 1vmin dotted $border-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__center {
+    @include circle($center-size);
+
+    background-color: $center-color;
+    z-index: 2;
+  }
+
+  &__minutes-hand {
+    position: absolute;
+    top: calc(50% - $minutes-hand-len);
+    left: calc(50% - $minutes-hand-width / 2);
+    z-index: 0;
+    width: $minutes-hand-width;
+    height: $minutes-hand-len;
+    background-color: $minutes-hand-color;
+
+    transform-origin: 50% 100%;
+    animation: rotate-hand 3600s steps(60) infinite;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    top: calc(50% - $seconds-hand-len);
+    left: calc(50% - $seconds-hand-width / 2);
+    z-index: 1;
+    width: $seconds-hand-width;
+    height: $seconds-hand-len;
+    background-color: $seconds-hand-color;
+
+    transform-origin: 50% 100%;
+    animation: rotate-hand 60s linear infinite;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes-hand {
+      animation-duration: $minutes-speed-up;
+    }
+
+    .stopwatch__seconds-hand {
+      animation-duration: $seconds-speed-up;
+    }
+  }
+}
