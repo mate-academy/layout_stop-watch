@@ -23,7 +23,7 @@ body {
     bottom: 50%;
     transform: translateX(-50%) rotate(0deg);
     transform-origin: bottom center;
-    animation: minutes-rotate var(--min-duration) steps(60) infinite;
+    animation: rotation var(--min-duration) steps(60) infinite;
   }
   &__seconds-hand {
     height: 38vmin;
@@ -34,7 +34,7 @@ body {
     bottom: 50%;
     transform: translateX(-50%) rotate(0deg);
     transform-origin: bottom center;
-    animation: seconds-rotate var(--sec-duration) linear infinite;
+    animation: rotation var(--sec-duration) linear infinite;
   }
   &__center {
     width: 5vmin;
@@ -48,16 +48,7 @@ body {
   }
 }
 
-@keyframes seconds-rotate {
-  from {
-    transform: translateX(-50%) rotate(0deg);
-  }
-  to {
-    transform: translateX(-50%) rotate(360deg);
-  }
-}
-
-@keyframes minutes-rotate {
+@keyframes rotation {
   from {
     transform: translateX(-50%) rotate(0deg);
   }
