@@ -1,3 +1,68 @@
-body {
+@import './speed';
+
+.main {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__seconds {
+    position: absolute;
+    width: 1.5vmin;
+    height: 38vmin;
+    background: #2c8000;
+
+    left: 50%;
+    bottom: 50%;
+    transform-origin: center bottom;
+    transform: translate(-50%, 50%) rotate(0deg);
+
+    animation: rotation var(--sec-duration) linear infinite;
+  }
+
+  &__minutes {
+    position: absolute;
+    width: 3vmin;
+    height: 20vmin;
+    background: #0700ff;
+
+    left: 50%;
+    bottom: 50%;
+    transform-origin: center bottom;
+    transform: translate(-50%, 50%) rotate(0deg);
+
+    animation: rotation var(--min-duration) steps(60) infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    width: 5vmin;
+    height: 5vmin;
+    background: #f6a603;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
 }
