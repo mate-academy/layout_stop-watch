@@ -1,0 +1,50 @@
+@use '../utils/variables.scss' as v;
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minutes-hand {
+    position: absolute;
+    height: 20vmin;
+    width: v.$minutes-width;
+    background-color: v.$blue-hand;
+    left: calc(50% - v.$minutes-width / 2);
+    bottom: 50%;
+    transform-origin: center bottom;
+    animation: move-min 3600s steps(60) infinite;
+  }
+
+  &__second-hand {
+    position: absolute;
+    height: 38vmin;
+    width: v.$seconds-width;
+    background-color: v.$green-hand;
+    left: calc(50% - v.$seconds-width / 2);
+    bottom: 50%;
+    transform-origin: center bottom;
+    animation: move-sec 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    height: 5vmin;
+    width: 5vmin;
+    background-color: v.$center-color;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--speed-up &__minutes-hand {
+    animation: move-min 600s steps(60) infinite;
+  }
+
+  &--speed-up &__second-hand {
+    animation: move-sec 10s linear infinite;
+  }
+}
