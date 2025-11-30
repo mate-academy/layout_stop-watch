@@ -43,11 +43,13 @@
     animation: rotate-hand 60s linear infinite;
   }
 
-  &--speed-up > &__minutes-hand {
-    animation-duration: $minutes-speed-up;
-  }
+  &--speed-up {
+    &__minutes-hand {
+      animation-duration: $minutes-speed-up;
+    }
 
-  &--speed-up > &__seconds-hand {
-    animation-duration: $seconds-speed-up;
+    &--speed-up > &__seconds-hand {
+      animation-duration: $seconds-speed-up;
+    }
   }
 }
