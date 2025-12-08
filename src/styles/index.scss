@@ -1,3 +1,78 @@
+$size: 80vmin;
+$border-width: 1vmin;
+$border-color: #000;
+$minutes-width: 3vmin;
+$minutes-height: 20vmin;
+$minutes-color: #0700ff;
+$seconds-width: 1.5vmin;
+$seconds-height: 38vmin;
+$seconds-color: #2c8000;
+$center-size: 5vmin;
+$center-color: #f6a603;
+
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
+}
+
+.stopwatch {
+  --minute-duration: 60s;
+
+  width: $size;
+  height: $size;
+  border: $border-width dotted $border-color;
+  border-radius: 50%;
+  position: relative;
+
+  &--speed-up {
+    --minute-duration: 10s;
+  }
+
+  &__minutes-hand,
+  &__seconds-hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  &__minutes-hand {
+    width: $minutes-width;
+    height: $minutes-height;
+    background-color: $minutes-color;
+    animation: hand-rotate calc(var(--minute-duration) * 60) steps(60) infinite;
+  }
+
+  &__seconds-hand {
+    width: $seconds-width;
+    height: $seconds-height;
+    background-color: $seconds-color;
+    animation: hand-rotate var(--minute-duration) linear infinite;
+  }
+
+  &__center {
+    width: $center-size;
+    height: $center-size;
+    background-color: $center-color;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes hand-rotate {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
 }
