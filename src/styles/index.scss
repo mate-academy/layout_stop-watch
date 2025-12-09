@@ -1,3 +1,82 @@
 body {
   margin: 0;
 }
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vmin;
+}
+
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  position: relative;
+
+  &__minutes {
+    width: 3vmin;
+    height: 20vmin;
+
+    background-color: #0700ff;
+
+    position: absolute;
+    bottom: 50%;
+
+    transform-origin: 50% 100%;
+    transform: rotate(0deg);
+    animation: watch-arrow-rotation 3600s steps(60, end) infinite;
+  }
+
+  &__seconds {
+    width: 1.5vmin;
+    height: 38vmin;
+
+    background-color: #2c8000;
+
+    position: absolute;
+    bottom: 50%;
+
+    transform-origin: 50% 100%;
+    transform: rotate(0deg);
+
+    animation: watch-arrow-rotation 60s linear infinite;
+  }
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+
+    background-color: #f6a603;
+    border-radius: 50%;
+
+    position: absolute;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes {
+      animation-duration: 600s;
+    }
+
+    .stopwatch__seconds {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes watch-arrow-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
