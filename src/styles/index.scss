@@ -5,6 +5,7 @@ body {
   height: 100vh;
   margin: 0;
   display: flex;
+
 }
 
 .stopwatch {
@@ -31,7 +32,8 @@ body {
     position: absolute;
     bottom: 40vmin;
     left: 38.5vmin;
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
+
   }
 
   &__seconds-hand {
@@ -43,7 +45,8 @@ body {
     position: absolute;
     bottom: 40vmin;
     left: 39.25vmin;
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
+
   }
 
   &__central-circle {
@@ -54,15 +57,18 @@ body {
     position: absolute;
     bottom: 37.5vmin;
     left: 37.5vmin;
+
   }
 }
 
 @keyframes hand-rotate {
-  0% {
-    transform: rotate(-90deg);
+  from {
+    transform: rotate(0deg);
+
   }
 
-  100% {
-    transform: rotate(270deg);
+  to {
+    transform: rotate(360deg);
+
   }
 }
