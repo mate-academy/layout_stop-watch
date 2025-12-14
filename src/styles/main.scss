@@ -1,20 +1,11 @@
 @use './utils/variables.scss' as *;
 
-@keyframes rotate-seconds {
+@keyframes rotate-full {
   from {
-    transform: translateX(-50%) translateY(-100%) rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: translateX(-50%) translateY(-100%) rotate(360deg);
-  }
-}
-
-@keyframes rotate-minutes {
-  from {
-    transform: translateX(-50%) translateY(-100%) rotate(0deg);
-  }
-  to {
-    transform: translateX(-50%) translateY(-100%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -48,7 +39,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translateX(-50%) translateY(-100%);
+    transform: translateX(-50%) translateY(-100%) rotate(0deg);
     transform-origin: 50% 100%;
     z-index: 5;
 
@@ -56,14 +47,14 @@
       height: 38vmin;
       width: 1.5vmin;
       background-color: $seconds-color;
-      animation: rotate-seconds 60s linear infinite;
+      animation: rotate-full 60s linear infinite;
     }
 
     &--minutes {
       height: 20vmin;
       width: 3vmin;
       background-color: $minutes-color;
-      animation: rotate-minutes 3600s steps(60, end) infinite;
+      animation: rotate-full 3600s steps(60, end) infinite;
     }
   }
 
