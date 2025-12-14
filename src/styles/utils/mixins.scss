@@ -1,0 +1,17 @@
+@mixin position($x, $y) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate($x, $y);
+  transform-origin: bottom center;
+}
+
+@mixin animation {
+  from {
+    transform: translate($sw-hands-x, $sw-hands-y) rotate(0deg);
+  }
+
+  to {
+    transform: translate($sw-hands-x, $sw-hands-y) rotate(360deg);
+  }
+}
