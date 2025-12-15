@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      content="width=device-width, initial-scale=1.0"
     />
     <meta
       http-equiv="X-UA-Compatible"
@@ -16,7 +16,13 @@
       href="./styles/index.scss"
     />
   </head>
-  <body>
-    <h1>Stop watch</h1>
+  <body class="body">
+    <main class="main">
+      <div class="stopwatch">
+        <div class="stopwatch__minutes stopwatch__minutes--speed-up"></div>
+        <div class="stopwatch__seconds stopwatch__seconds--speed-up"></div>
+        <div class="stopwatch__center"></div>
+      </div>
+    </main>
   </body>
 </html>
