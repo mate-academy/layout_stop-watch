@@ -1,3 +1,107 @@
+$stopwatch-size: 80vmin;
+$stopwatch-border: 1vmin;
+$stopwatch-border-color: #000;
+$center-size: 5vmin;
+$seconds-length: 38vmin;
+$seconds-width: 1.5vmin;
+$seconds-color: #2c8000;
+$minutes-length: 20vmin;
+$minutes-width: 3vmin;
+$minutes-color: #0700ff;
+$center-color: #f6a603;
+
+// Center the stopwatch
+
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+// Stopwatch container
+
+.stopwatch {
+  list-style: none;
+  display: flex;
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: $stopwatch-border dotted $stopwatch-border-color;
+  border-radius: 50%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+// Center circle
+
+.stopwatch__center {
+  height: $center-size;
+  width: $center-size;
+  background-color: $center-color;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Hand minutes style
+
+.stopwatch__hand-minutes {
+  background-color: $minutes-color;
+  height: $minutes-length;
+  width: $minutes-width;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: center bottom;
+  transform: translateX(-50%);
+  animation: rotate-minutes 3600s steps(60) infinite;
+}
+
+// Hand seconds style
+
+.stopwatch__hand-seconds {
+  background-color: $seconds-color;
+  width: $seconds-width;
+  height: $seconds-length;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: center bottom;
+  transform: translateX(-50%);
+  animation: rotate-seconds 60s linear infinite;
+}
+
+// Keyframes
+
+@keyframes rotate-seconds {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-minutes {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+// BEM Modifier
+
+.stopwatch--speed-up {
+  .stopwatch__hand-seconds {
+    animation-duration: 10s;
+  }
+  .stopwatch__hand-minutes {
+    animation-duration: 600s;
+  }
 }
