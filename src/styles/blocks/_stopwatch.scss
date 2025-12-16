@@ -1,0 +1,47 @@
+@use 'variables';
+@use 'animations';
+@use '../utils/mixins';
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted variables.$color-stopwatch;
+  border-radius: 50%;
+  position: relative;
+
+  &--speed-up > :nth-child(1) {
+    animation: rotate-around 600s steps(60, end) infinite;
+  }
+
+  &--speed-up > :nth-child(2) {
+    animation: rotate-around 10s linear infinite;
+  }
+
+  &__minutes {
+    width: 3vmin;
+    height: 20vmin;
+    background-color: variables.$color-minutes;
+    animation: rotate-around 3600s steps(60, end) infinite;
+
+    @include mixins.position(25%, 48%, 50%, 100%);
+  }
+
+  &__seconds {
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: variables.$color-seconds;
+    animation: rotate-around 60s linear infinite;
+
+    @include mixins.position(2.5%, 49%, 50%, 100%);
+  }
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: variables.$color-center;
+    transform: translate(-50%, -50%);
+
+    @include mixins.position(50%, 50%);
+  }
+}
