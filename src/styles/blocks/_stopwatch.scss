@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'animations';
 @use '../utils/mixins';
 
 .stopwatch {
@@ -8,6 +9,14 @@
   border-radius: 50%;
   position: relative;
 
+  &--speed-up > :nth-child(1) {
+    animation: rotate-around 600s steps(60, end) infinite;
+  }
+
+  &--speed-up > :nth-child(2) {
+    animation: rotate-around 10s linear infinite;
+  }
+
   &__minutes {
     width: 3vmin;
     height: 20vmin;
@@ -15,11 +24,6 @@
     animation: rotate-around 3600s steps(60, end) infinite;
 
     @include mixins.position(25%, 48%, 50%, 100%);
-    @include mixins.rotate-around;
-
-    &--speed-up {
-      animation: rotate-around 600s steps(60, end) infinite;
-    }
   }
 
   &__seconds {
@@ -29,11 +33,6 @@
     animation: rotate-around 60s linear infinite;
 
     @include mixins.position(2.5%, 49%, 50%, 100%);
-    @include mixins.rotate-around;
-
-    &--speed-up {
-      animation: rotate-around 10s linear infinite;
-    }
   }
 
   &__center {
