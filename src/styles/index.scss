@@ -1,7 +1,89 @@
-@import './timer-base';
-@import './ponteiros-dos-segundos';
-@import './ponteiro-dos-minutos';
-@import './centro-do-cronometro';
-@import './segundos';
-@import './minutos';
-@import './modificador';
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  /* --- MINUTES HAND --- */
+  &__minutes {
+    position: absolute;
+    width: 40vmin; /* 20vmin visíveis + 20vmin invisíveis */
+    height: 3vmin;
+    transform-origin: center left;
+    transform: rotate(-90deg); /* posição inicial no topo */
+    animation: minutes 3600s steps(60) infinite;
+
+    &-blue {
+      width: 20vmin;
+      height: 3vmin;
+      background-color: #0700ff;
+    }
+  }
+
+  /* --- SECONDS HAND --- */
+  &__seconds {
+    position: absolute;
+    width: 76vmin; /* 38vmin visíveis + 38vmin invisíveis */
+    height: 1.5vmin;
+    transform-origin: center left;
+    transform: rotate(-90deg);
+    animation: seconds 60s linear infinite;
+
+    &-green {
+      width: 38vmin;
+      height: 1.5vmin;
+      background-color: #2c8000;
+    }
+  }
+
+  /* --- SPEED-UP MODIFIER --- */
+  &--speed-up {
+    .stopwatch__minutes {
+      animation-duration: 600s; /* 10 min */
+    }
+
+    .stopwatch__seconds {
+      animation-duration: 10s; /* 10 s */
+    }
+  }
+}
+
+/* --- ANIMATIONS --- */
+@keyframes minutes {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}

@@ -1,28 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <meta
-      http-equiv="X-UA-Compatible"
-      content="ie=edge"
-    />
-    <title>Stop watch</title>
+    <meta charset="UTF-8" />
+    <title>Cronômetro CSS</title>
+    <!-- Parcel permite importar CSS diretamente -->
     <link
       rel="stylesheet"
-      href="./styles/index.scss"
+      href="./style.css"
     />
   </head>
 
   <body>
-    <h1>Stop watch</h1>
-    <div class="timer timer--speed-up">
-      <div class="timer__hand timer__hand--minutes"></div>
-      <div class="timer__hand timer__hand--seconds"></div>
-      <div class="timer__center"></div>
+    <!-- Elemento obrigatório para testes -->
+    <div class="cronometro cronometro--speed-up">
+      <div class="cronometro__ponteiro cronometro__ponteiro--minutos"></div>
+      <div class="cronometro__ponteiro cronometro__ponteiro--segundos"></div>
+      <div class="cronometro__centro"></div>
     </div>
   </body>
 </html>
