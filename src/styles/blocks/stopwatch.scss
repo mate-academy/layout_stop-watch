@@ -1,0 +1,61 @@
+@use '../utils/variables' as *;
+
+.stopwatch {
+  height: $stopwatchSize;
+  width: $stopwatchSize;
+  border: 1vmin dotted $borderColor;
+  border-radius: 50%;
+  position: relative;
+
+  &__center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: $dotSize;
+    width: $dotSize;
+    background-color: $dotColor;
+    border-radius: 50%;
+  }
+
+  &__minutes {
+    position: absolute;
+    height: $minutesLength;
+    width: $minutesWidth;
+    background-color: $minutesColor;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    transform-origin: 50% 100%;
+    animation: clock 3600s steps(60, end) 0s infinite;
+  }
+  &__seconds {
+    position: absolute;
+    height: $secondsLength;
+    width: $secondsWidth;
+    background-color: $secondsColor;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    transform-origin: 50% 100%;
+    animation: clock 60s linear 0s infinite;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes {
+      animation: clock 600s steps(60, end) 0s infinite;
+    }
+    .stopwatch__seconds {
+      animation: clock 10s linear 0s infinite;
+    }
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
