@@ -2,10 +2,10 @@
 
 @keyframes rotate-full {
   from {
-    transform: translateX(-50%) translateY(-100%) rotate(0deg);
+    transform: translate(-50%, -100%) rotate(0deg);
   }
   to {
-    transform: translateX(-50%) translateY(-100%) rotate(360deg);
+    transform: translate(-50%, -100%) rotate(360deg);
   }
 }
 
@@ -16,8 +16,6 @@
   box-sizing: border-box;
   border: 1vmin dotted $frame-color;
   border-radius: 50%;
-  justify-content: center;
-  align-items: center;
 
   &__center {
     position: absolute;
@@ -35,8 +33,8 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -100%) rotate(0deg);
-    transform-origin: bottom center;
+    transform: translate(-50%, -100%);
+    transform-origin: 50% 100%;
 
     &--seconds {
       height: 38vmin;
