@@ -1,0 +1,63 @@
+@use './utils/variables.scss' as *;
+
+@keyframes rotate-full {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  position: relative;
+  border: 1vmin dotted $frame-color;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: $center-color;
+    z-index: 3;
+  }
+
+  &__hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -100%) rotate(0deg);
+    transform-origin: 50% 100%;
+
+    &--seconds {
+      height: 38vmin;
+      width: 1.5vmin;
+      background-color: $seconds-color;
+      animation: rotate-full 60s linear infinite;
+      z-index: 2;
+    }
+
+    &--minutes {
+      height: 20vmin;
+      width: 3vmin;
+      background-color: $minutes-color;
+      animation: rotate-full 3600s steps(60, end) infinite;
+      z-index: 1;
+    }
+  }
+
+  &--speed-up {
+    .stopwatch__hand--seconds {
+      animation-duration: 10s;
+    }
+    .stopwatch__hand--minutes {
+      animation-duration: 600s;
+    }
+  }
+}
