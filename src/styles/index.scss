@@ -1,3 +1,93 @@
+$stopwatch-size: 80vmin;
+$stopwatch-border: 1vmin dotted #000;
+$center-size: 5vmin;
+$center-color: #f6a603;
+$hand-min-width: 3vmin;
+$hand-min-height: 20vmin;
+$hand-min-color: #0700ff;
+$hand-sec-width: 1.5vmin;
+$hand-sec-height: 38vmin;
+$hand-sec-color: #2c8000;
+$hand-sec-duration: 60s;
+$hand-min-duration: $hand-sec-duration * 60;
+$speed-up-factor: 6;
+
+@mixin stopwatch-hand-base {
+  position: absolute;
+  bottom: 50%;
+
+  transform-origin: bottom center;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: $stopwatch-border;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    z-index: 3;
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+    background-color: $center-color;
+  }
+
+  &__min-hand {
+    @include stopwatch-hand-base;
+
+    z-index: 1;
+    width: $hand-min-width;
+    height: $hand-min-height;
+    background-color: $hand-min-color;
+
+    animation-duration: $hand-min-duration;
+    animation-timing-function: steps(60);
+  }
+
+  &__sec-hand {
+    @include stopwatch-hand-base;
+
+    z-index: 2;
+    width: $hand-sec-width;
+    height: $hand-sec-height;
+    background-color: $hand-sec-color;
+
+    animation-duration: $hand-sec-duration;
+    animation-timing-function: linear;
+  }
+
+  &--speed-up {
+    .stopwatch__min-hand {
+      animation-duration: $hand-min-duration / $speed-up-factor;
+    }
+    .stopwatch__sec-hand {
+      animation-duration: $hand-sec-duration / $speed-up-factor;
+    }
+  }
 }
