@@ -1,0 +1,15 @@
+@mixin position-top-clock-hand($percent, $heightHand) {
+  position: absolute;
+  top: calc($percent - $heightHand);
+}
+
+@mixin animation-hand-clock {
+  @keyframes rotate-hand-clock {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
