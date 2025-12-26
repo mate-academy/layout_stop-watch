@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: $stopwatch-size;
+  width: $stopwatch-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minutes {
+    position: absolute;
+    height: $minutes-height;
+    width: $minutes-width;
+    background-color: $minutes-color;
+    top: $stopwatch-size / 2 - $minutes-height;
+    transform-origin: bottom;
+    animation: spin 3600s linear 60 forwards;
+  }
+
+  &__seconds {
+    height: $seconds-height;
+    width: $seconds-width;
+    background-color: $seconds-color;
+    position: absolute;
+    top: $stopwatch-size / 2 - $seconds-height;
+    z-index: 1;
+    transform-origin: bottom;
+    animation: spin 60s linear infinite forwards;
+  }
+
+  &__circle {
+    position: absolute;
+    height: $circle-size;
+    width: $circle-size;
+    background-color: $circle-color;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  &--speed-up :first-child {
+    animation: spin 600s linear 60 forwards;
+  }
+
+  &--speed-up :nth-child(2) {
+    animation: spin 10s linear 60 forwards;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
