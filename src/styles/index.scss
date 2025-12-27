@@ -1,7 +1,5 @@
 html,
 body {
-  /* height: 100%; */
-
   margin: 0;
 }
 
@@ -20,75 +18,69 @@ body {
   border-radius: 50%;
   position: relative;
 
-  /* box-sizing: border-box; */
-}
+  &__hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
 
-.stopwatch__hand {
-  position: absolute;
-  left: 50%;
-  top: 50%;
+    transform-origin: 50% 100%;
 
-  transform-origin: 50% 100%;
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
 
-  transform: translate(-50%, -100%) rotate(0deg);
-}
+  &__hand--minute {
+    width: 3vmin;
+    height: 20vmin;
+    background: #0700ff;
 
-.stopwatch__hand--minute {
-  width: 3vmin;
-  height: 20vmin;
-  background: #0700ff;
+    animation: rotate-minute 3600s steps(60) infinite;
+  }
 
-  animation: rotate-minute 3600s steps(60) infinite;
-}
+  &__hand--second {
+    width: 1.5vmin;
+    height: 38vmin;
+    background: #2c8000;
 
-.stopwatch__hand--second {
-  width: 1.5vmin;
-  height: 38vmin;
-  background: #2c8000;
+    transform: translate(-50%, -100%) rotate(0deg);
 
-  transform: translate(-50%, -100%) rotate(0deg);
+    animation: rotate-second 60s linear infinite;
+  }
 
-  animation: rotate-second 60s linear infinite backwards;
-}
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 5vmin;
+    height: 5vmin;
+    background: #f6a603;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-.stopwatch__center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 5vmin;
-  height: 5vmin;
-  background: #f6a603;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+  &--speed-up {
+    .stopwatch__hand--second {
+      animation-duration: 10s;
+    }
+    .stopwatch__hand--minute {
+      animation-duration: 600s;
+    }
+  }
 }
 
 @keyframes rotate-second {
-  0% {
+  from {
     transform: translate(-50%, -100%) rotate(0deg);
   }
-  100% {
+  to {
     transform: translate(-50%, -100%) rotate(360deg);
   }
 }
 
 @keyframes rotate-minute {
-  0% {
+  from {
     transform: translate(-50%, -100%) rotate(0deg);
   }
-  100% {
+  to {
     transform: translate(-50%, -100%) rotate(360deg);
-  }
-}
-
-/* BEM modifier: speed-up
-   - Second hand: 10s full rotation
-   - Minute hand: 10min full rotation (still steps(60)) */
-
-.stopwatch.stopwatch--speed-up {
-  .stopwatch__hand--second {
-    animation-duration: 10s;
-  }
-  .stopwatch__hand--minute {
-    animation-duration: 600s;
   }
 }
