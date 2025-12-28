@@ -1,0 +1,11 @@
+@mixin animation($name, $time) {
+  animation: #{$name} #{$time} infinite linear;
+}
+
+@mixin placement-center($height) {
+  position: absolute;
+  transform-origin: left center;
+  left: calc(#{$stopwatch-width-height} / 2);
+  top: calc((#{$stopwatch-width-height} / 2) - (#{$height} / 2));
+  transform: translateY(-50%) rotate(-90deg);
+}
