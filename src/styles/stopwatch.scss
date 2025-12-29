@@ -9,9 +9,9 @@
     width: 20vmin;
     height: 3vmin;
     background-color: #0700ff;
+    animation: movement-of-the-minute-hand 3600 infinite steps(60);
 
     @include placement-center(3vmin);
-    @include animation(movement-of-the-minute-hand, 3600s);
   }
 
   @keyframes movement-of-the-minute-hand {
@@ -35,11 +35,11 @@
 
   @keyframes movement-of-the-second-hand {
     from {
-      transform: rotate(-90deg);
+      transform: translateY(-50%) rotate(-90deg);
     }
 
     to {
-      transform: rotate(270deg);
+      transform: translateY(-50%) rotate(270deg);
     }
   }
 
@@ -59,7 +59,7 @@
     }
 
     .stopwatch__minute-hand {
-      @include animation(movement-of-the-minute-hand, 600s);
+      animation: movement-of-the-minute-hand 600 infinite steps(60);
     }
   }
 }
