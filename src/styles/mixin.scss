@@ -1,0 +1,11 @@
+@mixin animation($name, $time) {
+  animation: #{$name} #{$time} infinite linear;
+}
+
+@mixin placement-center {
+  position: absolute;
+  transform-origin: left center;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+}
