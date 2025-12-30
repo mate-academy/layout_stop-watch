@@ -1,13 +1,4 @@
-$stopwatch-color: #000;
-$second-color: #2c8000;
-$minute-color: #0700ff;
-$center-color: #f6a603;
-$stopwatch-size: 80vmin;
-$second-height: 38vmin;
-$second-width: 1.5vmin;
-$minute-height: 20vmin;
-$minute-width: 3vmin;
-$center-size: 5vmin;
+@import 'variables';
 
 body {
   margin: 0;
@@ -33,6 +24,10 @@ body {
   border: 1vmin dotted $stopwatch-color;
   border-radius: 50%;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &__second,
   &__minute {
     position: absolute;
@@ -45,7 +40,7 @@ body {
     height: $second-height;
     background-color: $second-color;
     left: calc(50% - (#{$second-width} / 2));
-    animation: sec 60s steps(60) infinite;
+    animation: sec 60s linear infinite;
   }
 
   &__minute {
@@ -62,9 +57,6 @@ body {
     height: $center-size;
     background-color: $center-color;
     border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 }
 
