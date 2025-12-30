@@ -33,70 +33,42 @@ body {
   border: 1vmin dotted $stopwatch-color;
   border-radius: 50%;
 
-  &__second,
-  &__minute {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__second {
-    animation: sec 60s linear infinite;
-    z-index: 1;
-  }
-  &__second::after {
-    content: '';
     position: absolute;
     height: $second-height;
     width: $second-width;
     background-color: $second-color;
-
-    left: 50%;
     bottom: 50%;
-    transform: translateX(-50%);
+    left: 50%;
     transform-origin: bottom center;
+    transform: translateX(-50%);
+    animation: sec 60s linear infinite;
   }
 
   &__minute {
-    animation: sec 3600s linear infinite;
-  }
-  &__minute::after {
-    content: '';
     position: absolute;
     height: $minute-height;
     width: $minute-width;
     background-color: $minute-color;
-
-    left: 50%;
-    bottom: 50%;
-    transform: translateX(-50%);
-    transform-origin: bottom center;
+    bottom: 40vmin;
+    transform-origin: bottom;
+    animation: sec 3600s steps(60) infinite;
   }
 
   &__center {
     position: absolute;
-    width: $center-size;
-    height: $center-size;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     background-color: $center-color;
-    border-radius: 50%;
-    z-index: 2;
-  }
-
-  &__center::after {
-    content: '';
-    position: absolute;
     height: $center-size;
     width: $center-size;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%);
-    transform-origin: bottom center;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: bottom;
   }
 }
 
@@ -106,6 +78,6 @@ body {
   }
 
   .stopwatch__minute {
-    animation-duration: 599s;
+    animation-duration: 600s;
   }
 }
