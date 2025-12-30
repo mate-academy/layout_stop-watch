@@ -28,50 +28,47 @@ body {
 
 .stopwatch {
   position: relative;
-  height: $stopwatch-size;
   width: $stopwatch-size;
+  height: $stopwatch-size;
   border: 1vmin dotted $stopwatch-color;
   border-radius: 50%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  &__second,
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom center;
+  }
 
   &__second {
-    position: absolute;
-    height: $second-height;
     width: $second-width;
+    height: $second-height;
     background-color: $second-color;
-    bottom: 50%;
-    left: 50%;
-    transform-origin: bottom center;
-    transform: translateX(-50%);
-    animation: sec 60s linear infinite;
+    left: calc(50% - (#{$second-width} / 2));
+    animation: sec 60s steps(60) infinite;
   }
 
   &__minute {
-    position: absolute;
-    height: $minute-height;
     width: $minute-width;
+    height: $minute-height;
     background-color: $minute-color;
-    bottom: 40vmin;
-    transform-origin: bottom;
+    left: calc(50% - (#{$minute-width} / 2));
     animation: sec 3600s steps(60) infinite;
   }
 
   &__center {
     position: absolute;
-    background-color: $center-color;
-    height: $center-size;
     width: $center-size;
+    height: $center-size;
+    background-color: $center-color;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-origin: bottom;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
+/* modifier */
 .stopwatch--speed-up {
   .stopwatch__second {
     animation-duration: 10s;
