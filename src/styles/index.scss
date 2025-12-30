@@ -1,3 +1,72 @@
+@import 'variables';
+
 body {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+@keyframes sec {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: 1vmin dotted $stopwatch-color;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__second,
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom center;
+  }
+
+  &__second {
+    width: $second-width;
+    height: $second-height;
+    background-color: $second-color;
+    left: calc(50% - (#{$second-width} / 2));
+    animation: sec 60s linear infinite;
+  }
+
+  &__minute {
+    width: $minute-width;
+    height: $minute-height;
+    background-color: $minute-color;
+    left: calc(50% - (#{$minute-width} / 2));
+    animation: sec 3600s steps(60) infinite;
+  }
+
+  &__center {
+    position: absolute;
+    width: $center-size;
+    height: $center-size;
+    background-color: $center-color;
+    border-radius: 50%;
+  }
+}
+
+/* modifier */
+.stopwatch--speed-up {
+  .stopwatch__second {
+    animation-duration: 10s;
+  }
+
+  .stopwatch__minute {
+    animation-duration: 600s;
+  }
 }
