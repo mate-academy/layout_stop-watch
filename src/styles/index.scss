@@ -1,16 +1,17 @@
 body {
   display: grid;
-  min-height: 100vh;
   place-items: center;
+  min-height: 100vh;
   margin: 0;
 }
 
 .cronometro {
+  position: relative;
+
   width: 80vmin;
   height: 80vmin;
   border: 1vmin dotted #000;
   border-radius: 50%;
-  position: relative;
 
   &__ponteiro {
     position: absolute;
@@ -36,13 +37,15 @@ body {
 
   &__centro {
     position: absolute;
-    width: 5vmin;
-    height: 5vmin;
-    background: #f6a603;
-    border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+
+    background: #f6a603;
   }
 }
 
