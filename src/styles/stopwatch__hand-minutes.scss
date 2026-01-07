@@ -1,0 +1,11 @@
+.stopwatch__hand-minutes {
+  height: $height-minutes;
+  width: $width-minutes;
+  background: $color-minutes;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 50% 100%;
+  transform: translate(-50%, -100%) rotate(0deg);
+  animation: spin-minutes 3600s steps(60, end) infinite;
+}
