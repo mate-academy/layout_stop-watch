@@ -1,0 +1,62 @@
+.stopwatch {
+  height: $size;
+  width: $size;
+  position: relative;
+
+  border-radius: 50%;
+
+  border: 1vmin dotted #000;
+
+
+  &__center {
+    @include center-marks(5vmin, 5vmin, #f6a603)
+  }
+
+  // &__dial {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  // }
+
+  // &__tick-marks {
+  //   @include center-marks(1vmin, 1vmin, #000);
+
+  //   @for $i from 1 through 60 {
+  //     &:nth-child(#{$i}) {
+  //       transform: $centering rotate(6 * $i * 1deg) translateY(-40vmin);
+  //     }
+  //   }
+  // }
+
+  &__seconds {
+    @include hands(38vmin, 1.5vmin, #2c8000);
+
+    animation: time 60s linear infinite;
+  }
+
+  &__minutes {
+    @include hands(20vmin, 3vmin, #0700ff);
+
+    animation: time 3600s steps(60) infinite;
+  }
+
+  &--speed-up {
+    .stopwatch__seconds {
+      animation-duration: 10s;
+    }
+    .stopwatch__minutes {
+      animation-duration: 600s;
+    }
+  }
+
+  @keyframes time {
+    from {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    to {
+      transform: translateX(-50%) rotate(360deg);
+    }
+  }
+}

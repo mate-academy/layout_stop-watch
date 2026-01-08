@@ -1,0 +1,22 @@
+@mixin center-marks($height, $width, $color) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: $height;
+  width: $width;
+  background-color: $color;
+  transform: $centering;
+  border-radius: 50%;
+}
+
+@mixin hands($height, $width, $color) {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  height: $height;
+  width: $width;
+  background-color: $color;
+  transform-origin: bottom center;
+  transform: translateX(-50%)
+}
+
