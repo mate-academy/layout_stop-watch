@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* remove qualquer rolagem */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  border: 1vmin dotted $border-color;
+  width: $clock-size;
+  height: $clock-size;
+  border-radius: 50%;
+
+  &__circle {
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    position: absolute;
+    background-color: $color-circle;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  &__pointer-minute {
+    height: 20vmin;
+    width: 3vmin;
+    background-color: $color-minute-pointer;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%);
+  }
+
+  &__pointer-seconds {
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: $color-second-pointer;
+    position: absolute;
+    bottom: 50%; // conecta ao centro da órbita
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%); // centraliza horizontalmente
+  }
+
+  &__orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+  }
+
+  &__orbit--seconds {
+    animation-name: roll;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 0;
+  }
+
+  &__orbit--minute {
+    animation-name: steps;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+    z-index: 0;
+  }
+}
+
+.stopwatch--speed-up .stopwatch__orbit--seconds {
+  animation-duration: 10s;
+}
+
+.stopwatch--speed-up .stopwatch__orbit--minute {
+  animation-duration: 600s;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes steps {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counter-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
