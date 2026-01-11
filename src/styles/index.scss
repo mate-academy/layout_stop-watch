@@ -28,7 +28,7 @@ body {
       height: 20vmin;
       background-color: #0700ff; // Azul
       margin-left: -1.5vmin; // Metade da largura para centralizar
-      animation: rotate 3600s steps(60) infinite;
+      animation: rotate 3600s steps(60, end) infinite;
     }
 
     &--seconds {
@@ -54,10 +54,11 @@ body {
   }
 
   // Modificador de Velocidade (BEM)
-  &--speed-up {
+  &--speedup {
     .stopwatch__hand--minutes {
       animation-duration: 600s; // 10 minutos
     }
+
     .stopwatch__hand--seconds {
       animation-duration: 10.8s; // 10 segundos
     }
@@ -69,6 +70,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
