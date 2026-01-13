@@ -20,7 +20,7 @@ body {
   position: relative;
 }
 
-.stopwatch__hand--seconds{
+.stopwatch__hand-seconds{
   position: absolute;
   bottom: 50%;
   left: 50%;
@@ -31,15 +31,15 @@ body {
   animation: rotate 60s linear infinite;
 }
 
-.stopwatch__hand--minutes{
+.stopwatch__hand-minutes{
   position: absolute;
   bottom: 50%;
   left: 50%;
-  transform-origin: center bottom;
+  transform-origin: bottom center ;
   height: 20vmin;
   width: 3vmin;
   background-color: #0700ff;
-  animation: rotate 3600s linear infinite
+  animation: rotate 3600s steps(60) infinite;
 }
 
 .stopwatch__center{
@@ -52,11 +52,19 @@ body {
 
 @keyframes rotate{
   from{
-    transform: rotate(0deg);
+    transform:translateX(-50%) rotate(0deg);
   }
   to{
-    transform: rotate(360deg);
+    transform:translateX(-50%) rotate(360deg);
   }
 }
 
+.stopwatch.stopwatch--speed-up{
+  .stopwatch__hand-minutes{
+    animation-duration: 600s;
+  }
+  .stopwatch__hand-seconds{
+    animation-duration: 10s;
+  }
+}
 
