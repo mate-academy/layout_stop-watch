@@ -1,0 +1,82 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin solid black;
+  border-radius: 50%;
+  border-style: dotted;
+
+  position: relative;
+
+  &__hvl {
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    animation: hvl 3600s steps(60, end) 0s infinite;
+  }
+
+  &__sec {
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    animation: sec 60s linear 0s infinite;
+  }
+
+  &__sec,
+  &__hvl {
+    transform: translate(-50%, -100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.stopwatch.stopwatch--speed-up .stopwatch__sec {
+  animation-duration: 10s;
+}
+
+.stopwatch.stopwatch--speed-up .stopwatch__hvl {
+  animation-duration: 600s;
+}
+
+@keyframes sec {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+@keyframes hvl {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
