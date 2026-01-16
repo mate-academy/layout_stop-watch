@@ -1,0 +1,89 @@
+// *,
+// *::before,
+// *::after {
+//   box-sizing: border-box;
+// }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.stopwatch {
+  width: $width;
+  height: $height;
+  border: $border;
+  border-radius: $border-radius;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__min {
+    width: $min-width;
+    height: $min-length;
+    background-color: $min-color;
+    position: absolute;
+    top: calc(50% - #{$min-length});
+    left: calc(50% - #{$min-width} / 2);
+    animation-name: rotate-min;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60, jump-none);
+    transform-origin: bottom;
+
+    &--speed-up {
+      animation-duration: 600s;
+    }
+  }
+
+  &__sec {
+    width: $sec-width;
+    height: $sec-length;
+    background-color: $sec-color;
+    position: absolute;
+    top: calc(50% - #{$sec-length});
+    left: calc(50% - #{$sec-width} / 2);
+    animation-name: rotate-sec;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: bottom;
+
+    &--speed-up {
+      animation-duration: 10s;
+    }
+  }
+
+  &__center {
+    width: $center-width;
+    height: $center-height;
+    background-color: $center-color;
+    border-radius: $center-round;
+    position: absolute;
+    top: calc(50% - #{$center-height} / 2);
+    left: calc(50% - #{$center-width} / 2);
+  }
+}
+
+@keyframes rotate-min {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-sec {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
