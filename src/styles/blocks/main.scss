@@ -35,10 +35,10 @@ body {
     animation-iteration-count: infinite;
     animation-timing-function: steps(60, jump-none);
     transform-origin: bottom;
+  }
 
-    &--speed-up {
-      animation-duration: 600s;
-    }
+  &--speed-up &__min {
+    animation-duration: 600s;
   }
 
   &__sec {
@@ -53,10 +53,10 @@ body {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     transform-origin: bottom;
+  }
 
-    &--speed-up {
-      animation-duration: 10s;
-    }
+  &--speed-up &__sec {
+    animation-duration: 10s;
   }
 
   &__center {
@@ -71,19 +71,19 @@ body {
 }
 
 @keyframes rotate-min {
-  0% {
+  from {
     transform: rotate(0);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 
 @keyframes rotate-sec {
-  0% {
+  from {
     transform: rotate(0);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
