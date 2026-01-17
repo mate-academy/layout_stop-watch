@@ -1,0 +1,29 @@
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dashed #000;
+  border-radius: 50%;
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  &--speed-up {
+    .stopwatch__hand--second {
+      animation-duration: 10s;
+    }
+
+    .stopwatch__hand--minute {
+      animation-duration: 600s;
+    }
+  }
+}
+
