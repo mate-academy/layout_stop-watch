@@ -2,15 +2,13 @@ $clockSize: 80vmin;
 $pivotSize: 5vmin;
 $secondWidth: 1.5vmin;
 $secondHeight: 38vmin;
-$hourWidth: 3vmin;
-$hourHeight: 20vmin;
+$minuteWidth: 3vmin;
+$minuteHeight: 20vmin;
 $secondDuration: 10s;
-$hourDuration: $secondDuration * 60;
-$hourSteps: 60;
+$minuteDuration: $secondDuration * 60;
+$minuteSteps: 60;
 $secondCircleTime: 60s;
-$hourCircleTime: 60 * $secondCircleTime;
-
-
+$minuteCircleTime: 60 * $secondCircleTime;
 
 @keyframes rotate-hand {
   from {
@@ -37,7 +35,7 @@ body {
   border: dotted #000 1vmin;
   border-radius: 50%;
 
-    &__second {
+  &__seconds-hand {
     position: absolute;
     z-index: 0;
     width: $secondWidth;
@@ -49,19 +47,19 @@ body {
     animation: rotate-hand 60s linear infinite;
   }
 
-    &__hour {
+  &__minutes-hand {
     position: absolute;
     z-index: 0;
-    width: $hourWidth;
-    height: $hourHeight;
+    width: $minuteWidth;
+    height: $minuteHeight;
     background-color: #0700ff;
-    left: calc(0.5 * ($clockSize - $hourWidth));
-    top: calc((0.5 * $clockSize) - $hourHeight);
+    left: calc(0.5 * ($clockSize - $minuteWidth));
+    top: calc((0.5 * $clockSize) - $minuteHeight);
     transform-origin: 50% 100%;
-    animation: rotate-hand $hourCircleTime steps($hourSteps) infinite;
+    animation: rotate-hand $minuteCircleTime steps($minuteSteps) infinite;
   }
 
-    &__center {
+  &__center {
     z-index: 1;
     position: absolute;
     width: $pivotSize;
@@ -71,13 +69,12 @@ body {
     margin-left: calc(0.5 * ($clockSize - $pivotSize));
     margin-top: calc(0.5 * ($clockSize - $pivotSize));
   }
-
 }
 
-.stopwatch--speed-up .stopwatch__second {
+.stopwatch--speed-up .stopwatch__seconds-hand {
   animation-duration: $secondDuration;
 }
 
-.stopwatch--speed-up .stopwatch__hour {
-  animation-duration: $hourDuration;
+.stopwatch--speed-up .stopwatch__minutes-hand {
+  animation-duration: $minuteDuration;
 }
