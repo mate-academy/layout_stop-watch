@@ -1,3 +1,83 @@
+$clockSize: 80vmin;
+$pivotSize: 5vmin;
+$secondWidth: 1.5vmin;
+$secondHeight: 38vmin;
+$hourWidth: 3vmin;
+$hourHeight: 20vmin;
+$secondDuration: 10s;
+$hourDuration: $secondDuration * 60;
+$hourSteps: 60;
+$secondCircleTime: 60s;
+$hourCircleTime: 60 * $secondCircleTime;
+
+
+
+@keyframes rotate-hand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  display: block;
+  height: $clockSize;
+  width: $clockSize;
+  border: dotted #000 1vmin;
+  border-radius: 50%;
+
+    &__second {
+    position: absolute;
+    z-index: 0;
+    width: $secondWidth;
+    height: $secondHeight;
+    background-color: #2c8000;
+    left: calc(0.5 * ($clockSize - $secondWidth));
+    top: calc((0.5 * $clockSize) - $secondHeight);
+    transform-origin: 50% 100%;
+    animation: rotate-hand 60s linear infinite;
+  }
+
+    &__hour {
+    position: absolute;
+    z-index: 0;
+    width: $hourWidth;
+    height: $hourHeight;
+    background-color: #0700ff;
+    left: calc(0.5 * ($clockSize - $hourWidth));
+    top: calc((0.5 * $clockSize) - $hourHeight);
+    transform-origin: 50% 100%;
+    animation: rotate-hand $hourCircleTime steps($hourSteps) infinite;
+  }
+
+    &__center {
+    z-index: 1;
+    position: absolute;
+    width: $pivotSize;
+    height: $pivotSize;
+    background-color: #f6a603;
+    border-radius: 50%;
+    margin-left: calc(0.5 * ($clockSize - $pivotSize));
+    margin-top: calc(0.5 * ($clockSize - $pivotSize));
+  }
+
+}
+
+.stopwatch--speed-up .stopwatch__second {
+  animation-duration: $secondDuration;
+}
+
+.stopwatch--speed-up .stopwatch__hour {
+  animation-duration: $hourDuration;
 }
