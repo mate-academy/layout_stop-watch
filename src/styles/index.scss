@@ -1,3 +1,89 @@
+$stopwatch-size: 80vmin;
+$center-point: $stopwatch-size / 2;
+$center-size: 5vmin;
+$border: 1vmin;
+$hand-minute-length: 20vmin;
+$hand-minute-width: 3vmin;
+$hand-second-length: 38vmin;
+$hand-second-width: 1.5vmin;
+$color-border: #000;
+$color-minute: #0700ff;
+$color-second: #2c8000;
+$color-center: #f6a603;
+
+@mixin create-hand($width, $height, $color, $is-minute: false) {
+  position: absolute;
+  background-color: $color;
+  width: $width;
+  height: $height;
+  bottom: $center-point;
+  left: $center-point - ($width / 2);
+  transform-origin: bottom;
+
+  @if $is-minute {
+    animation: hand-rotate calc(var(--minute-duration) * 60) steps(60) infinite;
+  } @else {
+    animation: hand-rotate var(--minute-duration) linear infinite;
+  }
+}
+
+@keyframes hand-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
+  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
+}
+
+.stopwatch {
+  --minute-duration: 60s;
+
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: $border dotted $color-border;
+  border-radius: 50%;
+
+  &__center-circle {
+    position: absolute;
+    width: $center-size;
+    height: $center-size;
+    background-color: $color-center;
+    border-radius: 50%;
+    bottom: $center-point - ($center-size / 2);
+    left: $center-point - ($center-size / 2);
+  }
+
+  &__hand-minute {
+    @include create-hand(
+      $hand-minute-width,
+      $hand-minute-length,
+      $color-minute,
+      true
+    );
+  }
+
+  &__hand-second {
+    @include create-hand(
+      $hand-second-width,
+      $hand-second-length,
+      $color-second,
+      false
+    );
+  }
+
+  &--speed-up {
+    --minute-duration: 10s;
+  }
 }
