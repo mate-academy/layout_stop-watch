@@ -1,3 +1,61 @@
+@import './variables';
+
 body {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.clock {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted black;
+  border-radius: 50%;
+  position: relative;
+
+  &__dot {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: $orange;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minutes_hand {
+    height: 20vmin;
+    width: 3vmin;
+    background-color: $blue;
+    position: absolute;
+    left: calc(50% - 1.5vmin);
+    top: calc(40vmin - 20vmin);
+    animation: rotate 3600s steps(60) infinite;
+    transform-origin: center bottom;
+  }
+
+  &__seconds_hand {
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: $green;
+    position: absolute;
+    top: calc(40vmin - 38vmin);
+    left: calc(50% - 0.75vmin);
+    animation: rotate 60s linear infinite;
+    transform-origin: center bottom;
+  }
+}
+
+.clock--speed-up {
+  .clock__minutes_hand {
+    animation: rotate 60s steps(60) infinite;
+  }
+
+  .clock__seconds_hand {
+    animation: rotate 10s linear infinite;
+  }
 }
