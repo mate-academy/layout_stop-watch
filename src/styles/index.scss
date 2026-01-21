@@ -1,17 +1,17 @@
 @keyframes move-sec {
-  from {
-    transform: rotate(0);
+  0% {
+    transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
 
 @keyframes move-min {
-  from {
-    transform: rotate(0);
+  0% {
+    transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -25,7 +25,8 @@ body {
 }
 
 .stopwatch {
-  --second-duration: 60s;
+  --min-duration: 3600s;
+  --sec-duration: 60s;
 
   position: relative;
   border: 1vmin dotted #000;
@@ -34,13 +35,14 @@ body {
   height: 80vmin;
 
   &--speed-up {
-    --second-duration: 10s;
+    --min-duration: 600s;
+    --sec-duration: 10s;
   }
 
   &__seconds {
     transform: rotate(0);
     transform-origin: center bottom;
-    animation: move-sec var(--second-duration) linear infinite;
+    animation: move-sec var(--sec-duration) linear infinite;
     position: absolute;
     left: 39.25vmin;
     bottom: 40vmin;
@@ -52,7 +54,7 @@ body {
   &__minutes {
     transform: rotate(0);
     transform-origin: center bottom;
-    animation: move-min calc(var(--second-duration) * 60) steps(60) infinite;
+    animation: move-min var(--min-duration) steps(60, end) infinite;
     position: absolute;
     left: 38.5vmin;
     bottom: 40vmin;
