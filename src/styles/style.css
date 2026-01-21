@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border-style: dotted;
+  border-width: 1vmin;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.stopwatch__minutes {
+  width: 3vmin;
+  height: 20vmin;
+  bottom: 50%;
+  background: #0700ff;
+  position: absolute;
+  transform-origin: bottom;
+  animation: minutes-rotate 3600s steps(60) infinite;
+}
+
+.stopwatch__seconds {
+  width: 1.5vmin;
+  height: 38vmin;
+  bottom: 50%;
+  background: #2c8000;
+  position: absolute;
+  transform-origin: bottom;
+  animation: seconds-rotate 60s linear infinite;
+}
+
+.stopwatch__circle {
+  width: 5vmin;
+  height: 5vmin;
+  background: #f6a603;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.stopwatch--speed-up .stopwatch__minutes {
+  animation: minutes-rotate 600s steps(60) infinite;
+}
+
+.stopwatch--speed-up .stopwatch__seconds {
+  animation: seconds-rotate 10s linear infinite;
+}
+
+@keyframes minutes-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes seconds-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
