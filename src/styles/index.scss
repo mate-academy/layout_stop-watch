@@ -1,3 +1,91 @@
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   margin: 0;
+}
+
+// Variables
+$size: 80vmin;
+$border-width: 1vmin;
+$dot-color: #000;
+$seconds-color: #2c8000;
+$minutes-color: #0700ff;
+$center-color: #f6a603;
+
+.stopwatch {
+  width: $size;
+  height: $size;
+  border: $border-width dotted $dot-color;
+  border-radius: 50%;
+  position: relative;
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    background-color: $center-color;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  &__hand--seconds {
+    width: 1.5vmin;
+    height: 38vmin;
+    margin-left: -7px;
+    background-color: $seconds-color;
+    animation: rotate-seconds 60s linear infinite;
+    z-index: 1;
+  }
+
+  &__hand--minutes {
+    width: 3vmin;
+    height: 20vmin;
+    margin-left: -10px;
+    background-color: $minutes-color;
+    animation: rotate-minutes 3600s steps(60) infinite;
+    z-index: 0;
+  }
+
+  // Modifier to speed up time
+  &--speed-up {
+    .stopwatch__hand--seconds {
+      animation-duration: 10s;
+    }
+
+    .stopwatch__hand--minutes {
+      animation-duration: 600s;
+    }
+  }
+}
+
+// Animations
+@keyframes rotate-seconds {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-minutes {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
