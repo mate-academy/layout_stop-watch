@@ -1,0 +1,67 @@
+.stopwatch {
+  position: relative;
+  width: $width;
+  height: $height;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  background-color: $background;
+
+  &__center {
+    position: absolute;
+    top: $top;
+    left: $left;
+    width: 5vmin;
+    height: 5vmin;
+    background-color: $color-center;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute-hand,
+  &__second-hand {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform-origin: bottom;
+    transform: translate(-50%, -100%) rotate(0deg);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute-hand {
+    width: 3vmin;
+    height: 20vmin;
+    background-color: $color-minute;
+    animation: rotate-minute 3600s steps(60) infinite;
+  }
+
+  &__second-hand {
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: $color-second;
+    animation: rotate-second 60s linear infinite;
+  }
+
+  &--speed-up {
+    &__minute-hand {
+      animation: rotate-minute 600s steps(60) infinite;
+    }
+
+    &__second-hand {
+      animation: rotate-second 10s linear infinite;
+    }
+  }
+}
+
+// Анімація
+@keyframes rotate-minute {
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-second {
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
