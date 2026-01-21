@@ -1,3 +1,102 @@
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin circle($size) {
+  @include size($size);
+
+  border-radius: 50%;
+}
+
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotate-seconds {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-minute-steps {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
 body {
   margin: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+
+  @include size(80vmin);
+
+  border: 1vmin dotted #000;
+
+  @include circle(80vmin);
+
+  &__center {
+    @include center-absolute;
+
+    background-color: #f6a603;
+
+    @include circle(5vmin);
+
+    border: 0;
+    z-index: 3;
+  }
+
+  &__minute {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    background-color: #0700ff;
+
+    @include size(3vmin, 20vmin);
+
+    transform: translateX(-50%);
+    z-index: 1;
+    animation: rotate-minute-steps 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    background-color: #2c8000;
+
+    @include size(1.5vmin, 38vmin);
+
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: rotate-seconds 60s linear infinite;
+  }
+
+  &--speed-up {
+    & .stopwatch__minute {
+      animation-duration: 600s;
+    }
+
+    & .stopwatch__seconds {
+      animation-duration: 10s;
+    }
+  }
 }
