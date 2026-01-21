@@ -1,0 +1,58 @@
+@import 'var';
+
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  position: relative;
+  border-radius: 50%;
+  border: 1vmin dotted $stopwatch-border-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  --time: 60s;
+
+  &__minutes-hand {
+    width: $minutes-hand-width;
+    height: $minutes-hand-length;
+    background-color: $minutes-hand-bg;
+    position: absolute;
+    top: 50%;
+    transform-origin: center top;
+    rotate: 180deg;
+    animation: hand-rotate calc(var(--time) * 60) steps(60) infinite;
+  }
+
+  &__seconds-hand {
+    width: $seconds-hand-width;
+    height: $seconds-hand-length;
+    background-color: $seconds-hand-bg;
+    position: absolute;
+    top: 50%;
+    transform-origin: center top;
+    rotate: 180deg;
+    animation: hand-rotate var(--time) linear infinite;
+  }
+  &__center-dot {
+    width: $stopwatch-center-dot-diameter;
+    height: $stopwatch-center-dot-diameter;
+    background-color: $stopwatch-center-dot-bg;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - (#{$stopwatch-center-dot-diameter} / 2));
+    left: calc(50% - (#{$stopwatch-center-dot-diameter} / 2));
+  }
+}
+
+.stopwatch--speed-up {
+  --time: 10s;
+}
+
+@keyframes hand-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
