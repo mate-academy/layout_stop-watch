@@ -1,0 +1,22 @@
+@import '../styles/variables';
+
+@mixin circle {
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+@mixin sizing($hand-w, $hand-h, $factor-w, $factor-h) {
+  content: '';
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  left: calc(#{$stopwatch-size} * 0.5 - (#{$hand-w} / #{$factor-w}));
+  top: calc(#{$stopwatch-size} * 0.5 - (#{$hand-h} / #{$factor-h}));
+  width: $hand-w;
+  height: $hand-h;
+}
+
+@mixin animation($time) {
+  animation: rotation #{$time} infinite linear;
+  transform-origin: bottom;
+}
