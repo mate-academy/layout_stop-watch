@@ -1,3 +1,89 @@
+$stopwatch-radius: 80vmin;
+$stopwatch-center-radius: 5vmin;
+$stopwatch-center-position: ($stopwatch-radius - $stopwatch-center-radius) / 2;
+$minutes-hand-height: 20vmin;
+$minutes-hand-width: 3vmin;
+$minutes-hand-position-top: ($stopwatch-radius / 2) - $minutes-hand-height;
+$minutes-hand-position-left: ($stopwatch-radius - $minutes-hand-width) / 2;
+$seconds-hand-width: 1.5vmin;
+$seconds-hand-height: 38vmin;
+$seconds-hand-position-top: ($stopwatch-radius / 2) - $seconds-hand-height;
+$seconds-hand-position-left: ($stopwatch-radius - $seconds-hand-width) / 2;
+$speed-minutes: 3600s;
+$speed-seconds: 60s;
+$speed-multiplier: 6;
+
 body {
   margin: 0;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  // box-sizing: border-box;
+  position: relative;
+
+  height: $stopwatch-radius;
+  width: $stopwatch-radius;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minutes-hand {
+    height: $minutes-hand-height;
+    width: $minutes-hand-width;
+    background-color: #0700ff;
+
+    position: absolute;
+    transform-origin: bottom;
+    top: $minutes-hand-position-top;
+    left: $minutes-hand-position-left;
+    animation: rotate steps(60) infinite;
+    animation-duration: $speed-minutes;
+  }
+
+  &__seconds-hand {
+    height: $seconds-hand-height;
+    width: $seconds-hand-width;
+    background-color: #2c8000;
+
+    position: absolute;
+    top: $seconds-hand-position-top;
+    left: $seconds-hand-position-left;
+
+    transform-origin: bottom center;
+    animation: rotate linear infinite;
+    animation-duration: $speed-seconds;
+  }
+
+  &__center {
+    height: $stopwatch-center-radius;
+    width: $stopwatch-center-radius;
+    background-color: #f6a603;
+    border-radius: 50%;
+
+    position: absolute;
+    top: $stopwatch-center-position;
+    left: $stopwatch-center-position;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes-hand {
+      animation-duration: $speed-minutes / $speed-multiplier;
+    }
+    .stopwatch__seconds-hand {
+      animation-duration: $speed-seconds / $speed-multiplier;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
