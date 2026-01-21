@@ -1,3 +1,88 @@
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $circle-size;
+  width: $circle-size;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__minute,
+  &__second {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  &__second-arrow {
+    display: flex;
+    position: absolute;
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: $color-s-arrow;
+
+    order: 2;
+    z-index: 1;
+    animation-name: move;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: 50% 100%;
+  }
+
+  &__minute-arrow {
+    display: flex;
+    position: absolute;
+    width: 3vmin;
+    height: 20vmin;
+    background-color: $color-m-arrow;
+
+    animation-name: move;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(60);
+    transform-origin: 50% 100%;
+  }
+
+  &__circle {
+    position: absolute;
+    height: 5vmin;
+    width: 5vmin;
+    background-color: $color-s-circle;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+.stopwatch--speed-up .stopwatch__second-arrow {
+  animation-name: move;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 100%;
+}
+
+.stopwatch--speed-up .stopwatch__minute-arrow {
+  animation-name: move;
+  animation-duration: 600s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 100%;
+  animation-timing-function: steps(60);
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
