@@ -1,0 +1,79 @@
+.page {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  border: 1vmin #000 dotted;
+  border-radius: 50%;
+  width: 80vmin;
+  height: 80vmin;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__minutes-hand {
+    background-color: #0700ff;
+    height: 20vmin;
+    width: 3vmin;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -10vmin;
+    transform-origin: bottom center;
+    animation: minutes 3600s steps(60) infinite;
+
+    &--speed-up {
+      animation-duration: 600s;
+    }
+  }
+
+  &__center {
+    background-color: #f6a603;
+    border-radius: 50%;
+    width: 5vmin;
+    height: 5vmin;
+    position: absolute;
+    z-index: 2;
+  }
+
+  &__seconds-hand {
+    background-color: #2c8000;
+    height: 38vmin;
+    width: 1.5vmin;
+    position: absolute;
+    top: 2vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: bottom center;
+    animation: seconds 60s linear infinite;
+
+    &--speed-up {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes minutes {
+  0% {
+    transform: rotate(0deg); /* Початковий кут (вверх) */
+  }
+  100% {
+    transform: rotate(360deg); /* Кінець анімації (повний оберт) */
+  }
+}
+
+@keyframes seconds {
+  0% {
+    transform: rotate(0deg); /* Початковий кут (вверх) */
+  }
+  100% {
+    transform: rotate(360deg); /* Кінець анімації (повний оберт) */
+  }
+}
