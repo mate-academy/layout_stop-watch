@@ -1,0 +1,69 @@
+.stopwatch {
+  --hour-duration: 3600s;
+  --minute-duration: 60s;
+
+  &--speed-up {
+    --hour-duration: 600s;
+    --minute-duration: 10s;
+  }
+
+  position: relative;
+
+  // box-sizing: border-box;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+
+  border: 1vmin dotted $stopwatch-border-color;
+  border-radius: 50%;
+
+  &__axis-pin {
+    position: absolute;
+    left: calc(50% - #{$axis-pin-size / 2});
+    top: calc(50% - #{$axis-pin-size / 2});
+
+    height: $axis-pin-size;
+    width: $axis-pin-size;
+
+    background-color: $axis-pin-color;
+
+    border-radius: 50%;
+  }
+
+  @keyframes stopwatch-arm {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__minutes-arm {
+    position: absolute;
+    left: calc(50% - #{$minutes-arm-width / 2});
+    bottom: 50%;
+
+    height: 20vmin;
+    width: $minutes-arm-width;
+
+    background-color: $minutes-arm-color;
+
+    animation: stopwatch-arm var(--hour-duration) steps(60, end) infinite;
+    transform-origin: bottom center;
+  }
+
+  &__seconds-arm {
+    position: absolute;
+    left: calc(50% - #{$seconds-arm-width / 2});
+    bottom: 50%;
+
+    height: 38vmin;
+    width: $seconds-arm-width;
+
+    background-color: $seconds-arm-color;
+
+    animation: stopwatch-arm var(--minute-duration) linear infinite;
+    transform-origin: bottom center;
+  }
+}
