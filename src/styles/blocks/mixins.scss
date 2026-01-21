@@ -1,0 +1,18 @@
+@mixin content-position() {
+  position: absolute;
+}
+
+@mixin content-animation() {
+  bottom: 50%;
+
+  animation: rotating;
+  transform-origin: bottom center;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@mixin content-justify() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
