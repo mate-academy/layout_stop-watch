@@ -1,0 +1,22 @@
+@use './key-frames.scss' as kf;
+
+@mixin layout-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin stopwatch-styles($width, $height, $bckground-color) {
+  width: $width;
+  height: $height;
+  background-color: $bckground-color;
+
+  @if $width == $height {
+    border-radius: 50%;
+  }
+}
+
+@mixin animate-stopwatch-hand($duration, $timing-function) {
+  transform-origin: bottom center;
+  animation: #{kf.$rotate} $duration infinite $timing-function;
+}
