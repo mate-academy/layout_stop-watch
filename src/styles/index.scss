@@ -1,3 +1,82 @@
 body {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+  align-items: center;
+
+  &__center {
+    position: absolute;
+    height: 5vmin;
+    width: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    z-index: 99;
+    bottom: 37.5vmin;
+    left: 37.5vmin;
+  }
+
+  &__minute {
+    background-color: #0700ff;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: bottom;
+    width: 3vmin;
+    height: 20vmin;
+    animation: rotate-steps 3600s steps(60) infinite;
+  }
+
+  &__sec {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: bottom;
+    align-items: center;
+    height: 38vmin;
+    width: 1.5vmin;
+    animation: rotate 60s infinite linear;
+    background-color: #2c8000;
+  }
+
+  &--speed-up {
+    .stopwatch__sec {
+      animation-duration: 10s;
+    }
+
+    .stopwatch__minute {
+      animation-duration: 600s;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-steps {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
 }
