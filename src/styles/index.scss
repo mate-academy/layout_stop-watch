@@ -1,3 +1,69 @@
-body {
+@import './variable';
+
+.page {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  width: $width;
+  height: $width;
+  border: $border-width dotted $border-color;
+  border-radius: 50%;
+
+  &__minutes {
+    position: absolute;
+    height: $minutes-height;
+    width: $minutes-width;
+    background-color: $minutes-color;
+    bottom: 50%;
+    left: calc(50% - (#{$minutes-width} / 2));
+    transform-origin: bottom center;
+    animation: rotate 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    height: $seconds-height;
+    width: $seconds-width;
+    background-color: $seconds-color;
+    bottom: 50%;
+    left: calc(50% - (#{$seconds-width} / 2));
+    transform-origin: bottom center;
+    animation: rotate 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    width: $center-size;
+    height: $center-size;
+    border-radius: 50%;
+    background-color: $center-color;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--speed {
+    .stopwatch__seconds {
+      animation-duration: 10s;
+    }
+
+    .stopwatch__minutes {
+      animation-duration: 600s;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
