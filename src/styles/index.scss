@@ -1,3 +1,87 @@
+$circle-size: 5vmin;
+$minute-hand-height: 20vmin;
+$minute-hand-width: 3vmin;
+$second-hand-height: 38vmin;
+$second-hand-width: 1.5vmin;
+
+@mixin set-to-center {
+  position: absolute;
+  transform-origin: bottom center;
+}
+
+@mixin flex($align: center, $justify: center, $direction: row, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-flow: $direction $wrap;
+}
+
+@keyframes hand-move {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   margin: 0;
+  height: 100vh;
+
+  @include flex;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  @include flex(flex-start);
+
+  &__circle {
+    width: $circle-size;
+    height: $circle-size;
+    background-color: #f6a603;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minute-hand {
+    width: $minute-hand-width;
+    height: $minute-hand-height;
+    background: blue;
+
+    @include set-to-center;
+
+    margin-top: ($circle-size / 2) + ($second-hand-height - $minute-hand-height);
+    animation: hand-move 3600s steps(60, jump-end) infinite;
+  }
+
+  &__second-hand {
+    width: $second-hand-width;
+    height: $second-hand-height;
+    background-color: #2c8000;
+
+    @include set-to-center;
+
+    margin-top: $circle-size / 2;
+    animation: hand-move 60s linear infinite;
+  }
+
+  &--speed-up {
+    .stopwatch__second-hand {
+      animation-duration: 10s;
+    }
+
+    .stopwatch__minute-hand {
+      animation-duration: 600s;
+    }
+  }
 }
