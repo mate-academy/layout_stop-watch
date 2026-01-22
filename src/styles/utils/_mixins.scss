@@ -1,0 +1,22 @@
+@use 'keyframes' as kf;
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin stopwatch-styles($width, $height, $bg-color) {
+  width: $width;
+  height: $height;
+  background-color: $bg-color;
+
+  @if $width == $height {
+    border-radius: 50%;
+  }
+}
+
+@mixin animate-stopwatch-hand($duration, $timing-function) {
+  transform-origin: bottom center;
+  animation: #{kf.$rotate} $duration infinite $timing-function;
+}
