@@ -2,7 +2,7 @@
   height: 80vmin;
   width: 80vmin;
   border-radius: 50%;
-  border: 1vmin dotted #000;
+  border: $border-width dotted $border-color;
   position: relative;
 
   &__min {
@@ -42,5 +42,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  &--speed-up {
+    .stopwatch__sec {
+      animation-duration: 10s;
+    }
+
+    .stopwatch__min {
+      animation-duration: 600s;
+    }
   }
 }
