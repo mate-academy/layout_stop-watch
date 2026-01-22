@@ -1,0 +1,74 @@
+@mixin center($width) {
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - ($width / 2));
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__center {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background: #f6a603;
+    z-index: 2;
+  }
+
+  &__minute {
+    width: 3vmin;
+    height: 20vmin;
+    background: #0700ff;
+
+    @include center(3vmin);
+
+    z-index: 1;
+
+    transform-origin: bottom center;
+    animation-name: arrow;
+    animation-duration: 60s * 60;
+    animation-timing-function: steps(60);
+    animation-iteration-count: infinite;
+  }
+
+  &__second {
+    width: 1.5vmin;
+    height: 38vmin;
+    background: #2c8000;
+    z-index: 1;
+
+    @include center(1.5vmin);
+
+    transform-origin: bottom center;
+    animation-timing-function: linear;
+    animation-name: arrow;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+  }
+
+  &--speed-up {
+    .stopwatch__second {
+      animation-duration: 10s;
+    }
+
+    .stopwatch__minute {
+      animation-duration: 60s * 10;
+    }
+  }
+
+  @keyframes arrow {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
