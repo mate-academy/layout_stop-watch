@@ -1,3 +1,96 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+  display: block;
+
+  height: 100vh;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+
+  &__center {
+    // visibility: hidden;
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+
+    transform-origin: bottom center;
+
+    height: 38vmin;
+    width: 1.5vmin;
+    background-color: #2c8000;
+    animation-name: seconds-hand;
+    animation-iteration-count: infinite;
+
+    animation-duration: 60s;
+    animation-timing-function: linear;
+  }
+
+  &__minutes-hand {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+
+    transform-origin: bottom center;
+
+    height: 20vmin;
+    width: 3vmin;
+    background-color: #0700ff;
+
+    animation-timing-function: steps(60);
+
+    animation-name: minutes-hand;
+    animation-iteration-count: infinite;
+
+    animation-duration: 3600s;
+  }
+
+  &__seconds-hand--speed-up {
+    animation-duration: 10s;
+  }
+
+  &__minutes-hand--speed-up {
+    animation-duration: 600s;
+  }
+}
+
+@keyframes seconds-hand {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+@keyframes minutes-hand {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
 }
