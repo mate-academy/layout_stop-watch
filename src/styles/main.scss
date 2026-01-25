@@ -1,0 +1,85 @@
+// Variables following requirements
+$color-orange: #f6a603;
+$color-blue: #0700ff;
+$color-green: #2c8000;
+$color-black: #000;
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stopwatch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted $color-black;
+  border-radius: 50%;
+  background-color: #fff;
+
+  &__point {
+    position: relative;
+    z-index: 10;
+    width: 5vmin;
+    height: 5vmin;
+    background-color: $color-orange;
+    border-radius: 50%;
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+  }
+
+  &__hand--minute {
+    width: 3vmin;
+    height: 20vmin;
+    background-color: $color-blue;
+
+    animation: rotate-minute 3600s steps(60) infinite;
+  }
+
+  &__hand--second {
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: $color-green;
+
+    animation: rotate-second 60s linear infinite;
+  }
+
+  &--speed-up {
+    .stopwatch__hand--minute {
+      animation-duration: 600s;
+    }
+
+    .stopwatch__hand--second {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes rotate-second {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-minute {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
