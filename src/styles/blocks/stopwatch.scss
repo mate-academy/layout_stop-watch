@@ -14,7 +14,7 @@
     left: 50%;
     transform-origin: 50% 100%;
     transform: translate(-50%, -100%) rotate(0deg);
-    animation: second-rotate 10s linear infinite;
+    animation: second-rotate 60s linear infinite;
   }
 
   &__minute-hand {
@@ -26,7 +26,7 @@
     left: 50%;
     transform-origin: 50% 100%;
     transform: translate(-50%, -100%) rotate(0deg);
-    animation: minute-rotate 600s steps(60) infinite;
+    animation: minute-rotate 3600s steps(60) infinite;
   }
 
   &__center {
@@ -40,7 +40,17 @@
     transform: translate(-50%, -50%);
     z-index: 2;
   }
+
+  &--speed-up {
+    .stopwatch__second-hand {
+      animation-duration: 10s;
+    }
+    .stopwatch__minute-hand {
+      animation-duration: 600s;
+    }
+  }
 }
+
 
 @keyframes second-rotate {
   from {
