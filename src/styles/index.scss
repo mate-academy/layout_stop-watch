@@ -1,3 +1,96 @@
 body {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+
+  border-radius: 50%;
+
+  border: 1vmin dotted #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.stopwatch__circle {
+  width: 5vmin;
+  height: 5vmin;
+  background-color: #f6a603;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(1px);
+  z-index: 3;
+}
+
+.stopwatch__minutes {
+  width: 3vmin;
+  height: 20vmin;
+  background-color: #0700ff;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  z-index: -2;
+  transform-origin: bottom;
+
+  animation-name: minutes;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(60, end);
+}
+
+.stopwatch__seconds {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  z-index: -1;
+  width: 1.5vmin;
+  height: 38vmin;
+  background-color: #2c8000;
+
+  transform-origin: bottom center;
+
+  animation-name: seconds;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes seconds {
+  from {
+    transform: translateX(-50%) translateZ(-1px) rotate(0deg);
+  }
+
+  to {
+    transform: translateX(-50%) translateZ(-1px) rotate(360deg);
+  }
+}
+
+@keyframes minutes {
+  from {
+    transform: translateX(-50%) translateZ(-1px) rotate(0deg);
+  }
+
+  to {
+    transform: translateX(-50%) translateZ(-1px) rotate(360deg);
+  }
+}
+
+.stopwatch--speed-up {
+  .stopwatch__seconds {
+    animation-duration: 10s;
+  }
+  .stopwatch__minutes {
+    animation-duration: 600s;
+  }
 }
