@@ -1,0 +1,84 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.stopwatch {
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  width: 80vmin;
+  height: 80vmin;
+  position: relative;
+}
+
+.stopwatch:after {
+  content: '';
+  background-color: #f6a603;
+  border-radius: 50%;
+  width: 5vmin;
+  height: 5vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stopwatch__seconds {
+  transform-origin: 0;
+  background-color: #2c8000;
+  width: 38vmin;
+  height: 1.5vmin;
+  animation: 60s linear infinite rotate-seconds;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.stopwatch__minutes {
+  transform-origin: 0%;
+  background-color: #0700ff;
+  width: 20vmin;
+  height: 3vmin;
+  animation: 3600s steps(60, end) infinite rotate-minutes;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.stopwatch--speed-up .stopwatch__seconds {
+  animation-duration: 10s;
+}
+
+.stopwatch--speed-up .stopwatch__minutes {
+  animation-duration: 600s;
+}
+
+@keyframes rotate-seconds {
+  from {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+
+  to {
+    transform: translateY(-50%) rotate(270deg);
+  }
+}
+
+@keyframes rotate-minutes {
+  from {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+
+  to {
+    transform: translateY(-50%) rotate(270deg);
+  }
+}
+/*# sourceMappingURL=layout_stop-watch.7ffea227.css.map */
