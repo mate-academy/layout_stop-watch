@@ -23,6 +23,7 @@ body {
     width: 1.5vmin;
     height: 38vmin;
     background-color: #2c8000;
+
     animation-name: seconds;
     animation-timing-function: linear;
     animation-duration: 60s;
@@ -48,6 +49,7 @@ body {
     width: 3vmin;
     height: 20vmin;
     background-color: #0700ff;
+
     animation-name: minutes;
     animation-timing-function: steps(60, end);
     animation-duration: 3600s;
@@ -66,14 +68,15 @@ body {
 
   &__hand-center {
     position: absolute;
-    border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 5vmin;
     height: 5vmin;
+    border-radius: 50%;
     background-color: #f6a603;
   }
+
   &--speed-up {
     .stopwatch__hand-seconds {
       animation-duration: 10s;
