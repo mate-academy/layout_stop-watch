@@ -1,3 +1,77 @@
-body {
+@mixin hand-style($w, $h, $color, $z) {
+  height: $h;
+  width: $w;
+  background-color: $color;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  transform-origin: bottom center;
+  z-index: $z;
+}
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+
+  outline: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    z-index: 3;
+  }
+
+  &__minutes-hand {
+    @include hand-style(3vmin, 20vmin, #0700ff, 1);
+
+    animation: rotate-hand 3600s steps(60) infinite;
+  }
+
+  &__seconds-hand {
+    @include hand-style(1.5vmin, 38vmin, #2c8000, 2);
+
+    animation: rotate-hand 60s linear infinite;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes-hand {
+      animation-duration: 600s;
+    }
+
+    .stopwatch__seconds-hand {
+      animation-duration: 10s;
+    }
+  }
+}
+
+@keyframes rotate-hand {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
 }
