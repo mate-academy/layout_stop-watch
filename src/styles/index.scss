@@ -40,15 +40,15 @@ body {
     transform-origin: bottom center;
     transform: translate(-50%, -100%) rotate(0deg);
     animation: minute-rotate 3600s steps(60, end) infinite;
-  }
 
-  @keyframes minute-rotate {
-    from {
-      transform: translate(-50%, -100%) rotate(0deg);
-    }
+    @keyframes minute-rotate {
+      from {
+        transform: translate(-50%, -100%) rotate(0deg);
+      }
 
-    to {
-      transform: translate(-50%, -100%) rotate(360deg);
+      to {
+        transform: translate(-50%, -100%) rotate(360deg);
+      }
     }
   }
 
@@ -62,19 +62,19 @@ body {
     transform: translate(-50%, -100%) rotate(0deg);
     transform-origin: bottom center;
     animation: second-rotate 60s linear infinite;
+
+    @keyframes second-rotate {
+      from {
+        transform: translate(-50%, -100%) rotate(0deg);
+      }
+
+      to {
+        transform: translate(-50%, -100%) rotate(360deg);
+      }
+    }
   }
 
-  @keyframes second-rotate {
-    from {
-      transform: translate(-50%, -100%) rotate(0deg);
-    }
-
-    to {
-      transform: translate(-50%, -100%) rotate(360deg);
-    }
-  }
-
-  .stopwatch--speed-up {
+  &--speed-up {
     .stopwatch__second-hand {
       animation-duration: 10s;
     }
