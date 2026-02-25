@@ -3,19 +3,19 @@ body {
 }
 
 @keyframes rotate-minutes {
-  0% {
+  from {
     transform: translate(-50%, -100%) rotate(0deg);
   }
-  100% {
+  to {
     transform: translate(-50%, -100%) rotate(360deg);
   }
 }
 
 @keyframes rotate-seconds {
-  0% {
+  from {
     transform: translate(-50%, -100%) rotate(0deg);
   }
-  100% {
+  to {
     transform: translate(-50%, -100%) rotate(360deg);
   }
 }
@@ -73,7 +73,7 @@ body {
 
   &--speed-up {
     .stopwatch__hand--minutes {
-      animation-duration: 600s;
+      animation-duration: 60s;
     }
 
     .stopwatch__hand--seconds {
