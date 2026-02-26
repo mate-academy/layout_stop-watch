@@ -12,12 +12,12 @@
   border-radius: $radius;
 
   @keyframes hand {
-    0% {
+    from {
       transform: rotate(0);
     }
 
-    100% {
-      transform: rotate($one-circle);
+    to {
+      transform: rotate(360deg);
     }
   }
 
@@ -29,9 +29,9 @@
     height: $min-lendth;
     width: $min-width;
     background-color: $min-color;
-    transform-origin: bottom;
+    transform-origin: bottom center;
 
-    animation: hand $one-hour steps($steps) infinite;
+    animation: hand $hour steps($steps) infinite;
   }
 
   &__seconds-hand {
@@ -41,9 +41,9 @@
     height: $sec-lendth;
     width: $sec-width;
     background-color: $sec-color;
-    transform-origin: bottom;
+    transform-origin: bottom center;
 
-    animation: hand $one-min linear infinite;
+    animation: hand $min linear infinite;
   }
 
   &__circle {
