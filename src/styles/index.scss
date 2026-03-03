@@ -1,3 +1,81 @@
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stopwatch {
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__minutes {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 20vmin;
+    width: 3vmin;
+    background: #0700ff;
+    transform: translate(-50%, -100%) rotate(0deg);
+    transform-origin: 50% 100%;
+    animation: minute 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 38vmin;
+    width: 1.5vmin;
+    background: #2c8000;
+    transform: translate(-50%, -100%) rotate(0deg);
+    transform-origin: 50% 100%;
+    animation: second 60s linear infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 5vmin;
+    width: 5vmin;
+    border-radius: 50%;
+    background: #f6a603;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  &--speed-up .stopwatch__seconds {
+    animation-duration: 10s;
+  }
+
+  &--speed-up .stopwatch__minutes {
+    animation-duration: 600s;
+  }
+}
+
+@keyframes minute {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+@keyframes second {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
 }
