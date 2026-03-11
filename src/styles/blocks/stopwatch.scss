@@ -14,7 +14,7 @@
     transform: translateX(-50%) translateY(-100%) rotate(0deg);
   }
 
-  &__hand-minute {
+  &__hand--minute {
     height: $watch-minute-height;
     width: $watch-minute-width;
     background-color: $watch-minutes-color;
@@ -25,7 +25,7 @@
     animation-iteration-count: infinite;
   }
 
-  &__hand-second {
+  &__hand--second {
     height: $watch-second-height;
     width: $watch-second-width;
     background-color: $watch-second-color;
@@ -47,7 +47,7 @@
     transform: translate(-50%, -50%);
   }
 
-  &--speed-up .stopwatch__hand-minute {
+  &--speed-up .stopwatch__hand--minute {
     transform-origin: bottom center;
 
     animation-name: circle;
@@ -56,7 +56,7 @@
     animation-iteration-count: infinite;
   }
 
-  &--speed-up .stopwatch__hand-second {
+  &--speed-up .stopwatch__hand--second {
     transform-origin: bottom center;
 
     animation-name: circle;
