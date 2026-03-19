@@ -1,3 +1,91 @@
+$black-color: #000;
+$blue-color: #0700ff;
+$green-color: #2c8000;
+$orange-color: #f6a603;
+$watch-size: 80vmin;
+$border-radius: 50%;
+$watch-hand-origin: bottom center;
+
+@mixin watch-hand-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+
+@mixin watch-rotate(
+  $duration: 60s,
+  $timing: linear,
+  $iterationCount: infinite
+) {
+  animation: watch-rotate $duration $timing $iterationCount;
+}
+
 body {
   margin: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stopwatch {
+  position: relative;
+  width: $watch-size;
+  height: $watch-size;
+  border: 1vmin dotted $black-color;
+  border-radius: $border-radius;
+
+  &__minutes {
+    width: 3vmin;
+    height: 20vmin;
+    background-color: $blue-color;
+    transform-origin: $watch-hand-origin;
+
+    @include watch-hand-position;
+    @include watch-rotate(3600s, steps(60));
+  }
+
+  &__seconds {
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: $green-color;
+    transform-origin: $watch-hand-origin;
+
+    @include watch-hand-position;
+    @include watch-rotate(60s);
+  }
+
+  &__circle {
+    width: 5vmin;
+    height: 5vmin;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: $border-radius;
+    transform: translate(-50%, -50%);
+    background-color: $orange-color;
+  }
+
+  &--speed-up {
+    .stopwatch__minutes {
+      @include watch-rotate(600s, steps(60));
+    }
+    .stopwatch__seconds {
+      @include watch-rotate(10s);
+    }
+  }
+}
+
+@keyframes watch-rotate {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
 }
