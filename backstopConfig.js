@@ -1,5 +1,5 @@
 'use strict';
-// https://github.com/garris/BackstopJS#advanced-scenarios
+// url: 'https://sonik-boom71.github.io/layout_stop-watch/',
 
 const backstop = require('@mate-academy/backstop-config');
 const { basicScenario } = backstop;
