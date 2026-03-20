@@ -44,7 +44,7 @@ body {
     width: $minutes-hand-width;
     height: $minutes-hand-height;
     background-color: $minutes-hand-color;
-    animation: rotate-minutes 60 min steps(60) infinite;
+    animation: rotate-minutes 3600s steps(60) infinite;
   }
 
   &__hand--seconds {
@@ -67,7 +67,7 @@ body {
 
   &--speed-up {
     .stopwatch__hand--minutes {
-      animation-duration: 10 min;
+      animation-duration: 600s;
     }
 
     .stopwatch__hand--seconds {
