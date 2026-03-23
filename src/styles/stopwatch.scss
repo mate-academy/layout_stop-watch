@@ -1,18 +1,15 @@
 @keyframes rotate {
   from {
-    transform: rotate(0deg);
+    transform: translate(-50%, -100%) rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: translate(-50%, -100%) rotate(360deg);
   }
 }
 
 .stopwatch {
   --minute: 60s;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // position: relative;
 
   width: 80vmin;
   height: 80vmin;
@@ -24,18 +21,24 @@
   }
 
   &__center {
-    position: absolute;
+    transform-origin: center;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     height: 5vmin;
     width: 5vmin;
     background-color: $center-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
   }
 
   &__minutes-hand {
-    transform-origin: bottom;
-    position: relative;
-    bottom: 10vmin;
-    left: 1.5vmin;
+    transform-origin: 50% 100%;
+    transform: translate(-50%, -100%) rotate(0deg);
+    transform-origin: center bottom;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 3vmin;
     height: 20vmin;
     background-color: $minutes-hand-color;
@@ -44,10 +47,10 @@
   }
 
   &__seconds-hand {
-    transform-origin: bottom;
-    position: relative;
-    bottom: 18vmin;
-    left: -1.5vmin;
+    transform-origin: center bottom;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     height: 38vmin;
     width: 1.5vmin;
     background-color: $seconds-hand-color;
