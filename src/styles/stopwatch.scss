@@ -1,8 +1,8 @@
 @keyframes rotate {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
@@ -33,8 +33,9 @@
 
   &__minutes-hand {
     transform-origin: bottom;
-    position: absolute;
-    top: 31.5vmin;
+    position: relative;
+    bottom: 10vmin;
+    left: 1.5vmin;
     width: 3vmin;
     height: 20vmin;
     background-color: $minutes-hand-color;
@@ -44,8 +45,9 @@
 
   &__seconds-hand {
     transform-origin: bottom;
-    position: absolute;
-    top: 13.5vmin;
+    position: relative;
+    bottom: 18vmin;
+    left: -1.5vmin;
     height: 38vmin;
     width: 1.5vmin;
     background-color: $seconds-hand-color;
