@@ -1,3 +1,71 @@
+@import './utilits/variables';
+
 body {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $full-heigth;
+  width: $full-width;
+}
+
+.stopwatch {
+  height: $watch-height;
+  width: $watch-width;
+
+  border: $border-width dotted $border-color;
+  border-radius: 50%;
+
+  position: relative;
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: $center-watch-diam;
+    width: $center-watch-diam;
+
+    border-radius: 50%;
+    background-color: $center-watch-color;
+  }
+
+  &__hand-seconds {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+
+    animation: rotate 60s linear infinite;
+    transform: translate(-50%, 0) rotate(0deg);
+
+    height: $hand-sec-heigth;
+    width: $hand-sec-width;
+
+    background-color: $hand-sec-color;
+  }
+
+  &__hand-minutes {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
+
+    animation: rotate 3600s steps(60) infinite;
+    transform: translate(-50%, 0) rotate(0deg);
+
+    height: $hand-minut-heigth;
+    width: $hand-minut-width;
+
+    background-color: $hand-minut-color;
+  }
+
+  &--speed-up {
+    .stopwatch__hand-seconds {
+      animation-duration: 10s;
+    }
+    .stopwatch__hand-minutes {
+      animation-duration: 600s;
+    }
+  }
 }
