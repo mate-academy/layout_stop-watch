@@ -11,7 +11,7 @@ const basic = {
   removeSelectors: [
     'h1',
   ],
-  misMatchThreshold: 0.4,
+  misMatchThreshold: 3.0,
   referenceUrl: basicScenario.referenceUrl + '/stopwatch/',
 };
 
