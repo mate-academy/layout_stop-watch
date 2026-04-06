@@ -1,0 +1,90 @@
+@use '../utils/variables' as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes stopwatch-hand-rotate {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+
+  &__second {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%) rotate(0deg);
+    transform-origin: bottom center;
+
+    width: 1.5vmin;
+    height: 38vmin;
+    background-color: #2c8000;
+    animation-name: stopwatch-hand-rotate;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &__minute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%) rotate(0deg);
+
+    width: 3vmin;
+    height: 20vmin;
+    background-color: #0700ff;
+    animation-name: stopwatch-hand-rotate;
+    animation-duration: 3600s;
+    animation-timing-function: steps(60, end);
+    animation-iteration-count: infinite;
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: #f6a603;
+  }
+
+  &--speed-up {
+    .stopwatch__second {
+      animation-duration: $duration;
+    }
+    .stopwatch__minute {
+      animation-duration: $duration * 60;
+    }
+  }
+}
