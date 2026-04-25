@@ -1,3 +1,55 @@
+@import './utils/mixins';
+
 body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: var(--size);
+  width: var(--size);
+  border: var(--border-size) dotted var(--border-color);
+  border-radius: var(--size);
+
+  &__minute {
+    @include content-center-of-hands;
+
+    background-color: var(--minutes-hand-color);
+    width: var(--minutes-hand-width);
+    height: var(--minutes-hand-height);
+    animation: rotation 3600s steps(60) infinite;
+  }
+
+  &__seconds {
+    @include content-center-of-hands;
+
+    background-color: var(--seconds-hand-color);
+    width: var(--seconds-hand-width);
+    height: var(--seconds-hand-height);
+    animation: rotation 60s linear infinite;
+  }
+
+  &__dot {
+    position: relative;
+    z-index: 1;
+    background-color: var(--center-circle-color);
+    border-radius: 50%;
+    width: var(--center-circle-diameter);
+    height: var(--center-circle-diameter);
+  }
+}
+
+.stopwatch--speed-up .stopwatch__minute {
+  @include animation-speed-up-minutes;
+}
+
+.stopwatch--speed-up .stopwatch__seconds {
+  @include animation-speed-up-seconds;
 }
