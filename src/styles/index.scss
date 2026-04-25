@@ -1,3 +1,87 @@
+$watch-size: 80vmin;
+$minutes-length: 20vmin;
+$secunds-length: 38vmin;
+$minutes-width: 3vmin;
+$secunds-width: 1.5vmin;
+$minutes-color: #0700ff;
+$secunds-color: #2c8000;
+$watch-center-d: 5vmin;
+$watch-center-color: #f6a603;
+
+@keyframes minutes {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: center bottom;
+  }
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center bottom;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: center bottom;
+  }
+}
+
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  display: flex;
+
+  height: $watch-size;
+  width: $watch-size;
+  border: 1vmin dotted #000;
+  border-radius: 100%;
+
+  &__secund_hand {
+    position: absolute;
+    width: $secunds-width;
+    height: $secunds-length;
+    background-color: $secunds-color;
+    margin-left: ($watch-size - $secunds-width) / 2;
+    margin-top: ($watch-size / 2 - $secunds-length);
+
+    animation: seconds 60s linear infinite;
+  }
+
+  &__minute_hand {
+    position: absolute;
+    width: $minutes-width;
+    height: $minutes-length;
+    background-color: $minutes-color;
+    margin-left: ($watch-size - $minutes-width) / 2;
+    margin-top: ($watch-size / 2 - $minutes-length);
+
+    animation: minutes 3600s steps(60, end) infinite;
+  }
+
+  &__circle {
+    position: absolute;
+    width: $watch-center-d;
+    height: $watch-center-d;
+    background-color: $watch-center-color;
+    border-radius: 100%;
+    margin-left: ($watch-size - $watch-center-d) / 2;
+    margin-top: ($watch-size - $watch-center-d) / 2;
+  }
+
+  &--speed-up &__minute_hand {
+    animation-duration: 600s;
+  }
+  &--speed-up &__secund_hand {
+    animation-duration: 10s;
+  }
 }
