@@ -52,7 +52,7 @@ body {
     height: $secunds-length;
     background-color: $secunds-color;
     margin-left: ($watch-size - $secunds-width) / 2;
-    margin-top: calc(($watch-size / 2 - $secunds-length));
+    margin-top: ($watch-size / 2 - $secunds-length);
 
     animation: seconds 60s linear infinite;
   }
@@ -62,10 +62,10 @@ body {
     width: $minutes-width;
     height: $minutes-length;
     background-color: $minutes-color;
-    margin-left: calc(($watch-size - $minutes-width) / 2);
-    margin-top: calc(($watch-size / 2 - $minutes-length));
+    margin-left: ($watch-size - $minutes-width) / 2;
+    margin-top: ($watch-size / 2 - $minutes-length);
 
-    animation: minutes 3600s steps(60) infinite;
+    animation: minutes 3600s steps(60, end) infinite;
   }
 
   &__circle {
@@ -74,8 +74,8 @@ body {
     height: $watch-center-d;
     background-color: $watch-center-color;
     border-radius: 100%;
-    margin-left: calc(($watch-size - $watch-center-d) / 2);
-    margin-top: calc(($watch-size - $watch-center-d) / 2);
+    margin-left: ($watch-size - $watch-center-d) / 2;
+    margin-top: ($watch-size - $watch-center-d) / 2;
   }
 
   &--speed-up &__minute_hand {
