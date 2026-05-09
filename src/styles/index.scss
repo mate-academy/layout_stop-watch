@@ -1,3 +1,53 @@
-body {
+.container {
   margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.stopwatch {
+  position: relative;
+  vertical-align: center;
+  text-align: center;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+
+  border: dotted 1vmin #000;
+}
+
+.stopwatch__minutes-hand {
+  position: absolute;
+  height: 20vmin;
+  width: 3vmin;
+  top: 50%;
+  left: 50%;
+
+  background-color: #0700ff;
+}
+
+.stopwatch__seconds-hand {
+  position: absolute;
+  height: 38vmin;
+  width: 1.5vmin;
+
+  background-color: #2c8000;
+
+  &__seconds-hand:hover {
+    animation-name: rotate-seconds;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes rotate-seconds {
+
+  }
+}
+
+.stopwatch__circle {
+  position: absolute;
+  height: 5vmin;
+  width: 5vmin;
+  border-radius: 50%;
+
+  background-color: #f6a603;
 }
