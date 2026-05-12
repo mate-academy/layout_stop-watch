@@ -11,17 +11,7 @@
   height: 80vmin;
   width: 80vmin;
   border-radius: 50%;
-
   border: dotted 1vmin #000;
-}
-
-.stopwatch--speed-up {
-  .stopwatch__seconds-hand {
-    animation-duration: 10s;
-  }
-  .stopwatch__minutes-hand {
-    animation-duration: 600s;
-  }
 }
 
 .stopwatch__minutes-hand {
@@ -77,6 +67,15 @@
     to {
       transform: translate(-50%, -100%) rotate(360deg);
     }
+  }
+}
+
+.stopwatch--speed-up {
+  .stopwatch__seconds-hand {
+    animation-duration: 10s;
+  }
+  .stopwatch__minutes-hand {
+    animation-duration: 600s;
   }
 }
 
