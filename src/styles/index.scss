@@ -42,12 +42,8 @@ body {
 
     z-index: 1;
 
-    animation: stopwatch-minutes 3600s infinite;
+    animation: stopwatch-minutes 3600s steps(60) infinite;
     transform-origin: 0%;
-
-    &--speed-up {
-      animation: stopwatch-minutes-speed-up 600s infinite;
-    }
   }
 
   &__seconds {
@@ -62,11 +58,17 @@ body {
 
     z-index: 2;
 
-    animation: stopwatch-seconds 60s infinite;
+    animation: stopwatch-seconds 60s steps(60) infinite;
     transform-origin: 0%;
+  }
 
-    &--speed-up {
-      animation: stopwatch-seconds-speed-up 10s infinite;
+  &--speed-up{
+    .stopwatch__minutes{
+      animation: stopwatch-minutes-speed-up 600s steps(60) infinite;
+    }
+
+    .stopwatch__seconds{
+      animation: stopwatch-seconds-speed-up 10s steps(60) infinite;
     }
   }
 }
