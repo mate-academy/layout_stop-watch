@@ -1,0 +1,70 @@
+@use '../util/variables';
+@use '../util/mixin';
+
+.stopwatch {
+  width: variables.$watchSize;
+  height: variables.$watchSize;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__wrap {
+    position: relative;
+    width: variables.$watchSizeCenter;
+    height: variables.$watchSizeCenter;
+    display: flex;
+    align-items: center;
+  }
+
+  &__circle {
+    width: variables.$watchSizeCenter;
+    height: variables.$watchSizeCenter;
+    background-color: #f6a603;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+  }
+
+  &__second {
+    width: 38vmin;
+    height: 1.5vmin;
+    background-color: #2c8000;
+
+    @include mixin.position-sec-min;
+
+    animation: move 60s linear infinite;
+  }
+
+  &__minute {
+    width: 20vmin;
+    height: 3vmin;
+    background-color: #0700ff;
+
+    @include mixin.position-sec-min;
+
+    animation: move 3600s steps(60) infinite;
+  }
+
+  &--speed-up {
+    .stopwatch__second {
+      animation-duration: 10s;
+    }
+
+    .stopwatch__minute {
+      animation-duration: 600s;
+    }
+  }
+}
+
+@keyframes move {
+
+  from {
+    transform: rotate(variables.$degStart);
+  }
+
+  to {
+    transform: rotate(variables.$degFinish);
+  }
+}
