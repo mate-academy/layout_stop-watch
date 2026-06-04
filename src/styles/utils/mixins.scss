@@ -1,0 +1,14 @@
+@mixin rotating {
+  @keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@mixin hand-animation($animation-name, $duration, $timing-function) {
+  animation: $animation-name $duration infinite $timing-function;
+}
