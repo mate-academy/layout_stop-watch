@@ -1,3 +1,83 @@
-body {
+html {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
   margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  border: 1vmin dotted black;
+  border-radius: 50%;
+}
+
+.stopwatch__minute,
+.stopwatch__second {
+  position: absolute;
+  top: 50%; /* Volta para 50% */
+  left: 50%;
+  transform-origin: 0% 50%;
+  transform: translateY(-50%) rotate(-90deg); /* Correção aqui */
+  animation-fill-mode: both;
+}
+
+/* Ponteiro dos minutos */
+.stopwatch__minute {
+  width: 20vmin;
+  height: 3vmin;
+  background-color: #0700ff;
+  animation: rotate-minute 3600s steps(60) infinite;
+  animation-fill-mode: both;
+}
+
+.stopwatch__second {
+  width: 38vmin;
+  height: 1.5vmin;
+  background-color: #2c8000;
+  animation: rotate-second 60s linear infinite;
+  animation-fill-mode: both;
+}
+
+/* Centro do cronômetro */
+.stopwatch__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5vmin;
+  height: 5vmin;
+  background-color: #f6a603;
+  border-radius: 50%;
+}
+
+/* Animação do ponteiro dos segundos */
+@keyframes rotate-second {
+  from {
+    transform: translateY(-50%) rotate(-90deg); /* Adiciona o translateY aqui */
+  }
+  to {
+    transform: translateY(-50%) rotate(270deg); /* Adiciona o translateY aqui */
+  }
+}
+
+@keyframes rotate-minute {
+  from {
+    transform: translateY(-50%) rotate(-90deg); /* Adiciona o translateY aqui */
+  }
+  to {
+    transform: translateY(-50%) rotate(270deg); /* Adiciona o translateY aqui */
+  }
+}
+
+/* Estado acelerado */
+.stopwatch--speed-up .stopwatch__second {
+  animation-duration: 10s;
+}
+
+.stopwatch--speed-up .stopwatch__minute {
+  animation-duration: 600s;
 }
