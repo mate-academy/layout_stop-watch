@@ -1,3 +1,77 @@
+@use './utils/variables.scss' as *;
+
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vmin;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: $watch-size;
+  width: $watch-size;
+  border-radius: 50%;
+  border: 1vmin dotted $border-color;
+
+  @keyframes clock {
+    from {
+      transform: translateY(-50%) rotate(0deg);
+    }
+
+    to {
+      transform: translateY(-50%) rotate(360deg);
+    }
+  }
+
+  &__center-dot {
+    width: $center-dot-size;
+    height: $center-dot-size;
+    border-radius: 50%;
+    background-color: $center-dot-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__seconds-hand {
+    width: $seconds-hand-width;
+    height: $seconds-hand-height;
+    background-color: $seconds-hand-color;
+    position: absolute;
+    transform: translateY(-50%);
+
+    @include hand-animation(60s);
+
+    animation-timing-function: linear;
+  }
+
+  &__minutes-hand {
+    width: $minutes-hand-width;
+    height: $minutes-hand-height;
+    background-color: $minutes-hand-color;
+    position: absolute;
+    transform: translateY(-50%);
+
+    @include hand-animation(3600s);
+
+    animation-timing-function: steps(60);
+  }
+
+  &--speed-up &__seconds-hand {
+    @include hand-animation(10s);
+
+    animation-timing-function: linear;
+  }
+
+  &--speed-up &__minutes-hand {
+    @include hand-animation(600s);
+
+    animation-timing-function: steps(60);
+  }
 }
