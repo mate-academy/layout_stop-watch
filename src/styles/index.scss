@@ -26,14 +26,16 @@ body {
   &__seconds {
     @include hand(38vmin, 1.5vmin, #2c8000);
 
-    transform-origin: left center;
+    transform-origin: 0 50%;
+    transform: translateY(-50%) rotate(-90deg);
     animation: rotate 60s linear infinite;
   }
 
   &__minutes {
     @include hand(20vmin, 3vmin, #0700ff);
 
-    transform-origin: left center;
+    transform-origin: 0 50%;
+    transform: translateY(-50%) rotate(-90deg);
     animation: rotate 3600s steps(60) infinite;
   }
 
