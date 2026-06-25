@@ -9,8 +9,8 @@
     position: absolute;
     left: 50%;
     bottom: 50%;
-    transform-origin: bottom center;
-    transform: translateX(-50%);
+    transform-origin: center bottom;
+    translate: -50% 0;
   }
 
   &__hand--seconds {
@@ -50,10 +50,10 @@
 
 @keyframes rotate {
   from {
-    transform: translateX(-50%) rotate(0deg);
+    transform: rotate(0deg);
   }
 
   to {
-    transform: translateX(-50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }
