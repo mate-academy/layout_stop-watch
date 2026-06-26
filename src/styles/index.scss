@@ -1,3 +1,82 @@
+$stopwatch-size: 80vmin;
+$stopwatch-border-width: 1vmin;
+$stopwatch-border-color: #000;
+$stopwatch-radius: 50%;
+$stopwatch-center-position: $stopwatch-size * 0.5;
+$minutes-hand-length: 20vmin;
+$minutes-hand-width: 3vmin;
+$minutes-hand-color: #0700ff;
+$seconds-hand-length: 38vmin;
+$seconds-hand-width: 1.5vmin;
+$seconds-hand-color: #2c8000;
+$center-size: 5vmin;
+$center-color: #f6a603;
+$seconds-duration: 60s;
+$speed-up-duration: 10s;
+
 body {
   margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  --seconds-duration: #{$seconds-duration};
+
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: $stopwatch-border-width dotted $stopwatch-border-color;
+  border-radius: $stopwatch-radius;
+
+  &__minutes-hand {
+    position: absolute;
+    bottom: $stopwatch-center-position;
+    left: $stopwatch-center-position - $minutes-hand-width * 0.5;
+    width: $minutes-hand-width;
+    height: $minutes-hand-length;
+    background-color: $minutes-hand-color;
+    transform: rotate(0);
+    transform-origin: bottom;
+    animation: hand-rotate calc(var(--seconds-duration) * 60) steps(60) infinite;
+  }
+
+  &__seconds-hand {
+    position: absolute;
+    bottom: $stopwatch-center-position;
+    left: $stopwatch-center-position - $seconds-hand-width * 0.5;
+    width: $seconds-hand-width;
+    height: $seconds-hand-length;
+    background-color: $seconds-hand-color;
+    transform: rotate(0);
+    transform-origin: bottom;
+    animation: hand-rotate var(--seconds-duration) linear infinite;
+  }
+
+  &__central-circle {
+    position: absolute;
+    bottom: $stopwatch-center-position - $center-size * 0.5;
+    left: $stopwatch-center-position - $center-size * 0.5;
+    width: $center-size;
+    height: $center-size;
+    border-radius: $stopwatch-radius;
+    background-color: $center-color;
+  }
+}
+
+.stopwatch--speed-up {
+  --seconds-duration: #{$speed-up-duration};
+}
+
+@keyframes hand-rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
