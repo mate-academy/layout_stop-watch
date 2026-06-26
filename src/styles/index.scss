@@ -28,6 +28,7 @@ body {
   border-style: dotted;
   border-width: $dot-size;
   border-radius: 50%;
+  border-color: $dot-color;
   position: relative;
 
   &--speed-up {
@@ -35,6 +36,7 @@ body {
   }
 
   &__center {
+    position: absolute;
     height: $center-diametr;
     width: $center-diametr;
     background-color: $center-color;
@@ -42,6 +44,7 @@ body {
     z-index: 1;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &__minutes-hand,
