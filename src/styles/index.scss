@@ -1,3 +1,70 @@
+@import './variables';
+
+@keyframes rotate-full {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $watch-size;
+  width: $watch-size;
+  border-style: dotted;
+  border-width: $dot-size;
+  border-radius: 50%;
+  border-color: $dot-color;
+  position: relative;
+
+  &--speed-up {
+    --minute-duration: 10s;
+  }
+
+  &__center {
+    position: absolute;
+    height: $center-diametr;
+    width: $center-diametr;
+    background-color: $center-color;
+    border-radius: 50%;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__minutes-hand,
+  &__seconds-hand {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom;
+  }
+
+  &__minutes-hand {
+    height: $minutes-length;
+    width: $minutes-width;
+    background-color: $minutes-color;
+    animation: rotate-full calc(var(--minute-duration) * 60) steps(60) infinite;
+  }
+
+  &__seconds-hand {
+    height: $seconds-length;
+    width: $seconds-width;
+    background-color: $seconds-color;
+    animation: rotate-full var(--minute-duration) linear infinite;
+  }
 }
