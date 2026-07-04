@@ -1,0 +1,16 @@
+@import './utils/variables';
+@import './utils/mixin';
+@import './blocks/stopwatch';
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  @include flex-center;
+
+  min-height: 100vh;
+}

@@ -1,0 +1,17 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin starting-position-hand {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom;
+}
+
+@mixin stopwatch-hand-properties($width, $height, $background-color) {
+  width: #{$width};
+  height: #{$height};
+  background-color: #{$background-color};
+}
