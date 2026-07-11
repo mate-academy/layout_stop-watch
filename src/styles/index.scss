@@ -53,11 +53,11 @@ body {
   }
 
   &--speed-up &__minutes-hand {
-    animation-duration: $minutes-time / $speed-up-ratio;
+    animation-duration: calc($minutes-time / $speed-up-ratio);
   }
 
   &--speed-up &__seconds-hand {
-    animation-duration: $seconds-time / $speed-up-ratio;
+    animation-duration: calc($seconds-time / $speed-up-ratio);
   }
 }
 
