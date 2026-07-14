@@ -1,0 +1,62 @@
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: 50%;
+  position: relative;
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    transform-origin: bottom center;
+    will-change: transform;
+    transform: rotate(0deg);
+
+    &--seconds {
+      height: 38vmin;
+      width: 1.5vmin;
+      left: calc(50% - 0.75vmin);
+      background-color: #2c8000;
+      animation: tick-tock 60s linear infinite;
+    }
+
+    &--minutes {
+      height: 20vmin;
+      width: 3vmin;
+      left: calc(50% - 1.5vmin);
+      background-color: #0700ff;
+      animation: tick-tock 3600s steps(60) infinite;
+    }
+  }
+
+  &--speed-up {
+    .stopwatch__hand--seconds {
+      animation-duration: 10s;
+    }
+
+    .stopwatch__hand--minutes {
+      animation-duration: 600s;
+    }
+  }
+
+  &__center {
+    height: 5vmin;
+    width: 5vmin;
+    background-color: #f6a603;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+}
+
+@keyframes tick-tock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
