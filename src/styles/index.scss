@@ -1,3 +1,74 @@
 body {
   margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@mixin pre-settings($height, $width, $color) {
+  height: $height;
+  width: $width;
+  background-color: $color;
+}
+
+@mixin pointer-position {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.stopwatch {
+  @include pre-settings(80vmin, 80vmin, #fff);
+
+  border-radius: 100%;
+  border: 1vmin dotted #000;
+  position: relative;
+}
+
+.stopwatch__secondsPointer {
+  @include pre-settings(38vmin, 1.5vmin, #2c8000);
+  @include pointer-position;
+
+  animation: roll 60s linear infinite;
+}
+
+.stopwatch__minutesPointer {
+  @include pre-settings(20vmin, 3vmin, #0700ff);
+  @include pointer-position;
+
+  animation: roll 3600s steps(60, end) infinite;
+}
+
+.stopwatch__circle {
+  @include pre-settings(5vmin, 5vmin, #f6a603);
+
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.stopwatch--speed-up {
+  .stopwatch__secondsPointer {
+    animation-duration: 10s;
+  }
+
+  .stopwatch__minutesPointer {
+    animation-duration: 600s;
+  }
+}
+
+@keyframes roll {
+  from {
+    transform: translateX(-50%) rotate(0deg) translateZ(0);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg) translateZ(0);
+  }
 }
