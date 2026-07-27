@@ -1,0 +1,21 @@
+$stopwatch-size: 80vmin;
+$border-radius: 50%;
+$min-hand-h: 20vmin;
+$min-hand-w: 3vmin;
+$min-hand-color: #0700ff;
+$sec-hand-h: 38vmin;
+$sec-hand-w: 1.5vmin;
+$sec-hand-color: #2c8000;
+$center-dot-diameter: 5vmin;
+$center-dot-color: #f6a603;
+$position: 50%;
+
+@keyframes hand-animation {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
