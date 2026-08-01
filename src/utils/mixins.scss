@@ -1,0 +1,11 @@
+@mixin size-and-color($height, $width, $color) {
+  height: $height;
+  width: $width;
+  background-color: $color;
+}
+
+@mixin offset($left, $top, $translate-horizontally, $translate-vertically) {
+  left: $left;
+  top: $top;
+  translate: $translate-horizontally $translate-vertically;
+}

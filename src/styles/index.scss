@@ -1,3 +1,58 @@
+@import '../utils/mixins';
+
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+  position: relative;
+
+  &__minutes-hand {
+    @include size-and-color(20vmin, 3vmin, #0700ff);
+    @include offset(50%, 50%, -50%, -100%);
+
+    position: absolute;
+    animation: spin 3600s steps(60) infinite;
+    transform-origin: bottom center;
+  }
+
+  &__seconds-hand {
+    @include size-and-color(38vmin, 1.5vmin, #2c8000);
+    @include offset(50%, 50%, -50%, -100%);
+
+    position: absolute;
+    animation: spin 60s linear infinite;
+    transform-origin: bottom center;
+  }
+
+  &__center {
+    @include size-and-color(5vmin, 5vmin, #f6a603);
+    @include offset(50%, 50%, -50%, -50%);
+
+    position: absolute;
+    border-radius: 50%;
+  }
+  &--speed-up .stopwatch__minutes-hand {
+    animation: spin 600s steps(60) infinite;
+  }
+  &--speed-up .stopwatch__seconds-hand {
+    animation: spin 10s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
