@@ -1,6 +1,9 @@
 @use '../utils/variables.scss' as vars;
 
 .stopwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: vars.$stopwatch-size;
   height: vars.$stopwatch-size;
@@ -9,10 +12,11 @@
 
   &__minutes-hand,
   &__seconds-hand {
-    transform-origin: 50% 100%;
     position: absolute;
     bottom: 50%;
     left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: center bottom;
   }
 
   &__minutes-hand {
@@ -51,10 +55,10 @@
   }
 
   &--speed-up {
-    &__seconds-hand {
+    .stopwatch__seconds-hand {
       animation: rotate 10s linear infinite;
     }
-    &__minutes-hand {
+    .stopwatch__minutes-hand {
       animation: rotate 600s steps(60) infinite;
     }
   }
