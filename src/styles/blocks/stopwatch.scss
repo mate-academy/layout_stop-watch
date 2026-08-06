@@ -1,4 +1,4 @@
-@use '../utils/variables.scss' as vars;
+@use '../utils/variables' as vars;
 
 .stopwatch {
   display: flex;
@@ -55,10 +55,10 @@
   }
 
   &--speed-up {
-    .stopwatch__seconds-hand {
+    &__seconds-hand {
       animation: rotate 10s linear infinite;
     }
-    .stopwatch__minutes-hand {
+    &__minutes-hand {
       animation: rotate 600s steps(60) infinite;
     }
   }
