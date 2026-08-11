@@ -18,53 +18,50 @@
     height: 5vmin;
     background-color: #f6a603;
     border-radius: 50%;
-
-
   }
 
   &__arrow {
     position: absolute;
     transform-origin: bottom center;
 
-
-    &--hours {
-      width: 3vmin;
-      height: $arrow-hour-length;
-      background-color: #0700ff;
-
-
-      animation-name: animation-of-arrow-hours;
-      animation-duration: $animation-duration-for-hours;
-      animation-timing-function: steps(60);
-    }
-
     &--minutes {
-      width: 1.5vmin;
+      width: 3vmin;
       height: $arrow-minute-length;
-      background-color: #2c8000;
-
-
+      background-color: #0700ff;
 
       animation-name: animation-of-arrow-minutes;
       animation-duration: $animation-duration-for-minutes;
+      animation-timing-function: steps(60);
+    }
+
+    &--seconds {
+      width: 1.5vmin;
+      height: $arrow-second-length;
+      background-color: #2c8000;
+
+      animation-name: animation-of-arrow-seconds;
+      animation-duration: $animation-duration-for-seconds;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
-
     }
-
   }
 
-    &--speed-up {
-      .stopwatch__arrow--hours {
-        animation-duration: 600s;
-      }
-
-      .stopwatch__arrow--minutes {
-        animation-duration: 10s;
-      }
+  &--speed-up {
+    .stopwatch__arrow--minutes {
+      animation-duration: 600s;
     }
 
+    .stopwatch__arrow--seconds {
+      animation-duration: 10s;
+    }
+  }
 }
 
-@include generation-of-animations('animation-of-arrow-hours', calculate-center-of-stopwatch($arrow-hour-length));
-@include generation-of-animations('animation-of-arrow-minutes', calculate-center-of-stopwatch($arrow-minute-length));
+@include generation-of-animations(
+  'animation-of-arrow-minutes',
+  calculate-center-of-stopwatch($arrow-minute-length)
+);
+@include generation-of-animations(
+  'animation-of-arrow-seconds',
+  calculate-center-of-stopwatch($arrow-second-length)
+);
