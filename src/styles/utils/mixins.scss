@@ -1,0 +1,11 @@
+@mixin generation-of-animations($animation-name, $translateY) {
+  @keyframes #{$animation-name} {
+    from {
+      transform: translateY(-$translateY) rotate(0deg);
+    }
+
+    to {
+      transform: translateY(-$translateY) rotate(360deg);
+    }
+  }
+}
