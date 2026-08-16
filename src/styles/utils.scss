@@ -1,17 +1,17 @@
 @keyframes rotate-arrows {
   from {
-    transform: rotate(0deg);
+    transform: rotate(-90deg);
   }
 
   to {
-    transform: rotate(360deg);
+    transform: rotate(270deg);
   }
 }
 
 @mixin arrows-anim($name, $duration, $timing-function) {
   animation-name: $name;
   animation-duration: $duration;
-  transform-origin: bottom;
+  transform-origin: left;
   animation-timing-function: $timing-function;
   animation-iteration-count: infinite;
 }
