@@ -1,4 +1,4 @@
-@import './utills';
+@import './utils';
 
 body {
   margin: 0;
@@ -40,10 +40,6 @@ body {
     background-color: #2c8000;
 
     @include arrows-anim(rotate-arrows, 60s, linear);
-
-    &--speed-up {
-      @include arrows-anim(rotate-arrows, 10s, linear);
-    }
   }
 
   &__arrow-of-min {
@@ -56,8 +52,14 @@ body {
     background-color: #0700ff;
 
     @include arrows-anim(rotate-arrows, 3600s, steps(60));
+  }
 
-    &--speed-up {
+  &--speed-up {
+    .stopwatch__arrow-of-sec {
+      @include arrows-anim(rotate-arrows, 10s, linear);
+    }
+
+    .stopwatch__arrow-of-min {
       @include arrows-anim(rotate-arrows, 600s, steps(60));
     }
   }
