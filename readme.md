@@ -7,7 +7,7 @@ Create a working stopwatch with minute and second hands using **only CSS animati
   - it should have a `1vmin` dotted round border with `#000` color
   - minutes hand should have a length of `20vmin` and `3vmin` width with blue (`#0700ff`) color
   - seconds hand should have a length of `38vmin` and `1.5vmin` width with green (`#2c8000`) color
-  - the center of the stopwatch should be a circle with a diameter of `5vmin` and orange (`#f6a603`) color
+  - the center of the stopwatch should be a circle with a diameter of `5vmin` and orange (`#fa603`) color
 - The starting position of the hands should be at the top.
 - The stopwatch should be animated infinitely.
 - For seconds hand use animation with even speed, without acceleration and deceleration. It should take the `60s` for the seconds hand to make a full circle.
@@ -32,7 +32,7 @@ This is possible because [we use the Parcel library](https://en.parceljs.org/scs
 ## Checklist
 
 ❗️ Replace `<your_account>` with your GitHub username and copy the links to the `Pull Request` description:
-- [DEMO LINK](https://<your_account>.github.io/layout_stop-watch/)
+- [DEMO LINK](https://evadab.github.io/layout_stop-watch/)
 
 ❗️ Copy this `Checklist` to the `Pull Request` description after links, and put `- [x]` before each point after you checked it.
 
