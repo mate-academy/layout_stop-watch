@@ -1,0 +1,14 @@
+@mixin hand($top, $left, $height, $width, $color) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform-origin: $hands-transform-origin;
+
+  height: $height;
+  width: $width;
+  background-color: $color;
+}
+
+@mixin rotation($duration, $timing: linear) {
+  animation: rotation $duration $timing infinite;
+}
