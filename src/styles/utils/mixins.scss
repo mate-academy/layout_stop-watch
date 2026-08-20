@@ -1,0 +1,16 @@
+@use './functions';
+
+@mixin hand($width, $height, $color) {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+
+  width: $width;
+  height: $height;
+
+  margin-left: functions.shift($width);
+
+  background-color: $color;
+
+  transform-origin: bottom center;
+}
