@@ -1,3 +1,98 @@
+$size: 80vmin;
+$border-width: 1vmin;
+$center-size: 5vmin;
+$minutes-length: 20vmin;
+$minutes-width: 3vmin;
+$seconds-length: 38vmin;
+$seconds-width: 1.5vmin;
+$minutes-duration: 3600s;
+$seconds-duration: 60s;
+$minutes-duration-fast: 600s;
+$seconds-duration-fast: 10s;
+$steps-in-circle: 60;
+$border-color: #000;
+$minutes-color: #0700ff;
+$seconds-color: #2c8000;
+$center-color: #f6a603;
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
   margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+
+  width: $size;
+  height: $size;
+  border: $border-width dotted $border-color;
+  border-radius: 50%;
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+
+    &--minutes {
+      width: $minutes-width;
+      height: $minutes-length;
+      margin-left: -$minutes-width * 0.5;
+
+      background-color: $minutes-color;
+
+      animation-duration: $minutes-duration;
+      animation-timing-function: steps($steps-in-circle);
+    }
+
+    &--seconds {
+      width: $seconds-width;
+      height: $seconds-length;
+      margin-left: -$seconds-width * 0.5;
+
+      background-color: $seconds-color;
+
+      animation-duration: $seconds-duration;
+      animation-timing-function: linear;
+    }
+  }
+
+  &__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: $center-size;
+    height: $center-size;
+    margin-top: -$center-size * 0.5;
+    margin-left: -$center-size * 0.5;
+    border-radius: 50%;
+
+    background-color: $center-color;
+  }
+
+  &--speed-up &__hand--minutes {
+    animation-duration: $minutes-duration-fast;
+  }
+
+  &--speed-up &__hand--seconds {
+    animation-duration: $seconds-duration-fast;
+  }
 }
