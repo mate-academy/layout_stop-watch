@@ -38,12 +38,12 @@
       @include rotate(3600s, steps(60));
     }
   }
+}
 
-  &--speed-up stopwatch__hand--seconds {
-    @include rotate(10s, linear);
-  }
+.stopwatch--speed-up stopwatch__hand--seconds {
+  @include rotate(10s, linear);
+}
 
-  &--speed-up stopwatch__hand--minutes {
-    @include rotate(600s, steps(60));
-  }
+.stopwatch--speed-up stopwatch__hand--minutes {
+  @include rotate(600s, steps(60));
 }
