@@ -1,3 +1,75 @@
+@import './variables';
+
+@keyframes rotate {
+  from {
+    transform: #{$stopwatch__hand-translate} rotate(0deg);
+  }
+  to {
+    transform: #{$stopwatch__hand-translate} rotate(360deg);
+  }
+}
+
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
   margin: 0;
+}
+
+.stopwatch {
+  position: relative;
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  background-color: #fff;
+  border: $stopwatch-border;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__minutes {
+    position: absolute;
+    width: $stopwatch__minutes-width;
+    height: $stopwatch__minutes-length;
+    background-color: $stopwatch__minutes-color;
+    top: 50%;
+    left: 50%;
+    animation: rotate $stopwatch__minutes-speed steps(60) infinite;
+
+    transform-origin: bottom center;
+    transform: #{$stopwatch__hand-translate};
+  }
+
+  &__seconds {
+    position: absolute;
+    width: $stopwatch__seconds-width;
+    height: $stopwatch__seconds-length;
+    background-color: $stopwatch__seconds-color;
+    top: 50%;
+    left: 50%;
+    animation: rotate $stopwatch__seconds-speed linear infinite;
+
+    transform-origin: bottom center;
+    transform: #{$stopwatch__hand-translate};
+  }
+
+  &__center {
+    position: absolute;
+    width: $stopwatch-center-size;
+    height: $stopwatch-center-size;
+    background-color: $stopwatch__center-color;
+    border-radius: 50%;
+  }
+
+  &--speed-up {
+    & .stopwatch__seconds {
+      animation-duration: 10s;
+    }
+
+    & .stopwatch__minutes {
+      animation-duration: 600s;
+    }
+  }
 }
