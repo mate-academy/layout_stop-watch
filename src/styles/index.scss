@@ -1,3 +1,88 @@
+$stopwatch-size: 80vmin;
+$stopwatch-border-color: #000;
+$stopwatch-border-size: 1vmin;
+$stopwatch-border-style: dotted;
+$stopwatch-center-size: 5vmin;
+$stopwatch-center-color: #f6a603;
+$hand-minutes-color: #0700ff;
+$hand-minutes-height: 20vmin;
+$hand-minutes-width: 3vmin;
+$hand-seconds-color: #2c8000;
+$hand-seconds-height: 38vmin;
+$hand-seconds-width: 1.5vmin;
+$minute: 60s;
+$hour: 60 * $minute;
+$hand-seconds-duration: $minute;
+$hand-minutes-duration: $hour;
+$hand-seconds-duration-speed-up: 10s;
+$hand-minutes-duration-speed-up: 10 * $minute;
+$minute-steps: 60;
+
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  width: $stopwatch-size;
+  height: $stopwatch-size;
+  border: $stopwatch-border-size $stopwatch-border-style $stopwatch-border-color;
+  border-radius: 50%;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: $stopwatch-center-size;
+    height: $stopwatch-center-size;
+    background-color: $stopwatch-center-color;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+
+    &--minutes {
+      height: $hand-minutes-height;
+      width: $hand-minutes-width;
+      background-color: $hand-minutes-color;
+      margin-left: $hand-minutes-width * -0.5;
+      animation: rotate $hand-minutes-duration steps($minute-steps) infinite;
+    }
+
+    &--seconds {
+      height: $hand-seconds-height;
+      width: $hand-seconds-width;
+      background-color: $hand-seconds-color;
+      margin-left: $hand-seconds-width * -0.5;
+      animation: rotate $hand-seconds-duration linear infinite;
+    }
+  }
+
+  &--speed-up &__hand--minutes {
+    animation-duration: $hand-minutes-duration-speed-up;
+  }
+
+  &--speed-up &__hand--seconds {
+    animation-duration: $hand-seconds-duration-speed-up;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
