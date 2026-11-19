@@ -1,3 +1,77 @@
+@import './variables';
+
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes hand-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border: 1vmin dotted #000;
+  border-radius: $border-radius;
+  position: relative;
+  display: flex;
+
+  &__minutes {
+    position: absolute;
+    bottom: $position;
+    left: $position;
+
+    margin-left: $minute-width * -0.5;
+    height: 20vmin;
+    width: $minute-width;
+    background-color: #0700ff;
+    align-self: baseline;
+
+    transform-origin: bottom center;
+    animation: hand-rotate $hour steps(60) infinite;
+  }
+
+  &__seconds {
+    position: absolute;
+    bottom: $position;
+    left: $position;
+
+    margin-left: $seconds-width * -0.5;
+    height: 38vmin;
+    width: $seconds-width;
+    background-color: #2c8000;
+
+    transform-origin: bottom center;
+    animation: hand-rotate $minute linear infinite;
+  }
+
+  &--speed-up &__minutes {
+    animation-duration: $speed-up-minute-duration;
+  }
+
+  &--speed-up &__seconds {
+    animation-duration: $speed-up-seconds-duration;
+  }
+
+  &__center {
+    position: absolute;
+    z-index: 2;
+    left: $position;
+    top: $position;
+    height: 5vmin;
+    width: 5vmin;
+    background-color: #f6a603;
+    border-radius: $border-radius;
+    transform: translate(-50%, -50%);
+  }
 }
