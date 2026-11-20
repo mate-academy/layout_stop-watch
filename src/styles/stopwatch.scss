@@ -1,0 +1,53 @@
+@use './modifiers.scss' as modifier;
+@use './variables.scss' as var;
+
+.stopwatch {
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  border: 1vmin dotted #000;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.stopwatch__hand {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom center;
+}
+
+.stopwatch__hand--minutes {
+  @include modifier.hand-size(20vmin, 3vmin, var.$minutes-hand-color);
+
+  animation: rotate-hand var.$minutes-duration steps(60) infinite;
+}
+
+.stopwatch__hand--center {
+  z-index: 2;
+  bottom: auto;
+  border-radius: 50%;
+
+  @include modifier.hand-size(5vmin, 5vmin, var.$center-hand-color);
+}
+
+.stopwatch__hand--seconds {
+  @include modifier.hand-size(38vmin, 1.5vmin, var.$seconds-hand-color);
+
+  z-index: 1;
+
+  animation: rotate-hand var.$seconds-duration linear infinite;
+}
+
+.stopwatch--speed-up {
+  .stopwatch__hand--seconds {
+    animation: rotate-hand var.$seconds-speed-up-duration linear infinite;
+  }
+
+  .stopwatch__hand--minutes {
+    animation: rotate-hand var.$minutes-speed-up-duration steps(60) infinite;
+  }
+}
