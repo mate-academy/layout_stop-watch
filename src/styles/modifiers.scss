@@ -1,0 +1,14 @@
+@keyframes rotate-hand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin hand-size($height, $width, $bg-color) {
+  height: $height;
+  width: $width;
+  background-color: $bg-color;
+}
